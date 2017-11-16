@@ -1,0 +1,48 @@
+---
+ms.date: 2017-06-12
+author: eslesar
+ms.topic: conceptual
+keywords: "DSC, powershell, yapılandırma, Kur"
+title: "DSC ProcessSet kaynağı"
+ms.openlocfilehash: b713d1a9c34eab6966de4f342991ead32c19df5d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 06/12/2017
+---
+# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess kaynağı
+
+> İçin geçerlidir: Windows PowerShell 5.0
+
+**ProcessSet** kaynağı içinde Windows PowerShell istenen durum yapılandırması (DSC), bir hedef düğümde işlemlerini yapılandırmak için bir mekanizma sağlar. Bu kaynak olmadığı bir [bileşik kaynak](authoringResourceComposite.md) çağrısı [WindowsProcess kaynak](windowsProcessResource.md) belirtilen her grup için `GroupName` parametresi.
+
+## <a name="syntax"></a>Sözdizimi
+
+```
+WindowsProcess [string] #ResourceName
+{
+    Arguments = [string]
+    Path = [string]
+    [ Credential = [PSCredential] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ StandardOutputPath = [string] ]
+    [ StandardErrorPath = [string] ]
+    [ StandardInputPath = [string] ]   
+    [ WorkingDirectory = [string] ]
+    [ DependsOn = [string[]] ]
+}
+```
+
+## <a name="properties"></a>Özellikler
+|  Özellik  |  Açıklama   | 
+|---|---| 
+| Bağımsız değişkenler| İşlem olarak geçirilecek bağımsız değişkenleri içeren bir dize-değil. Birden fazla bağımsız değişken geçirmek gerekiyorsa, bunları bu dize tüm yerleştirin.| 
+| Yol| İşlem yürütülebilir dosya yolları. Bunlar yürütülebilir dosyaları (tam olarak nitelenmiş yollar) adlarını varsa, DSC kaynağı ortam arama **yolu** değişkeni (`$env:Path`) dosyaları bulmak için. Bu özelliğin değerleri, tam yol varsa, DSC kullanmaz **yolu** dosyaları bulmak için ortam değişkeni ve yolların yoksa bir hata özel durum oluşturacak. Göreli yollar izin verilmiyor.| 
+| kimlik bilgisi| İşlemi başlatmak için kimlik bilgilerini gösterir.| 
+| Emin olun| İşlemler var olup olmadığını belirtir. Bu özelliği işlemi var olduğundan emin olmak için "var" olarak ayarlayın. Aksi takdirde, "Yok" ayarlayın. "Var" varsayılandır.| 
+| StandardErrorPath| İşlemler yazma standart hatası yolu. Var. Varolan dosyanın üzerine yazılır.| 
+| StandardInputPath| İşlem standart giriş aldığı akış.| 
+| StandardOutputPath| Standart çıktı yazma işlemleri için dosyanın yolu. Var. Varolan dosyanın üzerine yazılır.| 
+| WorkingDirectory| Geçerli çalışma dizini olarak işlemleri için kullanılan konumu.| 
+| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise **ResourceName** ve türünü **_ResourceType**, bu özelliği kullanmak için sözdizimi ' DependsOn = "[ ResourceType] KaynakAdı"''.| 
+
