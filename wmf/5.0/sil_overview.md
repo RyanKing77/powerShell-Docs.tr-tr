@@ -1,0 +1,23 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: WMF, powershell, Kur
+ms.openlocfilehash: 4a2dfd651f1c74e7441e5f5e357c1c26453adc07
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 06/12/2017
+---
+# <a name="software-inventory-logging-sil"></a><span data-ttu-id="9ad3a-102">Yazılım envanter günlüğü (SIL)</span><span class="sxs-lookup"><span data-stu-id="9ad3a-102">Software Inventory Logging (SIL)</span></span>
+
+<span data-ttu-id="9ad3a-103">** Önemli: ** *yükleme işlemi errantly yazılım durdurulacak WMF 5.0 Windows Server 2012 R2 sunucusu üzerinde zaten SIL çalıştıran yüklerken, bir kez WMF yüklemeden sonra Start-SilLogging cmdlet'i çalıştırmak gerekli olur Envanter Günlüğü özelliği.*</span><span class="sxs-lookup"><span data-stu-id="9ad3a-103">**IMPORTANT: ** *When installing WMF 5.0 on a Windows Server 2012 R2 Server that is already running SIL, it is necessary to run the Start-SilLogging cmdlet once after the WMF install, as the installation process will errantly stop the Software Inventory Logging feature.*</span></span>
+
+<span data-ttu-id="9ad3a-104">Yazılım envanter günlüğü bir sunucuya, ancak özellikle (yazılımın yüklü olduğu varsayılarak ve çalışan bir BT ortamındaki çok sayıda sunucuya yerel olarak yüklü olan Microsoft yazılım hakkında kesin bilgi alma, işletim maliyetlerini azaltmaya yardımcı olur ortamı genelinde).</span><span class="sxs-lookup"><span data-stu-id="9ad3a-104">Software Inventory Logging helps reduce the operational costs of getting accurate information about the Microsoft software installed locally on a server, but especially across many servers in an IT environment (assuming the software is installed and running across the IT environment).</span></span> <span data-ttu-id="9ad3a-105">Ayarlanan bir sağlanan bu verilerin bir toplama sunucusuna iletme ve Tekdüzen, otomatik bir işlemle kullanarak tek bir yerde günlük verilerini topla.</span><span class="sxs-lookup"><span data-stu-id="9ad3a-105">Provided one is set up, you can forward this data to an aggregation server, and collect the log data in one place by using a uniform, automatic process.</span></span>
+
+<span data-ttu-id="9ad3a-106">Yazılım envanteri verilerini her bilgisayar doğrudan sorgulanarak da oturum açabilir, ancak yazılım stok günlüğü, her sunucu tarafından başlatılan bir (ağ üzerinden) iletme mimarisi kullanarak çoğu için tipik olan sunucu bulma güçlüklerini aşabilir yazılım envanteri ve varlık yönetim senaryoları.</span><span class="sxs-lookup"><span data-stu-id="9ad3a-106">While you can also log software inventory data by querying each computer directly, Software Inventory Logging, by employing a forwarding (over the network) architecture initiated by each server, can overcome server discovery challenges that are typical for many software inventory and asset management scenarios.</span></span> <span data-ttu-id="9ad3a-107">Yazılım stok günlüğü, HTTPS üzerinden bir birleştirme sunucusuna iletilen verilerin güvenliğini sağlamak için SSL kullanır.</span><span class="sxs-lookup"><span data-stu-id="9ad3a-107">Software Inventory Logging uses SSL to secure data that is forwarded over HTTPS to an aggregation server.</span></span> <span data-ttu-id="9ad3a-108">Verileri tek bir yerde depolamak verilerin çözümlenmesini, yönetilmesini ve gerektiğinde paylaşmak kolaylaştırır.</span><span class="sxs-lookup"><span data-stu-id="9ad3a-108">Storing the data in one place makes the data easier to analyze, manipulate, and share when necessary.</span></span>
+
+<span data-ttu-id="9ad3a-109">Bu verilerin hiçbirinin, özellik işlevinin parçası olarak Microsoft'a gönderilir.</span><span class="sxs-lookup"><span data-stu-id="9ad3a-109">None of this data is sent to Microsoft as part of the feature functionality.</span></span> <span data-ttu-id="9ad3a-110">Yazılım Stok Günlüğü verileri ve işlevselliği, yalnızca sunucu yazılımının lisanslı sahibi ve yöneticilerinin kullanımına yöneliktir.</span><span class="sxs-lookup"><span data-stu-id="9ad3a-110">Software Inventory Logging data and functionality is meant for the sole use of the server software’s licensed owner and administrators.</span></span>
+
+<span data-ttu-id="9ad3a-111">Daha fazla bilgi ve yazılım envanter günlüğü cmdlet'leri ile ilgili belgeler için bkz: Windows Server 2012 R2 çevrimiçi kaynakları adresindeki <http://technet.microsoft.com/library/dn383584.aspx>.</span><span class="sxs-lookup"><span data-stu-id="9ad3a-111">For more information and documentation about Software Inventory Logging cmdlets, see Windows Server 2012 R2 online resources at <http://technet.microsoft.com/library/dn383584.aspx>.</span></span>
+
