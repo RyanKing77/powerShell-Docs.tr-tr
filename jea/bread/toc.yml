@@ -1,0 +1,7 @@
+- name: PowerShell
+  tocHref: /powershell/
+  topicHref: /powershell/index
+  items:
+    - name: Yeterli Yönetim
+      tocHref: /powershell/jea/
+      topicHref: /powershell/jea/index
