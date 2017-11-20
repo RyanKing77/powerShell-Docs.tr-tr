@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC sahip sürekli tümleştirme ve sürekli dağıtımı işlem hattı oluşturma"
-ms.openlocfilehash: 60b41c5d279560d0121372e593879fe03cd52f7a
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: baa56088d83fba56d3a19cff7954d3081f341f9a
+ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC sahip sürekli tümleştirme ve sürekli dağıtımı işlem hattı oluşturma
 
@@ -353,7 +353,7 @@ Bu derleme adımı biz arama sırasında daha önce Pester komut dosyasında bir
     **\Integration\**
     ```
 
-1. Ayarlama **TargetFolder** için`$(BuildArtifactStagingDirectory)\`
+1. Ayarlama **TargetFolder** için`$(Build.ArtifactStagingDirectory)\`
 
 Bu adım yapı kopyalar ve test komutlar hazırlama dizinine kadar sonraki adım yapıları oluşturma gibi yayımlanabilir.
 
