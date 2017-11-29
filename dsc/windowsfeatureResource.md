@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC WindowsFeature kaynağı"
-ms.openlocfilehash: a3433577a122f6c7e31360e094a089f6ceef77c2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b4f50cb9ee172600b1811175e9cf67f6a7ed2d55
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature kaynağı
 
@@ -35,7 +35,7 @@ WindowsFeature [string] #ResourceName
 
 |  Özellik  |  Açıklama   | 
 |---|---| 
-| Ad| Sağlamak istediğiniz rol veya özellik adını eklenen veya kaldırılan gösterir. Bu aynı sonucu verir __adı__ özelliğinden [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) cmdlet'ini ve rol veya özellik görünen adı değil.| 
+| Ad| Sağlamak istediğiniz rol veya özellik adını eklenen veya kaldırılan gösterir. Bu aynı sonucu verir __adı__ özelliğinden [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet'ini ve rol veya özellik görünen adı değil.| 
 | kimlik bilgisi| Rol veya özellik eklemek veya kaldırmak için kullanılacak kimlik bilgilerini gösterir.| 
 | Emin olun| Rol veya özellik eklediyseniz gösterir. Rol veya özellik olduğundan emin olmak için eklenen, ayarlanmış bu özelliğe rol veya özellik kaldırıldığını, emin olmak için "var" olarak ayarlayın "Yok" özelliği.| 
 | IncludeAllSubFeature| Bu özelliği ayarlamak __$true__ belirttiğiniz ile gerekli tüm alt özellikleri özellik durumuyla durumunu emin olmak için __adı__ özelliği.| 

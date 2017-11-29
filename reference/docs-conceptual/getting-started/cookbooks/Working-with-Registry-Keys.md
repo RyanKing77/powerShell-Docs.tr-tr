@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
-title: "Kayıt defteri anahtarları ile çalışma"
+title: "Kayıt Defteri Anahtarları ile Çalışma"
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: efb2c016afa2212c2907c0740ad26c4e4cddd3af
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e7c16fe5f03330da3ea8f60b141d9e35eed474b9
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 11/28/2017
 ---
-# <a name="working-with-registry-keys"></a>Kayıt defteri anahtarları ile çalışma
+# <a name="working-with-registry-keys"></a>Kayıt Defteri Anahtarları ile Çalışma
 Kayıt defteri anahtarları öğeler Windows PowerShell sürücülerde olduğundan, bunlarla çalışmaya dosyalar ve klasörlerle çalışmaya çok benzer. Bir kritik fark her öğe bir kayıt defteri tabanlı Windows PowerShell sürücüsünde bir dosya sistemi sürücüsündeki bir klasörde bulunan gibi bir kapsayıcı olmasıdır. Ancak, kayıt defteri girdileri ve ilişkili değerleri değil ayrı öğeleri öğeleri özellikleridir.
 
 ### <a name="listing-all-subkeys-of-a-registry-key"></a>Tüm alt anahtarlarının kayıt defteri anahtarının listeleme
@@ -49,7 +49,7 @@ Bu komutları liste Cmd.exe's kullanarak benzer doğrudan içerilen öğelerin y
 Get-ChildItem -Path hkcu:\ -Recurse
 ```
 
-**Get-Childıtem** aracılığıyla karmaşık filtreleme yetenekleri gerçekleştirebilirsiniz kendi **yolu**, **filtre**, **INCLUDE**, ve **Dışla** parametreleri, ancak bu parametreler yalnızca adına bağlı genellikle. Karmaşık öğelerinin diğer özellikleri kullanarak göre filtreleme gerçekleştirebilirsiniz **Where-Object**cmdlet'i. Tüm anahtarları HKCU içinde aşağıdaki komutu bulur:\\Hayır birden fazla alt anahtar ve ayrıca tam olarak dört değerlere sahip olan yazılım:
+**Get-Childıtem** aracılığıyla karmaşık filtreleme yetenekleri gerçekleştirebilirsiniz kendi **yolu**, **filtre**, **INCLUDE**, ve **Dışla** parametreleri, ancak bu parametreler yalnızca adına bağlı genellikle. Karmaşık öğelerinin diğer özellikleri kullanarak göre filtreleme gerçekleştirebilirsiniz **Where-Object** cmdlet'i. Tüm anahtarları HKCU içinde aşağıdaki komutu bulur:\\Hayır birden fazla alt anahtar ve ayrıca tam olarak dört değerlere sahip olan yazılım:
 
 ```
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
