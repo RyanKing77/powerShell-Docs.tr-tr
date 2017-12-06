@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC kullanarak ilk önyükleme yukarı bir sanal makineleri yapılandırma"
-ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c793e36eb9caa194104f9dda2aa1d335b21b676c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 >İçin geçerlidir: Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 06/12/2017
 
 Bu örnekleri çalıştırmak için ihtiyacınız:
 
-- Çalışmak üzere önyüklenebilir VHD. Windows Server 2016 değerlendirme kopyasının ile bir ISO indirebilirsiniz   [TechNet değerlendirme Merkezi](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Bir ISO görüntüsüne bir VHD oluşturmak nasıl yönergelerini bulabilirsiniz [oluşturma önyüklenebilir sanal sabit diskler](https://technet.microsoft.com/en-us/library/gg318049.aspx).
+- Çalışmak üzere önyüklenebilir VHD. Windows Server 2016 değerlendirme kopyasının ile bir ISO indirebilirsiniz [TechNet değerlendirme Merkezi](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Bir ISO görüntüsüne bir VHD oluşturmak nasıl yönergelerini bulabilirsiniz [oluşturma önyüklenebilir sanal sabit diskler](https://technet.microsoft.com/en-us/library/gg318049.aspx).
 - Hyper-V'nin etkin olduğu bir ana bilgisayar. Bilgi için bkz: [Hyper-V'ye Genel Bakış](https://technet.microsoft.com/library/hh831531.aspx).
 
 DSC kullanarak, bir bilgisayarda ilk önyükleme yukarı için yazılım yükleme ve yapılandırma otomatikleştirebilirsiniz.
@@ -83,7 +83,7 @@ Configuration SampleIISInstall
 Yeniden adlandırın ve bu dosyayı doğru konuma VHD taşıyın `Pending.mof` kullanarak [taşıma öğesi](https://technet.microsoft.comlibrary/hh849852.aspx) cmdlet'i. Örneğin:
 
     ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\Sytem32\Configuration\Pending.mof
+        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
     ```
 6. VHD çağırarak çıkarılması [Dismount-VHD](https://technet.microsoft.com/library/hh848562.aspx) cmdlet'i. Örneğin:
 
@@ -202,6 +202,6 @@ Varsayılan olarak, değeri **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Curr
 
 - [DSC yapılandırmaları](configurations.md)
 - [DSCAutomationHostEnabled kayıt defteri anahtarı](DSCAutomationHostEnabled.md)
-- [Yerel Yapılandırma Yöneticisi'ni (LCM'yi) yapılandırma](metaConfig.md)
+- [Local Configuration Manager’ı (LCM) Yapılandırma](metaConfig.md)
 - [DSC çekme sunucusuna ayarlama](pullServer.md)
 

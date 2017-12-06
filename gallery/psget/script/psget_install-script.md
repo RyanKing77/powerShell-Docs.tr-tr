@@ -4,48 +4,40 @@ contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
 title: "Yükleme betiği"
-ms.openlocfilehash: 4c3fd9393ccb7ee5c3b010f1114b6596a74fdee2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 9ce4125329ea2a38f27f9305b169c7fcf3e9df42
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="install-script"></a>Yükleme betiği
 
 PowerShell komut dosyalarını çevrimiçi havuzların yerel bilgisayara yükler.
 
-
 ## <a name="description"></a>Açıklama
 
-Yükleme betiği cmdlet betik yükü bir depodan alır, yükü geçerli bir PowerShell komut dosyası ve komut dosyasını belirtilen yükleme konumuna kopyalar doğrular.
+Yükleme betiği cmdlet bulur ve bir veya daha fazla komut dosyası bir çevrimiçi galeriden indirir, doğrular ve bunları belirtilen yükleme kapsam için yerel bilgisayarda yükler.
 
-Yükleme betiği karşı çalışır varsayılan depoları Register-PSRepository, Set-PSRepository, Unregister-PSRepository ve Get-PSRepository cmdlet'leri yapılandırılabilir. Birden çok depoları karşı çalışırken, yükleme betiği herhangi bir hata olmadan ilk depodan belirtilen arama ölçütleri (adı, MinimumVersion veya MaximumVersion) ile eşleşen ilk komut dosyasını yükler.
+Kapsam tanımlandığında veya kapsam parametresinin değeri AllUsers olduğunda betik %systemdrive%:\Program Files\WindowsPowerShell\scripts yüklenir. Currentuser'a kapsam değeri betik $home\Documents\WindowsPowerShell\scripts yüklenir.
 
+Belirtilen komut dosyalarını en az ve tam sürümlerine dayalı sonuçlarınızı filtreleyebilirsiniz.
 
-Yükleme betiği cmdlet'i bir çevrimiçi galeriden bir veya daha fazla modül indirir, doğrular ve bunları belirtilen yükleme kapsamı yerel bilgisayara yükler.
-
-Yükleme betiği cmdlet'i bir çevrimiçi galeriden belirtilen ölçütleri karşılayan bir veya daha fazla modül alır, arama sonuçları geçerli modülleri ve yükleme konumuna modülü kopyalarına olduğunu doğrular.
-
-Kapsam tanımlandığında veya kapsam parametresinin değeri AllUsers olduğunda modülü %systemdrive%:\Program Files\WindowsPowerShell\Modules yüklenir. Currentuser'a kapsam değeri modülü $home\Documents\WindowsPowerShell\Modules yüklenir.
-
-Minimum ve tam belirtilen modülleri sürümlerine göre sonuçlarınızı filtreleyebilirsiniz.
-
-- PowerShell komut dosyaları yan yana sürüm desteği
-- Komut dosyası bağımlılık yükleme desteği
-- **Komut isteminde güvenilmeyen:** kullanıcı kabul güvenilmeyen bir depodan modülleri yüklemek için gereklidir.
-- -Force yüklü modül yeniden yükler
+Bazı önemli notlar:
+- Komut dosyaları yüklü tek bir dosyalarıdır. Sonuç olarak, bir komut dosyası yalnızca bir kopyasını yüklenir ve komut dosyaları birden çok sürümünün yüklü yan yana bir sistemde olamaz. 
+- Komut dosyaları, yükleme betiğini çalıştırdığınızda, yüklenecek dış modülleri üzerinde bağımlılıkları tanımlayabilir.
+- **Komut isteminde güvenilmeyen:** kullanıcı kabul güvenilmeyen bir depodan komut dosyalarını yüklemek için gereklidir.
 - RequiredVersion, PowerShell sürüm 5.0 veya daha yeni olan sürümleriyle SxS içinde belirtilen sürümü yükler.
 
-Joker karakterler desteklenmez - Install-Module, Kaydet-Module, Uninstall-modül, yükleme betiği, ad içinde Save-komut dosyası ve kaldırma komut dosyası cmdlet'leri.
+Joker karakter kullanılması desteklenmez, - yükleme betiği, adına Kaydet-komut dosyası ve kaldırma komut dosyası cmdlet'leri.
 
 ### <a name="scope"></a>Kapsam
-Modül yükleme kapsamını belirtir. Bu parametre için kabul edilebilir değerler: AllUsers ve Currentuser'a.
+Komut dosyası yükleme kapsamını belirtir. Bu parametre için kabul edilebilir değerler: AllUsers ve Currentuser'a.
 
 Varsayılan yükleme AllUsers kapsamıdır.
 
-Diğer bir deyişle, bilgisayarın tüm kullanıcıları için erişilebilen bir konumda yüklü modülleri AllUsers kapsam sağlar "$env: SystemDrive\Program Files\WindowsPowerShell\Modules".
+Diğer bir deyişle, bilgisayarın tüm kullanıcıları için erişilebilen bir konumda yüklenmesi komut dosyalarının AllUsers kapsam sağlar "$env: SystemDrive\Program Files\WindowsPowerShell\scripts".
 
-Modül yalnızca geçerli kullanıcı için kullanılabilir olmasını sağlamak Currentuser'a kapsam yalnızca "$home\Documents\WindowsPowerShell\Modules için", yüklü modülleri olanak sağlar.
+Komut dosyası yalnızca geçerli kullanıcı için kullanılabilir olmasını sağlamak Currentuser'a kapsam komut dosyalarının yalnızca "$home\Documents\WindowsPowerShell\scripts için", yüklenmesini sağlar.
 
 
 Komut dosyası yükleme kapsamını belirtir. Geçerli değerler: AllUsers ve Currentuser'a. Currentuser'a varsayılandır.
@@ -66,17 +58,15 @@ Komut dosyası tüm kullanıcılar tarafından kullanılabilir olmasını sağla
 
 Bu cmdlet, Windows PowerShell 3.0 veya sonraki sürümleri Windows PowerShell, Windows 7 veya Windows 2008 R2 ve Windows'un sonraki sürümleri üzerinde çalışır.
 
-(Diğer bir deyişle, bir .psm1, .psd1 veya .dll dosyasının aynı ada sahip klasör içinde yoksa) yüklü bir modül içeri aktarılamıyor Force parametresini komutunuza eklemedikçe yükleme başarısız olur.
+Bir bilgisayarda komut dosyası adı parametresi için belirtilen değer eşleştiğinden ve MinimumVersion veya RequiredVersion parametresini eklemediniz yükleme betiği sessizce komut dosyaları yüklemeden devam eder. MinimumVersion veya RequiredVersion parametreler belirtildi ve var olan betiği Bu parametre değerleri eşleşmiyor, bir hata oluşur. Daha belirgin olması: şu anda yüklü komut dosyasının sürümünü MinimumVersion parametresinin değerini daha düşük veya RequiredVersion parametre değerine eşit değil ise, bir hata oluşur. Yüklü komut dosyasının sürümünü MinimumVersion parametresinin değerinden büyük veya RequiredVersion parametresinin değeri eşit ise, yükleme betiği komut dosyaları yüklemeden sessizce sürdürür.
 
-Bir bilgisayarda modül adı parametresi için belirtilen değer eşleştiğinden ve MinimumVersion veya RequiredVersion parametresini eklemediniz yükleme betiği sessizce bu modül yüklemeden devam eder. MinimumVersion veya RequiredVersion parametreler belirtildi ve var olan bir modül, bu parametre değerleri eşleşmiyor, bir hata oluşur. Daha belirgin olması: şu anda yüklü modülü sürümü MinimumVersion parametresinin değerini daha düşük veya RequiredVersion parametre değerine eşit değil ise, bir hata oluşur. Yüklü Modül sürümü MinimumVersion parametresinin değerinden büyük veya eşit RequiredVersion parametresinin değeri ise, bu modül yüklemeden yükleme betiği sessizce sürdürür.
+Betik belirtilen adla eşleşen çevrimiçi galeriden varsa yükleme komut dosyası bir hata döndürür.
 
-Hiçbir modül belirtilen adla eşleşen çevrimiçi galeriden varsa yükleme komut dosyası bir hata döndürür.
+Birden fazla komut dosyası yüklemek için bir dizi virgülle ayırarak komut dosyası adını belirtin. Birden çok komut dosyası adı belirtirseniz, MinimumVersion veya RequiredVersion ekleyemezsiniz.
 
-Birden çok modüllerini yüklemek için bir dizi virgülle ayırarak modül adını belirtin. Birden çok modül adlarını belirtirseniz, MinimumVersion veya RequiredVersion ekleyemezsiniz.
+Varsayılan olarak, komut dosyaları Program Files klasörüne yüklenir. Yükleme komut dosyası birden çok PSGetItemInfo nesnelere iletebildiğiniz; Bu tek bir komutta yüklemek için birden fazla komut dosyası belirtmenin başka bir yoludur.
 
-Varsayılan olarak, modüller Windows PowerShell istenen durum yapılandırması (DSC) kaynakları yüklerken Karışıklığı önlemek için Program Files klasörüne yüklenir. Yükleme komut dosyası birden çok PSGetItemInfo nesnelere iletebildiğiniz; Bu tek bir komutta yüklemek için birden fazla modülü belirtmenin başka bir yoludur.
-
-Yüklenen kötü amaçlı kod içeren çalışan modülleri önlemeye yardımcı olmak için modülleri yüklemesi tarafından otomatik olarak alınmaz. Güvenlik açısından en iyisi, herhangi bir cmdlet veya işlevleri, bir modüle ilk defa çalıştırmadan önce modülü kod değerlendirin.
+Yüklenen kötü amaçlı kod içeren çalışan komut dosyalarını engellemeye yardımcı olmak için komut dosyaları otomatik olarak yükleme tarafından içeri aktarılmadı. Güvenlik açısından en iyisi, herhangi bir cmdlet veya işlevleri, bir komut dosyası ilk defa çalıştırmadan önce bir kod değerlendirin.
 
 
 ## <a name="cmdlet-syntax"></a>Cmdlet sözdizimi
@@ -297,42 +287,46 @@ ExternalScript Required-Script2.ps1 C:\\Users\\manikb\\Documents\\WindowsPowerSh
 
 ```powershell
 
-# Install a module by name
-Install-Script -Name MyDscModule
+# Install a script by name
+Install-Script -Name MyDscscript
 
-# Install multiple modules
+# Install multiple scripts
 Install-Script ContosoClient,ContosoServer
 
-# Install a module using its minimum version
+# Install a script using its minimum version
 Install-Script -Name ContosoServer -MinimumVersion 1.0
 
-# Install a specific version of a module
+# Install a specific version of a script
 Install-Script -Name ContosoServer -RequiredVersion 1.1.3
 
-# Install the latest version of a module to $home\Documents\WindowsPowerShell\Modules.
+# Install a specific prerelease version of a script
+Install-Script -Name ContosoServer -RequiredVersion 1.1.3-alpha -AllowPrerelease
+
+# Install the latest version of a script to $home\Documents\WindowsPowerShell\scripts.
 Install-Script -Name ContosoServer -Scope CurrentUser
 
-# if a module is already available under $env:PSModulePath, below command fails with 'ModuleAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
+# if a script is already available under $env:PSModulePath, below command fails with 'scriptAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
 Install-Script ContosoServer -RequiredVersion 1.5
 
-# if a module is already available under $env:PSModulePath, below command fails with 'ModuleAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
+# if a script is already available under $env:PSModulePath, below command fails with 'scriptAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
 Install-Script ContosoServer -MinimumVersion 2.5
 
-# Install multiple modules from multiple registered repositories
+# Install multiple scripts from multiple registered repositories
 Install-Script ContosoClient,ContosoServer -Repository PSGallery, PrivatePSGallery
 
-# Install a module with -WhatIf
+# Install a script with -WhatIf
 Install-Script ContosoClient -WhatIf
 
-# Install a module with -Confirm. A prompt will be displayed to confirm the installation.
+# Install a script with -Confirm. A prompt will be displayed to confirm the installation.
 Install-Script ContosoClient -WhatIf
 
-# -Force option reinstalls the installed module
+# -Force option reinstalls the installed script
 Install-Script ContosoClient -Force
 
-# Install a module with dependencies
-Install-Script -Name 
+# Install a script with dependencies
+Install-Script -Name ContosoClient
 
+# Install a script 
 
 # Install a script from the registered repository with ScriptSourceLocation
 Install-Script Connect-AzureVM
@@ -475,158 +469,25 @@ The scripts install location 'C:\Program Files\WindowsPowerShell\Scripts' is req
 
 ```powershell
 
-# Find a module and install it
+# Find a script and install it
 Find-Script -Name "MyDSC*" | Install-Script
 
-# Find a module and install it to the CurrentUser scope
+# Find a script and install it to the CurrentUser scope
 Find-Script -Name "MyDSC*" | Install-Script -Scope CurrentUser
 
 # Find commands by name and install them
 # The first command finds the specified commands in the INT repository, and then uses the pipeline operator to pass them to Install-Script to install them.
-# The second command uses Get-InstalledModule to verify the modules from the prior command are installed.
+# The second command uses Get-Installedscript to verify the scripts from the prior command are installed.
 Find-Command -Repository "INT" -Name Get-ContosoClient,Get-ContosoServer | Install-Script
-Get-InstalledModule
-
-# This command finds the resource named MyResource and passes it to the Install-Script cmdlet by using the pipeline operator. The Install-Script cmdlet installs the module for the resource. 
-# If you pipe multiple resources to the Install-Script cmdlet from the same module, Install-Script attempts to install the module only once. 
-Find-DscResource -Name "MyResource" | Install-Script
-Get-InstalledModule
+Get-Installedscript
 
 # Find multiple role capabilities and install them
 Find-RoleCapability -Name MyJeaRole, Maintenance | Install-Script
-Get-InstalledModule
+Get-Installedscript
 
 ```
 
-## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Yan yana sürüm desteği PowerShell 5.0 veya daha yeni
 
-PowerShellGet destekleyen yan yana (SxS) modülü sürüm desteği yükleme komut dosyasında, güncelleştirme komut dosyası ve Windows PowerShell 5.0 veya daha yeni çalışması Yayımla-komut dosyası cmdlet'leri.
-
-### <a name="install-script-examples"></a>Yükleme komut dosyası örnekleri
-
-```powershell
-# Install a version of the module
-Install-Script -Name PSScriptAnalyzer -RequiredVersion 1.1.0 -Repository PSGallery
-Get-Script -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
-
-Name : PSScriptAnalyzer
-Version : 1.1.0
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
-
-# Install another version of the module in Side-by-Side with already installed version.
-Install-Script -Name PSScriptAnalyzer -RequiredVersion 1.1.1 -Repository PSGallery
-Get-Script -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
-
-Name       : PSScriptAnalyzer 
-Version    : 1.1.1
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.1
-Name       : PSScriptAnalyzer
-Version    : 1.1.0
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
-
-# Get all versions of an installed module
-Get-InstalledModule -Name PSScriptAnalyzer -AllVersions
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.1.0      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
-1.1.1      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
-
-
-```
-
-## <a name="install-module-with-its-dependencies"></a>Bağımlılıkları ile modülünü yükleme
-
-```powershell
-
-# Find a module
-Find-Module -Name TypePx -Repository PSGallery
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-
-# Find a module and its dependencies
-Find-Module -Name TypePx -Repository PSGallery -IncludeDependencies
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experience i...
-
-# Discover the dependencies list without adding -IncludeDependencies
-$result = Find-Module -Name TypePx -Repository PSGallery
-$result.Dependencies
-
-Name                           Value
-----                           -----
-Name                           SnippetPx
-CanonicalId                    powershellget:SnippetPx/#https://www.powershellgallery.com/api/v2/
-
-
-# Now install the module along with its dependencies
-Install-Script -Name TypePx -Repository PSGallery -Verbose
-
-VERBOSE: Repository details, Name = 'PSGallery', Location = 'https://www.powershellgallery.com/api/v2/'; IsTrusted =
-'False'; IsRegistered = 'True'.
-VERBOSE: Using the provider 'PowerShellGet' for searching packages.
-VERBOSE: Using the specified source names : 'PSGallery'.
-VERBOSE: Getting the provider object for the PackageManagement Provider 'NuGet'.
-VERBOSE: The specified Location is 'https://www.powershellgallery.com/api/v2/' and PackageManagementProvider is
-'NuGet'.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='TypePx'' for ''.
-VERBOSE: Total package yield:'1' for the specified package 'TypePx'.
-VERBOSE: Performing the operation "Install-Script" on target "Version '2.0.1.20' of module 'TypePx'".
-
-Untrusted repository
-You are installing the modules from an untrusted repository. If you trust this repository, change its
-InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from
-'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
-VERBOSE: The installation scope is specified to be 'AllUsers'.
-VERBOSE: The specified module will be installed in 'C:\Program Files\WindowsPowerShell\Modules'.
-VERBOSE: The specified Location is 'NuGet' and PackageManagementProvider is 'NuGet'.
-VERBOSE: Downloading module 'TypePx' with version '2.0.1.20' from the repository
-'https://www.powershellgallery.com/api/v2/'.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='TypePx'' for ''.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='SnippetPx'' for ''.
-VERBOSE: InstallPackage' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: DownloadPackage' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896\SnippetPx\SnippetPx.nupkg',
-uri='https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'
-VERBOSE: Downloading 'https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'.
-VERBOSE: Completed downloading 'https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'.
-VERBOSE: Completed downloading 'SnippetPx'.
-VERBOSE: Hash for package 'SnippetPx' does not match hash provided from the server.
-VERBOSE: InstallPackageLocal' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: InstallPackage' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: DownloadPackage' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896\TypePx\TypePx.nupkg',
-uri='https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'
-VERBOSE: Downloading 'https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'.
-VERBOSE: Completed downloading 'https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'.
-VERBOSE: Completed downloading 'TypePx'.
-VERBOSE: Hash for package 'TypePx' does not match hash provided from the server.
-VERBOSE: InstallPackageLocal' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: Installing the dependency module 'SnippetPx' with version '1.0.5.18' for the module 'TypePx'.
-VERBOSE: Module 'SnippetPx' was installed successfully to path 'C:\Program
-Files\WindowsPowerShell\Modules\SnippetPx\1.0.5.18'.
-VERBOSE: Module 'TypePx' was installed successfully to path 'C:\Program
-Files\WindowsPowerShell\Modules\TypePx\2.0.1.20'.
-
-
-# Get the installed modules
-Get-InstalledModule
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experience i...
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-
-```
 
 ## <a name="error-scenarios"></a>Hata senaryoları
 
@@ -644,79 +505,6 @@ Install-Script ContosoClient,ContosoServer -RequiredVersion 2.0
 # Below command fails with 'VersionParametersAreAllowedOnlyWithSingleName,Install-Script'
 Install-Script ContosoClient,ContosoServer -MinimumVersion 2.0
 
-```
-
-## <a name="installing-a-script-with-dependent-scripts-and-modules"></a>Bir komut dosyası bağımlı komut dosyaları ve modülleri yükleme
-
-```powershell
-# Installing a script with dependent scripts and modules
-Find-Script -Repository GalleryINT -Name Script-WithDependencies2 -IncludeDependencies
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
-2.5 RequiredModule1 Module GalleryINT RequiredModule1 module
-2.5 RequiredModule2 Module GalleryINT RequiredModule2 module
-2.5 RequiredModule3 Module GalleryINT RequiredModule3 module
-2.0 RequiredModule4 Module GalleryINT RequiredModule4 module
-1.5 RequiredModule5 Module GalleryINT RequiredModule5 module
-2.5 Required-Script1 Script GalleryINT Description for the Required-Script1 script
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-2.5 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-
-Get-InstalledScript
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-1.0 Demo-Script Script LocalRepo1 Script file description goes here
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-Get-InstalledModule
-Install-Script -Repository GalleryINT -Name Script-WithDependencies2 -Scope CurrentUser
-Get-InstalledScript
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-1.0 Demo-Script Script LocalRepo1 Script file description goes here
-2.5 Required-Script1 Script GalleryINT Description for the Required-Script1 script
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
-Get-InstalledModule
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.5 RequiredModule1 Module GalleryINT RequiredModule1 module
-2.5 RequiredModule2 Module GalleryINT RequiredModule2 module
-2.5 RequiredModule3 Module GalleryINT RequiredModule3 module
-2.0 RequiredModule4 Module GalleryINT RequiredModule4 module
-1.5 RequiredModule5 Module GalleryINT RequiredModule5 module
-
-# Contents of Script-WithDependencies2 file.
-<#PSScriptInfo
-.VERSION 2.0
-.GUID 90082fa1-0b84-49fb-a00e-0a624fbb6584
-.AUTHOR manikb
-.COMPANYNAME Microsoft Corporation
-.COPYRIGHT (c) 2015 Microsoft Corporation. All rights reserved.
-.TAGS Tag1 Tag2 Tag-Script-WithDependencies2-2.0
-.LICENSEURI http://script-withdependencies2.com/license
-.PROJECTURI http://script-withdependencies2.com/
-.ICONURI http://script-withdependencies2.com/icon
-.EXTERNALMODULEDEPENDENCIES
-.REQUIREDSCRIPTS Required-Script1,Required-Script2,Required-Script3
-.EXTERNALSCRIPTDEPENDENCIES
-.RELEASENOTES
-Script-WithDependencies2 release notes
-#>
-#Requires -Module RequiredModule1
-#Requires -Module @{ModuleName = 'RequiredModule2'; ModuleVersion = '2.0'}
-#Requires -Module @{RequiredVersion = '2.5'; ModuleName = 'RequiredModule3'}
-#Requires -Module @{ModuleVersion = '1.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '2.0'}
-#Requires -Module @{MaximumVersion = '1.5'; ModuleName = 'RequiredModule5'}
-<#
-.DESCRIPTION
-Description for the Script-WithDependencies2 script
-#>
-Param()
-Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
-Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
 ## <a name="install-script-and-get-installedscript-cmdlets"></a>Yükleme komut dosyası ve Get-InstalledScript cmdlet'leri
