@@ -1,22 +1,29 @@
-<span data-ttu-id="17a2c-101">.MD---ms.date: 2017-06-05 anahtar sözcükler: powershell cmdlet Başlık: kavramları başvuru anlama</span><span class="sxs-lookup"><span data-stu-id="17a2c-101">.md--- ms.date:  2017-06-05 keywords:  powershell,cmdlet title:  understanding concepts reference</span></span>
 ---
+ms.date: 2017-06-05
+keywords: PowerShell cmdlet'i
+title: "Kavramları başvuru anlama"
+ms.openlocfilehash: 0a155b502be35463a30833e08e679d707c39592c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 12/05/2017
+---
+# <a name="understanding-concepts"></a><span data-ttu-id="cb475-103">Anlama kavramları</span><span class="sxs-lookup"><span data-stu-id="cb475-103">Understanding Concepts</span></span>
 
-# <a name="understanding-concepts"></a><span data-ttu-id="17a2c-102">Anlama kavramları</span><span class="sxs-lookup"><span data-stu-id="17a2c-102">Understanding Concepts</span></span>
-
-*  <span data-ttu-id="17a2c-103">PowerShell nesneleri</span><span class="sxs-lookup"><span data-stu-id="17a2c-103">Objects in PowerShell</span></span>  
-*  [<span data-ttu-id="17a2c-104">Ardışık Düzen</span><span class="sxs-lookup"><span data-stu-id="17a2c-104">The Pipeline</span></span>](./fundamental/understanding-the-windows-powershell-pipeline.md)
-*  <span data-ttu-id="17a2c-105">Ayrıştırma komutu</span><span class="sxs-lookup"><span data-stu-id="17a2c-105">Command Parsing</span></span>
-*  <span data-ttu-id="17a2c-106">İfadeleri değerlendirme</span><span class="sxs-lookup"><span data-stu-id="17a2c-106">Evaluating expressions</span></span>
-*  <span data-ttu-id="17a2c-107">Tırnak içine almak ve kaçış</span><span class="sxs-lookup"><span data-stu-id="17a2c-107">Quoting and Escaping</span></span>
-*  <span data-ttu-id="17a2c-108">İşleçler</span><span class="sxs-lookup"><span data-stu-id="17a2c-108">Operators</span></span>
-*  [<span data-ttu-id="17a2c-109">Değişkenleri ve atama</span><span class="sxs-lookup"><span data-stu-id="17a2c-109">Variables and assignment</span></span>](./fundamental/using-variables-to-store-objects.md)
-*  <span data-ttu-id="17a2c-110">Komut veya cmdlet'ini yürütme</span><span class="sxs-lookup"><span data-stu-id="17a2c-110">Command or cmdlet execution</span></span>
-*  <span data-ttu-id="17a2c-111">Yerel uygulamalar yürütme ve parametre geçirme</span><span class="sxs-lookup"><span data-stu-id="17a2c-111">Native apps execution and parameter passing</span></span>
-*  [<span data-ttu-id="17a2c-112">Örtük ve açık çıktı biçimlendirmesi</span><span class="sxs-lookup"><span data-stu-id="17a2c-112">Implicit and explicit output formatting</span></span>](./cookbooks/using-format-commands-to-change-output-view.md)
-*  <span data-ttu-id="17a2c-113">Biçimlendirme dosya geliştirme</span><span class="sxs-lookup"><span data-stu-id="17a2c-113">Developing a Formatting File</span></span>
-*  <span data-ttu-id="17a2c-114">Komut dosyası dil öğeleri</span><span class="sxs-lookup"><span data-stu-id="17a2c-114">Scripting language elements</span></span>
-*  <span data-ttu-id="17a2c-115">İşletim sistemi ve Hizmetleri ile tümleştirme</span><span class="sxs-lookup"><span data-stu-id="17a2c-115">Integration with OS and Services</span></span>
-*  <span data-ttu-id="17a2c-116">Sağlayıcılar</span><span class="sxs-lookup"><span data-stu-id="17a2c-116">Providers</span></span>
-*  <span data-ttu-id="17a2c-117">Sürücüler</span><span class="sxs-lookup"><span data-stu-id="17a2c-117">Drivers</span></span>
-*  [<span data-ttu-id="17a2c-118">Yardım güncelleştiriliyor</span><span class="sxs-lookup"><span data-stu-id="17a2c-118">Updating help</span></span>](/powershell/module/Microsoft.PowerShell.Core/Update-Help)
+*  <span data-ttu-id="cb475-104">PowerShell nesneleri</span><span class="sxs-lookup"><span data-stu-id="cb475-104">Objects in PowerShell</span></span>  
+*  [<span data-ttu-id="cb475-105">Ardışık Düzen</span><span class="sxs-lookup"><span data-stu-id="cb475-105">The Pipeline</span></span>](./fundamental/understanding-the-windows-powershell-pipeline.md)
+*  <span data-ttu-id="cb475-106">Ayrıştırma komutu</span><span class="sxs-lookup"><span data-stu-id="cb475-106">Command Parsing</span></span>
+*  <span data-ttu-id="cb475-107">İfadeleri değerlendirme</span><span class="sxs-lookup"><span data-stu-id="cb475-107">Evaluating expressions</span></span>
+*  <span data-ttu-id="cb475-108">Tırnak içine almak ve kaçış</span><span class="sxs-lookup"><span data-stu-id="cb475-108">Quoting and Escaping</span></span>
+*  <span data-ttu-id="cb475-109">İşleçler</span><span class="sxs-lookup"><span data-stu-id="cb475-109">Operators</span></span>
+*  [<span data-ttu-id="cb475-110">Değişkenleri ve atama</span><span class="sxs-lookup"><span data-stu-id="cb475-110">Variables and assignment</span></span>](./fundamental/using-variables-to-store-objects.md)
+*  <span data-ttu-id="cb475-111">Komut veya cmdlet'ini yürütme</span><span class="sxs-lookup"><span data-stu-id="cb475-111">Command or cmdlet execution</span></span>
+*  <span data-ttu-id="cb475-112">Yerel uygulamalar yürütme ve parametre geçirme</span><span class="sxs-lookup"><span data-stu-id="cb475-112">Native apps execution and parameter passing</span></span>
+*  [<span data-ttu-id="cb475-113">Örtük ve açık çıktı biçimlendirmesi</span><span class="sxs-lookup"><span data-stu-id="cb475-113">Implicit and explicit output formatting</span></span>](./cookbooks/using-format-commands-to-change-output-view.md)
+*  <span data-ttu-id="cb475-114">Biçimlendirme dosya geliştirme</span><span class="sxs-lookup"><span data-stu-id="cb475-114">Developing a Formatting File</span></span>
+*  <span data-ttu-id="cb475-115">Komut dosyası dil öğeleri</span><span class="sxs-lookup"><span data-stu-id="cb475-115">Scripting language elements</span></span>
+*  <span data-ttu-id="cb475-116">İşletim sistemi ve Hizmetleri ile tümleştirme</span><span class="sxs-lookup"><span data-stu-id="cb475-116">Integration with OS and Services</span></span>
+*  <span data-ttu-id="cb475-117">Sağlayıcılar</span><span class="sxs-lookup"><span data-stu-id="cb475-117">Providers</span></span>
+*  <span data-ttu-id="cb475-118">Sürücüler</span><span class="sxs-lookup"><span data-stu-id="cb475-118">Drivers</span></span>
+*  [<span data-ttu-id="cb475-119">Yardım güncelleştiriliyor</span><span class="sxs-lookup"><span data-stu-id="cb475-119">Updating help</span></span>](/powershell/module/Microsoft.PowerShell.Core/Update-Help)
 
