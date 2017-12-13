@@ -4,11 +4,11 @@ author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "Yerel Yapılandırma Yöneticisi'ni yapılandırma"
-ms.openlocfilehash: 98470f45ca7c11ea63d68da7dec9fcd844f06192
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
+ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Yerel Yapılandırma Yöneticisi'ni yapılandırma
 
@@ -73,7 +73,7 @@ Aşağıdaki özellikler kullanılabilir olan bir **ayarları** bloğu.
 
 |  Özellik  |  Tür  |  Açıklama   |
 |----------- |------- |--------------- |
-| ActionAfterReboot| dize| Bir yeniden başlatmadan sonra bir yapılandırma uygulanması sırasında neler belirtir. Olası değerler şunlardır: __"ContinueConfiguration"__ ve __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: Makine yeniden başlatıldıktan sonra geçerli yapılandırmayı uygulama devam edin. Bu varsayılan falue olur</li><li>__StopConfiguration__: Makine yeniden başlatıldıktan sonra geçerli yapılandırmasını durdurun.</li></ul>|
+| ActionAfterReboot| dize| Bir yeniden başlatmadan sonra bir yapılandırma uygulanması sırasında neler belirtir. Olası değerler şunlardır: __"ContinueConfiguration"__ ve __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: Makine yeniden başlatıldıktan sonra geçerli yapılandırmayı uygulama devam edin. Bu varsayılan değerdir</li><li>__StopConfiguration__: Makine yeniden başlatıldıktan sonra geçerli yapılandırmasını durdurun.</li></ul>|
 | AllowModuleOverwrite| bool| __$TRUE__ çekme hizmetten indirilen yeni yapılandırmaların hedef düğümde bulunan eski olanları üzerine yazmak için izinleri olup olmadığını. Aksi takdirde $FALSE.|
 | CertificateID| dize| Kimlik bilgilerinin güvenliğini sağlamak için kullanılan bir sertifikanın parmak izini bir yapılandırmada geçirildi. Daha fazla bilgi için bkz: [Windows PowerShell istenen durum Yapılandırması'te kimlik bilgilerini güvenli hale getirmek istediğiniz](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)? <br> __Not:__ bu Azure Automation DSC çekme hizmeti kullanıyorsanız otomatik olarak yönetilir.|
 | ConfigurationDownloadManagers| CimInstance]| Kullanımdan kalktı. Kullanım __ConfigurationRepositoryWeb__ ve __ConfigurationRepositoryShare__ yapılandırma çekme tanımlamak için blokları hizmet uç noktaları.|

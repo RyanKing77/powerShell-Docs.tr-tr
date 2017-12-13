@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 2429e0fa6ef982d3c722c62c7b1aed8f36ce9959
-ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
+ms.openlocfilehash: d01fd70e60e65c9d787431ee505388c3737c635f
+ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="product-compatibility-status"></a>Ürün Uyumluluk durumu
 
@@ -15,9 +15,11 @@ ms.lasthandoff: 11/28/2017
 > Aşağıdaki sunucu uygulamaları çalıştıran sistemler **çalıştırabilirsiniz** Windows Management Framework 5.1:
 
 - Microsoft SharePoint Server 2013
-- Skype Kurumsal Sunucu 2015
+- Skype for Business Server 2015 (_nota bakın_) 
 - Microsoft Lync Server 2013
 - System Center 2012 Configuration Manager
+
+_Not: Business Server 2015 uyumluluğu WMF 5.1 ile Skype yalnızca Windows Server 2012 R2 ile test edilmiştir._ 
 
 ## <a name="not-tested"></a>Test değil:
 > Aşağıdaki sunucu uygulamaları çalıştıran sistemler **değil sınanmıştır** Windows Management Framework 5.1 karşı:
