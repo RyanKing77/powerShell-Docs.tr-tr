@@ -39,6 +39,7 @@
 ### [Yayımla](psget/module/psget_publish-module.md)
 ### [PSEditions’ı olan Modüller](psget/module/modulewithpseditionsupport.md)
 ### [Lisans Kabulü Gerektiren Modüller](psget/module/RequireLicenseAcceptance.md)
+### [Yayın Öncesi Sürümler](psget/module/PreReleaseModule.md)
 ### [Sorun giderme](psget/psget_cmdlets_troubleshooting.md)
 
 ## Betik
@@ -54,7 +55,7 @@
 ### [Yayımla](psget/script/psget_publish-script.md)
 ### [PSEditions’ı olan Betikler](psget/script/scriptwithpseditionsupport.md)
 ### [Betikler için Lisans Kabulü Gerektir](psget/script/script_RequireLicenseAcceptance.md)
-
+### [Yayın Öncesi Sürümler](psget/script/PreReleaseScript.md)
 ## Depo yönetimi
 ### [NuGet sağlayıcısı ve NuGet.exe önyüklemesi](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
 ### [Depo kaydetme](psget/repository/psget_register-psrepository.md)
