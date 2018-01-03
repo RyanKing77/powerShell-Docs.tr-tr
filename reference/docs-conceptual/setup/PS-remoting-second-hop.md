@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
 title: "PowerShell uzaktan iletişim içinde ikinci atlama yapma"
-ms.openlocfilehash: f3b8280819e43bd67bd608ffd0ba9484c2bbc26c
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>PowerShell uzaktan iletişim içinde ikinci atlama yapma
 
@@ -256,12 +256,12 @@ Kimlik bilgileri içinde geçirdiğiniz **ScriptBlock** yapılan bir çağrı pa
 - Özel sunucu yapılandırması gerektirmez.
 - WMF 2.0 veya sonraki sürümünü çalıştıran herhangi bir sunucu üzerinde çalışır.
 
-## <a name="cons"></a>Eksileri
+### <a name="cons"></a>Eksileri
 
 - Garip kod teknik gerektirir.
 - WMF 2.0 çalıştıran, bir uzak oturum için bağımsız değişkenleri geçirme farklı bir sözdizimi gerektirir.
 
-## <a name="example"></a>Örnek
+### <a name="example"></a>Örnek
 
 Aşağıdaki örnek, kimlik bilgileri geçirmek gösterilmiştir bir **Invoke-Command** betik bloğu:
 
@@ -277,7 +277,7 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[PowerShell uzaktan iletişim güvenlik konuları](WinRMSecurity.md)
+[PowerShell Uzaktan İletişim Güvenlik Konuları](WinRMSecurity.md)
 
 
 
