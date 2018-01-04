@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "Yapılandırma verileri kullanma"
-ms.openlocfilehash: a70cd8f0f6c24eb02743b02d198cebcc3d775756
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60c6c2d5694a03275e1a08522bdcf4b1bc5bb068
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>DSC yapılandırma verileri kullanma
 
@@ -153,7 +153,7 @@ Tanımlayabileceğiniz **ConfigurationData** herhangi bir yapılandırma (olduğ
 
 ## <a name="compiling-a-configuration-with-configuration-data"></a>Yapılandırma verilerini bir yapılandırmayla derleme
 
-Yapılandırma verileri için tanımladığınız bir yapılandırma derlemek için cofiguration veri değeri olarak geçirdiğiniz **ConfigurationData** parametresi.
+Değeri olarak yapılandırma verilerini geçirdiğiniz yapılandırma verileri için tanımladığınız bir yapılandırma derlemek için **ConfigurationData** parametresi.
 
 Bu her giriş için bir MOF dosyası oluşturacak **AllNodes** dizi.
 Her MOF dosyası adında `NodeName` karşılık gelen bir dizi girişi özelliği.
@@ -187,7 +187,7 @@ DSC yapılandırma komut dosyasında kullanılan üç özel değişkenler sağla
 ## <a name="using-non-node-data"></a>Düğümü olmayan verileri kullanma
 
 Önceki örneklerde anlatıldığı gibi **ConfigurationData** hashtable ek olarak gerekli bir veya daha fazla anahtarları olabilir **AllNodes** anahtarı.
-Bu konudaki örneklerde, biz yalnızca bir tek addiontal düğüm kullanılan ve onu adlı `NonNodeData`. Ancak, herhangi bir sayıda addiontal anahtarları tanımlayın ve bunları istediğiniz adı.
+Bu konudaki örneklerde, biz yalnızca tek bir ek düğüm kullanılan ve onu adlı `NonNodeData`. Ancak, herhangi bir ek anahtar sayısını tanımlayın ve bunları istediğiniz adı.
 
 Düğümü olmayan verileri kullanarak bir örnek için bkz: [yapılandırma ve ortam verilerin ayrılmasını](separatingEnvData.md).
 

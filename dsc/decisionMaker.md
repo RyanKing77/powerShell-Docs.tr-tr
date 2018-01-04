@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "Durum yapılandırmasına genel bakış karar alıcılar için istenen"
-ms.openlocfilehash: e39ab5138b20653e46ac35fa32b99d268f96b2df
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 1800acfa9edae4f65e34db380ff719ad4c034921
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Durum yapılandırmasına genel bakış karar alıcılar için istenen
 
@@ -34,7 +34,7 @@ Yapılandırmaları aracılığıyla paylaşılabilir de [PowerShell Galerisi](h
 
 ## <a name="desired-state-configuration-and-devops"></a>İstenen durum yapılandırması ve aygıt kullanıcıları
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) kişiler, teknolojileri ve hızlı dağıtım ve yineleme için izin kültür birleşimidir. DSC ile DevOps göz önünde tasarlanmıştır. Tek bir yapılandırmasına sahip bir ortamda tanımlamak geliştiriciler kendi yapılandırma gereksinimlerini kodlamak, kaynak denetimine bu yapılandırmasını denetleyin ve işletim ekipleri kolayca dağıtabilirsiniz kod hataya yatkın üzerinden geçmek zorunda kalmadan anlamına gelir el ile işlemler. 
+[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) kişiler, işlem ve hızlı dağıtım ve son kullanıcılara değeri sunmaya odaklanır odaklanmış yineleme için iç veya dış izin araçları birleşimidir. DSC ile DevOps göz önünde tasarlanmıştır. Tek bir yapılandırmasına sahip bir ortamda tanımlamak geliştiriciler kendi yapılandırma gereksinimlerini kodlamak, kaynak denetimine bu yapılandırmasını denetleyin ve işletim ekipleri kolayca dağıtabilirsiniz kod hataya yatkın üzerinden geçmek zorunda kalmadan anlamına gelir el ile işlemler. 
 
 Bağlantılardır de [verilere](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), hangi kolaylaştırır ops ekiplerin tanımlamak ve geliştirici müdahalesi olmadan ortamları değiştirin. 
 
