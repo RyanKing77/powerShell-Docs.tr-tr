@@ -2,10 +2,10 @@
 
 ## <a name="msi"></a>MSI
 
-Bir Windows İstemcisi veya Windows Server PowerShell yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve daha sonra), MSI paketi yükle
-<!-- TODO: either the Download Center or -->
-Bizim GitHub [serbest][] sayfası.
+Bir Windows İstemcisi veya Windows Server PowerShell yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve daha sonra), bizim Github'dan MSI paketini indirin [serbest][] sayfası.
+
 MSI dosyası şuna benzer-`PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+<!-- TODO: should be updated to point to the Download Center as well -->
 
 Yüklendikten sonra yükleyici çift tıklayın ve yönergeleri izleyin.
 

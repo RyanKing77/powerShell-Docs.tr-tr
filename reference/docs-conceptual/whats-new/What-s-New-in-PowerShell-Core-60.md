@@ -224,7 +224,7 @@ PowerShell işleri hakkında daha fazla bilgi için bkz: [about_Jobs](https://ms
   - `PSEdition`: Bu ayar `Core` PowerShell çekirdeği üzerinde ve `Desktop` , Windows PowerShell
   - `GitCommitId`: Bu Git yürütme Git şube veya etiketinin PowerShell burada oluşturulmuş kimliğidir.
     Yayın derlemeleri üzerinde bu büyük olasılıkla aynı olacaktır `PSVersion`.
-  - `OS`: Bu tarafından döndürülen bir işletim sistemi sürüm dizesi değil`[System.Environment]::OSVersion.VersionString`
+  - `OS`: Bu tarafından döndürülen bir işletim sistemi sürüm dizesi değil`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: Bu tarafından döndürülen `[System.Environment]::OSVersion.Platform` ayarlanır `Win32NT` , Windows'da `MacOSX` macOS üzerinde ve `Unix` Linux üzerinde.
 - Kaldırılan `BuildVersion` özelliğinden `$PSVersionTable`.
   Bu özellik, kesin Windows derleme sürüme bağlı.
