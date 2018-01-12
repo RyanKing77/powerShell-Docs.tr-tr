@@ -1,27 +1,39 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
-title: "Uzak komutları çalıştırma"
+title: "Uzak Komut Çalıştırma"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 5cf9690b8fe4549a99186f172cb6f0de156a4dea
-ms.sourcegitcommit: c5251755c4442487f99ff74fadf7e37bbf039089
+ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
+ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="running-remote-commands"></a>Uzak komutları çalıştırma
+# <a name="running-remote-commands"></a>Uzak Komut Çalıştırma
+
 Bir ya da tek bir Windows PowerShell komut bilgisayarlarla yüzlerce komutları çalıştırabilirsiniz. Windows PowerShell, WMI, RPC ve WS-Management gibi çeşitli teknolojiler kullanılarak bir uzak bilgisayar destekler.
+
+## <a name="remoting-in-powershell-core"></a>PowerShell çekirdek uzaktan çalışma
+
+PowerShell çekirdeği, Windows, macOS ve Linux, PowerShell daha yeni sürümünü destekler WMI, WS-Management ve SSH remoting.
+(RPC artık desteklenmiyor.)
+
+Bu ayarlama ile ilgili daha fazla bilgi için bkz:
+
+* [SSH PowerShell çekirdek Remoting] [ssh-remoting]
+* [WinRM uzaktan PowerShell çekirdek.] [remoting winrm]
 
 ## <a name="remoting-without-configuration"></a>Yapılandırma olmadan uzaktan iletişim
 Birçok Windows PowerShell cmdlet'leri veri toplamak ve bir veya daha fazla uzak bilgisayarlarda ayarlarını değiştirmenizi sağlar ComputerName parametresi vardır. Tüm Windows işletim sistemlerinde özel bir yapılandırma Windows PowerShell destekleyen çeşitli iletişimi teknolojileri ve birçok iş kullanırlar.
 
 Şu cmdlet'leri içerir:
+
 * [Bilgisayarı yeniden Başlat](https://go.microsoft.com/fwlink/?LinkId=821625)
 * [Bağlantıyı Sına](https://go.microsoft.com/fwlink/?LinkId=821646)
 * [Olay günlüğünü Temizle](https://go.microsoft.com/fwlink/?LinkId=821568)
 * [Get-olay günlüğü](https://go.microsoft.com/fwlink/?LinkId=821585)
 * [Get-düzeltme](https://go.microsoft.com/fwlink/?LinkId=821586)
-  - [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
+* [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
 * [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
 * [Hizmet belirleme](https://go.microsoft.com/fwlink/?LinkId=821633)
 * [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
@@ -135,3 +147,6 @@ Remoting hatalarla ilgili Yardım için bkz: [about_Remote_Troubleshooting](http
 - [Yeni PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [WSMan sağlayıcısı](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+
+[wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
+[ssh-resmoting]: SSH-Remoting-in-PowerShell-Core.md
