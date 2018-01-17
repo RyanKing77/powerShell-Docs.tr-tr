@@ -1,32 +1,31 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "PowerShell sınıfları içeren özel bir DSC kaynağı yazma"
-ms.openlocfilehash: 6e482f45c7d09898d46de20f43dcf16ecf3da7da
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b24351a49ca11dac4687efdce39d400bfd00f399
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a><span data-ttu-id="9e2b2-103">PowerShell sınıfları içeren özel bir DSC kaynağı yazma</span><span class="sxs-lookup"><span data-stu-id="9e2b2-103">Writing a custom DSC resource with PowerShell classes</span></span>
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a><span data-ttu-id="f7d3a-103">PowerShell sınıfları içeren özel bir DSC kaynağı yazma</span><span class="sxs-lookup"><span data-stu-id="f7d3a-103">Writing a custom DSC resource with PowerShell classes</span></span>
 
-> <span data-ttu-id="9e2b2-104">İçin geçerlidir: Windows Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="9e2b2-104">Applies To: Windows Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="f7d3a-104">İçin geçerlidir: Windows Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="f7d3a-104">Applies To: Windows Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="9e2b2-105">Windows PowerShell 5.0 PowerShell sınıflarda başlanmasıyla, bir sınıf oluşturarak şimdi DSC kaynağı tanımlayabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-105">With the introduction of PowerShell classes in Windows PowerShell 5.0, you can now define a DSC resource by creating a class.</span></span> <span data-ttu-id="9e2b2-106">Bu yüzden ayrı bir MOF dosyası oluşturmaya gerek sınıfı hem şema hem de kaynak uyarlamasını tanımlar.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-106">The class defines both the schema and the implementation of the resource, so there is no need to create a separate MOF file.</span></span> <span data-ttu-id="9e2b2-107">Sınıf tabanlı bir kaynak klasör yapısını de daha basit, çünkü bir **DSCResources** klasörü gerekli değildir.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-107">The folder structure for a class-based resource is also simpler, because a **DSCResources** folder is not necessary.</span></span>
+<span data-ttu-id="f7d3a-105">Windows PowerShell 5.0 PowerShell sınıflarda başlanmasıyla, bir sınıf oluşturarak şimdi DSC kaynağı tanımlayabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-105">With the introduction of PowerShell classes in Windows PowerShell 5.0, you can now define a DSC resource by creating a class.</span></span> <span data-ttu-id="f7d3a-106">Bu yüzden ayrı bir MOF dosyası oluşturmaya gerek sınıfı hem şema hem de kaynak uyarlamasını tanımlar.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-106">The class defines both the schema and the implementation of the resource, so there is no need to create a separate MOF file.</span></span> <span data-ttu-id="f7d3a-107">Sınıf tabanlı bir kaynak klasör yapısını de daha basit, çünkü bir **DSCResources** klasörü gerekli değildir.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-107">The folder structure for a class-based resource is also simpler, because a **DSCResources** folder is not necessary.</span></span>
 
-<span data-ttu-id="9e2b2-108">Sınıf tabanlı DSC kaynağı ' bir şema, özellik türü belirtmek özniteliklerle değiştirilebilir sınıfının özelliklerine olarak tanımlanır...</span><span class="sxs-lookup"><span data-stu-id="9e2b2-108">In a class-based DSC resource, the schema is defined as properties of the class which can be modified with attributes to specify the property type..</span></span> <span data-ttu-id="9e2b2-109">Kaynak tarafından uygulanan **Get()**, **Set()**, ve **Test()** yöntemleri (eşdeğer **Get-TargetResource**, **Kümesi TargetResource**, ve **Test TargetResource** bir komut dosyası kaynağı işlevlerde.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-109">The resource is implemented by **Get()**, **Set()**, and **Test()** methods (equivalent to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
+<span data-ttu-id="f7d3a-108">Sınıf tabanlı DSC kaynağı ' bir şema, özellik türü belirtmek özniteliklerle değiştirilebilir sınıfının özelliklerine olarak tanımlanır...</span><span class="sxs-lookup"><span data-stu-id="f7d3a-108">In a class-based DSC resource, the schema is defined as properties of the class which can be modified with attributes to specify the property type..</span></span> <span data-ttu-id="f7d3a-109">Kaynak tarafından uygulanan **Get()**, **Set()**, ve **Test()** yöntemleri (eşdeğer **Get-TargetResource**, **Kümesi TargetResource**, ve **Test TargetResource** bir komut dosyası kaynağı işlevlerde.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-109">The resource is implemented by **Get()**, **Set()**, and **Test()** methods (equivalent to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
 
-<span data-ttu-id="9e2b2-110">Bu konuda, basit bir kaynağı oluşturacağız **FileResource** belirtilen yolda bir dosya yönetir.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-110">In this topic, we will create a simple resource named **FileResource** that manages a file in a specified path.</span></span>
+<span data-ttu-id="f7d3a-110">Bu konuda, basit bir kaynağı oluşturacağız **FileResource** belirtilen yolda bir dosya yönetir.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-110">In this topic, we will create a simple resource named **FileResource** that manages a file in a specified path.</span></span>
 
-<span data-ttu-id="9e2b2-111">DSC kaynakları hakkında daha fazla bilgi için bkz: [yapı özel Windows PowerShell istenen durum yapılandırma kaynağı](authoringResource.md)</span><span class="sxs-lookup"><span data-stu-id="9e2b2-111">For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)</span></span>
+<span data-ttu-id="f7d3a-111">DSC kaynakları hakkında daha fazla bilgi için bkz: [yapı özel Windows PowerShell istenen durum yapılandırma kaynağı](authoringResource.md)</span><span class="sxs-lookup"><span data-stu-id="f7d3a-111">For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)</span></span>
 
-><span data-ttu-id="9e2b2-112">**Not:** genel koleksiyonlar sınıf tabanlı kaynaklara desteklenmiyor.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-112">**Note:** Generic collections are not supported in class-based resources.</span></span>
+><span data-ttu-id="f7d3a-112">**Not:** genel koleksiyonlar sınıf tabanlı kaynaklara desteklenmiyor.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-112">**Note:** Generic collections are not supported in class-based resources.</span></span>
 
-## <a name="folder-structure-for-a-class-resource"></a><span data-ttu-id="9e2b2-113">Bir sınıf kaynak için klasör yapısı</span><span class="sxs-lookup"><span data-stu-id="9e2b2-113">Folder structure for a class resource</span></span>
+## <a name="folder-structure-for-a-class-resource"></a><span data-ttu-id="f7d3a-113">Bir sınıf kaynak için klasör yapısı</span><span class="sxs-lookup"><span data-stu-id="f7d3a-113">Folder structure for a class resource</span></span>
 
-<span data-ttu-id="9e2b2-114">PowerShell sınıfı ile özel bir DSC kaynağı uygulamak için aşağıdaki klasör yapısını oluşturun.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-114">To implement a DSC custom resource with a PowerShell class, create the following folder structure.</span></span> <span data-ttu-id="9e2b2-115">Sınıf tanımlanan **MyDscResource.psm1** ve modül bildirimi tanımlanan **MyDscResource.psd1**.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-115">The class is defined in **MyDscResource.psm1** and the module manifest is defined in **MyDscResource.psd1**.</span></span>
+<span data-ttu-id="f7d3a-114">PowerShell sınıfı ile özel bir DSC kaynağı uygulamak için aşağıdaki klasör yapısını oluşturun.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-114">To implement a DSC custom resource with a PowerShell class, create the following folder structure.</span></span> <span data-ttu-id="f7d3a-115">Sınıf tanımlanan **MyDscResource.psm1** ve modül bildirimi tanımlanan **MyDscResource.psd1**.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-115">The class is defined in **MyDscResource.psm1** and the module manifest is defined in **MyDscResource.psd1**.</span></span>
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -35,9 +34,9 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
            MyDscResource.psd1 
 ```
 
-## <a name="create-the-class"></a><span data-ttu-id="9e2b2-116">Sınıf oluşturma</span><span class="sxs-lookup"><span data-stu-id="9e2b2-116">Create the class</span></span>
+## <a name="create-the-class"></a><span data-ttu-id="f7d3a-116">Sınıf oluşturma</span><span class="sxs-lookup"><span data-stu-id="f7d3a-116">Create the class</span></span>
 
-<span data-ttu-id="9e2b2-117">Class anahtar sözcüğü bir PowerShell sınıfı oluşturmak için kullanın.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-117">You use the class keyword to create a PowerShell class.</span></span> <span data-ttu-id="9e2b2-118">Bir sınıf bir DSC kaynağı olduğunu belirtmek için kullanın **DscResource()** özniteliği.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-118">To specify that a class is a DSC resource, use the **DscResource()** attribute.</span></span> <span data-ttu-id="9e2b2-119">Sınıfın adını DSC kaynağı adıdır.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-119">The name of the class is the name of the DSC resource.</span></span>
+<span data-ttu-id="f7d3a-117">Class anahtar sözcüğü bir PowerShell sınıfı oluşturmak için kullanın.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-117">You use the class keyword to create a PowerShell class.</span></span> <span data-ttu-id="f7d3a-118">Bir sınıf bir DSC kaynağı olduğunu belirtmek için kullanın **DscResource()** özniteliği.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-118">To specify that a class is a DSC resource, use the **DscResource()** attribute.</span></span> <span data-ttu-id="f7d3a-119">Sınıfın adını DSC kaynağı adıdır.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-119">The name of the class is the name of the DSC resource.</span></span>
 
 ```powershell
 [DscResource()]
@@ -45,9 +44,9 @@ class FileResource {
 }
 ```
 
-### <a name="declare-properties"></a><span data-ttu-id="9e2b2-120">Özellikleri bildirme</span><span class="sxs-lookup"><span data-stu-id="9e2b2-120">Declare properties</span></span>
+### <a name="declare-properties"></a><span data-ttu-id="f7d3a-120">Özellikleri bildirme</span><span class="sxs-lookup"><span data-stu-id="f7d3a-120">Declare properties</span></span>
 
-<span data-ttu-id="9e2b2-121">DSC kaynağı şeması sınıfının özelliklerine tanımlanır.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-121">The DSC resource schema is defined as properties of the class.</span></span> <span data-ttu-id="9e2b2-122">Şu üç özellik aşağıdaki gibi bildirin.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-122">We declare three properties as follows.</span></span>
+<span data-ttu-id="f7d3a-121">DSC kaynağı şeması sınıfının özelliklerine tanımlanır.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-121">The DSC resource schema is defined as properties of the class.</span></span> <span data-ttu-id="f7d3a-122">Şu üç özellik aşağıdaki gibi bildirin.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-122">We declare three properties as follows.</span></span>
 
 ```powershell
 [DscProperty(Key)]
@@ -63,14 +62,14 @@ class FileResource {
 [Nullable[datetime]] $CreationTime
 ```
 
-<span data-ttu-id="9e2b2-123">Özellikler öznitelikleri tarafından değiştirildiğinde dikkat edin.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-123">Notice that the properties are modified by attributes.</span></span> <span data-ttu-id="9e2b2-124">Öznitelikleri anlamını aşağıdaki gibidir:</span><span class="sxs-lookup"><span data-stu-id="9e2b2-124">The meaning of the attributes is as follows:</span></span>
+<span data-ttu-id="f7d3a-123">Özellikler öznitelikleri tarafından değiştirildiğinde dikkat edin.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-123">Notice that the properties are modified by attributes.</span></span> <span data-ttu-id="f7d3a-124">Öznitelikleri anlamını aşağıdaki gibidir:</span><span class="sxs-lookup"><span data-stu-id="f7d3a-124">The meaning of the attributes is as follows:</span></span>
 
-- <span data-ttu-id="9e2b2-125">**DscProperty(Key)**: gerekli bir özelliktir.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-125">**DscProperty(Key)**: The property is required.</span></span> <span data-ttu-id="9e2b2-126">Özelliği bir anahtardır.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-126">The property is a key.</span></span> <span data-ttu-id="9e2b2-127">Tüm özellik değerlerini anahtarları kaynak örnek bir yapılandırma içinde benzersiz şekilde tanımlamak için birleştirmeniz gerekir olarak işaretlenmiş.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-127">The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.</span></span>
-- <span data-ttu-id="9e2b2-128">**DscProperty(Mandatory)**: gerekli bir özelliktir.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-128">**DscProperty(Mandatory)**: The property is required.</span></span>
-- <span data-ttu-id="9e2b2-129">**DscProperty(NotConfigurable)**: özelliği salt okunur durumdadır.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-129">**DscProperty(NotConfigurable)**: The property is read-only.</span></span> <span data-ttu-id="9e2b2-130">Bu özniteliği ile işaretlenmiş özellikleri yapılandırma tarafından ayarlanamaz, ancak tarafından doldurulur **Get()** yöntemi varsa.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-130">Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.</span></span>
-- <span data-ttu-id="9e2b2-131">**DscProperty()**: özellik yapılandırılabilir, ancak gerekli değildir.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-131">**DscProperty()**: The property is configurable, but it is not required.</span></span>
+- <span data-ttu-id="f7d3a-125">**DscProperty(Key)**: gerekli bir özelliktir.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-125">**DscProperty(Key)**: The property is required.</span></span> <span data-ttu-id="f7d3a-126">Özelliği bir anahtardır.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-126">The property is a key.</span></span> <span data-ttu-id="f7d3a-127">Tüm özellik değerlerini anahtarları kaynak örnek bir yapılandırma içinde benzersiz şekilde tanımlamak için birleştirmeniz gerekir olarak işaretlenmiş.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-127">The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.</span></span>
+- <span data-ttu-id="f7d3a-128">**DscProperty(Mandatory)**: gerekli bir özelliktir.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-128">**DscProperty(Mandatory)**: The property is required.</span></span>
+- <span data-ttu-id="f7d3a-129">**DscProperty(NotConfigurable)**: özelliği salt okunur durumdadır.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-129">**DscProperty(NotConfigurable)**: The property is read-only.</span></span> <span data-ttu-id="f7d3a-130">Bu özniteliği ile işaretlenmiş özellikleri yapılandırma tarafından ayarlanamaz, ancak tarafından doldurulur **Get()** yöntemi varsa.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-130">Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.</span></span>
+- <span data-ttu-id="f7d3a-131">**DscProperty()**: özellik yapılandırılabilir, ancak gerekli değildir.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-131">**DscProperty()**: The property is configurable, but it is not required.</span></span>
 
-<span data-ttu-id="9e2b2-132">**$Path** ve **$SourcePath** özellikleri her iki dizelerdir.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-132">The **$Path** and **$SourcePath** properties are both strings.</span></span> <span data-ttu-id="9e2b2-133">**$CreationTime** olan bir [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) özelliği.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-133">The **$CreationTime** is a [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) property.</span></span> <span data-ttu-id="9e2b2-134">**$Ensure** şu şekilde tanımlanan bir numaralandırma türü bir özelliktir.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-134">The **$Ensure** property is an enumeration type, defined as follows.</span></span>
+<span data-ttu-id="f7d3a-132">**$Path** ve **$SourcePath** özellikleri her iki dizelerdir.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-132">The **$Path** and **$SourcePath** properties are both strings.</span></span> <span data-ttu-id="f7d3a-133">**$CreationTime** olan bir [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) özelliği.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-133">The **$CreationTime** is a [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) property.</span></span> <span data-ttu-id="f7d3a-134">**$Ensure** şu şekilde tanımlanan bir numaralandırma türü bir özelliktir.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-134">The **$Ensure** property is an enumeration type, defined as follows.</span></span>
 
 ```powershell
 enum Ensure 
@@ -80,11 +79,11 @@ enum Ensure
 }
 ```
 
-### <a name="implementing-the-methods"></a><span data-ttu-id="9e2b2-135">Yöntemler uygulama</span><span class="sxs-lookup"><span data-stu-id="9e2b2-135">Implementing the methods</span></span>
+### <a name="implementing-the-methods"></a><span data-ttu-id="f7d3a-135">Yöntemler uygulama</span><span class="sxs-lookup"><span data-stu-id="f7d3a-135">Implementing the methods</span></span>
 
-<span data-ttu-id="9e2b2-136">**Get()**, **Set()**, ve **Test()** yöntemleri benzer **Get-TargetResource**, **kümesi TargetResource** , ve **Test TargetResource** bir komut dosyası kaynağı işlevlerde.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-136">The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
+<span data-ttu-id="f7d3a-136">**Get()**, **Set()**, ve **Test()** yöntemleri benzer **Get-TargetResource**, **kümesi TargetResource** , ve **Test TargetResource** bir komut dosyası kaynağı işlevlerde.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-136">The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
 
-<span data-ttu-id="9e2b2-137">Bu kod ayrıca CopyFile() işlevi, dosyadan kopyalar yardımcı bir işlev içerir **$SourcePath** için **$Path**.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-137">This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**.</span></span> 
+<span data-ttu-id="f7d3a-137">Bu kod ayrıca CopyFile() işlevi, dosyadan kopyalar yardımcı bir işlev içerir **$SourcePath** için **$Path**.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-137">This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**.</span></span> 
 
 ```powershell
 
@@ -217,8 +216,8 @@ enum Ensure
     }
 ```
 
-### <a name="the-complete-file"></a><span data-ttu-id="9e2b2-138">Tam dosya</span><span class="sxs-lookup"><span data-stu-id="9e2b2-138">The complete file</span></span>
-<span data-ttu-id="9e2b2-139">Tüm sınıf dosya izler.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-139">The complete class file follows.</span></span>
+### <a name="the-complete-file"></a><span data-ttu-id="f7d3a-138">Tam dosya</span><span class="sxs-lookup"><span data-stu-id="f7d3a-138">The complete file</span></span>
+<span data-ttu-id="f7d3a-139">Tüm sınıf dosya izler.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-139">The complete class file follows.</span></span>
 
 ```powershell
 enum Ensure
@@ -416,9 +415,9 @@ class FileResource
 ```
 
 
-## <a name="create-a-manifest"></a><span data-ttu-id="9e2b2-140">Bir bildirimi oluşturma</span><span class="sxs-lookup"><span data-stu-id="9e2b2-140">Create a manifest</span></span>
+## <a name="create-a-manifest"></a><span data-ttu-id="f7d3a-140">Bir bildirimi oluşturma</span><span class="sxs-lookup"><span data-stu-id="f7d3a-140">Create a manifest</span></span>
 
-<span data-ttu-id="9e2b2-141">Bir sınıf tabanlı kaynak DSC altyapısı kullanılabilir hale getirmek için içermelidir bir **DscResourcesToExport** deyimi bildirim dosyasındaki kaynak verilecek modül bildirir.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-141">To make a class-based resource available to the DSC engine, you must include a **DscResourcesToExport** statement in the manifest file that instructs the module to export the resource.</span></span> <span data-ttu-id="9e2b2-142">Bizim bildirimi şöyle görünür:</span><span class="sxs-lookup"><span data-stu-id="9e2b2-142">Our manifest looks like this:</span></span>
+<span data-ttu-id="f7d3a-141">Bir sınıf tabanlı kaynak DSC altyapısı kullanılabilir hale getirmek için içermelidir bir **DscResourcesToExport** deyimi bildirim dosyasındaki kaynak verilecek modül bildirir.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-141">To make a class-based resource available to the DSC engine, you must include a **DscResourcesToExport** statement in the manifest file that instructs the module to export the resource.</span></span> <span data-ttu-id="f7d3a-142">Bizim bildirimi şöyle görünür:</span><span class="sxs-lookup"><span data-stu-id="f7d3a-142">Our manifest looks like this:</span></span>
 
 ```powershell
 @{
@@ -454,9 +453,9 @@ PowerShellVersion = '5.0'
 } 
 ```
 
-## <a name="test-the-resource"></a><span data-ttu-id="9e2b2-143">Kaynak test</span><span class="sxs-lookup"><span data-stu-id="9e2b2-143">Test the resource</span></span>
+## <a name="test-the-resource"></a><span data-ttu-id="f7d3a-143">Kaynak test</span><span class="sxs-lookup"><span data-stu-id="f7d3a-143">Test the resource</span></span>
 
-<span data-ttu-id="9e2b2-144">Sınıf ve bildirim dosyaları daha önce açıklandığı gibi Klasör yapısındaki kaydedildikten sonra yeni kaynak kullanan bir yapılandırması oluşturabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-144">After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource.</span></span> <span data-ttu-id="9e2b2-145">DSC yapılandırması çalıştırma hakkında daha fazla bilgi için bkz: [yapılandırmaları ederek ilerlemesini kabul ederek](enactingConfigurations.md).</span><span class="sxs-lookup"><span data-stu-id="9e2b2-145">For information about how to run a DSC configuration, see [Enacting configurations](enactingConfigurations.md).</span></span> <span data-ttu-id="9e2b2-146">Aşağıdaki yapılandırma denetleyeceği olup olmadığını dosyasını `c:\test\test.txt` var ve aksi durumda, dosyadan kopyalar `c:\test.txt` (oluşturmanız gerekir `c:\test.txt` yapılandırma çalıştırmadan önce).</span><span class="sxs-lookup"><span data-stu-id="9e2b2-146">The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).</span></span>
+<span data-ttu-id="f7d3a-144">Sınıf ve bildirim dosyaları daha önce açıklandığı gibi Klasör yapısındaki kaydedildikten sonra yeni kaynak kullanan bir yapılandırması oluşturabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-144">After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource.</span></span> <span data-ttu-id="f7d3a-145">DSC yapılandırması çalıştırma hakkında daha fazla bilgi için bkz: [yapılandırmaları ederek ilerlemesini kabul ederek](enactingConfigurations.md).</span><span class="sxs-lookup"><span data-stu-id="f7d3a-145">For information about how to run a DSC configuration, see [Enacting configurations](enactingConfigurations.md).</span></span> <span data-ttu-id="f7d3a-146">Aşağıdaki yapılandırma denetleyeceği olup olmadığını dosyasını `c:\test\test.txt` var ve aksi durumda, dosyadan kopyalar `c:\test.txt` (oluşturmanız gerekir `c:\test.txt` yapılandırma çalıştırmadan önce).</span><span class="sxs-lookup"><span data-stu-id="f7d3a-146">The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).</span></span>
 
 ```powershell
 Configuration Test
@@ -473,24 +472,24 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="9e2b2-147">PsDscRunAsCredential destekleme</span><span class="sxs-lookup"><span data-stu-id="9e2b2-147">Supporting PsDscRunAsCredential</span></span>
+## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="f7d3a-147">PsDscRunAsCredential destekleme</span><span class="sxs-lookup"><span data-stu-id="f7d3a-147">Supporting PsDscRunAsCredential</span></span>
 
-><span data-ttu-id="9e2b2-148">**Not:** **PsDscRunAsCredential** PowerShell 5.0 ve sonraki sürümlerinde desteklenir.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-148">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
+><span data-ttu-id="f7d3a-148">**Not:** **PsDscRunAsCredential** PowerShell 5.0 ve sonraki sürümlerinde desteklenir.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-148">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
 
-<span data-ttu-id="9e2b2-149">**PsDscRunAsCredential** özelliği kullanılabilir [DSC yapılandırmaları](configurations.md) kaynak belirtilen kimlik bilgileri kümesi altında çalışması gerektiğini belirtmek için kaynak bloğu.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-149">The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
-<span data-ttu-id="9e2b2-150">Daha fazla bilgi için bkz: [çalıştıran DSC kullanıcı kimlik bilgileriyle](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="9e2b2-150">For more information, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="f7d3a-149">**PsDscRunAsCredential** özelliği kullanılabilir [DSC yapılandırmaları](configurations.md) kaynak belirtilen kimlik bilgileri kümesi altında çalışması gerektiğini belirtmek için kaynak bloğu.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-149">The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
+<span data-ttu-id="f7d3a-150">Daha fazla bilgi için bkz: [çalıştıran DSC kullanıcı kimlik bilgileriyle](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="f7d3a-150">For more information, see [Running DSC with user credentials](runAsUser.md).</span></span>
 
-### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a><span data-ttu-id="9e2b2-151">Gerektiren veya PsDscRunAsCredential, kaynak için izin verme</span><span class="sxs-lookup"><span data-stu-id="9e2b2-151">Require or disallow PsDscRunAsCredential for your resource</span></span>
+### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a><span data-ttu-id="f7d3a-151">Gerektiren veya PsDscRunAsCredential, kaynak için izin verme</span><span class="sxs-lookup"><span data-stu-id="f7d3a-151">Require or disallow PsDscRunAsCredential for your resource</span></span>
 
-<span data-ttu-id="9e2b2-152">**DscResource()** özniteliği isteğe bağlı bir parametre alır **RunAsCredential**.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-152">The **DscResource()** attribute takes an optional parameter **RunAsCredential**.</span></span>
-<span data-ttu-id="9e2b2-153">Bu parametre üç değerden birini alır:</span><span class="sxs-lookup"><span data-stu-id="9e2b2-153">This parameter takes one of three values:</span></span>
+<span data-ttu-id="f7d3a-152">**DscResource()** özniteliği isteğe bağlı bir parametre alır **RunAsCredential**.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-152">The **DscResource()** attribute takes an optional parameter **RunAsCredential**.</span></span>
+<span data-ttu-id="f7d3a-153">Bu parametre üç değerden birini alır:</span><span class="sxs-lookup"><span data-stu-id="f7d3a-153">This parameter takes one of three values:</span></span>
 
-- <span data-ttu-id="9e2b2-154">`Optional`**PsDscRunAsCredential** bu kaynak çağrısına yapılandırmaları için isteğe bağlıdır.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-154">`Optional` **PsDscRunAsCredential** is optional for configurations that call this resource.</span></span> <span data-ttu-id="9e2b2-155">Bu varsayılan değerdir.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-155">This is the default value.</span></span>
-- <span data-ttu-id="9e2b2-156">`Mandatory`**PsDscRunAsCredential** bu kaynak çağıran herhangi bir yapılandırma için kullanılması gerekir.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-156">`Mandatory` **PsDscRunAsCredential** must be used for any configuration that calls this resource.</span></span>
-- <span data-ttu-id="9e2b2-157">`NotSupported`Bu kaynak çağrısına yapılandırmaları kullanamaz **PsDscRunAsCredential**.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-157">`NotSupported` Configurations that call this resource cannot use **PsDscRunAsCredential**.</span></span>
-- <span data-ttu-id="9e2b2-158">`Default`Aynı `Optional`.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-158">`Default` Same as `Optional`.</span></span>
+- <span data-ttu-id="f7d3a-154">`Optional`**PsDscRunAsCredential** bu kaynak çağrısına yapılandırmaları için isteğe bağlıdır.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-154">`Optional` **PsDscRunAsCredential** is optional for configurations that call this resource.</span></span> <span data-ttu-id="f7d3a-155">Bu varsayılan değerdir.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-155">This is the default value.</span></span>
+- <span data-ttu-id="f7d3a-156">`Mandatory`**PsDscRunAsCredential** bu kaynak çağıran herhangi bir yapılandırma için kullanılması gerekir.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-156">`Mandatory` **PsDscRunAsCredential** must be used for any configuration that calls this resource.</span></span>
+- <span data-ttu-id="f7d3a-157">`NotSupported`Bu kaynak çağrısına yapılandırmaları kullanamaz **PsDscRunAsCredential**.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-157">`NotSupported` Configurations that call this resource cannot use **PsDscRunAsCredential**.</span></span>
+- <span data-ttu-id="f7d3a-158">`Default`Aynı `Optional`.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-158">`Default` Same as `Optional`.</span></span>
 
-<span data-ttu-id="9e2b2-159">Örneğin, özel kaynak kullanımını desteklemez belirtmek için aşağıdaki öznitelik kullanın **PsDscRunAsCredential**:</span><span class="sxs-lookup"><span data-stu-id="9e2b2-159">For example, use the following attribute to specify that your custom resource does not support using **PsDscRunAsCredential**:</span></span>
+<span data-ttu-id="f7d3a-159">Örneğin, özel kaynak kullanımını desteklemez belirtmek için aşağıdaki öznitelik kullanın **PsDscRunAsCredential**:</span><span class="sxs-lookup"><span data-stu-id="f7d3a-159">For example, use the following attribute to specify that your custom resource does not support using **PsDscRunAsCredential**:</span></span>
 
 ```powershell
 [DscResource(RunAsCredential=NotSupported)]
@@ -498,11 +497,11 @@ class FileResource {
 }
 ```
 
-### <a name="access-the-user-context"></a><span data-ttu-id="9e2b2-160">Access kullanıcı bağlamı</span><span class="sxs-lookup"><span data-stu-id="9e2b2-160">Access the user context</span></span>
+### <a name="access-the-user-context"></a><span data-ttu-id="f7d3a-160">Access kullanıcı bağlamı</span><span class="sxs-lookup"><span data-stu-id="f7d3a-160">Access the user context</span></span>
 
-<span data-ttu-id="9e2b2-161">Özel bir kaynak içinde kullanıcı bağlamından erişmek için otomatik değişkeni kullanabilirsiniz `$global:PsDscContext`.</span><span class="sxs-lookup"><span data-stu-id="9e2b2-161">To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.</span></span>
+<span data-ttu-id="f7d3a-161">Özel bir kaynak içinde kullanıcı bağlamından erişmek için otomatik değişkeni kullanabilirsiniz `$global:PsDscContext`.</span><span class="sxs-lookup"><span data-stu-id="f7d3a-161">To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.</span></span>
 
-<span data-ttu-id="9e2b2-162">Örneğin aşağıdaki kodu kaynak ayrıntılı çıktı akışına çalıştırıldığı kullanıcı bağlamı yazarsınız:</span><span class="sxs-lookup"><span data-stu-id="9e2b2-162">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
+<span data-ttu-id="f7d3a-162">Örneğin aşağıdaki kodu kaynak ayrıntılı çıktı akışına çalıştırıldığı kullanıcı bağlamı yazarsınız:</span><span class="sxs-lookup"><span data-stu-id="f7d3a-162">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
 
 ```powershell
 if (PsDscContext.RunAsUser) {
@@ -510,7 +509,7 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="9e2b2-163">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="9e2b2-163">See Also</span></span>
-### <a name="concepts"></a><span data-ttu-id="9e2b2-164">Kavramlar</span><span class="sxs-lookup"><span data-stu-id="9e2b2-164">Concepts</span></span>
-[<span data-ttu-id="9e2b2-165">Özel Windows PowerShell istenen durum yapılandırması kaynakları oluşturma</span><span class="sxs-lookup"><span data-stu-id="9e2b2-165">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](authoringResource.md)
+## <a name="see-also"></a><span data-ttu-id="f7d3a-163">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="f7d3a-163">See Also</span></span>
+### <a name="concepts"></a><span data-ttu-id="f7d3a-164">Kavramlar</span><span class="sxs-lookup"><span data-stu-id="f7d3a-164">Concepts</span></span>
+[<span data-ttu-id="f7d3a-165">Özel Windows PowerShell istenen durum yapılandırması kaynakları oluşturma</span><span class="sxs-lookup"><span data-stu-id="f7d3a-165">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](authoringResource.md)
 

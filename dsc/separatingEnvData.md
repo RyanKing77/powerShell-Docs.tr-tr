@@ -1,33 +1,32 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "Yapılandırma ve ortam verilerin ayrılmasını"
-ms.openlocfilehash: 861a4cecc28b2d93b2cfa2743d47ee0e5025e1f4
-ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
+ms.openlocfilehash: cf0d4a12efe4998176d3c80841740c5f9d9a103b
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="9c05f-103">Yapılandırma ve ortam verilerin ayrılmasını</span><span class="sxs-lookup"><span data-stu-id="9c05f-103">Separating configuration and environment data</span></span>
+# <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="71782-103">Yapılandırma ve ortam verilerin ayrılmasını</span><span class="sxs-lookup"><span data-stu-id="71782-103">Separating configuration and environment data</span></span>
 
-><span data-ttu-id="9c05f-104">İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="9c05f-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+><span data-ttu-id="71782-104">İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="71782-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="9c05f-105">Yapılandırma verilerini kullanarak yapılandırmasından kendisini bir DSC yapılandırmasında kullanılan veri ayırmak yararlı olabilir.</span><span class="sxs-lookup"><span data-stu-id="9c05f-105">It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data.</span></span>
-<span data-ttu-id="9c05f-106">Bunu yaparak, birden çok ortamlar için tek bir yapılandırmayı kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="9c05f-106">By doing this, you can use a single configuration for multiple environments.</span></span>
+<span data-ttu-id="71782-105">Yapılandırma verilerini kullanarak yapılandırmasından kendisini bir DSC yapılandırmasında kullanılan veri ayırmak yararlı olabilir.</span><span class="sxs-lookup"><span data-stu-id="71782-105">It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data.</span></span>
+<span data-ttu-id="71782-106">Bunu yaparak, birden çok ortamlar için tek bir yapılandırmayı kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="71782-106">By doing this, you can use a single configuration for multiple environments.</span></span>
 
-<span data-ttu-id="9c05f-107">Örneğin, bir uygulama geliştiriyorsanız, geliştirme ve üretim ortamları için bir yapılandırma kullanın ve yapılandırma verilerini her ortam için verileri belirtmek için kullanın.</span><span class="sxs-lookup"><span data-stu-id="9c05f-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
+<span data-ttu-id="71782-107">Örneğin, bir uygulama geliştiriyorsanız, geliştirme ve üretim ortamları için bir yapılandırma kullanın ve yapılandırma verilerini her ortam için verileri belirtmek için kullanın.</span><span class="sxs-lookup"><span data-stu-id="71782-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
 
-## <a name="what-is-configuration-data"></a><span data-ttu-id="9c05f-108">Yapılandırma verilerini nedir?</span><span class="sxs-lookup"><span data-stu-id="9c05f-108">What is configuration data?</span></span>
+## <a name="what-is-configuration-data"></a><span data-ttu-id="71782-108">Yapılandırma verilerini nedir?</span><span class="sxs-lookup"><span data-stu-id="71782-108">What is configuration data?</span></span>
 
-<span data-ttu-id="9c05f-109">Yapılandırma verileri, bir karma tablosunda tanımlı ve bu yapılandırma derlediğinizde DSC yapılandırması için geçirilen verilerdir.</span><span class="sxs-lookup"><span data-stu-id="9c05f-109">Configuration data is data that is defined in a hashtable and passed to a DSC configuration when you compile that configuration.</span></span>
+<span data-ttu-id="71782-109">Yapılandırma verileri, bir karma tablosunda tanımlı ve bu yapılandırma derlediğinizde DSC yapılandırması için geçirilen verilerdir.</span><span class="sxs-lookup"><span data-stu-id="71782-109">Configuration data is data that is defined in a hashtable and passed to a DSC configuration when you compile that configuration.</span></span>
 
-<span data-ttu-id="9c05f-110">Ayrıntılı bir açıklaması için **ConfigurationData** hashtable, bkz: [yapılandırma verilerini kullanarak](configData.md).</span><span class="sxs-lookup"><span data-stu-id="9c05f-110">For a detailed description of the **ConfigurationData** hashtable, see [Using configuration data](configData.md).</span></span>
+<span data-ttu-id="71782-110">Ayrıntılı bir açıklaması için **ConfigurationData** hashtable, bkz: [yapılandırma verilerini kullanarak](configData.md).</span><span class="sxs-lookup"><span data-stu-id="71782-110">For a detailed description of the **ConfigurationData** hashtable, see [Using configuration data](configData.md).</span></span>
 
-## <a name="a-simple-example"></a><span data-ttu-id="9c05f-111">Basit bir örnek</span><span class="sxs-lookup"><span data-stu-id="9c05f-111">A simple example</span></span>
+## <a name="a-simple-example"></a><span data-ttu-id="71782-111">Basit bir örnek</span><span class="sxs-lookup"><span data-stu-id="71782-111">A simple example</span></span>
 
-<span data-ttu-id="9c05f-112">Bunun nasıl çalıştığını görmek için çok basit bir örneğe bakalım.</span><span class="sxs-lookup"><span data-stu-id="9c05f-112">Let's look at a very simple example to see how this works.</span></span> <span data-ttu-id="9c05f-113">Sağlar tek bir yapılandırma oluşturacağız **IIS** bazı düğümler, üzerinde mevcut olduğunu ve **Hyper-V** bazılarında mevcuttur:</span><span class="sxs-lookup"><span data-stu-id="9c05f-113">We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others:</span></span> 
+<span data-ttu-id="71782-112">Bunun nasıl çalıştığını görmek için çok basit bir örneğe bakalım.</span><span class="sxs-lookup"><span data-stu-id="71782-112">Let's look at a very simple example to see how this works.</span></span> <span data-ttu-id="71782-113">Sağlar tek bir yapılandırma oluşturacağız **IIS** bazı düğümler, üzerinde mevcut olduğunu ve **Hyper-V** bazılarında mevcuttur:</span><span class="sxs-lookup"><span data-stu-id="71782-113">We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others:</span></span> 
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -68,9 +67,9 @@ $MyData =
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-<span data-ttu-id="9c05f-114">Bu komut dosyasının son satırında geçirme yapılandırmanın derler `$MyData` değeri olarak **ConfigurationData** parametresi.</span><span class="sxs-lookup"><span data-stu-id="9c05f-114">The last line in this script compiles the configuration, passing `$MyData` as the value **ConfigurationData** parameter.</span></span>
+<span data-ttu-id="71782-114">Bu komut dosyasının son satırında geçirme yapılandırmanın derler `$MyData` değeri olarak **ConfigurationData** parametresi.</span><span class="sxs-lookup"><span data-stu-id="71782-114">The last line in this script compiles the configuration, passing `$MyData` as the value **ConfigurationData** parameter.</span></span>
 
-<span data-ttu-id="9c05f-115">İki MOF dosyaları oluşturduğunuz oluşur:</span><span class="sxs-lookup"><span data-stu-id="9c05f-115">The result is that two MOF files are created:</span></span>
+<span data-ttu-id="71782-115">İki MOF dosyaları oluşturduğunuz oluşur:</span><span class="sxs-lookup"><span data-stu-id="71782-115">The result is that two MOF files are created:</span></span>
 
 ```
     Directory: C:\DscTests\MyDscConfiguration
@@ -82,15 +81,15 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof  
 ```
  
-<span data-ttu-id="9c05f-116">`$MyData`her biri kendi iki farklı düğümleri belirtir `NodeName` ve `Role`.</span><span class="sxs-lookup"><span data-stu-id="9c05f-116">`$MyData` specifies two different nodes, each with its own `NodeName` and `Role`.</span></span> <span data-ttu-id="9c05f-117">Yapılandırma dinamik olarak oluşturur **düğümü** alır gelen düğümler topluluğunu alarak blokları `$MyData` (özellikle `$AllNodes`) ve o koleksiyonu karşı filtreler `Role` özelliği...</span><span class="sxs-lookup"><span data-stu-id="9c05f-117">The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the `Role` property..</span></span>
+<span data-ttu-id="71782-116">`$MyData`her biri kendi iki farklı düğümleri belirtir `NodeName` ve `Role`.</span><span class="sxs-lookup"><span data-stu-id="71782-116">`$MyData` specifies two different nodes, each with its own `NodeName` and `Role`.</span></span> <span data-ttu-id="71782-117">Yapılandırma dinamik olarak oluşturur **düğümü** alır gelen düğümler topluluğunu alarak blokları `$MyData` (özellikle `$AllNodes`) ve o koleksiyonu karşı filtreler `Role` özelliği...</span><span class="sxs-lookup"><span data-stu-id="71782-117">The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the `Role` property..</span></span>
 
-## <a name="using-configuration-data-to-define-development-and-production-environments"></a><span data-ttu-id="9c05f-118">Geliştirme ve üretim ortamlarını tanımlamak için yapılandırma verileri kullanma</span><span class="sxs-lookup"><span data-stu-id="9c05f-118">Using configuration data to define development and production environments</span></span>
+## <a name="using-configuration-data-to-define-development-and-production-environments"></a><span data-ttu-id="71782-118">Geliştirme ve üretim ortamlarını tanımlamak için yapılandırma verileri kullanma</span><span class="sxs-lookup"><span data-stu-id="71782-118">Using configuration data to define development and production environments</span></span>
 
-<span data-ttu-id="9c05f-119">Bir Web sitesi geliştirme ve üretim ortamlarını ayarlama tek bir yapılandırması kullanan tam bir örneğe bakalım.</span><span class="sxs-lookup"><span data-stu-id="9c05f-119">Let's look at a complete example that uses a single configuration to set up both development and production environments of a website.</span></span> <span data-ttu-id="9c05f-120">Geliştirme ortamında, IIS ve SQL Server tek düğümlerine yüklenir.</span><span class="sxs-lookup"><span data-stu-id="9c05f-120">In the development environment, both IIS and SQL Server are installed on a single nodes.</span></span> <span data-ttu-id="9c05f-121">Üretim ortamında, IIS ve SQL Server ayrı düğümlerine yüklenir.</span><span class="sxs-lookup"><span data-stu-id="9c05f-121">In the production environment, IIS and SQL Server are installed on separate nodes.</span></span> <span data-ttu-id="9c05f-122">İki farklı ortamlar için verileri belirtmek için bir yapılandırma verileri .psd1 dosyası kullanacağız.</span><span class="sxs-lookup"><span data-stu-id="9c05f-122">We'll use a configuration data .psd1 file to specify the data for the two different environments.</span></span>
+<span data-ttu-id="71782-119">Bir Web sitesi geliştirme ve üretim ortamlarını ayarlama tek bir yapılandırması kullanan tam bir örneğe bakalım.</span><span class="sxs-lookup"><span data-stu-id="71782-119">Let's look at a complete example that uses a single configuration to set up both development and production environments of a website.</span></span> <span data-ttu-id="71782-120">Geliştirme ortamında, IIS ve SQL Server tek düğümlerine yüklenir.</span><span class="sxs-lookup"><span data-stu-id="71782-120">In the development environment, both IIS and SQL Server are installed on a single nodes.</span></span> <span data-ttu-id="71782-121">Üretim ortamında, IIS ve SQL Server ayrı düğümlerine yüklenir.</span><span class="sxs-lookup"><span data-stu-id="71782-121">In the production environment, IIS and SQL Server are installed on separate nodes.</span></span> <span data-ttu-id="71782-122">İki farklı ortamlar için verileri belirtmek için bir yapılandırma verileri .psd1 dosyası kullanacağız.</span><span class="sxs-lookup"><span data-stu-id="71782-122">We'll use a configuration data .psd1 file to specify the data for the two different environments.</span></span>
 
- ### <a name="configuration-data-file"></a><span data-ttu-id="9c05f-123">Yapılandırma veri dosyası</span><span class="sxs-lookup"><span data-stu-id="9c05f-123">Configuration data file</span></span>
+ ### <a name="configuration-data-file"></a><span data-ttu-id="71782-123">Yapılandırma veri dosyası</span><span class="sxs-lookup"><span data-stu-id="71782-123">Configuration data file</span></span>
 
-<span data-ttu-id="9c05f-124">Geliştirme ve üretim ortamı verileri bir dosya namd tanımlarız `DevProdEnvData.psd1` gibi:</span><span class="sxs-lookup"><span data-stu-id="9c05f-124">We'll define the development and production environment data in a file namd `DevProdEnvData.psd1` as follows:</span></span>
+<span data-ttu-id="71782-124">Geliştirme ve üretim ortamı verileri bir dosya namd tanımlarız `DevProdEnvData.psd1` gibi:</span><span class="sxs-lookup"><span data-stu-id="71782-124">We'll define the development and production environment data in a file namd `DevProdEnvData.psd1` as follows:</span></span>
 
 ```powershell
 @{
@@ -127,15 +126,15 @@ Mode                LastWriteTime         Length Name
 }
 ```
 
-### <a name="configuration-script-file"></a><span data-ttu-id="9c05f-125">Yapılandırma komut dosyası</span><span class="sxs-lookup"><span data-stu-id="9c05f-125">Configuration script file</span></span>
+### <a name="configuration-script-file"></a><span data-ttu-id="71782-125">Yapılandırma komut dosyası</span><span class="sxs-lookup"><span data-stu-id="71782-125">Configuration script file</span></span>
 
-<span data-ttu-id="9c05f-126">Şimdi, yapılandırmada, tanımlanmış bir `.ps1` dosyasında, biz filtre biz tanımlanan düğümleri `DevProdEnvData.psd1` rolleri tarafından (`MSSQL`, `Dev`, veya her ikisini de) ve uygun biçimde yapılandırın.</span><span class="sxs-lookup"><span data-stu-id="9c05f-126">Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly.</span></span> <span data-ttu-id="9c05f-127">Üretim ortamında bunları iki farklı düğümlerde sahipken geliştirme ortamı SQL Server ve IIS bir düğümde vardır.</span><span class="sxs-lookup"><span data-stu-id="9c05f-127">The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes.</span></span> <span data-ttu-id="9c05f-128">Site içeriği belirtildiği gibi farklı de `SiteContents` özellikleri.</span><span class="sxs-lookup"><span data-stu-id="9c05f-128">The site contents is also different, as specified by the `SiteContents` properties.</span></span>
+<span data-ttu-id="71782-126">Şimdi, yapılandırmada, tanımlanmış bir `.ps1` dosyasında, biz filtre biz tanımlanan düğümleri `DevProdEnvData.psd1` rolleri tarafından (`MSSQL`, `Dev`, veya her ikisini de) ve uygun biçimde yapılandırın.</span><span class="sxs-lookup"><span data-stu-id="71782-126">Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly.</span></span> <span data-ttu-id="71782-127">Üretim ortamında bunları iki farklı düğümlerde sahipken geliştirme ortamı SQL Server ve IIS bir düğümde vardır.</span><span class="sxs-lookup"><span data-stu-id="71782-127">The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes.</span></span> <span data-ttu-id="71782-128">Site içeriği belirtildiği gibi farklı de `SiteContents` özellikleri.</span><span class="sxs-lookup"><span data-stu-id="71782-128">The site contents is also different, as specified by the `SiteContents` properties.</span></span>
 
-<span data-ttu-id="9c05f-129">Yapılandırma komut dosyası sonunda diyoruz yapılandırma (bir MOF belgeye, geçirme derlemeniz) `DevProdEnvData.psd1` olarak `$ConfigurationData` parametresi.</span><span class="sxs-lookup"><span data-stu-id="9c05f-129">At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.</span></span>
+<span data-ttu-id="71782-129">Yapılandırma komut dosyası sonunda diyoruz yapılandırma (bir MOF belgeye, geçirme derlemeniz) `DevProdEnvData.psd1` olarak `$ConfigurationData` parametresi.</span><span class="sxs-lookup"><span data-stu-id="71782-129">At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.</span></span>
 
-><span data-ttu-id="9c05f-130">**Not:** modülleri için bu yapılandırma gereklidir `xSqlPs` ve `xWebAdministration` hedef düğümde yüklü.</span><span class="sxs-lookup"><span data-stu-id="9c05f-130">**Note:** This configuration requires the modules `xSqlPs` and `xWebAdministration` to be installed on the target node.</span></span>
+><span data-ttu-id="71782-130">**Not:** modülleri için bu yapılandırma gereklidir `xSqlPs` ve `xWebAdministration` hedef düğümde yüklü.</span><span class="sxs-lookup"><span data-stu-id="71782-130">**Note:** This configuration requires the modules `xSqlPs` and `xWebAdministration` to be installed on the target node.</span></span>
 
-<span data-ttu-id="9c05f-131">Şimdi adındaki bir dosyada gereken yapılandırmayı tanımlayan `MyWebApp.ps1`:</span><span class="sxs-lookup"><span data-stu-id="9c05f-131">Let's define the configuration in a file named `MyWebApp.ps1`:</span></span>
+<span data-ttu-id="71782-131">Şimdi adındaki bir dosyada gereken yapılandırmayı tanımlayan `MyWebApp.ps1`:</span><span class="sxs-lookup"><span data-stu-id="71782-131">Let's define the configuration in a file named `MyWebApp.ps1`:</span></span>
 
 ```powershell
 Configuration MyWebApp
@@ -227,7 +226,7 @@ Configuration MyWebApp
 MyWebApp -ConfigurationData DevProdEnvData.psd1
 ```
 
-<span data-ttu-id="9c05f-132">Bu yapılandırma çalıştırdığınızda, üç MOF dosyaları oluşturulur (her adlı giriş **AllNodes** array):</span><span class="sxs-lookup"><span data-stu-id="9c05f-132">When you run this configuration, three MOF files are created (one for each named entry in the **AllNodes** array):</span></span>
+<span data-ttu-id="71782-132">Bu yapılandırma çalıştırdığınızda, üç MOF dosyaları oluşturulur (her adlı giriş **AllNodes** array):</span><span class="sxs-lookup"><span data-stu-id="71782-132">When you run this configuration, three MOF files are created (one for each named entry in the **AllNodes** array):</span></span>
 
 ```
     Directory: C:\DscTests\MyWebApp
@@ -240,21 +239,21 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
-## <a name="using-non-node-data"></a><span data-ttu-id="9c05f-133">Düğümü olmayan verileri kullanma</span><span class="sxs-lookup"><span data-stu-id="9c05f-133">Using non-node data</span></span>
+## <a name="using-non-node-data"></a><span data-ttu-id="71782-133">Düğümü olmayan verileri kullanma</span><span class="sxs-lookup"><span data-stu-id="71782-133">Using non-node data</span></span>
 
-<span data-ttu-id="9c05f-134">Ek anahtarları ekleyebilirsiniz **ConfigurationData** hashtable bir düğüme özgü olmayan veriler için.</span><span class="sxs-lookup"><span data-stu-id="9c05f-134">You can add additional keys to the **ConfigurationData** hashtable for data that is not specific to a node.</span></span>
-<span data-ttu-id="9c05f-135">Aşağıdaki yapılandırma iki Web sitesi varlığını sağlar.</span><span class="sxs-lookup"><span data-stu-id="9c05f-135">The following configuration ensures the presence of two websites.</span></span>
-<span data-ttu-id="9c05f-136">Her Web sitesi için veri tanımlanmış **AllNodes** dizi.</span><span class="sxs-lookup"><span data-stu-id="9c05f-136">Data for each website are defined in the **AllNodes** array.</span></span>
-<span data-ttu-id="9c05f-137">Dosya `Config.xml` Biz bu ada sahip bir ek anahtar tanımlamak için her iki Web siteleri için kullanılan `NonNodeData`.</span><span class="sxs-lookup"><span data-stu-id="9c05f-137">The file `Config.xml` is used for both websites, so we define it in an additional key with the name `NonNodeData`.</span></span>
-<span data-ttu-id="9c05f-138">İstediğiniz istediğiniz ve herhangi bir şey ad kadar ek anahtarlar sahip olduğunu unutmayın.</span><span class="sxs-lookup"><span data-stu-id="9c05f-138">Note that you can have as many additional keys as you want, and you can name them anything you want.</span></span>
-<span data-ttu-id="9c05f-139">`NonNodeData`ayrılmış bir sözcük değil yalnızca ne ek anahtarı adlandırın karar değil.</span><span class="sxs-lookup"><span data-stu-id="9c05f-139">`NonNodeData` is not a reserved word, it is just what we decided to name the additional key.</span></span>
+<span data-ttu-id="71782-134">Ek anahtarları ekleyebilirsiniz **ConfigurationData** hashtable bir düğüme özgü olmayan veriler için.</span><span class="sxs-lookup"><span data-stu-id="71782-134">You can add additional keys to the **ConfigurationData** hashtable for data that is not specific to a node.</span></span>
+<span data-ttu-id="71782-135">Aşağıdaki yapılandırma iki Web sitesi varlığını sağlar.</span><span class="sxs-lookup"><span data-stu-id="71782-135">The following configuration ensures the presence of two websites.</span></span>
+<span data-ttu-id="71782-136">Her Web sitesi için veri tanımlanmış **AllNodes** dizi.</span><span class="sxs-lookup"><span data-stu-id="71782-136">Data for each website are defined in the **AllNodes** array.</span></span>
+<span data-ttu-id="71782-137">Dosya `Config.xml` Biz bu ada sahip bir ek anahtar tanımlamak için her iki Web siteleri için kullanılan `NonNodeData`.</span><span class="sxs-lookup"><span data-stu-id="71782-137">The file `Config.xml` is used for both websites, so we define it in an additional key with the name `NonNodeData`.</span></span>
+<span data-ttu-id="71782-138">İstediğiniz istediğiniz ve herhangi bir şey ad kadar ek anahtarlar sahip olduğunu unutmayın.</span><span class="sxs-lookup"><span data-stu-id="71782-138">Note that you can have as many additional keys as you want, and you can name them anything you want.</span></span>
+<span data-ttu-id="71782-139">`NonNodeData`ayrılmış bir sözcük değil yalnızca ne ek anahtarı adlandırın karar değil.</span><span class="sxs-lookup"><span data-stu-id="71782-139">`NonNodeData` is not a reserved word, it is just what we decided to name the additional key.</span></span>
 
-<span data-ttu-id="9c05f-140">Özel değişkeni kullanarak bir ek anahtar erişim **$ConfigurationData**.</span><span class="sxs-lookup"><span data-stu-id="9c05f-140">You access additional keys by using the special variable **$ConfigurationData**.</span></span>
-<span data-ttu-id="9c05f-141">Bu örnekte, `ConfigFileContents` içeren satırı erişilir:</span><span class="sxs-lookup"><span data-stu-id="9c05f-141">In this example, `ConfigFileContents` is accessed with the line:</span></span>
+<span data-ttu-id="71782-140">Özel değişkeni kullanarak bir ek anahtar erişim **$ConfigurationData**.</span><span class="sxs-lookup"><span data-stu-id="71782-140">You access additional keys by using the special variable **$ConfigurationData**.</span></span>
+<span data-ttu-id="71782-141">Bu örnekte, `ConfigFileContents` içeren satırı erişilir:</span><span class="sxs-lookup"><span data-stu-id="71782-141">In this example, `ConfigFileContents` is accessed with the line:</span></span>
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- <span data-ttu-id="9c05f-142">içinde `File` kaynak bloğu.</span><span class="sxs-lookup"><span data-stu-id="9c05f-142">in the `File` resource block.</span></span>
+ <span data-ttu-id="71782-142">içinde `File` kaynak bloğu.</span><span class="sxs-lookup"><span data-stu-id="71782-142">in the `File` resource block.</span></span>
 
 
 ```powershell
@@ -310,8 +309,8 @@ configuration WebsiteConfig
 ```
 
 
-## <a name="see-also"></a><span data-ttu-id="9c05f-143">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="9c05f-143">See Also</span></span>
-- [<span data-ttu-id="9c05f-144">Yapılandırma verileri kullanma</span><span class="sxs-lookup"><span data-stu-id="9c05f-144">Using configuration data</span></span>](configData.md)
-- [<span data-ttu-id="9c05f-145">Yapılandırma verilerini seçeneklerinde kimlik bilgileri</span><span class="sxs-lookup"><span data-stu-id="9c05f-145">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
-- [<span data-ttu-id="9c05f-146">DSC yapılandırmaları</span><span class="sxs-lookup"><span data-stu-id="9c05f-146">DSC Configurations</span></span>](configurations.md)
+## <a name="see-also"></a><span data-ttu-id="71782-143">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="71782-143">See Also</span></span>
+- [<span data-ttu-id="71782-144">Yapılandırma verileri kullanma</span><span class="sxs-lookup"><span data-stu-id="71782-144">Using configuration data</span></span>](configData.md)
+- [<span data-ttu-id="71782-145">Yapılandırma verilerini seçeneklerinde kimlik bilgileri</span><span class="sxs-lookup"><span data-stu-id="71782-145">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
+- [<span data-ttu-id="71782-146">DSC yapılandırmaları</span><span class="sxs-lookup"><span data-stu-id="71782-146">DSC Configurations</span></span>](configurations.md)
 
