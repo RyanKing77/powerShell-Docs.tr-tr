@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC SMB çekme sunucusu kurma"
-ms.openlocfilehash: 5efd8a822e4420484391f7a5a9832d5d51883e8d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 427dc8d858bd12e420fbde03b33a66f33cd654dc
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB çekme sunucusu kurma
 
@@ -213,7 +212,7 @@ $ConfigurationData = @{
 
 ## <a name="see-also"></a>Ayrıca bkz:
 - [Windows PowerShell istenen durum yapılandırması genel bakış](overview.md)
-- [Yapılandırmaları ederek ilerlemesini kabul ederek](enactingConfigurations.md)
-- [Yapılandırma kimliği kullanan bir çekme istemci ayarlama](pullClientConfigID.md)
+- [Yapılandırmaları Kabul Etme](enactingConfigurations.md)
+- [Yapılandırma kimliğini kullanarak çekme istemcisi ayarlama](pullClientConfigID.md)
 
  

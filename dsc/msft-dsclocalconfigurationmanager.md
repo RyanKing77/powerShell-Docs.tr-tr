@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "MSFT_DSCLocalConfigurationManager sınıfı"
-ms.openlocfilehash: 35f732698fcc58f7bd43945edd10c143ffb79af9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b2d2ce000988f2c10ab04c4ba5a4650bd3c75ec7
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfı
 
@@ -31,7 +30,7 @@ class MSFT_DSCLocalConfigurationManager
 
 **MSFT_DSCLocalConfigurationManager** sınıfı aşağıdaki üyeleri sahiptir:
 
--   [Yöntemleri] []
+-   [Methods][]
 
 ### <a name="methods"></a>Yöntemler
 
@@ -51,7 +50,7 @@ class MSFT_DSCLocalConfigurationManager
 | [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| Doğrudan çağıran **almak** DSC kaynağı yöntemi.| 
 | [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Doğrudan çağıran **ayarlamak** DSC kaynağı yöntemi.| 
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Doğrudan çağıran **Test** DSC kaynağı yöntemi.| 
-| [Geri alma](msft-dsclocalconfigurationmanager-rollback.md)| Dökümünü önceki yapılandırmaya geri dön.| 
+| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| Dökümünü önceki yapılandırmaya geri dön.| 
 | [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| Yönetilen düğüme yapılandırma belgesini gönderir ve bekleyen bir değişiklik kaydeder.| 
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| Yönetilen düğüme yapılandırma belgesini gönderir ve yapılandırmayı uygulamak için yapılandırma Aracısı'nı kullanır.| 
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| Yönetilen düğüme yapılandırma belgesi göndermek ve yapılandırmayı uygulamak için yapılandırma Aracısı'nı kullanmaya başlayın. Sonuç çıkış almak için GetConfigurationResultOutput kullanın.| 

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC kayıt kaynağı"
-ms.openlocfilehash: 649cb60578c053c04a7fcc7446881fb76daee26a
-ms.sourcegitcommit: 79e8f03afb8d0b0bb0a167e56464929b27f51990
+ms.openlocfilehash: 1e73e4275c0d9db5d8fac7641514ea8190f719ca
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-registry-resource"></a>DSC kayıt kaynağı
 
@@ -43,19 +42,19 @@ Registry [string] #ResourceName
 | dependsOn| Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.| 
 | ValueData| Kayıt defteri değeri verileri.| 
 | ValueType| Değerin türünü belirtir. Desteklenen türler şunlardır: 
-<ul><li>Dize (REG_SZ)</li>
+<ul><li>String (REG_SZ)</li>
 
 
 <li>İkili (ikili REG)</li>
 
 
-<li>DWORD 32-bit (REG_DWORD)</li>
+<li>Dword 32-bit (REG_DWORD)</li>
 
 
 <li>QWORD 64-bit (REG_QWORD)</li>
 
 
-<li>Çoklu dize (REG_MULTI_SZ)</li>
+<li>Multi-string (REG_MULTI_SZ)</li>
 
 
 <li>Genişletilebilir dize (REG_EXPAND_SZ)</li></ul>

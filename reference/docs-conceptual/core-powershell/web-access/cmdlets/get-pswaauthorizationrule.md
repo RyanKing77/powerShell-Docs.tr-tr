@@ -1,18 +1,16 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell cmdlet'i
 ms.date: 2016-12-12
 title: pswaauthorizationrule Al
 ms.technology: powershell
-ms.openlocfilehash: eb9f42ab4d9cec111e03a096b2f00740e97ee1b7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 003195457660a18b9bbed065181b6d8c23835348
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
@@ -39,7 +37,7 @@ Ne **kimliği** parametresi ya da **RuleName** parametresi belirtilirse, sonra B
 
 ## <a name="parameters"></a>PARAMETRELERİ
 
-### <a name="-idltint32gt"></a>-ID&lt;Int32\[\]&gt;
+### <a name="-idltint32gt"></a>-Id&lt;Int32\[\]&gt;
 
 Bu cmdlet alması gereken kuralların tanımlayıcılar (Kimlikler) belirtir. Hiçbir kimlikleri belirtilirse, bu cmdlet tüm yetkilendirme kurallarını döndürür.
 

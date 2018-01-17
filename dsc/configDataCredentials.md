@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "Yapılandırma verilerini seçeneklerinde kimlik bilgileri"
-ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Yapılandırma verilerini seçeneklerinde kimlik bilgileri
 >İçin geçerlidir: Windows PowerShell 5.0
@@ -21,7 +20,10 @@ Gizlemek için bu hata ve uyarı iletileri DSC yapılandırma verileri anahtar s
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**Notlar:** <p>Depolama/iletmek düz metin parolalarını şifrelenmemiş genellikle güvenli değildir. Bu konuda açıklanan teknikleri kullanarak kimlik bilgilerini güvenli hale getirme önerilir.</p> <p>Azure Otomasyonu DSC hizmet yapılandırmalarında derlenmiş ve güvenli şekilde depolanan kimlik bilgileri merkezi olarak yönetmenizi sağlar.  Bilgi için bkz: [derleme DSC yapılandırmaları / kimlik bilgisi varlıkları](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
+> [!NOTE]
+> Depolama/iletmek düz metin parolalarını şifrelenmemiş genellikle güvenli değildir. Bu konuda açıklanan teknikleri kullanarak kimlik bilgilerini güvenli hale getirme önerilir.
+> Azure Otomasyonu DSC hizmet yapılandırmalarında derlenmiş ve güvenli şekilde depolanan kimlik bilgileri merkezi olarak yönetmenizi sağlar.
+> Bilgi için bkz: [derleme DSC yapılandırmaları / kimlik bilgisi varlıkları](/azure/automation/automation-dsc-compile#credential-assets)
 
 Düz metin kimlik bilgileri geçirme bir örnek verilmiştir:
 
@@ -133,7 +135,8 @@ WMF 5.0 eklenen otomatik `PsDscRunAsCredential` tüm kaynaklar için özellik.
 Kullanma hakkında bilgi için `PsDscRunAsCredential`, bkz: [çalıştıran DSC kullanıcı kimlik bilgileriyle](runAsUser.md).
 Daha yeni kaynakları ve özel kaynakları için kimlik bilgilerini kendi özelliği oluşturmak yerine bu otomatik özelliğini kullanabilirsiniz.
 
->**Not:** bazı kaynaklar tasarımını olan belirli bir nedenle birden çok kimlik bilgilerini kullanmayı ve kendi kimlik özelliklerine sahip olur.
+> [!NOTE]
+> Bazı kaynaklar tasarımını olan belirli bir nedenle birden çok kimlik bilgilerini kullanmayı ve kendi kimlik özelliklerine sahip olur.
 
 Kullanılabilir kimlik bilgisi bulmak için bir kaynak özelliklerini kullanın ya da `Get-DscResource -Name ResourceName -Syntax` veya işe IntelliSense (`CTRL+SPACE`).
 
@@ -222,8 +225,8 @@ for node 'localhost'.
 ```
 
 Bu örnek iki sorunları vardır:
-1.  Düz metin parolalarını önerilmez hata açıklar
-2.  Bir uyarı etki alanı kimlik bilgilerini kullanarak karşı öneren
+1. Düz metin parolalarını önerilmez hata açıklar
+2. Bir uyarı etki alanı kimlik bilgilerini kullanarak karşı öneren
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
@@ -266,9 +269,11 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
->**Not:** `NodeName` yıldız işareti, belirli düğüm adı zorunludur eşit olamaz.
+> [!NOTE]
+> `NodeName`yıldız işareti, belirli düğüm adı zorunludur eşit olamaz.
 
 **Düz metin parolalarını önemli güvenlik riski nedeniyle önlemek için Microsoft önerir.**
+
 Yalnızca (aktarımda, hizmet REST ve düğüm üzerinde bekleyen) şifreli her zaman verilerin depolandığı için bir özel durum Azure Otomasyonu DSC hizmetini kullanırken olacaktır.
 
 ## <a name="domain-credentials"></a>Etki alanı kimlik bilgileri

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "Linux için istenen durum yapılandırması (DSC) ile çalışmaya başlama"
-ms.openlocfilehash: fd4820d27de5958a325032ca3fc202a521c131b4
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 4fd8460bc5d2564cab291904b60a1a0c26c3e5a7
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux için istenen durum yapılandırması (DSC) ile çalışmaya başlama
 
@@ -28,7 +27,7 @@ Aşağıdaki tabloda, Linux için DSC için gerekli paket bağımlılıkları a�
 
 |  Gerekli paket |  Açıklama |  En düşük sürüm | 
 |---|---|---|
-| Glibc| GNU Kitaplığı| 2…4 – 31.30| 
+| glibc| GNU Kitaplığı| 2…4 – 31.30| 
 | Python| Python| 2.4 – 3.4| 
 | omiserver| Açık Yönetim Altyapısı| 1.0.8.1| 
 | Openssl| OpenSSL kitaplıkları| 0.9.8 veya 1.0| 
@@ -182,5 +181,5 @@ Aşağıdaki günlük dosyalarına DSC için Linux iletiler için oluşturulur.
 |Günlük dosyası|Dizin|Açıklama|
 |---|---|---|
 |omiserver.log|/var/OPT/omi/log|OMI CIM sunucusu işlemi için ilgili iletileri.|
-|DSC.log|/var/OPT/omi/log|Yerel Configuration Manager (LCM'yi) ve DSC kaynak işlemlerinin işlemi için ilgili iletileri.|
+|dsc.log|/var/OPT/omi/log|Yerel Configuration Manager (LCM'yi) ve DSC kaynak işlemlerinin işlemi için ilgili iletileri.|
 

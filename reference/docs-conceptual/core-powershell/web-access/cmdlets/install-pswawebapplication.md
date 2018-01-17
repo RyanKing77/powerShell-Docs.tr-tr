@@ -1,18 +1,16 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell cmdlet'i
 ms.date: 2016-12-12
 title: "pswawebapplication yükleyin"
 ms.technology: powershell
-ms.openlocfilehash: a608a6272d3eae56ccf808b9d94525ca39df50cb
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
@@ -59,7 +57,7 @@ Web uygulamanız için ad belirtir. Bu Windows PowerShell Web erişim URL'si son
 | Ardışık Düzen Girişi kabul edilsin mi?               | yanlış                                |
 | Joker Karakter Kabul Edilsin Mi?          | yanlış                                |
 
-### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;dize&gt;
+### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;String&gt;
 
 Bu Windows PowerShell Web erişimi web uygulamasını yüklemek için Web sunucusu (IIS) Web sitesi adını belirtir.
 

@@ -1,18 +1,16 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell cmdlet'i
 ms.date: 2016-12-12
 title: Test pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: 900547301c815ba6fe3a9507f975503fec864e4e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: fb2937397616160c70b056e412e42fb8ff4c2f27
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
 
@@ -71,7 +69,7 @@ Test etmek için Windows PowerShell oturum yapılandırmasını, uç nokta veya 
 | Ardışık Düzen Girişi kabul edilsin mi?               | yanlış                                |
 | Joker Karakter Kabul Edilsin Mi?          | yanlış                                |
 
-### <a name="-connectionuri-lturigt"></a>-ConnectionUri &lt;URI&gt;
+### <a name="-connectionuri-lturigt"></a>-ConnectionUri &lt;Uri&gt;
 
 Bağlantıyı sınamak için URI belirtir.
 

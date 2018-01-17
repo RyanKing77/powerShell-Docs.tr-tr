@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "MSFT_DSCLocalConfigurationManager sınıfının ResourceGet yöntemi"
-ms.openlocfilehash: 7d8b185c49778253dcb4e983ad948775c4cb0842
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: df90cb6859413c94be992c8cbc30171e9bd3d6de
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının ResourceGet yöntemi
 
@@ -29,13 +28,13 @@ uint32 ResourceGet(
 <a name="parameters"></a>Parametreler
 ----------
 
-*ResourceType* \[içinde\]  
+*ResourceType* \[in\]  
 Çağrılacak kaynağının adı.
 
-*ModuleName* \[içinde\]  
+*ModuleName* \[in\]  
 Aranacak kaynak içeren modülü adı.
 
-*resourceProperty* \[içinde\]  
+*resourceProperty* \[in\]  
 Kaynak özelliği adını ve değerini bir karma tablosunda anahtar ve değer sırasıyla belirtir. Kullanım [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) kaynak özelliklerini ve bunların türlerini bulmak için cmdlet.
 
 *yapılandırmaları* \[çıkışı\]  

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC WaitForSome kaynağı"
-ms.openlocfilehash: 3ea9dc51cbb00cf6158abf114fdb31fd91307df9
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: cbe16c543f0eeb62dbe1fb439af2f9147f1bc210
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome kaynağı
 
@@ -42,7 +41,7 @@ WaitForSome [String] #ResourceName
 | NodeCount| Düğüm sayısı alt sınırı başarılı olması bu kaynak için istenen durumunda olması gerekir.|
 | nodeName| Hedef düğümleri kaynağın bağlıdır.| 
 | resourceName| Bağımlı kaynak adı.| 
-| RetryIntervalSec| Yeniden denemeden önce saniye sayısı. En az 1'dir.| 
+| RetryIntervalSec| Yeniden denemeden önce saniye sayısı. Minimum is 1.| 
 | retryCount| Yeniden deneneceğini maksimum sayısı.| 
 | ThrottleLimit| Makinelerin aynı anda bağlanmasına sayısı. Varsayılan yeni-cimsession varsayılandır.| 
 | dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|

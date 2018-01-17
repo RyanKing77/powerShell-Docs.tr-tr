@@ -1,18 +1,16 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell cmdlet'i
 ms.date: 2016-12-12
 title: "Web erişim cmdlet'leri"
 ms.technology: powershell
-ms.openlocfilehash: daebe2fe2cbccaf8d3f41d265d23dc45d3bb99b6
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 54821c318b165461ec613678a39c4e3b500dfd0e
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web Erişim Cmdlet’leri
 
@@ -38,7 +36,7 @@ Windows PowerShell Web Erişimi'nden belirtilen bir yetkilendirme kuralını kal
 
 Belirli bir kullanıcının doğrulamak için yetkilendirme kuralları testleri bilgisayar, uç nokta erişim isteği yetkili olduğu.
 
-## <a name="uninstall-pswawebapplicationuninstall-pswawebapplicationmd"></a>[Kaldırma-PswaWebApplication](uninstall-pswawebapplication.md)
+## <a name="uninstall-pswawebapplicationuninstall-pswawebapplicationmd"></a>[Uninstall-PswaWebApplication](uninstall-pswawebapplication.md)
 
 Windows PowerShell web uygulamasını IIS'den kaldırır.
 

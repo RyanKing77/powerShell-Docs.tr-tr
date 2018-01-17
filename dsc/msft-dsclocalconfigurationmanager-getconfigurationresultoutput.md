@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "MSFT_DSCLocalConfigurationManager sınıfının GetConfigurationResultOutput yöntemi"
-ms.openlocfilehash: 09862fd3c19e1e517c9bf5df878113ba3f10d8a6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f6106bb28dc20004b5bbb6df2d8e719cf0c453f0
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının GetConfigurationResultOutput yöntemi
 
@@ -28,10 +27,10 @@ uint32 GetConfigurationResultOutput(
 <a name="parameters"></a>Parametreler
 ----------
 
-*JobId* \[içinde\]  
+*jobId* \[in\]  
 Proje çıktı verileri almak istediğiniz için kimliği.
 
-*resumeOutputBookmark* \[içinde\]  
+*resumeOutputBookmark* \[in\]  
 Çıktı devamlılığı önceki yer işareti gelen olması gerektiğini belirtir.
 
 *Çıktı* \[çıkışı\]  

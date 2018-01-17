@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
 title: "Windows PowerShell Tümleşik komut dosyası ortamı ISE"
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 6bddb953a7f17e220f92d357eb59dfedc5496272
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 66f36371cbb8ad8523aa1e1e3cd791cc692194c9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Tümleşik Komut Dosyası Ortamı (ISE)
 Windows PowerShell Tümleşik komut dosyası ortamı (ISE) Windows PowerShell altyapısı ve dil için iki ana biridir. Onunla yazabileceğiniz, çalıştırma ve komut dosyaları Windows PowerShell konsolunda kullanılabilir olmayan yollarla test etme. ISE söz dizimi renklendirme, sekme tamamlama, IntelliSense, visual hata ayıklama ve bağlama duyarlı Yardım ekler.
@@ -63,5 +63,5 @@ En son sürümünü bulmak için bu Ara'yı çalıştırın: [indirmeleri](http:
 > Windows PowerShell ISE bir grafik kullanıcı arabirimi gerektirdiğinden, Windows Server'ın Sunucu Çekirdeği seçeneğini üzerinde çalıştırılamaz.
 
 ## <a name="see-also"></a>Ayrıca bkz:
-- [Windows PowerShell Tümleşik komut dosyası ortamı'nı kullanma](Using-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell Tümleşik komut dosyası ortamı'nı kullanma](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 

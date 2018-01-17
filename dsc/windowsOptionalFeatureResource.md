@@ -1,16 +1,15 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC WindowsOptionalFeature kaynağı"
-ms.openlocfilehash: 388fbe1bc430098d6680902e0b5643243fbf7f4c
-ms.sourcegitcommit: 79e8f03afb8d0b0bb0a167e56464929b27f51990
+title: DSC WindowsOptionalFeature Resource
+ms.openlocfilehash: d9b8cc316255f06d2de71fedc47ce4472cc8b382
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature kaynağı
+# <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature Resource
 
 > İçin geçerlidir: Windows PowerShell 5.0
 

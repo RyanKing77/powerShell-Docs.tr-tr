@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC sahip sürekli tümleştirme ve sürekli dağıtımı işlem hattı oluşturma"
-ms.openlocfilehash: baa56088d83fba56d3a19cff7954d3081f341f9a
-ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
+ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC sahip sürekli tümleştirme ve sürekli dağıtımı işlem hattı oluşturma
 
@@ -318,14 +317,14 @@ Burada, biz yalnızca yapı ekleyeceksiniz oluşturma adımlarının ele alacağ
 Yeni bir derleme tanımı oluşturun (seçin **boş** şablonu) "InfraDNS" adlı.
 Aşağıdaki adımlar, yapı tanımı ekleyin:
 
-- PowerShell Betiği
+- PowerShell Script
 - Test sonuçlarını yayımlama
 - Dosyaları kopyalama
 - Yapı yayımlama
 
 Bu derleme adımları, her adım özelliklerini şu şekilde düzenleyerek ekledikten sonra:
 
-### <a name="powershell-script"></a>PowerShell Betiği
+### <a name="powershell-script"></a>PowerShell Script
 
 1. Ayarlama **türü** özelliğine `File Path`.
 1. Ayarlama **betik yolu** özelliğine `initiate.ps1`.
@@ -386,13 +385,13 @@ Seçtiğinizden emin olun **sürekli dağıtım** böylece yeni bir yapı tamaml
 
 Aşağıdaki adımları yayın tanımına ekleyin:
 
-- PowerShell Betiği
+- PowerShell Script
 - Test sonuçlarını yayımlama
 - Test sonuçlarını yayımlama
 
 Adımları aşağıdaki gibi düzenleyin:
 
-### <a name="powershell-script"></a>PowerShell Betiği
+### <a name="powershell-script"></a>PowerShell Script
 
 1. Ayarlama **betik yolu** alanı`$(Build.DefinitionName)\Deploy\initiate.ps1"`
 1. Ayarlama **bağımsız değişkenleri** alanı`-fileName Deploy`

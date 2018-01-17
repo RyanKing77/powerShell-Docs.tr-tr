@@ -1,19 +1,17 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell cmdlet'i
 ms.date: 2016-12-12
 title: pswaauthorizationrule Ekle
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 18422f71b2a5f9af07af94e4324d3c7774f1d5ea
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 196797215a678e6f674592dc6b289816aced3c01
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -60,7 +58,7 @@ Birincil oturum açma kimlik bilgileri Windows PowerShell Web erişimi kullanıc
 
 ## <a name="parameters"></a>Parametreler
 
-### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;dize&gt;
+### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;String&gt;
 
 Active Directory etki alanı Hizmetleri (AD DS) veya yerel gruplar için bu kural erişimine izin verdiği bir bilgisayar grubunun adını belirtir.
 
@@ -73,7 +71,7 @@ Active Directory etki alanı Hizmetleri (AD DS) veya yerel gruplar için bu kura
 | Ardışık Düzen Girişi kabul edilsin mi?               | TRUE (ByPropertyName)                |
 | Joker Karakter Kabul Edilsin Mi?          | yanlış                                |
 
-### <a name="-computernameltstringgt"></a>-ComputerName&lt;dize&gt;
+### <a name="-computernameltstringgt"></a>-ComputerName&lt;String&gt;
 
 Bu kural erişim verdiği bilgisayar adını belirtir.
 
@@ -139,7 +137,7 @@ Bu kural için kolay adı belirtir.
 | Ardışık Düzen Girişi kabul edilsin mi?               | TRUE (ByPropertyName)                |
 | Joker Karakter Kabul Edilsin Mi?          | yanlış                                |
 
-### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;dize\[\]&gt;
+### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;String\[\]&gt;
 
 AD DS veya bu kural erişim verdiği yerel gruplar bir veya daha fazla kullanıcı grubu adını belirtir.
 
@@ -253,6 +251,6 @@ Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
 - [Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
 - [Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
 - [Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
-- [Üye Ekle](http://go.microsoft.com/fwlink/p/?LinkId=113280)
-- [Yeni nesne](http://go.microsoft.com/fwlink/p/?LinkId=113355)
+- [Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)
+- [New-Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)
 - [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)

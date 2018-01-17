@@ -13,14 +13,14 @@ Başka bir deyişle, Windows PowerShell, .NET Framework tarafından sunulan API 
 
 .NET Core ve .NET Framework arasında paylaşılan API'leri parçası olarak tanımlanan [.NET standart][].
 
-Bunun PowerShell çekirdek ve Windows PowerShell modülü/komut dosyası uyumluluğu nasıl etkilediği hakkında daha fazla bilgi için bkz: [Windows PowerShell ile Backwards uyumluluk] [#backwards-uyumluluk--windows-powershell ile]
+Bunun PowerShell çekirdek ve Windows PowerShell modülü/komut dosyası uyumluluğu nasıl etkilediği hakkında daha fazla bilgi için bkz: [Backwards uyumluluk Windows PowerShell ile](#backwards-compatibility-with-windows-powershell).
 
 ## <a name="support-for-macos-and-linux"></a>MacOS ve Linux desteği
 
 PowerShell artık resmi olarak destekler macOS ve Linux dahil olmak üzere:
 
 - Windows 7, 8.1 ve 10
-- Windows Server 2008 R2, 2012 R2'de, 2016
+- Windows Server 2008 R2, 2012 R2, 2016
 - [Windows Server noktalı yıllık kanalı][semi-annual]
 - Ubuntu 14.04 ve 16.04 17.04
 - Debian 8.7 + ve 9
@@ -28,7 +28,7 @@ PowerShell artık resmi olarak destekler macOS ve Linux dahil olmak üzere:
 - Red Hat Enterprise Linux 7
 - OpenSUSE 42.2
 - Fedora 25 26
-- macOS 10,12 +
+- macOS 10.12+
 
 Topluluğumuz ayrıca aşağıdaki platformları için paketleri katıldığını ancak resmi olarak desteklenmez:
 
@@ -173,13 +173,13 @@ Tüm yerleşik cmdlet'leri kullanan yani `-Encoding` parametresi kullanım `UTF8
 Aşağıdaki cmdlet, bu değişiklikten etkilenmez:
 
 - İçerik Ekle
-- Dışarı aktarma Clixml
+- Export-Clixml
 - Export-Csv
 - Export-PSSession
-- Onaltılık biçimi
+- Format-Hex
 - Get-içerik
 - Import-Csv
-- ModuleManifest yeni
+- New-ModuleManifest
 - Out-File
 - Dize seçin
 - Posta iletisi gönder
@@ -202,8 +202,8 @@ PowerShell işleri hakkında daha fazla bilgi için bkz: [about_Jobs](https://ms
 
 ## <a name="semantic-versioning"></a>Anlamsal sürüm oluşturma
 
-- Yapılan `SemanticVersion` uyumlu `SemVer 2.0`. (#5037) (Teşekkürler @iSazonov!)
-- Değiştirilen varsayılan `ModuleVersion` içinde `New-ModuleManifest` için `0.0.1` SemVer ile hizalamak için. (#4842) (Teşekkürler @LDSpits)
+- Yapılan `SemanticVersion` uyumlu `SemVer 2.0`. (#5037) (Thanks @iSazonov!)
+- Değiştirilen varsayılan `ModuleVersion` içinde `New-ModuleManifest` için `0.0.1` SemVer ile hizalamak için. (#4842) (Thanks @LDSpits)
 - Eklenen `semver` için türü Hızlandırıcı olarak `System.Management.Automation.SemanticVersion`. (#4142) (Teşekkürler @oising!)
 - Karşılaştırma arasında etkin bir `SemanticVersion` örneği ve `Version` yalnızca ile oluşturulan örnek `Major` ve `Minor` sürüm değerleri.
 
@@ -213,7 +213,7 @@ PowerShell işleri hakkında daha fazla bilgi için bkz: [about_Jobs](https://ms
 - Eklenen yeni kaçış karakteri ESC için:`` `e``
 - Numaralandırmalar (#4318) dize dönüştürmek için destek eklenmiştir (teşekkürler @KirkMunro)
 - Bir genel koleksiyon tek öğe diziye atama sabit. (#3170)
-- Eklenen karakter aralığı aşırı yüklemesine `..` işleci, bu nedenle `'a'..'z'` 'z' 'a ' karakteri döndürür. (#5026) (Teşekkürler @IISResetMe!)
+- Eklenen karakter aralığı aşırı yüklemesine `..` işleci, bu nedenle `'a'..'z'` 'z' 'a ' karakteri döndürür. (#5026) (Thanks @IISResetMe!)
 - Salt okunur değişkenler üzerine değildir sabit değişkeni ataması
 - Otomatik değişkenlerin Yereller 'DottedScopes' komut dosyası cmdlet'leri dotting push (#4709)
 - Bölme işleci 'Singleline, çok satırlı' seçeneğinin kullanımını etkinleştirin (#4721) (teşekkürler @iSazonov)
@@ -243,37 +243,37 @@ PowerShell işleri hakkında daha fazla bilgi için bkz: [about_Jobs](https://ms
 ### <a name="new-cmdlets"></a>Yeni cmdlet'leri
 
 - Ekleme `Get-Uptime` için `Microsoft.PowerShell.Utility`.
-- Ekleme `Remove-Alias` komutu. (#5143) (Teşekkürler @PowershellNinja!)
-- Ekleme `Remove-Service` yönetim modülü için. (#4858) (Teşekkürler @joandrsn!)
+- Ekleme `Remove-Alias` komutu. (#5143) (Thanks @PowershellNinja!)
+- Ekleme `Remove-Service` yönetim modülü için. (#4858) (Thanks @joandrsn!)
 
 ### <a name="web-cmdlets"></a>Web cmdlet'leri
 
-- Web cmdlet'leri için sertifika kimlik doğrulama desteği ekleyin. (#4646) (Teşekkürler @markekraus)
+- Web cmdlet'leri için sertifika kimlik doğrulama desteği ekleyin. (#4646) (Thanks @markekraus)
 - İçerik üstbilgileri desteği web cmdlet'leri ekleyin. (#4494 & #4640) (Teşekkürler @markekraus)
-- Birden çok bağlantı üstbilgisi desteği Web cmdlet'leri ekleyin. (#5265) (Teşekkürler @markekraus!)
+- Birden çok bağlantı üstbilgisi desteği Web cmdlet'leri ekleyin. (#5265) (Thanks @markekraus!)
 - Web cmdlet'leri bağlantı üstbilgi sayfalandırma desteği (#3828)
   - İçin `Invoke-WebRequest`, yanıt oluşturuyoruz RelationLink özelliği URL'leri temsil eden bir sözlük olarak bir bağlantı üstbilgisi bulunuyorsa ve `rel` öznitelikleri ve URL'leri kullanmak Geliştirici kolaylaştırmak için mutlak emin olun.
   - İçin `Invoke-RestMethod`, yanıt biz kullanıma bağlantı üstbilgi içerdiğinde bir `-FollowRelLink` otomatik olarak izlemek için anahtar `next` `rel` artık mevcut kadar bağlantıları veya bir kez biz isabet isteğe bağlı `-MaximumFollowRelLink` parametre değeri.
 - Ekleme `-CustomMethod` için standart olmayan yöntemi fiillere izin vermek için web cmdlet'leri parametresi. (#3142) (Teşekkürler @Lee303!)
-- Ekleme `SslProtocol` desteklemek için Web cmdlet'leri. (#5329) (Teşekkürler @markekraus!)
-- Çok bölümlü eklemek web cmdlet'leri için destek. (#4782) (Teşekkürler @markekraus)
+- Ekleme `SslProtocol` desteklemek için Web cmdlet'leri. (#5329) (Thanks @markekraus!)
+- Çok bölümlü eklemek web cmdlet'leri için destek. (#4782) (Thanks @markekraus)
 - Ekleme `-NoProxy` web cmdlet'leri böylece sistem genelinde proxy ayarı yoksayar. (#3447) (Teşekkürler @TheFlyingCorpse!)
 - Kullanıcı Aracısı, Web cmdlet'leri şimdi raporları işletim sistemi Platformu (#4937) (teşekkürler @LDSpits)
 - Ekleme `-SkipHeaderValidation` üstbilgi değeri doğrulamadan ekleme üstbilgileri desteklemek üzere web cmdlet'leri geçin. (#4085)
 - Sunucunun HTTPS sertifikasının gerekirse değil doğrulanacak web cmdlet'leri sağlar.
-- Kimlik doğrulama parametreleri web cmdlet'leri ekleyin. (#5052) (Teşekkürler @markekraus)
+- Kimlik doğrulama parametreleri web cmdlet'leri ekleyin. (#5052) (Thanks @markekraus)
   - Ekleme `-Authentication` üç seçenek sunar: Basic, OAuth ve taşıyıcı.
   - Ekleme `-Token` OAuth ve taşıyıcı seçeneklerini taşıyıcı belirtecini almak için.
   - Ekleme `-AllowUnencryptedAuthentication` HTTPS dışında herhangi bir aktarım düzeni için sağlanan kimlik doğrulamasını atlamak için.
-- Ekleme `-ResponseHeadersVariable` için `Invoke-RestMethod` yanıt üstbilgilerini yakalama etkinleştirmek için. (#4888) (Teşekkürler @markekraus)
+- Ekleme `-ResponseHeadersVariable` için `Invoke-RestMethod` yanıt üstbilgilerini yakalama etkinleştirmek için. (#4888) (Thanks @markekraus)
 - Yanıt durum kodu başarılı olmadığında HTTP yanıtı durum dahil etmek için web cmdlet'leri düzeltin. (#3201)
-- Değiştirme web cmdlet'leri `UserAgent` gelen `WindowsPowerShell` için `PowerShell`. (#4914) (Teşekkürler @markekraus)
+- Değiştirme web cmdlet'leri `UserAgent` gelen `WindowsPowerShell` için `PowerShell`. (#4914) (Thanks @markekraus)
 - Açık eklemek `ContentType` algılama `Invoke-RestMethod` (#4692)
-- Web cmdlet'leri düzeltme `-SkipHeaderValidation` standart User-Agent üstbilgileri ile çalışmak için. (#4479 & #4512) (Teşekkürler @markekraus)
+- Web cmdlet'leri düzeltme `-SkipHeaderValidation` standart User-Agent üstbilgileri ile çalışmak için. (#4479 & #4512) (Thanks @markekraus)
 
 ### <a name="json-cmdlets"></a>JSON cmdlet'leri
 
-- Ekleme `-AsHashtable` için `ConvertFrom-Json` döndürmek için bir `Hashtable` yerine. (#5043) (Teşekkürler @bergmeister!)
+- Ekleme `-AsHashtable` için `ConvertFrom-Json` döndürmek için bir `Hashtable` yerine. (#5043) (Thanks @bergmeister!)
 - İle prettier biçimlendirici kullanmak `ConvertTo-Json` çıktı. (#2787) (Teşekkürler @kittholland!)
 - Ekleme `Jobject` serileştirme desteklemek için `ConvertTo-Json`. (#5141)
 - Düzeltme `ConvertFrom-Json` ardışık düzendeki birlikte tam bir JSON dizesi oluşturmak bir dizeler dizisi seri durumdan çıkarılamadı.
@@ -283,14 +283,14 @@ PowerShell işleri hakkında daha fazla bilgi için bkz: [about_Jobs](https://ms
 
 ### <a name="csv-cmdlets"></a>CSV cmdlet'leri
 
-- Ekleme `PSTypeName` desteği `Import-Csv` ve `ConvertFrom-Csv`. (#5389) (Teşekkürler @markekraus!)
-- Olun `Import-Csv` Destek `CR`, `LF`, ve `CRLF` sınırlayıcıları satır. (#5363) (Teşekkürler @iSazonov!)
-- Olun `-NoTypeInformation` varsayılan `Export-Csv` ve `ConvertTo-Csv`. (#5164) (Teşekkürler @markekraus)
+- Ekleme `PSTypeName` desteği `Import-Csv` ve `ConvertFrom-Csv`. (#5389) (Thanks @markekraus!)
+- Olun `Import-Csv` Destek `CR`, `LF`, ve `CRLF` sınırlayıcıları satır. (#5363) (Thanks @iSazonov!)
+- Olun `-NoTypeInformation` varsayılan `Export-Csv` ve `ConvertTo-Csv`. (#5164) (Thanks @markekraus)
 
 ### <a name="service-cmdlets"></a>Hizmet cmdlet'leri
 
-- Özellikler ekleme `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, ve `StartupType` için `ServiceController` tarafından döndürülen nesne `Get-Service`. (#4907) (Teşekkürler @joandrsn)
-- Kimlik bilgilerini ayarlamak için işlevsellik ekleyen `Set-Service` komutu. (#4844) (Teşekkürler @joandrsn)
+- Özellikler ekleme `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, ve `StartupType` için `ServiceController` tarafından döndürülen nesne `Get-Service`. (#4907) (Thanks @joandrsn)
+- Kimlik bilgilerini ayarlamak için işlevsellik ekleyen `Set-Service` komutu. (#4844) (Thanks @joandrsn)
 
 ### <a name="other-cmdlets"></a>Diğer cmdlet'ler
 
@@ -303,7 +303,7 @@ PowerShell işleri hakkında daha fazla bilgi için bkz: [about_Jobs](https://ms
 - Parametre ekleme `-Top` ve `-Bottom` için `Sort-Object` üst/alt N sıralama için
 - Bir işlemi üst işlemi ekleyerek kullanıma `CodeProperty "Parent"` için `System.Diagnostics.Process`. (#2850) (Teşekkürler @powercode!)
 - MB yerine KB bellek sütunlar için kullanın.`Get-Process`
-- Ekleme `-NoNewLine` için geçiş `Out-String`. (#5056) (Teşekkürler @raghav710)
+- Ekleme `-NoNewLine` için geçiş `Out-String`. (#5056) (Thanks @raghav710)
 - `Move-Item`cmdlet geliştirir `-Include`, `-Exclude`, ve `-Filter` parametreleri. (#3878)
 - İzin `*` kayıt defteri yolu için kullanılmak üzere `Remove-Item`. (#4866)
 - Ekleme `-Title` için `Get-Credential` ve platformlar arası komut istemi deneyimi birleştirin.
@@ -376,7 +376,7 @@ Biz bu verileri bu kullanma hakkında daha fazla bilgi için [blog gönderisi][t
 [değişim günlüğü]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
-[.NET standart]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [SSS]: https://github.com/dotnet/standard/blob/master/docs/faq.md

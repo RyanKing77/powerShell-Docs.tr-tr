@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-31
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "MOF dosyası güvenliğini sağlama"
-ms.openlocfilehash: ed9d259e2cd963560ad6f5b60702c54e2fa36900
-ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
+ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="securing-the-mof-file"></a>MOF dosyası güvenliğini sağlama
 
@@ -81,7 +80,7 @@ Aşağıdaki örnek:
  3. Ortak anahtar sertifikası içine alır **my** sertifika deposunda **yazma düğümü**.
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>Hedef düğümde bulunan: oluşturma ve sertifika verme
->Geliştirme düğümü: Windows Server 2016 ve Windows 10
+>Hedef düğüm: Windows Server 2016 ve Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -91,7 +90,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 Bir kez dışarı ```DscPublicKey.cer``` kopyalanması gerekir **yazma düğümü**.
 
->Geliştirme düğümü: Windows Server 2012 R2/Windows 8.1 ve önceki sürümleri
+>Hedef düğüm: Windows Server 2012 R2/Windows 8.1 ve önceki sürümleri
 
 Üzerinde Windows işletim sistemlerinin Windows 10 ve Windows Server 2016 önce yeni SelfSignedCertificate cmdlet desteklemez çünkü **türü** parametresi, bu sertifika oluşturma alternatif bir yöntem bunları gereklidir işletim sistemleri.
 Bu durumda kullanabileceğiniz ```makecert.exe``` veya ```certutil.exe``` bir sertifika oluşturmak için.
@@ -109,7 +108,6 @@ New-SelfsignedCertificateEx `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
     -StoreLocation 'LocalMachine' `
-    -StoreName 'My' `
     -KeyLength 2048 `
     -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
     -AlgorithmName 'RSA' `
