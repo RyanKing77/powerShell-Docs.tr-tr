@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell temel kavramları"
+title: Windows PowerShell Temel Bilgileri
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: 7b5cdfce876aa7d5559fe772379829011b275a02
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: bd17786d2d8690b89a2d107e0da98ee45f5b2ff7
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/03/2018
 ---
-# <a name="windows-powershell-basics"></a>Windows PowerShell temel kavramları
+# <a name="windows-powershell-basics"></a>Windows PowerShell Temel Bilgileri
 Grafik kullanıcı arabirimleri çoğu bilgisayar kullanıcıları için bilinen bazı temel kavramları kullanın. Kullanıcıların görevleri gerçekleştirmek için bu arabirimleri benzerlik üzerinde kullanır. İşletim sistemleri, genellikle bağlam özgü işlevsellik erişmek için belirli işlevleri ve bağlam menülerini erişmek için aşağı açılır menüler ile gözatılabilir öğeleri grafik gösterimi ile kullanıcılar sunar.
 
 Menüleri veya kullanıcının yardımcı olmak için grafik sistemleri olmadığı için Windows PowerShell gibi komut satırı arabirimi (CLI) bilgilerini ifşa farklı bir yaklaşım kullanmanız gerekir. Kullanabilmek için önce komut adlarını bilmeniz gerekir. GUI ortamında özellikleri eşdeğer karmaşık komutları yazabilirsiniz rağmen sık kullanılan komutlar ve komut parametreleri ile aşina olmalısınız.
@@ -18,13 +18,10 @@ Menüleri veya kullanıcının yardımcı olmak için grafik sistemleri olmadı�
 
 Windows PowerShell Geçmiş bilgisi CLIs kullanıcının yararlanmak için tasarlanmıştır. Bu bölümde, biz bazı temel Araçlar ve Windows PowerShell hızla bilgi edinmek için kullanabileceğiniz kavramları hakkında konuşur. Bunlar:
 
-- Get-Command kullanma
+- Kullanarak [Get-Command](/powershell/module/Microsoft.PowerShell.Core/get-command)
 
-- Cmd.exe ve UNIX komutları kullanarak
+- Kullanarak [Cmd.exe](/windows-server/administration/windows-commands/cmd) ve [UNIX komutları](/windows/wsl/reference)
 
-- Dış komutları kullanarak
+- [Sekme tamamlama kullanma](../../core-powershell/console/using-tab-expansion.md)
 
-- Sekme tamamlama kullanma
-
-- Get-Help kullanma
-
+- [Get-Help kullanma](./getting-detailed-help-information.md)

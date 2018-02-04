@@ -234,7 +234,7 @@ PowerShell işleri hakkında daha fazla bilgi için bkz: [about_Jobs](https://ms
 - PowerShell belirli bir işletim sisteminde çalışır durumda olup olmadığını belirlemek için üç yeni Otomatik değişkenleri eklenmiştir: `$IsWindows`, `$IsMacOs`, ve `$IsLinux`.
 - Ekleme `GitCommitId` PowerShell çekirdek başlık için.
   Çalıştırmak zorunda değilsiniz artık `$PSVersionTable` sürümü almak için PowerShell başlar başlamaz! (#3916) (Teşekkürler @iSazonov!)
-- Adlı bir JSON yapılandırma dosyası ekleme `PowerShellProperties.json` içinde `$PSHome` başlangıç saatinden önce gereken bazı ayarları depolamak için (örneğin `ExecutionPolicy`).
+- Adlı bir JSON yapılandırma dosyası ekleme `powershell.config.json` içinde `$PSHome` başlangıç saatinden önce gereken bazı ayarları depolamak için (örneğin `ExecutionPolicy`).
 - Ardışık Düzen Windows EXE'ın çalıştırırken engelleme
 - COM koleksiyonları etkin numaralandırması. (#4553)
 
