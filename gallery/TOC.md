@@ -11,6 +11,7 @@
 ### [PowerShellGallery Hesabı Oluşturma](psgallery/psgallery_creating_an_account.md)
 ### [Öğe oluşturma ve yayımlama](psgallery/Creating-and-Publishing-an-item.md)
 ### [Yayımlama kılavuzları ve en iyi yöntemler](psgallery/psgallery-PublishingGuidelines.md)
+### [Öğe bildirimi ve Galeri Kullanıcı Arabirimi](psgallery/psgallery_ItemManifestAffectingUI.md)
 ### [Öğeleri listeden kaldırma](psgallery/psgallery_unlist_items.md)
 ### [Öğe silme](psgallery/Deleting-Items.md)
 ### [Öğe sahiplerini yönetme](psgallery/Managing-Item-Owners.md)
