@@ -1,8 +1,66 @@
-- name: Kavramsal
+- name: Genel bakış
   href: PowerShell-Scripting.md
   items:
-    - name: Core PowerShell
-      href: core-powershell/core-powershell.md
+    - name: Yükle
+      href: ''
+      items:
+        - name: PowerShell Core
+          href: ''
+          items:
+            - name: Windows’da PowerShell Core yükleme
+              href: setup/Installing-PowerShell-Core-on-Windows.md
+            - name: macOS ve Linux’ta PowerShell Core yükleme
+              href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+        - name: Windows PowerShell
+          href: ''
+          items:
+            - name: Windows PowerShell Yükleme
+              href: setup/installing-windows-powershell.md
+            - name: Windows PowerShell 2.0 Altyapısını Yükleme
+              href: setup/installing-the-windows-powershell-2.0-engine.md
+            - name: Windows PowerShell Sistem Gereksinimleri
+              href: setup/windows-powershell-system-requirements.md
+    - name: Kullanmaya başlama
+      href: getting-started/getting-started-with-windows-powershell.md
+      items:
+        - name: Windows Powershell Başlatma
+          href: setup/starting-windows-powershell.md
+        - name: Windows PowerShell 2.0 Altyapısını Başlatma
+          href: setup/starting-the-windows-powershell-2.0-engine.md
+    - name: Kavramlar
+      href: ''
+      items:
+        - name: Önemli Windows PowerShell Kavramlarını Anlama
+          href: getting-started/fundamental/understanding-important-windows-powershell-concepts.md
+        - name: Ayrıntılı Yardım Bilgisi Alma
+          href: getting-started/fundamental/getting-detailed-help-information.md
+        - name: Komutlar Hakkında Bilgi Alma
+          href: getting-started/fundamental/getting-information-about-commands.md
+        - name: Wndows Powershell Adlarını Öğrenme
+          href: getting-started/fundamental/learning-windows-powershell-names.md
+        - name: Tanıdık Komut Adlarını Kullanma
+          href: getting-started/fundamental/using-familiar-command-names.md
+        - name: Nesne Komut Zinciri
+          href: getting-started/fundamental/object-pipeline.md
+        - name: Windows PowerShell ile Betik Oluşturma
+          href: getting-started/fundamental/scripting-with-windows-powershell.md
+        - name: Windows PowerShell Komut Zincirini Anlama
+          href: getting-started/fundamental/understanding-the-windows-powershell-pipeline.md
+        - name: Nesne Depolamak için Değişkenleri Kullanma
+          href: getting-started/fundamental/using-variables-to-store-objects.md
+        - name: Uzak Komut Çalıştırma
+          href: core-powershell/running-remote-commands.md
+          items:
+            - name: SSH üzerinden PowerShell Uzaktan İletişimi
+              href: core-powershell/SSH-Remoting-in-PowerShell-Core.md
+            - name: PowerShell Core’da WS-Management (WSMan) Uzaktan İletişimi
+              href: core-powershell/WSMan-Remoting-in-PowerShell-Core.md
+            - name: WinRMSecurity
+              href: setup/winrmsecurity.md
+            - name: PS uzaktan iletişim ikinci atlama
+              href: setup/ps-remoting-second-hop.md
+    - name: Bileşenler
+      href: ''
       items:
         - name: Konsol
           href: ''
@@ -14,73 +72,68 @@
         - name: ISE
           href: core-powershell/ise/introducing-the-windows-powershell-ise.md
           items:
-            - name: Windows PowerShell ISE’de bir PowerShell Sekmesi Oluşturma
-              href: core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
-            - name: Windows PowerShell ISE’de Betiklerde Hata Ayıklama
-              href: core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
-            - name: Windows PowerShell ISE’de Profilleri Kullanma
-              href: core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
-            - name: Betik Bölmesi ve Konsol Bölmesinde Sekme Tamamlamayı Kullanma
-              href: core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
-            - name: Windows PowerShell ISE’de Konsol Bölmesini Kullanma
-              href: core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
-            - name: Windows PowerShell ISE’de Betik Yazma ve Çalıştırma
-              href: core-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
-            - name: Windows PowerShell ISE Tanıtımı
-              href: core-powershell/ise/introducing-the-windows-powershell-ise.md
-            - name: ISE Modülü
-              href: core-powershell/ise/ise-module.md
-            - name: Windows PowerShell ISE için Klavye Kısayolları
-              href: core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
-            - name: Windows PowerShell ISE Betik Oluşturma Nesne Modelinin Amacı
-              href: core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model.md
-            - name: ISEAddOnToolCollection Nesnesi
-              href: core-powershell/ise/the-iseaddontoolcollection-object.md
-            - name: ISEAddOnTool Nesnesi
-              href: core-powershell/ise/the-iseaddontool-object.md
-            - name: ISEEditor Nesnesi
-              href: core-powershell/ise/the-iseeditor-object.md
-            - name: ISEFileCollection Nesnesi
-              href: core-powershell/ise/the-isefilecollection-object.md
-            - name: ISEFile Nesnesi
-              href: core-powershell/ise/the-isefile-object.md
-            - name: ISEMenuItemCollection Nesnesi
-              href: core-powershell/ise/the-isemenuitemcollection-object.md
-            - name: ISEMenuItem Nesnesi
-              href: core-powershell/ise/the-isemenuitem-object.md
-            - name: ISE Nesne Modeli Hiyerarşisi
-              href: core-powershell/ise/the-ise-object-model-hierarchy.md
-            - name: ISEOptions Nesnesi
-              href: core-powershell/ise/the-iseoptions-object.md
-            - name: ISESnippetCollection Nesnesi
-              href: core-powershell/ise/the-isesnippetcollection-object.md
-            - name: ISESnippet Nesnesi
-              href: core-powershell/ise/the-isesnippetobject.md
-            - name: ObjectModelRoot Nesnesi
-              href: core-powershell/ise/the-objectmodelroot-object.md
-            - name: PowerShellTabCollection Nesnesi
-              href: core-powershell/ise/the-powershelltabcollection-object.md
-            - name: PowerShellTab Nesnesi
-              href: core-powershell/ise/the-powershelltab-object.md
-            - name: Windows PowerShell ISE Betik Oluşturma Nesne Modeli
-              href: core-powershell/ise/the-windows-powershell-ise-scripting-object-model.md
+            - name: Windows PowerShell Tümleşik Komut Dosyası Ortamı (ISE)
+              href: getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-.md
             - name: Windows PowerShell ISE’yi Kullanma
-              href: core-powershell/ise/using-the-windows-powershell-ise.md
-            - name: Windows PowerShell ISE Nesne Modeli Başvurusu
-              href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
+              href: ''
+              items:
+                - name: Windows PowerShell ISE’yi Keşfetme
+                  href: getting-started/fundamental/exploring-the-windows-powershell-ise.md
+                - name: Windows PowerShell ISE’de bir PowerShell Sekmesi Oluşturma
+                  href: core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+                - name: Windows PowerShell ISE’de Betiklerde Hata Ayıklama
+                  href: core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+                - name: Windows PowerShell ISE’de Profilleri Kullanma
+                  href: core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
+                - name: Betik Bölmesi ve Konsol Bölmesinde Sekme Tamamlamayı Kullanma
+                  href: core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+                - name: Windows PowerShell ISE’de Konsol Bölmesini Kullanma
+                  href: core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+                - name: Windows PowerShell ISE’de Betik Yazma ve Çalıştırma
+                  href: core-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+                - name: Windows PowerShell ISE için Klavye Kısayolları
+                  href: core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+                - name: Windows PowerShell ISE’de erişilebilirlik
+                  href: setup/accessibility-in-windows-powershell-ise.md
+            - name: Windows PowerShell ISE Betik Oluşturma Nesne Modeli
+              href: ''
+              items:
+                - name: Windows PowerShell ISE Betik Oluşturma Nesne Modelinin Amacı
+                  href: core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+                - name: ISE Nesne Modeli Hiyerarşisi
+                  href: core-powershell/ise/the-ise-object-model-hierarchy.md
+                - name: ObjectModelRoot Nesnesi
+                  href: core-powershell/ise/the-objectmodelroot-object.md
+                - name: ISEAddOnToolCollection Nesnesi
+                  href: core-powershell/ise/the-iseaddontoolcollection-object.md
+                - name: ISEAddOnTool Nesnesi
+                  href: core-powershell/ise/the-iseaddontool-object.md
+                - name: ISEEditor Nesnesi
+                  href: core-powershell/ise/the-iseeditor-object.md
+                - name: ISEFileCollection Nesnesi
+                  href: core-powershell/ise/the-isefilecollection-object.md
+                - name: ISEFile Nesnesi
+                  href: core-powershell/ise/the-isefile-object.md
+                - name: ISEMenuItemCollection Nesnesi
+                  href: core-powershell/ise/the-isemenuitemcollection-object.md
+                - name: ISEMenuItem Nesnesi
+                  href: core-powershell/ise/the-isemenuitem-object.md
+                - name: ISEOptions Nesnesi
+                  href: core-powershell/ise/the-iseoptions-object.md
+                - name: ISESnippetCollection Nesnesi
+                  href: core-powershell/ise/the-isesnippetcollection-object.md
+                - name: ISESnippet Nesnesi
+                  href: core-powershell/ise/the-isesnippetobject.md
+                - name: PowerShellTabCollection Nesnesi
+                  href: core-powershell/ise/the-powershelltabcollection-object.md
+                - name: PowerShellTab Nesnesi
+                  href: core-powershell/ise/the-powershelltab-object.md
         - name: Visual Studio Code
           items:
             - name: Visual Studio Code’u kullanma
               href: core-powershell/vscode/using-vscode.md
-        - name: Uzak Komut Çalıştırma
-          href: core-powershell/running-remote-commands.md
-          items:
-            - name: SSH üzerinden PowerShell Uzaktan İletişimi
-              href: core-powershell/SSH-Remoting-in-PowerShell-Core.md
-            - name: PowerShell Core’da WS-Management (WSMan) Uzaktan İletişimi
-              href: core-powershell/WSMan-Remoting-in-PowerShell-Core.md
         - name: Web Erişimi
-          href: core-powershell/web-access.md
+          href: ''
           items:
             - name: Windows PowerShell web erişimi yetkilendirme kuralları ve güvenlik özellikleri
               href: core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
@@ -94,150 +147,6 @@
               href: core-powershell/web-access/use-the-web-based-windows-powershell-console.md
         - name: İş Akışları Kılavuzu
           href: core-powershell/workflows-guide.md
-    - name: Başlarken
-      href: ''
-      items:
-        - name: Temel tarif kitapları
-          href: getting-started/basic-cookbooks.md
-          items:
-            - name: Ek 1   Uyumluluk Takma Adları
-              href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
-            - name: Ek 2   Özel bir PowerShell Kısayolu Oluşturma
-              href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
-            - name: Temel tarif kitapları başvurusu
-              href: getting-started/cookbooks/basic-cookbooks-reference.md
-            - name: Bilgisayar Durumunu Değiştirme
-              href: getting-started/cookbooks/changing-computer-state.md
-            - name: Bilgisayarlar Hakkında Bilgi Toplama
-              href: getting-started/cookbooks/collecting-information-about-computers.md
-            - name: .NET ve COM Nesneleri Oluşturma  New Object
-              href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
-            - name: Özel bir Giriş Kutusu Oluşturma
-              href: getting-started/cookbooks/creating-a-custom-input-box.md
-            - name: Grafik Tarih Seçici Oluşturma
-              href: getting-started/cookbooks/creating-a-graphical-date-picker.md
-            - name: WMI Nesnelerini Alma  Get WmiObject
-              href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
-            - name: Geçerli Konumu Yönetme
-              href: getting-started/cookbooks/managing-current-location.md
-            - name: İşlem Cmdlet’leri ile İşlemleri Yönetme
-              href: getting-started/cookbooks/managing-processes-with-process-cmdlets.md
-            - name: Hizmetleri Yönetme
-              href: getting-started/cookbooks/managing-services.md
-            - name: Windows PowerShell Sürücülerini Yönetme
-              href: getting-started/cookbooks/managing-windows-powershell-drives.md
-            - name: Öğeleri Doğrudan İşleme
-              href: getting-started/cookbooks/manipulating-items-directly.md
-            - name: Birden Çok Seçim Liste Kutusu
-              href: getting-started/cookbooks/multiple-selection-list-boxes.md
-            - name: Diğer Kullanışlı Betik Oluşturma Nesneleri
-              href: getting-started/cookbooks/other-useful-scripting-objects.md
-            - name: Ağ Görevleri Gerçekleştirme
-              href: getting-started/cookbooks/performing-networking-tasks.md
-            - name: Out   Cmdlet’leri ile Verileri Yeniden Yönlendirme
-              href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
-            - name: Komut Zincirinden Nesne Kaldırma  WhereObject
-              href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
-            - name: Birden Çok Nesne için bir Görevi Tekrarlama  ForEach Object
-              href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
-            - name: Bir Liste Kutusundan Öğe Seçme
-              href: getting-started/cookbooks/selecting-items-from-a-list-box.md
-            - name: Nesne Bölümleri Seçme  Select Object
-              href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
-            - name: Nesne Sıralama
-              href: getting-started/cookbooks/sorting-objects.md
-            - name: Çıkış Görünümünü Değiştirmek İçin Biçimlendirme Komutları Kullanma
-              href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
-            - name: Statik Sınıflar ve Yöntemler Kullanma
-              href: getting-started/cookbooks/using-static-classes-and-methods.md
-            - name: Nesne Yapısını Görüntüleme  Get Member
-              href: getting-started/cookbooks/viewing-object-structure--get-member-.md
-            - name: Dosya ve Klasörlerle Çalışma
-              href: getting-started/cookbooks/working-with-files-and-folders.md
-            - name: 'Dosya, Klasör ve Kayıt Defteri Anahtarları ile Çalışma'
-              href: getting-started/cookbooks/working-with-files-folders-and-registry-keys.md
-            - name: Nesneler ile Çalışma
-              href: getting-started/cookbooks/working-with-objects.md
-            - name: Yazıcılar ile Çalışma
-              href: getting-started/cookbooks/working-with-printers.md
-            - name: Kayıt Defteri Girdileri ile Çalışma
-              href: getting-started/cookbooks/working-with-registry-entries.md
-            - name: Kayıt Defteri Anahtarları ile Çalışma
-              href: getting-started/cookbooks/working-with-registry-keys.md
-            - name: Yazılım Yüklemeleri ile Çalışma
-              href: getting-started/cookbooks/working-with-software-installations.md
-        - name: Temel Öğeler
-          href: ''
-          items:
-            - name: Windows PowerShell Hakkında
-              href: getting-started/fundamental/about-windows-powershell.md
-            - name: Windows PowerShell ISE’yi Keşfetme
-              href: getting-started/fundamental/exploring-the-windows-powershell-ise.md
-            - name: Ayrıntılı Yardım Bilgisi Alma
-              href: getting-started/fundamental/getting-detailed-help-information.md
-            - name: Komutlar Hakkında Bilgi Alma
-              href: getting-started/fundamental/getting-information-about-commands.md
-            - name: Wndows Powershell Adlarını Öğrenme
-              href: getting-started/fundamental/learning-windows-powershell-names.md
-            - name: Nesne Komut Zinciri
-              href: getting-started/fundamental/object-pipeline.md
-            - name: Windows PowerShell ile Betik Oluşturma
-              href: getting-started/fundamental/scripting-with-windows-powershell.md
-            - name: Önemli Windows PowerShell Kavramlarını Anlama
-              href: getting-started/fundamental/understanding-important-windows-powershell-concepts.md
-            - name: Windows PowerShell Komut Zincirini Anlama
-              href: getting-started/fundamental/understanding-the-windows-powershell-pipeline.md
-            - name: Tanıdık Komut Adlarını Kullanma
-              href: getting-started/fundamental/using-familiar-command-names.md
-            - name: Nesne Depolamak için Değişkenleri Kullanma
-              href: getting-started/fundamental/using-variables-to-store-objects.md
-            - name: Windows PowerShell kullanarak
-              href: getting-started/fundamental/using-windows-powershell.md
-            - name: Yönetim için Windows PowerShell’i Kullanma
-              href: getting-started/fundamental/using-windows-powershell-for-administration.md
-            - name: Windows PowerShell Temel Bilgileri
-              href: getting-started/fundamental/windows-powershell-basics.md
-            - name: Windows PowerShell Tümleşik Komut Dosyası Ortamı  ISE
-              href: getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-.md
-        - name: Temel Kavramlar
-          href: getting-started/fundamental-concepts.md
-        - name: Windows PowerShell Kullanmaya Hazırlanma
-          href: getting-started/getting-ready-to-use-windows-powershell.md
-        - name: Windows PowerShell Kullanmaya Başlama
-          href: getting-started/getting-started-with-windows-powershell.md
-        - name: PowerShell hakkında daha fazla şey
-          href: getting-started/more-powershell-learning.md
-    - name: Kurulum
-      href: ''
-      items:
-        - name: Windows’da PowerShell Core yükleme
-          href: setup/Installing-PowerShell-Core-on-Windows.md
-        - name: macOS ve Linux’ta PowerShell Core yükleme
-          href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
-        - name: Windows PowerShell ISE’de erişilebilirlik
-          href: setup/accessibility-in-windows-powershell-ise.md
-        - name: Windows PowerShell 2.0 Altyapısını Yükleme
-          href: setup/installing-the-windows-powershell-2.0-engine.md
-        - name: Windows PowerShell SDK’sını Yükleme
-          href: setup/installing-the-windows-powershell-sdk.md
-        - name: Windows PowerShell Yükleme
-          href: setup/installing-windows-powershell.md
-        - name: PS uzaktan iletişim ikinci atlama
-          href: setup/ps-remoting-second-hop.md
-        - name: Kurulum başvurusu
-          href: setup/setup-reference.md
-        - name: Windows PowerShell 32 Bit Sürümünü Başlatma
-          href: setup/starting-the-32-bit-version-of-windows-powershell.md
-        - name: Windows PowerShell 2.0 Altyapısını Başlatma
-          href: setup/starting-the-windows-powershell-2.0-engine.md
-        - name: Windows Powershell Başlatma
-          href: setup/starting-windows-powershell.md
-        - name: Önceki Windows Sürümlerinde Windows PowerShell’i Başlatma
-          href: setup/starting-windows-powershell-on-earlier-versions-of-windows.md
-        - name: Windows PowerShell Sistem Gereksinimleri
-          href: setup/windows-powershell-system-requirements.md
-        - name: WinRMSecurity
-          href: setup/winrmsecurity.md
     - name: Yenilikler
       href: ''
       items:
@@ -251,5 +160,77 @@
           href: whats-new/what-s-new-in-powershell-core-60.md
     - name: PowerShell Core Destek Yaşam Döngüsü
       href: PowerShell-Core-Support.md
-    - name: Sözlük
-      href: windows-powershell-glossary.md
+    - name: Daha fazla bilgi
+      href: ''
+      items:
+        - name: PowerShell hakkında daha fazla şey
+          href: getting-started/more-powershell-learning.md
+        - name: Sözlük
+          href: windows-powershell-glossary.md
+- name: Örnek betikler
+  href: getting-started/fundamental/using-windows-powershell-for-administration.md
+  items:
+    - name: Bilgisayar Durumunu Değiştirme
+      href: getting-started/cookbooks/changing-computer-state.md
+    - name: Bilgisayarlar Hakkında Bilgi Toplama
+      href: getting-started/cookbooks/collecting-information-about-computers.md
+    - name: .NET ve COM Nesneleri Oluşturma - New-Object
+      href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
+    - name: Özel bir Giriş Kutusu Oluşturma
+      href: getting-started/cookbooks/creating-a-custom-input-box.md
+    - name: Grafik Tarih Seçici Oluşturma
+      href: getting-started/cookbooks/creating-a-graphical-date-picker.md
+    - name: WMI Nesnelerini Alma - Get WmiObject
+      href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
+    - name: Geçerli Konumu Yönetme
+      href: getting-started/cookbooks/managing-current-location.md
+    - name: İşlem Cmdlet’leri ile İşlemleri Yönetme
+      href: getting-started/cookbooks/managing-processes-with-process-cmdlets.md
+    - name: Hizmetleri Yönetme
+      href: getting-started/cookbooks/managing-services.md
+    - name: Windows PowerShell Sürücülerini Yönetme
+      href: getting-started/cookbooks/managing-windows-powershell-drives.md
+    - name: Öğeleri Doğrudan İşleme
+      href: getting-started/cookbooks/manipulating-items-directly.md
+    - name: Birden Çok Seçim Liste Kutusu
+      href: getting-started/cookbooks/multiple-selection-list-boxes.md
+    - name: Diğer Kullanışlı Betik Oluşturma Nesneleri
+      href: getting-started/cookbooks/other-useful-scripting-objects.md
+    - name: Ağ Görevleri Gerçekleştirme
+      href: getting-started/cookbooks/performing-networking-tasks.md
+    - name: Out Cmdlet’leri ile Verileri Yeniden Yönlendirme
+      href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
+    - name: Komut Zincirinden Nesne Kaldırma - Where-Object
+      href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
+    - name: Birden Çok Nesne için bir Görevi Tekrarlama - ForEach-Object
+      href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
+    - name: Bir Liste Kutusundan Öğe Seçme
+      href: getting-started/cookbooks/selecting-items-from-a-list-box.md
+    - name: Nesne Bölümleri Seçme - Select-Object
+      href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
+    - name: Nesne Sıralama
+      href: getting-started/cookbooks/sorting-objects.md
+    - name: Çıkış Görünümünü Değiştirmek İçin Biçimlendirme Komutları Kullanma
+      href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
+    - name: Statik Sınıflar ve Yöntemler Kullanma
+      href: getting-started/cookbooks/using-static-classes-and-methods.md
+    - name: Nesne Yapısını Görüntüleme - Get-Member
+      href: getting-started/cookbooks/viewing-object-structure--get-member-.md
+    - name: Dosya ve Klasörlerle Çalışma
+      href: getting-started/cookbooks/working-with-files-and-folders.md
+    - name: 'Dosya, Klasör ve Kayıt Defteri Anahtarları ile Çalışma'
+      href: getting-started/cookbooks/working-with-files-folders-and-registry-keys.md
+    - name: Nesneler ile Çalışma
+      href: getting-started/cookbooks/working-with-objects.md
+    - name: Yazıcılar ile Çalışma
+      href: getting-started/cookbooks/working-with-printers.md
+    - name: Kayıt Defteri Girdileri ile Çalışma
+      href: getting-started/cookbooks/working-with-registry-entries.md
+    - name: Kayıt Defteri Anahtarları ile Çalışma
+      href: getting-started/cookbooks/working-with-registry-keys.md
+    - name: Yazılım Yüklemeleri ile Çalışma
+      href: getting-started/cookbooks/working-with-software-installations.md
+    - name: Ek 1 Uyumluluk Takma Adları
+      href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
+    - name: Ek 2 Özel bir PowerShell Kısayolu Oluşturma
+      href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
