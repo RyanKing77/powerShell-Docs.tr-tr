@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell ISE nesne modeli başvurusu"
+title: "Windows PowerShell ISE Nesne Modeli Başvurusu"
 ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
 ms.openlocfilehash: 624ddca3895ba3e24bf52a27babdb07e8714baae
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="windows-powershell-ise-object-model-reference"></a>Windows PowerShell ISE nesne modeli başvurusu
+# <a name="windows-powershell-ise-object-model-reference"></a>Windows PowerShell ISE Nesne Modeli Başvurusu
   
 ## <a name="object-model-reference"></a>Nesne Modeli Başvurusu
  Bu bölüm, çeşitli nesneleri inWindows PowerShell® Tümleşik komut dosyası ortamı (ISE) tanımlayan temel sınıflar üzerinde bir başvuru sağlar. Kendi hiyerarşilerinde düzenlenmiş nesneleri görmek için bkz: [işe nesne modeli hiyerarşisi](The-ISE-Object-Model-Hierarchy.md).

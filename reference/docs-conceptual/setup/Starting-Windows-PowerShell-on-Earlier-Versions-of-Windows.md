@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
-title: "Windows'un önceki sürümlerinde Windows PowerShell'i başlatma"
+title: "Önceki Windows Sürümlerinde Windows PowerShell’i Başlatma"
 ms.assetid: 57125436-3d1e-4e7f-b5c4-8f0ecb49d642
 ms.openlocfilehash: 52e3acc1fd3009ecad3b7134008e38d4edfb5ca7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="starting-windows-powershell-on-earlier-versions-of-windows"></a>Windows'un önceki sürümlerinde Windows PowerShell'i başlatma
+# <a name="starting-windows-powershell-on-earlier-versions-of-windows"></a>Önceki Windows Sürümlerinde Windows PowerShell’i Başlatma
 Bu bölümde, Windows PowerShell ve Windows PowerShell Tümleşik komut dosyası ortamı (ISE) Windows® 7, Windows Server® 2008 R2 ve Windows Server® 2008 Başlat açıklanmaktadır. Ayrıca, isteğe bağlı Windows PowerShell ISE Windows PowerShell 2.0 Windows Server® 2008 R2 ve Windows Server® 2008 için nasıl etkinleştirileceğini açıklar.
 
 Desteklenen sistemlerinde Windows PowerShell 4.0 sürümünü yüklemek için karşıdan yükleyip kurun [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881). Daha fazla bilgi için bkz: [Windows PowerShell'i yükleme](Installing-Windows-PowerShell.md).

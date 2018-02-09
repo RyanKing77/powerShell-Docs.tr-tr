@@ -1,13 +1,13 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell 32 Bit sürümü başlatılıyor"
+title: "Windows PowerShell 32 Bit Sürümünü Başlatma"
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
 ms.openlocfilehash: d682ce45ebc92cda3a9008ab608bacf9ef8eba57
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="starting-the-32-bit-version-of-windows-powershell"></a>Windows PowerShell 32-Bit sürümünü başlatılıyor
 64-bit bir bilgisayarda, Windows PowerShell yüklediğinizde **Windows PowerShell (x86)**, Windows PowerShell 32-bit sürümünü yanı sıra 64-bit sürümü yüklü. Windows PowerShell çalıştırdığınızda, varsayılan olarak 64-bit sürümünü çalıştırır.
@@ -16,7 +16,7 @@ Ancak, bazen çalıştırmanız gerekebilir **Windows PowerShell (x86)**gibi bir
 
 Windows PowerShell 32-bit sürümünü başlatmak için aşağıdaki yordamlardan birini kullanın.
 
-#### <a name="in-windows-server-2012-r2"></a>Windows Server® 2012 R2'de
+#### <a name="in-windows-server-2012-r2"></a>In Windows Server® 2012 R2
 
 - Üzerinde **Başlat** ekranında, yazın **Windows PowerShell (x86)**. Tıklatın **Windows PowerShell x86** döşeme.
 
@@ -26,7 +26,7 @@ Windows PowerShell 32-bit sürümünü başlatmak için aşağıdaki yordamlarda
 
 - Komut satırı girin:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### <a name="in-windows-server-2012"></a>Windows Server® 2012
+#### <a name="in-windows-server-2012"></a>In Windows Server® 2012
 
 - Üzerinde **Başlat** ekranında, yazın **PowerShell** ve ardından **Windows PowerShell (x86)**.
 
@@ -36,7 +36,7 @@ Windows PowerShell 32-bit sürümünü başlatmak için aşağıdaki yordamlarda
 
 - Komut satırı girin:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### <a name="in-windows-81"></a>Windows® 8.1
+#### <a name="in-windows-81"></a>In Windows® 8.1
 
 - Üzerinde **Başlat** ekranında, yazın **Windows PowerShell (x86)**. Tıklatın **Windows PowerShell x86** döşeme.
 
@@ -46,7 +46,7 @@ Windows PowerShell 32-bit sürümünü başlatmak için aşağıdaki yordamlarda
    
 - Komut satırı girin:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### <a name="in-windows-8"></a>Windows® 8
+#### <a name="in-windows-8"></a>In Windows® 8
 
 - Üzerinde **Başlat** ekranında, imleci için sağ üst köşesindeki taşıma, tıklatın **ayarları**, tıklatın **döşeme**ve ardından taşıma **Yönetimsel Araçları Göster** kaydırıcı Evet. Ardından, yazın **PowerShell** tıklatıp **Windows PowerShell (x86)**.
 

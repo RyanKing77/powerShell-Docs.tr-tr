@@ -1,14 +1,14 @@
 ---
 ms.date: 2017-08-09
 keywords: "PowerShell cmdlet, indirme, yükleme, Kurulum, windows 10, windows 8.1, windows 8.0, windows 7"
-title: "Windows PowerShell'i yükleme"
-ms.openlocfilehash: 781bf50b6ac649e72bcdbb708555275fb7422d94
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: "Windows PowerShell Yükleme"
+ms.openlocfilehash: ec8f09087a5c5f2e7ea6237faa01ea3f447ad1f3
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/09/2018
 ---
-# <a name="installing-windows-powershell"></a>Windows PowerShell'i yükleme
+# <a name="installing-windows-powershell"></a>Windows PowerShell Yükleme
 
 PowerShell Windows 7 SP1 ve Windows Server 2008 R2 SP1 ile başlayarak, her Windows varsayılan olarak yüklenmiş olarak gelir.
 
@@ -17,7 +17,7 @@ Yüklemek istediğiniz Linux, macOS ve Windows kullanıcıları **PowerShell 6**
 1. PowerShell belirli işletim sistemi ve sürümü için almanız [GitHub](https://github.com/powershell/powershell#get-powershell)
 1. Yükleme yönergelerini izleyin
   - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012)
+  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md)
   - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
 
 Ayrıca, Docker için PowerShell 6 kullanılabilir; bkz: [Docker yükleme](https://github.com/PowerShell/PowerShell/tree/master/docker) yönergeler.

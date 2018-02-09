@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell hakkında"
+title: "Windows PowerShell Hakkında"
 ms.assetid: 979654ae-7994-47f8-be43-d79e7a140143
 ms.openlocfilehash: 5e6d1bb4d8915ba3c83ba0020b959e444b5211cd
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="about-windows-powershell"></a>Windows PowerShell hakkında
+# <a name="about-windows-powershell"></a>Windows PowerShell Hakkında
 Windows PowerShell komut satırı ve komut dosyası ortamı artırmanın uzun süredir bilinen sorunlar ortadan kaldırılır ve yeni özellikler ekleyerek iyileştirmek için tasarlanmıştır.
 
 ## <a name="discoverability"></a>Bulunabilirliği

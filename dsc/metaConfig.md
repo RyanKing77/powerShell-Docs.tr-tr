@@ -3,11 +3,11 @@ ms.date: 2017-10-11
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "Yerel Yapılandırma Yöneticisi'ni yapılandırma"
-ms.openlocfilehash: 81434b57e453ba7b64cc32dffdf309da16ef8882
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b8e0749cf2f67e395e9fd8eaf9cde33b97c0cb67
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Yerel Yapılandırma Yöneticisi'ni yapılandırma
 
@@ -25,8 +25,8 @@ DSC, aşağıdakiler de dahil olmak üzere diğer yönlerini sayısı için soru
 Bu davranışların her biri belirtmek için LCM'yi yapılandırmak için yapılandırma özel bir tür kullanın.
 Aşağıdaki bölümlerde LCM'yi yapılandırma açıklanmaktadır.
 
-> **Not**: Bu konu, Windows PowerShell 5. 0 ' sunulan LCM'yi için geçerlidir.
-Windows PowerShell 4. 0 ' LCM'yi yapılandırma hakkında daha fazla bilgi için bkz: [Windows PowerShell 4.0 istenen durum yapılandırması yerel Configuration Manager](metaconfig4.md).
+Windows PowerShell 5.0, yerel Configuration Manager'ı yönetmek için yeni ayarları kullanıma sunuldu.
+Windows PowerShell 4. 0 ' LCM'yi yapılandırma hakkında daha fazla bilgi için bkz: [önceki sürümleri, Windows PowerShell'de yerel Configuration Manager Yapılandırma](metaconfig4.md).
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>Yazma ve LCM'yi yapılandırma ederek ilerlemesini kabul ederek
 
@@ -90,38 +90,13 @@ Aşağıdaki özellikler kullanılabilir olan bir **ayarları** bloğu.
 
 ## <a name="pull-service"></a>Çekme Hizmeti
 
-DSC ayarlar, yapılandırmaları ve modülleri çekme ve raporlama verilerini uzak bir konuma yayımlama tarafından yönetilmek üzere bir düğümü sağlar.
-Çekme Hizmeti için geçerli seçenekler şunlardır:
-
-- Azure Otomasyonu istenen durum Yapılandırma hizmeti
-- Windows Server'da çalışan bir çekme hizmet örneği
-- (Raporlama verilerini yayımlama desteklemez) bir SMB paylaşımı
-
 LCM'yi yapılandırma çekme hizmet uç noktaları aşağıdaki türlerini tanımlama destekler:
 
 - **Yapılandırma sunucusu**: DSC yapılandırmaları için depo. Kullanarak yapılandırma sunucularına tanımlayın **ConfigurationRepositoryWeb** (için web tabanlı sunucular) ve **ConfigurationRepositoryShare** (için SMB tabanlı sunucular) engeller.
 - **Kaynak sunucuda**: PowerShell modülleri paketlenmiş DSC kaynakları için depo. Kaynak sunucuları kullanarak tanımlayın **ResourceRepositoryWeb** (için web tabanlı sunucular) ve **ResourceRepositoryShare** (için SMB tabanlı sunucular) engeller.
 - **Rapor sunucusu**: DSC rapor veri gönderen bir hizmet. Rapor sunucusu kullanarak tanımlayın **ReportServerWeb** engeller. Bir rapor sunucusu web hizmeti olması gerekir.
 
-**Önerilen Çözüm**, ve en çok kullanılabilir olan özellikleri seçeneğiyle [Azure Otomasyonu DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started).
-
-Azure hizmet düğümleri şirket içi özel veri merkezleri veya genel Bulutlar Azure ve AWS gibi yönetebilirsiniz.
-Burada sunucuları doğrudan bağlanamıyor Internet'e özel ortamları için yalnızca yayımlanan Azure IP aralığına giden trafiği kullanabilirsiniz (bkz [Azure veri merkezi IP aralıkları](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
-
-Şu anda Windows Server'da çekme Hizmet kullanılamıyor çevrimiçi hizmet özelliklerini içerir:
-- Yoldaki ve bekleyen tüm veriler şifrelenir
-- İstemci sertifikalarını oluşturulur ve otomatik olarak yönetilir
-- Parolaları depolamak merkezi olarak yönetmek için [parolaları/kimlik bilgilerinin](https://docs.microsoft.com/en-us/azure/automation/automation-credentials), veya [değişkenleri](https://docs.microsoft.com/en-us/azure/automation/automation-variables) sunucu adlarını veya bağlantı dizeleri gibi
-- Düğüm merkezi olarak yönetmenize [LCM'yi yapılandırma](metaConfig.md#basic-settings)
-- Merkezi olarak istemci düğümlerine yapılandırmalar atama
-- Üretim ulaşmadan önce test etmek için "yalancı gruplarına" yayın yapılandırma değişiklikleri
-- Grafik raporlama
-  - Ayrıntı düzeyi DSC kaynağı düzeyinde durumu ayrıntısı
-  - Sorun giderme için istemci makinelerden ayrıntılı hata iletileri
-- [Azure günlük analizi ile tümleştirme](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics) , otomatik görevler, raporlama ve Uyarılar için Android/iOS uygulaması uyarı verme
-
-Alternatif olarak, ayarlama ve Windows Server'da HTTP çekme hizmeti kullanma hakkında daha fazla bilgi için bkz: [bir DSC çekme sunucusu kurma](pullServer.md).
-Lütfen bu yapılandırmaları/modülleri depolama ve yerel bir veritabanı için rapor verileri yakalama sınırlı bir uygulama yalnızca temel özellikleri ile olduğunu dikkat edin.
+Çekme hizmeti hakkında daha fazla ayrıntı görmek için [istenen durum yapılandırması çekme hizmeti](pullServer.md).
 
 ## <a name="configuration-server-blocks"></a>Yapılandırma sunucusu blokları
 
