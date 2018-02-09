@@ -108,7 +108,7 @@
 
 # DSC çekme modeli
 
-## [Web çekme sunucusu ayarlama](pullServer.md)
+## [DSC Çekme Hizmeti](pullServer.md)
 
 ## [DSC SMB çekme sunucusu ayarlama](pullServerSMB.md)
 
