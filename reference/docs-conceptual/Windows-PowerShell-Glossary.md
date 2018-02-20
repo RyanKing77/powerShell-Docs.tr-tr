@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell sözlüğü"
+title: Windows PowerShell Glossary
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
-ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
+ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 02/19/2018
 ---
-# <a name="windows-powershell-glossary"></a>Windows PowerShell sözlüğü
+# <a name="windows-powershell-glossary"></a>Windows PowerShell Glossary
 
 
 |Terim|Açıklama|
@@ -24,7 +24,7 @@ ms.lasthandoff: 08/08/2017
 |ana bilgisayar|Windows PowerShell altyapısında kullanıcıyla iletişim kurmak için kullandığı arabirimi. Örneğin, ana bilgisayar Windows PowerShell ve kullanıcı istemleri nasıl işleneceğini belirtir.|
 |ana bilgisayar uygulaması|Windows PowerShell altyapısı kendi sürecine yükler ve işlemleri gerçekleştirmek için kullandığı bir programdır.|
 |Giriş işleme yöntemi|Bir cmdlet kayıtlarını işlemek için kullanabileceğiniz bir yöntem giriş olarak alır. Giriş işleme yöntemleri BeginProcessing yöntemi, ProcessRecord yöntemi, EndProcessing yöntemi ve StopProcessing yöntemi içerir.|
-|Modül bildirim|Bir bildirime sahip ve ModulesToProcess anahtar boş bir Windows PowerShell modülü.|
+|Modül bildirim|Bir bildirime sahip ve RootModule anahtar boş bir Windows PowerShell modülü.|
 |Modül bildirimi|Bir modül içeriğini açıklayan ve bir modül nasıl işleneceğini denetleyen bir Windows PowerShell veri dosyası (.psd1).|
 |Modül oturum durumu|Bir Windows PowerShell modülünün genel ve özel verileri içeren oturum durumu. Bu oturum durumu özel verileri bir Windows PowerShell oturumu kullanıcıya kullanılabilir değil.|
 |Sonlandırıcı olmayan hata|Windows PowerShell komutu işlemeye devam etmesini durdurmaz bir hata oluştu.|
@@ -33,7 +33,7 @@ ms.lasthandoff: 08/08/2017
 |Kanal|Yukarıdaki komut sonuçlarını ardışık düzende sonraki komut için giriş olarak göndermek için Windows PowerShell'de.|
 |Ardışık Düzen|Bir dizi ardışık düzen işleçleri (&#124;) bağlı komutu (ASCII 124). Her ardışık düzen işleci yukarıdaki komut sonuçlarını sonraki komut için giriş olarak gönderir.|
 |PSSession|Oluşturulan, yönetilen ve kullanıcı tarafından kapatılan Windows PowerShell oturumu türü.|
-|kök Modülü|Bir modül bildirimi ModuleToProcess anahtarında belirtilen modül.|
+|kök Modülü|Bir modül bildirimi RootModule anahtarında belirtilen modül.|
 |Çalışma alanı|Windows PowerShell'de her komut ardışık düzeninde yürütüldüğü işletim sistemi ortamında.|
 |betik bloğu|Windows PowerShell'de programlama dili, bir koleksiyonu deyimleri veya tek bir birim olarak kullanılan ifadeler. Bir betik bloğu bağımsız değişkenlerini kabul eder ve dönüş değerleri.|
 |komut satırı Modülü|Windows PowerShell modülünü betik modül dosyası (.psm1), kök modülüdür. Betik modülündeki olabilir veya bir modül bildirimi içermeyebilir.|
