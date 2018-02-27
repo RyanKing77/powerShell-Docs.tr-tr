@@ -52,7 +52,7 @@ Başkalarının yalnızca yok veya PowerShell çekirdek Windows olmayan yükleme
 - Yoksay `-ExecutionPolicy` PowerShell komut dosyası imzalama şu anda desteklenmediğinden olmayan Windows platformlarında çalıştırırken geçin. (#3481)
 - Vermenizin ConsoleHost sabit `NoEcho` UNIX platformlarda. (#3801)
 - Sabit `Get-Help` UNIX platformlarında büyük küçük harfe duyarlı desen eşleştirme desteklemek için. (#3852)
-- `powershell`Pakete eklenen adam sayfası
+- `powershell` Pakete eklenen adam sayfası
 
 ### <a name="logging"></a>Günlük
 
@@ -65,14 +65,14 @@ Değişiklik sayısı macOS ve Linux üzerinde Windows olmayan geleneksel olarak
 
 - Cmdlet'leri için verilen şimdi eğik çizgi belirsiz yollardır (hem / ve \ dizin ayırıcı olarak çalışır)
 - XDG temel dizin belirtimi dikkate ve varsayılan olarak kullanılabilir:
-  - Linux/macOS profil yolu bulunur`~/.config/powershell/profile.ps1`
-  - Geçmiş kaydetme yolu bulunur`~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
-  - Kullanıcı modülü yolu bulunur`~/.local/share/powershell/Modules`
+  - Linux/macOS profil yolu bulunur `~/.config/powershell/profile.ps1`
+  - Geçmiş kaydetme yolu bulunur `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
+  - Kullanıcı modülü yolu bulunur `~/.local/share/powershell/Modules`
 - UNIX iki nokta üst üste karakteri içeren dosya ve klasör adları için destek. (#4959)
 - Komut dosyası adları veya virgül sahip tam yollar için destek. (#4136) (Teşekkürler @TimCurwick!)
 - Algılama `-LiteralPath` Gezinti cmdlet'leri için joker karakter genişletmesi bastırmak için kullanılır. (#5038)
 - Güncelleştirilmiş `Get-ChildItem` daha fazla benzer çalışmaya * nix `ls -R` ve Windows `DIR /S` yerel komutları.
-  `Get-ChildItem`Şimdi bir özyinelemeli arama sırasında karşılaşılan sembolik bağlantılar döndürür ve dizinleri aramaz, bu bağlantılar hedef. (#3780)
+  `Get-ChildItem` Şimdi bir özyinelemeli arama sırasında karşılaşılan sembolik bağlantılar döndürür ve dizinleri aramaz, bu bağlantılar hedef. (#3780)
 
 ### <a name="case-sensitivity"></a>Büyük/küçük harfe duyarlılık
 
@@ -93,11 +93,11 @@ Komut dosyaları için gereksinim duydukları belirli sürümler sabitlenmiş ol
 > Varsayılan olarak, Windows Installer MSI tabanlı bir yerinde güncelleştirme yüklemesini desteklemez.
 >
 
-## <a name="renamed-powershellexe-to-pwshexe"></a>Yeniden adlandırılmış `powershell(.exe)` için`pwsh(.exe)`
+## <a name="renamed-powershellexe-to-pwshexe"></a>Yeniden adlandırılmış `powershell(.exe)` için `pwsh(.exe)`
 
 PowerShell çekirdek için ikili dosya adı değiştirildi `powershell(.exe)` için `pwsh(.exe)`.
 Bu değişiklik yan yana Windows PowerShell ve PowerShell çekirdeği yüklemelerini desteklemek için PowerShell çekirdek makineler üzerinde çalıştırılacak kullanıcılar belirleyici bir yol sağlar.
-`pwsh`de çok daha kısa ve yazın daha kolay olur.
+`pwsh` de çok daha kısa ve yazın daha kolay olur.
 
 Ek değişiklikler `pwsh(.exe)` gelen `powershell.exe`:
 
@@ -210,7 +210,7 @@ PowerShell işleri hakkında daha fazla bilgi için bkz: [about_Jobs](https://ms
 ## <a name="language-updates"></a>Dil güncelleştirmeleri
 
 - Kullanıcıların Unicode karakterler bağımsız değişkenleri, dize veya değişken adları kullanabilmesi için ayrıştırma Unicode kaçış uygulayın. (#3958) (Teşekkürler @rkeithhill!)
-- Eklenen yeni kaçış karakteri ESC için:`` `e``
+- Eklenen yeni kaçış karakteri ESC için: `` `e``
 - Numaralandırmalar (#4318) dize dönüştürmek için destek eklenmiştir (teşekkürler @KirkMunro)
 - Bir genel koleksiyon tek öğe diziye atama sabit. (#3170)
 - Eklenen karakter aralığı aşırı yüklemesine `..` işleci, bu nedenle `'a'..'z'` 'z' 'a ' karakteri döndürür. (#5026) (Thanks @IISResetMe!)
@@ -220,11 +220,11 @@ PowerShell işleri hakkında daha fazla bilgi için bkz: [about_Jobs](https://ms
 
 ## <a name="engine-updates"></a>Altyapı güncelleştirmeleri
 
-- `$PSVersionTable`dört yeni özelliklere sahiptir:
+- `$PSVersionTable` dört yeni özelliklere sahiptir:
   - `PSEdition`: Bu ayar `Core` PowerShell çekirdeği üzerinde ve `Desktop` , Windows PowerShell
   - `GitCommitId`: Bu Git yürütme Git şube veya etiketinin PowerShell burada oluşturulmuş kimliğidir.
     Yayın derlemeleri üzerinde bu büyük olasılıkla aynı olacaktır `PSVersion`.
-  - `OS`: Bu tarafından döndürülen bir işletim sistemi sürüm dizesi değil`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
+  - `OS`: Bu tarafından döndürülen bir işletim sistemi sürüm dizesi değil `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: Bu tarafından döndürülen `[System.Environment]::OSVersion.Platform` ayarlanır `Win32NT` , Windows'da `MacOSX` macOS üzerinde ve `Unix` Linux üzerinde.
 - Kaldırılan `BuildVersion` özelliğinden `$PSVersionTable`.
   Bu özellik, kesin Windows derleme sürüme bağlı.
@@ -302,18 +302,18 @@ PowerShell işleri hakkında daha fazla bilgi için bkz: [about_Jobs](https://ms
 - Ekleme `-Extension` ve `-LeafBase` geçirir `Split-Path` böylece dosya adı uzantısı ve dosya adı geri kalanı arasında yollar bölebilirsiniz. (#2721) (Teşekkürler @powercode!)
 - Parametre ekleme `-Top` ve `-Bottom` için `Sort-Object` üst/alt N sıralama için
 - Bir işlemi üst işlemi ekleyerek kullanıma `CodeProperty "Parent"` için `System.Diagnostics.Process`. (#2850) (Teşekkürler @powercode!)
-- MB yerine KB bellek sütunlar için kullanın.`Get-Process`
+- MB yerine KB bellek sütunlar için kullanın. `Get-Process`
 - Ekleme `-NoNewLine` için geçiş `Out-String`. (#5056) (Thanks @raghav710)
-- `Move-Item`cmdlet geliştirir `-Include`, `-Exclude`, ve `-Filter` parametreleri. (#3878)
+- `Move-Item` cmdlet geliştirir `-Include`, `-Exclude`, ve `-Filter` parametreleri. (#3878)
 - İzin `*` kayıt defteri yolu için kullanılmak üzere `Remove-Item`. (#4866)
 - Ekleme `-Title` için `Get-Credential` ve platformlar arası komut istemi deneyimi birleştirin.
 - Ekleme `-TimeOut` parametresi `Test-Connection`. (#2492)
-- `Get-AuthenticodeSignature`cmdlet'leri şimdi dosya imza zaman damgası elde edebilirsiniz. (#4061)
+- `Get-AuthenticodeSignature` cmdlet'leri şimdi dosya imza zaman damgası elde edebilirsiniz. (#4061)
 - Desteklenmeyen Kaldır `-ShowWindow` geçiş `Get-Help`. (#4903)
 - Düzeltme `Get-Content -Delimiter` sınırlayıcı dizi öğeleri içermeyecek şekilde döndürdü (#3706) (teşekkürler @mklement0)
 - Ekleme `Meta`, `Charset`, ve `Transitional` parametreleri `ConvertTo-HTML` (#4184) (teşekkürler @ergo3114)
 - Ekleme `WindowsUBR` ve `WindowsVersion` özelliklerine `Get-ComputerInfo` sonucu
-- Ekleme `-Group` parametresi`Get-Verb`
+- Ekleme `-Group` parametresi `Get-Verb`
 - Ekleme `ShouldProcess` için destek `New-FileCatalog` ve `Test-FileCatalog` (düzeltmeler `-WhatIf` ve `-Confirm`). (#3074) (Teşekkürler @iSazonov!)
 - Ekleme `-WhatIf` geçiş `Start-Process` cmdlet (#4735) (teşekkürler @sarithsutha)
 - Ekleme `ValidateNotNullOrEmpty` çok fazla mevcut parametre.
@@ -344,8 +344,8 @@ Daha fazla bilgi için bunları hakkında ayrıntılı bkz [PowerShell çekirdek
 ## <a name="filesystem-updates"></a>Dosya sistemi güncelleştirmeleri
 
 - Dosya sistemi Sağlayıcısı'ndan bir UNC yolu kullanımını etkinleştirin. ($4998)
-- `Split-Path`Şimdi UNC kökleri ile çalışır
-- `cd`bağımsız değişkenler olmadan olarak şimdi davranır.`cd ~`
+- `Split-Path` Şimdi UNC kökleri ile çalışır
+- `cd` bağımsız değişkenler olmadan olarak şimdi davranır. `cd ~`
 - 260 karakterden uzun olan yollar kullanımına izin vermek için sabit PowerShell çekirdek. (#3960)
 
 ## <a name="bug-fixes-and-performance-improvements"></a>Hata düzeltmeleri ve performans iyileştirmeleri
@@ -361,8 +361,8 @@ Düzeltme ve değişikliklerin tam listesi için kullanıma bizim [değişim gü
   - işletim sistemi Platformu (`$PSVersionTable.OSDescription`)
   - PowerShell'ün tam sürümünü (`$PSVersionTable.GitCommitId`)
 
-Bu telemetrinin çevirin etmek istiyorsanız, yalnızca silmeniz `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`.
-Bu dosyayı silmeyi bile PowerShell ilk çalıştırmada önce tüm telemetri atlar.
+Bu telemetrinin çevirin etmek istiyorsanız, yalnızca silmeniz `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` veya oluşturma `POWERSHELL_TELEMETRY_OPTOUT` ortam değişkeni aşağıdaki değerlerden biriyle: `true`, `1` veya `yes`.
+Bu dosya silme veya değişkeni oluşturma PowerShell ilk çalıştırmada bile önce tüm telemetri atlar.
 Biz de bu telemetri verilerini ve biz glean telemetri gelen öngörü gösterme üzerinde planlama [topluluk Pano][community-dashboard].
 Biz bu verileri bu kullanma hakkında daha fazla bilgi için [blog gönderisi][telemetry-blog].
 

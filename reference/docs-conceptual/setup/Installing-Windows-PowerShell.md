@@ -2,25 +2,16 @@
 ms.date: 2017-08-09
 keywords: "PowerShell cmdlet, indirme, yükleme, Kurulum, windows 10, windows 8.1, windows 8.0, windows 7"
 title: "Windows PowerShell Yükleme"
-ms.openlocfilehash: ec8f09087a5c5f2e7ea6237faa01ea3f447ad1f3
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell Yükleme
+Windows PowerShell, Windows 7 SP1 ve Windows Server 2008 R2 SP1 ile başlayarak, her Windows varsayılan olarak yüklü gelir.
 
-PowerShell Windows 7 SP1 ve Windows Server 2008 R2 SP1 ile başlayarak, her Windows varsayılan olarak yüklenmiş olarak gelir.
-
-Yüklemek istediğiniz Linux, macOS ve Windows kullanıcıları **PowerShell 6** (beta), kendi makinelerine içinde gerekir:
-
-1. PowerShell belirli işletim sistemi ve sürümü için almanız [GitHub](https://github.com/powershell/powershell#get-powershell)
-1. Yükleme yönergelerini izleyin
-  - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md)
-  - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
-
-Ayrıca, Docker için PowerShell 6 kullanılabilir; bkz: [Docker yükleme](https://github.com/PowerShell/PowerShell/tree/master/docker) yönergeler.
+PowerShell 6 ve üzeri ilgileniyorsanız, Windows PowerShell yerine PowerShell çekirdek yüklemeniz gerekir. Bunun için bkz: [Windows PowerShell Çekirdeğinde yükleme](Installing-PowerShell-Core-on-Windows.md).
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>PowerShell Windows 10 ve 8.1, 8.0 ve 7 bulma
 
@@ -65,7 +56,7 @@ Yukarıdaki kuralın tek özel durum, Windows Server 2008 R2 SP1 işe olan; Bu d
 
 ## <a name="how-to-check-the-version-of-powershell"></a>PowerShell sürümü denetleme
 
-PowerShell hangi sürümünün yüklü olduğunu bulmak için bir PowerShell konsolunda (veya ISE) başlatın ve türü `$PSVersionTable` ve basın **ENTER**.
+PowerShell hangi sürümünün yüklü olduğunu bulmak için bir PowerShell konsolunda (veya ISE) başlatın ve türü `$PSVersionTable` ve basın **ENTER**. Ara `PSVersion` değeri.
 
 ## <a name="upgrading-existing-windows-powershell"></a>Mevcut Windows PowerShell yükseltme
 
