@@ -1,14 +1,14 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell ISE betiklerde hata ayıklama"
-ms.openlocfilehash: 0ec520dfcba5e4562258256570f140e618e77cdb
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: "Windows PowerShell ISE’de Betiklerde Hata Ayıklama"
+ms.openlocfilehash: d37fb6cdcd5782cf8eff89c2b124b7c81fdaca71
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Windows PowerShell ISE betiklerde hata ayıklama
+# <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Windows PowerShell ISE’de Betiklerde Hata Ayıklama
 
 Bu konu, Windows PowerShell Tümleşik komut dosyası ortamı (ISE) visual hata ayıklama özelliklerini kullanarak komut dosyalarını yerel bir bilgisayarda hata ayıklama açıklar.
 
@@ -42,7 +42,7 @@ Tüm kesme noktaları geçerli Windows PowerShell oturumunda görüntüler.
 Üzerinde **hata ayıklama** menüsünde tıklatın **listesi kesme noktaları**. Aşağıdaki komut dosyası kullanarak Konsol bölmesinde tüm kesme noktalarını nasıl listeleyebilirsiniz bir örnektir [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet'i.
 
 ``` PowerShell
-# This command lists all breakpoints in the current session. 
+# This command lists all breakpoints in the current session.
 Get-PSBreakpoint
 ```
 
@@ -82,7 +82,7 @@ Disable-PSBreakpoint -Id 0
 Bir kesme noktası devre dışı bırakma kaldırmaz; etkinleştirilene kadar bu kapanır.  Üzerinde geçerli oturumdaki tüm kesme noktaları devre dışı bırakmak için **hata ayıklama** menüsünde tıklatın **tüm kesme noktaları devre dışı**. Aşağıdaki betik nasıl, konsol bölmesinde tüm kesme noktalarını kullanarak devre dışı bırakabilirsiniz, bir örnek verilmiştir [devre dışı bırakma PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet'i.
 
 ``` PowerShell
-# This command disables all breakpoints in the current session. 
+# This command disables all breakpoints in the current session.
 # You can abbreviate this command as: "gbp | dbp".
 Get-PSBreakpoint | Disable-PSBreakpoint
 ```
@@ -99,13 +99,13 @@ Enable-PSBreakpoint -Id 0, 1, 5
 Geçerli oturumdaki tanımlanan tüm kesme noktaları etkinleştirmek için **hata ayıklama** menüsünde tıklatın **tüm kesme noktalarını etkinleştir**. Aşağıdaki komut dosyası kullanarak Konsol bölmesinde tüm kesme noktalarını nasıl etkinleştirebilirsiniz bir örnektir [etkinleştir PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet'i.
 
 ``` PowerShell
-# This command enables all breakpoints in the current session. 
+# This command enables all breakpoints in the current session.
 # You can abbreviate the command by using their aliases: "gbp | ebp".
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="how-to-manage-a-debugging-session"></a>Hata ayıklama oturumu yönetme
-Hata ayıklama başlamadan önce bir veya daha fazla kesme noktaları ayarlamanız gerekir. Hata ayıklamak istediğiniz komut dosyasını kaydettiğiniz sürece bir kesme noktası ayarlanamıyor. Yönleri üzerinde bir kesme noktası ayarlama için bkz: [kesme noktaları yönetme](#how-to-manage-breakpoints) veya [kümesi PSBreakpoint](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-psbreakpoint). Hata ayıklama başlattıktan sonra bir komut dosyası hata ayıklamayı durdurun kadar düzenleyemezsiniz. Bunu çalıştırılmadan önce ayarlanmış bir veya daha fazla kesme noktaları olan bir komut dosyası otomatik olarak kaydedilir.
+Hata ayıklama başlamadan önce bir veya daha fazla kesme noktaları ayarlamanız gerekir. Hata ayıklamak istediğiniz komut dosyasını kaydettiğiniz sürece bir kesme noktası ayarlanamıyor. Yönleri üzerinde bir kesme noktası ayarlama için bkz: [kesme noktaları yönetme](#how-to-manage-breakpoints) veya [kümesi PSBreakpoint](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint). Hata ayıklama başlattıktan sonra bir komut dosyası hata ayıklamayı durdurun kadar düzenleyemezsiniz. Bunu çalıştırılmadan önce ayarlanmış bir veya daha fazla kesme noktaları olan bir komut dosyası otomatik olarak kaydedilir.
 
 ### <a name="to-start-debugging"></a>Hata ayıklama başlatılamıyor
 Tuşuna **F5** veya araç çubuğunda tıklatın **komut dosyasını Çalıştır** simge veya **hata ayıklama** menüsünü tıklatın **Çalıştır/devam**. İlk kesme bulduğu kadar komut dosyasını çalıştırır. İşlemi ortada duraklatır ve üzerinde duraklatıldı satır vurgular.
@@ -174,5 +174,4 @@ C:\ps-test\MyScript.ps1
 ```
 
 ## <a name="see-also"></a>Ayrıca bkz:
-- [Windows PowerShell ISE kullanma](Using-the-Windows-PowerShell-ISE.md)
-
+- [Windows PowerShell ISE’yi Keşfetme](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

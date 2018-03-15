@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
 title: "Uzak Komut Çalıştırma"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
-ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
+ms.openlocfilehash: 24648e8f35fbc28c9ba9f9b7176ac23e72ffbe78
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="running-remote-commands"></a>Uzak Komut Çalıştırma
 
@@ -28,14 +28,14 @@ Birçok Windows PowerShell cmdlet'leri veri toplamak ve bir veya daha fazla uzak
 
 Şu cmdlet'leri içerir:
 
-* [Bilgisayarı yeniden Başlat](https://go.microsoft.com/fwlink/?LinkId=821625)
+* [Restart-Computer](https://go.microsoft.com/fwlink/?LinkId=821625)
 * [Bağlantıyı Sına](https://go.microsoft.com/fwlink/?LinkId=821646)
-* [Olay günlüğünü Temizle](https://go.microsoft.com/fwlink/?LinkId=821568)
-* [Get-olay günlüğü](https://go.microsoft.com/fwlink/?LinkId=821585)
-* [Get-düzeltme](https://go.microsoft.com/fwlink/?LinkId=821586)
+* [Clear-EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
+* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
+* [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
 * [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
 * [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
-* [Hizmet belirleme](https://go.microsoft.com/fwlink/?LinkId=821633)
+* [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
 * [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
 * [Get-WmiObject](https://go.microsoft.com/fwlink/?LinkId=821595)
 
@@ -48,9 +48,9 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 ## <a name="windows-powershell-remoting"></a>Windows PowerShell uzaktan iletişim
 Bir veya daha çok uzak bilgisayarlarda herhangi bir Windows PowerShell komutunu çalıştırın WS-Management protokolü kullanır, Windows PowerShell uzaktan iletişim sağlar. Kalıcı bağlantılar kurmak, 1:1 etkileşimli oturumlarını başlatmak ve komut dosyaları birden çok bilgisayarda çalışacak olanak sağlar.
 
-Windows PowerShell uzaktan iletişim kullanmak için uzak bilgisayara uzaktan yönetim için yapılandırılmalıdır. Yönergeleri dahil daha fazla bilgi için bkz: [hakkında uzaktan gereksinimleri](https://technet.microsoft.com/en-us/library/dd315349.aspx).
+Windows PowerShell uzaktan iletişim kullanmak için uzak bilgisayara uzaktan yönetim için yapılandırılmalıdır. Yönergeleri dahil daha fazla bilgi için bkz: [hakkında uzaktan gereksinimleri](https://technet.microsoft.com/library/dd315349.aspx).
 
-Windows PowerShell uzaktan iletişimini yapılandırdıktan sonra birçok remoting strateji size kullanılabilir. Bu belgenin geri kalanında birkaçı bunları listeler. Daha fazla bilgi için bkz: [hakkında uzak](https://technet.microsoft.com/en-us/library/dd347744.aspx) ve [hakkında uzak SSS](https://technet.microsoft.com/en-us/library/dd347744.aspx).
+Windows PowerShell uzaktan iletişimini yapılandırdıktan sonra birçok remoting strateji size kullanılabilir. Bu belgenin geri kalanında birkaçı bunları listeler. Daha fazla bilgi için bkz: [hakkında uzak](https://technet.microsoft.com/library/dd347744.aspx) ve [hakkında uzak SSS](https://technet.microsoft.com/library/dd347744.aspx).
 
 ### <a name="start-an-interactive-session"></a>Etkileşimli oturum Başlat
 Tek bir uzak bilgisayarla bir etkileşimli oturum başlatmak için kullanmak [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) cmdlet'i.
@@ -144,7 +144,7 @@ Remoting hatalarla ilgili Yardım için bkz: [about_Remote_Troubleshooting](http
 - [about_WS Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 - [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
-- [Yeni PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
+- [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [WSMan sağlayıcısı](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 

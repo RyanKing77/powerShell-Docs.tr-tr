@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "İstenen durum yapılandırması PowerShell ile çalışmaya başlama"
-ms.openlocfilehash: 856528f1e52eafa8b2c93b825a60376a0d64cab2
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 04404696bef128805e4f1c191711eaab33cf7e4c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>İstenen durum yapılandırması PowerShell ile çalışmaya başlama #
 
@@ -16,7 +16,7 @@ Bu kılavuz, PowerShell istenen durum yapılandırması belgeleri oluşturmaya b
 
 ## <a name="create-a-configuration"></a>Bir yapılandırma oluşturmak ##
 
-[**Yapılandırmaları** ](https://msdn.microsoft.com/en-us/powershell/dsc/configurations) bir ortam açıklamak belgelerdir. Ortamlar oluşur "**düğümleri**", olan yaygın olarak sanal veya fiziksel makineler. 
+[**Yapılandırmaları** ](https://msdn.microsoft.com/powershell/dsc/configurations) bir ortam açıklamak belgelerdir. Ortamlar oluşur "**düğümleri**", olan yaygın olarak sanal veya fiziksel makineler. 
 
 Yapılandırmaları çeşitli formlarını gelebilir. Yeni bir yapılandırma oluşturmak için en kolay yolu, bir .ps1 (PowerShell) betiği oluşturmaktır. Bunu yapmak için tercih düzenleyicide açın. DSC yerel anladığı beri PowerShell ISE olduğunda iyi bir seçimdir. Aşağıdaki PS1 Kaydet:
 
@@ -44,9 +44,9 @@ Sonraki satıra bir modülü içeri aktarmaya benzer bir içeri aktarma ifadesi 
 
 Bu yapılandırma üzerinde görecek makine adı "Düğümü" tanımlar. Bu yapılandırma yerel olarak düzenlenen rağmen yapılandırmaları uzak düğümlerine ulaşmak ve bunları yapılandırabilirsiniz. 
 
-Düğümler, makine adı veya IP adresleri olabilir. Birden çok düğüm tek yapılandırma belgede olabilir. Kullanarak [yapılandırma verilerini](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), birden çok düğümlerine uygulamak aynı yapılandırmaya sahip olabilir. Bu durumda, "yerel bilgisayarda anlamı localhost" - düğümdür. 
+Düğümler, makine adı veya IP adresleri olabilir. Birden çok düğüm tek yapılandırma belgede olabilir. Kullanarak [yapılandırma verilerini](https://msdn.microsoft.com/powershell/dsc/configdata), birden çok düğümlerine uygulamak aynı yapılandırmaya sahip olabilir. Bu durumda, "yerel bilgisayarda anlamı localhost" - düğümdür. 
 
-Sonraki öğe bir [ **kaynak**](https://msdn.microsoft.com/en-us/powershell/dsc/resources). Kaynaklar, yapılandırmaları yapı taşlarıdır. Her kaynak makinenin tek bir boyut uygulama mantığını tanımlayan bir modüldür. Her kaynak makinenize çalıştırarak görüntüleyebileceğiniz **Get-DscResource** PowerShell'de. Kaynaklar yerel makinede mevcut olması gerekir ve bir yapılandırmasında kullanılmadan önce içeri **alma DscResource** bu yapılandırma ikinci satırda olduğu. 
+Sonraki öğe bir [ **kaynak**](https://msdn.microsoft.com/powershell/dsc/resources). Kaynaklar, yapılandırmaları yapı taşlarıdır. Her kaynak makinenin tek bir boyut uygulama mantığını tanımlayan bir modüldür. Her kaynak makinenize çalıştırarak görüntüleyebileceğiniz **Get-DscResource** PowerShell'de. Kaynaklar yerel makinede mevcut olması gerekir ve bir yapılandırmasında kullanılmadan önce içeri **alma DscResource** bu yapılandırma ikinci satırda olduğu. 
 
 **Bir yapılandırma ederek ilerlemesini kabul ederek**
 

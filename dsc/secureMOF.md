@@ -3,11 +3,11 @@ ms.date: 2017-10-31
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "MOF dosyası güvenliğini sağlama"
-ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 1bb257f3237344f32c9035f3836dd317b75eef0a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="securing-the-mof-file"></a>MOF dosyası güvenliğini sağlama
 
@@ -19,7 +19,7 @@ Bu konuda, hedef düğüm dosya şifrelenmiş sahip olmak açıklar.
 
 Düğüm kullanmaya uygulandığında sürüm 5.0 PowerShell ile başlayarak, tüm MOF dosyası varsayılan olarak şifrelenmiş **başlangıç DSCConfiguration** cmdlet'i.
 Bu makalede açıklanan işlemi yalnızca Sertifikalar, hedef düğüm tarafından indirilen yapılandırmaları şifresi çözülür ve uygulanmadan önce sistem tarafından okunur emin olmak için yönetilmeyen çekme hizmet protokolünü kullanarak bir çözüm uygulama gereklidir (örneğin, çekme hizmeti Windows Server'da kullanılabilir).
-Düğümleri kayıtlı için [Azure Otomasyonu DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) otomatik olarak sahip sertifikaları yüklü ve hiçbir yönetim yükü ile hizmet yöneten gerekli.
+Düğümleri kayıtlı için [Azure Otomasyonu DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) otomatik olarak sahip sertifikaları yüklü ve hiçbir yönetim yükü ile hizmet yöneten gerekli.
 
 >**Not:** şifreleme için kullanılan sertifikaları bu konuda ele alınmıştır.
 >Şifreleme için otomatik olarak imzalanan bir sertifika yeterlidir, özel anahtarı her zaman gizli anahtar ve şifreleme tutulduğundan belgenin güven anlamına gelmez.
@@ -262,7 +262,7 @@ configuration CredentialEncryptionExample
 
 ## <a name="setting-up-decryption"></a>Şifre çözme ayarlama
 
-Önce [ `Start-DscConfiguration` ](https://technet.microsoft.com/en-us/library/dn521623.aspx) çalışabilir, sertifikanın parmak izi doğrulamak için CertificateID kaynak kullanarak kimlik bilgileri şifresini çözmek için kullanılacak hangi sertifikanın her bir hedef düğümde yerel Configuration Manager söyleyin zorunda. Bu örnek işlevi (kullanmak istediğiniz tam sertifika bulacaksınız şekilde özelleştirmek için olabilir) uygun yerel sertifika bulacaksınız:
+Önce [ `Start-DscConfiguration` ](https://technet.microsoft.com/library/dn521623.aspx) çalışabilir, sertifikanın parmak izi doğrulamak için CertificateID kaynak kullanarak kimlik bilgileri şifresini çözmek için kullanılacak hangi sertifikanın her bir hedef düğümde yerel Configuration Manager söyleyin zorunda. Bu örnek işlevi (kullanmak istediğiniz tam sertifika bulacaksınız şekilde özelleştirmek için olabilir) uygun yerel sertifika bulacaksınız:
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -311,7 +311,7 @@ configuration CredentialEncryptionExample
 
 Bu noktada, iki dosya çıkış yapılandırma çalıştırabilirsiniz:
 
- * Bir *. yerel Configuration Manager'ın yerel makine deposunda depolanır ve kendi parmak izi tarafından tanımlanan sertifikayı kullanarak kimlik bilgilerini şifresini yapılandırır meta.mof dosya. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx)Geçerli *. meta.mof dosya.
+ * Bir *. yerel Configuration Manager'ın yerel makine deposunda depolanır ve kendi parmak izi tarafından tanımlanan sertifikayı kullanarak kimlik bilgilerini şifresini yapılandırır meta.mof dosya. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) Geçerli *. meta.mof dosya.
  * Gerçekte yapılandırma uygulanır bir MOF dosyası. Başlangıç DscConfiguration yapılandırmasını uygular.
 
 Bu komutlar, bu adımları yapabiliriz:

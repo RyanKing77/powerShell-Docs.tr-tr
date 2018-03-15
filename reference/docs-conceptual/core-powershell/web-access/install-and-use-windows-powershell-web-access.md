@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: PowerShell cmdlet'i
 title: "Yükleme ve windows powershell web erişimi kullanma"
-ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yükleme ve Kullanma
 
@@ -29,7 +29,7 @@ Windows PowerShell Web erişimi kurulumu ve yapılandırması üç adımlık bir
 1. [Kısıtlayıcı yetkilendirme kuralı yapılandırma](#configure-a-restrictive-authorization-rule)
 
 Yüklemeden ve Windows PowerShell Web erişimi yapılandırmadan önce nasıl yükleneceği hakkında yönergeler içeren bu kılavuzun tamamının, okuma güvenli ve Windows PowerShell Web erişimini kaldırma öneririz.
-[Web tabanlı Windows PowerShell konsolunu kullanma](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx) konu, kullanıcıların web tabanlı konsolda nasıl oturum açtığını açıklar ve web tabanlı Windows PowerShell Konsolu arasındaki sınırlamaları ve farklılıkları kapsar ve  **PowerShell.exe** konsol. Web tabanlı konsolun son kullanıcıların kimler [kullanım Web tabanlı Windows PowerShell Konsolu](use-the-web-based-windows-powershell-console.md), ancak bu kılavuzun ilerleyen okuma gerekmez.
+[Web tabanlı Windows PowerShell konsolunu kullanma](https://technet.microsoft.com/library/hh831417(v=ws.11).aspx) konu, kullanıcıların web tabanlı konsolda nasıl oturum açtığını açıklar ve web tabanlı Windows PowerShell Konsolu arasındaki sınırlamaları ve farklılıkları kapsar ve  **PowerShell.exe** konsol. Web tabanlı konsolun son kullanıcıların kimler [kullanım Web tabanlı Windows PowerShell Konsolu](use-the-web-based-windows-powershell-console.md), ancak bu kılavuzun ilerleyen okuma gerekmez.
 
 Bu konuda ayrıntılı IIS Web sunucusu işlem yönergelerini sağlamaz; Bu konu yalnızca Windows PowerShell Web erişimi ağ geçidini yapılandırmak için gerekli adımları açıklanmaktadır. IIS’te web sitelerini yapılandırma ve güvenliğini sağlama hakkında daha fazla bilgi için Ayrıca Bkz bölümündeki IIS belge kaynaklarına bakın.
 
@@ -136,12 +136,12 @@ Cmdlet'ini çalıştırarak IIS varsayılan Web sitesi kapsayıcı içindeki Win
 
 Aşağıdaki ayarlar cmdlet çalıştırılarak yapılandırılır. İsterseniz bunları IIS Yöneticisi konsolunda el ile değiştirebilirsiniz.
 
-- Yol: / pswa
+- Path: /pswa
 - ApplicationPool: pswa_pool
 - EnabledProtocols: http
 - PhysicalPath: %*windir*%/Web/PowerShellWebAccess/wwwroot
 
-**Örnek**:`Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
+**Örnek**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
 Bu örnekte, https:// sonuçta elde edilen Web sitesi için Windows PowerShell Web erişimi olan\<*sunucu_adı*\>/myWebApp.
 
@@ -165,7 +165,7 @@ Bu örnekte, https:// sonuçta elde edilen Web sitesi için Windows PowerShell W
     İsterseniz bunları IIS Yöneticisi konsolunda el ile değiştirebilirsiniz.
     `Install-PswaWebApplication` cmdlet’inin `WebsiteName` ve `WebApplicationName` parametreleri için de değer belirtebilirsiniz.
 
-    - Yol: / pswa
+    - Path: /pswa
 
     - ApplicationPool: pswa_pool
 
@@ -212,7 +212,7 @@ Windows PowerShell Web Erişimi yetkilendirme kuralları ve güvenlik hakkında 
 
     - Windows **Başlat** ekranında, sağ **Windows PowerShell**ve ardından **yönetici olarak çalıştır**.
 
-2. Kullanıcı erişimini oturum yapılandırmaları kullanarak kısıtlamak için isteğe bağlı adım: kullanmak, kurallarınızı zaten istediğiniz oturum yapılandırmaları mevcut olduğunu doğrulayın. Bunlar henüz oluşturulmadı, içindeki oturum yapılandırmaları oluşturmak için yönergeleri kullanın [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Kullanıcı erişimini oturum yapılandırmaları kullanarak kısıtlamak için isteğe bağlı adım: kullanmak, kurallarınızı zaten istediğiniz oturum yapılandırmaları mevcut olduğunu doğrulayın. Bunlar henüz oluşturulmadı, içindeki oturum yapılandırmaları oluşturmak için yönergeleri kullanın [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Aşağıdaki komutu yazın ve sonra basın **Enter**.
 
@@ -224,7 +224,7 @@ Windows PowerShell Web Erişimi yetkilendirme kuralları ve güvenlik hakkında 
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
-4. Kural ya da çalıştırarak oluşturulduğunu doğrulayın `Get-PswaAuthorizationRule` cmdlet'ini veya`Test-PswaAuthorizationRule -UserName <domain\user> -ComputerName <computer-name>`
+4. Kural ya da çalıştırarak oluşturulduğunu doğrulayın `Get-PswaAuthorizationRule` cmdlet'ini veya `Test-PswaAuthorizationRule -UserName <domain\user> -ComputerName <computer-name>`
 
 5. Örneğin, `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
@@ -290,13 +290,13 @@ Bir alt ve Web sitenizin kök dizininde değil Windows PowerShell Web erişimi w
 
 9. Bu konudaki IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager) bir SSL sertifikası yapılandırmak için yordamdaki adımları izleyin.
 
-10. ![](images/SecurityNote.jpeg)İsteğe bağlı güvenlik adımı:
+10. ![](images/SecurityNote.jpeg) İsteğe bağlı güvenlik adımı:
 
     Ağaç bölmesinde seçilen Web sitesiyle çift **SSL ayarları** içerik bölmesindeki. Seçin **SSL iste**ve ardından **Eylemler** bölmesinde tıklatın **Uygula**. İsteğe bağlı olarak **SSL ayarları** bölmesinde, Windows PowerShell Web Erişimi Web sitesine bağlanan kullanıcıların istemci sertifikalarını sahip gerektirebilirsiniz. İstemci sertifikaları bir istemci cihaz kullanıcısının kimliğini doğrulamaya yardımcı olur. İstemci sertifika istemenin Windows PowerShell Web erişimi güvenliğini nasıl artırabilirsiniz hakkında daha fazla bilgi için bkz: [yetkilendirme kuralları ve güvenlik özellikleri, Windows PowerShell Web erişimi](authorization-rules-and-security-features-of-windows-powershell-web-access.md) bu kılavuzdaki.
 
 11. Bir istemci cihazda tarayıcı oturumu açın. Desteklenen tarayıcılar ve cihazlar hakkında daha fazla bilgi için bkz: [tarayıcı ve istemci aygıt destek](#browser-and-client-device-support) bu konuda.
 
-12. Yeni Windows PowerShell Web Erişimi Web sitesini açın  **https://\<*ağ geçidi sunucusu adı*\>/pswa**.
+12. Yeni Windows PowerShell Web Erişimi Web sitesini açın **https://\<*ağ geçidi sunucusu adı*\>/pswa**.
 
     Tarayıcı, Windows PowerShell Web erişimi konsol oturum açma sayfası görüntülemelidir.
 
@@ -361,7 +361,7 @@ Bir alt ve Web sitenizin kök dizininde değil Windows PowerShell Web erişimi w
 
 15. Yeni Windows PowerShell Web Erişimi Web sitesini açın.
 
-    Kök Web sitesi Windows PowerShell Web erişimi klasöre işaret ettiğinden açtığınızda tarayıcı Windows PowerShell Web erişimi oturum açma sayfası görüntülemelidir  **https://\<*gateway_server_name* \>**. Eklemek gerekmez **/pswa** URL.
+    Kök Web sitesi Windows PowerShell Web erişimi klasöre işaret ettiğinden açtığınızda tarayıcı Windows PowerShell Web erişimi oturum açma sayfası görüntülemelidir **https://\<*gateway_server_name* \>**. Eklemek gerekmez **/pswa** URL.
 
     >**![Not](images/note.jpeg) Not** 
     > 
@@ -384,7 +384,7 @@ Windows PowerShell Web Erişimi yetkilendirme kuralları ve güvenlik hakkında 
 
 2. ![Güvenlik Notu](images/SecurityNote.jpeg) Kullanıcı erişimini oturum yapılandırmaları kullanarak kısıtlamak için isteğe bağlı adım:
 
-    Kurallarınızı içinde zaten kullanacağınız oturum yapılandırmaları var olduğunu doğrulayın. Bunlar henüz oluşturulmadı, içindeki oturum yapılandırmaları oluşturmak için yönergeleri kullanın [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+    Kurallarınızı içinde zaten kullanacağınız oturum yapılandırmaları var olduğunu doğrulayın. Bunlar henüz oluşturulmadı, içindeki oturum yapılandırmaları oluşturmak için yönergeleri kullanın [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Aşağıdaki komutu yazın ve sonra basın **Enter**.
 
@@ -418,7 +418,7 @@ Güvenli bir üretim ortamında her zaman bir sertifika yetkilisi (CA) tarafınd
 
     - Tıklatın **sertifika isteği oluştur** gibi bir CA'dan sertifika istemek için [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), veya [GeoTrust](https://www.geotrust.com/). Sertifikanın ortak adı, istekte konak üst bilgisi ile eşleşmelidir.
 
-      Örneğin, istemci tarayıcısı http://www.contoso.com/ isterse, ortak ad da http://www.contoso.com/ olmalıdır. Windows PowerShell Web erişimi ağ geçidini sahip bir sertifika sağlamak için en güvenli ve önerilen seçenek budur.
+      Örneğin, istemci tarayıcısı isterse http://www.contoso.com/, ortak ad da olmalıdır http://www.contoso.com/. Windows PowerShell Web erişimi ağ geçidini sahip bir sertifika sağlamak için en güvenli ve önerilen seçenek budur.
 
     - Tıklatın **otomatik olarak imzalanan sertifika oluşturma** hemen kullanabilirsiniz ve daha sonra bir CA tarafından istenirse imzalanmış bir sertifika oluşturmak için. Otomatik olarak imzalanan sertifika için bir kolay ad belirtin **Windows PowerShell Web erişimi**. Bu seçenek güvenli olarak kabul edilmez ve yalnızca özel bir test ortamı için önerilir.
 

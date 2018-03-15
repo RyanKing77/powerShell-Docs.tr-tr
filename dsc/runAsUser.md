@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC kullanıcı kimlik bilgileriyle çalıştırma"
-ms.openlocfilehash: 7b57732679e4fb29112a3ca7fe64cba2bda67207
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 11c13d852b506be3e202b798d135eba73d84cfe0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="running-dsc-with-user-credentials"></a>DSC kullanıcı kimlik bilgileriyle çalıştırma 
 
@@ -16,8 +16,8 @@ ms.lasthandoff: 01/17/2018
 Belirtilen kimlik bilgileri kümesi altında bir DSC kaynak otomatik kullanarak çalıştırabilirsiniz **PsDscRunAsCredential** özelliğini yapılandırma. Varsayılan olarak, DSC her bir kaynağın sistem hesabı olarak çalışır.
 Bir kullanıcı belirli bir kullanıcı bağlamında bir MSI paketleri yükleme, bir kullanıcının kayıt defteri anahtarlarını ayarlamak, bir kullanıcının belirli yerel dizinine erişmesini veya bir ağa erişen gibi gerekli olduğu gibi çalışan zaman paylaşmak zamanlar vardır.
 
-Her DSC kaynağı olan bir **PsDscRunAsCredential** tüm kullanıcı kimlik bilgilerinin ayarlanabilir özelliği (bir [PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) nesnesi).
-Kimlik bilgileri Yapılandırma özelliğinin değeri olarak sabit kodlanmış olabilir ya da değeri ayarlamak [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx), hangi ister kullanıcı için bir kimlik bilgisi (hakkında bilgi için yapılandırma derlendiğinde yapılandırmaları derleme, bkz: [yapılandırmaları](configurations.md).
+Her DSC kaynağı olan bir **PsDscRunAsCredential** tüm kullanıcı kimlik bilgilerinin ayarlanabilir özelliği (bir [PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) nesnesi).
+Kimlik bilgileri Yapılandırma özelliğinin değeri olarak sabit kodlanmış olabilir ya da değeri ayarlamak [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx), hangi ister kullanıcı için bir kimlik bilgisi (hakkında bilgi için yapılandırma derlendiğinde yapılandırmaları derleme, bkz: [yapılandırmaları](configurations.md).
 
 >**Not:** PowerShell'de kullanarak 5.0, **PsDscRunAsCredential** bileşik kaynakları çağırma yapılandırmaları özelliğinde desteklenmiyordu. 
 >PowerShell 5.1 içinde **PsDscRunAsCredential** özelliği bileşik kaynakları çağırma yapılandırmalarında desteklenir.

@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
 title: WinRMSecurity
-ms.openlocfilehash: 65cf12466c9dc8fc8b77d79b0d63a6ae61e64d60
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0522844fded847a3fd45c1b3890a141357edb2b2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell uzaktan iletişim güvenlik konuları
 
@@ -14,7 +14,7 @@ PowerShell uzaktan iletişimi, Windows sistemleri yönetmek için önerilen yold
 
 ## <a name="what-is-powershell-remoting"></a>PowerShell uzaktan iletişimi nedir?
 
-PowerShell uzaktan iletişimi kullandığından [Windows Uzaktan Yönetim (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx), Microsoft uyarlamasını olduğu [Yönetim (WS-Management) için Web Hizmetleri](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) kullanıcıların PowerShell çalıştırmasına izin vermek için protokol komutları uzak bilgisayarlarda. PowerShell uzaktan iletişim sırasında kullanma hakkında daha fazla bilgi bulabilirsiniz [çalıştıran uzak komutları](https://technet.microsoft.com/en-us/library/dd819505.aspx).
+PowerShell uzaktan iletişimi kullandığından [Windows Uzaktan Yönetim (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), Microsoft uyarlamasını olduğu [Yönetim (WS-Management) için Web Hizmetleri](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) kullanıcıların PowerShell çalıştırmasına izin vermek için protokol komutları uzak bilgisayarlarda. PowerShell uzaktan iletişim sırasında kullanma hakkında daha fazla bilgi bulabilirsiniz [çalıştıran uzak komutları](https://technet.microsoft.com/library/dd819505.aspx).
 
 PowerShell uzaktan iletişimini kullanma ile aynı değil **ComputerName** çalıştırmak için temel protokolü olarak uzak yordam çağrısı (RPC) kullanan bir uzak bilgisayarda bir cmdlet parametresi.
 
@@ -33,7 +33,7 @@ Varsayılan olarak, PowerShell uzaktan iletişim bağlantıları yalnızca Admin
 
 ## <a name="process-isolation"></a>İşlem yalıtımı
 
-PowerShell uzaktan iletişimi kullandığından [Windows Uzaktan Yönetim (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) bilgisayarlar arasındaki iletişim. WinRM Network Service hesabının altında bir hizmet olarak çalışır ve ana bilgisayar PowerShell örnekleri için kullanıcı hesapları olarak çalışan yalıtılmış işlemler olarak çoğaltılır. Bir kullanıcı olarak çalışan PowerShell örneği PowerShell örneği başka bir kullanıcı olarak çalışan bir işlemi hiçbir erişebilir.
+PowerShell uzaktan iletişimi kullandığından [Windows Uzaktan Yönetim (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) bilgisayarlar arasındaki iletişim. WinRM Network Service hesabının altında bir hizmet olarak çalışır ve ana bilgisayar PowerShell örnekleri için kullanıcı hesapları olarak çalışan yalıtılmış işlemler olarak çoğaltılır. Bir kullanıcı olarak çalışan PowerShell örneği PowerShell örneği başka bir kullanıcı olarak çalışan bir işlemi hiçbir erişebilir.
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>PowerShell uzaktan iletişimi tarafından oluşturulan olay günlükleri
 
@@ -50,10 +50,10 @@ Kullanılan Aktarım Protokolü bağımsız olarak (HTTP veya HTTPS), PowerShell
 
 Kimlik doğrulama - sunucu ve ideal - istemci sunucuya istemcinin kimliğini doğrular.
     
-Bir istemci bilgisayar adını kullanarak bir etki alanı sunucusuna bağlandığında (örn: server01, veya server01.contoso.com), varsayılan kimlik doğrulama protokolüdür [Kerberos](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378747.aspx).
+Bir istemci bilgisayar adını kullanarak bir etki alanı sunucusuna bağlandığında (örn: server01, veya server01.contoso.com), varsayılan kimlik doğrulama protokolüdür [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx).
 Kerberos yeniden kullanılabilir kimlik bilgisi herhangi bir tür göndermeden kullanıcı kimliği ve sunucu kimliğini garanti eder.
 
-İstemci IP adresini kullanarak bir etki alanı sunucusuna bağlanarak veya bir çalışma grubu sunucusuna bağlanır, Kerberos kimlik doğrulaması mümkün değil. PowerShell uzaktan iletişimi dayanan bu durumda, [NTLM kimlik doğrulama protokolü](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378749.aspx). NTLM kimlik doğrulama protokolü, herhangi bir tür delegable kimlik bilgisi göndermeden kullanıcı kimliğini garanti eder. Kullanıcı kimliğini kanıtlamak için NTLM protokolü istemci ve sunucu bir oturum anahtarı kullanıcının parolayı hiç parola değişimi olmadan işlem gerektirir. Kullanıcının parolayı biliyor ve sunucu için oturum anahtarı hesaplar etki alanı denetleyicisi ile iletişim kurar şekilde sunucunun kullanıcı parolasının genellikle bilmez. 
+İstemci IP adresini kullanarak bir etki alanı sunucusuna bağlanarak veya bir çalışma grubu sunucusuna bağlanır, Kerberos kimlik doğrulaması mümkün değil. PowerShell uzaktan iletişimi dayanan bu durumda, [NTLM kimlik doğrulama protokolü](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). NTLM kimlik doğrulama protokolü, herhangi bir tür delegable kimlik bilgisi göndermeden kullanıcı kimliğini garanti eder. Kullanıcı kimliğini kanıtlamak için NTLM protokolü istemci ve sunucu bir oturum anahtarı kullanıcının parolayı hiç parola değişimi olmadan işlem gerektirir. Kullanıcının parolayı biliyor ve sunucu için oturum anahtarı hesaplar etki alanı denetleyicisi ile iletişim kurar şekilde sunucunun kullanıcı parolasının genellikle bilmez. 
       
 NTLM protokolü ancak, sunucu kimliğini garanti etmez. Protokollerle kimlik doğrulaması için NTLM kullanan tüm gibi bir etki alanına katılmış bilgisayarın makine hesabına erişim izni olan bir saldırgan etki alanı denetleyicisi bir NTLM oturum anahtarı işlem ve böylece sunucu özelliklerini çağıramadı.
 

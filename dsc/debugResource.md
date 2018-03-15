@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC kaynakları hata ayıklama"
-ms.openlocfilehash: 35eb990705bab8190172df899c64c9f34452aa4b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="debugging-dsc-resources"></a>DSC kaynakları hata ayıklama
 
@@ -16,9 +16,9 @@ ms.lasthandoff: 01/17/2018
 PowerShell 5. 0'da, istenen durum yapılandırma (DSC kaynağı bir yapılandırma uygulanması gibi hata ayıklamak izin veren DSC içinde) yeni bir özellik sunulmuştur.
 
 ## <a name="enabling-dsc-debugging"></a>DSC hata ayıklamayı etkinleştirme
-Bir kaynak ayıklayabilirsiniz önce çağırarak hata ayıklamayı etkinleştirmek sahip [etkinleştir DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) cmdlet'i. Bu cmdlet zorunlu bir parametre alır **BreakAll**. 
+Bir kaynak ayıklayabilirsiniz önce çağırarak hata ayıklamayı etkinleştirmek sahip [etkinleştir DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet'i. Bu cmdlet zorunlu bir parametre alır **BreakAll**. 
 
-Hata ayıklama için bir çağrı sonucunu bakarak etkinleştirildiğini doğrulayın [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx).
+Hata ayıklama için bir çağrı sonucunu bakarak etkinleştirildiğini doğrulayın [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).
 
 Aşağıdaki PowerShell çıkış hata ayıklamasını etkinleştirme sonucunu gösterir:
 
@@ -59,7 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-Yapılandırma derledikten sonra başlatılsın çağırarak [başlangıç DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). Yerel Configuration Manager (LCM'yi) yapılandırmasında ilk kaynak içine çağırdığında yapılandırma durdurur. Kullanırsanız `-Verbose` ve `-Wait` parametreleri, çıktı hata ayıklamayı başlatmak için girmeniz gereken satırları görüntüler.
+Yapılandırma derledikten sonra başlatılsın çağırarak [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx). Yerel Configuration Manager (LCM'yi) yapılandırmasında ilk kaynak içine çağırdığında yapılandırma durdurur. Kullanırsanız `-Verbose` ve `-Wait` parametreleri, çıktı hata ayıklamayı başlatmak için girmeniz gereken satırları görüntüler.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -96,7 +96,7 @@ Kaynak komut dosyası adım için işe hata ayıklama komutlarını kullanabilir
 
 ## <a name="disabling-dsc-debugging"></a>DSC hata ayıklama devre dışı bırakma
 
-Çağırdıktan sonra [etkinleştir DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx), tüm çağrıları [başlangıç DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) ayıklayıcıya çiğnemekten yapılandırma neden olur. Yapılandırmaları normal olarak çalışmasına izin vermek için çağırarak hata ayıklama devre dışı bırakmalısınız [devre dışı bırakma DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet'i.
+Çağırdıktan sonra [etkinleştir DscDebug](https://technet.microsoft.com/library/mt517870.aspx), tüm çağrıları [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) ayıklayıcıya çiğnemekten yapılandırma neden olur. Yapılandırmaları normal olarak çalışmasına izin vermek için çağırarak hata ayıklama devre dışı bırakmalısınız [devre dışı bırakma DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet'i.
 
 >**Not:** Rebooting LCM'yi hata ayıklama durumunu değiştirmez. Hata ayıklama etkinleştirilirse yapılandırma başlatma hala ayıklayıcıya bir yeniden başlatmadan sonra çalışmamasına neden olur.
 

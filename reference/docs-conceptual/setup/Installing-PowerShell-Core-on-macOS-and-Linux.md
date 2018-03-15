@@ -369,10 +369,21 @@ sudo yum remove powershell
 
 ## <a name="opensuse-422"></a>OpenSUSE 42.2
 
-> **Not:** PowerShell çekirdek yüklerken OpenSUSE hiçbir şey sağladığını bildirebilir `libcurl`.
-`libcurl`OpenSUSE desteklenen sürümleri önceden yüklenmiş olması gerekir.
-Çalıştırma `zypper search libcurl` onaylamak için.
-Hata 2 'çözümleri' sunacaktır. 'Çözüm PowerShell çekirdek yüklemeye devam etmek için 2' i seçin.
+> **Not:** PowerShell çekirdek yüklerken `zypper` şu hata rapor edebilir:
+>
+> ```text
+> Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
+>  Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
+>  Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+> ```
+>
+> Bu durumda, doğrulayın uyumlu bir `libcurl` kitaplığı varsa aşağıdaki gösterir komutu denetleyerek `libcurl4` paketini yüklü olarak:
+>
+> ```sh
+> zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
+> ```
+>
+> Ardından `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` yüklerken çözüm `powershell` paket.
 
 ### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Paket (önerilen) - deposu OpenSUSE 42.2 aracılığıyla yükleme
 
@@ -384,9 +395,6 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
 # Add the Microsoft Product feed
 curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/zypp/repos.d/microsoft.repo
-
-# Update the list of products
-sudo zypper update
 
 # Install PowerShell
 sudo zypper install powershell
@@ -763,13 +771,13 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 ## <a name="paths"></a>Yollar
 
-* `$PSHOME`değil`/opt/microsoft/powershell/6.0.0/`
-* Kullanıcı profillerini okuma`~/.config/powershell/profile.ps1`
-* Varsayılan profiller okuma`$PSHOME/profile.ps1`
-* Kullanıcı modülleri okuma`~/.local/share/powershell/Modules`
-* Paylaşılan modülleri okuma`/usr/local/share/powershell/Modules`
-* Varsayılan modülleri okuma`$PSHOME/Modules`
-* PSReadline geçmişi için kaydedilen`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME` değil `/opt/microsoft/powershell/6.0.0/`
+* Kullanıcı profillerini okuma `~/.config/powershell/profile.ps1`
+* Varsayılan profiller okuma `$PSHOME/profile.ps1`
+* Kullanıcı modülleri okuma `~/.local/share/powershell/Modules`
+* Paylaşılan modülleri okuma `/usr/local/share/powershell/Modules`
+* Varsayılan modülleri okuma `$PSHOME/Modules`
+* PSReadline geçmişi için kaydedilen `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 Varsayılan ana bilgisayar özel profiller var böylece profilleri PowerShell'in başına ana bilgisayar yapılandırması saygı `Microsoft.PowerShell_profile.ps1` aynı konumlarda.
 

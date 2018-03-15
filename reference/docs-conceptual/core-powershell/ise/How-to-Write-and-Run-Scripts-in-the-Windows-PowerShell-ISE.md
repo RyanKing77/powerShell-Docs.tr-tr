@@ -1,22 +1,22 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
-title: "Yazma ve komut dosyaları içinde Windows PowerShell ISE çalıştırma"
+title: "Windows PowerShell ISE’de Betik Yazma ve Çalıştırma"
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: dd3055df8c84195f0145b1a058f1d17c9c382f33
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 77d8ae81cb03f03b3b5d044e6503bbb23cb5b771
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Yazma ve komut dosyaları içinde Windows PowerShell ISE çalıştırma
+# <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Windows PowerShell ISE’de Betik Yazma ve Çalıştırma
 Bu konu, oluşturmak, düzenlemek, çalıştırmak ve komut dosyaları betik bölmesinde Kaydet açıklar.
 
 ## <a name="how-to-create-and-run-scripts"></a>Oluşturma ve komut dosyalarını çalıştır
 Açın ve Windows PowerShell betik bölmesine dosyalarında düzenleyin. Belirli dosya ilgilendiğiniz Windows PowerShell komut dosyaları (.ps1), komut dosyası veri dosyaları (.psd1) ve betik Modülü dosyaları (.psm1) türleridir. Betik bölmesine Düzenleyicisi'nde renkli sözdizimi bu dosya türleridir. Betik bölmesinde açılabilir diğer ortak dosya yapılandırma dosyalarını (.ps1xml), XML dosyalarını ve metin dosyaları türleridir.
 
 > [!NOTE]
-> Windows PowerShell yürütme ilkesini betik çalıştıran ve Windows PowerShell profilleri ve yapılandırma dosyalarını yükleme olup olmadığını belirler. Varsayılan yürütme ilkesini kısıtlı, tüm komut dosyalarının çalışmasını engeller ve yükleme profilleri engeller. Yürütme İlkesi yüklenmesi ve kullanılması profilleri izin verecek şekilde değiştirmek için bkz: [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) ve [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
+> Windows PowerShell yürütme ilkesini betik çalıştıran ve Windows PowerShell profilleri ve yapılandırma dosyalarını yükleme olup olmadığını belirler. Varsayılan yürütme ilkesini kısıtlı, tüm komut dosyalarının çalışmasını engeller ve yükleme profilleri engeller. Yürütme İlkesi yüklenmesi ve kullanılması profilleri izin verecek şekilde değiştirmek için bkz: [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) ve [about_Signing [v4]](https://technet.microsoft.com/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
 
 ### <a name="to-create-a-new-script-file"></a>Yeni bir komut dosyası oluşturmak için
 Araç çubuğunda tıklatın **yeni** , veya **dosya** menüsünde tıklatın **yeni**. Yeni bir dosya sekmesinde geçerli PowerShell sekmesi altında oluşturulan dosya görüntülenir. Olduğunda birden fazla PowerShell sekmeleri yalnızca görünür olduğunu unutmayın. Varsayılan olarak bir dosya türü betiği (.ps1) oluşturuldu, ancak yeni adı ve uzantısı ile kaydedilebilir. Birden çok komut dosyaları aynı PowerShell sekmesindeki oluşturulabilir.
@@ -139,5 +139,4 @@ Windows PowerShell ISE aşağıdaki kodlama seçeneklerini destekler: ASCII, Big
 Windows PowerShell ISE diğer düzenleyicilerde tarafından oluşturulan komut dosyalarını kodlama değiştirmez bile Kaydet veya Kaydet kullandığınızda, Windows PowerShell ISE komutları.
 
 ## <a name="see-also"></a>Ayrıca bkz:
-- [Windows PowerShell ISE kullanma](Using-the-Windows-PowerShell-ISE.md)
-
+- [Windows PowerShell ISE’yi Keşfetme](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

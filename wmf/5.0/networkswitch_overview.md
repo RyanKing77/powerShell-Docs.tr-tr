@@ -2,12 +2,12 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: 80852bf750700d549de24e150ffd89ac55b7bf88
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 4868cf657f678ee43a6c92d5ee286e9ddb490964
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="network-switch-management-with-powershell"></a>PowerShell ile ağ anahtarı yönetimi
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 06/12/2017
 
 ## <a name="fundamental-network-switch-management-with-windows-powershell"></a>Windows PowerShell ile temel ağ anahtarı yönetimi
 
-WMF 5. 0'da, sunulan ağ geçiş cmdlet'leri anahtarı, sanal LAN (VLAN) ve temel Katman 2 ağ anahtarı bağlantı noktası yapılandırmasını Windows Server 2012 R2 logo sertifikalı ağ anahtarlara uygulamak sağlar. Microsoft destek kaydedilmiş kalır [veri merkezi soyutlama](http://technet.microsoft.com/en-us/cloud/dal.aspx) düzeyi (DAL) görme ve müşterilerimizin ve iş ortakları bu alan için değer göstermek için. Bu cmdlet'leri kullanarak şunları yapabilirsiniz:
+WMF 5. 0'da, sunulan ağ geçiş cmdlet'leri anahtarı, sanal LAN (VLAN) ve temel Katman 2 ağ anahtarı bağlantı noktası yapılandırmasını Windows Server 2012 R2 logo sertifikalı ağ anahtarlara uygulamak sağlar. Microsoft destek kaydedilmiş kalır [veri merkezi soyutlama](http://technet.microsoft.com/cloud/dal.aspx) düzeyi (DAL) görme ve müşterilerimizin ve iş ortakları bu alan için değer göstermek için. Bu cmdlet'leri kullanarak şunları yapabilirsiniz:
 
 - Genel yapılandırma, gibi anahtarı:
     - Küme ana bilgisayar adı

@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
 title: modulewithpseditionsupport
-ms.openlocfilehash: 8122756b78e18fe55daef5c46dc299b87ddcaf1a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 8a762ddf307f47ecec8d2a63098e75cde97c391f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modüller ile uyumlu PowerShell sürümleri
 Sürüm 5.1’den başlayarak, PowerShell çeşitli özellik kümelerini ve platform uyumluluğunu belirten farklı sürümler halinde sağlanır.
@@ -95,7 +95,7 @@ Burada, birkaç modülünüzün uygun DLL'leri yükleme için mantığı ile pak
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-#### <a name="contents-of-psscriptanalyzerpsd1-file"></a>PSScriptAnalyzer.psd1 dosyasının içeriği
+#### <a name="contents-of-psscriptanalyzerpsd1-file"></a>Contents of PSScriptAnalyzer.psd1 file
 
 ```powershell
 @{
@@ -113,7 +113,7 @@ ModuleVersion = '1.6.1'
 }
 ```
 
-#### <a name="contents-of-psscriptanalyzerpsm1-file"></a>PSScriptAnalyzer.psm1 dosyasının içeriği
+#### <a name="contents-of-psscriptanalyzerpsm1-file"></a>Contents of PSScriptAnalyzer.psm1 file
 Mantığı gerekli derlemeleri geçerli sürümü veya bağlı olarak yükler.
 
 ```powershell
@@ -224,8 +224,8 @@ Mode                LastWriteTime         Length Name
 -a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
 ```
 
-## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditoncore"></a>PowerShell Galerisi kullanıcılar etiketleri PSEdition_Desktop ve PSEditon_Core kullanarak belirli bir PowerShell sürümünde desteklenen modüllerin listesini bulabilirsiniz.
-Modülleri PSEdition_Desktop ve PSEditon_Core etiketleri olmadan PowerShell Masaüstü sürümlerinde ince çalışmaya olarak kabul edilir.
+## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>PowerShell Galerisi kullanıcılar etiketleri PSEdition_Desktop ve PSEdition_Core kullanarak belirli bir PowerShell sürümünde desteklenen modüllerin listesini bulabilirsiniz.
+Modülleri PSEdition_Desktop ve PSEdition_Core etiketleri olmadan PowerShell Masaüstü sürümlerinde ince çalışmaya olarak kabul edilir.
 
 ```powershell
 
@@ -239,7 +239,7 @@ Find-Module -Tag PSEditon_Core
 
 
 ## <a name="more-details"></a>Daha fazla ayrıntı
-### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[PSEditions sahip komut dosyaları](../script/scriptwithpseditionsupport.md)
+### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[PSEditions’ı olan Betikler](../script/scriptwithpseditionsupport.md)
 ### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[PowerShellGallery PSEditions desteği](../../psgallery/psgallery_pseditions.md)
 ### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a>[Güncelleştirme modül bildirimi] (./psget_update-modulemanifest.md)
 

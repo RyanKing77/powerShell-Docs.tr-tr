@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeri, powershell, cmdlet, psgallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: d13c23cd6f9cce433cd3fe1ad5f2d00e3ef0527c
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>PowerShell Galerisi ile çalışmaya başlama
 
@@ -103,7 +103,7 @@ Varsayılan olarak, [yükleme-Module](https://go.microsoft.com/fwlink/?LinkId=82
 
 PowerShell Galerisi'nden bir öğe Azure Automation ile dağıtmak için **Azure Otomasyonu Dağıt** öğe Ayrıntıları sayfasında. Burada Azure hesabı kimlik bilgilerinizi kullanarak oturum Azure yönetim portalına yönlendirilir. Bağımlılıkları olan öğeleri dağıtmak için Azure Otomasyonu tüm bağımlılıkları dağıtması unutmayın. 'Azure Otomasyonu Dağıt' düğmesini ekleyerek devre dışı bırakılabilir **AzureAutomationNotSupported** öğe meta etiketi.
 
-Azure Otomasyonu hakkında daha fazla bilgi için bkz: [Azure Otomasyonu Web sitesi](http://azure.microsoft.com/en-us/services/automation/).
+Azure Otomasyonu hakkında daha fazla bilgi için bkz: [Azure Otomasyonu Web sitesi](http://azure.microsoft.com/services/automation/).
 
 ## <a name="updating-items-from-the-powershell-gallery"></a>PowerShell Galerisi'nden öğeler güncelleştiriliyor
 

@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: PowerShell cmdlet'i
 title: "windows powershell web erişimi'nde erişim sorunlarını giderme"
-ms.openlocfilehash: 08a9fd286ed8a40e9423deb7d29dc0a8ecf8e5b1
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi’nde Erişim Sorunlarını Giderme
 
@@ -34,7 +34,7 @@ Hata, aşağıdakilerden biri nedeniyle oluşabilir.
 
   Uzaktan Yönetim için kullanıcının bağlanmaya çalıştığı bilgisayarda etkin doğrulayın.
 
-  Daha fazla bilgi için bkz: [bilgisayarınızı yapılandırma uzaktan iletişim için nasıl](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  Daha fazla bilgi için bkz: [bilgisayarınızı yapılandırma uzaktan iletişim için nasıl](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## <a name="internal-server-error"></a>İç sunucu hatası
 
@@ -61,7 +61,7 @@ Bu, Çince karakterler içeren bir etki alanı adı ile oturum açmış kullanı
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Bir uzak çalışma grubu bilgisayarına bağlanılamıyor
 
-Hedef bilgisayar bir çalışma grubunun üyesi ise, kullanıcı adınızı sağlamak ve bilgisayara oturum açmak için aşağıdaki sözdizimini kullanın:`<workgroup_name>\<user_name>`
+Hedef bilgisayar bir çalışma grubunun üyesi ise, kullanıcı adınızı sağlamak ve bilgisayara oturum açmak için aşağıdaki sözdizimini kullanın: `<workgroup_name>\<user_name>`
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Rol yüklenmiş olsa dahi, Web Sunucusu (IIS) yönetim araçları bulunamıyor
 
@@ -132,7 +132,7 @@ Yetkilendirme kuralları, bir etki alanı adı biçiminde bir IPv6 adresini dest
 Bir IPv6 adresi kullanarak bir hedef bilgisayar belirtmek için, yetkilendirme kuralında özgün IPv6 adresini kullanın (iki nokta üst üste içeren).
 Hem etki alanı hem de sayısal (iki nokta üst üste) olan IPv6 adresleri, yetkilendirme kurallarında değil ancak, Windows PowerShell Web erişimi oturum açma sayfasında hedef bilgisayar adı olarak desteklenir. 
 
-IPv6 adresleri hakkında daha fazla bilgi için bkz: [IPv6 nasıl çalışır](https://technet.microsoft.com/en-us/library/cc781672(v=ws.10).aspx).
+IPv6 adresleri hakkında daha fazla bilgi için bkz: [IPv6 nasıl çalışır](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 
 ## <a name="see-also"></a>Ayrıca bkz:
 

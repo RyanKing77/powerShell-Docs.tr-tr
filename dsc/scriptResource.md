@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC komut dosyası kaynağı"
-ms.openlocfilehash: 22213b74986b45b3a8205f1584b3b0d89a92f211
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: d65a89ceba0b641ccb0ac3dfcc6d5ec1a48dc92a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-script-resource"></a>DSC komut dosyası kaynağı
 
@@ -42,9 +42,9 @@ Script [string] #ResourceName
 
 |  Özellik  |  Açıklama   | 
 |---|---| 
-| GetScript| Çağırdığınızda, çalıştırılan Windows PowerShell komut dosyası bloğunda sağlar [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) cmdlet'i. Bu bloğu bir hashtable döndürmesi gerekir. Hashtable yalnızca bir anahtar içermelidir **sonuç** ve değer türü olmalıdır **dize**.| 
-| SetScript| Windows PowerShell komut dosyası bloğunda sağlar. Ne zaman çağırmayı [başlangıç DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet'ini **TestScript** bloğu ilk çalışır. Varsa **TestScript** engelleme döndürür **$false**, **SetScript** bloğu çalıştırır. Varsa **TestScript** engelleme döndürür **$true**, **SetScript** blok çalışmaz.| 
-| TestScript| Windows PowerShell komut dosyası bloğunda sağlar. Ne zaman çağırmayı [başlangıç DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet'i, bu bloğu çalıştırır. Döndürürse **$false**, SetScript blok çalışır. Döndürürse **$true**, çalıştırılacak blok olacak SetScript. **TestScript** bloğu ayrıca çalışır çağırdığınızda [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet'i. Ancak, bu durumda, **SetScript** bloğu değil çalıştırmak, hangi TestScript değerin olsun engelle döndürür. **TestScript** gerçek yapılandırması geçerli istenen durum yapılandırması ve False eşleşirse, eşleşmiyorsa, blok True döndürmesi gerekir. (Geçerli istenen durum yapılandırması, DSC kullanarak düğümde kamulaştırılmış son yapılandırmadır.)| 
+| GetScript| Çağırdığınızda, çalıştırılan Windows PowerShell komut dosyası bloğunda sağlar [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet'i. Bu bloğu bir hashtable döndürmesi gerekir. Hashtable yalnızca bir anahtar içermelidir **sonuç** ve değer türü olmalıdır **dize**.| 
+| SetScript| Windows PowerShell komut dosyası bloğunda sağlar. Ne zaman çağırmayı [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet'ini **TestScript** bloğu ilk çalışır. Varsa **TestScript** engelleme döndürür **$false**, **SetScript** bloğu çalıştırır. Varsa **TestScript** engelleme döndürür **$true**, **SetScript** blok çalışmaz.| 
+| TestScript| Windows PowerShell komut dosyası bloğunda sağlar. Ne zaman çağırmayı [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet'i, bu bloğu çalıştırır. Döndürürse **$false**, SetScript blok çalışır. Döndürürse **$true**, çalıştırılacak blok olacak SetScript. **TestScript** bloğu ayrıca çalışır çağırdığınızda [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet'i. Ancak, bu durumda, **SetScript** bloğu değil çalıştırmak, hangi TestScript değerin olsun engelle döndürür. **TestScript** gerçek yapılandırması geçerli istenen durum yapılandırması ve False eşleşirse, eşleşmiyorsa, blok True döndürmesi gerekir. (Geçerli istenen durum yapılandırması, DSC kullanarak düğümde kamulaştırılmış son yapılandırmadır.)| 
 | kimlik bilgisi| Bu komut dosyasını çalıştırmak için kimlik bilgileri gerekli olduğunda kullanılacak kimlik bilgilerini gösterir.| 
 | dependsOn| Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise **ResourceName** ve türünü **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.
 

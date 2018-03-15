@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC WaitForAll kaynağı"
-ms.openlocfilehash: 2054d2af7cd7dd839c62e77c1d4b6eee5cff34ab
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 2b6d9e11acd429eecb30926316d1033331524edc
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll kaynağı
 
@@ -36,7 +36,7 @@ WaitForAll [string] #ResourceName
 
 |  Özellik  |  Açıklama   | 
 |---|---| 
-| resourceName| Bağımlı kaynak adı.| 
+| resourceName| Bağımlı kaynak adı. Bu kaynak için farklı bir yapılandırma aitse, adı olarak biçim "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "| 
 | nodeName| Hedef düğümleri kaynağın bağlıdır.| 
 | RetryIntervalSec| Yeniden denemeden önce saniye sayısı. Minimum is 1.| 
 | retryCount| Yeniden deneneceğini maksimum sayısı.| 

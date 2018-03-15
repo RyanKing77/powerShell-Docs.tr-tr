@@ -2,38 +2,38 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: 91b60a22580dcb8eae245f45e202710812522a64
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 10f20967465a1911628552f0d468c63e4e88dcd7
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>Modülü yönetimi için PowerShellGet cmdlet'leri
 
-- [Bul DscResource](https://technet.microsoft.com/en-us/library/mt654006.aspx)
-- [Bulma Modülü](https://technet.microsoft.com/en-us/library/dn807167.aspx)
-- [Bulma komut dosyası](https://technet.microsoft.com/en-us/library/mt654001.aspx)
+- [Find-DscResource](https://technet.microsoft.com/library/mt654006.aspx)
+- [Bulma Modülü](https://technet.microsoft.com/library/dn807167.aspx)
+- [Bulma komut dosyası](https://technet.microsoft.com/library/mt654001.aspx)
 - [Get-InstalledModule](https://technet.microsoft.com/en-us/library/mt653990.aspx)
 - [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
 - [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)
 - [Yükleme Modülü](https://technet.microsoft.com/en-us/library/dn807162.aspx)
-- [Yükleme betiği](https://technet.microsoft.com/en-us/library/mt653998.aspx)
-- [ScriptFileInfo yeni](https://technet.microsoft.com/en-us/library/mt653995.aspx)
+- [Install-Script](https://technet.microsoft.com/en-us/library/mt653998.aspx)
+- [New-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
 - [Yayımlama Modülü](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [Yayımlama-komut dosyası](https://technet.microsoft.com/en-us/library/mt654003.aspx)
+- [Publish-Script](https://technet.microsoft.com/en-us/library/mt654003.aspx)
 - [Register-PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
 - [Kaydet-Modülü](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [Kaydet-komut dosyası](https://technet.microsoft.com/en-us/library/mt654004.aspx)
+- [Save-Script](https://technet.microsoft.com/en-us/library/mt654004.aspx)
 - [Set-PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
 - [Test-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
-- [Kaldırma Modülü](https://technet.microsoft.com/en-us/library/mt653996.aspx)
-- [Kaldırma betiği](https://technet.microsoft.com/en-us/library/mt653989.aspx)
+- [Uninstall-Module](https://technet.microsoft.com/en-us/library/mt653996.aspx)
+- [Uninstall-Script](https://technet.microsoft.com/en-us/library/mt653989.aspx)
 - [Güncelleştirme Modülü](https://technet.microsoft.com/en-us/library/dn807166.aspx)
-- [Güncelleştirme ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
+- [Update-ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
 - [Güncelleştirme komut dosyası](https://technet.microsoft.com/en-us/library/mt653997.aspx)
-- [Güncelleştirme ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [Kaydı PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
+- [Unregister-PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
 
 ## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Modül bağımlılık yükleme desteği, Get-InstalledModule ve Kaldır-Module cmdlet'leri
 - Modül bağımlılıkları popülasyon Yayımla-Module cmdlet'te eklendi. PSModuleInfo RequiredModules ve NestedModules listesi yayımlanmasını bir modül bağımlılık listesi hazırlamak için kullanılır.
@@ -207,7 +207,7 @@ d----- 4/21/2015 5:40 PM RequiredModule3
 ## <a name="update-modulemanifest-cmdlet"></a>Güncelleştirme ModuleManifest cmdlet'i
 Bu yeni cmdlet Yardım giriş özellik değerlerini dosyasıyla bildirim güncelleştirmesi için kullanılır. Test ModuleManifest yaptığı tüm parametreleri alır.
 
-Çok sayıda modülü yazarlar belirtmek istediğiniz fark "\*" gibi FunctionsToExport, CmdletsToExport, dışarı aktarılan değerleri vb.. PowerShell Galerisi modülü yayımlama sırasında belirtilmeyen işlevleri ve komutları düzgün galeri doldurulmaz. Bu nedenle, modül yazarlar güncelleştirme kendi bildirimleri uygun değerlerle öneririz.
+Çok sayıda modülü yazarlar belirtmek istediğiniz fark "\*" gibi FunctionsToExport, CmdletsToExport, dışarı aktarılan değerleri vb. PowerShell Galerisi modülü yayımlama sırasında belirtilmeyen işlevleri ve komutları düzgün galeri doldurulmaz. Bu nedenle, modül yazarlar güncelleştirme kendi bildirimleri uygun değerlerle öneririz.
 
 Özellikler dışarı aktardığınız modülleri varsa, güncelleştirme ModuleManifest belirtilen bildirim dosyası dışarı aktarılan işlevler, cmdlet'leri, değişkenler vb. alınan bilgilerle doldurun:
 ```powershell

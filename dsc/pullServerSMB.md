@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC SMB çekme sunucusu kurma"
-ms.openlocfilehash: 427dc8d858bd12e420fbde03b33a66f33cd654dc
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff3faeb1952e6116cf97b1aaf8f125d8931dd35e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB çekme sunucusu kurma
 
 >İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Bir DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) çekme sunucu, bu düğümler için söylediğinizde DSC yapılandırma dosyalarını ve DSC kaynakları, hedef düğümleri kullanılabilmesini SMB dosya paylaşımlarını barındıran bir bilgisayardır.
+Bir DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) çekme sunucu, bu düğümler için söylediğinizde DSC yapılandırma dosyalarını ve DSC kaynakları, hedef düğümleri kullanılabilmesini SMB dosya paylaşımlarını barındıran bir bilgisayardır.
 
 DSC için bir SMB çekme sunucusunu kullanmak üzere için gerekenler:
 - PowerShell 4.0 veya üstünü çalıştıran bir sunucuda bir SMB dosya paylaşımı ayarlama
@@ -25,7 +25,7 @@ Bir SMB dosya paylaşımı ayarlama, ancak nasıl DSC kullanarak bunu yapabilirs
 
 ### <a name="install-the-xsmbshare-resource"></a>XSmbShare kaynak yükleyin
 
-Çağrı [yükleme-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) yüklemek için cmdlet'i **xSmbShare** modülü.
+Çağrı [yükleme-Module](https://technet.microsoft.com/library/dn807162.aspx) yüklemek için cmdlet'i **xSmbShare** modülü.
 >**Not**: **yükleme-Module** dahil **PowerShellGet** PowerShell 5. 0 ' dahil modülü. İndirebilirsiniz **PowerShellGet** için modülü PowerShell 3.0 ve 4.0 en [PackageManagement PowerShell modülleri Önizleme](https://www.microsoft.com/en-us/download/details.aspx?id=49186). **XSmbShare** DSC kaynağı içeren **xSmbShare**, bir SMB dosya paylaşımı oluşturmak için kullanılabilir.
 
 ### <a name="create-the-directory-and-file-share"></a>Dizin ve dosya paylaşımı oluşturma
@@ -208,7 +208,7 @@ $ConfigurationData = @{
 Özel aşağıdaki sayesinde:
 
 - Bu konudaki içeriğin bildirmek için DSC SMB kullanma, postaları Yardım CAN F'ye Robbins. Kendi blogu [CAN F Robbins](http://mikefrobbins.com/).
-- Kimin yazılan serge Nikalaichyk **cNtfsAccessControl** modülü. Bu modül https://github.com/SNikalaichyk/cNtfsAccessControl kaynağıdır.
+- Kimin yazılan serge Nikalaichyk **cNtfsAccessControl** modülü. Bu modül için bir kaynak altındadır https://github.com/SNikalaichyk/cNtfsAccessControl.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 - [Windows PowerShell istenen durum yapılandırması genel bakış](overview.md)

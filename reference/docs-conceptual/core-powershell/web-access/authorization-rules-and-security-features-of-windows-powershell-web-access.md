@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: PowerShell cmdlet'i
 title: "Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri"
-ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri
 
@@ -24,7 +24,7 @@ Windows PowerShell Web erişimi yüklendikten ve ağ geçidi yapılandırıldık
 Yetkilendirme kuralları eklemek veya yönetmek için karşılaştırılabilir GUI yoktur.
 Bkz: [Windows PowerShell Web erişim cmdlet'leri](cmdlets/web-access-cmdlets.md).
 
-Yöneticiler tanımlayabilirsiniz 0 - *n*  Windows PowerShell Web erişimi için kimlik doğrulama kuralları.
+Yöneticiler tanımlayabilirsiniz 0 -*n* Windows PowerShell Web erişimi için kimlik doğrulama kuralları.
 Varsayılan güvenlik esnek değil kısıtlayıcıdır; sıfır kimlik doğrulama kuralı, hiçbir kullanıcının herhangi bir şeye erişimi olmadığı anlamına gelir.
 
 [Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) ve [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) Windows Server 2012 R2'de ekleyin ve uzak bir Windows PowerShell Web Erişimi yetkilendirme kuralları test olanak tanıyan bir kimlik bilgisi parametresi içerir bilgisayar veya etkin bir Windows PowerShell Web erişimi oturumu içinde.
@@ -32,7 +32,7 @@ Farklı bir kimlik bilgisi parametresi olan diğer Windows PowerShell cmdlet'ler
 Uzak bir bilgisayara geçirmek istediğiniz kimlik bilgilerini içeren bir PSCredential nesnesi oluşturmak için çalıştırın [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) cmdlet'i.
 
 Windows PowerShell Web erişimi kimlik doğrulama kuralları beyaz liste kurallarıdır.
-Her kural kullanıcılar, hedef bilgisayarlar ve belirli Windows PowerShellÂ arasında izin verilen bir bağlantının tanımıdır [oturum yapılandırmaları](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (uç noktalar olarak da adlandırılan veya _çalışma alanlarını_) üzerinde Belirtilen hedef bilgisayarlar.
+Her kural kullanıcılar, hedef bilgisayarlar ve belirli Windows PowerShellÂ arasında izin verilen bir bağlantının tanımıdır [oturum yapılandırmaları](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (uç noktalar olarak da adlandırılan veya _çalışma alanlarını_) üzerinde Belirtilen hedef bilgisayarlar.
 Üzerinde bir açıklama için **çalışma alanlarını** görmek [başına kullanım, PowerShell çalışma alanları](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > **Güvenlik Notu**
@@ -103,7 +103,7 @@ Bu kurallar yalnızca, bir kullanıcı kimliği ağ geçidi tarafından doğrula
 Windows PowerShell Web erişimi için güvenliğin son katmanı hedef bilgisayarın kendi güvenlik yapılandırmasıdır.
 Kullanıcıların Windows PowerShell Web erişimi aracılığıyla bir hedef bilgisayarı etkileyen bir Windows PowerShell web tabanlı konsol çalıştırmak için hedef bilgisayarda ve Windows PowerShell Web Erişimi yetkilendirme kurallarında, yapılandırılmış uygun erişim hakları olmalıdır.
 
-Bu katman kullanıcılar çalıştırarak Windows PowerShell içinde bir hedef bilgisayara uzak bir Windows PowerShell oturumu oluşturmaya çalıştılarsa bağlantı denemelerini değerlendirecek güvenlik mekanizmalarının aynısını sunar [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) veya [New-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-pssession) cmdlet'leri.
+Bu katman kullanıcılar çalıştırarak Windows PowerShell içinde bir hedef bilgisayara uzak bir Windows PowerShell oturumu oluşturmaya çalıştılarsa bağlantı denemelerini değerlendirecek güvenlik mekanizmalarının aynısını sunar [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) veya [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) cmdlet'leri.
 
 Varsayılan olarak, Windows PowerShell Web erişimi, ağ geçidi ve hedef bilgisayar kimlik doğrulaması için birincil kullanıcı adı ve parola kullanır.
 Web tabanlı oturum açma sayfasında, başlıklı bir bölümde **isteğe bağlı bağlantı ayarlarını**, gerekli olduğunda kullanıcılar hedef bilgisayar için farklı kimlik bilgileri sağlama seçeneği sunar.

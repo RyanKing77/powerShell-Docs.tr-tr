@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "Yapılandırma verilerini seçeneklerinde kimlik bilgileri"
-ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6ddf82c2b63309255ec3187d650677a6c3c2afb0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Yapılandırma verilerini seçeneklerinde kimlik bilgileri
 >İçin geçerlidir: Windows PowerShell 5.0
@@ -156,7 +156,7 @@ Group [String] #ResourceName
 }
 ```
 
-Bu örnekte bir [grup](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) kaynaktan `PSDesiredStateConfiguration` yerleşik DSC kaynakları modülü.
+Bu örnekte bir [grup](https://msdn.microsoft.com/powershell/dsc/groupresource) kaynaktan `PSDesiredStateConfiguration` yerleşik DSC kaynakları modülü.
 Onu yerel gruplar oluşturabilir ve ekleyebilir veya üyeleri kaldırın.
 Her ikisini de kabul `Credential` özelliği ve otomatik `PsDscRunAsCredential` özelliği.
 Ancak, kaynak yalnızca kullanır `Credential` özelliği.
@@ -231,7 +231,7 @@ Bu örnek iki sorunları vardır:
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 İlk hata iletisi belgelerine bir URL'ye sahip.
-Bu bağlantıyı kullanarak parolaları şifrelemek açıklanmaktadır bir [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) yapısı ve bir sertifika.
+Bu bağlantıyı kullanarak parolaları şifrelemek açıklanmaktadır bir [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) yapısı ve bir sertifika.
 Sertifikalar ve DSC hakkında daha fazla bilgi için [bu gönderisini okuduğunuzu](http://aka.ms/certs4dsc).
 
 Düz metinli bir parola zorlamak için kaynak gerektiriyor `PsDscAllowPlainTextPassword` yapılandırma verilerinde anahtar sözcüğü bölümünde aşağıdaki gibi:
@@ -270,7 +270,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
 > [!NOTE]
-> `NodeName`yıldız işareti, belirli düğüm adı zorunludur eşit olamaz.
+> `NodeName` yıldız işareti, belirli düğüm adı zorunludur eşit olamaz.
 
 **Düz metin parolalarını önemli güvenlik riski nedeniyle önlemek için Microsoft önerir.**
 

@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: PowerShell cmdlet'i
 title: "web tabanlı windows powershell konsolunu kullanma"
-ms.openlocfilehash: 31ab17f1a1ea1353abc6f770285a2dca70da446d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Web tabanlı Windows PowerShell Konsolunu kullanma
 
@@ -58,7 +58,7 @@ Varsayılan olarak, bu Web sitesi adresidir *https://\<sunucu_adı\>/pswa*.
 
 Windows PowerShell Web erişimi için oturum açmadan önce adını veya IP adresini yönetmek istediğiniz uzak bilgisayarın sahip olduğunuzdan emin olun.
 Uzak bilgisayarda yetkili bir kullanıcı olmalısınız ve uzak bilgisayar, uzaktan yönetimine izin verecek şekilde yapılandırılmalıdır.
-Bilgisayarınızı uzaktan yönetime izin verecek şekilde yapılandırma hakkında daha fazla bilgi için bkz: [kullanım Windows PowerShell'de uzak komutları etkinleştirme ve](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting).
+Bilgisayarınızı uzaktan yönetime izin verecek şekilde yapılandırma hakkında daha fazla bilgi için bkz: [kullanım Windows PowerShell'de uzak komutları etkinleştirme ve](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting).
 
 Bilgisayarınızı uzaktan yönetime izin verecek şekilde yapılandırmanın en basit yöntemi çalıştırmaktır **Enable-PSRemoting - force** cmdlet ile açılmış bir Windows PowerShell oturumunda bilgisayarda yükseltilmiş kullanıcı hakları (**Yönetici olarak çalıştır**).
 
@@ -70,11 +70,11 @@ Bilgisayarınızı uzaktan yönetime izin verecek şekilde yapılandırmanın en
 
     > ![Not](images/Note.jpeg) **Not**:
     >
-    > - Hedef bilgisayar bir çalışma grubu içindeyse, kullanıcı adınızı sağlamak ve bilgisayara oturum açmak için aşağıdaki sözdizimini kullanın:`<workgroup_name>\<user_name>`
+    > - Hedef bilgisayar bir çalışma grubu içindeyse, kullanıcı adınızı sağlamak ve bilgisayara oturum açmak için aşağıdaki sözdizimini kullanın: `<workgroup_name>\<user_name>`
     > - Hedef bilgisayar ağ geçidi sunucusu olup olmadığını, belirtebilirsiniz `localhost` bilgisayar adı alanında
     > - Hedef bilgisayar ağ geçidi sunucusuysa ve ağ geçidi sunucusu bir çalışma grubunda ise, kullanmalısınız `<workgroup name>\<user_name>` kullanıcı adı kaydedildi. Kullanabileceğiniz `localhost` bilgisayar adı alanında.
 
-1. **İsteğe bağlı bağlantı ayarları** bölüm için yönetmek istediğiniz uzak bilgisayarın yetkilendirme gereksinimleriyle ilgilidir. İsteğe bağlı bağlantı ayarlarına eşdeğer parametreler hakkında daha fazla bilgi için bkz: [Enter-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet Yardımı.
+1. **İsteğe bağlı bağlantı ayarları** bölüm için yönetmek istediğiniz uzak bilgisayarın yetkilendirme gereksinimleriyle ilgilidir. İsteğe bağlı bağlantı ayarlarına eşdeğer parametreler hakkında daha fazla bilgi için bkz: [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet Yardımı.
 
     Genellikle, Windows PowerShell Web erişimi ağ geçidi üzerinden iletmek için kullandığı kimlik yönetmek istediğiniz uzak bilgisayar tarafından tanınan aynıdır. Ancak, uzak bilgisayarı yönetmek için farklı kimlik bilgileri kullanmak istiyorsanız, 2. adımda belirttiğiniz, genişletin **isteğe bağlı bağlantı ayarları** bölümünde ve diğer kimlik bilgilerini sağlayın. Aksi takdirde, adım 6’ya geçin.
 
@@ -126,7 +126,7 @@ Windows PowerShell konak işlevselliğin çoğu Windows PowerShell Web erişimi 
 
   Giriş rengi (ön ve arka plan) değiştirilemez. Çıkış, uyarı, ayrıntı ve hata iletilerinin tümü, bir komut dosyası çalıştırılarak değiştirilebilir.
 
-- Pshostrawuserınterface.
+- PSHostRawUserInterface.
 
   Windows PowerShell Web erişimi, Windows PowerShell uzaktan yönetimini uygulanır ve bir uzak çalışma alanı kullanır. Windows PowerShell Web erişimi bu arabirimindeki bazı yöntemleri uygulamaz; Örneğin, Windows konsoluna yazan herhangi komut. Gibi komutlar **PowerTab** Windows PowerShell Web Erişimi'nde çalışmaz.
 

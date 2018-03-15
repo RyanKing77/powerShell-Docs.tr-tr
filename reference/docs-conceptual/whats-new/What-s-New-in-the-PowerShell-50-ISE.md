@@ -3,19 +3,19 @@ ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
 title: Hangi s yeni 50 PowerShell ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="what39s-new-in-the-windows-powershell-ise"></a>&#39; teki Windows PowerShell ISE'deki yenilikler
+# <a name="what39s-new-in-the-windows-powershell-ise"></a>Ne&#39;s Windows PowerShell ISE'deki yenilikler
 Bu konu, Windows PowerShell Tümleşik komut dosyası ortamı (ISE) sürümlerde sunulan yeni ve güncelleştirilmiş özelliklerin açıklar.
 
 ## <a name="feature-description"></a>Özellik açıklaması
 Windows PowerShell ISE yazma, çalıştırma ve komut dosyaları ve modüller bir grafik ve sezgisel ortamında test etme olanak tanıyan bir ana bilgisayar uygulamasıdır. Sözdizimi renklendirmesi gibi anahtar özellikleri sekme tamamlama, visual hata ayıklama, Unicode uyumluluk ve bağlama duyarlı Yardım zengin bir komut dosyası deneyimi sağlar.
 
-Windows PowerShell ISE genel bakış için bkz: [Windows PowerShell Tümleşik komut dosyası ortamı genel bakış](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+Windows PowerShell ISE genel bakış için bkz: [Windows PowerShell Tümleşik komut dosyası ortamı genel bakış](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
 
 ## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Windows PowerShell ISE yeni ve değiştirilmiş işlevleri
 Aşağıdaki tabloda, Windows PowerShell'de Windows PowerShell ISE bu sürümü için yeni ve değiştirilmiş özellikler listelenmektedir.
@@ -23,7 +23,7 @@ Aşağıdaki tabloda, Windows PowerShell'de Windows PowerShell ISE bu sürümü 
 |Özellik/işlevsellik|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
 |**[IntelliSense](#intellisense)**|X|X||
-|**[Kod parçacıkları](#snippets)**|X|X||
+|**[Snippets](#snippets)**|X|X||
 |**[Eklenti araçları](#add-on-tools)**|X|X||
 |**[Yeniden başlatma Yöneticisi ve otomatik kayıt](#restart-manager-and-auto-save)**|X|X||
 |**[En son kullanılan listesi](#most-recently-used-list)**|X|X||
@@ -167,7 +167,7 @@ Diğer Windows PowerShell ISE düzenleme özellikleri içerir:
 
 - **XML sözdizimi renklendirmesi**Windows PowerShell ISE şimdi renkleri XML sözdizimi aynı şekilde Windows PowerShell sözdizimi renkleri gibi.
 
-- **Ayraç eşleştirme** Windows PowerShell ISE eşleşen ayraç ve vurgulama içerir ve aşağıdaki şekillerde kullanılabilir: (örneğin, kullanarak **eşleşen Git** komut veya **Ctrl +]** bulur Seçili açılan parantez varsa kapanış ayracı,).
+- **Ayraç eşleştirme** Windows PowerShell ISE eşleşen ayraç ve vurgulama içerir ve aşağıdaki şekillerde kullanılabilir: (örneğin, kullanarak **eşleşen Git** komut veya **Ctrl +]** bulur Seçili açılan parantez varsa, kapanış ayracı).
 
 - **Anahat görünümü** betik bölmesine destekler daraltma veya kodun bölümlerini artı veya eksi tıklayarak genişletme imzalar sol kenar boşluğunda sağlayan anahat oluşturma,. Küme ayraçları kullanabilirsiniz veya **#region** ve **#endregion** başında ve sonunda daraltılabilir bölümünün işaretlemek için etiketler. Genişlet veya daralt tüm bölgeler için basın **Ctrl + M**.
 
@@ -222,7 +222,7 @@ Göster-yeni Windows PowerShell ISE 3.0 komuttur.
 ## <a name="see-also"></a>Ayrıca bkz:
 Windows PowerShell'de Windows PowerShell ISE kullanma hakkında daha fazla bilgi için aşağıdaki bağlantılara bakın.
 
-- [Windows PowerShell Tümleşik komut dosyası ortamı'nı kullanma](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell Tümleşik komut dosyası ortamı keşfetme](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [TechNet Wiki'de işe](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [Komut Merkezi](http://technet.microsoft.com/scriptcenter/default)
 

@@ -2,12 +2,12 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: f39328b240a36deb40d484c4aedb889cee91dc8d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>İstenen durum yapılandırması (DSC) bilinen sorunlar ve sınırlamalar
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 06/12/2017
 
 WMF 4.0 ve WMF 5.0 Önizleme sürümlerde DSC parolaları uzunlukta yapılandırmasında izin vermez birden fazla 121 karakter. DSC uzun ve güçlü parola gerekli olsa bile kısa parolalarını zorlama. Bu önemli değişiklik parolaları DSC yapılandırması, rastgele uzunlukta olmasını sağlar.
 
-**Çözüm:** verileri şifreleme veya anahtar şifreleme anahtarı kullanımını ve belge şifreleme Gelişmiş anahtar kullanımı (1.3.6.1.4.1.311.80.1) sertifikayla yeniden oluşturun. TechNet makalesine <https://technet.microsoft.com/en-us/library/dn807171.aspx> daha fazla bilgi bulunur.
+**Çözüm:** verileri şifreleme veya anahtar şifreleme anahtarı kullanımını ve belge şifreleme Gelişmiş anahtar kullanımı (1.3.6.1.4.1.311.80.1) sertifikayla yeniden oluşturun. TechNet makalesine <https://technet.microsoft.com/library/dn807171.aspx> daha fazla bilgi bulunur.
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>DSC cmdlet'leri WMF 5.0 RTM yükledikten sonra başarısız olabilir
@@ -89,7 +89,7 @@ Invoke-DscResource cmdlet'i uyarı, ayrıntılı döndürmüyor ve LCM'yi veya D
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>DSC kaynakları kolayca Invoke-DscResource ile kullanıldığında hata ayıklaması yapılabilir olamaz
 -----------------------------------------------------------------------
 Hata ayıklama modunda LCM'yi çalışırken (bkz [hata ayıklama DSC kaynakları](https://msdn.microsoft.com/powershell/dsc/debugresource) daha fazla ayrıntı için), Invoke-DscResource cmdlet'i hata ayıklama için bağlanmak için çalışma alanı hakkında bilgi vermek değil.
-**Çözüm:** bulma ve cmdlet'lerini kullanarak çalışma attach **Get-PSHostProcessInfo**, **Enter PSHostProcess** , **Get-çalışma** ve  **Hata ayıklama çalışma** DSC kaynağı hata ayıklamak için.
+**Çözüm:** bulma ve cmdlet'lerini kullanarak çalışma attach **Get-PSHostProcessInfo**, **Enter PSHostProcess** , **Get-çalışma** ve **Hata ayıklama çalışma** DSC kaynağı hata ayıklamak için.
 
 ```powershell
 # Find all the processes hosting PowerShell

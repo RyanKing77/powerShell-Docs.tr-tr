@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "PowerShell sınıfları içeren özel bir DSC kaynağı yazma"
-ms.openlocfilehash: b24351a49ca11dac4687efdce39d400bfd00f399
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell sınıfları içeren özel bir DSC kaynağı yazma
 
@@ -69,7 +69,7 @@ DSC kaynağı şeması sınıfının özelliklerine tanımlanır. Şu üç özel
 - **DscProperty(NotConfigurable)**: özelliği salt okunur durumdadır. Bu özniteliği ile işaretlenmiş özellikleri yapılandırma tarafından ayarlanamaz, ancak tarafından doldurulur **Get()** yöntemi varsa.
 - **DscProperty()**: özellik yapılandırılabilir, ancak gerekli değildir.
 
-**$Path** ve **$SourcePath** özellikleri her iki dizelerdir. **$CreationTime** olan bir [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) özelliği. **$Ensure** şu şekilde tanımlanan bir numaralandırma türü bir özelliktir.
+**$Path** ve **$SourcePath** özellikleri her iki dizelerdir. **$CreationTime** olan bir [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) özelliği. **$Ensure** şu şekilde tanımlanan bir numaralandırma türü bir özelliktir.
 
 ```powershell
 enum Ensure 
@@ -484,10 +484,10 @@ Daha fazla bilgi için bkz: [çalıştıran DSC kullanıcı kimlik bilgileriyle]
 **DscResource()** özniteliği isteğe bağlı bir parametre alır **RunAsCredential**.
 Bu parametre üç değerden birini alır:
 
-- `Optional`**PsDscRunAsCredential** bu kaynak çağrısına yapılandırmaları için isteğe bağlıdır. Bu varsayılan değerdir.
-- `Mandatory`**PsDscRunAsCredential** bu kaynak çağıran herhangi bir yapılandırma için kullanılması gerekir.
-- `NotSupported`Bu kaynak çağrısına yapılandırmaları kullanamaz **PsDscRunAsCredential**.
-- `Default`Aynı `Optional`.
+- `Optional` **PsDscRunAsCredential** bu kaynak çağrısına yapılandırmaları için isteğe bağlıdır. Bu varsayılan değerdir.
+- `Mandatory` **PsDscRunAsCredential** bu kaynak çağıran herhangi bir yapılandırma için kullanılması gerekir.
+- `NotSupported` Bu kaynak çağrısına yapılandırmaları kullanamaz **PsDscRunAsCredential**.
+- `Default` Aynı `Optional`.
 
 Örneğin, özel kaynak kullanımını desteklemez belirtmek için aşağıdaki öznitelik kullanın **PsDscRunAsCredential**:
 

@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeri, powershell, cmdlet, psgallery
 title: psgallery_faqs
-ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="frequently-asked-questions"></a>Sık Sorulan Sorular
 
@@ -18,7 +18,7 @@ PowerShell modülü, PowerShell işlevselliğinin içeren yeniden kullanılabili
 
 ## <a name="what-is-a-powershell-script"></a>Bir PowerShell komut dosyası nedir?
 
-Bir PowerShell Betiği yeniden kullanma ve paylaşma etkinleştirmek için bir .ps1 dosyasına depolanan komutları dizisidir. PowerShell Ayrıca, bir dizi görevi anahat ve bu görevler için sıralama belirtin, PowerShell komut dosyası iş akışlarıdır. Daha fazla bilgi için lütfen ziyaret [PowerShell iş akışı ile çalışmaya başlama](https://technet.microsoft.com/en-us/library/jj134242.aspx).
+Bir PowerShell Betiği yeniden kullanma ve paylaşma etkinleştirmek için bir .ps1 dosyasına depolanan komutları dizisidir. PowerShell Ayrıca, bir dizi görevi anahat ve bu görevler için sıralama belirtin, PowerShell komut dosyası iş akışlarıdır. Daha fazla bilgi için lütfen ziyaret [PowerShell iş akışı ile çalışmaya başlama](https://technet.microsoft.com/library/jj134242.aspx).
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>PowerShell betiklerinin PowerShell modülleri fark nedir?
 
@@ -48,7 +48,7 @@ Bu hata aşağıdaki nedenlerle oluşabilir:
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>My kişisel hesabıyla oturum açamazsınız ancak dün oturum neden?
 
-Galeri hesabınızın birincil e-posta diğer adınız değişiklikler hale getirmez unutmayın. Daha fazla bilgi için bkz: [Microsoft e-posta diğer adlar](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account).
+Galeri hesabınızın birincil e-posta diğer adınız değişiklikler hale getirmez unutmayın. Daha fazla bilgi için bkz: [Microsoft e-posta diğer adlar](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>Öğeleri sekmesinde tüm kategori onay kutularını seçtiğinizde tüm galeri öğelerini neden göremiyorum?
 
@@ -156,7 +156,7 @@ Bu nedenle, **PowerShellGet** aşağıdaki işletim sistemlerinden birini gerekt
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** de .NET Framework 4.5 gerektirir veya üstü. .NET Framework 4.5 yükleyebilirsiniz ya da yukarıdaki gelen [burada](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx).
+**PowerShellGet** de .NET Framework 4.5 gerektirir veya üstü. .NET Framework 4.5 yükleyebilirsiniz ya da yukarıdaki gelen [burada](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 ## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>Gelecekte yayımlanacak öğe adları ayırmak mümkün mü?
 

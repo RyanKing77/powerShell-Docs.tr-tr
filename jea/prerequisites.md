@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, powershell, güvenlik"
 title: "JEA önkoşulları"
-ms.openlocfilehash: 75d5db2ba446df1d461050d187dc1495a22fef18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e6ee16e34eb9f1f0b2f3601c1aa9e90ab4f785f1
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="prerequisites"></a>Önkoşullar
 
@@ -33,8 +33,8 @@ Ev veya iş bilgisayarınızda JEA de kullanabilirsiniz:
 
 İstemci işletim sistemi   | JEA kullanılabilirliği
 --------------------------|-----------------------------------------------------
-Windows 10 1607 +          | Önceden yüklenmiş
-Windows 10 1603 1511     | Önceden, azaltılmış işlevsellik ile<sup>2</sup>
+Windows 10 1607+          | Önceden yüklenmiş
+Windows 10 1603, 1511     | Önceden, azaltılmış işlevsellik ile<sup>2</sup>
 Windows 10 1507           | Mevcut değil
 Windows 8, 8.1            | WMF 5.1 tam işlevsellikle
 Windows 7                 | İşlevleri azaltılmış<sup>1</sup> WMF 5.1 ile
@@ -72,7 +72,7 @@ Windows 10 kullanıcıları Windows PowerShell geçerli sürümünü elde etmek 
 ## <a name="enable-powershell-remoting"></a>PowerShell uzaktan iletişimini etkinleştirme
 
 PowerShell uzaktan iletişimi JEA yerleşik olan temel sağlar.
-Bu nedenle PowerShell uzaktan iletişimi etkin emin olmak gerekli olan ve [düzgün güvenli](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity) JEA kullanmadan önce sisteminizdeki.
+Bu nedenle PowerShell uzaktan iletişimi etkin emin olmak gerekli olan ve [düzgün güvenli](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity) JEA kullanmadan önce sisteminizdeki.
 
 PowerShell uzaktan iletişimi, Windows Server 2012, 2012 R2 ve 2016 varsayılan olarak etkindir.
 PowerShell uzaktan iletişimi yükseltilmiş bir PowerShell penceresinde aşağıdaki komutu çalıştırarak etkinleştirebilirsiniz.
@@ -109,6 +109,6 @@ Grup İlkesi aracılığıyla sistem genelinde PowerShell transcription de etkin
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-- [PowerShell uzaktan iletişimi ve WinRM güvenlik hakkında ek bilgi](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [PowerShell uzaktan iletişimi ve WinRM güvenlik hakkında ek bilgi](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ mavi takım* güvenlik blog gönderisi](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 

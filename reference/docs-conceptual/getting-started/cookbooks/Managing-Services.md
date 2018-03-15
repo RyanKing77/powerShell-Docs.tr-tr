@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell cmdlet'i
-title: "Hizmetleri yönetme"
+title: "Hizmetleri Yönetme"
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: 9fd6c8bcfecc99756188409629ddf94b880aab91
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 1e83566b1cb3c0c9c3c78a5877e52552ee51b0e9
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="managing-services"></a>Hizmetleri yönetme
+# <a name="managing-services"></a>Hizmetleri Yönetme
 Çok çeşitli hizmeti görevleri için tasarlanmış sekiz çekirdeği hizmet cmdlet'leri vardır. Yalnızca listeleme ve çalışır durumda Hizmetleri için değiştirme ele alacağız ancak listesini hizmet cmdlet'leri kullanarak alabileceğiniz **Get-Help \&#42;-hizmet**, ve kullanarakherhizmetcmdlet'ihakkındabilgibulabilirsiniz**Get-Help < Cmdlet adı >**, gibi **Get-Help yeni hizmet**.
 
 ## <a name="getting-services"></a>Hizmetleri alma
@@ -138,11 +138,11 @@ Hizmet belirleme cmdlet'ini yerel veya uzak bilgisayardaki bir hizmet özellikle
 
 Windows Vista ve Windows'un sonraki sürümleri üzerinde kümesi hizmeti kullanmak için "Yönetici olarak çalıştır" seçeneğiyle Windows PowerShell'i açın.
 
-Daha fazla bilgi için bkz: [hizmet belirleme [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+Daha fazla bilgi için bkz: [hizmet belirleme [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 
 ## <a name="see-also"></a>Ayrıca bkz:
 - [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-- [Hizmet belirleme [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+- [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 - [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
-- [Askıya alma hizmet [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
+- [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
 

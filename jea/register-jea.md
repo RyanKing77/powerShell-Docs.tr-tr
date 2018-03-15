@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, powershell, güvenlik"
 title: "JEA yapılandırmaları kaydetme"
-ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d6b007fed97be6470bfe4cf4d42f72cb4edc3a45
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="registering-jea-configurations"></a>JEA yapılandırmaları kaydetme
 
@@ -19,7 +19,7 @@ Bu işlem için sistem oturum yapılandırma bilgilerini uygular ve uç nokta ku
 
 ## <a name="single-machine-configuration"></a>Tek makine yapılandırması
 
-Küçük ortamlarda oturum yapılandırma dosyası kullanarak kaydederek JEA dağıtabilirsiniz [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet'i.
+Küçük ortamlarda oturum yapılandırma dosyası kullanarak kaydederek JEA dağıtabilirsiniz [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet'i.
 
 Başlamadan önce aşağıdaki önkoşulların karşılandığından emin olun:
 - Bir veya daha fazla rol oluşturulur ve geçerli bir PowerShell Modülü 'RoleCapabilities' klasörüne yerleştirilir.
@@ -28,7 +28,7 @@ Başlamadan önce aşağıdaki önkoşulların karşılandığından emin olun:
 
 JEA uç noktanız için bir ad seçmek gerekir.
 Kullanıcıların JEA kullanarak sisteme bağlanmak istediğinizde JEA uç noktanın adı gerekli olacaktır.
-Kullanabileceğiniz [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'ini sistemde mevcut uç nokta adlarını denetleyin.
+Kullanabileceğiniz [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'ini sistemde mevcut uç nokta adlarını denetleyin.
 'Microsoft' ile başlayan uç noktaları genellikle Windows ile birlikte gönderilir.
 'Microsoft.powershell' uç noktası bir uzak PowerShell bitiş noktasına bağlanırken kullanılan varsayılan uç noktadır.
 

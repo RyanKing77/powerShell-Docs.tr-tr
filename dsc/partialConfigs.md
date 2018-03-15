@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "PowerShell istenen durum yapılandırması kısmi yapılandırmaları"
-ms.openlocfilehash: 66791bb7b14898d292b9da38dd27ba45b7c75d88
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4401ea80cffd09f4b92c9fcca16d5dcad7f6a327
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell istenen durum yapılandırması kısmi yapılandırmaları
 
@@ -18,10 +18,10 @@ PowerShell 5. 0'da, istenen durum Yapılandırması'nı (DSC) parçada ve birden
 Kısmi yapılandırmalarını itme modu, çekme modu veya ikisinin birleşimini kullanabilirsiniz.
 
 ## <a name="partial-configurations-in-push-mode"></a>Zorlama modunda kısmi yapılandırmaları
-Kısmi yapılandırmaları zorlama modunda kullanmak için LCM'yi kısmi yapılandırmalarını almak için hedef düğümde yapılandırın. Her bir kısmi yapılandırmasının hedef Yayımla DSCConfiguration cmdlet'ini kullanarak gönderilir gerekir. Hedef düğüm ardından tek bir yapılandırması kısmi yapılandırmaya birleştirir ve çağırarak yapılandırma uygulayabilirsiniz [başlangıç DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet'i.
+Kısmi yapılandırmaları zorlama modunda kullanmak için LCM'yi kısmi yapılandırmalarını almak için hedef düğümde yapılandırın. Her bir kısmi yapılandırmasının hedef Yayımla DSCConfiguration cmdlet'ini kullanarak gönderilir gerekir. Hedef düğüm ardından tek bir yapılandırması kısmi yapılandırmaya birleştirir ve çağırarak yapılandırma uygulayabilirsiniz [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet'i.
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Anında iletme modu kısmi yapılandırmaları için LCM'yi yapılandırma
-Kısmi yapılandırmaları için LCM'yi zorlama modunda yapılandırmak için oluşturduğunuz bir **DSCLocalConfigurationManager** bir yapılandırmayla **PartialConfiguration** kısmi her yapılandırma için bloğu. LCM'yi yapılandırma hakkında daha fazla bilgi için bkz: [yerel Configuration Manager Yapılandırma Windows](https://technet.microsoft.com/en-us/library/mt421188.aspx). Aşağıdaki örnek, iki kısmi yapılandırmaları bekliyor LCM'yi yapılandırma gösterir — işletim sistemi dağıtan, diğeri dağıtır ve SharePoint yapılandırır.
+Kısmi yapılandırmaları için LCM'yi zorlama modunda yapılandırmak için oluşturduğunuz bir **DSCLocalConfigurationManager** bir yapılandırmayla **PartialConfiguration** kısmi her yapılandırma için bloğu. LCM'yi yapılandırma hakkında daha fazla bilgi için bkz: [yerel Configuration Manager Yapılandırma Windows](https://technet.microsoft.com/library/mt421188.aspx). Aşağıdaki örnek, iki kısmi yapılandırmaları bekliyor LCM'yi yapılandırma gösterir — işletim sistemi dağıtan, diğeri dağıtır ve SharePoint yapılandırır.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ PartialConfigDemo
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Yayımlama ve başlangıç itme modu kısmi yapılandırmaları
 
-Ardından çağıran [Yayımla DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) her yapılandırma için yapılandırma belgeleri olarak içeren klasörleri geçirme **yolu** parametreleri. `Publish-DSCConfiguration`Hedef düğümleri yapılandırma MOF dosyasına yerleştirir. Her iki yapılandırma yayımladıktan sonra çağırabilirsiniz `Start-DSCConfiguration –UseExisting` hedef düğümde bulunan.
+Ardından çağıran [Yayımla DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) her yapılandırma için yapılandırma belgeleri olarak içeren klasörleri geçirme **yolu** parametreleri. `Publish-DSCConfiguration`Hedef düğümleri yapılandırma MOF dosyasına yerleştirir. Her iki yapılandırma yayımladıktan sonra çağırabilirsiniz `Start-DSCConfiguration –UseExisting` hedef düğümde bulunan.
 
 Örneğin, aşağıdaki yapılandırma MOF belgeleri yazma düğümde derlenmiş ise:
 
@@ -96,7 +96,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Not:** çalıştıran kullanıcının [Yayımla DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet'i hedef düğümde yönetici ayrıcalıkları olması gerekir.
+>**Not:** çalıştıran kullanıcının [Yayımla DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet'i hedef düğümde yönetici ayrıcalıkları olması gerekir.
 
 ## <a name="partial-configurations-in-pull-mode"></a>Çekme modunda kısmi yapılandırmaları
 
@@ -211,7 +211,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Adlandırma ve çekme sunucusunda (ConfigurationID) yapılandırma belgelerini yerleştirme
 
-Kısmi yapılandırma belgeleri olarak belirtilen klasöre yerleştirilmelidir **ConfigurationPath** içinde `web.config` çekme sunucusuna ilişkin dosyasını (genellikle `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Aşağıdaki gibi yapılandırma belgelerini adlı: _ConfigurationName_. _ConfigurationID_`.mof`, burada _ConfigurationName_ kısmi yapılandırma adıdır ve _ConfigurationID_ yapılandırması kimliği üzerinde LCM'yi tanımlanır Hedef düğüm. Bizim örneğimizde, aşağıdaki gibi yapılandırma belgelerini adlı:
+Kısmi yapılandırma belgeleri olarak belirtilen klasöre yerleştirilmelidir **ConfigurationPath** içinde `web.config` çekme sunucusuna ilişkin dosyasını (genellikle `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Aşağıdaki gibi yapılandırma belgelerini adlı: _ConfigurationName_. _ConfigurationID_`.mof`, burada _ConfigurationName_ kısmi yapılandırma adıdır ve _ConfigurationID_ yapılandırması kimliği hedefte LCM'yi tanımlanır düğüm. Bizim örneğimizde, aşağıdaki gibi yapılandırma belgelerini adlı:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -377,5 +377,5 @@ SharePointConfig
 **Kavramları**
 [Windows PowerShell istenen durum yapılandırması çekme sunucuları](pullServer.md) 
 
-[Windows yerel Configuration Manager'ı yapılandırma](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+[Windows yerel Configuration Manager'ı yapılandırma](https://technet.microsoft.com/library/mt421188.aspx) 
 

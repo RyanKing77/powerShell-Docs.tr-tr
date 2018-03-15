@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: Galeri, powershell, cmdlet, psgallery
 description: "Yayımcılar için yönergeler"
 title: "PowerShell Galerisi kılavuzları ve en iyi uygulamaları yayımlama"
-ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 25bbe31bcc805808c311829598e3c29991f72aad
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery kılavuzları ve en iyi uygulamaları yayımlama
 
@@ -19,7 +19,7 @@ Bu yönergeleri izleyerek yayımlanan öğeler güvenilir, yüklenecek, büyük 
 Aşağıda bulunan isteğe bağlı bildirim ayarları en önemli olan ilk gözden geçirenler görüşleri ile kodunuzu iyileştirme iyi bir PowerShell galeri öğesi kılan için yönergelerdir ve [Powershell komut dosyası Çözümleyicisi](https://aka.ms/psscriptanalyzer), sürüm oluşturma Modül, belgeleri, testleri ve örnekler için paylaşılan kullanma.
 Bu belge çoğunu yayımlama yönelik yönergeleri izleyen [yüksek kaliteli DSC kaynakları modüllerinin](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-Öğe için PowerShell Galerisi yayımlama mekanizması için bkz: [oluşturma ve öğe yayımlama](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item).
+Öğe için PowerShell Galerisi yayımlama mekanizması için bkz: [oluşturma ve öğe yayımlama](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item).
 
 Bu yönergeleri geribildirim Hoş Geldiniz. Görüş bildirmek isterseniz, lütfen sorunları açın bizim [Github belgeleri deposu](https://github.com/powershell/powershell-docs/).
 
@@ -71,7 +71,7 @@ MSDN kullanılabilir belgeleri de dahil olmak üzere PowerShell öğelerle sağl
 * Yardım sağlama yönergeleri olan [nasıl Cmdlet Yardım yazma](https://go.microsoft.com/fwlink/?LinkID=123415)
 * Cmdlet Yardım oluşturma, herhangi bir PowerShell komut dosyası, işlevini veya cmdlet'ini için en iyi yaklaşımı olduğu.
   Cmdlet Yardım oluşturma hakkında daha fazla bilgi için başlayın [yazma Cmdlet Yardım nasıl](https://go.microsoft.com/fwlink/?LinkID=123415) MSDN Kitaplığı'nda.
-  Bir komut dosyası içinde Yardım eklemek için bkz: [hakkında açıklama tabanlı Yardım](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
+  Bir komut dosyası içinde Yardım eklemek için bkz: [hakkında açıklama tabanlı Yardım](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
 * Birçok modül belgelerine MarkDown dosyaları gibi metin biçiminde de içerir.
   Markdown yoğun olarak kullanılan bir biçimde olduğu Github'da proje sitesi olduğunda bu özellikle yararlı olabilir.
   Kullanmak için en iyi uygulamadır [Github özellikli Markdown](https://help.github.com/categories/writing-on-github/)

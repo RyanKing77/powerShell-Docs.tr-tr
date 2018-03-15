@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "Çekme Server en iyi uygulamalar"
-ms.openlocfilehash: 045f98475d6182b329ecf048038a98e933684a82
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="pull-server-best-practices"></a>Çekme Server en iyi uygulamalar
 
@@ -24,7 +24,7 @@ Yayımlanan | Nisan 2015
 ## <a name="abstract"></a>Özet
 
 Bu belge, herkes için bir Windows PowerShell istenen durum yapılandırması çekme sunucu uygulama planlama için resmi bir kılavuz sağlamak için tasarlanmıştır. Bir çekme sunucusuna dağıtmak için yalnızca dakika sürer basit bir hizmettir. Bu belgede bir dağıtımda kullanılan teknik nasıl yapılır yönergeleri sunacaktır karşın, bu belgenin en iyi yöntemler ve ne dağıtmadan önce hakkında düşünmek için bir başvuru olarak değerdir.
-Okuyucular DSC temel olarak bilindiğini olmalıdır ve bileşenleri açıklamak için kullanılan terimler bir DSC dağıtımda dahil edilen. Daha fazla bilgi için bkz: [Windows PowerShell istenen durum yapılandırması genel bakış](https://technet.microsoft.com/en-us/library/dn249912.aspx) konu.
+Okuyucular DSC temel olarak bilindiğini olmalıdır ve bileşenleri açıklamak için kullanılan terimler bir DSC dağıtımda dahil edilen. Daha fazla bilgi için bkz: [Windows PowerShell istenen durum yapılandırması genel bakış](https://technet.microsoft.com/library/dn249912.aspx) konu.
 Bulut tempoyla gelişmesi DSC beklendiği gibi çekme sunucusuna da dahil olmak üzere temel alınan teknoloji gelişmesi ve yeni özellikleri tanıtan için de beklenmektedir. Bu belgenin önceki sürümlerden başvuruları ve forward-looking tasarımları teşvik eden gelecekteki görünümlü çözümler başvurular sağlayan ek bir sürüm tablosunu içerir.
 
 Bu belgenin iki ana bölümleri:
@@ -43,7 +43,7 @@ Windows PowerShell oluşturmak ve bildirim temelli yapılandırmaları yönetmek
 ### <a name="pull-server-role"></a>Çekme sunucu rolü  
 Bir çekme sunucu hedef düğümleri için erişilebilir yapılandırmaları depolamak için merkezi bir hizmet sunar.
  
-Çekme sunucu rolü, Web sunucusu örneğine veya bir SMB dosya paylaşımı dağıtılabilir. Web sunucusu özelliği bir OData arabirimi içerir ve isteğe bağlı olarak hedef düğümleri yapılandırmaları uygulanmış olarak başarı veya başarısızlık onayı geri bildirmek için özellikleri içerebilir. Bu işlevsellik ortamlarda kullanışlıdır çok sayıda hedef düğümleri olduğu. En son yapılandırma çekme sunucusuna işaret etmek için (bir istemci olarak da bilinir) bir hedef düğümü yapılandırdıktan sonra veri ve tüm gerekli komut dosyalarını karşıdan uygulanan ve. Bu bir kerelik dağıtımı veya kılan de çekme sunucunun önemli bir varlık değişikliği ölçekte yönetmek için yeniden tekrarlanan bir iş olarak meydana gelebilir. Daha fazla bilgi için bkz: [Windows PowerShell istenen durum yapılandırma çekme sunucularına](https://technet.microsoft.com/en-us/library/dn249913.aspx) ve [anında iletme ve çekme yapılandırma modlarından](https://technet.microsoft.com/en-us/library/dn249913.aspx).
+Çekme sunucu rolü, Web sunucusu örneğine veya bir SMB dosya paylaşımı dağıtılabilir. Web sunucusu özelliği bir OData arabirimi içerir ve isteğe bağlı olarak hedef düğümleri yapılandırmaları uygulanmış olarak başarı veya başarısızlık onayı geri bildirmek için özellikleri içerebilir. Bu işlevsellik ortamlarda kullanışlıdır çok sayıda hedef düğümleri olduğu. En son yapılandırma çekme sunucusuna işaret etmek için (bir istemci olarak da bilinir) bir hedef düğümü yapılandırdıktan sonra veri ve tüm gerekli komut dosyalarını karşıdan uygulanan ve. Bu bir kerelik dağıtımı veya kılan de çekme sunucunun önemli bir varlık değişikliği ölçekte yönetmek için yeniden tekrarlanan bir iş olarak meydana gelebilir. Daha fazla bilgi için bkz: [Windows PowerShell istenen durum yapılandırma çekme sunucularına](https://technet.microsoft.com/library/dn249913.aspx) ve [anında iletme ve çekme yapılandırma modlarından](https://technet.microsoft.com/library/dn249913.aspx).
 
 ## <a name="configuration-planning"></a>Yapılandırmasını planlama
 

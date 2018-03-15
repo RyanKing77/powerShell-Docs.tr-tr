@@ -3,20 +3,20 @@ ms.date: 2017-06-12
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: Bul DscResource
-ms.openlocfilehash: 37ba7925d6f73c453126f25e0818b3f8839d3b3b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Find-DscResource
+ms.openlocfilehash: 6c5713f122d48e9c9d5e0aa45dc14047afc56102
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="find-dscresource"></a>Bul DscResource
+# <a name="find-dscresource"></a>Find-DscResource
 
 Modüllerdeki DSC kaynakları bulur.
 
 ## <a name="description"></a>Açıklama
 
-Bul DscResource cmdlet bulur [istenen durum Yapılandırması'nı (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) kayıtlı depoları öğesinden belirtilen ölçütlerle eşleşen modüllerde bulunan kaynaklar.
+Bul DscResource cmdlet bulur [istenen durum Yapılandırması'nı (DSC)](https://msdn.microsoft.com/PowerShell/dsc/overview) kayıtlı depoları öğesinden belirtilen ölçütlerle eşleşen modüllerde bulunan kaynaklar.
 Modüllerin her zaman bu cmdlet bulur Bul DscResource yükleme-Bu cmdlet döndürür ve kaynakları içeren modüllerini yüklemek için modülüne iletebildiğiniz bir PSGetDscResourceInfo nesnesi döndürür.
 
 DSC, Windows PowerShell'de, dağıtma ve yazılım hizmetleri için yapılandırma verilerini yönetmek ve bu hizmetleri çalıştırdığınız ortamının yönetilmesi sağlayan yeni bir yönetim platformudur.
@@ -41,7 +41,7 @@ Get-Command -Name Find-DscResource -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Cmdlet çevrimiçi Yardım başvurusu
 
-[Bul DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
+[Find-DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
 
 ## <a name="example-commands"></a>Örnek komutlar
 ```powershell

@@ -2,8 +2,8 @@
 
 Bu konu, böylece PowerShellGet cmdlet'leri ve PowerShell Galerisi UI özelliklerini etkilenecek kendi PowerShell Galerisi yayınlar için bildirim değiştirme konusunda özet bilgileri olan yayımcı sağlar. Bu içerik, değişiklik, Orta kısım, ardından sol gezinti alanını sürümünden itibaren görüneceği yeri tarafından düzenlenir. Bir ayrıntı bölümü yoktur kapsayıcı etiketleri, önemli etiketleri, aynı zamanda bazıları etiketleri yaygın olarak kullanılan tanımlar. Bildirim örnekler sağlayan iki konuları vardır: 
 
-* Modülleri için bkz: [modülü güncelleştirme bildirimi](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/psget_update-modulemanifest)
-* Komut dosyaları için bkz: [meta verilerle komut dosyası oluştur](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+* Modülleri için bkz: [modülü güncelleştirme bildirimi](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
+* Komut dosyaları için bkz: [meta verilerle komut dosyası oluştur](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>PowerShell Galerisi özellik öğeleri listesi tarafından denetlenir
 
@@ -84,7 +84,7 @@ Bu daha az gürültü neden ve daha iyi arama sonuçları Tüketiciler için ter
 | **Dağıtım** | Dağıtma biraz daha az sıklıkta kullanılır |
 | **Bulut** |  |
 | **GIT** |  |
-| **Test** | Sınama daha az tercih edilir |
+| **test etme** | Sınama daha az tercih edilir |
 | **VersionControl** | Sürüm daha sık kullanılır ancak daha az kesin  |
 | **Günlüğe kaydetme** | Tercih edilen bir eylem olarak günlük kullanımı |
 | **Log** | Bir şey olarak tercih edilen kullanımını günlük |

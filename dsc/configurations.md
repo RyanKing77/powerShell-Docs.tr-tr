@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC yapılandırmaları"
-ms.openlocfilehash: 3fd2846d0fbfb0ae9baa44cde66afe1f5be65cf7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-configurations"></a>DSC yapılandırmaları
 
@@ -62,7 +62,7 @@ Configuration MyDscConfiguration {
         }
     }
 }
-MyDscConfiguration -ComputerName <MyComputer>
+MyDscConfiguration -ComputerName $ComputerName
 
 ```
 
@@ -141,11 +141,11 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>Yapılandırmanızda yeni kaynakları kullanma
 
 Önceki örneklerde çalıştırdıysanız, açıkça almadan kaynak kullanmakta olduğunuz uyarı fark etmiş olabilirsiniz.
-Bugün, DSC da PSDesiredStateConfiguration modülünün bir parçası olarak 12 kaynakları ile birlikte gelir. Dış modüllerindeki diğer kaynakları yerleştirilmelidir `$env:PSModulePath` tarafından LCM'yi tanınması için. Yeni bir cmdlet [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), hangi kaynaklara göre LCM'yi sistemde yüklü ve kullanım için uygun olduğunu belirlemek için kullanılabilir. Bu modüller, yerleştirildi sonra `$env:PSModulePath` ve düzgün şekilde tarafından tanınan [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), bunlar yine de yapılandırmanızı içinde yüklü olması gerekir. 
+Bugün, DSC da PSDesiredStateConfiguration modülünün bir parçası olarak 12 kaynakları ile birlikte gelir. Dış modüllerindeki diğer kaynakları yerleştirilmelidir `$env:PSModulePath` tarafından LCM'yi tanınması için. Yeni bir cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), hangi kaynaklara göre LCM'yi sistemde yüklü ve kullanım için uygun olduğunu belirlemek için kullanılabilir. Bu modüller, yerleştirildi sonra `$env:PSModulePath` ve düzgün şekilde tarafından tanınan [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), bunlar yine de yapılandırmanızı içinde yüklü olması gerekir. 
 **İçeri aktarma DscResource** içinde yalnızca tanınmasını dinamik bir anahtar sözcüktür bir **yapılandırma** (yani olmadığı bir cmdlet) engelle. 
 **İçeri aktarma DscResource** iki parametreleri destekler:
 - **ModuleName** kullanmanın önerilen yöntem **alma DscResource**. Bu, (bir dize dizisi modül adlarını yanı sıra) içeri aktarılacak kaynakları içeren modülü adını kabul eder. 
-- **Ad** almak için kaynak adıdır. Bu "Name" tarafından döndürülen kolay adı değil [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), ancak kullanıldığında sınıf adı kaynak şemasını tanımlama (olarak döndürülen **ResourceType** tarafından [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 
+- **Ad** almak için kaynak adıdır. Bu "Name" tarafından döndürülen kolay adı değil [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), ancak kullanıldığında sınıf adı kaynak şemasını tanımlama (olarak döndürülen **ResourceType** tarafından [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)). 
 
 ## <a name="see-also"></a>Ayrıca bkz:
 * [Windows PowerShell istenen durum yapılandırması genel bakış](overview.md)

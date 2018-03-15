@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC kaynağı C# geliştirme"
-ms.openlocfilehash: 2fc6b8c127bca29e8f66fc7bd8d2828fdfe39f3c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4d276edf1180573df61b62d18a9f90cfa1cd4112
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>DSC kaynağı C# geliştirme
 
 > İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Genellikle, Windows PowerShell istenen durum yapılandırması (DSC) özel bir kaynağı bir PowerShell Betiği uygulanır. Ancak, C# ' ta cmdlet'leri yazarak DSC özel kaynak işlevselliğini de uygulayabilirsiniz. Cmdlet'leri C# dilinde yazma giriş için bkz [bir Windows PowerShell Cmdlet yazma](https://technet.microsoft.com/en-us/library/dd878294.aspx).
+Genellikle, Windows PowerShell istenen durum yapılandırması (DSC) özel bir kaynağı bir PowerShell Betiği uygulanır. Ancak, C# ' ta cmdlet'leri yazarak DSC özel kaynak işlevselliğini de uygulayabilirsiniz. Cmdlet'leri C# dilinde yazma giriş için bkz [bir Windows PowerShell Cmdlet yazma](https://technet.microsoft.com/library/dd878294.aspx).
 
 C# cmdlet'leriyle kaynak uygulama yanı sıra MOF şema oluşturma, klasör yapısını oluşturma, alma ve özel DSC kaynağı kullanma sürecini aynıdır açıklandığı gibi [MOFileözelbirDSCkaynağıyazma](authoringResourceMOF.md).
 
@@ -281,5 +281,5 @@ $env: psmodulepath (folder)
 #### <a name="concepts"></a>Kavramlar
 [Özel bir DSC kaynağı MOF ile yazma](authoringResourceMOF.md)
 #### <a name="other-resources"></a>Diğer Kaynaklar
-[Bir Windows PowerShell Cmdlet yazma](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+[Bir Windows PowerShell Cmdlet yazma](https://msdn.microsoft.com/library/dd878294.aspx)
 

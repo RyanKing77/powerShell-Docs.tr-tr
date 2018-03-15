@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC sorunlarını giderme"
-ms.openlocfilehash: 4141e1f3304460dcaf310ce603fdc5d9550a5069
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: cdb11a80daecec0e0d01071752612663ac69ac6d
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-dsc"></a>DSC sorunlarını giderme
 
@@ -21,7 +21,7 @@ Windows PowerShell istenen durum yapılandırması (DSC) üzerinde WinRM bağlı
 
 ## <a name="using-get-dscconfigurationstatus"></a>Get-DscConfigurationStatus kullanma
 
-[Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) cmdlet'i, hedef düğüm yapılandırması durumu hakkındaki bilgileri alır. Yapılandırma çalıştırma veya desteklemediğini başarılı hakkında üst düzey bilgileri içeren zengin bir nesne döndürdü. Gibi çalıştırmak yapılandırması hakkında ayrıntıları keşfetmek için nesnesine derinliklerine:
+[Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet'i, hedef düğüm yapılandırması durumu hakkındaki bilgileri alır. Yapılandırma çalıştırma veya desteklemediğini başarılı hakkında üst düzey bilgileri içeren zengin bir nesne döndürdü. Gibi çalıştırmak yapılandırması hakkında ayrıntıları keşfetmek için nesnesine derinliklerine:
 
 * Tüm başarısız kaynakları
 * Bir sistem yeniden başlatması herhangi bir kaynak
@@ -117,7 +117,7 @@ Consistency engine was run successfully.
 
 DSC olaylar kullanıcının bir DSC işten toplama olaylarına sağlayan belirli bir yapı günlüğe kaydedilir. Yapısı aşağıdaki gibidir:
 
-**İş Kimliği:<Guid>**
+**İş Kimliği: <Guid>**
 **<Event Message>**
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>Tek bir DSC işlem toplama olayları
@@ -232,7 +232,7 @@ Displaying messages from built-in DSC resources:
 
 ### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4: en son başarısız işlemler için günlüğe hata iletileri
 
-`$SeparateDscOperations[0].Group`Son işlemi olayları kümesini içerir. Çalıştırma `Where-Object` olayları filtrelemek için cmdlet tabanlı kullanıcıların düzeyi görünen adı. Sonuçları depolanır `$myFailedEvent` değişkenine olabilen başka olay iletisini almak için dissected:
+`$SeparateDscOperations[0].Group` Son işlemi olayları kümesini içerir. Çalıştırma `Where-Object` olayları filtrelemek için cmdlet tabanlı kullanıcıların düzeyi görünen adı. Sonuçları depolanır `$myFailedEvent` değişkenine olabilen başka olay iletisini almak için dissected:
 
 ```powershell
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
@@ -247,7 +247,7 @@ Error Code : 1
 
 ### <a name="5-all-events-generated-for-a-particular-job-id"></a>5: belirli iş kimliği için oluşturulan tüm olayları
 
-`$SeparateDscOperations`her biri benzersiz iş kimliği ada sahip bir dizi gruplarının Çalıştırarak `Where-Object` cmdlet'ini gruplarıyla belirli iş kimliği olan olayları ayıklamak:
+`$SeparateDscOperations` her biri benzersiz iş kimliği ada sahip bir dizi gruplarının Çalıştırarak `Where-Object` cmdlet'ini gruplarıyla belirli iş kimliği olan olayları ayıklamak:
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -621,5 +621,5 @@ onlyProperty                            PSComputerName
 * [Özel Windows PowerShell istenen durum yapılandırması kaynakları oluşturma](authoringResource.md)
 
 ### <a name="other-resources"></a>Diğer Kaynaklar
-* [Windows PowerShell istenen durum yapılandırma cmdlet'leri](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+* [Windows PowerShell istenen durum yapılandırma cmdlet'leri](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
 

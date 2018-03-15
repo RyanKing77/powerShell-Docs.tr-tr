@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, powershell, güvenlik"
 title: "JEA rol özellikleri"
-ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 083cab3b44348168fe20e8355f5076b28be78702
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-role-capabilities"></a>JEA rol özellikleri
 
@@ -41,7 +41,7 @@ Bu kapsamlı bir liste değil ve dikkat gerektiren bir başlangıç noktası ola
 
 ### <a name="examples-of-potentially-dangerous-commands"></a>Potansiyel olarak tehlikeli olabilecek komutları örnekleri
 
-Riski | Örnek | İlgili komutları
+Risk | Örnek | İlgili komutları
 -----|---------|-----------------
 Bağlanan kullanıcının JEA atlamak için yönetici ayrıcalıkları verme | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`
 Kötü amaçlı yazılım, açıkları veya korumaları atlamak için özel betikler gibi rastgele bir kodu çalıştırma | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
@@ -86,7 +86,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> [Ortak PowerShell parametrelerini](https://technet.microsoft.com/en-us/library/hh847884.aspx) kullanılabilir parametrelerin kısıtlıyor olsa bile her zaman izin verilir.
+> [Ortak PowerShell parametrelerini](https://technet.microsoft.com/library/hh847884.aspx) kullanılabilir parametrelerin kısıtlıyor olsa bile her zaman izin verilir.
 > Siz açıkça bunları parametreler alanında listelenmemesi gerekir.
 
 Aşağıdaki tablo görünür cmdlet veya işlevi özelleştirebilirsiniz çeşitli yolları açıklanmaktadır.
@@ -111,7 +111,7 @@ Aynı cmdlet veya işlevi bir ValidatePattern ve ValidateSet uygulanamıyor.
 
 Bunu yaparsanız, ValidatePattern ValidateSet geçersiz kılar.
 
-ValidatePattern hakkında daha fazla bilgi için kullanıma [bu *Hey, Scripting Guy!* sonrası](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) ve [PowerShell normal ifadeler](https://technet.microsoft.com/en-us/library/hh847880.aspx) başvuru içeriği.
+ValidatePattern hakkında daha fazla bilgi için kullanıma [bu *Hey, Scripting Guy!* sonrası](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) ve [PowerShell normal ifadeler](https://technet.microsoft.com/library/hh847880.aspx) başvuru içeriği.
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>Dış komutları ve PowerShell betikleri izin verme
 
@@ -128,7 +128,7 @@ Birçok yürütülebilir dosyaları, geçerli durumu okuma ve yalnızca farklı 
 Örneğin, hangi ağ paylaşımlarına yerel makine tarafından barındırılan denetlemek isteyen bir dosya sunucu yöneticisi rol göz önünde bulundurun.
 Kontrol etmenin bir yolu kullanmaktır `net share`.
 Ancak, yönetici, yönetici ayrıcalıklarıyla kazanmak için komutunu kolayca kullanabilirsiniz çünkü net.exe çok tehlikeli izin vererek `net group Administrators unprivilegedjeauser /add`.
-Daha iyi bir yaklaşım izin vermektir [Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx) aynı sonucu veren ancak çok daha kısıtlı kapsama sahip.
+Daha iyi bir yaklaşım izin vermektir [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) aynı sonucu veren ancak çok daha kısıtlı kapsama sahip.
 
 Dış komutları kullanılabilir kullanıcılara JEA oturumda yaparken, her zaman başka bir yerde sistemine yerleştirilmiş bir benzer ada (ve büyük olasılıkla malicous) programı yerine yürütülmedi sağlamak için yürütülebilir dosyanın tam yolunu belirtin.
 

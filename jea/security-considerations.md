@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, powershell, güvenlik"
 title: "JEA güvenlik konuları"
-ms.openlocfilehash: 2dcce34113998a1c31709b6afe6d0a21c991e79d
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 69bbe50fb1a7580c32d657a0f084cc80c28825c7
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-security-considerations"></a>JEA güvenlik konuları
 
@@ -79,7 +79,7 @@ Rol Tanımları artık beklendiği gibi çalışmaz ve uç noktasına erişmek i
 
 Bir RunAsCredential JEA noktadaki geri belirli kullanıcılar ve eylemleri Kullanıcıları rollerine eşlemek için destek eksikliği izleme zorluk nedeniyle kullanmamanız gerekir.
 
-## <a name="winrm-endpoint-acl"></a>WinRM uç nokta ACL
+## <a name="winrm-endpoint-acl"></a>WinRM Endpoint ACL
 
 Normal PowerShell uzaktan iletişim uç ile denetimleri WinRM yapılandırmasında bir ayrı bir erişim denetim listesi (ACL) her JEA bitiş taşıdığından kimin JEA bitiş noktası ile doğrulanabilir.
 Hatalı biçimde yapılandırdıysanız, güvenilen kullanıcıların JEA uç noktasına erişmek mümkün olmayabilir ve/veya güvenilmeyen kullanıcıların erişim elde.
@@ -95,7 +95,7 @@ New-PSSessionConfigurationFile -Path '.\jea.pssc' -SessionType RestrictedRemoteS
 Register-PSSessionConfiguration -Path '.\jea.pssc' -Name 'MyJEAEndpoint'
 ```
 
-Kullanıcı izinleri olan denetim [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'i.
+Kullanıcı izinleri olan denetim [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'i.
 
 ```powershell
 PS C:\> Get-PSSessionConfiguration -Name 'MyJEAEndpoint' | Select-Object Permission
