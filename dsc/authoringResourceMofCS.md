@@ -3,26 +3,26 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, powershell, yapılandırma, Kur"
 title: "DSC kaynağı C# geliştirme"
-ms.openlocfilehash: 2fc6b8c127bca29e8f66fc7bd8d2828fdfe39f3c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4d276edf1180573df61b62d18a9f90cfa1cd4112
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="99f91-103">DSC kaynağı C# geliştirme</span><span class="sxs-lookup"><span data-stu-id="99f91-103">Authoring a DSC resource in C#</span></span>
+# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="cde35-103">DSC kaynağı C# geliştirme</span><span class="sxs-lookup"><span data-stu-id="cde35-103">Authoring a DSC resource in C#</span></span>
 
-> <span data-ttu-id="99f91-104">İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="99f91-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="cde35-104">İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="cde35-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="99f91-105">Genellikle, Windows PowerShell istenen durum yapılandırması (DSC) özel bir kaynağı bir PowerShell Betiği uygulanır.</span><span class="sxs-lookup"><span data-stu-id="99f91-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="99f91-106">Ancak, C# ' ta cmdlet'leri yazarak DSC özel kaynak işlevselliğini de uygulayabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="99f91-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="99f91-107">Cmdlet'leri C# dilinde yazma giriş için bkz [bir Windows PowerShell Cmdlet yazma](https://technet.microsoft.com/en-us/library/dd878294.aspx).</span><span class="sxs-lookup"><span data-stu-id="99f91-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).</span></span>
+<span data-ttu-id="cde35-105">Genellikle, Windows PowerShell istenen durum yapılandırması (DSC) özel bir kaynağı bir PowerShell Betiği uygulanır.</span><span class="sxs-lookup"><span data-stu-id="cde35-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="cde35-106">Ancak, C# ' ta cmdlet'leri yazarak DSC özel kaynak işlevselliğini de uygulayabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="cde35-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="cde35-107">Cmdlet'leri C# dilinde yazma giriş için bkz [bir Windows PowerShell Cmdlet yazma](https://technet.microsoft.com/library/dd878294.aspx).</span><span class="sxs-lookup"><span data-stu-id="cde35-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](https://technet.microsoft.com/library/dd878294.aspx).</span></span>
 
-<span data-ttu-id="99f91-108">C# cmdlet'leriyle kaynak uygulama yanı sıra MOF şema oluşturma, klasör yapısını oluşturma, alma ve özel DSC kaynağı kullanma sürecini aynıdır açıklandığı gibi [MOFileözelbirDSCkaynağıyazma](authoringResourceMOF.md).</span><span class="sxs-lookup"><span data-stu-id="99f91-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
+<span data-ttu-id="cde35-108">C# cmdlet'leriyle kaynak uygulama yanı sıra MOF şema oluşturma, klasör yapısını oluşturma, alma ve özel DSC kaynağı kullanma sürecini aynıdır açıklandığı gibi [MOFileözelbirDSCkaynağıyazma](authoringResourceMOF.md).</span><span class="sxs-lookup"><span data-stu-id="cde35-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
 
-## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="99f91-109">Cmdlet tabanlı bir kaynak yazma</span><span class="sxs-lookup"><span data-stu-id="99f91-109">Writing a cmdlet-based resource</span></span>
-<span data-ttu-id="99f91-110">Bu örnekte, biz bir metin dosyası ve içeriği yöneten basit bir kaynak gerçekleştireceksiniz.</span><span class="sxs-lookup"><span data-stu-id="99f91-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
+## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="cde35-109">Cmdlet tabanlı bir kaynak yazma</span><span class="sxs-lookup"><span data-stu-id="cde35-109">Writing a cmdlet-based resource</span></span>
+<span data-ttu-id="cde35-110">Bu örnekte, biz bir metin dosyası ve içeriği yöneten basit bir kaynak gerçekleştireceksiniz.</span><span class="sxs-lookup"><span data-stu-id="cde35-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
 
-### <a name="writing-the-mof-schema"></a><span data-ttu-id="99f91-111">MOF şema yazma</span><span class="sxs-lookup"><span data-stu-id="99f91-111">Writing the MOF schema</span></span>
+### <a name="writing-the-mof-schema"></a><span data-ttu-id="cde35-111">MOF şema yazma</span><span class="sxs-lookup"><span data-stu-id="cde35-111">Writing the MOF schema</span></span>
 
-<span data-ttu-id="99f91-112">MOF kaynak tanımı aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="99f91-112">The following is the MOF resource definition.</span></span>
+<span data-ttu-id="cde35-112">MOF kaynak tanımı aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="cde35-112">The following is the MOF resource definition.</span></span>
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("xDemoFile")]
@@ -34,19 +34,19 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="99f91-113">Visual Studio projesi ayarlama</span><span class="sxs-lookup"><span data-stu-id="99f91-113">Setting up the Visual Studio project</span></span>
-#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="99f91-114">Bir cmdlet projesi ayarlama</span><span class="sxs-lookup"><span data-stu-id="99f91-114">Setting up a cmdlet project</span></span>
+### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="cde35-113">Visual Studio projesi ayarlama</span><span class="sxs-lookup"><span data-stu-id="cde35-113">Setting up the Visual Studio project</span></span>
+#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="cde35-114">Bir cmdlet projesi ayarlama</span><span class="sxs-lookup"><span data-stu-id="cde35-114">Setting up a cmdlet project</span></span>
 
-1. <span data-ttu-id="99f91-115">Visual Studio'yu açın.</span><span class="sxs-lookup"><span data-stu-id="99f91-115">Open Visual Studio.</span></span>
-1. <span data-ttu-id="99f91-116">Bir C# projesi oluşturun ve adını belirtin.</span><span class="sxs-lookup"><span data-stu-id="99f91-116">Create a C# project and provide the name.</span></span>
-1. <span data-ttu-id="99f91-117">Seçin **sınıf kitaplığı** kullanılabilir proje şablonları.</span><span class="sxs-lookup"><span data-stu-id="99f91-117">Select **Class Library** from the available project templates.</span></span>
-1. <span data-ttu-id="99f91-118">Click **Ok**.</span><span class="sxs-lookup"><span data-stu-id="99f91-118">Click **Ok**.</span></span>
-1. <span data-ttu-id="99f91-119">Bir derleme başvurusu System.Automation.Management.dll projenize ekleyin.</span><span class="sxs-lookup"><span data-stu-id="99f91-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
-1. <span data-ttu-id="99f91-120">Derleme adı kaynak adı ile eşleşmesi için değiştirin.</span><span class="sxs-lookup"><span data-stu-id="99f91-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="99f91-121">Derleme adlı bu durumda, **MSFT_XDemoFile**.</span><span class="sxs-lookup"><span data-stu-id="99f91-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
+1. <span data-ttu-id="cde35-115">Visual Studio'yu açın.</span><span class="sxs-lookup"><span data-stu-id="cde35-115">Open Visual Studio.</span></span>
+1. <span data-ttu-id="cde35-116">Bir C# projesi oluşturun ve adını belirtin.</span><span class="sxs-lookup"><span data-stu-id="cde35-116">Create a C# project and provide the name.</span></span>
+1. <span data-ttu-id="cde35-117">Seçin **sınıf kitaplığı** kullanılabilir proje şablonları.</span><span class="sxs-lookup"><span data-stu-id="cde35-117">Select **Class Library** from the available project templates.</span></span>
+1. <span data-ttu-id="cde35-118">Click **Ok**.</span><span class="sxs-lookup"><span data-stu-id="cde35-118">Click **Ok**.</span></span>
+1. <span data-ttu-id="cde35-119">Bir derleme başvurusu System.Automation.Management.dll projenize ekleyin.</span><span class="sxs-lookup"><span data-stu-id="cde35-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
+1. <span data-ttu-id="cde35-120">Derleme adı kaynak adı ile eşleşmesi için değiştirin.</span><span class="sxs-lookup"><span data-stu-id="cde35-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="cde35-121">Derleme adlı bu durumda, **MSFT_XDemoFile**.</span><span class="sxs-lookup"><span data-stu-id="cde35-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
 
-### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="99f91-122">Cmdlet kod yazma</span><span class="sxs-lookup"><span data-stu-id="99f91-122">Writing the cmdlet code</span></span>
+### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="cde35-122">Cmdlet kod yazma</span><span class="sxs-lookup"><span data-stu-id="cde35-122">Writing the cmdlet code</span></span>
 
-<span data-ttu-id="99f91-123">Aşağıdaki C# kodu uygulayan **Get-TargetResource**, **kümesi TargetResource**, ve **Test TargetResource** cmdlet'leri.</span><span class="sxs-lookup"><span data-stu-id="99f91-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
+<span data-ttu-id="cde35-123">Aşağıdaki C# kodu uygulayan **Get-TargetResource**, **kümesi TargetResource**, ve **Test TargetResource** cmdlet'leri.</span><span class="sxs-lookup"><span data-stu-id="cde35-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
 
 ```C#
 
@@ -262,9 +262,9 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### <a name="deploying-the-resource"></a><span data-ttu-id="99f91-124">Kaynak dağıtma</span><span class="sxs-lookup"><span data-stu-id="99f91-124">Deploying the resource</span></span>
+### <a name="deploying-the-resource"></a><span data-ttu-id="cde35-124">Kaynak dağıtma</span><span class="sxs-lookup"><span data-stu-id="cde35-124">Deploying the resource</span></span>
 
-<span data-ttu-id="99f91-125">Betik tabanlı bir kaynak için benzer bir dosya yapısı içinde derlenmiş dll dosyasını yeniden kaydedilmesi gerekir.</span><span class="sxs-lookup"><span data-stu-id="99f91-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="99f91-126">Bu kaynak için klasör yapısı verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="99f91-126">The following is the folder structure for this resource.</span></span>
+<span data-ttu-id="cde35-125">Betik tabanlı bir kaynak için benzer bir dosya yapısı içinde derlenmiş dll dosyasını yeniden kaydedilmesi gerekir.</span><span class="sxs-lookup"><span data-stu-id="cde35-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="cde35-126">Bu kaynak için klasör yapısı verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="cde35-126">The following is the folder structure for this resource.</span></span>
 
 ```
 $env: psmodulepath (folder)
@@ -277,9 +277,9 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### <a name="see-also"></a><span data-ttu-id="99f91-127">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="99f91-127">See Also</span></span>
-#### <a name="concepts"></a><span data-ttu-id="99f91-128">Kavramlar</span><span class="sxs-lookup"><span data-stu-id="99f91-128">Concepts</span></span>
-[<span data-ttu-id="99f91-129">Özel bir DSC kaynağı MOF ile yazma</span><span class="sxs-lookup"><span data-stu-id="99f91-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
-#### <a name="other-resources"></a><span data-ttu-id="99f91-130">Diğer Kaynaklar</span><span class="sxs-lookup"><span data-stu-id="99f91-130">Other Resources</span></span>
-[<span data-ttu-id="99f91-131">Bir Windows PowerShell Cmdlet yazma</span><span class="sxs-lookup"><span data-stu-id="99f91-131">Writing a Windows PowerShell Cmdlet</span></span>](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+### <a name="see-also"></a><span data-ttu-id="cde35-127">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="cde35-127">See Also</span></span>
+#### <a name="concepts"></a><span data-ttu-id="cde35-128">Kavramlar</span><span class="sxs-lookup"><span data-stu-id="cde35-128">Concepts</span></span>
+[<span data-ttu-id="cde35-129">Özel bir DSC kaynağı MOF ile yazma</span><span class="sxs-lookup"><span data-stu-id="cde35-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+#### <a name="other-resources"></a><span data-ttu-id="cde35-130">Diğer Kaynaklar</span><span class="sxs-lookup"><span data-stu-id="cde35-130">Other Resources</span></span>
+[<span data-ttu-id="cde35-131">Bir Windows PowerShell Cmdlet yazma</span><span class="sxs-lookup"><span data-stu-id="cde35-131">Writing a Windows PowerShell Cmdlet</span></span>](https://msdn.microsoft.com/library/dd878294.aspx)
 
