@@ -2,12 +2,12 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
+keywords: wmf,powershell,setup
 ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Ayıklamak ve yapılandırılmış nesneler arasından dizesi ayrıştırılamadı
 Bu aynı zamanda ConvertFrom dize cmdlet'i için bazı ek işlevler sunar:
@@ -30,7 +30,7 @@ Varsayılan olarak, ayrılmış ayrıştırma boşluk konumundaki giriş böler 
 
 > 1 \[C:\\temp\] &gt; &gt; "Hello World" | ConvertFrom dize | Format-Table-otomatik
 
-P1 P2
+P1    P2
 --    --
 
 Cmdlet ayrıca otomatik olarak oluşturulan göre örnek temelli ayrıştırma destekler [FlashExtract](http://research.microsoft.com/en-us/um/people/sumitg/flashextract.html) araştırma iş [Microsoft Research](http://research.microsoft.com).
@@ -83,11 +83,11 @@ Bu örnekler, kümesinden **ConvertFrom dize** artık otomatik olarak nesne taba
 
 > 2 \[C:\\temp\]
 >
-> &gt;&gt;Get-içerik. \\addresses.output.txt | ConvertFrom dize - TemplateFile. \\addresses.template.txt | &gt; &gt; &gt; Format-Table-otomatik
+> &gt;&gt; Get-içerik. \\addresses.output.txt | ConvertFrom dize - TemplateFile. \\addresses.template.txt | &gt; &gt; &gt; Format-Table-otomatik
 >
 > ExtentText adı Şehir durumu
 > ----------                     ----               ----     -----
-> Ana Trujillo...                Ana Trujillo Redmond Washington Antonio Moreno...              Antonio Moreno Renton WA Thomas Hardy...                Thomas Hardy Seattle WA Çiğdem Berglund...          Çiğdem Berglund Redmond Washington Hanna Moos...                  Hanna Moos Puyallup WA
+> Ana Trujillo...                Ana Trujillo       Redmond  WA Antonio Moreno...              Antonio Moreno Renton WA Thomas Hardy...                Thomas Hardy Seattle WA Çiğdem Berglund...          Christina Berglund Redmond  WA Hanna Moos...                  Hanna Moos         Puyallup WA
 
-Ek veri işleme ayıklanan metni yapmak için **ExtentText** özelliği kendisinden kaydı çıkarılan ham metni yakalar. Bu özellik üzerinde geribildirim sağlamak veya örnekler yazma zorluk sahip içeriği paylaşmak için lütfen e-posta < psdmfb@microsoft.com >.
+Ek veri işleme ayıklanan metni yapmak için **ExtentText** özelliği kendisinden kaydı çıkarılan ham metni yakalar. Bu özellik üzerinde geribildirim sağlamak veya örnekler yazma zorluk sahip içeriği paylaşmak için lütfen e-posta <psdmfb@microsoft.com>.
 

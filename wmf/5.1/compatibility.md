@@ -5,10 +5,10 @@ ms.topic: reference
 keywords: wmf,powershell,setup
 title: "WMF 5.1 işletim sistemi uyumluluğu"
 ms.openlocfilehash: 04217c5abb0f04a5dc6b15cd956a632f7b84c9bb
-ms.sourcegitcommit: 5dbf78ba0db482efa79e31a0e4963f8cbeb3df54
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 işletim sistemi uyumluluğu #
 
@@ -20,10 +20,10 @@ ms.lasthandoff: 12/15/2017
 | Windows 10 | İçinde gelir-kutusunu * | İçinde gelir-kutusunu *  | | | |  
 | Windows Server 2012 R2| Evet | Evet | Yerleşik gelir |  |  |
 | Windows 8.1 | Evet | Evet |  Yerleşik gelir |  |  |
-| Windows Server 2012 | Evet | Evet'e | Evet |  Yerleşik gelir | |
+| Windows Server 2012 | Evet | Evet | Evet |  Yerleşik gelir | |
 | Windows 8 |  |  |  | Yerleşik gelir | |
-| Windows Server 2008 R2 SP1 | Evet | Evet'e | Evet'e |  Evet| Yerleşik gelir |
-| Windows 7 SP1  | Evet | Evet'e | Evet'e | Evet | Yerleşik gelir |
+| Windows Server 2008 R2 SP1 | Evet | Evet | Evet |  Evet| Yerleşik gelir |
+| Windows 7 SP1  | Evet | Evet | Evet | Evet | Yerleşik gelir |
 | Windows Server 2008 SP2 | | | | Evet | Evet |
 | Windows Vista | | | | | Evet |
 | Windows Server 2003| | | |  | Evet |
