@@ -2,14 +2,14 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
+keywords: wmf,powershell,setup
 ms.openlocfilehash: 32f8e20889ddc526def4b925e8d0761a2e851e19
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/20/2018
 ---
-# <a name="unified-and-consistent-state-and-status-representation"></a>Birleştirilmiş ve tutarlı durumunu ve Durum Gösterimi
+# <a name="unified-and-consistent-state-and-status-representation"></a>Birleşmiş ve Tutarlı Durum ve Durum Gösterimi
 
 Bir dizi, yerleşik LCM'yi durumu ve DSC durum otomasyonlara yönelik bu sürümde yapılan. Birleştirilmiş ve tutarlı durumunu ve durum Beyanları bunlar, yönetilebilir datetime özelliği durum nesne Get-DscConfigurationStatus cmdlet tarafından döndürülen ve Get-DscLocalConfigurationManager tarafından döndürülen LCM'yi durumu ayrıntıları özelliği Gelişmiş cmdlet'ini kullanın.
 
@@ -27,16 +27,16 @@ Aşağıdaki tabloda sonuç gösterilmiştir durum ilgili birkaç tipik senaryol
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Boşta                 | Başarılı    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Başarısız    | $false        | $null                        | F                              |
-| S, F                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
-| F, S                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
+| S,F                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
+| F,S                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Başarısız    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
 | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Başarısız    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-| S, r                            | PendingReboot        | Başarılı    | $true         | S                            | R                              |
+| S, r                            | PendingReboot        | Başarılı    | $true         | S                            | r                              |
 | F, r                            | PendingReboot        | Başarısız    | $true         | $null                        | F, r                           |
-| r, S                            | PendingReboot        | Başarılı    | $true         | $null                        | R                              |
-| r, F                            | PendingReboot        | Başarılı    | $true         | $null                        | R                              |
+| r, S                            | PendingReboot        | Başarılı    | $true         | $null                        | r                              |
+| r, F                            | PendingReboot        | Başarılı    | $true         | $null                        | r                              |
 
-^ S<sub>ı</sub>: F başarıyla uygulandı kaynakları bir dizi<sub>ı</sub>: bir dizi başarısız yeniden başlatma gerektiren r: A kaynak uygulanan kaynakları\*
+^ S<sub>ı</sub>: F başarıyla uygulandı kaynakları bir dizi<sub>ı</sub>: bir dizi başarısız yeniden başlatma gerektiren r: A kaynak uygulanan kaynakları \*
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState
