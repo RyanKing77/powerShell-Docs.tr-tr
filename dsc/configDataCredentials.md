@@ -283,7 +283,7 @@ Yerel bir hesap kullanarak diğer sunucularda kullanılabilir etki alanı kimlik
 
 **Kimlik bilgileri ile DSC kaynakları kullanılırken, yerel bir hesap bir etki alanı hesabı mümkün olduğunda tercih edilir.**
 
-Varsa bir '\' veya ' @' ın `Username` özelliği kimlik bilgisi, daha sonra DSC işlemek, bir etki alanı hesabı olarak.
+Varsa bir '\' veya '@' ın `Username` özelliği kimlik bilgisi, daha sonra DSC işlemek, bir etki alanı hesabı olarak.
 "Localhost", "127.0.0.1" için bir özel durum yoktur ve ":: 1" kullanıcı adı etki alanı kısmının.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
