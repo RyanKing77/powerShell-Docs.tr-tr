@@ -10,7 +10,7 @@ ms.contentlocale: tr-TR
 ms.lasthandoff: 03/20/2018
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Sürüm aralıkları (1.*, vb.) bildirme modülleri desteği
-Birlikte **- MinimumVersion**, **- MaximumVersion** artık get/içeri aktarma modülü belirli aralık içinde kullanıcıya izin verir. Parametresini de destekler **. ***. Aşağıdaki örnekte, nasıl çalıştığı gösterilmektedir:
+Birlikte **- MinimumVersion**, **- MaximumVersion** artık get/içeri aktarma modülü belirli aralık içinde kullanıcıya izin verir. Parametresini de destekler **.**\*. Aşağıdaki örnekte, nasıl çalıştığı gösterilmektedir:
 
 ```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
