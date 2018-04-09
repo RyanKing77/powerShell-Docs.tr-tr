@@ -62,7 +62,7 @@ Desteklemek için bu modüller açıkça PowerShell çekirdek desteği sürece P
 Örneğin, kullanarak `ActiveDirectory` desteklenmeyen bir senaryodur Windows Server parçası olarak gelir modüldür.
 
 Ancak, açıkça PowerShell çekirdek desteklemeyen modülleri bazı durumlarda uyumlu olabilir.
-Yükleyerek [ `WindowsPSModulePath` ][] modülü, Windows PowerShell ekleyebilirsiniz `PSModulePath` PowerShell çekirdek için `PSModulePath`.
+Yükleyerek [`WindowsPSModulePath`][] modülü, Windows PowerShell ekleyebilirsiniz `PSModulePath` PowerShell çekirdek için `PSModulePath`.
 
 İlk olarak, yükleme `WindowsPSModulePath` PowerShell Galerisi'nden modül:
 

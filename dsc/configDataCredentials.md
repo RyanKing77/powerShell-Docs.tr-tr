@@ -1,11 +1,11 @@
 ---
 ms.date: 2017-06-12
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "Yapılandırma verilerini seçeneklerinde kimlik bilgileri"
+keywords: DSC, powershell, yapılandırma, Kur
+title: Yapılandırma verilerini seçeneklerinde kimlik bilgileri
 ms.openlocfilehash: 6ddf82c2b63309255ec3187d650677a6c3c2afb0
 ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 03/15/2018
 ---
@@ -283,7 +283,7 @@ Yerel bir hesap kullanarak diğer sunucularda kullanılabilir etki alanı kimlik
 
 **Kimlik bilgileri ile DSC kaynakları kullanılırken, yerel bir hesap bir etki alanı hesabı mümkün olduğunda tercih edilir.**
 
-Varsa bir '\' veya '@' ın `Username` özelliği kimlik bilgisi, daha sonra DSC işlemek, bir etki alanı hesabı olarak.
+Varsa bir '\' veya '\@' ın `Username` özelliği kimlik bilgisi, daha sonra DSC işlemek, bir etki alanı hesabı olarak.
 "Localhost", "127.0.0.1" için bir özel durum yoktur ve ":: 1" kullanıcı adı etki alanı kısmının.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
