@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: 2d56df459a4e09a16ab16c02f7ca2744c779206f
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 505ff4ebef2d0b063edacbdfa465616890be1001
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="powershellget-cmdlets-for-script-management"></a><span data-ttu-id="a7a1f-102">Komut dosyası yönetimi için PowerShellGet cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="a7a1f-102">PowerShellGet Cmdlets for Script Management</span></span>
+# <a name="powershellget-cmdlets-for-script-management"></a><span data-ttu-id="89473-102">Betik Yönetimi için PowerShellGet Cmdlet’leri</span><span class="sxs-lookup"><span data-stu-id="89473-102">PowerShellGet Cmdlets for Script Management</span></span>
 
-## <a name="find-script-cmdlet"></a><span data-ttu-id="a7a1f-103">Bulma komut dosyası cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="a7a1f-103">Find-Script cmdlet</span></span>
-<span data-ttu-id="a7a1f-104">Bulma komut dosyası cmdlet'i, farklı arama ölçütleri ad, etiket, filtre, komutu ad, sürüm aralığı, tam sürümünü, bağımlılıklarını dahil olmak üzere tüm sürümleri gibi ve belirli veya tüm kayıtlı depoları ile komut dosyaları bulmak için olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-104">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
+## <a name="find-script-cmdlet"></a><span data-ttu-id="89473-103">Bulma komut dosyası cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="89473-103">Find-Script cmdlet</span></span>
+<span data-ttu-id="89473-104">Bulma komut dosyası cmdlet'i, farklı arama ölçütleri ad, etiket, filtre, komutu ad, sürüm aralığı, tam sürümünü, bağımlılıklarını dahil olmak üzere tüm sürümleri gibi ve belirli veya tüm kayıtlı depoları ile komut dosyaları bulmak için olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="89473-104">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
 
-<span data-ttu-id="a7a1f-105">Örnek Kullanım:</span><span class="sxs-lookup"><span data-stu-id="a7a1f-105">Example usage:</span></span>
+<span data-ttu-id="89473-105">Örnek Kullanım:</span><span class="sxs-lookup"><span data-stu-id="89473-105">Example usage:</span></span>
 ```powershell
 \# Find a script from the registered repository with ScriptSourceLocation
 Find-Script -Repository GalleryINT -Name Required-Script2
@@ -150,8 +150,8 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## <a name="save-script-cmdlet"></a><span data-ttu-id="a7a1f-106">Kaydet-komut dosyası cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="a7a1f-106">Save-Script cmdlet</span></span>
-<span data-ttu-id="a7a1f-107">Kaydet-komut dosyası cmdlet belirtilen bir konuma kaydederek komut dosyasını gözden geçirmenizi sağlar.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-107">Save-Script cmdlet lets you to review the script file by saving it to a specified location.</span></span>
+## <a name="save-script-cmdlet"></a><span data-ttu-id="89473-106">Kaydet-komut dosyası cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="89473-106">Save-Script cmdlet</span></span>
+<span data-ttu-id="89473-107">Kaydet-komut dosyası cmdlet belirtilen bir konuma kaydederek komut dosyasını gözden geçirmenizi sağlar.</span><span class="sxs-lookup"><span data-stu-id="89473-107">Save-Script cmdlet lets you to review the script file by saving it to a specified location.</span></span>
 ```powershell
 \# Save a script file to the specified location for the script analysis
 \# Piping the Find-Script output to Save-Script cmdlet
@@ -163,10 +163,10 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="a7a1f-108">Yükleme komut dosyası ve Get-InstalledScript cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="a7a1f-108">Install-Script and Get-InstalledScript cmdlets</span></span>
-<span data-ttu-id="a7a1f-109">Yükleme betiği cmdlet'i, belirtilen kapsam için bir özel komut dosyası bağımlılıklarını birlikte yüklemek için olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-109">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="a7a1f-110">Varsayılan olarak, komut dosyaları AllUsers kapsama yüklenir.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-110">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="a7a1f-111">Get-InstalledScript cmdlet yükleme betiği cmdlet'i kullanılarak yüklenen komut dosyalarını listesini almak için olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-111">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
+## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="89473-108">Yükleme komut dosyası ve Get-InstalledScript cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="89473-108">Install-Script and Get-InstalledScript cmdlets</span></span>
+<span data-ttu-id="89473-109">Yükleme betiği cmdlet'i, belirtilen kapsam için bir özel komut dosyası bağımlılıklarını birlikte yüklemek için olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="89473-109">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="89473-110">Varsayılan olarak, komut dosyaları AllUsers kapsama yüklenir.</span><span class="sxs-lookup"><span data-stu-id="89473-110">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="89473-111">Get-InstalledScript cmdlet yükleme betiği cmdlet'i kullanılarak yüklenen komut dosyalarını listesini almak için olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="89473-111">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
 
-<span data-ttu-id="a7a1f-112">Kullanım Not: Yönetim ve komut dosyaları onlar yüklendikten sonra bulma izin vermek için yükleme betiği $home\Documents\WindowsPowerShell\Scripts adresindeki komut dosyaları depolamak için varsayılan klasörü oluşturur ve bu klasörü yolu ortamınıza eklemek.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-112">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="a7a1f-113">Yolun değiştirilmesi önemliyse, yükleme komut dosyası yerine Kaydet-komut dosyası kullanın.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-113">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="a7a1f-114">Yalnızca GET-InstalledScripts ve kaldırma komut dosyası yükleme komut dosyasını kullanarak sistemde yerleştirilmiş komut dosyaları ile çalışabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-114">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
+<span data-ttu-id="89473-112">Kullanım Not: Yönetim ve komut dosyaları onlar yüklendikten sonra bulma izin vermek için yükleme betiği $home\Documents\WindowsPowerShell\Scripts adresindeki komut dosyaları depolamak için varsayılan klasörü oluşturur ve bu klasörü yolu ortamınıza eklemek.</span><span class="sxs-lookup"><span data-stu-id="89473-112">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="89473-113">Yolun değiştirilmesi önemliyse, yükleme komut dosyası yerine Kaydet-komut dosyası kullanın.</span><span class="sxs-lookup"><span data-stu-id="89473-113">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="89473-114">Yalnızca GET-InstalledScripts ve kaldırma komut dosyası yükleme komut dosyasını kullanarak sistemde yerleştirilmiş komut dosyaları ile çalışabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="89473-114">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
 ```powershell
 \# Install locations for scripts:
 \# Default scope is AllUsers.
@@ -222,7 +222,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-<span data-ttu-id="a7a1f-115">Get-Command de kullanabilirsiniz – adı &lt;InstalledScriptFileName&gt; edinilir.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-115">You can also use Get-Command –Name &lt;InstalledScriptFileName&gt; to get it.</span></span> <span data-ttu-id="a7a1f-116">İki yükleme konumları PATH ortam değişkeninde belirtilen bir kapsamın ilk kullanımda eklenir.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-116">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
+<span data-ttu-id="89473-115">Get-Command de kullanabilirsiniz – adı &lt;InstalledScriptFileName&gt; edinilir.</span><span class="sxs-lookup"><span data-stu-id="89473-115">You can also use Get-Command –Name &lt;InstalledScriptFileName&gt; to get it.</span></span> <span data-ttu-id="89473-116">İki yükleme konumları PATH ortam değişkeninde belirtilen bir kapsamın ilk kullanımda eklenir.</span><span class="sxs-lookup"><span data-stu-id="89473-116">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -344,8 +344,8 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## <a name="update-script-cmdlet"></a><span data-ttu-id="a7a1f-117">Güncelleştirme betiğini cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="a7a1f-117">Update-Script cmdlet</span></span>
-<span data-ttu-id="a7a1f-118">Güncelleştirme betiğini cmdlet, yerinde yükleme betiği cmdlet'i kullanılarak yüklenen komut dosyalarını güncelleştirilmesini sağlar.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-118">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
+## <a name="update-script-cmdlet"></a><span data-ttu-id="89473-117">Güncelleştirme betiğini cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="89473-117">Update-Script cmdlet</span></span>
+<span data-ttu-id="89473-118">Güncelleştirme betiğini cmdlet, yerinde yükleme betiği cmdlet'i kullanılarak yüklenen komut dosyalarını güncelleştirilmesini sağlar.</span><span class="sxs-lookup"><span data-stu-id="89473-118">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -386,7 +386,7 @@ Version Name Type Repository Description
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
 
-## <a name="uninstall-script-cmdlet"></a><span data-ttu-id="a7a1f-119">Kaldırma komut dosyası cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="a7a1f-119">Uninstall-Script cmdlet</span></span>
+## <a name="uninstall-script-cmdlet"></a><span data-ttu-id="89473-119">Kaldırma komut dosyası cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="89473-119">Uninstall-Script cmdlet</span></span>
 ```powershell
 Uninstall-Script cmdlet lets you to uninstall the installed script files.
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -423,8 +423,8 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a><span data-ttu-id="a7a1f-120">Yeni ScriptFileInfo ve Test ScriptFileInfo cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="a7a1f-120">New-ScriptFileInfo and Test-ScriptFileInfo cmdlets</span></span>
-<span data-ttu-id="a7a1f-121">ScriptFileInfo yeni cmdlet ile meta veri sürümü, GUID, yazar ve açıklaması gibi yeni bir komut dosyası oluşturma olanak tanır vs. Test-ScriptFileInfo cmdlet'i doğrulamak ve komut dosyası meta verilerini almak için olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-121">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc. Test-ScriptFileInfo cmdlet lets you to validate and get the script file metadata.</span></span>
+## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a><span data-ttu-id="89473-120">Yeni ScriptFileInfo ve Test ScriptFileInfo cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="89473-120">New-ScriptFileInfo and Test-ScriptFileInfo cmdlets</span></span>
+<span data-ttu-id="89473-121">ScriptFileInfo yeni cmdlet ile meta veri sürümü, GUID, yazar ve açıklaması gibi yeni bir komut dosyası oluşturma olanak tanır vs. Test-ScriptFileInfo cmdlet'i doğrulamak ve komut dosyası meta verilerini almak için olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="89473-121">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc. Test-ScriptFileInfo cmdlet lets you to validate and get the script file metadata.</span></span>
 ```powershell
 \# Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Description "Script file description goes here"
@@ -575,8 +575,8 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## <a name="update-scriptfileinfo-cmdlet"></a><span data-ttu-id="a7a1f-122">Güncelleştirme ScriptFileInfo cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="a7a1f-122">Update-ScriptFileInfo cmdlet</span></span>
-<span data-ttu-id="a7a1f-123">Güncelleştirme ScriptFileInfo cmdlet, var olan komut dosyası meta verilerini güncelleştirmek için olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-123">Update-ScriptFileInfo cmdlet lets you to update the existing script file metadata.</span></span>
+## <a name="update-scriptfileinfo-cmdlet"></a><span data-ttu-id="89473-122">Güncelleştirme ScriptFileInfo cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="89473-122">Update-ScriptFileInfo cmdlet</span></span>
+<span data-ttu-id="89473-123">Güncelleştirme ScriptFileInfo cmdlet, var olan komut dosyası meta verilerini güncelleştirmek için olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="89473-123">Update-ScriptFileInfo cmdlet lets you to update the existing script file metadata.</span></span>
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
 Update-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-ScriptWithCompletePSScriptInfo.ps1 -Version 2.0
@@ -586,8 +586,8 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="a7a1f-124">Destek paylaşımı betiği ile kayıt PSRepository ve Set-PSRepository cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="a7a1f-124">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
-<span data-ttu-id="a7a1f-125">Register-PSRepository/Set-PSRepository cmdlet öğelerini eklemek için kullanmak **ScriptSourceLocation** ve **ScriptPublishLocation** PSRepository için.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-125">Use Register-PSRepository/Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
+## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="89473-124">Destek paylaşımı betiği ile kayıt PSRepository ve Set-PSRepository cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="89473-124">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
+<span data-ttu-id="89473-125">Register-PSRepository/Set-PSRepository cmdlet öğelerini eklemek için kullanmak **ScriptSourceLocation** ve **ScriptPublishLocation** PSRepository için.</span><span class="sxs-lookup"><span data-stu-id="89473-125">Use Register-PSRepository/Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
 Register-PSRepository -Name GalleryINT \`
@@ -644,8 +644,8 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-## <a name="publish-script-cmdlet"></a><span data-ttu-id="a7a1f-126">Yayımlama betik cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="a7a1f-126">Publish-Script cmdlet</span></span>
-<span data-ttu-id="a7a1f-127">Yayımlama betik cmdlet komut dosyanızı sürüm, GUID, yazar ve açıklaması gibi geçerli meta veri yayımlama olanak tanır vs.</span><span class="sxs-lookup"><span data-stu-id="a7a1f-127">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc.</span></span>
+## <a name="publish-script-cmdlet"></a><span data-ttu-id="89473-126">Yayımlama betik cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="89473-126">Publish-Script cmdlet</span></span>
+<span data-ttu-id="89473-127">Yayımlama betik cmdlet komut dosyanızı sürüm, GUID, yazar ve açıklaması gibi geçerli meta veri yayımlama olanak tanır vs.</span><span class="sxs-lookup"><span data-stu-id="89473-127">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc.</span></span>
 ```powershell
 \# Publish the really basic script file with required metadata
 Publish-Script -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Repository GalleryINT -NuGetApiKey cad91af7-a49c-4026-9570-a4c16564e785 -Verbose
@@ -686,4 +686,3 @@ Repository : GalleryINT
 PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 ```
-

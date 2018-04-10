@@ -1,115 +1,115 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "PowerShell uzaktan iletişim içinde ikinci atlama yapma"
-ms.openlocfilehash: 726b4d1b7a41e9e344347543ecde26da6547bcf3
-ms.sourcegitcommit: fff6c0522508eeb408cb055ba4c9337a2759b392
+title: PowerShell uzaktan iletişim içinde ikinci atlama yapma
+ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="making-the-second-hop-in-powershell-remoting"></a><span data-ttu-id="c6ccd-103">PowerShell uzaktan iletişim içinde ikinci atlama yapma</span><span class="sxs-lookup"><span data-stu-id="c6ccd-103">Making the second hop in PowerShell Remoting</span></span>
+# <a name="making-the-second-hop-in-powershell-remoting"></a><span data-ttu-id="029e6-103">PowerShell uzaktan iletişim içinde ikinci atlama yapma</span><span class="sxs-lookup"><span data-stu-id="029e6-103">Making the second hop in PowerShell Remoting</span></span>
 
-<span data-ttu-id="c6ccd-104">"İkinci atlama sorun" aşağıdaki gibi bir durumla başvuruyor:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-104">The "second hop problem" refers to a situation like the following:</span></span>
+<span data-ttu-id="029e6-104">"İkinci atlama sorun" aşağıdaki gibi bir durumla başvuruyor:</span><span class="sxs-lookup"><span data-stu-id="029e6-104">The "second hop problem" refers to a situation like the following:</span></span>
 
-1. <span data-ttu-id="c6ccd-105">Oturum açmış _ServerA_.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-105">You are logged in to _ServerA_.</span></span>
-2. <span data-ttu-id="c6ccd-106">Gelen _ServerA_, bağlanmak için Uzak PowerShell oturumu Başlat _SunucuB_.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-106">From _ServerA_, you start a remote PowerShell session to connect to _ServerB_.</span></span>
-3. <span data-ttu-id="c6ccd-107">Çalıştırdığınız bir komut _SunucuB_ , PowerShell uzaktan iletişimi oturum üzerindeki bir kaynağa erişim girişiminde _SunucuC ise_.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-107">A command you run on _ServerB_ via your PowerShell Remoting session attempts to access a resource on _ServerC_.</span></span>
-4. <span data-ttu-id="c6ccd-108">Kaynağa erişim _SunucuC ise_ engellendi, PowerShell uzak oturum oluşturmak için kullanılan kimlik bilgileri gelen değil geçirildiğinden _SunucuB_ için _SunucuC ise_.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-108">Access to the resource on _ServerC_ is denied, because the credentials you used to create the PowerShell Remoting session are not passed from _ServerB_ to _ServerC_.</span></span>
+1. <span data-ttu-id="029e6-105">Oturum açmış _ServerA_.</span><span class="sxs-lookup"><span data-stu-id="029e6-105">You are logged in to _ServerA_.</span></span>
+2. <span data-ttu-id="029e6-106">Gelen _ServerA_, bağlanmak için Uzak PowerShell oturumu Başlat _SunucuB_.</span><span class="sxs-lookup"><span data-stu-id="029e6-106">From _ServerA_, you start a remote PowerShell session to connect to _ServerB_.</span></span>
+3. <span data-ttu-id="029e6-107">Çalıştırdığınız bir komut _SunucuB_ , PowerShell uzaktan iletişimi oturum üzerindeki bir kaynağa erişim girişiminde _SunucuC ise_.</span><span class="sxs-lookup"><span data-stu-id="029e6-107">A command you run on _ServerB_ via your PowerShell Remoting session attempts to access a resource on _ServerC_.</span></span>
+4. <span data-ttu-id="029e6-108">Kaynağa erişim _SunucuC ise_ engellendi, PowerShell uzak oturum oluşturmak için kullanılan kimlik bilgileri gelen değil geçirildiğinden _SunucuB_ için _SunucuC ise_.</span><span class="sxs-lookup"><span data-stu-id="029e6-108">Access to the resource on _ServerC_ is denied, because the credentials you used to create the PowerShell Remoting session are not passed from _ServerB_ to _ServerC_.</span></span>
 
-<span data-ttu-id="c6ccd-109">Bu sorunu gidermek için birkaç yolu vardır.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-109">There are several ways to address this problem.</span></span> <span data-ttu-id="c6ccd-110">Bu konuda, birkaç ikinci atlama sorun en popüler çözümleri inceleyeceğiz.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-110">In this topic, we'll look at several of the most popular solutions to the second hop problem.</span></span>
+<span data-ttu-id="029e6-109">Bu sorunu gidermek için birkaç yolu vardır.</span><span class="sxs-lookup"><span data-stu-id="029e6-109">There are several ways to address this problem.</span></span> <span data-ttu-id="029e6-110">Bu konuda, birkaç ikinci atlama sorun en popüler çözümleri inceleyeceğiz.</span><span class="sxs-lookup"><span data-stu-id="029e6-110">In this topic, we'll look at several of the most popular solutions to the second hop problem.</span></span>
 
-## <a name="credssp"></a><span data-ttu-id="c6ccd-111">CredSSP</span><span class="sxs-lookup"><span data-stu-id="c6ccd-111">CredSSP</span></span>
+## <a name="credssp"></a><span data-ttu-id="029e6-111">CredSSP</span><span class="sxs-lookup"><span data-stu-id="029e6-111">CredSSP</span></span>
 
-<span data-ttu-id="c6ccd-112">Kullanabileceğiniz [kimlik bilgileri güvenlik desteği sağlayıcısı (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) kimlik doğrulaması için.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-112">You can use the [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) for authentication.</span></span> <span data-ttu-id="c6ccd-113">CredSSP kimlik bilgileri uzak sunucuda önbelleğe alır (_SunucuB_), bunu kullanarak kimlik bilgisi hırsızlığı saldırıları kadar açar.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-113">CredSSP caches credentials on the remote server (_ServerB_), so using it opens you up to credential theft attacks.</span></span> <span data-ttu-id="c6ccd-114">Uzak bilgisayar tehlikede olsa saldırganın kullanıcının kimlik bilgilerine erişebilir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-114">If the remote computer is compromised, the attacker has access to the user's credentials.</span></span> <span data-ttu-id="c6ccd-115">CredSSP hem istemci hem de sunucu bilgisayarlarda varsayılan olarak devre dışıdır.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-115">CredSSP is disabled by default on both client and server computers.</span></span> <span data-ttu-id="c6ccd-116">Yalnızca en güvenilir ortamlarında CredSSP etkinleştirmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-116">You should enable CredSSP only in the most trusted environments.</span></span> <span data-ttu-id="c6ccd-117">Örneğin, bir etki alanı yöneticisi etki alanı denetleyicisi yüksek oranda güvenilir olmadığı için bir etki alanı denetleyicisine bağlanma.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-117">For example, a domain administrator connecting to a domain controller because the domain controller is highly trusted.</span></span>
+<span data-ttu-id="029e6-112">Kullanabileceğiniz [kimlik bilgileri güvenlik desteği sağlayıcısı (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) kimlik doğrulaması için.</span><span class="sxs-lookup"><span data-stu-id="029e6-112">You can use the [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) for authentication.</span></span> <span data-ttu-id="029e6-113">CredSSP kimlik bilgileri uzak sunucuda önbelleğe alır (_SunucuB_), bunu kullanarak kimlik bilgisi hırsızlığı saldırıları kadar açar.</span><span class="sxs-lookup"><span data-stu-id="029e6-113">CredSSP caches credentials on the remote server (_ServerB_), so using it opens you up to credential theft attacks.</span></span> <span data-ttu-id="029e6-114">Uzak bilgisayar tehlikede olsa saldırganın kullanıcının kimlik bilgilerine erişebilir.</span><span class="sxs-lookup"><span data-stu-id="029e6-114">If the remote computer is compromised, the attacker has access to the user's credentials.</span></span> <span data-ttu-id="029e6-115">CredSSP hem istemci hem de sunucu bilgisayarlarda varsayılan olarak devre dışıdır.</span><span class="sxs-lookup"><span data-stu-id="029e6-115">CredSSP is disabled by default on both client and server computers.</span></span> <span data-ttu-id="029e6-116">Yalnızca en güvenilir ortamlarında CredSSP etkinleştirmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="029e6-116">You should enable CredSSP only in the most trusted environments.</span></span> <span data-ttu-id="029e6-117">Örneğin, bir etki alanı yöneticisi etki alanı denetleyicisi yüksek oranda güvenilir olmadığı için bir etki alanı denetleyicisine bağlanma.</span><span class="sxs-lookup"><span data-stu-id="029e6-117">For example, a domain administrator connecting to a domain controller because the domain controller is highly trusted.</span></span>
 
-<span data-ttu-id="c6ccd-118">PowerShell uzaktan iletişim için CredSSP kullanırken, güvenlik sorunları hakkında daha fazla bilgi için bkz: [yanlışlıkla Sabotaj: CredSSP dikkat](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).</span><span class="sxs-lookup"><span data-stu-id="c6ccd-118">For more information about security concerns when using CredSSP for PowerShell Remoting, see [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).</span></span>
+<span data-ttu-id="029e6-118">PowerShell uzaktan iletişim için CredSSP kullanırken, güvenlik sorunları hakkında daha fazla bilgi için bkz: [yanlışlıkla Sabotaj: CredSSP dikkat](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).</span><span class="sxs-lookup"><span data-stu-id="029e6-118">For more information about security concerns when using CredSSP for PowerShell Remoting, see [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).</span></span>
 
-<span data-ttu-id="c6ccd-119">Kimlik bilgisi hırsızlığı saldırıları hakkında daha fazla bilgi için bkz: [Azaltıcı Pass--Hash (PtH) saldırılarını ve diğer kimlik bilgisi hırsızlığını](https://www.microsoft.com/en-us/download/details.aspx?id=36036).</span><span class="sxs-lookup"><span data-stu-id="c6ccd-119">For more information about credential theft attacks, see [Mitigating Pass-the-Hash (PtH) Attacks and Other Credential Theft](https://www.microsoft.com/en-us/download/details.aspx?id=36036).</span></span>
+<span data-ttu-id="029e6-119">Kimlik bilgisi hırsızlığı saldırıları hakkında daha fazla bilgi için bkz: [Azaltıcı Pass--Hash (PtH) saldırılarını ve diğer kimlik bilgisi hırsızlığını](https://www.microsoft.com/en-us/download/details.aspx?id=36036).</span><span class="sxs-lookup"><span data-stu-id="029e6-119">For more information about credential theft attacks, see [Mitigating Pass-the-Hash (PtH) Attacks and Other Credential Theft](https://www.microsoft.com/en-us/download/details.aspx?id=36036).</span></span>
 
-<span data-ttu-id="c6ccd-120">Etkinleştirmek ve PowerShell uzaktan iletişim için CredSSP kullanma örneği için bkz: [ikinci atlama sorunu çözmek için CredSSP kullanarak](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).</span><span class="sxs-lookup"><span data-stu-id="c6ccd-120">For an example of how to enable and use CredSSP for PowerShell remoting, see [Using CredSSP to solve the second-hop problem](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).</span></span>
+<span data-ttu-id="029e6-120">Etkinleştirmek ve PowerShell uzaktan iletişim için CredSSP kullanma örneği için bkz: [ikinci atlama sorunu çözmek için CredSSP kullanarak](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).</span><span class="sxs-lookup"><span data-stu-id="029e6-120">For an example of how to enable and use CredSSP for PowerShell remoting, see [Using CredSSP to solve the second-hop problem](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).</span></span>
 
-### <a name="pros"></a><span data-ttu-id="c6ccd-121">Artıları</span><span class="sxs-lookup"><span data-stu-id="c6ccd-121">Pros</span></span>
+### <a name="pros"></a><span data-ttu-id="029e6-121">Artıları</span><span class="sxs-lookup"><span data-stu-id="029e6-121">Pros</span></span>
 
-- <span data-ttu-id="c6ccd-122">Tüm sunucular için Windows Server 2008 veya sonraki sürümleriyle çalışır.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-122">It works for all servers with Windows Server 2008 or later.</span></span>
+- <span data-ttu-id="029e6-122">Tüm sunucular için Windows Server 2008 veya sonraki sürümleriyle çalışır.</span><span class="sxs-lookup"><span data-stu-id="029e6-122">It works for all servers with Windows Server 2008 or later.</span></span>
 
-### <a name="cons"></a><span data-ttu-id="c6ccd-123">Eksileri</span><span class="sxs-lookup"><span data-stu-id="c6ccd-123">Cons</span></span>
+### <a name="cons"></a><span data-ttu-id="029e6-123">Eksileri</span><span class="sxs-lookup"><span data-stu-id="029e6-123">Cons</span></span>
 
-- <span data-ttu-id="c6ccd-124">Güvenlik açıkları vardır.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-124">Has security vulnerabilities.</span></span>
-- <span data-ttu-id="c6ccd-125">İstemci ve sunucu rollerinin yapılandırılmasını gerektirir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-125">Requires configuration of both client and server roles.</span></span>
+- <span data-ttu-id="029e6-124">Güvenlik açıkları vardır.</span><span class="sxs-lookup"><span data-stu-id="029e6-124">Has security vulnerabilities.</span></span>
+- <span data-ttu-id="029e6-125">İstemci ve sunucu rollerinin yapılandırılmasını gerektirir.</span><span class="sxs-lookup"><span data-stu-id="029e6-125">Requires configuration of both client and server roles.</span></span>
 
-## <a name="kerberos-delegation-unconstrained"></a><span data-ttu-id="c6ccd-126">Kerberos temsilcisi (kısıtlanmamış)</span><span class="sxs-lookup"><span data-stu-id="c6ccd-126">Kerberos delegation (unconstrained)</span></span>
+## <a name="kerberos-delegation-unconstrained"></a><span data-ttu-id="029e6-126">Kerberos temsilcisi (kısıtlanmamış)</span><span class="sxs-lookup"><span data-stu-id="029e6-126">Kerberos delegation (unconstrained)</span></span>
 
-<span data-ttu-id="c6ccd-127">Ayrıca kullanabilir Kısıtlanmamış Kerberos yetkilendirmesi ikinci atlama yapma.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-127">You can also used Kerberos unconstrained delegation to make the second hop.</span></span> <span data-ttu-id="c6ccd-128">Ancak, bu yöntem atanmış kimlik bilgileri kullanıldığı hiçbir denetim sağlar.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-128">However, this method provides no control of where delegated credentials are used.</span></span>
+<span data-ttu-id="029e6-127">Ayrıca kullanabilir Kısıtlanmamış Kerberos yetkilendirmesi ikinci atlama yapma.</span><span class="sxs-lookup"><span data-stu-id="029e6-127">You can also used Kerberos unconstrained delegation to make the second hop.</span></span> <span data-ttu-id="029e6-128">Ancak, bu yöntem atanmış kimlik bilgileri kullanıldığı hiçbir denetim sağlar.</span><span class="sxs-lookup"><span data-stu-id="029e6-128">However, this method provides no control of where delegated credentials are used.</span></span>
 
-><span data-ttu-id="c6ccd-129">**Not:** olan Active Directory hesaplarını **Hesap duyarlıdır ve devredilemez** özellik kümesi temsilci seçilemez.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-129">**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated.</span></span> <span data-ttu-id="c6ccd-130">Daha fazla bilgi için bkz: [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span><span class="sxs-lookup"><span data-stu-id="c6ccd-130">For more information, see [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span></span>
+><span data-ttu-id="029e6-129">**Not:** olan Active Directory hesaplarını **Hesap duyarlıdır ve devredilemez** özellik kümesi temsilci seçilemez.</span><span class="sxs-lookup"><span data-stu-id="029e6-129">**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated.</span></span> <span data-ttu-id="029e6-130">Daha fazla bilgi için bkz: [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span><span class="sxs-lookup"><span data-stu-id="029e6-130">For more information, see [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span></span>
 
-### <a name="pros"></a><span data-ttu-id="c6ccd-131">Artıları</span><span class="sxs-lookup"><span data-stu-id="c6ccd-131">Pros</span></span>
+### <a name="pros"></a><span data-ttu-id="029e6-131">Artıları</span><span class="sxs-lookup"><span data-stu-id="029e6-131">Pros</span></span>
 
-- <span data-ttu-id="c6ccd-132">Hiçbir özel kodlama gerektirir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-132">Requires no special coding.</span></span>
+- <span data-ttu-id="029e6-132">Hiçbir özel kodlama gerektirir.</span><span class="sxs-lookup"><span data-stu-id="029e6-132">Requires no special coding.</span></span>
 
-### <a name="cons"></a><span data-ttu-id="c6ccd-133">Eksileri</span><span class="sxs-lookup"><span data-stu-id="c6ccd-133">Cons</span></span>
+### <a name="cons"></a><span data-ttu-id="029e6-133">Eksileri</span><span class="sxs-lookup"><span data-stu-id="029e6-133">Cons</span></span>
 
-- <span data-ttu-id="c6ccd-134">İkinci atlama için WinRM desteklemez.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-134">Does not support the second hop for WinRM.</span></span>
-- <span data-ttu-id="c6ccd-135">Bir güvenlik açığı oluşturma, kimlik bilgilerinin kullanıldığı üzerinde hiçbir denetimi sağlar.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-135">Provides no control over where credentials are used, creating a security vulnerability.</span></span>
+- <span data-ttu-id="029e6-134">İkinci atlama için WinRM desteklemez.</span><span class="sxs-lookup"><span data-stu-id="029e6-134">Does not support the second hop for WinRM.</span></span>
+- <span data-ttu-id="029e6-135">Bir güvenlik açığı oluşturma, kimlik bilgilerinin kullanıldığı üzerinde hiçbir denetimi sağlar.</span><span class="sxs-lookup"><span data-stu-id="029e6-135">Provides no control over where credentials are used, creating a security vulnerability.</span></span>
 
-## <a name="kerberos-constrained-delegation"></a><span data-ttu-id="c6ccd-136">Kısıtlı Kerberos temsilcisi seçme</span><span class="sxs-lookup"><span data-stu-id="c6ccd-136">Kerberos constrained delegation</span></span>
+## <a name="kerberos-constrained-delegation"></a><span data-ttu-id="029e6-136">Kısıtlı Kerberos temsilcisi seçme</span><span class="sxs-lookup"><span data-stu-id="029e6-136">Kerberos constrained delegation</span></span>
 
-<span data-ttu-id="c6ccd-137">Eski Kısıtlı temsilci (değil kaynak tabanlı), ikinci atlama yapmak için kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-137">You can use legacy constrained delegation (not resource-based) to make the second hop.</span></span> 
+<span data-ttu-id="029e6-137">Eski Kısıtlı temsilci (değil kaynak tabanlı), ikinci atlama yapmak için kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="029e6-137">You can use legacy constrained delegation (not resource-based) to make the second hop.</span></span>
 
-><span data-ttu-id="c6ccd-138">**Not:** olan Active Directory hesaplarını **Hesap duyarlıdır ve devredilemez** özellik kümesi temsilci seçilemez.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-138">**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated.</span></span> <span data-ttu-id="c6ccd-139">Daha fazla bilgi için bkz: [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span><span class="sxs-lookup"><span data-stu-id="c6ccd-139">For more information, see [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span></span>
+><span data-ttu-id="029e6-138">**Not:** olan Active Directory hesaplarını **Hesap duyarlıdır ve devredilemez** özellik kümesi temsilci seçilemez.</span><span class="sxs-lookup"><span data-stu-id="029e6-138">**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated.</span></span> <span data-ttu-id="029e6-139">Daha fazla bilgi için bkz: [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span><span class="sxs-lookup"><span data-stu-id="029e6-139">For more information, see [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span></span>
 
-### <a name="pros"></a><span data-ttu-id="c6ccd-140">Artıları</span><span class="sxs-lookup"><span data-stu-id="c6ccd-140">Pros</span></span>
+### <a name="pros"></a><span data-ttu-id="029e6-140">Artıları</span><span class="sxs-lookup"><span data-stu-id="029e6-140">Pros</span></span>
 
-- <span data-ttu-id="c6ccd-141">Hiçbir özel kodlama gerektirir</span><span class="sxs-lookup"><span data-stu-id="c6ccd-141">Requires no special coding</span></span>
+- <span data-ttu-id="029e6-141">Hiçbir özel kodlama gerektirir</span><span class="sxs-lookup"><span data-stu-id="029e6-141">Requires no special coding</span></span>
 
-### <a name="cons"></a><span data-ttu-id="c6ccd-142">Eksileri</span><span class="sxs-lookup"><span data-stu-id="c6ccd-142">Cons</span></span>
+### <a name="cons"></a><span data-ttu-id="029e6-142">Eksileri</span><span class="sxs-lookup"><span data-stu-id="029e6-142">Cons</span></span>
 
-- <span data-ttu-id="c6ccd-143">İkinci atlama için WinRM desteklemez.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-143">Does not support the second hop for WinRM.</span></span>
-- <span data-ttu-id="c6ccd-144">Uzak sunucuya Active Directory nesnesinde yapılandırılmış olması gerekir (_SunucuB_).</span><span class="sxs-lookup"><span data-stu-id="c6ccd-144">Must be configured on the Active Directory object of the remote server (_ServerB_).</span></span>
-- <span data-ttu-id="c6ccd-145">Bir etki alanı sınırlıdır.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-145">Limited to one domain.</span></span> <span data-ttu-id="c6ccd-146">Etki alanları veya ormanlar arası olamaz.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-146">Cannot cross domains or forests.</span></span>
-- <span data-ttu-id="c6ccd-147">Nesneleri ve hizmet asıl adları (SPN) güncelleştirmek için hakları gerektirir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-147">Requires rights to update objects and Service Principal Names (SPNs).</span></span>
+- <span data-ttu-id="029e6-143">İkinci atlama için WinRM desteklemez.</span><span class="sxs-lookup"><span data-stu-id="029e6-143">Does not support the second hop for WinRM.</span></span>
+- <span data-ttu-id="029e6-144">Uzak sunucuya Active Directory nesnesinde yapılandırılmış olması gerekir (_SunucuB_).</span><span class="sxs-lookup"><span data-stu-id="029e6-144">Must be configured on the Active Directory object of the remote server (_ServerB_).</span></span>
+- <span data-ttu-id="029e6-145">Bir etki alanı sınırlıdır.</span><span class="sxs-lookup"><span data-stu-id="029e6-145">Limited to one domain.</span></span> <span data-ttu-id="029e6-146">Etki alanları veya ormanlar arası olamaz.</span><span class="sxs-lookup"><span data-stu-id="029e6-146">Cannot cross domains or forests.</span></span>
+- <span data-ttu-id="029e6-147">Nesneleri ve hizmet asıl adları (SPN) güncelleştirmek için hakları gerektirir.</span><span class="sxs-lookup"><span data-stu-id="029e6-147">Requires rights to update objects and Service Principal Names (SPNs).</span></span>
 
-## <a name="resource-based-kerberos-constrained-delegation"></a><span data-ttu-id="c6ccd-148">Kaynak tabanlı kısıtlı Kerberos temsilcisi seçme</span><span class="sxs-lookup"><span data-stu-id="c6ccd-148">Resource-based Kerberos constrained delegation</span></span>
+## <a name="resource-based-kerberos-constrained-delegation"></a><span data-ttu-id="029e6-148">Kaynak tabanlı kısıtlı Kerberos temsilcisi seçme</span><span class="sxs-lookup"><span data-stu-id="029e6-148">Resource-based Kerberos constrained delegation</span></span>
 
-<span data-ttu-id="c6ccd-149">Kaynak tabanlı Kerberos kısıtlı temsilcisi (Windows Server 2012'de sunulmuştur), kimlik bilgileri temsilcisi kaynakları bulunduğu sunucu nesnesinde yapılandırın.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-149">Using resource-based Kerberos constrained delegation (introduced in Windows Server 2012), you configure credential delegation on the server object where resources reside.</span></span>
-<span data-ttu-id="c6ccd-150">Yukarıda açıklanan ikinci atlama senaryoda yapılandırdığınız _SunucuC ise_ belirtmek için burada kabul edeceği kimlik bilgileri temsilcisi.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-150">In the second hop scenario described above, you configure _ServerC_ to specify from where it will accept delegated credentials.</span></span>
+<span data-ttu-id="029e6-149">Kaynak tabanlı Kerberos kısıtlı temsilcisi (Windows Server 2012'de sunulmuştur), kimlik bilgileri temsilcisi kaynakları bulunduğu sunucu nesnesinde yapılandırın.</span><span class="sxs-lookup"><span data-stu-id="029e6-149">Using resource-based Kerberos constrained delegation (introduced in Windows Server 2012), you configure credential delegation on the server object where resources reside.</span></span>
+<span data-ttu-id="029e6-150">Yukarıda açıklanan ikinci atlama senaryoda yapılandırdığınız _SunucuC ise_ belirtmek için burada kabul edeceği kimlik bilgileri temsilcisi.</span><span class="sxs-lookup"><span data-stu-id="029e6-150">In the second hop scenario described above, you configure _ServerC_ to specify from where it will accept delegated credentials.</span></span>
 
-><span data-ttu-id="c6ccd-151">**Not:** olan Active Directory hesaplarını **Hesap duyarlıdır ve devredilemez** özellik kümesi temsilci seçilemez.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-151">**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated.</span></span> <span data-ttu-id="c6ccd-152">Daha fazla bilgi için bkz: [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span><span class="sxs-lookup"><span data-stu-id="c6ccd-152">For more information, see [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span></span>
+><span data-ttu-id="029e6-151">**Not:** olan Active Directory hesaplarını **Hesap duyarlıdır ve devredilemez** özellik kümesi temsilci seçilemez.</span><span class="sxs-lookup"><span data-stu-id="029e6-151">**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated.</span></span> <span data-ttu-id="029e6-152">Daha fazla bilgi için bkz: [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span><span class="sxs-lookup"><span data-stu-id="029e6-152">For more information, see [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)</span></span>
 
-### <a name="pros"></a><span data-ttu-id="c6ccd-153">Artıları</span><span class="sxs-lookup"><span data-stu-id="c6ccd-153">Pros</span></span>
+### <a name="pros"></a><span data-ttu-id="029e6-153">Artıları</span><span class="sxs-lookup"><span data-stu-id="029e6-153">Pros</span></span>
 
-- <span data-ttu-id="c6ccd-154">Kimlik bilgileri depolanmaz.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-154">Credentials are not stored.</span></span>
-- <span data-ttu-id="c6ccd-155">Görece kolay PowerShell cmdlet'leri--gerekli özel kodlama kullanılarak yapılandırılabilir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-155">Relatively easy to configure by using PowerShell cmdlets--no special coding required.</span></span>
-- <span data-ttu-id="c6ccd-156">Özel etki alanı erişimi gereklidir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-156">No special domain access is required.</span></span>
-- <span data-ttu-id="c6ccd-157">Etki alanları ve ormanlar arasında çalışır.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-157">Works across domains and forests.</span></span>
-- <span data-ttu-id="c6ccd-158">PowerShell kodu.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-158">PowerShell code.</span></span>
+- <span data-ttu-id="029e6-154">Kimlik bilgileri depolanmaz.</span><span class="sxs-lookup"><span data-stu-id="029e6-154">Credentials are not stored.</span></span>
+- <span data-ttu-id="029e6-155">Görece kolay PowerShell cmdlet'leri--gerekli özel kodlama kullanılarak yapılandırılabilir.</span><span class="sxs-lookup"><span data-stu-id="029e6-155">Relatively easy to configure by using PowerShell cmdlets--no special coding required.</span></span>
+- <span data-ttu-id="029e6-156">Özel etki alanı erişimi gereklidir.</span><span class="sxs-lookup"><span data-stu-id="029e6-156">No special domain access is required.</span></span>
+- <span data-ttu-id="029e6-157">Etki alanları ve ormanlar arasında çalışır.</span><span class="sxs-lookup"><span data-stu-id="029e6-157">Works across domains and forests.</span></span>
+- <span data-ttu-id="029e6-158">PowerShell kodu.</span><span class="sxs-lookup"><span data-stu-id="029e6-158">PowerShell code.</span></span>
 
-### <a name="cons"></a><span data-ttu-id="c6ccd-159">Eksileri</span><span class="sxs-lookup"><span data-stu-id="c6ccd-159">Cons</span></span>
+### <a name="cons"></a><span data-ttu-id="029e6-159">Eksileri</span><span class="sxs-lookup"><span data-stu-id="029e6-159">Cons</span></span>
 
-- <span data-ttu-id="c6ccd-160">Windows Server 2012 veya sonraki sürümünü gerektirir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-160">Requires Windows Server 2012 or later.</span></span>
-- <span data-ttu-id="c6ccd-161">İkinci atlama için WinRM desteklemez.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-161">Does not support the second hop for WinRM.</span></span>
-- <span data-ttu-id="c6ccd-162">Nesneleri ve hizmet asıl adları (SPN) güncelleştirmek için hakları gerektirir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-162">Requires rights to update objects and Service Principal Names (SPNs).</span></span> 
+- <span data-ttu-id="029e6-160">Windows Server 2012 veya sonraki sürümünü gerektirir.</span><span class="sxs-lookup"><span data-stu-id="029e6-160">Requires Windows Server 2012 or later.</span></span>
+- <span data-ttu-id="029e6-161">İkinci atlama için WinRM desteklemez.</span><span class="sxs-lookup"><span data-stu-id="029e6-161">Does not support the second hop for WinRM.</span></span>
+- <span data-ttu-id="029e6-162">Nesneleri ve hizmet asıl adları (SPN) güncelleştirmek için hakları gerektirir.</span><span class="sxs-lookup"><span data-stu-id="029e6-162">Requires rights to update objects and Service Principal Names (SPNs).</span></span>
 
-### <a name="example"></a><span data-ttu-id="c6ccd-163">Örnek</span><span class="sxs-lookup"><span data-stu-id="c6ccd-163">Example</span></span>
+### <a name="example"></a><span data-ttu-id="029e6-163">Örnek</span><span class="sxs-lookup"><span data-stu-id="029e6-163">Example</span></span>
 
-<span data-ttu-id="c6ccd-164">Kaynak yapılandırır örnek temel Kısıtlı temsilci PowerShell bakalım _SunucuC ise_ yetki verilen kimlik bilgilerinden izin vermek için bir _SunucuB_.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-164">Let's look at a PowerShell example that configures resource based constrained delegation on _ServerC_ to allow delegated credentials from a _ServerB_.</span></span>
-<span data-ttu-id="c6ccd-165">Bu örnek, tüm sunucular Windows Server 2012 veya sonraki sürümünü, çalıştığını varsayar ve hangi sunuculardan herhangi biri için her bir etki alanı en az bir Windows Server 2012 etki alanı denetleyicisi olduğunu ait.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-165">This example assumes that all servers are running Windows Server 2012 or later, and that there is at least one Windows Server 2012 domain controller each domain to which any of the servers belong.</span></span>
+<span data-ttu-id="029e6-164">Kaynak yapılandırır örnek temel Kısıtlı temsilci PowerShell bakalım _SunucuC ise_ yetki verilen kimlik bilgilerinden izin vermek için bir _SunucuB_.</span><span class="sxs-lookup"><span data-stu-id="029e6-164">Let's look at a PowerShell example that configures resource based constrained delegation on _ServerC_ to allow delegated credentials from a _ServerB_.</span></span>
+<span data-ttu-id="029e6-165">Bu örnek, tüm sunucular Windows Server 2012 veya sonraki sürümünü, çalıştığını varsayar ve hangi sunuculardan herhangi biri için her bir etki alanı en az bir Windows Server 2012 etki alanı denetleyicisi olduğunu ait.</span><span class="sxs-lookup"><span data-stu-id="029e6-165">This example assumes that all servers are running Windows Server 2012 or later, and that there is at least one Windows Server 2012 domain controller each domain to which any of the servers belong.</span></span>
 
-<span data-ttu-id="c6ccd-166">Kısıtlanmış temsilci yapılandırmadan önce eklemelisiniz `RSAT-AD-PowerShell` Active Directory PowerShell modülünü yüklemek için özellik ve oturumunuza bu modülünü içeri aktarın:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-166">Before you can configure constrained delegation, you must add the `RSAT-AD-PowerShell` feature to install the Active Directory PowerShell module, and then import that module into your session:</span></span>
+<span data-ttu-id="029e6-166">Kısıtlanmış temsilci yapılandırmadan önce eklemelisiniz `RSAT-AD-PowerShell` Active Directory PowerShell modülünü yüklemek için özellik ve oturumunuza bu modülünü içeri aktarın:</span><span class="sxs-lookup"><span data-stu-id="029e6-166">Before you can configure constrained delegation, you must add the `RSAT-AD-PowerShell` feature to install the Active Directory PowerShell module, and then import that module into your session:</span></span>
 
 ```powershell
 PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
 
 PS C:\> Import-Module ActiveDirectory
 ```
-<span data-ttu-id="c6ccd-167">Birkaç kullanılabilir cmdlet'leri şimdi sahip bir **PrincipalsAllowedToDelegateToAccount** parametre:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-167">Several available cmdlets now have a **PrincipalsAllowedToDelegateToAccount** parameter:</span></span>
+<span data-ttu-id="029e6-167">Birkaç kullanılabilir cmdlet'leri şimdi sahip bir **PrincipalsAllowedToDelegateToAccount** parametre:</span><span class="sxs-lookup"><span data-stu-id="029e6-167">Several available cmdlets now have a **PrincipalsAllowedToDelegateToAccount** parameter:</span></span>
 
 ```powershell
 PS C:\> Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
 
-CommandType Name                 ModuleName     
------------ ----                 ----------     
+CommandType Name                 ModuleName
+----------- ----                 ----------
 Cmdlet      New-ADComputer       ActiveDirectory
 Cmdlet      New-ADServiceAccount ActiveDirectory
 Cmdlet      New-ADUser           ActiveDirectory
@@ -118,18 +118,18 @@ Cmdlet      Set-ADServiceAccount ActiveDirectory
 Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
-<span data-ttu-id="c6ccd-168">**PrincipalsAllowedToDelegateToAccount** parametre kümeleri Active Directory nesne özniteliği **msDS-AllowedToActOnBehalfOfOtherIdentity**, bir erişim denetimi listesi (ACL) içeren, hangi hesapların ilişkili hesabın kimlik bilgilerini temsil izniniz olan belirtir (örneğimizde, makine hesabını olacaktır _Server_).</span><span class="sxs-lookup"><span data-stu-id="c6ccd-168">The **PrincipalsAllowedToDelegateToAccount** parameter sets the Active Directory object attribute **msDS-AllowedToActOnBehalfOfOtherIdentity**, which contains an access control list (ACL) that specifies which accounts have permission to delegate credentials to the associated account (in our example, it will be the machine account for _Server_).</span></span>
+<span data-ttu-id="029e6-168">**PrincipalsAllowedToDelegateToAccount** parametre kümeleri Active Directory nesne özniteliği **msDS-AllowedToActOnBehalfOfOtherIdentity**, bir erişim denetimi listesi (ACL) içeren, hangi hesapların ilişkili hesabın kimlik bilgilerini temsil izniniz olan belirtir (örneğimizde, makine hesabını olacaktır _Server_).</span><span class="sxs-lookup"><span data-stu-id="029e6-168">The **PrincipalsAllowedToDelegateToAccount** parameter sets the Active Directory object attribute **msDS-AllowedToActOnBehalfOfOtherIdentity**, which contains an access control list (ACL) that specifies which accounts have permission to delegate credentials to the associated account (in our example, it will be the machine account for _Server_).</span></span>
 
-<span data-ttu-id="c6ccd-169">Şimdi şimdi sunucuları temsil etmek amacıyla değişkenlerini ayarlamak:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-169">Now let's set up the variables we'll use to represent the servers:</span></span>
+<span data-ttu-id="029e6-169">Şimdi şimdi sunucuları temsil etmek amacıyla değişkenlerini ayarlamak:</span><span class="sxs-lookup"><span data-stu-id="029e6-169">Now let's set up the variables we'll use to represent the servers:</span></span>
 
 ```powershell
-# Set up variables for reuse            
-$ServerA = $env:COMPUTERNAME            
-$ServerB = Get-ADComputer -Identity ServerB            
-$ServerC = Get-ADComputer -Identity ServerC            
+# Set up variables for reuse
+$ServerA = $env:COMPUTERNAME
+$ServerB = Get-ADComputer -Identity ServerB
+$ServerC = Get-ADComputer -Identity ServerC
 ```
 
-<span data-ttu-id="c6ccd-170">WinRM (ve bu nedenle PowerShell uzaktan iletişimini) varsayılan olarak bilgisayar hesabı olarak çalışır.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-170">WinRM (and therefore PowerShell remoting) runs as the computer account by default.</span></span> <span data-ttu-id="c6ccd-171">Bu bakarak bkz **StartName** özelliği `winrm` hizmeti:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-171">You can see this by looking at the **StartName** property of the `winrm` service:</span></span>
+<span data-ttu-id="029e6-170">WinRM (ve bu nedenle PowerShell uzaktan iletişimini) varsayılan olarak bilgisayar hesabı olarak çalışır.</span><span class="sxs-lookup"><span data-stu-id="029e6-170">WinRM (and therefore PowerShell remoting) runs as the computer account by default.</span></span> <span data-ttu-id="029e6-171">Bu bakarak bkz **StartName** özelliği `winrm` hizmeti:</span><span class="sxs-lookup"><span data-stu-id="029e6-171">You can see this by looking at the **StartName** property of the `winrm` service:</span></span>
 
 ```powershell
 PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartName
@@ -137,153 +137,144 @@ PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartNa
 StartName : NT AUTHORITY\NetworkService
 ```
 
-<span data-ttu-id="c6ccd-172">İçin _SunucuC ise_ PowerShell uzaktan iletişim oturumundan temsilci sağlamak için _SunucuB_, biz ayarlayarak erişim izni verecek **PrincipalsAllowedToDelegateToAccount** parametresini _SunucuC ise_ bilgisayar nesnesi _SunucuB_:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-172">For _ServerC_ to allow delegation from a PowerShell remoting session on _ServerB_, we will grant access by setting the **PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to the computer object of _ServerB_:</span></span>
+<span data-ttu-id="029e6-172">İçin _SunucuC ise_ PowerShell uzaktan iletişim oturumundan temsilci sağlamak için _SunucuB_, biz ayarlayarak erişim izni verecek **PrincipalsAllowedToDelegateToAccount** parametresini _SunucuC ise_ bilgisayar nesnesi _SunucuB_:</span><span class="sxs-lookup"><span data-stu-id="029e6-172">For _ServerC_ to allow delegation from a PowerShell remoting session on _ServerB_, we will grant access by setting the **PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to the computer object of _ServerB_:</span></span>
 
 ```powershell
-# Grant resource-based Kerberos constrained delegation            
-Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB            
-            
-# Check the value of the attribute directly            
-$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity            
-$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access            
-            
-# Check the value of the attribute indirectly            
+# Grant resource-based Kerberos constrained delegation
+Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
+
+# Check the value of the attribute directly
+$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity
+$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
+
+# Check the value of the attribute indirectly
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-<span data-ttu-id="c6ccd-173">Kerberos [Anahtar Dağıtım Merkezi (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) önbellekleri erişim denemesi (negatif önbelleğini) 15 dakika için reddedildi.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-173">The Kerberos [Key Distribution Center (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) caches denied access attempts (negative cache) for 15 minutes.</span></span> <span data-ttu-id="c6ccd-174">Varsa _SunucuB_ önceden erişmeyi denedi _SunucuC ise_, üzerinde önbelleğini temizlemek gerekir _SunucuB_ göre aşağıdaki komutu çalıştırır:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-174">If _ServerB_ has previously attempted to access _ServerC_, you will need to clear the cache on _ServerB_ by invoking the following command:</span></span>
+<span data-ttu-id="029e6-173">Kerberos [Anahtar Dağıtım Merkezi (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) önbellekleri erişim denemesi (negatif önbelleğini) 15 dakika için reddedildi.</span><span class="sxs-lookup"><span data-stu-id="029e6-173">The Kerberos [Key Distribution Center (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) caches denied access attempts (negative cache) for 15 minutes.</span></span> <span data-ttu-id="029e6-174">Varsa _SunucuB_ önceden erişmeyi denedi _SunucuC ise_, üzerinde önbelleğini temizlemek gerekir _SunucuB_ göre aşağıdaki komutu çalıştırır:</span><span class="sxs-lookup"><span data-stu-id="029e6-174">If _ServerB_ has previously attempted to access _ServerC_, you will need to clear the cache on _ServerB_ by invoking the following command:</span></span>
 
 ```powershell
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    klist purge -li 0x3e7            
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    klist purge -li 0x3e7
 }
 ```
 
-<span data-ttu-id="c6ccd-175">Ayrıca bilgisayarı yeniden başlatın veya önbelleğini temizlemek için en az 15 dakika bekleyin.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-175">You could also restart the computer, or wait at least 15 minutes to clear the cache.</span></span>
+<span data-ttu-id="029e6-175">Ayrıca bilgisayarı yeniden başlatın veya önbelleğini temizlemek için en az 15 dakika bekleyin.</span><span class="sxs-lookup"><span data-stu-id="029e6-175">You could also restart the computer, or wait at least 15 minutes to clear the cache.</span></span>
 
-<span data-ttu-id="c6ccd-176">Önbelleği temizledikten sonra koddan başarıyla çalıştırabilirsiniz _ServerA_ aracılığıyla _SunucuB_ için _SunucuC ise_:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-176">After clearing the cache, you can successfully run code from _ServerA_ through _ServerB_ to _ServerC_:</span></span>
+<span data-ttu-id="029e6-176">Önbelleği temizledikten sonra koddan başarıyla çalıştırabilirsiniz _ServerA_ aracılığıyla _SunucuB_ için _SunucuC ise_:</span><span class="sxs-lookup"><span data-stu-id="029e6-176">After clearing the cache, you can successfully run code from _ServerA_ through _ServerB_ to _ServerC_:</span></span>
 
 ```powershell
-# Capture a credential            
-$cred = Get-Credential Contoso\Alice            
-            
-# Test kerberos double hop            
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    Test-Path \\$($using:ServerC.Name)\C$            
-    Get-Process lsass -ComputerName $($using:ServerC.Name)            
-    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)            
+# Capture a credential
+$cred = Get-Credential Contoso\Alice
+
+# Test kerberos double hop
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    Test-Path \\$($using:ServerC.Name)\C$
+    Get-Process lsass -ComputerName $($using:ServerC.Name)
+    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)
 }
 ```
 
-<span data-ttu-id="c6ccd-177">Bu örnekte, `$using` değişkeni yapmak için kullanılan `$ServerC` değişkeni görünür _SunucuB_.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-177">In this example, the `$using` variable is used to make the `$ServerC` variable visible to _ServerB_.</span></span> <span data-ttu-id="c6ccd-178">Hakkında daha fazla bilgi için `$using` değişken, bkz: [about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx).</span><span class="sxs-lookup"><span data-stu-id="c6ccd-178">For more information about the `$using` variable, see [about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx).</span></span>
+<span data-ttu-id="029e6-177">Bu örnekte, `$using` değişkeni yapmak için kullanılan `$ServerC` değişkeni görünür _SunucuB_.</span><span class="sxs-lookup"><span data-stu-id="029e6-177">In this example, the `$using` variable is used to make the `$ServerC` variable visible to _ServerB_.</span></span> <span data-ttu-id="029e6-178">Hakkında daha fazla bilgi için `$using` değişken, bkz: [about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx).</span><span class="sxs-lookup"><span data-stu-id="029e6-178">For more information about the `$using` variable, see [about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx).</span></span>
 
-<span data-ttu-id="c6ccd-179">Kimlik bilgileri için temsilci seçme birden çok sunucu izin vermek için _SunucuC ise_, değerini **PrincipalsAllowedToDelegateToAccount** parametresini _SunucuC ise_ bir dizi:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-179">To allow multiple servers to delegate credentials to _ServerC_, set the value of the **PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to an array:</span></span>
+<span data-ttu-id="029e6-179">Kimlik bilgileri için temsilci seçme birden çok sunucu izin vermek için _SunucuC ise_, değerini **PrincipalsAllowedToDelegateToAccount** parametresini _SunucuC ise_ bir dizi:</span><span class="sxs-lookup"><span data-stu-id="029e6-179">To allow multiple servers to delegate credentials to _ServerC_, set the value of the **PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to an array:</span></span>
 
 ```powershell
-# Set up variables for each server            
-$ServerB1 = Get-ADComputer -Identity ServerB1            
-$ServerB2 = Get-ADComputer -Identity ServerB2            
-$ServerB3 = Get-ADComputer -Identity ServerB3            
-$ServerC  = Get-ADComputer -Identity ServerC            
-            
-# Grant resource-based Kerberos constrained delegation            
+# Set up variables for each server
+$ServerB1 = Get-ADComputer -Identity ServerB1
+$ServerB2 = Get-ADComputer -Identity ServerB2
+$ServerB3 = Get-ADComputer -Identity ServerB3
+$ServerC  = Get-ADComputer -Identity ServerC
+
+# Grant resource-based Kerberos constrained delegation
 Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
 
-<span data-ttu-id="c6ccd-180">Etki alanları arasında ikinci atlama yapmak istiyorsanız, tam etki alanı adı (FQDN) etki alanının etki alanı denetleyicisini kendisine eklemek _SunucuB_ ait:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-180">If you want to make the second hop across domains, add fully-qualified domain name (FQDN) of the domain controller of the domain to which _ServerB_ belongs:</span></span>
+<span data-ttu-id="029e6-180">Etki alanları arasında ikinci atlama yapmak istiyorsanız, tam etki alanı adı (FQDN) etki alanının etki alanı denetleyicisini kendisine eklemek _SunucuB_ ait:</span><span class="sxs-lookup"><span data-stu-id="029e6-180">If you want to make the second hop across domains, add fully-qualified domain name (FQDN) of the domain controller of the domain to which _ServerB_ belongs:</span></span>
 
 ```powershell
-# For ServerC in Contoso domain and ServerB in other domain            
-$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com            
-$ServerC = Get-ADComputer -Identity ServerC            
+# For ServerC in Contoso domain and ServerB in other domain
+$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com
+$ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
-<span data-ttu-id="c6ccd-181">Kimlik bilgileri SunucuC ise için temsilci seçme olanağı kaldırmak için değerini ayarlayın **PrincipalsAllowedToDelegateToAccount** parametresini _SunucuC ise_ için `$null`:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-181">To remove the ability to delegate credentials to ServerC, set the value of the **PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to `$null`:</span></span>
+<span data-ttu-id="029e6-181">Kimlik bilgileri SunucuC ise için temsilci seçme olanağı kaldırmak için değerini ayarlayın **PrincipalsAllowedToDelegateToAccount** parametresini _SunucuC ise_ için `$null`:</span><span class="sxs-lookup"><span data-stu-id="029e6-181">To remove the ability to delegate credentials to ServerC, set the value of the **PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to `$null`:</span></span>
 
 ```powershell
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 ```
 
-### <a name="information-on-resource-based-kerberos-constrained-delegation"></a><span data-ttu-id="c6ccd-182">Kaynak tabanlı kısıtlı Kerberos temsilcisi seçme hakkında bilgi</span><span class="sxs-lookup"><span data-stu-id="c6ccd-182">Information on resource-based Kerberos constrained delegation</span></span>
+### <a name="information-on-resource-based-kerberos-constrained-delegation"></a><span data-ttu-id="029e6-182">Kaynak tabanlı kısıtlı Kerberos temsilcisi seçme hakkında bilgi</span><span class="sxs-lookup"><span data-stu-id="029e6-182">Information on resource-based Kerberos constrained delegation</span></span>
 
-- [<span data-ttu-id="c6ccd-183">Kerberos kimlik doğrulamasındaki yenilikler nelerdir?</span><span class="sxs-lookup"><span data-stu-id="c6ccd-183">What's New in Kerberos Authentication</span></span>](https://technet.microsoft.com/library/hh831747.aspx)
-- [<span data-ttu-id="c6ccd-184">Windows Server 2012 hızları Kerberos sorunun nasıl kısıtlı temsilcisi, bölüm 1</span><span class="sxs-lookup"><span data-stu-id="c6ccd-184">How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1</span></span>](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
-- [<span data-ttu-id="c6ccd-185">Windows Server 2012 hızları Kerberos sorunun nasıl kısıtlı temsilcisi, bölüm 2</span><span class="sxs-lookup"><span data-stu-id="c6ccd-185">How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2</span></span>](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
-- [<span data-ttu-id="c6ccd-186">Anlama Kerberos Kısıtlanmış temsilci seçme için tümleşik Windows kimlik doğrulaması ile Azure Active Directory Uygulama proxy'si dağıtımları</span><span class="sxs-lookup"><span data-stu-id="c6ccd-186">Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication</span></span>](http://aka.ms/kcdpaper)
-- <span data-ttu-id="c6ccd-187">[[MS-ADA2]: Active Directory şema öznitelikleri M2.210 özniteliği msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)</span><span class="sxs-lookup"><span data-stu-id="c6ccd-187">[[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)</span></span>
-- <span data-ttu-id="c6ccd-188">[[MS-SFU]: Kerberos Protokolü uzantıları: kullanıcı için hizmet ve kısıtlanmış temsil protokolü 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx)</span><span class="sxs-lookup"><span data-stu-id="c6ccd-188">[[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx)</span></span>
-- [<span data-ttu-id="c6ccd-189">Kaynak tabanlı Kerberos Kısıtlı temsilci</span><span class="sxs-lookup"><span data-stu-id="c6ccd-189">Resource Based Kerberos Constrained Delegation</span></span>](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
-- [<span data-ttu-id="c6ccd-190">Kısıtlanmış temsilci PrincipalsAllowedToDelegateToAccount kullanarak olmadan uzaktan yönetim</span><span class="sxs-lookup"><span data-stu-id="c6ccd-190">Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount</span></span>](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
+- [<span data-ttu-id="029e6-183">Kerberos kimlik doğrulamasındaki yenilikler nelerdir?</span><span class="sxs-lookup"><span data-stu-id="029e6-183">What's New in Kerberos Authentication</span></span>](https://technet.microsoft.com/library/hh831747.aspx)
+- [<span data-ttu-id="029e6-184">Windows Server 2012 hızları Kerberos sorunun nasıl kısıtlı temsilcisi, bölüm 1</span><span class="sxs-lookup"><span data-stu-id="029e6-184">How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1</span></span>](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
+- [<span data-ttu-id="029e6-185">Windows Server 2012 hızları Kerberos sorunun nasıl kısıtlı temsilcisi, bölüm 2</span><span class="sxs-lookup"><span data-stu-id="029e6-185">How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2</span></span>](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
+- [<span data-ttu-id="029e6-186">Anlama Kerberos Kısıtlanmış temsilci seçme için tümleşik Windows kimlik doğrulaması ile Azure Active Directory Uygulama proxy'si dağıtımları</span><span class="sxs-lookup"><span data-stu-id="029e6-186">Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication</span></span>](http://aka.ms/kcdpaper)
+- <span data-ttu-id="029e6-187">[[MS-ADA2]: Active Directory şema öznitelikleri M2.210 özniteliği msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)</span><span class="sxs-lookup"><span data-stu-id="029e6-187">[[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)</span></span>
+- <span data-ttu-id="029e6-188">[[MS-SFU]: Kerberos Protokolü uzantıları: kullanıcı için hizmet ve kısıtlanmış temsil protokolü 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx)</span><span class="sxs-lookup"><span data-stu-id="029e6-188">[[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx)</span></span>
+- [<span data-ttu-id="029e6-189">Kaynak tabanlı Kerberos Kısıtlı temsilci</span><span class="sxs-lookup"><span data-stu-id="029e6-189">Resource Based Kerberos Constrained Delegation</span></span>](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
+- [<span data-ttu-id="029e6-190">Kısıtlanmış temsilci PrincipalsAllowedToDelegateToAccount kullanarak olmadan uzaktan yönetim</span><span class="sxs-lookup"><span data-stu-id="029e6-190">Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount</span></span>](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
-## <a name="pssessionconfiguration-using-runas"></a><span data-ttu-id="c6ccd-191">Runas komutunu kullanarak PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="c6ccd-191">PSSessionConfiguration using RunAs</span></span>
+## <a name="pssessionconfiguration-using-runas"></a><span data-ttu-id="029e6-191">Runas komutunu kullanarak PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="029e6-191">PSSessionConfiguration using RunAs</span></span>
 
-<span data-ttu-id="c6ccd-192">Bir oturum yapılandırması oluşturabilirsiniz _SunucuB_ ve kendi **RunAsCredential** parametresi.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-192">You can create a session configuration on _ServerB_ and set its **RunAsCredential** parameter.</span></span>
+<span data-ttu-id="029e6-192">Bir oturum yapılandırması oluşturabilirsiniz _SunucuB_ ve kendi **RunAsCredential** parametresi.</span><span class="sxs-lookup"><span data-stu-id="029e6-192">You can create a session configuration on _ServerB_ and set its **RunAsCredential** parameter.</span></span>
 
-<span data-ttu-id="c6ccd-193">İkinci atlama sorunu çözmek için PSSessionConfiguration ve Farklı Çalıştır'ı kullanma hakkında daha fazla bilgi için bkz: [çoklu atlamalı PowerShell uzaktan iletişim için başka bir çözüm](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).</span><span class="sxs-lookup"><span data-stu-id="c6ccd-193">For information about using PSSessionConfiguration and RunAs to solve the second hop problem, see [Another solution to multi-hop PowerShell remoting](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).</span></span>
+<span data-ttu-id="029e6-193">İkinci atlama sorunu çözmek için PSSessionConfiguration ve Farklı Çalıştır'ı kullanma hakkında daha fazla bilgi için bkz: [çoklu atlamalı PowerShell uzaktan iletişim için başka bir çözüm](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).</span><span class="sxs-lookup"><span data-stu-id="029e6-193">For information about using PSSessionConfiguration and RunAs to solve the second hop problem, see [Another solution to multi-hop PowerShell remoting](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).</span></span>
 
-### <a name="pros"></a><span data-ttu-id="c6ccd-194">Artıları</span><span class="sxs-lookup"><span data-stu-id="c6ccd-194">Pros</span></span>
+### <a name="pros"></a><span data-ttu-id="029e6-194">Artıları</span><span class="sxs-lookup"><span data-stu-id="029e6-194">Pros</span></span>
 
-- <span data-ttu-id="c6ccd-195">WMF 3.0 veya daha sonra herhangi bir sunucu ile çalışır.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-195">Works with any server with WMF 3.0 or later.</span></span>
+- <span data-ttu-id="029e6-195">WMF 3.0 veya daha sonra herhangi bir sunucu ile çalışır.</span><span class="sxs-lookup"><span data-stu-id="029e6-195">Works with any server with WMF 3.0 or later.</span></span>
 
-### <a name="cons"></a><span data-ttu-id="c6ccd-196">Eksileri</span><span class="sxs-lookup"><span data-stu-id="c6ccd-196">Cons</span></span>
+### <a name="cons"></a><span data-ttu-id="029e6-196">Eksileri</span><span class="sxs-lookup"><span data-stu-id="029e6-196">Cons</span></span>
 
-- <span data-ttu-id="c6ccd-197">Yapılandırmasını gerektirir **PSSessionConfiguration** ve **RunAs** Ara her sunucuda (_SunucuB_).</span><span class="sxs-lookup"><span data-stu-id="c6ccd-197">Requires configuration of **PSSessionConfiguration** and **RunAs** on every intermediate server (_ServerB_).</span></span>
-- <span data-ttu-id="c6ccd-198">Bir etki alanı kullanırken parola bakım gerektiren **RunAs** hesabı</span><span class="sxs-lookup"><span data-stu-id="c6ccd-198">Requires password maintenance when using a domain **RunAs** account</span></span>
+- <span data-ttu-id="029e6-197">Yapılandırmasını gerektirir **PSSessionConfiguration** ve **RunAs** Ara her sunucuda (_SunucuB_).</span><span class="sxs-lookup"><span data-stu-id="029e6-197">Requires configuration of **PSSessionConfiguration** and **RunAs** on every intermediate server (_ServerB_).</span></span>
+- <span data-ttu-id="029e6-198">Bir etki alanı kullanırken parola bakım gerektiren **RunAs** hesabı</span><span class="sxs-lookup"><span data-stu-id="029e6-198">Requires password maintenance when using a domain **RunAs** account</span></span>
 
-## <a name="just-enough-administration-jea"></a><span data-ttu-id="c6ccd-199">Tam yetecek kadar Yönetim (JEA)</span><span class="sxs-lookup"><span data-stu-id="c6ccd-199">Just Enough Administration (JEA)</span></span>
+## <a name="just-enough-administration-jea"></a><span data-ttu-id="029e6-199">Yeterli Yönetim (JEA)</span><span class="sxs-lookup"><span data-stu-id="029e6-199">Just Enough Administration (JEA)</span></span>
 
-<span data-ttu-id="c6ccd-200">JEA, yönetici bir PowerShell oturumunda çalıştırmak hangi komutları sınırlamanıza olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-200">JEA allows you to restrict what commands an administrator can run during a PowerShell session.</span></span> <span data-ttu-id="c6ccd-201">İkinci atlama sorunu çözmek için kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-201">It can be used to solve the second hop problem.</span></span>
+<span data-ttu-id="029e6-200">JEA, yönetici bir PowerShell oturumunda çalıştırmak hangi komutları sınırlamanıza olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="029e6-200">JEA allows you to restrict what commands an administrator can run during a PowerShell session.</span></span> <span data-ttu-id="029e6-201">İkinci atlama sorunu çözmek için kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="029e6-201">It can be used to solve the second hop problem.</span></span>
 
-<span data-ttu-id="c6ccd-202">JEA hakkında daha fazla bilgi için bkz: [yalnızca yeterince Yönetim](https://docs.microsoft.com/en-us/powershell/jea/overview).</span><span class="sxs-lookup"><span data-stu-id="c6ccd-202">For information about JEA, see [Just Enough Administration](https://docs.microsoft.com/en-us/powershell/jea/overview).</span></span>
+<span data-ttu-id="029e6-202">JEA hakkında daha fazla bilgi için bkz: [yalnızca yeterince Yönetim](https://docs.microsoft.com/en-us/powershell/jea/overview).</span><span class="sxs-lookup"><span data-stu-id="029e6-202">For information about JEA, see [Just Enough Administration](https://docs.microsoft.com/en-us/powershell/jea/overview).</span></span>
 
-### <a name="pros"></a><span data-ttu-id="c6ccd-203">Artıları</span><span class="sxs-lookup"><span data-stu-id="c6ccd-203">Pros</span></span>
+### <a name="pros"></a><span data-ttu-id="029e6-203">Artıları</span><span class="sxs-lookup"><span data-stu-id="029e6-203">Pros</span></span>
 
-- <span data-ttu-id="c6ccd-204">Sanal hesap kullanırken hiçbir parola Bakım.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-204">No password maintenance when using a virtual account.</span></span>
+- <span data-ttu-id="029e6-204">Sanal hesap kullanırken hiçbir parola Bakım.</span><span class="sxs-lookup"><span data-stu-id="029e6-204">No password maintenance when using a virtual account.</span></span>
 
-### <a name="cons"></a><span data-ttu-id="c6ccd-205">Eksileri</span><span class="sxs-lookup"><span data-stu-id="c6ccd-205">Cons</span></span>
+### <a name="cons"></a><span data-ttu-id="029e6-205">Eksileri</span><span class="sxs-lookup"><span data-stu-id="029e6-205">Cons</span></span>
 
-- <span data-ttu-id="c6ccd-206">WMF 5.0 veya sonrasını gerektirir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-206">Requires WMF 5.0 or later.</span></span>
-- <span data-ttu-id="c6ccd-207">Her ara sunucusu üzerindeki yapılandırmayı gerektirir (_SunucuB_).</span><span class="sxs-lookup"><span data-stu-id="c6ccd-207">Requires configuration on every intermediate server (_ServerB_).</span></span>
+- <span data-ttu-id="029e6-206">WMF 5.0 veya sonrasını gerektirir.</span><span class="sxs-lookup"><span data-stu-id="029e6-206">Requires WMF 5.0 or later.</span></span>
+- <span data-ttu-id="029e6-207">Her ara sunucusu üzerindeki yapılandırmayı gerektirir (_SunucuB_).</span><span class="sxs-lookup"><span data-stu-id="029e6-207">Requires configuration on every intermediate server (_ServerB_).</span></span>
 
-## <a name="pass-credentials-inside-an-invoke-command-script-block"></a><span data-ttu-id="c6ccd-208">Invoke-Command betik bloğu içinde geçişi kimlik bilgileri</span><span class="sxs-lookup"><span data-stu-id="c6ccd-208">Pass credentials inside an Invoke-Command script block</span></span>
+## <a name="pass-credentials-inside-an-invoke-command-script-block"></a><span data-ttu-id="029e6-208">Invoke-Command betik bloğu içinde geçişi kimlik bilgileri</span><span class="sxs-lookup"><span data-stu-id="029e6-208">Pass credentials inside an Invoke-Command script block</span></span>
 
-<span data-ttu-id="c6ccd-209">Kimlik bilgileri içinde geçirdiğiniz **ScriptBlock** yapılan bir çağrı parametresinin [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-209">You can pass credentials inside the **ScriptBlock** parameter of a call to the [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.</span></span>
+<span data-ttu-id="029e6-209">Kimlik bilgileri içinde geçirdiğiniz **ScriptBlock** yapılan bir çağrı parametresinin [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="029e6-209">You can pass credentials inside the **ScriptBlock** parameter of a call to the [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.</span></span>
 
-### <a name="pros"></a><span data-ttu-id="c6ccd-210">Artıları</span><span class="sxs-lookup"><span data-stu-id="c6ccd-210">Pros</span></span>
+### <a name="pros"></a><span data-ttu-id="029e6-210">Artıları</span><span class="sxs-lookup"><span data-stu-id="029e6-210">Pros</span></span>
 
-- <span data-ttu-id="c6ccd-211">Özel sunucu yapılandırması gerektirmez.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-211">Does not require special server configuration.</span></span>
-- <span data-ttu-id="c6ccd-212">WMF 2.0 veya sonraki sürümünü çalıştıran herhangi bir sunucu üzerinde çalışır.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-212">Works on any server running WMF 2.0 or later.</span></span>
+- <span data-ttu-id="029e6-211">Özel sunucu yapılandırması gerektirmez.</span><span class="sxs-lookup"><span data-stu-id="029e6-211">Does not require special server configuration.</span></span>
+- <span data-ttu-id="029e6-212">WMF 2.0 veya sonraki sürümünü çalıştıran herhangi bir sunucu üzerinde çalışır.</span><span class="sxs-lookup"><span data-stu-id="029e6-212">Works on any server running WMF 2.0 or later.</span></span>
 
-### <a name="cons"></a><span data-ttu-id="c6ccd-213">Eksileri</span><span class="sxs-lookup"><span data-stu-id="c6ccd-213">Cons</span></span>
+### <a name="cons"></a><span data-ttu-id="029e6-213">Eksileri</span><span class="sxs-lookup"><span data-stu-id="029e6-213">Cons</span></span>
 
-- <span data-ttu-id="c6ccd-214">Garip kod teknik gerektirir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-214">Requires an awkward code technique.</span></span>
-- <span data-ttu-id="c6ccd-215">WMF 2.0 çalıştıran, bir uzak oturum için bağımsız değişkenleri geçirme farklı bir sözdizimi gerektirir.</span><span class="sxs-lookup"><span data-stu-id="c6ccd-215">If running WMF 2.0, requires different syntax for passing arguments to a remote session.</span></span>
+- <span data-ttu-id="029e6-214">Garip kod teknik gerektirir.</span><span class="sxs-lookup"><span data-stu-id="029e6-214">Requires an awkward code technique.</span></span>
+- <span data-ttu-id="029e6-215">WMF 2.0 çalıştıran, bir uzak oturum için bağımsız değişkenleri geçirme farklı bir sözdizimi gerektirir.</span><span class="sxs-lookup"><span data-stu-id="029e6-215">If running WMF 2.0, requires different syntax for passing arguments to a remote session.</span></span>
 
-### <a name="example"></a><span data-ttu-id="c6ccd-216">Örnek</span><span class="sxs-lookup"><span data-stu-id="c6ccd-216">Example</span></span>
+### <a name="example"></a><span data-ttu-id="029e6-216">Örnek</span><span class="sxs-lookup"><span data-stu-id="029e6-216">Example</span></span>
 
-<span data-ttu-id="c6ccd-217">Aşağıdaki örnek, kimlik bilgileri geçirmek gösterilmiştir bir **Invoke-Command** betik bloğu:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-217">The following example shows how to pass credentials in an **Invoke-Command** script block:</span></span>
+<span data-ttu-id="029e6-217">Aşağıdaki örnek, kimlik bilgileri geçirmek gösterilmiştir bir **Invoke-Command** betik bloğu:</span><span class="sxs-lookup"><span data-stu-id="029e6-217">The following example shows how to pass credentials in an **Invoke-Command** script block:</span></span>
 
 ```powershell
-# This works without delegation, passing fresh creds            
-# Note $Using:Cred in nested request            
-$cred = Get-Credential Contoso\Administrator            
-Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {            
-    hostname            
-    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}            
+# This works without delegation, passing fresh creds
+# Note $Using:Cred in nested request
+$cred = Get-Credential Contoso\Administrator
+Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
+    hostname
+    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c6ccd-218">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="c6ccd-218">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="029e6-218">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="029e6-218">See also</span></span>
 
-[<span data-ttu-id="c6ccd-219">PowerShell Uzaktan İletişim Güvenlik Konuları</span><span class="sxs-lookup"><span data-stu-id="c6ccd-219">PowerShell Remoting Security Considerations</span></span>](WinRMSecurity.md)
-
-
-
-
-
-
-
-
- 
+[<span data-ttu-id="029e6-219">PowerShell Uzaktan İletişim Güvenlik Konuları</span><span class="sxs-lookup"><span data-stu-id="029e6-219">PowerShell Remoting Security Considerations</span></span>](WinRMSecurity.md)
