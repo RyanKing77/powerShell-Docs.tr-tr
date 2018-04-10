@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, powershell, güvenlik"
-title: "Denetim ve JEA üzerinde raporlama"
-ms.openlocfilehash: 57148bc3753bdd751bfa21fc3198aca3f8654849
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea, powershell, güvenlik
+title: Denetim ve JEA üzerinde raporlama
+ms.openlocfilehash: 7fc670c77b5fbf9bce8fb55dd99a2f9a984100d2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Denetim ve JEA üzerinde raporlama
 
@@ -144,11 +144,11 @@ Bir kullanıcı çalıştıran her komut için bir "CommandInvocation" satır cm
 Her bir parametre ve komutu ile sağlanan değer hakkında bilgi için her CommandInvocation ParameterBindings izleyin.
 Yukarıdaki örnekte, "adı" parametresi "Dns" değeri "Get-Service" cmdlet için sağlanan görebilirsiniz.
 
-Her komut çıktısı ayrıca bir CommandInvocation genellikle dışarı varsayılan olarak tetikler. Inputobject Out-Default komuttan döndürülen PowerShell nesnesidir.
+Her komut çıktısı ayrıca bir CommandInvocation genellikle dışarı varsayılan olarak tetikler.
+Inputobject Out-Default komuttan döndürülen PowerShell nesnesidir.
 Bu nesnenin ayrıntılarını yazdırılır altında hangi kullanıcı görülen yakından mimicking birkaç satır.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
 - [JEA oturumunda denetim kullanıcı eylemleri](audit-and-report.md)
 - [*PowerShell ♥ mavi takım* güvenlik blog gönderisi](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

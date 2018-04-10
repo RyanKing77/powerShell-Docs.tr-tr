@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "Yapılandırma ve ortam verilerin ayrılmasını"
-ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, powershell, yapılandırma, Kur
+title: Yapılandırma ve ortam verilerini ayırma
+ms.openlocfilehash: c89e26105611eae59a926be1432079913c40671f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="separating-configuration-and-environment-data"></a>Yapılandırma ve ortam verilerin ayrılmasını
+# <a name="separating-configuration-and-environment-data"></a>Yapılandırma ve ortam verilerini ayırma
 
 >İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -26,18 +26,19 @@ Ayrıntılı bir açıklaması için **ConfigurationData** hashtable, bkz: [yap�
 
 ## <a name="a-simple-example"></a>Basit bir örnek
 
-Bunun nasıl çalıştığını görmek için çok basit bir örneğe bakalım. Sağlar tek bir yapılandırma oluşturacağız **IIS** bazı düğümler, üzerinde mevcut olduğunu ve **Hyper-V** bazılarında mevcuttur: 
+Bunun nasıl çalıştığını görmek için çok basit bir örneğe bakalım.
+Sağlar tek bir yapılandırma oluşturacağız **IIS** bazı düğümler, üzerinde mevcut olduğunu ve **Hyper-V** bazılarında mevcuttur:
 
 ```powershell
 Configuration MyDscConfiguration {
-    
+
     Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
         WindowsFeature IISInstall {
             Ensure = 'Present'
             Name   = 'Web-Server'
         }
-        
+
     }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
@@ -48,7 +49,7 @@ Configuration MyDscConfiguration {
     }
 }
 
-$MyData = 
+$MyData =
 @{
     AllNodes =
     @(
@@ -75,12 +76,12 @@ Bu komut dosyasının son satırında geçirme yapılandırmanın derler `$MyDat
     Directory: C:\DscTests\MyDscConfiguration
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:09 PM           1968 VM-1.mof                                                                                                                
--a----        3/31/2017   5:09 PM           1970 VM-2.mof  
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:09 PM           1968 VM-1.mof
+-a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
- 
+
 `$MyData` her biri kendi iki farklı düğümleri belirtir `NodeName` ve `Role`. Yapılandırma dinamik olarak oluşturur **düğümü** alır gelen düğümler topluluğunu alarak blokları `$MyData` (özellikle `$AllNodes`) ve o koleksiyonu karşı filtreler `Role` özelliği...
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Geliştirme ve üretim ortamlarını tanımlamak için yapılandırma verileri kullanma
@@ -128,7 +129,9 @@ Geliştirme ve üretim ortamı verileri bir dosya namd tanımlarız `DevProdEnvD
 
 ### <a name="configuration-script-file"></a>Yapılandırma komut dosyası
 
-Şimdi, yapılandırmada, tanımlanmış bir `.ps1` dosyasında, biz filtre biz tanımlanan düğümleri `DevProdEnvData.psd1` rolleri tarafından (`MSSQL`, `Dev`, veya her ikisini de) ve uygun biçimde yapılandırın. Üretim ortamında bunları iki farklı düğümlerde sahipken geliştirme ortamı SQL Server ve IIS bir düğümde vardır. Site içeriği belirtildiği gibi farklı de `SiteContents` özellikleri.
+Şimdi, yapılandırmada, tanımlanmış bir `.ps1` dosyasında, biz filtre biz tanımlanan düğümleri `DevProdEnvData.psd1` rolleri tarafından (`MSSQL`, `Dev`, veya her ikisini de) ve uygun biçimde yapılandırın.
+Üretim ortamında bunları iki farklı düğümlerde sahipken geliştirme ortamı SQL Server ve IIS bir düğümde vardır.
+Site içeriği belirtildiği gibi farklı de `SiteContents` özellikleri.
 
 Yapılandırma komut dosyası sonunda diyoruz yapılandırma (bir MOF belgeye, geçirme derlemeniz) `DevProdEnvData.psd1` olarak `$ConfigurationData` parametresi.
 
@@ -147,7 +150,7 @@ Configuration MyWebApp
    {
         # Install prerequisites
         WindowsFeature installdotNet35
-        {            
+        {
             Ensure      = "Present"
             Name        = "Net-Framework-Core"
             Source      = "c:\software\sxs"
@@ -182,7 +185,7 @@ Configuration MyWebApp
         }
 
         # Stop the default website
-        xWebsite DefaultSite 
+        xWebsite DefaultSite
         {
             Ensure       = 'Present'
             Name         = 'Default Web Site'
@@ -203,7 +206,7 @@ Configuration MyWebApp
             Type            = 'Directory'
             DependsOn       = '[WindowsFeature]AspNet45'
 
-        }       
+        }
 
 
         # Create the new Website
@@ -232,10 +235,10 @@ Bu yapılandırma çalıştırdığınızda, üç MOF dosyaları oluşturulur (h
     Directory: C:\DscTests\MyWebApp
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof                                                                                                            
--a----        3/31/2017   5:47 PM           6994 Dev.mof                                                                                                                 
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof
+-a----        3/31/2017   5:47 PM           6994 Dev.mof
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
@@ -257,39 +260,39 @@ Bu örnekte, `ConfigFileContents` içeren satırı erişilir:
 
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName           = “*”
             LogPath            = “C:\Logs”
         },
- 
+
         @{
             NodeName = “VM-1”
             SiteContents = “C:\Site1”
             SiteName = “Website1”
         },
- 
-        
+
+
         @{
             NodeName = “VM-2”;
             SiteContents = “C:\Site2”
             SiteName = “Website2”
         }
     );
- 
-    NonNodeData = 
+
+    NonNodeData =
     @{
         ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }   
-} 
- 
+     }
+}
+
 configuration WebsiteConfig
 {
     Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
- 
+
     node $AllNodes.NodeName
     {
         xWebsite Site
@@ -298,14 +301,14 @@ configuration WebsiteConfig
             PhysicalPath = $Node.SiteContents
             Ensure       = “Present”
         }
- 
+
         File ConfigFile
         {
             DestinationPath = $Node.SiteContents + “\\config.xml”
             Contents = $ConfigurationData.NonNodeData.ConfigFileContents
         }
     }
-} 
+}
 ```
 
 
@@ -313,4 +316,3 @@ configuration WebsiteConfig
 - [Yapılandırma verileri kullanma](configData.md)
 - [Yapılandırma verilerini seçeneklerinde kimlik bilgileri](configDataCredentials.md)
 - [DSC yapılandırmaları](configurations.md)
-

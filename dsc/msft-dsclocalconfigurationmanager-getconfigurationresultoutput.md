@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "MSFT_DSCLocalConfigurationManager sınıfının GetConfigurationResultOutput yöntemi"
-ms.openlocfilehash: f6106bb28dc20004b5bbb6df2d8e719cf0c453f0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: MSFT_DSCLocalConfigurationManager sınıfının GetConfigurationResultOutput yöntemi
+ms.openlocfilehash: f4c2ddaa37cdafeff1a442f3f1fa656788a1c6c8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının GetConfigurationResultOutput yöntemi
 
@@ -27,14 +27,11 @@ uint32 GetConfigurationResultOutput(
 <a name="parameters"></a>Parametreler
 ----------
 
-*jobId* \[in\]  
-Proje çıktı verileri almak istediğiniz için kimliği.
+*JobId* \[içinde\] , çıktı verilerini almak iş kimliği.
 
-*resumeOutputBookmark* \[in\]  
-Çıktı devamlılığı önceki yer işareti gelen olması gerektiğini belirtir.
+*resumeOutputBookmark* \[içinde\] çıkış devamlılığı önceki yer işareti gelen olması gerektiğini belirtir.
 
-*Çıktı* \[çıkışı\]  
-Belirtilen iş için çıktı.
+*Çıktı* \[çıkışı\] belirtilen iş için çıktı.
 
 ## <a name="return-value"></a>Dönüş değeri
 ------------
@@ -56,10 +53,3 @@ Bu statik bir yöntemdir.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

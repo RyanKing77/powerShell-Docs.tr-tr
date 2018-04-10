@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
 title: Bul RoleCapability
-ms.openlocfilehash: 77c5b492d9681fa05315401fba410c508af1d13b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 89aacd604d54f6a5e9752790be65cc3bcc77c8e1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="find-rolecapability"></a>Bul RoleCapability
 
 Rol özellikleri modülleri bulur.
 
 ## <a name="description"></a>Açıklama
-Bul RoleCapability cmdlet'i modüllerdeki PowerShell rol özellikleri bulur. Bul RoleCapability modülleri kayıtlı depoları içinde arar. Bu cmdlet bulduğu her rol özelliği için bir PSGetRoleCapabilityInfo nesnesi döndürür. Rol özelliği içeren modülünü yüklemek için Yükle-modül cmdlet PSGetRoleCapabilityInfo nesnesini geçirebilirsiniz.
+Bul RoleCapability cmdlet'i modüllerdeki PowerShell rol özellikleri bulur. Bul RoleCapability modülleri kayıtlı depoları içinde arar.
+Bu cmdlet bulduğu her rol özelliği için bir PSGetRoleCapabilityInfo nesnesi döndürür. Rol özelliği içeren modülünü yüklemek için Yükle-modül cmdlet PSGetRoleCapabilityInfo nesnesini geçirebilirsiniz.
 PowerShell rol özellikleri, komutları tanımlamak, uygulamaları ve benzeri, bir kullanıcı yalnızca yetecek kadar Yönetim (JEA) uç noktada kullanılamaz. Rol özellikleri .psrc uzantılı dosyaları tarafından tanımlanır.
 
 - Bul RoleCapability sürüm parametrelerle filtre uygulayabilirsiniz: MinimumVersion, RequiredVersion, AllVersions.
@@ -34,7 +35,7 @@ Get-Command -Name Find-RoleCapability -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Cmdlet çevrimiçi Yardım başvurusu
 
-[Bul RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
+[Find-RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
 
 ## <a name="example-commands"></a>Örnek komutlar
 ```powershell
@@ -78,4 +79,3 @@ Find-RoleCapability -Filter RBAC
 Find-RoleCapability -Tag Azure, DSC
 
 ```
-

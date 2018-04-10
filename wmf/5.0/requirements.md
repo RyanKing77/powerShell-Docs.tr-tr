@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 510e1baa2933932cfd4c3bcb4e0973f3eb8095f3
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 7e24bb4ee4d0658b0619f7f008e3740f647f124f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="system-requirements"></a>Sistem Gereksinimleri
 
@@ -55,7 +55,7 @@ Aşağıdaki önkoşulların karşılandığından emin olun:
 Windows Server 2008 R2 SP1 ve Windows 7 SP1 sistemleri yerleşik PowerShell 2.0, WinRM ve WMI sahiptir. Bu yerleşik bileşenleri güncelleştirmeleri, WMF 3.0 ve WMF 4.0 paketleri, Windows Server 2008 R2 SP1 ve Windows 7 SP1 yayımlandıktan sonra kullanıma sunulmuştur. Yükleme/kaldırma WMF 3.0 ve WMF 4.0 paketleri aşağıdaki yükseltme yolundaki bazı sorunlar sınamayla:
 
 - Yerleşik WMF 4.0-->
-- Yerleşik--> WMF 3.0 WMF4.0-->. 
+- Yerleşik--> WMF 3.0 WMF4.0-->.
 
 Biz bu sorunların tümü WMF 4.0 paketinde düzeltti. Bu nedenle, WMF 5.0 yüklemek için Windows Server 2008 R2 SP1 ve Windows 7 SP1 WMF 4.0 bir önkoşul yoktur. Aşağıda WMF 5.0 yükseltmeden önce WMF 4.0 yüklemezseniz, karşılaşabileceğiniz belirli sorunları şunlardır:
 
@@ -96,4 +96,3 @@ wusa /uninstall /kb:3134760
 3.  Tıklatın **yüklü güncelleştirmeleri görüntüle.**
 
 4.  Seçin **Windows Management Framework 5.0** yüklü güncelleştirmeler listesinden. Bu karşılık *KB3134758*, *KB3134759*, veya *KB3134760*. Tıklatın **kaldırın.**
-

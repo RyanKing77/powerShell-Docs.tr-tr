@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell cmdlet'i
-ms.date: 2016-12-12
-title: "pswawebapplication kaldırma"
+ms.date: 12/12/2016
+title: pswawebapplication kaldırma
 ms.technology: powershell
-ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
@@ -36,7 +36,7 @@ Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCerti
 Sınama sertifikaları tarafından oluşturulan gösterir **yükleme\_PswaWebApplication** cmdlet (ile **UseTestCertificate** parametresi) silinir.
 Yalnızca sınama sertifikası tarafından oluşturulan aynı ada sahip **Install-PswaWebApplication** cmdlet kaldırılır.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -49,7 +49,7 @@ Yalnızca sınama sertifikası tarafından oluşturulan aynı ada sahip **Instal
 
 Kaldırmak için web uygulamasının adını belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -62,7 +62,7 @@ Kaldırmak için web uygulamasının adını belirtir.
 
 Web uygulamasının yüklendiği web sitesi adını belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -75,7 +75,7 @@ Web uygulamasının yüklendiği web sitesi adını belirtir.
 
 Cmdlet'i çalıştırmadan önce sizden onay ister.
 
-|||  
+|||
 |-|-|
 | Gerekli mi?                            | yanlış                                |
 | Konumu?                            | Adlı                                |
@@ -88,7 +88,7 @@ Cmdlet'i çalıştırmadan önce sizden onay ister.
 Cmdlet çalıştırılıyorsa ne olacağını gösterir.
 Cmdlet çalıştırılmaz.
 
-|||  
+|||
 |-|-|
 | Gerekli mi?                            | yanlış                                |
 | Konumu?                            | Adlı                                |

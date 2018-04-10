@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell cmdlet'i
-ms.date: 2016-12-12
-title: "Web erişim cmdlet'leri"
+ms.date: 12/12/2016
+title: Web erişim cmdlet'leri
 ms.technology: powershell
-ms.openlocfilehash: 54821c318b165461ec613678a39c4e3b500dfd0e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6930fd6a08de69078576fb0d0fbabb04e05d0814
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web Erişim Cmdlet’leri
 
@@ -44,21 +44,18 @@ Windows PowerShell web uygulamasını IIS'den kaldırır.
 >
 >Kullanılabilir tüm cmdlet'leri listelemek için kullanın:
 >
-> `Get-Command –Module PowerShellWebAccess`cmdlet'ini kullanın.
+> `Get-Command –Module PowerShellWebAccess` cmdlet'ini kullanın.
 
-Hakkında daha fazla bilgi için ya da sözdizimini cmdlet'lerinden herhangi birini kullanın:  
-`Get-Help `*&lt;cmdlet adı&gt;*  
-Burada  *&lt;cmdlet adı&gt;*  araştırmak istediğiniz cmdlet'in adıdır.
+Hakkında daha fazla bilgi için ya da sözdizimini, cmdlet'lerinden herhangi birini kullanın: `Get-Help ` *&lt;cmdlet adı&gt;* nerede *&lt;cmdlet adı&gt;* araştırmak istediğiniz cmdlet'in adıdır.
 
 Daha ayrıntılı bilgi için, aşağıdaki cmdlet'lerin herhangi birini çalıştırabilirsiniz:
 
-- `Get-Help `*&lt;cmdlet adı&gt;*` -Detailed`
-- `Get-Help `*&lt;cmdlet adı&gt;*` -Examples`
-- `Get-Help `*&lt;cmdlet adı&gt;*` -Full`
+- `Get-Help `*&lt;Cmdlet adı&gt;*` -Detailed`
+- `Get-Help `*&lt;Cmdlet adı&gt;*` -Examples`
+- `Get-Help `*&lt;Cmdlet adı&gt;*` -Full`
 
 ### <a name="more-information"></a>Daha Fazla Bilgi
 
 PowerShell Web erişimi hakkında daha fazla bilgi için aşağıdakilere bakın:
 
 - [Yükleme ve Windows PowerShell Web erişimini kullanma](../install-and-use-windows-powershell-web-access.md)
-

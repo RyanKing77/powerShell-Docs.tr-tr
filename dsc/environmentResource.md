@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC ortamı kaynak"
-ms.openlocfilehash: 9c166d719ba3f168c936278acd6fb5fb7658613e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC ortamı kaynak
+ms.openlocfilehash: 4f024afe2d70c13e19406745ec7fd69821ab229b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-environment-resource"></a>DSC ortamı kaynak
 
@@ -29,13 +29,13 @@ Environment [string] #ResourceName
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik  |  Açıklama   | 
-|---|---| 
-| Ad| Belirli bir durumu sağlamak istediğiniz ortam değişkeninin adını belirtir.| 
-| Emin olun| Bir değişken var olup olmadığını gösterir. Bu özelliği ayarlamak __mevcut__ henüz yoksa ortam değişkeni oluşturmak veya değerini aracılığıyla sunulan uyduğundan emin olmak için __değeri__ değişkeni zaten varsa, özelliği. Ayarlamak __etmeksizin__ varsa değişkeni silmek için.| 
-| Yol| Yapılandırılmakta olan ortam değişkeni tanımlar. Bu özelliği ayarlamak __$true__ değişken ise __yolu__ değişken, aksi takdirde ayarlamak __$false__. Varsayılan değer __$false__. Yapılandırılmakta değişken ise __yolu__ değişken değeri sağlanan __değeri__ özelliği, var olan değerin eklenir.| 
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.| 
-| Değer| Ortam değişkenine atanacak değer.| 
+|  Özellik  |  Açıklama   |
+|---|---|
+| Ad| Belirli bir durumu sağlamak istediğiniz ortam değişkeninin adını belirtir.|
+| Emin olun| Bir değişken var olup olmadığını gösterir. Bu özelliği ayarlamak __mevcut__ henüz yoksa ortam değişkeni oluşturmak veya değerini aracılığıyla sunulan uyduğundan emin olmak için __değeri__ değişkeni zaten varsa, özelliği. Ayarlamak __etmeksizin__ varsa değişkeni silmek için.|
+| Yol| Yapılandırılmakta olan ortam değişkeni tanımlar. Bu özelliği ayarlamak __$true__ değişken ise __yolu__ değişken, aksi takdirde ayarlamak __$false__. Varsayılan değer __$false__. Yapılandırılmakta değişken ise __yolu__ değişken değeri sağlanan __değeri__ özelliği, var olan değerin eklenir.|
+| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
+| Değer| Ortam değişkenine atanacak değer.|
 
 ## <a name="example"></a>Örnek
 
@@ -49,4 +49,3 @@ Environment EnvironmentExample
     Value = "TestValue"
 }
 ```
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-09
+ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: RequireLicenseAcceptance
-ms.openlocfilehash: 260ccc1ee52d09a640e88203c5644f20f9723d6f
-ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
+ms.openlocfilehash: d78f8cb7f84869880e9a88a0f0407d18dc5c64cb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="modules-requiring-license-acceptance"></a>Lisans kabulünü gerektirme modülleri
+# <a name="modules-requiring-license-acceptance"></a>Lisans Kabulü Gerektiren Modüller
 
 ## <a name="synopsis"></a>ÖZET
 Müşteriler açıkça lisans kendi modülü PowerShell Galerisi'nden yüklemeden önce kabul etmesi gereken bazı modülü yayımcıları için yasal Departmanlar gerektirir. Bir kullanıcı yükler, güncelleştirmeleri veya PowerShellGet, doğrudan ya da başka bir öğe için bağımlılık olarak kullanarak bir modülü kaydeder ve bu modül kullanıcıya bir lisans kabul gerektiriyorsa, kullanıcı lisansı kabul veya işlem başarısız belirtmeniz gerekir.
@@ -17,7 +17,7 @@ Müşteriler açıkça lisans kendi modülü PowerShell Galerisi'nden yüklemede
 ## <a name="publish-requirements-for-modules"></a>Modülleri için gereksinimleri yayımlama
 
 Kullanıcıların lisans kabul etmesini gerektir istediğiniz modülleri gereksinimleri karşılamanız:
-    
+
 - Modül bildirimi PSData bölümünü RequireLicenseAcceptance içermelidir $True =.
 - Modül license.txt dosyası kök dizininde içermelidir.
 - Modül bildirimi lisans URI içermelidir.
@@ -28,16 +28,16 @@ Kullanıcıların lisans kabul etmesini gerektir istediğiniz modülleri gereksi
 - Yükleme/kaydetme/güncelleştirme cmdlet'leri, yeni bir parametre destekleneceğini – kullanıcının lisans gördüğünüz olarak gibi davranacak AcceptLicense.
 - RequiredLicenseAcceptance True ise ve – AcceptLicense belirtilmezse, kullanıcı license.txt gösterilen ve ile istenir: &quot;lisans koşullarını (Evet/Hayır/YesToAll/NoToAll) kabul ediyor musunuz&quot;.
   - Lisans kabul edilirse
-    - **Kaydet-Module:** modül kullanıcı &#39; kopyalanacak s sistem
-    - **Install-Module:** modül kullanıcı &#39; kopyalanacak (kapsamına göre) uygun klasöre s sistem
+    - **Kaydet-Module:** modülü kullanıcıya kopyalanacak&#39;s sistem
+    - **Install-Module:** modülü kullanıcıya kopyalanacak&#39;(kapsamına göre) uygun klasöre s sistem
     - **Update-Module:** modülü güncelleştirilir.
-  - Lisans reddettiyseniz. 
+  - Lisans reddettiyseniz.
     - İşlem iptal edilir.
 - Tüm cmdlet'ler lisans kabulünü gereklidir bildiren için meta veriler (requireLicenseAcceptance ve biçim sürümünü) denetler
   - İstemci biçimindeki sürümü 2.0 eskiyse, işlem başarısız ve istemci güncelleştirmesini kullanıcıya isteyin.
   - Modül biçimi sürüm 2.0 eski yayımlandıysa requireLicenseAcceptance bayrağı yoksayılacak.
 
-    
+
  ## <a name="module-dependencies"></a>Modül bağımlılıkları
 - (Başka bir modülde bağlıdır) bağımlı bir modül lisans kabulünü sonra lisans kabulü davranış (yukarıda) gerektiriyorsa işlemi kaydetme/yükleme/güncelleştirme sırasında gerekli olacaktır.
 - Modül sürümü zaten sistemde yüklü olarak yerel kataloğunda listeleniyorsa, biz lisans denetimi atlar.
@@ -59,7 +59,7 @@ PrivateData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
     } # End of PSData hashtable
-    
+
  } # End of PrivateData hashtable
 ```
 Bu komut, bildirim dosyasını güncelleştirir ve RequireLicenseAcceptance bayrağı true olarak ayarlanır.
@@ -78,7 +78,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
 ```
 Bu komut license.txt dosyasından lisans gösterir ve kullanıcının lisans kabul etmesi istenir.
@@ -117,7 +117,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Örnek 6: Yükleme modül lisans kabulünü ve - AcceptLicense gerektiren bağımlılıkları
@@ -147,7 +147,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 Bu komut license.txt dosyasından lisans gösterir ve kullanıcının lisans kabul etmesi istenir.
 
@@ -172,7 +172,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 Bu komut license.txt dosyasından lisans gösterir ve kullanıcının lisans kabul etmesi istenir.
 
@@ -183,8 +183,8 @@ PS C:\> Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 Modül lisans kabul etmek için tüm sorulmadan güncelleştirilir.
 
 ## <a name="more-details"></a>Daha fazla ayrıntı
-### <a name="require-license-acceptance-for-scriptsscriptscriptrequirelicenseacceptancemd"></a>[Lisans kabulünü betikler için gerektirir](../script/script_RequireLicenseAcceptance.md)
+### <a name="require-license-acceptance-for-scriptsscriptscriptrequirelicenseacceptancemd"></a>[Betikler için Lisans Kabulü Gerektir](../script/script_RequireLicenseAcceptance.md)
 
 ### <a name="require-license-acceptance-support-on-powershellgallerypsgallerypsgalleryrequireslicenseacceptancemd"></a>[Lisans kabulünü desteğini PowerShellGallery gerektirir](../../psgallery/psgallery_requires_license_acceptance.md)
 
-### <a name="require-license-acceptance-on-deploy-to-azure-automationpsgallerypsgallerydeploytoazureautomationrequirelicenseacceptancemd"></a>[Lisans kabulünü gerektiren üzerinde Azure Automation'ı dağıtma](../../psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
+### <a name="require-license-acceptance-on-deploy-to-azure-automationpsgallerypsgallerydeploytoazureautomationrequirelicenseacceptancemd"></a>[Azure Otomasyonuna Dağıtmada Lisans Kabulü Gerektir](../../psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)

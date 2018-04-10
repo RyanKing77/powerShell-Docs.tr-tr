@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Komutlar hakkında bilgi alma"
+title: Komutlar Hakkında Bilgi Alma
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: 98e449110860ea81939d6ec0b7b1a8534a2da2aa
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 1426c171d74afc87751f7d31d46571b9c98fa47e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getting-information-about-commands"></a>Komutlar hakkında bilgi alma
+# <a name="getting-information-about-commands"></a>Komutlar Hakkında Bilgi Alma
 Windows PowerShell **Get-Command** cmdlet'i Geçerli oturumunuzda kullanılabilir tüm komutları alır. Yazdığınızda **Get-Command** bir Windows PowerShell komut isteminde, aşağıdakine benzer bir çıktı göreceksiniz:
 
 ```
@@ -77,4 +77,3 @@ Windows PowerShell'in arama yolunda komut dosyalarını görüntülemek için ş
 ```
 Get-Command -CommandType Script
 ```
-

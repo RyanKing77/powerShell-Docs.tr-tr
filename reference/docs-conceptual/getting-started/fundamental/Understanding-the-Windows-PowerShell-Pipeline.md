@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: Windows PowerShell komut zincirini anlama
+title: Windows PowerShell Komut Zincirini Anlama
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 6d152e52d2fcfb9dd592eb9ac40500615f2186cb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: c3f1d17432cf3a77c0f5ecae137a4233a28a19d7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="understanding-the-windows-powershell-pipeline"></a>Windows PowerShell komut zincirini anlama
+# <a name="understanding-the-windows-powershell-pipeline"></a>Windows PowerShell Komut Zincirini Anlama
 Yöneltme neredeyse her yerde Windows PowerShell içinde çalışır. Ekranda metin karşın, Windows PowerShell komutları arasındaki metni kanal değil. Bunun yerine, nesneleri geçirir.
 
 İşlem hatları için kullanılan gösterimi benzer kullanan için diğer Kabukları, bu nedenle ilk bakışta, bunu Windows PowerShell yeni bir şey tanıtır belirgin olmayabilir. Örneğin, kullanırsanız **dışarı barındırmak** çıkış sayfa tarafından görüntüsünü başka bir komuttan çıkış görünüyor yalnızca zorlamak için cmdlet'i ister sayfalarına parçalanmış ekranda görüntülenen normal metin:
@@ -61,4 +61,3 @@ Aslında, başlık bilgileri çıkış olarak **Get-Location** cmdlet'i yalnızc
 Olabilir koşuluyla, bir Windows PowerShell komut biz gördükleri konsol penceresinde görüntülenen daha nasıl kullanabilir daha fazla bilgi çıktısını görünür olmayan öğeleri almak? Ek veriler nasıl görüntüleyebilirim? Ve normal şekilde verileri bir Windows PowerShell farklı bir biçimde görüntülemek isterseniz kullanır?
 
 Bu bölümde rest belirli öğeler seçme belirli Windows PowerShell nesnelerin yapısı nasıl bulabilir açıklanır ve onları daha kolay görüntüleme için ve bu bilgiyi alternatif çıkış konumlara gibi göndermek nasıl biçimlendirme dosyaları ve Yazıcılar.
-

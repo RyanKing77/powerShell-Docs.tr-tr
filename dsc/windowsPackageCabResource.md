@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
+keywords: DSC, powershell, yapılandırma, Kur
 title: DSC WindowsPackageCab Resource
-ms.openlocfilehash: 1d7c8d9bf45d2eda8734daa8877315d219662c75
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: af45956c1fe8cffa1d7fd779847eded9e3f6b51e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab Resource
 
@@ -15,7 +15,7 @@ ms.lasthandoff: 01/17/2018
 
 **WindowsPackageCab** kaynak olarak Windows PowerShell istenen durum yapılandırması (DSC) yüklemek veya bir hedef düğümde Windows dolap (.cab) paketleri kaldırmak için bir mekanizma sağlar.
 
-Hedef düğüm DISM PowerShell modül yüklü olması gerekir. Bilgi için bkz: [kullanım DISM Windows PowerShell'de](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14). 
+Hedef düğüm DISM PowerShell modül yüklü olması gerekir. Bilgi için bkz: [kullanım DISM Windows PowerShell'de](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14).
 
 
 ## <a name="syntax"></a>Sözdizimi
@@ -32,13 +32,13 @@ Hedef düğüm DISM PowerShell modül yüklü olması gerekir. Bilgi için bkz: 
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik  |  Açıklama   | 
-|---|---| 
-| Ad| Belirli bir durumu sağlamak istediğiniz paketinin adını belirtir.| 
+|  Özellik  |  Açıklama   |
+|---|---|
+| Ad| Belirli bir durumu sağlamak istediğiniz paketinin adını belirtir.|
 | Emin olun| Paketin yüklü olup olmadığını gösterir. Bu özelliği paketi yüklü değil emin olun (veya paket yüklüyse kaldırmak için) "yok" olarak ayarlayın. "Paketinin yüklü emin olmak için (varsayılan değer) sunmak için" olarak ayarlayın.|
-| Yol| Paketin bulunduğu yolu gösterir.| 
-| LogPath| Sağlayıcı yüklemek veya paket kaldırmak için bir günlük dosyasını kaydetmek istediğiniz yeri tam yolunu belirtir.| 
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise **ResourceName** ve türünü **ResourceType**, bu özelliği kullanmak için sözdizimi ' DependsOn = "[ ResourceType] KaynakAdı"''.| 
+| Yol| Paketin bulunduğu yolu gösterir.|
+| LogPath| Sağlayıcı yüklemek veya paket kaldırmak için bir günlük dosyasını kaydetmek istediğiniz yeri tam yolunu belirtir.|
+| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise **ResourceName** ve türünü **ResourceType**, bu özelliği kullanmak için sözdizimi ' DependsOn = "[ ResourceType] KaynakAdı"''.|
 
 ## <a name="example"></a>Örnek
 
@@ -76,4 +76,3 @@ Configuration Sample_WindowsPackageCab
     }
 }
 ```
-

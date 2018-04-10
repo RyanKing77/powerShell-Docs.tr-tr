@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: ScriptFileInfo yeni
-ms.openlocfilehash: 9aed0e16f2dec3681ca4b58595aae8d4972a3808
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: New-ScriptFileInfo
+ms.openlocfilehash: 2b19421111cd3daef9f7a953cc59223a38fcb79c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-scriptfileinfo"></a>ScriptFileInfo yeni
+# <a name="new-scriptfileinfo"></a>New-ScriptFileInfo
 
 Bir komut dosyası meta verilerini oluşturur.
 
@@ -26,7 +26,7 @@ Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Cmdlet çevrimiçi Yardım başvurusu
 
-[ScriptFileInfo yeni](http://go.microsoft.com/fwlink/?LinkId=619792)
+[New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
 
 ## <a name="example-commands"></a>Örnek komutlar
 
@@ -37,7 +37,7 @@ New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
 ### <a name="new-scriptfileinfo-cmdlet"></a>ScriptFileInfo yeni cmdlet'i
-ScriptFileInfo yeni cmdlet ile meta veri sürümü, GUID, yazar ve açıklaması gibi yeni bir komut dosyası oluşturma olanak tanır vs. 
+ScriptFileInfo yeni cmdlet ile meta veri sürümü, GUID, yazar ve açıklaması gibi yeni bir komut dosyası oluşturma olanak tanır vs.
 
 ```powershell
 # Create a new script file with minimum required metadata values
@@ -73,11 +73,11 @@ Version Name Author Description
 
 # Add function and workflow to the script file
 Add-Content -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Value @"
-   
+
     Function Demo-ScriptFunction { 'Demo-ScriptFunction' }
-   
+
     Workflow Demo-ScriptWorkflow { 'Demo-ScriptWorkflow' }
-   
+
     Demo-ScriptFunction
     Demo-ScriptWorkflow
 "@
@@ -118,11 +118,11 @@ New-ScriptFileInfo -Path 'C:\ScriptSharingDemo\Demo-ScriptWithCompletePSScriptIn
 
 # Add function and workflow to the script file
 Add-Content -Path 'C:\ScriptSharingDemo\Demo-ScriptWithCompletePSScriptInfo.ps1' -Value @"
-   
+
     Function Demo-ScriptFunction { 'Demo-ScriptFunction' }
-   
+
     Workflow Demo-ScriptWorkflow { 'Demo-ScriptWorkflow' }
-   
+
     Demo-ScriptFunction
     Demo-ScriptWorkflow
 "@
@@ -192,4 +192,3 @@ DefinedCommands : {Demo-ScriptFunction, Demo-ScriptWorkflow}
 DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
-

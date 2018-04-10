@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, powershell, güvenlik"
-title: JEA kullanma
-ms.openlocfilehash: f0c22bf0f823b9fafa203e7f98049a6a6b3b7c05
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea, powershell, güvenlik
+title: JEA’yı kullanma
+ms.openlocfilehash: 8a6fb2682cf82de8dd20a8699178d4abde4954c2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-jea"></a>JEA kullanma
+# <a name="using-jea"></a>JEA’yı kullanma
 
 > Uygulandığı öğe: Windows PowerShell 5.0
 
@@ -103,7 +103,7 @@ $jeaDefaultCmdlets = 'Clear-Host', 'Exit-PSSession', 'Get-Command', 'Get-FormatD
 $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notcontains $_ }
 
 # Import only commands explicitly added in role capabilities and prefix each imported cmdlet with "JEA"
-Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands 
+Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
 Örtük remoting kullanarak yönlendirilirken cmdlet'leri devam edebilir [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
@@ -189,4 +189,3 @@ Kullanmak, Hyper-V yöneticileri için sistemi yönetmek için başka haklara sa
 Kısıtlanmamış PowerShell kullanarak da dahil olmak üzere varsayılan olarak, bir Windows makinesine, ayrıcalıksız bir kullanıcı hala bağlanabilir unutmayın.
 İzin verin (bazıları) göz atmak dosya sistemini ve OS ortamınız hakkında daha fazla bilgi edinin.
 Yalnızca PowerShell doğrudan JEA ile kullanarak bir VM'i erişmek için bir Hyper-V Yöneticisi kilitlemek için Hyper-V yöneticisinin JEA hesabın yerel oturum açma hakları Reddet gerekecektir.
-

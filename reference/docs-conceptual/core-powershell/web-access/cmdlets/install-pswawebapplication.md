@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell cmdlet'i
-ms.date: 2016-12-12
-title: "pswawebapplication yükleyin"
+ms.date: 12/12/2016
+title: pswawebapplication yükleyin
 ms.technology: powershell
-ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c7f7768a41b6784d8c29afa1fccf0b855160b777
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
@@ -35,7 +35,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 Bir test sertifikası oluşturulduğunu belirtir. Bu parametre, bu cmdlet bir test sertifikası oluşturur ve HTTPS isteklerinde sertifikayı kullanmak üzere Windows PowerShell Web erişimi web uygulaması yapılandırır true olarak ayarlanmışsa. Bu parametre false olarak ayarlanırsa, hiçbir sertifika veya bağlama oluşturulur. Başka bir sertifika Windows PowerShell Web erişimi için kullanılıyorsa, bu değeri false olarak ayarlayın.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -48,7 +48,7 @@ Bir test sertifikası oluşturulduğunu belirtir. Bu parametre, bu cmdlet bir te
 
 Web uygulamanız için ad belirtir. Bu Windows PowerShell Web erişim URL'si son parçası olarak görüntülenir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -61,7 +61,7 @@ Web uygulamanız için ad belirtir. Bu Windows PowerShell Web erişim URL'si son
 
 Bu Windows PowerShell Web erişimi web uygulamasını yüklemek için Web sunucusu (IIS) Web sitesi adını belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -74,7 +74,7 @@ Bu Windows PowerShell Web erişimi web uygulamasını yüklemek için Web sunucu
 
 Cmdlet'i çalıştırmadan önce sizden onay ister.
 
-|||  
+|||
 |-|-|
 | Gerekli mi?                            | yanlış                                |
 | Konumu?                            | Adlı                                |
@@ -87,7 +87,7 @@ Cmdlet'i çalıştırmadan önce sizden onay ister.
 Cmdlet çalıştırılıyorsa ne olacağını gösterir.
 Cmdlet çalıştırılmaz.
 
-|||  
+|||
 |-|-|
 | Gerekli mi?                            | yanlış                                |
 | Konumu?                            | Adlı                                |

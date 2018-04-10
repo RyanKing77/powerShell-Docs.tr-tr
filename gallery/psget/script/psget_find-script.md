@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: "Bulma komut dosyası"
-ms.openlocfilehash: df62a9934d8013d37bd0083c03f90fa7fa05ac0c
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Bulma komut dosyası
+ms.openlocfilehash: 1f5076d94015c0b1041591144f1f0fe36819204b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="find-script"></a>Bulma komut dosyası
 
@@ -24,7 +24,7 @@ Bulma komut dosyası cmdlet'i, farklı arama ölçütleri ad, etiket, filtre, ko
 - Bulma komut dosyası sürümü parametrelerle filtre uygulayabilirsiniz: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - Bu parametreler MinmimumVersion ve MaximumVersion dışında birbirini dışlar.
   - Bu sürümü parametreleri yalnızca bir joker karakter bulunmayan tek betiği adıyla izin verilir.
-  - RequiredVersion parametresi belirtilmezse, bulma komut dosyası hiçbir en düşük sürüm belirtilmezse eşit veya bundan büyük belirtilen en düşük sürüm veya komut dosyası en son sürümünü betik en son sürümünü döndürür. 
+  - RequiredVersion parametresi belirtilmezse, bulma komut dosyası hiçbir en düşük sürüm belirtilmezse eşit veya bundan büyük belirtilen en düşük sürüm veya komut dosyası en son sürümünü betik en son sürümünü döndürür.
   - RequiredVersion parametresi belirtilirse, bulma komut dosyası, yalnızca belirtilen sürümü ile tam olarak bir komut dosyası sürümünü döndürür.
 - Bulma komut dosyası, komut dosyası meta filtreleyebilir - etiketi parametresine sahip.
 - Bulma komut dosyası deposu özgü arama dili filtreleyebilir - filtre parametresine sahip.
@@ -61,7 +61,7 @@ Find-Script -Name *Azure*
 # Find all versions of a script
 Find-Script -Name Connect-O365 -AllVersions
 
-# Find a script with -MinimumVersion. 
+# Find a script with -MinimumVersion.
 # With MinimumVersion we can find a script whose version is greate than or equal to the specified MinimumVersion value.
 Find-Script Connect-O365 -MinimumVersion 1.4
 
@@ -155,4 +155,3 @@ Cmdlet                         {}
 
 
 ```
-

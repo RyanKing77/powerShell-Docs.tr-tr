@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Önemli Windows PowerShell kavramlarını anlama"
+title: Önemli Windows PowerShell Kavramlarını Anlama
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 1ffcfefcc7ffc7c98ba4d1e3ccc9a59cd9b0baac
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 07ceaa2f3e6a192c6281cb4c99aed4c3f66afc7e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="understanding-important-windows-powershell-concepts"></a>Önemli Windows PowerShell kavramlarını anlama
+# <a name="understanding-important-windows-powershell-concepts"></a>Önemli Windows PowerShell Kavramlarını Anlama
 Windows PowerShell tasarım kavramları birçok farklı ortamlarından tümleştirir. Birkaç kişiye belirli Kabukları veya programlama ortamlarının deneyimi sahibiyseniz, ancak bunların tümünün hakkında çok az İnsan öğrenmiş olacaksınız. Bu kavramların bazıları arayan Kabuk yararlı bir genel bakış sağlar.
 
 ### <a name="commands-are-not-text-based"></a>Komutları metin tabanlı değildir
@@ -30,7 +30,7 @@ Windows PowerShell iç komutlarını özel yapısı nedeniyle, biz bunlara başv
 ### <a name="windows-powershell-handles-console-input-and-display"></a>Windows PowerShell tanıtıcıları konsol giriş ve görüntüleme
 Bir komut yazdığınızda, Windows PowerShell komut satırı girişi her zaman doğrudan'e işler. Windows PowerShell Ayrıca ekranda görün çıkış biçimlendirir. Bu önemlidir, çünkü her cmdlet gereken iş azaltır ve hangi cmdlet bağımsız olarak, kullandığınız aynı şekilde her zaman şeyler yapabilirsiniz sağlar. Komut satırı Yardım nasıl bu yaşam aracı geliştiriciler ve kullanıcılar için kolaylaştırır, bir örnek verilmiştir.
 
-Geleneksel komut satırı araçları, isteme ve Yardım görüntüleme için kendi şemaları sahiptir. Bazı komut satırı araçlarını kullanma **/?** Yardım görüntüleme tetiklemek için; Başkalarının kullanmak **-?**, **/H**, hatta  **//** . Bazı Yardım konsol görünümünde değil, bir GUI penceresinde görüntüler. Uygulama güncelleştiriciler gibi karmaşık bazı araçlar, kendilerine Yardım görüntülemeden önce iç dosyaları ayıklayın. Yanlış parametre kullanırsanız, aracı neleri yazılan ve otomatik olarak bir görevi gerçekleştirme başlamak yoksay.
+Geleneksel komut satırı araçları, isteme ve Yardım görüntüleme için kendi şemaları sahiptir. Bazı komut satırı araçlarını kullanma **/?** Yardım görüntüleme tetiklemek için; Başkalarının kullanmak **-?**, **/H**, hatta **//**. Bazı Yardım konsol görünümünde değil, bir GUI penceresinde görüntüler. Uygulama güncelleştiriciler gibi karmaşık bazı araçlar, kendilerine Yardım görüntülemeden önce iç dosyaları ayıklayın. Yanlış parametre kullanırsanız, aracı neleri yazılan ve otomatik olarak bir görevi gerçekleştirme başlamak yoksay.
 
 Windows PowerShell'de komut girdiğinizde, girdiğiniz her şeyi otomatik olarak ayrıştırılır ve önceden Windows PowerShell tarafından işlenir. Kullanırsanız **-?** bir Windows PowerShell cmdlet parametresi, bu her zaman "Yardım için bu komutu Göster" anlamına gelir. Cmdlet geliştiriciler komutu ayrıştırma gerekmez; Bunlar yalnızca Yardım metni sağlamanız gerekir.
 
@@ -43,4 +43,3 @@ Bile, Windows PowerShell'de geleneksel komut satırı araçları'ı çalıştır
 Windows PowerShell sözdizimi özellikleri ve çok benzer kullanılan C# programlama dili, Windows PowerShell kullanarak .NET Framework üzerinde bağlı olduğu anahtar sözcükleri vardır. Dille ilgileniyorsanız Windows PowerShell öğrenme, C# öğrenme çok daha kolay hale getirir.
 
 C# Programcı emin değilseniz, bu önemli değildir. Ancak, C# ile bilginiz varsa, benzerlikleri çok daha kolay Windows PowerShell öğrenme yapabilirsiniz.
-

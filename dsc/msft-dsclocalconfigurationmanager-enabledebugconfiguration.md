@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "MSFT_DSCLocalConfigurationManager sınıfının EnableDebugConfiguration yöntemi"
-ms.openlocfilehash: fa34a583af7c3fd46d99307d582973410e4c0e31
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: MSFT_DSCLocalConfigurationManager sınıfının EnableDebugConfiguration yöntemi
+ms.openlocfilehash: 9fe41fa806a6abff1d36dadd0c041a5cf0e78caf
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="enabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının EnableDebugConfiguration yöntemi
 
@@ -25,8 +25,7 @@ uint32 EnableDebugConfiguration(
 <a name="parameters"></a>Parametreler
 ----------
 
-*BreakAll* \[içinde\]  
-Her kaynak komut satırında bir kesme noktası ayarlar.
+*BreakAll* \[içinde\] her kaynak komut satırında bir kesme noktası ayarlar.
 
 ## <a name="return-value"></a>Dönüş değeri
 ------------
@@ -48,9 +47,3 @@ Bu statik bir yöntemdir.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
- 
-
- 
-
-
-

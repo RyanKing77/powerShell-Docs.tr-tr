@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC Linux nxGroup kaynak için"
-ms.openlocfilehash: bc01f6ae5ed61aff63958fe55f30d82f9b81b2b9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC Linux nxGroup kaynak için
+ms.openlocfilehash: 750b7c38a38fb8a7781585a3a7776f832ee62495
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC Linux nxGroup kaynak için
 
@@ -30,22 +30,22 @@ nxGroup <string> #ResourceName
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik |  Açıklama | 
+|  Özellik |  Açıklama |
 |---|---|
-| GroupName| Belirli bir durumu sağlamak istediğiniz grubun adını belirtir.| 
-| Emin olun| Grubun var olup olmadığını denetlemek belirler. Bu özelliği Grup mevcut emin olmak için "var" olarak ayarlayın. "Mevcut için" grubu yok emin olmak için ayarlayın. "Var" varsayılan değerdir.| 
-| Üyeler| Grup form üyeleri belirtir.| 
-| MembersToInclude| Sağlamak istediğiniz kullanıcıları grubunun bir üyesi belirtir.| 
-| MembersToExclude| Sağlamak istediğiniz kullanıcıları grubunun üyesi olmayan belirtir.| 
-| PreferredGroupID| Grup Kimliği için sağlanan değer mümkünse ayarlar. Grup Kimliği şu anda kullanımda ise, bir sonraki kullanılabilir grup kimliği kullanılır.| 
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, varsa **kimliği** çalıştırmak istediğiniz yapılandırma betik bloğu ilk kaynaktır **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.| 
+| GroupName| Belirli bir durumu sağlamak istediğiniz grubun adını belirtir.|
+| Emin olun| Grubun var olup olmadığını denetlemek belirler. Bu özelliği Grup mevcut emin olmak için "var" olarak ayarlayın. "Mevcut için" grubu yok emin olmak için ayarlayın. "Var" varsayılan değerdir.|
+| Üyeler| Grup form üyeleri belirtir.|
+| MembersToInclude| Sağlamak istediğiniz kullanıcıları grubunun bir üyesi belirtir.|
+| MembersToExclude| Sağlamak istediğiniz kullanıcıları grubunun üyesi olmayan belirtir.|
+| PreferredGroupID| Grup Kimliği için sağlanan değer mümkünse ayarlar. Grup Kimliği şu anda kullanımda ise, bir sonraki kullanılabilir grup kimliği kullanılır.|
+| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, varsa **kimliği** çalıştırmak istediğiniz yapılandırma betik bloğu ilk kaynaktır **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Örnek
 
 Aşağıdaki örnekte, kullanıcı "monuser" mevcut ve "DBusers" grubunun bir üyesi olduğundan sağlar.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 
@@ -56,13 +56,12 @@ nxUser UserExample{
    Ensure = "Present"
    HomeDirectory = "/home/monuser"
 }
- 
+
 nxGroup GroupExample{
    GroupName = "DBusers"
    Ensure = "Present"
    MembersToInclude = "monuser"
-   DependsOn = "[nxUser]UserExample"            
+   DependsOn = "[nxUser]UserExample"
 }
 }
 ```
-

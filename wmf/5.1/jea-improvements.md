@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
+keywords: wmf,powershell,setup
 contributor: ryanpu
-title: "Tam yetecek kadar Yönetim (JEA) geliştirmeleri"
-ms.openlocfilehash: 2811b4deb3f4fca513791c7389ee5f9f877dbfe8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Tam yetecek kadar Yönetim (JEA) geliştirmeleri
+ms.openlocfilehash: c80472fa4372331bf2cf9ab0b7513021354d1408
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Tam yetecek kadar Yönetim (JEA) geliştirmeleri
 
@@ -28,7 +28,7 @@ MountUserDrive = $true
 UserDriveMaximumSize = 10485760    # 10 MB
 ```
 
-Kullanıcı sürücüsünde yedekleme klasörü oluşturulur`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
+Kullanıcı sürücüsünde yedekleme klasörü oluşturulur `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
 Kullanıcı sürücü kullanmak ve/kullanıcı sürücü kullanıma sunmak için yapılandırılmış bir JEA uç noktasından dosyaları kopyalamak için kullanın `-ToSession` ve `-FromSession` Copy-Item parametreleri.
 
@@ -50,7 +50,7 @@ Ardından, kullanıcı sürücüde depolanan verileri işlemek ve bu kullanıcı
 
 Bazı durumlarda, yerel makine ötesindeki kaynaklara erişmek bir kullanıcı bir JEA oturumda gerçekleştirmek için gereken bir görev gerekebilir.
 JEA oturum sanal bir hesabı kullanacak şekilde yapılandırıldığında, her türlü girişim gibi kaynaklara ulaşmak için yerel makinenin kimliğini, değil sanal hesap veya bağlı olan kullanıcı gelen görünecektir.
-TP5 içinde biz JEA [grup yönetilen hizmet hesabı] (bir etki alanı kullanarak ağ kaynaklarına erişmek çok daha kolay https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), bağlamı altında çalıştırmak için destek etkinleştirdiyseniz kimliği.
+TP5 içinde biz JEA [grup yönetilen hizmet hesabı] bağlamı altında çalışırken desteğini etkinleştirdiyseniz (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), bir etki alanı kimliği kullanarak ağ kaynaklarına erişmek çok daha kolay.
 
 JEA oturum gMSA hesabı altında çalışacak şekilde yapılandırmak için aşağıdaki yeni anahtarı PSSC dosyanızda kullanın:
 
@@ -93,4 +93,3 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Sabit: Sanal hesapları artık Windows Server 2008 R2'de desteklenir
 WMF 5.1, Windows Server 2008 tutarlı yapılandırmalar ve özellik eşliği Windows Server 2008 R2 - 2016 etkinleştirme R2 sanal hesaplar kullanabilmek için sunulmuştur.
 Sanal hesaplar JEA Windows 7'de kullanırken desteklenmeyen kalır.
-

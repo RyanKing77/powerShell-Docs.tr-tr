@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "MSFT_DSCLocalConfigurationManager sınıfının RemoveConfiguration yöntemi"
-ms.openlocfilehash: fed45836293adedbce18f01cfe53cdfa1a474975
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: MSFT_DSCLocalConfigurationManager sınıfının RemoveConfiguration yöntemi
+ms.openlocfilehash: e0ae8a50212b70841d210d7b2d666a2855218d1a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının RemoveConfiguration yöntemi
 
@@ -26,8 +26,7 @@ uint32 RemoveConfiguration(
 <a name="parameters"></a>Parametreler
 ----------
 
-*Aşama* \[içinde\]  
-Kaldırmak için hangi yapılandırma belgesini belirtir. Aşağıdaki değerler geçerlidir:
+*Aşama* \[içinde\] kaldırmak için hangi yapılandırma belgesini belirtir. Aşağıdaki değerler geçerlidir:
 
 |Değer |Açıklama |
 |:--- |:---|
@@ -35,8 +34,7 @@ Kaldırmak için hangi yapılandırma belgesini belirtir. Aşağıdaki değerler
 |**2** | **Bekleyen** yapılandırma belgesi (pending.mof).  |
 |**4** | **Önceki** yapılandırma belgesi (previous.mof). |
 
-*Zorla* \[içinde\]  
-**doğru** yapılandırma kaldırılmasını zorla için.
+*Zorla* \[içinde\] **true** yapılandırma kaldırılmasını zorla için.
 
 ## <a name="return-value"></a>Dönüş değeri
 ------------
@@ -58,11 +56,3 @@ Bu statik bir yöntemdir.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

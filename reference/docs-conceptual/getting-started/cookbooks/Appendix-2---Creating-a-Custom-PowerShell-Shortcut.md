@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Ek özel PowerShell kısayol oluşturma 2"
+title: Ek 2 Özel bir PowerShell Kısayolu Oluşturma
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
-ms.openlocfilehash: d5e554f6f062fc5bf1beddd2aca1acf0b93d2133
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: e8081b7a64d313c8ef4bbccf95f250445dd68ad9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>Ek 2 - özel PowerShell kısayol oluşturma
+
 Aşağıdaki yordamda, özelleştirilmiş birkaç uygun seçenek olan Windows PowerShell için kısayol oluşturma açıklanmaktadır.
 
 1. Powershell.exe işaret eden bir kısayol oluşturun.
@@ -37,4 +38,3 @@ Aşağıdaki yordamda, özelleştirilmiş birkaç uygun seçenek olan Windows Po
 11. Masaüstünde belirli bir noktada, Temizle açıldığında konsol yerleştirmek istiyorsanız **izin pencere konumunu sistem** onay kutusuna **pencere konumunu** bölümünde ve ardından değerlerindedeğişiklik **Sol** ve **üst** kutularındaki **pencere konumunu** bölümü.
 
 12. **Tamam**’a tıklayın.
-

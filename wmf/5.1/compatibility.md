@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-title: "WMF 5.1 işletim sistemi uyumluluğu"
-ms.openlocfilehash: 04217c5abb0f04a5dc6b15cd956a632f7b84c9bb
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: WMF 5.1 işletim sistemi uyumluluğu
+ms.openlocfilehash: a20c8a15e1d05253d99f25b5b8ae8e5d7f816089
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 işletim sistemi uyumluluğu #
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 03/15/2018
 | İşletim sistemi sürümü | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
 | Windows Server 2016 | İçinde gelir-kutusunu * |  |  |  |  |
-| Windows 10 | İçinde gelir-kutusunu * | İçinde gelir-kutusunu *  | | | |  
+| Windows 10 | İçinde gelir-kutusunu * | İçinde gelir-kutusunu *  | | | |
 | Windows Server 2012 R2| Evet | Evet | Yerleşik gelir |  |  |
 | Windows 8.1 | Evet | Evet |  Yerleşik gelir |  |  |
 | Windows Server 2012 | Evet | Evet | Evet |  Yerleşik gelir | |
@@ -31,8 +31,10 @@ ms.lasthandoff: 03/15/2018
 
 
 Hakkında "olarak birlikte gelir-kutusunu *": WMF 5.0 özelliklerini orijinal Windows 10 RTM sürümünde eklendi.
-WMF 5.1 özellikleri Windows Server 2016 ve Windows 10 Anniversary Edition eklendi. Windows Update güncelleştirmeleri koşuluyla WMF 5.1 Bu işletim sistemi sürümleri için geçerli değildir.
+WMF 5.1 özellikleri Windows Server 2016 ve Windows 10 Anniversary Edition eklendi.
+Windows Update güncelleştirmeleri koşuluyla WMF 5.1 Bu işletim sistemi sürümleri için geçerli değildir.
 
 
-Not etmek için bir WMF Windows gelmez şeydir. WMF daha önce yayımlanmış Windows sürümleri için Windows özellikleri kümesi sağlayan bir yükseltme paketidir. Bu bileşenlerin sürümü olarak Yardım için bu özelliklerden herhangi birini aramayı ne özgün işletim sisteminde sevk eşleşmez olduğunda bu önemli bir fark yapabilirsiniz.
-
+Not etmek için bir WMF Windows gelmez şeydir.
+WMF daha önce yayımlanmış Windows sürümleri için Windows özellikleri kümesi sağlayan bir yükseltme paketidir.
+Bu bileşenlerin sürümü olarak Yardım için bu özelliklerden herhangi birini aramayı ne özgün işletim sisteminde sevk eşleşmez olduğunda bu önemli bir fark yapabilirsiniz.

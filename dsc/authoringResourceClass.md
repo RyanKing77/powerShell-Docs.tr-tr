@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "PowerShell sınıfları içeren özel bir DSC kaynağı yazma"
-ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, powershell, yapılandırma, Kur
+title: PowerShell sınıfları içeren özel bir DSC kaynağı yazma
+ms.openlocfilehash: 23669a6db17855e8d69aa0144c541bb4c799a9eb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell sınıfları içeren özel bir DSC kaynağı yazma
 
@@ -30,8 +30,8 @@ PowerShell sınıfı ile özel bir DSC kaynağı uygulamak için aşağıdaki kl
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1 
-           MyDscResource.psd1 
+        |- MyDscResource.psm1
+           MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>Sınıf oluşturma
@@ -72,10 +72,10 @@ DSC kaynağı şeması sınıfının özelliklerine tanımlanır. Şu üç özel
 **$Path** ve **$SourcePath** özellikleri her iki dizelerdir. **$CreationTime** olan bir [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) özelliği. **$Ensure** şu şekilde tanımlanan bir numaralandırma türü bir özelliktir.
 
 ```powershell
-enum Ensure 
-{ 
-    Absent 
-    Present 
+enum Ensure
+{
+    Absent
+    Present
 }
 ```
 
@@ -83,7 +83,7 @@ enum Ensure
 
 **Get()**, **Set()**, ve **Test()** yöntemleri benzer **Get-TargetResource**, **kümesi TargetResource** , ve **Test TargetResource** bir komut dosyası kaynağı işlevlerde.
 
-Bu kod ayrıca CopyFile() işlevi, dosyadan kopyalar yardımcı bir işlev içerir **$SourcePath** için **$Path**. 
+Bu kod ayrıca CopyFile() işlevi, dosyadan kopyalar yardımcı bir işlev içerir **$SourcePath** için **$Path**.
 
 ```powershell
 
@@ -450,7 +450,7 @@ PowerShellVersion = '5.0'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
-} 
+}
 ```
 
 ## <a name="test-the-resource"></a>Kaynak test
@@ -466,7 +466,7 @@ Configuration Test
         Path = "C:\test\test.txt"
         SourcePath = "c:\test.txt"
         Ensure = "Present"
-    } 
+    }
 }
 Test
 Start-DscConfiguration -Wait -Force Test
@@ -512,4 +512,3 @@ if (PsDscContext.RunAsUser) {
 ## <a name="see-also"></a>Ayrıca bkz:
 ### <a name="concepts"></a>Kavramlar
 [Özel Windows PowerShell istenen durum yapılandırması kaynakları oluşturma](authoringResource.md)
-

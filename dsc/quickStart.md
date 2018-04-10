@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "İstenen durum yapılandırması hızlı başlangıç"
-ms.openlocfilehash: e21017f24db8c90229063895c1a7e4c6f0546d0c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: İstenen durum yapılandırması hızlı başlangıç
+ms.openlocfilehash: 25bcd46bbf62a6ebb727519a65732377363e68c0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 > İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -37,7 +37,7 @@ Bir metin Düzenleyicisi'nde, aşağıdaki metni yazın:
 </body>
 ```
 
-Bu olarak Kaydet `index.htm` içinde `test` daha önce oluşturduğunuz klasör. 
+Bu olarak Kaydet `index.htm` içinde `test` daha önce oluşturduğunuz klasör.
 
 ## <a name="write-the-configuration"></a>Yazma yapılandırması
 
@@ -122,7 +122,7 @@ Start-DscConfiguration .\WebsiteTest
 
 ## <a name="test-the-configuration"></a>Yapılandırmayı test etme
 
-Çağırabilirsiniz [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) yapılandırmanın başarılı olup olmadığını görmek için cmdlet. 
+Çağırabilirsiniz [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) yapılandırmanın başarılı olup olmadığını görmek için cmdlet.
 
 Ayrıca sonuçları doğrudan, bu durumda göz atarak sınayabilirsiniz `http://localhost/` bir web tarayıcısında.
 Bu örnekte ilk adım olarak, oluşturduğunuz "Hello World" HTML sayfası görmeniz gerekir.
@@ -132,6 +132,3 @@ Bu örnekte ilk adım olarak, oluşturduğunuz "Hello World" HTML sayfası görm
 - DSC yapılandırmaları hakkında daha fazla bilgi [DSC yapılandırmaları](configurations.md).
 - Hangi DSC kaynakları kullanılabilir ve özel DSC kaynakları oluşturma bkz [DSC kaynakları](resources.md).
 - DSC yapılandırmaları ve kaynakları bulmak [PowerShell Galerisi](https://www.powershellgallery.com/).
-
-
-

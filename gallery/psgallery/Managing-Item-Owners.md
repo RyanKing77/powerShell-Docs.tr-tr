@@ -1,23 +1,25 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeri, powershell, cmdlet, psgallery
-title: "Öğesi sahiplerini yönetme"
-ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Öğesi sahiplerini yönetme
+ms.openlocfilehash: e550b74ebde00cfbb154dbf4fb1fa4ae0582e029
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-item-owners"></a>Öğesi sahiplerini yönetme
 
 PowerShell galerisinde bir öğe sahipliğini kimin öğesi Galerisi'ne yayımlanan tarafından tanımlanır.
 Bazen bu meta veriler sahibi meta veri öğesi olmamasına karşın değişebilir olması gereken anlamına gelir başlangıç öğesi yayımlama ötesinde yönetilmesi gerekir.
 
-Tüm öğesi sahiplerinin eştir. Başka bir deyişle, tüm öğesi sahibi öğeyi yeni bir sürümü yayımlayabilirsiniz. Ayrıca, tüm öğesi sahibi diğer öğesi sahibi kaldırabilirsiniz anlamına gelir. Sahibi diğer sahipleri'den daha fazla yetkilisi yoktur.  
+Tüm öğesi sahiplerinin eştir.
+Başka bir deyişle, tüm öğesi sahibi öğeyi yeni bir sürümü yayımlayabilirsiniz. Ayrıca, tüm öğesi sahibi diğer öğesi sahibi kaldırabilirsiniz anlamına gelir.
+Sahibi diğer sahipleri'den daha fazla yetkilisi yoktur.
 
-## <a name="setting-an-items-initial-owner"></a>Bir öğenin ilk sahibi ayarlama 
+## <a name="setting-an-items-initial-owner"></a>Bir öğenin ilk sahibi ayarlama
 
 Yeni bir öğe için PowerShell Galerisi yayımlandığında, ilk sahibi öğesi yayımlanan kullanıcı tarafından tanımlanır. Bu, API tarafından Yayımla-Module cmdlet'te anahtar kullanılan belirlenir.
 
@@ -78,4 +80,3 @@ Biz, ardından öğenin, sahipliği doğrulamak için bir sürecini takip eder.
 Öğenin bir sahibi olması gereken karar verirseniz, biz 'Sahiplerini Yönetme' bağlantıyı öğe için kendisini kullanın ve sahibi olmak için davet gönderin.
 Biz yalnızca bu bir sahip olması gerekir ve bu işlem tarafından durumlar değişir doğruladıktan sonra yapın.
 Çoğu zaman, biz öğesi'nin proje URL'sini bir proje sahibine başvurun şekilde bulmak için kullanır, ancak proje sahibi ile iletişim için Twitter, e-posta ya da başka araçlar da kullanabiliriz.
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, powershell, güvenlik"
-title: "JEA güvenlik konuları"
-ms.openlocfilehash: 69bbe50fb1a7580c32d657a0f084cc80c28825c7
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea, powershell, güvenlik
+title: JEA güvenlik konuları
+ms.openlocfilehash: 1b83a73c047b056a4cc094d7e4b0bbf31f75f53a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="jea-security-considerations"></a>JEA güvenlik konuları
 
@@ -153,4 +153,3 @@ Bu nedenle, sistem ayrıcalıklı erişim elde edebilir diğer yolları olup olm
 
 JEA düzenli günlük bakım kullanıyorsanız ve bir "biraz zaman" ayrıcalıklı için ortak bir uygulama olan erişim yönetimi çözümü kullanıcıların geçici olarak yerel Yöneticiler acil durumlarda duruma olanak tanır.
 Bu, kullanıcıların sistemde kalıcı yönetici değildir, ancak bu hakları varsa ve yalnızca bunlar bu izinleri kullanımını belgeleri bir iş akışı tamamlandığında, alabilirsiniz sağlamaya yardımcı olur.
-

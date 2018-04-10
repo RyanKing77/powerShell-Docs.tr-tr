@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "Linux için istenen durum yapılandırması (DSC) ile çalışmaya başlama"
-ms.openlocfilehash: 4fd8460bc5d2564cab291904b60a1a0c26c3e5a7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: Linux için istenen durum yapılandırması (DSC) ile çalışmaya başlama
+ms.openlocfilehash: b2f35ebe84dfd9f68ca07e7630534be59f8a1aa3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux için istenen durum yapılandırması (DSC) ile çalışmaya başlama
 
@@ -25,14 +25,14 @@ Aşağıdaki Linux işletim sistemi sürümleri için DSC Linux için destekleni
 
 Aşağıdaki tabloda, Linux için DSC için gerekli paket bağımlılıkları açıklar.
 
-|  Gerekli paket |  Açıklama |  En düşük sürüm | 
+|  Gerekli paket |  Açıklama |  En düşük sürüm |
 |---|---|---|
-| glibc| GNU Kitaplığı| 2…4 – 31.30| 
-| Python| Python| 2.4 – 3.4| 
-| omiserver| Açık Yönetim Altyapısı| 1.0.8.1| 
-| Openssl| OpenSSL kitaplıkları| 0.9.8 veya 1.0| 
-| ctypes| Python CTypes kitaplığı| Python sürümü aynı olmalıdır| 
-| libcurl| cURL http istemci kitaplığı| 7.15.1| 
+| glibc| GNU Kitaplığı| 2…4 – 31.30|
+| Python| Python| 2.4 – 3.4|
+| omiserver| Açık Yönetim Altyapısı| 1.0.8.1|
+| Openssl| OpenSSL kitaplıkları| 0.9.8 veya 1.0|
+| ctypes| Python CTypes kitaplığı| Python sürümü aynı olmalıdır|
+| libcurl| cURL http istemci kitaplığı| 7.15.1|
 
 ## <a name="installing-dsc-for-linux"></a>Linux için DSC yükleme
 
@@ -52,12 +52,12 @@ OMI CentOS 7 x64 sisteme yüklemek için aşağıdaki komutu çalıştırın.
 
 ### <a name="installing-dsc"></a>DSC yükleme
 
-Linux için DSC indirilebilir [burada](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest). 
+Linux için DSC indirilebilir [burada](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest).
 
 DSC yüklemek için Linux sistemine (.rpm veya .deb) ve OpenSSL sürümü (ssl_098 veya ssl_100) ve mimari (x64/x86) uygun paketini yükleyin. RPM paketleri, CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server ve Oracle Linux için uygundur. DEB paketleri Debian GNU/Linux ve Ubuntu Server için uygundur. Ssl_098 paketleri OpenSSL 0.9.8 ssl_100 paketleri OpenSSL 1.0 yüklü bilgisayarlar için uygun durumdayken yüklü olan bilgisayarlar için uygundur.
 
 > **Not**: yüklü olan bir OpenSSL sürümü belirlemek için komut openssl sürümü çalıştırın.
- 
+
 DSC CentOS 7 x64 sisteme yüklemek için aşağıdaki komutu çalıştırın.
 
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
@@ -74,10 +74,10 @@ Windows PowerShell yapılandırması anahtar sözcüğü, Windows bilgisayarlar�
 1. Nx modülünü içeri aktarın. Nx Windows PowerShell modülü yerleşik kaynaklar için şema DSC için Linux için içerir ve yerel bilgisayarınıza yüklenmeli ve yapılandırmada içeri aktarıldı.
 
     -Nx modülünü yüklemek için nx modülü dizini ya da kopyalama `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` veya `$PSHOME\Modules`. Nx modülü DSC Linux yükleme paketinin (MSI) dahil edilir. Yapılandırmanızda nx modülü içeri aktarmak için kullanın __alma DSCResource__ komutu:
-    
+
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DSCResource -Module nx
 
 }
@@ -86,9 +86,9 @@ Configuration ExampleConfiguration{
 
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DscResource -Module nx
- 
+
     Node  "linuxhost.contoso.com"{
     nxFile ExampleFile {
 
@@ -100,7 +100,7 @@ Configuration ExampleConfiguration{
 
     }
 }
-ExampleConfiguration -OutputPath:"C:\temp" 
+ExampleConfiguration -OutputPath:"C:\temp"
 ```
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>Linux bilgisayara yapılandırma bildirme
@@ -117,15 +117,15 @@ $Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
 #$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true 
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90 
+$opt = New-CimSessionOption -UseSsl:$true
+$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
 ```
 
 > **Not**:
 * "Gönderme" modu için kullanıcı kimlik bilgileri Linux bilgisayardaki kök kullanıcı olmalıdır.
 * Linux, New-CimSession – UseSSL parametresi $true olarak ayarlanmış kullanılmalıdır yalnızca SSL/TLS bağlantılarını DSC için desteklenir.
 * (DSC için) OMI tarafından kullanılan SSL sertifikasını dosyasında belirtilen: `/opt/omi/etc/omiserver.conf` özelliklere sahip: pemfile ve keyfile.
-Bu sertifika çalıştırmakta olduğunuz Windows bilgisayar tarafından güvenilir değilse [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet'ini, sertifika doğrulama CIMSession seçeneklerle yoksay seçebilirsiniz:`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+Bu sertifika çalıştırmakta olduğunuz Windows bilgisayar tarafından güvenilir değilse [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet'ini, sertifika doğrulama CIMSession seçeneklerle yoksay seçebilirsiniz: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
 DSC yapılandırması Linux düğüme göndermek için aşağıdaki komutu çalıştırın.
 
@@ -162,7 +162,7 @@ Linux için DSC yapılandırma yerel Linux bilgisayardan çalışmak için komut
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* StartDscLocalConfigurationManager.py 
+* StartDscLocalConfigurationManager.py
 
  Bir yapılandırma MOF dosyası bilgisayara uygulanır. Benzer şekilde [başlangıç DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet'i. Yapılandırmayı uygulamak için MOF yolu gerektirir.
 
@@ -182,4 +182,3 @@ Aşağıdaki günlük dosyalarına DSC için Linux iletiler için oluşturulur.
 |---|---|---|
 |omiserver.log|/var/OPT/omi/log|OMI CIM sunucusu işlemi için ilgili iletileri.|
 |dsc.log|/var/OPT/omi/log|Yerel Configuration Manager (LCM'yi) ve DSC kaynak işlemlerinin işlemi için ilgili iletileri.|
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: e8620cdeb90792e86d091d3e19a169f9dfa690f9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 306241bc5ec854c0e2ed835009a79b21fc249f14
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="known-issues-and-limitations"></a>Bilinen sorunlar ve sınırlamalar
+# <a name="known-issues-and-limitations"></a>Bilinen Sorunlar ve Sınırlamalar
 
 <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>İlk defa kullanıldığında PowerShell kısayolları bozuk
 ------------------------------------------------------------
@@ -63,23 +63,23 @@ Ardından bir dizin adı geçersiz joker karakter içeriyorsa, - LiteralPath hem
 **Çözüm:**
 - Çalışan sistemler için **Windows Server 2008 R2**
   1. Yönetici olarak PowerShell'i açın
-  2. Aşağıdaki komutu çalıştırın 
-  
+  2. Aşağıdaki komutu çalıştırın
+
   ```powershell
     Set-SilLogging –TargetUri https://BlankTarget –CertificateThumbprint 0123456789
   ```
   3. Komutunu çalıştırın ve bunlar beklendiği gibi hatayı yok sayıp.
-  
+
   ```powershell
     Publish-SilData
    ```
   4. \Windows\System32\Logfiles\SIL\ dizindeki dosyaları sil
-  
+
   ```powershell
     Remove-Item -Recurse $env:SystemRoot\System32\Logfiles\SIL\
   ```
   5. Kullanılabilir tüm önemli Windows güncelleştirmeleri yüklemek ve Sysyprep işlemi normalde başlayın.
-  
+
 - Çalışan sistemler için **Windows Server 2012**
   1.    WMF 5.0 olabilir sunucuya yükledikten sonra Sysprep'd, yönetici olarak oturum açın.
   2.    Generize.XML dizin \Windows\System32\Sysprep\ActionFiles\ C:\ Windows dizini dışındaki bir konuma örneğin kopyalayın.
@@ -96,24 +96,23 @@ Ardından bir dizin adı geçersiz joker karakter içeriyorsa, - LiteralPath hem
   7.    System32 klasöründe Generalize.xml dosya sahipliğini almak için aşağıdaki komutu çalıştırın:
 
     ```
-    Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
     ```
 
   8.    Dosyayı uygun izni ayarlamak için aşağıdaki komutu çalıştırın:
 
     ```
-    Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F 
+    Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F
     ```
-      * Evet komut isteminde onay yanıtı. 
+      * Evet komut isteminde onay yanıtı.
       * Unutmayın `<AdministratorUserName>` makinedeki yöneticisi olan kullanıcı adı ile değiştirilmelidir. Örneğin, "Yönetici".
-      
+
   9.    Düzenlenen ve üzerinde aşağıdaki komutu kullanarak Sysprep'i dizinine kaydedilir dosyasını kopyalayın:
 
     ```
-    xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
     ```
       * (Üzerine yazmak için hiçbir istemi ise girilen yolunu kontrol edin unutmayın) üzerine yazmak için Evet'i yanıtlayın.
       * Düzenlenen Generalize.xml kopyanızı C:\ için kopyalanan varsayar.
 
   10.   Generalize.xml geçici çözüm ile güncelleştirilmiştir. Lütfen Sysprep etkin generalize seçeneği ile çalıştırın.
-

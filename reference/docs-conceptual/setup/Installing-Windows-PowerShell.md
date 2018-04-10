@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-09
-keywords: "PowerShell cmdlet, indirme, yükleme, Kurulum, windows 10, windows 8.1, windows 8.0, windows 7"
-title: "Windows PowerShell Yükleme"
-ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.date: 08/09/2017
+keywords: PowerShell cmdlet, indirme, yükleme, Kurulum, windows 10, windows 8.1, windows 8.0, windows 7
+title: Windows PowerShell Yükleme
+ms.openlocfilehash: 320b271ce49768f8865c79c5c72749befe306fa4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell Yükleme
 Windows PowerShell, Windows 7 SP1 ve Windows Server 2008 R2 SP1 ile başlayarak, her Windows varsayılan olarak yüklü gelir.
@@ -45,7 +45,8 @@ GUI olmadan Windows Server sürümleri adlı **çekirdek** ve GUI içeren sürü
 
 Sunucuda oturum açtığınızda tüm çekirdeği sürümlerinde, bir Windows komut istemi penceresi olursunuz.
 
-Tür `powershell` ve basın **ENTER** PowerShell içinde komut istemi oturumu başlatmak için. Tür `exit` PowerShell oturumu sona erdirmek ve komut istemine geri dönmek için.
+Tür `powershell` ve basın **ENTER** PowerShell içinde komut istemi oturumu başlatmak için.
+Tür `exit` PowerShell oturumu sona erdirmek ve komut istemine geri dönmek için.
 
 ### <a name="windows-server-desktop-editions"></a>Windows Server Masaüstü sürümleri
 

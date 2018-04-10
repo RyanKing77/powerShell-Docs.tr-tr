@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC Linux nxSshAuthorizedKeys kaynak için"
-ms.openlocfilehash: f48ecec39ffe24cee99ca08ad9d050b36c5e04bf
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC Linux nxSshAuthorizedKeys kaynak için
+ms.openlocfilehash: a36d158735839727e98893ce9fce174a0f37f764
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC Linux nxSshAuthorizedKeys kaynak için
 
@@ -29,20 +29,20 @@ nxAuthorizedKeys <string> #ResourceName
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik |  Açıklama | 
+|  Özellik |  Açıklama |
 |---|---|
-| KeyComment| Anahtar için benzersiz bir açıklama. Bu anahtarları benzersiz şekilde tanımlamak için kullanılır.| 
-| Emin olun| Anahtar tanımlı olup olmadığını belirtir. Bu özelliği anahtarı kullanıcının yetkili anahtarları dosyasında yok emin olmak için "yok" olarak ayarlayın. Anahtar kullanıcının yetkili anahtar dosyasında tanımlanan emin olmak için "var" ayarlayın.| 
-| Kullanıcı Adı| SSH yönetmek için kullanıcı adı için anahtarları yetkili. Tanımlı değil, varsayılan kullanıcı "Kök" olur.| 
-| üzerine gelin| Anahtar içerikleri. Bu gereklidir **olun** "Var" ayarlanır.| 
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, varsa **kimliği** çalıştırmak istediğiniz yapılandırma betik bloğu ilk kaynaktır **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.| 
+| KeyComment| Anahtar için benzersiz bir açıklama. Bu anahtarları benzersiz şekilde tanımlamak için kullanılır.|
+| Emin olun| Anahtar tanımlı olup olmadığını belirtir. Bu özelliği anahtarı kullanıcının yetkili anahtarları dosyasında yok emin olmak için "yok" olarak ayarlayın. Anahtar kullanıcının yetkili anahtar dosyasında tanımlanan emin olmak için "var" ayarlayın.|
+| Kullanıcı Adı| SSH yönetmek için kullanıcı adı için anahtarları yetkili. Tanımlı değil, varsayılan kullanıcı "Kök" olur.|
+| üzerine gelin| Anahtar içerikleri. Bu gereklidir **olun** "Var" ayarlanır.|
+| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, varsa **kimliği** çalıştırmak istediğiniz yapılandırma betik bloğu ilk kaynaktır **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Örnek
 
 Aşağıdaki örnek, ssh yetkili ortak tanımlar "monuser" kullanıcı için anahtar.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 
@@ -51,7 +51,6 @@ nxSshAuthorizedKeys myKey{
    Ensure = "Present"
    Key = 'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEA0b+0xSd07QXRifm3FXj7Pn/DblA6QI5VAkDm6OivFzj3U6qGD1VJ6AAxWPCyMl/qhtpRtxZJDu/TxD8AyZNgc8aN2CljN1hOMbBRvH2q5QPf/nCnnJRaGsrxIqZjyZdYo9ZEEzjZUuMDM5HI1LA9B99k/K6PK2Bc1NLivpu7nbtVG2tLOQs+GefsnHuetsRMwo/+c3LtwYm9M0XfkGjYVCLO4CoFuSQpvX6AB3TedUy6NZ0iuxC0kRGg1rIQTwSRcw+McLhslF0drs33fw6tYdzlLBnnzimShMuiDWiT37WqCRovRGYrGCaEFGTG2e0CN8Co8nryXkyWc6NSDNpMzw== rsa-key-20150401'
    UserName = "monuser"
-} 
+}
 }
 ```
-

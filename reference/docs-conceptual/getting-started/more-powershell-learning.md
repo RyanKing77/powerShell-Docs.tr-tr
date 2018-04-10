@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Daha fazla powershell öğrenme"
-ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: Daha fazla powershell öğrenme
+ms.openlocfilehash: bed263df0ff52ec687bc7a644470f0397d0106ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="more-powershell-learning"></a>Daha fazla PowerShell öğrenme
 
-PowerShell öğrenmek için diğer kaynaklar  
+PowerShell öğrenmek için diğer kaynaklar
 
 ## <a name="resources-for-windows-powershell-users"></a>Windows PowerShell kullanıcıları için kaynaklar
 
@@ -26,17 +26,17 @@ Komut satırında kullanılabilir Yardım ek olarak, daha fazla bilgi için Wind
 
 ## <a name="video-training"></a>Video eğitim
 
-### <a name="microsoft-virtual-academy"></a>Microsoft sanal Akademi
+### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
 - [PowerShell 3.0 ile çalışmaya başlama hızlı başlangıç](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
 - [Gelişmiş Araçlar & PowerShell 3.0 Hızlı Başlangıç ile komut dosyası oluşturma](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8231)
 
 ### <a name="script-center-learn"></a>Komut Merkezi bilgi edinin
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Windows PowerShell Essentials meşgul yönetici serisi
-- [PowerShell 'SmowerShell' — Windows PowerShell &#40; öğrenmelisiniz neden Bölümü 1 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Ardışık Düzen üzerinden heard — Windows PowerShell komutlarını eğlenceli ve kar &#40; bileşik nasıl Bölümü 2 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Tek sağlayıcı? Değil tümcesi — Windows PowerShell sağlayıcıları &#40; bakma Bölümü 3 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [Ana olay — Windows PowerShell mu olay günlüklerini &#40; Bölümü 4 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Birden çok uzaktan olası — Uzak Masaüstü'nü &#40; yönetmek için Windows PowerShell'i kullanma Bölümü 5 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell 'SmowerShell' — Windows PowerShell öğrenmelisiniz neden &#40;Kısım 1&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [Ardışık Düzen üzerinden heard — Windows PowerShell komutlarını eğlenceli ve kar için bileşik nasıl &#40;bölüm 2&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [Tek sağlayıcı? Değil tümcesi — Windows PowerShell sağlayıcıları göz &#40;bölüm 3&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [Ana olay — Windows PowerShell mu olay günlüklerini &#40;bölüm 4&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [Birden çok uzaktan olası — Uzak Masaüstü'nü yönetmek için Windows PowerShell kullanarak &#40;Kısım 5&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>Acil önce şimdi öğrenin
 - [Windows PowerShell: Acil - bölüm 1 önce bunu şimdi öğrenin](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
@@ -51,4 +51,3 @@ Aşağıdaki kaynaklar, geliştiricilerin kendi Windows PowerShell modülleri, �
 
 - [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595). Başvuru içeriği sağlar.
 - [Windows PowerShell Programcı Kılavuzu](http://go.microsoft.com/fwlink/p/?LinkID=89596). Öğreticiler sağlar. Temel Windows PowerShell kavramları hakkında bilgiler de içerir.
-

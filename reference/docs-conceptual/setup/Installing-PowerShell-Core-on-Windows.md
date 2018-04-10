@@ -1,18 +1,18 @@
-# <a name="installing-powershell-core-on-windows"></a>Windows PowerShell çekirdek yükleniyor
+# <a name="installing-powershell-core-on-windows"></a>Windows’da PowerShell Core yükleme
 
 ## <a name="msi"></a>MSI
 
 Bir Windows İstemcisi veya Windows Server PowerShell yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve daha sonra), bizim Github'dan MSI paketini indirin [serbest][] sayfası.
 
-MSI dosyası şuna benzer-`PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+MSI dosyası şuna benzer- `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Yüklendikten sonra yükleyici çift tıklayın ve yönergeleri izleyin.
 
 Yükleme sonrasında Başlat menüsü yerleştirilen bir kısayol yoktur.
 
-* Varsayılan olarak, paket için yüklenir`$env:ProgramFiles\PowerShell\`
-* Başlat menüsü aracılığıyla PowerShell başlatabilir veya`$env:ProgramFiles\PowerShell\pwsh.exe`
+* Varsayılan olarak, paket için yüklenir `$env:ProgramFiles\PowerShell\`
+* Başlat menüsü aracılığıyla PowerShell başlatabilir veya `$env:ProgramFiles\PowerShell\pwsh.exe`
 
 ### <a name="prerequisites"></a>Önkoşullar
 

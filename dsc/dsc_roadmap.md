@@ -5,4 +5,4 @@
 | İndirilebilir paketi | TBD | TBD | TBD | TBD |
 | TBD | TBD | TBD | TBD | TBD |
 
-*Not: Bu tablo şu anda yalnızca bir yer tutucudur. Biz önümüzdeki aylarda güncelleştirmek ve onu biz olarak güncel ilerleme planlarımızı ile devam edilecek.* 
+*Not: Bu tablo şu anda yalnızca bir yer tutucudur. Biz önümüzdeki aylarda güncelleştirmek ve onu biz olarak güncel ilerleme planlarımızı ile devam edilecek.*

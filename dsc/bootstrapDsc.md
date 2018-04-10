@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC kullanarak ilk önyükleme yukarı bir sanal makineleri yapılandırma"
-ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC kullanarak ilk önyükleme yukarı bir sanal makineleri yapılandırma
+ms.openlocfilehash: e6ff83b9a09f93277904c80e8e52f3db5e818739
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 >İçin geçerlidir: Windows PowerShell 5.0
 
@@ -90,7 +90,8 @@ Yeniden adlandırın ve bu dosyayı doğru konuma VHD taşıyın `Pending.mof` k
     Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
     ```
 
-7. DSC MOF belge yüklendiği VHD kullanarak bir VM oluşturun. İlk önyükleme yukarı ve işletim sisteminin yüklenmesinden sonra IIS yüklenir.
+7. DSC MOF belge yüklendiği VHD kullanarak bir VM oluşturun.
+İlk önyükleme yukarı ve işletim sisteminin yüklenmesinden sonra IIS yüklenir.
 Bunu çağırarak doğrulamak [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) cmdlet'i.
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>Bir VHD'ye DSC meta yapılandırmasını Ekle
@@ -203,4 +204,3 @@ Varsayılan olarak, değeri **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Curr
 - [DSCAutomationHostEnabled kayıt defteri anahtarı](DSCAutomationHostEnabled.md)
 - [Local Configuration Manager’ı (LCM) Yapılandırma](metaConfig.md)
 - [DSC çekme sunucusuna ayarlama](pullServer.md)
-

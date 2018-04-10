@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
+keywords: wmf,powershell,setup
 contributor: jianyunt, quoctruong
-title: "WMF 5.1 içinde paket yönetimi geliştirmeleri"
-ms.openlocfilehash: b55a1742530b7cd48d60d79b7d4866ebee80a3b6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: WMF 5.1 içinde paket yönetimi geliştirmeleri
+ms.openlocfilehash: d8b66cc101a6d963b484bba26a1bcd7f71437536
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>WMF 5.1# içinde paket yönetimi geliştirmeleri
 
 ## <a name="improvements-in-packagemanagement"></a>PackageManagement yenilikleri ##
-WMF 5.1 yapılan düzeltmeler şunlardır: 
+WMF 5.1 yapılan düzeltmeler şunlardır:
 
 ### <a name="version-alias"></a>Sürüm diğer adı
 
-**Senaryo**: sürüm 1.0 ve 2.0, sisteminizde yüklü bir paketin P1, sahip olduğunuz ve sürüm 1.0 kaldırmak istediğiniz, şunu çalıştırırsınız: `Uninstall-Package -Name P1 -Version 1.0` ve sürüm 1.0 cmdlet'ini çalıştırdıktan sonra kaldırılması için bekler. Ancak sonucu 2.0 sürümünün kaldırılması.  
-    
+**Senaryo**: sürüm 1.0 ve 2.0, sisteminizde yüklü bir paketin P1, sahip olduğunuz ve sürüm 1.0 kaldırmak istediğiniz, şunu çalıştırırsınız: `Uninstall-Package -Name P1 -Version 1.0` ve sürüm 1.0 cmdlet'ini çalıştırdıktan sonra kaldırılması için bekler. Ancak sonucu 2.0 sürümünün kaldırılması.
+
 Bu kaynaklanır `-Version` parametredir bir diğer ad `-MinimumVersion` parametresi. En düşük sürüm 1.0 olan tam bir paket için PackageManagement bakıldığında, en son sürümünü döndürür. Bu normal durumlarda istenilen sonucu genellikle en yeni sürüm olduğundan bulma için beklenen davranıştır. Ancak, bunun uygulanması gereken değil `Uninstall-Package` durumda.
-    
-**Çözüm**: kaldırılan `-Version` tamamen PackageManagement diğer adı (paketini OneGet) ve PowerShellGet. 
+
+**Çözüm**: kaldırılan `-Version` tamamen PackageManagement diğer adı (paketini OneGet) ve PowerShellGet.
 
 ### <a name="multiple-prompts-for-bootstrapping-the-nuget-provider"></a>NuGet sağlayıcısı önyükleme için birden çok komut istemleri
 
-**Senaryo**: çalıştırdığınızda `Find-Module` veya `Install-Module` veya diğer PackageManagement cmdlet'leri PackageManagement ilk kez bilgisayarınızda NuGet sağlayıcı bootstrap dener. PowerShellGet sağlayıcısı NuGet sağlayıcısı ayrıca PowerShell modülleri indirmek için kullandığı için bunu yapar. PackageManagement ardından kullanıcıdan NuGet Sağlayıcısı'nı yüklemek izin ister. Kullanıcı önyüklemesi için "Evet" seçtikten sonra NuGet sağlayıcısının son sürümünün yüklenecek. 
-    
+**Senaryo**: çalıştırdığınızda `Find-Module` veya `Install-Module` veya diğer PackageManagement cmdlet'leri PackageManagement ilk kez bilgisayarınızda NuGet sağlayıcı bootstrap dener. PowerShellGet sağlayıcısı NuGet sağlayıcısı ayrıca PowerShell modülleri indirmek için kullandığı için bunu yapar. PackageManagement ardından kullanıcıdan NuGet Sağlayıcısı'nı yüklemek izin ister. Kullanıcı önyüklemesi için "Evet" seçtikten sonra NuGet sağlayıcısının son sürümünün yüklenecek.
+
 Bilgisayarınızda yüklü NuGet Sağlayıcısı'nın eski bir sürümü varsa, ancak bazı durumlarda, eski sürümü NuGet bazen ilk (yani PackageManagement yarış durumu) PowerShell oturumuna yüklenen. Ancak PowerShellGet NuGet sağlayıcısı yeniden bootstrap PackageManagement ister şekilde PowerShellGet çalışmak için NuGet provider'ın sonraki bir sürümünü gerektirir. Bu, NuGet sağlayıcısı önyükleme için birden çok komut istemlerini sonuçlanır.
 
 **Çözüm**: WMF5.1 içinde PackageManagement NuGet sağlayıcısı önyükleme için birden çok komut istemlerini önlemek için NuGet Sağlayıcısı'nın en son sürümü yükler.
@@ -68,4 +68,3 @@ WMF 5.1 PackageManagement şimdi yeni proxy kullandığı parametreler `-ProxyCr
 ``` PowerShell
 Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
 ```
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeri, powershell, cmdlet, psgallery
 title: psgallery_faqs
-ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: f00372d75b3e73bdc1499c3a2c8895bffb0902f9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="frequently-asked-questions"></a>Sık Sorulan Sorular
 
@@ -86,7 +86,7 @@ Ne metin kutusuna aradığınız yazın. Örneğin, Azure SQL ilgili modülleri 
 
 - Etiketler
 - İşlevler
-- Cmdlet'leri
+- Cmdlet’ler
 - DscResources
 - PowerShellVersion
 
@@ -169,4 +169,3 @@ Kullanıma [yönetme öğesi sahiplerinin PowerShellGallery.com üzerinde](Manag
 ## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>My öğesi lisans ihlal eden bir öğe sahibi ile nasıl ilgilenir?
 
 Öğe sahipleri ve diğer öğeleri sahipleri arasında kaynaklanabilecek itirazları çözümlemek için birlikte çalışmak üzere PowerShell topluluğu öneririz.  Biz hazırlanmış bir [itiraz çözümleme işlemi](psgallery_dispute_resolution.md) , biz PowerShellGallery.com Yöneticiler intercede önce izleyin istenir.
-

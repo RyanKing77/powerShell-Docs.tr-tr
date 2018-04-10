@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: "Bulma Modülü"
-ms.openlocfilehash: 65c466909c007ed08c3fa978f78483983b00ba73
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Bulma Modülü
+ms.openlocfilehash: 03dff4454a31638df564568ef51eec158685c8e9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="find-module"></a>Bulma Modülü
 Belirtilen ölçütlerle eşleşen bir çevrimiçi galeriden modülleri bulur.
@@ -21,7 +21,7 @@ Bulunan her modül için bulma modülü isteğe bağlı olarak yöneltilen bir P
 - Bulma modülü sürüm parametrelerle filtre uygulayabilirsiniz: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - Bu parametreler MinmimumVersion ve MaximumVersion dışında birbirini dışlar.
   - Bu sürümü parametreleri yalnızca bir joker karakter bulunmayan tek modülü adıyla izin verilir.
-  - RequiredVersion parametresi belirtilmezse, bulma modülü en düşük bir sürüm belirtilmezse eşit veya bundan büyük belirtilen en düşük sürüm veya modülünün en son sürümünü modülü en son sürümünü döndürür. 
+  - RequiredVersion parametresi belirtilmezse, bulma modülü en düşük bir sürüm belirtilmezse eşit veya bundan büyük belirtilen en düşük sürüm veya modülünün en son sürümünü modülü en son sürümünü döndürür.
   - RequiredVersion parametresi belirtilirse, bulma modülü yalnızca tam olarak belirtilen sürümle eşleşen modülü sürümünü döndürür.
 - Bulma modülü modülü meta filtreleyebilir Tag parametresini ile
 - Bulma modülü deposu özgü arama dili filtreleyebilir - filtre parametresine sahip.
@@ -54,7 +54,7 @@ Find-Module -Name AzureRM*
 # Find all versions of a module
 Find-Module -Name PSReadline -AllVersions
 
-# Find a module with -MinimumVersion. 
+# Find a module with -MinimumVersion.
 # With MinimumVersion we can find a module whose version is greate than or equal to the specified MinimumVersion value.
 Find-Module -Name PSReadline -MinimumVersion 1.0.0.12
 
@@ -142,4 +142,3 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
-

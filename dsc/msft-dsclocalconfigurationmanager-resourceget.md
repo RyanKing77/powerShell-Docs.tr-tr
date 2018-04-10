@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "MSFT_DSCLocalConfigurationManager sınıfının ResourceGet yöntemi"
-ms.openlocfilehash: 2c055b3fab468f85c9e2f91cf1eaf1a4353b4660
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, powershell, yapılandırma, Kur
+title: MSFT_DSCLocalConfigurationManager sınıfının ResourceGet yöntemi
+ms.openlocfilehash: 3fd7ae54eb3ae782156dc4619ee0b6905dfb1212
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının ResourceGet yöntemi
 
@@ -28,17 +28,13 @@ uint32 ResourceGet(
 <a name="parameters"></a>Parametreler
 ----------
 
-*ResourceType* \[in\]  
-Çağrılacak kaynağının adı.
+*ResourceType* \[içinde\] çağırmak için kaynağın adı.
 
-*ModuleName* \[in\]  
-Aranacak kaynak içeren modülü adı.
+*ModuleName* \[içinde\] çağırmak için kaynak içeren modülü adı.
 
-*resourceProperty* \[in\]  
-Kaynak özelliği adını ve değerini bir karma tablosunda anahtar ve değer sırasıyla belirtir. Kullanım [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) kaynak özelliklerini ve bunların türlerini bulmak için cmdlet.
+*resourceProperty* \[içinde\] kaynak özellik adını ve değerini bir karma tablosunda anahtar ve değer sırasıyla belirtir. Kullanım [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) kaynak özelliklerini ve bunların türlerini bulmak için cmdlet.
 
-*yapılandırmaları* \[çıkışı\]  
-Getirisi, katıştırılmış yapılandırmaları örneğini içerir.
+*yapılandırmaları* \[çıkışı\] getirisi, katıştırılmış yapılandırmaları örneğini içerir.
 
 ## <a name="return-value"></a>Dönüş değeri
 ------------
@@ -60,11 +56,3 @@ Bu statik bir yöntemdir.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

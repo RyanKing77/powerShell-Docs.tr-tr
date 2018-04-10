@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC komut dosyası kaynağı"
-ms.openlocfilehash: d65a89ceba0b641ccb0ac3dfcc6d5ec1a48dc92a
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC komut dosyası kaynağı
+ms.openlocfilehash: 6a39fbd914f9a0bb0f192b7b1f81f404bb6b93c1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-script-resource"></a>DSC komut dosyası kaynağı
 
- 
+
 > İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-**Betik** kaynağı içinde Windows PowerShell istenen durum yapılandırması (DSC), Windows PowerShell komut dosyası blokları hedef düğümlerinde çalıştırmak için bir mekanizma sağlar. `Script` Kaynak `GetScript`, `SetScript`, ve `TestScript` özellikleri. Bu özelliklerin her hedef düğümde çalışacak komut dosyası blokları ayarlamanız gerekir. 
+**Betik** kaynağı içinde Windows PowerShell istenen durum yapılandırması (DSC), Windows PowerShell komut dosyası blokları hedef düğümlerinde çalıştırmak için bir mekanizma sağlar. `Script` Kaynak `GetScript`, `SetScript`, ve `TestScript` özellikleri. Bu özelliklerin her hedef düğümde çalışacak komut dosyası blokları ayarlamanız gerekir.
 
 `GetScript` Betik bloğu geçerli düğüm durumunu temsil eden bir hashtable döndürmelidir. Hashtable yalnızca bir anahtar içermelidir `Result` ve değer türü olmalıdır `String`. Herhangi bir şeyi geri dönmek için gerekli değildir. DSC çıkış bu betik bloğunun herhangi bir şey yapmaz.
 
@@ -40,12 +40,12 @@ Script [string] #ResourceName
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik  |  Açıklama   | 
-|---|---| 
-| GetScript| Çağırdığınızda, çalıştırılan Windows PowerShell komut dosyası bloğunda sağlar [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet'i. Bu bloğu bir hashtable döndürmesi gerekir. Hashtable yalnızca bir anahtar içermelidir **sonuç** ve değer türü olmalıdır **dize**.| 
-| SetScript| Windows PowerShell komut dosyası bloğunda sağlar. Ne zaman çağırmayı [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet'ini **TestScript** bloğu ilk çalışır. Varsa **TestScript** engelleme döndürür **$false**, **SetScript** bloğu çalıştırır. Varsa **TestScript** engelleme döndürür **$true**, **SetScript** blok çalışmaz.| 
-| TestScript| Windows PowerShell komut dosyası bloğunda sağlar. Ne zaman çağırmayı [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet'i, bu bloğu çalıştırır. Döndürürse **$false**, SetScript blok çalışır. Döndürürse **$true**, çalıştırılacak blok olacak SetScript. **TestScript** bloğu ayrıca çalışır çağırdığınızda [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet'i. Ancak, bu durumda, **SetScript** bloğu değil çalıştırmak, hangi TestScript değerin olsun engelle döndürür. **TestScript** gerçek yapılandırması geçerli istenen durum yapılandırması ve False eşleşirse, eşleşmiyorsa, blok True döndürmesi gerekir. (Geçerli istenen durum yapılandırması, DSC kullanarak düğümde kamulaştırılmış son yapılandırmadır.)| 
-| kimlik bilgisi| Bu komut dosyasını çalıştırmak için kimlik bilgileri gerekli olduğunda kullanılacak kimlik bilgilerini gösterir.| 
+|  Özellik  |  Açıklama   |
+|---|---|
+| GetScript| Çağırdığınızda, çalıştırılan Windows PowerShell komut dosyası bloğunda sağlar [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet'i. Bu bloğu bir hashtable döndürmesi gerekir. Hashtable yalnızca bir anahtar içermelidir **sonuç** ve değer türü olmalıdır **dize**.|
+| SetScript| Windows PowerShell komut dosyası bloğunda sağlar. Ne zaman çağırmayı [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet'ini **TestScript** bloğu ilk çalışır. Varsa **TestScript** engelleme döndürür **$false**, **SetScript** bloğu çalıştırır. Varsa **TestScript** engelleme döndürür **$true**, **SetScript** blok çalışmaz.|
+| TestScript| Windows PowerShell komut dosyası bloğunda sağlar. Ne zaman çağırmayı [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet'i, bu bloğu çalıştırır. Döndürürse **$false**, SetScript blok çalışır. Döndürürse **$true**, çalıştırılacak blok olacak SetScript. **TestScript** bloğu ayrıca çalışır çağırdığınızda [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet'i. Ancak, bu durumda, **SetScript** bloğu değil çalıştırmak, hangi TestScript değerin olsun engelle döndürür. **TestScript** gerçek yapılandırması geçerli istenen durum yapılandırması ve False eşleşirse, eşleşmiyorsa, blok True döndürmesi gerekir. (Geçerli istenen durum yapılandırması, DSC kullanarak düğümde kamulaştırılmış son yapılandırmadır.)|
+| kimlik bilgisi| Bu komut dosyasını çalıştırmak için kimlik bilgileri gerekli olduğunda kullanılacak kimlik bilgilerini gösterir.|
 | dependsOn| Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise **ResourceName** ve türünü **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.
 
 ## <a name="example-1"></a>Örnek 1
@@ -56,14 +56,14 @@ Configuration ScriptTest
 
     Script ScriptExample
     {
-        SetScript = 
-        { 
+        SetScript =
+        {
             $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
             $sw.WriteLine("Some sample string")
             $sw.Close()
         }
         TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }          
+        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
     }
 }
 ```
@@ -78,11 +78,11 @@ Configuration ScriptTest
 
     Script UpdateConfigurationVersion
     {
-        GetScript = { 
+        GetScript = {
             $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
             return @{ 'Result' = "$currentVersion" }
-        }          
-        TestScript = { 
+        }
+        TestScript = {
             $state = $GetScript
             if( $state['Result'] -eq $using:version )
             {
@@ -92,7 +92,7 @@ Configuration ScriptTest
             Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
             return $false
         }
-        SetScript = { 
+        SetScript = {
             $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
         }
     }
@@ -100,4 +100,3 @@ Configuration ScriptTest
 ```
 
 Bu kaynak yapılandırma sürümü bir metin dosyasına yazma. Bu sürüm, istemci bilgisayarda kullanılabilir, ancak her biri için geçirilecek sahiptir herhangi bir düğüme değil `Script` kaynağın komut dosyası blokları PowerShell'ın ile `using` kapsam. Ne zaman oluşturuluyor düğümün MOF dosyası değeri `$version` değişkeni istemci bilgisayardaki bir metin dosyasından okunur. DSC değiştirir `$using:version` her komut dosyası değişkenleri engelleme değeriyle `$version` değişkeni.
-

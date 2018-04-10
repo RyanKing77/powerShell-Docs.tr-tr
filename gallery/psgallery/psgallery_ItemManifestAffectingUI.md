@@ -1,6 +1,8 @@
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell Galerisi UI etkisi öğesi bildirim değerleri
 
-Bu konu, böylece PowerShellGet cmdlet'leri ve PowerShell Galerisi UI özelliklerini etkilenecek kendi PowerShell Galerisi yayınlar için bildirim değiştirme konusunda özet bilgileri olan yayımcı sağlar. Bu içerik, değişiklik, Orta kısım, ardından sol gezinti alanını sürümünden itibaren görüneceği yeri tarafından düzenlenir. Bir ayrıntı bölümü yoktur kapsayıcı etiketleri, önemli etiketleri, aynı zamanda bazıları etiketleri yaygın olarak kullanılan tanımlar. Bildirim örnekler sağlayan iki konuları vardır: 
+Bu konu, böylece PowerShellGet cmdlet'leri ve PowerShell Galerisi UI özelliklerini etkilenecek kendi PowerShell Galerisi yayınlar için bildirim değiştirme konusunda özet bilgileri olan yayımcı sağlar.
+Bu içerik, değişiklik, Orta kısım, ardından sol gezinti alanını sürümünden itibaren görüneceği yeri tarafından düzenlenir. Bir ayrıntı bölümü yoktur kapsayıcı etiketleri, önemli etiketleri, aynı zamanda bazıları etiketleri yaygın olarak kullanılan tanımlar.
+Bildirim örnekler sağlayan iki konuları vardır:
 
 * Modülleri için bkz: [modülü güncelleştirme bildirimi](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
 * Komut dosyaları için bkz: [meta verilerle komut dosyası oluştur](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
@@ -10,7 +12,7 @@ Bu konu, böylece PowerShellGet cmdlet'leri ve PowerShell Galerisi UI özellikle
 Aşağıdaki tabloda, yayımcı tarafından denetlenen PowerShell Galerisi öğesi sayfanın UI öğelerini gösterir.
 Bu modül veya komut dosyası bildirimi tarafından denetlenmesi, her bir öğeyi gösterir.
 
-| UI Element | Açıklama | Modül | Betik | 
+| UI Element | Açıklama | Modül | Betik |
 | --- | --- | --- | --- |
 | **Başlık** | Galeriye yayımlanan öğesi adıdır  | Hayır | Hayır |
 | **Sürüm** | Görüntülenen meta verilerde sürüm dizesi sürümüdür ve yayın öncesi IF belirtilir. Birincil bir modül bildirimi sürümünde ModuleVersion bölümüdür. Bir betik için onu olarak tanımlanır. Sürüm. Bir yayın öncesi sürüm dizesi belirtilirse, bu modülleri için ModuleVersion eklenen, veya kaldırılacak parçası olarak belirtilen. Komut dosyalarının sürümü. Yayın öncesi dizelerde belirtmek için belge yok [modülleri](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule)hem de [komut dosyaları](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) | Evet | Evet |
@@ -49,18 +51,26 @@ PowerShell galeri öğesi sayfasını Düzenle birkaç bir öğe için özellikl
 * Sürüm notları
 * Lisans gerektirir
 
-Bu yaklaşım genellikle, bir modül daha eski bir sürümü için görüntülenenleri düzeltmek için gerekli dışında önerilmez. Modülü Al kullanıcılar meta veri öğesi endişeniz başlatır PowerShell galerisinde görüntülenenleri eşleşmiyor görürsünüz. Bu sıkça Değişikliği onaylamak için öğeyi sahiplerine gidip sorguları neden olur. Bu yaklaşım kullanılır, dilediğiniz zaman aynı değişikliklerle öğenin yeni bir sürümü yayınlanmalıdır önerilir. 
+Bu yaklaşım genellikle, bir modül daha eski bir sürümü için görüntülenenleri düzeltmek için gerekli dışında önerilmez.
+Modülü Al kullanıcılar meta veri öğesi endişeniz başlatır PowerShell galerisinde görüntülenenleri eşleşmiyor görürsünüz.
+Bu sıkça Değişikliği onaylamak için öğeyi sahiplerine gidip sorguları neden olur.
+Bu yaklaşım kullanılır, dilediğiniz zaman aynı değişikliklerle öğenin yeni bir sürümü yayınlanmalıdır önerilir.
 
 ## <a name="tag-details"></a>Etiket ayrıntıları
 
-Etiketler öğeleri bulmak için basit dizeler tüketicileri kullanım içindir. Tutarlı olarak aynı konu ile ilgili birçok öğeleri arasında kullanıldığında, bunların etiketlerini en değerli. Aynı birden fazla sürümünü kullanarak word (örneğin veritabanı ve veritabanları veya test ve test) genellikle az avantajı sağlar. Etiketler Tek sözcüklü büyük küçük harf duyarsız dizelerdir ve boşluk içeremez. Kullanıcıları arar düşünüyorsanız tümcecik ise öğeyi açıklama eklemek ve arama sonuçlarında bulunamadı. Okunabilirliğini artırmak çalışıyorsanız Pascal büyük/küçük harf, tire, alt çizgi veya nokta kullanın. Genellikle yanlış olarak uzun, karmaşık ve olağan dışı etiketler oluşturma hakkında dikkatli olun. 
+Etiketler öğeleri bulmak için basit dizeler tüketicileri kullanım içindir.
+Tutarlı olarak aynı konu ile ilgili birçok öğeleri arasında kullanıldığında, bunların etiketlerini en değerli. Aynı birden fazla sürümünü kullanarak word (örneğin veritabanı ve veritabanları veya test ve test) genellikle az avantajı sağlar.
+Etiketler Tek sözcüklü büyük küçük harf duyarsız dizelerdir ve boşluk içeremez. Kullanıcıları arar düşünüyorsanız tümcecik ise öğeyi açıklama eklemek ve arama sonuçlarında bulunamadı. Okunabilirliğini artırmak çalışıyorsanız Pascal büyük/küçük harf, tire, alt çizgi veya nokta kullanın. Genellikle yanlış olarak uzun, karmaşık ve olağan dışı etiketler oluşturma hakkında dikkatli olun.
 
-Dikkat edilecek önemli etiketleri, PowerShell Galerisi ve PowerShellGet cmdlet'leri bunları benzersiz olarak işler. PSEdition_Desktop PSEdition_Core belirli örnekler ve yukarıda açıklanan. 
+Dikkat edilecek önemli etiketleri, PowerShell Galerisi ve PowerShellGet cmdlet'leri bunları benzersiz olarak işler. PSEdition_Desktop PSEdition_Core belirli örnekler ve yukarıda açıklanan.
 
-Tutarlı bir şekilde arasında çok sayıda öğe belirli ve kullanılan olduklarında yukarıda belirtildiği gibi etiketleri en yüksek değeri sağlayın. Kullanmak için en iyi etiketleri bulmaya çalışan bir yayımcı olarak, en kolay yaklaşım, değerlendiriyorsanız etiketleri için PowerShell Galerisi arama yapmaktır. İdeal olarak, döndürülen öğe olacaktır ve madde açıklamaları, bu anahtar sözcük kullanımı ile hizalanır. 
+Tutarlı bir şekilde arasında çok sayıda öğe belirli ve kullanılan olduklarında yukarıda belirtildiği gibi etiketleri en yüksek değeri sağlayın.
+Kullanmak için en iyi etiketleri bulmaya çalışan bir yayımcı olarak, en kolay yaklaşım, değerlendiriyorsanız etiketleri için PowerShell Galerisi arama yapmaktır.
+İdeal olarak, döndürülen öğe olacaktır ve madde açıklamaları, bu anahtar sözcük kullanımı ile hizalanır.
 
-Başvuru için en yaygın kullanılan bazı etiketler 14/12/2017'dan sonra şunlardır. Bazı durumlarda, benzer ancak belki de etiketi listelenen ideal seçenekleri daha az vardır.
-Bu daha az gürültü neden ve daha iyi arama sonuçları Tüketiciler için tercih edilen etiketi olarak kullanmak için en iyi uygulamadır. 
+Başvuru için en yaygın kullanılan bazı etiketler 14/12/2017'dan sonra şunlardır.
+Bazı durumlarda, benzer ancak belki de etiketi listelenen ideal seçenekleri daha az vardır.
+Bu daha az gürültü neden ve daha iyi arama sonuçları Tüketiciler için tercih edilen etiketi olarak kullanmak için en iyi uygulamadır.
 
 
 | **Tercih edilen etiketi** | **Alternatifleri ve notlar** |
@@ -125,5 +135,3 @@ Bu daha az gürültü neden ve daha iyi arama sonuçları Tüketiciler için ter
 | **MSI** |  |
 | **Mac** |  |
 | **PoshBot** |  |
-
-

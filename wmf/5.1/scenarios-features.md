@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-title: "Yeni senaryolar ve WMF 5.1 Özellikleri"
-ms.openlocfilehash: da3dfb2243c00e3faf637d3dbcb70016cfabb011
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Yeni senaryolar ve WMF 5.1 Özellikleri
+ms.openlocfilehash: f0e50fc87208d6ee9edba9c660b9243621f02bb4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Yeni senaryolar ve WMF 5.1 Özellikleri #
 
@@ -26,35 +26,41 @@ Sürüm 5.1’den başlayarak, PowerShell çeşitli özellik kümelerini ve plat
 - [Get-Module sonuçları CompatiblePSEditions göre filtrele]()
 - [Betik yürütme uyumlu bir PowerShell sürümünde çalıştırmadığınız sürece engelle]()
 
-## <a name="catalog-cmdlets"></a>Katalog cmdlet'leri  
+## <a name="catalog-cmdlets"></a>Katalog cmdlet'leri
 
-İçinde iki yeni cmdlet'ler eklenmiştir [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) modülü; bunlar oluşturmak ve Windows Katalog dosyaları doğrulayın.  
+İçinde iki yeni cmdlet'ler eklenmiştir [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) modülü; bunlar oluşturmak ve Windows Katalog dosyaları doğrulayın.
 
-###<a name="new-filecatalog"></a>New-FileCatalog 
+###<a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
 
-FileCatalog yeni dosya ve klasörleri kümesi için bir Windows katalog dosyası oluşturur. Bu katalog dosyası belirtilen yolda tüm dosyalar için karmaları içerir. Kullanıcılar bu klasörleri temsil eden karşılık gelen katalog dosyası ile birlikte klasörler kümesi dağıtabilirsiniz. Bu bilgiler, tüm klasörler için katalog oluşturma işleminden yapılan değişiklikler olup olmadığını doğrulamak yararlıdır.    
+FileCatalog yeni dosya ve klasörleri kümesi için bir Windows katalog dosyası oluşturur.
+Bu katalog dosyası belirtilen yolda tüm dosyalar için karmaları içerir.
+Kullanıcılar bu klasörleri temsil eden karşılık gelen katalog dosyası ile birlikte klasörler kümesi dağıtabilirsiniz.
+Bu bilgiler, tüm klasörler için katalog oluşturma işleminden yapılan değişiklikler olup olmadığını doğrulamak yararlıdır.
 
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
-Katalog sürüm 1 ve 2 desteklenir. Sürüm 1 dosya karmaları oluşturmak için SHA1 karma algoritmasını kullanır; sürüm 2 SHA256 kullanır. Katalog sürüm 2 desteklenmiyor *Windows Server 2008 R2* veya *Windows 7*. Katalog sürüm 2 kullanması gereken *Windows 8*, *Windows Server 2012*ve sonraki işletim sistemleri.  
+Katalog sürüm 1 ve 2 desteklenir.
+Sürüm 1 dosya karmaları oluşturmak için SHA1 karma algoritmasını kullanır; sürüm 2 SHA256 kullanır.
+Katalog sürüm 2 desteklenmiyor *Windows Server 2008 R2* veya *Windows 7*.
+Katalog sürüm 2 kullanması gereken *Windows 8*, *Windows Server 2012*ve sonraki işletim sistemleri.
 
 ![](../images/NewFileCatalog.jpg)
 
-Bu, katalog dosyası oluşturur. 
+Bu, katalog dosyası oluşturur.
 
-![](../images/CatalogFile1.jpg)  
+![](../images/CatalogFile1.jpg)
 
-![](../images/CatalogFile2.jpg) 
+![](../images/CatalogFile2.jpg)
 
-Katalog dosyası (yukarıdaki örnekte, Pester.cat) bütünlüğünü doğrulamak için kullanarak oturum [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet'i.   
+Katalog dosyası (yukarıdaki örnekte, Pester.cat) bütünlüğünü doğrulamak için kullanarak oturum [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet'i.
 
 
-###<a name="test-filecatalog"></a>Test-FileCatalog 
+###<a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
 
-Test FileCatalog klasörleri kümesini temsil eden katalog doğrular. 
+Test FileCatalog klasörleri kümesini temsil eden katalog doğrular.
 
 ```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -62,7 +68,11 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-Bu cmdlet tüm dosyaları karmaları karşılaştırır ve bunların göreli yollar bulunan *katalog* bulunanlarla *disk*. Herhangi dosya karmaları ve yolları arasında uyuşmazlık algılarsa, durum olarak döndürür *ValidationFailed*. Kullanıcılar, tüm bu bilgileri kullanarak alabilir *-ayrıntılı* parametresi. Ayrıca Kataloğu'nda imzalama durumunu görüntüler *imza* arama için eşdeğer olan özelliği [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) katalog dosyası cmdlet'ini. Kullanıcılar ayrıca atlayabilirsiniz herhangi bir dosya doğrulama sırasında kullanarak *- FilesToSkip* parametresi. 
+Bu cmdlet tüm dosyaları karmaları karşılaştırır ve bunların göreli yollar bulunan *katalog* bulunanlarla *disk*.
+Herhangi dosya karmaları ve yolları arasında uyuşmazlık algılarsa, durum olarak döndürür *ValidationFailed*.
+Kullanıcılar, tüm bu bilgileri kullanarak alabilir *-ayrıntılı* parametresi.
+Ayrıca Kataloğu'nda imzalama durumunu görüntüler *imza* arama için eşdeğer olan özelliği [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) katalog dosyası cmdlet'ini.
+Kullanıcılar ayrıca atlayabilirsiniz herhangi bir dosya doğrulama sırasında kullanarak *- FilesToSkip* parametresi.
 
 
 ## <a name="module-analysis-cache"></a>Modül analiz önbelleği ##
@@ -71,13 +81,17 @@ WMF 5.1 ile başlayarak, PowerShell bunu aktarır komutları gibi bir modülüyl
 Varsayılan olarak, bu önbellek dosyasında depolanan `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
 Önbellek başlangıçta komutu için aranırken genelde okur ve bir modülü içeri aktarıldıktan sonra arka plan iş parçacığında süre yazılır.
 
-Önbelleğinin varsayılan konumu değiştirmek için ayarlayın `$env:PSModuleAnalysisCachePath` PowerShell başlatmadan önce ortam değişkeni. Bu ortam değişkenini yapılan değişiklikler yalnızca alt işlemleri etkiler. Değeri PowerShell dosya oluşturma ve yazma izni olan bir tam yol (içeren dosya adı) adı. Dosya önbelleği devre dışı bırakmak için geçersiz bir konum için bu değeri örneğin ayarlayın:
+Önbelleğinin varsayılan konumu değiştirmek için ayarlayın `$env:PSModuleAnalysisCachePath` PowerShell başlatmadan önce ortam değişkeni.
+Bu ortam değişkenini yapılan değişiklikler yalnızca alt işlemleri etkiler.
+Değeri PowerShell dosya oluşturma ve yazma izni olan bir tam yol (içeren dosya adı) adı.
+Dosya önbelleği devre dışı bırakmak için geçersiz bir konum için bu değeri örneğin ayarlayın:
 
 ```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
-Bu, geçersiz bir aygıta yolunu ayarlar. PowerShell yolunu yazılamıyor, herhangi bir hata döndürdü, ancak hata bir izleyici kullanarak raporlama görebilirsiniz:
+Bu, geçersiz bir aygıta yolunu ayarlar.
+PowerShell yolunu yazılamıyor, herhangi bir hata döndürdü, ancak hata bir izleyici kullanarak raporlama görebilirsiniz:
 
 ```powershell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
@@ -94,12 +108,14 @@ Bu ortam değişkenini ayarı hemen geçerli işlemde etkinleşir.
 
 ##<a name="specifying-module-version"></a>Modül sürümü belirtme
 
-WMF 5.1 içinde `using module` diğer ilgili modülü kurulumlarını PowerShell'de aynı şekilde davranır. Daha önce belirli modülü sürüm belirtmek için hiçbir yolu yoktu; Mevcut birden çok sürüm varsa, bu hatayla sonuçlandı.
+WMF 5.1 içinde `using module` diğer ilgili modülü kurulumlarını PowerShell'de aynı şekilde davranır.
+Daha önce belirli modülü sürüm belirtmek için hiçbir yolu yoktu; Mevcut birden çok sürüm varsa, bu hatayla sonuçlandı.
 
 
 WMF 5.1:
 
-* Kullanabileceğiniz [ModuleSpecification Oluşturucusu (karma)](https://msdn.microsoft.com/library/jj136290). Bu karma tablosu ile aynı biçimi sahip `Get-Module -FullyQualifiedName`.
+* Kullanabileceğiniz [ModuleSpecification Oluşturucusu (karma)](https://msdn.microsoft.com/library/jj136290).
+Bu karma tablosu ile aynı biçimi sahip `Get-Module -FullyQualifiedName`.
 
 **Örnek:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
@@ -107,7 +123,6 @@ WMF 5.1:
 
 
 ##<a name="improvements-to-pester"></a>Pester geliştirmeleri
-WMF 5.1, PowerShell ile birlikte gelen Pester sürümü 3.3.5 tamamlama eklenmesi ile 3.4.0 güncelleştirildi https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, hangi etkinleştirir daha iyi davranış Nano Server üzerinde Pester için. 
+WMF 5.1, PowerShell ile birlikte gelen Pester sürümü 3.3.5 tamamlama eklenmesi ile 3.4.0 güncelleştirildi https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, hangi etkinleştirir daha iyi davranış Nano Server üzerinde Pester için.
 
 ChangeLog.md dosyasını inceleyerek sürümleri için 3.3.5 3.4.0 değişiklikleri gözden geçirebilirsiniz: https://github.com/pester/Pester/blob/master/CHANGELOG.md
-

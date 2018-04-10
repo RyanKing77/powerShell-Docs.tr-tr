@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
 title: Register-PSRepository
-ms.openlocfilehash: badac5dc1157bbfa79058630c5c2f260d2151bd8
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7a7d1bf56a87161f6ec735399b15b19f317282b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="register-psrepository"></a>Register-PSRepository
 
@@ -16,7 +16,7 @@ Bir bilgisayarda kayıtlı depoları alır.
 
 ## <a name="description"></a>Açıklama
 
-Register-PSRepository cmdlet, PowerShell modülleri için çevrimiçi depoya kaydeder. Bir depo kaydedildikten sonra bulma modülünden başvurabilir yükle-Module ve Yayımla-Module cmdlet'leri. Kayıtlı havuzu bulma modülü ve yükleme modülünün varsayılan depoya olur. 
+Register-PSRepository cmdlet, PowerShell modülleri için çevrimiçi depoya kaydeder. Bir depo kaydedildikten sonra bulma modülünden başvurabilir yükle-Module ve Yayımla-Module cmdlet'leri. Kayıtlı havuzu bulma modülü ve yükleme modülünün varsayılan depoya olur.
 
 Kayıtlı depoları kullanıcıya özeldir. Bir sistem genelinde bağlamında kayıtlı değil.
 
@@ -32,8 +32,9 @@ Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 
 ## <a name="example-commands"></a>Örnek komutlar
 
-### <a name="register-a-powershell-repository"></a>Bir PowerShell deposu kaydetme
-İç depoları karşı çalışmaya PowerShellGet yapılandırabilirsiniz. Bir depo kaydedildikten sonra ile çalışmak için bulma modülü ve Install-Module kullanabilirsiniz.
+### <a name="register-a-powershell-repository"></a>Bir PowerShell Deposu Kaydetme
+İç depoları karşı çalışmaya PowerShellGet yapılandırabilirsiniz.
+Bir depo kaydedildikten sonra ile çalışmak için bulma modülü ve Install-Module kullanabilirsiniz.
 
 ```powershell
 # Register a default repository
@@ -114,4 +115,3 @@ ScriptPublishLocation : https://customgallery.cloudapp.net/api/v2/package/
 ProviderOptions : {}
 
 ```
-

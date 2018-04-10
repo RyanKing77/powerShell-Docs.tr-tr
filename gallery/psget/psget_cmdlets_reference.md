@@ -1,40 +1,39 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
 title: psget_cmdlets_reference
-ms.openlocfilehash: adf0cfb8f0a6502ec16452656ae7a840ef4126df
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 292903a8583fb06ed556fef4c5bc9e10ba441274
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="powershellget-cmdlet-reference"></a>PowerShellGet cmdlet başvurusu
 
 - [Register-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517129)
 - [Get-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517127)
 - [Set-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
-- [Kaydı PSRepository](http://go.microsoft.com/fwlink/?LinkID=517130)
+- [Unregister-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517130)
 - [Bulma Modülü](http://go.microsoft.com/fwlink/?LinkID=398574)
 - [Bul komutu](http://go.microsoft.com/fwlink/?LinkId=733636)
-- [Bul DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
-- [Bul RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
+- [Find-DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
+- [Find-RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
 - [Kaydet-Modülü](http://go.microsoft.com/fwlink/?LinkId=531351)
 - [Yükleme Modülü](http://go.microsoft.com/fwlink/?LinkID=398573)
 - [Get-InstalledModule](http://go.microsoft.com/fwlink/?LinkId=526863)
 - [Güncelleştirme Modülü](http://go.microsoft.com/fwlink/?LinkID=398576)
-- [Kaldırma Modülü](http://go.microsoft.com/fwlink/?LinkId=526864)
+- [Uninstall-Module](http://go.microsoft.com/fwlink/?LinkId=526864)
 - [Yayımlama Modülü](http://go.microsoft.com/fwlink/?LinkID=398575)
-- [Güncelleştirme ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
+- [Update-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
 - [Bulma komut dosyası](http://go.microsoft.com/fwlink/?LinkId=619785)
-- [Kaydet-komut dosyası](http://go.microsoft.com/fwlink/?LinkId=619786)
-- [Yükleme betiği](http://go.microsoft.com/fwlink/?LinkId=619784)
+- [Save-Script](http://go.microsoft.com/fwlink/?LinkId=619786)
+- [Install-Script](http://go.microsoft.com/fwlink/?LinkId=619784)
 - [Get-InstalledScript](http://go.microsoft.com/fwlink/?LinkId=619790)
 - [Güncelleştirme komut dosyası](http://go.microsoft.com/fwlink/?LinkId=619787)
-- [Kaldırma betiği](http://go.microsoft.com/fwlink/?LinkId=619789)
-- [ScriptFileInfo yeni](http://go.microsoft.com/fwlink/?LinkId=619792)
+- [Uninstall-Script](http://go.microsoft.com/fwlink/?LinkId=619789)
+- [New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
 - [Test-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
-- [Güncelleştirme ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619793)
-- [Yayımlama-komut dosyası](http://go.microsoft.com/fwlink/?LinkId=619788)
-
+- [Update-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619793)
+- [Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)

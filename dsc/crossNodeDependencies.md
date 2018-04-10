@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "Geçici bir düğüm bağımlılıkları belirtme"
-ms.openlocfilehash: f4411161d819d96803f57600646409d5bfe827b9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: Çapraz düğüm bağımlılıklarını belirtme
+ms.openlocfilehash: c563563118c4df8aeee442d3b30b79f7b7700fc7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="specifying-cross-node-dependencies"></a>Geçici bir düğüm bağımlılıkları belirtme
+# <a name="specifying-cross-node-dependencies"></a>Çapraz düğüm bağımlılıklarını belirtme
 
 > İçin geçerlidir: Windows PowerShell 5.0
 
@@ -17,7 +17,7 @@ DSC özel kaynaklar sağlar **WaitForAll**, **WaitForAny**, ve **WaitForSome** k
 
 * **WaitForAll**: Belirtilen kaynak tanımlanan tüm hedef düğümleri üzerinde istenen durumda ise başarılı **NodeName** özelliği.
 * **WaitForAny**: Belirtilen kaynak tanımlanan hedef düğümleri en az biri istenilen durumda ise başarılı **NodeName** özelliği.
-* **WaitForSome**: belirten bir **NodeCount** özelliğine ek olarak bir **NodeName** özelliği. Kaynak istenen düğüm sayısı alt sınırı durumda ise kaynak başarılı (tarafından belirtilen **NodeCount**) tarafından tanımlanan **NodeName** özelliği. 
+* **WaitForSome**: belirten bir **NodeCount** özelliğine ek olarak bir **NodeName** özelliği. Kaynak istenen düğüm sayısı alt sınırı durumda ise kaynak başarılı (tarafından belirtilen **NodeCount**) tarafından tanımlanan **NodeName** özelliği.
 
 ## <a name="using-waitforxxxx-resources"></a>WaitForXXXX kaynaklarını kullanma
 
@@ -35,13 +35,13 @@ Configuration JoinDomain
     {
         WindowsFeature InstallAD
         {
-            Ensure = 'Present' 
-            Name = 'AD-Domain-Services' 
+            Ensure = 'Present'
+            Name = 'AD-Domain-Services'
         }
 
-        xADDomain NewDomain 
-        { 
-            DomainName = 'Contoso.com'            
+        xADDomain NewDomain
+        {
+            DomainName = 'Contoso.com'
             DomainAdministratorCredential = (Get-Credential)
             SafemodeAdministratorPassword = (Get-Credential)
             DatabasePath = "C:\Windows\NTDS"
@@ -79,4 +79,3 @@ Configuration JoinDomain
 * [DSC yapılandırmaları](configurations.md)
 * [DSC kaynakları](resources.md)
 * [Yerel Yapılandırma Yöneticisi'ni yapılandırma](metaConfig.md)
-

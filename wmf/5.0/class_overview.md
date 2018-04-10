@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: 8b414331bbfb7dc71d960241a6bc83b0b22641db
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 7eaa4dfb68bc299ad31bce81af96b6a760c4fcc5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="creating-custom-types-using-powershell-classes"></a>Özel türler PowerShell sınıflarını kullanarak oluşturma
+# <a name="creating-custom-types-using-powershell-classes"></a>PowerShell Sınıfları Kullanarak Özel Türler Oluşturma
 
 Biz resmi sözdizimi ve diğer nesne odaklı programlama dili için benzer semantiği kullanarak sınıfları ve diğer kullanıcı tanımlı türler tanımlamak için PowerShell dil geliştirdik. Geliştiriciler ve BT uzmanları geniş bir grup kullanım durumları için PowerShell çekirdeğin, geliştirme (örneğin, DSC kaynakları) PowerShell yapılarının basitleştirmek ve yönetim yüzeyleri kapsamını hızlandırmak etkinleştirmek için belirtilir.
 
@@ -20,4 +20,3 @@ Biz resmi sözdizimi ve diğer nesne odaklı programlama dili için benzer seman
 -   PowerShell ve sınıf temel DSC kaynağı sınıfında devralma desteği
 -   PowerShell dilini kullanarak türleri hata ayıklama
 -   Oluşturma ve resmi mekanizmalarını kullanarak ve sağ düzeyinde özel durumları işleme
-

@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell cmdlet'i
-ms.date: 2016-12-12
-title: "pswaauthorizationrule Kaldır"
+ms.date: 12/12/2016
+title: pswaauthorizationrule Kaldır
 ms.technology: powershell
-ms.openlocfilehash: 4d039e7e00f87bc7aebb89217251edbbb5c3f5be
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 28dbfe84827d6ccb99dce1ebb520cae66dc8c50e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
 
@@ -40,7 +40,7 @@ Windows PowerShell Web Erişimi'nden belirtilen bir yetkilendirme kuralını kal
 
 Cmdlet'i onay istemeden çalıştırır. Varsayılan olarak cmdlet devam etmeden önce onay ister.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -53,7 +53,7 @@ Cmdlet'i onay istemeden çalıştırır. Varsayılan olarak cmdlet devam etmeden
 
 Tanımlayıcılar (Kimlikler) kaldırmak için bir veya daha fazla kural belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | TRUE                                 |
@@ -66,7 +66,7 @@ Tanımlayıcılar (Kimlikler) kaldırmak için bir veya daha fazla kural belirti
 
 Kaldırmak için kuralları belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | TRUE                                 |
@@ -79,7 +79,7 @@ Kaldırmak için kuralları belirtir.
 
 Cmdlet'i çalıştırmadan önce sizden onay ister.
 
-|||  
+|||
 |-|-|
 | Gerekli mi?                            | yanlış                                |
 | Konumu?                            | Adlı                                |
@@ -91,7 +91,7 @@ Cmdlet'i çalıştırmadan önce sizden onay ister.
 
 Cmdlet çalıştırılıyorsa ne olacağını gösterir. Cmdlet çalıştırılmaz.
 
-|||  
+|||
 |-|-|
 | Gerekli mi?                            | yanlış                                |
 | Konumu?                            | Adlı                                |
@@ -106,7 +106,7 @@ Daha fazla bilgi için bkz: [about_CommonParameters](http://go.microsoft.com/fwl
 
 ## <a name="inputs"></a>GİRİŞLERİ
 
-### <a name="int"></a>int\[\]
+### <a name="int"></a>Int\[\]
 
 Bu cmdlet dizisi veya bir dizi PswaAuthorizationRule nesneleri kabul eder.
 

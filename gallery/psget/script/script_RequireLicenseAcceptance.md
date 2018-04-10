@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-09
+ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: RequireLicenseAcceptanceScript
-ms.openlocfilehash: 7092fb2e63b9e2b1eca59cd418317631bff8b172
-ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
+ms.openlocfilehash: 4a2dc39c2b6c380fb4ca94f9fd071ed9cdb35049
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>Komut dosyaları için lisans kabulünü gerektirme
 
@@ -32,7 +32,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 ### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Örnek 2: Lisans kabulünü ve - AcceptLicense gerektiren bağımlılıkları olan yükleme betiği
@@ -46,4 +46,4 @@ PS C:\> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 
 ### <a name="require-license-acceptance-support-on-powershellgallerypsgallerypsgalleryrequireslicenseacceptancemd"></a>[Lisans kabulünü desteğini PowerShellGallery gerektirir](../../psgallery/psgallery_requires_license_acceptance.md)
 
-### <a name="require-license-acceptance-on-deploy-to-azure-automationpsgallerypsgallerydeploytoazureautomationrequirelicenseacceptancemd"></a>[Lisans kabulünü gerektiren üzerinde Azure Automation'ı dağıtma](../../psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
+### <a name="require-license-acceptance-on-deploy-to-azure-automationpsgallerypsgallerydeploytoazureautomationrequirelicenseacceptancemd"></a>[Azure Otomasyonuna Dağıtmada Lisans Kabulü Gerektir](../../psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
 title: Get-InstalledModule
-ms.openlocfilehash: 6f485d04503ea6d9a51a68ae7ec3d0dc2e6facab
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f82d8f3b6b6a9283deef44c2705b97d4717b634c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-installedmodule"></a>Get-InstalledModule
 
@@ -24,7 +24,7 @@ Yüklü her modül için Get-InstalledModule isteğe bağlı olarak yöneltilen 
 - Get-InstalledModule sürüm parametrelerle filtre uygulayabilirsiniz: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - Bu parametreler MinmimumVersion ve MaximumVersion dışında birbirini dışlar.
   - Bu sürümü parametreleri yalnızca bir joker karakter bulunmayan tek modülü adıyla izin verilir.
-  - RequiredVersion parametresi belirtilmezse, Get-InstalledModule en düşük bir sürüm belirtilmezse eşit veya bundan büyük belirtilen en düşük sürüm veya modülü en son sürümü yüklü modülü en son sürümünü döndürür. 
+  - RequiredVersion parametresi belirtilmezse, Get-InstalledModule en düşük bir sürüm belirtilmezse eşit veya bundan büyük belirtilen en düşük sürüm veya modülü en son sürümü yüklü modülü en son sürümünü döndürür.
   - RequiredVersion parametresi belirtilirse, Get-InstalledModule yalnızca belirtilen sürümü ile tam olarak yüklü modül sürümünü döndürür.
 
 ## <a name="cmdlet-syntax"></a>Cmdlet sözdizimi
@@ -126,4 +126,3 @@ Name          InstalledDate         UpdatedDate
 ----          -------------         -----------
 ContosoServer 2/29/2016 11:59:14 AM 2/29/2016 12:00:15 PM
 ```
-

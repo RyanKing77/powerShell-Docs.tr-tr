@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC kullanıcı kaynağı"
-ms.openlocfilehash: c1b8487d9adc899950d185036ada3a2fa3747417
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC kullanıcı kaynağı
+ms.openlocfilehash: 1c3efa8e3bf945c45834cbea7ddb0a6c3ffc5f45
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 #<a name="dsc-user-resource"></a>DSC kullanıcı kaynak #
 
- 
+
 >İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 
@@ -37,18 +37,18 @@ User [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Özellikler
-|  Özellik  |  Açıklama   | 
-|---|---| 
-| UserName| Belirli bir durumu sağlamak istediğiniz hesap adını gösterir.| 
-| Açıklama| Kullanıcı hesabı için kullanmak istediğiniz açıklamayı belirtir.| 
-| Devre Dışı| Hesabın etkin olup olmadığını gösterir. Bu özelliği ayarlamak __$true__ bu hesap devre dışı ve ayarlamak olduğunu emin olmak için __$false__ için etkinleştirildiğinden emin olun.| 
-| Emin olun| Hesabının mevcut olup olmadığını gösterir. Bu hesabı var olduğundan emin olmak için "var" özelliğine ayarlayın ve "Mevcut için" hesap yok emin olmak için ayarlayın.| 
-| FullName| Kullanıcı hesabı için kullanmak istediğiniz tam adı bir dizeyle temsil eder.| 
-| Parola| Bu hesap için kullanmak istediğiniz parolayı gösterir. | 
-| PasswordChangeNotAllowed| Kullanıcının parolayı değiştirirseniz gösterir. Bu özelliği ayarlamak __$true__ kullanıcı olamaz parolasını değiştirmek ve ayarlamak emin olmak için __$false__ parola değiştirmeye izin vermek için. Varsayılan değer __$false__.| 
-| PasswordChangeRequired| Kullanıcı bir sonraki oturum açmada parola değiştirmeli gösterir. Bu özelliği ayarlamak __$true__ kullanıcı parolasını değiştirmeniz gerekiyorsa. Varsayılan değer __$true__.| 
-| PasswordNeverExpires| Parola sona erecek gösterir. Bu hesap süresiz için parola bu özelliği ayarlamak emin olmak için __$true__ve ayarlamak __$false__ parola süresi dolacak durumunda. Varsayılan değer __$false__.| 
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.| 
+|  Özellik  |  Açıklama   |
+|---|---|
+| UserName| Belirli bir durumu sağlamak istediğiniz hesap adını gösterir.|
+| Açıklama| Kullanıcı hesabı için kullanmak istediğiniz açıklamayı belirtir.|
+| Devre Dışı| Hesabın etkin olup olmadığını gösterir. Bu özelliği ayarlamak __$true__ bu hesap devre dışı ve ayarlamak olduğunu emin olmak için __$false__ için etkinleştirildiğinden emin olun.|
+| Emin olun| Hesabının mevcut olup olmadığını gösterir. Bu hesabı var olduğundan emin olmak için "var" özelliğine ayarlayın ve "Mevcut için" hesap yok emin olmak için ayarlayın.|
+| FullName| Kullanıcı hesabı için kullanmak istediğiniz tam adı bir dizeyle temsil eder.|
+| Parola| Bu hesap için kullanmak istediğiniz parolayı gösterir. |
+| PasswordChangeNotAllowed| Kullanıcının parolayı değiştirirseniz gösterir. Bu özelliği ayarlamak __$true__ kullanıcı olamaz parolasını değiştirmek ve ayarlamak emin olmak için __$false__ parola değiştirmeye izin vermek için. Varsayılan değer __$false__.|
+| PasswordChangeRequired| Kullanıcı bir sonraki oturum açmada parola değiştirmeli gösterir. Bu özelliği ayarlamak __$true__ kullanıcı parolasını değiştirmeniz gerekiyorsa. Varsayılan değer __$true__.|
+| PasswordNeverExpires| Parola sona erecek gösterir. Bu hesap süresiz için parola bu özelliği ayarlamak emin olmak için __$true__ve ayarlamak __$false__ parola süresi dolacak durumunda. Varsayılan değer __$false__.|
+| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Örnek
 
@@ -61,4 +61,3 @@ User UserExample
     DependsOn = "[Group]GroupExample" # Configures GroupExample first
 }
 ```
-

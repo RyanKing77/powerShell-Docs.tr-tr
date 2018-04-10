@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "MSFT_DSCLocalConfigurationManager sınıfının SendConfigurationApplyAsync yöntemi"
-ms.openlocfilehash: e680d510aaac097f4f0de80660274230e028ed45
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: MSFT_DSCLocalConfigurationManager sınıfının SendConfigurationApplyAsync yöntemi
+ms.openlocfilehash: 7ff821a277a548869862741551ee9897e417ea45
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının SendConfigurationApplyAsync yöntemi
 
@@ -27,14 +27,11 @@ uint32 SendConfigurationApplyAsync(
 <a name="parameters"></a>Parametreler
 ----------
 
-*ConfigurationData* \[içinde\]  
-Ortam verilerini yapılandırması için.
+*ConfigurationData* \[içinde\] yapılandırması için ortam verilerini.
 
-*zorla* \[içinde\]  
-**doğru** durdurmak için yapılandırmayı zorla uygulamak için.
+*zorla* \[içinde\] **true** durdurmak için yapılandırmayı zorla uygulamak için.
 
-*jobId* \[in\]  
-İş için yapılandırma gönderileceği kimliği.
+*JobId* \[içinde\] yapılandırma göndermek işin kimliği.
 
 ## <a name="return-value"></a>Dönüş değeri
 ------------
@@ -56,11 +53,3 @@ Bu statik bir yöntemdir.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

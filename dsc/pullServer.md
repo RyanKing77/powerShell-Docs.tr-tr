@@ -1,13 +1,13 @@
 ---
-ms.date: 2018-02-02
+ms.date: 02/02/2018
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: DSC Pull Service
-ms.openlocfilehash: d5e24dcc093c73d8ebbaa618517193dacc4f2aaf
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC Çekme Hizmeti
+ms.openlocfilehash: 1547092d5ea6733296bf89f05dd96f70c0a000ac
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="desired-state-configuration-pull-service"></a>İstenen durum yapılandırma çekme hizmeti
 
@@ -67,7 +67,7 @@ Bir örnek komut dosyası aşağıda verilmiştir.
 Bir web çekme sunucusu kurmak için en kolay yolu xPSDesiredStateConfiguration modülünde yer alan xWebService kaynak kullanmaktır.
 Aşağıdaki adımları, kaynak web hizmeti oluşturan ayarlar bir yapılandırmada kullanmak açıklanmaktadır.
 
-1. Çağrı [yükleme-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) yüklemek için cmdlet'i **xPSDesiredStateConfiguration** modülü. **Not**: **yükleme-Module** dahil **PowerShellGet** PowerShell 5. 0 ' dahil modülü. İndirebilirsiniz **PowerShellGet** için modülü PowerShell 3.0 ve 4.0 en [PackageManagement PowerShell modülleri Önizleme](https://www.microsoft.com/en-us/download/details.aspx?id=49186). 
+1. Çağrı [yükleme-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) yüklemek için cmdlet'i **xPSDesiredStateConfiguration** modülü. **Not**: **yükleme-Module** dahil **PowerShellGet** PowerShell 5. 0 ' dahil modülü. İndirebilirsiniz **PowerShellGet** için modülü PowerShell 3.0 ve 4.0 en [PackageManagement PowerShell modülleri Önizleme](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
 1. Bir güvenilen sertifika yetkilisi, kuruluşunuz ya da bir ortak yetkilisinden içinde ya da DSC çekme sunucusu için bir SSL sertifikası alın. Yetkilisinden alınan sertifika genellikle PFX biçimindedir. DSC çekme sunucusuna CERT: \LocalMachine\My olması gereken varsayılan konumda olacak düğüm üzerinde sertifikayı yükleyin. Sertifika parmak izini not edin.
 1. Kayıt anahtarı olarak kullanılacak bir GUID seçin. Bir oluşturmak için PowerShell kullanarak PS istemine aşağıdakileri girin ve ENTER tuşuna basın: '``` [guid]::newGuid()```'veya'```New-Guid```'. Bu anahtar istemci düğümleri tarafından kayıt sırasında kimlik doğrulaması için paylaşılan bir anahtar olarak kullanılır. Daha fazla bilgi için aşağıdaki kayıt anahtarı bölümüne bakın.
 1. PowerShell ISE aşağıdaki yapılandırma komut dosyası (F5) başlatın (örneğin klasöründe bulunan **xPSDesiredStateConfiguration** modülü Sample_xDscWebService.ps1 olarak). Bu komut çekme sunucusunda ayarlar.
@@ -127,7 +127,7 @@ Aşağıdaki adımları, kaynak web hizmeti oluşturan ayarlar bir yapılandırm
 1. Sertifikanın parmak izi SSL geçirme yapılandırmayı çalıştırın **certificateThumbPrint** parametre ve bir GUID kayıt anahtarı olarak **RegistrationKey** parametre:
 
 ```powershell
-    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
     # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
     dir Cert:\LocalMachine\my
 
@@ -142,7 +142,7 @@ Aşağıdaki adımları, kaynak web hizmeti oluşturan ayarlar bir yapılandırm
 #### <a name="registration-key"></a>Kayıt anahtarı
 
 İstemci yapılandırması kimliği yerine yapılandırma adları kullanabilmeleri sunucusu ile kayıt düğümleri izin vermek için yukarıdaki yapılandırması tarafından oluşturulan bir kayıt anahtarı adlı bir dosyaya kaydedilir `RegistrationKeys.txt` içinde `C:\Program Files\WindowsPowerShell\DscService`. Kayıt anahtarını ilk kaydı sırasında çekme sunucu ile istemci tarafından kullanılan bir paylaşılan gizlilik olarak çalışır. İstemci kayıt başarıyla tamamlandıktan sonra çekme sunucusuna benzersiz olarak kimlik doğrulaması için kullanılan kendinden imzalı bir sertifika oluşturur. Bu sertifikanın parmak izini yerel olarak depolanır ve çekme sunucu URL'si ile ilişkili.
-> **Not**: Kayıt anahtarlarını PowerShell 4. 0'desteklenmiyor. 
+> **Not**: Kayıt anahtarlarını PowerShell 4. 0'desteklenmiyor.
 
 Çekme sunucunun kayıt kimliğini doğrulamak için bir düğüm yapılandırmak için anahtarı'nı bu çekme Server'a kaydettirirken herhangi bir hedef düğümün meta yapılandırmasını olması gerekir. Unutmayın **RegistrationKey** meta yapılandırmasını içinde aşağıdaki hedef makine başarılı bir şekilde kaydettirildi ve '140a952b-b9d6-406b-b416-e0f759c9c0e4' değeri depolanan değeriyle eşleşmelidir sonra kaldırılır. Çekme sunucusunda RegistrationKeys.txt dosyası. Her zaman farkında çekme sunucusu ile kayıt herhangi bir hedef makine verdiğinden kayıt anahtarı değeri güvenli kabul eder.
 
@@ -155,7 +155,7 @@ configuration PullClientConfigID
         Settings
         {
             RefreshMode          = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded   = $true
         }
 
@@ -223,8 +223,8 @@ Ayar oluşturan için doğrulama ve daha kolay, çekme sunucusunu yönetme aşa�
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-         $moduleList = @("xWebAdministration", "xPhp") 
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
+         $moduleList = @("xWebAdministration", "xPhp")
+         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
 
          # Example 2 - Package modules and mof documents from c:\LocalDepot
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force

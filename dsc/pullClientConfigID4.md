@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "PowerShell 4. 0 ' yapılandırması kimliği kullanan bir çekme istemci ayarlama"
-ms.openlocfilehash: 2449a4ddfea5c0ee7096ad7478e80166eb095bbe
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: PowerShell 4. 0 ' yapılandırması kimliği kullanan bir çekme istemci ayarlama
+ms.openlocfilehash: 7074d842b7b99ef3fb6498b6dbc1e561b14caf16
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>PowerShell 4. 0 ' yapılandırması kimliği kullanan bir çekme istemci ayarlama
 
@@ -18,28 +18,28 @@ ms.lasthandoff: 01/17/2018
 Aşağıdaki komut dosyası LCM'yi çekme yapılandırmaları için "PullServer" adlı bir sunucudan yapılandırır:
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-Komut dosyasında **DownloadManagerCustomData** geçişleri URL çekme sunucusunun ve (Bu örneğin), güvenli olmayan bir bağlantı sağlar. 
+Komut dosyasında **DownloadManagerCustomData** geçişleri URL çekme sunucusunun ve (Bu örneğin), güvenli olmayan bir bağlantı sağlar.
 
 Bu betik çalıştıktan sonra adlı yeni bir çıkış klasörü oluşturur **SimpleMetaConfigurationForPull** ve meta yapılandırmasını MOF dosyası var. yerleştirir.
 
-Yapılandırmayı uygulamak için kullanmak **kümesi DscLocalConfigurationManager** parametrelere sahip **ComputerName** ("localhost" kullanın) ve **yolu** (konumu yolu düğümün localhost.meta.mof dosya hedef). Örneğin: 
+Yapılandırmayı uygulamak için kullanmak **kümesi DscLocalConfigurationManager** parametrelere sahip **ComputerName** ("localhost" kullanın) ve **yolu** (konumu yolu düğümün localhost.meta.mof dosya hedef). Örneğin:
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
@@ -53,20 +53,20 @@ Belirttiğiniz çekme sunucusuna bir web hizmeti yerine bir SMB dosya paylaşım
 **DscFileDownloadManager** geçen bir **KaynakYolu** özelliği yerine **ServerUrl**. Aşağıdaki komut dosyası "CONTOSO-SERVER" adlı bir sunucuda "SmbDscShare" adlı bir SMB paylaşımına yapılandırmalardan çıkarmak için LCM'yi yapılandırır:
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
@@ -74,4 +74,3 @@ SimpleMetaConfigurationForPull -Output "."
 
 - [DSC çekme sunucusuna ayarlama](pullServer.md)
 - [DSC SMB çekme sunucusu ayarlama](pullServerSMB.md)
-

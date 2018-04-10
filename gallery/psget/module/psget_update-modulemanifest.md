@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: "Güncelleştirme ModuleManifest"
-ms.openlocfilehash: ce3f6f173535d98648eb51adb1dbf84764e4f434
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Güncelleştirme ModuleManifest
+ms.openlocfilehash: 45f40f753af17e82c83dbf57dea13749ba626503
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="update-modulemanifest"></a>Güncelleştirme ModuleManifest
 Modül bildirim dosyasını güncelleştirir.
@@ -27,13 +27,13 @@ Get-Command -Name Update-ModuleManifest -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Cmdlet çevrimiçi Yardım başvurusu
 
-[Güncelleştirme ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
+[Update-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
 
 ## <a name="example-commands"></a>Örnek komutlar
 
 Bu yeni cmdlet Yardım giriş özellik değerlerini dosyasıyla bildirim güncelleştirmesi için kullanılır. Yeni ModuleManifest yaptığı tüm parametreleri alır.
 
-Çok sayıda modülü yazarlar belirtmek istediğiniz fark "\*" gibi FunctionsToExport, CmdletsToExport, dışarı aktarılan değerleri vb.. PowerShell Galerisi modülü yayımlama sırasında belirtilmeyen işlevleri ve komutları düzgün galeri doldurulmaz. Bu nedenle, modül yazarlar güncelleştirme kendi bildirimleri uygun değerlerle öneririz.
+Çok sayıda modülü yazarlar belirtmek istediğiniz fark "\*" gibi FunctionsToExport, CmdletsToExport, dışarı aktarılan değerleri vb. PowerShell Galerisi modülü yayımlama sırasında belirtilmeyen işlevleri ve komutları düzgün galeri doldurulmaz. Bu nedenle, modül yazarlar güncelleştirme kendi bildirimleri uygun değerlerle öneririz.
 
 Özellikler dışarı aktardığınız modülleri varsa, güncelleştirme ModuleManifest belirtilen bildirim dosyası dışarı aktarılan işlevler, cmdlet'leri, değişkenler vb. alınan bilgilerle doldurun:
 ```powershell
@@ -101,19 +101,18 @@ PrivateData = @{
 
         # A URL to the license for this module.
         # LicenseUri = ''
-    
+
         # A URL to the main website for this project.
         # ProjectUri = ''
-        
+
         # A URL to an icon representing this module.
         # IconUri = ''
-        
+
         # ReleaseNotes of this module
         # ReleaseNotes = ''
-        
+
         # External dependent modules of this module
         # ExternalModuleDependencies = ''
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-

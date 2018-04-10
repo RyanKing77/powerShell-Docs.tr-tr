@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC Hizmet kaynağı"
-ms.openlocfilehash: a549530edc19496a68c036fecbd18b0072cc6d74
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC Hizmet kaynağı
+ms.openlocfilehash: 59d7c0c7147bf28b92d64a25c0d67c277e0bb210
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-service-resource"></a>DSC Hizmet kaynağı
 
@@ -36,18 +36,18 @@ Service [string] #ResourceName
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik  |  Açıklama   | 
-|---|---| 
-| Ad| Hizmet adını gösterir. Bazen bu görünen adından farklı olduğunu unutmayın. Hizmetler ve bunların geçerli durumu Get-Service cmdlet ile listesini elde edebilirsiniz.| 
-| BuiltInAccount| Hizmet için oturum açma hesabı belirtir. Bu özellik için izin verilen değerler: **Yerelhizmet**, **LocalSystem**, ve **NetworkService**.| 
-| kimlik bilgisi| Hizmet, altında çalışacağı hesabın kimlik bilgilerini gösterir. Bu özellik ve __BuiltinAccount__ özelliği birlikte kullanılamaz.| 
-| dependsOn| Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.| 
-| StartupType| Hizmet başlangıç türünü gösterir. Bu özellik için izin verilen değerler: **otomatik**, **devre dışı**, ve **el ile**| 
-| Durum| Hizmet için sağlamak istediğiniz durumu gösterir.| 
-| Açıklama | Hedef hizmet açıklaması gösterir.| 
-| Görünen Ad | Hedef hizmet görünen adını belirtir.| 
+|  Özellik  |  Açıklama   |
+|---|---|
+| Ad| Hizmet adını gösterir. Bazen bu görünen adından farklı olduğunu unutmayın. Hizmetler ve bunların geçerli durumu Get-Service cmdlet ile listesini elde edebilirsiniz.|
+| BuiltInAccount| Hizmet için oturum açma hesabı belirtir. Bu özellik için izin verilen değerler: **Yerelhizmet**, **LocalSystem**, ve **NetworkService**.|
+| kimlik bilgisi| Hizmet, altında çalışacağı hesabın kimlik bilgilerini gösterir. Bu özellik ve __BuiltinAccount__ özelliği birlikte kullanılamaz.|
+| dependsOn| Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
+| StartupType| Hizmet başlangıç türünü gösterir. Bu özellik için izin verilen değerler: **otomatik**, **devre dışı**, ve **el ile**|
+| Durum| Hizmet için sağlamak istediğiniz durumu gösterir.|
+| Açıklama | Hedef hizmet açıklaması gösterir.|
+| Görünen Ad | Hedef hizmet görünen adını belirtir.|
 | Emin olun | Hedef hizmet sistemde var olup olmadığını gösterir. Bu özelliği ayarlamak **etmeksizin** hedef hizmet yok emin olmak için. Ayar **mevcut** hedef hizmetinin var olduğunu (varsayılan değer) sağlar.|
-| Yol | Yeni bir hizmet için ikili dosya yolunu gösterir.| 
+| Yol | Yeni bir hizmet için ikili dosya yolunu gösterir.|
 
 ## <a name="example"></a>Örnek
 
@@ -63,8 +63,7 @@ configuration ServiceTest
             Name        = "TermService"
             StartupType = "Manual"
             State       = "Running"
-        } 
+        }
     }
 }
 ```
-

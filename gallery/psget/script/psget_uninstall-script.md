@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: "Kaldırma betiği"
-ms.openlocfilehash: 41f2b88ee81cf9f8c1a8c415ed658f29f4f08c3b
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Uninstall-Script
+ms.openlocfilehash: 3d35235d001063784226dbbdb60595c5efee928d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="uninstall-script"></a>Kaldırma betiği
+# <a name="uninstall-script"></a>Uninstall-Script
 
 PowerShellGet kullanılarak yüklenmiş bir komut dosyası kaldırır.
 
@@ -25,7 +25,7 @@ Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
 ## <a name="cmdlet-online-help-reference"></a>Cmdlet çevrimiçi Yardım başvurusu
 
-[Kaldırma betiği](http://go.microsoft.com/fwlink/?LinkId=619789)
+[Uninstall-Script](http://go.microsoft.com/fwlink/?LinkId=619789)
 
 ## <a name="example-commands"></a>Örnek komutlar
 
@@ -73,4 +73,3 @@ VERBOSE: Performing the operation "Uninstall-Script" on target "Version '2.5.0-a
 VERBOSE: Successfully uninstalled the script 'Required-Script1' from script base 'C:\Users\manikb\Documents\WindowsPowerShell\Scripts'.
 
 ```
-

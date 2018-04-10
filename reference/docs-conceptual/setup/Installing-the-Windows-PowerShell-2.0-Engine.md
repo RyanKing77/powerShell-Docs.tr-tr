@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell 2.0 altyapısı yükleme"
+title: Windows PowerShell 2.0 Altyapısını Yükleme
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: ff6c2b52b8948472ace3ee35cd4c6aa2dbf46c25
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0b3282a1a67886509e749af0f499c47fe7a99411
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="installing-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 altyapısı yükleme
+# <a name="installing-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 Altyapısını Yükleme
 Bu konuda, Windows PowerShell 2.0 Altyapısı'nı açıklanmaktadır.
 
 Windows PowerShell 3.0, Windows PowerShell 2.0 ile geriye dönük olarak uyumlu olacak şekilde tasarlanmıştır. Cmdlet'leri, sağlayıcıları, ek bileşenler, modüller ve Windows PowerShell 2.0 için yazılan komut dosyaları Windows PowerShell 3.0 ve Windows PowerShell 4.0 değişmeden çalıştırın. Ancak, Microsoft .NET Framework 4 çalışma zamanı etkinleştirme ilkesi değişikliği nedeniyle, Windows PowerShell 2.0 için yazılmış ve ortak dil çalışma zamanı (CLR ile) 2.0 derlenmiş Windows PowerShell konak programları değişiklik olmadan daha sonra çalıştıramaz CLR 4.0 ile derlenmiş Windows PowerShell sürümleri.
@@ -77,5 +77,4 @@ Windows 7, Windows Server 2008 R2 ve Windows Server 2008, Windows PowerShell 3.0
 - [Windows PowerShell sistem gereksinimleri](Windows-PowerShell-System-Requirements.md)
 - [Windows PowerShell'i yükleme](Installing-Windows-PowerShell.md)
 - [Windows PowerShell'i başlatma](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-- [Windows PowerShell 2.0 altyapısı başlatılıyor](Starting-the-Windows-PowerShell-2.0-Engine.md)
-
+- [Windows PowerShell 2.0 Altyapısını Başlatma](Starting-the-Windows-PowerShell-2.0-Engine.md)

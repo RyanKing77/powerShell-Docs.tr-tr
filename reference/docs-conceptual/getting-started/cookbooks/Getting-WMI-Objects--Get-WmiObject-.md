@@ -1,20 +1,22 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Alma WMI nesneleri WmiObject Al
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-ms.openlocfilehash: fbaac2797dd62eb03a2be581b3b5f8be6dafc0ad
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 67922426ae3f13ef5f4c70bc70bb3ce1594d3d05
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>WMI nesnelerini (Get-WmiObject) alma
 
 ## <a name="getting-wmi-objects-get-wmiobject"></a>WMI nesnelerini (Get-WmiObject) alma
+
 Windows Yönetim Araçları (WMI) Windows Sistem Yönetimi için bir çekirdek teknoloji olduğundan çok çeşitli bilgi tek bir yolla kullanıma sunar. Ne kadar WMI WMI nesneleri erişmek için Windows PowerShell cmdlet'ini mümkün hale getirir nedeniyle **Get-WmiObject**, en kullanışlı biri gerçek iş yapmak için. Biz Get-WmiObject WMI nesnelere erişmek için nasıl kullanılacağı ve WMI nesneleri belirli şeyler için nasıl kullanılacağını ele alınacaktır.
 
 ### <a name="listing-wmi-classes"></a>WMI sınıflarını listeleme
+
 WMI kullanıcıların çoğunun karşılaştığınız ilk sorun WMI ile ne yapılabilir bulmak çalışıyor. WMI sınıflarını yönetilebilir kaynaklarını tanımlar. WMI sınıflarını, bazıları özellikleri düzinelerce içeren yüzlerce vardır.
 
 **Get-WmiObject** WMI bulunabilirlik sağlayarak bu sorunu giderir. Yazarak yerel bilgisayarda kullanılabilir WMI sınıflarının bir listesini alabilirsiniz:
@@ -48,7 +50,7 @@ Uzak bilgisayarlar tarafından döndürülen sınıfı listeleme, bilgisayarda �
 
 ComputerName bile, yerel sistem bağlanırken da içerebilir. Yerel bilgisayarın adı, IP adresini (veya geri döngü adresine 127.0.0.1) kullanabilir veya WMI-style '.' bilgisayar adı olarak. IP adresi 192.168.1.90 Admin01 adlı bir bilgisayarda Windows PowerShell çalıştırıyorsanız, aşağıdaki komutları tüm bu bilgisayar için listeleme WMI sınıfı döndürün:
 
-```
+```powershell
 Get-WmiObject -List
 Get-WmiObject -List -ComputerName .
 Get-WmiObject -List -ComputerName Admin01
@@ -68,6 +70,7 @@ __Provider                              __Win32Provider
 ```
 
 ### <a name="displaying-wmi-class-details"></a>WMI sınıfı ayrıntılarını görüntüleme
+
 WMI sınıfı adını biliyorsanız, bilgi hemen almak için kullanabilirsiniz. Örneğin, bir bilgisayar hakkında bilgi almak için kullanılan WMI sınıflarını biri **Win32_OperatingSystem**.
 
 ```
@@ -83,7 +86,7 @@ Version         : 5.1.2600
 
 Biz tüm parametreleri gösteren rağmen komut daha kısa bir yol ifade edilebilir. **ComputerName** parametresi gerekli değildir yerel sisteme bağlanırken. En genel durum göstermek ve parametre hakkında anımsatmak kendisine gösteriyoruz. **Namespace** Varsayılanları kök/cimv2 ve de atlanabilir. Son olarak, çoğu cmdlet'leri ortak parametrelerinin adını Atla olanak sağlar. Ad için ilk parametresi, belirtilmişse, Get-WmiObject ile Windows PowerShell, işler **sınıfı** parametresi. Başka bir deyişle, son komut yazarak verilmiş:
 
-```
+```powershell
 Get-WmiObject Win32_OperatingSystem
 ```
 
@@ -105,6 +108,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ```
 
 #### <a name="displaying-non-default-properties-with-format-cmdlets"></a>Varsayılan olmayan özellikleri biçimi cmdlet'leri ile görüntüleme
+
 İçinde yer alan bilgileri almak istiyorsanız **Win32_OperatingSystem** diğer bir deyişle sınıfı varsayılan olarak görüntülenmiyorsa, onu kullanarak görüntüleyebilirsiniz **biçimi** cmdlet'leri. Kullanılabilir bellek verileri görüntülemek istiyorsanız, örneğin, yazın:
 
 ```
@@ -116,7 +120,7 @@ TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory F
 ```
 
 > [!NOTE]
-> Özellik adlarında joker karakterler çalışabilirsiniz **Format-Table**, son ardışık düzen öğesi için azaltılabilir  **Format-Table-özelliği toplam*, boş*
+> Özellik adlarında joker karakterler çalışabilirsiniz **Format-Table**, son ardışık düzen öğesi için azaltılabilir **Format-Table-özelliği toplam*, serbest *
 
 Bellek verileri daha okunabilir bir liste olarak yazarak biçimlendirmek varsa olabilir:
 
@@ -129,4 +133,3 @@ FreePhysicalMemory     : 301876
 FreeVirtualMemory      : 2056724
 FreeSpaceInPagingFiles : 1556644
 ```
-

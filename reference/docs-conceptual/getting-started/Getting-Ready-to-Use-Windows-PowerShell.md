@@ -1,18 +1,18 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell kullanmaya başlama"
+title: Windows PowerShell Kullanmaya Hazırlanma
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
-ms.openlocfilehash: de09c74e938f11a130864b1620d6c169006a27be
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 5e095984286ff89958dc0a4e3d27e40eae5b2c5e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getting-ready-to-use-windows-powershell"></a>Windows PowerShell kullanmaya başlama
+# <a name="getting-ready-to-use-windows-powershell"></a>Windows PowerShell Kullanmaya Hazırlanma
 Windows PowerShell yüklenmiş ve başlatılmış olduğundan, aşağıdaki kurulum seçenekleri göz önünde bulundurun. Herhangi bir zamanda bu görevleri gerçekleştirebilirsiniz.
 
-- **Yardım dosyalarını yükleyin.** Windows PowerShell 3. 0 ' içerdiği cmdlet Yardım dosyalarıyla gelmeyen. Ancak, kullanabileceğiniz [Update-Help](/powershell/module/microsoft.powershell.core/update-help) bilgisayarınızda en yeni Yardım dosyalarını indirmek ve yüklemek için cmdlet'i. Dosyalar yüklendiğinde, kullanabileceğiniz [Get-Help](/powershell/module/microsoft.powershell.core/get-help) komut satırında sağa görüntülenecek cmdlet'i. Daha fazla bilgi için bkz: [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+- **Yardım dosyalarını yükleyin.** Windows PowerShell 3. 0 ' içerdiği cmdlet Yardım dosyalarıyla gelmeyen. Ancak, kullanabileceğiniz [Update-Help](/powershell/module/microsoft.powershell.core/update-help) bilgisayarınızda en yeni Yardım dosyalarını indirmek ve yüklemek için cmdlet'i. Dosyalar yüklendiğinde, kullanabileceğiniz [Get-Help](/powershell/module/microsoft.powershell.core/get-help) komut satırında sağa görüntülenecek cmdlet'i. Daha fazla bilgi için bkz: [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_updatable_help).
 
     Yardım dosyalarını yüklememeye karar verirseniz, çevrimiçi Yardım konuları hala okuyabilir. Tüm cmdlet Yardım konusunun çevrimiçi sürümünü bulmak için şunu yazın: `Get-Help <CmdletName> -Online`. Windows PowerShell Yardım konularına bakın göz atmak için [PowerShell belgelerine](/powershell/scripting).
 
@@ -25,4 +25,3 @@ Windows PowerShell yüklenmiş ve başlatılmış olduğundan, aşağıdaki kuru
 ## <a name="see-also"></a>Ayrıca bkz:
 - [Windows PowerShell'i yükleme](../setup/Installing-Windows-PowerShell.md)
 - [Windows PowerShell'i başlatma](/powershell/scripting/setup/starting-windows-powershell)
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: "Kaldırma Modülü"
-ms.openlocfilehash: 3c4d8faa63aba6b4434d42a19a219baf84122591
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Kaldırma Modülü
+ms.openlocfilehash: 90f26e64a8a6bc95faf444b1d3ce82a8e3bbefc1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-module"></a>Kaldırma Modülü
 
@@ -16,7 +16,8 @@ PowerShellGet cmdlet'leri kullanılarak yüklenmiş bir modül kaldırır.
 
 ## <a name="description"></a>Açıklama
 
-Uninstall-modül cmdlet Belirtilen modül yerel bilgisayardan kaldırır. Bazı diğer modüller üzerinde bir bağımlılık varsa, bir modül kaldıramazsınız.
+Uninstall-modül cmdlet Belirtilen modül yerel bilgisayardan kaldırır.
+Bazı diğer modüller üzerinde bir bağımlılık varsa, bir modül kaldıramazsınız.
 Kaldırma modülü cmdlet'leri ayrıca kaldırılıyor modülü kullanımda olup olmadığını doğrular. Modül kullanılıyorsa bir hata oluşturulur.
 
 ## <a name="cmdlet-syntax"></a>Cmdlet sözdizimi
@@ -26,7 +27,7 @@ Get-Command -Name Uninstall-Module -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Cmdlet çevrimiçi Yardım başvurusu
 
-[Kaldırma Modülü](http://go.microsoft.com/fwlink/?LinkId=526864)
+[Uninstall-Module](http://go.microsoft.com/fwlink/?LinkId=526864)
 
 
 ## <a name="example-commands"></a>Örnek komutlar
@@ -126,4 +127,3 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    , Exception
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
-

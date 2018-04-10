@@ -1,22 +1,22 @@
 ---
-description: "İstenen durum Yapılandırması'nı (DSC) uzantısı'nda Azure sürüm geçmişi hakkında bilgi edinin."
-ms.date: 2018-03-14
+description: İstenen durum Yapılandırması'nı (DSC) uzantısı'nda Azure sürüm geçmişi hakkında bilgi edinin.
+ms.date: 03/14/2018
 ms.topic: conceptual
-keywords: "DSC, powershell, azure, uzantısı"
-title: "Azure DSC uzantısı sürüm geçmişi"
+keywords: DSC, powershell, azure, uzantısı
+title: Azure DSC uzantısı sürüm geçmişi
 author: DCtheGeek
 ms.author: dacoulte
-ms.openlocfilehash: e324ff9db2aff36a7e13c3a222e3c50f6f1c5d39
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: a183137dde302811874bd5466c35bccebca5d128
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure istenen durum yapılandırması uzantısı sürüm geçmişi
 
 Azure istenen durum yapılandırması (DSC) VM uzantısı gerektiği geliştirmeleri ve Azure, Windows Server ve Windows PowerShell içeren Windows Management Framework (WMF) tarafından sunulan yeni özellikler desteklemek üzere güncelleştirilmiştir.
 
-Bu makalede Azure DSC VM uzantısı, BT'nin her bir sürümü hakkında bilgi sağlanır destekler, yorumlar ve açıklamalar yenilikleri veya değişiklikleri ortamları.
+Bu makalede destekler, açıklamalar ve yeni özellikleri ve değişiklikleri açıklamalar için hangi ortamları Azure DSC VM uzantısı, her sürümü hakkında bilgi sağlar.
 
 ## <a name="latest-versions"></a>En son sürümleri
 
@@ -38,9 +38,9 @@ Bu makalede Azure DSC VM uzantısı, BT'nin her bir sürümü hakkında bilgi sa
   - WMF 4.0
 - **Ortamı:**
   - Azure
-- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano için VM DSC rolü yüklenir.
+- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano Server için VM DSC rolü yüklenir.
 - **Yeni özellikler:**
-  - TLS 1.2 için Github'ın en son taşıma sonra yerleşik bir VM üzerinde Azure Marketi kullanılabilir Dıy Resource Manager şablonları kullanarak Azure Otomasyonu DSC olamaz veya DSC uzantısı Github üzerinde barındırılan config almak için kullanın. Uzantı dağıtma sırasında aşağıdakine benzer bir hata görürsünüz:
+  - TLS 1.2 için GitHub'ın en son taşıma sonra yerleşik bir VM üzerinde Azure Marketi kullanılabilir Dıy Resource Manager şablonları kullanarak Azure Otomasyonu DSC olamaz veya DSC uzantısı GitHub üzerinde barındırılan config almak için kullanın. Uzantı dağıtma sırasında aşağıdakine benzer bir hata görürsünüz:
 
     ```json
     {
@@ -101,7 +101,7 @@ Bu makalede Azure DSC VM uzantısı, BT'nin her bir sürümü hakkında bilgi sa
 - **İşletim sistemi desteği:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows istemci 7/8.1/10, Nano Server
 - **WMF desteği:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 güncelleştirme, WMF 4.0
 - **Ortam:** Azure
-- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano için VM DSC rolü yüklenir.
+- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano Server için VM DSC rolü yüklenir.
 - **Yeni özellikler:**
   - Düzeltmeleri & UI Portalı aracılığıyla Azure Otomasyonu DSC, hem de Resource Manager şablonu kullanarak basitleştirir geliştirmeleri hata.  Daha fazla bilgi için bkz: [varsayılan yapılandırma komut dosyası](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/extensions-dsc-overview#default-configuration-script) DSC uzantısı belgelerinde.
 
@@ -111,7 +111,7 @@ Bu makalede Azure DSC VM uzantısı, BT'nin her bir sürümü hakkında bilgi sa
 - **İşletim sistemi desteği:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows istemci 7/8.1/10, Nano Server
 - **WMF desteği:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 güncelleştirme, WMF 4.0
 - **Ortam:** Azure
-- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano için VM DSC rolü yüklenir.
+- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano Server için VM DSC rolü yüklenir.
 - **Yeni özellikler:**
   - Telemetri geliştirmeler.
 
@@ -121,7 +121,7 @@ Bu makalede Azure DSC VM uzantısı, BT'nin her bir sürümü hakkında bilgi sa
 - **İşletim sistemi desteği:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows istemci 7/8.1/10, Nano Server
 - **WMF desteği:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 güncelleştirme, WMF 4.0
 - **Ortam:** Azure
-- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano için VM DSC rolü yüklenir.
+- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano Server için VM DSC rolü yüklenir.
 - **Yeni özellikler:**
   - Çeşitli hata düzeltmeleri ve diğer ikincil geliştirmeler eklendi.
 
@@ -131,7 +131,7 @@ Bu makalede Azure DSC VM uzantısı, BT'nin her bir sürümü hakkında bilgi sa
 - **İşletim sistemi desteği:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
 - **WMF desteği:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 güncelleştirme, WMF 4.0
 - **Ortam:** Azure
-- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano için VM DSC rolü yüklenir.
+- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano Server için VM DSC rolü yüklenir.
 - **Yeni özellikler:**
   - VM UUID & DSC Aracısı kimliği uzantısı meta veri kullanıma sunar. İkincil diğer geliştirmeler eklendi.
 
@@ -141,7 +141,7 @@ Bu makalede Azure DSC VM uzantısı, BT'nin her bir sürümü hakkında bilgi sa
 - **İşletim sistemi desteği:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
 - **WMF desteği:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 güncelleştirme, WMF 4.0
 - **Ortam:** Azure
-- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano için VM DSC rolü yüklenir.
+- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano Server için VM DSC rolü yüklenir.
 - **Yeni özellikler:**
   - Çok sayıda hata düzeltmeleri ve diğer geliştirmeler eklendi.
 
@@ -151,7 +151,7 @@ Bu makalede Azure DSC VM uzantısı, BT'nin her bir sürümü hakkında bilgi sa
 - **İşletim sistemi desteği:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
 - **WMF desteği:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 güncelleştirme, WMF 4.0
 - **Ortam:** Azure
-- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano için VM DSC rolü yüklenir.
+- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano Server için VM DSC rolü yüklenir.
 - **Yeni özellikler:**
   - DSC uzantı WMF 5.1 desteği artık sahiptir.
   - İkincil diğer geliştirmeler eklendi.
@@ -162,7 +162,7 @@ Bu makalede Azure DSC VM uzantısı, BT'nin her bir sürümü hakkında bilgi sa
 - **İşletim sistemi desteği:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
 - **WMF desteği:** WMF 5.1 önizleme, WMF 5.0 RTM, WMF 4.0 güncelleştirme, WMF 4.0
 - **Ortam:** Azure
-- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (yeniden başlatma gerektirir WMF yükleme). Nano için VM DSC rolü yüklenir.
+- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (yeniden başlatma gerektirir WMF yükleme). Nano Server için VM DSC rolü yüklenir.
 - **Yeni özellikler:**
   - DSC uzantısı artık Nano Server üzerinde kullanılabilir. Bu sürüm, öncelikle uzantısı Nano sunucuda çalıştırmak için kod değişiklikleri içerir.
   - İkincil diğer geliştirmeler eklendi.
@@ -186,7 +186,7 @@ Bu makalede Azure DSC VM uzantısı, BT'nin her bir sürümü hakkında bilgi sa
 - **Ortam:** Azure, Azure Çin'de Azure kamu
 - **Açıklamalar:** bu sürümü Windows Server 2016 Technical Preview içinde yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (yeniden başlatma gerektirir WMF yükleme).
 - **Yeni özellikler:**
-  - DSC uzantı şimdi üzerinde Azure Çin'e dahil edilmiş. Bu sürüm öncelikle uzantısı Azure Çin üzerinde çalıştırmak için düzeltmeler içerir.
+  - DSC uzantı edildi Azure Çin için sunulmuştur. Bu sürüm öncelikle uzantısı Azure Çin üzerinde çalıştırmak için düzeltmeler içerir.
 
 ### <a name="version-218"></a>Sürüm 2.18
 

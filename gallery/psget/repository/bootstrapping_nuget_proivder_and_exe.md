@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: "NuGet sağlayıcısı ve EXE önyükleme"
-ms.openlocfilehash: 0036972eb9a0c20469da1aadafe223e6ec80f16a
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+title: NuGet sağlayıcısı ve EXE önyükleme
+ms.openlocfilehash: 1c8d99491aec6d2a598facb909c1f36f4bb979e7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="bootstrap-both-nuget-provider-and-nugetexe-or-bootstrap-only-nuget-provider"></a>NuGet sağlayıcısı ve NuGet.exe bootstrap veya yalnızca NuGet sağlayıcısı bootstrap
 
@@ -19,7 +19,7 @@ PowerShellGet NuGet sağlayıcı NuGet.exe ve birleştirilmiş bir önyükleme y
 Her iki durumda da, yalnızca tek bir komut istemi ileti olmalıdır.
 Makine Internet'e bağlı değilse, kullanıcı veya yönetici NuGet sağlayıcı ve/veya NuGet.exe dosya güvenilir bir örneğini bağlantısı kesilmiş makineye kopyalamanız gerekir.
 
->**Not**: sürüm 6 ile başlayarak, NuGet sağlayıcı PowerShell yüklemesinde bulunur. [http://github.com/PowerShell/PowerShell](http://github.com/powershell/powershell)
+>**Not**: sürüm 6 ile başlayarak, NuGet sağlayıcı PowerShell yüklemesinde bulunur. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
 
 ## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>NuGet sağlayıcısı Internet bir makinede yüklü değil, hatayı giderme bağlı
 
@@ -83,7 +83,7 @@ PS C:\> Publish-Module -Name Contoso -Repository PSGallery -Verbose
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
-Publish-Module : PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Please ensure that '2.8.5.201' or newer version of NuGet provider is installed and NuGet.exe is available under 
+Publish-Module : PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Please ensure that '2.8.5.201' or newer version of NuGet provider is installed and NuGet.exe is available under
 one of the paths specified in PATH environment variable value.
 At line:1 char:1
 + Publish-Module -Name Contoso -Repository PSGallery -Verbose
@@ -116,7 +116,7 @@ NuGet sağlayıcısı klasör/dosya yapısını (büyük olasılıkla farklı s�
 
 NuGet<br>
 --2.8.5.208<br>
----Microsoft.PackageManagement.NuGetProvider.dll
+----Microsoft.PackageManagement.NuGetProvider.dll
 
 Bu klasörler ve çevrimdışı makinelere güvenilir bir işlemi kullanarak dosyasını kopyalayın.
 
@@ -139,7 +139,7 @@ Cmdlet yükseltilmiş izinler olmadan bir kullanıcı olarak yürütüldü ise:
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-İkinci seçenek NuGet.Org Web sitesinden NuGet.exe indirmektir: [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)<br>
+NuGet.exe NuGet.Org Web sitesinden indirin ikinci bir seçenektir: [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)<br>
 Üretim makineler için NugGet sürümü seçerken, 2.8.5.208 sonraki olduğundan emin olun ve "önerilen" etiketli sürüm belirleyin.
 Bir tarayıcı kullanarak indirildiği, dosyanın Engellemeyi Kaldır unutmayın.
 Bu kullanılarak gerçekleştirilebilir *Engellemeyi Kaldır dosya* cmdlet'i.
@@ -155,4 +155,3 @@ Yürütülebilir dosya yalnızca belirli bir kullanıcı tarafından kullanılab
 ```
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
-

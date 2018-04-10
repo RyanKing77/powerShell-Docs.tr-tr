@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: "Yayımlama Modülü"
-ms.openlocfilehash: 53fca3d6756ebf698023152ce5b58b45eb0ef757
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Yayımlama Modülü
+ms.openlocfilehash: 8b73be2814678ce143cc5b53e2b8103b3297eb6a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="publish-module"></a>Yayımlama Modülü
 
@@ -72,8 +72,8 @@ _------ ---- ---------- -----------
 ### <a name="create-a-module-with-dependencies-and-version-range-specified-in-requiredmodules-property-of-its-module-manifest"></a>Bağımlılıklar bir modül, modül bildirimi RequiredModules özelliğinde belirtilen sürüm aralığı oluşturun.
 
 **Not:**
-  - \*yalnızca MaximumVersion içinde desteklenir ve ayrıca sürüm dizesi sonunda olmalıdır. 
-  - \*Sürüm nesnesindeki 999999999 ile değiştirilir.
+  - \* yalnızca MaximumVersion içinde desteklenir ve ayrıca sürüm dizesi sonunda olmalıdır.
+  - \* Sürüm nesnesindeki 999999999 ile değiştirilir.
 
 ```powershell
 PS C:\windows\system32> $requiredModules = @( @{ModuleName = 'RequiredModule1'; ModuleVersion = '0.1'; MaximumVersion = '1.9'; }, @{ModuleName = 'RequiredModule2'; MaximumVersion = '1.*'; })
@@ -180,4 +180,3 @@ Bazı modülü bağımlılıklar harici olarak yönetilebilir, bu durumda bunlar
 ```powershell
 Publish-PSArtifactUtility : PowerShellGet cannot resolve the module dependency 'SnippetPx' of the module 'TypePx' on the repository 'LocalRepo'. Verify that the dependent module 'SnippetPx' is available in the repository 'LocalRepo'. If this dependent 'SnippetPx' is managed externally, add it to the ExternalModuleDependencies entry in the PSData section of the module manifest.
 ```
-

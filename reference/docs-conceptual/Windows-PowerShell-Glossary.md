@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Glossary
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell Glossary
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 02/19/2018
 |isim|Bir Windows PowerShell cmdlet ad tire izleyen word. İsim bağlı cmdlet davranır kaynaklar açıklanır.|
 |Parametre kümesi|Belirli bir eylemi gerçekleştirmek için aynı komutta kullanılan parametreler grubudur.|
 |Kanal|Yukarıdaki komut sonuçlarını ardışık düzende sonraki komut için giriş olarak göndermek için Windows PowerShell'de.|
-|Ardışık Düzen|Bir dizi ardışık düzen işleçleri (&#124;) bağlı komutu (ASCII 124). Her ardışık düzen işleci yukarıdaki komut sonuçlarını sonraki komut için giriş olarak gönderir.|
+|Ardışık Düzen|Bir dizi ardışık düzen işleçleri tarafından bağlı komutu (&#124;) (ASCII 124). Her ardışık düzen işleci yukarıdaki komut sonuçlarını sonraki komut için giriş olarak gönderir.|
 |PSSession|Oluşturulan, yönetilen ve kullanıcı tarafından kapatılan Windows PowerShell oturumu türü.|
 |kök Modülü|Bir modül bildirimi RootModule anahtarında belirtilen modül.|
 |Çalışma alanı|Windows PowerShell'de her komut ardışık düzeninde yürütüldüğü işletim sistemi ortamında.|
@@ -55,4 +55,3 @@ ms.lasthandoff: 02/19/2018
 |Windows PowerShell komut dosyası|.Ps1 uzantısı olan ve Windows PowerShell dilinde yazılmış bir komut dosyası içeren bir dosyadır.|
 |Windows PowerShell ek bileşeni|Cmdlet'leri, sağlayıcıları ve Windows PowerShell ortamına eklenebilir Microsoft .NET Framework türleri kümesini tanımlayan bir kaynaktır.|
 |Windows PowerShell iş akışı|Bir iş akışı, birden fazla cihazda veya yönetilen düğümde uzun süre çalışan görevler gerçekleştiren veya birden fazla adımın eşgüdümünü gerektiren programlı ve bağlı adımlardan oluşan bir dizidir. BT uzmanları Windows PowerShell iş akışı sağlar ve geliştiricilerin çok cihazlı yönetim etkinlikleri ya da bir iş akışındaki tek görevleri iş akışları olarak dizilerini yazar. Windows PowerShell iş akışı uyum ve iş akışları olarak Windows PowerShell komut dosyaları ve XAML dosyaları çalıştırmanıza olanak sağlar.|
-

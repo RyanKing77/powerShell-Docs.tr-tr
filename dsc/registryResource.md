@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC kayıt kaynağı"
-ms.openlocfilehash: 1e73e4275c0d9db5d8fac7641514ea8190f719ca
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC kayıt kaynağı
+ms.openlocfilehash: fcd24b1dd729dbb0abd697a4a628dce01fdd5422
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-registry-resource"></a>DSC kayıt kaynağı
 
@@ -32,16 +32,16 @@ Registry [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Özellikler
-|  Özellik  |  Açıklama   | 
-|---|---| 
-| üzerine gelin| Belirli bir durumu sağlamak istediğiniz kayıt defteri anahtarının yolunu gösterir. Bu yol hive içermelidir.| 
-| Değer adı| Kayıt defteri değerinin adını belirtir. Eklemek veya bir kayıt defteri anahtarı kaldırmak için ValueType veya ValueData belirtmeden bu özellik olarak boş bir dize belirtin. Değiştirmek veya bir kayıt defteri anahtarının varsayılan değeri kaldırmak için ValueType veya ValueData de belirtildiğinde bu özellik olarak boş bir dize belirtin.| 
-| Emin olun| Anahtar ve değer var olup olmadığını gösterir. "Var" Bu özelliği ayarlayın emin olmak için. Mevcut olduğundan emin olmak için "Yok" özelliğini ayarlayın. "Var" varsayılan değerdir.| 
-| Force| Belirtilen kayıt defteri anahtarı varsa, __zorla__ yeni değerle üzerine yazar. Alt anahtarlar içeren bir kayıt defteri anahtarının silinmesi, bu olması gerekir __$true__| 
-| Onaltılık| Onaltılık biçimde belirtilecektir veri gösterir. Belirtilmişse, onaltılık biçimde DWORD/QWORD değer verisi sunulur. Diğer türleri için geçerli değil. Varsayılan değer __$false__.| 
-| dependsOn| Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.| 
-| ValueData| Kayıt defteri değeri verileri.| 
-| ValueType| Değerin türünü belirtir. Desteklenen türler şunlardır: 
+|  Özellik  |  Açıklama   |
+|---|---|
+| üzerine gelin| Belirli bir durumu sağlamak istediğiniz kayıt defteri anahtarının yolunu gösterir. Bu yol hive içermelidir.|
+| Değer adı| Kayıt defteri değerinin adını belirtir. Eklemek veya bir kayıt defteri anahtarı kaldırmak için ValueType veya ValueData belirtmeden bu özellik olarak boş bir dize belirtin. Değiştirmek veya bir kayıt defteri anahtarının varsayılan değeri kaldırmak için ValueType veya ValueData de belirtildiğinde bu özellik olarak boş bir dize belirtin.|
+| Emin olun| Anahtar ve değer var olup olmadığını gösterir. "Var" Bu özelliği ayarlayın emin olmak için. Mevcut olduğundan emin olmak için "Yok" özelliğini ayarlayın. "Var" varsayılan değerdir.|
+| Force| Belirtilen kayıt defteri anahtarı varsa, __zorla__ yeni değerle üzerine yazar. Alt anahtarlar içeren bir kayıt defteri anahtarının silinmesi, bu olması gerekir __$true__|
+| Onaltılık| Onaltılık biçimde belirtilecektir veri gösterir. Belirtilmişse, onaltılık biçimde DWORD/QWORD değer verisi sunulur. Diğer türleri için geçerli değil. Varsayılan değer __$false__.|
+| dependsOn| Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
+| ValueData| Kayıt defteri değeri verileri.|
+| ValueType| Değerin türünü belirtir. Desteklenen türler şunlardır:
 <ul><li>String (REG_SZ)</li>
 
 
@@ -76,6 +76,3 @@ Configuration RegistryTest
 
 >**Not:** bir kayıt defteri ayarını değiştirerek **HKEY\_geçerli\_kullanıcı** hive gerektirir yapılandırma sistemi olarak değil, kullanıcı kimlik bilgileriyle çalışır.
 >Kullanabileceğiniz **PsDscRunAsCredential** özelliği yapılandırma için kullanıcı kimlik bilgilerini belirtin. Bir örnek için bkz: [çalıştıran DSC kullanıcı kimlik bilgileri](runAsUser.md)
-
-
-

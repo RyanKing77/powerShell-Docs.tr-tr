@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC Linux nxFileLine kaynak için"
-ms.openlocfilehash: 281f08c1dbf42372762a2b1b9838427b910ea791
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC Linux nxFileLine kaynak için
+ms.openlocfilehash: 798bfa4150996622c33c77d6a5aa3be4af342f1b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>DSC Linux nxFileLine kaynak için
 
@@ -28,25 +28,24 @@ nxFileLine <string> #ResourceName
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik |  Açıklama | 
+|  Özellik |  Açıklama |
 |---|---|
-| FilePath| Hedef düğümde bulunan satırları yönetmek için dosyanın tam yolu.| 
-| ContainsLine| Dosyada emin olmak için bir satır var. Dosya yoksa, bu satırın dosyasına eklenir. **ContainsLine** zorunludur, ancak boş bir dize olarak ayarlanabilir ('ContainsLine = ''') değil gerekiyorsa.| 
-| DoesNotContainPattern| Normal ifade deseni dosyasında bulunmamalıdır satırlar için. Bu normal bir ifadeyle eşleşen dosyasında bulunan tüm satırlar için dosyadan satır kaldırılır.| 
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, varsa **kimliği** çalıştırmak istediğiniz yapılandırma betik bloğu ilk kaynaktır **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.| 
+| FilePath| Hedef düğümde bulunan satırları yönetmek için dosyanın tam yolu.|
+| ContainsLine| Dosyada emin olmak için bir satır var. Dosya yoksa, bu satırın dosyasına eklenir. **ContainsLine** zorunludur, ancak boş bir dize olarak ayarlanabilir ('ContainsLine = ''') değil gerekiyorsa.|
+| DoesNotContainPattern| Normal ifade deseni dosyasında bulunmamalıdır satırlar için. Bu normal bir ifadeyle eşleşen dosyasında bulunan tüm satırlar için dosyadan satır kaldırılır.|
+| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, varsa **kimliği** çalıştırmak istediğiniz yapılandırma betik bloğu ilk kaynaktır **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Örnek
 
 Bu örnek kullanılmasını gösterir **nxFileLine** yapılandırmak için kaynak `/etc/sudoers` dosyası, kullanıcı sağlanarak: monuser değil requiretty için yapılandırılmış.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 nxFileLine DoNotRequireTTY
 {
    FilePath = “/etc/sudoers”
    ContainsLine = 'Defaults:monuser !requiretty'
    DoesNotContainPattern = "Defaults:monuser[ ]+requiretty"
-} 
+}
 ```
-

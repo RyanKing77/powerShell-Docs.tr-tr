@@ -1,4 +1,4 @@
-# <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell çekirdek WS-Management (WSMan) uzaktan çalışma 
+# <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core’da WS-Management (WSMan) Uzaktan İletişimi
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>Bir uzak uç noktası oluşturmak için yönergeler
 
@@ -28,19 +28,19 @@ Komut dosyası, bir yönetici düzeyi PowerShell oturumu ve iki modda çalışı
 
 #### <a name="executed-by-the-instance-of-powershell-that-it-will-register"></a>Kaydeder PowerShell örneği tarafından yürütülebilir.
 
-``` powershell
+```powershell
 Install-PowerShellRemoting.ps1
 ```
 
 #### <a name="executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register"></a>Başka bir PowerShell örneği kaydeder örnek adına tarafından yürütülebilir.
 
-``` powershell
+```powershell
 <path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>"
 ```
 
 Örneğin:
 
-``` powershell
+```powershell
 Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
@@ -51,7 +51,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 
 Bir PowerShell oturumuna yeni PowerShell uç noktası belirterek oluşturun `-ConfigurationName "some endpoint name"`. Yukarıdaki örnek PowerShell örneğine bağlanmak için kullanın:
 
-``` powershell
+```powershell
 New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```

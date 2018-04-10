@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: c7318552969c44f3b79f82efd71e6a72bfabef6b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 85e9206ffef76fb4bd7714d847888e6e5bbcc4ec
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 içindeki yeni dil özellikleri 
+# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 içindeki yeni dil özellikleri
 
 PowerShell 5.0, Windows PowerShell içinde aşağıdaki yeni dil öğeleri sunar:
 
 ## <a name="class-keyword"></a>Class anahtar sözcüğü
 
-**Sınıfı** anahtar sözcüğü yeni bir sınıf tanımlar. True .NET Framework türü budur. Sınıf üyeleri ortak, ancak yalnızca genel modülü kapsam içinde.
+**Sınıfı** anahtar sözcüğü yeni bir sınıf tanımlar. True .NET Framework türü budur.
+Sınıf üyeleri ortak, ancak yalnızca genel modülü kapsam içinde.
 Tür adı bir dize olarak başvuramaz (örneğin, `New-Object` çalışmıyor), ve bu sürümde, bir tür değişmez değeri kullanamazsınız (örneğin, `[MyClass]`) sınıf tanımlanır komut dosyası/modül dosyası dışında.
 
 ```powershell
@@ -64,11 +65,11 @@ PowerShell içeren sınıfları aranıyor belirtilen modülünün kök modül ay
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-Yeni bir alan **ImplementingAssembly**, ModuleInfo için eklendi. Komut dosyası sınıfları tanımlıyorsa bir betik modülü için oluşturulan dinamik derleme ya da ikili modülleri için yüklenen derleme ayarlanır. Ne zaman ayarlanmadı ModuleType bildirimi =. 
+Yeni bir alan **ImplementingAssembly**, ModuleInfo için eklendi. Komut dosyası sınıfları tanımlıyorsa bir betik modülü için oluşturulan dinamik derleme ya da ikili modülleri için yüklenen derleme ayarlanır. Ne zaman ayarlanmadı ModuleType bildirimi =.
 
 Yansıma **ImplementingAssembly** alan bir modüldeki kaynakları bulur. Başka bir deyişle, PowerShell veya diğer yönetilen dilleri ile yazılmış kaynakları bulabilir.
 
-Başlatıcılar alanlarla:      
+Başlatıcılar alanlarla:
 
 ```powershell
 [int] $i = 5
@@ -86,11 +87,11 @@ Bir isteğe bağlı türüdür.
 $s = "hello"
 ```
 
-Tüm ortak üyeleridir. 
+Tüm ortak üyeleridir.
 
 ## <a name="constructors-and-instantiation"></a>Oluşturucular ve örnek oluşturma
 
-Windows PowerShell sınıfları oluşturucular olabilir; Bunlar kendi sınıf ile aynı ada sahip. Oluşturucular aşırı yüklenmiş. Statik oluşturucular desteklenir. Başlatma ifadeleri özelliklerle herhangi bir kod oluşturucu içinde çalıştırılmadan önce başlatılır. Statik özellikler statik oluşturucu gövdesi önce başlatılır ve örnek özelliklerini statik olmayan Oluşturucusu gövde önce başlatılır. Şu anda başka bir oluşturucudan bir oluşturucu çağırmak için hiçbir sözdizimi yoktur (ister C\# sözdizimi ": this()"). Bir ortak Init yöntemi tanımlamak için geçici bir çözüm değildir. 
+Windows PowerShell sınıfları oluşturucular olabilir; Bunlar kendi sınıf ile aynı ada sahip. Oluşturucular aşırı yüklenmiş. Statik oluşturucular desteklenir. Başlatma ifadeleri özelliklerle herhangi bir kod oluşturucu içinde çalıştırılmadan önce başlatılır. Statik özellikler statik oluşturucu gövdesi önce başlatılır ve örnek özelliklerini statik olmayan Oluşturucusu gövde önce başlatılır. Şu anda başka bir oluşturucudan bir oluşturucu çağırmak için hiçbir sözdizimi yoktur (ister C\# sözdizimi ": this()"). Bir ortak Init yöntemi tanımlamak için geçici bir çözüm değildir.
 
 Bu sürümde başlatmasını sınıfların yollar şunlardır.
 
@@ -113,7 +114,7 @@ $c = [MyClass]::new(@(42,43,44), "Hello")
 
 Bu sürümde, Windows PowerShell içinde tanımlanan sınıflar ile New-Object çalışmaz. Ayrıca bu sürüm için tür adı yalnızca sözcüksel olarak, modül veya sınıfı tanımlayan betik dışında görünür değil anlamı görünür olur. İşlevler Windows PowerShell içinde tanımlı bir sınıfın örneklerini döndürebilir ve iyi modül veya komut dosyası dışında çalışma örnekleri.
 
-`Get-Member -Static`başka bir yöntem gibi aşırı görüntüleyebilmeniz Oluşturucular, listeler. Bu sözdiziminin performansını da New-Object önemli ölçüde daha hızlıdır.
+`Get-Member -Static` başka bir yöntem gibi aşırı görüntüleyebilmeniz Oluşturucular, listeler. Bu sözdiziminin performansını da New-Object önemli ölçüde daha hızlıdır.
 
 Adlı sözde statik yöntemi **yeni** aşağıdaki örnekte gösterildiği gibi .NET türleri ile çalışır.
 
@@ -151,12 +152,12 @@ Yöntem çağırma:
 
 ```powershell
 $b = [MyClass]::new()
-$b.DoSomething(42) 
+$b.DoSomething(42)
 ```
 
 Aşırı yüklenmiş yöntemler, varolan bir yöntemi ile aynı adlı ancak belirtilen değerlerine göre--Ayrıştırılan de başka bir deyişle, desteklenir.
 
-## <a name="properties"></a>Özellikler 
+## <a name="properties"></a>Özellikler
 
 Tüm ortak özelliklerdir. Bir satır başı karakteri veya noktalı virgül özellikleri gerektirir. Hiçbir nesne türü belirtilirse, özellik türü nesnesidir.
 
@@ -210,7 +211,8 @@ $v -eq $d # true
 
 ## <a name="end-to-end-example"></a>Uçtan uca örnek
 
-Aşağıdaki örnek, bir HTML dinamik bir stil sayfası dili (DSL) uygulamak için birkaç yeni, özel sınıfları oluşturur. Ardından, türleri bir modül kapsamı dışında kullanıldığından örnek başlık stilleri ve tabloları gibi öğe sınıfının bir parçası olarak belirli öğe türleri oluşturmak için yardımcı işlevleri ekler.
+Aşağıdaki örnek, bir HTML dinamik bir stil sayfası dili (DSL) uygulamak için birkaç yeni, özel sınıfları oluşturur.
+Ardından, türleri bir modül kapsamı dışında kullanıldığından örnek başlık stilleri ve tabloları gibi öğe sınıfının bir parçası olarak belirli öğe türleri oluşturmak için yardımcı işlevleri ekler.
 
 ```powershell
 # Classes that define the structure of the document
@@ -220,7 +222,7 @@ class Html
     [string] $docType
     [HtmlHead] $Head
     [Element[]] $Body
-    
+
     [string] Render()
     {
         $text = "<html>`n<head>`n"
@@ -334,4 +336,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-

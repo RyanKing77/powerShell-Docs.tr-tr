@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-title: "WMF 5.1 hata düzeltmeleri"
-ms.openlocfilehash: 137095f50f9f926d3488ff9c1ce8270ddbda63eb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+title: WMF 5.1 hata düzeltmeleri
+ms.openlocfilehash: dfd9ead447edfe9b7bdae23be14785df4b182bbc
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1# hata düzeltmeleri
 
@@ -16,13 +16,15 @@ ms.lasthandoff: 06/12/2017
 
 WMF 5.1, aşağıdaki önemli hatalar düzeltildi:
 
-### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>Modül otomatik bulma tam olarak geliştirir`$env:PSModulePath` ###
+### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>Modül otomatik bulma tam olarak geliştirir `$env:PSModulePath` ###
 
-Modül otomatik bulma (bir açık Import-bir komutu çağrılırken Module olmadan otomatik olarak yüklenmesini modüller) WMF 3'te tanıtıldı. Sunulan, PowerShell komutları için iade `$PSHome\Modules` kullanmadan önce `$env:PSModulePath`.
+Modül otomatik bulma (bir açık Import-bir komutu çağrılırken Module olmadan otomatik olarak yüklenmesini modüller) WMF 3'te tanıtıldı.
+Sunulan, PowerShell komutları için iade `$PSHome\Modules` kullanmadan önce `$env:PSModulePath`.
 
-WMF 5.1 vermenizin Bu davranış değişiklikleri `$env:PSModulePath` tamamen. Bu kullanıcı tarafından yazılan PowerShell tarafından sağlanan komutları tanımlayan bir modül sağlar (örneğin `Get-ChildItem`) otomatik yüklü olmasını ve doğru şekilde yerleşik komut geçersiz kılma.
+WMF 5.1 vermenizin Bu davranış değişiklikleri `$env:PSModulePath` tamamen.
+Bu kullanıcı tarafından yazılan PowerShell tarafından sağlanan komutları tanımlayan bir modül sağlar (örneğin `Get-ChildItem`) otomatik yüklü olmasını ve doğru şekilde yerleşik komut geçersiz kılma.
 
-### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>Hiçbir uzun sabit kodları dosya yeniden yönlendirmesi`-Encoding Unicode` ###
+### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>Hiçbir uzun sabit kodları dosya yeniden yönlendirmesi `-Encoding Unicode` ###
 
 Tüm önceki sürümlerinde PowerShell, örneğin dosya yeniden yönlendirme operatör tarafından kullanılan dosya kodlamasını denetlemek imkansız `Get-ChildItem > out.txt` PowerShell eklenmiş olduğundan `-Encoding Unicode`.
 
@@ -32,7 +34,7 @@ WMF 5.1 ile başlayarak, artık dosya yeniden yönlendirme kodlama ayarlayarak d
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ```
 
-### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Üyeleri erişimde bir gerileme sabit`System.Reflection.TypeInfo` ###
+### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Üyeleri erişimde bir gerileme sabit `System.Reflection.TypeInfo` ###
 
 WMF 5.0 ile sunulan bir gerileme erişilirken üyeleri ihlal `System.Reflection.RuntimeType`, örneğin `[int].ImplementedInterfaces`.
 Bu hatayı WMF 5.1 düzeltilmiştir.
@@ -40,7 +42,8 @@ Bu hatayı WMF 5.1 düzeltilmiştir.
 
 ### <a name="fixed-some-issues-with-com-objects"></a>COM nesneleri ile giderilen bazı sorunlar ###
 
-WMF 5.0 COM nesneleri ve COM nesnelerini erişme özelliklerini çağıran yöntemleri için yeni bir COM bağlayıcı sunmuştur. Bu yeni bağlayıcı performansı önemli ölçüde iyileştirilmiştir, ancak ayrıca WMF 5.1 düzeltilen bazı hatalar sunulmuştur.
+WMF 5.0 COM nesneleri ve COM nesnelerini erişme özelliklerini çağıran yöntemleri için yeni bir COM bağlayıcı sunmuştur.
+Bu yeni bağlayıcı performansı önemli ölçüde iyileştirilmiştir, ancak ayrıca WMF 5.1 düzeltilen bazı hatalar sunulmuştur.
 
 #### <a name="argument-conversions-were-not-always-performed-correctly"></a>Bağımsız değişken dönüşümleri her zaman doğru gerçekleştirilen değil ####
 
@@ -73,10 +76,11 @@ Yukarıdaki örnekte WMF 5.0 Scripting.Dictionary anahtar/değer çiftlerini num
 
 Bu değişiklik ayrıca adresleri [Kurulunca 1752224 sorun](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
 
-### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]`sınıfları içinde izin verilmiyor ###
+### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]` sınıfları içinde izin verilmiyor ###
 
-WMF 5.0 sınıflarda kullanılan türü değişmez değerleri doğrulaması sınıflarıyla sunmuştur.  
-`[ordered]`türü değişmez değer gibi görünüyor, ancak gerçek bir .NET türü değil. WMF 5.0 yanlış bir hata bildirdi üzerinde `[ordered]` bir sınıf içinde:
+WMF 5.0 sınıflarda kullanılan türü değişmez değerleri doğrulaması sınıflarıyla sunmuştur.
+`[ordered]` türü değişmez değer gibi görünüyor, ancak gerçek bir .NET türü değil.
+WMF 5.0 yanlış bir hata bildirdi üzerinde `[ordered]` bir sınıf içinde:
 
 ```
 class CThing
@@ -95,13 +99,14 @@ WMF modül yüklü birden fazla sürümünü vardı ve bunların tümü Yardım 
 
 WMF 5.1 Bu konunun en son sürümü için Yardım döndürerek giderir.
 
-`Get-Help`hangi sürümü için Yardım istediğinizi belirtmek için bir yol sağlamaz. Bu sorunu çözmek için modülleri dizine gidin ve tercih ettiğiniz Düzenleyicisi gibi bir araçla doğrudan Yardımı görüntüleyin. 
+`Get-Help` hangi sürümü için Yardım istediğinizi belirtmek için bir yol sağlamaz.
+Bu sorunu çözmek için modülleri dizine gidin ve tercih ettiğiniz Düzenleyicisi gibi bir araçla doğrudan Yardımı görüntüleyin.
 
 ### <a name="powershellexe-reading-from-stdin-stopped-working"></a>STDIN okuma powershell.exe durdu
 
 Müşteriler `powershell -command -` PowerShell yürütmek için yerel uygulamalar komut dosyasındaki ne yazık ki bu bozuk diğer tüm değişiklikler son STDIN aracılığıyla bu konsolu konak geçirme.
 
-https://windowsserver.uservoice.com/forums/301869-PowerShell/suggestions/15854689-PowerShell-exe-Command-is-Broken-on-Windows-10
+https://windowsserver.uservoice.com/forums/301869-powershell/suggestions/15854689-powershell-exe-command-is-broken-on-windows-10
 
 ### <a name="powershellexe-creates-spike-in-cpu-usage-on-startup"></a>PowerShell.exe başlangıç CPU kullanımında ani oluşturur
 
@@ -109,4 +114,3 @@ PowerShell oturumu gecikmeye neden önlemek için Grup İlkesi aracılığıyla 
 WMI sorgusu yerel saat dilimi bilgilerini almak WMI Win32_Process sınıfı çalışır olduğundan tzres.mui.dll sistem üzerindeki her işlemine injecting yukarı sona erer.
 Bu, büyük bir CPU ani wmiprvse (WMI sağlayıcısı ana bilgisayarı) içinde sonuçlanır.
 Düzeltme WMI kullanmak yerine aynı bilgi almak için Win32 API çağrıları kullanmaktır.
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-10-13
+ms.date: 10/13/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "Durum yapılandırmasına genel bakış karar alıcılar için istenen"
-ms.openlocfilehash: ae545ead0718def44d5a17708d254b872691e1d3
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: Karar Verenler için İstenen Durum Yapılandırmasına Genel Bakış
+ms.openlocfilehash: 3d2d4b7e09fb699751151d7af641410bae3b38a4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="desired-state-configuration-overview-for-engineers"></a>Durum yapılandırmasına genel bakış mühendisleri için istenen
+# <a name="desired-state-configuration-overview-for-engineers"></a>Mühendisler için İstenen Durum Yapılandırmasına Genel Bakış
 
 Bu belge, PowerShell istenen durum yapılandırması (DSC) avantajlarını öğrenmeniz Geliştirici ve işlemleri ekipleri için tasarlanmıştır.
 DSC değeri yüksek düzey bir görünümünü sağlar için lütfen bkz [istenen durum yapılandırması için genel bakış karar alıcılar](decisionMaker.md)

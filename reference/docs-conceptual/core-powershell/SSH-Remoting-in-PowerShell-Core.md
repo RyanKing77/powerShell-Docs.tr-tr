@@ -1,4 +1,4 @@
-# <a name="powershell-remoting-over-ssh"></a>SSH üzerinden PowerShell uzaktan iletişim
+# <a name="powershell-remoting-over-ssh"></a>SSH üzerinden PowerShell Uzaktan İletişimi
 
 ## <a name="overview"></a>Genel bakış
 
@@ -59,7 +59,7 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
     Restart-Service sshd
     ```
 1. OpenSSH, yol Env değişkenini yüklendiği yolu Ekle
-    - Bu satırları olmalıdır`C:\Program Files\OpenSSH\`
+    - Bu satırları olmalıdır `C:\Program Files\OpenSSH\`
     - Bu ssh.exe bulunacak sağlar
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) makinede Kurulumu
@@ -92,11 +92,11 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
 
 1. En son yükleme [MacOS için PowerShell] derleme
     - Aşağıdaki adımları izleyerek SSH uzatan iletişimin etkinleştirildiğinden emin olun:
-      - Açık`System Preferences`
-      - ' Yi tıklatın`Sharing`
-      - Denetleme `Remote Login` -yazması gerekir`Remote Login: On`
+      - Açık `System Preferences`
+      - ' Yi tıklatın `Sharing`
+      - Denetleme `Remote Login` -yazması gerekir `Remote Login: On`
       - Uygun kullanıcıların erişmesine izin vermek
-1. Düzen `sshd_config` konumda dosya`/private/etc/ssh/sshd_config`
+1. Düzen `sshd_config` konumda dosya `/private/etc/ssh/sshd_config`
     - Tercih ettiğiniz düzenleyicisi kullanın veya
     ```bash
     sudo nano /private/etc/ssh/sshd_config

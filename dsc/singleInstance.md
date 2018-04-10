@@ -1,54 +1,55 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "Tek Örnekli DSC kaynağı (en iyi yöntem) yazma"
-ms.openlocfilehash: 4510bec5b4600334b845831ec6700da01e1a110c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: Tek örnekli DSC kaynağı yazma (en iyi uygulama)
+ms.openlocfilehash: fc118fd8b0d91d2001030769ac7e3c6321972905
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Tek Örnekli DSC kaynağı (en iyi yöntem) yazma
+# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Tek örnekli DSC kaynağı yazma (en iyi uygulama)
 
 >**Not:** bir yapılandırmada yalnızca tek bir örneğini izin veren bir DSC kaynağı tanımlamak için en iyi uygulama bu konuda açıklanmaktadır. Şu anda, bunu yapmak için yerleşik bir DSC özelliği yoktur. Gelecekte değişebilir.
 
 Birden çok kez yapılandırmasında kullanılması için bir kaynak izin vermek için burada istemediğiniz durumlar vardır. Örneğin, uygulamasında bir önceki [xTimeZone](https://github.com/PowerShell/xTimeZone) kaynak, bir yapılandırma çağrısına kaynak birden çok kez, her kaynak bloğundaki farklı bir ayar için saat dilimi ayarını:
 
 ```powershell
-Configuration SetTimeZone 
-{ 
-    Param 
-    ( 
-        [String[]]$NodeName = $env:COMPUTERNAME 
+Configuration SetTimeZone
+{
+    Param
+    (
+        [String[]]$NodeName = $env:COMPUTERNAME
 
-    ) 
+    )
 
-    Import-DSCResource -ModuleName xTimeZone 
- 
- 
-    Node $NodeName 
-    { 
-         xTimeZone TimeZoneExample 
-         { 
-        
-            TimeZone = 'Eastern Standard Time' 
-         } 
+    Import-DSCResource -ModuleName xTimeZone
+
+
+    Node $NodeName
+    {
+         xTimeZone TimeZoneExample
+         {
+
+            TimeZone = 'Eastern Standard Time'
+         }
 
          xTimeZone TimeZoneExample2
          {
 
             TimeZone = 'Pacific Standard Time'
 
-         }        
+         }
 
-    } 
-} 
+    }
+}
 ```
 
 Bu DSC kaynağı anahtarları çalışması nedeniyle yoludur. Bir kaynak en az bir anahtarı özelliği olması gerekir. Bir kaynak örneği tüm anahtar özelliklerini değerlerin birleşimi benzersiz ise benzersiz olarak kabul edilir. Kendi önceki uygulamasında [xTimeZone](https://github.com/PowerShell/xTimeZone) kaynak sahip yalnızca bir özellik--**saat dilimi**, bir anahtarı olması gereken. Bu nedenle, bir yapılandırma yukarıdakine gibi derleyin ve uyarmadan çalıştırın. Her biri **xTimeZone** kaynak blokları benzersiz olarak değerlendirilir. Bu, saat dilimi İleri ve Geri Dönüşüm düğüme sürekli olarak uygulanması için yapılandırmayı neden olur.
 
-Kaynak ikinci bir özellik eklemek için bir kez güncelleştirildi yalnızca bir yapılandırma bir hedef düğümü için saat dilimi ayarlayabilirsiniz emin olmak için **IsSingleInstance**, anahtar özelliği hale geldi. **IsSingleInstance** tek bir değer için "Evet" kullanarak sınırlı bir **ValueMap**. Kaynak için eski MOF şema oluştu:
+Kaynak ikinci bir özellik eklemek için bir kez güncelleştirildi yalnızca bir yapılandırma bir hedef düğümü için saat dilimi ayarlayabilirsiniz emin olmak için **IsSingleInstance**, anahtar özelliği hale geldi.
+**IsSingleInstance** tek bir değer için "Evet" kullanarak sınırlı bir **ValueMap**. Kaynak için eski MOF şema oluştu:
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -117,10 +118,10 @@ function Set-TargetResource
         [String]
         $TimeZone
     )
-    
+
     #Output the result of Get-TargetResource function.
     $CurrentTimeZone = Get-TimeZone
-    
+
     if($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
     {
         try
@@ -152,7 +153,7 @@ function Test-TargetResource
         [parameter(Mandatory = $true)]
         [ValidateSet('Yes')]
         [String]
-        $IsSingleInstance, 
+        $IsSingleInstance,
 
         [parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
@@ -205,9 +206,9 @@ Export-ModuleMember -Function *-TargetResource
 Dikkat **saat dilimi** özelliktir artık bir anahtar. Şimdi, iki kez saat dilimini ayarlamak bir yapılandırma çalışırsa (iki farklı kullanarak **xTimeZone** farklı bloklarla **saat dilimi** değerleri), yapılandırma derleme çalışılırken bir hata neden olur:
 
 ```powershell
-Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and 
-'[xTimeZone]TimeZoneExample2 (::22::10::xTimeZone)' in node 'CONTOSO-CLIENT'. Resources have identical key properties but there are differences in the 
-following non-key properties: 'TimeZone'. Values 'Eastern Standard Time' don't match values 'Pacific Standard Time'. Please update these property 
+Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and
+'[xTimeZone]TimeZoneExample2 (::22::10::xTimeZone)' in node 'CONTOSO-CLIENT'. Resources have identical key properties but there are differences in the
+following non-key properties: 'TimeZone'. Values 'Eastern Standard Time' don't match values 'Pacific Standard Time'. Please update these property
 values so that they are identical in both cases.
 At line:271 char:9
 +         Test-ConflictingResources $keywordName $canonicalizedValue $k ...
@@ -221,4 +222,3 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + CategoryInfo          : InvalidOperation: (SetTimeZone:String) [], InvalidOperationException
     + FullyQualifiedErrorId : FailToProcessConfiguration
 ```
-   

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeri, powershell, cmdlet, psgallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 599b148e141ba4205a7c774581e737a5d54bfae1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>PowerShell Galerisi ile çalışmaya başlama
 
@@ -33,7 +33,7 @@ PowerShellGet de gerektirir [NuGet sağlayıcı](http://go.microsoft.com/fwlink/
 
 Ya da çalıştırabilirsiniz `Install-PackageProvider -Name NuGet -Force` indirme ve yükleme NuGet sağlayıcısının otomatik hale getirmek için.
 
-  
+
 NuGet 2.8.5.201 eski bir sürüm varsa, yüklemek ve NuGet en son sürümüne geçiş için aşağıdaki PowerShell cmdlet'lerini aramak gerekir.
 
 1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
@@ -42,7 +42,7 @@ NuGet 2.8.5.201 eski bir sürüm varsa, yüklemek ve NuGet en son sürümüne ge
 
 Daha fazla bilgi için bkz: <http://oneget.org/> .
 
-  
+
 Not: paketleme biçimlerde değişiklikler nedeniyle PowerShellGet ve PackageManagement en son güncelleştirilen öğeleri yüklemek için en son sürümüne güncelleştirme öneririz. PowerShellGet hakkında daha fazla bilgi edinebilirsiniz Windows 10 dahil [burada](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409).
 PowerShellGet karşıdan yükleyebileceğiniz parçası olarak Windows Management Framework (WMF) 5.0, ayrıca olduğu [burada](http://go.microsoft.com/fwlink/?LinkId=398175).
 
@@ -118,4 +118,3 @@ Komut dosyaları seçmeli olarak güncelleştirmek için ekleyin `-Name` paramet
 PowerShell Galerisi'nden yüklü modüllerine öğrenmek için Çalıştır [Get-InstalledModule](https://go.microsoft.com/fwlink/?LinkId=526863) cmdlet'i. Bu komut tüm doğrudan PowerShell Galerisi'nden yüklenen sisteminizde yüklü modülleri listeler.
 
 PowerShell Galerisi'nden yüklü hangi komut dosyaları bulmak için benzer şekilde, çalıştırmak [Get-InstalledScript](https://go.microsoft.com/fwlink/?LinkId=619790) cmdlet'i. Bu komut doğrudan PowerShell Galerisi'nden yüklenen sisteminizde yüklü komut dosyalarının tümü listeler.
-

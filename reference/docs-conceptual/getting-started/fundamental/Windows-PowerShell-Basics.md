@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Temel Bilgileri
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: bd17786d2d8690b89a2d107e0da98ee45f5b2ff7
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b21c6cd84ea29d5e8085ccf8df2a5a9199e1d859
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-basics"></a>Windows PowerShell Temel Bilgileri
 Grafik kullanıcı arabirimleri çoğu bilgisayar kullanıcıları için bilinen bazı temel kavramları kullanın. Kullanıcıların görevleri gerçekleştirmek için bu arabirimleri benzerlik üzerinde kullanır. İşletim sistemleri, genellikle bağlam özgü işlevsellik erişmek için belirli işlevleri ve bağlam menülerini erişmek için aşağı açılır menüler ile gözatılabilir öğeleri grafik gösterimi ile kullanıcılar sunar.

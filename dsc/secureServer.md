@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "Çekme Server en iyi uygulamalar"
-ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, powershell, yapılandırma, Kur
+title: Çekme sunucusu en iyi uygulamaları
+ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="pull-server-best-practices"></a>Çekme Server en iyi uygulamalar
+# <a name="pull-server-best-practices"></a>Çekme sunucusu en iyi uygulamaları
 
 >İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -17,8 +17,8 @@ ms.lasthandoff: 03/15/2018
 
 | |Belge bilgileri|
 |:---|:---|
-Yazar | Michael Greene  
-Gözden Geçirenler | Ben Gelens, Ravikanth Chaganti Aleksandar Nikolic  
+Yazar | Michael Greene
+Gözden Geçirenler | Ben Gelens, Ravikanth Chaganti Aleksandar Nikolic
 Yayımlanan | Nisan 2015
 
 ## <a name="abstract"></a>Özet
@@ -31,8 +31,8 @@ Bu belgenin iki ana bölümleri:
 
  - Yapılandırmasını planlama
  - Yükleme Kılavuzu
- 
-### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework sürümleri 
+
+### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework sürümleri
 Bu belgedeki bilgiler Windows Management Framework 5.0 uygulamak için tasarlanmıştır. WMF 5.0 dağıtma ve çekme sunucu işletim için gerekli olmamasına karşın, sürüm 5.0, bu belgenin odak noktasıdır.
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell istenen durum yapılandırması
@@ -40,10 +40,11 @@ Bu belgedeki bilgiler Windows Management Framework 5.0 uygulamak için tasarlanm
 
 Windows PowerShell oluşturmak ve bildirim temelli yapılandırmaları yönetmek için kullanabileceğiniz ve istenen durum yapılandırması için bir dizi dil uzantıları sağlar.
 
-### <a name="pull-server-role"></a>Çekme sunucu rolü  
+### <a name="pull-server-role"></a>Çekme sunucu rolü
 Bir çekme sunucu hedef düğümleri için erişilebilir yapılandırmaları depolamak için merkezi bir hizmet sunar.
- 
-Çekme sunucu rolü, Web sunucusu örneğine veya bir SMB dosya paylaşımı dağıtılabilir. Web sunucusu özelliği bir OData arabirimi içerir ve isteğe bağlı olarak hedef düğümleri yapılandırmaları uygulanmış olarak başarı veya başarısızlık onayı geri bildirmek için özellikleri içerebilir. Bu işlevsellik ortamlarda kullanışlıdır çok sayıda hedef düğümleri olduğu. En son yapılandırma çekme sunucusuna işaret etmek için (bir istemci olarak da bilinir) bir hedef düğümü yapılandırdıktan sonra veri ve tüm gerekli komut dosyalarını karşıdan uygulanan ve. Bu bir kerelik dağıtımı veya kılan de çekme sunucunun önemli bir varlık değişikliği ölçekte yönetmek için yeniden tekrarlanan bir iş olarak meydana gelebilir. Daha fazla bilgi için bkz: [Windows PowerShell istenen durum yapılandırma çekme sunucularına](https://technet.microsoft.com/library/dn249913.aspx) ve [anında iletme ve çekme yapılandırma modlarından](https://technet.microsoft.com/library/dn249913.aspx).
+
+Çekme sunucu rolü, Web sunucusu örneğine veya bir SMB dosya paylaşımı dağıtılabilir. Web sunucusu özelliği bir OData arabirimi içerir ve isteğe bağlı olarak hedef düğümleri yapılandırmaları uygulanmış olarak başarı veya başarısızlık onayı geri bildirmek için özellikleri içerebilir. Bu işlevsellik ortamlarda kullanışlıdır çok sayıda hedef düğümleri olduğu.
+En son yapılandırma çekme sunucusuna işaret etmek için (bir istemci olarak da bilinir) bir hedef düğümü yapılandırdıktan sonra veri ve tüm gerekli komut dosyalarını karşıdan uygulanan ve. Bu bir kerelik dağıtımı veya kılan de çekme sunucunun önemli bir varlık değişikliği ölçekte yönetmek için yeniden tekrarlanan bir iş olarak meydana gelebilir. Daha fazla bilgi için bkz: [Windows PowerShell istenen durum yapılandırma çekme sunucularına](https://technet.microsoft.com/library/dn249913.aspx) ve [anında iletme ve çekme yapılandırma modlarından](https://technet.microsoft.com/library/dn249913.aspx).
 
 ## <a name="configuration-planning"></a>Yapılandırmasını planlama
 
@@ -59,7 +60,9 @@ Windows Update'ten en son içerik yüklemenin yanı sıra, bir DSC çekme sunucu
 
 ### <a name="wmf"></a>WMF
 
-Windows Server 2012 R2 DSC hizmeti adlı bir özellik içerir. DSC hizmeti özelliğini destekleyen OData uç noktasını ikili dosyaları dahil olmak üzere çekme sunucu işlevselliği sağlar. WMF Windows Server'a dahil edilmiştir ve Windows Server sürümleri arasında Çevik bir tempoyla üzerinde güncelleştirilir. [WMF 5.0 yeni sürümlerini](http://aka.ms/wmf5latest) DSC servis özelliği için güncelleştirmeleri içerebilir. Bu nedenle, bu en iyi WMF en son sürümü karşıdan yüklemek ve yayın DSC hizmeti özelliği için bir güncelleştirme içerip içermediğini belirlemek için sürüm notlarını gözden geçirmek için uygulamadır. Bir güncelleştirme veya senaryo için Tasarım Durumu kararlı veya Deneysel olarak listelenip listelenmediğini gösteren Sürüm Notları bölümünü incelemeniz de gerekir. Tek tek özellikleri kararlı bildirilebilir bir Çevik yayın döngüsü için izin vermek için özellik gösterir WMF Önizleme'de serbest bile olsa bir üretim ortamında kullanılmak üzere hazırdır.
+Windows Server 2012 R2 DSC hizmeti adlı bir özellik içerir. DSC hizmeti özelliğini destekleyen OData uç noktasını ikili dosyaları dahil olmak üzere çekme sunucu işlevselliği sağlar.
+WMF Windows Server'a dahil edilmiştir ve Windows Server sürümleri arasında Çevik bir tempoyla üzerinde güncelleştirilir. [WMF 5.0 yeni sürümlerini](http://aka.ms/wmf5latest) DSC servis özelliği için güncelleştirmeleri içerebilir. Bu nedenle, bu en iyi WMF en son sürümü karşıdan yüklemek ve yayın DSC hizmeti özelliği için bir güncelleştirme içerip içermediğini belirlemek için sürüm notlarını gözden geçirmek için uygulamadır. Bir güncelleştirme veya senaryo için Tasarım Durumu kararlı veya Deneysel olarak listelenip listelenmediğini gösteren Sürüm Notları bölümünü incelemeniz de gerekir.
+Tek tek özellikleri kararlı bildirilebilir bir Çevik yayın döngüsü için izin vermek için özellik gösterir WMF Önizleme'de serbest bile olsa bir üretim ortamında kullanılmak üzere hazırdır.
 Geçmişten bu yana güncelleştirilen diğer özellikleri (bkz. daha fazla ayrıntı için WMF sürüm notları) WMF sürümleri tarafından:
 
  - Windows PowerShell Windows PowerShell Tümleşik komut dosyası
@@ -77,7 +80,7 @@ Kullanım **yükleme-Module** cmdlet'inden **PowerShellGet** modülü.
 Install-Module xPSDesiredStateConfiguration
 ```
 
-**PowerShellGet** modül için modülü yükleyin: 
+**PowerShellGet** modül için modülü yükleyin:
 
 `C:\Program Files\Windows PowerShell\Modules`
 
@@ -93,10 +96,7 @@ Erişim zaten çevrimdışı ekleme işlemi aracılığıyla güncelleştirmeler
 
 Çekme sunucusuna dağıtımlar, hem fiziksel hem de sanal sunucularda desteklenir. Windows Server 2012 R2 için gereksinimlerle çekme server boyutlandırma gereksinimleri hizalayın.
 
-CPU: 1,4 GHz 64-bit işlemci  
-Bellek: 512 MB  
-Disk alanı: 32 GB  
-Ağ: Gigabit Ethernet Bağdaştırıcısı  
+CPU: 1,4 GHz 64-bit işlemci bellek: 512 MB Disk alanı: 32 GB ağ: Gigabit Ethernet Bağdaştırıcısı
 
 Görev Planlama|
 ---|
@@ -107,15 +107,22 @@ Hangi boyutu sunucu, ister?|
 
 ### <a name="accounts"></a>Hesaplar
 
-Bir çekme server örneği dağıtmak için hizmet hesabı gereksinimi yoktur. Ancak, Web sitesi yerel bir kullanıcı hesabı bağlamında çalıştırdığı senaryo vardır. Örneğin, bir gereksinimi varsa Web sitesi içeriğini ve Windows Server veya depolama paylaşımı barındırma aygıtı için bir depolama paylaşmak erişimi olmayan etki alanına katılmış.
+Bir çekme server örneği dağıtmak için hizmet hesabı gereksinimi yoktur.
+Ancak, Web sitesi yerel bir kullanıcı hesabı bağlamında çalıştırdığı senaryo vardır.
+Örneğin, bir gereksinimi varsa Web sitesi içeriğini ve Windows Server veya depolama paylaşımı barındırma aygıtı için bir depolama paylaşmak erişimi olmayan etki alanına katılmış.
 
 ### <a name="dns-records"></a>DNS kayıtları
 
-Bir çekme sunucu ortamı ile çalışmak için istemciler yapılandırırken kullanılacak bir sunucu adı gerekir. Sınama ortamlarında sunucusu konak adı genellikle kullanılan veya DNS ad çözümlemesi kullanılamıyorsa, sunucunun IP adresini kullanılabilir. Üretim ortamlarında ya da bir laboratuvar ortamında Üretim dağıtımı temsil etmek üzere tasarlanmıştır bir DNS CNAME kaydı oluşturmak için en iyi yöntem olacaktır.
+Bir çekme sunucu ortamı ile çalışmak için istemciler yapılandırırken kullanılacak bir sunucu adı gerekir.
+Sınama ortamlarında sunucusu konak adı genellikle kullanılan veya DNS ad çözümlemesi kullanılamıyorsa, sunucunun IP adresini kullanılabilir.
+Üretim ortamlarında ya da bir laboratuvar ortamında Üretim dağıtımı temsil etmek üzere tasarlanmıştır bir DNS CNAME kaydı oluşturmak için en iyi yöntem olacaktır.
 
-Bir DNS CNAME, ana bilgisayar (A) kaydı başvurmak için bir diğer ad oluşturmanızı sağlar. Ek ad kaydı amacı, bir değişiklik gelecekte gerekip gerekmeyeceğini esneklik artırmaktır. CNAME değişiklikler çekme sunucusunu değiştirme ya ek çekme sunucuları ekleme gibi sunucu ortamınıza karşılık gelen bir istemci yapılandırmasında değişiklik gerektirmez istemci yapılandırmasını ayırmaya yardımcı olabilir.
+Bir DNS CNAME, ana bilgisayar (A) kaydı başvurmak için bir diğer ad oluşturmanızı sağlar.
+Ek ad kaydı amacı, bir değişiklik gelecekte gerekip gerekmeyeceğini esneklik artırmaktır.
+CNAME değişiklikler çekme sunucusunu değiştirme ya ek çekme sunucuları ekleme gibi sunucu ortamınıza karşılık gelen bir istemci yapılandırmasında değişiklik gerektirmez istemci yapılandırmasını ayırmaya yardımcı olabilir.
 
-DNS kaydı için bir ad seçerken, çözüm mimarisi göz önünde bulundurun. Kullanarak Yük Dengelemesi, trafik HTTPS üzerinden güvenli hale getirmek için kullanılan sertifikanın DNS kaydı olarak aynı adı paylaşan gerekecektir. 
+DNS kaydı için bir ad seçerken, çözüm mimarisi göz önünde bulundurun.
+Kullanarak Yük Dengelemesi, trafik HTTPS üzerinden güvenli hale getirmek için kullanılan sertifikanın DNS kaydı olarak aynı adı paylaşan gerekecektir.
 
 Senaryo |En iyi uygulama
 :---|:---
@@ -134,7 +141,8 @@ Gerekirse, ne tür yük dengeleme çözümü, yararlanacak olan? (Ayrıntılar i
 
 ### <a name="public-key-infrastructure"></a>Ortak anahtar altyapısı
 
-Çoğu kuruluş, ağ trafiğini, özellikle gibi hassas verileri yapılandırılmış sunucuları nasıl gibi içeren trafiği gerekir doğrulandı ve/veya iletim sırasında şifrelenmiş olduğunu bugün gerektirir. Kolaylaştıran HTTP kullanarak bir çekme sunucusuna dağıtmak mümkün olmakla birlikte, istemci isteklerini metni silin, HTTPS kullanan güvenli trafiği için en iyi uygulama olur. Hizmet DSC kaynağı bir parametre kümesi kullanarak HTTPS kullanmak üzere yapılandırılan **xPSDesiredStateConfiguration**.
+Çoğu kuruluş, ağ trafiğini, özellikle gibi hassas verileri yapılandırılmış sunucuları nasıl gibi içeren trafiği gerekir doğrulandı ve/veya iletim sırasında şifrelenmiş olduğunu bugün gerektirir.
+Kolaylaştıran HTTP kullanarak bir çekme sunucusuna dağıtmak mümkün olmakla birlikte, istemci isteklerini metni silin, HTTPS kullanan güvenli trafiği için en iyi uygulama olur. Hizmet DSC kaynağı bir parametre kümesi kullanarak HTTPS kullanmak üzere yapılandırılan **xPSDesiredStateConfiguration**.
 
 Çekme sunucusuna HTTPS trafiğinin güvenliğini sağlamak için sertifika gereksinimleri herhangi bir HTTPS web sitesini güvenli hale getirme daha farklı değildir. **Web sunucusu** şablonu bir Windows Server Sertifika Hizmetleri'nde gerekli yeteneklerin karşılar.
 
@@ -149,9 +157,11 @@ Sertifika adı için kullanabileceğiniz çekme sunucu ortamı için bir DNS ad�
 
 ### <a name="choosing-an-architecture"></a>Bir mimari seçme
 
-IIS veya bir SMB dosya paylaşımında barındırılan ya da bir web hizmetini kullanarak bir çekme sunucusuna dağıtılabilir. Çoğu durumda, web hizmeti seçeneği büyük esneklik sağlar. SMB trafiğini genellikle filtrelenmiş veya ağlar arasında engellenen ancak ağ sınırları geçiş yapmak HTTPS trafiği için seyrek değil. Web hizmeti ayrıca uyumluluk sunucu veya istemciler merkezi görünürlük sunucusuna geri durumu raporlamak için bir mekanizma sağlar bir Web raporlama Yöneticisi (Bu belgenin sonraki bir sürümde ele alınması gereken iki konuları) içerecek şekilde seçeneği de sunar. SMB burada İlkesi bir web sunucusu değil göstermesi belirler. ortamlar için ve bir web sunucusu rolü istenmeyen olun diğer çevre gereksinimleri için bir seçenek sağlar. İmzalama ve trafiği şifreleme gereksinimlerini değerlendirmek her iki durumda da unutmayın. HTTPS, SMB imzalama ve IPSec ilkelerini dikkate değer tüm seçeneklerdir.
+IIS veya bir SMB dosya paylaşımında barındırılan ya da bir web hizmetini kullanarak bir çekme sunucusuna dağıtılabilir. Çoğu durumda, web hizmeti seçeneği büyük esneklik sağlar. SMB trafiğini genellikle filtrelenmiş veya ağlar arasında engellenen ancak ağ sınırları geçiş yapmak HTTPS trafiği için seyrek değil. Web hizmeti ayrıca uyumluluk sunucu veya istemciler merkezi görünürlük sunucusuna geri durumu raporlamak için bir mekanizma sağlar bir Web raporlama Yöneticisi (Bu belgenin sonraki bir sürümde ele alınması gereken iki konuları) içerecek şekilde seçeneği de sunar.
+SMB burada İlkesi bir web sunucusu değil göstermesi belirler. ortamlar için ve bir web sunucusu rolü istenmeyen olun diğer çevre gereksinimleri için bir seçenek sağlar.
+İmzalama ve trafiği şifreleme gereksinimlerini değerlendirmek her iki durumda da unutmayın. HTTPS, SMB imzalama ve IPSec ilkelerini dikkate değer tüm seçeneklerdir.
 
-#### <a name="load-balancing"></a>Yük dengeleme  
+#### <a name="load-balancing"></a>Yük dengeleme
 İstemciler web hizmetiyle etkileşmek tek bir yanıtta döndürülen bilgi isteğini olun. Yük Dengeleyici oturumları zamanında herhangi bir noktada tek bir sunucu üzerinde saklanır emin olmak için platform için gerekli değildir sıralı istekler gereklidir.
 
 Görev Planlama|
@@ -166,11 +176,11 @@ PKI aygıt tarafından işlenmesi Yük Dengeleme çözümüne ihtiyacı yoktur v
 
 ### <a name="staging-configurations-and-modules-on-the-pull-server"></a>Yapılandırmaları ve modülleri çekme sunucusunda hazırlama
 
-Yapılandırma planlaması kapsamında, hangi DSC hakkında modülleri ve yapılandırmaları çekme sunucu tarafından barındırılacak düşünmeniz gerekir. Yapılandırma planlama amacıyla hazırlamak ve içerik bir çekme sunucusuna dağıtmak nasıl temel bir anlayış olması önemlidir. 
+Yapılandırma planlaması kapsamında, hangi DSC hakkında modülleri ve yapılandırmaları çekme sunucu tarafından barındırılacak düşünmeniz gerekir. Yapılandırma planlama amacıyla hazırlamak ve içerik bir çekme sunucusuna dağıtmak nasıl temel bir anlayış olması önemlidir.
 
-Gelecekte, bu bölümde genişletilmiş ve DSC çekme sunucusu için bir işlemler Kılavuzu'nda bulunan.  Kılavuzu otomasyon ile zamanla modülleri ve yapılandırmaları yönetmek için günlük işlem ele alınacaktır. 
+Gelecekte, bu bölümde genişletilmiş ve DSC çekme sunucusu için bir işlemler Kılavuzu'nda bulunan.  Kılavuzu otomasyon ile zamanla modülleri ve yapılandırmaları yönetmek için günlük işlem ele alınacaktır.
 
-#### <a name="dsc-modules"></a>DSC modülleri  
+#### <a name="dsc-modules"></a>DSC modülleri
 Bir yapılandırma isteyen istemcilerin gerekli DSC modüllerini gerekir. Çekme sunucunun işlevselliğini isteğe bağlı bir dağıtım istemcilere DSC modüllerin otomatik hale getirmektir. Bir çekme sunucusuna ilk kez, belki de bir laboratuvar veya kavram kanıtı olarak dağıtıyorsanız, büyük olasılıkla PowerShell Galerisi gibi ortak depoları veya PowerShell.org GitHub depoları DSC modülleri için kullanılabilir DSC modülleri bağımlı olmaz .
 
 Bile güvenilen çevrimiçi kaynakları için PowerShell Galerisi gibi ortak bir depodan indirilen herhangi bir modül biri tarafından PowerShell deneyimi ve modülleri burada olacaktır ortamının bilgi gözden geçirilmesi gereken olduğunu unutmamak önemlidir Üretimde kullanılan önce kullanılır. Bu görev tamamlanırken herhangi ek yükü belgeler ve örnek komut dosyaları gibi kaldırılabilir modülünde denetlemek için bir zamanıdır. Modülleri sunucudan istemciye ağ üzerinden yüklenen bu ilk talebinde istemcisinde başına ağ bant genişliğini azaltır.
@@ -194,7 +204,8 @@ Ekibinizin Otomasyon platform de yönetmekten sorumlu olacak?|
 
 #### <a name="dsc-configurations"></a>DSC yapılandırmaları
 
-Bir çekme sunucusuna amacı, istemci düğümlere DSC yapılandırmaları dağıtmak için merkezi bir düzenek sağlamaktır. Yapılandırmaları sunucuda MOF belgeleri olarak depolanır. Her bir belgenin benzersiz bir GUID ile adlandırılacaktır. İstemciler, bir çekme sunucusuna bağlanmak üzere yapılandırıldığında, bunlar GUID isteği yapılandırma için de verilir. Bu sistem yapılandırmaları GUID tarafından başvuru genel benzersizliği garanti eder ve düğüm başına ya da aynı yapılandırmalara sahip olması çok sayıda sunucuya yayılan bir rol yapılandırma olarak ayrıntı düzeyi içeren bir yapılandırma uygulanabilir şekilde esnektir.
+Bir çekme sunucusuna amacı, istemci düğümlere DSC yapılandırmaları dağıtmak için merkezi bir düzenek sağlamaktır. Yapılandırmaları sunucuda MOF belgeleri olarak depolanır.
+Her bir belgenin benzersiz bir GUID ile adlandırılacaktır. İstemciler, bir çekme sunucusuna bağlanmak üzere yapılandırıldığında, bunlar GUID isteği yapılandırma için de verilir. Bu sistem yapılandırmaları GUID tarafından başvuru genel benzersizliği garanti eder ve düğüm başına ya da aynı yapılandırmalara sahip olması çok sayıda sunucuya yayılan bir rol yapılandırma olarak ayrıntı düzeyi içeren bir yapılandırma uygulanabilir şekilde esnektir.
 
 #### <a name="guids"></a>GUID
 
@@ -289,26 +300,26 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 #      * Automatically load certificate from Certificate Authority
 #      * Locate Modules and Configuration data on remote SMB share
 #      * Manage state of default websites in IIS
-    
+
 param (
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [System.String] $ServerName,
         [System.String] $DomainName,
         [System.String] $CARootName,
         [System.String] $CAServerFQDN,
         [System.String] $CertSubject,
         [System.String] $SMBShare,
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [PsCredential] $Credential
     )
-    
+
 Configuration PullServer {
     Import-DscResource -ModuleName xPSDesiredStateConfiguration, xWebAdministration, xCertificate, xComputerManagement
     Node localhost
     {
-            
+
         # Configure the server to automatically corret configuration drift including reboots if needed.
         LocalConfigurationManager
         {
@@ -316,14 +327,14 @@ Configuration PullServer {
             RebootNodeifNeeded = $node.RebootNodeifNeeded
             CertificateId = $node.Thumbprint
         }
-    
+
         # Remove all GUI interfaces so the server has minimum running footprint.
         WindowsFeature ServerCore
         {
             Ensure = 'Absent'
             Name = 'User-Interfaces-Infra'
         }
-    
+
         # Set the server name and if needed, join a domain. If not joining a domain, remove the DomainName parameter.
         xComputer DomainJoin
         {
@@ -331,7 +342,7 @@ Configuration PullServer {
             DomainName = $Node.DomainName
             Credential = $Node.Credential
         }
-    
+
         # The next series of settings disable SSL and enable TLS, for environments where that is required by policy.
         Registry TLS1_2ServerEnabled
         {
@@ -373,14 +384,14 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
-    
+
         # Install the Windows Server DSC Service feature
         WindowsFeature DSCServiceFeature
         {
             Ensure = 'Present'
             Name = 'DSC-Service'
         }
-    
+
         # If using a certificate from a local Active Directory Enterprise Root Certificate Authority, complete a request and install the certificate
         xCertReq SSLCert
         {
@@ -390,7 +401,7 @@ Configuration PullServer {
             AutoRenew = $Node.AutoRenew
             Credential = $Node.Credential
         }
-    
+
         # Use the DSC resource to simplify deployment of the web service.  You might also consider modifying the default port, possibly leveraging port 443 in environments where that is enforced as a standard.
         xDSCWebService PSDSCPullServer
         {
@@ -405,10 +416,10 @@ Configuration PullServer {
             State = 'Started'
             DependsOn = '[WindowsFeature]DSCServiceFeature'
         }
-    
+
         # Validate web config file contains current DB settings
         xWebConfigKeyValue CorrectDBProvider
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbprovider'
             Value = 'System.Data.OleDb'
@@ -416,17 +427,17 @@ Configuration PullServer {
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
         xWebConfigKeyValue CorrectDBConnectionStr
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbconnectionstr'
             Value = 'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Program Files\WindowsPowerShell\DscService\Devices.mdb;'
             WebsitePath = 'IIS:\sites\PSDSCPullServer'
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
-    
+
         # Stop the default website
-        xWebsite StopDefaultSite  
-        { 
+        xWebsite StopDefaultSite
+        {
             Ensure = 'Present'
             Name = 'Default Web Site'
             State = 'Stopped'
@@ -456,8 +467,8 @@ $configData = @{
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
-    
-# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share' 
+
+# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
 
@@ -468,7 +479,7 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 function Verify-DSCPullServer ($fqdn) {
     ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN' 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
 
 Expected Result:
 Action
@@ -485,14 +496,14 @@ Configuration PullClient {
     $ID,
     $Server
     )
-        LocalConfigurationManager 
-                { 
+        LocalConfigurationManager
+                {
                     ConfigurationID = $ID;
                     RefreshMode = 'PULL';
                     DownloadManagerName = 'WebDownloadManager';
                     RebootNodeIfNeeded = $true;
                     RefreshFrequencyMins = 30;
-                    ConfigurationModeFrequencyMins = 15; 
+                    ConfigurationModeFrequencyMins = 15;
                     ConfigurationMode = 'ApplyAndAutoCorrect';
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
@@ -504,13 +515,13 @@ Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\'
 
 ## <a name="additional-references-snippets-and-examples"></a>Ek başvurular, parçacıkları ve örnekler
 
-Bu örnek, test etmek için el ile (WMF5 gerektirir) bir istemci bağlantı başlatmak nasıl gösterir. 
+Bu örnek, test etmek için el ile (WMF5 gerektirir) bir istemci bağlantı başlatmak nasıl gösterir.
 
 ```powershell
 Update-DSCConfiguration –Wait -Verbose
 ```
 
-[Ekle DnsServerResourceRecordName](http://bit.ly/1G1H31L) cmdlet türü CNAME kaydı bir DNS bölgesine eklemek için kullanılır. 
+[Ekle DnsServerResourceRecordName](http://bit.ly/1G1H31L) cmdlet türü CNAME kaydı bir DNS bölgesine eklemek için kullanılır.
 
 PowerShell işlevi [bir sağlama toplamı oluşturup yayımlama DSC MOF SMB çekme sunucusuna](http://bit.ly/1E46BhI) gerekli sağlama toplamı otomatik olarak oluşturur ve ardından MOF yapılandırma ve sağlama toplamı dosyaları SMB çekme sunucusuna kopyalar.
 
@@ -518,10 +529,7 @@ PowerShell işlevi [bir sağlama toplamı oluşturup yayımlama DSC MOF SMB çek
 
 Bir veri dosyası, bilgileri bir OData web hizmetini içeren bir çekme sunucu dağıtımı sırasında oluşturmak için depolanır. Dosya türü aşağıda açıklandığı gibi işletim sistemine bağlıdır.
 
- - **Windows Server 2012**  
-Dosya türü her zaman .mdb olacaktır
- - **Windows Server 2012 R2**  
-Bir .mdb yapılandırmada belirtilmediği sürece dosya türü için .edb varsayılan olur
+ - **Windows Server 2012** dosya türü her zaman .mdb olacaktır
+ - **Windows Server 2012 R2** bir .mdb yapılandırmada belirtilmediği sürece dosya türü için .edb varsayılan olur
 
 İçinde [örnek komut dosyası Gelişmiş](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) bir çekme sunucusuna yüklemek için tüm dosya türüne göre neden hata olasılığını önlemek için web.config dosyası ayarları otomatik olarak denetlemek nasıl bir örnek da bulacaksınız.
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell ile çalışmaya başlama"
+title: Windows PowerShell Kullanmaya Başlama
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-ms.openlocfilehash: 93a4d4a6bc0ebef6b6af7f7f8af59dec865bcfa3
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: d8f1a416c1618040311ec0ea3b98b28aa432bcf1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getting-started-with-windows-powershell"></a>Windows PowerShell ile çalışmaya başlama
+# <a name="getting-started-with-windows-powershell"></a>Windows PowerShell Kullanmaya Başlama
 Windows PowerShell, özellikle sistem yöneticileri için tasarlanmış bir Windows komut satırı kabuğu olan. Windows PowerShell, etkileşimli bir istemi ve bağımsız olarak veya birlikte kullanılan bir komut dosyası ortamı içerir.
 
 Kabul edin ve metni döndürür, çoğu Kabukları aksine Windows PowerShell .NET Framework ortak dil çalışma zamanı (CLR) ve .NET Framework üzerinde yerleşik olarak bulunur ve kabul eder ve .NET Framework nesneleri döndürür. Bu temel bir değişiklik ortamında Windows yapılandırmasını ve Yönetim için tamamen yeni araç ve yöntemleri getirir.
@@ -29,4 +29,3 @@ Bu konuda:
 - [Windows PowerShell'i başlatma](../setup/Starting-Windows-PowerShell.md)
 
 - [Windows PowerShell kullanmaya başlama](Getting-Ready-to-Use-Windows-PowerShell.md)
-

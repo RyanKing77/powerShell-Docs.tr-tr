@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Sekme genişletme kullanma"
+title: Sekme Genişletmeyi Kullanma
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
-ms.openlocfilehash: 8412bd97a95719f07b16c6671d3b8801bbfab8e3
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 3d047bf0691c8a304d7637aa50fba6ae99709a82
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-tab-expansion"></a>Sekme genişletme kullanma
+# <a name="using-tab-expansion"></a>Sekme Genişletmeyi Kullanma
+
 Komut satırı Kabukları komut girişini hızlandırmak ve sağlama genellikle uzun dosyalarını veya komutları adlarını otomatik olarak tamamlamak için bir yol sağlar. Windows PowerShell tuşlarına basarak dosya adlarını ve cmdlet adları doldurmanıza olanak sağlar **sekmesini** anahtarı.
 
 > [!NOTE]
@@ -45,4 +46,3 @@ PS> Get-Content C:\windows\actsetup.log
 
 > [!NOTE]
 > Bir sekme genişletme işlemi sekmelerin her zaman tam bir sözcük girişimleri yorumlanır kısıtlamasıdır. Bir PowerShell konsolunda komut örnekleri kopyalayıp, örnek sekmeleri içermiyor emin olun; varsa, sonuçlar öngörülemez olacaktır ve istediğiniz neredeyse kesinlikle olmaz.
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "Kaynak Tasarımcısı aracını kullanma"
-ms.openlocfilehash: c39b48f67d3874ee3cd2f2704aeb7390fa186fe4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, powershell, yapılandırma, Kur
+title: Kaynak Tasarımcısı aracını kullanma
+ms.openlocfilehash: e0282671861755a5f147de4d07783a4680024ec5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-the-resource-designer-tool"></a>Kaynak Tasarımcısı aracını kullanma
 
@@ -21,7 +21,7 @@ Kullanım [yükleme-Module](https://technet.microsoft.com/library/dn807162.aspx)
 
 ## <a name="creating-resource-properties"></a>Kaynak özellikleri oluşturma
 Yapmamız gereken ilk şey, kaynak açığa çıkarır özelliklerinde karar ' dir. Bu örnekte, biz aşağıdaki özelliklere sahip bir Active Directory kullanıcı tanımlayacaksınız.
- 
+
 Parametre adı açıklaması
 * **Kullanıcı adı**: anahtarı bir kullanıcı olarak tanıtan özelliği.
 * **Olun**: kullanıcı hesabı yoksa mi olacağını Absent belirtir. Bu parametre yalnızca iki olası değerlere sahip olur.
@@ -33,7 +33,7 @@ Parametre adı açıklaması
 ```powershell
 $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
 $Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
-$DomainCredential = New-xDscResourceProperty –Name DomainCredential-Type PSCredential -Attribute Write
+$DomainCredential = New-xDscResourceProperty –Name DomainCredential -Type PSCredential -Attribute Write
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 

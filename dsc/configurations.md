@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC yapılandırmaları"
-ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC yapılandırmaları
+ms.openlocfilehash: 8b44fd9a715c217ee198ea343cdffbfab1193625
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-configurations"></a>DSC yapılandırmaları
 
 >İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-DSC yapılandırmaları özel türde bir işlevi tanımlayan PowerShell betiklerdir. Bir yapılandırma tanımlamak için PowerShell anahtar sözcüğü kullanın **yapılandırma**.
+DSC yapılandırmaları özel türde bir işlevi tanımlayan PowerShell betiklerdir.
+Bir yapılandırma tanımlamak için PowerShell anahtar sözcüğü kullanın **yapılandırma**.
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -70,21 +71,22 @@ Bu örnekte, düğümün adı olarak geçirerek belirttiğiniz **ComputerName** 
 
 ## <a name="compiling-the-configuration"></a>Yapılandırmayı derleme
 
-Bir yapılandırma yürürlüğe önce bir MOF belgeye derleme gerekir. Bunun için bir PowerShell işlevi gibi yapılandırma çağırarak.  
+Bir yapılandırma yürürlüğe önce bir MOF belgeye derleme gerekir.
+Bunun için bir PowerShell işlevi gibi yapılandırma çağırarak.
 Bu yapılandırma, yalnızca adını içeren örnek son satırının yapılandırma çağırır.
 
->**Not:** bir yapılandırma çağrılacak işlev genel kapsamda (işleviyle herhangi diğer PowerShell gibi) olmalıdır. 
->Bu durum ya da göre "nokta betik kaynak belirleme" hale getirebilir veya F5 kullanarak veya tıklayarak yapılandırma komut dosyası çalıştırarak **komut dosyasını Çalıştır** işe düğmesi. 
+>**Not:** bir yapılandırma çağrılacak işlev genel kapsamda (işleviyle herhangi diğer PowerShell gibi) olmalıdır.
+>Bu durum ya da göre "nokta betik kaynak belirleme" hale getirebilir veya F5 kullanarak veya tıklayarak yapılandırma komut dosyası çalıştırarak **komut dosyasını Çalıştır** işe düğmesi.
 >Nokta kaynak için komut dosyası, komutu çalıştırmak `. .\myConfig.ps1` burada `myConfig.ps1` yapılandırmanızı içeren komut dosyası adıdır.
 
 Bu yapılandırma, çağırdığınızda:
 
-- Tüm değişkenleri çözümler 
+- Tüm değişkenleri çözümler
 - Geçerli dizinde yapılandırma olarak aynı ada sahip bir klasör oluşturur.
-- Adlı bir dosya oluşturur _NodeName_yeni dizininde .mof nerede _NodeName_ hedef düğüm yapılandırmasının adı. 
+- Adlı bir dosya oluşturur _NodeName_yeni dizininde .mof nerede _NodeName_ hedef düğüm yapılandırmasının adı.
     Birden fazla düğüm varsa, her düğüm için bir MOF dosyası oluşturulur.
 
->**Not**: MOF dosyası tüm hedef düğüm için yapılandırma bilgilerini içerir. Bu nedenle, daha güvenli tutmak önemlidir. 
+>**Not**: MOF dosyası tüm hedef düğüm için yapılandırma bilgilerini içerir. Bu nedenle, daha güvenli tutmak önemlidir.
 >Daha fazla bilgi için bkz: [MOF dosyası güvenli hale getirme](secureMOF.md).
 
 İlk yapılandırması aşağıdaki klasör yapısını sonuçlarında yukarıda derleme:
@@ -96,10 +98,10 @@ MyDscConfiguration
 
 ```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
-Mode                LastWriteTime         Length Name                                                                                              
-----                -------------         ------ ----                                                                                         
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----       10/23/2015   4:32 PM           2842 localhost.mof
-```  
+```
 
 Yapılandırma ikinci örnekte olduğu gibi bir parametre alırsa, derleme zamanında sağlanması gerekir. İşte, nasıl görünür:
 
@@ -110,14 +112,16 @@ MyDscConfiguration -ComputerName 'MyTestNode'
 
 ```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
-Mode                LastWriteTime         Length Name                                                                                              
-----                -------------         ------ ----                                                                                         
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
-```      
+```
 
 ## <a name="using-dependson"></a>DependsOn kullanma
 
-Yararlı bir DSC anahtar **DependsOn**. Genellikle (mutlaka rağmen), DSC kaynakları yapılandırma içinde göründükleri sırada uygulanır. Ancak, **DependsOn** belirten diğer kaynaklara bağımlı kaynaklar ve bunların hangi kaynak örnekleri tanımlanan sipariş bakılmaksızın doğru sırada uygulanan LCM'yi sağlar. Bir yapılandırma, örneğin, belirtebilir örneği **kullanıcı** kaynak bağlıdır varlığı üzerinde bir **grup** örneği:
+Yararlı bir DSC anahtar **DependsOn**. Genellikle (mutlaka rağmen), DSC kaynakları yapılandırma içinde göründükleri sırada uygulanır.
+Ancak, **DependsOn** belirten diğer kaynaklara bağımlı kaynaklar ve bunların hangi kaynak örnekleri tanımlanan sipariş bakılmaksızın doğru sırada uygulanan LCM'yi sağlar.
+Bir yapılandırma, örneğin, belirtebilir örneği **kullanıcı** kaynak bağlıdır varlığı üzerinde bir **grup** örneği:
 
 ```powershell
 Configuration DependsOnExample {
@@ -141,14 +145,16 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>Yapılandırmanızda yeni kaynakları kullanma
 
 Önceki örneklerde çalıştırdıysanız, açıkça almadan kaynak kullanmakta olduğunuz uyarı fark etmiş olabilirsiniz.
-Bugün, DSC da PSDesiredStateConfiguration modülünün bir parçası olarak 12 kaynakları ile birlikte gelir. Dış modüllerindeki diğer kaynakları yerleştirilmelidir `$env:PSModulePath` tarafından LCM'yi tanınması için. Yeni bir cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), hangi kaynaklara göre LCM'yi sistemde yüklü ve kullanım için uygun olduğunu belirlemek için kullanılabilir. Bu modüller, yerleştirildi sonra `$env:PSModulePath` ve düzgün şekilde tarafından tanınan [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), bunlar yine de yapılandırmanızı içinde yüklü olması gerekir. 
-**İçeri aktarma DscResource** içinde yalnızca tanınmasını dinamik bir anahtar sözcüktür bir **yapılandırma** (yani olmadığı bir cmdlet) engelle. 
+Bugün, DSC da PSDesiredStateConfiguration modülünün bir parçası olarak 12 kaynakları ile birlikte gelir.
+Dış modüllerindeki diğer kaynakları yerleştirilmelidir `$env:PSModulePath` tarafından LCM'yi tanınması için.
+Yeni bir cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), hangi kaynaklara göre LCM'yi sistemde yüklü ve kullanım için uygun olduğunu belirlemek için kullanılabilir.
+Bu modüller, yerleştirildi sonra `$env:PSModulePath` ve düzgün şekilde tarafından tanınan [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), bunlar yine de yapılandırmanızı içinde yüklü olması gerekir.
+**İçeri aktarma DscResource** içinde yalnızca tanınmasını dinamik bir anahtar sözcüktür bir **yapılandırma** (yani olmadığı bir cmdlet) engelle.
 **İçeri aktarma DscResource** iki parametreleri destekler:
-- **ModuleName** kullanmanın önerilen yöntem **alma DscResource**. Bu, (bir dize dizisi modül adlarını yanı sıra) içeri aktarılacak kaynakları içeren modülü adını kabul eder. 
-- **Ad** almak için kaynak adıdır. Bu "Name" tarafından döndürülen kolay adı değil [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), ancak kullanıldığında sınıf adı kaynak şemasını tanımlama (olarak döndürülen **ResourceType** tarafından [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)). 
+- **ModuleName** kullanmanın önerilen yöntem **alma DscResource**. Bu, (bir dize dizisi modül adlarını yanı sıra) içeri aktarılacak kaynakları içeren modülü adını kabul eder.
+- **Ad** almak için kaynak adıdır. Bu "Name" tarafından döndürülen kolay adı değil [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), ancak kullanıldığında sınıf adı kaynak şemasını tanımlama (olarak döndürülen **ResourceType** tarafından [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)).
 
 ## <a name="see-also"></a>Ayrıca bkz:
 * [Windows PowerShell istenen durum yapılandırması genel bakış](overview.md)
 * [DSC kaynakları](resources.md)
 * [Yerel Yapılandırma Yöneticisi'ni yapılandırma](metaConfig.md)
-

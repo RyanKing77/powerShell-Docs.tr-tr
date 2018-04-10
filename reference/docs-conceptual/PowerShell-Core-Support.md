@@ -1,4 +1,4 @@
-# <a name="powershell-core-support-lifecycle"></a>PowerShell çekirdek destek yaşam döngüsü
+# <a name="powershell-core-support-lifecycle"></a>PowerShell Core Destek Yaşam Döngüsü
 
 PowerShell çekirdek araçları ve sevk, yüklü ve ayrı ayrı Windows Powershell'den yapılandırılmış bileşenleri ayrı bir kümesidir.
 Bu nedenle, PowerShell çekirdeği Windows 7/8.1/10 veya Windows Server Lisans anlaşmalarındaki dahil edilmez.
@@ -34,7 +34,7 @@ Sonuç olarak, PowerShell çekirdek benimsemeye "uzun süreli bakım" bekliyoruz
 PowerShell çekirdek resmi olarak aşağıdaki platformlarda desteklenir:
 
 * Windows 7, 8.1 ve 10
-* Windows Server 2008 R2, 2012 R2'de, 2016
+* Windows Server 2008 R2, 2012 R2, 2016
 * [Windows Server noktalı yıllık kanalı][semi-annual]
 * Ubuntu 14.04 ve 16.04 17.04
 * Debian 8.7 + ve 9
@@ -42,7 +42,7 @@ PowerShell çekirdek resmi olarak aşağıdaki platformlarda desteklenir:
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42.2
 * Fedora 25 26
-* macOS 10,12 +
+* macOS 10.12+
 
 Topluluğumuz ayrıca aşağıdaki platformları için paketleri katıldığını, ancak bunlar resmi olarak suppported değildir:
 
@@ -62,12 +62,12 @@ Desteklemek için bu modüller açıkça PowerShell çekirdek desteği sürece P
 Örneğin, kullanarak `ActiveDirectory` desteklenmeyen bir senaryodur Windows Server parçası olarak gelir modüldür.
 
 Ancak, açıkça PowerShell çekirdek desteklemeyen modülleri bazı durumlarda uyumlu olabilir.
-Yükleyerek [`WindowsPSModulePath`][] modülü, Windows PowerShell ekleyebilirsiniz `PSModulePath` PowerShell çekirdek için `PSModulePath`.
+Yükleyerek [ `WindowsPSModulePath` ][] modülü, Windows PowerShell ekleyebilirsiniz `PSModulePath` PowerShell çekirdek için `PSModulePath`.
 
 İlk olarak, yükleme `WindowsPSModulePath` PowerShell Galerisi'nden modül:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -89,4 +89,4 @@ Add-WindowsPSModulePath
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT lisansı]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-['WindowsPSModulePath']: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/

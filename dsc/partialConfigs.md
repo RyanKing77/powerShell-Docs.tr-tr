@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "PowerShell istenen durum yapılandırması kısmi yapılandırmaları"
-ms.openlocfilehash: 4401ea80cffd09f4b92c9fcca16d5dcad7f6a327
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, powershell, yapılandırma, Kur
+title: PowerShell istenen durum yapılandırması kısmi yapılandırmaları
+ms.openlocfilehash: cd2812724c2279a7effc4739f23193c1dc836ce5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell istenen durum yapılandırması kısmi yapılandırmaları
 
 >İçin geçerlidir: Windows PowerShell 5.0 ve sonraki sürümleri.
 
-PowerShell 5. 0'da, istenen durum Yapılandırması'nı (DSC) parçada ve birden fazla kaynaktan teslim edilecek yapılandırmaları sağlar. Hedef düğümde bulunan yerel Configuration Manager (LCM'yi) tek bir yapılandırma olarak uygulamadan önce parçaları birlikte koyar. Paylaşım denetimi ekip veya kişiler arasındaki yapılandırmasının bu yeteneği sağlar. İki veya daha fazla takıma geliştiricilerin bir hizmette işbirliği, örneğin, bunlar her hizmetin kendi parçası yönetmek için yapılandırmaları oluşturmak isteyebilirsiniz. Bu yapılandırmalar her farklı çekme sunucularından çekilen ve geliştirme farklı aşamalarında eklenemedi. Kısmi yapılandırmaları de farklı kişilere veya ekiplere düğümleri bir tek yapılandırma belgesini düzenleme koordine etmek zorunda kalmadan yapılandırma farklı yönlerini kontrol olanak sağlar. Örneğin, bir takım başka bir takım diğer uygulama ve hizmetlerin bu VM'de dağıtılabileceği sırada VM ve işletim sistemi dağıtmak için sorumlu olabilir. Kısmi yapılandırmaları ile her takım her ikisini gereksiz yere karmaşık olmadan kendi yapılandırması oluşturabilirsiniz.
+PowerShell 5. 0'da, istenen durum Yapılandırması'nı (DSC) parçada ve birden fazla kaynaktan teslim edilecek yapılandırmaları sağlar. Hedef düğümde bulunan yerel Configuration Manager (LCM'yi) tek bir yapılandırma olarak uygulamadan önce parçaları birlikte koyar. Paylaşım denetimi ekip veya kişiler arasındaki yapılandırmasının bu yeteneği sağlar.
+İki veya daha fazla takıma geliştiricilerin bir hizmette işbirliği, örneğin, bunlar her hizmetin kendi parçası yönetmek için yapılandırmaları oluşturmak isteyebilirsiniz. Bu yapılandırmalar her farklı çekme sunucularından çekilen ve geliştirme farklı aşamalarında eklenemedi. Kısmi yapılandırmaları de farklı kişilere veya ekiplere düğümleri bir tek yapılandırma belgesini düzenleme koordine etmek zorunda kalmadan yapılandırma farklı yönlerini kontrol olanak sağlar. Örneğin, bir takım başka bir takım diğer uygulama ve hizmetlerin bu VM'de dağıtılabileceği sırada VM ve işletim sistemi dağıtmak için sorumlu olabilir. Kısmi yapılandırmaları ile her takım her ikisini gereksiz yere karmaşık olmadan kendi yapılandırması oluşturabilirsiniz.
 
 Kısmi yapılandırmalarını itme modu, çekme modu veya ikisinin birleşimini kullanabilirsiniz.
 
@@ -21,7 +22,8 @@ Kısmi yapılandırmalarını itme modu, çekme modu veya ikisinin birleşimini 
 Kısmi yapılandırmaları zorlama modunda kullanmak için LCM'yi kısmi yapılandırmalarını almak için hedef düğümde yapılandırın. Her bir kısmi yapılandırmasının hedef Yayımla DSCConfiguration cmdlet'ini kullanarak gönderilir gerekir. Hedef düğüm ardından tek bir yapılandırması kısmi yapılandırmaya birleştirir ve çağırarak yapılandırma uygulayabilirsiniz [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet'i.
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Anında iletme modu kısmi yapılandırmaları için LCM'yi yapılandırma
-Kısmi yapılandırmaları için LCM'yi zorlama modunda yapılandırmak için oluşturduğunuz bir **DSCLocalConfigurationManager** bir yapılandırmayla **PartialConfiguration** kısmi her yapılandırma için bloğu. LCM'yi yapılandırma hakkında daha fazla bilgi için bkz: [yerel Configuration Manager Yapılandırma Windows](https://technet.microsoft.com/library/mt421188.aspx). Aşağıdaki örnek, iki kısmi yapılandırmaları bekliyor LCM'yi yapılandırma gösterir — işletim sistemi dağıtan, diğeri dağıtır ve SharePoint yapılandırır.
+Kısmi yapılandırmaları için LCM'yi zorlama modunda yapılandırmak için oluşturduğunuz bir **DSCLocalConfigurationManager** bir yapılandırmayla **PartialConfiguration** kısmi her yapılandırma için bloğu. LCM'yi yapılandırma hakkında daha fazla bilgi için bkz: [yerel Configuration Manager Yapılandırma Windows](https://technet.microsoft.com/library/mt421188.aspx).
+Aşağıdaki örnek, iki kısmi yapılandırmaları bekliyor LCM'yi yapılandırma gösterir — işletim sistemi dağıtan, diğeri dağıtır ve SharePoint yapılandırır.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -29,7 +31,7 @@ configuration PartialConfigDemo
 {
     Node localhost
     {
-        
+
            PartialConfiguration ServiceAccountConfig
         {
             Description = 'Configuration to add the SharePoint service account to the Administrators group.'
@@ -42,7 +44,7 @@ configuration PartialConfigDemo
         }
     }
 }
-PartialConfigDemo 
+PartialConfigDemo
 ```
 
 **RefreshMode** her kısmi yapılandırma "gönderme"temelli ayarlayın. Adları **PartialConfiguration** blokları (Bu durumda, "ServiceAccountConfig" ve "SharePointConfig"), hedef düğüme gönderilen yapılandırmaları adlarını tam olarak eşleşmelidir.
@@ -62,26 +64,26 @@ PS C:\PartialConfigTest> Get-ChildItem -Recurse
     Directory: C:\PartialConfigTest
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                         
-----                -------------         ------ ----                                                                                                                                         
-d-----        8/11/2016   1:55 PM                ServiceAccountConfig                                                                                                                  
-d-----       11/17/2016   4:14 PM                SharePointConfig                                                                                                                                    
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        8/11/2016   1:55 PM                ServiceAccountConfig
+d-----       11/17/2016   4:14 PM                SharePointConfig
 
 
     Directory: C:\PartialConfigTest\ServiceAccountConfig
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                         
-----                -------------         ------ ----                                                                                                                                         
--a----        8/11/2016   2:02 PM           2034 TestVM.mof                                                                                                                                
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/11/2016   2:02 PM           2034 TestVM.mof
 
 
     Directory: C:\DscTests\SharePointConfig
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                         
-----                -------------         ------ ----                                                                                                                                         
--a----       11/17/2016   4:14 PM           1930 TestVM.mof                                                                                                                                     
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----       11/17/2016   4:14 PM           1930 TestVM.mof
 ```
 
 Yayımlama ve yapılandırmaları aşağıdaki şekilde çalıştırmanız:
@@ -91,8 +93,8 @@ PS C:\PartialConfigTest> Publish-DscConfiguration .\ServiceAccountConfig -Comput
 PS C:\PartialConfigTest> Publish-DscConfiguration .\SharePointConfig -ComputerName 'TestVM'
 PS C:\PartialConfigTest> Start-DscConfiguration -UseExisting -ComputerName 'TestVM'
 
-Id     Name            PSJobTypeName   State         HasMoreData     Location             Command                  
---     ----            -------------   -----         -----------     --------             -------                  
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
@@ -106,7 +108,8 @@ Kısmi yapılandırmaları bir veya daha fazla çekme sunucularından çekilen (
 
 Bir çekme sunucudan kısmi yapılandırmaları çıkarmak için LCM'yi yapılandırmak için çekme sunucu ya da tanımladığınız bir **ConfigurationRepositoryWeb** (için bir HTTP istek sunucusu) veya **ConfigurationRepositoryShare** () SMB çekme server için) blok. Ardından oluşturduğunuz **PartialConfiguration** kullanarak çekme sunucusuna başvuran blokları **ConfigurationSource** özelliği. Oluşturmak için gereken bir **ayarları** blok LCM'yi çekme modunu kullandığını belirtmek ve belirtmek için **ConfigurationNames** veya **ConfigurationID** , çekme sunucunun ve Hedef düğüm yapılandırmaları tanımlamak için kullanın. Kullanan iki kısmi yapılandırmaları çekme sunucusuna ve CONTOSO PullSrv adlı bir HTTP çekme sunucusunda aşağıdaki meta yapılandırmasını tanımlar.
 
-LCM'yi kullanarak yapılandırma hakkında daha fazla bilgi için **ConfigurationNames**, bkz: [yapılandırma adları kullanarak bir çekme istemcisi kurarken](pullClientConfigNames.md). LCM'yi kullanarak yapılandırma hakkında bilgi için **ConfigurationID**, bkz: [yapılandırma Kimliğini kullanarak bir çekme istemcisi kurarken](pullClientConfigID.md).
+LCM'yi kullanarak yapılandırma hakkında daha fazla bilgi için **ConfigurationNames**, bkz: [yapılandırma adları kullanarak bir çekme istemcisi kurarken](pullClientConfigNames.md).
+LCM'yi kullanarak yapılandırma hakkında bilgi için **ConfigurationID**, bkz: [yapılandırma Kimliğini kullanarak bir çekme istemcisi kurarken](pullClientConfigID.md).
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>Yapılandırma adları kullanarak çekme modu yapılandırmaları için LCM'yi yapılandırma
 
@@ -125,26 +128,26 @@ Configuration PartialConfigDemoConfigNames
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
-            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
-            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
+            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38
             ConfigurationNames              = @("ServiceAccountConfig", "SharePointConfig")
-        }     
-        
-        PartialConfiguration ServiceAccountConfig 
+        }
+
+        PartialConfiguration ServiceAccountConfig
         {
             Description                     = "ServiceAccountConfig"
-            ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv") 
+            ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
         }
- 
+
         PartialConfiguration SharePointConfig
         {
             Description                     = "SharePointConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
             DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
         }
-   
+
 }
-``` 
+```
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configurationid"></a>LCM'yi ConfigurationID kullanarak çekme modu yapılandırmaları için yapılandırma
 
@@ -158,15 +161,15 @@ configuration PartialConfigDemoConfigID
         {
             RefreshMode                     = 'Pull'
             ConfigurationID                 = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins            = 30 
+            RefreshFrequencyMins            = 30
             RebootNodeIfNeeded              = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
+
            PartialConfiguration ServiceAccountConfig
         {
             Description                     = 'Configuration for the Base OS'
@@ -182,7 +185,7 @@ configuration PartialConfigDemoConfigID
         }
     }
 }
-PartialConfigDemo 
+PartialConfigDemo
 ```
 
 Birden çok çekme sunucusundan kısmi yapılandırmaları çekebilir — her çekme sunucusuna tanımlamak ve ardından her uygun çekme sunucusuna başvurmak yalnızca gerekir **PartialConfiguration** bloğu.
@@ -191,11 +194,13 @@ Meta yapılandırma oluşturduktan sonra yapılandırma belge (bir MOF dosyası)
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>Adlandırma ve çekme sunucusunda (ConfigurationNames) yapılandırma belgelerini yerleştirme
 
-Kısmi yapılandırma belgeleri olarak belirtilen klasöre yerleştirilmelidir **ConfigurationPath** içinde `web.config` çekme sunucusuna ilişkin dosyasını (genellikle `C:\Program Files\WindowsPowerShell\DscService\Configuration`). 
+Kısmi yapılandırma belgeleri olarak belirtilen klasöre yerleştirilmelidir **ConfigurationPath** içinde `web.config` çekme sunucusuna ilişkin dosyasını (genellikle `C:\Program Files\WindowsPowerShell\DscService\Configuration`).
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>PowerShell 5.1 çekme sunucusunda yapılandırma Belgeleri adlandırma
 
-Bir tek tek çekme sunucusuna yalnızca bir kısmi yapılandırmasından çekme, yapılandırma belgesini herhangi bir ad olabilir. Birden fazla kısmi yapılandırmasını çekme sunucusundan çekme, yapılandırma belge ya da adlandırılabilir `<ConfigurationName>.mof`, burada _ConfigurationName_ kısmi yapılandırma adı veya `<ConfigurationName>.<NodeName>.mof`, burada  _ConfigurationName_ kısmi yapılandırma adıdır ve _NodeName_ hedef düğüm adıdır. Bu, çekme yapılandırmaları için Azure Otomasyonu DSC istek sunucusundan sağlar.
+Bir tek tek çekme sunucusuna yalnızca bir kısmi yapılandırmasından çekme, yapılandırma belgesini herhangi bir ad olabilir.
+Birden fazla kısmi yapılandırmasını çekme sunucusundan çekme, yapılandırma belge ya da adlandırılabilir `<ConfigurationName>.mof`, burada _ConfigurationName_ kısmi yapılandırma adı veya `<ConfigurationName>.<NodeName>.mof`, burada  _ConfigurationName_ kısmi yapılandırma adıdır ve _NodeName_ hedef düğüm adıdır.
+Bu, çekme yapılandırmaları için Azure Otomasyonu DSC istek sunucusundan sağlar.
 
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>PowerShell 5.0 çekme sunucusunda yapılandırma Belgeleri adlandırma
@@ -228,7 +233,8 @@ Hedef düğümde bulunan LCM'yi yapılandırılmış ve belgeleri oluşturulduğ
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>Karma İtme hem de çekme modlarında kısmi yapılandırmaları
 
-Ayrıca, anında iletme karıştırmak ve modları kısmi yapılandırmaları için çekme. Diğer bir deyişle, başka bir kısmi yapılandırma gönderilen karşın, bir istek sunucusundan çekilen bir kısmi yapılandırmasına sahip olabilir. Kısmi her yapılandırma için yenileme modu önceki bölümlerde açıklandığı gibi belirtin. Örneğin, aşağıdaki meta yapılandırması ile aynı örnek açıklar `ServiceAccountConfig` çekme modunda kısmi yapılandırma ve `SharePointConfig` zorlama modunda kısmi yapılandırma.
+Ayrıca, anında iletme karıştırmak ve modları kısmi yapılandırmaları için çekme. Diğer bir deyişle, başka bir kısmi yapılandırma gönderilen karşın, bir istek sunucusundan çekilen bir kısmi yapılandırmasına sahip olabilir. Kısmi her yapılandırma için yenileme modu önceki bölümlerde açıklandığı gibi belirtin.
+Örneğin, aşağıdaki meta yapılandırması ile aynı örnek açıklar `ServiceAccountConfig` çekme modunda kısmi yapılandırma ve `SharePointConfig` zorlama modunda kısmi yapılandırma.
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>ConfigurationNames kullanarak karma anında iletme ve çekme modları
 
@@ -247,27 +253,27 @@ Configuration PartialConfigDemoConfigNames
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
-            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
-            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
+            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38
             ConfigurationNames              = @("ServiceAccountConfig", "SharePointConfig")
-        }     
-        
-        PartialConfiguration ServiceAccountConfig 
+        }
+
+        PartialConfiguration ServiceAccountConfig
         {
             Description                     = "ServiceAccountConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
-            RefreshMode                     = 'Pull' 
+            RefreshMode                     = 'Pull'
         }
- 
+
         PartialConfiguration SharePointConfig
         {
             Description                     = "SharePointConfig"
             DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
             RefreshMode                     = 'Push'
         }
-   
+
 }
-``` 
+```
 
 ### <a name="mixed-push-and-pull-modes-using-configurationid"></a>ConfigurationID kullanarak karma anında iletme ve çekme modları
 
@@ -281,15 +287,15 @@ configuration PartialConfigDemo
         {
             RefreshMode             = 'Pull'
             ConfigurationID         = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins    = 30 
+            RefreshFrequencyMins    = 30
             RebootNodeIfNeeded      = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL               = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
+
            PartialConfiguration ServiceAccountConfig
         {
             Description             = 'Configuration for the Base OS'
@@ -304,7 +310,7 @@ configuration PartialConfigDemo
         }
     }
 }
-PartialConfigDemo 
+PartialConfigDemo
 ```
 
 Unutmayın **RefreshMode** ayarları bloğunda belirtilen "Çekme" olan ancak **RefreshMode** için `SharePointConfig` kısmi yapılandırmadır "Gönderme".
@@ -335,7 +341,7 @@ Configuration ServiceAccountConfig
                                   'admins@example.domain'
             Ensure              = 'Present'
             Credential          = $Credential
-            
+
         }
 
         WindowsFeature Telnet
@@ -372,10 +378,9 @@ Configuration SharePointConfig
 }
 SharePointConfig
 ```
-##<a name="see-also"></a>Ayrıca bkz: 
+##<a name="see-also"></a>Ayrıca bkz:
 
 **Kavramları**
-[Windows PowerShell istenen durum yapılandırması çekme sunucuları](pullServer.md) 
+[Windows PowerShell istenen durum yapılandırması çekme sunucuları](pullServer.md)
 
-[Windows yerel Configuration Manager'ı yapılandırma](https://technet.microsoft.com/library/mt421188.aspx) 
-
+[Windows yerel Configuration Manager'ı yapılandırma](https://technet.microsoft.com/library/mt421188.aspx)

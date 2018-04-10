@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, powershell, güvenlik"
-title: "Tam yetecek kadar yönetim genel bakış"
-ms.openlocfilehash: a664a8ad44916f8112f7ef7bac145a54b83f126d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: jea, powershell, güvenlik
+title: Tam yetecek kadar yönetim genel bakış
+ms.openlocfilehash: fd5b97b7a483908f10cec6460d4e803740f064a8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="just-enough-administration"></a>Yeterli Yönetim
 
@@ -53,4 +53,3 @@ JEA kullanılacağını ve nasıl oluşturulacağını öğrenmek için gereksin
 ## <a name="samples-and-dsc-resource"></a>Örnekler ve DSC kaynağı
 
 Örnek JEA yapılandırmaları ve JEA DSC kaynağı bulunabilir [JEA GitHub deposunu](https://github.com/PowerShell/JEA).
-

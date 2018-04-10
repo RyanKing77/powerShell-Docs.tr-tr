@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-description: "Hedef düğümde bulunan yerel grupları yönetmek için bir mekanizma sağlar."
-title: "DSC GroupSet kaynağı"
-ms.openlocfilehash: 158cb28747c5fe1987eb62b2cc0f6d6f6fb14332
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+description: Hedef düğümde bulunan yerel grupları yönetmek için bir mekanizma sağlar.
+title: DSC GroupSet kaynağı
+ms.openlocfilehash: 4f8fc21806fdb4eb06e0d915d5b6ca229357a210
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet kaynağı
 
@@ -33,19 +33,19 @@ Group [string] #ResourceName
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik  |  Açıklama   | 
-|---|---| 
-| GroupName| Belirli bir durumu sağlamak istediğiniz grupların adları.| 
-| MembersToExclude| Gruplar mevcut üyeliğinden üyeleri kaldırmak için bu özelliği kullanın. Biçiminde bir dize dizisi bu özellik değeri *etki alanı*\\*kullanıcıadı*. Bu özellik bir yapılandırmada ayarlarsanız kullanmayın **üyeleri** özelliği. Bunun yapılması bir hata oluşturur.| 
+|  Özellik  |  Açıklama   |
+|---|---|
+| GroupName| Belirli bir durumu sağlamak istediğiniz grupların adları.|
+| MembersToExclude| Gruplar mevcut üyeliğinden üyeleri kaldırmak için bu özelliği kullanın. Biçiminde bir dize dizisi bu özellik değeri *etki alanı*\\*kullanıcıadı*. Bu özellik bir yapılandırmada ayarlarsanız kullanmayın **üyeleri** özelliği. Bunun yapılması bir hata oluşturur.|
 | kimlik bilgisi| Uzak kaynaklara erişmek için gerekli kimlik bilgileri. **Not**: Bu hesap tüm yerel olmayan hesapları grubuna eklemek için uygun Active Directory izinleri olması gerekir; aksi takdirde bir hata ortaya çıkar.
-| Emin olun| Gruplar mevcut olup olmadığını gösterir. Bu özelliği grubu mevcut emin olmak için "yok" olarak ayarlayın. "(Varsayılan değer) sunmak için" olarak ayarlanması grupların bulunmasını sağlar.| 
-| Üyeler| Belirtilen üyeleriyle geçerli grup üyeliğini değiştirmek için bu özelliği kullanın. Biçiminde bir dize dizisi bu özellik değeri *etki alanı*\\*kullanıcıadı*. Bu özellik bir yapılandırmada ayarlarsanız, ya da kullanmayın **MembersToExclude** veya **MembersToInclude** özelliği. Bunun yapılması bir hata oluşturur.| 
-| MembersToInclude| Grubun var olan üyeliğini üye eklemek için bu özelliği kullanın. Biçiminde bir dize dizisi bu özellik değeri *etki alanı*\\*kullanıcıadı*. Bu özellik bir yapılandırmada ayarlarsanız kullanmayın **üyeleri** özelliği. Bunun yapılması bir hata oluşturur.| 
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi ' DependsOn = "[ ResourceType] KaynakAdı"''.| 
+| Emin olun| Gruplar mevcut olup olmadığını gösterir. Bu özelliği grubu mevcut emin olmak için "yok" olarak ayarlayın. "(Varsayılan değer) sunmak için" olarak ayarlanması grupların bulunmasını sağlar.|
+| Üyeler| Belirtilen üyeleriyle geçerli grup üyeliğini değiştirmek için bu özelliği kullanın. Biçiminde bir dize dizisi bu özellik değeri *etki alanı*\\*kullanıcıadı*. Bu özellik bir yapılandırmada ayarlarsanız, ya da kullanmayın **MembersToExclude** veya **MembersToInclude** özelliği. Bunun yapılması bir hata oluşturur.|
+| MembersToInclude| Grubun var olan üyeliğini üye eklemek için bu özelliği kullanın. Biçiminde bir dize dizisi bu özellik değeri *etki alanı*\\*kullanıcıadı*. Bu özellik bir yapılandırmada ayarlarsanız kullanmayın **üyeleri** özelliği. Bunun yapılması bir hata oluşturur.|
+| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi ' DependsOn = "[ ResourceType] KaynakAdı"''.|
 
 ## <a name="example-1"></a>Örnek 1
 
-Aşağıdaki örnekte, "myGroup" ve "myOtherGroup" adlı iki grup mevcut olduğundan emin olun gösterilmektedir. 
+Aşağıdaki örnekte, "myGroup" ve "myOtherGroup" adlı iki grup mevcut olduğundan emin olun gösterilmektedir.
 
 ```powershell
 configuration GroupSetTest
@@ -78,5 +78,3 @@ GroupSetTest -ConfigurationData $cd
 ```
 
 >**Not:** Bu örnek düz metin kimlik bilgileri kolaylık sağlamak için kullanır. Yapılandırma MOF dosyasındaki kimlik bilgilerini şifrelemek hakkında daha fazla bilgi için bkz: [MOF dosyası güvenli hale getirme](secureMOF.md).
-
-

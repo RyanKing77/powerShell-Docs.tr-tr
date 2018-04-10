@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
+keywords: wmf,powershell,setup
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: 9a9281c5eeb771c472623bff6fa6bd6d6aa7814a
-ms.sourcegitcommit: fee03bb9802222078c8d5f6c8efb0698024406ed
+ms.openlocfilehash: 715ac6fe5df47066415a65d91a0982fd7070a426
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -24,7 +24,7 @@ WMF yüklemesi ekler ve/veya aşağıdaki özellikleri güncelleştirir:
 - Windows Uzaktan Yönetim (WinRM)
 - Windows Yönetim Araçları (WMI)
 - Windows PowerShell Web Hizmetleri (Yönetim OData IIS uzantısı)
-- Yazılım envanter günlüğü (SIL)
+- Yazılım Envanter Günlüğü (SIL)
 - Sunucu Yöneticisi'ni CIM sağlayıcısı
 
 ## <a name="wmf-release-notes"></a>WMF sürüm notları
@@ -41,13 +41,13 @@ PowerShell ve diğer bileşenleri verilen WMF çeşitli iyileştirmeleri hakkın
 | İşletim sistemi sürümü | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
 | Windows Server 2016 | Yerleşik gelir |  |  |  |  |
-| Windows 10 | Yerleşik gelir | Yerleşik gelir  | | | |  
+| Windows 10 | Yerleşik gelir | Yerleşik gelir  | | | |
 | Windows Server 2012 R2| Evet | Evet | Yerleşik gelir |  |  |
 | Windows 8.1 | Evet | Evet |  Yerleşik gelir |  |  |
-| Windows Server 2012 | Evet | Evet'e | Evet |  Yerleşik gelir | |
+| Windows Server 2012 | Evet | Evet | Evet |  Yerleşik gelir | |
 | Windows 8 |  |  |  | Yerleşik gelir | |
-| Windows Server 2008 R2 SP1 | Evet | Evet'e | Evet'e |  Evet| Yerleşik gelir |
-| Windows 7 SP1  | Evet | Evet'e | Evet'e | Evet | Yerleşik gelir |
+| Windows Server 2008 R2 SP1 | Evet | Evet | Evet |  Evet| Yerleşik gelir |
+| Windows 7 SP1  | Evet | Evet | Evet | Evet | Yerleşik gelir |
 | Windows Server 2008 SP2 | | | | Evet | Evet |
 | Windows Vista | | | | | Evet |
 | Windows Server 2003| | | |  | Evet |
@@ -55,4 +55,3 @@ PowerShell ve diğer bileşenleri verilen WMF çeşitli iyileştirmeleri hakkın
 
 **"Gelen kutusu"**: özelliklerini `specified WMF` belirtilen Windows ve Windows Server sürümünde geldiği.
 Bu nedenle, `specified WMF` belirtilen işletim sistemi sürümlerinde yüklü olması gerekmez.
-

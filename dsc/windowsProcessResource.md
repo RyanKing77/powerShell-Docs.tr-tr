@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
+keywords: DSC, powershell, yapılandırma, Kur
 title: DSC WindowsProcess Resource
-ms.openlocfilehash: ec77209637d574a0e530f4cce283e1ad98701cdb
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 236a48fd4449a96f2297c152bce65253dd2fd08d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess Resource
 
@@ -33,15 +33,14 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Özellikler
-|  Özellik  |  Açıklama   | 
-|---|---| 
-| Bağımsız değişkenler| Bir işlem olarak geçirilecek bağımsız değişkenleri dizisini gösterir-değil. Birden fazla bağımsız değişken geçirmek gerekiyorsa, bunları bu dize tüm yerleştirin.| 
-| Yol| İşlem yürütülebilir dosyası yolu. Bu ortam çalıştırılabilir dosyanın (olmayan tam yolunu), DSC kaynağı dosya adını arayacaktır **yolu** değişkeni (`$env:Path`) yürütülebilir dosyası bulunamadı. Bu özelliğin değeri tam bir yol ise, DSC kullanmaz **yolu** dosyayı bulmak için ortam değişkeni ve yol yoksa, bir hata özel durum oluşturacak. Göreli yollar izin verilmiyor.| 
-| kimlik bilgisi| İşlemi başlatmak için kimlik bilgilerini gösterir.| 
-| Emin olun| İşlem var olup olmadığını gösterir. Bu özelliği işlemi var olduğundan emin olmak için "var" olarak ayarlayın. Aksi takdirde, "Yok" ayarlayın. "Var" varsayılandır.| 
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi ' DependsOn = "[ ResourceType] KaynakAdı"''.| 
-| StandardErrorPath| Standart hatayı yazmak için dizin yolu gösterir. Var. Varolan dosyanın üzerine yazılır.| 
-| StandardInputPath| Standart giriş konumu gösterir.| 
-| StandardOutputPath| Standart çıktı yazmak için konumu belirtir. Var. Varolan dosyanın üzerine yazılır.| 
-| WorkingDirectory| Geçerli çalışma dizini olarak işlemi için kullanılacak konumu gösterir.| 
-
+|  Özellik  |  Açıklama   |
+|---|---|
+| Bağımsız değişkenler| Bir işlem olarak geçirilecek bağımsız değişkenleri dizisini gösterir-değil. Birden fazla bağımsız değişken geçirmek gerekiyorsa, bunları bu dize tüm yerleştirin.|
+| Yol| İşlem yürütülebilir dosyası yolu. Bu ortam çalıştırılabilir dosyanın (olmayan tam yolunu), DSC kaynağı dosya adını arayacaktır **yolu** değişkeni (`$env:Path`) yürütülebilir dosyası bulunamadı. Bu özelliğin değeri tam bir yol ise, DSC kullanmaz **yolu** dosyayı bulmak için ortam değişkeni ve yol yoksa, bir hata özel durum oluşturacak. Göreli yollar izin verilmiyor.|
+| kimlik bilgisi| İşlemi başlatmak için kimlik bilgilerini gösterir.|
+| Emin olun| İşlem var olup olmadığını gösterir. Bu özelliği işlemi var olduğundan emin olmak için "var" olarak ayarlayın. Aksi takdirde, "Yok" ayarlayın. "Var" varsayılandır.|
+| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi ' DependsOn = "[ ResourceType] KaynakAdı"''.|
+| StandardErrorPath| Standart hatayı yazmak için dizin yolu gösterir. Var. Varolan dosyanın üzerine yazılır.|
+| StandardInputPath| Standart giriş konumu gösterir.|
+| StandardOutputPath| Standart çıktı yazmak için konumu belirtir. Var. Varolan dosyanın üzerine yazılır.|
+| WorkingDirectory| Geçerli çalışma dizini olarak işlemi için kullanılacak konumu gösterir.|

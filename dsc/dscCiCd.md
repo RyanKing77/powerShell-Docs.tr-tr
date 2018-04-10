@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC sahip sürekli tümleştirme ve sürekli dağıtımı işlem hattı oluşturma"
-ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC sahip sürekli tümleştirme ve sürekli dağıtımı işlem hattı oluşturma
+ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC sahip sürekli tümleştirme ve sürekli dağıtımı işlem hattı oluşturma
 
 Bu örnek bir sürekli tümleştirme/sürekli dağıtımı (CI/CD) ardışık PowerShell, DSC, Pester ve Visual Studio Team Foundation Server (TFS) kullanarak nasıl oluşturulacağını gösterir.
 
-Ardışık Düzen yerleşik yapılandırıldıktan sonra tam olarak dağıtmak, yapılandırmak ve bir DNS sunucusu sınamak için kullanabilir ve ana bilgisayar kayıtları ilişkili. Bu işlem bir geliştirme ortamında kullanılacak bir ardışık düzen ilk bölümü benzetimini yapar.
+Ardışık Düzen yerleşik yapılandırıldıktan sonra tam olarak dağıtmak, yapılandırmak ve bir DNS sunucusu sınamak için kullanabilir ve ana bilgisayar kayıtları ilişkili.
+Bu işlem bir geliştirme ortamında kullanılacak bir ardışık düzen ilk bölümü benzetimini yapar.
 
 Daha güvenilir bir şekilde tüm kod sınanır ve kodunuzun geçerli bir yapı olduğundan emin olduktan kullanılabilir her zaman ve otomatik bir CI/CD ardışık yazılım daha hızlı güncelleştirmenize yardımcı olur.
 
@@ -36,7 +37,7 @@ Bu, tüm ayarlama ve örnek çalışan iş yeri gerçekleştirirsiniz bilgisayar
 
 İstemci bilgisayar bir Windows bilgisayara aşağıdakilerin yüklü olması gerekir:
 - [Git](https://git-scm.com/)
-- https://github.com/PowerShell/Demo_CI klonlanmış bir yerel git deposu
+- öğesinden kopyalanan bir yerel git deposu https://github.com/PowerShell/Demo_CI
 - bir metin düzenleyicisi gibi [Visual Studio Code](https://code.visualstudio.com/)
 
 ### <a name="tfssrv1"></a>TFSSrv1
@@ -60,7 +61,7 @@ Bilgisayar çalıştırmalıdır [Windows Server 2016](https://www.microsoft.com
 ### <a name="testagent2"></a>TestAgent2
 
 Bu örnek yapılandırır Web sitesini barındıran bilgisayar budur.
-Bilgisayar çalıştırmalıdır [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). 
+Bilgisayar çalıştırmalıdır [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
 
 ## <a name="add-the-code-to-tfs"></a>TFS için kod ekleme
 
@@ -156,7 +157,8 @@ Bu rolü sahip olarak tanımlanmış olan tüm düğümleri bulur `DNSServer` i�
 
 Düğümleri tanımlamak için yapılandırma verilerini kullanarak CI çünkü düğüm bilgi büyük olasılıkla ortamlar arasında değişir ve yapılandırma verilerini kullanarak kolayca düğümü bilgileri yapılandırma kodunu değiştirmeden değişiklik sağlar yapmak önemlidir.
 
-İlk kaynak bloğunda yapılandırma çağırır [WindowsFeature](windowsFeatureResource.md) DNS özelliği etkinleştirildiğinden emin olmak için. Çağrı kaynaklardan izleyin kaynak blokları [xDnsServer](https://github.com/PowerShell/xDnsServer) modülünü birincil bölge ve DNS kayıtlarını yapılandırmak için.
+İlk kaynak bloğunda yapılandırma çağırır [WindowsFeature](windowsFeatureResource.md) DNS özelliği etkinleştirildiğinden emin olmak için.
+Çağrı kaynaklardan izleyin kaynak blokları [xDnsServer](https://github.com/PowerShell/xDnsServer) modülünü birincil bölge ve DNS kayıtlarını yapılandırmak için.
 
 Dikkat iki `xDnsRecord` blokları sarılır `foreach` yapılandırma verilerini dizilerde yinelemek döngüler.
 Yapılandırma verilerini tarafından yeniden oluşturulan `DevEnv.ps1` biz sonraki göreceğiz komut dosyası.
@@ -199,7 +201,8 @@ Bu örnekte, yalnızca `RawEnvData` parametresi kullanılır.
 ### <a name="the-psake-build-script"></a>Psake derleme betiğindeki
 
 [Psake](https://github.com/psake/psake) tanımlanan komut dosyası derleme `Build.ps1` (Demo_CI depo kök `./InfraDNS/Build.ps1`) yapının bir parçası olan görevleri tanımlar.
-Ayrıca, her görevin bağımlı diğer görevleri tanımlar. Psake betik çağrıldığında, belirtilen görev sağlar (veya adlı görev `Default` belirtilmemişse) çalıştırır ve tüm bağımlılıkları da çalıştırın (bağımlılıkları bağımlılıklarını çalıştırmak için bu, yinelemelidir ve benzeri).
+Ayrıca, her görevin bağımlı diğer görevleri tanımlar.
+Psake betik çağrıldığında, belirtilen görev sağlar (veya adlı görev `Default` belirtilmemişse) çalıştırır ve tüm bağımlılıkları da çalıştırın (bağımlılıkları bağımlılıklarını çalıştırmak için bu, yinelemelidir ve benzeri).
 
 Bu örnekte, `Default` görev olarak tanımlanır:
 
@@ -263,7 +266,7 @@ Yapılandırma derler (`DNSServer.ps1`) tarafından oluşturulan yapılandırma 
 
 [Psake](https://github.com/psake/psake) tanımlanan dağıtım betiği `Deploy.ps1` (Demo_CI depo kök `./InfraDNS/Deploy.ps1`) dağıtma ve yapılandırma çalıştırma görevleri tanımlar.
 
-`Deploy.ps1`Aşağıdaki görevleri tanımlar:
+`Deploy.ps1` Aşağıdaki görevleri tanımlar:
 
 #### <a name="deploymodules"></a>DeployModules
 
@@ -334,8 +337,8 @@ Bu derleme adımı çalışır `initiate.ps1` psake yapı komut dosyasını ça�
 
 ### <a name="publish-test-results"></a>Test sonuçlarını yayımlama
 
-1. Ayarlama **Test Sonuç biçimi** için`NUnit`
-1. Ayarlama **Test sonuçları dosyaları** için`InfraDNS/Tests/Results/*.xml`
+1. Ayarlama **Test Sonuç biçimi** için `NUnit`
+1. Ayarlama **Test sonuçları dosyaları** için `InfraDNS/Tests/Results/*.xml`
 1. Ayarlama **çalıştırma başlığı Test** için `Unit`.
 1. Emin olun **denetim seçeneklerini** **etkin** ve **her zaman Çalıştır** seçilidir hem.
 
@@ -352,15 +355,15 @@ Bu derleme adımı biz arama sırasında daha önce Pester komut dosyasında bir
     **\Integration\**
     ```
 
-1. Ayarlama **TargetFolder** için`$(Build.ArtifactStagingDirectory)\`
+1. Ayarlama **TargetFolder** için `$(Build.ArtifactStagingDirectory)\`
 
 Bu adım yapı kopyalar ve test komutlar hazırlama dizinine kadar sonraki adım yapıları oluşturma gibi yayımlanabilir.
 
 ### <a name="publish-artifact"></a>Yapı yayımlama
 
-1. Ayarlama **yayımlamak için yol** için`$(Build.ArtifactStagingDirectory)\`
-1. Ayarlama **yapı adı** için`Deploy`
-1. Ayarlama **yapay nesne türü** için`Server`
+1. Ayarlama **yayımlamak için yol** için `$(Build.ArtifactStagingDirectory)\`
+1. Ayarlama **yapı adı** için `Deploy`
+1. Ayarlama **yapay nesne türü** için `Server`
 1. Seçin `Enabled` içinde **seçeneklerini denetle**
 
 ## <a name="enable-continuous-integration"></a>Sürekli Tümleştirme etkinleştir
@@ -393,21 +396,21 @@ Adımları aşağıdaki gibi düzenleyin:
 
 ### <a name="powershell-script"></a>PowerShell Script
 
-1. Ayarlama **betik yolu** alanı`$(Build.DefinitionName)\Deploy\initiate.ps1"`
-1. Ayarlama **bağımsız değişkenleri** alanı`-fileName Deploy`
+1. Ayarlama **betik yolu** alanı `$(Build.DefinitionName)\Deploy\initiate.ps1"`
+1. Ayarlama **bağımsız değişkenleri** alanı `-fileName Deploy`
 
 ### <a name="first-publish-test-results"></a>İlk Test sonuçlarını yayımlama
 
 1. Seçin `NUnit` için **Test Sonuç biçimi** alan
-1. Ayarlama **Test sonuç dosyalarını** alanı`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
-1. Ayarlama **çalıştırma başlığı Test** için`Integration`
+1. Ayarlama **Test sonuç dosyalarını** alanı `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
+1. Ayarlama **çalıştırma başlığı Test** için `Integration`
 1. Altında **denetim seçeneklerini**, denetleme **her zaman çalıştır**
 
 ### <a name="second-publish-test-results"></a>İkinci Test sonuçlarını yayımlama
 
 1. Seçin `NUnit` için **Test Sonuç biçimi** alan
-1. Ayarlama **Test sonuç dosyalarını** alanı`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
-1. Ayarlama **çalıştırma başlığı Test** için`Acceptance`
+1. Ayarlama **Test sonuç dosyalarını** alanı `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
+1. Ayarlama **çalıştırma başlığı Test** için `Acceptance`
 1. Altında **denetim seçeneklerini**, denetleme **her zaman çalıştır**
 
 ## <a name="verify-your-results"></a>Sonuçlarınızı doğrulayın
@@ -422,10 +425,3 @@ Yapılandırma başarıyla tamamlanırsa, yeni bir dağıtım tetiklenir.
 Bu örnek DNS sunucusu yapılandırır `TestAgent1` böylece URL `www.contoso.com` çözümler `TestAgent2`, ancak bir Web sitesi gerçekte dağıtmaz.
 Bunu yapmak için çatıyı depodaki altında sağlanan `WebApp` klasör.
 Psake komut dosyaları, Pester testleri ve DSC yapılandırmaları oluşturmak için sağlanan saplamalar kendi Web sitenizi dağıtmak için kullanabilirsiniz.
-
-
-
-
-
-
-
