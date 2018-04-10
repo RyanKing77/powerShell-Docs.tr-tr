@@ -1,26 +1,27 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, powershell, yapılandırma, Kur"
-title: "DSC kaynakları hata ayıklama"
-ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, powershell, yapılandırma, Kur
+title: DSC kaynaklarında hata ayıklama
+ms.openlocfilehash: 6a1f4b04a11185c2cfe9be26324bd66ed13ca7dd
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="debugging-dsc-resources"></a><span data-ttu-id="e10dc-103">DSC kaynakları hata ayıklama</span><span class="sxs-lookup"><span data-stu-id="e10dc-103">Debugging DSC resources</span></span>
+# <a name="debugging-dsc-resources"></a><span data-ttu-id="d52e5-103">DSC kaynaklarında hata ayıklama</span><span class="sxs-lookup"><span data-stu-id="d52e5-103">Debugging DSC resources</span></span>
 
-> <span data-ttu-id="e10dc-104">İçin geçerlidir: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="e10dc-104">Applies To: Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="d52e5-104">İçin geçerlidir: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="d52e5-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="e10dc-105">PowerShell 5. 0'da, istenen durum yapılandırma (DSC kaynağı bir yapılandırma uygulanması gibi hata ayıklamak izin veren DSC içinde) yeni bir özellik sunulmuştur.</span><span class="sxs-lookup"><span data-stu-id="e10dc-105">In PowerShell 5.0, a new feature was introduced in Desired State Configuraiton (DSC) that allows you to debug a DSC resource as a configuration is being applied.</span></span>
+<span data-ttu-id="d52e5-105">PowerShell 5. 0'da, istenen durum yapılandırma (DSC kaynağı bir yapılandırma uygulanması gibi hata ayıklamak izin veren DSC içinde) yeni bir özellik sunulmuştur.</span><span class="sxs-lookup"><span data-stu-id="d52e5-105">In PowerShell 5.0, a new feature was introduced in Desired State Configuraiton (DSC) that allows you to debug a DSC resource as a configuration is being applied.</span></span>
 
-## <a name="enabling-dsc-debugging"></a><span data-ttu-id="e10dc-106">DSC hata ayıklamayı etkinleştirme</span><span class="sxs-lookup"><span data-stu-id="e10dc-106">Enabling DSC debugging</span></span>
-<span data-ttu-id="e10dc-107">Bir kaynak ayıklayabilirsiniz önce çağırarak hata ayıklamayı etkinleştirmek sahip [etkinleştir DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="e10dc-107">Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet.</span></span> <span data-ttu-id="e10dc-108">Bu cmdlet zorunlu bir parametre alır **BreakAll**.</span><span class="sxs-lookup"><span data-stu-id="e10dc-108">This cmdlet takes a mandatory parameter, **BreakAll**.</span></span> 
+## <a name="enabling-dsc-debugging"></a><span data-ttu-id="d52e5-106">DSC hata ayıklamayı etkinleştirme</span><span class="sxs-lookup"><span data-stu-id="d52e5-106">Enabling DSC debugging</span></span>
+<span data-ttu-id="d52e5-107">Bir kaynak ayıklayabilirsiniz önce çağırarak hata ayıklamayı etkinleştirmek sahip [etkinleştir DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="d52e5-107">Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet.</span></span>
+<span data-ttu-id="d52e5-108">Bu cmdlet zorunlu bir parametre alır **BreakAll**.</span><span class="sxs-lookup"><span data-stu-id="d52e5-108">This cmdlet takes a mandatory parameter, **BreakAll**.</span></span>
 
-<span data-ttu-id="e10dc-109">Hata ayıklama için bir çağrı sonucunu bakarak etkinleştirildiğini doğrulayın [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).</span><span class="sxs-lookup"><span data-stu-id="e10dc-109">You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).</span></span>
+<span data-ttu-id="d52e5-109">Hata ayıklama için bir çağrı sonucunu bakarak etkinleştirildiğini doğrulayın [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).</span><span class="sxs-lookup"><span data-stu-id="d52e5-109">You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).</span></span>
 
-<span data-ttu-id="e10dc-110">Aşağıdaki PowerShell çıkış hata ayıklamasını etkinleştirme sonucunu gösterir:</span><span class="sxs-lookup"><span data-stu-id="e10dc-110">The following PowerShell output shows the result of enabling debugging:</span></span>
+<span data-ttu-id="d52e5-110">Aşağıdaki PowerShell çıkış hata ayıklamasını etkinleştirme sonucunu gösterir:</span><span class="sxs-lookup"><span data-stu-id="d52e5-110">The following PowerShell output shows the result of enabling debugging:</span></span>
 
 
 ```powershell
@@ -41,8 +42,9 @@ PS C:\DebugTest>
 ```
 
 
-## <a name="starting-a-configuration-with-debug-enabled"></a><span data-ttu-id="e10dc-111">Bir yapılandırma ile hata ayıklama etkin başlatılıyor</span><span class="sxs-lookup"><span data-stu-id="e10dc-111">Starting a configuration with debug enabled</span></span>
-<span data-ttu-id="e10dc-112">DSC kaynağı hata ayıklamak için bu kaynağa çağıran bir yapılandırma başlatın.</span><span class="sxs-lookup"><span data-stu-id="e10dc-112">To debug a DSC resource, you start a configuration that calls that resource.</span></span> <span data-ttu-id="e10dc-113">Bu örnekte, biz çağıran basit bir yapılandırma sırasında göreceğiz [WindowsFeature](windowsfeatureResource.md) kaynak "WindowsPowerShellWebAccess" özelliği yüklü olduğundan emin olun:</span><span class="sxs-lookup"><span data-stu-id="e10dc-113">For this example, we'll look at a simple configuration that calls the [WindowsFeature](windowsfeatureResource.md) resource to ensure that the "WindowsPowerShellWebAccess" feature is installed:</span></span>
+## <a name="starting-a-configuration-with-debug-enabled"></a><span data-ttu-id="d52e5-111">Bir yapılandırma ile hata ayıklama etkin başlatılıyor</span><span class="sxs-lookup"><span data-stu-id="d52e5-111">Starting a configuration with debug enabled</span></span>
+<span data-ttu-id="d52e5-112">DSC kaynağı hata ayıklamak için bu kaynağa çağıran bir yapılandırma başlatın.</span><span class="sxs-lookup"><span data-stu-id="d52e5-112">To debug a DSC resource, you start a configuration that calls that resource.</span></span>
+<span data-ttu-id="d52e5-113">Bu örnekte, biz çağıran basit bir yapılandırma sırasında göreceğiz [WindowsFeature](windowsfeatureResource.md) kaynak "WindowsPowerShellWebAccess" özelliği yüklü olduğundan emin olun:</span><span class="sxs-lookup"><span data-stu-id="d52e5-113">For this example, we'll look at a simple configuration that calls the [WindowsFeature](windowsfeatureResource.md) resource to ensure that the "WindowsPowerShellWebAccess" feature is installed:</span></span>
 
 ```powershell
 Configuration PSWebAccess
@@ -59,7 +61,9 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-<span data-ttu-id="e10dc-114">Yapılandırma derledikten sonra başlatılsın çağırarak [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).</span><span class="sxs-lookup"><span data-stu-id="e10dc-114">After compiling the configuration, start it by calling [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).</span></span> <span data-ttu-id="e10dc-115">Yerel Configuration Manager (LCM'yi) yapılandırmasında ilk kaynak içine çağırdığında yapılandırma durdurur.</span><span class="sxs-lookup"><span data-stu-id="e10dc-115">The configuration will stop when the Local Configuration Manager (LCM) calls into the first resource in the configuration.</span></span> <span data-ttu-id="e10dc-116">Kullanırsanız `-Verbose` ve `-Wait` parametreleri, çıktı hata ayıklamayı başlatmak için girmeniz gereken satırları görüntüler.</span><span class="sxs-lookup"><span data-stu-id="e10dc-116">If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter to start debugging.</span></span>
+<span data-ttu-id="d52e5-114">Yapılandırma derledikten sonra başlatılsın çağırarak [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).</span><span class="sxs-lookup"><span data-stu-id="d52e5-114">After compiling the configuration, start it by calling [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).</span></span>
+<span data-ttu-id="d52e5-115">Yerel Configuration Manager (LCM'yi) yapılandırmasında ilk kaynak içine çağırdığında yapılandırma durdurur.</span><span class="sxs-lookup"><span data-stu-id="d52e5-115">The configuration will stop when the Local Configuration Manager (LCM) calls into the first resource in the configuration.</span></span>
+<span data-ttu-id="d52e5-116">Kullanırsanız `-Verbose` ve `-Wait` parametreleri, çıktı hata ayıklamayı başlatmak için girmeniz gereken satırları görüntüler.</span><span class="sxs-lookup"><span data-stu-id="d52e5-116">If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter to start debugging.</span></span>
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -68,40 +72,44 @@ Manager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
 VERBOSE: An LCM method call arrived from computer TEST-SRV with user sid S-1-5-21-2127521184-1604012920-1887927527-108583.
 VERBOSE: An LCM method call arrived from computer TEST-SRV with user sid S-1-5-21-2127521184-1604012920-1887927527-108583.
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Set      ]
-WARNING: [TEST-SRV]:                            [DSCEngine] Warning LCM is in Debug 'ResourceScriptBreakAll' mode.  Resource script processing will 
+WARNING: [TEST-SRV]:                            [DSCEngine] Warning LCM is in Debug 'ResourceScriptBreakAll' mode.  Resource script processing will
 be stopped to wait for PowerShell script debugger to attach.
 VERBOSE: [TEST-SRV]:                            [DSCEngine] Importing the module C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateCo
 nfiguration\DscResources\MSFT_RoleResource\MSFT_RoleResource.psm1 in force mode.
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Resource ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Test     ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]:                            [[WindowsFeature]PSWA] Importing the module MSFT_RoleResource in force mode.
-WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach. 
+WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach.
 Use the following commands to begin debugging this resource script:
 Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
-<span data-ttu-id="e10dc-117">Bu noktada, LCM'yi kaynak adı ve ilk kesme noktası gelir.</span><span class="sxs-lookup"><span data-stu-id="e10dc-117">At this point, the LCM has called the resource, and come to the first break point.</span></span> <span data-ttu-id="e10dc-118">Çıktıdaki ilk üç satırını işleme ekleyin ve kaynak komut dosyası hata ayıklamayı Başlat gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="e10dc-118">The last three lines in the output show you how to attach to the process and start debugging the resource script.</span></span>
+<span data-ttu-id="d52e5-117">Bu noktada, LCM'yi kaynak adı ve ilk kesme noktası gelir.</span><span class="sxs-lookup"><span data-stu-id="d52e5-117">At this point, the LCM has called the resource, and come to the first break point.</span></span>
+<span data-ttu-id="d52e5-118">Çıktıdaki ilk üç satırını işleme ekleyin ve kaynak komut dosyası hata ayıklamayı Başlat gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="d52e5-118">The last three lines in the output show you how to attach to the process and start debugging the resource script.</span></span>
 
-## <a name="debugging-the-resource-script"></a><span data-ttu-id="e10dc-119">Kaynak komut dosyası hata ayıklaması</span><span class="sxs-lookup"><span data-stu-id="e10dc-119">Debugging the resource script</span></span>
+## <a name="debugging-the-resource-script"></a><span data-ttu-id="d52e5-119">Kaynak komut dosyası hata ayıklaması</span><span class="sxs-lookup"><span data-stu-id="d52e5-119">Debugging the resource script</span></span>
 
-<span data-ttu-id="e10dc-120">PowerShell ISE yeni bir örneğini başlatın.</span><span class="sxs-lookup"><span data-stu-id="e10dc-120">Start a new instance of the PowerShell ISE.</span></span> <span data-ttu-id="e10dc-121">Konsol bölmesinde çıktısını ilk üç satırını girin `Start-DscConfiguration` değiştirme komutları çıkış `<credentials>` geçerli kullanıcı kimlik bilgileri.</span><span class="sxs-lookup"><span data-stu-id="e10dc-121">In the console pane, enter the last three lines of output from the `Start-DscConfiguration` output as commands, replacing `<credentials>` with valid user credentials.</span></span> <span data-ttu-id="e10dc-122">Şimdi için benzer bir istem görmeniz gerekir:</span><span class="sxs-lookup"><span data-stu-id="e10dc-122">You should now see a prompt that looks similar to:</span></span>
+<span data-ttu-id="d52e5-120">PowerShell ISE yeni bir örneğini başlatın.</span><span class="sxs-lookup"><span data-stu-id="d52e5-120">Start a new instance of the PowerShell ISE.</span></span>
+<span data-ttu-id="d52e5-121">Konsol bölmesinde çıktısını ilk üç satırını girin `Start-DscConfiguration` değiştirme komutları çıkış `<credentials>` geçerli kullanıcı kimlik bilgileri.</span><span class="sxs-lookup"><span data-stu-id="d52e5-121">In the console pane, enter the last three lines of output from the `Start-DscConfiguration` output as commands, replacing `<credentials>` with valid user credentials.</span></span>
+<span data-ttu-id="d52e5-122">Şimdi için benzer bir istem görmeniz gerekir:</span><span class="sxs-lookup"><span data-stu-id="d52e5-122">You should now see a prompt that looks similar to:</span></span>
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
 ```
 
-<span data-ttu-id="e10dc-123">Kaynak betik betik bölmesinde açılır ve hata ayıklayıcı ilk satırında durdurulur **Test TargetResource** işlevi ( **Test()** sınıf tabanlı bir kaynak yöntemi).</span><span class="sxs-lookup"><span data-stu-id="e10dc-123">The resource script will open in the script pane, and the debugger is stopped at the first line of the **Test-TargetResource** function (the **Test()** method of a class-based resource).</span></span>
-<span data-ttu-id="e10dc-124">Kaynak komut dosyası adım için işe hata ayıklama komutlarını kullanabilirsiniz artık değişken değerlere göz, çağrı yığını görüntülemek ve benzeri.</span><span class="sxs-lookup"><span data-stu-id="e10dc-124">Now you can use the debug commands in the ISE to step through the resource script, look at variable values, view the call stack, and so on.</span></span> <span data-ttu-id="e10dc-125">PowerShell ISE hata ayıklama hakkında daha fazla bilgi için bkz: [hata ayıklama komut dosyalarında Windows PowerShell ISE nasıl](https://technet.microsoft.com/en-us/library/dd819480.aspx).</span><span class="sxs-lookup"><span data-stu-id="e10dc-125">For information about debugging in the PowerShell ISE, see [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx).</span></span> <span data-ttu-id="e10dc-126">Kaynak betik (veya sınıfı) her satırda bir kesme noktası olarak ayarlandığını unutmayın.</span><span class="sxs-lookup"><span data-stu-id="e10dc-126">Remember that every line in the resource script (or class) is set as a break point.</span></span>
+<span data-ttu-id="d52e5-123">Kaynak betik betik bölmesinde açılır ve hata ayıklayıcı ilk satırında durdurulur **Test TargetResource** işlevi ( **Test()** sınıf tabanlı bir kaynak yöntemi).</span><span class="sxs-lookup"><span data-stu-id="d52e5-123">The resource script will open in the script pane, and the debugger is stopped at the first line of the **Test-TargetResource** function (the **Test()** method of a class-based resource).</span></span>
+<span data-ttu-id="d52e5-124">Kaynak komut dosyası adım için işe hata ayıklama komutlarını kullanabilirsiniz artık değişken değerlere göz, çağrı yığını görüntülemek ve benzeri.</span><span class="sxs-lookup"><span data-stu-id="d52e5-124">Now you can use the debug commands in the ISE to step through the resource script, look at variable values, view the call stack, and so on.</span></span>
+<span data-ttu-id="d52e5-125">PowerShell ISE hata ayıklama hakkında daha fazla bilgi için bkz: [hata ayıklama komut dosyalarında Windows PowerShell ISE nasıl](https://technet.microsoft.com/en-us/library/dd819480.aspx).</span><span class="sxs-lookup"><span data-stu-id="d52e5-125">For information about debugging in the PowerShell ISE, see [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx).</span></span>
+<span data-ttu-id="d52e5-126">Kaynak betik (veya sınıfı) her satırda bir kesme noktası olarak ayarlandığını unutmayın.</span><span class="sxs-lookup"><span data-stu-id="d52e5-126">Remember that every line in the resource script (or class) is set as a break point.</span></span>
 
-## <a name="disabling-dsc-debugging"></a><span data-ttu-id="e10dc-127">DSC hata ayıklama devre dışı bırakma</span><span class="sxs-lookup"><span data-stu-id="e10dc-127">Disabling DSC debugging</span></span>
+## <a name="disabling-dsc-debugging"></a><span data-ttu-id="d52e5-127">DSC hata ayıklama devre dışı bırakma</span><span class="sxs-lookup"><span data-stu-id="d52e5-127">Disabling DSC debugging</span></span>
 
-<span data-ttu-id="e10dc-128">Çağırdıktan sonra [etkinleştir DscDebug](https://technet.microsoft.com/library/mt517870.aspx), tüm çağrıları [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) ayıklayıcıya çiğnemekten yapılandırma neden olur.</span><span class="sxs-lookup"><span data-stu-id="e10dc-128">After calling [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), all calls to [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) will result in the configuration breaking into the debugger.</span></span> <span data-ttu-id="e10dc-129">Yapılandırmaları normal olarak çalışmasına izin vermek için çağırarak hata ayıklama devre dışı bırakmalısınız [devre dışı bırakma DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="e10dc-129">To allow configurations to run normally, you must disable debugging by calling the [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.</span></span>
+<span data-ttu-id="d52e5-128">Çağırdıktan sonra [etkinleştir DscDebug](https://technet.microsoft.com/library/mt517870.aspx), tüm çağrıları [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) ayıklayıcıya çiğnemekten yapılandırma neden olur.</span><span class="sxs-lookup"><span data-stu-id="d52e5-128">After calling [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), all calls to [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) will result in the configuration breaking into the debugger.</span></span> <span data-ttu-id="d52e5-129">Yapılandırmaları normal olarak çalışmasına izin vermek için çağırarak hata ayıklama devre dışı bırakmalısınız [devre dışı bırakma DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="d52e5-129">To allow configurations to run normally, you must disable debugging by calling the [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.</span></span>
 
-><span data-ttu-id="e10dc-130">**Not:** Rebooting LCM'yi hata ayıklama durumunu değiştirmez.</span><span class="sxs-lookup"><span data-stu-id="e10dc-130">**Note:** Rebooting does not change the debug state of the LCM.</span></span> <span data-ttu-id="e10dc-131">Hata ayıklama etkinleştirilirse yapılandırma başlatma hala ayıklayıcıya bir yeniden başlatmadan sonra çalışmamasına neden olur.</span><span class="sxs-lookup"><span data-stu-id="e10dc-131">If debugging is enabled, starting a configuration will still break into the debugger after a reboot.</span></span>
+><span data-ttu-id="d52e5-130">**Not:** Rebooting LCM'yi hata ayıklama durumunu değiştirmez.</span><span class="sxs-lookup"><span data-stu-id="d52e5-130">**Note:** Rebooting does not change the debug state of the LCM.</span></span> <span data-ttu-id="d52e5-131">Hata ayıklama etkinleştirilirse yapılandırma başlatma hala ayıklayıcıya bir yeniden başlatmadan sonra çalışmamasına neden olur.</span><span class="sxs-lookup"><span data-stu-id="d52e5-131">If debugging is enabled, starting a configuration will still break into the debugger after a reboot.</span></span>
 
 
-## <a name="see-also"></a><span data-ttu-id="e10dc-132">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="e10dc-132">See Also</span></span>
-- [<span data-ttu-id="e10dc-133">Özel bir DSC kaynağı MOF ile yazma</span><span class="sxs-lookup"><span data-stu-id="e10dc-133">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md) 
-- [<span data-ttu-id="e10dc-134">PowerShell sınıfları içeren özel bir DSC kaynağı yazma</span><span class="sxs-lookup"><span data-stu-id="e10dc-134">Writing a custom DSC resource with PowerShell classes</span></span>](authoringResourceClass.md)
-
+## <a name="see-also"></a><span data-ttu-id="d52e5-132">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="d52e5-132">See Also</span></span>
+- [<span data-ttu-id="d52e5-133">Özel bir DSC kaynağı MOF ile yazma</span><span class="sxs-lookup"><span data-stu-id="d52e5-133">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+- [<span data-ttu-id="d52e5-134">PowerShell sınıfları içeren özel bir DSC kaynağı yazma</span><span class="sxs-lookup"><span data-stu-id="d52e5-134">Writing a custom DSC resource with PowerShell classes</span></span>](authoringResourceClass.md)

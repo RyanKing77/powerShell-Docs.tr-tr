@@ -1,85 +1,85 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: "Yükleme betiği"
-ms.openlocfilehash: 9ce4125329ea2a38f27f9305b169c7fcf3e9df42
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Install-Script
+ms.openlocfilehash: 3d5b3a3076a11fbf452eb1b968decf217d9bace0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="install-script"></a><span data-ttu-id="df628-103">Yükleme betiği</span><span class="sxs-lookup"><span data-stu-id="df628-103">Install-Script</span></span>
+# <a name="install-script"></a><span data-ttu-id="93652-103">Install-Script</span><span class="sxs-lookup"><span data-stu-id="93652-103">Install-Script</span></span>
 
-<span data-ttu-id="df628-104">PowerShell komut dosyalarını çevrimiçi havuzların yerel bilgisayara yükler.</span><span class="sxs-lookup"><span data-stu-id="df628-104">Installs the PowerShell script files from online repositories to the local computer.</span></span>
+<span data-ttu-id="93652-104">PowerShell komut dosyalarını çevrimiçi havuzların yerel bilgisayara yükler.</span><span class="sxs-lookup"><span data-stu-id="93652-104">Installs the PowerShell script files from online repositories to the local computer.</span></span>
 
-## <a name="description"></a><span data-ttu-id="df628-105">Açıklama</span><span class="sxs-lookup"><span data-stu-id="df628-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="93652-105">Açıklama</span><span class="sxs-lookup"><span data-stu-id="93652-105">Description</span></span>
 
-<span data-ttu-id="df628-106">Yükleme betiği cmdlet bulur ve bir veya daha fazla komut dosyası bir çevrimiçi galeriden indirir, doğrular ve bunları belirtilen yükleme kapsam için yerel bilgisayarda yükler.</span><span class="sxs-lookup"><span data-stu-id="df628-106">The Install-Script cmdlet finds and downloads one or more scripts from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
+<span data-ttu-id="93652-106">Yükleme betiği cmdlet bulur ve bir veya daha fazla komut dosyası bir çevrimiçi galeriden indirir, doğrular ve bunları belirtilen yükleme kapsam için yerel bilgisayarda yükler.</span><span class="sxs-lookup"><span data-stu-id="93652-106">The Install-Script cmdlet finds and downloads one or more scripts from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
 
-<span data-ttu-id="df628-107">Kapsam tanımlandığında veya kapsam parametresinin değeri AllUsers olduğunda betik %systemdrive%:\Program Files\WindowsPowerShell\scripts yüklenir.</span><span class="sxs-lookup"><span data-stu-id="df628-107">When no scope is defined, or when the value of the Scope parameter is AllUsers, the script is installed to %systemdrive%:\Program Files\WindowsPowerShell\scripts.</span></span> <span data-ttu-id="df628-108">Currentuser'a kapsam değeri betik $home\Documents\WindowsPowerShell\scripts yüklenir.</span><span class="sxs-lookup"><span data-stu-id="df628-108">When the value of Scope is CurrentUser, the script is installed to $home\Documents\WindowsPowerShell\scripts.</span></span>
+<span data-ttu-id="93652-107">Kapsam tanımlandığında veya kapsam parametresinin değeri AllUsers olduğunda betik %systemdrive%:\Program Files\WindowsPowerShell\scripts yüklenir.</span><span class="sxs-lookup"><span data-stu-id="93652-107">When no scope is defined, or when the value of the Scope parameter is AllUsers, the script is installed to %systemdrive%:\Program Files\WindowsPowerShell\scripts.</span></span> <span data-ttu-id="93652-108">Currentuser'a kapsam değeri betik $home\Documents\WindowsPowerShell\scripts yüklenir.</span><span class="sxs-lookup"><span data-stu-id="93652-108">When the value of Scope is CurrentUser, the script is installed to $home\Documents\WindowsPowerShell\scripts.</span></span>
 
-<span data-ttu-id="df628-109">Belirtilen komut dosyalarını en az ve tam sürümlerine dayalı sonuçlarınızı filtreleyebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="df628-109">You can filter your results based on minimum and exact versions of specified scripts.</span></span>
+<span data-ttu-id="93652-109">Belirtilen komut dosyalarını en az ve tam sürümlerine dayalı sonuçlarınızı filtreleyebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="93652-109">You can filter your results based on minimum and exact versions of specified scripts.</span></span>
 
-<span data-ttu-id="df628-110">Bazı önemli notlar:</span><span class="sxs-lookup"><span data-stu-id="df628-110">Some important notes:</span></span>
-- <span data-ttu-id="df628-111">Komut dosyaları yüklü tek bir dosyalarıdır.</span><span class="sxs-lookup"><span data-stu-id="df628-111">Scripts are installed single files.</span></span> <span data-ttu-id="df628-112">Sonuç olarak, bir komut dosyası yalnızca bir kopyasını yüklenir ve komut dosyaları birden çok sürümünün yüklü yan yana bir sistemde olamaz.</span><span class="sxs-lookup"><span data-stu-id="df628-112">As a result, only one copy of a script is installed, and multiple versions of scripts cannot be installed side-by-side on a system.</span></span> 
-- <span data-ttu-id="df628-113">Komut dosyaları, yükleme betiğini çalıştırdığınızda, yüklenecek dış modülleri üzerinde bağımlılıkları tanımlayabilir.</span><span class="sxs-lookup"><span data-stu-id="df628-113">Scripts may define dependencies on external modules, which will  be installed when Install-Script is run.</span></span>
-- <span data-ttu-id="df628-114">**Komut isteminde güvenilmeyen:** kullanıcı kabul güvenilmeyen bir depodan komut dosyalarını yüklemek için gereklidir.</span><span class="sxs-lookup"><span data-stu-id="df628-114">**Untrusted prompt:** User acceptance is required for installing the scripts from an untrusted repository.</span></span>
-- <span data-ttu-id="df628-115">RequiredVersion, PowerShell sürüm 5.0 veya daha yeni olan sürümleriyle SxS içinde belirtilen sürümü yükler.</span><span class="sxs-lookup"><span data-stu-id="df628-115">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
+<span data-ttu-id="93652-110">Bazı önemli notlar:</span><span class="sxs-lookup"><span data-stu-id="93652-110">Some important notes:</span></span>
+- <span data-ttu-id="93652-111">Komut dosyaları yüklü tek bir dosyalarıdır.</span><span class="sxs-lookup"><span data-stu-id="93652-111">Scripts are installed single files.</span></span> <span data-ttu-id="93652-112">Sonuç olarak, bir komut dosyası yalnızca bir kopyasını yüklenir ve komut dosyaları birden çok sürümünün yüklü yan yana bir sistemde olamaz.</span><span class="sxs-lookup"><span data-stu-id="93652-112">As a result, only one copy of a script is installed, and multiple versions of scripts cannot be installed side-by-side on a system.</span></span>
+- <span data-ttu-id="93652-113">Komut dosyaları, yükleme betiğini çalıştırdığınızda, yüklenecek dış modülleri üzerinde bağımlılıkları tanımlayabilir.</span><span class="sxs-lookup"><span data-stu-id="93652-113">Scripts may define dependencies on external modules, which will  be installed when Install-Script is run.</span></span>
+- <span data-ttu-id="93652-114">**Komut isteminde güvenilmeyen:** kullanıcı kabul güvenilmeyen bir depodan komut dosyalarını yüklemek için gereklidir.</span><span class="sxs-lookup"><span data-stu-id="93652-114">**Untrusted prompt:** User acceptance is required for installing the scripts from an untrusted repository.</span></span>
+- <span data-ttu-id="93652-115">RequiredVersion, PowerShell sürüm 5.0 veya daha yeni olan sürümleriyle SxS içinde belirtilen sürümü yükler.</span><span class="sxs-lookup"><span data-stu-id="93652-115">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
 
-<span data-ttu-id="df628-116">Joker karakter kullanılması desteklenmez, - yükleme betiği, adına Kaydet-komut dosyası ve kaldırma komut dosyası cmdlet'leri.</span><span class="sxs-lookup"><span data-stu-id="df628-116">Wildcards are not supported in -Name on Install-Script, Save-Script, and Uninstall-Script cmdlets.</span></span>
+<span data-ttu-id="93652-116">Joker karakter kullanılması desteklenmez, - yükleme betiği, adına Kaydet-komut dosyası ve kaldırma komut dosyası cmdlet'leri.</span><span class="sxs-lookup"><span data-stu-id="93652-116">Wildcards are not supported in -Name on Install-Script, Save-Script, and Uninstall-Script cmdlets.</span></span>
 
-### <a name="scope"></a><span data-ttu-id="df628-117">Kapsam</span><span class="sxs-lookup"><span data-stu-id="df628-117">Scope</span></span>
-<span data-ttu-id="df628-118">Komut dosyası yükleme kapsamını belirtir.</span><span class="sxs-lookup"><span data-stu-id="df628-118">Specifies the installation scope of the script.</span></span> <span data-ttu-id="df628-119">Bu parametre için kabul edilebilir değerler: AllUsers ve Currentuser'a.</span><span class="sxs-lookup"><span data-stu-id="df628-119">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
+### <a name="scope"></a><span data-ttu-id="93652-117">Kapsam</span><span class="sxs-lookup"><span data-stu-id="93652-117">Scope</span></span>
+<span data-ttu-id="93652-118">Komut dosyası yükleme kapsamını belirtir.</span><span class="sxs-lookup"><span data-stu-id="93652-118">Specifies the installation scope of the script.</span></span> <span data-ttu-id="93652-119">Bu parametre için kabul edilebilir değerler: AllUsers ve Currentuser'a.</span><span class="sxs-lookup"><span data-stu-id="93652-119">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
 
-<span data-ttu-id="df628-120">Varsayılan yükleme AllUsers kapsamıdır.</span><span class="sxs-lookup"><span data-stu-id="df628-120">The default installation scope is AllUsers.</span></span>
+<span data-ttu-id="93652-120">Varsayılan yükleme AllUsers kapsamıdır.</span><span class="sxs-lookup"><span data-stu-id="93652-120">The default installation scope is AllUsers.</span></span>
 
-<span data-ttu-id="df628-121">Diğer bir deyişle, bilgisayarın tüm kullanıcıları için erişilebilen bir konumda yüklenmesi komut dosyalarının AllUsers kapsam sağlar "$env: SystemDrive\Program Files\WindowsPowerShell\scripts".</span><span class="sxs-lookup"><span data-stu-id="df628-121">The AllUsers scope lets scripts be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\scripts".</span></span>
+<span data-ttu-id="93652-121">Diğer bir deyişle, bilgisayarın tüm kullanıcıları için erişilebilen bir konumda yüklenmesi komut dosyalarının AllUsers kapsam sağlar "$env: SystemDrive\Program Files\WindowsPowerShell\scripts".</span><span class="sxs-lookup"><span data-stu-id="93652-121">The AllUsers scope lets scripts be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\scripts".</span></span>
 
-<span data-ttu-id="df628-122">Komut dosyası yalnızca geçerli kullanıcı için kullanılabilir olmasını sağlamak Currentuser'a kapsam komut dosyalarının yalnızca "$home\Documents\WindowsPowerShell\scripts için", yüklenmesini sağlar.</span><span class="sxs-lookup"><span data-stu-id="df628-122">The CurrentUser scope lets scripts be installed only to "$home\Documents\WindowsPowerShell\scripts", so that the script is available only to the current user.</span></span>
-
-
-<span data-ttu-id="df628-123">Komut dosyası yükleme kapsamını belirtir.</span><span class="sxs-lookup"><span data-stu-id="df628-123">Specifies the installation scope of the script.</span></span> <span data-ttu-id="df628-124">Geçerli değerler: AllUsers ve Currentuser'a.</span><span class="sxs-lookup"><span data-stu-id="df628-124">Valid values are: AllUsers and CurrentUser.</span></span> <span data-ttu-id="df628-125">Currentuser'a varsayılandır.</span><span class="sxs-lookup"><span data-stu-id="df628-125">The default is CurrentUser.</span></span>
-
-<span data-ttu-id="df628-126">Komut dosyası tüm kullanıcılar tarafından kullanılabilir olmasını sağlamak için %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts bir komut dosyası yüklemek için AllUsers kapsamı belirler.</span><span class="sxs-lookup"><span data-stu-id="df628-126">The AllUsers scope specifies to install a script to %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts so that the script is available to all users.</span></span> <span data-ttu-id="df628-127">Komut dosyası yalnızca geçerli kullanıcı için kullanılabilir olmasını sağlamak $home\Documents\WindowsPowerShell\Scripts komut dosyasını yüklemek için Currentuser'a kapsamını belirtir.</span><span class="sxs-lookup"><span data-stu-id="df628-127">The CurrentUser scope specifies to install the script in $home\Documents\WindowsPowerShell\Scripts so that the script is available only to the current user.</span></span>
+<span data-ttu-id="93652-122">Komut dosyası yalnızca geçerli kullanıcı için kullanılabilir olmasını sağlamak Currentuser'a kapsam komut dosyalarının yalnızca "$home\Documents\WindowsPowerShell\scripts için", yüklenmesini sağlar.</span><span class="sxs-lookup"><span data-stu-id="93652-122">The CurrentUser scope lets scripts be installed only to "$home\Documents\WindowsPowerShell\scripts", so that the script is available only to the current user.</span></span>
 
 
-## <a name="nopathupdate"></a><span data-ttu-id="df628-128">NoPathUpdate</span><span class="sxs-lookup"><span data-stu-id="df628-128">NoPathUpdate</span></span>
+<span data-ttu-id="93652-123">Komut dosyası yükleme kapsamını belirtir.</span><span class="sxs-lookup"><span data-stu-id="93652-123">Specifies the installation scope of the script.</span></span> <span data-ttu-id="93652-124">Geçerli değerler: AllUsers ve Currentuser'a.</span><span class="sxs-lookup"><span data-stu-id="93652-124">Valid values are: AllUsers and CurrentUser.</span></span> <span data-ttu-id="93652-125">Currentuser'a varsayılandır.</span><span class="sxs-lookup"><span data-stu-id="93652-125">The default is CurrentUser.</span></span>
 
-- <span data-ttu-id="df628-129">NoPathUpdate anahtar parametresini yükleme betiği cmdlet komut dosyası yükleme konumu PATH ortam değişkenine eklemek için istemi atlar.</span><span class="sxs-lookup"><span data-stu-id="df628-129">NoPathUpdate switch parameter on Install-Script cmdlet bypasses the prompt for adding the script install location to the PATH environment variable.</span></span>
-- <span data-ttu-id="df628-130">Herhangi bir kullanımından komutu – belirtilen NoPathUpdate ile hiçbir istemi ve yol güncelleştirilmekte değil neden olur (zorla yoksayılabilir burada).</span><span class="sxs-lookup"><span data-stu-id="df628-130">Any use of the command WITH –NoPathUpdate specified will result in no prompt and the PATH NOT being updated (force is ignorable here).</span></span>
-- <span data-ttu-id="df628-131">-YOLUN güncelleştirilir ve force – NoPathUpdate olmadan hiçbir isteminde neden olur.</span><span class="sxs-lookup"><span data-stu-id="df628-131">-Force without –NoPathUpdate will result in no prompt and the PATH will be updated.</span></span>
-- <span data-ttu-id="df628-132">Ne – Force veya – NoPathUpdate belirttiyseniz, Kullanıcı istemi görürsünüz.</span><span class="sxs-lookup"><span data-stu-id="df628-132">If neither –Force or –NoPathUpdate are specified, the user will see the prompt.</span></span>
-- <span data-ttu-id="df628-133">Tüm bunlar yalnızca geçerlidir yükleme betiği verilen kapsam içinde ilk defa.</span><span class="sxs-lookup"><span data-stu-id="df628-133">All of this only applies the first time Install-Script is used in a given scope.</span></span>
+<span data-ttu-id="93652-126">Komut dosyası tüm kullanıcılar tarafından kullanılabilir olmasını sağlamak için %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts bir komut dosyası yüklemek için AllUsers kapsamı belirler.</span><span class="sxs-lookup"><span data-stu-id="93652-126">The AllUsers scope specifies to install a script to %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts so that the script is available to all users.</span></span> <span data-ttu-id="93652-127">Komut dosyası yalnızca geçerli kullanıcı için kullanılabilir olmasını sağlamak $home\Documents\WindowsPowerShell\Scripts komut dosyasını yüklemek için Currentuser'a kapsamını belirtir.</span><span class="sxs-lookup"><span data-stu-id="93652-127">The CurrentUser scope specifies to install the script in $home\Documents\WindowsPowerShell\Scripts so that the script is available only to the current user.</span></span>
 
 
-## <a name="notes"></a><span data-ttu-id="df628-134">Notlar</span><span class="sxs-lookup"><span data-stu-id="df628-134">Notes</span></span>
+## <a name="nopathupdate"></a><span data-ttu-id="93652-128">NoPathUpdate</span><span class="sxs-lookup"><span data-stu-id="93652-128">NoPathUpdate</span></span>
 
-<span data-ttu-id="df628-135">Bu cmdlet, Windows PowerShell 3.0 veya sonraki sürümleri Windows PowerShell, Windows 7 veya Windows 2008 R2 ve Windows'un sonraki sürümleri üzerinde çalışır.</span><span class="sxs-lookup"><span data-stu-id="df628-135">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
-
-<span data-ttu-id="df628-136">Bir bilgisayarda komut dosyası adı parametresi için belirtilen değer eşleştiğinden ve MinimumVersion veya RequiredVersion parametresini eklemediniz yükleme betiği sessizce komut dosyaları yüklemeden devam eder.</span><span class="sxs-lookup"><span data-stu-id="df628-136">If a version of the script on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Script silently continues without installing that script.</span></span> <span data-ttu-id="df628-137">MinimumVersion veya RequiredVersion parametreler belirtildi ve var olan betiği Bu parametre değerleri eşleşmiyor, bir hata oluşur.</span><span class="sxs-lookup"><span data-stu-id="df628-137">If the MinimumVersion or RequiredVersion parameters are specified, and the existing script does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="df628-138">Daha belirgin olması: şu anda yüklü komut dosyasının sürümünü MinimumVersion parametresinin değerini daha düşük veya RequiredVersion parametre değerine eşit değil ise, bir hata oluşur.</span><span class="sxs-lookup"><span data-stu-id="df628-138">To be more specific: if the version of the currently-installed script is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="df628-139">Yüklü komut dosyasının sürümünü MinimumVersion parametresinin değerinden büyük veya RequiredVersion parametresinin değeri eşit ise, yükleme betiği komut dosyaları yüklemeden sessizce sürdürür.</span><span class="sxs-lookup"><span data-stu-id="df628-139">If the version of the installed script is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Script silently continues without installing that script.</span></span>
-
-<span data-ttu-id="df628-140">Betik belirtilen adla eşleşen çevrimiçi galeriden varsa yükleme komut dosyası bir hata döndürür.</span><span class="sxs-lookup"><span data-stu-id="df628-140">Install-Script returns an error if no script exists in the online gallery that matches the specified name.</span></span>
-
-<span data-ttu-id="df628-141">Birden fazla komut dosyası yüklemek için bir dizi virgülle ayırarak komut dosyası adını belirtin.</span><span class="sxs-lookup"><span data-stu-id="df628-141">To install multiple scripts, specify an array of the script names, separated by commas.</span></span> <span data-ttu-id="df628-142">Birden çok komut dosyası adı belirtirseniz, MinimumVersion veya RequiredVersion ekleyemezsiniz.</span><span class="sxs-lookup"><span data-stu-id="df628-142">You cannot add MinimumVersion or RequiredVersion if you specify multiple script names.</span></span>
-
-<span data-ttu-id="df628-143">Varsayılan olarak, komut dosyaları Program Files klasörüne yüklenir.</span><span class="sxs-lookup"><span data-stu-id="df628-143">By default, scripts are installed to the Program Files folder.</span></span> <span data-ttu-id="df628-144">Yükleme komut dosyası birden çok PSGetItemInfo nesnelere iletebildiğiniz; Bu tek bir komutta yüklemek için birden fazla komut dosyası belirtmenin başka bir yoludur.</span><span class="sxs-lookup"><span data-stu-id="df628-144">You can pipe multiple PSGetItemInfo objects to Install-Script; this is another way of specifying multiple scripts to install in a single command.</span></span>
-
-<span data-ttu-id="df628-145">Yüklenen kötü amaçlı kod içeren çalışan komut dosyalarını engellemeye yardımcı olmak için komut dosyaları otomatik olarak yükleme tarafından içeri aktarılmadı.</span><span class="sxs-lookup"><span data-stu-id="df628-145">To help prevent running scripts that contain malicious code, installed scripts are not automatically imported by installation.</span></span> <span data-ttu-id="df628-146">Güvenlik açısından en iyisi, herhangi bir cmdlet veya işlevleri, bir komut dosyası ilk defa çalıştırmadan önce bir kod değerlendirin.</span><span class="sxs-lookup"><span data-stu-id="df628-146">As a security best practice, evaluate script code before running any cmdlets or functions in a script for the first time.</span></span>
+- <span data-ttu-id="93652-129">NoPathUpdate anahtar parametresini yükleme betiği cmdlet komut dosyası yükleme konumu PATH ortam değişkenine eklemek için istemi atlar.</span><span class="sxs-lookup"><span data-stu-id="93652-129">NoPathUpdate switch parameter on Install-Script cmdlet bypasses the prompt for adding the script install location to the PATH environment variable.</span></span>
+- <span data-ttu-id="93652-130">Herhangi bir kullanımından komutu – belirtilen NoPathUpdate ile hiçbir istemi ve yol güncelleştirilmekte değil neden olur (zorla yoksayılabilir burada).</span><span class="sxs-lookup"><span data-stu-id="93652-130">Any use of the command WITH –NoPathUpdate specified will result in no prompt and the PATH NOT being updated (force is ignorable here).</span></span>
+- <span data-ttu-id="93652-131">-YOLUN güncelleştirilir ve force – NoPathUpdate olmadan hiçbir isteminde neden olur.</span><span class="sxs-lookup"><span data-stu-id="93652-131">-Force without –NoPathUpdate will result in no prompt and the PATH will be updated.</span></span>
+- <span data-ttu-id="93652-132">Ne – Force veya – NoPathUpdate belirttiyseniz, Kullanıcı istemi görürsünüz.</span><span class="sxs-lookup"><span data-stu-id="93652-132">If neither –Force or –NoPathUpdate are specified, the user will see the prompt.</span></span>
+- <span data-ttu-id="93652-133">Tüm bunlar yalnızca geçerlidir yükleme betiği verilen kapsam içinde ilk defa.</span><span class="sxs-lookup"><span data-stu-id="93652-133">All of this only applies the first time Install-Script is used in a given scope.</span></span>
 
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="df628-147">Cmdlet sözdizimi</span><span class="sxs-lookup"><span data-stu-id="df628-147">Cmdlet syntax</span></span>
+## <a name="notes"></a><span data-ttu-id="93652-134">Notlar</span><span class="sxs-lookup"><span data-stu-id="93652-134">Notes</span></span>
+
+<span data-ttu-id="93652-135">Bu cmdlet, Windows PowerShell 3.0 veya sonraki sürümleri Windows PowerShell, Windows 7 veya Windows 2008 R2 ve Windows'un sonraki sürümleri üzerinde çalışır.</span><span class="sxs-lookup"><span data-stu-id="93652-135">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
+
+<span data-ttu-id="93652-136">Bir bilgisayarda komut dosyası adı parametresi için belirtilen değer eşleştiğinden ve MinimumVersion veya RequiredVersion parametresini eklemediniz yükleme betiği sessizce komut dosyaları yüklemeden devam eder.</span><span class="sxs-lookup"><span data-stu-id="93652-136">If a version of the script on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Script silently continues without installing that script.</span></span> <span data-ttu-id="93652-137">MinimumVersion veya RequiredVersion parametreler belirtildi ve var olan betiği Bu parametre değerleri eşleşmiyor, bir hata oluşur.</span><span class="sxs-lookup"><span data-stu-id="93652-137">If the MinimumVersion or RequiredVersion parameters are specified, and the existing script does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="93652-138">Daha belirgin olması: şu anda yüklü komut dosyasının sürümünü MinimumVersion parametresinin değerini daha düşük veya RequiredVersion parametre değerine eşit değil ise, bir hata oluşur.</span><span class="sxs-lookup"><span data-stu-id="93652-138">To be more specific: if the version of the currently-installed script is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="93652-139">Yüklü komut dosyasının sürümünü MinimumVersion parametresinin değerinden büyük veya RequiredVersion parametresinin değeri eşit ise, yükleme betiği komut dosyaları yüklemeden sessizce sürdürür.</span><span class="sxs-lookup"><span data-stu-id="93652-139">If the version of the installed script is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Script silently continues without installing that script.</span></span>
+
+<span data-ttu-id="93652-140">Betik belirtilen adla eşleşen çevrimiçi galeriden varsa yükleme komut dosyası bir hata döndürür.</span><span class="sxs-lookup"><span data-stu-id="93652-140">Install-Script returns an error if no script exists in the online gallery that matches the specified name.</span></span>
+
+<span data-ttu-id="93652-141">Birden fazla komut dosyası yüklemek için bir dizi virgülle ayırarak komut dosyası adını belirtin.</span><span class="sxs-lookup"><span data-stu-id="93652-141">To install multiple scripts, specify an array of the script names, separated by commas.</span></span> <span data-ttu-id="93652-142">Birden çok komut dosyası adı belirtirseniz, MinimumVersion veya RequiredVersion ekleyemezsiniz.</span><span class="sxs-lookup"><span data-stu-id="93652-142">You cannot add MinimumVersion or RequiredVersion if you specify multiple script names.</span></span>
+
+<span data-ttu-id="93652-143">Varsayılan olarak, komut dosyaları Program Files klasörüne yüklenir.</span><span class="sxs-lookup"><span data-stu-id="93652-143">By default, scripts are installed to the Program Files folder.</span></span> <span data-ttu-id="93652-144">Yükleme komut dosyası birden çok PSGetItemInfo nesnelere iletebildiğiniz; Bu tek bir komutta yüklemek için birden fazla komut dosyası belirtmenin başka bir yoludur.</span><span class="sxs-lookup"><span data-stu-id="93652-144">You can pipe multiple PSGetItemInfo objects to Install-Script; this is another way of specifying multiple scripts to install in a single command.</span></span>
+
+<span data-ttu-id="93652-145">Yüklenen kötü amaçlı kod içeren çalışan komut dosyalarını engellemeye yardımcı olmak için komut dosyaları otomatik olarak yükleme tarafından içeri aktarılmadı.</span><span class="sxs-lookup"><span data-stu-id="93652-145">To help prevent running scripts that contain malicious code, installed scripts are not automatically imported by installation.</span></span> <span data-ttu-id="93652-146">Güvenlik açısından en iyisi, herhangi bir cmdlet veya işlevleri, bir komut dosyası ilk defa çalıştırmadan önce bir kod değerlendirin.</span><span class="sxs-lookup"><span data-stu-id="93652-146">As a security best practice, evaluate script code before running any cmdlets or functions in a script for the first time.</span></span>
+
+
+## <a name="cmdlet-syntax"></a><span data-ttu-id="93652-147">Cmdlet sözdizimi</span><span class="sxs-lookup"><span data-stu-id="93652-147">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Install-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="df628-148">Cmdlet çevrimiçi Yardım başvurusu</span><span class="sxs-lookup"><span data-stu-id="df628-148">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="93652-148">Cmdlet çevrimiçi Yardım başvurusu</span><span class="sxs-lookup"><span data-stu-id="93652-148">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="df628-149">Yükleme betiği</span><span class="sxs-lookup"><span data-stu-id="df628-149">Install-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619784)
+[<span data-ttu-id="93652-149">Install-Script</span><span class="sxs-lookup"><span data-stu-id="93652-149">Install-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619784)
 
-## <a name="example-commands"></a><span data-ttu-id="df628-150">Örnek komutlar</span><span class="sxs-lookup"><span data-stu-id="df628-150">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="93652-150">Örnek komutlar</span><span class="sxs-lookup"><span data-stu-id="93652-150">Example commands</span></span>
 
 ```powershell
 
@@ -239,7 +239,7 @@ Get-Command -Name "Required-Script2"
 
 Get-InstalledScript -Name "Required-Script2"
 
-Get-InstalledScript -Name "Required-Script2" | Format-List * 
+Get-InstalledScript -Name "Required-Script2" | Format-List *
 
 
 # Install a script with AllUsers scope
@@ -250,7 +250,7 @@ Get-InstalledScript -Name "Required-Script2" | Format-List *
 
 Install-Script -Repository "Local1" -Name "Required-Script3" -Scope "AllUsers"
 Get-InstalledScript -Name "Required-Script3"
-Get-InstalledScript -Name "Required-Script3" | Format-List * 
+Get-InstalledScript -Name "Required-Script3" | Format-List *
 
 
 # Install a script with its dependent scripts and modules
@@ -260,7 +260,7 @@ Get-InstalledScript -Name "Required-Script3" | Format-List *
 # The third command uses the Get-InstalledScript script cmdlet to get installed scripts and display the results.
 # The fourth command uses the Get-InstalledModule cmdlet to get installed modules and display the results.
 # The fifth command uses the Find-Script cmdlet to find scripts where the name begins with Required-Script and display the results.
-# The sixth command installs the scripts where the name begins with Required-Script in the Local1 repository. 
+# The sixth command installs the scripts where the name begins with Required-Script in the Local1 repository.
 # The final command gets installed scripts and displays the results.
 
 Find-Script -Repository "Local1" -Name "Script-WithDependencies2" -IncludeDependencies
@@ -273,7 +273,7 @@ Get-InstalledScript
 
 ```
 
-<span data-ttu-id="df628-151">Get-Command de kullanabilirsiniz – adı <InstalledScriptFileName> edinilir.</span><span class="sxs-lookup"><span data-stu-id="df628-151">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="df628-152">İki yükleme konumları PATH ortam değişkeninde belirtilen bir kapsamın ilk kullanımda eklenir.</span><span class="sxs-lookup"><span data-stu-id="df628-152">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
+<span data-ttu-id="93652-151">Get-Command de kullanabilirsiniz – adı <InstalledScriptFileName> edinilir.</span><span class="sxs-lookup"><span data-stu-id="93652-151">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="93652-152">İki yükleme konumları PATH ortam değişkeninde belirtilen bir kapsamın ilk kullanımda eklenir.</span><span class="sxs-lookup"><span data-stu-id="93652-152">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -326,7 +326,7 @@ Install-Script ContosoClient -Force
 # Install a script with dependencies
 Install-Script -Name ContosoClient
 
-# Install a script 
+# Install a script
 
 # Install a script from the registered repository with ScriptSourceLocation
 Install-Script Connect-AzureVM
@@ -344,7 +344,7 @@ Install-Script -Name *Azure*
 # Find all versions of a script
 Install-Script -Name Connect-O365 -AllVersions
 
-# Find a script with -MinimumVersion. 
+# Find a script with -MinimumVersion.
 # With MinimumVersion we can find a script whose version is greate than or equal to the specified MinimumVersion value.
 Install-Script Connect-O365 -MinimumVersion 1.4
 
@@ -381,8 +381,8 @@ At line:1 char:1
      + CategoryInfo          : InvalidOperation: (:) [Write-Error], WriteErrorException
      + FullyQualifiedErrorId : CommandAlreadyAvailableWitScriptName,Install-Script
 
- 
- 
+
+
  PS C:\WINDOWS\system32> install-script get-childitem,contosos -Repository localrepo
 install-script : A command with name 'get-childitem' is already available on this system. This script 'get-childitem' may override the existing command. If you still want to install this script 'get-childitem', use -Force parameter.
 At line:1 char:1
@@ -400,8 +400,8 @@ At C:\Program Files\WindowsPowerShell\Modules\powershellget\1.0.0.1\PSModule.psm
 
  PS C:\WINDOWS\system32>
 
- 
- 
+
+
  PS C:\WINDOWS\system32> find-script get-childitem -Repository localrepo | install-script
 install-script : A command with name 'get-childitem' is already available on this system. This script 'get-childitem' may override the existing command. If you still want to install this script 'get-childitem', use -Force parameter.
 At line:1 char:51
@@ -410,7 +410,7 @@ At line:1 char:51
      + CategoryInfo          : InvalidOperation: (:) [Write-Error], WriteErrorException
      + FullyQualifiedErrorId : CommandAlreadyAvailableWitScriptName,Install-Script
 
- 
+
  PS C:\WINDOWS\system32>
 
  PS C:\WINDOWS\system32> Install-Package -Name Get-ChildItem -source LocalRepo  -ProviderName powershellget -Type Script
@@ -437,13 +437,13 @@ The scripts install location 'C:\Program Files\WindowsPowerShell\Scripts' is req
 
 
 - To prompt only once per scope, user acceptance for PATH variable change will be added to the user specific settings file under %localappdata%\Microsoft\windows\PowerShell\PowerShellGet
-%localappdata%\Microsoft\windows\PowerShell\PowerShellGet\PowerShellGetSettings.XML. 
+%localappdata%\Microsoft\windows\PowerShell\PowerShellGet\PowerShellGetSettings.XML.
 This settings file will be used to not prompt again.
 
-After prompting for CurrentUser scope: 
+After prompting for CurrentUser scope:
     true or false for CurrentUserScope_AllowPATHChangeForScripts key based on user input.
 
-After prompting for AllUsers scope: 
+After prompting for AllUsers scope:
     true or false for AllUsersScope_AllowPATHChangeForScripts key based on user input.
 
 - If user accepts the prompt
@@ -455,7 +455,7 @@ After prompting for AllUsers scope:
 
 
 
-Example:             
+Example:
 PS C:\windows\system32> Install-Script -Name $scriptName -Repository $repositoryName -Scope $Scope -Verbose
 
 Acceptance required for adding the script installation locations to the PATH environment variable
@@ -465,7 +465,7 @@ The scripts install location 'C:\Program Files\WindowsPowerShell\Scripts' is req
 
 ```
 
-## <a name="install-script-cmdlet-in-pipeline-operations"></a><span data-ttu-id="df628-153">Ardışık Düzen işlemlerinde yükleme betiği cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="df628-153">Install-Script cmdlet in pipeline operations</span></span>
+## <a name="install-script-cmdlet-in-pipeline-operations"></a><span data-ttu-id="93652-153">Ardışık Düzen işlemlerinde yükleme betiği cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="93652-153">Install-Script cmdlet in pipeline operations</span></span>
 
 ```powershell
 
@@ -489,7 +489,7 @@ Get-Installedscript
 
 
 
-## <a name="error-scenarios"></a><span data-ttu-id="df628-154">Hata senaryoları</span><span class="sxs-lookup"><span data-stu-id="df628-154">Error scenarios</span></span>
+## <a name="error-scenarios"></a><span data-ttu-id="93652-154">Hata senaryoları</span><span class="sxs-lookup"><span data-stu-id="93652-154">Error scenarios</span></span>
 
 ```powershell
 
@@ -507,10 +507,10 @@ Install-Script ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
 
-## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="df628-155">Yükleme komut dosyası ve Get-InstalledScript cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="df628-155">Install-Script and Get-InstalledScript cmdlets</span></span>
-<span data-ttu-id="df628-156">Yükleme betiği cmdlet'i, belirtilen kapsam için bir özel komut dosyası bağımlılıklarını birlikte yüklemek için olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="df628-156">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="df628-157">Varsayılan olarak, komut dosyaları AllUsers kapsama yüklenir.</span><span class="sxs-lookup"><span data-stu-id="df628-157">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="df628-158">Get-InstalledScript cmdlet yükleme betiği cmdlet'i kullanılarak yüklenen komut dosyalarını listesini almak için olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="df628-158">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
+## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="93652-155">Yükleme komut dosyası ve Get-InstalledScript cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="93652-155">Install-Script and Get-InstalledScript cmdlets</span></span>
+<span data-ttu-id="93652-156">Yükleme betiği cmdlet'i, belirtilen kapsam için bir özel komut dosyası bağımlılıklarını birlikte yüklemek için olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="93652-156">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="93652-157">Varsayılan olarak, komut dosyaları AllUsers kapsama yüklenir.</span><span class="sxs-lookup"><span data-stu-id="93652-157">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="93652-158">Get-InstalledScript cmdlet yükleme betiği cmdlet'i kullanılarak yüklenen komut dosyalarını listesini almak için olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="93652-158">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
 
-<span data-ttu-id="df628-159">Kullanım Not: Yönetim ve komut dosyaları onlar yüklendikten sonra bulma izin vermek için yükleme betiği $home\Documents\WindowsPowerShell\Scripts adresindeki komut dosyaları depolamak için varsayılan klasörü oluşturur ve bu klasörü yolu ortamınıza eklemek.</span><span class="sxs-lookup"><span data-stu-id="df628-159">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="df628-160">Yolun değiştirilmesi önemliyse, yükleme komut dosyası yerine Kaydet-komut dosyası kullanın.</span><span class="sxs-lookup"><span data-stu-id="df628-160">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="df628-161">Yalnızca GET-InstalledScripts ve kaldırma komut dosyası yükleme komut dosyasını kullanarak sistemde yerleştirilmiş komut dosyaları ile çalışabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="df628-161">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
+<span data-ttu-id="93652-159">Kullanım Not: Yönetim ve komut dosyaları onlar yüklendikten sonra bulma izin vermek için yükleme betiği $home\Documents\WindowsPowerShell\Scripts adresindeki komut dosyaları depolamak için varsayılan klasörü oluşturur ve bu klasörü yolu ortamınıza eklemek.</span><span class="sxs-lookup"><span data-stu-id="93652-159">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="93652-160">Yolun değiştirilmesi önemliyse, yükleme komut dosyası yerine Kaydet-komut dosyası kullanın.</span><span class="sxs-lookup"><span data-stu-id="93652-160">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="93652-161">Yalnızca GET-InstalledScripts ve kaldırma komut dosyası yükleme komut dosyasını kullanarak sistemde yerleştirilmiş komut dosyaları ile çalışabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="93652-161">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
 ```powershell
 # Install locations for scripts:
 # Default scope is AllUsers.
@@ -566,7 +566,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-<span data-ttu-id="df628-162">Get-Command de kullanabilirsiniz – adı <InstalledScriptFileName> edinilir.</span><span class="sxs-lookup"><span data-stu-id="df628-162">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="df628-163">İki yükleme konumları PATH ortam değişkeninde belirtilen bir kapsamın ilk kullanımda eklenir.</span><span class="sxs-lookup"><span data-stu-id="df628-163">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
+<span data-ttu-id="93652-162">Get-Command de kullanabilirsiniz – adı <InstalledScriptFileName> edinilir.</span><span class="sxs-lookup"><span data-stu-id="93652-162">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="93652-163">İki yükleme konumları PATH ortam değişkeninde belirtilen bir kapsamın ilk kullanımda eklenir.</span><span class="sxs-lookup"><span data-stu-id="93652-163">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -687,4 +687,3 @@ Param()
 Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
-

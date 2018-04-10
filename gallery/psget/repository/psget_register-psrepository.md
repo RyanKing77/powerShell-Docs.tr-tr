@@ -1,39 +1,40 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
 title: Register-PSRepository
-ms.openlocfilehash: badac5dc1157bbfa79058630c5c2f260d2151bd8
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7a7d1bf56a87161f6ec735399b15b19f317282b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="register-psrepository"></a><span data-ttu-id="35aa1-103">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="35aa1-103">Register-PSRepository</span></span>
+# <a name="register-psrepository"></a><span data-ttu-id="63edb-103">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="63edb-103">Register-PSRepository</span></span>
 
-<span data-ttu-id="35aa1-104">Bir bilgisayarda kayıtlı depoları alır.</span><span class="sxs-lookup"><span data-stu-id="35aa1-104">Gets the registered repositories on a computer.</span></span>
+<span data-ttu-id="63edb-104">Bir bilgisayarda kayıtlı depoları alır.</span><span class="sxs-lookup"><span data-stu-id="63edb-104">Gets the registered repositories on a computer.</span></span>
 
-## <a name="description"></a><span data-ttu-id="35aa1-105">Açıklama</span><span class="sxs-lookup"><span data-stu-id="35aa1-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="63edb-105">Açıklama</span><span class="sxs-lookup"><span data-stu-id="63edb-105">Description</span></span>
 
-<span data-ttu-id="35aa1-106">Register-PSRepository cmdlet, PowerShell modülleri için çevrimiçi depoya kaydeder.</span><span class="sxs-lookup"><span data-stu-id="35aa1-106">The Register-PSRepository cmdlet registers the online repository for PowerShell modules.</span></span> <span data-ttu-id="35aa1-107">Bir depo kaydedildikten sonra bulma modülünden başvurabilir yükle-Module ve Yayımla-Module cmdlet'leri.</span><span class="sxs-lookup"><span data-stu-id="35aa1-107">After a repository is registered, you can reference it from the Find-Module, Install-Module, and Publish-Module cmdlets.</span></span> <span data-ttu-id="35aa1-108">Kayıtlı havuzu bulma modülü ve yükleme modülünün varsayılan depoya olur.</span><span class="sxs-lookup"><span data-stu-id="35aa1-108">The registered repository becomes the default repository in Find-Module and Install-Module.</span></span> 
+<span data-ttu-id="63edb-106">Register-PSRepository cmdlet, PowerShell modülleri için çevrimiçi depoya kaydeder.</span><span class="sxs-lookup"><span data-stu-id="63edb-106">The Register-PSRepository cmdlet registers the online repository for PowerShell modules.</span></span> <span data-ttu-id="63edb-107">Bir depo kaydedildikten sonra bulma modülünden başvurabilir yükle-Module ve Yayımla-Module cmdlet'leri.</span><span class="sxs-lookup"><span data-stu-id="63edb-107">After a repository is registered, you can reference it from the Find-Module, Install-Module, and Publish-Module cmdlets.</span></span> <span data-ttu-id="63edb-108">Kayıtlı havuzu bulma modülü ve yükleme modülünün varsayılan depoya olur.</span><span class="sxs-lookup"><span data-stu-id="63edb-108">The registered repository becomes the default repository in Find-Module and Install-Module.</span></span>
 
-<span data-ttu-id="35aa1-109">Kayıtlı depoları kullanıcıya özeldir.</span><span class="sxs-lookup"><span data-stu-id="35aa1-109">Registered repositories are user-specific.</span></span> <span data-ttu-id="35aa1-110">Bir sistem genelinde bağlamında kayıtlı değil.</span><span class="sxs-lookup"><span data-stu-id="35aa1-110">They are not registered in a system-wide context.</span></span>
+<span data-ttu-id="63edb-109">Kayıtlı depoları kullanıcıya özeldir.</span><span class="sxs-lookup"><span data-stu-id="63edb-109">Registered repositories are user-specific.</span></span> <span data-ttu-id="63edb-110">Bir sistem genelinde bağlamında kayıtlı değil.</span><span class="sxs-lookup"><span data-stu-id="63edb-110">They are not registered in a system-wide context.</span></span>
 
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="35aa1-111">Cmdlet sözdizimi</span><span class="sxs-lookup"><span data-stu-id="35aa1-111">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="63edb-111">Cmdlet sözdizimi</span><span class="sxs-lookup"><span data-stu-id="63edb-111">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="35aa1-112">Cmdlet çevrimiçi Yardım başvurusu</span><span class="sxs-lookup"><span data-stu-id="35aa1-112">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="63edb-112">Cmdlet çevrimiçi Yardım başvurusu</span><span class="sxs-lookup"><span data-stu-id="63edb-112">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="35aa1-113">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="35aa1-113">Register-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517129)
+[<span data-ttu-id="63edb-113">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="63edb-113">Register-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517129)
 
-## <a name="example-commands"></a><span data-ttu-id="35aa1-114">Örnek komutlar</span><span class="sxs-lookup"><span data-stu-id="35aa1-114">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="63edb-114">Örnek komutlar</span><span class="sxs-lookup"><span data-stu-id="63edb-114">Example commands</span></span>
 
-### <a name="register-a-powershell-repository"></a><span data-ttu-id="35aa1-115">Bir PowerShell deposu kaydetme</span><span class="sxs-lookup"><span data-stu-id="35aa1-115">Register a PowerShell Repository</span></span>
-<span data-ttu-id="35aa1-116">İç depoları karşı çalışmaya PowerShellGet yapılandırabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="35aa1-116">You can configure PowerShellGet to work against internal repositories.</span></span> <span data-ttu-id="35aa1-117">Bir depo kaydedildikten sonra ile çalışmak için bulma modülü ve Install-Module kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="35aa1-117">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
+### <a name="register-a-powershell-repository"></a><span data-ttu-id="63edb-115">Bir PowerShell Deposu Kaydetme</span><span class="sxs-lookup"><span data-stu-id="63edb-115">Register a PowerShell Repository</span></span>
+<span data-ttu-id="63edb-116">İç depoları karşı çalışmaya PowerShellGet yapılandırabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="63edb-116">You can configure PowerShellGet to work against internal repositories.</span></span>
+<span data-ttu-id="63edb-117">Bir depo kaydedildikten sonra ile çalışmak için bulma modülü ve Install-Module kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="63edb-117">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
 
 ```powershell
 # Register a default repository
@@ -62,9 +63,9 @@ Unregister-PSRepository DemoRepo
 ```
 
 
-### <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="35aa1-118">Destek paylaşımı betiği ile kayıt PSRepository ve Set-PSRepository cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="35aa1-118">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
+### <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="63edb-118">Destek paylaşımı betiği ile kayıt PSRepository ve Set-PSRepository cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="63edb-118">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
 
-<span data-ttu-id="35aa1-119">Eklemek için kayıt PSRepository kullanın **ScriptSourceLocation** ve **ScriptPublishLocation** PSRepository için.</span><span class="sxs-lookup"><span data-stu-id="35aa1-119">Use Register-PSRepository cmdlet to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
+<span data-ttu-id="63edb-119">Eklemek için kayıt PSRepository kullanın **ScriptSourceLocation** ve **ScriptPublishLocation** PSRepository için.</span><span class="sxs-lookup"><span data-stu-id="63edb-119">Use Register-PSRepository cmdlet to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 
 ```powershell
 
@@ -114,4 +115,3 @@ ScriptPublishLocation : https://customgallery.cloudapp.net/api/v2/package/
 ProviderOptions : {}
 
 ```
-

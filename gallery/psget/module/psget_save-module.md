@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: "Kaydet-Modülü"
-ms.openlocfilehash: acea38b0eebc58dafda0ab58b91dc6a70ffffd3b
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Kaydet-Modülü
+ms.openlocfilehash: c9078afb03dc074ee3831c2c395c0f1e6c4ffa38
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="save-module"></a><span data-ttu-id="d54be-103">Kaydet-Modülü</span><span class="sxs-lookup"><span data-stu-id="d54be-103">Save-Module</span></span>
+# <a name="save-module"></a><span data-ttu-id="9e4af-103">Kaydet-Modülü</span><span class="sxs-lookup"><span data-stu-id="9e4af-103">Save-Module</span></span>
 
-<span data-ttu-id="d54be-104">Bir modül, yerel olarak yüklemeden kaydeder.</span><span class="sxs-lookup"><span data-stu-id="d54be-104">Saves a module locally without installing it.</span></span>
+<span data-ttu-id="9e4af-104">Bir modül, yerel olarak yüklemeden kaydeder.</span><span class="sxs-lookup"><span data-stu-id="9e4af-104">Saves a module locally without installing it.</span></span>
 
-## <a name="description"></a><span data-ttu-id="d54be-105">Açıklama</span><span class="sxs-lookup"><span data-stu-id="d54be-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="9e4af-105">Açıklama</span><span class="sxs-lookup"><span data-stu-id="9e4af-105">Description</span></span>
 
-<span data-ttu-id="d54be-106">Kaydet-modül cmdlet modülü İnceleme için belirtilen depodan yerel olarak kaydeder.</span><span class="sxs-lookup"><span data-stu-id="d54be-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="d54be-107">Modülü yüklü değil.</span><span class="sxs-lookup"><span data-stu-id="d54be-107">The module is not installed.</span></span>
+<span data-ttu-id="9e4af-106">Kaydet-modül cmdlet modülü İnceleme için belirtilen depodan yerel olarak kaydeder.</span><span class="sxs-lookup"><span data-stu-id="9e4af-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="9e4af-107">Modülü yüklü değil.</span><span class="sxs-lookup"><span data-stu-id="9e4af-107">The module is not installed.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="d54be-108">Cmdlet sözdizimi</span><span class="sxs-lookup"><span data-stu-id="d54be-108">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="9e4af-108">Cmdlet sözdizimi</span><span class="sxs-lookup"><span data-stu-id="9e4af-108">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="d54be-109">Cmdlet çevrimiçi Yardım başvurusu</span><span class="sxs-lookup"><span data-stu-id="d54be-109">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="9e4af-109">Cmdlet çevrimiçi Yardım başvurusu</span><span class="sxs-lookup"><span data-stu-id="9e4af-109">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="d54be-110">Kaydet-Modülü</span><span class="sxs-lookup"><span data-stu-id="d54be-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
+[<span data-ttu-id="9e4af-110">Kaydet-Modülü</span><span class="sxs-lookup"><span data-stu-id="9e4af-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-## <a name="example-commands"></a><span data-ttu-id="d54be-111">Örnek komutlar</span><span class="sxs-lookup"><span data-stu-id="d54be-111">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="9e4af-111">Örnek komutlar</span><span class="sxs-lookup"><span data-stu-id="9e4af-111">Example commands</span></span>
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
@@ -64,4 +64,3 @@ Install-Module -Name ContosoServer -Path C:\MySavedModuleLocation -AllowPrerelea
 
 
 ```
-

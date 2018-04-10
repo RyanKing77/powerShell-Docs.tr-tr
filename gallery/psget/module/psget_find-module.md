@@ -1,42 +1,42 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeri, powershell, cmdlet, psget
-title: "Bulma Modülü"
-ms.openlocfilehash: 65c466909c007ed08c3fa978f78483983b00ba73
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Bulma Modülü
+ms.openlocfilehash: 03dff4454a31638df564568ef51eec158685c8e9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="find-module"></a><span data-ttu-id="e6e72-103">Bulma Modülü</span><span class="sxs-lookup"><span data-stu-id="e6e72-103">Find-Module</span></span>
-<span data-ttu-id="e6e72-104">Belirtilen ölçütlerle eşleşen bir çevrimiçi galeriden modülleri bulur.</span><span class="sxs-lookup"><span data-stu-id="e6e72-104">Finds modules from an online gallery that match specified criteria.</span></span>
+# <a name="find-module"></a><span data-ttu-id="86e8b-103">Bulma Modülü</span><span class="sxs-lookup"><span data-stu-id="86e8b-103">Find-Module</span></span>
+<span data-ttu-id="86e8b-104">Belirtilen ölçütlerle eşleşen bir çevrimiçi galeriden modülleri bulur.</span><span class="sxs-lookup"><span data-stu-id="86e8b-104">Finds modules from an online gallery that match specified criteria.</span></span>
 
-## <a name="description"></a><span data-ttu-id="e6e72-105">Açıklama</span><span class="sxs-lookup"><span data-stu-id="e6e72-105">Description</span></span>
-<span data-ttu-id="e6e72-106">Bulma modülü belirtilen ölçütlere uyan kayıtlı depoları modüllerden bulur.</span><span class="sxs-lookup"><span data-stu-id="e6e72-106">Find-Module discovers the modules from registered repositories that matches the specified criteria.</span></span>
-<span data-ttu-id="e6e72-107">Bulunan her modül için bulma modülü isteğe bağlı olarak yöneltilen bir PSRepositoryItemInfo nesnesi yükle-Module modülleri yüklemek için döndürür.</span><span class="sxs-lookup"><span data-stu-id="e6e72-107">For each module found, Find-Module returns a PSRepositoryItemInfo object which can optionally be piped to Install-Module for installing the modules.</span></span>
+## <a name="description"></a><span data-ttu-id="86e8b-105">Açıklama</span><span class="sxs-lookup"><span data-stu-id="86e8b-105">Description</span></span>
+<span data-ttu-id="86e8b-106">Bulma modülü belirtilen ölçütlere uyan kayıtlı depoları modüllerden bulur.</span><span class="sxs-lookup"><span data-stu-id="86e8b-106">Find-Module discovers the modules from registered repositories that matches the specified criteria.</span></span>
+<span data-ttu-id="86e8b-107">Bulunan her modül için bulma modülü isteğe bağlı olarak yöneltilen bir PSRepositoryItemInfo nesnesi yükle-Module modülleri yüklemek için döndürür.</span><span class="sxs-lookup"><span data-stu-id="86e8b-107">For each module found, Find-Module returns a PSRepositoryItemInfo object which can optionally be piped to Install-Module for installing the modules.</span></span>
 
-- <span data-ttu-id="e6e72-108">Bulma modülü için modüle bağlı filtre içeriği komutu, - DscResource, - RoleCapability ve - parametrelerini içerir.</span><span class="sxs-lookup"><span data-stu-id="e6e72-108">Find-Module can filter based on module contents with the -Command, -DscResource, -RoleCapability and -Includes parameters.</span></span>
-- <span data-ttu-id="e6e72-109">Bulma modülü sürüm parametrelerle filtre uygulayabilirsiniz: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="e6e72-109">Find-Module can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
-  - <span data-ttu-id="e6e72-110">Bu parametreler MinmimumVersion ve MaximumVersion dışında birbirini dışlar.</span><span class="sxs-lookup"><span data-stu-id="e6e72-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
-  - <span data-ttu-id="e6e72-111">Bu sürümü parametreleri yalnızca bir joker karakter bulunmayan tek modülü adıyla izin verilir.</span><span class="sxs-lookup"><span data-stu-id="e6e72-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
-  - <span data-ttu-id="e6e72-112">RequiredVersion parametresi belirtilmezse, bulma modülü en düşük bir sürüm belirtilmezse eşit veya bundan büyük belirtilen en düşük sürüm veya modülünün en son sürümünü modülü en son sürümünü döndürür.</span><span class="sxs-lookup"><span data-stu-id="e6e72-112">If the RequiredVersion parameter is not specified, Find-Module returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span> 
-  - <span data-ttu-id="e6e72-113">RequiredVersion parametresi belirtilirse, bulma modülü yalnızca tam olarak belirtilen sürümle eşleşen modülü sürümünü döndürür.</span><span class="sxs-lookup"><span data-stu-id="e6e72-113">If the RequiredVersion parameter is specified, Find-Module only returns the version of module that exactly matches the specified version.</span></span>
-- <span data-ttu-id="e6e72-114">Bulma modülü modülü meta filtreleyebilir Tag parametresini ile</span><span class="sxs-lookup"><span data-stu-id="e6e72-114">Find-Module can filter on module metadata with the -Tag parameter</span></span>
-- <span data-ttu-id="e6e72-115">Bulma modülü deposu özgü arama dili filtreleyebilir - filtre parametresine sahip.</span><span class="sxs-lookup"><span data-stu-id="e6e72-115">Find-Module can filter on repository-specific search language with the -Filter parameter.</span></span>
-- <span data-ttu-id="e6e72-116">Bulma modülü tüm veya az kayıtlı depoları modüllerden filtre uygulayabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="e6e72-116">Find-Module can filter on modules from all or few of the registered repositories.</span></span>
+- <span data-ttu-id="86e8b-108">Bulma modülü için modüle bağlı filtre içeriği komutu, - DscResource, - RoleCapability ve - parametrelerini içerir.</span><span class="sxs-lookup"><span data-stu-id="86e8b-108">Find-Module can filter based on module contents with the -Command, -DscResource, -RoleCapability and -Includes parameters.</span></span>
+- <span data-ttu-id="86e8b-109">Bulma modülü sürüm parametrelerle filtre uygulayabilirsiniz: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="86e8b-109">Find-Module can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="86e8b-110">Bu parametreler MinmimumVersion ve MaximumVersion dışında birbirini dışlar.</span><span class="sxs-lookup"><span data-stu-id="86e8b-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="86e8b-111">Bu sürümü parametreleri yalnızca bir joker karakter bulunmayan tek modülü adıyla izin verilir.</span><span class="sxs-lookup"><span data-stu-id="86e8b-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
+  - <span data-ttu-id="86e8b-112">RequiredVersion parametresi belirtilmezse, bulma modülü en düşük bir sürüm belirtilmezse eşit veya bundan büyük belirtilen en düşük sürüm veya modülünün en son sürümünü modülü en son sürümünü döndürür.</span><span class="sxs-lookup"><span data-stu-id="86e8b-112">If the RequiredVersion parameter is not specified, Find-Module returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span>
+  - <span data-ttu-id="86e8b-113">RequiredVersion parametresi belirtilirse, bulma modülü yalnızca tam olarak belirtilen sürümle eşleşen modülü sürümünü döndürür.</span><span class="sxs-lookup"><span data-stu-id="86e8b-113">If the RequiredVersion parameter is specified, Find-Module only returns the version of module that exactly matches the specified version.</span></span>
+- <span data-ttu-id="86e8b-114">Bulma modülü modülü meta filtreleyebilir Tag parametresini ile</span><span class="sxs-lookup"><span data-stu-id="86e8b-114">Find-Module can filter on module metadata with the -Tag parameter</span></span>
+- <span data-ttu-id="86e8b-115">Bulma modülü deposu özgü arama dili filtreleyebilir - filtre parametresine sahip.</span><span class="sxs-lookup"><span data-stu-id="86e8b-115">Find-Module can filter on repository-specific search language with the -Filter parameter.</span></span>
+- <span data-ttu-id="86e8b-116">Bulma modülü tüm veya az kayıtlı depoları modüllerden filtre uygulayabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="86e8b-116">Find-Module can filter on modules from all or few of the registered repositories.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="e6e72-117">Cmdlet sözdizimi</span><span class="sxs-lookup"><span data-stu-id="e6e72-117">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="86e8b-117">Cmdlet sözdizimi</span><span class="sxs-lookup"><span data-stu-id="86e8b-117">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="e6e72-118">Cmdlet çevrimiçi Yardım başvurusu</span><span class="sxs-lookup"><span data-stu-id="e6e72-118">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="86e8b-118">Cmdlet çevrimiçi Yardım başvurusu</span><span class="sxs-lookup"><span data-stu-id="86e8b-118">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="e6e72-119">Bulma Modülü</span><span class="sxs-lookup"><span data-stu-id="e6e72-119">Find-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398574)
+[<span data-ttu-id="86e8b-119">Bulma Modülü</span><span class="sxs-lookup"><span data-stu-id="86e8b-119">Find-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398574)
 
-## <a name="example-commands"></a><span data-ttu-id="e6e72-120">Örnek komutlar</span><span class="sxs-lookup"><span data-stu-id="e6e72-120">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="86e8b-120">Örnek komutlar</span><span class="sxs-lookup"><span data-stu-id="86e8b-120">Example commands</span></span>
 ```powershell
 # Find a specific module
 Find-Module Azure
@@ -54,7 +54,7 @@ Find-Module -Name AzureRM*
 # Find all versions of a module
 Find-Module -Name PSReadline -AllVersions
 
-# Find a module with -MinimumVersion. 
+# Find a module with -MinimumVersion.
 # With MinimumVersion we can find a module whose version is greate than or equal to the specified MinimumVersion value.
 Find-Module -Name PSReadline -MinimumVersion 1.0.0.12
 
@@ -142,4 +142,3 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
-

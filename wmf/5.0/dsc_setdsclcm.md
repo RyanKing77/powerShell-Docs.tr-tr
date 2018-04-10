@@ -1,19 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: 0aff3ff1fe12fbc7acce20cf7c802f58ace77bb9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 676d25f945e5a2176ed1d6108f703b21581bd036
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a><span data-ttu-id="a8454-102">Set-DscLocalConfigurationManager cmdlet'ini destekler - force parametresini</span><span class="sxs-lookup"><span data-stu-id="a8454-102">Set-DscLocalConfigurationManager cmdlet supports -force parameter</span></span>
+# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a><span data-ttu-id="67d16-102">Set-DscLocalConfigurationManager cmdlet'ini destekler - force parametresini</span><span class="sxs-lookup"><span data-stu-id="67d16-102">Set-DscLocalConfigurationManager cmdlet supports -force parameter</span></span>
 
-<span data-ttu-id="a8454-103">Set-DscLocalConfigurationManager cmdlet'i için yeni bir parametre için bir destek ekledik.</span><span class="sxs-lookup"><span data-stu-id="a8454-103">We have added a support for new parameter to Set-DscLocalConfigurationManager cmdlet.</span></span> <span data-ttu-id="a8454-104">Bu kullanıcının makinesinde meta yapılandırması, belirleyici biçimde durdurulacak tüm çalışan işlemleri neden olacak şekilde tutarlılık denetimi gibi diğer işlemleri arka planda çalışıyor sıfırlanır olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="a8454-104">This will allow the user to reset meta configuration on machine deterministically when other operations like consistency check are running in background as it will cause all running operations to be stopped.</span></span>
+<span data-ttu-id="67d16-103">Set-DscLocalConfigurationManager cmdlet'i için yeni bir parametre için bir destek ekledik.</span><span class="sxs-lookup"><span data-stu-id="67d16-103">We have added a support for new parameter to Set-DscLocalConfigurationManager cmdlet.</span></span> <span data-ttu-id="67d16-104">Bu kullanıcının makinesinde meta yapılandırması, belirleyici biçimde durdurulacak tüm çalışan işlemleri neden olacak şekilde tutarlılık denetimi gibi diğer işlemleri arka planda çalışıyor sıfırlanır olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="67d16-104">This will allow the user to reset meta configuration on machine deterministically when other operations like consistency check are running in background as it will cause all running operations to be stopped.</span></span>
 
-<span data-ttu-id="a8454-105">Deneyimi, – Force parametresi olmadan meta yapılandırmasını ayarlamaya çalışırken aşağıdaki gibi görünür.</span><span class="sxs-lookup"><span data-stu-id="a8454-105">The experience looks like this when trying to set meta configuration without –Force parameter.</span></span>
+<span data-ttu-id="67d16-105">Deneyimi, – Force parametresi olmadan meta yapılandırmasını ayarlamaya çalışırken aşağıdaki gibi görünür.</span><span class="sxs-lookup"><span data-stu-id="67d16-105">The experience looks like this when trying to set meta configuration without –Force parameter.</span></span>
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".
@@ -28,7 +28,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.046 seconds.
 ```
 
-<span data-ttu-id="a8454-106">Biz kullandığınızda – başarıyla zorla makinede çalışan geçerli işlemi iptal ederek sistemdeki meta yapılandırmasını güncelleştirir.</span><span class="sxs-lookup"><span data-stu-id="a8454-106">When we use –force it successfully updates the meta configuration on system by canceling the current running operation on the machine.</span></span>
+<span data-ttu-id="67d16-106">Biz kullandığınızda – başarıyla zorla makinede çalışan geçerli işlemi iptal ederek sistemdeki meta yapılandırmasını güncelleştirir.</span><span class="sxs-lookup"><span data-stu-id="67d16-106">When we use –force it successfully updates the meta configuration on system by canceling the current running operation on the machine.</span></span>
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose -Force
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".
@@ -47,4 +47,3 @@ VERBOSE: \[DEV-10586-465\]: LCM: \[ End Set \] in 0.1410 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.421 seconds.
 ```
-
