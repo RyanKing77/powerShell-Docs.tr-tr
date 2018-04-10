@@ -133,7 +133,7 @@ Yükleyerek [ `WindowsPSModulePath` ] [ windowspsmodulepath] modülü, Windows P
 İlk olarak, yükleme `WindowsPSModulePath` PowerShell Galerisi'nden modül:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -160,7 +160,7 @@ Yapmanız gereken tek şey PowerShell alt sistemi bir OpenSSH tabanlı SSH sunuc
 
 Yapılandırma ve SSH temelli remoting kullanma hakkında daha fazla bilgi için bkz: [PowerShell uzaktan iletişimi SSH üzerinden][ssh-remoting].
 
-## <a name="default-encoding-is-utf-8-without-a-bom"></a>Varsayılan kodlamadır UTF-8 bir ürün reçetesi olmadan
+## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Varsayılan kodlamadır UTF-8 yeni ModuleManifest dışında bir ürün reçetesi olmadan
 
 Geçmişte, Windows PowerShell cmdlet'leri ister `Get-Content`, `Set-Content` ASCII ve UTF-16 gibi farklı kodlamaları kullanılır.
 Varsayılan kodlama varyansı sorunları cmdlet'leri bir kodlama belirtmeden kullanırken oluşturulur.
@@ -179,7 +179,6 @@ Aşağıdaki cmdlet, bu değişiklikten etkilenmez:
 - Format-Hex
 - Get-içerik
 - Import-Csv
-- New-ModuleManifest
 - Out-File
 - Dize seçin
 - Posta iletisi gönder
@@ -190,6 +189,8 @@ Bu cmdlet'leri ayrıca güncelleştirilmiş böylece `-Encoding` parametresi evr
 Varsayılan değer olan `$OutputEncoding` UTF-8'de değişti.
 
 En iyi uygulama, açıkça komut dosyalarını kullanarak Kodlamalar ayarlamalısınız `-Encoding` platformlarında belirleyici davranış üretmek için parametre.
+
+`New-ModuleManifest` cmdlet yok **kodlama** parametresi. Modül bildirimi (.psd1) dosyasının kodlamasını ile oluşturulan `New-ModuleManifest` cmdlet ortama bağlıdır: PowerShell çekirdek ise Linux üzerinde çalışan sonra kodlama UTF-8 (ürün reçetesi); Aksi takdirde kodlama UTF-16 (BOM) sahip. (#3940)
 
 ## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>Ardışık Düzen işareti, backgrounding desteği (`&`) (#3360)
 
@@ -225,7 +226,7 @@ PowerShell işleri hakkında daha fazla bilgi için bkz: [about_Jobs](https://ms
   - `GitCommitId`: Bu Git yürütme Git şube veya etiketinin PowerShell burada oluşturulmuş kimliğidir.
     Yayın derlemeleri üzerinde bu büyük olasılıkla aynı olacaktır `PSVersion`.
   - `OS`: Bu tarafından döndürülen bir işletim sistemi sürüm dizesi değil `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
-  - `Platform`: Bu tarafından döndürülen `[System.Environment]::OSVersion.Platform` ayarlanır `Win32NT` , Windows'da `MacOSX` macOS üzerinde ve `Unix` Linux üzerinde.
+  - `Platform`: Bu tarafından döndürülen `[System.Environment]::OSVersion.Platform` ayarlanır `Win32NT` , Windows'da `Unix` macOS üzerinde ve `Unix` Linux üzerinde.
 - Kaldırılan `BuildVersion` özelliğinden `$PSVersionTable`.
   Bu özellik, kesin Windows derleme sürüme bağlı.
   Bunun yerine, kullanmanızı öneririz `GitCommitId` PowerShell çekirdek tam yapı sürümü alınamadı. (#3877) (Teşekkürler @iSazonov!)

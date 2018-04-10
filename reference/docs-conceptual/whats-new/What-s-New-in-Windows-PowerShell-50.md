@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell 5.0 yenilikler nelerdir?
-ms.openlocfilehash: 3a412b35c593c99fb8ea8307b12ccc05871863f4
-ms.sourcegitcommit: e2360ac94fe4deb0ed0f5c8c8d9b293551ec8030
+ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 yenilikler nelerdir?
 Windows PowerShell 5.0 kullanımını genişleten, kullanılabilirliğini artıran ve denetime izin ver ve Windows tabanlı ortamları daha kolay ve kapsamlı bir şekilde yönetmek, önemli yeni özellikler içerir.
 
 Windows PowerShell 5.0 geriye dönük olarak uyumludur. Cmdlet'leri, sağlayıcıları, modüller, ek bileşenler, komut dosyaları, İşlevler ve Windows PowerShell 4.0, Windows PowerShell 3.0 ve Windows PowerShell 2.0 için genellikle tasarlanmış profilleri Windows PowerShell 5. 0 ' değişiklik yapılmadan çalışır.
 
-# <a name="installing-windows-powershell"></a>Windows PowerShell'i yükleme
-Windows PowerShell 5.0, Windows Server 2016 Technical Preview ve Windows 10 varsayılan olarak yüklenir. 
+# <a name="installing-windows-powershell"></a>Windows PowerShell Yükleme
+Windows PowerShell 5.0, Windows Server 2016 Technical Preview ve Windows 10 varsayılan olarak yüklenir.
 
 Windows Server 2012 R2, Windows 8.1 Enterprise veya Windows 8.1 Pro üzerinde Windows PowerShell 5. 0'ı yüklemek için karşıdan yükleyip [Windows Management Framework 5.0](http://aka.ms/wmf5download). Yükleme ayrıntılarını okuduğunuzdan ve Windows Management Framework 5.0 yüklemeden önce tüm sistem gereksinimlerini karşıladığından emin olun.
 
@@ -36,7 +36,7 @@ Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell istenen dur
 
     -   [Başlangıç DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force sabit.
 
-    -   [Get-DscLocalConfigurationManager](http://technet.microsoft.com/library/dn407378.aspx) daha kullanışlı motoru durumu bilgilerini görüntüler.
+    -   [Get-DscLocalConfigurationManager](http://technet.microsoft.com/library/dn407378.aspx) displays more useful information about the engine state.
 
     -   [Test-DscConfiguration](http://technet.microsoft.com/library/dn407382.aspx) artık doğru veya yanlış yanı sıra bilgisayar adını döndürür.
 
@@ -184,7 +184,7 @@ Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell istenen dur
 
 - Yeni GUID cmdlet komut dosyaları veya DSC kaynakları yazarken yararlı bir GUID oluşturmak için .NET Framework GUID sınıfı yararlanır.
 
-- Bir dosya özellikle uygulandıktan sonra dosya sürümü bilgilerini yanıltıcı, olabileceğinden, yeni FileVersionRaw ve ProductVersionRaw komut dosyası özellikleri FileInfo nesneler için kullanılamaz. Örneğin, burada $pid çalışan bir Windows PowerShell oturumu için işlem kimliği içerir, powershell.exe için bu özelliklerin değerlerini görüntülemek için aşağıdaki komutu çalıştırabilirsiniz:```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- Bir dosya özellikle uygulandıktan sonra dosya sürümü bilgilerini yanıltıcı, olabileceğinden, yeni FileVersionRaw ve ProductVersionRaw komut dosyası özellikleri FileInfo nesneler için kullanılamaz. Örneğin, burada $pid çalışan bir Windows PowerShell oturumu için işlem kimliği içerir, powershell.exe için bu özelliklerin değerlerini görüntülemek için aşağıdaki komutu çalıştırabilirsiniz:  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 
 - Yeni cmdlet'leri Enter PSHostProcess ve çıkış PSHostProcess Windows PowerShell betikleri Windows PowerShell konsolunda çalışan geçerli işlemi ayrı işlemlerde hata ayıklama sağlar. Girin ya da belirli işlem kimliği için iliştirmek için ENTER-PSHostProcess çalıştırın ve ardından işlemdeki etkin çalışma alanlarını döndürmek için Get-çalışma çalıştırın. İşlem içindeki komut dosyası hata ayıklaması bittiğinde işleminden ayırmak için çıkış-PSHostProcess çalıştırın.
 
@@ -228,11 +228,11 @@ Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell istenen dur
 
     -   Get-DscLocalConfigurationManager
 
-    -   Geri yükleme DscConfiguration
+    -   Restore-DscConfiguration
 
     -   Test-DscConfiguration
 
-    -   Karşılaştırma DscConfiguration
+    -   Compare-DscConfiguration
 
     -   Yayımlama DscConfiguration
 
@@ -240,7 +240,7 @@ Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell istenen dur
 
     -   Start-DscConfiguration
 
-    -   Güncelleştirme DscConfiguration
+    -   Update-DscConfiguration
 
 - Olay günlüğü, ancak sonraki çözümleme için merkezi bir konuma gönderilebilir merkezi DSC hata raporlama ile zengin hata bilgileri yalnızca günlüğe kaydedilmez. Kullanıcıların, ortamlarında herhangi bir sunucu için oluşmuş DSC yapılandırma hataları depolamak için bu merkezi bir konum kullanın. Rapor sunucusu meta yapılandırmasında tanımlandıktan sonra tüm hataları rapor sunucusuna gönderilir ve sonra bir veritabanında depolanır. Bir çekme sunucudan yapılandırmaları çıkarmak için hedef düğüm yapılandırılmış olup olmadığına bakılmaksızın bu işlevselliği ayarlayabilirsiniz.
 
@@ -352,7 +352,7 @@ Windows PowerShell 4.0, aşağıdaki yeni özellikler içerir.
 
 - Değeri **$PSVersionTable.PSVersion** 4.0 için güncelleştirilmiştir.
 
-- **WHERE()** işleci davranışı değişti. `Collection.Where('property -match name')`bir dize ifadesi biçimde kabul `"Property -CompareOperator Value"` artık desteklenmiyor. Ancak, **Where()** işleci bir scriptblock biçimde dizesi ifadeleri kabul eder; Bu hala desteklenmektedir.
+- **WHERE()** işleci davranışı değişti. `Collection.Where('property -match name')` bir dize ifadesi biçimde kabul `"Property -CompareOperator Value"` artık desteklenmiyor. Ancak, **Where()** işleci bir scriptblock biçimde dizesi ifadeleri kabul eder; Bu hala desteklenmektedir.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Yeni özellikler, Windows PowerShell Tümleşik komut dosyası ortamı (ISE)
 
@@ -449,7 +449,7 @@ Windows PowerShell 3.0 aşağıdaki yeni özellikler içerir.
 - [Microsoft .NET Framework 4.0 için destek](#support-for-microsoft-net-framework-4)
 - [Windows önyükleme ortamı için destek](#support-for-windows-preinstallation-environment)
 - [Bağlantısı kesik oturumlar](#disconnected-sessions)
-- [Sağlam oturum bağlantısı](#robust-session-connectivity)
+- [Robust Session Connectivity](#robust-session-connectivity)
 - [Güncelleştirilebilir Yardımı](#updatable-help-system)
 - [Gelişmiş çevrimiçi Yardım](#enhanced-online-help)
 - [CIM tümleştirme](#cim-integration)
@@ -523,7 +523,7 @@ Bağlantısı kesilen oturumlara özelliğini desteklemek için yeni cmdlet'ler 
 
 Bağlantısı kesilen oturumlara özelliği yalnızca her ikisi de bilgisayarların kaynaklanan ("istemci") ve bağlantı ("server") ucunun sonlandırma Windows PowerShell 3.0 çalıştırırken desteklenir.
 
-### <a name="robust-session-connectivity"></a>Sağlam oturum bağlantısı
+### <a name="robust-session-connectivity"></a>Robust Session Connectivity
 Windows PowerShell 3.0 istemci ve sunucu arasındaki bağlantı beklenmeyen zararları algılar ve bağlantıyı yeniden kurmak ve yürütme otomatik olarak devam dener. Ayrılan sürede istemci-sunucu bağlantısı kurulamıyor, kullanıcı bildirimi ve oturum bağlantısı kesilir. Yeniden bağlanma girişimi sırasında Windows PowerShell kullanıcıya sürekli geri bildirim sağlar.
 
 Bağlantısı kesilmiş bir oturuma Invokecommand kullanılarak başlatıldıysa, Windows PowerShell için yeniden bağlanın ve yürütme sürdürmek daha kolay hale getirmek bağlantısı kesilmiş bir oturuma bir işi oluşturur.
@@ -604,14 +604,14 @@ Yeni cmdlet'leri zamanlanmış işler, bağlantısı kesilmiş oturumları, CIM 
 
 |||
 |-|-|
-|Add-JobTrigger|Yeni-JobTrigger|
-|Connect-PSSession|PSSessionConfigurationFile yeni|
-|ConvertFrom Json|New-PSTransportOption|
-|ConvertTo-Json|PSWorkflowExecutionOption yeni|
-|Devre dışı bırak-JobTrigger|New-PSWorkflowSession|
-|Devre dışı bırak-ScheduledJob|ScheduledJobOption yeni|
-|Bağlantı kesme-PSSession|Yeni-WinEvent|
-|Enable-JobTrigger|Alma-PSSession|
+|Add-JobTrigger|New-JobTrigger|
+|Connect-PSSession|New-PSSessionConfigurationFile|
+|ConvertFrom-Json|New-PSTransportOption|
+|ConvertTo-Json|New-PSWorkflowExecutionOption|
+|Disable-JobTrigger|New-PSWorkflowSession|
+|Devre dışı bırak-ScheduledJob|New-ScheduledJobOption|
+|Disconnect-PSSession|New-WinEvent|
+|Enable-JobTrigger|Receive-PSSession|
 |Enable-ScheduledJob|Register-CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
 |Get-CimClass|Remove-CimInstance|
@@ -623,15 +623,15 @@ Yeni cmdlet'leri zamanlanmış işler, bağlantısı kesilmiş oturumları, CIM 
 |Get-ScheduledJob|Set-CimInstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
-|İçeri aktarma IseSnippet|Set-ScheduledJobOption|
+|Import-IseSnippet|Set-ScheduledJobOption|
 |Çağırma AsWorkflow|Göster komutu|
-|Çağırma CimMethod|ControlPanelItem Göster|
-|Çağırma RestMethod|İşi askıya alma|
-|Çağırma WebRequest|Test-PSSessionConfigurationFile|
+|Çağırma CimMethod|Show-ControlPanelItem|
+|Çağırma RestMethod|Suspend-Job|
+|Invoke-WebRequest|Test-PSSessionConfigurationFile|
 |CimInstance yeni|Engellemesini dosyası|
 |Yeni-CimSession|Unregister-ScheduledJob|
-|CimSessionOption yeni|Update-Help|
-|IseSnippet yeni||
+|New-CimSessionOption|Update-Help|
+|New-IseSnippet||
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Varolan çekirdek cmdlet'leri ve sağlayıcıları geliştirmeleri
 Windows PowerShell 3.0 Basitleştirilmiş söz dizimi ve aşağıdaki cmdlet'ler yeni parametreleri de dahil olmak üzere mevcut cmdlet'leri için yeni özellikler içerir: bilgisayar cmdlet'leri, CSV cmdlet'leri, Get-Childıtem, Get-Command, Get-içerik, Get-geçmişi, ölçü-nesnesi, güvenlik cmdlet, Select-Object, Seç-dize, bölünmüş yolu, Start-işlem, t-Object, Bağlantıyı Sına Üye Ekle ve WMI cmdlet'leri.
@@ -713,4 +713,3 @@ Yorumlar ve özel karakterler düzgün işlemek için Windows PowerShell 3.0 yet
 ## <a name="see-also"></a>Ayrıca bkz:
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
-

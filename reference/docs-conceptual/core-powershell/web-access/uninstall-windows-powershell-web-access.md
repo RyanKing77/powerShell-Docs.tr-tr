@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
-title: "Windows powershell web erişimini kaldırma"
-ms.openlocfilehash: b6e6a2374e6b4b2be8742019c5f1e4d5b5d1abe3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: Windows powershell web erişimini kaldırma
+ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web Erişimini Kaldırma
 
@@ -29,7 +29,7 @@ Bu bölümdeki yordamlar hem kaldırmanıza yardımcı:
 
 - Windows PowerShell Web erişimi web uygulaması ve
 - Windows PowerShell Web erişimi özelliği
- 
+
 Windows PowerShell cmdlet'lerini kullanarak.
 
 ### <a name="step-1-delete-the-web-application-using-cmdlets"></a>1. adım: cmdlet'lerini kullanarak web uygulamasını silme
@@ -96,9 +96,9 @@ Bu bölümdeki yordamlar hem Windows PowerShell Web erişimi web uygulaması hem
 
 > ![Uyarı notu](images/SecurityNote.jpeg)**Not**:
 >
-> Sertifika kaldırma sırasında silinmez. 
+> Sertifika kaldırma sırasında silinmez.
 >
-> Kendinden imzalı bir sertifika oluşturduysanız veya bir test sertifikası kullanıyor ve bunu kaldırmak istiyorsanız, IIS Yöneticisi'nde sertifikayı silin. 
+> Kendinden imzalı bir sertifika oluşturduysanız veya bir test sertifikası kullanıyor ve bunu kaldırmak istiyorsanız, IIS Yöneticisi'nde sertifikayı silin.
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>2. adım: Kaldırma rol ve Özellik Ekleme Sihirbazı'nı kullanarak Windows PowerShell Web erişimini kaldırma
 

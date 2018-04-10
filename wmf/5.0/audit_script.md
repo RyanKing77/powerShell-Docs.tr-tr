@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: 2c3cc6d5d226daf22c7ee83a1b7068d6a08b7f45
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="script-tracing-and-logging"></a>Komut dosyası izleme ve kaydetme
+# <a name="script-tracing-and-logging"></a>Betik İzleme ve Günlüğe Kaydetme
 
 Windows PowerShell zaten varken **LogPipelineExecutionDetails** Grup İlkesi cmdlet'leri çağırma oturum ayarlama, PowerShell'in komut dosyası dili oturum ve/veya denetim isteyebilirsiniz özellikleri Eskinin sahiptir. Yeni betik ayrıntılı izleme özelliği, ayrıntılı izleme ve çözümleme sisteminde Windows PowerShell komut dosyası kullanımı olanak tanır. Ayrıntılı betik izleme etkinleştirdikten sonra Windows PowerShell tüm komut dosyası blokları ETW olay günlüğüne kaydeder. **Microsoft-Windows-PowerShell/Operational**. Bir betik bloğu başka bir betik bloğu (örneğin, bir dizesine Invoke-Expression cmdlet'ini çağıran bir betik) oluşturursa, sonuçta elde edilen bu betik bloğu da günlüğe kaydedilir.
 
@@ -23,7 +23,7 @@ Olaylar şunlardır:
 | İşlem kodu  | Oluşturma                                      |
 | Görev    | CommandStart                                |
 | Anahtar sözcüğü | Çalışma alanı                                    |
-| Olay Kimliği | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
+| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
 | İleti | Scriptblock metin (%1% 2) oluşturma: </br> %3 </br> ScriptBlock kimliği: %4 |
 
 
@@ -37,7 +37,7 @@ Ayrıntılı günlük kaydını etkinleştirdiğinizde, özellik yazma başlamak
 | İşlem kodu  | Açın (/ Kapat)                                         |
 | Görev    | CommandStart (/ CommandStop)                           |
 | Anahtar sözcüğü | Çalışma alanı                                               |
-| Olay Kimliği | ScriptBlock\_çağırma\_Başlat\_ayrıntı (0x1009 = 4105) / </br> ScriptBlock\_çağırma\_tam\_ayrıntı (0x100A Sınır = 4106) |
+| EventId | ScriptBlock\_çağırma\_Başlat\_ayrıntı (0x1009 = 4105) / </br> ScriptBlock\_çağırma\_tam\_ayrıntı (0x100A Sınır = 4106) |
 | İleti | Başlarken (/ tamamlanmış) çağırma ScriptBlock kimliği: %1 </br> Çalışma alanı kimliği: %2 |
 
 Kimliği (olay kimliği 0x1008 ile ilişkili olabilir) betik bloğu temsil eden GUID'dir ve çalışma alanı kimliği bu betik bloğu çalıştırıldı çalışma alanı temsil eder.
@@ -52,7 +52,7 @@ function SuperDecrypt
 {
     param($script)
     $bytes = [Convert]::FromBase64String($script)
-             
+
     ## XOR “encryption”
     $xorKey = 0x42
     for($counter = 0; $counter -lt $bytes.Length; $counter++)
@@ -107,4 +107,3 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 Sistemleriyle sınırlı bekletme arabellek (yani ETW günlükleri) sahip tüm günlük olarak, önceki kanıt gizlemek için alacaklardır olaylarla günlük bölgesini doldurmak için bu altyapı karşı bir saldırı olduğunu. Bu saldırıya karşı korunmak için ayarlanan olay günlüğü koleksiyonunu çeşit olduğundan emin olun (yani, Windows Olay iletme'yi [Windows olay günlüğünü izleme ile birlikte etkilemeyi belirleme](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) olay günlükleri bilgisayarı olarak dışına taşımak için mümkün olduğunca çabuk.
-

@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: c3645a6ba83081bd5ac31a13af0f67f6538db22a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 9065315ef39129e6a28234d972fe350fd5e7e11d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="creating-and-connecting-to-a-jea-endpoint"></a>Oluşturma ve JEA uç noktasına bağlanma
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a>Bir JEA Uç Noktası Oluşturma ve Buna Bağlanma
 JEA uç noktası oluşturmak için oluşturmanız ve ile oluşturulan bir özel olarak yapılandırılmış PowerShell oturumu yapılandırma dosyasını kaydetmek için gereken **yeni PSSessionConfigurationFile** cmdlet'i.
 
 ```powershell
-New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc" 
+New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-Bu şuna benzer bir oturum yapılandırma dosyası oluşturacak: 
+Bu şuna benzer bir oturum yapılandırma dosyası oluşturacak:
 ```powershell
 @{
 
@@ -52,7 +52,7 @@ RoleDefinitions = @{
     'CONTOSO\NonAdmin_Operators' = @{
         'RoleCapabilities' = 'Maintenance' } }
 
-} 
+}
 ```
 JEA uç noktası oluştururken, aşağıdaki parametreleri komutu (ve karşılık gelen anahtarları dosyasındaki) ayarlamanız gerekir:
 1.  RestrictedRemoteServer SessionType
@@ -64,7 +64,7 @@ JEA uç noktası oluştururken, aşağıdaki parametreleri komutu (ve karşılı
 Hangi grupların hangi rolü özellikleri erişebildiği RoleDefinitions alanı tanımlar.  Bir rol özelliği kullanıcıları bağlamak için bir dizi sunulur özelliği tanımlayan bir dosyadır.  Rol özellikleri ile oluşturabileceğiniz **yeni PSRoleCapabilityFile** komutu.
 
 ```powershell
-New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc" 
+New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
 Bu şuna benzeyen bir şablon rol özelliği oluşturur:
@@ -128,7 +128,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # Assemblies to load when applied to a session
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
-} 
+}
 
 ```
 JEA oturum yapılandırması tarafından kullanılmak üzere rol özellikleri "RoleCapabilities" adlı bir dizinde geçerli bir PowerShell modülü kaydedilmesi gerekir. Bir modül, isterseniz birden çok Rol Yetenek dosya olabilir.
@@ -138,7 +138,7 @@ Hangi cmdlet'ler, İşlevler, diğer adlar ve kullanıcı JEA oturumuna bağlan�
 Son olarak, oturum yapılandırması ve ilgili rol özellikleri özelleştirme tamamladıktan sonra bu oturum yapılandırmasını kaydetmek ve çalıştırarak uç noktası oluşturma **Register-PSSessionConfiguration**.
 
 ```powershell
-Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
+Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>JEA uç noktasına bağlanın
@@ -148,4 +148,3 @@ JEA uç noktasına bağlanmak için diğer bir PowerShell uç nokta works bağla
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 JEA oturumuna bağlandığında komutları Güvenilenler listesine erişiminiz rol özellikleri çalışan için sınırlı olacaktır. Rolü için izin verilmiyor komutu çalıştırmayı denerseniz, hatayla karşılaşır.
-

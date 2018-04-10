@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell ISE Tanıtımı"
-ms.openlocfilehash: 7b529c9da7c91c6ca699c70f2674c8bc8734dd33
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+title: Windows PowerShell ISE Tanıtımı
+ms.openlocfilehash: b09e64d0258d11f1f16f96b319ef232ebdfa0c49
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Windows PowerShell ISE Tanıtımı
 
@@ -20,13 +20,13 @@ Windows PowerShell ISE bu özelliklerin deneyin.
 
 Windows PowerShell ISE görünümünü bazı yönlerini özelleştirmenizi sağlar. Ayrıca, Windows PowerShell ISE burada işlevleri, diğer adlar, değişkenler ve kullandığınız komutları depolayabilir kendi Windows PowerShell profiliniz da vardır.
 
-### <a name="to-start-the-windows-powershell-ise"></a>Windows PowerShell ISE başlatmak için
+## <a name="to-start-the-windows-powershell-ise"></a>Windows PowerShell ISE başlatmak için
 
 Aşağıdakilerden birini yapın:
 
 - Tıklatın **Başlat**, işaret **tüm programlar**, işaret **Windows PowerShell V2**ve ardından **Windows PowerShell ISE**.
 - Windows PowerShell Konsolu Cmd.exe veya Çalıştır kutusuna yazın, **powershell_ise.exe**.
 
-### <a name="to-get-help-in-the-windows-powershell-ise"></a>Windows PowerShell ISE Yardım almak için
+## <a name="to-get-help-in-the-windows-powershell-ise"></a>Windows PowerShell ISE Yardım almak için
 
 Üzerinde **yardımcı** menüsünde tıklatın **Windows PowerShell Yardımı**. Veya F1 tuşuna basın. Windows PowerShell ISE ve tüm Get-Help cmdlet'ten kullanılabilir Yardım'ın da dahil olmak üzere Windows PowerShell açar dosya açıklar.

@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
-title: "web tabanlı windows powershell konsolunu kullanma"
-ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: web tabanlı windows powershell konsolunu kullanma
+ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Web tabanlı Windows PowerShell Konsolunu kullanma
 
@@ -18,15 +18,18 @@ Windows PowerShell Web erişimi, güvenli bir Web sitesine oturum olanak sağlar
 
 Windows PowerShell konsolu bir web tarayıcısında çalıştığından, çok çeşitli istemci cihazları açılabilir; bir web tarayıcısı ile neredeyse tüm cihazları çalışır.
 
-Web tabanlı Windows PowerShell konsol oturum açma işleminin bir parçası olarak kullanıcılar tarafından belirtilen bir uzak bilgisayarda yöneliktir. 
+Web tabanlı Windows PowerShell konsol oturum açma işleminin bir parçası olarak kullanıcılar tarafından belirtilen bir uzak bilgisayarda yöneliktir.
 
 Bu konuda, oturum açmanız ve Windows PowerShell Web erişimi web tabanlı konsolunu Başlat açıklar.
 
-Bu konu Windows PowerShell kullanma veya cmdlet'leri veya betikleri çalıştırma açıklanmamaktadır. Windows PowerShell ve komut dosyası kaynakları nasıl kullanılacağı hakkında daha fazla bilgi için bkz: [ayrıca](#see-also) , bu konunun sonunda bölüm.
+Bu konu Windows PowerShell kullanma veya cmdlet'leri veya betikleri çalıştırma açıklanmamaktadır.
+Windows PowerShell ve komut dosyası kaynakları nasıl kullanılacağı hakkında daha fazla bilgi için bkz: [ayrıca](#see-also) , bu konunun sonunda bölüm.
 
 ## <a name="supported-browsers-and-client-devices"></a>Desteklenen tarayıcılar ve istemci cihazlar
 
-Windows PowerShell Web erişimi aşağıdaki Internet tarayıcılarını destekler. Mobil tarayıcılar resmi olarak desteklenmese de, birçok web tabanlı Windows PowerShell konsolunda çalıştırmanız mümkün olabilir. Yalnızca tanımlama bilgilerini kabul eden, JavaScript çalıştıran ve HTTPS web sitelerini çalıştıran diğer tarayıcıların çalışması beklenir, ancak bunlar resmi olarak test edilmemiştir.
+Windows PowerShell Web erişimi aşağıdaki Internet tarayıcılarını destekler.
+Mobil tarayıcılar resmi olarak desteklenmese de, birçok web tabanlı Windows PowerShell konsolunda çalıştırmanız mümkün olabilir.
+Yalnızca tanımlama bilgilerini kabul eden, JavaScript çalıştıran ve HTTPS web sitelerini çalıştıran diğer tarayıcıların çalışması beklenir, ancak bunlar resmi olarak test edilmemiştir.
 
 ### <a name="supported-desktop-computer-browsers"></a>Desteklenen masaüstü bilgisayar tarayıcıları
 

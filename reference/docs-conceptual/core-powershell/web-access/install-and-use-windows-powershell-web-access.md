@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
-title: "Yükleme ve windows powershell web erişimi kullanma"
-ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Yükleme ve windows powershell web erişimi kullanma
+ms.openlocfilehash: 8f140e73ce833fd1cfadbe1d8ee0fe0bb2d08873
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yükleme ve Kullanma
 
@@ -96,7 +96,7 @@ Ya da Windows PowerShell cmdlet'lerini kullanarak veya Rol Ekle ve Sunucu Yönet
    >**![Not](images/note.jpeg) Not**
    >
    >Windows PowerShell cmdlet'lerini kullanarak Windows PowerShell Web erişimi yükleme, Web sunucusu (IIS) yönetim araçları varsayılan olarak eklemez. Windows PowerShell Web erişimi ağ geçidi ile aynı sunucuda yönetim araçlarını yüklemek istiyorsanız, ekleme `-IncludeManagementTools` (Bu adımda anlatıldığı gibi) yükleme komut parametresi. Windows PowerShell Web Erişimi Web sitesini uzak bir bilgisayardan yönetiyorsanız, IIS Yöneticisi ek bileşenini yükleyerek yüklemenizi [uzak sunucu yönetim Toolsfor Windows 8.1](http://go.microsoft.com/fwlink/?LinkID=304145) veya [uzak sunucu yönetim Windows 8 için Araçları](http://go.microsoft.com/fwlink/p/?LinkID=238560) ağ geçidini yönetmek istediğiniz bilgisayarı üzerinde.
-   
+
    Çevrimdışı bir VHD’ye rol ve özellikler yüklemek için hem `-ComputerName` parametresini hem de `-VHD` parametresini eklemeniz gerekir. `-ComputerName` parametresi, VHD’nin bağlanacağı sunucunun adını içerir ve `-VHD` parametresi de belirtilen sunucuda VHD dosyasının yolunu içerir.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
@@ -113,8 +113,8 @@ Yöneticiler IIS Yöneticisi konsolunu kullanarak test sertifikasını kendi se�
 Çalıştırarak Windows PowerShell Web erişimi web uygulaması yapılandırmasını tamamlayabilirsiniz `Install-PswaWebApplication` cmdlet'ini veya IIS Yöneticisi'nde GUI tabanlı yapılandırma adımları gerçekleştirerek. Varsayılan olarak, web uygulaması cmdlet yükler **pswa** (ve ona ait bir uygulama havuzu **pswa_pool**), **varsayılan Web sitesi** kapsayıcı, IIS Yöneticisi'nde; gösterildiği gibi İstenen, web uygulamasının varsayılan site kapsayıcısını değiştirmesini isteyebilirsiniz söyleyebilirsiniz. IIS Yöneticisi, bağlantı noktasını veya Güvenli Yuva Katmanı (SSL) sertifikasını değiştirme gibi web uygulamaları için kullanılabilir olan yapılandırma seçenekleri sunar.
 
 >**![Güvenlik Notu](images/securitynote.jpeg) güvenlik notu**
-> 
->Yöneticilerin ağ geçidini bir CA tarafından imzalanmış geçerli bir sertifika kullanacak şekilde yapılandırması önerilir. 
+>
+>Yöneticilerin ağ geçidini bir CA tarafından imzalanmış geçerli bir sertifika kullanacak şekilde yapılandırması önerilir.
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>Windows PowerShell Web Erişimi ağ geçidini Install-PswaWebApplication kullanarak bir test sertifikasıyla yapılandırmak için
 
@@ -145,8 +145,8 @@ Aşağıdaki ayarlar cmdlet çalıştırılarak yapılandırılır. İsterseniz 
 
 Bu örnekte, https:// sonuçta elde edilen Web sitesi için Windows PowerShell Web erişimi olan\<*sunucu_adı*\>/myWebApp.
 
->**![Not](images/note.jpeg) Not** 
-> 
+>**![Not](images/note.jpeg) Not**
+>
 >Yetkilendirme kuralları eklenerek kullanıcılara web sitesi erişimi verilinceye kadar oturum açamazsınız. Daha fazla bilgi için bkz: [kısıtlayıcı yetkilendirme kuralı yapılandırma](#configure-a-restrictive-authorization-rule) ve [yetkilendirme kuralları ve güvenlik özellikleri, Windows PowerShell Web erişimi](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>Windows PowerShell Web Erişimi ağ geçidini Install-PswaWebApplication ve IIS Yöneticisi kullanarak orijinal bir sertifika ile yapılandırmak için
@@ -193,9 +193,9 @@ Bu örnekte, https:// sonuçta elde edilen Web sitesi için Windows PowerShell W
 
     Windows PowerShell Web erişimi açarak erişebilir **https://\<sunucu_adı\>/pswa** bir tarayıcı penceresinde.
 
->**![Not](images/note.jpeg) Not** 
-> 
->Yetkilendirme kuralları eklenerek kullanıcılara web sitesi erişimi verilinceye kadar oturum açamazsınız. 
+>**![Not](images/note.jpeg) Not**
+>
+>Yetkilendirme kuralları eklenerek kullanıcılara web sitesi erişimi verilinceye kadar oturum açamazsınız.
 >Daha fazla bilgi için bkz: [kısıtlayıcı yetkilendirme kuralı yapılandırma](#configure-a-restrictive-authorization-rule), bu konu başlığı ve [yetkilendirme kuralları ve güvenlik özellikleri, Windows PowerShell Web erişimi](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Kısıtlayıcı yetkilendirme kuralı yapılandırma
@@ -219,7 +219,7 @@ Windows PowerShell Web Erişimi yetkilendirme kuralları ve güvenlik hakkında 
    `Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>`
 
    Bu yetkilendirme kuralı genelde, kullanıcının tipik komut dosyası için kapsamlı bir özel oturum yapılandırması erişimi ile erişimi ve cmdlet gereksinimlerine ağ üzerinde bir bilgisayara belirli kullanıcı erişimi sağlar.
-   
+
    Aşağıdaki örnekte, `Contoso` etki alanında `JSmith` adlı bir kullanıcıya, `Contoso_214` bilgisayarını yönetmek ve `NewAdminsOnly` adlı bir oturum yapılandırması kullanmak için erişim verilir.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
@@ -254,7 +254,7 @@ Windows PowerShell Web erişimi ağ geçidini, Sunucu Yöneticisi'nde Ekle rolle
 
 6. .NET Framework 4.5 ve Web Sunucusu’nun (IIS) rol hizmetleri gibi gerekli özellikleri eklemeniz istenir. Gerekli özellikleri ekleyin ve devam edin.
 
-    >**![Not](images/note.jpeg) Not** 
+    >**![Not](images/note.jpeg) Not**
     >
     >Ekle roller ve Özellikler Sihirbazı'nı kullanarak Windows PowerShell Web erişimi yükleme, Web sunucusu (IIS Yöneticisi ek bileşenini dahil olmak üzere IIS), yükler. Ekle roller ve Özellikler Sihirbazı'nı kullanıyorsanız ek bileşenini ve diğer IIS Yönetim Araçları varsayılan olarak yüklenir. Aşağıdaki yordamda açıklandığı gibi Windows PowerShell cmdlet'lerini kullanarak Windows PowerShell Web erişimi yüklerseniz, Yönetim Araçları varsayılan olarak eklenmez.
 
@@ -292,7 +292,10 @@ Bir alt ve Web sitenizin kök dizininde değil Windows PowerShell Web erişimi w
 
 10. ![](images/SecurityNote.jpeg) İsteğe bağlı güvenlik adımı:
 
-    Ağaç bölmesinde seçilen Web sitesiyle çift **SSL ayarları** içerik bölmesindeki. Seçin **SSL iste**ve ardından **Eylemler** bölmesinde tıklatın **Uygula**. İsteğe bağlı olarak **SSL ayarları** bölmesinde, Windows PowerShell Web Erişimi Web sitesine bağlanan kullanıcıların istemci sertifikalarını sahip gerektirebilirsiniz. İstemci sertifikaları bir istemci cihaz kullanıcısının kimliğini doğrulamaya yardımcı olur. İstemci sertifika istemenin Windows PowerShell Web erişimi güvenliğini nasıl artırabilirsiniz hakkında daha fazla bilgi için bkz: [yetkilendirme kuralları ve güvenlik özellikleri, Windows PowerShell Web erişimi](authorization-rules-and-security-features-of-windows-powershell-web-access.md) bu kılavuzdaki.
+    Ağaç bölmesinde seçilen Web sitesiyle çift **SSL ayarları** içerik bölmesindeki.
+Seçin **SSL iste**ve ardından **Eylemler** bölmesinde tıklatın **Uygula**.
+İsteğe bağlı olarak **SSL ayarları** bölmesinde, Windows PowerShell Web Erişimi Web sitesine bağlanan kullanıcıların istemci sertifikalarını sahip gerektirebilirsiniz. İstemci sertifikaları bir istemci cihaz kullanıcısının kimliğini doğrulamaya yardımcı olur.
+İstemci sertifika istemenin Windows PowerShell Web erişimi güvenliğini nasıl artırabilirsiniz hakkında daha fazla bilgi için bkz: [yetkilendirme kuralları ve güvenlik özellikleri, Windows PowerShell Web erişimi](authorization-rules-and-security-features-of-windows-powershell-web-access.md) bu kılavuzdaki.
 
 11. Bir istemci cihazda tarayıcı oturumu açın. Desteklenen tarayıcılar ve cihazlar hakkında daha fazla bilgi için bkz: [tarayıcı ve istemci aygıt destek](#browser-and-client-device-support) bu konuda.
 
@@ -300,9 +303,9 @@ Bir alt ve Web sitenizin kök dizininde değil Windows PowerShell Web erişimi w
 
     Tarayıcı, Windows PowerShell Web erişimi konsol oturum açma sayfası görüntülemelidir.
 
-    >**![Not](images/note.jpeg) Not** 
-    > 
-    >Yetkilendirme kuralları eklenerek kullanıcılara web sitesi erişimi verilinceye kadar oturum açamazsınız. 
+    >**![Not](images/note.jpeg) Not**
+    >
+    >Yetkilendirme kuralları eklenerek kullanıcılara web sitesi erişimi verilinceye kadar oturum açamazsınız.
     >Daha fazla bilgi için bkz: [kısıtlayıcı yetkilendirme kuralı yapılandırma](#configure-a-restrictive-authorization-rule), bu konu başlığı ve [yetkilendirme kuralları ve güvenlik özellikleri, Windows PowerShell Web erişimi](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 13. Yükseltilmiş kullanıcı hakları (yönetici olarak çalıştır) ile açılmış bir Windows PowerShell oturumunda, aşağıdaki komut dosyası içinde çalıştığı *application_pool_name* 3. adımda oluşturduğunuz uygulama havuzu adını temsil eder Uygulama havuzu yetkilendirme dosyasına erişim hakkı vermek için.
@@ -363,9 +366,9 @@ Bir alt ve Web sitenizin kök dizininde değil Windows PowerShell Web erişimi w
 
     Kök Web sitesi Windows PowerShell Web erişimi klasöre işaret ettiğinden açtığınızda tarayıcı Windows PowerShell Web erişimi oturum açma sayfası görüntülemelidir **https://\<*gateway_server_name* \>**. Eklemek gerekmez **/pswa** URL.
 
-    >**![Not](images/note.jpeg) Not** 
-    > 
-    >Yetkilendirme kuralları eklenerek kullanıcılara web sitesi erişimi verilinceye kadar oturum açamazsınız. 
+    >**![Not](images/note.jpeg) Not**
+    >
+    >Yetkilendirme kuralları eklenerek kullanıcılara web sitesi erişimi verilinceye kadar oturum açamazsınız.
     >Daha fazla bilgi için bkz: [kısıtlayıcı yetkilendirme kuralı yapılandırma](#configure-a-restrictive-authorization-rule), bu konu başlığı ve [yetkilendirme kuralları ve güvenlik özellikleri, Windows PowerShell Web erişimi](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Kısıtlayıcı yetkilendirme kuralı yapılandırma
@@ -390,13 +393,13 @@ Windows PowerShell Web Erişimi yetkilendirme kuralları ve güvenlik hakkında 
 
         Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    Bu yetkilendirme kuralı genelde sahip oldukları kullanıcı için kapsamlı bir özel oturum yapılandırması erişimi ile erişim ağınızdaki bir bilgisayara belirli kullanıcı erişimi sağlar '™ s tipik komut dosyası ve cmdlet gereksinimlerine. 
-    
+    Bu yetkilendirme kuralı genelde sahip oldukları kullanıcı için kapsamlı bir özel oturum yapılandırması erişimi ile erişim ağınızdaki bir bilgisayara belirli kullanıcı erişimi sağlar '™ s tipik komut dosyası ve cmdlet gereksinimlerine.
+
     Aşağıdaki örnekte, `Contoso` etki alanında `JSmith` adlı bir kullanıcıya, `Contoso_214` bilgisayarını yönetmek ve `NewAdminsOnly` adlı bir oturum yapılandırması kullanmak için erişim verilir.
 
         Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. Kural ya da çalıştırarak oluşturulduğunu doğrulayın `Get-PswaAuthorizationRule` cmdlet'ini veya `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`. 
+4. Kural ya da çalıştırarak oluşturulduğunu doğrulayın `Get-PswaAuthorizationRule` cmdlet'ini veya `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
     Örneğin, `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 

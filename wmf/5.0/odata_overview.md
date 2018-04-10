@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: 11891587f59dc8a38e4ce267018160f7f9a28178
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: a8947844df0da167961c64e1e09d5075960c95de
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>OData uç tabanlı PowerShell cmdlet'leri oluştur
+# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>OData Uç Noktasına göre PowerShell Cmdlet’leri Oluşturma
 <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Bir OData uç noktada tabanlı Windows PowerShell cmdlet'leri oluştur
 --------------------------------------------------------------
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 06/12/2017
 
 Aşağıdaki örnek, bu yeni cmdlet'inin nasıl kullanılacağı gösterilmektedir:
 
-\#Dışarı aktarma ODataEndpointProxy temel kullanım örneği
+\# Dışarı aktarma ODataEndpointProxy temel kullanım örneği
 
 ```powershell
 Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -OutputModule C:\Users\user\Generated.psd1
@@ -109,4 +109,3 @@ Dışarı aktarma ODataEndpointProxy cmdlet ve işlem tarafından oluşturulan p
 
 Export-ODataEndpointProxy -Uri $endPointUri -OutputModule $generatedProxyModuleDir -Force -AllowUnSecureConnection -Verbose -Headers @{'subscription-key'='XXXX'}
 ```
-

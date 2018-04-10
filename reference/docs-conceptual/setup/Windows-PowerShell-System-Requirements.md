@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: Windows PowerShell sistem gereksinimleri
+title: Windows PowerShell Sistem Gereksinimleri
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 33824eac4de28de97990ffa1ea2500e61e03e847
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: a15b5b33b5296befae833e520cfdfbd41a07b122
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="windows-powershell-system-requirements"></a>Windows PowerShell sistem gereksinimleri
+# <a name="windows-powershell-system-requirements"></a>Windows PowerShell Sistem Gereksinimleri
 Bu konuda, Windows PowerShell 3.0, Windows PowerShell 4.0 ve Windows PowerShell 5.0 ve Windows PowerShell Tümleşik komut dosyası ortamı (ISE), CIM komutları ve iş akışları gibi özel özellik için sistem gereksinimleri listelenmiştir.
 
 Windows® 8.1 ve Windows Server® 2012 R2'in tüm gerekli programları içerir. Bu konu, Windows'un önceki sürümleri kullanıcılar için tasarlanmıştır.
@@ -72,7 +72,7 @@ WinRM hizmeti ve WSMan protokolü destekleyen WS-Management 3.0, Windows PowerSh
 Windows Yönetim Araçları 3.0 (WMI), Windows PowerShell 3.0 ve Windows PowerShell 4.0 sürümünü gerektirir. Bu program, Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0 ve Windows Management Framework 3.0 dahil edilir. Bu program bilgisayarda yüklü değilse, WMI, CIM komutları gibi gerektiren özellikler çalışmaz.
 
 ## <a name="common-language-runtime-40"></a>Ortak dil çalışma zamanı 4.0
-Ortak dil çalışma zamanı (CLR karşı) 4.0, Windows PowerShell 3.0, Windows PowerShell 4.0 ve Windows PowerShell 5.0 derlenir.
+Windows PowerShell 3.0, Windows PowerShell 4.0, and Windows PowerShell 5.0 are compiled against Common Language Runtime (CLR) 4.0.
 
 ## <a name="graphical-user-interface-requirements"></a>Grafik kullanıcı arabirimi gereksinimleri
 Windows PowerShell bir grafik kullanıcı arabirimi gerektirmeyen bir konsol tabanlı bir uygulamadır. Bu nedenle, bu da ekranlar veya izleyiciler ya da Windows Server 2012 R2 veya Windows Server 2012 Sunucu Çekirdeği yükleme seçenekleri gibi bir kullanıcı arabirimi olmayan bilgisayarlar için uygundur.
@@ -81,15 +81,15 @@ Ancak, bazı öğeler, aşağıdaki gibi bir grafik kullanıcı arabirimi gerekt
 
 - Windows PowerShell Tümleşik Komut Dosyası Ortamı (ISE)
 
-- Cmdlet'leri
+- Cmdlet’ler
 
     1.  [Çıkış GridView](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
 
     2.  [Göster komutu](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
-    3.  [ControlPanelItem Göster](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
+    3.  [Show-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
-    4.  [Olay günlüğüne Göster](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
+    4.  [Show-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
 - Parametreler
 
@@ -111,7 +111,7 @@ Windows PowerShell 2.0, Windows PowerShell 3.0 ve Windows PowerShell 4.0 Windows
 
 - [Arka Plan Akıllı Aktarım Hizmeti (BITS) cmdlet'leri](http://go.microsoft.com/fwlink/?LinkId=257514)
 
-- [Get-olay günlüğü](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
+- [Get-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
 - [Get-WinEvent](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
@@ -125,4 +125,3 @@ Ayrıca, **WinRM** hizmeti Windows PE'de mevcut değil.
 - [Windows PowerShell ile çalışmaya başlama](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 - [Windows PowerShell'i yükleme](Installing-Windows-PowerShell.md)
 - [Windows PowerShell'i başlatma](Starting-Windows-PowerShell.md)
-

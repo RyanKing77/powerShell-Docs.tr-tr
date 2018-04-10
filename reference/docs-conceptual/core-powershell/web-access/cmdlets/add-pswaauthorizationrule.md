@@ -1,17 +1,17 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell cmdlet'i
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: pswaauthorizationrule Ekle
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -62,7 +62,7 @@ Birincil oturum açma kimlik bilgileri Windows PowerShell Web erişimi kullanıc
 
 Active Directory etki alanı Hizmetleri (AD DS) veya yerel gruplar için bu kural erişimine izin verdiği bir bilgisayar grubunun adını belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | TRUE                                 |
@@ -75,7 +75,7 @@ Active Directory etki alanı Hizmetleri (AD DS) veya yerel gruplar için bu kura
 
 Bu kural erişim verdiği bilgisayar adını belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | TRUE                                 |
@@ -88,7 +88,7 @@ Bu kural erişim verdiği bilgisayar adını belirtir.
 
 Windows PowerShell oturumu configuration olarak da bilinen bu kural erişim verdiği çalışma alanının adını belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | TRUE                                 |
@@ -101,7 +101,7 @@ Windows PowerShell oturumu configuration olarak da bilinen bu kural erişim verd
 
 Belirten bir **PSCredential** Windows PowerShell Web Erişimi yetkilendirme kurallarını değiştirmek için kullanmak istediğiniz bir kullanıcı hesabı için nesnesi. Bu parametreyi eklemezseniz cmdlet şu anda oturum açmış kullanıcı hesabını kullanır. Alınacak bir **PSCredential** uzaktan yetkilendirme kuralları eklemek için çalıştırmak için gerekli olan nesne, [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) cmdlet'i.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -115,7 +115,7 @@ Belirten bir **PSCredential** Windows PowerShell Web Erişimi yetkilendirme kura
 Komutu için kullanıcı onayı istemeden çalışmaya zorlar. \
 Ayrıca, bir basit veya kısa bir bilgisayar adı (örneğin, bir etki alanı adı değil veya tam değil adı) girdiğinizde de onaylamanızı ister. Böylece yalnızca bilgisayar bir çalışma grubunda ise bir bilgisayar eklemek için basit bir ad kullanabilirsiniz onay güvenlik nedenleriyle istendi.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -128,7 +128,7 @@ Ayrıca, bir basit veya kısa bir bilgisayar adı (örneğin, bir etki alanı ad
 
 Bu kural için kolay adı belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -141,7 +141,7 @@ Bu kural için kolay adı belirtir.
 
 AD DS veya bu kural erişim verdiği yerel gruplar bir veya daha fazla kullanıcı grubu adını belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | TRUE                                 |
@@ -155,7 +155,7 @@ AD DS veya bu kural erişim verdiği yerel gruplar bir veya daha fazla kullanıc
 Bu kural erişim verdiği bir veya daha fazla kullanıcı belirtir. Kullanıcı adı, ağ geçidi bilgisayarında veya AD DS'de bir kullanıcı bir yerel kullanıcı hesabı olabilir.
 Biçim `domain\user` veya `computer\user`.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | TRUE                                 |
@@ -217,9 +217,9 @@ Bu örnekte, kullanıcı adı değerleri ardışık düzeni aracılığıyla gir
 Bu örnekte gösterilmiştir tüm parametreleri özellik adı ardışık düzen değerlerinden ele nasıl.
 
 ````PowerShell
-$o = New-Object -TypeName PSObject | 
-    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
-    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+$o = New-Object -TypeName PSObject |
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
     Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell

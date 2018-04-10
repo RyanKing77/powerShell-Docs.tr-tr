@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell SDK'sını yükleme"
+title: Windows PowerShell SDK’sını Yükleme
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
-ms.openlocfilehash: c6acba828e469e716c80603ec2432176652a7280
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 830b054c2cf2b49d935d3d96b79effa7131f6db2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="installing-the-windows-powershell-sdk"></a>Windows PowerShell SDK'sını yükleme
+# <a name="installing-the-windows-powershell-sdk"></a>Windows PowerShell SDK’sını Yükleme
 
 Aşağıdaki konuda farklı Windows sürümleri üzerinde PowerShell SDK'yı yüklemeyi açıklar.
 
@@ -266,4 +266,3 @@ Bu örnek sağlayıcısı sınıfında türetilen [NavigationCmdletProvider](htt
 Clear içerik çağrıları desteklemek için içerik yöntemleri üzerine gösterilmektedir Get-içerik ve Set-Content cmdlet'leri.
 Bu yöntemler, kullanıcı içeriği veri deposuna'ndeki öğelerin kullanımını yönetmek gerektiğinde uygulanmalıdır.
 Bu örnek sağlayıcısı sınıfında türetilen [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) sınıfı ve uygulayan [IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx) arabirimi.
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, Kur
-ms.openlocfilehash: 2d56df459a4e09a16ab16c02f7ca2744c779206f
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 505ff4ebef2d0b063edacbdfa465616890be1001
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="powershellget-cmdlets-for-script-management"></a>Komut dosyası yönetimi için PowerShellGet cmdlet'leri
+# <a name="powershellget-cmdlets-for-script-management"></a>Betik Yönetimi için PowerShellGet Cmdlet’leri
 
 ## <a name="find-script-cmdlet"></a>Bulma komut dosyası cmdlet'i
 Bulma komut dosyası cmdlet'i, farklı arama ölçütleri ad, etiket, filtre, komutu ad, sürüm aralığı, tam sürümünü, bağımlılıklarını dahil olmak üzere tüm sürümleri gibi ve belirli veya tüm kayıtlı depoları ile komut dosyaları bulmak için olanak tanır.
@@ -686,4 +686,3 @@ Repository : GalleryINT
 PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 ```
-

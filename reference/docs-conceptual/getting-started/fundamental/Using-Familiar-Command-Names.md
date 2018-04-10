@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Tanıdık komut adlarını kullanma"
+title: Tanıdık Komut Adlarını Kullanma
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 5e72e721bdb9d48684092344a0169907e7e25d40
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-familiar-command-names"></a>Tanıdık komut adlarını kullanma
+# <a name="using-familiar-command-names"></a>Tanıdık Komut Adlarını Kullanma
 Bir mekanizma kullanılarak adlı *yumuşatma*, Windows PowerShell komutları için alternatif adlarına göre başvurmak kullanıcıların sağlar. Yumuşatma deneyimine sahip kullanıcıların Windows PowerShell'de benzer işlemleri gerçekleştirmek için kullanıcılarınızın zaten bildikleri ortak komut adlarının yeniden kullanmak için diğer Kabukları verir. Windows PowerShell diğer adlar ayrıntılı aşağıdakiler ele alınacaktır değil de, Windows PowerShell ile çalışmaya başlama gibi bunları kullanmaya devam edebilirsiniz.
 
 Yumuşatma yazdığınız komut adı başka bir komutu ile ilişkilendirir. Örneğin, Windows PowerShell adlı bir iç işlev sahip **Clear-Host** çıktı penceresi temizler. Ya da yazarsanız **cls** veya **temizleyin** komutu bir komut isteminde, Windows PowerShell yorumlar için bir diğer ad budur **Clear-Host** işlev ve çalıştırır **Clear-Host** işlevi.
@@ -20,13 +20,13 @@ Windows PowerShell içinde kullanabileceğiniz ortak Cmd.exe ve UNIX komutları 
 
 |||||
 |-|-|-|-|
-|Kat|Dir|bağlama|RM|
-|CD|echo|Taşıma|rmdir|
+|Kat|Dir|bağlama|rm|
+|cd|echo|Taşıma|rmdir|
 |chdir|silme|popd|Uyku|
-|Temizle|H|PS|Sıralama|
+|Temizle|h|PS|Sıralama|
 |CLS|Geçmişi|pushd|t|
 |Kopyalama|sonlandırma|pwd|tür|
-|DEL|LP|R|yazma|
+|del|lp|r|yazma|
 |fark|Ls|ren||
 
 Kendinizi bulursanız bunlardan birini kullanarak reflexively komutları ve yerel Windows PowerShell komutunu gerçek adını öğrenmek istiyorsanız, kullanabileceğiniz **Get-diğer** komutu:
@@ -67,4 +67,3 @@ Set-Alias : Alias is not writeable because alias gi is read-only or constant and
 At line:1 char:10
 + Set-Alias  <<<< -Name gi -Value Get-Item
 ```
-

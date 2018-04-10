@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-27
+ms.date: 06/27/2017
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri"
-ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri
+ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri
 
@@ -186,7 +186,7 @@ Aşağıda bu senaryonun bazı örnekleri verilmiştir.
 - Bazı yöneticiler, bazı kullanıcılara diğerlerinden daha fazla erişim sağlar. Örneğin, bir yönetici iki kullanıcı grubu oluşturuyor **Admins** ve **BasicSupport**. Yönetici bir uç nokta adı verilen sınırlı bir çalışma alanıyla da oluşturur. **PswaEndpoint**ve şu iki kuralı tanımlıyor: **yöneticileri,\*,\***  ve  **BasicSupport,\*, PswaEndpoint**. Tüm kullanıcılar ilk kural sağlar **yönetici** tüm bilgisayarlar ve ikinci kural grubu erişim sağlayan tüm kullanıcılar **BasicSupport** Grup yalnızca olan bilgisayarlara erişim  **PswaEndpoint**.
 
 - Bir yönetici bir özel test ortamı ayarlamış ve tüm yetkilendirilmiş ağ kullanıcılarına, tipik olarak erişime sahip oldukları ağdaki tüm bilgisayarlar için, tipik olarak erişime sahip olukları tüm oturum yapılandırmalarıyla erişim izni vermek istiyor. Bu özel bir test ortamı olduğundan, yönetici güvenli olmayan bir yetkilendirme kuralı oluşturuyor.
-  - Cmdlet'i yönetici çalıştırır `Add-PswaAuthorizationRule * * *`, joker karakterini kullanan  **\***  tüm kullanıcılar, tüm bilgisayarlar ve tüm yapılandırmaları belirtmek için.
+  - Cmdlet'i yönetici çalıştırır `Add-PswaAuthorizationRule * * *`, joker karakterini kullanan **\*** tüm kullanıcılar, tüm bilgisayarlar ve tüm yapılandırmaları belirtmek için.
   - Bu kural şuna eşdeğerdir: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
   >**Not**:

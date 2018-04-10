@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell cmdlet'i
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: Test pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: fb2937397616160c70b056e412e42fb8ff4c2f27
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ed6d56b2f3c4ee4ac410cdaadda312bffe506ee9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
 
@@ -47,7 +47,7 @@ Bu cmdlet parametrelerini alanları Windows PowerShell® Web Access oturum açma
 
 Test etmek için bilgisayar adını belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | TRUE                                 |
@@ -60,7 +60,7 @@ Test etmek için bilgisayar adını belirtir.
 
 Test etmek için Windows PowerShell oturum yapılandırmasını, uç nokta veya çalışma alanı olarak da bilinen adını belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -73,7 +73,7 @@ Test etmek için Windows PowerShell oturum yapılandırmasını, uç nokta veya 
 
 Bağlantıyı sınamak için URI belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | TRUE                                 |
@@ -86,7 +86,7 @@ Bağlantıyı sınamak için URI belirtir.
 
 Belirten bir **PSCredential** Windows PowerShell Web Erişimi yetkilendirme kuralları test etmek için kullanmak istediğiniz bir kullanıcı hesabı için nesnesi. Bu parametreyi eklemezseniz cmdlet şu anda oturum açmış kullanıcı hesabını kullanır. Alınacak bir **PSCredential** yetkilendirme kuralları uzaktan test, çalıştırmak için gerekli olan nesne, [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936) cmdlet'i.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -99,7 +99,7 @@ Belirten bir **PSCredential** Windows PowerShell Web Erişimi yetkilendirme kura
 
 Test etmek için kurallar kümesini belirtir. Bu parametre belirtilmezse, bu cmdlet'i tüm yetkilendirme kurallarını karşı sınar.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | yanlış                                |
@@ -112,7 +112,7 @@ Test etmek için kurallar kümesini belirtir. Bu parametre belirtilmezse, bu cmd
 
 Test etmek için kullanıcı adını belirtir.
 
-|||  
+|||
 |-|-|
 | Diğer adlar                              | yok                                 |
 | Gerekli mi?                            | TRUE                                 |

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: cedda61241df4965fe5db723f03e3497f046fa44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="extract-and-parse-structured-objects-out-of-string"></a>Ayıklamak ve yapılandırılmış nesneler arasından dizesi ayrıştırılamadı
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>Yapılandırılmış Nesneleri Dizeden Çıkarma ve Ayıklama
 Bu aynı zamanda ConvertFrom dize cmdlet'i için bazı ek işlevler sunar:
 
 -   Uzantı metin özelliği varsayılan olarak kaldırır. -IncludeExtent parametresiyle ekleyebilirsiniz.
@@ -67,7 +67,7 @@ Birkaç örnek, şablon olarak kullanacağınız bir dosyaya kopyalayın:
 
     Renton, WA
 
-   
+
 
 Ayıklamak istediğiniz verilerin etrafına süslü ayraçlar bunu gibi bir ad verip yerleştirin. Çünkü **adı** özelliği (ve diğer özellikleri ilişkili) birden çok kez görüntülenir, bir yıldız işareti kullanın (\*) bu birden çok kayıt (yerine tek bir demet özelliklerinin ayıklanıyor sonuçları göstermek için kayıt):
 
@@ -90,4 +90,3 @@ Bu örnekler, kümesinden **ConvertFrom dize** artık otomatik olarak nesne taba
 > Ana Trujillo...                Ana Trujillo       Redmond  WA Antonio Moreno...              Antonio Moreno Renton WA Thomas Hardy...                Thomas Hardy Seattle WA Çiğdem Berglund...          Christina Berglund Redmond  WA Hanna Moos...                  Hanna Moos         Puyallup WA
 
 Ek veri işleme ayıklanan metni yapmak için **ExtentText** özelliği kendisinden kaydı çıkarılan ham metni yakalar. Bu özellik üzerinde geribildirim sağlamak veya örnekler yazma zorluk sahip içeriği paylaşmak için lütfen e-posta <psdmfb@microsoft.com>.
-

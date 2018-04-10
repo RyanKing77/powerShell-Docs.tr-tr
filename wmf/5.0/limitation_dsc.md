@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 66ceea383b78b2654caa4f1de16a30beea0e7fd3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>İstenen durum yapılandırması (DSC) bilinen sorunlar ve sınırlamalar
 
@@ -30,7 +30,7 @@ Başlangıç DscConfiguration ve diğer DSC cmdlet'lerini şu hata ile WMF 5.0 R
 ```
 
 **Çözüm:** (yönetici olarak çalıştır) yükseltilmiş bir PowerShell oturumunda aşağıdaki komutu çalıştırarak DSCEngineCache.mof silin:
-    
+
 ```powershell
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
@@ -151,7 +151,7 @@ Sınıf tabanlı DSC kaynakları hata ayıklama bu sürümde desteklenmiyor.
 **Çözüm:** yok.
 
 
-<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Değişkenleri & DSC sınıf tabanlı kaynak $script kapsamda tanımlanan işlevleri DSC kaynağı için birden fazla çağrı arasında korunmaz 
+<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Değişkenleri & DSC sınıf tabanlı kaynak $script kapsamda tanımlanan işlevleri DSC kaynağı için birden fazla çağrı arasında korunmaz
 -------------------------------------------------------------------------------------------------------------------------------------
 
 Yapılandırma değişkenleri veya işlevleri $script kapsamda tanımlı olan tüm sınıf tabanlı kaynak kullanıyorsa, başlangıç DSCConfiguration birden çok ardışık çağrıları başarısız olur.
@@ -184,7 +184,7 @@ Get-DscResource-sözdizimi değil yansıtacak PsDscRunAsCredential doğru kaynak
 
 WindowsOptionalFeature DSC kaynağı, Windows 7'de kullanılamaz. Bu kaynak DISM modülünü ve Windows 8 ve Windows işletim sisteminin daha yeni sürümleri başlayarak kullanılabilir DISM cmdlet'leri gerektirir.
 
-<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Sınıf tabanlı DSC kaynakları için içeri aktarma DscResource - ModuleVersion beklendiği gibi çalışmayabilir.   
+<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Sınıf tabanlı DSC kaynakları için içeri aktarma DscResource - ModuleVersion beklendiği gibi çalışmayabilir.
 ------------------------------------------------------------------------------------------
 Derleme düğümü bir sınıf tabanlı DSC kaynağı modülü, birden fazla sürümü varsa `Import-DscResource -ModuleVersion` belirtilen sürüm çekme değil ve aşağıdaki derleme hata neden olur.
 
@@ -198,16 +198,16 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 ```
 
 **Çözüm:** tanımlayarak gerekli sürümü alma *ModuleSpecification* nesnesini `-ModuleName` ile `RequiredVersion` gibi belirtilen anahtarı:
-``` PowerShell  
-Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}  
-```  
+``` PowerShell
+Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
+```
 
 <a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Kayıt defteri kaynak gibi bazı DSC kaynakları isteğini işlemek için uzun zaman başlayabilir.
 --------------------------------------------------------------------------------------------------------------------------------
 
 **Resolution1:** aşağıdaki klasörü düzenli aralıklarla temizlenir bir zamanlama görevi oluşturun.
-``` PowerShell 
-$env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis 
+``` PowerShell
+$env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
 **Resolution2:** temizlemek için DSC yapılandırmasını değiştirme *CommandAnalysis* yapılandırmasının sonunda klasör.
@@ -226,7 +226,7 @@ Configuration $configName
         ValueData = $Node.RegisteredOwnerData
     }
     #
-    # Script to delete the config 
+    # Script to delete the config
     #
     script DeleteCommandAnalysisCache
     {
@@ -237,4 +237,3 @@ Configuration $configName
     }
 }
 ```
-

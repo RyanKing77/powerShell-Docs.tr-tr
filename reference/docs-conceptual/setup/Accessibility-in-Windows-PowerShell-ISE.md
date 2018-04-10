@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: "Windows PowerShell ISE’de erişilebilirlik"
+title: Windows PowerShell ISE’de erişilebilirlik
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE’de erişilebilirlik
+
 Bu konu, Windows PowerShell Tümleşik komut dosyası ortamı (yararlı bulabileceğiniz ISE)'ın erişilebilirlik özelliklerini açıklar.
 
 * [Konsol ve komut dosyası bölmeleri konumunu ve boyutunu değiştirme](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
@@ -31,6 +32,7 @@ Windows PowerShell ISE yüksek karşıtlık modunu destekler. Görme engelli iç
 - Metin boyutu Değiştir
 
 ## <a name="how-to-change-the-size-and-location-of-the-console-and-script-panes"></a>Konsol ve komut dosyası bölmeleri konumunu ve boyutunu değiştirme
+
 Konsol bölmesinde ve betik bölmesine konumunu ve boyutunu değiştirmek için aşağıdaki adımları kullanın. Windows PowerShell ISE yeniden açtığınızda, boyut ve konum değişikliklerinin korunur.
 
 ### <a name="to-resize-the-script-pane-and-console-pane"></a>Komut dosyası ve konsol bölmesinde yeniden boyutlandırmak için
@@ -40,6 +42,7 @@ Konsol bölmesinde ve betik bölmesine konumunu ve boyutunu değiştirmek için 
 2. Fare işaretçisini iki yönlü oka değiştiğinde bölmesinin boyutunu değiştirmek için kenarlığı sürükleyin.
 
 ### <a name="to-move-the-script-pane-and-console-pane"></a>Komut dosyası ve konsol bölmesinde taşımak için
+
 Aşağıdakilerden birini yapın:
 
 - Yukarıda Konsol bölmesinde betik bölmesini taşımak için tuşuna basın **CTRL + 1** veya araç çubuğunda tıklatın **betik bölmesinde üstü Göster** simgesi veya **Görünüm** menüsünde tıklatın **Göster Betik bölmesinde üst**.
@@ -53,6 +56,7 @@ Aşağıdakilerden birini yapın:
 - Konsol bölmesinde, en sağdaki kenarın sekmeler, satırın ekranı betik bölmesine görüntülemek için tıklatın **betik bölmesini göster** simge veya **Görünüm** menüsü, seçmek için tıklatın **komut dosyasını Göster Bölmesinde** menü seçeneği.
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Metin düzenleme için klavye kısayolları
+
 Metin düzenlediğinizde, aşağıdaki klavye kısayollarını kullanabilirsiniz.
 
 |Eylem|Klavye kısayolları|Kullanın.|
@@ -70,6 +74,7 @@ Metin düzenlediğinizde, aşağıdaki klavye kısayollarını kullanabilirsiniz
 |**Geri alma**|CTRL+Z|Betik bölmesi, konsol bölmesi|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Komut dosyaları çalıştırmak için klavye kısayolları
+
 Betik bölmesinde komut dosyalarını çalıştırdığınızda, aşağıdaki klavye kısayollarını kullanabilirsiniz.
 
 |Eylem|Klavye kısayolu|
@@ -83,6 +88,7 @@ Betik bölmesinde komut dosyalarını çalıştırdığınızda, aşağıdaki kl
 |**Sekme** (için önceki komut dosyası)|CTRL + SHIFT + SEKME **Not:** önceki betik sekmesine çalışır, yalnızca bir PowerShell sekme açık olduğunda ya da birden fazla PowerShell sekmesini açmak varsa ve betik bölmesinde odak noktasıdır.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Görünümünü özelleştirmek için klavye kısayolları
+
 Windows PowerShell ISE görünümünde özelleştirmek için aşağıdaki klavye kısayollarını kullanabilirsiniz. Bunlar, uygulamadaki tüm bölmeleri erişilebilir.
 
 |Eylem|Klavye kısayolu|
@@ -99,6 +105,7 @@ Windows PowerShell ISE görünümünde özelleştirmek için aşağıdaki klavye
 |**Uzaklaştır**|CTRL + EKSİ İŞARETİ|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Komut dosyaları hata ayıklama için klavye kısayolları
+
 Komut dosyaları ayıklarken aşağıdaki klavye kısayollarını kullanabilirsiniz.
 
 |Eylem|Klavye kısayolu|Kullanın.|
@@ -130,6 +137,7 @@ Komut dosyaları ayıklarken aşağıdaki klavye kısayollarını kullanabilirsi
 |**Görüntü Konsolu komutları hata ayıklama**|H veya?|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Windows PowerShell sekmeler için klavye kısayolları
+
 Windows PowerShell sekmeleri kullandığınızda aşağıdaki klavye kısayollarını kullanabilirsiniz.
 
 |Eylem|Klavye kısayolu|
@@ -140,6 +148,7 @@ Windows PowerShell sekmeleri kullandığınızda aşağıdaki klavye kısayollar
 |**Sonraki Windows PowerShell sekmesi**|CTRL + SEKME. Hiçbir dosya herhangi bir PowerShell sekmede açık olduğunda bu kısayol çalışır.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Başlatma ve çıkma için klavye kısayolları
+
 Windows PowerShell konsolunda (PowerShell.exe) başlatmak veya Windows PowerShell ISE çıkmak için aşağıdaki klavye kısayollarını kullanabilirsiniz.
 
 |Eylem|Klavye kısayolu|
@@ -148,5 +157,5 @@ Windows PowerShell konsolunda (PowerShell.exe) başlatmak veya Windows PowerShel
 |**PowerShell.exe Başlat** (Windows PowerShell Konsolu)|CTRL+SHIFT+P|
 
 ## <a name="see-also"></a>Ayrıca bkz:
-- [Windows PowerShell ISE’yi Kullanma](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+- [Windows PowerShell ISE Tanıtımı](../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)

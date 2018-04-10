@@ -58,7 +58,7 @@ Visual Studio Code ile belirli bir PowerShell yüklemesini kullanmak istiyorsan�
 
 1. Tıklatın **dosya Tercihler -> Ayarlar ->**
 1. İki Düzenleyicisi bölmeleri görünür.
-   En sağdaki bölmede (`settings.json`), aşağıdaki ayar Ekle iki süslü ayraçlar arasında bir yerde, işletim sistemi için uygun (`{` ve `}`) ve değiştirme  *<version>*  yüklü ile PowerShell sürümü:
+   En sağdaki bölmede (`settings.json`), aşağıdaki ayar Ekle iki süslü ayraçlar arasında bir yerde, işletim sistemi için uygun (`{` ve `}`) ve değiştirme *<version>* yüklü ile PowerShell sürümü:
 
   ```json
     // On Windows:

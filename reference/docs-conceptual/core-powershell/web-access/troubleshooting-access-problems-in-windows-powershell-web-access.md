@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
-title: "windows powershell web erişimi'nde erişim sorunlarını giderme"
-ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: windows powershell web erişimi'nde erişim sorunlarını giderme
+ms.openlocfilehash: ef476d8e386e5380cb2c9dda69180dfce8748bf4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi’nde Erişim Sorunlarını Giderme
 
@@ -130,7 +130,7 @@ Bir etki alanıyla IPv6 adresi olarak yetkilendirme kurallarında belirtilmiş b
 Yetkilendirme kuralları, bir etki alanı adı biçiminde bir IPv6 adresini desteklemez.
 
 Bir IPv6 adresi kullanarak bir hedef bilgisayar belirtmek için, yetkilendirme kuralında özgün IPv6 adresini kullanın (iki nokta üst üste içeren).
-Hem etki alanı hem de sayısal (iki nokta üst üste) olan IPv6 adresleri, yetkilendirme kurallarında değil ancak, Windows PowerShell Web erişimi oturum açma sayfasında hedef bilgisayar adı olarak desteklenir. 
+Hem etki alanı hem de sayısal (iki nokta üst üste) olan IPv6 adresleri, yetkilendirme kurallarında değil ancak, Windows PowerShell Web erişimi oturum açma sayfasında hedef bilgisayar adı olarak desteklenir.
 
 IPv6 adresleri hakkında daha fazla bilgi için bkz: [IPv6 nasıl çalışır](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 
