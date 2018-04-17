@@ -566,7 +566,7 @@ chmod a+x powershell-6.0.0-x86_64.AppImage
 
 [appimage]: http://appimage.org/
 
-## <a name="macos-1012"></a>macOS 10.12
+## <a name="macos-1012"></a>macOS 10,12
 
 ### <a name="installation-via-homebrew-preferred---macos-1012"></a>(Önerilen) - Homebrew macOS 10,12 aracılığıyla yükleme
 
@@ -588,10 +588,10 @@ PowerShell yeni sürümleri yayımlandığında, yalnızca Homebrew'ın formül 
 
 ```sh
 brew update
-brew cask reinstall powershell
+brew cask upgrade powershell
 ```
 
-> Not: nedeniyle, [Cask bu sorunu](https://github.com/caskroom/homebrew-cask/issues/29301), şu anda yükseltmek için bir yeniden yükleme yapmak zorunda.
+> Not: Yukarıdaki komutlarda gelen içindeki bir PowerShell (pwsh) ana çağrılabilir, ancak sonra PowerShell Kabuk çıkıldı ve gerekir yükseltmeyi tamamlamak ve $PSVersionTable içinde gösterilen değerleri yenilemek için yeniden girildi.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
@@ -703,11 +703,11 @@ Aşağıdaki grafikte .NET Core 2.0 bağımlılıkları resmi olarak desteklenen
 
 | İşletim sistemi                 | Bağımlılıklar |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
-| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Debian 9 (Esnetme) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
+| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
+| Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Debian 9 (Esnetme) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind, libcurl, openssl kitaplıklar, libicu |
 | Fedora 26          | libunwind, libcurl, openssl kitaplıklar, libicu, compat openssl10 |
 
@@ -736,7 +736,7 @@ sudo chmod +x /usr/local/microsoft/powershell/6.0.0/pwsh
 sudo ln -s /opt/microsoft/powershell/6.0.0/pwsh /usr/bin/pwsh
 ```
 
-#### <a name="macos"></a>macOS
+#### <a name="macos"></a>MacOS
 
 ```sh
 # Download the powershell '.tar.gz' archive
@@ -763,7 +763,7 @@ sudo ln -s /usr/local/microsoft/powershell/6.0.0/pwsh /usr/local/bin/pwsh
 sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
-#### <a name="macos"></a>macOS
+#### <a name="macos"></a>MacOS
 
 ```sh
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
