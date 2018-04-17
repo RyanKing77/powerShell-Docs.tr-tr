@@ -1,17 +1,20 @@
 ---
-ms.date: 06/12/2017
+ms.date: 04/11/2018
 ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
 title: DSC SMB çekme sunucusu ayarlama
-ms.openlocfilehash: e9228c050d6f496e30e94404a564ed2e425a5412
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e4e313746e95af86c5d17a8de0549451b1399b6c
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB çekme sunucusu ayarlama
 
 >İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> Çekme sunucusuna (Windows özelliği *DSC hizmet*) vardır ancak desteklenen bir bileşen Windows Server'ın yeni özellikleri veya yetenekleri sunmak için herhangi bir plan vardır. Geçiş başlamak için önerilen yönetilen istemcilere [Azure Otomasyonu DSC](/azure/automation/automation-dsc-getting-started) (Windows Server çekme sunucusunda ötesinde özellikler içerir) veya topluluk çözümlerden birini listelenen [burada](pullserver.md#community-solutions-for-pull-service).
 
 Bir DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) çekme sunucu, bu düğümler için söylediğinizde DSC yapılandırma dosyalarını ve DSC kaynakları, hedef düğümleri kullanılabilmesini SMB dosya paylaşımlarını barındıran bir bilgisayardır.
 

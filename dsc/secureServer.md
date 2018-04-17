@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
 title: Çekme sunucusu en iyi uygulamaları
-ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d8d8667e2fc608e0c5948a0b5046bf92801b49db
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="pull-server-best-practices"></a>Çekme sunucusu en iyi uygulamaları
 
 >İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> Çekme sunucusuna (Windows özelliği *DSC hizmet*) vardır ancak desteklenen bir bileşen Windows Server'ın yeni özellikleri veya yetenekleri sunmak için herhangi bir plan vardır. Geçiş başlamak için önerilen yönetilen istemcilere [Azure Otomasyonu DSC](/azure/automation/automation-dsc-getting-started) (Windows Server çekme sunucusunda ötesinde özellikler içerir) veya topluluk çözümlerden birini listelenen [burada](pullserver.md#community-solutions-for-pull-service).
 
 Özeti: Bu belgede işlem ve çözüm için hazırlama mühendisleri yardımcı olmak için genişletilebilirlik dahil olmak üzere tasarlanmıştır. En iyi yöntemler müşteriler tarafından tanımlandığı gibi sağlaması gerekir ve öneriler gelecekte kullanıma yönelik ve kararlı kabul emin olmak için ürün ekibi tarafından doğrulanmış ayrıntıları.
 
