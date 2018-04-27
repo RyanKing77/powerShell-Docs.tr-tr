@@ -8,7 +8,8 @@ Visual Studio Code Windows PowerShell sürüm 5 ile Windows 10 veya yükleyerek 
 Başlamadan önce lütfen PowerShell sisteminizde bulunduğundan emin olun.
 Windows, macOS ve Linux modern iş yükleri için bkz:
 
-- [PowerShell çekirdek yüklemek macOS ve Linux][install-pscore-linux]
+- [PowerShell çekirdek Linux'ta yükleme][install-pscore-linux]
+- [PowerShell çekirdeği üzerinde macOS yükleme][install-pscore-macos]
 - [Windows PowerShell çekirdek yükleniyor][install-pscore-windows]
 
 Geleneksel Windows PowerShell iş yükleri için bkz: [Windows PowerShell'i yükleme][install-winps].
@@ -171,7 +172,8 @@ Visual Studio Code için PowerShell uzantısını kullanarak başlamanıza yard�
 - [Visual Studio Code – Kısım 2 PowerShell komut dosyası hata ayıklaması][debugging-part2]
 
 [ise]: ../ise-guide.md
-[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
+[install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
 [ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/

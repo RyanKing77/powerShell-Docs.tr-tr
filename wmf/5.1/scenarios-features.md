@@ -4,33 +4,35 @@ author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
 title: Yeni senaryolar ve WMF 5.1 Özellikleri
-ms.openlocfilehash: f0e50fc87208d6ee9edba9c660b9243621f02bb4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 8edea99731df44349c8bcff113a8163ba5401ccd
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="new-scenarios-and-features-in-wmf-51"></a>Yeni senaryolar ve WMF 5.1 Özellikleri #
+# <a name="new-scenarios-and-features-in-wmf-51"></a>Yeni senaryolar ve WMF 5.1 Özellikleri
 
 > Not: Bu bilgiler geçicidir ve değiştirilebilir.
 
-## <a name="powershell-editions"></a>PowerShell Sürümleri ##
+## <a name="powershell-editions"></a>PowerShell Sürümleri
+
 Sürüm 5.1’den başlayarak, PowerShell çeşitli özellik kümelerini ve platform uyumluluğunu belirten farklı sürümler halinde sağlanır.
 
 - **Masaüstü Sürümü:** .NET Framework üzerine yapılandırılmıştır ve Windows’un Sunucu Çekirdeği ve Windows Masaüstü gibi tam boyutlu sürümlerinde çalışan PowerShell sürümlerinin hedeflendiği betikler ve modüllerle uyumluluk sağlar.
 - **Çekirdek Sürümü:** .NET Core üzerine yapılandırılmıştır ve Windows’un Nano Sunucu ve Windows IoT gibi azaltılmış boyutlu sürümlerinde çalışan PowerShell sürümlerinin hedeflendiği betikler ve modüllerle uyumluluk sağlar.
 
 **PowerShell sürümleri kullanma hakkında daha fazla bilgi edinin**
-- [PowerShell çalışan sürümünü belirleme]()
-- [Bir modülün uyumluluk belirli PowerShell sürümleri için bildirme]()
-- [Get-Module sonuçları CompatiblePSEditions göre filtrele]()
-- [Betik yürütme uyumlu bir PowerShell sürümünde çalıştırmadığınız sürece engelle]()
+
+- [PowerShell $PSVersionTable kullanarak çalışan sürümünü belirleme](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
+- [Get-Module sonuçları PSEdition parametresini kullanarak CompatiblePSEditions göre filtrele](/powershell/module/microsoft.powershell.core/get-module)
+- [Betik yürütme uyumlu bir PowerShell sürümünde çalıştırmadığınız sürece engelle](/powershell/gallery/psget/script/scriptwithpseditionsupport)
+- [Bir modülün uyumluluk belirli PowerShell sürümleri için bildirme](/powershell/gallery/psget/module/modulewithpseditionsupport)
 
 ## <a name="catalog-cmdlets"></a>Katalog cmdlet'leri
 
-İçinde iki yeni cmdlet'ler eklenmiştir [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) modülü; bunlar oluşturmak ve Windows Katalog dosyaları doğrulayın.
+İçinde iki yeni cmdlet'ler eklenmiştir [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) modülü; bunlar oluşturmak ve Windows Katalog dosyaları doğrulayın.
 
-###<a name="new-filecatalog"></a>New-FileCatalog
+### <a name="new-filecatalog"></a>FileCatalog yeni
 --------------------------------
 
 FileCatalog yeni dosya ve klasörleri kümesi için bir Windows katalog dosyası oluşturur.
@@ -41,6 +43,7 @@ Bu bilgiler, tüm klasörler için katalog oluşturma işleminden yapılan deği
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
+
 Katalog sürüm 1 ve 2 desteklenir.
 Sürüm 1 dosya karmaları oluşturmak için SHA1 karma algoritmasını kullanır; sürüm 2 SHA256 kullanır.
 Katalog sürüm 2 desteklenmiyor *Windows Server 2008 R2* veya *Windows 7*.
@@ -56,8 +59,7 @@ Bu, katalog dosyası oluşturur.
 
 Katalog dosyası (yukarıdaki örnekte, Pester.cat) bütünlüğünü doğrulamak için kullanarak oturum [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet'i.
 
-
-###<a name="test-filecatalog"></a>Test-FileCatalog
+### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
 
 Test FileCatalog klasörleri kümesini temsil eden katalog doğrular.
@@ -74,8 +76,8 @@ Kullanıcılar, tüm bu bilgileri kullanarak alabilir *-ayrıntılı* parametres
 Ayrıca Kataloğu'nda imzalama durumunu görüntüler *imza* arama için eşdeğer olan özelliği [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) katalog dosyası cmdlet'ini.
 Kullanıcılar ayrıca atlayabilirsiniz herhangi bir dosya doğrulama sırasında kullanarak *- FilesToSkip* parametresi.
 
+## <a name="module-analysis-cache"></a>Modül analiz önbelleği
 
-## <a name="module-analysis-cache"></a>Modül analiz önbelleği ##
 WMF 5.1 ile başlayarak, PowerShell bunu aktarır komutları gibi bir modülüyle ilgili verileri önbelleğe kullanılan dosya üzerinde denetim sağlar.
 
 Varsayılan olarak, bu önbellek dosyasında depolanan `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
@@ -106,23 +108,22 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 Bu ortam değişkenini ayarı hemen geçerli işlemde etkinleşir.
 
-##<a name="specifying-module-version"></a>Modül sürümü belirtme
+## <a name="specifying-module-version"></a>Modül sürümü belirtme
 
 WMF 5.1 içinde `using module` diğer ilgili modülü kurulumlarını PowerShell'de aynı şekilde davranır.
 Daha önce belirli modülü sürüm belirtmek için hiçbir yolu yoktu; Mevcut birden çok sürüm varsa, bu hatayla sonuçlandı.
 
-
 WMF 5.1:
 
-* Kullanabileceğiniz [ModuleSpecification Oluşturucusu (karma)](https://msdn.microsoft.com/library/jj136290).
+- Kullanabileceğiniz [ModuleSpecification Oluşturucusu (karma)](https://msdn.microsoft.com/library/jj136290).
 Bu karma tablosu ile aynı biçimi sahip `Get-Module -FullyQualifiedName`.
 
 **Örnek:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-* Birden çok modül sürümü varsa, PowerShell kullanan **aynı çözümleme mantığı** olarak `Import-Module` ve bir hata oluştu--aynı davranışı dönmez `Import-Module` ve `Import-DscResource`.
+- Birden çok modül sürümü varsa, PowerShell kullanan **aynı çözümleme mantığı** olarak `Import-Module` ve bir hata oluştu--aynı davranışı dönmez `Import-Module` ve `Import-DscResource`.
 
+## <a name="improvements-to-pester"></a>Pester geliştirmeleri
 
-##<a name="improvements-to-pester"></a>Pester geliştirmeleri
 WMF 5.1, PowerShell ile birlikte gelen Pester sürümü 3.3.5 tamamlama eklenmesi ile 3.4.0 güncelleştirildi https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, hangi etkinleştirir daha iyi davranış Nano Server üzerinde Pester için.
 
 ChangeLog.md dosyasını inceleyerek sürümleri için 3.3.5 3.4.0 değişiklikleri gözden geçirebilirsiniz: https://github.com/pester/Pester/blob/master/CHANGELOG.md

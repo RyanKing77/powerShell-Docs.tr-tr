@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
 title: DSC yapılandırmaları
-ms.openlocfilehash: 8b44fd9a715c217ee198ea343cdffbfab1193625
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ffeb953048c0a65352618d2ab141ee10ead4c663
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dsc-configurations"></a>DSC yapılandırmaları
 
@@ -72,7 +72,7 @@ Bu örnekte, düğümün adı olarak geçirerek belirttiğiniz **ComputerName** 
 ## <a name="compiling-the-configuration"></a>Yapılandırmayı derleme
 
 Bir yapılandırma yürürlüğe önce bir MOF belgeye derleme gerekir.
-Bunun için bir PowerShell işlevi gibi yapılandırma çağırarak.
+Bunun için bir PowerShell işlevini çağırırdı gibi yapılandırma çağırarak.
 Bu yapılandırma, yalnızca adını içeren örnek son satırının yapılandırma çağırır.
 
 >**Not:** bir yapılandırma çağrılacak işlev genel kapsamda (işleviyle herhangi diğer PowerShell gibi) olmalıdır.

@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Bilgisayarlar Hakkında Bilgi Toplama
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: c914a7133a1ac0a05346233db802175f7f29c6b2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7f5a5f6accd57a84e2bcb3d20c14640a8e028791
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="collecting-information-about-computers"></a>Bilgisayarlar Hakkında Bilgi Toplama
 
@@ -32,7 +32,7 @@ Kullanımda olsun olmasın bu tüm masaüstleri için bilgileri döndürür.
 Get-WmiObject -Class Win32_Desktop -ComputerName . | Select-Object -Property [a-z]*
 ```
 
-Meta verileri filtrelemek için bir ardışık düzen işleci (|) Get-WmiObject komutunun sonuçlarını için göndermektir ** Select-Object - özelliği [a-z] ***.
+Meta verileri filtrelemek için bir ardışık düzen işleci (|) Get-WmiObject komutunun sonuçlarını için göndermektir `Select-Object -Property [a-z]*`.
 
 ### <a name="listing-bios-information"></a>BIOS bilgilerini listeleme
 
