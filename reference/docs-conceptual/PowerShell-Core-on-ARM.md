@@ -1,4 +1,4 @@
-# <a name="powershell-core-on-arm"></a>ARM üzerinde PowerShell'i çekirdek
+# <a name="powershell-core-on-arm"></a>ARM’da PowerShell Core
 
 Günümüzde, Windows 10 ARM32/ARM64 ve Raspbian, Deneysel, desteklenmeyen bir durumda da dahil olmak üzere bazı ARM cihazlarda PowerShell çekirdek çalışır.
 
