@@ -34,30 +34,40 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
 
 ## <a name="setup-on-windows-machine"></a>Kurulum Windows makinesinde
 
-1. [Windows PowerShell çekirdek en son sürümünü yükleme] []
+1. En son sürümünü yüklemek [Windows PowerShell çekirdek]
     - Bakarak SSH remoting desteği varsa, New-PSSession için parametre kümeleri söyleyin
+
     ```powershell
     PS> Get-Command New-PSSession -syntax
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
+
 1. En son yükleme [Win32 OpenSSH] GitHub kullanarak yapı [yükleme] yönergeleri
 1. Win32 OpenSSH yüklendiği konumda sshd_config dosyayı düzenleyin.
     - Parola kimlik doğrulaması etkin olduğundan emin olun
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Bir PowerShell alt sistemi girişi ekleme, değiştirme `c:/program files/powershell/6.0.0/pwsh.exe` kullanmak istediğiniz sürüm için doğru yolu ile
-    ```none
+
+    ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+
     - İsteğe bağlı olarak anahtar kimlik doğrulamasını etkinleştir
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Sshd hizmetini yeniden başlatın
+
     ```powershell
     Restart-Service sshd
     ```
+
 1. OpenSSH, yol Env değişkenini yüklendiği yolu Ekle
     - Bu satırları olmalıdır `C:\Program Files\OpenSSH\`
     - Bu ssh.exe bulunacak sağlar
@@ -66,24 +76,33 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
 
 1. En son yükleme [Linux için PowerShell] Github'dan derleme
 1. Yükleme [Ubuntu SSH] gerektiğinde
+
     ```bash
     sudo apt install openssh-client
     sudo apt install openssh-server
     ```
+
 1. Konum /etc/ssh sshd_config dosyasını düzenleyin
     - Parola kimlik doğrulaması etkin olduğundan emin olun
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Bir PowerShell alt sistemi Girişi Ekle
-    ```none
+
+    ```
     Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
     ```
+
     - İsteğe bağlı olarak anahtar kimlik doğrulamasını etkinleştir
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Sshd hizmetini yeniden başlatın
+
     ```bash
     sudo service sshd restart
     ```
@@ -98,22 +117,31 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
       - Uygun kullanıcıların erişmesine izin vermek
 1. Düzen `sshd_config` konumda dosya `/private/etc/ssh/sshd_config`
     - Tercih ettiğiniz düzenleyicisi kullanın veya
+
     ```bash
     sudo nano /private/etc/ssh/sshd_config
     ```
+
     - Parola kimlik doğrulaması etkin olduğundan emin olun
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Bir PowerShell alt sistemi Girişi Ekle
-    ```none
+
+    ```
     Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
     ```
+
     - İsteğe bağlı olarak anahtar kimlik doğrulamasını etkinleştir
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Sshd hizmetini yeniden başlatın
+
     ```bash
     sudo launchctl stop com.openssh.sshd
     sudo launchctl start com.openssh.sshd
@@ -213,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo komutu Linux makinesinde uzaktan oturumunda çalışmaz.
 
-[PowerShell for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[Windows PowerShell çekirdek]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
 [yükleme]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [Linux için PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[MacOS için PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012
+[MacOS için PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
