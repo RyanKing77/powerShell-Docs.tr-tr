@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
 title: MOF dosyası güvenliğini sağlama
-ms.openlocfilehash: 80ef37ef1bdcb0a8b0ad343b4eab99f1bc66e116
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 00a33a5d628921bcd04aa904a1aa8ee4345af48f
+ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-the-mof-file"></a>MOF dosyası güvenliğini sağlama
 
@@ -137,7 +137,7 @@ Aşağıdaki örnek:
  1. bir sertifika oluşturur **yazma düğümü**.
  2. özel anahtar dahil olmak üzere sertifika dışa aktarır **yazma düğümü**.
  3. özel anahtardan kaldırır **yazma düğümü**, ancak ortak anahtar sertifikası tutar **my** depolar.
- 4. özel anahtar sertifikasını, üzerinde kök sertifika deposuna aktarır **hedef düğüm**.
+ 4. özel anahtar sertifikasını, üzerinde My(Personal) sertifika deposuna aktarır **hedef düğüm**.
    - Böylece tarafından güvenilecek, kök deposuna eklenmelidir **hedef düğüm**.
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>Yazma düğümde: oluşturma ve sertifika verme

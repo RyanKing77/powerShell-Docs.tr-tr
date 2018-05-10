@@ -25,7 +25,7 @@ Geleneksel Windows PowerShell iş yükleri için bkz: [Windows PowerShell'i yük
 > [!IMPORTANT]
 > MacOS üzerinde düzgün çalışması için OpenSSL PowerShell uzantısı yüklemeniz gerekir.
 > Bunu yapmanın en kolay yolu yüklemektir [Homebrew](http://brew.sh/) ve ardından çalıştırın `brew install openssl`.
-> PowerShell uzantısı artık başarıyla yüklemek mümkün olacaktır.
+> VS Code şimdi yükleyebilirsiniz PowerShell uzantısı başarıyla.
 
 - **Windows**: yükleme yönergelerini izleyin [Windows üzerinde çalışan VS kodu](https://code.visualstudio.com/docs/setup/windows) sayfası
 
@@ -38,13 +38,13 @@ Geleneksel Windows PowerShell iş yükleri için bkz: [Windows PowerShell'i yük
 
 - Başlatma **hızlı açık** basarak **Ctrl + P** (**Cmd + P** Mac üzerinde).
 - Hızlı Aç yazın `ext install powershell` ve isabet **Enter**.
-- **Uzantıları** görünümü yan çubuğunda açın. PowerShell uzantısı Microsoft'tan seçin.
-  Bir şey görürsünüz aşağıdaki gibi:
+- **Uzantıları** yan çubuğunda görünümünü açar. PowerShell uzantısı Microsoft'tan seçin.
+  Bir şey görmeniz gerekir aşağıdaki gibi:
 
   ![VSCode](../../images/vscode.png)
 
 - Tıklatın **yükleme** Microsoft PowerShell uzantısından düğmesinde.
-- Yüklemeden sonra görürsünüz **yükleme** düğmesini döndüğüne **yeniden**.
+- Yüklemeyi tamamladıktan sonra gördüğünüz **yüklemek** düğmesini döndüğüne **yeniden**.
   Tıklayın **yeniden**.
 - Visual Studio Code yeniden sahip olduktan sonra düzenleme için hazır olursunuz.
 
@@ -96,7 +96,7 @@ Visual Studio Code aşağıdaki yapılandırma ayarları öneririz:
 
 Visual Studio Code sürüm 1.9 itibariyle PowerShell komut dosyasını içeren klasörü açmak zorunda kalmadan PowerShell komut dosyaları ayıklayabilirsiniz.
 PowerShell komut dosyası ile açmanız yeterlidir **Dosya -> Dosya Aç...** , bir satırı (F9 tuşuna basın) bir kesme noktası ayarlayın ve ardından hata ayıklamayı başlatmak için F5'e basın.
-Hata ayıklayıcı, adım, devam ettirme ve durdurma hata ayıklama bölün sağlayan görünen hata ayıklama eylemler bölmesini görürsünüz.
+Hata ayıklayıcı, adım, devam ettirme ve durdurma hata ayıklama bölün sağlayan görünür ve hata ayıklama Eylemler bölmesinde görmeniz gerekir.
 
 ### <a name="workspace-debugging"></a>Çalışma hata ayıklama
 
@@ -116,11 +116,11 @@ Hata ayıklama yapılandırma dosyası oluşturmak için aşağıdaki adımları
 
 1. Açık **hata ayıklama** basarak Görünüm **Ctrl + Shift + D** (**Cmd + SHIFT + D** Mac üzerinde).
 1. Tuşuna **yapılandırma** araç çubuğunda dişli simgesi.
-1. Visual Studio Code size sorar **seçin ortamı**.
+1. Visual Studio Code ister **seçin ortamı**.
    Seçin **PowerShell**.
 
    Bunu yaparken, Visual Studio Code çalışma klasörünüze kök dizininde bir dizin ve dosya ".vscode\launch.json" oluşturur.
-   Bu, hata ayıklama yapılandırmasını depolandığı yerdir. Dosyalarınızı Git deposunda varsa, genellikle Launch.json'u dosya Yürüt istersiniz.
+   Bu, hata ayıklama yapılandırmasını depolandığı yerdir. Dosyalarınızı Git deposunda varsa, genellikle Launch.json'u dosyasını kaydetmek istediğiniz.
    Launch.json'u dosyasının içeriğini şunlardır:
 
 ```json
@@ -153,7 +153,7 @@ Hata ayıklama yapılandırma dosyası oluşturmak için aşağıdaki adımları
 ```
 
 Bu hata ayıklama senaryoları temsil eder.
-Ancak, bu dosyayı düzenleyicide açtığınızda göreceğiniz bir **Yapılandırması Ekle...**  düğmesi.
+Ancak, bu dosyayı düzenleyicide açtığınızda gördüğünüz bir **Yapılandırması Ekle...**  düğmesi.
 Daha fazla PowerShell hata ayıklama yapılandırmaları eklemek için bu düğmeyi basabilirsiniz. Eklemek için kullanışlı bir yapılandırma **PowerShell: başlatma komut dosyası**.
 Bu yapılandırma ile hangi dosya Düzenleyicisi'nde şu anda etkin olan geçtiğinden bağımsız F5'e basın her başlatılması gereken isteğe bağlı bağımsız değişkenler ile belirli bir dosya belirtebilirsiniz.
 
