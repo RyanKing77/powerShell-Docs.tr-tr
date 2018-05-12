@@ -1,14 +1,14 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: Daha fazla powershell öğrenme
-ms.openlocfilehash: bed263df0ff52ec687bc7a644470f0397d0106ff
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: PowerShell hakkında daha fazla şey
+ms.openlocfilehash: b0e17a6894468696365e5a553e6ffccfaa8eb499
+ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="more-powershell-learning"></a>Daha fazla PowerShell öğrenme
+# <a name="more-powershell-learning"></a>PowerShell hakkında daha fazla şey
 
 PowerShell öğrenmek için diğer kaynaklar
 
@@ -26,7 +26,7 @@ Komut satırında kullanılabilir Yardım ek olarak, daha fazla bilgi için Wind
 
 ## <a name="video-training"></a>Video eğitim
 
-### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
+### <a name="microsoft-virtual-academy"></a>Microsoft sanal Akademi
 - [PowerShell 3.0 ile çalışmaya başlama hızlı başlangıç](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
 - [Gelişmiş Araçlar & PowerShell 3.0 Hızlı Başlangıç ile komut dosyası oluşturma](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8231)
 

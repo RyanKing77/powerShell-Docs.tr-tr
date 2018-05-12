@@ -1,16 +1,16 @@
 ---
 description: İstenen durum Yapılandırması'nı (DSC) uzantısı'nda Azure sürüm geçmişi hakkında bilgi edinin.
-ms.date: 03/14/2018
+ms.date: 05/09/2018
 ms.topic: conceptual
 keywords: DSC, powershell, azure, uzantısı
 title: Azure DSC uzantısı sürüm geçmişi
 author: DCtheGeek
 ms.author: dacoulte
-ms.openlocfilehash: a183137dde302811874bd5466c35bccebca5d128
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 59c014b4b169a589561f57c1ee2a5e861137aee5
+ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure istenen durum yapılandırması uzantısı sürüm geçmişi
 
@@ -20,10 +20,10 @@ Bu makalede destekler, açıklamalar ve yeni özellikleri ve değişiklikleri a�
 
 ## <a name="latest-versions"></a>En son sürümleri
 
-### <a name="version-275"></a>Sürüm 2,75
+### <a name="version-276"></a>Sürüm 2.76
 
 - **Yayın Tarihi:**
-  - 5 Mart 2018
+  - 9 May 2018
 - **İşletim sistemi desteği:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -38,6 +38,42 @@ Bu makalede destekler, açıklamalar ve yeni özellikleri ve değişiklikleri a�
   - WMF 4.0
 - **Ortamı:**
   - Azure
+- **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano Server için VM DSC rolü yüklenir.
+- **Yeni özellikler:**
+  - Geliştirme substatus ve küçük diğer hata düzeltmeleri için uzantı meta verilerde.
+
+### <a name="version-219"></a>Sürüm 2.19
+
+- **Yayın Tarihi:**
+  - 3 Haziran 2016
+- **İşletim sistemi desteği:**
+  - Windows Server 2016 Technical Preview
+  - Windows Server 2012 R2
+  - Windows Server 2012
+  - Windows Server 2008 R2 SP1
+- **WMF desteği:**
+  - WMF 5.0 RTM
+  - WMF 4.0 güncelleştirme
+  - WMF 4.0
+- **Ortamı:**
+  - Azure
+  - Azure Çin
+  - Azure kamu
+- **Açıklamalar:** bu sürümü Windows Server 2016 Technical Preview içinde yer alan DSC kullanır; diğer işletim sistemleri için yükler [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (yeniden başlatma gerektirir WMF yükleme).
+- **Yeni özellikler:**
+  - DSC uzantı şimdi üzerinde Azure Çin'e dahil edilmiş. Bu sürüm öncelikle uzantısı Azure Çin üzerinde çalıştırmak için düzeltmeler içerir.
+
+## <a name="supported-versions"></a>Desteklenen sürümleri
+
+> [!WARNING]
+> WMF 5.0 Genel Ağustos 2016'da, imzalama sertifikası süresi Önizleme sürümleri 2.13 aracılığıyla 2.4 kullanın.  Bu sorun hakkında daha fazla bilgi için bkz: [blog gönderisi](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/).
+
+### <a name="version-275"></a>Sürüm 2,75
+
+- **Yayın Tarihi:** 5 Mart 2018
+- **İşletim sistemi desteği:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows istemci 7/8.1/10, Nano Server
+- **WMF desteği:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 güncelleştirme, WMF 4.0
+- **Ortam:** Azure
 - **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano Server için VM DSC rolü yüklenir.
 - **Yeni özellikler:**
   - TLS 1.2 için GitHub'ın en son taşıma sonra yerleşik bir VM üzerinde Azure Marketi kullanılabilir Dıy Resource Manager şablonları kullanarak Azure Otomasyonu DSC olamaz veya DSC uzantısı GitHub üzerinde barındırılan config almak için kullanın. Uzantı dağıtma sırasında aşağıdakine benzer bir hata görürsünüz:
@@ -68,32 +104,6 @@ Bu makalede destekler, açıklamalar ve yeni özellikleri ve değişiklikleri a�
     ```
 
   - Yeni Uzantı sürümde TLS 1.2 şimdi zorlanır. Uzantı 2,75 autoupgraded alırsınız AutoUpgradeMinorVersion zaten sahipse, uzantı dağıtırken Resource Manager şablonunda = true. El ile güncelleştirmeleri için belirtme `TypeHandlerVersion = 2.75` için Resource Manager şablonunda.
-
-### <a name="version-219"></a>Sürüm 2.19
-
-- **Yayın Tarihi:**
-  - 3 Haziran 2016
-- **İşletim sistemi desteği:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **WMF desteği:**
-  - WMF 5.0 RTM
-  - WMF 4.0 güncelleştirme
-  - WMF 4.0
-- **Ortamı:**
-  - Azure
-  - Azure Çin
-  - Azure kamu
-- **Açıklamalar:** bu sürümü Windows Server 2016 Technical Preview içinde yer alan DSC kullanır; diğer işletim sistemleri için yükler [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (yeniden başlatma gerektirir WMF yükleme).
-- **Yeni özellikler:**
-  - DSC uzantı şimdi üzerinde Azure Çin'e dahil edilmiş. Bu sürüm öncelikle uzantısı Azure Çin üzerinde çalıştırmak için düzeltmeler içerir.
-
-## <a name="supported-versions"></a>Desteklenen sürümleri
-
-> [!WARNING]
-> WMF 5.0 Genel Ağustos 2016'da, imzalama sertifikası süresi Önizleme sürümleri 2.13 aracılığıyla 2.4 kullanın.  Bu sorun hakkında daha fazla bilgi için bkz: [blog gönderisi](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/).
 
 ### <a name="version-270---272"></a>Sürüm 2.70 2.72
 
