@@ -1,130 +1,84 @@
 - name: Genel bakış
   href: readme.md
+- name: PowerShellGet yükleme
+  href: installing-psget.md
+- name: Başlarken
+  href: getting-started.md
+- name: Nasıl Yapılır
   items:
-    - name: Galeri
+    - name: Galeride Öğe Bulma
       items:
-        - name: Başlarken
-          href: psgallery/psgallery_gettingstarted.md
-        - name: Sistem Durumu
-          href: psgallery/psgallery_status.md
-        - name: Galeri SSS
-          href: psgallery/psgallery_faqs.md
-        - name: Galeri Öğeleri sekmesi
-          href: psgallery/psgallery_items_tab.md
-        - name: Galeri arama söz dizimi
-          href: psgallery/psgallery_search_syntax.md
-        - name: Uyumlu PSEditions’ı olan Öğeler
-          href: psgallery/psgallery_pseditions.md
-        - name: FileList görünümü
-          href: psgallery/psgallery_filelist_feature.md
-        - name: Azure Otomasyonuna Dağıtma
-          href: psgallery/psgallery_deploy_to_azure_automation.md
-        - name: PowerShellGallery Hesabı Oluşturma
-          href: psgallery/psgallery_creating_an_account.md
+        - name: Öğe Arama
+          href: how-to/finding-items/search-syntax.md
+        - name: PSEdition’a Göre Arama
+          href: how-to/finding-items/searching-by-psedition.md
+        - name: Arama Sonuçlarını Filtreleme
+          href: how-to/finding-items/filtering-items.md
+    - name: Galeride Yayımlama
+      items:
         - name: Öğe oluşturma ve yayımlama
-          href: psgallery/Creating-and-Publishing-an-item.md
-        - name: Yayımlama kılavuzları ve en iyi yöntemler
-          href: psgallery/psgallery-PublishingGuidelines.md
-        - name: Öğe bildirimi ve Galeri Kullanıcı Arabirimi
-          href: psgallery/psgallery_ItemManifestAffectingUI.md
+          href: how-to/publishing-items/publishing-an-item.md
+        - name: PowerShellGallery Hesabı Oluşturma
+          href: how-to/publishing-items/creating-an-account.md
         - name: Öğeleri listeden kaldırma
-          href: psgallery/psgallery_unlist_items.md
+          href: how-to/publishing-items/unlisting-items.md
         - name: Öğeleri silme
-          href: psgallery/Deleting-Items.md
+          href: how-to/publishing-items/deleting-items.md
         - name: Öğe sahiplerini yönetme
-          href: psgallery/Managing-Item-Owners.md
-        - name: Uygunsuz Kullanımı Bildirme
-          href: psgallery/psgallery_report_abuse.md
-        - name: Uyuşmazlık çözümü
-          href: psgallery/psgallery_dispute_resolution.md
+          href: how-to/publishing-items/managing-item-owners.md
+    - name: Öğeler ile Çalışma
+      items:
+        - name: FileList görünümü
+          href: how-to/working-with-items/filelist-view.md
+        - name: Azure Otomasyonuna Dağıtma
+          href: how-to/working-with-items/deploy-to-azure-automation.md
+        - name: Lisans Kabulü Gerektiren Öğeler
+          href: how-to/working-with-items/items-that-require-license-acceptance.md
         - name: Öğe sahipleriyle iletişime geçme
-          href: psgallery/psgallery_contacting_item_owners.md
-        - name: Yöneticilerle iletişime geçme
-          href: psgallery/psgallery_contacting_administrators.md
+          href: how-to/working-with-items/contacting-item-owners.md
         - name: Sosyal Medya veya Yorumlar Aracılığıyla Geri Bildirim Sağlama
-          href: psgallery/psgallery-SocialMediaFeedback.md
-        - name: Öğe Ayrıntılarında Lisans Kabulü Gerektir
-          href: psgallery/psgallery_requires_license_acceptance.md
-        - name: Azure Otomasyonuna Dağıtmada Lisans Kabulü Gerektir
-          href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
-        - name: PowerShell Galerisi GDPR Uyumlulluğu
-          href: psgallery/psgallery_gdpr_dsr.md
-- name: PowerShellGet
-  href: psget/overview.md
+          href: how-to/working-with-items/social-media-feedback.md
+- name: Kavramlar
   items:
-    - name: PowerShellGet Modülü Al
-      href: psget/get_psget_module.md
-    - name: Modül
+    - name: Yayımlama kılavuzları ve en iyi yöntemler
+      href: concepts/publishing-guidelines.md
+    - name: Öğe bildirimi ve Galeri Kullanıcı Arabirimi
+      href: concepts/item-manifest-affecting-ui.md
+    - name: Belirli PSEdition’ları Gerektirme
       items:
-        - name: Modül Bul
-          href: psget/module/psget_find-module.md
-        - name: DSC Kaynakları Bul
-          href: psget/module/psget_find-dscresource.md
-        - name: Rol İşlevleri Bul
-          href: psget/module/psget_find-rolecapability.md
-        - name: Komut Bul
-          href: psget/module/psget_find-command.md
-        - name: Kaydet
-          href: psget/module/psget_save-module.md
-        - name: Yükle
-          href: psget/module/psget_install-module.md
-        - name: Güncelleştir
-          href: psget/module/psget_update-module.md
-        - name: Kaldır
-          href: psget/module/psget_uninstall-module.md
-        - name: Yüklü modülleri al
-          href: psget/module/psget_get-installedmodule.md
-        - name: Modül bildirimini güncelleştir
-          href: psget/module/psget_update-modulemanifest.md
-        - name: Yayımla
-          href: psget/module/psget_publish-module.md
-        - name: PSEditions’ı olan Modüller
-          href: psget/module/modulewithpseditionsupport.md
-        - name: Lisans Kabulü Gerektiren Modüller
-          href: psget/module/RequireLicenseAcceptance.md
-        - name: Yayın Öncesi Sürümler
-          href: psget/module/PreReleaseModule.md
-        - name: Sorun giderme
-          href: psget/psget_cmdlets_troubleshooting.md
-    - name: Betik
+        - name: PSEdition Desteği ile Betik Yazma
+          href: concepts/script-psedition-support.md
+        - name: PSEdition Desteği ile Modül Yazma
+          href: concepts/module-psedition-support.md
+    - name: Lisans Kabulü Gerektirme
       items:
-        - name: Bul
-          href: psget/script/psget_find-script.md
-        - name: Kaydet
-          href: psget/script/psget_save-script.md
-        - name: Yükle
-          href: psget/script/psget_install-script.md
-        - name: Güncelleştir
-          href: psget/script/psget_update-script.md
-        - name: Kaldır
-          href: psget/script/psget_uninstall-script.md
-        - name: Yüklü betikleri al
-          href: psget/script/psget_get-installedscript.md
-        - name: Meta veriler ile betik dosyası oluştur
-          href: psget/script/psget_new-scriptfileinfo.md
-        - name: Betik dosyası meta verilerini sına
-          href: psget/script/psget_test-scriptfileinfo.md
-        - name: Betik dosyası meta verilerini güncelleştir
-          href: psget/script/psget_update-scriptfileinfo.md
-        - name: Yayımla
-          href: psget/script/psget_publish-script.md
-        - name: PSEditions’ı olan Betikler
-          href: psget/script/scriptwithpseditionsupport.md
-        - name: Betikler için Lisans Kabulü Gerektir
-          href: psget/script/script_RequireLicenseAcceptance.md
-        - name: Yayın Öncesi Sürümler
-          href: psget/script/PreReleaseScript.md
-    - name: Depo yönetimi
+        - name: Betikler için Lisans Kabulü Gerektirme
+          href: concepts/script-license-acceptance.md
+        - name: Modüller için Lisans Kabulü Gerektirme
+          href: concepts/module-license-acceptance.md
+    - name: Öğeleri Ön Sürüm Olarak Tanımlama
       items:
-        - name: NuGet sağlayıcısı ve NuGet.exe önyüklemesi
-          href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
-        - name: Depo kaydetme
-          href: psget/repository/psget_register-psrepository.md
-        - name: Kayıtlı depoyu listeleme
-          href: psget/repository/psget_get-psrepository.md
-        - name: Kayıtlı depoyu değiştirme
-          href: psget/repository/psget_set-psrepository.md
-        - name: Depo kaydını kaldırma
-          href: psget/repository/psget_unregister-psrepository.md
-    - name: PackageManagement Cmdlet’leri
-      href: psget/oneget/PackageManagement_cmdlets.md
+        - name: Bir Modülü Ön Sürüm Olarak Tanımlama
+          href: concepts/module-prerelease-support.md
+        - name: Bir Betiği Ön Sürüm Olarak Tanımlama
+          href: concepts/script-prerelease-support.md
+    - name: PSScriptAnalyzer Kural Profili
+      href: concepts/scriptanalyzer-rule-profile.md
+- name: Destek Alma
+  items:
+    - name: Uygunsuz Kullanımı Bildirme
+      href: how-to/getting-support/report-abuse.md
+    - name: Uyuşmazlık çözümü
+      href: how-to/getting-support/dispute-resolution.md
+    - name: Yöneticilerle iletişime geçme
+      href: how-to/getting-support/contacting-administrators.md
+    - name: Sorun giderme
+      href: how-to/getting-support/troubleshooting-cmdlets.md
+    - name: NuGet sağlayıcısı ve NuGet.exe önyüklemesi
+      href: how-to/getting-support/bootstrapping-nuget.md
+    - name: GDPR Uyumluluğu
+      href: how-to/getting-support/gdpr-dsr-policy.md
+- name: Galeri SSS
+  href: faqs.md
+- name: PowerShellGet cmdlet’leri
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
