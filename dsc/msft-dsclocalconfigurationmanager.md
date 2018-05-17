@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
 title: MSFT_DSCLocalConfigurationManager sınıfı
-ms.openlocfilehash: 598bd7490043975d9d965c12a7337fb3475b3ded
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 615f2998b11a0a927d3868d852e0d408f500c86d
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfı
 
@@ -30,7 +29,7 @@ class MSFT_DSCLocalConfigurationManager
 
 **MSFT_DSCLocalConfigurationManager** sınıfı aşağıdaki üyeleri sahiptir:
 
--   [Methods][]
+-   [Yöntemleri] []
 
 ### <a name="methods"></a>Yöntemler
 
@@ -48,9 +47,9 @@ class MSFT_DSCLocalConfigurationManager
 | [PerformRequiredConfigurationChecks](msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)| Tutarlılık denetimi başlatır.|
 | [RemoveConfiguration](msft-dsclocalconfigurationmanager-removeconfiguration.md)| Yapılandırma dosyalarını kaldırır.|
 | [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| Doğrudan çağıran **almak** DSC kaynağı yöntemi.|
-| [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Doğrudan çağıran **ayarlamak** DSC kaynağı yöntemi.|
+| [resourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Doğrudan çağıran **ayarlamak** DSC kaynağı yöntemi.|
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Doğrudan çağıran **Test** DSC kaynağı yöntemi.|
-| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| Dökümünü önceki yapılandırmaya geri dön.|
+| [Geri alma](msft-dsclocalconfigurationmanager-rollback.md)| Dökümünü önceki yapılandırmaya geri dön.|
 | [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| Yönetilen düğüme yapılandırma belgesini gönderir ve bekleyen bir değişiklik kaydeder.|
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| Yönetilen düğüme yapılandırma belgesini gönderir ve yapılandırmayı uygulamak için yapılandırma Aracısı'nı kullanır.|
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| Yönetilen düğüme yapılandırma belgesi göndermek ve yapılandırmayı uygulamak için yapılandırma Aracısı'nı kullanmaya başlayın. Sonuç çıkış almak için GetConfigurationResultOutput kullanın.|

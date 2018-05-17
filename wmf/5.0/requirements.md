@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 7e24bb4ee4d0658b0619f7f008e3740f647f124f
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ce68bc57a5da049cf895165420ba7c4e21b3e63b
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="system-requirements"></a>Sistem Gereksinimleri
 
@@ -19,7 +17,7 @@ ms.lasthandoff: 04/09/2018
     | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
     | Windows Server 2012    |  |  | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
     | Windows Server 2008 R2 SP1 | IA64 dışında tüm | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) ve [.NET Framework 4.5 veya üstü](https://msdn.microsoft.com/library/5a4x27ek.aspx) yüklenir| [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
-    | Windows 8.1 | Pro, Enterprise | | **x64:**  [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:**  [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
+    | Windows 8.1 | Pro, Enterprise | | **x64:**[Win8.1AndW2K12R2 KB3134758 x64.msu  ](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:**  [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
     | Windows 7 SP1 | Tümü | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) ve [.NET Framework 4.5 veya üstü](https://msdn.microsoft.com/library/5a4x27ek.aspx) yüklenir | **x64:**  [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:**  [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
 
 # <a name="installation-instructions"></a>Yükleme yönergeleri
@@ -78,7 +76,7 @@ Windows Server 2012 R2 ve Windows 8.1:
 ```powershell
 wusa /uninstall /kb:3134758
 ```
-On Windows Server 2012:
+Windows Server 2012:
 ```powershell
 wusa /uninstall /kb:3134759
 ```

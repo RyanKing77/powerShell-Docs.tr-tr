@@ -1,17 +1,14 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: PowerShell cmdlet'i
 ms.date: 12/12/2016
-title: pswaauthorizationrule Ekle
-ms.technology: powershell
+title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: b8020f8b034ab24d79a96da3908e9b63bf017cd9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -71,7 +68,7 @@ Active Directory etki alanı Hizmetleri (AD DS) veya yerel gruplar için bu kura
 | Ardışık Düzen Girişi kabul edilsin mi?               | TRUE (ByPropertyName)                |
 | Joker Karakter Kabul Edilsin Mi?          | yanlış                                |
 
-### <a name="-computernameltstringgt"></a>-ComputerName&lt;String&gt;
+### <a name="-computernameltstringgt"></a>-ComputerName&lt;dize&gt;
 
 Bu kural erişim verdiği bilgisayar adını belirtir.
 
@@ -137,7 +134,7 @@ Bu kural için kolay adı belirtir.
 | Ardışık Düzen Girişi kabul edilsin mi?               | TRUE (ByPropertyName)                |
 | Joker Karakter Kabul Edilsin Mi?          | yanlış                                |
 
-### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;String\[\]&gt;
+### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;dize\[\]&gt;
 
 AD DS veya bu kural erişim verdiği yerel gruplar bir veya daha fazla kullanıcı grubu adını belirtir.
 
@@ -251,6 +248,6 @@ Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
 - [Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
 - [Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
 - [Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
-- [Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)
-- [New-Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)
+- [Üye Ekle](http://go.microsoft.com/fwlink/p/?LinkId=113280)
+- [Yeni nesne](http://go.microsoft.com/fwlink/p/?LinkId=113355)
 - [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)

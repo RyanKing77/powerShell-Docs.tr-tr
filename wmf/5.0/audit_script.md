@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2627b9d02788bd31a5384587406df533faf2cfaf
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="script-tracing-and-logging"></a>Betik İzleme ve Günlüğe Kaydetme
 
@@ -23,7 +21,7 @@ Olaylar şunlardır:
 | İşlem kodu  | Oluşturma                                      |
 | Görev    | CommandStart                                |
 | Anahtar sözcüğü | Çalışma alanı                                    |
-| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
+| Olay Kimliği | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
 | İleti | Scriptblock metin (%1% 2) oluşturma: </br> %3 </br> ScriptBlock kimliği: %4 |
 
 
@@ -37,7 +35,7 @@ Ayrıntılı günlük kaydını etkinleştirdiğinizde, özellik yazma başlamak
 | İşlem kodu  | Açın (/ Kapat)                                         |
 | Görev    | CommandStart (/ CommandStop)                           |
 | Anahtar sözcüğü | Çalışma alanı                                               |
-| EventId | ScriptBlock\_çağırma\_Başlat\_ayrıntı (0x1009 = 4105) / </br> ScriptBlock\_çağırma\_tam\_ayrıntı (0x100A Sınır = 4106) |
+| Olay Kimliği | ScriptBlock\_çağırma\_Başlat\_ayrıntı (0x1009 = 4105) / </br> ScriptBlock\_çağırma\_tam\_ayrıntı (0x100A Sınır = 4106) |
 | İleti | Başlarken (/ tamamlanmış) çağırma ScriptBlock kimliği: %1 </br> Çalışma alanı kimliği: %2 |
 
 Kimliği (olay kimliği 0x1008 ile ilişkili olabilir) betik bloğu temsil eden GUID'dir ve çalışma alanı kimliği bu betik bloğu çalıştırıldı çalışma alanı temsil eder.

@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
 title: MSFT_DSCLocalConfigurationManager sınıfının RemoveConfiguration yöntemi
-ms.openlocfilehash: e0ae8a50212b70841d210d7b2d666a2855218d1a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c68d17d38336dec08e078366ea5f2071fcf7c5a8
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının RemoveConfiguration yöntemi
 

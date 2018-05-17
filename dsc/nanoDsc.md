@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
 title: Nano Server’da DSC Kullanma
-ms.openlocfilehash: 9ebc1f046893c360538009b5ecbcfb6456f92bbb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9e26c525b48e8656a3479db9c0a760eaeb8cf58a
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>Nano Server’da DSC Kullanma
 
@@ -35,18 +34,18 @@ Yükleme ve PowerShell uzaktan iletişimi Nano Server yönetme yanı sıra, Nano
   * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
   * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)
   * [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
-  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)
+  * [DscDebug devre dışı bırak](https://technet.microsoft.com/en-us/library/mt517872.aspx)
   * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
   * [Stop-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
   * [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
   * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)
-  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx)
-  * [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
-  * [Restore-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
+  * [Yayımlama DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx)
+  * [Güncelleştirme DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
+  * [Geri yükleme DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
   * [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
   * [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx)
-  * [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
-  * [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+  * [Çağırma DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
+  * [Bul DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
   * [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)
   * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)
 
@@ -84,10 +83,10 @@ Yükleme ve PowerShell uzaktan iletişimi Nano Server yönetme yanı sıra, Nano
   * [Arşiv](archiveResource.md)
   * [Ortamı](environmentResource.md)
   * [Dosya](fileResource.md)
-  * [Log](logResource.md)
+  * [Günlük](logResource.md)
   * ProcessSet
   * [Kayıt defteri](registryResource.md)
-  * [Script](scriptResource.md)
+  * [Komut dosyası](scriptResource.md)
   * WindowsPackageCab
   * [WindowsProcess](windowsProcessResource.md)
   * WaitForAll (bkz [arası düğümlü bağımlılıkları belirtme](crossNodeDependencies.md))

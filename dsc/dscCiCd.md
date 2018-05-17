@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
 title: DSC sahip sürekli tümleştirme ve sürekli dağıtımı işlem hattı oluşturma
-ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC sahip sürekli tümleştirme ve sürekli dağıtımı işlem hattı oluşturma
 
@@ -320,14 +319,14 @@ Burada, biz yalnızca yapı ekleyeceksiniz oluşturma adımlarının ele alacağ
 Yeni bir derleme tanımı oluşturun (seçin **boş** şablonu) "InfraDNS" adlı.
 Aşağıdaki adımlar, yapı tanımı ekleyin:
 
-- PowerShell Script
+- PowerShell Betiği
 - Test sonuçlarını yayımlama
 - Dosyaları kopyalama
 - Yapı yayımlama
 
 Bu derleme adımları, her adım özelliklerini şu şekilde düzenleyerek ekledikten sonra:
 
-### <a name="powershell-script"></a>PowerShell Script
+### <a name="powershell-script"></a>PowerShell Betiği
 
 1. Ayarlama **türü** özelliğine `File Path`.
 1. Ayarlama **betik yolu** özelliğine `initiate.ps1`.
@@ -373,7 +372,7 @@ Bu adım yapı kopyalar ve test komutlar hazırlama dizinine kadar sonraki adım
 1. TFS'de, tıklatın **yapı & yayın** sekmesi
 1. Seçin `DNS Infra` yapı tanımı öğesini tıklatıp **Düzenle**
 1. Tıklatın **Tetikleyicileri** sekmesi
-1. Seçin **sürekli tümleştirme (CI)**seçip `refs/heads/ci-cd-example` şube aşağı açılan listesinde
+1. Seçin **sürekli tümleştirme (CI)** seçip `refs/heads/ci-cd-example` şube aşağı açılan listesinde
 1. Tıklatın **kaydetmek** ve ardından **Tamam**
 
 Artık TFS git deposu Tetikleyicileri otomatik derleme değiştirin.
@@ -388,13 +387,13 @@ Seçtiğinizden emin olun **sürekli dağıtım** böylece yeni bir yapı tamaml
 
 Aşağıdaki adımları yayın tanımına ekleyin:
 
-- PowerShell Script
+- PowerShell Betiği
 - Test sonuçlarını yayımlama
 - Test sonuçlarını yayımlama
 
 Adımları aşağıdaki gibi düzenleyin:
 
-### <a name="powershell-script"></a>PowerShell Script
+### <a name="powershell-script"></a>PowerShell Betiği
 
 1. Ayarlama **betik yolu** alanı `$(Build.DefinitionName)\Deploy\initiate.ps1"`
 1. Ayarlama **bağımsız değişkenleri** alanı `-fileName Deploy`

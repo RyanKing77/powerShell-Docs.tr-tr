@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
-title: DSC WindowsProcess Resource
-ms.openlocfilehash: 236a48fd4449a96f2297c152bce65253dd2fd08d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: DSC WindowsProcess kaynağı
+ms.openlocfilehash: 72668136a3a51c17c52f762c6f94bec3ed4597b0
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess Resource
+# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess kaynağı
 
 > İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 

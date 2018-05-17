@@ -1,14 +1,12 @@
 ---
 ms.date: 06/12/2017
-author: rpsqrd
-ms.topic: conceptual
 keywords: jea, powershell, güvenlik
 title: JEA güvenlik konuları
-ms.openlocfilehash: 1b83a73c047b056a4cc094d7e4b0bbf31f75f53a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 46ea5cc3e9bc7b6759524aa466e900950a6dee26
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="jea-security-considerations"></a>JEA güvenlik konuları
 
@@ -79,7 +77,7 @@ Rol Tanımları artık beklendiği gibi çalışmaz ve uç noktasına erişmek i
 
 Bir RunAsCredential JEA noktadaki geri belirli kullanıcılar ve eylemleri Kullanıcıları rollerine eşlemek için destek eksikliği izleme zorluk nedeniyle kullanmamanız gerekir.
 
-## <a name="winrm-endpoint-acl"></a>WinRM Endpoint ACL
+## <a name="winrm-endpoint-acl"></a>WinRM uç nokta ACL
 
 Normal PowerShell uzaktan iletişim uç ile denetimleri WinRM yapılandırmasında bir ayrı bir erişim denetim listesi (ACL) her JEA bitiş taşıdığından kimin JEA bitiş noktası ile doğrulanabilir.
 Hatalı biçimde yapılandırdıysanız, güvenilen kullanıcıların JEA uç noktasına erişmek mümkün olmayabilir ve/veya güvenilmeyen kullanıcıların erişim elde.

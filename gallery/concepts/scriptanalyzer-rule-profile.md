@@ -3,14 +3,14 @@ ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeri, powershell, cmdlet, psgallery
-title: Galeri için ScriptAnazlyer kural profili
-ms.openlocfilehash: 74eab49e4c4a546655451ef21b30cfcafaeb9584
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
-ms.translationtype: MT
+title: Galeri için ScriptAnalyzer kural profili
+ms.openlocfilehash: 22b95f0901fe95d5ad79df0e23e675ab52313fee
+ms.sourcegitcommit: f8a37df92db22b9368469fb07378399b2ab90cea
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/14/2018
 ---
-# <a name="scriptanazlyer-rule-profile-for-gallery"></a>Galeri için ScriptAnazlyer kural profili
+# <a name="scriptanalyzer-rule-profile-for-gallery"></a>Galeri için ScriptAnalyzer kural profili
 
 PowerShell Galerisi yayımlanan öğeleri kalitesini emin olmak için çalıştıracağımız [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) gönderilen komut dosyalarında herhangi bir ihlal olup olmadığını belirlemek için kurallar.
 

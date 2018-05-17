@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Katalog cmdlet’leri
-ms.openlocfilehash: f46fb99b61ff8008c247f6db4ed57ae6e6e81b9b
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7eaca09667af0eb5d719f23e987bb112e8514978
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="catalog-cmdlets"></a>Katalog cmdlet'leri
 
 İki yeni cmdlet'leri ekledik [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) oluşturmak ve windows katalog dosyaları doğrulamak için modülü.
 
-## <a name="new-filecatalog"></a>New-FileCatalog
+## <a name="new-filecatalog"></a>FileCatalog yeni
 --------------------------------
 
 `New-FileCatalog` Dosya ve klasörleri kümesi için bir windows katalog dosyası oluşturur. Bir katalog dosyası belirtilen yolda tüm dosyalar için karmaları içerir. Kullanıcılar bu klasörleri temsil eden katalog dosyası karşılık gelen birlikte klasörler kümesi dağıtabilirsiniz. Bir katalog dosyası içeriği alıcı tarafından katalog oluşturulduktan sonra klasörlere hiçbir değişiklik yapılmadan olup olmadığını doğrulamak için kullanılabilir.

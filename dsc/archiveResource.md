@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
 title: DSC arşiv kaynak
-ms.openlocfilehash: 1accd48f3862ee09b88d2792f9b7e5a7324bcf17
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 458b4f0f20dc96dab62e709183c25ff57d971aae
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-archive-resource"></a>DSC arşiv kaynak
 
@@ -35,7 +34,7 @@ Archive [string] #ResourceName
 |---|---|
 | Hedef| Arşiv içeriği ayıklanır sağlamak istediğiniz konumu belirtir.|
 | Yol| Arşiv dosyasını kaynak yolunu belirtir.|
-| __Checksum__| İki dosya aynı olup olmadığını belirlerken kullanılacak türünü tanımlar. Varsa __sağlama toplamı__ belirtilmezse, yalnızca dosya veya dizin adı karşılaştırma için kullanılır. Geçerli değerler şunlardır: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate, none (varsayılan). Belirtirseniz __sağlama toplamı__ olmadan __doğrulama__, yapılandırma başarısız olur.|
+| __Sağlama toplamı__| İki dosya aynı olup olmadığını belirlerken kullanılacak türünü tanımlar. Varsa __sağlama toplamı__ belirtilmezse, yalnızca dosya veya dizin adı karşılaştırma için kullanılır. Geçerli değerler şunlardır: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate, none (varsayılan). Belirtirseniz __sağlama toplamı__ olmadan __doğrulama__, yapılandırma başarısız olur.|
 | Emin olun| Arşiv içeriğini adresindeki var olup olmadığını denetlemek belirler __hedef__. Bu özelliği ayarlamak __mevcut__ içeriği mevcut emin olmak için. Ayarlamak __etmeksizin__ mevcut emin olmak için. Varsayılan değer __mevcut__.|
 | dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, çalıştırmak istediğiniz kaynak yapılandırma komut dosyası bloğunda Kimliğini ilk KaynakAdı ve onun türü ise __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
 | Doğrula| Arşiv imza eşleşip eşleşmediğini belirlemek için sağlama özelliğini kullanır. Sağlama toplamı doğrulama olmadan belirtirseniz, yapılandırma başarısız olur. SHA-256 sağlama toplamı doğrulama sağlama toplamı olmadan belirtirseniz, varsayılan olarak kullanılır.|

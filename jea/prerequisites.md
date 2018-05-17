@@ -1,14 +1,12 @@
 ---
 ms.date: 06/12/2017
-author: rpsqrd
-ms.topic: conceptual
 keywords: jea, powershell, güvenlik
 title: JEA önkoşulları
-ms.openlocfilehash: 92a74d89a0e982e9f45e69d92b261756de33c038
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: a5cf5519b30b24d44c12bdeedcf4cd763e2edbde
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="prerequisites"></a>Önkoşullar
 
@@ -33,7 +31,7 @@ Ev veya iş bilgisayarınızda JEA de kullanabilirsiniz:
 
 İstemci işletim sistemi   | JEA kullanılabilirliği
 --------------------------|-----------------------------------------------------
-Windows 10 1607+          | Önceden yüklenmiş
+Windows 10 1607 +          | Önceden yüklenmiş
 Windows 10 1603, 1511     | Önceden, azaltılmış işlevsellik ile<sup>2</sup>
 Windows 10 1507           | Mevcut değil
 Windows 8, 8.1            | WMF 5.1 tam işlevsellikle

@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: cedda61241df4965fe5db723f03e3497f046fa44
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e4588e8c69efb965cd33c273ad09a8bef8e9bf16
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Yapılandırılmış Nesneleri Dizeden Çıkarma ve Ayıklama
 Bu aynı zamanda ConvertFrom dize cmdlet'i için bazı ek işlevler sunar:
@@ -87,6 +85,6 @@ Bu örnekler, kümesinden **ConvertFrom dize** artık otomatik olarak nesne taba
 >
 > ExtentText adı Şehir durumu
 > ----------                     ----               ----     -----
-> Ana Trujillo...                Ana Trujillo       Redmond  WA Antonio Moreno...              Antonio Moreno Renton WA Thomas Hardy...                Thomas Hardy Seattle WA Çiğdem Berglund...          Christina Berglund Redmond  WA Hanna Moos...                  Hanna Moos         Puyallup WA
+> Ana Trujillo...                Ana Trujillo Redmond Washington Antonio Moreno...              Antonio Moreno Renton WA Thomas Hardy...                Thomas Hardy Seattle WA Çiğdem Berglund...          Çiğdem Berglund Redmond Washington Hanna Moos...                  Hanna Moos Puyallup WA
 
 Ek veri işleme ayıklanan metni yapmak için **ExtentText** özelliği kendisinden kaydı çıkarılan ham metni yakalar. Bu özellik üzerinde geribildirim sağlamak veya örnekler yazma zorluk sahip içeriği paylaşmak için lütfen e-posta <psdmfb@microsoft.com>.

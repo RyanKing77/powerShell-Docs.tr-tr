@@ -1,12 +1,12 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: PowerShell Scripting
-ms.openlocfilehash: 3304ecc3129b710a003725715803a03b68f79b45
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: PowerShell komut dosyası
+ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -25,18 +25,18 @@ Windows PowerShell komut satırı ve komut dosyası ortamı artırmanın uzun s�
 ### <a name="discoverability"></a>Bulunabilirliği
 Windows PowerShell özelliklerini Bul kolay hale getirir. Örneğin, görüntüle ve Değiştir Windows Hizmetleri cmdlet'lerinin listesini bulmak için şunu yazın:
 
-```
+```powershell
 Get-Command *-Service
 ```
 
 Hangi cmdlet'i bir görevi gerçekleştirir öğrendiğinizde Get-Help cmdlet'ini kullanarak cmdlet hakkında daha fazla bilgi edinebilirsiniz. Örneğin, Get-Service cmdlet'i hakkında Yardım görüntülemek için şunu yazın:
 
-```
+```powershell
 Get-Help Get-Service
 ```
 Çoğu cmdlet'leri yönetilebilir ve görüntülemek için metne çizilir nesneleri yayma. Bu cmdlet'in çıktısı, tam olarak anlamak için kendi çıktı Get-üye cmdlet'i için kanal oluşturun. Örneğin, aşağıdaki komut, Get-Service cmdlet tarafından nesne çıktısını üyeleri hakkında bilgi görüntüler.
 
-```
+```powershell
 Get-Service | Get-Member
 ```
 

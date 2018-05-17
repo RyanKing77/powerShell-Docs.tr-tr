@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: dee5e8206c61d79faadf8573a82c74d4ac0fb8e0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9ead27fd5d4f146e9062488c1c8cc22a073b922e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>PowerShell Betik Hata Ayıklama İyileştirmeleri
 
@@ -41,15 +39,15 @@ Windows PowerShell yükledi herhangi bir yerel bilgisayarda işlem ekleyin ve bu
 
 İşlemin geçerli çalışma alanlarını listelemek ve komut dosyası hata ayıklama için bu çalışma alanı Windows PowerShell konsolu veya işe hata ayıklayıcı ekleme imkan sağlayan yeni cmdlet'ler eklenmiştir:
 
--   Get-Runspace
+-   Get-çalışma
 -   Hata ayıklama çalışma
 -   Enable-RunspaceDebug
--   Disable-RunspaceDebug
+-   RunspaceDebug devre dışı bırak
 -   Get-RunspaceDebug
 
 ### <a name="attach-to-process-hosting-powershell"></a>PowerShell barındırma işlem ekleme
 
 Windows PowerShell yüklü olan herhangi bir bilgisayarda işlem şimdi ekleyebilirsiniz. Etkileşimli oturum işlemine nasıl Enter-PSSession cmdlet'i çalıştırarak etkileşimli bir uzak oturuma girin benzer şekilde, içine girerek yapın:
 
--   Enter-PSHostProcess
--   Exit-PSHostProcess
+-   Girin PSHostProcess
+-   Çıkış PSHostProcess

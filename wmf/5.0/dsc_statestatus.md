@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 9a8c261c01a7970f2e7f89172007768b63295673
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 272843efb68c42105af6eb88ad6a95b581da47ae
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Birleşmiş ve Tutarlı Durum ve Durum Gösterimi
 
@@ -27,14 +25,14 @@ Aşağıdaki tabloda sonuç gösterilmiştir durum ilgili birkaç tipik senaryol
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Boşta                 | Başarılı    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Başarısız    | $false        | $null                        | F                              |
-| S,F                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
-| F,S                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
+| S, F                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
+| F, S                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Başarısız    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
 | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Başarısız    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-| S, r                            | PendingReboot        | Başarılı    | $true         | S                            | r                              |
+| S, r                            | PendingReboot        | Başarılı    | $true         | S                            | R                              |
 | F, r                            | PendingReboot        | Başarısız    | $true         | $null                        | F, r                           |
-| r, S                            | PendingReboot        | Başarılı    | $true         | $null                        | r                              |
-| r, F                            | PendingReboot        | Başarılı    | $true         | $null                        | r                              |
+| r, S                            | PendingReboot        | Başarılı    | $true         | $null                        | R                              |
+| r, F                            | PendingReboot        | Başarılı    | $true         | $null                        | R                              |
 
 ^ S<sub>ı</sub>: F başarıyla uygulandı kaynakları bir dizi<sub>ı</sub>: bir dizi başarısız yeniden başlatma gerektiren r: A kaynak uygulanan kaynakları \*
 
