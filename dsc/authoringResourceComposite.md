@@ -1,23 +1,22 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
 title: DSC yapılandırması bir kaynak olarak kullanarak bileşik kaynakları--
-ms.openlocfilehash: c89293fdbe9bc054a47cc6974b6bd0471f727f46
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 246cab3b437546490d650e45be263a43fd0c84c3
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a><span data-ttu-id="0b29d-103">Bileşik kaynaklar: DSC yapılandırması bir kaynak olarak kullanma</span><span class="sxs-lookup"><span data-stu-id="0b29d-103">Composite resources: Using a DSC configuration as a resource</span></span>
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a><span data-ttu-id="452aa-103">Bileşik kaynaklar: DSC yapılandırması bir kaynak olarak kullanma</span><span class="sxs-lookup"><span data-stu-id="452aa-103">Composite resources: Using a DSC configuration as a resource</span></span>
 
-> <span data-ttu-id="0b29d-104">İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="0b29d-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="452aa-104">İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="452aa-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="0b29d-105">Gerçek dünya durumlarda yapılandırmaları uzun ve karmaşık, birçok farklı kaynaklar çağırma ve özelliklerinin büyük bir sayıya ayarlanması olabilir.</span><span class="sxs-lookup"><span data-stu-id="0b29d-105">In real-world situations, configurations can become long and complex, calling many different resources and setting a vast number of properties.</span></span> <span data-ttu-id="0b29d-106">Bu karmaşıklık gidermeye yardımcı olacak diğer yapılandırmaları için bir kaynak olarak bir Windows PowerShell istenen durum yapılandırması (DSC) yapılandırması kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="0b29d-106">To help address this complexity, you can use a Windows PowerShell Desired State Configuration (DSC) configuration as a resource for other configurations.</span></span> <span data-ttu-id="0b29d-107">Bu birleşik kaynak diyoruz.</span><span class="sxs-lookup"><span data-stu-id="0b29d-107">We call this a composite resource.</span></span> <span data-ttu-id="0b29d-108">Parametreler isteyen bir DSC yapılandırması buna birleşik bir kaynaktır.</span><span class="sxs-lookup"><span data-stu-id="0b29d-108">A composite resource is a DSC configuration that takes parameters.</span></span> <span data-ttu-id="0b29d-109">Yapılandırma parametrelerinin kaynak özellikleri olarak davranır.</span><span class="sxs-lookup"><span data-stu-id="0b29d-109">The parameters of the configuration act as the properties of the resource.</span></span> <span data-ttu-id="0b29d-110">Yapılandırmanın bir dosya olarak kaydedilmiş bir **. schema.psm1** uzantısı ve MOF şema ve kaynağın yerini komut dosyası, tipik bir DSC kaynağı alır (DSC kaynakları hakkında daha fazla bilgi için bkz [Windows PowerShell istenen durum yapılandırması kaynakları](resources.md).</span><span class="sxs-lookup"><span data-stu-id="0b29d-110">The configuration is saved as a file with a **.schema.psm1** extension, and takes the place of both the MOF schema and the resource script in a typical DSC resource (for more information about DSC resources, see [Windows PowerShell Desired State Configuration Resources](resources.md).</span></span>
+<span data-ttu-id="452aa-105">Gerçek dünya durumlarda yapılandırmaları uzun ve karmaşık, birçok farklı kaynaklar çağırma ve özelliklerinin büyük bir sayıya ayarlanması olabilir.</span><span class="sxs-lookup"><span data-stu-id="452aa-105">In real-world situations, configurations can become long and complex, calling many different resources and setting a vast number of properties.</span></span> <span data-ttu-id="452aa-106">Bu karmaşıklık gidermeye yardımcı olacak diğer yapılandırmaları için bir kaynak olarak bir Windows PowerShell istenen durum yapılandırması (DSC) yapılandırması kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="452aa-106">To help address this complexity, you can use a Windows PowerShell Desired State Configuration (DSC) configuration as a resource for other configurations.</span></span> <span data-ttu-id="452aa-107">Bu birleşik kaynak diyoruz.</span><span class="sxs-lookup"><span data-stu-id="452aa-107">We call this a composite resource.</span></span> <span data-ttu-id="452aa-108">Parametreler isteyen bir DSC yapılandırması buna birleşik bir kaynaktır.</span><span class="sxs-lookup"><span data-stu-id="452aa-108">A composite resource is a DSC configuration that takes parameters.</span></span> <span data-ttu-id="452aa-109">Yapılandırma parametrelerinin kaynak özellikleri olarak davranır.</span><span class="sxs-lookup"><span data-stu-id="452aa-109">The parameters of the configuration act as the properties of the resource.</span></span> <span data-ttu-id="452aa-110">Yapılandırmanın bir dosya olarak kaydedilmiş bir **. schema.psm1** uzantısı ve MOF şema ve kaynağın yerini komut dosyası, tipik bir DSC kaynağı alır (DSC kaynakları hakkında daha fazla bilgi için bkz [Windows PowerShell istenen durum yapılandırması kaynakları](resources.md).</span><span class="sxs-lookup"><span data-stu-id="452aa-110">The configuration is saved as a file with a **.schema.psm1** extension, and takes the place of both the MOF schema and the resource script in a typical DSC resource (for more information about DSC resources, see [Windows PowerShell Desired State Configuration Resources](resources.md).</span></span>
 
-## <a name="creating-the-composite-resource"></a><span data-ttu-id="0b29d-111">Bileşik kaynak oluşturma</span><span class="sxs-lookup"><span data-stu-id="0b29d-111">Creating the composite resource</span></span>
+## <a name="creating-the-composite-resource"></a><span data-ttu-id="452aa-111">Bileşik kaynak oluşturma</span><span class="sxs-lookup"><span data-stu-id="452aa-111">Creating the composite resource</span></span>
 
-<span data-ttu-id="0b29d-112">Bizim örneğimizde, sanal makineleri yapılandırmak için mevcut kaynak sayısı çağıran bir yapılandırma oluşturun.</span><span class="sxs-lookup"><span data-stu-id="0b29d-112">In our example, we create a configuration that invokes a number of existing resources to configure virtual machines.</span></span> <span data-ttu-id="0b29d-113">Yapılandırma bloklarında ayarlanacak değerleri belirtme yerine yapılandırmasını sonra yapılandırma bloklarında kullanılan parametreleri sayısını alır.</span><span class="sxs-lookup"><span data-stu-id="0b29d-113">Instead of specifying the values to be set in configuration blocks, the configuration takes a number of parameters that are then used in the configuration blocks.</span></span>
+<span data-ttu-id="452aa-112">Bizim örneğimizde, sanal makineleri yapılandırmak için mevcut kaynak sayısı çağıran bir yapılandırma oluşturun.</span><span class="sxs-lookup"><span data-stu-id="452aa-112">In our example, we create a configuration that invokes a number of existing resources to configure virtual machines.</span></span> <span data-ttu-id="452aa-113">Yapılandırma bloklarında ayarlanacak değerleri belirtme yerine yapılandırmasını sonra yapılandırma bloklarında kullanılan parametreleri sayısını alır.</span><span class="sxs-lookup"><span data-stu-id="452aa-113">Instead of specifying the values to be set in configuration blocks, the configuration takes a number of parameters that are then used in the configuration blocks.</span></span>
 
 ```powershell
 Configuration xVirtualMachine
@@ -131,15 +130,15 @@ Configuration xVirtualMachine
 }
 ```
 
-### <a name="saving-the-configuration-as-a-composite-resource"></a><span data-ttu-id="0b29d-114">Bileşik bir kaynak olarak yapılandırması kaydediliyor</span><span class="sxs-lookup"><span data-stu-id="0b29d-114">Saving the configuration as a composite resource</span></span>
+### <a name="saving-the-configuration-as-a-composite-resource"></a><span data-ttu-id="452aa-114">Bileşik bir kaynak olarak yapılandırması kaydediliyor</span><span class="sxs-lookup"><span data-stu-id="452aa-114">Saving the configuration as a composite resource</span></span>
 
-<span data-ttu-id="0b29d-115">Parametreli yapılandırmayı DSC kaynağı olarak kullanmak için bir dizin yapısına benzer diğer MOF tabanlı kaynak kaydedin ve onunla adı bir **. schema.psm1** uzantısı.</span><span class="sxs-lookup"><span data-stu-id="0b29d-115">To use the parameterized configuration as a DSC resource, save it in a directory structure like that of any other MOF-based resource, and name it with a **.schema.psm1** extension.</span></span> <span data-ttu-id="0b29d-116">Bu örnekte, biz dosya adı **xVirtualMachine.schema.psm1**.</span><span class="sxs-lookup"><span data-stu-id="0b29d-116">For this example, we’ll name the file **xVirtualMachine.schema.psm1**.</span></span> <span data-ttu-id="0b29d-117">Ayrıca adlı bir bildirimi oluşturmanıza gerek **xVirtualMachine.psd1** , aşağıdaki satırı içerir.</span><span class="sxs-lookup"><span data-stu-id="0b29d-117">You also need to create a manifest named **xVirtualMachine.psd1** that contains the following line.</span></span> <span data-ttu-id="0b29d-118">Bu ek olarak olduğuna dikkat edin **MyDscResources.psd1**, tüm kaynaklar için modül bildirimi **MyDscResources** klasör.</span><span class="sxs-lookup"><span data-stu-id="0b29d-118">Note that this is in addition to **MyDscResources.psd1**, the module manifest for all resources under the **MyDscResources** folder.</span></span>
+<span data-ttu-id="452aa-115">Parametreli yapılandırmayı DSC kaynağı olarak kullanmak için bir dizin yapısına benzer diğer MOF tabanlı kaynak kaydedin ve onunla adı bir **. schema.psm1** uzantısı.</span><span class="sxs-lookup"><span data-stu-id="452aa-115">To use the parameterized configuration as a DSC resource, save it in a directory structure like that of any other MOF-based resource, and name it with a **.schema.psm1** extension.</span></span> <span data-ttu-id="452aa-116">Bu örnekte, biz dosya adı **xVirtualMachine.schema.psm1**.</span><span class="sxs-lookup"><span data-stu-id="452aa-116">For this example, we’ll name the file **xVirtualMachine.schema.psm1**.</span></span> <span data-ttu-id="452aa-117">Ayrıca adlı bir bildirimi oluşturmanıza gerek **xVirtualMachine.psd1** , aşağıdaki satırı içerir.</span><span class="sxs-lookup"><span data-stu-id="452aa-117">You also need to create a manifest named **xVirtualMachine.psd1** that contains the following line.</span></span> <span data-ttu-id="452aa-118">Bu ek olarak olduğuna dikkat edin **MyDscResources.psd1**, tüm kaynaklar için modül bildirimi **MyDscResources** klasör.</span><span class="sxs-lookup"><span data-stu-id="452aa-118">Note that this is in addition to **MyDscResources.psd1**, the module manifest for all resources under the **MyDscResources** folder.</span></span>
 
 ```powershell
 RootModule = 'xVirtualMachine.schema.psm1'
 ```
 
-<span data-ttu-id="0b29d-119">İşiniz bittiğinde, klasör yapısı şu şekilde olması gerekir.</span><span class="sxs-lookup"><span data-stu-id="0b29d-119">When you are done, the folder structure should be as follows.</span></span>
+<span data-ttu-id="452aa-119">İşiniz bittiğinde, klasör yapısı şu şekilde olması gerekir.</span><span class="sxs-lookup"><span data-stu-id="452aa-119">When you are done, the folder structure should be as follows.</span></span>
 
 ```
 $env: psmodulepath
@@ -151,11 +150,11 @@ $env: psmodulepath
                 |- xVirtualMachine.schema.psm1
 ```
 
-<span data-ttu-id="0b29d-120">Şimdi Get-DscResource cmdlet'ini kullanarak kaynak bulunabilir olduğundan ve özelliklerini kullanarak veya ya da bu cmdlet'i bulunabilir **Ctrl + Ara çubuğu** Windows PowerShell ISE içinde otomatik olarak tamamlayın.</span><span class="sxs-lookup"><span data-stu-id="0b29d-120">The resource is now discoverable by using the Get-DscResource cmdlet, and its properties are discoverable by either that cmdlet or by using **Ctrl+Space** auto-complete in the Windows PowerShell ISE.</span></span>
+<span data-ttu-id="452aa-120">Şimdi Get-DscResource cmdlet'ini kullanarak kaynak bulunabilir olduğundan ve özelliklerini kullanarak veya ya da bu cmdlet'i bulunabilir **Ctrl + Ara çubuğu** Windows PowerShell ISE içinde otomatik olarak tamamlayın.</span><span class="sxs-lookup"><span data-stu-id="452aa-120">The resource is now discoverable by using the Get-DscResource cmdlet, and its properties are discoverable by either that cmdlet or by using **Ctrl+Space** auto-complete in the Windows PowerShell ISE.</span></span>
 
-## <a name="using-the-composite-resource"></a><span data-ttu-id="0b29d-121">Bileşik kaynak kullanma</span><span class="sxs-lookup"><span data-stu-id="0b29d-121">Using the composite resource</span></span>
+## <a name="using-the-composite-resource"></a><span data-ttu-id="452aa-121">Bileşik kaynak kullanma</span><span class="sxs-lookup"><span data-stu-id="452aa-121">Using the composite resource</span></span>
 
-<span data-ttu-id="0b29d-122">Sonraki bileşik kaynak çağıran bir yapılandırma oluşturun.</span><span class="sxs-lookup"><span data-stu-id="0b29d-122">Next we create a configuration that calls the composite resource.</span></span> <span data-ttu-id="0b29d-123">Bu yapılandırma, bir sanal makine oluşturmak için xVirtualMachine bileşik kaynak çağırır ve ardından çağırır **xComputer** yeniden adlandırmak için kaynak.</span><span class="sxs-lookup"><span data-stu-id="0b29d-123">This configuration calls the xVirtualMachine composite resource to create a virtual machine, and then calls the **xComputer** resource to rename it.</span></span>
+<span data-ttu-id="452aa-122">Sonraki bileşik kaynak çağıran bir yapılandırma oluşturun.</span><span class="sxs-lookup"><span data-stu-id="452aa-122">Next we create a configuration that calls the composite resource.</span></span> <span data-ttu-id="452aa-123">Bu yapılandırma, bir sanal makine oluşturmak için xVirtualMachine bileşik kaynak çağırır ve ardından çağırır **xComputer** yeniden adlandırmak için kaynak.</span><span class="sxs-lookup"><span data-stu-id="452aa-123">This configuration calls the xVirtualMachine composite resource to create a virtual machine, and then calls the **xComputer** resource to rename it.</span></span>
 
 ```powershell
 
@@ -188,16 +187,16 @@ configuration RenameVM
 }
 ```
 
-## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="0b29d-124">PsDscRunAsCredential destekleme</span><span class="sxs-lookup"><span data-stu-id="0b29d-124">Supporting PsDscRunAsCredential</span></span>
+## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="452aa-124">PsDscRunAsCredential destekleme</span><span class="sxs-lookup"><span data-stu-id="452aa-124">Supporting PsDscRunAsCredential</span></span>
 
-><span data-ttu-id="0b29d-125">**Not:** **PsDscRunAsCredential** PowerShell 5.0 ve sonraki sürümlerinde desteklenir.</span><span class="sxs-lookup"><span data-stu-id="0b29d-125">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
+><span data-ttu-id="452aa-125">**Not:** **PsDscRunAsCredential** PowerShell 5.0 ve sonraki sürümlerinde desteklenir.</span><span class="sxs-lookup"><span data-stu-id="452aa-125">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
 
-<span data-ttu-id="0b29d-126">**PsDscRunAsCredential** özelliği kullanılabilir [DSC yapılandırmaları](configurations.md) kaynak belirtilen kimlik bilgileri kümesi altında çalışması gerektiğini belirtmek için kaynak bloğu.</span><span class="sxs-lookup"><span data-stu-id="0b29d-126">The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
-<span data-ttu-id="0b29d-127">Daha fazla bilgi için bkz: [çalıştıran DSC kullanıcı kimlik bilgileriyle](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="0b29d-127">For more information, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="452aa-126">**PsDscRunAsCredential** özelliği kullanılabilir [DSC yapılandırmaları](configurations.md) kaynak belirtilen kimlik bilgileri kümesi altında çalışması gerektiğini belirtmek için kaynak bloğu.</span><span class="sxs-lookup"><span data-stu-id="452aa-126">The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
+<span data-ttu-id="452aa-127">Daha fazla bilgi için bkz: [çalıştıran DSC kullanıcı kimlik bilgileriyle](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="452aa-127">For more information, see [Running DSC with user credentials](runAsUser.md).</span></span>
 
-<span data-ttu-id="0b29d-128">Özel bir kaynak içinde kullanıcı bağlamından erişmek için otomatik değişkeni kullanabilirsiniz `$PsDscContext`.</span><span class="sxs-lookup"><span data-stu-id="0b29d-128">To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.</span></span>
+<span data-ttu-id="452aa-128">Özel bir kaynak içinde kullanıcı bağlamından erişmek için otomatik değişkeni kullanabilirsiniz `$PsDscContext`.</span><span class="sxs-lookup"><span data-stu-id="452aa-128">To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.</span></span>
 
-<span data-ttu-id="0b29d-129">Örneğin aşağıdaki kodu kaynak ayrıntılı çıktı akışına çalıştırıldığı kullanıcı bağlamı yazarsınız:</span><span class="sxs-lookup"><span data-stu-id="0b29d-129">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
+<span data-ttu-id="452aa-129">Örneğin aşağıdaki kodu kaynak ayrıntılı çıktı akışına çalıştırıldığı kullanıcı bağlamı yazarsınız:</span><span class="sxs-lookup"><span data-stu-id="452aa-129">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
 
 ```powershell
 if ($PsDscContext.RunAsUser) {
@@ -205,7 +204,7 @@ if ($PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="0b29d-130">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="0b29d-130">See Also</span></span>
-### <a name="concepts"></a><span data-ttu-id="0b29d-131">Kavramlar</span><span class="sxs-lookup"><span data-stu-id="0b29d-131">Concepts</span></span>
-* [<span data-ttu-id="0b29d-132">Özel bir DSC kaynağı MOF ile yazma</span><span class="sxs-lookup"><span data-stu-id="0b29d-132">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
-* [<span data-ttu-id="0b29d-133">Windows PowerShell istenen durum yapılandırması ile çalışmaya başlama</span><span class="sxs-lookup"><span data-stu-id="0b29d-133">Get Started with Windows PowerShell Desired State Configuration</span></span>](overview.md)
+## <a name="see-also"></a><span data-ttu-id="452aa-130">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="452aa-130">See Also</span></span>
+### <a name="concepts"></a><span data-ttu-id="452aa-131">Kavramlar</span><span class="sxs-lookup"><span data-stu-id="452aa-131">Concepts</span></span>
+* [<span data-ttu-id="452aa-132">Özel bir DSC kaynağı MOF ile yazma</span><span class="sxs-lookup"><span data-stu-id="452aa-132">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+* [<span data-ttu-id="452aa-133">Windows PowerShell istenen durum yapılandırması ile çalışmaya başlama</span><span class="sxs-lookup"><span data-stu-id="452aa-133">Get Started with Windows PowerShell Desired State Configuration</span></span>](overview.md)

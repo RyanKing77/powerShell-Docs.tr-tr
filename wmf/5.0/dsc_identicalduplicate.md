@@ -1,17 +1,15 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: d5ba6a5c5ba8ff54a4f4d6ba07cf04124baf65ef
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3f73b7cf0cdf033cbd561b3412734692bb7decd7
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a><span data-ttu-id="44a62-102">Yapılandırmasında aynı yinelenen kaynaklar için izin verme</span><span class="sxs-lookup"><span data-stu-id="44a62-102">Allowing for Identical Duplicate Resources in a Configuration</span></span>
+# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a><span data-ttu-id="4f752-102">Yapılandırmasında aynı yinelenen kaynaklar için izin verme</span><span class="sxs-lookup"><span data-stu-id="4f752-102">Allowing for Identical Duplicate Resources in a Configuration</span></span>
 
-<span data-ttu-id="44a62-103">DSC vermek veya çakışan kaynak tanımları bir yapılandırma içinde işler.</span><span class="sxs-lookup"><span data-stu-id="44a62-103">DSC does not allow or handle conflicting resource definitions within a configuration.</span></span> <span data-ttu-id="44a62-104">Çakışmayı çözmek çalışırken yerine, yalnızca başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="44a62-104">Instead of trying to resolve the conflict, it simply fails.</span></span> <span data-ttu-id="44a62-105">Yapılandırma yeniden daha bileşik kaynaklara aracılığıyla kullanılan hale gibi vb. çakışmaları daha sık meydana gelir.</span><span class="sxs-lookup"><span data-stu-id="44a62-105">As configuration reuse becomes more utilized through composite resources, etc. conflicts will occur more often.</span></span> <span data-ttu-id="44a62-106">Çakışan kaynak tanımları aynı olduğunda, DSC Akıllı ve bu, olanak gerekir.</span><span class="sxs-lookup"><span data-stu-id="44a62-106">When conflicting resource definitions are identical, DSC should be smart and allow this.</span></span> <span data-ttu-id="44a62-107">Bu sürümle birlikte, aynı tanımlara sahip birden çok kaynak örneği sahip destekler:</span><span class="sxs-lookup"><span data-stu-id="44a62-107">With this release, we support having multiple resource instances that have identical definitions:</span></span>
+<span data-ttu-id="4f752-103">DSC vermek veya çakışan kaynak tanımları bir yapılandırma içinde işler.</span><span class="sxs-lookup"><span data-stu-id="4f752-103">DSC does not allow or handle conflicting resource definitions within a configuration.</span></span> <span data-ttu-id="4f752-104">Çakışmayı çözmek çalışırken yerine, yalnızca başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="4f752-104">Instead of trying to resolve the conflict, it simply fails.</span></span> <span data-ttu-id="4f752-105">Yapılandırma yeniden daha bileşik kaynaklara aracılığıyla kullanılan hale gibi vb. çakışmaları daha sık meydana gelir.</span><span class="sxs-lookup"><span data-stu-id="4f752-105">As configuration reuse becomes more utilized through composite resources, etc. conflicts will occur more often.</span></span> <span data-ttu-id="4f752-106">Çakışan kaynak tanımları aynı olduğunda, DSC Akıllı ve bu, olanak gerekir.</span><span class="sxs-lookup"><span data-stu-id="4f752-106">When conflicting resource definitions are identical, DSC should be smart and allow this.</span></span> <span data-ttu-id="4f752-107">Bu sürümle birlikte, aynı tanımlara sahip birden çok kaynak örneği sahip destekler:</span><span class="sxs-lookup"><span data-stu-id="4f752-107">With this release, we support having multiple resource instances that have identical definitions:</span></span>
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -52,9 +50,9 @@ Configuration WebApplication
 }
 ```
 
-<span data-ttu-id="44a62-108">Önceki sürümlerde, sonuç WindowsFeature FE_IIS ve 'Web sunucusu' rolü emin olmak çalışırken WindowsFeature Worker_IIS örnekleri arasında bir çakışma nedeniyle başarısız derleme yüklü olacaktır.</span><span class="sxs-lookup"><span data-stu-id="44a62-108">In previous releases, the result would be a failed compilation due to a conflict between the WindowsFeature FE_IIS and WindowsFeature Worker_IIS instances trying to ensure the 'Web-Server' role is installed.</span></span> <span data-ttu-id="44a62-109">Dikkat *tüm* bu iki yapılandırmada yapılandırılan özelliklerini aynıdır.</span><span class="sxs-lookup"><span data-stu-id="44a62-109">Notice that *all* of the properties that are being configured are identical in these two configurations.</span></span> <span data-ttu-id="44a62-110">Bu yana *tüm* bu iki özelliklerinin kaynakları aynıdır, bunu şimdi başarılı bir derlemede neden olur.</span><span class="sxs-lookup"><span data-stu-id="44a62-110">Since *all* of the properties in these two resources are identical, this will result in a successful compilation now.</span></span>
+<span data-ttu-id="4f752-108">Önceki sürümlerde, sonuç WindowsFeature FE_IIS ve 'Web sunucusu' rolü emin olmak çalışırken WindowsFeature Worker_IIS örnekleri arasında bir çakışma nedeniyle başarısız derleme yüklü olacaktır.</span><span class="sxs-lookup"><span data-stu-id="4f752-108">In previous releases, the result would be a failed compilation due to a conflict between the WindowsFeature FE_IIS and WindowsFeature Worker_IIS instances trying to ensure the 'Web-Server' role is installed.</span></span> <span data-ttu-id="4f752-109">Dikkat *tüm* bu iki yapılandırmada yapılandırılan özelliklerini aynıdır.</span><span class="sxs-lookup"><span data-stu-id="4f752-109">Notice that *all* of the properties that are being configured are identical in these two configurations.</span></span> <span data-ttu-id="4f752-110">Bu yana *tüm* bu iki özelliklerinin kaynakları aynıdır, bunu şimdi başarılı bir derlemede neden olur.</span><span class="sxs-lookup"><span data-stu-id="4f752-110">Since *all* of the properties in these two resources are identical, this will result in a successful compilation now.</span></span>
 
-<span data-ttu-id="44a62-111">Özelliklerinden herhangi birini iki kaynak arasında farklıysa, bunlar aynı kabul edilmez ve derleme başarısız olur:</span><span class="sxs-lookup"><span data-stu-id="44a62-111">If any of the properties are different between the two resources, they will not be considered identical and compilation will fail:</span></span>
+<span data-ttu-id="4f752-111">Özelliklerinden herhangi birini iki kaynak arasında farklıysa, bunlar aynı kabul edilmez ve derleme başarısız olur:</span><span class="sxs-lookup"><span data-stu-id="4f752-111">If any of the properties are different between the two resources, they will not be considered identical and compilation will fail:</span></span>
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -95,4 +93,4 @@ Configuration WebApplication
 }
 ```
 
-<span data-ttu-id="44a62-112">WindowsFeature FE_IIS WindowsFeature Worker_IIS kaynakları artık aynıdır ve bu nedenle çakışma nedeniyle bu çok benzer yapılandırma başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="44a62-112">This very similar configuration will fail because the WindowsFeature FE_IIS and the WindowsFeature Worker_IIS resources are no longer identical and therefore conflict.</span></span>
+<span data-ttu-id="4f752-112">WindowsFeature FE_IIS WindowsFeature Worker_IIS kaynakları artık aynıdır ve bu nedenle çakışma nedeniyle bu çok benzer yapılandırma başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="4f752-112">This very similar configuration will fail because the WindowsFeature FE_IIS and the WindowsFeature Worker_IIS resources are no longer identical and therefore conflict.</span></span>
