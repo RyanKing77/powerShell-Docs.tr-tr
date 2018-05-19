@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, yapılandırma, Kur
 title: Kaynak yazma denetim listesi
-ms.openlocfilehash: 39f652b458702dc7e815ab4b2f965e6728fa1b51
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 76d9fecca8618fcc178975465f45cda0d0e04064
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="resource-authoring-checklist"></a>Kaynak yazma denetim listesi
 Bu denetim listesini yeni bir DSC kaynağı yazarken en iyi yöntemler bir listedir.
@@ -37,7 +36,7 @@ Olduğundan emin olun:
 - Özellik türleri doğru (dize, sayısal değerleri kabul özelliklerini örn kullanmayın, bunun yerine uint32 diğer sayısal türler kullanmalısınız)
 - Özellik öznitelikleri doğru olarak belirtilir: ([anahtarı], [gerekli], [yazma], [okuma])
 - [Anahtar] olarak işaretlenecek şemasında en az bir parametre içeriyor
-- [özelliği olmayan bir arada herhangi biri ile birlikte okuma]: [gerekli], [anahtarı], [yazma]
+- özelliği olmayan bir arada herhangi biri ile birlikte [okuma]: [gerekli], [anahtarı], [yazma]
 - Birden çok niteleyicileri [dışında oku] belirtilmişse [anahtarı] öncelik kazanır
 - Varsa [yazma] ve [gerekli] belirtilen sonra [gerekli] önceliğe
 - ValueMap uygun yerlerde belirtilmiştir
