@@ -1,13 +1,4 @@
----
-ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galeri, powershell, cmdlet, psgallery, psget
-title: PowerShell Galerisi
-ms.openlocfilehash: 65e0c427310ac20621109a6620e926a7894cf8f8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: MT
-ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
+ ve---ms.date: 06/12/2017 katkıda bulunan: JKeithB anahtar sözcükler: Galerisi, powershell, cmdlet, psgallery, psget Başlık: PowerShell Galerisi
 ---
 # <a name="the-powershell-gallery"></a>PowerShell Galerisi
 
@@ -27,9 +18,9 @@ Kullanıma [Başlarken](getting-started.md) PowerShellGet komutları Galerisi il
 
 ## <a name="supported-operating-systems"></a>Desteklenen işletim sistemleri
 
-**PowerShellGet** modülü gerektirir **PowerShell 3.0 veya daha yeni**.
+**PowerShellGet** modülü gerektirir **Windows PowerShell 3.0 veya daha yeni**, veya **PowerShell çekirdek 6.0 veya daha yeni**.
 
-Bu nedenle, **PowerShellGet** aşağıdaki işletim sistemlerinden birini gerektirir:
+Uygun bir sürümünü **Windows PowerShell** bu işletim sistemleri için kullanılabilir:
 
 - Windows 10
 - Windows 8.1 Pro
@@ -40,6 +31,10 @@ Bu nedenle, **PowerShellGet** aşağıdaki işletim sistemlerinden birini gerekt
 - Windows Server 2008 R2 SP1
 
 **PowerShellGet** de .NET Framework 4.5 gerektirir veya üstü. .NET Framework 4.5 yükleyebilirsiniz ya da yukarıdaki gelen [burada](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+
+**PowerShell çekirdek** birçok işletim sistemlerini destekler. Bkz: [bu makalede](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/) tam listesi için.
+
+Birçok modül galeride barındırılan, farklı işletim sistemleri destekler ve ek gereksinimleri vardır. Lütfen daha fazla bilgi için modülleri için belgelere bakın.
 
 ## <a name="got-a-question-have-feedback"></a>Bir soru var mı? Geri bildirim var mı?
 
