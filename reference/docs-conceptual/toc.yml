@@ -154,14 +154,20 @@
     - name: Yenilikler
       href: ''
       items:
-        - name: PowerShell’deki yenilikler
-          href: whats-new/what-s-new-with-powershell.md
-        - name: Windows PowerShell 5.0’daki yenilikler
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: PowerShell 5.0 ISE’deki yenilikler
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
         - name: PowerShell Core 6.0’daki yenilikler
           href: whats-new/what-s-new-in-powershell-core-60.md
+          items:
+            - name: PowerShell Core 6.0’daki önemli değişiklikler
+              href: whats-new/breaking-changes-ps6.md
+            - name: PowerShell Core 6.0’daki bilinen sorunlar
+              href: whats-new/known-issues-ps6.md
+        - name: PowerShell 5.0’daki yenilikler
+          href: whats-new/what-s-new-with-powershell.md
+          items:
+            - name: Windows PowerShell 5.0’daki yenilikler
+              href: whats-new/what-s-new-in-windows-powershell-50.md
+            - name: PowerShell 5.0 ISE’deki yenilikler
+              href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: PowerShell Core Destek Yaşam Döngüsü
       href: PowerShell-Core-Support.md
     - name: Daha fazla bilgi
