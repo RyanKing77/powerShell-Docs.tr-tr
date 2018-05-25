@@ -1,11 +1,11 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 272843efb68c42105af6eb88ad6a95b581da47ae
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7b4e4dbeaf9c3c48e7b2dfc74435dfa2cd9c7ea7
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Birleşmiş ve Tutarlı Durum ve Durum Gösterimi
 
@@ -21,7 +21,7 @@ LCM'yi durumu ve DSC işlem durumunu gösterimini tekrar ziyaret ve aşağıdaki
 
 Aşağıdaki tabloda sonuç gösterilmiştir durum ilgili birkaç tipik senaryolar altında özellikleri.
 
-| **Senaryo**                    | **LCMState\***       | **Durumu** | **İstenen yeniden başlatma**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| Senaryo                    | LCMState       | Durum | İstenen yeniden başlatma  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Boşta                 | Başarılı    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Başarısız    | $false        | $null                        | F                              |
@@ -46,11 +46,13 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
+
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus cmdlet'i geliştirme
 
 Get-DscConfigurationStatus cmdlet'i bu sürümde bazı geliştirmeler yapılmıştır. Daha önce StartDate, cmdlet tarafından döndürülen nesnelerin dize türünde özelliğidir. Şimdi, seçerek ve daha kolay bir Datetime nesnesi iç özellikleri göre filtreleme karmaşık etkinleştirir Datetime türünde değil.
+
 ```powershell
-(Get-DscConfigurationStatus).StartDate | fl \*
+(Get-DscConfigurationStatus).StartDate | fl *
 DateTime : Friday, November 13, 2015 1:39:44 PM
 Date : 11/13/2015 12:00:00 AM
 Day : 13
@@ -68,14 +70,16 @@ Year : 2015
 ```
 
 Aşağıdaki tüm DSC işlemi kayıtları bugün olarak haftanın aynı gün içinde gerçekleşen döndüren bir örnektir.
+
 ```powershell
-(Get-DscConfigurationStatus –All) | where { $\_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
+(Get-DscConfigurationStatus –All) | where { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
 Kayıtları (yani yalnızca işlemleri okuma) düğümün yapılandırma değişiklik yapmayın işlemlerinin ortadan kalkar. Bu nedenle, Test-DscConfiguration, Get-DscConfiguration işlemleri artık içinde adulterated Get-DscConfigurationStatus cmdlet'i nesne döndürmedi.
 Meta yapılandırmasını ayarlama işlemini kayıtlarının Get-DscConfigurationStatus cmdlet'i geri dönmek için eklenir.
 
 Get-DscConfigurationStatus döndürülen sonuç örneği aşağıdadır – tüm cmdlet'i.
+
 ```powershell
 All configuration operations:
 
@@ -89,12 +93,15 @@ Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
 ## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Get-DscLocalConfigurationManager cmdlet'i geliştirme
+
 Yeni bir alan LCMStateDetail, Get-DscLocalConfigurationManager cmdlet'i döndürülen nesne eklenir. Bu alan, LCMState "Meşgul" olduğunda doldurulur. Aşağıdaki cmdlet'i tarafından alınabilir:
+
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
 ```
 
 Aşağıda, bir sürekli uzak bir düğüm üzerindeki iki yeniden başlatma gerektiren bir yapılandırma izleme bir örnek çıktı verilmiştir.
+
 ```powershell
 Start a configuration that requires two reboots
 
