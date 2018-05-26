@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Sistem Gereksinimleri
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: a15b5b33b5296befae833e520cfdfbd41a07b122
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 74c65a97a30227997c48a23c42b0431189f9ed76
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell Sistem Gereksinimleri
 Bu konuda, Windows PowerShell 3.0, Windows PowerShell 4.0 ve Windows PowerShell 5.0 ve Windows PowerShell Tümleşik komut dosyası ortamı (ISE), CIM komutları ve iş akışları gibi özel özellik için sistem gereksinimleri listelenmiştir.
@@ -72,7 +72,7 @@ WinRM hizmeti ve WSMan protokolü destekleyen WS-Management 3.0, Windows PowerSh
 Windows Yönetim Araçları 3.0 (WMI), Windows PowerShell 3.0 ve Windows PowerShell 4.0 sürümünü gerektirir. Bu program, Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0 ve Windows Management Framework 3.0 dahil edilir. Bu program bilgisayarda yüklü değilse, WMI, CIM komutları gibi gerektiren özellikler çalışmaz.
 
 ## <a name="common-language-runtime-40"></a>Ortak dil çalışma zamanı 4.0
-Windows PowerShell 3.0, Windows PowerShell 4.0, and Windows PowerShell 5.0 are compiled against Common Language Runtime (CLR) 4.0.
+Ortak dil çalışma zamanı (CLR karşı) 4.0, Windows PowerShell 3.0, Windows PowerShell 4.0 ve Windows PowerShell 5.0 derlenir.
 
 ## <a name="graphical-user-interface-requirements"></a>Grafik kullanıcı arabirimi gereksinimleri
 Windows PowerShell bir grafik kullanıcı arabirimi gerektirmeyen bir konsol tabanlı bir uygulamadır. Bu nedenle, bu da ekranlar veya izleyiciler ya da Windows Server 2012 R2 veya Windows Server 2012 Sunucu Çekirdeği yükleme seçenekleri gibi bir kullanıcı arabirimi olmayan bilgisayarlar için uygundur.
@@ -83,19 +83,19 @@ Ancak, bazı öğeler, aşağıdaki gibi bir grafik kullanıcı arabirimi gerekt
 
 - Cmdlet’ler
 
-    1.  [Çıkış GridView](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
+    1.  [Çıkış GridView](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)
 
-    2.  [Göster komutu](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
+    2.  [Göster komutu](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
-    3.  [Show-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
+    3.  [ControlPanelItem Göster](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
-    4.  [Show-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
+    4.  [Olay günlüğüne Göster](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
 - Parametreler
 
-    1.  **ShowWindow** parametresinin [Get-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet'i.
+    1.  **ShowWindow** parametresinin [Get-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet'i.
 
-    2.  **ShowSecurityDescriptorUI** parametresinin [Register-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) ve [Set-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) cmdlet'leri.
+    2.  **ShowSecurityDescriptorUI** parametresinin [Register-PSSessionConfiguration](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) ve [Set-PSSessionConfiguration](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) cmdlet'leri.
 
 ## <a name="windows-powershell-engine-requirements"></a>Windows PowerShell altyapısı gereksinimleri
 Windows PowerShell 4.0, Windows PowerShell 3.0 ve Windows PowerShell 2.0 ile geriye dönük olarak uyumlu olacak şekilde tasarlanmıştır. Cmdlet'leri, sağlayıcıları, ek bileşenler, modüller ve Windows PowerShell 2.0 ve Windows PowerShell 3.0 için yazılan komut dosyaları Windows PowerShell 4. 0 ' değişmeden çalıştırın.
@@ -111,13 +111,13 @@ Windows PowerShell 2.0, Windows PowerShell 3.0 ve Windows PowerShell 4.0 Windows
 
 - [Arka Plan Akıllı Aktarım Hizmeti (BITS) cmdlet'leri](http://go.microsoft.com/fwlink/?LinkId=257514)
 
-- [Get-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
+- [Get-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
-- [Get-WinEvent](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
+- [Get-WinEvent](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
-- [Save-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
+- [Save-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Save-Help)
 
-- [Update-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Update-Help)
+- [Update-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Update-Help)
 
 Ayrıca, **WinRM** hizmeti Windows PE'de mevcut değil.
 

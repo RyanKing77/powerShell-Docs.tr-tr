@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE’de erişilebilirlik
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 272dd502ff9d220e82236c93cbffaf4e12054cfe
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE’de erişilebilirlik
 
@@ -27,7 +27,7 @@ Windows PowerShell ISE yüksek karşıtlık modunu destekler. Görme engelli iç
 
 - Klavye kısayolları
 
-- Sözdizimi renkleri tablo ve birkaç kullanarak diğer renk ayarlarını değiştirme yeteneğini [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) komut dosyası nesnesi.
+- Sözdizimi renkleri tablo ve birkaç kullanarak diğer renk ayarlarını değiştirme yeteneğini [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) komut dosyası nesnesi.
 
 - Metin boyutu Değiştir
 
@@ -67,7 +67,7 @@ Metin düzenlediğinizde, aşağıdaki klavye kısayollarını kullanabilirsiniz
 |**Komut dosyasında Sonrakini Bul**|F3|Komut dosyası bölmesi|
 |**Komut dosyasında Öncekini Bul**|SHIFT+F3|Komut dosyası bölmesi|
 |**Yapıştır**|CTRL+V|Betik bölmesi, konsol bölmesi|
-|**Yinele**|CTRL+Y|Betik bölmesi, konsol bölmesi|
+|**Yinele**|CTRL + Y|Betik bölmesi, konsol bölmesi|
 |**Komut dosyasında değiştirin**|CTRL + H|Komut dosyası bölmesi|
 |**Kaydet**|CTRL+S|Komut dosyası bölmesi|
 |**Tümünü Seç**|CTRL+A|Betik bölmesi, konsol bölmesi|
@@ -79,8 +79,8 @@ Betik bölmesinde komut dosyalarını çalıştırdığınızda, aşağıdaki kl
 
 |Eylem|Klavye kısayolu|
 |----------|---------------------|
-|**Yeni**|CTRL+N|
-|**Açık**|CTRL+O|
+|**Yeni**|CTRL + N|
+|**Açık**|CTRL + O|
 |**çalıştırma**|F5|
 |**Seçimi Çalıştır**|F8|
 |**Yürütme Durdur**|CTRL + BREAK. CTRL + C (metin seçili olduğunda) bağlamı anlaşılır olduğunda kullanılabilir.|
@@ -93,14 +93,14 @@ Windows PowerShell ISE görünümünde özelleştirmek için aşağıdaki klavye
 
 |Eylem|Klavye kısayolu|
 |----------|---------------------|
-|**Konsol bölmesinde gidin**|CTRL+D|
-|**Betik bölmesine gidin**|CTRL+I|
-|**Betik bölmesini göster**|CTRL+R|
-|**Betik Bölmesini Gizle**|CTRL+R|
+|**Konsol bölmesinde gidin**|CTRL + D|
+|**Betik bölmesine gidin**|CTRL + I|
+|**Betik bölmesini göster**|CTRL + R|
+|**Betik Bölmesini Gizle**|CTRL + R|
 ||
 |**Betik bölmesine Yukarı Taşı**|CTRL+1|
-|**Betik bölmesine sağa taşır**|CTRL+2|
-|**Betik bölmesine en üst düzeye çıkarmak**|CTRL+3|
+|**Betik bölmesine sağa taşır**|CTRL + 2|
+|**Betik bölmesine en üst düzeye çıkarmak**|CTRL + 3|
 |**Yakınlaştır**|CTRL + ARTI İŞARETİ|
 |**Uzaklaştır**|CTRL + EKSİ İŞARETİ|
 
@@ -113,12 +113,12 @@ Komut dosyaları ayıklarken aşağıdaki klavye kısayollarını kullanabilirsi
 |**Çalıştırma ve devam**|F5|Betik bölmesinde, bir komut dosyası hata ayıklaması|
 |**Girme**|F11|Betik bölmesinde, bir komut dosyası hata ayıklaması|
 |**Adımlama**|F10|Betik bölmesinde, bir komut dosyası hata ayıklaması|
-|**Dışarı Adım**|SHIFT+F11|Betik bölmesinde, bir komut dosyası hata ayıklaması|
+|**Dışarı Adım**|SHIFT + F11|Betik bölmesinde, bir komut dosyası hata ayıklaması|
 |**Görüntü çağrı yığını**|CTRL+SHIFT+D|Betik bölmesinde, bir komut dosyası hata ayıklaması|
 |**Liste kesme noktaları**|CTRL+SHIFT+L|Betik bölmesinde, bir komut dosyası hata ayıklaması|
 |**Kesme**|F9|Betik bölmesinde, bir komut dosyası hata ayıklaması|
 |**Tüm kesme noktalarını kaldırır**|CTRL+SHIFT+F9|Betik bölmesinde, bir komut dosyası hata ayıklaması|
-|**Hata ayıklayıcıyı**|SHIFT+F5|Betik bölmesinde, bir komut dosyası hata ayıklaması|
+|**Hata ayıklayıcıyı**|SHIFT + F5'E|Betik bölmesinde, bir komut dosyası hata ayıklaması|
 
 > ![Not](../core-powershell/web-access/images/Note.jpeg)**Not**
 >
@@ -133,7 +133,7 @@ Komut dosyaları ayıklarken aşağıdaki klavye kısayollarını kullanabilirsi
 |**Son komutu yineleyin** (için adımla veya Adımlama)|ENTER|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
 |**Görüntü çağrı yığını**|K|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
 |**Hata ayıklamayı durdurun**|Q|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
-|**Komut dosyası listeler**|L|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
+|**Komut dosyası listeler**|M|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
 |**Görüntü Konsolu komutları hata ayıklama**|H veya?|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Windows PowerShell sekmeler için klavye kısayolları
@@ -142,7 +142,7 @@ Windows PowerShell sekmeleri kullandığınızda aşağıdaki klavye kısayollar
 
 |Eylem|Klavye kısayolu|
 |----------|---------------------|
-|**PowerShell sekmesini kapatın**|CTRL+W|
+|**PowerShell sekmesini kapatın**|CTRL + W|
 |**Yeni bir PowerShell sekmesi**|CTRL+T|
 |**Önceki PowerShell sekmesi**|CTRL + SHIFT + SEKME. Hiçbir dosya herhangi bir PowerShell sekmede açık olduğunda bu kısayol çalışır.|
 |**Sonraki Windows PowerShell sekmesi**|CTRL + SEKME. Hiçbir dosya herhangi bir PowerShell sekmede açık olduğunda bu kısayol çalışır.|
@@ -153,7 +153,7 @@ Windows PowerShell konsolunda (PowerShell.exe) başlatmak veya Windows PowerShel
 
 |Eylem|Klavye kısayolu|
 |----------|---------------------|
-|**Exit**|ALT+F4|
+|**Çıkış**|ALT+F4|
 |**PowerShell.exe Başlat** (Windows PowerShell Konsolu)|CTRL+SHIFT+P|
 
 ## <a name="see-also"></a>Ayrıca bkz:

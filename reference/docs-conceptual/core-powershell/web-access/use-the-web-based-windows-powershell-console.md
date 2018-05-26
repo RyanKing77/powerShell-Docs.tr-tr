@@ -2,11 +2,11 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
 title: web tabanlı windows powershell konsolunu kullanma
-ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Web tabanlı Windows PowerShell Konsolunu kullanma
 
@@ -81,7 +81,7 @@ Bilgisayarınızı uzaktan yönetime izin verecek şekilde yapılandırmanın en
 
     Genellikle, Windows PowerShell Web erişimi ağ geçidi üzerinden iletmek için kullandığı kimlik yönetmek istediğiniz uzak bilgisayar tarafından tanınan aynıdır. Ancak, uzak bilgisayarı yönetmek için farklı kimlik bilgileri kullanmak istiyorsanız, 2. adımda belirttiğiniz, genişletin **isteğe bağlı bağlantı ayarları** bölümünde ve diğer kimlik bilgilerini sağlayın. Aksi takdirde, adım 6’ya geçin.
 
-1. Windows PowerShell Web erişimi yönetici Windows PowerShell Web erişimi kullanıcılar için bir özel oturum yapılandırması oluşturduysa, oturum yapılandırma adını yazın **yapılandırma adı** alan. Oturum yapılandırmaları hakkında daha fazla bilgi için bkz: [about_Session_Configurations](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+1. Windows PowerShell Web erişimi yönetici Windows PowerShell Web erişimi kullanıcılar için bir özel oturum yapılandırması oluşturduysa, oturum yapılandırma adını yazın **yapılandırma adı** alan. Oturum yapılandırmaları hakkında daha fazla bilgi için bkz: [about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 1. Tutmak **kimlik doğrulama türü** kümesine **varsayılan** , aksi takdirde Windows PowerShell Web Erişim Yöneticisi tarafından yapmak için verilmedikçe.
 
@@ -129,7 +129,7 @@ Windows PowerShell konak işlevselliğin çoğu Windows PowerShell Web erişimi 
 
   Giriş rengi (ön ve arka plan) değiştirilemez. Çıkış, uyarı, ayrıntı ve hata iletilerinin tümü, bir komut dosyası çalıştırılarak değiştirilebilir.
 
-- PSHostRawUserInterface.
+- Pshostrawuserınterface.
 
   Windows PowerShell Web erişimi, Windows PowerShell uzaktan yönetimini uygulanır ve bir uzak çalışma alanı kullanır. Windows PowerShell Web erişimi bu arabirimindeki bazı yöntemleri uygulamaz; Örneğin, Windows konsoluna yazan herhangi komut. Gibi komutlar **PowerTab** Windows PowerShell Web Erişimi'nde çalışmaz.
 

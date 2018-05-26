@@ -2,11 +2,11 @@
 ms.date: 06/27/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri
-ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1b4d4339efda78a5cb719921a9cb06881d119930
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri
 
@@ -112,7 +112,7 @@ Kullanıcı alternatif kimlik bilgileri sağlamazsa, birincil kullanıcı adı v
 Yetkilendirme kuralları, kullanıcıların belirli bir oturum yapılandırmasına erişmesine izin vermek için kullanılabilir.
 Oluşturabileceğiniz _sınırlı çalışma alanlarını_ veya Windows PowerShell Web erişimi, oturum yapılandırmaları ve belirli kullanıcıların bunlar Windows PowerShell Web erişimi için oturum açtığında yalnızca belirli oturum yapılandırmalarına bağlanmasına izin verin.
 Daha fazla belirli bir kullanıcı kümesi için uç noktaya Bu bölümde açıklanan yetkilendirme kurallarını kullanarak kısıtlayın ve hangi kullanıcıların belirli Uç noktalara erişimi olduğunu belirlemek için erişim denetim listelerini (ACL'ler) kullanın.
-Sınırlı çalışma alanlarını hakkında daha fazla bilgi için bkz: [kısıtlı bir çalışma alanı oluşturma](https://msdn.microsoft.com/en-us/library/dn614668).
+Sınırlı çalışma alanlarını hakkında daha fazla bilgi için bkz: [kısıtlı bir çalışma alanı oluşturma](https://msdn.microsoft.com/library/dn614668).
 
 ### <a name="configuring-authorization-rules"></a>Yetkilendirme kuralları yapılandırma
 
@@ -122,7 +122,7 @@ Bu bölümdeki ilk yordam tek bir oturum yapılandırması içinde ve bir bilgis
 
 Yalnızca Windows PowerShell Web Erişimi'nde sınırlı çalışma alanlarını içinde çalışmak belirli kullanıcılara izin vermek için özel oturum yapılandırmaları kullanmayı planlıyorsanız, özel oturum yapılandırmalarınızı, onları belirten yetkilendirme kuralları eklemeden önce oluşturun.
 Özel oturum yapılandırmaları oluşturmak için Windows PowerShell Web erişimi cmdlet'leri kullanamazsınız.
-Özel oturum yapılandırmaları oluşturma hakkında daha fazla bilgi için bkz: [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Özel oturum yapılandırmaları oluşturma hakkında daha fazla bilgi için bkz: [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 Windows PowerShell Web erişimi cmdlet'leri destekleyen bir joker karakter, bir yıldız işareti ( \* ).
 Dizeler içindeki joker karakterler desteklenmez; özellik başına (kullanıcılar, bilgisayarlar veya oturum yapılandırmaları) tek bir yıldız işareti kullanın.
@@ -142,7 +142,7 @@ Dizeler içindeki joker karakterler desteklenmez; özellik başına (kullanıcı
 2. **İsteğe bağlı adım** kullanıcı erişimini oturum yapılandırmaları kullanarak kısıtlamak için:
 
     Kullanmak istediğiniz oturum yapılandırmalarının zaten var olduğundan, kurallarınızı doğrulayın.
-Bunlar henüz oluşturulmadı, içindeki oturum yapılandırmaları oluşturmak için yönergeleri kullanın [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Bunlar henüz oluşturulmadı, içindeki oturum yapılandırmaları oluşturmak için yönergeleri kullanın [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 3. Bu yetkilendirme kuralı genelde sahip oldukları kullanıcı için kapsamlı bir özel oturum yapılandırması erişimi ile erişim ağınızdaki bir bilgisayara belirli kullanıcı erişimi sağlar '™ s tipik komut dosyası ve cmdlet gereksinimlerine. Aşağıdaki komutu yazın ve sonra basın **Enter**.
 
@@ -253,6 +253,6 @@ Ağ Geçidi sunucusu Windows Server 2012 R2 çalıştırıyorsa, kullanıcılar 
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-- [Yükleme ve Windows PowerShell Web erişimini kullanma](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+- [Yükleme ve Windows PowerShell Web erişimini kullanma](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [Windows PowerShell Web erişim cmdlet'leri](cmdlets/web-access-cmdlets.md)

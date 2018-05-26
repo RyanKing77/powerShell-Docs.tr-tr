@@ -1,4 +1,13 @@
- ve---ms.date: 06/12/2017 katkıda bulunan: JKeithB anahtar sözcükler: Galerisi, powershell, cmdlet, psgallery, psget Başlık: PowerShell Galerisi
+---
+ms.date: 06/12/2017
+contributor: JKeithB
+keywords: Galeri, powershell, cmdlet, psgallery, psget
+title: PowerShell Galerisi
+ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="the-powershell-gallery"></a>PowerShell Galerisi
 

@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: WinRMSecurity
-ms.openlocfilehash: e390a84b6f7a1932afdad84c7b09ce7da2ec5370
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell uzaktan iletişim güvenlik konuları
 
@@ -71,7 +71,7 @@ Bunun yerine, sunucunun kimliğini doğrulayamadı tarafından oluşturulan hata
 
 ### <a name="ongoing-communication"></a>Devam eden iletişimleri
 
-İlk kimlik doğrulaması tamamlandıktan sonra [PowerShell uzaktan iletişim protokolü](https://msdn.microsoft.com/en-us/library/dd357801.aspx) tüm devam eden iletişimleri oturum başına AES 256 simetrik anahtarla şifreler.
+İlk kimlik doğrulaması tamamlandıktan sonra [PowerShell uzaktan iletişim protokolü](https://msdn.microsoft.com/library/dd357801.aspx) tüm devam eden iletişimleri oturum başına AES 256 simetrik anahtarla şifreler.
 
 
 ## <a name="making-the-second-hop"></a>İkinci atlama yapma

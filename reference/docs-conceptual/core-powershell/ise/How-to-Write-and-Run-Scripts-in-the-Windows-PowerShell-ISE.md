@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE’de Betik Yazma ve Çalıştırma
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 4b8a9c0c3a710f3b3b9b6077c3c84e174a141db2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 4d7c5352ef1dac6f63a50433676068f83a920db5
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Windows PowerShell ISE’de Betik Yazma ve Çalıştırma
 
@@ -130,7 +130,7 @@ Tuşuna basın **CTRL + S** veya araç çubuğunda tıklatın **kaydetmek** simg
 
 ### <a name="to-save-a-script-in-ascii-encoding"></a>Bir komut dosyası ASCII kodlamasında kaydetmek için
 
-Varsayılan olarak, Windows PowerShell ISE yeni komut dosyaları (.ps1), komut dosyası veri dosyaları (.psd1) ve betik Modülü dosyaları (.psm1) Unicode (BigEndianUnicode) olarak varsayılan olarak kaydeder. Â için başka bir kodlamada bir komut dosyası kaydetme ASCII (ANSI gibi), kullanın **kaydetmek** veya **Farklı Kaydet** yöntemlere [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) nesnesi.
+Varsayılan olarak, Windows PowerShell ISE yeni komut dosyaları (.ps1), komut dosyası veri dosyaları (.psd1) ve betik Modülü dosyaları (.psm1) Unicode (BigEndianUnicode) olarak varsayılan olarak kaydeder. Â için başka bir kodlamada bir komut dosyası kaydetme ASCII (ANSI gibi), kullanın **kaydetmek** veya **Farklı Kaydet** yöntemlere [$psISE.CurrentFile](https://technet.microsoft.com/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) nesnesi.
 
 Aşağıdaki komutu ASCII kodlama ile yeni bir komut dosyası MyScript.ps1 kaydeder.
 

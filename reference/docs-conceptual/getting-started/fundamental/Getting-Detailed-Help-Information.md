@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Ayrıntılı Yardım Bilgisi Alma
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: bb0fac4eb338354e411458fad575c726a5f0da35
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="getting-detailed-help-information"></a>Ayrıntılı Yardım Bilgisi Alma
 Windows PowerShell, Windows PowerShell kavramları ve Windows PowerShell dil açıklayan ayrıntılı Yardım konuları içerir. Ayrıca her bir cmdlet'i ve sağlayıcı için Yardım konularını ve vardır birçok işlevleri ve komut dosyaları için Yardım konularını.
@@ -128,7 +128,7 @@ get-help c:\ps-test\TestScript.ps1
 
 Cmdlet görüntülemek için tasarlanmış olan parametreleri Yardım, gibi *ayrıntılı*, *tam*, *örnekler*, ve *parametresi*, iş için komut dosyası Yardım ve işlevi, çok yardımcı olur. Ancak, görüntülediğinizde tüm Yardım yazarak "get-help \*", yardımcı olmak için işlevleri ve komut dosyaları görünmez.
 
-İşlevleri ve komut dosyalarınız için Yardım konuları yazma hakkında daha fazla bilgi için bkz: [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af), ve [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
+İşlevleri ve komut dosyalarınız için Yardım konuları yazma hakkında daha fazla bilgi için bkz: [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af), ve [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
 
 ## <a name="getting-help-online"></a>Çevrimiçi Yardım alma
 Internet'e bağlıysanız, Yardım almak için en iyi yöntemleri çevrimiçi Yardım konularını görüntülemek için biridir. Çevrimiçi konuları güncelleştirmek kolay olduğundan, bunlar en güncel içeriği sağlamak olasıdır.
@@ -165,10 +165,10 @@ Konunun ilgili bağlantılar bölümündeki ilk satırı aşağıda gösterilmi�
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-Çevrimiçi desteklemek için Yardım konuları hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)ve [yazma Cmdlet Yardım nasıl](https://go.microsoft.com/fwlink/?LinkID=123415) MSDN Kitaplığı'nda.
+Çevrimiçi desteklemek için Yardım konuları hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)ve [yazma Cmdlet Yardım nasıl](https://go.microsoft.com/fwlink/?LinkID=123415) MSDN Kitaplığı'nda.
 
 ## <a name="see-also"></a>Ayrıca bkz:
-- [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
+- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
+- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
+- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
 - [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)

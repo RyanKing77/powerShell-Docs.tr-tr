@@ -3,14 +3,14 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Komutlar Hakkında Bilgi Alma
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: 1426c171d74afc87751f7d31d46571b9c98fa47e
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c51579fe2cdf4f2a0d3248d1aaf3f1f9cac83868
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="getting-information-about-commands"></a>Komutlar Hakkında Bilgi Alma
-Windows PowerShell **Get-Command** cmdlet'i Geçerli oturumunuzda kullanılabilir tüm komutları alır. Yazdığınızda **Get-Command** bir Windows PowerShell komut isteminde, aşağıdakine benzer bir çıktı göreceksiniz:
+Windows PowerShell `Get-Command` cmdlet'i Geçerli oturumunuzda kullanılabilir tüm komutları alır. Yazdığınızda `Get-Command` bir PowerShell komut isteminde, aşağıdakine benzer bir çıktı göreceksiniz:
 
 ```
 PS> Get-Command
@@ -24,13 +24,13 @@ Cmdlet          Add-Member                      Add-Member [-MemberType] <PS...
 
 Bu görünüm Cmd.exe Yardım çıktısı gibi çok çıktı: iç komutları tablo özetini. Alıntı içinde **Get-Command** yukarıda gösterilen her komut gösterilen çıktıyı içerir, bir CommandType Cmdlet komutu. Windows PowerShell'in iç komut türü - kabaca için karşılık gelen bir cmdlet'tir **dir** ve **cd** komutları Cmd.exe ve UNIX Kabukları BASH gibi öğelerin.
 
-Çıktısı olarak **Get-Command** komut, tüm tanımları bitiş PowerShell tüm içeriği görüntülenemiyor göstermek için üç nokta ile (...) kullanılabilir alanı. Windows PowerShell çıkış görüntülediğinde, çıktı metin olarak biçimlendirir ve düzgün bir şekilde penceresine sığacak veri olmak için düzenler. Biz bu konuda daha sonra bölümünde biçimlendiricileri üzerinde konuşur.
+Çıktısı olarak `Get-Command` komut, tüm tanımları bitiş PowerShell tüm içeriği görüntülenemiyor göstermek için üç nokta ile (...) kullanılabilir alanı. Windows PowerShell çıkış görüntülediğinde, çıktı metin olarak biçimlendirir ve düzgün bir şekilde penceresine sığacak veri olmak için düzenler. Biz bu konuda daha sonra bölümünde biçimlendiricileri üzerinde konuşur.
 
-**Get-Command** cmdlet sahip bir **sözdizimi** her cmdlet sözdizimi alır parametresi. Get-Help cmdlet sözdizimi almak için aşağıdaki komutu kullanın:
-
-**Get-Help Get-Command-sözdizimi**
+`Get-Command` Cmdlet sahip bir **sözdizimi** her cmdlet sözdizimi alır parametresi. Get-Help cmdlet sözdizimi almak için aşağıdaki komutu kullanın:
 
 ```
+Get-Command Get-Help -Syntax
+
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>] [-Functionality <String[]>]
  [-Role <String[]>] [-Full] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 
@@ -49,31 +49,31 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 
 Tüm komutlar oturumda almak için şunu yazın:
 
-```
+```powershell
 Get-Command *
 ```
 
 Bu liste, arama yolunuzda dış dosyalar içerdiğinden, binlerce öğeye içerebilir. Azaltılmış bir grup komutları aramak daha kullanışlıdır.
 
-Diğer türleri yerel komutları almak için **CommandType** parametresinin **Get-Command** cmdlet'i.
+Diğer türleri yerel komutları almak için **CommandType** parametresinin `Get-Command` cmdlet'i.
 
 > [!NOTE]
-> Yıldız işareti (\*) joker karakter eşleştirme Windows PowerShell komut bağımsız değişkenleri için kullanılır. \* "Eşleştirilmez ve bir veya daha fazla herhangi bir karakter". Yazabilirsiniz **Get-Command bir\&#42;** harfiyle başlayan tüm komutları bulmak için "a". Joker karakter cmd.exe eşleştirme Windows PowerShell'in joker ayrıca bir süre eşleşir.
+> Yıldız işareti (\*) joker karakter eşleştirme Windows PowerShell komut bağımsız değişkenleri için kullanılır. \* "Eşleştirilmez ve bir veya daha fazla herhangi bir karakter". Yazabilirsiniz `Get-Command a*` harfiyle başlayan tüm komutları bulmak için "a". Joker karakter cmd.exe eşleştirme Windows PowerShell'in joker ayrıca bir süre eşleşir.
 
 Atanan takma adlar komutların olan komut diğer adları almak için aşağıdakileri yazın:
 
-```
+```powershell
 Get-Command -CommandType Alias
 ```
 
 Geçerli oturumdaki işlevleri almak için şunu yazın:
 
-```
+```powershell
 Get-Command -CommandType Function
 ```
 
 Windows PowerShell'in arama yolunda komut dosyalarını görüntülemek için şunu yazın:
 
-```
+```powershell
 Get-Command -CommandType Script
 ```

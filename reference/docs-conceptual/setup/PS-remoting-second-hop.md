@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: PowerShell uzaktan iletişim içinde ikinci atlama yapma
-ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1d24473178bc50321a81ebf1115a20f17078844f
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>PowerShell uzaktan iletişim içinde ikinci atlama yapma
 
@@ -21,7 +21,7 @@ Bu sorunu gidermek için birkaç yolu vardır. Bu konuda, birkaç ikinci atlama 
 
 ## <a name="credssp"></a>CredSSP
 
-Kullanabileceğiniz [kimlik bilgileri güvenlik desteği sağlayıcısı (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) kimlik doğrulaması için. CredSSP kimlik bilgileri uzak sunucuda önbelleğe alır (_SunucuB_), bunu kullanarak kimlik bilgisi hırsızlığı saldırıları kadar açar. Uzak bilgisayar tehlikede olsa saldırganın kullanıcının kimlik bilgilerine erişebilir. CredSSP hem istemci hem de sunucu bilgisayarlarda varsayılan olarak devre dışıdır. Yalnızca en güvenilir ortamlarında CredSSP etkinleştirmeniz gerekir. Örneğin, bir etki alanı yöneticisi etki alanı denetleyicisi yüksek oranda güvenilir olmadığı için bir etki alanı denetleyicisine bağlanma.
+Kullanabileceğiniz [kimlik bilgileri güvenlik desteği sağlayıcısı (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) kimlik doğrulaması için. CredSSP kimlik bilgileri uzak sunucuda önbelleğe alır (_SunucuB_), bunu kullanarak kimlik bilgisi hırsızlığı saldırıları kadar açar. Uzak bilgisayar tehlikede olsa saldırganın kullanıcının kimlik bilgilerine erişebilir. CredSSP hem istemci hem de sunucu bilgisayarlarda varsayılan olarak devre dışıdır. Yalnızca en güvenilir ortamlarında CredSSP etkinleştirmeniz gerekir. Örneğin, bir etki alanı yöneticisi etki alanı denetleyicisi yüksek oranda güvenilir olmadığı için bir etki alanı denetleyicisine bağlanma.
 
 PowerShell uzaktan iletişim için CredSSP kullanırken, güvenlik sorunları hakkında daha fazla bilgi için bkz: [yanlışlıkla Sabotaj: CredSSP dikkat](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
@@ -175,7 +175,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-Bu örnekte, `$using` değişkeni yapmak için kullanılan `$ServerC` değişkeni görünür _SunucuB_. Hakkında daha fazla bilgi için `$using` değişken, bkz: [about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx).
+Bu örnekte, `$using` değişkeni yapmak için kullanılan `$ServerC` değişkeni görünür _SunucuB_. Hakkında daha fazla bilgi için `$using` değişken, bkz: [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
 Kimlik bilgileri için temsilci seçme birden çok sunucu izin vermek için _SunucuC ise_, değerini **PrincipalsAllowedToDelegateToAccount** parametresini _SunucuC ise_ bir dizi:
 
@@ -212,8 +212,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [Windows Server 2012 hızları Kerberos sorunun nasıl kısıtlı temsilcisi, bölüm 1](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Windows Server 2012 hızları Kerberos sorunun nasıl kısıtlı temsilcisi, bölüm 2](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Anlama Kerberos Kısıtlanmış temsilci seçme için tümleşik Windows kimlik doğrulaması ile Azure Active Directory Uygulama proxy'si dağıtımları](http://aka.ms/kcdpaper)
-- [[MS-ADA2]: Active Directory şema öznitelikleri M2.210 özniteliği msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)
-- [[MS-SFU]: Kerberos Protokolü uzantıları: kullanıcı için hizmet ve kısıtlanmış temsil protokolü 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx)
+- [[MS-ADA2]: Active Directory şema öznitelikleri M2.210 özniteliği msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
+- [[MS-SFU]: Kerberos Protokolü uzantıları: kullanıcı için hizmet ve kısıtlanmış temsil protokolü 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [Kaynak tabanlı Kerberos Kısıtlı temsilci](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Kısıtlanmış temsilci PrincipalsAllowedToDelegateToAccount kullanarak olmadan uzaktan yönetim](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
@@ -236,7 +236,7 @@ Bir oturum yapılandırması oluşturabilirsiniz _SunucuB_ ve kendi **RunAsCrede
 
 JEA, yönetici bir PowerShell oturumunda çalıştırmak hangi komutları sınırlamanıza olanak sağlar. İkinci atlama sorunu çözmek için kullanılabilir.
 
-JEA hakkında daha fazla bilgi için bkz: [yalnızca yeterince Yönetim](https://docs.microsoft.com/en-us/powershell/jea/overview).
+JEA hakkında daha fazla bilgi için bkz: [yalnızca yeterince Yönetim](https://docs.microsoft.com/powershell/jea/overview).
 
 ### <a name="pros"></a>Artıları
 
@@ -249,7 +249,7 @@ JEA hakkında daha fazla bilgi için bkz: [yalnızca yeterince Yönetim](https:/
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Invoke-Command betik bloğu içinde geçişi kimlik bilgileri
 
-Kimlik bilgileri içinde geçirdiğiniz **ScriptBlock** yapılan bir çağrı parametresinin [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet'i.
+Kimlik bilgileri içinde geçirdiğiniz **ScriptBlock** yapılan bir çağrı parametresinin [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet'i.
 
 ### <a name="pros"></a>Artıları
 
