@@ -1,18 +1,22 @@
 ---
-ms.date: 06/12/2017
+ms.date: 06/20/2018
 keywords: DSC, powershell, yapılandırma, Kur
 title: DSC PackageManagement kaynağı
-ms.openlocfilehash: f850c389214fe5adf139c3bd01fb60addc5ec238
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3d52934b130d59acee4d7f8a92da2c743c1eb305
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753796"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement kaynağı
 
-> İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0, 5.1 Windows PowerShell
 
 **PackageManagement** kaynak olarak Windows PowerShell istenen durum yapılandırması (DSC) yüklemek veya bir hedef düğüm üzerinde paket Yönetimi paketleri kaldırmak için bir mekanizma sağlar. Bu kaynak için gerekli **PackageManagement** modülü, kullanılabilir http://PowerShellGallery.com.
+
+> [!IMPORTANT]
+> **PackageManagement** modülü en az olmalıdır sürüm 1.1.7.0 doğru olması aşağıdaki özellik bilgileri.
 
 ## <a name="syntax"></a>Sözdizimi
 
@@ -20,31 +24,35 @@ ms.lasthandoff: 05/16/2018
 PackageManagement [string] #ResourceName
 {
     Name = [string]
-    [ Source = [string] ]
-    [ Ensure = [string] { Absent | Present }  ]
-    [ RequiredVersion = [string] ]
-    [ MinimumVersion = [string] ]
-    [ MaximumVersion = [string] ]
-    [ SourceCredential = [PSCredential] ]
-    [ ProviderName = [string] ]
-    [ AdditionalParameters = [Microsoft.Management.Infrastructure.CimInstance[]] ]
+    [AdditionalParameters = [HashTable]]
+    [DependsOn = [string[]]]
+    [Ensure = [string]{ Absent | Present }]
+    [MaximumVersion = [string]]
+    [MinimumVersion = [string]]
+    [ProviderName = [string]]
+    [PsDscRunAsCredential = [PSCredential]]
+    [RequiredVersion = [string]]
+    [Source = [string]]
+    [SourceCredential = [PSCredential]]
 }
 ```
 
 ## <a name="properties"></a>Özellikler
+
 |  Özellik  |  Açıklama   |
 |---|---|
 | Ad| Yüklenecek veya için paket adını belirtir.|
-| Kaynak| Paket bulunabileceği paket kaynağının adını belirtir. Bu bir URI olabilir veya bir kaynak kaydı PackageSource veya PackageManagementSource DSC kaynağı ile kayıtlı. DSC kaynağı MSFT_PackageManagementSource bir paket kaynağı da kaydedebilirsiniz.|
+| AdditionalParameters| Sağlayıcı belirli hashtable için aktarılabilecek parametrelerinin `Get-Package -AdditionalArguments`. Örneğin, NuGet sağlayıcısı HedefYolu gibi ek parametreleri geçirebilirsiniz.|
 | Emin olun| Paketin yüklü veya kaldırılmış olup olmadığını belirler.|
-| RequiredVersion| Yüklemek istediğiniz paketi'nün tam sürümünü belirtir. Bu parametre belirtmezseniz, bu DSC kaynağı MaximumVersion parametresi tarafından belirtilen herhangi bir en fazla sürümünü de karşılayan paketin kullanılabilir en yeni sürümü yükler.|
-| MinimumVersion| Yüklemek istediğiniz paketinin sürümünü, izin verilen en düşük belirtir. Bu parametreyi eklemezseniz, bu DSC kaynağı intalls yüksek kullanılabilir paketinin sürümünü, herhangi bir maksimum belirtilen sürümünü de karşılayan MaximumVersion parametresi tarafından belirtilen.|
-| MaximumVersion| Yüklemek istediğiniz paketinin sürümünü, izin verilen belirtir. Bu parametre belirtmezseniz, bu DSC kaynağı en yüksek numaralı kullanılabilir paketin sürümünü yükler.|
+| MaximumVersion|Bulmak istediğiniz paketinin sürümünü, izin verilen belirtir. Bu parametreyi eklemezseniz, kaynak paketinin yüksek kullanılabilir sürümünü bulur.|
+| MinimumVersion|Bulmak istediğiniz paketinin sürümünü, izin verilen en düşük belirtir. Bu parametreyi eklemezseniz, yüksek kullanılabilir paketinin sürümünü, tarafından belirtilen tüm maksimum belirtilen sürüm de karşılayan kaynak bulan _MaximumVersion_ parametresi.|
+| ProviderName| Paket arama kapsamınızı kurmak için bir paket sağlayıcının adını belirtir. Çalıştırarak paket sağlayıcı adları alabilirsiniz `Get-PackageProvider` cmdlet'i.|
+| RequiredVersion| Yüklemek istediğiniz paketi'nün tam sürümünü belirtir. Bu parametre belirtmezseniz, bu DSC kaynağı tarafından belirtilen herhangi bir en fazla sürümünü de karşılayan paketi kullanılabilir en yeni sürümünü yükler _MaximumVersion_ parametresi.|
+| Kaynak| Paket bulunabileceği paket kaynağının adını belirtir. Bu bir URI olabilir veya bir kaynak kayıtlı `Register-PackageSource` veya PackageManagementSource DSC kaynağı.|
 | SourceCredential | Belirtilen paket sağlayıcısı veya kaynak için bir paketi yüklemek için haklarına sahip bir kullanıcı hesabı belirtir.|
-| ProviderName| Paket arama kapsamınızı kurmak için bir paket sağlayıcının adını belirtir. Get-PackageProvider cmdlet'ini çalıştırarak paket sağlayıcı adları elde edebilirsiniz.|
-| AdditionalParameters| Bir karma tablosu olarak geçirilen belirli parametreleri sağlayıcı. Örneğin, NuGet sağlayıcısı HedefYolu gibi ek parametreleri geçirebilirsiniz.|
 
 ## <a name="additional-parameters"></a>Ek parametreler
+
 Aşağıdaki tabloda AdditionalParameters özelliği için seçenekleri listeler.
 |  Parametre  | Açıklama   |
 |---|---|
@@ -63,7 +71,7 @@ Configuration PackageTest
         Ensure      = "Present"
         Name        = "MyNuget"
         ProviderName= "Nuget"
-        SourceUri   = "http://nuget.org/api/v2/"
+        SourceLocation   = "http://nuget.org/api/v2/"
         InstallationPolicy ="Trusted"
     }
 
@@ -72,7 +80,7 @@ Configuration PackageTest
         Ensure      = "Present"
         Name        = "psgallery"
         ProviderName= "PowerShellGet"
-        SourceUri   = "https://www.powershellgallery.com/api/v2/"
+        SourceLocation   = "https://www.powershellgallery.com/api/v2/"
         InstallationPolicy ="Trusted"
     }
 
