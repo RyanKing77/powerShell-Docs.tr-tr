@@ -4,10 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Ayrıntılı Yardım Bilgisi Alma
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483041"
 ---
 # <a name="getting-detailed-help-information"></a>Ayrıntılı Yardım Bilgisi Alma
 Windows PowerShell, Windows PowerShell kavramları ve Windows PowerShell dil açıklayan ayrıntılı Yardım konuları içerir. Ayrıca her bir cmdlet'i ve sağlayıcı için Yardım konularını ve vardır birçok işlevleri ve komut dosyaları için Yardım konularını.

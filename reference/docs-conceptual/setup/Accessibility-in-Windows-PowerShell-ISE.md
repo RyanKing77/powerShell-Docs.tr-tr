@@ -4,10 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE’de erişilebilirlik
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 272dd502ff9d220e82236c93cbffaf4e12054cfe
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482990"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE’de erişilebilirlik
 

@@ -3,10 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell 5.0 yenilikler nelerdir?
 ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483194"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 yenilikler nelerdir?
 Windows PowerShell 5.0 kullanımını genişleten, kullanılabilirliğini artıran ve denetime izin ver ve Windows tabanlı ortamları daha kolay ve kapsamlı bir şekilde yönetmek, önemli yeni özellikler içerir.

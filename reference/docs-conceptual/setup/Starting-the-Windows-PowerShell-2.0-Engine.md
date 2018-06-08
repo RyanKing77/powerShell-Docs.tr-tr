@@ -4,10 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows PowerShell 2.0 Altyapısını Başlatma
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
 ms.openlocfilehash: 618745ff4865dd046acf46487e87c3ca0e324f95
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482973"
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 Altyapısını Başlatma
 
