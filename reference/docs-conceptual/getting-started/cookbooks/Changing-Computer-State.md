@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Bilgisayar Durumunu Değiştirme
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 3d3983c6d9e9b11db62bd71805da51be83331fdb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c659ad54325b0f7305f882e1cb9607062abad6a4
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251526"
 ---
 # <a name="changing-computer-state"></a>Bilgisayar Durumunu Değiştirme
 
@@ -49,16 +50,16 @@ Daha fazla bilgi için ve diğer özellikleri Win32Shutdown yönteminin bulmak i
 
 Kapatma ve bilgisayarları yeniden genellikle aynı görev türleridir. Bir bilgisayarı Araçlar genellikle yeniden onu da — tersi. Windows PowerShell bilgisayardan yeniden başlatmak için kolay iki seçenek vardır. Tsshutdn.exe veya Shutdown.exe uygun bağımsız değişkenlerle birlikte kullanın. Ayrıntılı kullanım bilgilerini alabilir **tsshutdn.exe /?** veya **shutdown.exe /?**.
 
-Ayrıca kapatma gerçekleştirmek ve işlemlerini kullanarak yeniden **Win32_OperatingSystem** Windows PowerShell doğrudan.
+Ayrıca, kapatma gerçekleştirmek ve Windows PowerShell doğrudan işlemlerinden yeniden başlatın.
 
-Bilgisayarı kapatmak için Win32Shutdown yöntemiyle kullanmak **1** bayrağı.
+Bilgisayarı kapatmak için bilgisayarı yeniden Başlat komutunu kullanın.
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(1)
+stop-computer
 ```
 
-İşletim sistemi yeniden başlatmaya Win32Shutdown yöntemiyle kullanmak **2** bayrağı.
+İşletim sistemi yeniden başlatmak için bilgisayarı yeniden Başlat komutunu kullanın.
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(2)
+restart-computer
 ```
