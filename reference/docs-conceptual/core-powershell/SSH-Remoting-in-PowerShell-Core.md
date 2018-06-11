@@ -74,7 +74,7 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) makinede Kurulumu
 
-1. En son yükleme [Linux için PowerShell] Github'dan derleme
+1. En son yükleme [Linux için PowerShell çekirdek] Github'dan derleme
 1. Yükleme [Ubuntu SSH] gerektiğinde
 
     ```bash
@@ -109,7 +109,7 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
 
 ## <a name="setup-on-macos-machine"></a>Kurulum MacOS makinede
 
-1. En son yükleme [MacOS için PowerShell] derleme
+1. En son yükleme [PowerShell çekirdek MacOS için] derleme
     - Aşağıdaki adımları izleyerek SSH uzatan iletişimin etkinleştirildiğinden emin olun:
       - Açık `System Preferences`
       - ' Yi tıklatın `Sharing`
@@ -241,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo komutu Linux makinesinde uzaktan oturumunda çalışmaz.
 
-[Windows PowerShell çekirdek]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[Windows PowerShell çekirdek]: ../setup/installing-powershell-core-on-windows.md#msi
+[Linux için PowerShell çekirdek]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[PowerShell çekirdek MacOS için]: ../setup/installing-powershell-core-on-macos.md
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [Yükleme]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[Linux için PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[MacOS için PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
