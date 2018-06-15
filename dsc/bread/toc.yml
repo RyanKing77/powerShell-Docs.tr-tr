@@ -1,6 +1,6 @@
 - name: PowerShell
   tocHref: /powershell/
-  topicHref: /powershell/index
+  topicHref: /powershell
   items:
     - name: İstenen Durum Yapılandırması
       tocHref: /powershell/dsc/
