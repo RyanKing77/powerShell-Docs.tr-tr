@@ -2,17 +2,17 @@
 
 ## <a name="msi"></a>MSI
 
-Bir Windows İstemcisi veya Windows Server PowerShell yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve daha sonra), bizim Github'dan MSI paketini indirin [serbest][] sayfası.
+Bir Windows İstemcisi veya Windows Server PowerShell yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve daha sonra), GitHub [sürümleri] [] sayfamızı MSI paketini indirin.
 
-MSI dosyası şuna benzer- `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+MSI dosyası şuna benzer- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Yüklendikten sonra yükleyici çift tıklayın ve yönergeleri izleyin.
 
 Yükleme sonrasında Başlat menüsü yerleştirilen bir kısayol yoktur.
 
-- Varsayılan olarak, paket için yüklenir `$env:ProgramFiles\PowerShell\`
-- Başlat menüsü aracılığıyla PowerShell başlatabilir veya `$env:ProgramFiles\PowerShell\pwsh.exe`
+- Varsayılan olarak, paket için yüklenir `$env:ProgramFiles\PowerShell\<version>`
+- Başlat menüsü aracılığıyla PowerShell başlatabilir veya `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 ### <a name="prerequisites"></a>Önkoşullar
 
@@ -126,12 +126,12 @@ Aşağıdaki adımları çalışan örneği Nano Server ve onun uzak uç nokta y
 PowerShell çekirdeği WSMan ve SSH üzerinden PowerShell uzaktan iletişim protokolü (PSRP) destekler.
 Daha fazla bilgi için bkz.:
 
-- [SSH PowerShell çekirdek uzaktan çalışma][ssh-remoting]
-- [PowerShell çekirdek WSMan uzaktan çalışma][wsman-remoting]
+- [SSH PowerShell çekirdek Remoting] [ssh-remoting]
+- [WSMan Remoting PowerShell çekirdek.] [wsman-remoting]
 
 ## <a name="artifact-installation-instructions"></a>Yapı yükleme yönergeleri
 
-Biz her CI yapı ile CoreCLR BITS ile ilgili bir arşiv yayımlama [AppVeyor][].
+Biz her CI yapı [AppVeyor] [] ile CoreCLR BITS ile ilgili bir arşiv yayımlayın.
 
 PowerShell çekirdek CoreCLR yapıdan yüklemek için:
 
@@ -140,8 +140,4 @@ PowerShell çekirdek CoreCLR yapıdan yüklemek için:
 3. Zip dosyasını ayıklayın `bin` dizini
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO -->
-[serbest]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO --> [serbest]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]:... /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.MD [wsman-remoting]:... /Core-PowerShell/wsman-Remoting-in-PowerShell-Core.MD [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
