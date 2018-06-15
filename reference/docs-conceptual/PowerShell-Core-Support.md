@@ -4,10 +4,10 @@ PowerShell çekirdek araçları ve sevk, yüklü ve ayrı ayrı Windows Powershe
 Bu nedenle, PowerShell çekirdeği Windows 7/8.1/10 veya Windows Server Lisans anlaşmalarındaki dahil edilmez.
 
 PowerShell çekirdek de dahil olmak üzere geleneksel Microsoft destek Anlaşmalarınızda ancak, desteklenen [Premier][], [Microsoft Kurumsal anlaşmalarındaki][enterprise-agreement]ve [Microsoft Yazılım Güvencesi][assurance].
-İçin ödeme yapabildiği [destekli Destek][] PowerShell sorununuz için bir destek isteği dosyalama tarafından çekirdek için.
+İçin ödeme yapabildiği [Yardım desteği][] PowerShell sorununuz için bir destek isteği dosyalama tarafından çekirdek için.
 
 Ayrıca sunuyoruz [topluluk desteği][] nerede dosyası bir sorunu, hata veya özellik isteği github'da.
-Alternatif olarak, genel diğer topluluk üyelerinden Yardım bulabilirsiniz [Microsoft Community][] veya Microsoft [PowerShell teknik topluluk][].
+Alternatif olarak, genel diğer topluluk üyelerinden Yardım bulabilirsiniz [Microsoft Topluluğu][] veya Microsoft [PowerShell Teknoloji Topluluğu][].
 Sorunu ele veya kaldırılacak zamanında çözümlendi, hiçbir garanti var. sunuyoruz.
 Hemen ilgilenilmesi gereken bir sorun varsa, Geleneksel, ücretli bir destek seçenekleri kullanmanız gerekir.
 
@@ -34,15 +34,15 @@ Sonuç olarak, PowerShell çekirdek benimsemeye "uzun süreli bakım" bekliyoruz
 PowerShell çekirdek resmi olarak aşağıdaki platformlarda desteklenir:
 
 * Windows 7, 8.1 ve 10
-* Windows Server 2008 R2, 2012 R2, 2016
+* Windows Server 2008 R2, 2012 R2'de, 2016
 * [Windows Server noktalı yıllık kanalı][semi-annual]
 * Ubuntu 14.04 ve 16.04 17.04
 * Debian 8.7 + ve 9
 * CentOS 7
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42.2
-* Fedora 25 26
-* macOS 10.12+
+* Fedora 27, 28
+* macOS 10,12 +
 
 Topluluğumuz ayrıca aşağıdaki platformları için paketleri katıldığını, ancak bunlar resmi olarak suppported değildir:
 
@@ -62,7 +62,7 @@ Desteklemek için bu modüller açıkça PowerShell çekirdek desteği sürece P
 Örneğin, kullanarak `ActiveDirectory` desteklenmeyen bir senaryodur Windows Server parçası olarak gelir modüldür.
 
 Ancak, açıkça PowerShell çekirdek desteklemeyen modülleri bazı durumlarda uyumlu olabilir.
-Yükleyerek [`WindowsPSModulePath`][] modülü, Windows PowerShell ekleyebilirsiniz `PSModulePath` PowerShell çekirdek için `PSModulePath`.
+Yükleyerek [ `WindowsPSModulePath` ][] modülü, Windows PowerShell ekleyebilirsiniz `PSModulePath` PowerShell çekirdek için `PSModulePath`.
 
 İlk olarak, yükleme `WindowsPSModulePath` PowerShell Galerisi'nden modül:
 
@@ -81,12 +81,12 @@ Add-WindowsPSModulePath
 [Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
-[topluluk desteği]: https://github.com/powershell/powershell/issues
-[Microsoft Community]: https://answers.microsoft.com/
-[PowerShell teknik topluluk]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
-[destekli Destek]: https://support.microsoft.com/assistedsupportproducts
+[Topluluk desteği]: https://github.com/powershell/powershell/issues
+[Microsoft Topluluğu]: https://answers.microsoft.com/
+[PowerShell Teknoloji Topluluğu]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[Yardım desteği]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT lisansı]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+['WindowsPSModulePath']: https://www.powershellgallery.com/packages/WindowsPSModulePath/
