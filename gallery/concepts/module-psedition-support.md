@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189525"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modüller ile uyumlu PowerShell sürümleri
 
@@ -249,4 +250,4 @@ Find-Module -Tag PSEdition_Core
 
 - [PSEditions’ı olan Betikler](script-psedition-support.md)
 - [PowerShellGallery PSEditions desteği](../how-to/finding-items/searching-by-psedition.md)
-- [Güncelleştirme modül bildirimi] (/ powershell/modülü/powershellget/güncelleştirme-modulemanifest)
+- [Güncelleştirme modül bildirimi] (/powershell/module/powershellget/update-modulemanifest)

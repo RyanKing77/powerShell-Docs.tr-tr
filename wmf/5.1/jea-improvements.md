@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222426"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Tam yetecek kadar Yönetim (JEA) geliştirmeleri
 
@@ -49,7 +50,7 @@ Ardından, kullanıcı sürücüde depolanan verileri işlemek ve bu kullanıcı
 
 Bazı durumlarda, yerel makine ötesindeki kaynaklara erişmek bir kullanıcı bir JEA oturumda gerçekleştirmek için gereken bir görev gerekebilir.
 JEA oturum sanal bir hesabı kullanacak şekilde yapılandırıldığında, her türlü girişim gibi kaynaklara ulaşmak için yerel makinenin kimliğini, değil sanal hesap veya bağlı olan kullanıcı gelen görünecektir.
-TP5 içinde biz JEA [grup yönetilen hizmet hesabı] bağlamı altında çalışırken desteğini etkinleştirdiyseniz (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), bir etki alanı kimliği kullanarak ağ kaynaklarına erişmek çok daha kolay.
+TP5 içinde biz JEA bağlamı altında çalışırken desteğini etkinleştirdiyseniz [grup yönetilen hizmet hesabı](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx) , bir etki alanı kimliği kullanarak ağ kaynaklarına erişmek çok daha kolay.
 
 JEA oturum gMSA hesabı altında çalışacak şekilde yapılandırmak için aşağıdaki yeni anahtarı PSSC dosyanızda kullanın:
 
