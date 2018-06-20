@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953931"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a><span data-ttu-id="6bbe3-103">Windows PowerShell Web Erişimi Yükleme ve Kullanma</span><span class="sxs-lookup"><span data-stu-id="6bbe3-103">Install and Use Windows PowerShell Web Access</span></span>
 

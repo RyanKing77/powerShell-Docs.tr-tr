@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951877"
 ---
 # <a name="managing-windows-powershell-drives"></a><span data-ttu-id="586b4-103">Windows PowerShell Sürücülerini Yönetme</span><span class="sxs-lookup"><span data-stu-id="586b4-103">Managing Windows PowerShell Drives</span></span>
 

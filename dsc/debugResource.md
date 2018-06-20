@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219115"
 ---
 # <a name="debugging-dsc-resources"></a><span data-ttu-id="cf904-103">DSC kaynaklarında hata ayıklama</span><span class="sxs-lookup"><span data-stu-id="cf904-103">Debugging DSC resources</span></span>
 

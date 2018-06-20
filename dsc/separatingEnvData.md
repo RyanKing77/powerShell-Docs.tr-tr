@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188131"
 ---
 # <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="cb053-103">Yapılandırma ve ortam verilerini ayırma</span><span class="sxs-lookup"><span data-stu-id="cb053-103">Separating configuration and environment data</span></span>
 

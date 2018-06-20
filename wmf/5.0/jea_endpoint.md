@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188437"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="ecab9-102">Bir JEA Uç Noktası Oluşturma ve Buna Bağlanma</span><span class="sxs-lookup"><span data-stu-id="ecab9-102">Creating and Connecting to a JEA Endpoint</span></span>
 <span data-ttu-id="ecab9-103">JEA uç noktası oluşturmak için oluşturmanız ve ile oluşturulan bir özel olarak yapılandırılmış PowerShell oturumu yapılandırma dosyasını kaydetmek için gereken **yeni PSSessionConfigurationFile** cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="ecab9-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>

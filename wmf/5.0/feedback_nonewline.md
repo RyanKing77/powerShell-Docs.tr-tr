@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189814"
 ---
 # <a name="nonewline-parameter"></a><span data-ttu-id="1acc4-102">NoNewLine parametresi</span><span class="sxs-lookup"><span data-stu-id="1acc4-102">NoNewLine parameter</span></span>
 <span data-ttu-id="1acc4-103">**Out-File**, **Ekle-Content**, ve **Set-Content** artık yeni bir sahip **– NoNewline** yalnızca yeni bir satır çıktıdan sonra atlar anahtarı.</span><span class="sxs-lookup"><span data-stu-id="1acc4-103">**Out-File**, **Add-Content**, and **Set-Content** now have a new **–NoNewline** switch which simply omits a new line after the output.</span></span>

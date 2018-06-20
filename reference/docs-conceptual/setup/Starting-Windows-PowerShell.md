@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953132"
 ---
 # <a name="starting-windows-powershell"></a><span data-ttu-id="070fe-103">Windows Powershell Başlatma</span><span class="sxs-lookup"><span data-stu-id="070fe-103">Starting Windows PowerShell</span></span>
 <span data-ttu-id="070fe-104">Birden çok konaklarına katıştırılmış bir komut dosyası altyapısı dll powershell'dir.</span><span class="sxs-lookup"><span data-stu-id="070fe-104">PowerShell is a scripting engine dll which is embedded into multiple hosts.</span></span>  <span data-ttu-id="070fe-105">Başlatır yaygın konak etkileşimli komut satırı PowerShell.exe ve etkileşimli komut dosyası ortamı PowerShell_ISE.exe verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="070fe-105">The most common host you will start are the interactive command line PowerShell.exe and the Interactive Scripting Environment PowerShell_ISE.exe.</span></span>
@@ -84,7 +85,7 @@ ISE
 
 <span data-ttu-id="070fe-141">64-bit bir bilgisayarda, Windows PowerShell yüklediğinizde **Windows PowerShell (x86)**, Windows PowerShell 32-bit sürümünü yanı sıra 64-bit sürümü yüklü.</span><span class="sxs-lookup"><span data-stu-id="070fe-141">When you install Windows PowerShell on a 64-bit computer, **Windows PowerShell (x86)**, a 32-bit version of Windows PowerShell is installed in addition to the 64-bit version.</span></span> <span data-ttu-id="070fe-142">Windows PowerShell çalıştırdığınızda, varsayılan olarak 64-bit sürümünü çalıştırır.</span><span class="sxs-lookup"><span data-stu-id="070fe-142">When you run Windows PowerShell, the 64-bit version runs by default.</span></span>
 
-<span data-ttu-id="070fe-143">Ancak, bazen çalıştırmanız gerekebilir **Windows PowerShell (x86)**gibi bir Modülü'nü kullanırken 32-bit sürümünü gerektirir veya, bir 32 bit bilgisayara uzaktan bağlanıyorsanız olduğunda.</span><span class="sxs-lookup"><span data-stu-id="070fe-143">However, you might occasionally need to run **Windows PowerShell (x86)**, such as when you are using a module that requires the 32-bit version or when you are connecting remotely to a 32-bit computer.</span></span>
+<span data-ttu-id="070fe-143">Ancak, bazen çalıştırmanız gerekebilir **Windows PowerShell (x86)** gibi bir Modülü'nü kullanırken 32-bit sürümünü gerektirir veya, bir 32 bit bilgisayara uzaktan bağlanıyorsanız olduğunda.</span><span class="sxs-lookup"><span data-stu-id="070fe-143">However, you might occasionally need to run **Windows PowerShell (x86)**, such as when you are using a module that requires the 32-bit version or when you are connecting remotely to a 32-bit computer.</span></span>
 
 <span data-ttu-id="070fe-144">Windows PowerShell 32-bit sürümünü başlatmak için aşağıdaki yordamlardan birini kullanın.</span><span class="sxs-lookup"><span data-stu-id="070fe-144">To start a 32-bit version of Windows PowerShell, use any of the following procedures.</span></span>
 

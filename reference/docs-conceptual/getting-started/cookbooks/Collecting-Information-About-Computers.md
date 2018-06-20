@@ -8,6 +8,7 @@ ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33677323"
 ---
 # <a name="collecting-information-about-computers"></a><span data-ttu-id="7b803-103">Bilgisayarlar Hakkında Bilgi Toplama</span><span class="sxs-lookup"><span data-stu-id="7b803-103">Collecting Information About Computers</span></span>
 

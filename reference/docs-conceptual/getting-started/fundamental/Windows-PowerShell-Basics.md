@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950547"
 ---
 # <a name="windows-powershell-basics"></a><span data-ttu-id="97c4b-103">Windows PowerShell Temel Bilgileri</span><span class="sxs-lookup"><span data-stu-id="97c4b-103">Windows PowerShell Basics</span></span>
 <span data-ttu-id="97c4b-104">Grafik kullanıcı arabirimleri çoğu bilgisayar kullanıcıları için bilinen bazı temel kavramları kullanın.</span><span class="sxs-lookup"><span data-stu-id="97c4b-104">Graphical user interfaces use some basic concepts that are well known to most computer users.</span></span> <span data-ttu-id="97c4b-105">Kullanıcıların görevleri gerçekleştirmek için bu arabirimleri benzerlik üzerinde kullanır.</span><span class="sxs-lookup"><span data-stu-id="97c4b-105">Users rely on the familiarity of those interfaces to accomplish tasks.</span></span> <span data-ttu-id="97c4b-106">İşletim sistemleri, genellikle bağlam özgü işlevsellik erişmek için belirli işlevleri ve bağlam menülerini erişmek için aşağı açılır menüler ile gözatılabilir öğeleri grafik gösterimi ile kullanıcılar sunar.</span><span class="sxs-lookup"><span data-stu-id="97c4b-106">Operating systems present users with a graphical representation of items that can be browsed, usually with drop-down menus for accessing specific functionality and context menus for accessing context-specific functionality.</span></span>

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218221"
 ---
 # <a name="format-hex"></a><span data-ttu-id="13f49-102">Format-Hex</span><span class="sxs-lookup"><span data-stu-id="13f49-102">Format-Hex</span></span>
 <span data-ttu-id="13f49-103">**Biçim onaltılık** , onaltılık biçimde metin veya ikili verileri görüntüleyebilir; bakın sağlar [biçimi onaltılık](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span><span class="sxs-lookup"><span data-stu-id="13f49-103">**Format-Hex** lets you view text or binary data in hexadecimal format; see [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span></span>

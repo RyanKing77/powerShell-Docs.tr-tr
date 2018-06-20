@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950976"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a><span data-ttu-id="9120d-103">Windows PowerShell Kullanmaya Hazırlanma</span><span class="sxs-lookup"><span data-stu-id="9120d-103">Getting Ready to Use Windows PowerShell</span></span>
 <span data-ttu-id="9120d-104">Windows PowerShell yüklenmiş ve başlatılmış olduğundan, aşağıdaki kurulum seçenekleri göz önünde bulundurun.</span><span class="sxs-lookup"><span data-stu-id="9120d-104">When Windows PowerShell is installed and started, consider the following setup options.</span></span> <span data-ttu-id="9120d-105">Herhangi bir zamanda bu görevleri gerçekleştirebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="9120d-105">You can perform these tasks at any time.</span></span>

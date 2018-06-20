@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188148"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a><span data-ttu-id="234ce-103">Sosyal medya veya açıklamalar geribildirim sağlama</span><span class="sxs-lookup"><span data-stu-id="234ce-103">Providing Feedback via social media or comments</span></span>
 

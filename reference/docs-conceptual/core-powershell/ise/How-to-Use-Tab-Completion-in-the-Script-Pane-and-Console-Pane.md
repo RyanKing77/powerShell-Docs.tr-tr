@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954934"
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a><span data-ttu-id="423ca-103">Betik Bölmesi ve Konsol Bölmesinde Sekme Tamamlamayı Kullanma</span><span class="sxs-lookup"><span data-stu-id="423ca-103">How to Use Tab Completion in the Script Pane and Console Pane</span></span>
 

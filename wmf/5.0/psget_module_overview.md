@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222182"
 ---
 # <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a><span data-ttu-id="2f685-102">PowerShell modülü bulma, yükleme ve PowerShellGet ile stok</span><span class="sxs-lookup"><span data-stu-id="2f685-102">PowerShell Module Discovery, Install and Inventory with PowerShellGet</span></span>
 

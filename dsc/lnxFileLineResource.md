@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219642"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a><span data-ttu-id="bd81c-103">DSC Linux nxFileLine kaynak için</span><span class="sxs-lookup"><span data-stu-id="bd81c-103">DSC for Linux nxFileLine Resource</span></span>
 

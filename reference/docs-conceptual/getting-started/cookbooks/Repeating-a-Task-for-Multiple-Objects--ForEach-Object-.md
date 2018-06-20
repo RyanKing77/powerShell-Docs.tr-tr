@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954288"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a><span data-ttu-id="b902c-103">Birden çok nesne (ForEach-Object) için bir görev yinelenen</span><span class="sxs-lookup"><span data-stu-id="b902c-103">Repeating a Task for Multiple Objects (ForEach-Object)</span></span>
 

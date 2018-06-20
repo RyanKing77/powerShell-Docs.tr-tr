@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219887"
 ---
 # <a name="rollback-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="41484-103">MSFT_DSCLocalConfigurationManager sınıfının RollBack yöntemi</span><span class="sxs-lookup"><span data-stu-id="41484-103">RollBack method of the MSFT_DSCLocalConfigurationManager class</span></span>
 

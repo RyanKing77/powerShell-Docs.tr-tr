@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219540"
 ---
 # <a name="register-a-powershell-repository"></a><span data-ttu-id="38f9b-102">Bir PowerShell Deposu Kaydetme</span><span class="sxs-lookup"><span data-stu-id="38f9b-102">Register a PowerShell Repository</span></span>
 <span data-ttu-id="38f9b-103">PowerShellGet karşı iç depoları çalışmak üzere yapılandırabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="38f9b-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="38f9b-104">Bu, aşağıdaki eklemelerle kullanarak gerçekleştirilir:</span><span class="sxs-lookup"><span data-stu-id="38f9b-104">This is done by using the following additions:</span></span>

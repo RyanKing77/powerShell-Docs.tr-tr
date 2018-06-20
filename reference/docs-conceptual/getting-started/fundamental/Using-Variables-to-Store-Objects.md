@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953336"
 ---
 # <a name="using-variables-to-store-objects"></a><span data-ttu-id="72c36-103">Nesne Depolamak için Değişkenleri Kullanma</span><span class="sxs-lookup"><span data-stu-id="72c36-103">Using Variables to Store Objects</span></span>
 <span data-ttu-id="72c36-104">PowerShell nesneler ile çalışır.</span><span class="sxs-lookup"><span data-stu-id="72c36-104">PowerShell works with objects.</span></span> <span data-ttu-id="72c36-105">PowerShell temelde daha sonra kullanmak için çıktı korumak için nesneleri, adlandırılmış değişkenleri oluşturmanıza olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="72c36-105">PowerShell lets you create variables, essentially named objects, to preserve output for later use.</span></span> <span data-ttu-id="72c36-106">Diğer değişkenlerle birlikte çalışmaya kullanılıyorsa Kabukları PowerShell değişkenleri nesneleri, metin değil olduğunu unutmayın.</span><span class="sxs-lookup"><span data-stu-id="72c36-106">If you are used to working with variables in other shells remember that PowerShell variables are objects, not text.</span></span>

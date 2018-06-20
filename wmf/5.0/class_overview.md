@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225734"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a><span data-ttu-id="cad97-102">PowerShell Sınıfları Kullanarak Özel Türler Oluşturma</span><span class="sxs-lookup"><span data-stu-id="cad97-102">Creating Custom Types using PowerShell Classes</span></span>
 

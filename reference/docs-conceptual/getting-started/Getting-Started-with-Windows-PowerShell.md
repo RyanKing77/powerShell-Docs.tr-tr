@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949494"
 ---
 # <a name="getting-started-with-windows-powershell"></a><span data-ttu-id="f1933-103">Windows PowerShell Kullanmaya Başlama</span><span class="sxs-lookup"><span data-stu-id="f1933-103">Getting Started with Windows PowerShell</span></span>
 <span data-ttu-id="f1933-104">Windows PowerShell, özellikle sistem yöneticileri için tasarlanmış bir Windows komut satırı kabuğu olan.</span><span class="sxs-lookup"><span data-stu-id="f1933-104">Windows PowerShell is a Windows command-line shell designed especially for system administrators.</span></span> <span data-ttu-id="f1933-105">Windows PowerShell, etkileşimli bir istemi ve bağımsız olarak veya birlikte kullanılan bir komut dosyası ortamı içerir.</span><span class="sxs-lookup"><span data-stu-id="f1933-105">Windows PowerShell includes an interactive prompt and a scripting environment that can be used independently or in combination.</span></span>

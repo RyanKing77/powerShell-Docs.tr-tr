@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219751"
 ---
 # <a name="call-base-class-method"></a><span data-ttu-id="1ceda-102">Temel Sınıf Yöntemini Çağırma</span><span class="sxs-lookup"><span data-stu-id="1ceda-102">Call Base Class Method</span></span>
 

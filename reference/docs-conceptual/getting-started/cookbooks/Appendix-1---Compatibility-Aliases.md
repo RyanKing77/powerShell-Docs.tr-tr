@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954645"
 ---
 # <a name="appendix-1---compatibility-aliases"></a><span data-ttu-id="3b7cb-103">Ek 1 - uyumluluk diğer adlar</span><span class="sxs-lookup"><span data-stu-id="3b7cb-103">Appendix 1 - Compatibility Aliases</span></span>
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218340"
 ---
 # <a name="report-abuse"></a><span data-ttu-id="e8042-103">Rapor Uygunsuz kullanım</span><span class="sxs-lookup"><span data-stu-id="e8042-103">Report abuse</span></span>
 

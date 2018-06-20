@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189321"
 ---
 # <a name="console-improvements-in-wmf-51"></a><span data-ttu-id="23377-103">WMF 5.1# Konsolu geliştirmeleri</span><span class="sxs-lookup"><span data-stu-id="23377-103">Console Improvements in WMF 5.1#</span></span>
 

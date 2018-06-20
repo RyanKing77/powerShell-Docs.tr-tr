@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948219"
 ---
 # <a name="object-pipeline"></a><span data-ttu-id="46196-103">Nesne Komut Zinciri</span><span class="sxs-lookup"><span data-stu-id="46196-103">Object Pipeline</span></span>
 <span data-ttu-id="46196-104">Ardışık Düzen kanal bağlı kesimleri bir dizi gibi davranır.</span><span class="sxs-lookup"><span data-stu-id="46196-104">Pipelines act like a series of connected segments of pipe.</span></span> <span data-ttu-id="46196-105">Ardışık Düzen taşıma öğeleri her segment geçirin.</span><span class="sxs-lookup"><span data-stu-id="46196-105">Items moving along the pipeline pass through each segment.</span></span> <span data-ttu-id="46196-106">Windows PowerShell'de bir ardışık düzen oluşturmak için dikey çizgi işleci birlikte komutları Bağlan "|".</span><span class="sxs-lookup"><span data-stu-id="46196-106">To create a pipeline in Windows PowerShell, you connect commands together with the pipe operator "|".</span></span> <span data-ttu-id="46196-107">Her komutun çıktısı, sonraki komut için giriş olarak kullanılır.</span><span class="sxs-lookup"><span data-stu-id="46196-107">The output of each command is used as input to the next command.</span></span>

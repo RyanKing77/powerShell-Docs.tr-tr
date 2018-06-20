@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951860"
 ---
 # <a name="using-static-classes-and-methods"></a><span data-ttu-id="398fb-103">Statik Sınıflar ve Yöntemler Kullanma</span><span class="sxs-lookup"><span data-stu-id="398fb-103">Using Static Classes and Methods</span></span>
 <span data-ttu-id="398fb-104">Tüm .NET Framework sınıfları kullanarak oluşturulabilir **New-Object**.</span><span class="sxs-lookup"><span data-stu-id="398fb-104">Not all .NET Framework classes can be created by using **New-Object**.</span></span> <span data-ttu-id="398fb-105">Örneğin, oluşturmayı denerseniz bir **System.Environment** veya **System.Math** nesnesi ile **New-Object**, aşağıdaki hata iletileri alırsınız:</span><span class="sxs-lookup"><span data-stu-id="398fb-105">For example, if you try to create a **System.Environment** or a **System.Math** object with **New-Object**, you will get the following error messages:</span></span>

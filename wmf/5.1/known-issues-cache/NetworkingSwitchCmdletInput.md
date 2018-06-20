@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188692"
 ---
 <span data-ttu-id="58754-103">Ağ anahtarı Yöneticisi cmdlet'leri ağ anahtarları WSMAN yönetmek için kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="58754-103">The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.</span></span>
 <span data-ttu-id="58754-104">Bu modülün birkaç cmdlet öğelerini ardışık düzen değerleri kabul özelliğine sahiptir.</span><span class="sxs-lookup"><span data-stu-id="58754-104">A few cmdlets of this module are capable of accepting values from pipelines.</span></span>

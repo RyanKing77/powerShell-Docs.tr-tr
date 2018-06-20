@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951707"
 ---
 # <a name="working-with-registry-keys"></a><span data-ttu-id="578ee-103">Kayıt Defteri Anahtarları ile Çalışma</span><span class="sxs-lookup"><span data-stu-id="578ee-103">Working with Registry Keys</span></span>
 

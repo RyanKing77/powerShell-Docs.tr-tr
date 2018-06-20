@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951078"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a><span data-ttu-id="70337-103">Windows PowerShell Komut Zincirini Anlama</span><span class="sxs-lookup"><span data-stu-id="70337-103">Understanding the Windows PowerShell Pipeline</span></span>
 <span data-ttu-id="70337-104">Yöneltme neredeyse her yerde Windows PowerShell içinde çalışır.</span><span class="sxs-lookup"><span data-stu-id="70337-104">Piping works virtually everywhere in Windows PowerShell.</span></span> <span data-ttu-id="70337-105">Ekranda metin karşın, Windows PowerShell komutları arasındaki metni kanal değil.</span><span class="sxs-lookup"><span data-stu-id="70337-105">Although you see text on the screen, Windows PowerShell does not pipe text between commands.</span></span> <span data-ttu-id="70337-106">Bunun yerine, nesneleri geçirir.</span><span class="sxs-lookup"><span data-stu-id="70337-106">Instead, it pipes objects.</span></span>

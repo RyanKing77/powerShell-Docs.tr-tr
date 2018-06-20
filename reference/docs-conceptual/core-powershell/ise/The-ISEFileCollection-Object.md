@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953098"
 ---
 # <a name="the-isefilecollection-object"></a><span data-ttu-id="52ab6-103">ISEFileCollection Nesnesi</span><span class="sxs-lookup"><span data-stu-id="52ab6-103">The ISEFileCollection Object</span></span>
 

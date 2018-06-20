@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219377"
 ---
 # <a name="community-resources"></a><span data-ttu-id="10163-103">Topluluk Kaynakları</span><span class="sxs-lookup"><span data-stu-id="10163-103">Community Resources</span></span> #
 > <span data-ttu-id="10163-104">Not: Bu bilgiler geçicidir ve değiştirilebilir.</span><span class="sxs-lookup"><span data-stu-id="10163-104">Note: This information is preliminary and subject to change.</span></span>

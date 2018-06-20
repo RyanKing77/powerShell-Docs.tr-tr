@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189576"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a><span data-ttu-id="76468-102">Yapılandırılmış Nesneleri Dizeden Çıkarma ve Ayıklama</span><span class="sxs-lookup"><span data-stu-id="76468-102">Extract and Parse Structured Objects out of String</span></span>
 <span data-ttu-id="76468-103">Bu aynı zamanda ConvertFrom dize cmdlet'i için bazı ek işlevler sunar:</span><span class="sxs-lookup"><span data-stu-id="76468-103">This also introduces some additional functionality for the ConvertFrom-String cmdlet:</span></span>

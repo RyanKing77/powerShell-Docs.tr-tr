@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952792"
 ---
 # <a name="using-format-commands-to-change-output-view"></a><span data-ttu-id="9d876-103">Çıkış Görünümünü Değiştirmek İçin Biçimlendirme Komutları Kullanma</span><span class="sxs-lookup"><span data-stu-id="9d876-103">Using Format Commands to Change Output View</span></span>
 

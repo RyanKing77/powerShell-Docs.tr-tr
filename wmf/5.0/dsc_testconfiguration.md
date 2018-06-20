@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187570"
 ---
 # <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a><span data-ttu-id="145af-102">Test-DscConfiguration cmdlet başvuru yapılandırmayı destekler.</span><span class="sxs-lookup"><span data-stu-id="145af-102">Test-DscConfiguration cmdlet supports Reference Configurations</span></span>
 

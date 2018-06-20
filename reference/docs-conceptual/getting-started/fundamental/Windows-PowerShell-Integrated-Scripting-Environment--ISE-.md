@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952078"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a><span data-ttu-id="ffb8b-103">Windows PowerShell Tümleşik Komut Dosyası Ortamı (ISE)</span><span class="sxs-lookup"><span data-stu-id="ffb8b-103">Windows PowerShell Integrated Scripting Environment (ISE)</span></span>
 

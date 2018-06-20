@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949409"
 ---
 # <a name="scripting-with-windows-powershell"></a><span data-ttu-id="68143-103">Windows PowerShell ile Betik Oluşturma</span><span class="sxs-lookup"><span data-stu-id="68143-103">Scripting with Windows PowerShell</span></span>
 

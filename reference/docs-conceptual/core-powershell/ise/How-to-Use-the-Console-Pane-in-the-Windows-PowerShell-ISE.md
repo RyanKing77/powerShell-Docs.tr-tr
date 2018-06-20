@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950796"
 ---
 # <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a><span data-ttu-id="9d7e1-103">Windows PowerShell ISE’de Konsol Bölmesini Kullanma</span><span class="sxs-lookup"><span data-stu-id="9d7e1-103">How to Use the Console Pane in the Windows PowerShell ISE</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225649"
 ---
 # <a name="updates-to-fileinfo-object"></a><span data-ttu-id="3f8ea-102">FileInfo nesnesi güncelleştirmeleri</span><span class="sxs-lookup"><span data-stu-id="3f8ea-102">Updates to FileInfo object</span></span>
 <span data-ttu-id="3f8ea-103">Dosya sürümü bilgilerini, özellikle dosya burada oluşturulmuştur durumlarda yanıltıcı.</span><span class="sxs-lookup"><span data-stu-id="3f8ea-103">File version information can be misleading, particularly in cases where the file was patched.</span></span> <span data-ttu-id="3f8ea-104">Bu sürüm WMF 5.0 yeni ekler **FileVersionRaw** ve **ProductVersionRaw** komut nesnelere FileInfo özellikleri.</span><span class="sxs-lookup"><span data-stu-id="3f8ea-104">This release of WMF 5.0 adds new **FileVersionRaw** and **ProductVersionRaw** script properties to FileInfo objects.</span></span> <span data-ttu-id="3f8ea-105">(PowerShell işlem Kimliğini $pid olduğunu varsayarak) powershell.exe için görüntülendiği gibi özellikleri şunlardır:</span><span class="sxs-lookup"><span data-stu-id="3f8ea-105">Here are the properties as displayed for powershell.exe (assuming $pid is the ID of the PowerShell process):</span></span>

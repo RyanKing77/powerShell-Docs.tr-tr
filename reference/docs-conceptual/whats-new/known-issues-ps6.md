@@ -7,6 +7,7 @@ ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/19/2018
+ms.locfileid: "34309585"
 ---
 # <a name="known-issues-for-powershell-60"></a><span data-ttu-id="2c738-103">PowerShell 6.0 için bilinen sorunlar</span><span class="sxs-lookup"><span data-stu-id="2c738-103">Known Issues for PowerShell 6.0</span></span>
 

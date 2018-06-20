@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188573"
 ---
 # <a name="prerelease-versions-of-scripts"></a><span data-ttu-id="b53df-103">Komut dosyaları uygulamasının yayım öncesi sürümleri</span><span class="sxs-lookup"><span data-stu-id="b53df-103">Prerelease versions of scripts</span></span>
 

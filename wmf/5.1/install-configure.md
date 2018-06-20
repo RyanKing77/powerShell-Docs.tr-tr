@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189355"
 ---
 # <a name="install-and-configure-wmf-51"></a><span data-ttu-id="79c5e-103">Yükleme ve WMF 5.1 yapılandırma</span><span class="sxs-lookup"><span data-stu-id="79c5e-103">Install and Configure WMF 5.1</span></span> #
 

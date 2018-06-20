@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953414"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a><span data-ttu-id="0f4ee-103">Windows PowerShell ISE’de Betiklerde Hata Ayıklama</span><span class="sxs-lookup"><span data-stu-id="0f4ee-103">How to Debug Scripts in Windows PowerShell ISE</span></span>
 

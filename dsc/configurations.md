@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188454"
 ---
 # <a name="dsc-configurations"></a><span data-ttu-id="05d6c-103">DSC yapılandırmaları</span><span class="sxs-lookup"><span data-stu-id="05d6c-103">DSC Configurations</span></span>
 

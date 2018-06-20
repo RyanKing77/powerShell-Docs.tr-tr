@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951333"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a><span data-ttu-id="a78a9-103">Windows PowerShell ISE Betik Oluşturma Nesne Modelinin Amacı</span><span class="sxs-lookup"><span data-stu-id="a78a9-103">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>
 

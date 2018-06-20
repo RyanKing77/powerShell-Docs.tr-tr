@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954900"
 ---
 # <a name="multiple-selection-list-boxes"></a><span data-ttu-id="f2f2b-103">Çoklu seçim liste kutuları</span><span class="sxs-lookup"><span data-stu-id="f2f2b-103">Multiple-selection List Boxes</span></span>
 

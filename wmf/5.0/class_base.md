@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219914"
 ---
 # <a name="declare-base-class"></a><span data-ttu-id="c6f08-102">Temel Sınıf Bildirme</span><span class="sxs-lookup"><span data-stu-id="c6f08-102">Declare Base Class</span></span>
 <span data-ttu-id="c6f08-103">Bir Windows PowerShell sınıf, bir başka bir Windows PowerShell sınıf için bir taban türü olarak bildirebilir.</span><span class="sxs-lookup"><span data-stu-id="c6f08-103">You can declare a Windows PowerShell class as a base type for another Windows PowerShell class.</span></span>

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952129"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a><span data-ttu-id="e6522-103">Verilerle çıkış - yeniden yönlendirme \* cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="e6522-103">Redirecting Data with Out-\* Cmdlets</span></span>
 

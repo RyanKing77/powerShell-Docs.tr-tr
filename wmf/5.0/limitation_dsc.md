@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190069"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a><span data-ttu-id="83523-102">İstenen durum yapılandırması (DSC) bilinen sorunlar ve sınırlamalar</span><span class="sxs-lookup"><span data-stu-id="83523-102">Desired State Configuration (DSC) Known Issues and Limitations</span></span>
 

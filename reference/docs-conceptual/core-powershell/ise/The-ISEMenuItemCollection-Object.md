@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954713"
 ---
 # <a name="the-isemenuitemcollection-object"></a><span data-ttu-id="b0d49-103">ISEMenuItemCollection Nesnesi</span><span class="sxs-lookup"><span data-stu-id="b0d49-103">The ISEMenuItemCollection Object</span></span>
 

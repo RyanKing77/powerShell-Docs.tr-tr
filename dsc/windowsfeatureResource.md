@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188318"
 ---
 # <a name="dsc-windowsfeature-resource"></a><span data-ttu-id="96b5c-103">DSC WindowsFeature kaynağı</span><span class="sxs-lookup"><span data-stu-id="96b5c-103">DSC WindowsFeature Resource</span></span>
 

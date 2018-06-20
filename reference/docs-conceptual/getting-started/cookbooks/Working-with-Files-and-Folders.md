@@ -8,6 +8,7 @@ ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31201028"
 ---
 # <a name="working-with-files-and-folders"></a><span data-ttu-id="3a87c-103">Dosya ve Klasörlerle Çalışma</span><span class="sxs-lookup"><span data-stu-id="3a87c-103">Working with Files and Folders</span></span>
 
