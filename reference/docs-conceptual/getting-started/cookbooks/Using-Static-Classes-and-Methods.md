@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951860"
 ---
 # <a name="using-static-classes-and-methods"></a>Statik Sınıflar ve Yöntemler Kullanma
 Tüm .NET Framework sınıfları kullanarak oluşturulabilir **New-Object**. Örneğin, oluşturmayı denerseniz bir **System.Environment** veya **System.Math** nesnesi ile **New-Object**, aşağıdaki hata iletileri alırsınız:

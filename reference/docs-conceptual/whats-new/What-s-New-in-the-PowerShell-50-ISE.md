@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953591"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Ne&#39;s Windows PowerShell ISE'deki yenilikler
 Bu konu, Windows PowerShell Tümleşik komut dosyası ortamı (ISE) sürümlerde sunulan yeni ve güncelleştirilmiş özelliklerin açıklar.

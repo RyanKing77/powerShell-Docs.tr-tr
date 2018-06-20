@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951078"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a>Windows PowerShell Komut Zincirini Anlama
 Yöneltme neredeyse her yerde Windows PowerShell içinde çalışır. Ekranda metin karşın, Windows PowerShell komutları arasındaki metni kanal değil. Bunun yerine, nesneleri geçirir.

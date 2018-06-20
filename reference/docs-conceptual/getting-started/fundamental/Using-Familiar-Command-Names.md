@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952690"
 ---
 # <a name="using-familiar-command-names"></a>Tanıdık Komut Adlarını Kullanma
 Bir mekanizma kullanılarak adlı *yumuşatma*, Windows PowerShell komutları için alternatif adlarına göre başvurmak kullanıcıların sağlar. Yumuşatma deneyimine sahip kullanıcıların Windows PowerShell'de benzer işlemleri gerçekleştirmek için kullanıcılarınızın zaten bildikleri ortak komut adlarının yeniden kullanmak için diğer Kabukları verir. Windows PowerShell diğer adlar ayrıntılı aşağıdakiler ele alınacaktır değil de, Windows PowerShell ile çalışmaya başlama gibi bunları kullanmaya devam edebilirsiniz.

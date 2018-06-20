@@ -7,6 +7,7 @@ ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33677255"
 ---
 # <a name="whats-new-with-powershell-50"></a>PowerShell ile 5.0 yenilikler nelerdir?
 Windows PowerShell® 5.0 kullanımını genişleten, kullanılabilirliğini artıran ve denetime izin ver ve Windows tabanlı ortamları daha kolay ve kapsamlı bir şekilde yönetmek, önemli yeni özellikler içerir.  Önemli geliştirmeler istenen durum yapılandırması, güvenlik, performans, remoting ve dil geliştirmeleri alanlarıdır.

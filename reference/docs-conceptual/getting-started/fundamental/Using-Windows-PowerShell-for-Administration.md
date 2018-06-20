@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954339"
 ---
 # <a name="using-windows-powershell-for-administration"></a>Yönetim için Windows PowerShell’i Kullanma
 Windows PowerShell temel amacı daha iyi ve daha kolay yönetim sistemleri denetime etkileşimli olarak veya komut dosyasından sağlamaktadır. Bu bölüm, Windows sistemleri Windows PowerShell ile yönetme birçok belirli sorunları için aracılığıyla çözümlerini anlatılmaktadır. Biz komut dosyaları veya Windows PowerShell Kullanıcı Kılavuzu'nda hakkında açıklandı değildir ancak çözümler komut dosyaları veya işlev olarak daha sonra kullanılabilir. İşlevler sorunları çözmek için çözümün bir parçası olarak dahil örnekler göstereceğiz.

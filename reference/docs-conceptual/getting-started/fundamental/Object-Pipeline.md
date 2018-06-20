@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948219"
 ---
 # <a name="object-pipeline"></a>Nesne Komut Zinciri
 Ardışık Düzen kanal bağlı kesimleri bir dizi gibi davranır. Ardışık Düzen taşıma öğeleri her segment geçirin. Windows PowerShell'de bir ardışık düzen oluşturmak için dikey çizgi işleci birlikte komutları Bağlan "|". Her komutun çıktısı, sonraki komut için giriş olarak kullanılır.

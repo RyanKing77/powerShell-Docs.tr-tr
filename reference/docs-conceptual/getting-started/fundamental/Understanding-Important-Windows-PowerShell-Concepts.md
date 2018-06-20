@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951095"
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>Önemli Windows PowerShell Kavramlarını Anlama
 Windows PowerShell tasarım kavramları birçok farklı ortamlarından tümleştirir. Birkaç kişiye belirli Kabukları veya programlama ortamlarının deneyimi sahibiyseniz, ancak bunların tümünün hakkında çok az İnsan öğrenmiş olacaksınız. Bu kavramların bazıları arayan Kabuk yararlı bir genel bakış sağlar.

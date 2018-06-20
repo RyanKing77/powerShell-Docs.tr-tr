@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189950"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure istenen durum yapılandırması uzantısı sürüm geçmişi
 

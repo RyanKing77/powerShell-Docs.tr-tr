@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188505"
 ---
 # <a name="just-enough-administration-jea"></a>Yeterli Yönetim (JEA)
 Yalnızca yeterli yönetim WMF 5.0 ile rol tabanlı yönetim PowerShell uzaktan iletişimi aracılığıyla sağlayan yeni bir özelliktir.  Varolan kısıtlanmış uç altyapısı belirli komutları, komut dosyaları ve yürütülebilir bir yönetici olarak çalıştırmak yönetici olmayanlar sağlayarak genişletir.  Bu, ortamınızda tam Yöneticiler sayısını azaltın ve güvenliğinizi artırmak sağlar.  JEA, her şeyi PowerShell aracılığıyla yönetmek için çalışır; PowerShell ile bir şey yönetebilir, JEA, böylece daha güvenli bir şekilde yapmanıza yardımcı olabilir.  Yalnızca yeterli yönetim ayrıntılı bir bakış için kullanıma [Kılavuzu deneyimi](http://aka.ms/JEA).

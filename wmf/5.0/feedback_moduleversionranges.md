@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225700"
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Sürüm aralıkları (1.*, vb.) bildirme modülleri desteği
 Birlikte **- MinimumVersion**, **- MaximumVersion** artık get/içeri aktarma modülü belirli aralık içinde kullanıcıya izin verir. Parametresini de destekler **.** \*. Aşağıdaki örnekte, nasıl çalıştığı gösterilmektedir:

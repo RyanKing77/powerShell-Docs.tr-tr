@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953132"
 ---
 # <a name="starting-windows-powershell"></a>Windows Powershell Başlatma
 Birden çok konaklarına katıştırılmış bir komut dosyası altyapısı dll powershell'dir.  Başlatır yaygın konak etkileşimli komut satırı PowerShell.exe ve etkileşimli komut dosyası ortamı PowerShell_ISE.exe verilmiştir.
@@ -84,7 +85,7 @@ Windows PowerShell 2.0 Windows Server 2008 R2 veya Windows Server 2008, Windows 
 
 64-bit bir bilgisayarda, Windows PowerShell yüklediğinizde **Windows PowerShell (x86)**, Windows PowerShell 32-bit sürümünü yanı sıra 64-bit sürümü yüklü. Windows PowerShell çalıştırdığınızda, varsayılan olarak 64-bit sürümünü çalıştırır.
 
-Ancak, bazen çalıştırmanız gerekebilir **Windows PowerShell (x86)**gibi bir Modülü'nü kullanırken 32-bit sürümünü gerektirir veya, bir 32 bit bilgisayara uzaktan bağlanıyorsanız olduğunda.
+Ancak, bazen çalıştırmanız gerekebilir **Windows PowerShell (x86)** gibi bir Modülü'nü kullanırken 32-bit sürümünü gerektirir veya, bir 32 bit bilgisayara uzaktan bağlanıyorsanız olduğunda.
 
 Windows PowerShell 32-bit sürümünü başlatmak için aşağıdaki yordamlardan birini kullanın.
 

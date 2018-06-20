@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950547"
 ---
 # <a name="windows-powershell-basics"></a>Windows PowerShell Temel Bilgileri
 Grafik kullanıcı arabirimleri çoğu bilgisayar kullanıcıları için bilinen bazı temel kavramları kullanın. Kullanıcıların görevleri gerçekleştirmek için bu arabirimleri benzerlik üzerinde kullanır. İşletim sistemleri, genellikle bağlam özgü işlevsellik erişmek için belirli işlevleri ve bağlam menülerini erişmek için aşağı açılır menüler ile gözatılabilir öğeleri grafik gösterimi ile kullanıcılar sunar.

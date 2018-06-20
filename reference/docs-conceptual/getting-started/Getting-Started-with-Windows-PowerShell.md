@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949494"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Windows PowerShell Kullanmaya Başlama
 Windows PowerShell, özellikle sistem yöneticileri için tasarlanmış bir Windows komut satırı kabuğu olan. Windows PowerShell, etkileşimli bir istemi ve bağımsız olarak veya birlikte kullanılan bir komut dosyası ortamı içerir.

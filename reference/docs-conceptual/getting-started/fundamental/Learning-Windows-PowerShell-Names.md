@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953482"
 ---
 # <a name="learning-windows-powershell-names"></a>Wndows Powershell Adlarını Öğrenme
 Önemli zaman yatırım çok komut satırı arabirimi ile komutları ve komut parametreleri öğrenme adları var. Her komut ve düzenli olarak kullanmak için gereken her bir parametreyi öğrenerek öğrenmek kaldırmanın tek yolu olması için çok az desenleri olduğunu konudur.
