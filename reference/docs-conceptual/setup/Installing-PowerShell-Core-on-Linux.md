@@ -1,11 +1,11 @@
-# <a name="installing-powershell-core-on-linux"></a>PowerShell çekirdek Linux'ta yükleme
+# <a name="installing-powershell-core-on-linux"></a>Linux’ta PowerShell Core yükleme
 
-Destekler [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.04] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 25 ] [ fed25], [Fedora 26][fed26], ve [Arch Linux][arch].
+Supports <bpt id="p1">[</bpt>Ubuntu 14.04<ept id="p1">]</ept><bpt id="p2">[</bpt><ept id="p2">u14]</ept>, <bpt id="p3">[</bpt>Ubuntu 16.04<ept id="p3">]</ept><bpt id="p4">[</bpt><ept id="p4">u16]</ept>, <bpt id="p5">[</bpt>Ubuntu 17.04<ept id="p5">]</ept><bpt id="p6">[</bpt><ept id="p6">u17]</ept>, <bpt id="p7">[</bpt>Debian 8<ept id="p7">]</ept><bpt id="p8">[</bpt><ept id="p8">deb8]</ept>, <bpt id="p9">[</bpt>Debian 9<ept id="p9">]</ept><bpt id="p10">[</bpt><ept id="p10">deb9]</ept>, <bpt id="p11">[</bpt>CentOS 7<ept id="p11">]</ept><bpt id="p12">[</bpt><ept id="p12">cos]</ept>, <bpt id="p13">[</bpt>Red Hat Enterprise Linux (RHEL) 7<ept id="p13">]</ept><bpt id="p14">[</bpt><ept id="p14">rhel7]</ept>, <bpt id="p15">[</bpt>OpenSUSE 42.2<ept id="p15">]</ept><bpt id="p16">[</bpt><ept id="p16">opensuse]</ept>, <bpt id="p17">[</bpt>Fedora 27<ept id="p17">]</ept><bpt id="p18">[</bpt><ept id="p18">fedora]</ept>, <bpt id="p19">[</bpt>Fedora 28<ept id="p19">]</ept><bpt id="p20">[</bpt><ept id="p20">fedora]</ept>, and <bpt id="p21">[</bpt>Arch Linux<ept id="p21">]</ept><bpt id="p22">[</bpt><ept id="p22">arch]</ept>.
 
 Resmi olarak desteklenmez Linux dağıtımları için kullanmayı deneyebilirsiniz [PowerShell AppImage][lai].
 Ayrıca Linux kullanarak doğrudan PowerShell ikili dosyaları dağıtma deneyebilirsiniz [ `tar.gz` arşiv][tar], ancak işletim sisteminde ayrı adımlar göre gerekli bağımlılıkları ayarlamanız gerekir.
 
-Tüm paketler bizim Github'da bulunan [serbest][] sayfası.
+Tüm paketler bizim Github'da bulunan [Sürümleri][] sayfası.
 Paket yüklendikten sonra çalıştırmak `pwsh` bir terminal gelen.
 
 [u14]: #ubuntu-1404
@@ -16,8 +16,7 @@ Paket yüklendikten sonra çalıştırmak `pwsh` bir terminal gelen.
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse-422
-[fed25]: #fedora-25
-[fed26]: #fedora-26
+[fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
 [tar]: #binary-archives
@@ -51,7 +50,7 @@ Daha sonra kullanmak yeterlidir `sudo apt-get upgrade powershell` yüklemeyi gü
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Doğrudan indirme - Ubuntu 14.04 aracılığıyla yükleme
 
-Debian paketi Yükle `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` gelen [serbest][] Ubuntu makine sayfaya.
+Debian paketi Yükle `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` gelen [Sürümleri][] Ubuntu makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -96,7 +95,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Doğrudan indirme - Ubuntu 16.04 aracılığıyla yükleme
 
-Debian paketi Yükle `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` gelen [serbest][] Ubuntu makine sayfaya.
+Debian paketi Yükle `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` gelen [Sürümleri][] Ubuntu makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -141,7 +140,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 
 ### <a name="installation-via-direct-download---ubuntu-1704"></a>Doğrudan indirme - Ubuntu 17.04 aracılığıyla yükleme
 
-Debian paketi Yükle `powershell_6.0.2-1.ubuntu.17.04_amd64.deb` gelen [serbest][] Ubuntu makine sayfaya.
+Debian paketi Yükle `powershell_6.0.2-1.ubuntu.17.04_amd64.deb` gelen [Sürümleri][] Ubuntu makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -190,7 +189,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 
 ### <a name="installation-via-direct-download---debian-8"></a>Aracılığıyla doğrudan indirme - Debian 8 yükleme
 
-Debian paketi Yükle `powershell_6.0.2-1.debian.8_amd64.deb` gelen [serbest][] Debian makine sayfaya.
+Debian paketi Yükle `powershell_6.0.2-1.debian.8_amd64.deb` gelen [Sürümleri][] Debian makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -241,7 +240,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 
 ### <a name="installation-via-direct-download---debian-9"></a>Doğrudan indirme - Debian 9 aracılığıyla yükleme
 
-Debian paketi Yükle `powershell_6.0.2-1.debian.9_amd64.deb` gelen [serbest][] Debian makine sayfaya.
+Debian paketi Yükle `powershell_6.0.2-1.debian.9_amd64.deb` gelen [Sürümleri][] Debian makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -283,7 +282,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidi
 
 ### <a name="installation-via-direct-download---centos-7"></a>Doğrudan indirme - CentOS 7 aracılığıyla yükleme
 
-Kullanarak [CentOS 7][], RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [serbest][] CentOS makine sayfaya.
+Kullanarak [CentOS 7][], RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [Sürümleri][] CentOS makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -326,7 +325,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidi
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Doğrudan indirme - Red Hat Enterprise Linux (RHEL) 7 aracılığıyla yükleme
 
-RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [serbest][] Red Hat Enterprise Linux makine sayfaya.
+RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [Sürümleri][] Red Hat Enterprise Linux makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -388,7 +387,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---opensuse-422"></a>Doğrudan indirme - OpenSUSE 42.2 aracılığıyla yükleme
 
-RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [serbest][] OpenSUSE makine sayfaya.
+RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [Sürümleri][] OpenSUSE makine sayfaya.
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -408,58 +407,9 @@ sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v
 sudo zypper remove powershell
 ```
 
-## <a name="fedora-25"></a>Fedora 25
+## <a name="fedora"></a>Fedora
 
-### <a name="installation-via-package-repository-preferred---fedora-25"></a>Paket (önerilen) - deposu Fedora 25 aracılığıyla yükleme
-
-Linux için PowerShell çekirdek kolay yükleme (ve güncelleştirmeleri) için resmi Microsoft depoları yayımlanır.
-
-```sh
-# Register the Microsoft signature key
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-
-# Register the Microsoft RedHat repository
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
-
-# Update the list of products
-sudo dnf update
-
-# Install PowerShell
-sudo dnf install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-### <a name="installation-via-direct-download---fedora-25"></a>Doğrudan indirme - Fedora 25 aracılığıyla yükleme
-
-RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [serbest][] Fedora makine sayfaya.
-
-```sh
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
-```
-
-Ardından aşağıdaki terminale yürütün:
-
-```sh
-sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-Ayrıca, indirilmesi ara adım olmadan RPM yükleyebilirsiniz:
-
-```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-### <a name="uninstallation---fedora-25"></a>Kaldırma - Fedora 25
-
-```sh
-sudo dnf remove powershell
-```
-
-## <a name="fedora-26"></a>Fedora 26
-
-### <a name="installation-via-package-repository-preferred---fedora-26"></a>Paket (önerilen) - deposu Fedora 26 aracılığıyla yükleme
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Paket (önerilen) - deposu Fedora 27 Fedora 28 aracılığıyla yükleme
 
 Linux için PowerShell çekirdek kolay yükleme (ve güncelleştirmeleri) için resmi Microsoft depoları yayımlanır.
 
@@ -483,14 +433,13 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-26"></a>Doğrudan indirme - Fedora 26 aracılığıyla yükleme
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Doğrudan indirme - Fedora 27, Fedora 28 aracılığıyla yükleme
 
-RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [serbest][] Fedora makine sayfaya.
+RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [Sürümleri][] Fedora makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
@@ -498,12 +447,11 @@ sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 Ayrıca, indirilmesi ara adım olmadan RPM yükleyebilirsiniz:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-26"></a>Kaldırma - Fedora 26
+### <a name="uninstallation---fedora-27-fedora-28"></a>Kaldırma - Fedora 27, Fedora 28
 
 ```sh
 sudo dnf remove powershell
@@ -511,7 +459,7 @@ sudo dnf remove powershell
 
 ## <a name="arch-linux"></a>Linux arch
 
-PowerShell edinilebilir [Arch Linux][] kullanıcı deposu (AUR).
+PowerShell edinilebilir [Linux arch][] kullanıcı deposu (AUR).
 
 * İle derlenebilir [en son sürüm etiketli][arch-release]
 * Nden derlenebilir [ana son yürütme][arch-git]
@@ -521,14 +469,14 @@ AUR paketlerinde saklanır topluluk - resmi desteği yoktur.
 
 AUR paketleri yükleme hakkında daha fazla bilgi için bkz: [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) veya topluluk [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Arch Linux]: https://www.archlinux.org/download/
+[Linux arch]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
 ## <a name="linux-appimage"></a>Linux AppImage
 
-Son Linux dağıtım kullanarak karşıdan AppImage `powershell-6.0.1-x86_64.AppImage` gelen [serbest][] Linux makine sayfaya.
+Son Linux dağıtım kullanarak karşıdan AppImage `powershell-6.0.1-x86_64.AppImage` gelen [Sürümleri][] Linux makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -642,8 +590,8 @@ Aşağıdaki grafikte farklı Linux dağıtımları üzerinde resmi olarak deste
 | Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Esnetme) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind, libcurl, openssl kitaplıklar, libicu |
-| Fedora 26          | libunwind, libcurl, openssl kitaplıklar, libicu, compat openssl10 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, openssl kitaplıklar, libicu |
+| Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl kitaplıklar, libicu, compat openssl10 |
 
 Resmi olarak desteklenmez Linux dağıtımları PowerShell ikili dosyaları dağıtmak için hedef işletim sistemi için gerekli bağımlılıkları ayrı adımlarda yüklemeniz gerekir.
 Örneğin, bizim [Amazon Linux dockerfile] [ amazon-dockerfile] bağımlılıkları ilk yükler ve Linux ayıklar `tar.gz` arşiv.
@@ -691,5 +639,5 @@ Varsayılan ana bilgisayar özel profiller var böylece profilleri PowerShell'in
 
 PowerShell uyar [XDG temel dizin belirtimi] [ xdg-bds] Linux üzerinde.
 
-[serbest]: https://github.com/PowerShell/PowerShell/releases/latest
+[Sürümleri]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
