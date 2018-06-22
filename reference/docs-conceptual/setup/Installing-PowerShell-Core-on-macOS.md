@@ -1,7 +1,7 @@
-# <a name="installing-powershell-core-on-macos"></a>PowerShell çekirdeği üzerinde macOS yükleme
+# <a name="installing-powershell-core-on-macos"></a>MacOS’ta PowerShell Core yükleme
 
 PowerShell çekirdeği macOS 10.12 ve üstünü destekler.
-Tüm paketler bizim Github'da bulunan [serbest][] sayfası.
+Tüm paketler bizim Github'da bulunan [Sürümleri][] sayfası.
 Paket yüklendikten sonra çalıştırmak `pwsh` bir terminal gelen.
 
 ### <a name="installation-via-homebrew-on-macos-1012"></a>MacOS 10,12 Homebrew aracılığıyla yükleme
@@ -36,15 +36,14 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> Yukarıdaki komutlarda PowerShell (pwsh) ana bilgisayar içinde çağrılabilir, ancak sonra PowerShell Kabuk çıkıldı ve gerekir yükseltmeyi tamamlamak için yeniden.
-> ve $PSVersionTable içinde gösterilen değerleri yenileyin.
+> Yukarıdaki komutlarda PowerShell (pwsh) ana bilgisayar içinde çağrılabilir, ancak sonra PowerShell Kabuk çıkıldı ve gerekir yükseltmesini tamamladıktan sonra $PSVersionTable içinde gösterilen değerleri yenilemek için yeniden.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
 
 ### <a name="installation-via-direct-download"></a>Doğrudan indirme ile yükleme
 
-PKG paketini indirin `powershell-6.0.2-osx.10.12-x64.pkg` gelen [serbest][] macOS makinenize sayfası.
+PKG paketini indirin `powershell-6.0.2-osx.10.12-x64.pkg` gelen [Sürümleri][] macOS makinenize sayfası.
 
 Dosyaya çift tıklayın ve yönergeleri izleyin veya terminal durumundan yükleyin:
 
@@ -94,11 +93,11 @@ Ek PowerShell yolları kaldırmak için lütfen bkz [yolları][] bölümünde bu
 > [!NOTE]
 > Bu Homebrew ile yüklediyseniz gerekli değildir.
 
-[yolları]:#paths
+[Yolları]:#paths
 
 ## <a name="paths"></a>Yollar
 
-* `$PSHOME` değil `/opt/microsoft/powershell/6.0.0/`
+* `$PSHOME` değil `/usr/local/microsoft/powershell/6.0.2/`
 * Kullanıcı profillerini okuma `~/.config/powershell/profile.ps1`
 * Varsayılan profiller okuma `$PSHOME/profile.ps1`
 * Kullanıcı modülleri okuma `~/.local/share/powershell/Modules`
@@ -112,7 +111,7 @@ Varsayılan ana bilgisayar özel profiller var böylece `Microsoft.PowerShell_pr
 PowerShell uyar [XDG temel dizin belirtimi] [ xdg-bds] macOS üzerinde.
 
 MacOS BSD, önek türevi olduğundan `/usr/local` yerine kullanılan `/opt`.
-Bu nedenle, `$PSHOME` olan `/usr/local/microsoft/powershell/6.0.0/`, ve simgesel yerleştirilmiş olması `/usr/local/bin/pwsh`.
+Bu nedenle, `$PSHOME` olan `/usr/local/microsoft/powershell/6.0.2/`, ve simgesel yerleştirilmiş olması `/usr/local/bin/pwsh`.
 
-[serbest]: https://github.com/PowerShell/PowerShell/releases/latest
+[Sürümleri]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
