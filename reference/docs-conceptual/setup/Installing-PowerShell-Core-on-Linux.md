@@ -1,16 +1,16 @@
 # <a name="installing-powershell-core-on-linux"></a>Linux’ta PowerShell Core yükleme
 
-Supports <bpt id="p1">[</bpt>Ubuntu 14.04<ept id="p1">]</ept><bpt id="p2">[</bpt><ept id="p2">u14]</ept>, <bpt id="p3">[</bpt>Ubuntu 16.04<ept id="p3">]</ept><bpt id="p4">[</bpt><ept id="p4">u16]</ept>, <bpt id="p5">[</bpt>Ubuntu 17.04<ept id="p5">]</ept><bpt id="p6">[</bpt><ept id="p6">u17]</ept>, <bpt id="p7">[</bpt>Debian 8<ept id="p7">]</ept><bpt id="p8">[</bpt><ept id="p8">deb8]</ept>, <bpt id="p9">[</bpt>Debian 9<ept id="p9">]</ept><bpt id="p10">[</bpt><ept id="p10">deb9]</ept>, <bpt id="p11">[</bpt>CentOS 7<ept id="p11">]</ept><bpt id="p12">[</bpt><ept id="p12">cos]</ept>, <bpt id="p13">[</bpt>Red Hat Enterprise Linux (RHEL) 7<ept id="p13">]</ept><bpt id="p14">[</bpt><ept id="p14">rhel7]</ept>, <bpt id="p15">[</bpt>OpenSUSE 42.2<ept id="p15">]</ept><bpt id="p16">[</bpt><ept id="p16">opensuse]</ept>, <bpt id="p17">[</bpt>Fedora 27<ept id="p17">]</ept><bpt id="p18">[</bpt><ept id="p18">fedora]</ept>, <bpt id="p19">[</bpt>Fedora 28<ept id="p19">]</ept><bpt id="p20">[</bpt><ept id="p20">fedora]</ept>, and <bpt id="p21">[</bpt>Arch Linux<ept id="p21">]</ept><bpt id="p22">[</bpt><ept id="p22">arch]</ept>.
+Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].
 
 Resmi olarak desteklenmez Linux dağıtımları için kullanmayı deneyebilirsiniz [PowerShell AppImage][lai].
 Ayrıca Linux kullanarak doğrudan PowerShell ikili dosyaları dağıtma deneyebilirsiniz [ `tar.gz` arşiv][tar], ancak işletim sisteminde ayrı adımlar göre gerekli bağımlılıkları ayarlamanız gerekir.
 
-Tüm paketler bizim Github'da bulunan [Sürümleri][] sayfası.
+Tüm paketler bizim Github'da bulunan [serbest][] sayfası.
 Paket yüklendikten sonra çalıştırmak `pwsh` bir terminal gelen.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u17]: #ubuntu-1704
+[u17]: #ubuntu-1710
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
@@ -50,7 +50,7 @@ Daha sonra kullanmak yeterlidir `sudo apt-get upgrade powershell` yüklemeyi gü
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Doğrudan indirme - Ubuntu 14.04 aracılığıyla yükleme
 
-Debian paketi Yükle `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` gelen [Sürümleri][] Ubuntu makine sayfaya.
+Debian paketi Yükle `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` gelen [serbest][] Ubuntu makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -95,7 +95,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Doğrudan indirme - Ubuntu 16.04 aracılığıyla yükleme
 
-Debian paketi Yükle `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` gelen [Sürümleri][] Ubuntu makine sayfaya.
+Debian paketi Yükle `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` gelen [serbest][] Ubuntu makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -112,9 +112,11 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1704"></a>Ubuntu 17.04
+## <a name="ubuntu-1710"></a>Ubuntu 17.10
 
-### <a name="installation-via-package-repository---ubuntu-1704"></a>Paket Deposu - Ubuntu 17.04 aracılığıyla yükleme
+> Not: Sonra Ubuntu 18.04 desteği eklendi `6.1.0-preview.2`
+
+### <a name="installation-via-package-repository---ubuntu-1710"></a>Paket Deposu - Ubuntu 17.10 aracılığıyla yükleme
 
 Linux için PowerShell çekirdek paket depoları kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
 Bu tercih edilen yöntemdir.
@@ -124,7 +126,7 @@ Bu tercih edilen yöntemdir.
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
 # Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.04/prod.list
+sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.10/prod.list
 
 # Update the list of products
 sudo apt-get update
@@ -138,20 +140,67 @@ pwsh
 
 Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmak yeterlidir `sudo apt-get upgrade powershell` güncelleştirin.
 
-### <a name="installation-via-direct-download---ubuntu-1704"></a>Doğrudan indirme - Ubuntu 17.04 aracılığıyla yükleme
+### <a name="installation-via-direct-download---ubuntu-1710"></a>Doğrudan indirme - Ubuntu 17.10 aracılığıyla yükleme
 
-Debian paketi Yükle `powershell_6.0.2-1.ubuntu.17.04_amd64.deb` gelen [Sürümleri][] Ubuntu makine sayfaya.
+Debian paketi Yükle `powershell_6.0.2-1.ubuntu.17.10_amd64.deb` gelen [serbest][] Ubuntu makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.17.04_amd64.deb
+sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
 sudo apt-get install -f
 ```
 
 > Lütfen unutmayın `dpkg -i` başarısız unmet bağımlılıkları; sonraki komut `apt-get install -f` Bu çözümler ve daha sonra PowerShell paketi yapılandırma tamamlanır.
 
-### <a name="uninstallation---ubuntu-1704"></a>Kaldırma - Ubuntu 17.04
+### <a name="uninstallation---ubuntu-1710"></a>Kaldırma - Ubuntu 17.10
+
+```sh
+sudo apt-get remove powershell
+```
+
+## <a name="ubuntu-1804"></a>Ubuntu 18.04
+
+> Not: Sonra Ubuntu 18.04 desteği eklendi `6.1.0-preview.2`
+
+### <a name="installation-via-package-repository---ubuntu-1804"></a>Paket Deposu - Ubuntu 18.04 aracılığıyla yükleme
+
+Linux için PowerShell çekirdek paket depoları kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
+Bu tercih edilen yöntemdir.
+
+```sh
+# Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+# Register the Microsoft Ubuntu repository
+sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/18.04/prod.list
+
+# Update the list of products
+sudo apt-get update
+
+# Install PowerShell
+sudo apt-get install -y powershell
+
+# Start PowerShell
+pwsh
+```
+
+Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmak yeterlidir `sudo apt-get upgrade powershell` güncelleştirin.
+
+### <a name="installation-via-direct-download---ubuntu-1804"></a>Doğrudan indirme - Ubuntu 18.04 aracılığıyla yükleme
+
+Debian paketi Yükle `powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb` gelen [serbest][] Ubuntu makine sayfaya.
+
+Ardından aşağıdaki terminale yürütün:
+
+```sh
+sudo dpkg -i powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb
+sudo apt-get install -f
+```
+
+> Lütfen unutmayın `dpkg -i` başarısız unmet bağımlılıkları; sonraki komut `apt-get install -f` Bu çözümler ve daha sonra PowerShell paketi yapılandırma tamamlanır.
+
+### <a name="uninstallation---ubuntu-1710"></a>Kaldırma - Ubuntu 17.10
 
 ```sh
 sudo apt-get remove powershell
@@ -189,7 +238,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 
 ### <a name="installation-via-direct-download---debian-8"></a>Aracılığıyla doğrudan indirme - Debian 8 yükleme
 
-Debian paketi Yükle `powershell_6.0.2-1.debian.8_amd64.deb` gelen [Sürümleri][] Debian makine sayfaya.
+Debian paketi Yükle `powershell_6.0.2-1.debian.8_amd64.deb` gelen [serbest][] Debian makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -240,7 +289,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 
 ### <a name="installation-via-direct-download---debian-9"></a>Doğrudan indirme - Debian 9 aracılığıyla yükleme
 
-Debian paketi Yükle `powershell_6.0.2-1.debian.9_amd64.deb` gelen [Sürümleri][] Debian makine sayfaya.
+Debian paketi Yükle `powershell_6.0.2-1.debian.9_amd64.deb` gelen [serbest][] Debian makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -282,7 +331,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidi
 
 ### <a name="installation-via-direct-download---centos-7"></a>Doğrudan indirme - CentOS 7 aracılığıyla yükleme
 
-Kullanarak [CentOS 7][], RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [Sürümleri][] CentOS makine sayfaya.
+Kullanarak [CentOS 7][], RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [serbest][] CentOS makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -325,7 +374,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidi
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Doğrudan indirme - Red Hat Enterprise Linux (RHEL) 7 aracılığıyla yükleme
 
-RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [Sürümleri][] Red Hat Enterprise Linux makine sayfaya.
+RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [serbest][] Red Hat Enterprise Linux makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -387,7 +436,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---opensuse-422"></a>Doğrudan indirme - OpenSUSE 42.2 aracılığıyla yükleme
 
-RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [Sürümleri][] OpenSUSE makine sayfaya.
+RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [serbest][] OpenSUSE makine sayfaya.
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -408,6 +457,8 @@ sudo zypper remove powershell
 ```
 
 ## <a name="fedora"></a>Fedora
+
+> Lütfen unutmayın, Fedora 28 yalnızca PowerShell çekirdek 6.1 ve sonraki sürümleri desteklenir.
 
 ### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Paket (önerilen) - deposu Fedora 27 Fedora 28 aracılığıyla yükleme
 
@@ -435,7 +486,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Doğrudan indirme - Fedora 27, Fedora 28 aracılığıyla yükleme
 
-RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [Sürümleri][] Fedora makine sayfaya.
+RPM paketi Yükle `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [serbest][] Fedora makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -476,7 +527,7 @@ AUR paketleri yükleme hakkında daha fazla bilgi için bkz: [Arch Linux wiki](h
 
 ## <a name="linux-appimage"></a>Linux AppImage
 
-Son Linux dağıtım kullanarak karşıdan AppImage `powershell-6.0.1-x86_64.AppImage` gelen [Sürümleri][] Linux makine sayfaya.
+Son Linux dağıtım kullanarak karşıdan AppImage `powershell-6.0.1-x86_64.AppImage` gelen [serbest][] Linux makine sayfaya.
 
 Ardından aşağıdaki terminale yürütün:
 
@@ -587,7 +638,8 @@ Aşağıdaki grafikte farklı Linux dağıtımları üzerinde resmi olarak deste
 | ------------------ | ------------ |
 | Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Esnetme) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, openssl kitaplıklar, libicu |
@@ -639,5 +691,5 @@ Varsayılan ana bilgisayar özel profiller var böylece profilleri PowerShell'in
 
 PowerShell uyar [XDG temel dizin belirtimi] [ xdg-bds] Linux üzerinde.
 
-[Sürümleri]: https://github.com/PowerShell/PowerShell/releases/latest
+[serbest]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
