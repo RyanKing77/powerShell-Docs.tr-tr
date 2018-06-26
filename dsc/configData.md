@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kur
 title: Yapılandırma verileri kullanma
-ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189695"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940387"
 ---
 # <a name="using-configuration-data-in-dsc"></a>DSC yapılandırma verileri kullanma
 
->İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Yerleşik DSC kullanarak **ConfigurationData** parametresi, içinde bir yapılandırması kullanılabilir veri tanımlayabilirsiniz.
 Bu, farklı ortamlar için veya birden çok düğüm için kullanılan tek bir yapılandırma oluşturmanızı sağlar.
@@ -25,10 +25,11 @@ Yapılandırma verileri kullanma örnekleri için bkz: [yapılandırma ve ortam 
 DSC yapılandırması bir ortak parametresi alan **ConfigurationData**, yapılandırmayı derleme zaman belirtin.
 Derleme yapılandırmaları hakkında daha fazla bilgi için bkz: [DSC yapılandırmaları](configurations.md).
 
-**ConfigurationData** parametredir adlı en az bir anahtar olmalıdır hasthtable **AllNodes**.
+**ConfigurationData** parametredir adlı en az bir anahtar olmalıdır bir hashtable **AllNodes**.
 Bir veya daha fazla diğer anahtarlar da olabilir.
 
->**Not:** bu konudaki örnekler tek bir ek anahtar kullanır (adlandırılmış dışında **AllNodes** anahtarı) adlı `NonNodeData`, ancak herhangi bir ek anahtar içerir ve bunları istediğiniz ad.
+> [!NOTE]
+> Bu konudaki örnekler tek bir ek anahtar kullanır (adlandırılmış dışında **AllNodes** anahtarı) adlı `NonNodeData`, ancak herhangi bir ek anahtar içerir ve bunları istediğiniz ad.
 
 ```powershell
 $MyData =
@@ -188,6 +189,7 @@ DSC yapılandırma komut dosyasında kullanılan üç özel değişkenler sağla
 
 - **$AllNodes** tanımlanan düğümlerinin tüm koleksiyon başvurduğu **ConfigurationData**. Filtre uygulayabilirsiniz **AllNodes** kullanarak koleksiyon **. WHERE()** ve **. ForEach()**.
 - **Düğüm** belirli bir giriş başvurduğu **AllNodes** kullanarak filtre sonra koleksiyon **. WHERE()** veya **. ForEach()**.
+  - Daha fazla bilgiyi bu yöntemler hakkında [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 - **ConfigurationData** bir yapılandırma derlerken parametre olarak geçirilen tüm karma tablosuna başvuruyor.
 
 ## <a name="using-non-node-data"></a>Düğümü olmayan verileri kullanma
@@ -199,5 +201,6 @@ Ancak, herhangi bir ek anahtar sayısını tanımlayın ve bunları istediğiniz
 Düğümü olmayan verileri kullanarak bir örnek için bkz: [yapılandırma ve ortam verilerin ayrılmasını](separatingEnvData.md).
 
 ## <a name="see-also"></a>Ayrıca bkz:
+
 - [Yapılandırma verilerini seçeneklerinde kimlik bilgileri](configDataCredentials.md)
 - [DSC yapılandırmaları](configurations.md)

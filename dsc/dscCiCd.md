@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kur
 title: DSC sahip sürekli tümleştirme ve sürekli dağıtımı işlem hattı oluşturma
-ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: faeef5022cbd984cab0620b69db19de8b84cca0e
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190562"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940353"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC sahip sürekli tümleştirme ve sürekli dağıtımı işlem hattı oluşturma
 
@@ -36,6 +36,7 @@ Derleme ve bu örneği çalıştırmak için çeşitli bilgisayarlar ve/veya san
 Bu, tüm ayarlama ve örnek çalışan iş yeri gerçekleştirirsiniz bilgisayardır.
 
 İstemci bilgisayar bir Windows bilgisayara aşağıdakilerin yüklü olması gerekir:
+
 - [Git](https://git-scm.com/)
 - öğesinden kopyalanan bir yerel git deposu https://github.com/PowerShell/Demo_CI
 - bir metin düzenleyicisi gibi [Visual Studio Code](https://code.visualstudio.com/)
@@ -73,21 +74,22 @@ Zaten Demo_CI depo istemci bilgisayarınıza kopyaladığınız değil, artık a
 1. İstemci bilgisayarınızda, TFS sunucunuz bir web tarayıcısında gidin.
 1. TFS, [yeni takım projesi oluşturma](https://www.visualstudio.com/en-us/docs/setup-admin/create-team-project) Demo_CI adlı.
 
-    Olduğundan emin olun **sürüm denetimi** ayarlanır **Git**.
+   Olduğundan emin olun **sürüm denetimi** ayarlanır **Git**.
 1. İstemci bilgisayarınızda, bir uzak aşağıdaki komutla TFS'de yeni oluşturduğunuz deponuza ekleyin:
 
-    `git remote add tfs <YourTFSRepoURL>`
+   `git remote add tfs <YourTFSRepoURL>`
 
-    Burada `<YourTFSRepoURL>` önceki adımda oluşturduğunuz TFS deponuza kopya URL.
+   Burada `<YourTFSRepoURL>` önceki adımda oluşturduğunuz TFS deponuza kopya URL.
 
-    Bu URL nerede bulacağını bilmiyorsanız, bkz: [var olan bir Git deposuna kopyalama](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
+   Bu URL nerede bulacağını bilmiyorsanız, bkz: [var olan bir Git deposuna kopyalama](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
 1. Kod yerel depodan aşağıdaki komutla TFS deponuza iletin:
 
-    `git push tfs --all`
+   `git push tfs --all`
 1. TFS depo Demo_CI kodu ile doldurulur.
 
->**Not:** Bu örnek kodda kullanır `ci-cd-example` Git deposuna dalı.
->TFS projenizin ve oluşturduğunuz CI/CD Tetikleyiciler için varsayılan dalı olarak bu dal belirttiğinizden emin olun.
+> [!NOTE]
+> Bu örnek kodda kullanır `ci-cd-example` Git deposuna dalı.
+> TFS projenizin ve oluşturduğunuz CI/CD Tetikleyiciler için varsayılan dalı olarak bu dal belirttiğinizden emin olun.
 
 ## <a name="understanding-the-code"></a>Kodu anlama
 
@@ -154,6 +156,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
 Bu rolü sahip olarak tanımlanmış olan tüm düğümleri bulur `DNSServer` içinde [yapılandırma verilerini](configData.md), tarafından oluşturulan `DevEnv.ps1` komut dosyası.
+
+Daha fazla bilgi edinebilirsiniz `Where` yönteminde [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 
 Düğümleri tanımlamak için yapılandırma verilerini kullanarak CI çünkü düğüm bilgi büyük olasılıkla ortamlar arasında değişir ve yapılandırma verilerini kullanarak kolayca düğümü bilgileri yapılandırma kodunu değiştirmeden değişiklik sağlar yapmak önemlidir.
 
@@ -348,12 +352,12 @@ Bu derleme adımı biz arama sırasında daha önce Pester komut dosyasında bir
 
 1. Her aşağıdaki satırları ekleyin **içeriği**:
 
-    ```
-    initiate.ps1
-    **\deploy.ps1
-    **\Acceptance\**
-    **\Integration\**
-    ```
+   ```
+   initiate.ps1
+   **\deploy.ps1
+   **\Acceptance\**
+   **\Integration\**
+   ```
 
 1. Ayarlama **TargetFolder** için `$(Build.ArtifactStagingDirectory)\`
 

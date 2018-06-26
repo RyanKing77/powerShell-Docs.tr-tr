@@ -1,14 +1,14 @@
 ---
 description: İstenen durum Yapılandırması'nı (DSC) uzantısı'nda Azure sürüm geçmişi hakkında bilgi edinin.
-ms.date: 05/09/2018
+ms.date: 06/21/2018
 keywords: DSC, powershell, azure, uzantısı
 title: Azure DSC uzantısı sürüm geçmişi
-ms.openlocfilehash: 81dfcf81bd8f8685a0c8c81cd07bc5447e1abf94
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 25248288291b9bf8efe6ce1eef203a552cd17736
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189950"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940336"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure istenen durum yapılandırması uzantısı sürüm geçmişi
 
@@ -16,12 +16,12 @@ Azure istenen durum yapılandırması (DSC) VM uzantısı gerektiği geliştirme
 
 Bu makalede destekler, açıklamalar ve yeni özellikleri ve değişiklikleri açıklamalar için hangi ortamları Azure DSC VM uzantısı, her sürümü hakkında bilgi sağlar.
 
-## <a name="latest-versions"></a>En son sürümleri
+## <a name="latest-version"></a>En son sürümü
 
 ### <a name="version-276"></a>Sürüm 2.76
 
 - **Yayın Tarihi:**
-  - 9 May 2018
+  - 9 May 2018 (Azure) | 21 Haziran 2018 (Azure Çin, Azure kamu)
 - **İşletim sistemi desteği:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -36,30 +36,11 @@ Bu makalede destekler, açıklamalar ve yeni özellikleri ve değişiklikleri a�
   - WMF 4.0
 - **Ortamı:**
   - Azure
+  - Azure Çin
+  - Azure kamu
 - **Açıklamalar:** bu sürümü Windows Server 2016'da yer alan DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (yeniden başlatma gerektirir WMF yükleme). Nano Server için VM DSC rolü yüklenir.
 - **Yeni özellikler:**
   - Geliştirme substatus ve küçük diğer hata düzeltmeleri için uzantı meta verilerde.
-
-### <a name="version-219"></a>Sürüm 2.19
-
-- **Yayın Tarihi:**
-  - 3 Haziran 2016
-- **İşletim sistemi desteği:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **WMF desteği:**
-  - WMF 5.0 RTM
-  - WMF 4.0 güncelleştirme
-  - WMF 4.0
-- **Ortamı:**
-  - Azure
-  - Azure Çin
-  - Azure kamu
-- **Açıklamalar:** bu sürümü Windows Server 2016 Technical Preview içinde yer alan DSC kullanır; diğer işletim sistemleri için yükler [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (yeniden başlatma gerektirir WMF yükleme).
-- **Yeni özellikler:**
-  - DSC uzantı şimdi üzerinde Azure Çin'e dahil edilmiş. Bu sürüm öncelikle uzantısı Azure Çin üzerinde çalıştırmak için düzeltmeler içerir.
 
 ## <a name="supported-versions"></a>Desteklenen sürümleri
 
