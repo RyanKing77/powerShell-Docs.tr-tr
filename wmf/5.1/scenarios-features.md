@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Yeni senaryolar ve WMF 5.1 Özellikleri
-ms.openlocfilehash: 77b439e61c5802f8ddbc4a0f39923cc8c0c36fe9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
+ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190324"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090372"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Yeni senaryolar ve WMF 5.1 Özellikleri
 
@@ -25,12 +25,12 @@ Sürüm 5.1’den başlayarak, PowerShell çeşitli özellik kümelerini ve plat
 
 - [PowerShell $PSVersionTable kullanarak çalışan sürümünü belirleme](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Get-Module sonuçları PSEdition parametresini kullanarak CompatiblePSEditions göre filtrele](/powershell/module/microsoft.powershell.core/get-module)
-- [Betik yürütme uyumlu bir PowerShell sürümünde çalıştırmadığınız sürece engelle](/powershell/gallery/psget/script/scriptwithpseditionsupport)
-- [Bir modülün uyumluluk belirli PowerShell sürümleri için bildirme](/powershell/gallery/psget/module/modulewithpseditionsupport)
+- [Betik yürütme uyumlu bir PowerShell sürümünde çalıştırmadığınız sürece engelle](/powershell/gallery/concepts/script-psedition-support)
+- [Bir modülün uyumluluk belirli PowerShell sürümleri için bildirme](/powershell/gallery/concepts/module-psedition-support)
 
 ## <a name="catalog-cmdlets"></a>Katalog cmdlet'leri
 
-İçinde iki yeni cmdlet'ler eklenmiştir [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) modülü; bunlar oluşturmak ve Windows Katalog dosyaları doğrulayın.
+İçinde iki yeni cmdlet'ler eklenmiştir [Microsoft.PowerShell.Security](/powershell/module/microsoft.powershell.security) modülü; bunlar oluşturmak ve Windows Katalog dosyaları doğrulayın.
 
 ### <a name="new-filecatalog"></a>FileCatalog yeni
 --------------------------------
@@ -57,7 +57,7 @@ Bu, katalog dosyası oluşturur.
 
 ![](../images/CatalogFile2.jpg)
 
-Katalog dosyası (yukarıdaki örnekte, Pester.cat) bütünlüğünü doğrulamak için kullanarak oturum [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet'i.
+Katalog dosyası (yukarıdaki örnekte, Pester.cat) bütünlüğünü doğrulamak için kullanarak oturum [kümesi AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) cmdlet'i.
 
 ### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
@@ -73,7 +73,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 Bu cmdlet tüm dosyaları karmaları karşılaştırır ve bunların göreli yollar bulunan *katalog* bulunanlarla *disk*.
 Herhangi dosya karmaları ve yolları arasında uyuşmazlık algılarsa, durum olarak döndürür *ValidationFailed*.
 Kullanıcılar, tüm bu bilgileri kullanarak alabilir *-ayrıntılı* parametresi.
-Ayrıca Kataloğu'nda imzalama durumunu görüntüler *imza* arama için eşdeğer olan özelliği [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) katalog dosyası cmdlet'ini.
+Ayrıca Kataloğu'nda imzalama durumunu görüntüler *imza* arama için eşdeğer olan özelliği [Get-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Get-AuthenticodeSignature) katalog dosyası cmdlet'ini.
 Kullanıcılar ayrıca atlayabilirsiniz herhangi bir dosya doğrulama sırasında kullanarak *- FilesToSkip* parametresi.
 
 ## <a name="module-analysis-cache"></a>Modül analiz önbelleği
@@ -115,7 +115,7 @@ Daha önce belirli modülü sürüm belirtmek için hiçbir yolu yoktu; Mevcut b
 
 WMF 5.1:
 
-- Kullanabileceğiniz [ModuleSpecification Oluşturucusu (karma)](https://msdn.microsoft.com/library/jj136290).
+- Kullanabileceğiniz [ModuleSpecification Oluşturucusu (karma)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 Bu karma tablosu ile aynı biçimi sahip `Get-Module -FullyQualifiedName`.
 
 **Örnek:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
