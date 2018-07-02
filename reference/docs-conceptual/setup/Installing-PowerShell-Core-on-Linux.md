@@ -21,6 +21,21 @@ Paket yüklendikten sonra çalıştırmak `pwsh` bir terminal gelen.
 [lai]: #linux-appimage
 [tar]: #binary-archives
 
+## <a name="installing-preview-releases"></a>Önizleme sürümleri yükleme
+
+PowerShell çekirdek Önizleme sürümü için bir paket deposu aracılığıyla Linux yüklerken, paket adı değişiklikleri `powershell` için `powershell-preview`.
+
+Doğrudan indirme yükleme, dosya adı dışında değiştirmez.
+
+Çeşitli paket yöneticileri kullanarak kararlı ve önizleme paketleri yüklemek için komutları tablosu aşağıdadır:
+
+|Distrobution(s)|Kararlı komutu | Önizleme komutu |
+|---------------|---------------|-----------------|
+| Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| openSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
+| Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+
 ## <a name="ubuntu-1404"></a>Ubuntu 14.04
 
 ### <a name="installation-via-package-repository---ubuntu-1404"></a>Paket Deposu - Ubuntu 14.04 aracılığıyla yükleme
@@ -59,7 +74,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Lütfen unutmayın `dpkg -i` başarısız unmet bağımlılıkları; sonraki komut `apt-get install -f` Bu çözümler ve daha sonra PowerShell paketi yapılandırma tamamlanır.
+> [!NOTE]
+> `dpkg -i` Komut unmet bağımlılıkları ile başarısız olur.
+> Sonraki komutu `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.
 
 ### <a name="uninstallation---ubuntu-1404"></a>Kaldırma - Ubuntu 14.04
 
@@ -104,7 +121,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Lütfen unutmayın `dpkg -i` başarısız unmet bağımlılıkları; sonraki komut `apt-get install -f` Bu çözümler ve daha sonra PowerShell paketi yapılandırma tamamlanır.
+> [!NOTE]
+> `dpkg -i` Komut unmet bağımlılıkları ile başarısız olur.
+> Sonraki komutu `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.
 
 ### <a name="uninstallation---ubuntu-1604"></a>Kaldırma - Ubuntu 16.04
 
@@ -114,7 +133,8 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1710"></a>Ubuntu 17.10
 
-> Not: Sonra Ubuntu 18.04 desteği eklendi `6.1.0-preview.2`
+> [!NOTE]
+> Sonra Ubuntu 17.04 desteği eklendi `6.1.0-preview.2`
 
 ### <a name="installation-via-package-repository---ubuntu-1710"></a>Paket Deposu - Ubuntu 17.10 aracılığıyla yükleme
 
@@ -151,7 +171,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
 sudo apt-get install -f
 ```
 
-> Lütfen unutmayın `dpkg -i` başarısız unmet bağımlılıkları; sonraki komut `apt-get install -f` Bu çözümler ve daha sonra PowerShell paketi yapılandırma tamamlanır.
+> [!NOTE]
+> `dpkg -i` Komut unmet bağımlılıkları ile başarısız olur.
+> Sonraki komutu `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.
 
 ### <a name="uninstallation---ubuntu-1710"></a>Kaldırma - Ubuntu 17.10
 
@@ -161,7 +183,8 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
-> Not: Sonra Ubuntu 18.04 desteği eklendi `6.1.0-preview.2`
+> [!NOTE]
+> Sonra Ubuntu 18.04 desteği eklendi `6.1.0-preview.2`
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Paket Deposu - Ubuntu 18.04 aracılığıyla yükleme
 
@@ -198,7 +221,9 @@ sudo dpkg -i powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Lütfen unutmayın `dpkg -i` başarısız unmet bağımlılıkları; sonraki komut `apt-get install -f` Bu çözümler ve daha sonra PowerShell paketi yapılandırma tamamlanır.
+> [!NOTE]
+> `dpkg -i` Komut unmet bağımlılıkları ile başarısız olur.
+> Sonraki komutu `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.
 
 ### <a name="uninstallation---ubuntu-1710"></a>Kaldırma - Ubuntu 17.10
 
@@ -248,8 +273,8 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Lütfen unutmayın `dpkg -i` unmet bağımlılıkları ile başarısız olur.
-> Sonraki komutu `apt-get install -f` Bu çözümler ve daha sonra PowerShell paketi yapılandırma tamamlanır.
+> `dpkg -i` Komut unmet bağımlılıkları ile başarısız olur.
+> Sonraki komutu `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.
 
 ### <a name="uninstallation---debian-8"></a>Kaldırma - Debian 8
 
@@ -298,10 +323,6 @@ sudo dpkg -i powershell_6.0.2-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-> [!NOTE]
-> Lütfen unutmayın `dpkg -i` unmet bağımlılıkları ile başarısız olur.
-> Sonraki komutu `apt-get install -f` Bu çözümler ve daha sonra PowerShell paketi yapılandırma tamamlanır.
-
 ### <a name="uninstallation---debian-9"></a>Kaldırma - Debian 9
 
 ```sh
@@ -310,6 +331,7 @@ sudo apt-get remove powershell
 
 ## <a name="centos-7"></a>CentOS 7
 
+> [!NOTE]
 > Bu paket, Oracle Linux 7'de de çalışır.
 
 ### <a name="installation-via-package-repository-preferred---centos-7"></a>Paket (önerilen) - deposu CentOS 7 aracılığıyla yükleme
@@ -396,22 +418,21 @@ sudo yum remove powershell
 
 ## <a name="opensuse-422"></a>OpenSUSE 42.2
 
-> [!NOTE]
-> PowerShell çekirdek yüklerken `zypper` şu hata rapor edebilir:
->
-> ```Output
-> Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
->  Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
->  Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
-> ```
->
-> Bu durumda, doğrulayın uyumlu bir `libcurl` kitaplığı varsa aşağıdaki gösterir komutu denetleyerek `libcurl4` paketini yüklü olarak:
->
-> ```sh
-> zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
-> ```
->
-> Ardından `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` PowerShell paket yüklerken çözümü.
+PowerShell çekirdek yüklerken `zypper` şu hata rapor edebilir:
+
+```Output
+Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
+ Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
+ Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+```
+
+Bu durumda, doğrulayın uyumlu bir `libcurl` kitaplığı varsa aşağıdaki gösterir komutu denetleyerek `libcurl4` paketini yüklü olarak:
+
+```sh
+zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
+```
+
+Ardından `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` PowerShell paket yüklerken çözümü.
 
 ### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Paket (önerilen) - deposu OpenSUSE 42.2 aracılığıyla yükleme
 
@@ -458,7 +479,8 @@ sudo zypper remove powershell
 
 ## <a name="fedora"></a>Fedora
 
-> Lütfen unutmayın, Fedora 28 yalnızca PowerShell çekirdek 6.1 ve sonraki sürümleri desteklenir.
+> [!NOTE]
+> Fedora 28 yalnızca PowerShell çekirdek 6.1 ve sonraki sürümleri desteklenir.
 
 ### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Paket (önerilen) - deposu Fedora 27 Fedora 28 aracılığıyla yükleme
 
@@ -510,7 +532,10 @@ sudo dnf remove powershell
 
 ## <a name="arch-linux"></a>Linux arch
 
-PowerShell edinilebilir [Linux arch][] kullanıcı deposu (AUR).
+> [!NOTE]
+> Yay Deneysel desteğidir.
+
+PowerShell edinilebilir [Arch Linux][] kullanıcı deposu (AUR).
 
 * İle derlenebilir [en son sürüm etiketli][arch-release]
 * Nden derlenebilir [ana son yürütme][arch-git]
@@ -520,12 +545,15 @@ AUR paketlerinde saklanır topluluk - resmi desteği yoktur.
 
 AUR paketleri yükleme hakkında daha fazla bilgi için bkz: [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) veya topluluk [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Linux arch]: https://www.archlinux.org/download/
+[Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
 ## <a name="linux-appimage"></a>Linux AppImage
+
+> [!NOTE]
+> Deneysel AppImage desteği
 
 Son Linux dağıtım kullanarak karşıdan AppImage `powershell-6.0.1-x86_64.AppImage` gelen [serbest][] Linux makine sayfaya.
 
@@ -543,6 +571,9 @@ Kullanıcının Linux dağıtım bağımsız olarak çalışır, tek bir ikili p
 [appimage]: http://appimage.org/
 
 ## <a name="kali"></a>Kali
+
+> [!NOTE]
+> Kali desteği Deneysel değil.
 
 ### <a name="installation"></a>Yükleme
 
@@ -579,6 +610,9 @@ sudo dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 ```
 
 ## <a name="raspbian"></a>Raspbian
+
+> [!NOTE]
+> Raspbian desteği Deneysel değil.
 
 Şu anda, PowerShell yalnızca Raspbian Esnetme üzerinde desteklenir.
 

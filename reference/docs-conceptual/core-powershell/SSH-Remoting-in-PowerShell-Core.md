@@ -55,6 +55,22 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+    
+    > [!NOTE]
+    Windows'da OpenSSH için alanları alt sistemi yürütülebilir yollarında çalışmasını engelleyen bir hata var.
+    Bkz: [github'daki bu sorunu daha fazla bilgi için](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    
+    Bir çözüm, boşluk içermeyen Powershell yükleme dizini için bir simgesel oluşturmaktır:
+    
+    ```powershell
+    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    ve alt girin:
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
+    ```
 
     - İsteğe bağlı olarak anahtar kimlik doğrulamasını etkinleştir
 
@@ -74,7 +90,7 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) makinede Kurulumu
 
-1. En son yükleme [Linux için PowerShell çekirdek] Github'dan derleme
+1. En son yükleme [PowerShell çekirdek Linux için] Github'dan derleme
 1. Yükleme [Ubuntu SSH] gerektiğinde
 
     ```bash
@@ -111,7 +127,7 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
 
 1. En son yükleme [PowerShell çekirdek MacOS için] derleme
     - Aşağıdaki adımları izleyerek SSH uzatan iletişimin etkinleştirildiğinden emin olun:
-      - Açık `System Preferences`
+      - açın `System Preferences`
       - ' Yi tıklatın `Sharing`
       - Denetleme `Remote Login` -yazması gerekir `Remote Login: On`
       - Uygun kullanıcıların erişmesine izin vermek
@@ -242,7 +258,7 @@ GitCommitId                    v6.0.0-alpha.17
 1. sudo komutu Linux makinesinde uzaktan oturumunda çalışmaz.
 
 [Windows PowerShell çekirdek]: ../setup/installing-powershell-core-on-windows.md#msi
-[Linux için PowerShell çekirdek]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[PowerShell çekirdek Linux için]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
 [PowerShell çekirdek MacOS için]: ../setup/installing-powershell-core-on-macos.md
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [Yükleme]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
