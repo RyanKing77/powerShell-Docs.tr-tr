@@ -3,34 +3,34 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: ryanpu
-title: Tam yetecek kadar Yönetim (JEA) geliştirmeleri
-ms.openlocfilehash: 47a58a6fae9f3a41ec527ec1f77ac1c196336669
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Yeterli yönetim (JEA) geliştirmeleri
+ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222426"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892729"
 ---
-# <a name="improvements-to-just-enough-administration-jea"></a><span data-ttu-id="d3153-103">Tam yetecek kadar Yönetim (JEA) geliştirmeleri</span><span class="sxs-lookup"><span data-stu-id="d3153-103">Improvements to Just Enough Administration (JEA)</span></span>
+# <a name="improvements-to-just-enough-administration-jea"></a><span data-ttu-id="97b32-103">Yeterli yönetim (JEA) geliştirmeleri</span><span class="sxs-lookup"><span data-stu-id="97b32-103">Improvements to Just Enough Administration (JEA)</span></span>
 
-## <a name="constrained-file-copy-tofrom-jea-endpoints"></a><span data-ttu-id="d3153-104">JEA uç noktalar/gruptan kısıtlanmış dosya kopyalama</span><span class="sxs-lookup"><span data-stu-id="d3153-104">Constrained file copy to/from JEA endpoints</span></span>
+## <a name="constrained-file-copy-tofrom-jea-endpoints"></a><span data-ttu-id="97b32-104">JEA uç öğesine/öğesinden kısıtlanmış dosya kopyalama</span><span class="sxs-lookup"><span data-stu-id="97b32-104">Constrained file copy to/from JEA endpoints</span></span>
 
-<span data-ttu-id="d3153-105">Şimdi dosyalarına uzaktan kopyalayabilirsiniz/bağlanan kullanıcının yalnızca kopyalanamıyor JEA uç noktası ve rest garanti *herhangi* sisteminizdeki dosyası.</span><span class="sxs-lookup"><span data-stu-id="d3153-105">You can now remotely copy files to/from a JEA endpoint and rest assured that the connecting user can't copy just *any* file on your system.</span></span>
-<span data-ttu-id="d3153-106">Kullanıcıların bağlanmak için bir kullanıcı sürücü için PSSC dosyasını yapılandırarak bu mümkündür.</span><span class="sxs-lookup"><span data-stu-id="d3153-106">This is possible by configuring your PSSC file to mount a user drive for connecting users.</span></span>
-<span data-ttu-id="d3153-107">Kullanıcı, bağlanan her kullanıcı için benzersiz olan ve oturumlarında devam ederse yeni bir PSDrive sürücüdür.</span><span class="sxs-lookup"><span data-stu-id="d3153-107">The user drive is a new PSDrive that is unique to each connecting user and persists across sessions.</span></span>
-<span data-ttu-id="d3153-108">Öğeyi Kopyala veya JEA oturumdan dosyaları kopyalamak için kullanıldığında, yalnızca kullanıcı sürücü erişmesine izin vermek için sınırlı değildir.</span><span class="sxs-lookup"><span data-stu-id="d3153-108">When Copy-Item is used to copy files to or from a JEA session, it is constrained to only allow access to the user drive.</span></span>
-<span data-ttu-id="d3153-109">Dosyaları kopyalamak için başka bir PSDrive girişimleri başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="d3153-109">Attempts to copy files to any other PSDrive will fail.</span></span>
+<span data-ttu-id="97b32-105">Artık dosyaları uzaktan kopyalayabilirsiniz/bağlanan kullanıcının yalnızca kopyalanamıyor bir JEA uç noktası ve rest garanti *herhangi* dosya sisteminize.</span><span class="sxs-lookup"><span data-stu-id="97b32-105">You can now remotely copy files to/from a JEA endpoint and rest assured that the connecting user can't copy just *any* file on your system.</span></span>
+<span data-ttu-id="97b32-106">Kullanıcıları bağlamak için bir kullanıcı sürücü için PSSC dosyanızı yapılandırarak bu mümkündür.</span><span class="sxs-lookup"><span data-stu-id="97b32-106">This is possible by configuring your PSSC file to mount a user drive for connecting users.</span></span>
+<span data-ttu-id="97b32-107">Kullanıcı oturumu arasında kalıcıdır ve bağlanan her kullanıcı için benzersiz bir yeni PSDrive sürücüdür.</span><span class="sxs-lookup"><span data-stu-id="97b32-107">The user drive is a new PSDrive that is unique to each connecting user and persists across sessions.</span></span>
+<span data-ttu-id="97b32-108">Zaman `Copy-Item` olduğu için veya bir JEA oturumdan dosyaları kopyalamak için kullanılan, onu yalnızca kullanıcı sürücüye erişime izin vermek için sınırlıdır.</span><span class="sxs-lookup"><span data-stu-id="97b32-108">When `Copy-Item` is used to copy files to or from a JEA session, it is constrained to only allow access to the user drive.</span></span>
+<span data-ttu-id="97b32-109">Dosyaları kopyalamak için başka bir PSDrive girişimleri başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="97b32-109">Attempts to copy files to any other PSDrive will fail.</span></span>
 
-<span data-ttu-id="d3153-110">Kullanıcı bir sürücünün JEA oturum yapılandırma dosyanızda ayarlamak için aşağıdaki yeni alanları kullanın:</span><span class="sxs-lookup"><span data-stu-id="d3153-110">To set up the user drive in your JEA session configuration file, use the following new fields:</span></span>
+<span data-ttu-id="97b32-110">Kullanıcı bir sürücünün JEA oturum yapılandırma dosyanızda ayarlamak için aşağıdaki yeni alanları kullanın:</span><span class="sxs-lookup"><span data-stu-id="97b32-110">To set up the user drive in your JEA session configuration file, use the following new fields:</span></span>
 
 ```powershell
 MountUserDrive = $true
 UserDriveMaximumSize = 10485760    # 10 MB
 ```
 
-<span data-ttu-id="d3153-111">Kullanıcı sürücüsünde yedekleme klasörü oluşturulur `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`</span><span class="sxs-lookup"><span data-stu-id="d3153-111">The folder backing the user drive will be created at `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`</span></span>
+<span data-ttu-id="97b32-111">Kullanıcı sürücünün yedekleme klasörü oluşturulur `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`</span><span class="sxs-lookup"><span data-stu-id="97b32-111">The folder backing the user drive will be created at `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`</span></span>
 
-<span data-ttu-id="d3153-112">Kullanıcı sürücü kullanmak ve/kullanıcı sürücü kullanıma sunmak için yapılandırılmış bir JEA uç noktasından dosyaları kopyalamak için kullanın `-ToSession` ve `-FromSession` Copy-Item parametreleri.</span><span class="sxs-lookup"><span data-stu-id="d3153-112">To utilize the user drive and copy files to/from a JEA endpoint configured to expose the User drive, use the `-ToSession` and `-FromSession` parameters on Copy-Item.</span></span>
+<span data-ttu-id="97b32-112">Kullanıcı sürücü yazılımınız ve/kullanıcı sürücü kullanıma sunmak için yapılandırılmış bir JEA uç noktasından dosyaları kopyalamak için kullanın `-ToSession` ve `-FromSession` parametrelere `Copy-Item`.</span><span class="sxs-lookup"><span data-stu-id="97b32-112">To utilize the user drive and copy files to/from a JEA endpoint configured to expose the User drive, use the `-ToSession` and `-FromSession` parameters on `Copy-Item`.</span></span>
 
 ```powershell
 # Connect to the JEA endpoint
@@ -44,15 +44,15 @@ Copy-Item -Path .\SampleFile.txt -Destination User: -ToSession $jeasession
 Copy-Item -Path User:\SampleFile.txt -Destination . -FromSession $jeasession
 ```
 
-<span data-ttu-id="d3153-113">Ardından, kullanıcı sürücüde depolanan verileri işlemek ve bu kullanıcılara Rol Yetenek dosyanızdaki kullanılabilir yapmak için özel işlevler de yazabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="d3153-113">You can then write custom functions to process the data stored in the user drive and make those available to users in your Role Capability file.</span></span>
+<span data-ttu-id="97b32-113">Ardından, kullanıcı sürücüde depolanan verileri işlemek ve kullanıcı rolü özelliği için kullanılabilir hale özel işlevler yazabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="97b32-113">You can then write custom functions to process the data stored in the user drive and make those available to users in your Role Capability file.</span></span>
 
-## <a name="support-for-group-managed-service-accounts"></a><span data-ttu-id="d3153-114">Destek grubu için Yönetilen hizmet hesapları</span><span class="sxs-lookup"><span data-stu-id="d3153-114">Support for Group Managed Service Accounts</span></span>
+## <a name="support-for-group-managed-service-accounts"></a><span data-ttu-id="97b32-114">Destek grubu için Yönetilen hizmet hesapları</span><span class="sxs-lookup"><span data-stu-id="97b32-114">Support for Group Managed Service Accounts</span></span>
 
-<span data-ttu-id="d3153-115">Bazı durumlarda, yerel makine ötesindeki kaynaklara erişmek bir kullanıcı bir JEA oturumda gerçekleştirmek için gereken bir görev gerekebilir.</span><span class="sxs-lookup"><span data-stu-id="d3153-115">In some cases, a task a user needs to perform in a JEA session may need to access resources beyond the local machine.</span></span>
-<span data-ttu-id="d3153-116">JEA oturum sanal bir hesabı kullanacak şekilde yapılandırıldığında, her türlü girişim gibi kaynaklara ulaşmak için yerel makinenin kimliğini, değil sanal hesap veya bağlı olan kullanıcı gelen görünecektir.</span><span class="sxs-lookup"><span data-stu-id="d3153-116">When a JEA session is configured to use a virtual account, any attempt to reach such resources will appear to come from the local machine's identity, not the virtual account or connected user.</span></span>
-<span data-ttu-id="d3153-117">TP5 içinde biz JEA bağlamı altında çalışırken desteğini etkinleştirdiyseniz [grup yönetilen hizmet hesabı](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx) , bir etki alanı kimliği kullanarak ağ kaynaklarına erişmek çok daha kolay.</span><span class="sxs-lookup"><span data-stu-id="d3153-117">In TP5, we have enabled support for running JEA under the context of a [Group Managed Service Account](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), making it much easier to access network resources by using a domain identity.</span></span>
+<span data-ttu-id="97b32-115">Bazı durumlarda, bir kullanıcı bir JEA oturumda gerçekleştirmesi gereken bir görevi, yerel makine ötesindeki kaynaklara gerekebilir.</span><span class="sxs-lookup"><span data-stu-id="97b32-115">In some cases, a task a user needs to perform in a JEA session may need to access resources beyond the local machine.</span></span>
+<span data-ttu-id="97b32-116">Bir JEA oturumu, sanal bir hesabı kullanacak şekilde yapılandırıldığında, yerel makinenin kimlik, olmayan sanal hesap veya bağlı durumda olan kullanıcı gelen gibi kaynaklarına ulaşmak için her türlü girişim görünecektir.</span><span class="sxs-lookup"><span data-stu-id="97b32-116">When a JEA session is configured to use a virtual account, any attempt to reach such resources will appear to come from the local machine's identity, not the virtual account or connected user.</span></span>
+<span data-ttu-id="97b32-117">JEA [grup yönetilen hizmet hesabı] bağlamı altında çalıştırmak için desteği etkinleştirdik TP5'te (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), bir etki alanı kimliği'ni kullanarak ağ kaynaklarına erişmek çok daha kolay hale getirme.</span><span class="sxs-lookup"><span data-stu-id="97b32-117">In TP5, we have enabled support for running JEA under the context of a [Group Managed Service Account](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), making it much easier to access network resources by using a domain identity.</span></span>
 
-<span data-ttu-id="d3153-118">JEA oturum gMSA hesabı altında çalışacak şekilde yapılandırmak için aşağıdaki yeni anahtarı PSSC dosyanızda kullanın:</span><span class="sxs-lookup"><span data-stu-id="d3153-118">To configure a JEA session to run under a gMSA account, use the following new key in your PSSC file:</span></span>
+<span data-ttu-id="97b32-118">Bir JEA oturumu gMSA hesabı altında çalışacak şekilde yapılandırmak için aşağıdaki yeni anahtarı PSSC dosyanızda kullanın:</span><span class="sxs-lookup"><span data-stu-id="97b32-118">To configure a JEA session to run under a gMSA account, use the following new key in your PSSC file:</span></span>
 
 ```powershell
 # Provide the name of your gMSA account here (don't include a trailing $)
@@ -64,19 +64,20 @@ GroupManagedServiceAccount = 'myGMSAforJEA'
 RunAsVirtualAccount = $false
 ```
 
-> <span data-ttu-id="d3153-119">**Not:** Grup yönetilen hizmet hesapları yalıtım veya sanal hesaplar sınırlı kapsamını göze değil.</span><span class="sxs-lookup"><span data-stu-id="d3153-119">**Note:** Group Managed Service Accounts do not afford the isolation or limited scope of virtual accounts.</span></span>
-> <span data-ttu-id="d3153-120">Bağlanan her kullanıcının kuruluş genelinde izniniz olmayabilir aynı gMSA kimlik paylaşır.</span><span class="sxs-lookup"><span data-stu-id="d3153-120">Every connecting user will share the same gMSA identity, which may have permissions across your entire enterprise.</span></span>
-> <span data-ttu-id="d3153-121">Bir gmsa'yı kullanın ve her zaman mümkün olduğunda yerel makineye sınırlı sanal hesapları tercih seçerken dikkatli olun.</span><span class="sxs-lookup"><span data-stu-id="d3153-121">Be very careful when selecting to use a gMSA, and always prefer virtual accounts which are limited to the local machine when possible.</span></span>
+> [!NOTE]
+> <span data-ttu-id="97b32-119">Grup yönetilen hizmet hesapları yalıtım veya sanal hesaplar sınırlı kapsamı göze değil.</span><span class="sxs-lookup"><span data-stu-id="97b32-119">Group Managed Service Accounts do not afford the isolation or limited scope of virtual accounts.</span></span>
+> <span data-ttu-id="97b32-120">Bağlanan her kullanıcı izinlerinizi kuruluş genelinde aynı gMSA kimlik paylaşır.</span><span class="sxs-lookup"><span data-stu-id="97b32-120">Every connecting user will share the same gMSA identity, which may have permissions across your entire enterprise.</span></span>
+> <span data-ttu-id="97b32-121">Bir gmsa'yı kullanın ve her zaman mümkün olduğunda yerel makineye sınırlı olan sanal hesaplar tercih seçerken dikkatli olun.</span><span class="sxs-lookup"><span data-stu-id="97b32-121">Be very careful when selecting to use a gMSA, and always prefer virtual accounts which are limited to the local machine when possible.</span></span>
 
-## <a name="conditional-access-policies"></a><span data-ttu-id="d3153-122">Koşullu erişim ilkeleri</span><span class="sxs-lookup"><span data-stu-id="d3153-122">Conditional access policies</span></span>
+## <a name="conditional-access-policies"></a><span data-ttu-id="97b32-122">Koşullu erişim ilkeleri</span><span class="sxs-lookup"><span data-stu-id="97b32-122">Conditional access policies</span></span>
 
-<span data-ttu-id="d3153-123">JEA, ne yapmalı yönetmek için bir sistem, ayrıca sınırlamak istiyorsanız bağlı zaman birisi neler yapabileceğinizi sınırlama en büyük *zaman* birisi JEA kullanabilirsiniz?</span><span class="sxs-lookup"><span data-stu-id="d3153-123">JEA is great at limiting what someone can do when they've connected to a system to manage it, but what if you also want to limit *when* someone can use JEA?</span></span>
-<span data-ttu-id="d3153-124">Güvenlik grupları bir kullanıcı bir JEA oturumu için ait olmalıdır belirtmenize izin vermek için yapılandırma seçenekleri oturum yapılandırma dosyalarına (.pssc) ekledik.</span><span class="sxs-lookup"><span data-stu-id="d3153-124">We have added configuration options into the session configuration files (.pssc) to let you specify security groups to which a user must belong in order to establish a JEA session.</span></span>
-<span data-ttu-id="d3153-125">Ortamınızda yalnızca içinde anında (JIT) sistem varsa ve kullanıcılarınızın kendi ayrıcalıklarını bir yüksek ayrıcalıklı JEA uç noktası erişmeden önce yükseltme yapmak istediğiniz bu özellikle yararlı olabilir.</span><span class="sxs-lookup"><span data-stu-id="d3153-125">This can be particularly helpful if you have a Just In Time (JIT) system in your environment, and want to make your users elevate their privileges before accessing a highly-privileged JEA endpoint.</span></span>
+<span data-ttu-id="97b32-123">JEA olduğunda bunlar, ne yapmalı yönetmek için bir sisteme ayrıca sınırlamak istiyorsanız bağlandıktan birinin neler yapabileceğinizi sınırlama en harika *olduğunda* birisi JEA kullanabilir miyim?</span><span class="sxs-lookup"><span data-stu-id="97b32-123">JEA is great at limiting what someone can do when they've connected to a system to manage it, but what if you also want to limit *when* someone can use JEA?</span></span>
+<span data-ttu-id="97b32-124">Güvenlik grupları bir kullanıcı bir JEA oturumu için ait olmalıdır belirtmenizi sağlar oturum yapılandırma dosyalarına (.pssc) yapılandırma seçeneği ekledik.</span><span class="sxs-lookup"><span data-stu-id="97b32-124">We have added configuration options into the session configuration files (.pssc) to let you specify security groups to which a user must belong in order to establish a JEA session.</span></span>
+<span data-ttu-id="97b32-125">Ortamınızda yalnızca zamanında (JIT) sisteminiz ve kullanıcılarınızın üst düzeyde ayrıcalıklı bir JEA uç noktası erişmeden önce kendi ayrıcalıklarını yükseltme yapmak istiyorsanız bu özellikle yararlı olabilir.</span><span class="sxs-lookup"><span data-stu-id="97b32-125">This can be particularly helpful if you have a Just In Time (JIT) system in your environment, and want to make your users elevate their privileges before accessing a highly-privileged JEA endpoint.</span></span>
 
-<span data-ttu-id="d3153-126">Yeni *RequiredGroups* PSSC dosyasında alan bir kullanıcı için JEA bağlanabildiğinizi belirlemek için mantığı belirtmenize olanak verir.</span><span class="sxs-lookup"><span data-stu-id="d3153-126">The new *RequiredGroups* field in the PSSC file allows you to specify the logic to determine if a user can connect to JEA.</span></span>
-<span data-ttu-id="d3153-127">Kullanır (isteğe bağlı olarak iç içe) bir hashtable belirtme oluşur 'Ve' ve 'Veya' anahtarları kurallarınızı oluşturmak için.</span><span class="sxs-lookup"><span data-stu-id="d3153-127">It consists of specifying a hashtable (optionally nested) that uses the 'And' and 'Or' keys to construct your rules.</span></span>
-<span data-ttu-id="d3153-128">Bu alan yararlanmak nasıl bazı örnekleri şunlardır:</span><span class="sxs-lookup"><span data-stu-id="d3153-128">Here are some examples of how to leverage this field:</span></span>
+<span data-ttu-id="97b32-126">Yeni *RequiredGroups* PSSC dosyasında alan, bir kullanıcı için JEA bağlanabildiğini belirlemek için mantığı belirtmenize olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="97b32-126">The new *RequiredGroups* field in the PSSC file allows you to specify the logic to determine if a user can connect to JEA.</span></span>
+<span data-ttu-id="97b32-127">Kullanır (isteğe bağlı olarak iç içe) bir hashtable belirtme oluşur 'Ve' ve 'Veya' anahtarlar kurallarınızı oluşturmak için.</span><span class="sxs-lookup"><span data-stu-id="97b32-127">It consists of specifying a hashtable (optionally nested) that uses the 'And' and 'Or' keys to construct your rules.</span></span>
+<span data-ttu-id="97b32-128">Bu alan kullanmayı bazı örnekleri aşağıda verilmiştir:</span><span class="sxs-lookup"><span data-stu-id="97b32-128">Here are some examples of how to leverage this field:</span></span>
 
 ```powershell
 # Example 1: Connecting users must belong to a security group called "elevated-jea"
@@ -90,6 +91,7 @@ RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
-## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a><span data-ttu-id="d3153-129">Sabit: Sanal hesapları artık Windows Server 2008 R2'de desteklenir</span><span class="sxs-lookup"><span data-stu-id="d3153-129">Fixed: Virtual accounts are now supported on Windows Server 2008 R2</span></span>
-<span data-ttu-id="d3153-130">WMF 5.1, Windows Server 2008 tutarlı yapılandırmalar ve özellik eşliği Windows Server 2008 R2 - 2016 etkinleştirme R2 sanal hesaplar kullanabilmek için sunulmuştur.</span><span class="sxs-lookup"><span data-stu-id="d3153-130">In WMF 5.1, you are now able to use virtual accounts on Windows Server 2008 R2, enabling consistent configurations and feature parity across Windows Server 2008 R2 - 2016.</span></span>
-<span data-ttu-id="d3153-131">Sanal hesaplar JEA Windows 7'de kullanırken desteklenmeyen kalır.</span><span class="sxs-lookup"><span data-stu-id="d3153-131">Virtual accounts remain unsupported when using JEA on Windows 7.</span></span>
+## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a><span data-ttu-id="97b32-129">Düzeltildi: Sanal hesaplar artık Windows Server 2008 R2 üzerinde desteklenir</span><span class="sxs-lookup"><span data-stu-id="97b32-129">Fixed: Virtual accounts are now supported on Windows Server 2008 R2</span></span>
+
+<span data-ttu-id="97b32-130">WMF 5.1, artık Windows Server 2008 tutarlı yapılandırmalar ve özellik eşliği arasında Windows Server 2008 R2 - 2016 etkinleştirme R2 sanal hesaplar kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="97b32-130">In WMF 5.1, you are now able to use virtual accounts on Windows Server 2008 R2, enabling consistent configurations and feature parity across Windows Server 2008 R2 - 2016.</span></span>
+<span data-ttu-id="97b32-131">Jea'yı, Windows 7'de kullanırken sanal hesaplar desteklenmeyen kalır.</span><span class="sxs-lookup"><span data-stu-id="97b32-131">Virtual accounts remain unsupported when using JEA on Windows 7.</span></span>

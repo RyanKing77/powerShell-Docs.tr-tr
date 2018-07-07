@@ -1,45 +1,47 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: f545461fd325049d0de4c651d7aa7d50d475eaca
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2f05fe96ec792a31fabf3aff0f9e18b40178316c
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221963"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893197"
 ---
-# <a name="packagemanagement-cmdlets"></a><span data-ttu-id="1fbb5-102">PackageManagement Cmdlet’leri</span><span class="sxs-lookup"><span data-stu-id="1fbb5-102">PackageManagement Cmdlets</span></span>
-<span data-ttu-id="1fbb5-103">Yazılım bulma, yükleme ve envanter (SDII) desteklemek için PackageManagement çekirdek budur.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="1fbb5-104">Bu işlemler için cmdlet'ler deneyin:</span><span class="sxs-lookup"><span data-stu-id="1fbb5-104">Try out the cmdlets for these operations:</span></span>
--   <span data-ttu-id="1fbb5-105">Paket Bul</span><span class="sxs-lookup"><span data-stu-id="1fbb5-105">Find-Package</span></span>
--   <span data-ttu-id="1fbb5-106">Find-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="1fbb5-106">Find-PackageProvider</span></span>
--   <span data-ttu-id="1fbb5-107">Get-Package</span><span class="sxs-lookup"><span data-stu-id="1fbb5-107">Get-Package</span></span>
--   <span data-ttu-id="1fbb5-108">Get-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="1fbb5-108">Get-PackageProvider</span></span>
--   <span data-ttu-id="1fbb5-109">Get-PackageSource</span><span class="sxs-lookup"><span data-stu-id="1fbb5-109">Get-PackageSource</span></span>
--   <span data-ttu-id="1fbb5-110">Import-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="1fbb5-110">Import-PackageProvider</span></span>
--   <span data-ttu-id="1fbb5-111">Install-Package</span><span class="sxs-lookup"><span data-stu-id="1fbb5-111">Install-Package</span></span>
--   <span data-ttu-id="1fbb5-112">Install-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="1fbb5-112">Install-PackageProvider</span></span>
--   <span data-ttu-id="1fbb5-113">Register-PackageSource</span><span class="sxs-lookup"><span data-stu-id="1fbb5-113">Register-PackageSource</span></span>
--   <span data-ttu-id="1fbb5-114">Kaydet-Package</span><span class="sxs-lookup"><span data-stu-id="1fbb5-114">Save-Package</span></span>
--   <span data-ttu-id="1fbb5-115">Set-PackageSource</span><span class="sxs-lookup"><span data-stu-id="1fbb5-115">Set-PackageSource</span></span>
--   <span data-ttu-id="1fbb5-116">Kaldırma paketi</span><span class="sxs-lookup"><span data-stu-id="1fbb5-116">Uninstall-Package</span></span>
--   <span data-ttu-id="1fbb5-117">Unregister-PackageSource</span><span class="sxs-lookup"><span data-stu-id="1fbb5-117">Unregister-PackageSource</span></span>
+# <a name="packagemanagement-cmdlets"></a><span data-ttu-id="2e556-102">PackageManagement Cmdlet’leri</span><span class="sxs-lookup"><span data-stu-id="2e556-102">PackageManagement Cmdlets</span></span>
 
-<span data-ttu-id="1fbb5-118">PowerShell modülü PackageManagement olduğu gibi PackageManagement kendisini güncelleştirmek için aşağıdakileri yapabilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="1fbb5-118">As PackageManagement is a PowerShell module, you can do the following to update PackageManagement itself:</span></span>
+<span data-ttu-id="2e556-103">Yazılım bulma, yükleme veya envanterini (SDII) desteklemek için PackageManagement setinin budur.</span><span class="sxs-lookup"><span data-stu-id="2e556-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="2e556-104">Bu işlemler için cmdlet'ler deneyin:</span><span class="sxs-lookup"><span data-stu-id="2e556-104">Try out the cmdlets for these operations:</span></span>
+
+- `Find-Package`
+- `Find-PackageProvider`
+- `Get-Package`
+- `Get-PackageProvider`
+- `Get-PackageSource`
+- `Import-PackageProvider`
+- `Install-Package`
+- `Install-PackageProvider`
+- `Register-PackageSource`
+- `Save-Package`
+- `Set-PackageSource`
+- `Uninstall-Package`
+- `Unregister-PackageSource`
+
+<span data-ttu-id="2e556-105">Bir PowerShell modülü PackageManagement olduğu gibi PackageManagement kendisini güncelleştirmek için aşağıdakileri yapabilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="2e556-105">As PackageManagement is a PowerShell module, you can do the following to update PackageManagement itself:</span></span>
+
 ```powershell
-PS C:\> Install-Module PackageManagement –Force
+Install-Module PackageManagement –Force
 ```
-<span data-ttu-id="1fbb5-119">Bu durumda, PackageManagement yeni sürümüne geçiş için PowerShell oturumu yeniden girmeniz gerekecek.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-119">In this case, you will have to re-enter PowerShell session to switch to the new version of PackageManagement.</span></span>
 
-## <a name="find-package-cmdlethttpstechnetmicrosoftcomlibrarydn890709aspx"></a>[<span data-ttu-id="1fbb5-120">Bul-Package cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-120">Find-Package Cmdlet</span></span>](https://technet.microsoft.com/library/dn890709.aspx)
-<span data-ttu-id="1fbb5-121">Bu cmdlet, yazılım paketlerini kullanarak kullanılabilir paket kaynakları bulma paket sağlayıcıları yüklenen sağlar.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-121">This cmdlet allows discovery of software packages in available package sources using loaded package providers.</span></span>
+<span data-ttu-id="2e556-106">Bu durumda, PackageManagement yeni sürümüne geçiş yapmak için PowerShell oturumunda yeniden girmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="2e556-106">In this case, you will have to re-enter PowerShell session to switch to the new version of PackageManagement.</span></span>
+
+## <a name="find-package-cmdletpowershellmodulepackagemanagementfind-package"></a>[<span data-ttu-id="2e556-107">Bul-Package cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-107">Find-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Find-Package)
+
+<span data-ttu-id="2e556-108">Bu cmdlet, paket sağlayıcıları bulma kullanılabilir paket kaynaklarını kullanan yazılım paketlerinin yüklü sağlar.</span><span class="sxs-lookup"><span data-stu-id="2e556-108">This cmdlet allows discovery of software packages in available package sources using loaded package providers.</span></span>
+
 ```powershell
 # Find all available Windows PowerShell module packages from galleries registered
 # with PowerShellGet provider
-Find-Package -Provider PowerShellGet -Source PSGallery
-
-# Find a package from a provider that is not yet installed
-# This will bootstrap NuGet provider and then search for jquery package using NuGet
-# with <http://www.nuget.org/api/v2/> as source
+Find-Package -ProviderName PowerShellGet -Source as source
 Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 
 # Find package with name and version
@@ -50,10 +52,12 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomlibrarymt676544aspx"></a>[<span data-ttu-id="1fbb5-122">Bul PackageProvider cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-122">Find-PackageProvider Cmdlet</span></span>](https://technet.microsoft.com/library/mt676544.aspx)
-<span data-ttu-id="1fbb5-123">Bul PackageProvider cmdlet ile PowerShellGet kayıtlı paket kaynaklarını kullanılabilir eşleşen PackageManagement sağlayıcısı bulur.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-123">The Find-PackageProvider cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet.</span></span> <span data-ttu-id="1fbb5-124">Bu paket yükleme PackageProvider cmdlet ile yükleme için kullanılabilir sağlayıcılarıdır.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-124">These are package providers available for installation with the Install-PackageProvider cmdlet.</span></span> <span data-ttu-id="1fbb5-125">Varsayılan olarak, bu 'PackageManagement' ve 'Provider' etiketleri PowerShell galerisinde kullanılabilir modül içerir.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-125">By default, this includes modules available in the PowerShell Gallery with the 'PackageManagement' and 'Provider' Tags.</span></span>
+## <a name="find-packageprovider-cmdletpowershellmodulepackagemanagementfind-packageprovider"></a>[<span data-ttu-id="2e556-109">Bul PackageProvider cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-109">Find-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Find-PackageProvider)
 
-<span data-ttu-id="1fbb5-126">Bul PackageProvider PackageManagement azure blob depolama burada PackageManagement boostrapper Sağlayıcısı'nı bulma ve bunları yükleme için kullanırız kullanılabilir eşleşen PackageManagement sağlayıcısı da bulur.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-126">Find-PackageProvider also finds matching PackageManagement providers that are available in the PackageManagement azure blob store where we use the PackageManagement boostrapper provider for finding and installing them.</span></span>
+<span data-ttu-id="2e556-110">`Find-PackageProvider` Cmdlet'i ile PowerShellGet kayıtlı paket kaynakları kullanılabilir PackageManagement sağlayıcıları eşleşen bulur.</span><span class="sxs-lookup"><span data-stu-id="2e556-110">The `Find-PackageProvider` cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet.</span></span> <span data-ttu-id="2e556-111">Bu paket sağlayıcıları ile yükleme için kullanılabilir olan `Install-PackageProvider` cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="2e556-111">These are package providers available for installation with the `Install-PackageProvider` cmdlet.</span></span> <span data-ttu-id="2e556-112">Varsayılan olarak, bu 'PackageManagement' ve 'Provider' etiketleri PowerShell galerisinde kullanılabilir modül içerir.</span><span class="sxs-lookup"><span data-stu-id="2e556-112">By default, this includes modules available in the PowerShell Gallery with the 'PackageManagement' and 'Provider' Tags.</span></span>
+
+<span data-ttu-id="2e556-113">`Find-PackageProvider` Ayrıca burada PackageManagement boostrapper sağlayıcısı bulmak ve onları yüklemek için kullandığımız PackageManagement azure blob depolama, kullanılabilir eşleşen PackageManagement sağlayıcıları bulur.</span><span class="sxs-lookup"><span data-stu-id="2e556-113">`Find-PackageProvider` also finds matching PackageManagement providers that are available in the PackageManagement azure blob store where we use the PackageManagement boostrapper provider for finding and installing them.</span></span>
+
 ```powershell
 #Find all available package providers in PackageManagement azure blob store as well as in PowerShellGallery.com
 Find-PackageProvider
@@ -65,8 +69,10 @@ Find-PackageProvider -Name "Nuget" -AllVersions
 Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 ```
 
-## <a name="get-package-cmdlethttpstechnetmicrosoftcomlibrarydn890704aspx"></a>[<span data-ttu-id="1fbb5-127">Get-Package cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-127">Get-Package Cmdlet</span></span>](https://technet.microsoft.com/library/dn890704.aspx)
-<span data-ttu-id="1fbb5-128">Bu cmdlet PackageManagement kullanılarak yüklenen tüm yazılım paketlerinin listesini döndürür.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-128">This cmdlet returns a list of all software packages that have been installed using PackageManagement.</span></span>
+## <a name="get-package-cmdletpowershellmodulepackagemanagementget-package"></a>[<span data-ttu-id="2e556-114">Get-Package cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-114">Get-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Get-Package)
+
+<span data-ttu-id="2e556-115">Bu cmdlet, PackageManagement kullanarak yüklenen tüm yazılım paketlerinin listesini döndürür.</span><span class="sxs-lookup"><span data-stu-id="2e556-115">This cmdlet returns a list of all software packages that have been installed using PackageManagement.</span></span>
+
 ```powershell
 # Get all the packages installed by Programs provider
 Get-Package –Provider Programs
@@ -76,8 +82,10 @@ Get-Package –Provider Programs
 Get-Package –Provider NuGet -Destination c:\test
 ```
 
-## <a name="get-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890703aspx"></a>[<span data-ttu-id="1fbb5-129">Get-PackageProvider cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-129">Get-PackageProvider Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890703.aspx)
-<span data-ttu-id="1fbb5-130">Yüklenen ve yerel makinede kullanılacak hazır paket sağlayıcıları cmdlet'ini kullanarak envantere kaydedilmiş.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-130">Package providers that are loaded and ready to be used on the local machine can be inventoried by using the cmdlet.</span></span>
+## <a name="get-packageprovider-cmdletpowershellmodulepackagemanagementget-packageprovider"></a>[<span data-ttu-id="2e556-116">Get-PackageProvider cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-116">Get-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Get-PackageProvider)
+
+<span data-ttu-id="2e556-117">Cmdlet'ini kullanarak yüklenir ve yerel makine üzerinde kullanılmaya hazır olan paket sağlayıcıları envantere kaydedilmiş.</span><span class="sxs-lookup"><span data-stu-id="2e556-117">Package providers that are loaded and ready to be used on the local machine can be inventoried by using the cmdlet.</span></span>
+
 ```powershell
 # Get all currently loaded package providers
 Get-PackageProvider
@@ -86,9 +94,11 @@ Get-PackageProvider
 Get-PackageProvider -ListAvailable
 ```
 
-## <a name="get-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890705aspx"></a>[<span data-ttu-id="1fbb5-131">Get-PackageSource cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-131">Get-PackageSource Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890705.aspx)
-<span data-ttu-id="1fbb5-132">Bu cmdlet için bir paket sağlayıcı kayıtlı paket kaynaklarını listesini alır.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-132">This cmdlet gets a list of package sources that are registered for a package provider.</span></span>
-```powershelll
+## <a name="get-packagesource-cmdletpowershellmodulepackagemanagementget-packagesource"></a>[<span data-ttu-id="2e556-118">Get-PackageSource cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-118">Get-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Get-PackageSource)
+
+<span data-ttu-id="2e556-119">Bu cmdlet için bir paket sağlayıcısı kayıtlı paket kaynaklarını listesini alır.</span><span class="sxs-lookup"><span data-stu-id="2e556-119">This cmdlet gets a list of package sources that are registered for a package provider.</span></span>
+
+```powershell
 # Get all package sources
 Get-PackageSource
 
@@ -96,8 +106,10 @@ Get-PackageSource
 Get-PackageSource –ProviderName PowerShellGet
 ```
 
-## <a name="import-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676545aspx"></a>[<span data-ttu-id="1fbb5-133">İçeri aktarma PackageProvider cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-133">Import-PackageProvider Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/mt676545.aspx)
-<span data-ttu-id="1fbb5-134">Bu cmdlet geçerli oturuma paket Yönetim Paketi sağlayıcılar ekler.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-134">This cmdlet adds Package Management package providers to the current session.</span></span>
+## <a name="import-packageprovider-cmdletpowershellmodulepackagemanagementimport-packageprovider"></a>[<span data-ttu-id="2e556-120">İçeri aktarma PackageProvider cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-120">Import-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Import-PackageProvider)
+
+<span data-ttu-id="2e556-121">Bu cmdlet, geçerli oturum için paket Yönetimi Paketi sağlayıcıları ekler.</span><span class="sxs-lookup"><span data-stu-id="2e556-121">This cmdlet adds Package Management package providers to the current session.</span></span>
+
 ```powershell
 # Import a package provider from the local machine
 Import-PackageProvider –Name MyProvider
@@ -118,9 +130,10 @@ Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 ```
 
-##<a name="-install-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890711aspx"></a>[<span data-ttu-id="1fbb5-135"> Install-Package cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-135"> Install-Package Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890711.aspx)
+## <a name="-install-package-cmdletpowershellmodulepackagemanagementinstall-package"></a>[<span data-ttu-id="2e556-122"> Install-Package cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-122"> Install-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Install-Package)
 
-<span data-ttu-id="1fbb5-136">Bu cmdlet'i kullanarak kullanılabilir paket kaynakları içindeki yazılım paketlerini yükleme paketini sağlayıcıları yüklenen sağlar.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-136">This cmdlet allows installation of software packages in available package sources using loaded package providers.</span></span>
+<span data-ttu-id="2e556-123">Bu cmdlet'i, kullanılabilir paket kaynaklarını kullanan yazılım paketlerinin yükleme paketi sağlayıcıları yüklendi sağlar.</span><span class="sxs-lookup"><span data-stu-id="2e556-123">This cmdlet allows installation of software packages in available package sources using loaded package providers.</span></span>
+
 ```powershell
 # Install a package by name.
 # NuGet provider requires us to provide the dynamic parameter destination path
@@ -132,8 +145,10 @@ Install-Package -Name jquery -Source nuget.org -Destination c:\test
 Find-Package -Name jquery –Provider NuGet | Install-Package -Destination c:\test
 ```
 
-## <a name="install-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676543aspx"></a>[<span data-ttu-id="1fbb5-137">Yükleme PackageProvider cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-137">Install-PackageProvider Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/mt676543.aspx)
-<span data-ttu-id="1fbb5-138">Bu cmdlet, bir veya daha fazla paket Yönetimi Paketi sağlayıcı yükler.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-138">This cmdlet installs one or more Package Management package providers.</span></span>
+## <a name="install-packageprovider-cmdletpowershellmodulepackagemanagementinstall-packageprovider"></a>[<span data-ttu-id="2e556-124">Yükleme PackageProvider cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-124">Install-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Install-PackageProvider)
+
+<span data-ttu-id="2e556-125">Bu cmdlet, bir veya daha fazla paket Yönetimi Paketi sağlayıcılarını yükler.</span><span class="sxs-lookup"><span data-stu-id="2e556-125">This cmdlet installs one or more Package Management package providers.</span></span>
+
 ```powershell
 # Install a package provider from the PowerShell Gallery
 Install-PackageProvider –Name "Gistprovider" -Verbose
@@ -149,15 +164,19 @@ Find-PackageProvider –Name "Gistprovider" | Install-PackageProvider -Verbose
 Install-PackageProvider –Name Gistprovider –Verbose –Scope CurrentUser
 ```
 
-## <a name="register-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890701aspx"></a>[<span data-ttu-id="1fbb5-139">Register-PackageSource cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-139">Register-PackageSource Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890701.aspx)
-<span data-ttu-id="1fbb5-140">Bu cmdlet bir paket kaynağı için belirtilen paket sağlayıcısı ekler.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-140">This cmdlet adds a package source for a specified package provider.</span></span>
-<span data-ttu-id="1fbb5-141">Her PackageManagement sağlayıcısı, bir veya birden çok yazılım kaynakları veya depoları olabilir.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-141">Each PackageManagement provider may have one or multiple software sources, or repositories.</span></span> <span data-ttu-id="1fbb5-142">PackageManagement kaynak Ekle/Kaldır/sorgu için PowerShell cmdlet'leri sağlar.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-142">PackageManagement provides PowerShell cmdlets to add/remove/query the source.</span></span> <span data-ttu-id="1fbb5-143">Örneğin, bir paket kaynağı için NuGet sağlayıcısı kaydedebilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="1fbb5-143">For example, you can register a package source for the NuGet provider:</span></span>
+## <a name="register-packagesource-cmdletpowershellmodulepackagemanagementregister-packagesource"></a>[<span data-ttu-id="2e556-126">Register-PackageSource cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-126">Register-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Register-PackageSource)
+
+<span data-ttu-id="2e556-127">Bu cmdlet bir paket kaynağı için belirtilen paket sağlayıcısı ekler.</span><span class="sxs-lookup"><span data-stu-id="2e556-127">This cmdlet adds a package source for a specified package provider.</span></span>
+<span data-ttu-id="2e556-128">Her PackageManagement sağlayıcısı, bir veya birden çok yazılım kaynakları veya depoları olabilir.</span><span class="sxs-lookup"><span data-stu-id="2e556-128">Each PackageManagement provider may have one or multiple software sources, or repositories.</span></span> <span data-ttu-id="2e556-129">PackageManagement kaynak ekleme/kaldırma/sorgu için PowerShell cmdlet'leri sağlar.</span><span class="sxs-lookup"><span data-stu-id="2e556-129">PackageManagement provides PowerShell cmdlets to add/remove/query the source.</span></span> <span data-ttu-id="2e556-130">Örneğin, bir paket kaynağı için NuGet sağlayıcısı kaydedebilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="2e556-130">For example, you can register a package source for the NuGet provider:</span></span>
+
 ```powershell
 Register-PackageSource -Name "NugetSource" -Location "http://www.nuget.org/api/v2" –ProviderName nuget
 ```
 
-## <a name="save-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890708aspx"></a>[<span data-ttu-id="1fbb5-144">Kaydet-Package cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-144">Save-Package Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890708.aspx)
-<span data-ttu-id="1fbb5-145">Bu cmdlet, paketleri yüklemeden yerel bilgisayara kaydeder.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-145">This cmdlet saves packages to the local computer without installing them.</span></span>
+## <a name="save-package-cmdletpowershellmodulepackagemanagementsave-package"></a>[<span data-ttu-id="2e556-131">Kaydet-Package cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-131">Save-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Save-Package)
+
+<span data-ttu-id="2e556-132">Bu cmdlet, paketleri yüklemeden yerel bilgisayara kaydeder.</span><span class="sxs-lookup"><span data-stu-id="2e556-132">This cmdlet saves packages to the local computer without installing them.</span></span>
+
 ```powershell
 # Saves jquery package to c:\test using NuGetProvider
 # Notes that the -Path parameter must point to an existing location
@@ -165,18 +184,22 @@ Save-Package -Name jquery –Provider NuGet -Path c:\test
 
 # Save a package by piping.
 Find-Package -Name jquery -Source http://www.nuget.org/api/v2/ | Save-Package -Path c:\test
-Find-Package -source c:\test
+Find-Package -Source c:\test
 ```
 
-## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[<span data-ttu-id="1fbb5-146">Set-PackageSource cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-146">Set-PackageSource Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890710.aspx)
-<span data-ttu-id="1fbb5-147">Bu cmdlet, var olan bir paket kaynağı ile ilgili bilgileri değiştirir.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-147">This cmdlet changes information about an existing package source.</span></span>
+## <a name="set-packagesource-cmdletpowershellmodulepackagemanagementset-packagesource"></a>[<span data-ttu-id="2e556-133">Set-PackageSource cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-133">Set-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Set-PackageSource)
+
+<span data-ttu-id="2e556-134">Bu cmdlet, var olan bir paket kaynağı bilgilerini değiştirir.</span><span class="sxs-lookup"><span data-stu-id="2e556-134">This cmdlet changes information about an existing package source.</span></span>
+
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
 Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2
 ```
 
-## <a name="uninstall-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890702aspx"></a>[<span data-ttu-id="1fbb5-148">Kaldırma paket cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-148">Uninstall-Package Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890702.aspx)
-<span data-ttu-id="1fbb5-149">Bu cmdlet yerel bilgisayarda yüklü olan paketleri kaldırır.</span><span class="sxs-lookup"><span data-stu-id="1fbb5-149">This cmdlet uninstalls packages installed on the local computer.</span></span>
+## <a name="uninstall-package-cmdletpowershellmodulepackagemanagementuninstall-package"></a>[<span data-ttu-id="2e556-135">Paket kaldırma cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-135">Uninstall-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Uninstall-Package)
+
+<span data-ttu-id="2e556-136">Bu cmdlet, yerel bilgisayarda yüklü paketleri kaldırır.</span><span class="sxs-lookup"><span data-stu-id="2e556-136">This cmdlet uninstalls packages installed on the local computer.</span></span>
+
 ```powershell
 # Uninstall jquery using nuget
 Uninstall-Package -Name jquery –Provider NuGet -Destination c:\test
@@ -185,7 +208,8 @@ Uninstall-Package -Name jquery –Provider NuGet -Destination c:\test
 Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Package
 ```
 
-## <a name="unregister-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890707aspx"></a>[<span data-ttu-id="1fbb5-150">Kaydı PackageSource cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="1fbb5-150">Unregister-PackageSource Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890707.aspx)
+## <a name="unregister-packagesource-cmdletpowershellmodulepackagemanagementunregister-packagesource"></a>[<span data-ttu-id="2e556-137">Kaydı PackageSource cmdlet'i</span><span class="sxs-lookup"><span data-stu-id="2e556-137">Unregister-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Unregister-PackageSource)
+
 ```powershell
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"

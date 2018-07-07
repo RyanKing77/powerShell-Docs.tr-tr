@@ -2,48 +2,53 @@
 ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
-title: WMF 5.1 bilinen sorunlar
-ms.openlocfilehash: d53031bea978087c68fcb22989c7cd2e2cf2d9fa
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: WMF 5.1'de bilinen sorunlar
+ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219462"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892146"
 ---
-# <a name="known-issues-in-wmf-51"></a><span data-ttu-id="61516-103">WMF 5.1 bilinen sorunlar</span><span class="sxs-lookup"><span data-stu-id="61516-103">Known Issues in WMF 5.1</span></span> #
+# <a name="known-issues-in-wmf-51"></a><span data-ttu-id="59551-103">WMF 5.1'de bilinen sorunlar</span><span class="sxs-lookup"><span data-stu-id="59551-103">Known Issues in WMF 5.1</span></span>
 
-> <span data-ttu-id="61516-104">Not: Bu bilgiler değiştirilebilir olur.</span><span class="sxs-lookup"><span data-stu-id="61516-104">Note: This information is subject to change.</span></span>
+> [!Note]
+> <span data-ttu-id="59551-104">Bu bilgiler değiştirilebilir olur.</span><span class="sxs-lookup"><span data-stu-id="59551-104">This information is subject to change.</span></span>
 
-## <a name="starting-powershell-shortcut-as-administrator"></a><span data-ttu-id="61516-105">Yönetici olarak PowerShell kısayol başlatma</span><span class="sxs-lookup"><span data-stu-id="61516-105">Starting PowerShell shortcut as Administrator</span></span>
-<span data-ttu-id="61516-106">WMF yükledikten sonra kısayol yönetici olarak PowerShell başlatmaya çalışırsanız, "Belirtilmeyen hata" iletisi alabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="61516-106">Upon installing WMF, if you try to start PowerShell as administrator from the shortcut, you may get an "Unspecified error" message.</span></span>
-<span data-ttu-id="61516-107">Yönetici olmayan kısaca yeniden açın ve kısayol şimdi bile yönetici olarak çalışır.</span><span class="sxs-lookup"><span data-stu-id="61516-107">Reopen the shortcut as non-administrator and the shortcut now works even as administrator.</span></span>
+## <a name="starting-powershell-shortcut-as-administrator"></a><span data-ttu-id="59551-105">Yönetici olarak PowerShell kısayolu başlatılıyor</span><span class="sxs-lookup"><span data-stu-id="59551-105">Starting PowerShell shortcut as Administrator</span></span>
 
-## <a name="pester"></a><span data-ttu-id="61516-108">Pester</span><span class="sxs-lookup"><span data-stu-id="61516-108">Pester</span></span>
-<span data-ttu-id="61516-109">Bu sürümde Pester Nano Server kullanırken bilmeniz gereken iki sorunlar vardır:</span><span class="sxs-lookup"><span data-stu-id="61516-109">In this release, there are two issues you should be aware of when using Pester on Nano Server:</span></span>
+<span data-ttu-id="59551-106">WMF yükleme sırasında kısayol yönetici olarak PowerShell başlatmaya çalışırsanız, bir "Bilinmeyen hata" iletisi alabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="59551-106">Upon installing WMF, if you try to start PowerShell as administrator from the shortcut, you may get an "Unspecified error" message.</span></span>
+<span data-ttu-id="59551-107">Yönetici olmayan kısaca yeniden açın ve kısayol artık yönetici olarak da çalışır.</span><span class="sxs-lookup"><span data-stu-id="59551-107">Reopen the shortcut as non-administrator and the shortcut now works even as administrator.</span></span>
 
-* <span data-ttu-id="61516-110">Testleri Pester karşı çalışan bazı hatalar tam CLR ve çekirdek CLR arasındaki farklar nedeniyle neden olabilir.</span><span class="sxs-lookup"><span data-stu-id="61516-110">Running tests against Pester itself can result in some failures because of differences between FULL CLR and CORE CLR.</span></span> <span data-ttu-id="61516-111">Özellikle, doğrula yöntemini XmlDocument türünde kullanılamaz.</span><span class="sxs-lookup"><span data-stu-id="61516-111">In particular, the Validate method is not available on the XmlDocument type.</span></span> <span data-ttu-id="61516-112">NUnit Çıktı günlükleri şeması doğrulamaya altı testleri başarısız olduğu bilinmektedir.</span><span class="sxs-lookup"><span data-stu-id="61516-112">Six tests which attempt to validate the schema of the NUnit output logs are known to fail.</span></span>
-* <span data-ttu-id="61516-113">Kod kapsamı test başarısız şu anda çünkü *WindowsFeature* DSC kaynağı Nano Server yok.</span><span class="sxs-lookup"><span data-stu-id="61516-113">One Code Coverage test fails currently because the *WindowsFeature* DSC Resource does not exist in Nano Server.</span></span> <span data-ttu-id="61516-114">Ancak, bu hatalar genellikle zararsız olan ve güvenle yoksayılabilir.</span><span class="sxs-lookup"><span data-stu-id="61516-114">However, these failures are generally benign and can safely be ignored.</span></span>
+## <a name="pester"></a><span data-ttu-id="59551-108">Pester</span><span class="sxs-lookup"><span data-stu-id="59551-108">Pester</span></span>
 
-## <a name="operation-validation"></a><span data-ttu-id="61516-115">İşlemi doğrulama</span><span class="sxs-lookup"><span data-stu-id="61516-115">Operation Validation</span></span>
+<span data-ttu-id="59551-109">Bu sürümde, Pester Nano Sunucu'da kullanırken bilmeniz gereken iki sorun vardır:</span><span class="sxs-lookup"><span data-stu-id="59551-109">In this release, there are two issues you should be aware of when using Pester on Nano Server:</span></span>
 
-* <span data-ttu-id="61516-116">Çalışma dışı Yardım URI nedeniyle Microsoft.PowerShell.Operation.Validation modülü için Update-Help başarısız</span><span class="sxs-lookup"><span data-stu-id="61516-116">Update-Help fails for Microsoft.PowerShell.Operation.Validation module due to non-working help URI</span></span>
+- <span data-ttu-id="59551-110">Testleri Pester karşı çalışan bazı hataları tam CLR ve CORE CLR farklılıklardan dolayı neden olabilir.</span><span class="sxs-lookup"><span data-stu-id="59551-110">Running tests against Pester itself can result in some failures because of differences between FULL CLR and CORE CLR.</span></span> <span data-ttu-id="59551-111">Özellikle, doğrula yöntemini XmlDocument türü üzerinde kullanılabilir değil.</span><span class="sxs-lookup"><span data-stu-id="59551-111">In particular, the Validate method is not available on the XmlDocument type.</span></span> <span data-ttu-id="59551-112">NUnit çıktı günlüklerini şemasını onaylamaya altı testleri başarısız olduğu bilinmektedir.</span><span class="sxs-lookup"><span data-stu-id="59551-112">Six tests which attempt to validate the schema of the NUnit output logs are known to fail.</span></span>
+- <span data-ttu-id="59551-113">Bir kod kapsamı test başarısız olursa şu anda çünkü *WindowsFeature* Nano Server'da DSC kaynak mevcut değil.</span><span class="sxs-lookup"><span data-stu-id="59551-113">One Code Coverage test fails currently because the *WindowsFeature* DSC Resource does not exist in Nano Server.</span></span> <span data-ttu-id="59551-114">Ancak, bu hatalar genellikle zararsızdır ve güvenle yoksayılabilir.</span><span class="sxs-lookup"><span data-stu-id="59551-114">However, these failures are generally benign and can safely be ignored.</span></span>
 
-## <a name="dsc-after-uninstall-wmf"></a><span data-ttu-id="61516-117">DSC sonra WMF kaldırma</span><span class="sxs-lookup"><span data-stu-id="61516-117">DSC after uninstall WMF</span></span>
-* <span data-ttu-id="61516-118">WMF kaldırma DSC MOF belgeleri yapılandırma klasöründen silinmez.</span><span class="sxs-lookup"><span data-stu-id="61516-118">Uninstalling WMF does not delete DSC MOF documents from the configuration folder.</span></span> <span data-ttu-id="61516-119">MOF belgeleri eski sistemlerinde kullanılabilir olmayan daha yeni özellikler içeriyorsa DSC düzgün çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="61516-119">DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems.</span></span> <span data-ttu-id="61516-120">Bu durumda, aşağıdaki komut dosyasını yükseltilmiş PowerShell konsolundan DSC durumları temizlemek için çalıştırın.</span><span class="sxs-lookup"><span data-stu-id="61516-120">In this case, run the following script from elevated PowerShell console to to clean up the DSC states.</span></span>
- ```powershell
+## <a name="operation-validation"></a><span data-ttu-id="59551-115">İşlem doğrulama</span><span class="sxs-lookup"><span data-stu-id="59551-115">Operation Validation</span></span>
+
+- <span data-ttu-id="59551-116">`Update-Help` çalışmayan Yardım URI nedeniyle Microsoft.PowerShell.Operation.Validation modülü başarısız</span><span class="sxs-lookup"><span data-stu-id="59551-116">`Update-Help` fails for Microsoft.PowerShell.Operation.Validation module due to non-working help URI</span></span>
+
+## <a name="dsc-after-uninstall-wmf"></a><span data-ttu-id="59551-117">DSC sonra WMF kaldırma</span><span class="sxs-lookup"><span data-stu-id="59551-117">DSC after uninstall WMF</span></span>
+
+- <span data-ttu-id="59551-118">WMF kaldırma DSC MOF belgeleri yapılandırma klasörden silmez.</span><span class="sxs-lookup"><span data-stu-id="59551-118">Uninstalling WMF does not delete DSC MOF documents from the configuration folder.</span></span> <span data-ttu-id="59551-119">MOF belgeleri eski sistemlerde kullanılabilir olmayan yeni özellikler içeriyorsa DSC düzgün şekilde çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="59551-119">DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems.</span></span> <span data-ttu-id="59551-120">Bu durumda, aşağıdaki komut dosyasını yükseltilmiş bir PowerShell Konsolu DSC durumları temizlemek için çalıştırın.</span><span class="sxs-lookup"><span data-stu-id="59551-120">In this case, run the following script from elevated PowerShell console to to clean up the DSC states.</span></span>
+
+  ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
             "$env:windir\system32\configuration\*.mof.checksum",
             "$env:windir\system32\configuration\PartialConfiguration\*.mof",
             "$env:windir\system32\configuration\PartialConfiguration\*.mof.checksum"
            )
-
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
- ```
+  ```
 
-## <a name="jea-virtual-accounts"></a><span data-ttu-id="61516-121">JEA sanal hesaplar</span><span class="sxs-lookup"><span data-stu-id="61516-121">JEA Virtual Accounts</span></span>
-<span data-ttu-id="61516-122">JEA uç noktaları ve sanal hesaplar WMF 5.0 ile kullanmak üzere yapılandırılmış oturum yapılandırmaları WMF 5.1 sürümüne yükselttikten sonra sanal hesap kullanmak için yapılandırılmaz.</span><span class="sxs-lookup"><span data-stu-id="61516-122">JEA endpoints and session configurations configured to use virtual accounts in WMF 5.0 will not be configured to use a virtual account after upgrading to WMF 5.1.</span></span>
-<span data-ttu-id="61516-123">Bu, JEA oturumlarında çalışan komutlar olası kullanıcı yükseltilmiş ayrıcalıklar gerektiren komutlar çalışmasını engelleyen bir geçici yönetici hesabı yerine bağlanan kullanıcının kimliği altında çalışacağı anlamına gelir.</span><span class="sxs-lookup"><span data-stu-id="61516-123">This means that commands run in JEA sessions will run under the connecting user's identity instead of a temporary administrator account, potentially preventing the user from running commands which require elevated privileges.</span></span>
-<span data-ttu-id="61516-124">Sanal hesaplar geri yüklemek için kaydı ve sanal hesapları kullanan tüm oturum yapılandırmaları yeniden kaydetmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="61516-124">To restore the virtual accounts, you need to unregister and re-register any session configurations that use virtual accounts.</span></span>
+## <a name="jea-virtual-accounts"></a><span data-ttu-id="59551-121">JEA sanal hesaplar</span><span class="sxs-lookup"><span data-stu-id="59551-121">JEA Virtual Accounts</span></span>
+
+<span data-ttu-id="59551-122">JEA uç noktaları ve WMF 5.0 ile sanal hesaplar kullanacak şekilde yapılandırılmış oturum yapılandırmaları WMF 5.1 sürümüne yükselttikten sonra sanal bir hesabı kullanacak şekilde yapılandırılmaz.</span><span class="sxs-lookup"><span data-stu-id="59551-122">JEA endpoints and session configurations configured to use virtual accounts in WMF 5.0 will not be configured to use a virtual account after upgrading to WMF 5.1.</span></span>
+<span data-ttu-id="59551-123">Bu, JEA oturumlarında çalışan komutlar potansiyel olarak kullanıcı yükseltilmiş ayrıcalıklar gerektiren komutlar çalışmasını engelliyor. bir geçici yönetici hesabı yerine bağlanan kullanıcının kimliği altında çalışacağı anlamına gelir.</span><span class="sxs-lookup"><span data-stu-id="59551-123">This means that commands run in JEA sessions will run under the connecting user's identity instead of a temporary administrator account, potentially preventing the user from running commands which require elevated privileges.</span></span>
+<span data-ttu-id="59551-124">Sanal hesaplar geri yüklemek için kaydını kaldırma ve sanal hesaplar kullanan herhangi bir oturum yapılandırmaları yeniden kaydetmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="59551-124">To restore the virtual accounts, you need to unregister and re-register any session configurations that use virtual accounts.</span></span>
 
 ```powershell
 # Find the JEA endpoint by its name
