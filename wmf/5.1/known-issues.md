@@ -2,48 +2,53 @@
 ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
-title: WMF 5.1 bilinen sorunlar
-ms.openlocfilehash: d53031bea978087c68fcb22989c7cd2e2cf2d9fa
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: WMF 5.1'de bilinen sorunlar
+ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219462"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892146"
 ---
-# <a name="known-issues-in-wmf-51"></a>WMF 5.1 bilinen sorunlar #
+# <a name="known-issues-in-wmf-51"></a>WMF 5.1'de bilinen sorunlar
 
-> Not: Bu bilgiler değiştirilebilir olur.
+> [!Note]
+> Bu bilgiler değiştirilebilir olur.
 
-## <a name="starting-powershell-shortcut-as-administrator"></a>Yönetici olarak PowerShell kısayol başlatma
-WMF yükledikten sonra kısayol yönetici olarak PowerShell başlatmaya çalışırsanız, "Belirtilmeyen hata" iletisi alabilirsiniz.
-Yönetici olmayan kısaca yeniden açın ve kısayol şimdi bile yönetici olarak çalışır.
+## <a name="starting-powershell-shortcut-as-administrator"></a>Yönetici olarak PowerShell kısayolu başlatılıyor
+
+WMF yükleme sırasında kısayol yönetici olarak PowerShell başlatmaya çalışırsanız, bir "Bilinmeyen hata" iletisi alabilirsiniz.
+Yönetici olmayan kısaca yeniden açın ve kısayol artık yönetici olarak da çalışır.
 
 ## <a name="pester"></a>Pester
-Bu sürümde Pester Nano Server kullanırken bilmeniz gereken iki sorunlar vardır:
 
-* Testleri Pester karşı çalışan bazı hatalar tam CLR ve çekirdek CLR arasındaki farklar nedeniyle neden olabilir. Özellikle, doğrula yöntemini XmlDocument türünde kullanılamaz. NUnit Çıktı günlükleri şeması doğrulamaya altı testleri başarısız olduğu bilinmektedir.
-* Kod kapsamı test başarısız şu anda çünkü *WindowsFeature* DSC kaynağı Nano Server yok. Ancak, bu hatalar genellikle zararsız olan ve güvenle yoksayılabilir.
+Bu sürümde, Pester Nano Sunucu'da kullanırken bilmeniz gereken iki sorun vardır:
 
-## <a name="operation-validation"></a>İşlemi doğrulama
+- Testleri Pester karşı çalışan bazı hataları tam CLR ve CORE CLR farklılıklardan dolayı neden olabilir. Özellikle, doğrula yöntemini XmlDocument türü üzerinde kullanılabilir değil. NUnit çıktı günlüklerini şemasını onaylamaya altı testleri başarısız olduğu bilinmektedir.
+- Bir kod kapsamı test başarısız olursa şu anda çünkü *WindowsFeature* Nano Server'da DSC kaynak mevcut değil. Ancak, bu hatalar genellikle zararsızdır ve güvenle yoksayılabilir.
 
-* Çalışma dışı Yardım URI nedeniyle Microsoft.PowerShell.Operation.Validation modülü için Update-Help başarısız
+## <a name="operation-validation"></a>İşlem doğrulama
+
+- `Update-Help` çalışmayan Yardım URI nedeniyle Microsoft.PowerShell.Operation.Validation modülü başarısız
 
 ## <a name="dsc-after-uninstall-wmf"></a>DSC sonra WMF kaldırma
-* WMF kaldırma DSC MOF belgeleri yapılandırma klasöründen silinmez. MOF belgeleri eski sistemlerinde kullanılabilir olmayan daha yeni özellikler içeriyorsa DSC düzgün çalışmaz. Bu durumda, aşağıdaki komut dosyasını yükseltilmiş PowerShell konsolundan DSC durumları temizlemek için çalıştırın.
- ```powershell
+
+- WMF kaldırma DSC MOF belgeleri yapılandırma klasörden silmez. MOF belgeleri eski sistemlerde kullanılabilir olmayan yeni özellikler içeriyorsa DSC düzgün şekilde çalışmaz. Bu durumda, aşağıdaki komut dosyasını yükseltilmiş bir PowerShell Konsolu DSC durumları temizlemek için çalıştırın.
+
+  ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
             "$env:windir\system32\configuration\*.mof.checksum",
             "$env:windir\system32\configuration\PartialConfiguration\*.mof",
             "$env:windir\system32\configuration\PartialConfiguration\*.mof.checksum"
            )
-
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
- ```
+  ```
 
 ## <a name="jea-virtual-accounts"></a>JEA sanal hesaplar
-JEA uç noktaları ve sanal hesaplar WMF 5.0 ile kullanmak üzere yapılandırılmış oturum yapılandırmaları WMF 5.1 sürümüne yükselttikten sonra sanal hesap kullanmak için yapılandırılmaz.
-Bu, JEA oturumlarında çalışan komutlar olası kullanıcı yükseltilmiş ayrıcalıklar gerektiren komutlar çalışmasını engelleyen bir geçici yönetici hesabı yerine bağlanan kullanıcının kimliği altında çalışacağı anlamına gelir.
-Sanal hesaplar geri yüklemek için kaydı ve sanal hesapları kullanan tüm oturum yapılandırmaları yeniden kaydetmeniz gerekir.
+
+JEA uç noktaları ve WMF 5.0 ile sanal hesaplar kullanacak şekilde yapılandırılmış oturum yapılandırmaları WMF 5.1 sürümüne yükselttikten sonra sanal bir hesabı kullanacak şekilde yapılandırılmaz.
+Bu, JEA oturumlarında çalışan komutlar potansiyel olarak kullanıcı yükseltilmiş ayrıcalıklar gerektiren komutlar çalışmasını engelliyor. bir geçici yönetici hesabı yerine bağlanan kullanıcının kimliği altında çalışacağı anlamına gelir.
+Sanal hesaplar geri yüklemek için kaydını kaldırma ve sanal hesaplar kullanan herhangi bir oturum yapılandırmaları yeniden kaydetmeniz gerekir.
 
 ```powershell
 # Find the JEA endpoint by its name

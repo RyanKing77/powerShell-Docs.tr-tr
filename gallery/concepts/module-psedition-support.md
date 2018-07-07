@@ -2,15 +2,15 @@
 ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
-title: Modüller ile uyumlu PowerShell sürümleri
-ms.openlocfilehash: fbbfda2f913d54c3e69c0724fea4d977923279c1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Modülleri ile uyumlu PowerShell sürümleri
+ms.openlocfilehash: 653cfa82be9d0150da8d8765c96e35be99497262
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189525"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892330"
 ---
-# <a name="modules-with-compatible-powershell-editions"></a>Modüller ile uyumlu PowerShell sürümleri
+# <a name="modules-with-compatible-powershell-editions"></a>Modülleri ile uyumlu PowerShell sürümleri
 
 Sürüm 5.1’den başlayarak, PowerShell çeşitli özellik kümelerini ve platform uyumluluğunu belirten farklı sürümler halinde sağlanır.
 
@@ -21,7 +21,9 @@ Sürüm 5.1’den başlayarak, PowerShell çeşitli özellik kümelerini ve plat
 
 ```powershell
 $PSVersionTable
+```
 
+```output
 Name                           Value
 ----                           -----
 PSVersion                      5.1.14300.1000
@@ -36,52 +38,65 @@ SerializationVersion           1.1.0.1
 
 ## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a>Modül yazarları CompatiblePSEditions modül bildirim anahtarını kullanarak kendi modüllerinin bir veya birden çok PowerShell sürümüyle uyumlu olduğunu bildirebilir. Bu anahtar yalnızca PowerShell 5.1 veya üstünde desteklenir.
 
-*Not* bir modül bildirimi CompatiblePSEditions anahtarla belirlendikten sonra alt PowerShell sürümlerinde alınabileceği değil.
+> [!NOTE]
+> Bir modül bildirimi CompatiblePSEditions anahtarla belirlendikten sonra alt PowerShell sürümlerinde alınamıyor.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
 $ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
 $ModuleInfo.CompatiblePSEditions
+```
+
+```output
 Desktop
 Core
+```
 
+```powershell
 $ModuleInfo | Get-Member CompatiblePSEditions
+```
 
+```output
    TypeName: System.Management.Automation.PSModuleInfo
 
 Name                 MemberType Definition
 ----                 ---------- ----------
 CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] CompatiblePSEditions {get;}
-
 ```
 
 Kullanılabilir modüllerin listesini alırken, listeyi PowerShell sürümüne göre filtreleyebilirsiniz.
 
 ```powershell
 Get-Module -ListAvailable -PSEdition Desktop
+```
 
+```output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
-
-Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
-Desktop
-Core
-
 ```
 
-## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>Modül yazarlar tek modülü hedefleme birini veya her ikisini PowerShell sürümleri için (Masaüstü ve çekirdek) yayımlama
+```powershell
+Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
+```
 
-Tek bir modül hem Masaüstü hem de çekirdek sürümleri üzerinde çalışabilir, ya da RootModule veya $PSEdition değişkenini kullanarak modül bildirimi gerekli mantığı eklemek bu modülde Yazar yoktur.
-Modülleri CoreCLR ve FullCLR hedefleyen derlenen DLL'leri iki kümesi olabilir.
-Burada, birkaç modülünüzün uygun DLL'leri yükleme için mantığı ile paketlemek için seçeneğiniz bulunmaktadır.
+```output
+Desktop
+Core
+```
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Seçenek 1: birden çok sürümü ve PowerShell birden çok sürümü hedefleme için bir modül paketleme
+## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>Modül yazarları tek modülü hedefleme veya her ikisi de PowerShell sürümleri için (Masaüstü ve çekirdek) yayımlayabilirsiniz.
 
-#### <a name="module-folder-contents"></a>Modül klasör içeriklerini
+Tek bir modül, hem Masaüstü hem de çekirdek sürümleri üzerinde çalışabilir, ya da RootModule veya $PSEdition değişkenini kullanarak modül bildirimindeki gerekli mantığı eklemek, yazarın Bu modülde olur.
+Modüller, CoreCLR hem FullCLR hedefleyen derlenen DLL'leri iki kümesi olabilir.
+Birkaç seçeneğiniz modülünüzde uygun DLL'leri yükleme için mantığı paketlemek için aşağıda verilmiştir.
+
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>1. seçenek: birden çok sürümü ve birden çok PowerShell sürümü hedeflemek için bir modül paketleme
+
+#### <a name="module-folder-contents"></a>Modül klasör içeriği
 
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
@@ -121,7 +136,7 @@ ModuleVersion = '1.6.1'
 
 #### <a name="contents-of-psscriptanalyzerpsm1-file"></a>PSScriptAnalyzer.psm1 dosyasının içeriği
 
-Mantığı gerekli derlemeleri geçerli sürümü veya bağlı olarak yükler.
+Mantıksal geçerli sürümü veya bağlı olarak gerekli bütünleştirilmiş kodları yükler.
 
 ```powershell
 #
@@ -157,13 +172,13 @@ $PSModule.OnRemove = {
 
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Seçenek 2: $PSEdition değişkeni uygun DLL'ler ve iç içe ve gerekli modüllerini yüklemek için PSD1 dosyası kullanın
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>2. seçenek: $PSEdition değişkeni PSD1 uygun DLL'ler ve iç içe geçmiş ve gerekli modülleri yüklemek için kullanın
 
-PS 5.1 veya daha yeni, $PSEdition genel değişkeni modülü bildirim dosyasında izin verilir.
-Bu değişkeni kullanarak, modül yazarına modülü bildirim dosyasında koşullu değerlerini belirtebilirsiniz. $PSEdition değişkeni kısıtlı dil modu veya veri bölümü başvurulabilir.
+PS 5.1 veya yeni, $PSEdition genel değişkeni modül bildirim dosyasında izin verilir.
+Bu değişkeni kullanarak, modül yazarına modül bildirim dosyasında koşullu değerleri belirtebilirsiniz. Kısıtlı dil modu veya veri bölümündeki $PSEdition değişkeni başvurulabilir.
 
-*Not* bir modül bildirimi CompatiblePSEditions anahtarla belirtilen veya $PSEdition değişkenini kullanır sonra daha düşük PowerShell sürümlerinde alınabileceği değil.
-
+> [!NOTE]
+> Bir modül bildirimi CompatiblePSEditions anahtarı ile belirtilen ya da $PSEdition değişkenini kullanır sonra daha düşük PowerShell sürümlerinde alınamıyor.
 
 #### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>Örnek modülü bildirim dosyası CompatiblePSEditions anahtarı
 
@@ -200,12 +215,13 @@ else # Desktop
 }
 ```
 
-#### <a name="module-contents"></a>Modül içerikleri
+#### <a name="module-contents"></a>Modül içeriği
 
 ```powershell
+dir -Recurse
+```
 
-PS C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions> dir -Recurse
-
+```output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
 Mode                LastWriteTime         Length Name
@@ -233,7 +249,7 @@ Mode                LastWriteTime         Length Name
 
 ## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>PowerShell Galerisi kullanıcılar etiketleri PSEdition_Desktop ve PSEdition_Core kullanarak belirli bir PowerShell sürümünde desteklenen modüllerin listesini bulabilirsiniz.
 
-Modülleri PSEdition_Desktop ve PSEdition_Core etiketleri olmadan PowerShell Masaüstü sürümlerinde ince çalışmaya olarak kabul edilir.
+PSEdition_Desktop ve PSEdition_Core etiketleri olmadan modülleri PowerShell Masaüstü sürümleri için üzerinde sorunsuz çalışacak şekilde değerlendirilir.
 
 ```powershell
 
@@ -245,9 +261,10 @@ Find-Module -Tag PSEdition_Core
 
 ```
 
-
 ## <a name="more-details"></a>Daha fazla ayrıntı
 
-- [PSEditions’ı olan Betikler](script-psedition-support.md)
-- [PowerShellGallery PSEditions desteği](../how-to/finding-items/searching-by-psedition.md)
-- [Güncelleştirme modül bildirimi] (/powershell/module/powershellget/update-modulemanifest)
+[PSEditions’ı olan Betikler](script-psedition-support.md)
+
+[PowerShellGallery pseditions'ı desteği](../how-to/finding-items/searching-by-psedition.md)
+
+[Modül bildirimini güncelleştir](/powershell/module/powershellget/update-modulemanifest)

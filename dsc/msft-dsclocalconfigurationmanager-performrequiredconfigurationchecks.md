@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
+keywords: DSC, powershell, yapılandırma, Kurulum
 title: MSFT_DSCLocalConfigurationManager sınıfının PerformRequiredConfigurationChecks yöntemi
-ms.openlocfilehash: c3fdaa23875815b1cf5cbf0b6e21c633e00664aa
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b92eefb7fbea6d96afa31f6b802ba10fe20d4103
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186703"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893238"
 ---
 # <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının PerformRequiredConfigurationChecks yöntemi
 
 Görev Zamanlayıcısı'nı kullanarak bir tutarlılık denetimi başlatır.
 
-<a name="syntax"></a>Sözdizimi
-------
+## <a name="syntax"></a>Sözdizimi
 
 ```mof
 uint32 PerformRequiredConfigurationChecks(
@@ -22,35 +21,31 @@ uint32 PerformRequiredConfigurationChecks(
 );
 ```
 
-<a name="parameters"></a>Parametreler
-----------
+## <a name="parameters"></a>Parametreler
 
-*Bayrakları* \[içinde\] çalıştırmak için tutarlılık denetimi türünü belirten bir bit maskesi. Aşağıdaki değerler geçerlidir ve bit kullanılarak birleştirilebilir **veya** işlemi:
+*Bayrakları* \[içinde\] çalıştırmak için tutarlılık denetimi türünü belirten bir bit maskesi. Aşağıdaki değerler geçerlidir ve bit düzeyinde kullanarak birleştirilebilir **veya** işlemi:
 
 |Değer |Açıklama |
 |:--- |:---|
-|**1** | Normal tutarlılık denetimi. |
-|**2** | Tutarlılık denetimi devamlılık bir yeniden başlatma işleminden sonra. Bu değer diğer değerlerle birleştirilmemelidir. |
-|**4** | Yapılandırma meta yapılandırmasını düğümü için belirtilen çekme sunucusundan çekilen. Bu değer her zaman ile birleştirilmelidir **1**, değeri için **5**. |
+|**1** | Normal bir tutarlılık denetimi. |
+|**2** | Bir tutarlılık denetimi bir yeniden başlatma işleminden sonra devam etmesi. Bu değer, diğer değerlerle birleştirilmemelidir. |
+|**4** | Çekme sunucusundan metaconfiguration düğümü için belirtilen yapılandırma çekilmesi. Bu değer her zaman ile birleştirilmelidir **1**, değeri için **5**. |
 |**8** | Durum rapor sunucusuna gönderir. |
 
 ## <a name="return-value"></a>Dönüş değeri
-------------
 
-Başarı sıfır döndürür; Aksi takdirde bir hata kodu döndürür.
+Başarılıysa sıfır döndürür; Aksi takdirde bir hata kodu döndürür.
 
 ## <a name="remarks"></a>Açıklamalar
 
-Bu statik bir yöntemdir.
+Statik bir yöntem budur.
 
 ## <a name="requirements"></a>Gereksinimler
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Ayrıca bkz:
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

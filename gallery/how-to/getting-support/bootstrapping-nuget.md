@@ -2,30 +2,33 @@
 ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
-title: NuGet önyükleme
-ms.openlocfilehash: f707e23737361ee7f82a16150402c9e719ee0ae1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: NuGet önyükleniyor
+ms.openlocfilehash: a935b6862f3912a4b419ca00b4d4dd5aab9c20fc
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221808"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892710"
 ---
-# <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet sağlayıcısı ve NuGet.exe bootstrap
+# <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet sağlayıcısı ve NuGet.exe önyükleme
 
-NuGet.exe son NuGet sağlayıcısında dahil edilmez.
-Yayım bir modül veya komut dosyası işlemleri için ikili yürütülebilir NuGet.exe PowerShellGet gerektirir.
-Diğer tüm işlemler için NuGet sağlayıcısı yalnızca dahil olmak üzere *Bul*, *yükleme*, *kaydetmek*, ve *kaldırma*.
-PowerShellGet NuGet sağlayıcı NuGet.exe ve birleştirilmiş bir önyükleme ya da yalnızca NuGet sağlayıcısının önyükleme ya da işlemek için mantığı içerir.
-Her iki durumda da, yalnızca tek bir komut istemi ileti olmalıdır.
-Makine Internet'e bağlı değilse, kullanıcı veya yönetici NuGet sağlayıcı ve/veya NuGet.exe dosya güvenilir bir örneğini bağlantısı kesilmiş makineye kopyalamanız gerekir.
+NuGet.exe en son NuGet sağlayıcısında yer almaz.
+Yayımlama işlemleri bir modül veya betik için ikili yürütülebilir NuGet.exe PowerShellGet gerektirir.
+NuGet sağlayıcısı gerekli diğer tüm işlemler için yalnızca dahil olmak üzere *bulmak*, *yükleme*, *Kaydet*, ve *kaldırma*.
+PowerShellGet, birleşik bir bootstrap NuGet sağlayıcısı ve NuGet.exe veya önyükleme NuGet sağlayıcısı ya da işlemek için mantığı içerir.
+Her iki durumda da, yalnızca tek bir komut istemi ileti gerçekleşmelidir.
+Makinenin Internet'e bağlı değilse, kullanıcı veya yönetici NuGet sağlayıcısı ve/veya NuGet.exe dosya güvenilen bir örneğini bağlantısı kesilmiş makineyi kopyalamanız gerekir.
 
->**Not**: sürüm 6 ile başlayarak, NuGet sağlayıcı PowerShell yüklemesinde bulunur. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
+> [!NOTE]
+> NuGet sağlayıcısı sürüm 6 ile başlayarak, PowerShell yüklenmesi dahildir. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
 
-## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>NuGet sağlayıcısı Internet bir makinede yüklü değil, hatayı giderme bağlı
+## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>NuGet sağlayıcısı Internet bir makinede yüklü olmayan, hatayı çözmede bağlı
 
 ```powershell
-PS> Find-Module -Repository PSGallery -Verbose -Name Contoso
+Find-Module -Repository PSGallery -Verbose -Name Contoso
+```
 
+```output
 NuGet provider is required to continue
 PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
 'C:\Users\manikb\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
@@ -37,9 +40,13 @@ At line:1 char:1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidOperation: (:) [Find-Module], InvalidOperationException
    + FullyQualifiedErrorId : CouldNotInstallNuGetProvider,Find-Module
+```
 
-PS> Find-Module -Repository PSGallery -Verbose -Name Contoso
+```powershell
+Find-Module -Repository PSGallery -Verbose -Name Contoso
+```
 
+```output
 NuGet provider is required to continue
 PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
 'C:\Users\manikb\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
@@ -52,11 +59,13 @@ Version    Name                                Type       Repository           D
 2.5        Contoso                             Module     PSGallery        Contoso module
 ```
 
-## <a name="resolving-error-when-the-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>NuGet sağlayıcısı kullanılabilir ve NuGet.exe Internet bir makinede yayımlama işlemi sırasında kullanılabilir olmadığında hatayı giderme bağlı
+## <a name="resolving-error-when-the-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>NuGet sağlayıcısı kullanılabilir ve NuGet.exe bir makinede Internet yayımlama işlemi sırasında kullanılabilir olmadığında çözümlenirken hata oluştu bağlı
 
 ```powershell
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```output
 NuGet.exe is required to continue
 PowerShellGet requires NuGet.exe to publish an item to the NuGet-based repositories. NuGet.exe must be available under one of the paths specified in PATH environment variable value. Do you want PowerShellGet to install NuGet.exe now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
@@ -67,8 +76,13 @@ At line:1 char:1
     + CategoryInfo          : InvalidOperation: (:) [Publish-Module], InvalidOperationException
     + FullyQualifiedErrorId : CouldNotInstallNuGetExe,Publish-Module
 
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```powershell
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
+
+```output
 NuGet.exe is required to continue
 PowerShellGet requires NuGet.exe to publish an item to the NuGet-based repositories. NuGet.exe must be available under one of the paths specified in PATH environment variable value. Do you want PowerShellGet to install NuGet.exe now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -76,11 +90,13 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'https://www.powershellgallery.com/api/v2/'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-## <a name="resolving-error-when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>NuGet sağlayıcısı ve NuGet.exe Internet bir makinede yayımlama işlemi sırasında kullanılabilir olmadığında hatayı giderme bağlı
+## <a name="resolving-error-when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>NuGet sağlayıcısı ve NuGet.exe hem bir makinede Internet yayımlama işlemi sırasında mevcut olmadığı durumlarda hata giderme bağlı
 
 ```powershell
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```output
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
@@ -92,8 +108,13 @@ At line:1 char:1
     + CategoryInfo          : InvalidOperation: (:) [Publish-Module], InvalidOperationException
     + FullyQualifiedErrorId : CouldNotInstallNuGetBinaries,Publish-Module
 
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```powershell
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
+
+```output
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -102,62 +123,64 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'https://www.powershellgallery.com/api/v2/'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a>El ile Internet'e bağlı olmayan bir makinede NuGet sağlayıcısı önyükleme
+## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a>NuGet sağlayıcısı Internet'e bağlı olmayan bir makineye el ile önyükleme
 
-Yukarıda gösterilen işlemleri makine Internet'e bağlı ve dosyaları genel bir konumdan yükleyebilirsiniz varsayalım.
-Bu mümkün değilse, yalnızca yukarıda verilen işlemleri kullanarak bir makine bootstrap ve el ile çevrimdışı güvenilen işlemi aracılığıyla yalıtılmış düğüme sağlayıcı kopyalamak için bir seçenektir.
-Bu senaryo için en yaygın kullanım örneği Özel Galeri yalıtılmış bir ortamı desteklemek kullanılabilir olduğunda.
+Yukarıda gösterilen işlemler, makine Internet'e bağlı ve dosyalarını ortak bir konumdan indirebilirsiniz varsayılır.
+Bu mümkün değilse, yalnızca seçeneğin kullanılması, yukarıda verilen işlemlerin bir makine önyükleme ve sağlayıcı çevrimdışı bir güvenilen işlem yalıtılmış düğümünden el ile kopyalayın sağlamaktır.
+Bu senaryo için en yaygın kullanım örneği, özel bir galeri, yalıtılmış bir ortam desteklemek kullanılabilir andır.
 
-Internet bağlantılı makine bootstrap yukarıdaki işlemini tamamladıktan sonra sağlayıcı dosyalar konumda bulabilirsiniz:
+İnternet'e bağlı bir makinede önyükleme için yukarıda işlemi tamamladıktan sonra sağlayıcı dosyalar konumda bulabilirsiniz:
 
 ```
 C:\Program Files\PackageManagement\ProviderAssemblies\
 ```
 
-NuGet sağlayıcısı klasör/dosya yapısını (büyük olasılıkla farklı sürüm numarasıyla) olacaktır:
-
-NuGet<br>
---2.8.5.208<br>
----Microsoft.PackageManagement.NuGetProvider.dll
-
-Bu klasörler ve çevrimdışı makinelere güvenilir bir işlemi kullanarak dosyasını kopyalayın.
-
-## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a>El ile desteklemek için NuGet.exe önyükleme yayımlama Internet'e bağlı olmayan bir makine üzerindeki işlemleri
-
-Makine modülleri veya komut dosyalarını kullanarak bir özel galeri yayımlamak için kullanılacaksa NuGet sağlayıcısını el ile bootstrap işleminin yanı sıra *Yayımla-Module* veya *Yayımla-komut dosyası* cmdlet'leri NuGet.exe ikili yürütülebilir dosya gerekli olacaktır.
-Bu senaryo için en yaygın kullanım örneği Özel Galeri yalıtılmış bir ortamı desteklemek kullanılabilir olduğunda.
-NuGet.exe dosyasını almak için iki seçenek vardır.
-
-Internet'e bağlı bir makinede bootstrap ve güvenilir bir işlemi kullanarak çevrimdışı makineler dosyaları kopyalamak için bir seçenek değil.
-Internet bağlantılı makine önyüklemesinden sonra NuGet.exe ikili iki klasörlerden birinde bulunur:
-
-Varsa *Yayımla-Module* veya *Yayımla-komut dosyası* cmdlet yükseltilmiş izinlerle (bir yönetici olarak) yürütülen:
+NuGet sağlayıcısı klasör/dosya yapısı (büyük olasılıkla farklı sürüm numarasıyla) olacaktır:
 
 ```
+NuGet
+--2.8.5.208
+----Microsoft.PackageManagement.NuGetProvider.dll
+```
+
+Bu klasör ve dosya kullanarak güvenilir bir işlemi çevrimdışı makinelere kopyalayın.
+
+## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a>Yayımlama işlemleri Internet'e bağlı olmayan bir makineye el ile desteklemek için NuGet.exe önyüklemesi
+
+Makine modüller ya da komut dosyaları için özel bir galeri kullanarak yayımlamak için kullanılacaksa NuGet sağlayıcısını el ile önyükleme işlemi yanı sıra `Publish-Module` veya `Publish-Script` cmdlet'lerini NuGet.exe ikili yürütülebilir dosya gerekecektir.
+
+Bu senaryo için en yaygın kullanım örneği, özel bir galeri, yalıtılmış bir ortam desteklemek kullanılabilir andır.
+NuGet.exe dosyası almak için iki seçenek vardır.
+
+İnternet'e bağlı olan bir makine önyükleme ve güvenilir bir işlem kullanılarak çevrimdışı makineler için dosyaları kopyalamak için bir seçenek var.
+İnternet'e bağlı makine önyüklemesinden sonra NuGet.exe ikili iki klasörlerden birinde yer alır:
+
+Varsa `Publish-Module` veya `Publish-Script` cmdlet'leri (bir yönetici olarak) yükseltilmiş izinlerle yürütülmesini:
+
+```powershell
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 ```
 
-Cmdlet yükseltilmiş izinler olmadan bir kullanıcı olarak yürütüldü ise:
+Cmdlet'lerin yükseltilmiş izinleri olmayan bir kullanıcı olarak yürütüldü varsa:
 
-```
+```powershell
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-NuGet.exe NuGet.Org Web sitesinden indirin ikinci bir seçenektir: [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)<br>
-Üretim makineler için NugGet sürümü seçerken, 2.8.5.208 sonraki olduğundan emin olun ve "önerilen" etiketli sürüm belirleyin.
-Bir tarayıcı kullanarak indirildiği, dosyanın Engellemeyi Kaldır unutmayın.
-Bu kullanılarak gerçekleştirilebilir *Engellemeyi Kaldır dosya* cmdlet'i.
+İkinci seçenek NuGet.Org Web sitesinden NuGet.exe indirmektir: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) NugGet sürümü için üretim makinelerinden seçerken 2.8.5.208 sonraki olduğundan emin olun ve etiketli sürümünüzü belirlemek " Önerilen".
+Bir tarayıcı kullanarak indirilen, dosyanın Engellemeyi Kaldır unutmayın.
+Bunu kullanarak gerçekleştirilebilir `Unblock-File` cmdlet'i.
 
-Her iki durumda da, herhangi bir konuma NuGet.exe dosya kopyalanabilir *$env: yol*, ancak Standart konumlar:
+Her iki durumda da NuGet.exe dosyanın herhangi bir konuma kopyalanabilir `$env:path`, ancak Standart konumlar:
 
-Tüm kullanıcıların kullanabilmesi için yürütülebilir dosya kullanılabilir hale getirmek *Yayımla-Module* ve *Yayımla-komut dosyası* cmdlet:
+Tüm kullanıcılar kullanabilmesi için yürütülebilir dosya kullanılabilir hale getirmek `Publish-Module` ve `Publish-Script` cmdlet'leri:
 
-```
+```powershell
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 ```
 
-Yürütülebilir dosya yalnızca belirli bir kullanıcı tarafından kullanılabilir hale getirmek yalnızca o kullanıcının profilindeki konuma kopyalayın:
+Yürütülebilir dosyanın yalnızca belirli bir kullanıcı tarafından kullanılabilir hale getirmek için yalnızca bu kullanıcının profilinde bir konuma kopyalayın:
 
-```
+```powershell
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```

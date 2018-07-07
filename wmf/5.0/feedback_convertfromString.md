@@ -1,41 +1,46 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: e4588e8c69efb965cd33c273ad09a8bef8e9bf16
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: fcf2adf67f36edb534df3e2a849459fb20e1c2de
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189576"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892372"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Yapılandırılmış Nesneleri Dizeden Çıkarma ve Ayıklama
-Bu aynı zamanda ConvertFrom dize cmdlet'i için bazı ek işlevler sunar:
 
--   Uzantı metin özelliği varsayılan olarak kaldırır. -IncludeExtent parametresiyle ekleyebilirsiniz.
+Bu da bazı ilave işlevler için tanıtılmaktadır `ConvertFrom-String` cmdlet:
 
--   Çok sayıda algoritma hata düzeltmeleri MVP ve topluluk geri bildirim alanından öğrenme.
+- Uzantı metin özelliği varsayılan olarak kaldırır. -IncludeExtent parametresiyle ekleyebilirsiniz.
 
--   Şablon dosyası bir açıklama içine öğrenme algoritmasını sonuçlarını kaydetmek için yeni bir - UpdateTemplate parametresi. Bu bir kerelik maliyeti (yavaş aşama) işlem öğrenme hale getirir. Dönüştürme dizesi kodlanmış öğrenme algoritmasını içeren bir şablonla şimdi neredeyse anlık çalışıyor.
+- Birçok algoritma hata düzeltmelerine MVP ve topluluk geri bildirimine ilişkin öğrenme.
 
+- Şablon dosyası bir açıklama içine öğrenme algoritmasını sonuçlarını kaydetmek için yeni bir - UpdateTemplate parametre. Bu tek seferlik bir ücret (yavaş aşaması) işlem öğrenme sağlar. Dize dönüştürme kodlanmış öğrenme algoritmasını içeren bir şablon ile artık neredeyse anında çalışıyor.
 
-<a name="extract-and-parse-structured-objects-out-of-string-content"></a>Ayıklamak ve dize içeriği dışında yapılandırılmış nesneleri ayrıştırılamadı
-----------------------------------------------------------
+## <a name="extract-and-parse-structured-objects-out-of-string-content"></a>Yapılandırılmış nesneleri dize içerik dışına çıkarma ve
 
-İşbirliğiyle [Microsoft Research](http://research.microsoft.com/), yeni bir **ConvertFrom dize** cmdlet eklendi.
+İşbirliği ile [Microsoft Research](https://www.microsoft.com/en-us/research/?from=http%3A%2F%2Fresearch.microsoft.com%2F), yeni bir `ConvertFrom-String` cmdlet'i eklendi.
 
-Bu cmdlet iki modlarını destekler: basic, ayrıştırma ve örnek temelli otomatik ayrıştırma ayrılmış.
+Bu cmdlet iki modu destekler: basic ayrıştırma ve otomatik örnek temelli ayrıştırma ayrılmış.
 
-Varsayılan olarak, ayrılmış ayrıştırma boşluk konumundaki giriş böler ve sonuçta elde edilen gruplarına özellik adları atar. Sınırlayıcı özelleştirebilirsiniz:
+Varsayılan olarak, sınırlandırılmış ayrıştırma boşluk konumundaki giriş böler ve elde edilen gruplara özellik adlarını atar. Sınırlayıcı özelleştirebilirsiniz:
 
-> 1 \[C:\\temp\] &gt; &gt; "Hello World" | ConvertFrom dize | Format-Table-otomatik
+```powershell
+"Hello World" | ConvertFrom-String | Format-Table -Auto
+```
 
-P1    P2
---    --
+```output
+P1     P2
+--     --
+Hello  World
+```
 
-Cmdlet ayrıca otomatik olarak oluşturulan göre örnek temelli ayrıştırma destekler [FlashExtract](http://research.microsoft.com/en-us/um/people/sumitg/flashextract.html) araştırma iş [Microsoft Research](http://research.microsoft.com).
+Cmdlet, ayrıca otomatik olarak oluşturulan göre örnek temelli ayrıştırma destekler [FlashExtract](https://www.microsoft.com/en-us/research/publication/flashextract-framework-data-extraction-examples/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fum%2Fpeople%2Fsumitg%2Fflashextract.html) araştırma çalışması [Microsoft Research](https://www.microsoft.com/en-us/research/?from=http%3A%2F%2Fresearch.microsoft.com%2F).
 
 Başlamak için bir metin tabanlı adres defteri göz önünde bulundurun:
 
+```
     Ana Trujillo
 
     Redmond, WA
@@ -55,9 +60,11 @@ Başlamak için bir metin tabanlı adres defteri göz önünde bulundurun:
     Hanna Moos
 
     Puyallup, WA
+```
 
-Birkaç örnek, şablon olarak kullanacağınız bir dosyaya kopyalayın:
+Bazı örnekler, şablon olarak kullanacağınız bir dosyaya kopyalayın:
 
+```
     Ana Trujillo
 
     Redmond, WA
@@ -65,11 +72,11 @@ Birkaç örnek, şablon olarak kullanacağınız bir dosyaya kopyalayın:
     Antonio Moreno
 
     Renton, WA
+```
 
+Bunu gibi bir ad verip ayıklamak istediğiniz verileriyle küme ayracı yerleştirin. Çünkü **adı** özelliği (ve ilgili diğer özellikleri) birden çok kez görünür, bir yıldız işareti kullanın (\*) bu birden çok kayıt (yerine tek bir sürü özellikleri ayıklama sonuçları göstermek için kayıt için):
 
-
-Ayıklamak istediğiniz verilerin etrafına süslü ayraçlar bunu gibi bir ad verip yerleştirin. Çünkü **adı** özelliği (ve diğer özellikleri ilişkili) birden çok kez görüntülenir, bir yıldız işareti kullanın (\*) bu birden çok kayıt (yerine tek bir demet özelliklerinin ayıklanıyor sonuçları göstermek için kayıt):
-
+```
     {Name\*:Ana Trujillo}
 
     {City:Redmond}, {State:WA}
@@ -77,15 +84,22 @@ Ayıklamak istediğiniz verilerin etrafına süslü ayraçlar bunu gibi bir ad v
     {Name\*:Antonio Moreno}
 
     {City:Renton}, {State:WA}
+```
 
-Bu örnekler, kümesinden **ConvertFrom dize** artık otomatik olarak nesne tabanlı çıkış benzer yapıya sahip girdi dosyalarındaki ayıklayabilirsiniz.
+Bu örnekler, kümesinden `ConvertFrom-String` artık otomatik olarak nesne tabanlı çıkış benzer yapıya sahip giriş dosyalarından ayıklayabilir.
 
-> 2 \[C:\\temp\]
->
-> &gt;&gt; Get-içerik. \\addresses.output.txt | ConvertFrom dize - TemplateFile. \\addresses.template.txt | &gt; &gt; &gt; Format-Table-otomatik
->
-> ExtentText adı Şehir durumu
-> ----------                     ----               ----     -----
-> Ana Trujillo...                Ana Trujillo Redmond Washington Antonio Moreno...              Antonio Moreno Renton WA Thomas Hardy...                Thomas Hardy Seattle WA Çiğdem Berglund...          Çiğdem Berglund Redmond Washington Hanna Moos...                  Hanna Moos Puyallup WA
+```powershell
+Get-Content .\addresses.output.txt | ConvertFrom-String -TemplateFile .\addresses.template.txt | Format-Table -Auto
+```
 
-Ek veri işleme ayıklanan metni yapmak için **ExtentText** özelliği kendisinden kaydı çıkarılan ham metni yakalar. Bu özellik üzerinde geribildirim sağlamak veya örnekler yazma zorluk sahip içeriği paylaşmak için lütfen e-posta <psdmfb@microsoft.com>.
+```output
+ExtentText                     Name               City     State
+----------                     ----               ----     -----
+Ana Trujillo...                Ana Trujillo       Redmond  WA
+Antonio Moreno...              Antonio Moreno     Renton   WA
+Thomas Hardy...                Thomas Hardy       Seattle  WA
+Christina Berglund...          Christina Berglund Redmond  WA
+Hanna Moos...                  Hanna Moos         Puyallup WA
+```
+
+Ayıklanan metin üzerinde ek veri işleme yapmak için **ExtentText** özelliği kendisinden kaydı çıkarılan ham metni yakalar. Bu özellik hakkında geri bildirim sağlamak veya zorluk örnekler yazmak zorunda içeriği paylaşmak için lütfen e-posta <psdmfb@microsoft.com>.

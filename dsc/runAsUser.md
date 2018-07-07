@@ -1,32 +1,32 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
+keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC’yi kullanıcı kimlik bilgileri ile çalıştırma
-ms.openlocfilehash: b2992ad562dea375aba980611312c7b96a23189c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4a6c3d8b561cd0a27be07a68f1b577f7bf764254
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189712"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893918"
 ---
 # <a name="running-dsc-with-user-credentials"></a>DSC’yi kullanıcı kimlik bilgileri ile çalıştırma
 
-> İçin geçerlidir: Windows PowerShell 5.0, 5.1 Windows PowerShell
+> Uygulama hedefi: Windows PowerShell 5.0, 5.1 Windows PowerShell
 
-Belirtilen kimlik bilgileri kümesi altında bir DSC kaynak otomatik kullanarak çalıştırabilirsiniz **PsDscRunAsCredential** özelliğini yapılandırma.
-Varsayılan olarak, DSC her bir kaynağın sistem hesabı olarak çalışır.
-Bir kullanıcı belirli bir kullanıcı bağlamında bir MSI paketleri yükleme, bir kullanıcının kayıt defteri anahtarlarını ayarlamak, bir kullanıcının belirli yerel dizinine erişmesini veya bir ağa erişen gibi gerekli olduğu gibi çalışan zaman paylaşmak zamanlar vardır.
+Belirtilen kimlik bilgileri kümesi altında bir DSC kaynak otomatik kullanarak çalıştırabileceğiniz **PsDscRunAsCredential** yapılandırma özellik.
+Varsayılan olarak, DSC, her kaynak sistem hesabı olarak çalışır.
+Belirli bir kullanıcı bağlamında MSI paketleri yükleme, bir kullanıcının kayıt defteri anahtarlarını ayarlamak, bir kullanıcının belirli yerel dizine veya bir ağ erişim gibi gerekli bir kullanıcı olarak çalıştırmanın ne zaman paylaşmak zamanlar vardır.
 
-Her DSC kaynağı olan bir **PsDscRunAsCredential** tüm kullanıcı kimlik bilgilerinin ayarlanabilir özelliği (bir [PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) nesnesi).
-Kimlik bilgileri Yapılandırma özelliğinin değeri olarak sabit kodlanmış olabilir ya da değeri ayarlamak [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx), hangi ister kullanıcı için bir kimlik bilgisi (hakkında bilgi için yapılandırma derlendiğinde yapılandırmaları derleme, bkz: [yapılandırmaları](configurations.md).
+Her DSC kaynağı bir **PsDscRunAsCredential** herhangi bir kullanıcı kimlik bilgisi için ayarlanabilir özelliği (bir [PSCredential](/dotnet/api/system.management.automation.pscredential) nesne).
+Kimlik bilgisi yapılandırma özelliğinin değeri olarak sabit kodlanmış olabilir ya da değer ayarlamak [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential), hangi ister kullanıcı için bir kimlik bilgisi (hakkında bilgi için yapılandırma derlendiğinde yapılandırmaları derleme, bkz: [yapılandırmaları](configurations.md).
 
->**Not:** PowerShell'de kullanarak 5.0, **PsDscRunAsCredential** bileşik kaynakları çağırma yapılandırmaları özelliğinde desteklenmiyordu.
->PowerShell 5.1 içinde **PsDscRunAsCredential** özelliği bileşik kaynakları çağırma yapılandırmalarında desteklenir.
+> [!NOTE] 
+> PowerShell 5.0, kullanarak **PsDscRunAsCredential** yapılandırmaları bileşik kaynakları arama özelliği desteklenmiyor.
+> PowerShell 5.1 içinde **PsDscRunAsCredential** özelliği bileşik kaynakları arama yapılandırmada desteklenir.
+> **PsDscRunAsCredential** PowerShell 4. 0'özelliği kullanılamaz.
 
->**Not:** **PsDscRunAsCredential** özelliği PowerShell 4. 0 ' kullanılabilir değil.
-
-Aşağıdaki örnekte, **Get-Credential** kullanıcıdan kimlik bilgileri istemek için kullanılır.
-[Kayıt defteri](registryResource.md) kaynak Windows komut istemi penceresi arka plan rengini belirtir kayıt defteri anahtarı değiştirmek için kullanılır.
+Aşağıdaki örnekte, `Get-Credential` kullanıcıdan kimlik bilgileri istemek için kullanılır.
+[Kayıt defteri](registryResource.md) kaynak Windows komut istemi penceresi arka plan rengini belirten kayıt defteri anahtarı değiştirmek için kullanılır.
 
 ```powershell
 Configuration ChangeCmdBackGroundColor
@@ -62,5 +62,7 @@ $configData = @{
 
 ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
->**Not:** Bu örnek, geçerli bir sertifika olduğunu varsayar `C:\publicKeys\targetNode.cer`, ve bu sertifikanın parmak izini gösterilen değer olduğunu.
->DSC yapılandırma MOF dosyaları kimlik bilgileri şifreleme hakkında daha fazla bilgi için bkz: [MOF dosyası güvenli hale getirme](secureMOF.md).
+
+> [!NOTE]
+> Bu örnek, geçerli bir sertifikada sahibi olduğunuzu varsayar `C:\publicKeys\targetNode.cer`, ve bu sertifikanın parmak izini gösterilen değer olduğunu.
+> DSC yapılandırma MOF dosyaları kimlik bilgilerini şifreleme hakkında daha fazla bilgi için bkz: [MOF dosyasının güvenliğini sağlama](secureMOF.md).

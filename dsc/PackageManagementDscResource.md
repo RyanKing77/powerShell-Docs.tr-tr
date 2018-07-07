@@ -1,22 +1,22 @@
 ---
 ms.date: 06/20/2018
-keywords: DSC, powershell, yapılandırma, Kur
-title: DSC PackageManagement kaynağı
-ms.openlocfilehash: 3d52934b130d59acee4d7f8a92da2c743c1eb305
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+keywords: DSC, powershell, yapılandırma, Kurulum
+title: DSC PackageManagement kaynak
+ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753796"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892510"
 ---
-# <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement kaynağı
+# <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement kaynak
 
-> İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0, 5.1 Windows PowerShell
+Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0, 5.1 Windows PowerShell
 
-**PackageManagement** kaynak olarak Windows PowerShell istenen durum yapılandırması (DSC) yüklemek veya bir hedef düğüm üzerinde paket Yönetimi paketleri kaldırmak için bir mekanizma sağlar. Bu kaynak için gerekli **PackageManagement** modülü, kullanılabilir http://PowerShellGallery.com.
+**PackageManagement** kaynak olarak Windows PowerShell Desired State Configuration (DSC) yüklemek veya bir hedef düğümde paket yönetim paketlerini kaldırmak için bir mekanizma sağlar. Bu kaynak gerektiriyor **PackageManagement** modülü, kullanılabilir [ http://PowerShellGallery.com ](http://PowerShellGallery.com).
 
 > [!IMPORTANT]
-> **PackageManagement** modülü en az olmalıdır sürüm 1.1.7.0 doğru olması aşağıdaki özellik bilgileri.
+> **PackageManagement** modülü olmalıdır en az sürüm 1.1.7.0 doğru olması aşağıdaki özellik bilgileri.
 
 ## <a name="syntax"></a>Sözdizimi
 
@@ -42,26 +42,26 @@ PackageManagement [string] #ResourceName
 |  Özellik  |  Açıklama   |
 |---|---|
 | Ad| Yüklenecek veya için paket adını belirtir.|
-| AdditionalParameters| Sağlayıcı belirli hashtable için aktarılabilecek parametrelerinin `Get-Package -AdditionalArguments`. Örneğin, NuGet sağlayıcısı HedefYolu gibi ek parametreleri geçirebilirsiniz.|
-| Emin olun| Paketin yüklü veya kaldırılmış olup olmadığını belirler.|
-| MaximumVersion|Bulmak istediğiniz paketinin sürümünü, izin verilen belirtir. Bu parametreyi eklemezseniz, kaynak paketinin yüksek kullanılabilir sürümünü bulur.|
-| MinimumVersion|Bulmak istediğiniz paketinin sürümünü, izin verilen en düşük belirtir. Bu parametreyi eklemezseniz, yüksek kullanılabilir paketinin sürümünü, tarafından belirtilen tüm maksimum belirtilen sürüm de karşılayan kaynak bulan _MaximumVersion_ parametresi.|
-| ProviderName| Paket arama kapsamınızı kurmak için bir paket sağlayıcının adını belirtir. Çalıştırarak paket sağlayıcı adları alabilirsiniz `Get-PackageProvider` cmdlet'i.|
-| RequiredVersion| Yüklemek istediğiniz paketi'nün tam sürümünü belirtir. Bu parametre belirtmezseniz, bu DSC kaynağı tarafından belirtilen herhangi bir en fazla sürümünü de karşılayan paketi kullanılabilir en yeni sürümünü yükler _MaximumVersion_ parametresi.|
+| AdditionalParameters| Sağlayıcı belirli hashtable için geçirilir parametrelerinin `Get-Package -AdditionalArguments`. Örneğin, NuGet sağlayıcısı DestinationPath gibi ek parametreler geçirebilir.|
+| Emin olun| Paket yüklü veya kaldırılmış olup olmadığını belirler.|
+| MaximumVersion|Bulmak istediğiniz paketin sürümü izin verilen üst sınırı belirtir. Bu parametreyi eklemezseniz, kaynak paketin en yüksek kullanılabilir sürümü bulur.|
+| MinimumVersion|Bulmak istediğiniz paketin sürümü izin verilen en düşük belirtir. Bu parametreyi eklemezseniz, yüksek kullanılabilir sürümü tarafından belirtilen en yüksek herhangi belirtilen sürümü de karşılayan kaynak bulan _MaximumVersion_ parametresi.|
+| ProviderName| Paket aramanızın kapsamını yapılacak bir paket sağlayıcı adını belirtir. Çalıştırarak paketin sağlayıcısı adlarını alabilirsiniz `Get-PackageProvider` cmdlet'i.|
+| RequiredVersion| Yüklemek istediğiniz paketin'ün tam sürümünü belirtir. Bu parametreyi belirtmezseniz, bu DSC kaynağı tarafından belirtilen herhangi bir en yüksek sürümü de karşılayan paket kullanılabilir en yeni sürümü yükler _MaximumVersion_ parametresi.|
 | Kaynak| Paket bulunabileceği paket kaynağının adını belirtir. Bu bir URI olabilir veya bir kaynak kayıtlı `Register-PackageSource` veya PackageManagementSource DSC kaynağı.|
-| SourceCredential | Belirtilen paket sağlayıcısı veya kaynak için bir paketi yüklemek için haklarına sahip bir kullanıcı hesabı belirtir.|
+| SourceCredential | Belirtilen paket sağlayıcısı veya kaynak için bir paket yüklemek için haklarına sahip bir kullanıcı hesabı belirtir.|
 
 ## <a name="additional-parameters"></a>Ek parametreler
 
-Aşağıdaki tabloda AdditionalParameters özelliği için seçenekleri listeler.
+Aşağıdaki tabloda, AdditionalParameters özelliği için seçenekleri listeler.
 |  Parametre  | Açıklama   |
 |---|---|
-| HedefYolu| Yerleşik Nuget sağlayıcısı gibi sağlayıcıları tarafından kullanılır. Yüklenecek paket istediğiniz bir dosya konumu belirtir.|
-| InstallationPolicy| Yerleşik Nuget sağlayıcısı gibi sağlayıcıları tarafından kullanılır. Paket kaynağına güveniyorsanız olup olmadığını belirler. Aşağıdakilerden birini: "Güvenilmeyen", "Güvenilen".|
+| DestinationPath| Yerleşik Nuget sağlayıcısı gibi sağlayıcıları tarafından kullanılır. Yüklenecek paket istediğiniz bir dosya konumu belirtir.|
+| InstallationPolicy| Yerleşik Nuget sağlayıcısı gibi sağlayıcıları tarafından kullanılır. Kaynak paketin güvendiğiniz olup olmadığını belirler. Şunlardan biri: "Güvenilmeyen", "Güvenilir".|
 
 ## <a name="example"></a>Örnek
 
-Bu örnek yükler **JQuery** NuGet paketi ve **GistProvider** PowerShell modülünü kullanarak **PackageManagement** DSC kaynağı. Bu örnek ilk gerekli paket kaynaklarını kullanılabilir sonra beklenen durumunu tanımlar sağlar **JQuery** ve **GistProvider** paketleri (NuGet ve PowerShell, sırasıyla).
+Bu örnek yükler **JQuery** NuGet paketi ve **GistProvider** PowerShell modülünü kullanarak **PackageManagement** DSC kaynağı. Bu örnekte, önce gerekli paket kaynakları kullanılabilir sonra beklenen durumunu tanımlar sağlar **JQuery** ve **GistProvider** paketleri (NuGet ve PowerShell, sırasıyla).
 
 ```powershell
 Configuration PackageTest

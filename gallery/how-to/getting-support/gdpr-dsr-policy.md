@@ -2,102 +2,102 @@
 ms.date: 03/27/2018
 contributor: JKeithB
 keywords: Galeri, powershell, psgallery, GDPR
-title: PowerShell Galerisi GDPR uyumluluk
-ms.openlocfilehash: dca1a82952c284980a84caafa13b2807e47e25a0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: PowerShell Galerisi GDPR uyumluluğu
+ms.openlocfilehash: 14b82fa07df52f02f0d7577cb0eef70faa4285a2
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189763"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893255"
 ---
-# <a name="powershell-gallery-gdpr-compliance"></a>PowerShell Galerisi GDPR uyumluluk
+# <a name="powershell-gallery-gdpr-compliance"></a>PowerShell Galerisi GDPR uyumluluğu
 
 ## <a name="overview"></a>Genel bakış
 
-Mayıs 2018 genel veri koruma düzenleme (GDPR), bir Avrupa gizlilik yasalarına etkinleşir.
-GDPR şirketler, devlet dairesi, kar kaybı olmayan ve diğer kuruluşlardan teklif mal ve hizmet Avrupa Birliği (AB) ya da, kişilere toplamak ve analiz etmek için AB Satışlar bağlı veri yeni kuralları uygular.
-Bulunduğunuz olsun GDPR geçerlidir.
+Mayıs 2018'de genel veri koruma yönetmeliği (GDPR), bir Avrupa gizlilik yasaları etkinleşir.
+GDPR, yeni şirketler, devlet kurumları, gütmeyen ve teklif mal ve hizmet kişilere Avrupa Birliği (AB) veya AB vatandaşlar için bağlı verileri toplayıp analiz, diğer kuruluşların kuralları uygular.
+Burada, nerede olursanız olun GDPR geçerlidir.
 
 > [!NOTE]
-> Bu makalede PowerShell Galerisi'nden kişisel verilerini silmek adımlar sağlar ve sizin yükümlülüklerin GDPR altında desteklemek için kullanılabilir. GDPR hakkında genel bilgi arıyorsanız bkz [Hizmeti'ne güvenen portal GDPR bölümünü](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+> Bu makalede, PowerShell Galerisi'nden kişisel verilerini silme adımlar sağlar ve sizin yükümlülükleriniz GDPR altında desteklemek için kullanılabilir. GDPR hakkında genel bilgiler arıyorsanız bkz [hizmet güveni portalı GDPR bölümünü](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
-## <a name="personally-identifiable-data"></a>Kişisel olarak tanımlanabilecek veriler
+## <a name="personally-identifiable-data"></a>Kişisel olarak tanımlanabilen veriler
 
-PowerShell Galerisi kişisel bilgiler içerebilir kullanıcılar tarafından sağlanan aşağıdaki bilgileri depolar:
+PowerShell Galerisi, kişisel bilgileri içerebilen kullanıcılar tarafından sağlanan aşağıdaki bilgileri depolar:
 
-* PowerShell Galerisi hesabı
-* PowerShell Galerisi yayımlanan öğeler
-* E-posta yazışmaları PowerShell Galerisi ekibi ile
+- PowerShell Galerisi hesabı
+- PowerShell Galerisi'nde yayımlanmış öğeler
+- PowerShell Galerisi ekibi ile e-posta yazışmaları
 
-Kullanıcıların çoğunun bir PowerShell Galerisi hesabı oluşturmayın.
-Bir öğe yayımlamak veya PowerShell galerisinde "Kişi sahip" Bu özelliği kullanmak için çalıştırmayacağınız sürece bir hesap gerekli değildir.
-Kullanıcı tarafından başlatılan e-posta yazışmaları dışında bir hesap oluşturmadınız kullanıcıların kişisel olarak tanımlanabilecek veriler PowerShell Galerisi depolamaz.
+Çoğu kullanıcı, bir PowerShell Galerisi hesabı oluşturmayın.
+Bir öğe yayımlayın veya PowerShell galerisinde "Kişi sahip" Bu özelliği kullanmak için çalıştırmayacağınız sürece bir hesap gerekli değildir.
+Kullanıcı tarafından başlatılan e-posta yazışmaları dışında PowerShell Galerisi bir hesabı oluşturmadığınızı kullanıcılar kişisel verilerini depolamaz.
 
-Bir PowerShell Galerisi hesabı oluşturma kullanıcılar öğeleri PowerShell Galerisi yayımlayabilirsiniz.
-Bu öğeler PowerShell kodu olması beklenir, ancak kişisel bilgiler dahil olmak üzere diğer bilgiler içerebilir.
-Aşağıdaki bilgiler tüm öğelerin nasıl erişebileceğini gösterecektir PowerShell Galerisine yayımlandı.
+PowerShell Galerisi hesabı oluşturan kullanıcılar öğeleri PowerShell Galerisi'nde yayımlayabilirsiniz.
+Bu öğeleri PowerShell kodu olması bekleniyor, ancak kişisel bilgiler dahil olmak üzere diğer bilgileri içerebilir.
+Tüm öğeleri nasıl alabileceğiniz aşağıdaki bilgileri gösterir PowerShell Galerisi'nden yayımlamış olursunuz.
 
-## <a name="dsr-export-of-powershell-gallery-data"></a>PowerShell Galerisi verilerin DSR aktarma
+## <a name="dsr-export-of-powershell-gallery-data"></a>PowerShell Galerisi verileri DSR dışarı aktarma
 
-Aşağıdaki bölümlerde PowerShell Galerisi veri konu isteklerinin (DSR) nasıl destekler? PowerShell galerisinde depolanan bilgileri dışarı aktarma ve bu bilgilerin silme isteği nasıl açıklayarak açıklanmaktadır.
+Aşağıdaki bölümlerde PowerShell Galerisi'nde bilgi dışarı aktarma ve silme, bu bilgilerin nasıl açıklayarak PowerShell Galerisi gdpr veri sahibi istekleri (DSR) nasıl desteklediği açıklanmaktadır.
 
 ### <a name="email"></a>E-posta
 
 E-posta yazışmaları aşağıdakilerden herhangi birini içerebilir:
 
-* PowerShell Galerisi Kod Analizi tarar, öğeleri PowerShell Galerisi yayımladığınız herhangi bir öğe ile ilgili bir sorun tespit sahiplerine gönderilen e-posta
-* "Bize başvurun" sayfasında e-posta adresini kullanarak PowerShell Galerisi takımı herkes tarafından gönderilen e-posta (cgadmin@microsoft.com)
-* PowerShell Galerisi bir öğede sahibi e-posta göndermek için PowerShell galerisinde "Kişi sahip" özelliğini kullanan kullanıcılar kayıtlı
+- Kod Analizi tarar, öğeler PowerShell Galerisi'nde yayımlanmış herhangi bir öğe ile ilgili bir sorun algıladı PowerShell Galerisi sahiplerine gönderilen e-posta
+- Hiç kimse tarafından "Bize başvurun" sayfasında e-posta adresini kullanarak PowerShell Galerisi ekibine gönderilen e-posta [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)
+- PowerShell galerisinde bir öğenin sahibi e-posta göndermek için PowerShell galerisinde "Kişi sahip" özelliğini kullanan kullanıcılar kayıtlı
 
-PowerShell Galerisi veya tarafından gönderilen e-postaların kötü amaçlı kod PowerShell Galerisi bulunmasına olası güvenlik araştırmalar desteklemek için 90 günlük bir bekletme ilkesi olması.
+PowerShell Galerisi veya tarafından gönderilen e-postaları, olası güvenlik araştırmalar kötü amaçlı kod PowerShell galerisinde bulunmasına desteklemek için 90 günlük bir bekletme ilkesi olması.
 E-posta İlkesi tarafından 90 gün sonra silinir.
 
-E-posta adresinizi ve PowerShell Galerisi bilgisayardan veya önceki 90 gün içinde gönderilen tüm e-postaları kopyalarını isteyebilir.
-Bu ilişkiyi istemek için bir e-posta Gönder cgadmin@microsoft.com, başlıkla: "Bu hesaba ilişkin e-posta talebi DSR".
-İleti gövdesinde isteyen hangi bilgilerin belirtin (örneğin: Lütfen bu e-posta adresinden alınan veya gönderilen tüm e-postalar gönderin.) İsteğin 90 gün içinde e-posta adresinizi içeren tüm e-postalar 7 iş günü içinde gönderilir.
+Gelen e-posta adresinizi ve PowerShell Galerisi veya önceki 90 gün içinde gönderilen tüm e-posta kopyalarını isteyebilir.
+Bu yazışma istemek için bir e-posta Gönder [ cgadmin@microsoft.com ](mailto:cgadmin@microsoft.com), başlıklı: "Bu hesaba ilişkin e-postalar için DSR istek".
+Hangi bilgilerin istiyorsunuz iletisinin gövdesinde, durum (örneğin: Lütfen bu e-posta adresinden alınan veya gönderilen tüm e-posta gönderin.) 7 iş günü içinde e-posta adresinizi isteğin 90 gün içinde ilgili tüm e-postalar gönderilir.
 
 ### <a name="powershell-gallery-account-information"></a>PowerShell Galerisi hesap bilgileri
 
-Bir PowerShell Galerisi hesabı oluşturduysanız, PowerShell galerisinde aşağıdaki adımları uygulayarak zamandır saklanan tüm kişisel bilgileri bulabilirsiniz:
+PowerShell Galerisi hesabı oluşturduysanız, PowerShell Galerisi'nde aşağıdaki adımları izleyerek daha fazladır saklanan tüm kişisel bilgileri bulabilirsiniz:
 
-1. PowerShell Galerisi oturum açın, sonra kullanıcı adınıza tıklayın
-2. Görüntülenen sonraki sayfa PowerShell Galerisi hesabı için kullanılan e-posta adresi gösterir hesap sayfa.
+1. PowerShell Galerisi için oturum açın, sonra kullanıcı adınıza tıklayın
+2. Sonraki sayfada görüntülenen gösterir PowerShell Galerisi hesabı için kullanılan e-posta adresine hesap sayfası olan
 
 PowerShell galerisinde birden fazla hesabı oluşturduysanız, her hesap için bu adımları yinelemeniz gerekecektir.
 
-### <a name="items-in-the-powershell-gallery"></a>PowerShell galerisinde öğeleri
+### <a name="items-in-the-powershell-gallery"></a>PowerShell galeride bulunan öğeler
 
-PowerShell Galerisi yayımlanan verme öğeleri kolaylaştırmak için biz "GetPSGalleryItemsForAuthor" komut dosyası için PowerShell Galerisi yayımladınız.
-Bu komut dosyası her bir sürümüyle öğesinde depolanan Yazar bilgilere dayanarak PowerShell Galerisi yerleştirin her öğenin bir kopyasını dışa aktarır.
+Dışarı aktarılan öğeleri PowerShell Galerisi'nde yayımlanmış kolaylaştırmak için "GetPSGalleryItemsForAuthor" betik PowerShell Galerisi'nde yayımladık.
+Bu betik, her öğesinde depolanan Yazar bilgileri temel alarak PowerShell Galerisi yerleştirerek her öğe sürümünün bir kopyasını dışarı aktarır.
 
 > [!NOTE]
-> Öğenizi yayımladığınızda Yazar öğesi bildiriminde depolanır.
-> Yazarın PowerShell galerisinde kullandığınız hesabı ile aynı kimlik olduğunu garantisi yoktur.
-> Başka bir değer yazar alanı kullanıyorsanız, bu komut dosyası kullanırken bu değer sağlamanız gerekir.
+> Öğenizi yayımladığınızda Yazar öğesi bildiriminde saklanır.
+> Yazar PowerShell Galerisi'nde kullandığınız hesap aynı kimliğe olduğunu garanti yoktur.
+> Yazar alanı başka bir değer kullanıyorsanız, bu komut dosyası kullanırken bu değer belirtmeniz gerekir.
 
 Aşağıdaki PowerShell komutunu kullanarak betiği yükleyebilirsiniz:
 
 ```powershell
-Save-Script GetPSGalleryItemsForAuthor -path <local folder location> -repository psgallery
+Save-Script Get-repository psgallery
 ```
 
-Aşağıdaki PowerShell komutlarını çalıştırarak komut dosyasını doğrudan, ardından çalıştırabilirsiniz:
+Betik aşağıdaki PowerShell komutlarını çalıştırarak, doğrudan, ardından çalıştırabilirsiniz:
 
 ```powershell
-cd <local folder location >
+# cd <local folder location>
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
-Yazar ve kaydedilmesi için öğelerini bir klasörü sisteminizdeki sağlamanız istenir.
+Yazar ve kaydedilmesi için öğeleri istediğiniz klasör sisteminize sağlamanız istenir.
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>PowerShell Galerisi'nden kişisel verileri silme
 
-PowerShell Galerisi hesabınız veya PowerShell galerisinde sahip herhangi bir öğeyi silmek için e-posta Gönder cgadmin@microsoft.com başlıkla: "GDPR isteği bu hesaba ilişkin öğeleri için".
-İleti gövdesinde hangi bilgilerin silinen istediğiniz durumu. Örneğin:
+PowerShell Galerisi hesabınız veya PowerShell Galerisi'nde olduğunuz herhangi bir öğeyi silmek için e-posta Gönder cgadmin@microsoft.com başlığıyla: "Bu hesaba ilişkin öğeleri için GDPR isteği".
+Hangi bilgilerin, silinen istediğiniz iletisinin gövdesindeki durumu. Örneğin:
 
-* Lütfen "öğe adı" Benim öğesinin sürüm x.y.z silin
-* Lütfen "öğe adı" öğe tüm sürümlerini silin
-* Lütfen PowerShell Galerisi Hesabımı silin
+- Lütfen "öğe adı" my öğesinin sürümü x.y.z silin
+- Lütfen "öğe adı" öğe tüm sürümleri sil
+- Lütfen PowerShell Galerisi Hesabımı silin
 
 PowerShell Galerisi Yöneticiler 7 iş günü içinde yanıt gönderir.
-İstek gönderildikten sonra 30 gün içinde belirtilen öğeler silinecek.
+Belirtilen öğelerin istek gönderildikten sonra 30 gün içinde silinecek.

@@ -2,88 +2,87 @@
 ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
-title: PowerShell Galerisi UI etkisi öğesi bildirim değerleri
-ms.openlocfilehash: 39522396b179c54b981e6292cddacec27b32506c
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+title: PowerShell Galerisi UI etkileyen öğe bildirimi değerleri
+ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34049104"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893486"
 ---
-# <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell Galerisi UI etkisi öğesi bildirim değerleri
+# <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell Galerisi UI etkileyen öğe bildirimi değerleri
 
-Bu konu, böylece PowerShellGet cmdlet'leri ve PowerShell Galerisi UI özelliklerini etkilenecek kendi PowerShell Galerisi yayınlar için bildirim değiştirme konusunda özet bilgileri olan yayımcı sağlar.
-Bu içerik, değişiklik, Orta kısım, ardından sol gezinti alanını sürümünden itibaren görüneceği yeri tarafından düzenlenir. Bir ayrıntı bölümü yoktur kapsayıcı etiketleri, önemli etiketleri, aynı zamanda bazıları etiketleri yaygın olarak kullanılan tanımlar.
-Bildirim örnekler sağlayan iki konuları vardır:
+Bu konu, böylece PowerShellGet cmdlet'leri ve PowerShell galeri kullanıcı Arabirimi özelliklerini etkilenecek PowerShell Galerisi yayınlarını bildirimi değiştirme konusunda yayımcılar Özet bilgilerle birlikte sağlar.
+Bu içerik, değişiklik, Orta kısım, sonra da sol taraftaki gezinti alanına başlayarak görüneceği yeri tarafından düzenlenir. Bir ayrıntı bölümü yoktur kapsayan etiketler, etiketler etiketleri yanı sıra bazı daha yaygın olarak kullanılan önemli tanımlayan.
+Bildirim örnekleri sağlayan iki konuları vardır:
 
-- Modülleri için bkz: [modülü güncelleştirme bildirimi](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
-- Komut dosyaları için bkz: [meta verilerle komut dosyası oluştur](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+- Modüller için bkz: [modülü güncelleştirme bildirimi](/powershell/module/powershellget/Update-ModuleManifest)
+- Betikler için bkz: [meta veriler ile betik dosyası oluştur](/powershell/module/powershellget/New-ScriptFileInfo)
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>PowerShell Galerisi özellik öğeleri listesi tarafından denetlenir
 
-Aşağıdaki tabloda, yayımcı tarafından denetlenen PowerShell Galerisi öğesi sayfanın UI öğelerini gösterir.
-Bu modül veya komut dosyası bildirimi tarafından denetlenmesi, her bir öğeyi gösterir.
+Aşağıdaki tabloda, yayımcı tarafından denetlenen PowerShell Galerisi öğesi sayfası kullanıcı Arabirimi öğelerini gösterir.
+Her öğe, modül veya betik bildirimi tarafından kontrol edilebilir olmadığını belirtir.
 
 | Kullanıcı Arabirimi öğesi | Açıklama | Modül | Betik |
 | --- | --- | --- | --- |
-| **Başlık** | Galeriye yayımlanan öğesi adıdır  | Hayır | Hayır |
-| **Sürüm** | Görüntülenen meta verilerde sürüm dizesi sürümüdür ve yayın öncesi IF belirtilir. Birincil bir modül bildirimi sürümünde ModuleVersion bölümüdür. Bir betik için onu olarak tanımlanır. Sürüm. Bir yayın öncesi sürüm dizesi belirtilirse, bu modülleri için ModuleVersion eklenen, veya kaldırılacak parçası olarak belirtilen. Komut dosyalarının sürümü. Yayın öncesi dizelerde belirtmek için belge yok [modülleri](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule)hem de [komut dosyaları](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) | Evet | Evet |
-| **Açıklama** | Bu modül bildiriminde bir açıklama ve bir komut dosyası bildiriminde olur. AÇIKLAMA | Evet | Evet |
-| **Lisans kabulünü gerektirir** | Bir modül modül bildirimi değiştirerek kullanıcı bir lisans kabul etmenizi gerektiriyor RequireLicenseAcceptance ile bir LicenseURI sağlayarak ve kök modül klasörünün license.txt dosyasında sağlama $true =. Ek bilgi sağlanmıştır [gerektiren lisans kabulünü](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_requires_license_acceptance) konu. | Evet | Hayır |
-| **Sürüm notları** | Modülleri için bu bilgileri ReleaseNotes bölümünde PSData\PrivateData çizilir. Komut dosyası bildirimleri olduğu. RELEASENOTES öğesi. | Evet | Evet |
-| **Sahipleri** | Sahipleri olan bir öğeyi güncelleştirebilirsiniz PowerShell Galerisi kullanıcılar listesi verilmiştir. Sahibi liste öğesi bildiriminde dahil edilmez. Ek belgeler açıklar nasıl [öğesi sahiplerini yönetme](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners). | Hayır | Hayır |
-| **Yazar** | Bu modül bildirimi yazarı olarak ve bir betik bildirim dahil edilir. YAZAR. Yazar alanı, genellikle bir şirket veya kuruluş bir öğesiyle ilişkili belirtmek için kullanılır. | Evet | Evet |
-| **Telif Hakkı** | Bu modül bildiriminde telif hakkı alanıdır ve. Bir komut dosyası bildiriminde telif hakkı. | Evet | Evet |
-| **FileList** | PowerShell Galerisi yayımlandığında dosya listesini paketinden çizilir. Bildirim bilgileriyle denetlenebilir değil. Not: bir sistemde öğeyi yükledikten sonra mevcut değil PowerShell galerisinde her bir öğesiyle listelenen bir ek .nuspec dosyası yok. Bu öğe için Nuget paket bildirim ve yok sayılabilir. | Hayır | Hayır |
-| **Etiketleri** | Modüller için etiketleri PSData\PrivateData altında bulunur. Komut dosyaları için bölüm etiketli. ETİKETLER. Tırnak içine olsalar bile etiketler Not boşluk içeremez. Etiketleri ek gereksinimler ve etiket Ayrıntıları bölümünde bu konunun ilerleyen bölümlerinde açıklanan anlama sahiptir. | Evet | Evet |
-| **Cmdlet’ler** | Bu modül bildiriminde CmdletsToExport kullanılarak sağlanır. Joker karakter kullanılması yerine açıkça öğeleri listelemek için en iyisi olduğuna dikkat edin "*" gibi kullanıcılar için yük modülü performansı iyileştirir. | Evet | Hayır |
-| **İşlevler** | Bu modül bildiriminde FunctionsToExport kullanılarak sağlanır. Joker karakter kullanılması yerine açıkça öğeleri listelemek için en iyisi olduğuna dikkat edin "*" gibi kullanıcılar için yük modülü performansı iyileştirir. | Evet | Hayır |
-| **DSC kaynakları** | PowerShell sürüm 5.0 ve üstü kullanılacak modülleri için bu DscResourcesToExport kullanarak bildiriminde sağlanır. Modül PowerShell 4'te kullanılacak ise, desteklenen bir bildirim anahtar olmadığından DSCResourcesToExport kullanılmamalıdır. (DSC PowerShell 4 önce yoktu.) | Evet | Hayır |
-| **İş Akışları** | İş akışları için PowerShell Galerisi komut dosyaları olarak yayımlanan ve iş akışları olarak tanımlanan (bkz [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) bir örnek) kod. Bu bildirimi tarafından denetlenmeyen. | Hayır | Hayır |
-| **Rol özellikleri** | JEA tarafından kullanılan bir veya daha fazla rolü özelliği (.psrc) dosyaları, PowerShell Galerisi yayımlanmış modül içerdiğinde, bu listede görüntülenir. Daha fazla ayrıntı için JEA belgelerine bakın [rol özellikleri](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities). | Evet | Hayır |
-| **PowerShell sürümleri** | Bu komut dosyası veya modül bildiriminde belirtilir. Aşağıda, bu PowerShell 5.0 ile kullanılmak üzere tasarlanmış modülleri için etiketleri kullanılarak denetlenir. Masaüstü için PSEdition_Desktop etiketi kullanın ve PSEdition_Core etiketi çekirdek için kullanın. Yalnızca PowerShell 5.1 ve üstü için kullanılacak olan modüller için ana bildiriminde CompatiblePSEditions anahtarı yok. Ek ayrıntılar için PS Edition özelliğinde gözden [PowerShell Get belgelerine](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport). | Evet | Evet |
-| **Bağımlılıklar** | Bağımlılıkları olan ya da modülü RequiredModules olarak veya komut dosyası bildirimi bildirilen PowerShell Galerisi modüllerde #Requires – Modülü (ad). | Evet | Evet |
+| **Başlık** | Galeride yayımlanmış öğesi adıdır  | Hayır | Hayır |
+| **Sürüm** | Görüntülenen meta veri sürümü dizesini sürümüdür ve yayın öncesi bir IF belirtilir. Birincil modül bildirimindeki sürüm ModuleVersion bölümüdür. Bir betik için onu olarak tanımlanır. Sürüm. Yayın öncesi sürüm dizesi belirtilirse, ModuleVersion modüller için eklenen, veya yüklenecek bir parçası olarak belirtilen. Komut dosyalarının sürümü. Yayın öncesi dizelerde belirtmek için belgeleri yoktur [modülleri](/powershell/gallery/concepts/module-prerelease-support)hem de [betikleri](/powershell/gallery/concepts/script-prerelease-support) | Evet | Evet |
+| **Açıklama** | Bu modül bildirimindeki açıklamasıdır ve bir betik dosyası bildiriminde olduğu. AÇIKLAMASI | Evet | Evet |
+| **Lisans kabulü gerektir** | Bir modül, modül bildirimini değiştirerek kullanıcı bir lisans kabul etmelerini zorunlu tutabilirsiniz RequireLicenseAcceptance ile bir LicenseURI sağlama ve modül klasörün kökünde bir license.txt dosyasına sağlayarak $true =. Ek bilgi sağlanmıştır [lisans kabulü gerektiren](/powershell/gallery/how-to/working-with-items/items-that-require-license-acceptance) konu. | Evet | Hayır |
+| **Sürüm notları** | Modüller için bu bilgileri ReleaseNotes bölümünde PSData\PrivateData çizilir. Betik Bildirimlerde öyledir. RELEASENOTES öğesi. | Evet | Evet |
+| **Sahipleri** | Sahip olan bir öğe güncelleştirebilirsiniz PowerShell galerisinde bulunan kullanıcılar listesidir. Sahip listesi öğesi bildiriminde yer almaz. Ek belgelerde nasıl [öğe sahiplerini yönetme](/powershell/gallery/how-to/publishing-items/managing-item-owners). | Hayır | Hayır |
+| **Yazar** | Bu, yazarı olarak modül bildirimindeki ve bir betik bildirim dahil edilir. YAZAR. Yazar alanı, genellikle bir şirket veya kuruluş bir öğeyle ilişkili belirtmek için kullanılır. | Evet | Evet |
+| **Telif Hakkı** | Bu modül bildirimindeki telif hakkı alanıdır ve. Bir betik bildiriminde telif hakkı. | Evet | Evet |
+| **FileList** | PowerShell Galerisi'nde yayımlandığında, dosya listesi paketten çizilir. Bildirim bilgileri tarafından denetlenebilir değil. Not: her öğe, öğe bir sistemde yükledikten sonra mevcut değilse PowerShell Galerisi ile listelenmiş bir ek .nuspec dosyası yoktur. Bu öğe için Nuget paket bildirim ve yok sayılabilir. | Hayır | Hayır |
+| **Etiketleri** | Modüller için etiketleri PSData\PrivateData altında bulunur. Betikler için bölüm etiketlendiğini. ETİKETLER. Tırnak işaretleri olduklarında bile etiketleri Not boşluk içeremez. Etiketler, ek gereksinimler ve etiket Ayrıntıları bölümünde bu konunun ilerleyen bölümlerinde açıklanan bir anlamı vardır. | Evet | Evet |
+| **Cmdlet’ler** | Bu modül bildiriminde CmdletsToExport kullanılarak sağlanır. Joker karakter kullanılması yerine açıkça öğelerini listelemek için en iyi olduğuna dikkat edin "*", kullanıcılar için yükleme-module performansını artıracak şekilde. | Evet | Hayır |
+| **İşlevleri** | Bu modül bildiriminde FunctionsToExport kullanılarak sağlanır. Joker karakter kullanılması yerine açıkça öğelerini listelemek için en iyi olduğuna dikkat edin "*", kullanıcılar için yükleme-module performansını artıracak şekilde. | Evet | Hayır |
+| **DSC kaynakları** | PowerShell sürüm 5.0 ve üzeri için kullanılacak olan modüller için bu DscResourcesToExport kullanılarak bildirimde sağlanır. Modülü, PowerShell 4'te kullanılacak ise, desteklenen bir bildirim anahtar olmadığından DSCResourcesToExport kullanılmamalıdır. (DSC, PowerShell 4 önce yoktu.) | Evet | Hayır |
+| **İş Akışları** | İş akışları betikler PowerShell Galerisi'nde yayımlanmış ve iş akışları olarak tanımlanır (bkz [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) bir örnek) kod. Bu bildirimi tarafından denetlenmez. | Hayır | Hayır |
+| **Rol işlevleri** | JEA tarafından kullanılan bir veya daha fazla rol (.psrc) dosyaları, modülün PowerShell Galerisi'nde yayımlanmış içerdiğinde, bu listede görüntülenir. İlgili daha fazla ayrıntı için JEA belgelere bakın [rol işlevleri](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities). | Evet | Hayır |
+| **PowerShell sürümleri** | Bu, bir komut veya modül bildiriminde belirtilir. Aşağıda, bu PowerShell 5.0 ile kullanılmak üzere tasarlanmış modüller için etiketleri kullanılarak denetlenir. Masaüstü için PSEdition_Desktop etiketini kullanın ve PSEdition_Core etiket core için kullanın. Yalnızca PowerShell 5.1 ve üzeri için kullanılacak olan modüller için ana bildiriminde CompatiblePSEditions anahtar yoktur. Ek ayrıntılar için PS Edition özelliği gözden [PowerShell Get belgeleri](/powershell/gallery/concepts/module-psedition-support). | Evet | Evet |
+| **Bağımlılıkları** | Bağımlılıkları olan ya da modül RequiredModules olarak ya da komut bildirim bildirilen PowerShell Galerisi modülleri #Requires – Modülü (ad). | Evet | Evet |
 | **En düşük Powershell sürümü** | Bu modül bildiriminde PowerShellVersion belirtilebilir. | Evet | Hayır |
-| **Sürüm Geçmişi** | Sürüm Geçmişi PowerShell Galerisi modülünde yapılan güncelleştirmeler yansıtır. Bir öğenin sürümü Sil özelliğini kullanarak gizli ise, bu sürüm geçmişinde dışında öğesi sahiplerine görüntülenmez. | Hayır | Hayır |
-| **Proje sitesi** | Proje sitesi bir ProjectURI belirterek modülleri modül bildirimi Privatedata\PSData bölümünde sağlanır. Komut dosyası bildiriminde belirterek denetlenir. PROJECTURI. | Evet | Evet |
-| **Lisans** | Bir lisans bağlantı bir LicenseURI belirterek modülleri modül bildirimi Privatedata\PSData bölümünde sağlanır. Komut dosyası bildiriminde belirterek denetlenir. LICENSEURI. Bir lisans LicenseURI sağlanmadı ya da bir modül içinde PowerShell Galerisi için kullanım koşullarını ardından kullanım koşullarını öğesi için belirtin. dikkate almak önemlidir. Kullanım koşulları Ayrıntılar için bkz. | Evet | Evet |
+| **Sürüm Geçmişi** | Sürüm Geçmişi bir modülün PowerShell Galerisi'nde yapılan güncelleştirmeleri yansıtır. Bir öğenin sürümünü silme özelliği kullanarak gizli ise, bu sürüm geçmişine dışında öğesi sahiplerine görüntülenmez. | Hayır | Hayır |
+| **Proje sitesi** | Proje sitesi bir ProjectURI belirterek modüllerin modül bildirimini Privatedata\PSData bölümünde sağlanır. Betik bildiriminde belirterek denetlenir. PROJECTURI. | Evet | Evet |
+| **Lisans** | Bir lisans bağlantı bir LicenseURI belirterek modül bildirimini Privatedata\PSData bölümünde modüller için sağlanır. Betik bildiriminde belirterek denetlenir. LICENSEURI. Bir lisansı LicenseURI sağlanmadı veya içinde bir modül, PowerShell Galerisi için kullanım koşullarını ardından kullanım koşullarını öğe için belirtin. dikkat etmeniz önemlidir. Kullanım koşullarını ayrıntılı bilgi için bkz. | Evet | Evet |
 
-## <a name="editing-item-details"></a>Öğe ayrıntıları düzenleme
+## <a name="editing-item-details"></a>Öğe ayrıntılarını düzenleme
 
-PowerShell galeri öğesi sayfasını Düzenle birkaç bir öğe için özellikle görüntülenen alanları değiştirmek yayımcılar sağlar:
+PowerShell Galerisi öğesi sayfasını Düzenle birkaç özellikle bir öğe için görüntülenen alanları değiştirmek yayımcılar sağlar:
 
 - Başlık
 - Açıklama
 - Özet
 - Simge URL'si
 - Proje giriş sayfası URL'si
-- yazarları
+- Yazarları
 - Telif Hakkı
 - Etiketler
 - Sürüm notları
-- Lisans gerektirir
+- Lisansı
 
-Bu yaklaşım genellikle, bir modül daha eski bir sürümü için görüntülenenleri düzeltmek için gerekli dışında önerilmez.
-Modülü Al kullanıcılar meta veri öğesi endişeniz başlatır PowerShell galerisinde görüntülenenleri eşleşmiyor görürsünüz.
-Bu sıkça Değişikliği onaylamak için öğeyi sahiplerine gidip sorguları neden olur.
-Bu yaklaşım kullanılır, dilediğiniz zaman aynı değişikliklerle öğenin yeni bir sürümü yayınlanmalıdır önerilir.
+Bu yaklaşım genellikle bir modülün daha eski bir sürümü görüntülenenleri düzeltmek için gerekli dışında önerilmez.
+Modülü Al kullanıcılar, meta veri öğesi ile ilgili endişelerini başlatır PowerShell galerisinde görüntülenen eşleşmiyor görürsünüz.
+Bu sık gidip Değişikliği onaylamak için öğe sahipleriyle sorguları sonuçlanır.
+Bu yaklaşımın kullanılması, istediğiniz zaman aynı değişikliklerle öğenin yeni bir sürümü yayımlanmasına önemle tavsiye edilir.
 
 ## <a name="tag-details"></a>Etiket ayrıntıları
 
-Etiketler öğeleri bulmak için basit dizeler tüketicileri kullanım içindir.
-Tutarlı olarak aynı konu ile ilgili birçok öğeleri arasında kullanıldığında, bunların etiketlerini en değerli. Aynı birden fazla sürümünü kullanarak word (örneğin veritabanı ve veritabanları veya test ve test) genellikle az avantajı sağlar.
-Etiketler Tek sözcüklü büyük küçük harf duyarsız dizelerdir ve boşluk içeremez. Kullanıcıları arar düşünüyorsanız tümcecik ise öğeyi açıklama eklemek ve arama sonuçlarında bulunamadı. Okunabilirliğini artırmak çalışıyorsanız Pascal büyük/küçük harf, tire, alt çizgi veya nokta kullanın. Genellikle yanlış olarak uzun, karmaşık ve olağan dışı etiketler oluşturma hakkında dikkatli olun.
+Etiketler, öğeleri bulmak için basit dizeler tüketiciler kullanım içindir.
+Etiketler en değerli alındığında bunlar aynı konu ile ilgili birçok öğeleri arasında tutarlı bir şekilde kullanılır. Aynı değinirken kullanarak sözcük (örneğin veritabanı ve veritabanları veya test ve test) genellikle az yarar sağlar.
+Etiketler Tek sözcüklü büyük küçük harf duyarsız dizelerdir ve boşluklar içeremez. Kullanıcılar için arama düşündüğünüz bir ifade ise madde açıklaması eklemek ve arama sonuçlarında bulunamadı. Okunabilirliğin çalışıyorsanız Pascal büyük/küçük harf, tire, alt çizgi veya nokta kullanın. Genellikle yanlış olarak uzun, karmaşık ve olağan dışı etiketler oluşturma hakkında dikkatli olun.
 
-Dikkat edilecek önemli etiketleri, PowerShell Galerisi ve PowerShellGet cmdlet'leri bunları benzersiz olarak işler. PSEdition_Desktop PSEdition_Core belirli örnekler ve yukarıda açıklanan.
+PowerShell Galerisi ve PowerShellGet olarak cmdlet'leri bunları benzersiz olarak işleme, dikkat edilecek önemli etiketleri vardır. PSEdition_Desktop PSEdition_Core belirli örnekler ve yukarıda açıklanan.
 
-Tutarlı bir şekilde arasında çok sayıda öğe belirli ve kullanılan olduklarında yukarıda belirtildiği gibi etiketleri en yüksek değeri sağlayın.
-Kullanmak için en iyi etiketleri bulmaya çalışan bir yayımcı olarak, en kolay yaklaşım, değerlendiriyorsanız etiketleri için PowerShell Galerisi arama yapmaktır.
-İdeal olarak, döndürülen öğe olacaktır ve madde açıklamaları, bu anahtar sözcük kullanımı ile hizalanır.
+Tutarlı bir şekilde birçok öğeleriniz genelinde belirli ve kullanılan olduklarında yukarıda belirtildiği gibi etiketleri en yüksek değeri sağlar.
+Kullanmak için en iyi etiketleri bulmaya çalışırken bir yayımcı, en kolay yaklaşım PowerShell Galerisi, değerlendiriyorsanız etiketleri için arama gerçekleştirmektir.
+İdeal olarak, döndürülen öğe sayısını olacaktır ve öğesi açıklamaları, bu anahtar sözcük kullanımını ile hizalanır.
 
-Başvuru için en yaygın kullanılan bazı etiketler 14/12/2017'dan sonra şunlardır.
-Bazı durumlarda, benzer ancak belki de etiketi listelenen ideal seçenekleri daha az vardır.
-Bu daha az gürültü neden ve daha iyi arama sonuçları Tüketiciler için tercih edilen etiketi olarak kullanmak için en iyi uygulamadır.
-
+Başvuru için en yaygın kullanılan bazı etiketler 14/12/2017 itibarıyla aşağıda verilmiştir.
+Bazı durumlarda, benzer ancak belki de ideal seçenek etiketi listelenen daha az vardır.
+Daha az paraziti de neden ve tüketiciler için daha iyi arama sonuçları tercih edilen etiketini kullanmak için bir en iyi yöntemdir.
 
 | **Tercih edilen etiketi** | **Alternatifleri ve notlar** |
 | --- | --- |
@@ -99,17 +98,17 @@ Bu daha az gürültü neden ve daha iyi arama sonuçları Tüketiciler için ter
 | **SQLServer** |  |
 | **DBA** |  |
 | **Güvenlik** | Savunma daha az kesin |
-| **Veritabanı** | Veritabanları (çoğul) daha az tercih |
+| **Veritabanı** | Daha az tercih veritabanları (çoğul) |
 | **DevOps** |  |
 | **Windows** |  |
 | **Derleme** |  |
-| **Dağıtım** | Dağıtma biraz daha az sıklıkta kullanılır |
+| **Dağıtım** | Dağıtma biraz daha az sıklıkta kullanılan |
 | **Bulut** |  |
 | **GIT** |  |
-| **test etme** | Sınama daha az tercih edilir |
-| **VersionControl** | Sürüm daha sık kullanılır ancak daha az kesin  |
+| **Test** | Testi daha az tercih edilir |
+| **VersionControl** | Sürüm daha sık kullanılan olsa da daha az kesin  |
 | **Günlüğe kaydetme** | Tercih edilen bir eylem olarak günlük kullanımı |
-| **Günlük** | Bir şey olarak tercih edilen kullanımını günlük |
+| **Günlük** | Bir şey olarak tercih edilen kullanım günlüğü |
 | **Yedekleme** |  |
 | **Iaas** |  |
 | **Linux** |  |
@@ -119,10 +118,10 @@ Bu daha az gürültü neden ve daha iyi arama sonuçları Tüketiciler için ter
 | **GitHub** |  |
 | **JSON** |  |
 | **Exchange** |  |
-| **Ağ** | Ağ daha az sıklıkta kullanılan, benzer |
+| **Ağ** | Daha az sıklıkta kullanılan ağ benzer, |
 | **SharePoint** |  |
-| **Raporlama** | Raporlama bir eylem, bir şey rapor. |
-| **Raporu** | Rapor bir şey. |
+| **Raporlama** | Raporlama bir eylem olduğundan, rapor bir şeydir |
+| **Rapor** | Rapor bir şeydir |
 | **WinRM** |  |
 | **İzleme** |  |
 | **VSTS** |  |
@@ -130,11 +129,11 @@ Bu daha az gürültü neden ve daha iyi arama sonuçları Tüketiciler için ter
 | **Google** |  |
 | **Renk** |  |
 | **DNS** |  |
-| **Office365** | Out Office Yazım tercih edilir. O365 daha az yaygın olarak, kısa ancak kullanılır | **Gitlab** |  |
+| **Office365** | Office Yazım tercih edilir. O365 daha az sık, daha kısa ancak kullanılır | **Gitlab** |  |
 | **Pester** |  |
 | **AzureAD** |  |
 | **HTML** |  |
-| **Hyper-V** | HyperV etiket olarak daha az yaygındır |
+| **Hyper-V** | HyperV bir etiket olarak daha az yaygındır |
 | **Yapılandırma** |  |
 | **ChatOps** |  |
 | **PackageManagement** |  |
@@ -142,7 +141,7 @@ Bu daha az gürültü neden ve daha iyi arama sonuçları Tüketiciler için ter
 | **Güvenlik Duvarı** |  |
 | **Docker** |  |
 | **Appveyor** |  |
-| **AzureRm** | Öncelikle AzureRM modülleri için kullanılır |
+| **AzureRm** | Öncelikle AzureRM modülleri için kullanılan |
 | **Zip** |  |
 | **MSI** |  |
 | **Mac** |  |

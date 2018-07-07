@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
+keywords: DSC, powershell, yapılandırma, Kurulum
 title: MSFT_DSCLocalConfigurationManager sınıfının SendConfigurationApply yöntemi
-ms.openlocfilehash: c578f4f52d3ea70e7bcf683ac204d6e484d4630d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: da3a08307122ab38ee4a6fd5d4a9b97579a988f7
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222165"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893180"
 ---
 # <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının SendConfigurationApply yöntemi
 
-Yönetilen düğüme yapılandırma belgesini gönderir ve yapılandırmayı uygulamak için yapılandırma Aracısı'nı kullanır.
+Yapılandırma belgelerini yönetilen düğüme gönderir ve yapılandırmayı uygulamak için yapılandırma aracısı kullanır.
 
-<a name="syntax"></a>Sözdizimi
-------
+## <a name="syntax"></a>Sözdizimi
 
 ```mof
 uint32 SendConfigurationApply(
@@ -23,30 +22,26 @@ uint32 SendConfigurationApply(
 );
 ```
 
-<a name="parameters"></a>Parametreler
-----------
+## <a name="parameters"></a>Parametreler
 
-*ConfigurationData* \[içinde\] yapılandırması için ortam verilerini.
+*ConfigurationData* \[içinde\] ortam verilerini.
 
 *zorla* \[içinde\] **true** durdurmak için yapılandırmayı zorla uygulamak için.
 
 ## <a name="return-value"></a>Dönüş değeri
-------------
 
-Başarı sıfır döndürür; Aksi takdirde bir hata kodu döndürür.
+Başarılıysa sıfır döndürür; Aksi takdirde bir hata kodu döndürür.
 
 ## <a name="remarks"></a>Açıklamalar
 
-Bu statik bir yöntemdir.
+Statik bir yöntem budur.
 
 ## <a name="requirements"></a>Gereksinimler
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Ayrıca bkz:
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

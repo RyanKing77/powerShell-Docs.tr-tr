@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
+keywords: DSC, powershell, yapılandırma, Kurulum
 title: MSFT_DSCLocalConfigurationManager sınıfının RollBack yöntemi
-ms.openlocfilehash: d2f9b7025d611912e119800408e25fcb66bc0228
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4956900ecd2c9cb7f2e2b5bcab94616f9f5d5565
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219887"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893027"
 ---
 # <a name="rollback-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının RollBack yöntemi
 
-Geri önceki bir sürüm olarak yapılandırma yapar.
+Yeniden yapılandırma, önceki bir sürüme yapar.
 
-<a name="syntax"></a>Sözdizimi
-------
+## <a name="syntax"></a>Sözdizimi
 
 ```mof
 uint32 RollBack(
@@ -22,28 +21,24 @@ uint32 RollBack(
 );
 ```
 
-<a name="parameters"></a>Parametreler
-----------
+## <a name="parameters"></a>Parametreler
 
-*configurationNumber* \[içinde\] istenen yapılandırma belirtir.
+*configurationNumber* \[içinde\] istenen yapılandırmanın belirtir.
 
 ## <a name="return-value"></a>Dönüş değeri
-------------
 
-Başarı sıfır döndürür; Aksi takdirde bir hata kodu döndürür.
+Başarılıysa sıfır döndürür; Aksi takdirde bir hata kodu döndürür.
 
 ## <a name="remarks"></a>Açıklamalar
 
-Bu statik bir yöntemdir.
+Statik bir yöntem budur.
 
 ## <a name="requirements"></a>Gereksinimler
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Ayrıca bkz:
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

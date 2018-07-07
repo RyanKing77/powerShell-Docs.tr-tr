@@ -3,22 +3,22 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
 title: Sorun giderme cmdlet'leri
-ms.openlocfilehash: e8890cb6bbe661b8524d83cabf91483acbde8095
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c0a1fbcafd8c4443dc9d628c54c4c525d9701861
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219836"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892483"
 ---
 # <a name="troubleshooting-cmdlets"></a>Sorun giderme cmdlet'leri
 
-## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Nasıl çözümleneceğini "Uyarı: 'paket adı,' paketi yükleyemedi" sorunu?
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Nasıl çözümleneceğini "Uyarı: ', paket adı' paket başarısız indirmek" sorun
 
-Modül yükleme veya güncelleştirme modülü bazen bazı makinelerde başarısız olduğunu bildirilir.
-Araştırmamıza göre bunu ağ bağlantısı yapmak için bir şeydir.
-Yakın zamanda, güvenilir bir şekilde paketleri indirebilmesi biz NuGet sağlayıcı güncelleştirildi.
-NuGet Sağlayıcısı'nın en son sürüme yükleyin ve ardından yüklemek veya modülünüzün güncelleştirmek için aşağıdaki yönergeleri izleyebilirsiniz.
-Şimdi 'Azure' modülü bir örnek olarak kullanabilirsiniz.
+Bu rapor, `Install-Module` veya `Update-Module` bazen bazı makinelerde başarısız olur.
+Araştırmamıza göre bunu ağ bağlantısı ile yapmak için bir şeydir.
+Güvenilir bir şekilde paketleri indirebilmeniz en son NuGet sağlayıcısı güncelleştirdik.
+NuGet sağlayıcısı en son derlemesini yüklemek ve yüklemeyi veya modülünüzde güncelleştirmek için aşağıdaki yönergeleri izleyebilirsiniz.
+Şimdi 'Azure' modülü bir örnek olarak kullanın.
 
 ```powershell
 Install-PackageProvider NuGet -MinimumVersion 2.8.5.206 -Force

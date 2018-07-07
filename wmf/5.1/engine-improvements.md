@@ -2,41 +2,41 @@
 ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
-title: WMF 5.1 PowerShell altyapısı yenilikleri
-ms.openlocfilehash: 98095904157a675bbe84616b1d9cbb22689cd059
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: WMF 5.1 PowerShell altyapısı iyileştirmeleri
+ms.openlocfilehash: 738f72b910de7d44f48309013237d523d0dd40a4
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218527"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892901"
 ---
-#<a name="powershell-engine-improvements"></a>PowerShell altyapısı geliştirmeleri
+# <a name="powershell-engine-improvements"></a>PowerShell altyapısı iyileştirmeleri
 
-WMF 5.1, çekirdek PowerShell altyapısı aşağıdaki iyileştirmeleri uygulanmıştır:
+WMF 5.1 aşağıdaki çekirdek PowerShell altyapısı iyileştirmeleri uygulanmıştır:
 
+## <a name="performance"></a>Performans
 
-## <a name="performance"></a>Performans ##
-
-Performans bazı önemli alanlarında geliştirilmiştir:
+Bazı önemli alanda performans geliştirilmiştir:
 
 - Başlatma
-- ForEach-Object ve Where-Object gibi cmdlet öğelerini ardışık düzen yaklaşık % 50 daha hızlı'dir
+- Gibi cmdlet'leri için ardışık düzen `ForEach-Object` ve `Where-Object` yaklaşık % 50 daha hızlıdır
 
-Bazı örnek iyileştirmeleri (sonuçlarınızı donanımınıza bağlı olarak değişebilir):
+Bazı örnek iyileştirmeleri (sonuçlarınızı donanımınıza bağlı olarak farklılık gösterebilir):
 
 | Senaryo | 5.0 süresi (ms) | 5.1 süresi (ms) |
 | -------- | :---------------: | :---------------: |
 | `powershell -command "echo 1"` | 900 | 250 |
-| PowerShell çalıştırma ilk hiç: `powershell -command "Unknown-Command"` | 30000 | 13000 |
-| Yerleşik komutu analiz önbellek: `powershell -command "Unknown-Command"` | 7000 | 520 |
+| PowerShell'i çalıştırmak ilk hiç olmadığı kadar: `powershell -command "Unknown-Command"` | 30000 | 13000 |
+| Yerleşik komut analiz önbellek: `powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
 
-> Bir değişiklik için başlatma ilgili bazı etkileyebilecek Not senaryoları desteklenmiyor.
-> PowerShell artık dosyaları okur `$pshome\*.ps1xml` --bu dosyaları bazı dosya önlemek için C# için olarak dönüştürülen ve XML işlem yükünü CPU dosyaları.
-Dosya içeriğini değiştirirseniz, bu V5, yalnızca V2 için herhangi bir etkisi kalmaması dosyaları yan yana destek V2 hala mevcut.
-Bu dosyaların içeriğini değiştirme, desteklenen bir senaryo asla olup olmadığını unutmayın.
+> [!Note]
+> Desteklenmeyen bazı senaryolar için başlatma ilgili bir değişiklik etkileyebilir.
+> PowerShell artık, dosyaları okur `$pshome\*.ps1xml` --bu dosyaları bazı dosya önlemek için C# için olarak dönüştürüldü ve XML işlem yükünü CPU dosyaları.
+> Dosya içeriğini değiştirirseniz V5, yalnızca V2 için herhangi bir etkisi olmaz şekilde dosyaları yan yana V2 desteklemek için hala mevcut.
+> Bu dosyaların içeriğini değiştirme, desteklenen bir senaryo asla olup olmadığını unutmayın.
 
-Başka bir görünür PowerShell dışarı aktarılan komutlar ve diğer bilgileri bir sistemde yüklü modülleri için nasıl önbelleğe alınacağını değişikliktir.
-Bu önbellek dizinde depolanan daha önce `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis`.
-WMF 5.1, tek bir dosya önbelleğidir `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
-Bkz: [modülü analiz önbellek](scenarios-features.md#module-analysis-cache) daha fazla ayrıntı için.
+Başka bir görünür bir değişiklik, dışarı aktarılan komutlar ve diğer bilgileri sistemde yüklü modüller için PowerShell'i nasıl önbelleğe aldığını ' dir.
+Daha önce bu önbellek dizinde depolanan `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis`.
+WMF 5.1, tek bir dosyayı bir önbellektir `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
+Bkz: [modül çözümleme önbellek](scenarios-features.md#module-analysis-cache) daha fazla ayrıntı için.

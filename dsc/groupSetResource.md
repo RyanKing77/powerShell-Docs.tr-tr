@@ -1,24 +1,25 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
-description: Hedef düğümde bulunan yerel grupları yönetmek için bir mekanizma sağlar.
+keywords: DSC, powershell, yapılandırma, Kurulum
+description: Hedef düğüm üzerindeki yerel grupların yönetmek için bir mekanizma sağlar.
 title: DSC GroupSet kaynağı
-ms.openlocfilehash: 3d6fdcaef6053964d3fb3b709a5263d291a7c840
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222362"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892435"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet kaynağı
 
-> İçin geçerlidir: Windows Windows PowerShell 5.0
+> Uygulama hedefi: Windows Windows PowerShell 5.0
 
-**GroupSet** kaynağı içinde Windows PowerShell istenen durum yapılandırması (DSC), yerel gruplar hedef düğümde bulunan yönetmek için bir mekanizma sağlar. Bu kaynak olmadığı bir [bileşik kaynak](authoringResourceComposite.md) çağrısı [kaynak grubunda](groupResource.md) belirtilen her grup için `GroupName` parametresi.
+**GroupSet** kaynak olarak Windows PowerShell Desired State Configuration (DSC) hedef düğümde yerel grupları yönetmek için bir mekanizma sağlar. Bu kaynak bir [bileşik kaynak](authoringResourceComposite.md) çağrılarının [kaynak grubunda](groupResource.md) belirtilen her grup için `GroupName` parametresi.
 
-Bu kaynak ekleme ve/veya birden fazla gruba üye aynı listesi kaldırmak, birden fazla grubu kaldırmak veya üyeleri aynı listesiyle birden fazla grubu ekleme yapmak istediğinizde kullanın.
+Bu kaynak, ekleme ve/veya aynı birden fazla gruba üye listesini Kaldır, birden fazla grubunu kaldırın veya aynı listesiyle birden fazla Grup üyeleri eklemek istediğinizde kullanın.
 
-##<a name="syntax"></a>Sözdizimi ##
+## <a name="syntax"></a>Sözdizimi
+
 ```
 Group [string] #ResourceName
 {
@@ -36,16 +37,16 @@ Group [string] #ResourceName
 |  Özellik  |  Açıklama   |
 |---|---|
 | GroupName| Belirli bir durumu sağlamak istediğiniz grupların adları.|
-| MembersToExclude| Gruplar mevcut üyeliğinden üyeleri kaldırmak için bu özelliği kullanın. Biçiminde bir dize dizisi bu özellik değeri *etki alanı*\\*kullanıcıadı*. Bu özellik bir yapılandırmada ayarlarsanız kullanmayın **üyeleri** özelliği. Bunun yapılması bir hata oluşturur.|
-| kimlik bilgisi| Uzak kaynaklara erişmek için gerekli kimlik bilgileri. **Not**: Bu hesap tüm yerel olmayan hesapları grubuna eklemek için uygun Active Directory izinleri olması gerekir; aksi takdirde bir hata ortaya çıkar.
-| Emin olun| Gruplar mevcut olup olmadığını gösterir. Bu özelliği grubu mevcut emin olmak için "yok" olarak ayarlayın. "(Varsayılan değer) sunmak için" olarak ayarlanması grupların bulunmasını sağlar.|
-| Üyeler| Belirtilen üyeleriyle geçerli grup üyeliğini değiştirmek için bu özelliği kullanın. Biçiminde bir dize dizisi bu özellik değeri *etki alanı*\\*kullanıcıadı*. Bu özellik bir yapılandırmada ayarlarsanız, ya da kullanmayın **MembersToExclude** veya **MembersToInclude** özelliği. Bunun yapılması bir hata oluşturur.|
-| MembersToInclude| Grubun var olan üyeliğini üye eklemek için bu özelliği kullanın. Biçiminde bir dize dizisi bu özellik değeri *etki alanı*\\*kullanıcıadı*. Bu özellik bir yapılandırmada ayarlarsanız kullanmayın **üyeleri** özelliği. Bunun yapılması bir hata oluşturur.|
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi ' DependsOn = "[ ResourceType] KaynakAdı"''.|
+| MembersToExclude| Gruplar mevcut üyelikten üyeleri kaldırmak için bu özelliği kullanın. Bu özelliğin değeri form dizeler dizisidir *etki alanı*\\*UserName*. Bir yapılandırmada bu özelliği ayarlarsanız, kullanmayın **üyeleri** özelliği. Bunun yapılması, bir hata oluşturur.|
+| Kimlik bilgisi| Uzak kaynaklara erişmek için gerekli kimlik bilgileri. **Not**: Bu hesabın tüm yerel olmayan hesapları grubuna eklemek için uygun Active Directory izinlerinin olması gerekir; aksi takdirde bir hata meydana gelir.
+| Emin olun| Gruplar mevcut olup olmadığını gösterir. "Yok" grubu mevcut sağlamak için bu özelliği ayarlayın. "(Varsayılan değer) sunmak için" ayar grupları mevcut olmasını sağlar.|
+| Üyeler| Belirtilen üye ile geçerli grup üyeliğini değiştirmek için bu özelliği kullanın. Bu özelliğin değeri form dizeler dizisidir *etki alanı*\\*UserName*. Bir yapılandırmada bu özelliği ayarlarsanız, ya da kullanmayın **MembersToExclude** veya **MembersToInclude** özelliği. Bunun yapılması, bir hata oluşturur.|
+| MembersToInclude| Mevcut üyelik grubunun üyeleri eklemek için bu özelliği kullanın. Bu özelliğin değeri form dizeler dizisidir *etki alanı*\\*UserName*. Bir yapılandırmada bu özelliği ayarlarsanız, kullanmayın **üyeleri** özelliği. Bunun yapılması, bir hata oluşturur.|
+| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise __ResourceName__ ve kendi türünün __ResourceType__, bu özelliği kullanmak için söz dizimi ' DependsOn "[= ResourceType] ResourceName"''.|
 
-## <a name="example-1"></a>Örnek 1
+## <a name="example-1-ensuring-groups-are-present"></a>Örnek 1: Kalmasını sağlama grup yok
 
-Aşağıdaki örnekte, "myGroup" ve "myOtherGroup" adlı iki grup mevcut olduğundan emin olun gösterilmektedir.
+Aşağıdaki örnek, "myGroup" ve "myOtherGroup" adlı iki grup mevcut olduğundan emin olun gösterilmektedir.
 
 ```powershell
 configuration GroupSetTest
@@ -73,8 +74,8 @@ $cd = @{
     )
 }
 
-
 GroupSetTest -ConfigurationData $cd
 ```
 
->**Not:** Bu örnek düz metin kimlik bilgileri kolaylık sağlamak için kullanır. Yapılandırma MOF dosyasındaki kimlik bilgilerini şifrelemek hakkında daha fazla bilgi için bkz: [MOF dosyası güvenli hale getirme](secureMOF.md).
+> [!NOTE] 
+> Bu örnekte, kolaylık olması için düz metin kimlik bilgileri kullanır. Yapılandırma MOF dosyasının kimlik bilgilerini şifreleme hakkında daha fazla bilgi için bkz: [MOF dosyasının güvenliğini sağlama](secureMOF.md).

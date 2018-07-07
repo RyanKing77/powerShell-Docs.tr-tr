@@ -1,29 +1,29 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-title: WMF 5.1 Konsolu geliştirmeleri
-ms.openlocfilehash: fb689002caf42203d760f11acc64e52cfa681069
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: WMF 5.1 Konsolu iyileştirmeleri
+ms.openlocfilehash: a8e82e2f973916c2ed5007eba90ee6f2b7a9a769
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189321"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892935"
 ---
-# <a name="console-improvements-in-wmf-51"></a>WMF 5.1# Konsolu geliştirmeleri
+# <a name="console-improvements-in-wmf-51"></a>WMF 5.1 Konsolu iyileştirmeleri
 
-## <a name="powershell-console-improvements"></a>PowerShell Konsolu geliştirmeleri
+## <a name="powershell-console-improvements"></a>PowerShell Konsolu iyileştirmeleri
 
-Aşağıdaki değişiklikleri WMF 5.1 PowerShell.exe konsol deneyimini geliştirmek üzere yapılmıştır:
+Aşağıdaki değişiklikler PowerShell.exe WMF 5.1, konsol deneyimini iyileştirmek üzere yapılmıştır:
 
-###<a name="vt100-support"></a>VT100 desteği
+### <a name="vt100-support"></a>VT100 desteği
 
-Windows 10 desteği eklendi [VT100 kaçış sıraları](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx).
-PowerShell belirli VT100 biçimlendirme kaçış sıraları tablo genişlikleri hesaplanırken göz ardı eder.
+Windows 10 için destek eklendi [VT100 kaçış dizileri](/windows/console/console-virtual-terminal-sequences).
+PowerShell belirli VT100 biçimlendirme kaçış dizileri tablo genişlikleri hesaplarken göz ardı eder.
 
-PowerShell VT100 desteklenip desteklenmediğini belirlemek için kod biçimlendirmede kullanılabilir yeni bir API de eklenir.
+PowerShell VT100 desteklenip desteklenmediğini belirlemek için kod biçimlendirme içinde kullanılabilen yeni bir API de ekledik.
 Örneğin:
 
-```
+```powershell
 if ($host.UI.SupportsVirtualTerminal)
 {
     $esc = [char]0x1b
@@ -34,21 +34,22 @@ else
     "A default hello"
 }
 ```
-İşte tamamı [örnek](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) eşleşmeleri vurgulamak için kullanılabilir dizesinden seçin.
-Örnek adlı bir dosyaya kaydedin `MatchInfo.format.ps1xml`, profilinizi veya başka bir yerde kullanmak için Çalıştır `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
 
-Windows 10 Anniversary güncelleştirmesiyle başlayarak VT100 kaçış sıraları yalnızca desteklendiğini unutmayın; Önceki sistemlerinde desteklenmez.
+İşte tam [örnek](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) eşleşme vurgulamak için kullanılabilen gelen `Select-String`.
+Örnek adlı bir dosyaya kaydedin `MatchInfo.format.ps1xml`, ardından çalıştırarak, profilinizi veya başka yerde kullanmak için `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
+
+Windows 10 Yıldönümü güncelleştirmesi ile başlayarak, VT100 kaçış dizileri yalnızca desteklendiğini unutmayın; eski sistemlerde desteklenmez.
 
 ### <a name="vi-mode-support-in-psreadline"></a>PSReadline VI modu desteği
 
-[PSReadline](https://github.com/lzybkr/PSReadLine) VI modu desteği ekler. VI modunu kullanmak için çalıştırın `Set-PSReadlineOption -EditMode Vi`.
+[PSReadline](https://github.com/lzybkr/PSReadLine) VI modu desteği ekler. VI modunu kullanmak için çalıştırma `Set-PSReadlineOption -EditMode Vi`.
 
-### <a name="redirected-stdin-with-interactive-input"></a>Yeniden yönlendirilen stdin etkileşimli girişi
+### <a name="redirected-stdin-with-interactive-input"></a>Etkileşimli giriş ile yeniden yönlendirilen stdin
 
-PowerShell ile başlayan önceki sürümlerde `powershell -File -` stdin yeniden yönlendirilen ve komutları etkileşimli olarak girmenizi isteyen gerekiyordu.
+PowerShell ile başlayarak önceki sürümlerde `powershell -File -` stdin yeniden yönlendirme ve etkileşimli olarak komut girmek istiyordu gerekiyordu.
 
-WMF 5.1 ile seçeneği artık gerekli değildir bulmak bu sabit.
-Örneğin tüm seçenekleri olmadan PowerShell başlatabilirsiniz `powershell`.
+WMF 5.1 ile bu seçeneği artık gerekli değildir bulmak zor.
+Hiçbir seçenek olmadan, örneğin PowerShell başlayabilirsiniz `powershell`.
 
-PSReadline şu anda desteklemediği Not stdin, yeniden yönlendirilen ve yerleşik komut satırı düzenleme deneyimi yeniden yönlendirilen stdin çok sınırlı ise, örneğin, ok tuşları çalışmıyor.
-Gelecek sürümlerinden birinde PSReadline bu soruna yönelik.
+PSReadline şu anda desteklemediği Not stdin, yeniden yönlendirilen ve yerleşik komut satırı düzenleme deneyimi ile yeniden yönlendirilen stdin son derece sınırlıdır, ok tuşları gibi çalışmaz.
+PSReadline'nın gelecek sürümlerinden birinde bu soruna.

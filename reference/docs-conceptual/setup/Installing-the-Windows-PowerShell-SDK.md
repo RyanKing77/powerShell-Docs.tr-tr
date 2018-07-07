@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell SDK’sını Yükleme
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
-ms.openlocfilehash: 830b054c2cf2b49d935d3d96b79effa7131f6db2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: fa876bac0c1afac24f93d11dd2e7ecfb1165cf5f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953574"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893547"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Windows PowerShell SDK’sını Yükleme
 
@@ -17,253 +17,255 @@ Aşağıdaki konuda farklı Windows sürümleri üzerinde PowerShell SDK'yı yü
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Windows PowerShell 3.0 yükleme Windows 8 ve Windows Server 2012 için SDK'sı
 
 Windows PowerShell 3.0, Windows 8 ve Windows Server 2012 ile otomatik olarak yüklenir.
-Ayrıca, indirin ve Windows 8 SDK'sı bir parçası olarak Windows PowerShell 3.0 için başvuru bütünleştirilmiş yükleyin.
-Bu derlemeler cmdlet'leri, sağlayıcıları ve ana bilgisayar programlar için Windows PowerShell 3.0 yazmanızı sağlar.
-Windows 8 için Windows SDK yüklediğinizde, Windows PowerShell derlemeleri başvuru derleme klasöründe \Program dosyaları (x86) \Reference Assemblies\Microsoft\WindowsPowerShell\3.0 otomatik olarak yüklenir.
-Daha fazla bilgi için bkz: [Windows 8 SDK yükleme sitesini](http://msdn.microsoft.com/windows/hardware/hh852363.aspx).
-Windows PowerShell kod örnekleri Geliştirme Merkezi de kullanılabilir.
-Daha fazla bilgi için masaüstü kod örnek sayfasına bakın [Geliştirme Merkezi sitesi](http://code.msdn.microsoft.com/windowsdesktop/).
+Ayrıca, indirin ve başvuru bütünleştirilmiş kodları için Windows PowerShell 3.0 Windows 8 SDK'ın bir parçası olarak yükleyin.
+Bu derlemeler cmdlet'leri ve sağlayıcıları ana program için Windows PowerShell 3.0 yazmanıza olanak sağlar.
+Windows 8 için Windows SDK'yı yüklediğinizde, Windows PowerShell derlemeler otomatik olarak başvuru derleme klasöründe yüklendiği `\Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`.
+Daha fazla bilgi için [Windows 8 SDK indirme sitesi](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
+Windows PowerShell kod örnekleri geliştirme Merkezi'nden de mevcuttur.
+Daha fazla bilgi için masaüstü kod örnek sayfasına bakın [Geliştirme Merkezi sitesi](https://code.msdn.microsoft.com:443/windowsdesktop/).
 
-Ayrıca, Windows PowerShell 3.0 geriye dönük olarak uyumludur Windows PowerShell 2.0 SDK ile birlikte, kod örnekleri sayısını içerir.
-Windows PowerShell 2.0 SDK'sını indirin hakkında daha fazla bilgi için aşağıya bakın.
-(2.0 kod örnekleri Windows 8 ve Windows PowerShell 3.0 ile uyumlu olsa da, bir Windows 8 platformda Windows PowerShell 2.0 yükleme yapamayacağınızı unutmayın.)
+Ayrıca, Windows PowerShell 3.0 geriye dönük olarak uyumludur Windows PowerShell 2.0 SDK kod örnekleri sayısını içerir.
+Windows PowerShell 2.0 SDK'sını indirme hakkında daha fazla bilgi için aşağıya bakın.
+(2.0 kod örnekleri Windows 8 ve Windows PowerShell 3.0 ile uyumlu olsa da, Windows 8 platformu üzerinde Windows PowerShell 2.0 uygulamasını yükleyemezsiniz unutmayın.)
 
-##<a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Windows PowerShell 3.0 yükleme Windows 7 ve Windows Server 2008 R2 için SDK'sı
+## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Windows PowerShell 3.0 yüklenmesi Windows 7 ve Windows Server 2008 R2 için SDK'sı
 
-Windows 7 ve Windows Server 2008 R2'in otomatik olarak PowerShell 2.0 yüklü.
-Ayrıca, bu sistemlerinde PowerShell 3.0 yükleyebilirsiniz.
-(Daha fazla bilgi için bkz: [Windows PowerShell'i yükleme](Installing-Windows-PowerShell.md).).
-Yukarıda açıklandığı gibi Windows 7 ve Windows Server 2008 R2'de Windows 8 SDK'sı yükleyebilirsiniz.
+Otomatik olarak Windows 7 ve Windows Server 2008 R2 PowerShell 2.0 yüklü.
+Ayrıca, PowerShell 3.0 Bu sistemlerin tümünde yükleyebilirsiniz.
+(Daha fazla bilgi için [Windows PowerShell'i yükleme](Installing-Windows-PowerShell.md).).
+Yukarıda açıklandığı gibi Windows 7 ve Windows Server 2008 R2'de Windows 8 SDK'sını yükleyebilirsiniz.
 
 ## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>Windows PowerShell 2.0 yükleme için Windows 7, Vista, XP, Server 2003 ve Server 2008 SDK'sı
 
-Windows PowerShell 2.0 SDK'sı cmdlet'leri, sağlayıcılarının ve barındırma uygulamaları yazmak için gereken başvuru derlemeleri sağlar ve kod yazmaya başladığınızda, başlangıç noktası olarak kullanılabilecek C# örnek kodu sağlıyor.
+Windows PowerShell 2.0 SDK'sını cmdlet'leri ve sağlayıcıları barındırma uygulamaları yazmak için gereken başvuru derlemelerini sağlar ve kod yazmaya başladığınızda, başlangıç noktası olarak kullanılacak C# örnek kodu sağlar.
 
-Bu SDK yüklemek için bkz: [Windows PowerShell 2.0 SDK](http://go.microsoft.com/fwlink/?LinkId=184611).
+Bu SDK'yı yüklemek için bkz [Windows PowerShell 2.0 SDK'sını](http://www.microsoft.com/en-us/download/details.aspx?id=2560).
 
-## <a name="reference-assemblies"></a>Başvuru derlemeleri
+## <a name="reference-assemblies"></a>Başvuru bütünleştirilmiş kodları
 
-Başvuru derlemeleri varsayılan olarak aşağıdaki konuma yüklenir: `c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0`.
+Başvuru bütünleştirilmiş kodları, varsayılan olarak şu konuma yüklenir: `c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
-> **Not**: Windows PowerShell 2.0 derlemeleri karşı derlenmiş kod Windows PowerShell 1.0 yüklemelerde yüklenemiyor.
->Ancak, Windows PowerShell 1.0 derlemeleri karşı derlenmiş kod Windows PowerShell 2.0 yüklemelerde yüklenebilir.
+> [!NOTE] 
+> Windows PowerShell 2.0 derlemeleri karşı derlenmiş kod, Windows PowerShell 1.0 yüklemelerde yüklenemiyor.
+> Ancak, Windows PowerShell 1.0 derlemelere karşı derlenmiş kod, Windows PowerShell 2.0 yüklemelerde yüklenebilir.
 
 ## <a name="samples"></a>Örnekler
 
-Kod örnekleri, varsayılan olarak şu konumda yüklenir: `C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`.
+Kod örnekleri, varsayılan olarak şu konuma yüklenir: `C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`.
 
-Aşağıdaki bölümlerde her örnek yaptığı, kısa bir açıklama sağlayın.
+Aşağıdaki bölümlerde, her örnek yapar, kısa bir açıklama sağlayın.
 
 ## <a name="cmdlet-samples"></a>Cmdlet örnekleri
-**GetProcessSample01**
 
-Yerel bilgisayardaki tüm işlemler alır basit bir cmdlet yazma gösterilmektedir.
+### <a name="getprocesssample01"></a>GetProcessSample01
 
-**GetProcessSample02**
+Tüm işlemler yerel bilgisayarda alır basit bir cmdlet yazma işlemi gösterilmektedir.
 
-Cmdlet parametreleri eklemek gösterilmiştir.
-Cmdlet, bir veya daha fazla işlem adlarını alır ve eşleşen işlemleri döndürür.
+### <a name="getprocesssample02"></a>GetProcessSample02
 
-**GetProcessSample03**
+Cmdlet'e parametre ekleme işlemi gösterilmektedir.
+Cmdlet'i, bir veya daha fazla işlem adlarını alır ve eşleşen işlem döndürür.
 
-Ardışık Düzen girişten kabul parametreleri eklemek gösterilmiştir.
+### <a name="getprocesssample03"></a>GetProcessSample03
 
-**GetProcessSample04**
+Ardışık düzendeki girişi kabul parametreleri ekleme işlemi gösterilmektedir.
 
-Nonterminating hataların nasıl işleneceğini gösterir.
+### <a name="getprocesssample04"></a>GetProcessSample04
 
-**GetProcessSample05**
+Olmak üzere sonlandırmasız hatalar nasıl ele alınacağını gösterir.
 
-Belirtilen işlemlerin listesini görüntülemek nasıl gösterir.
+### <a name="getprocesssample05"></a>GetProcessSample05
 
-**SelectObject**
+Belirtilen işlemlerin bir listesini görüntüleme işlemini göstermektedir.
 
-Nasıl yalnızca belirli nesneleri seçmek için bir filtre yazılacağını gösterir.
+### <a name="selectobject"></a>SelectObject
 
-**SelectString**
+Yalnızca belirli nesneleri seçmek için bir filtre yazma işlemi gösterilmektedir.
 
-Belirtilen desen dosyalarını arayın gösterilmektedir.
+### <a name="selectstring"></a>SelectString
 
-**StopProcessSample01**
+Belirtilen desenle dosyalarını aramak gösterilmektedir.
 
-Nasıl uygulandığını gösterir bir *PassThru* parametre ve yapılan çağrılar tarafından kullanıcı geri bildirim istemek nasıl [ShouldProcess](https://technet.microsoft.com/library/system.management.automation.cmdlet.shouldprocess.aspx) ve [ShouldContinue](https://technet.microsoft.com/library/system.management.automation.cmdlet.shouldcontinue.aspx) yöntemleri.
-Kullanıcıları belirtmek *PassThru* istediğinizde bir nesne döndürmek için cmdlet zorlamak parametre
+### <a name="stopprocesssample01"></a>StopProcessSample01
 
-**StopProcessSample02**
+Nasıl uygulayacağınızı gösteren bir *PassThru* parametresi ve yapılan çağrılar tarafından kullanıcı geri bildirimi nasıl [ShouldProcess](/dotnet/api/system.management.automation.cmdlet.shouldprocess) ve [ShouldContinue](/dotnet/api/system.management.automation.cmdlet.shouldcontinue) yöntemleri.
+Kullanıcının belirttiği *PassThru* nesneyi döndürmek için cmdlet zorlamak istediğinizde parametresi
 
-Belirli bir işlemi durdurmak gösterilmiştir.
+### <a name="stopprocesssample02"></a>StopProcessSample02
 
-**StopProcessSample03**
+Belirli bir işlem durdurma işlemi gösterilmektedir.
 
-Parametreler için diğer adlar bildirmeyi ve joker karakterleri destekleme gösterir.
+### <a name="stopprocesssample03"></a>StopProcessSample03
 
-**StopProcessSample04**
+Joker karakterleri destekleme ve parametreler için diğer ad bildirmek nasıl gösterir.
 
-Parametre kümeleri bildirme gösterilmektedir cmdlet giriş ve kullanmak üzere ayarlanmış varsayılan parametre belirtme alan nesne.
+### <a name="stopprocesssample04"></a>StopProcessSample04
 
-## <a name="remoting-samples"></a>Remoting örnekleri
+Parametre kümesine nasıl gösterir cmdlet'i, girdi ve nasıl belirtileceğini kullanacak şekilde varsayılan parametre olarak alan nesne.
 
-**RemoteRunspace01**
+## <a name="remoting-samples"></a>Uzaktan iletişimini örnekleri
 
-Uzak bağlantı kurmak için kullanılan bir uzak çalışma alanı oluşturulacağını gösterir.
+### <a name="remoterunspace01"></a>RemoteRunspace01
 
-**RemoteRunspacePool01**
+Uzak bağlantı kurmak için kullanılan bir uzak çalışma alanı oluşturma işlemi gösterilmektedir.
 
-Bir uzak çalışma alanı havuzu oluşturma ve bu havuzu kullanarak birden çok komutları aynı anda çalışmasına nasıl gösterir.
+### <a name="remoterunspacepool01"></a>RemoteRunspacePool01
 
-**Serialization01**
+Bu havuzu kullanarak aynı anda birden çok komut çalıştırma ve bir uzak çalışma alanı havuzu oluşturmak nasıl gösterir.
 
-Varolan bir .NET sınıfı arayın ve bu sınıfın seçili ortak özellikleri bilgilerinden serileştirme/seri durumdan çıkarma arasında korunur emin olmak gösterilmiştir.
+### <a name="serialization01"></a>Serialization01
 
-**Serialization02**
+Mevcut bir .NET sınıfı arayın ve bu sınıfın seçilen genel özelliklerin bilgilerinden serileştirme/seri durumdan çıkarma işlemi korunur emin olmak nasıl gösterir.
 
-Varolan bir .NET sınıfı arayın ve bilgileri sınıfının ortak özelliklerini kullanılabilir olmadığında bu sınıfın örneği bilgilerinden serileştirme/seri durumdan çıkarma arasında korunur emin olmak gösterilmiştir.
+### <a name="serialization02"></a>Serialization02
 
-**Serialization03**
+Mevcut bir .NET sınıfına bakın ve bilgileri sınıfın genel özelliklerini mevcut olmadığında bu sınıfın örneğini bilgilerinden serileştirme/seri durumundan çıkarma arasında korunmasını sağlayın gösterilmektedir.
 
-Varolan bir .NET sınıfı arayın ve örnekleri, bu sınıfın ve türetilmiş sınıflarının (dinamik .NET nesnelerini rehydrated) serisi olduğundan emin olun gösterilmektedir.
+### <a name="serialization03"></a>Serialization03
+
+Mevcut bir .NET sınıfına bakın ve bu sınıfın ve türetilen sınıfların örnekleri (Canlı .NET nesnelerini rehydrated) durumdan emin emin olmak nasıl gösterir.
 
 ## <a name="event-samples"></a>Olay örnekleri
 
-**Event01**
+### <a name="event01"></a>Event01
 
-ObjectEventRegistrationBase türetme tarafından olay kaydı için bir cmdlet'i oluşturulacağını gösterir.
+Bir cmdlet için etkinlik kaydı ObjectEventRegistrationBase türetme tarafından oluşturma işlemi gösterilmektedir.
 
-**Event02**
+### <a name="event02"></a>Event02
 
-Gösterir nasıl uzak bilgisayarlarda oluşturulan Windows PowerShell olaylarını bildirimlerini almak üzere nasıl gösterir.
-Aracılığıyla kullanıma sunulan PSEventReceived olayı kullanan [çalışma](https://technet.microsoft.com/library/system.management.automation.runspaces.runspace.aspx) sınıfı.
+Gösterir nasıl uzak bilgisayarlarda oluşturulan Windows PowerShell olay bildirimleri almak nasıl gösterir.
+Aracılığıyla kullanıma PSEventReceived olay kullanan [çalışma](/dotnet/api/system.management.automation.runspaces.runspace) sınıfı.
 
-## <a name="hosting-application-samples"></a>Barındırma uygulama örnekleri
+## <a name="hosting-application-samples"></a>Barındırma uygulaması örnekleri
 
-**Runspace01**
+### <a name="runspace01"></a>Runspace01
 
-Nasıl kullanılacağını gösterir [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) çalıştırmak için sınıf [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet zaman uyumlu olarak.
-[Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet'i döndürür [işlem](https://technet.microsoft.com/library/system.diagnostics.process.aspx) nesneleri yerel bilgisayarda çalışan her işlem için.
+Nasıl kullanılacağını gösterir [PowerShell](/dotnet/api/system.management.automation.powershell) çalıştırılacak sınıfı [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet'i zaman uyumlu olarak.
+[Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet döndürür [işlem](https://technet.microsoft.com/library/system.diagnostics.process.aspx) nesneler yerel bilgisayarda çalışan her işlem için.
 
-**Runspace02**
+### <a name="runspace02"></a>Runspace02
 
-Nasıl kullanılacağını gösterir [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) çalıştırmak için sınıf [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) ve [Sort-Object](http://go.microsoft.com/fwlink/?LinkID=113403) cmdlet'leri zaman uyumlu olarak.
-[Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet'i döndürür [işlem](https://technet.microsoft.com/library/system.diagnostics.process.aspx) nesneleri her işlem yerel bilgisayarda çalışan ve temel nesneleri Sort-Object sıralar kendi [kimliği](https://technet.microsoft.com/library/system.diagnostics.process.id.aspx) özelliği.
-Sonuçları aşağıdaki komutlardan birini kullanarak görüntüleyen bir [DataGridView](https://technet.microsoft.com/library/system.windows.forms.datagridview.aspx) denetim.
+Nasıl kullanılacağını gösterir [PowerShell](/dotnet/api/system.management.automation.powershell) çalıştırılacak sınıfı [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) ve [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlet'leri zaman uyumlu olarak.
+[Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet döndürür [işlem](https://technet.microsoft.com/library/system.diagnostics.process.aspx) yerel bilgisayarda çalışan her işlem için nesneleri ve `Sort-Object` nesneleri göre sıralar, [kimliği](https://technet.microsoft.com/library/system.diagnostics.process.id.aspx) özellik.
+Sonuçları aşağıdaki komutlardan birini kullanarak görüntülenen bir [DataGridView](https://technet.microsoft.com/library/system.windows.forms.datagridview.aspx) denetimi.
 
-**Runspace03**
+### <a name="runspace03"></a>Runspace03
 
-Nasıl kullanılacağını gösterir [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) eşzamanlı olarak bir komut dosyasını çalıştırmak için sınıf ve sonlandırıcı olmayan hataların nasıl işleneceğini.
-Komut dosyası işlemi adlarının bir listesini alır ve bu işlemleri alır.
-Komut dosyası çalıştırılırken oluşturulan Sonlandırıcı olmayan hatalar dahil olmak üzere komut dosyası sonuçlarını konsol penceresinde görüntülenir.
+Nasıl kullanılacağını gösterir [PowerShell](/dotnet/api/system.management.automation.powershell) zaman uyumlu olarak bir betik çalıştırmak için sınıf ve sonlandırıcı olmayan hatalara nasıl ele alınacağını.
+Betik işlem adları listesini alır ve ardından bu işlemleri alır.
+Komut dosyası çalıştırılırken oluşturulan sonlandırmayan hatalar dahil olmak üzere betik sonuçlarını konsol penceresinde görüntülenir.
 
-**Runspace04**
+### <a name="runspace04"></a>Runspace04
 
-Nasıl kullanılacağını gösterir [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) komutlarını çalıştırmak için sınıf ve komutlarını çalıştırırken oluşturulan catch sonlandırma hataları nasıl.
-İki komutu çalıştırın ve son komut, geçerli olmayan bir parametre bağımsız değişken geçirildi.
-Sonuç olarak, hiçbir nesne döndürmedi ve bir sonlandırma hatası oluşturulur.
+Nasıl kullanılacağını gösterir [PowerShell](/dotnet/api/system.management.automation.powershell) komutlarını çalıştırmak için sınıf ve komutlarını çalıştırırken oluşturulan catch Sonlandırıcı hataları.
+İki komutu çalıştırın ve son komut, geçerli olmayan bir parametre bağımsız değişkeni olarak geçirilir.
+Sonuç olarak, hiçbir nesne döndürülür ve bir sonlandırma hatası oluşturulur.
 
-**Runspace05**
+### <a name="runspace05"></a>Runspace05
 
-Bir ek bileşenine ekleme gösterilmektedir bir [InitialSessionState](https://technet.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.aspx) çalışma açıldığında cmdlet ek bileşenini, böylece kullanılabilir nesne.
-Ek bir Get-Proc cmdlet sağlar (tarafından tanımlanan [GetProcessSample01 örnek](https://technet.microsoft.com/library/ff602028.aspx)) çalıştırılan zaman uyumlu olarak kullanarak bir [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) nesnesi.
+Bir ek bileşenine ekleme işlemi açıklanır bir [InitialSessionState](/dotnet/api/system.management.automation.runspaces.initialsessionstate) böylece çalışma açıldığında, ek cmdlet kullanılabilir nesne.
+Ek bir Get-Proc cmdlet sağlar (tarafından tanımlanan [GetProcessSample01 örnek](https://technet.microsoft.com/library/ff602028.aspx)) çalıştırılan zaman uyumlu olarak kullanarak bir [PowerShell](/dotnet/api/system.management.automation.powershell) nesne.
 
-**Runspace06**
+### <a name="runspace06"></a>Runspace06
 
-Bir modüle eklemeyi gösterir bir [InitialSessionState](https://technet.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.aspx) çalışma açıldığında modülü yüklenir böylece nesne.
-Get-Proc cmdlet modülü sağlar (tarafından tanımlanan [GetProcessSample02 örnek](https://technet.microsoft.com/library/ff602027.aspx)) çalıştırılan zaman uyumlu olarak kullanarak bir [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) nesnesi.
+Bir modüle ekleneceği gösterilmiştir bir [InitialSessionState](/dotnet/api/system.management.automation.runspaces.initialsessionstate) modülü bir çalışma açıldığında yüklenmesi nesne.
+Get-Proc cmdlet modülü sağlar (tarafından tanımlanan [GetProcessSample02 örnek](https://technet.microsoft.com/library/ff602027.aspx)) çalıştırılan zaman uyumlu olarak kullanarak bir [PowerShell](/dotnet/api/system.management.automation.powershell) nesne.
 
-**Runspace07**
+### <a name="runspace07"></a>Runspace07
 
-Bir çalışma alanı oluşturun ve ardından kullanarak iki cmdlet'leri zaman uyumlu olarak çalıştırmak için bu çalışma alanı kullanın gösterilmektedir bir [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) nesnesi.
+Bir çalışma alanı oluşturun ve ardından iki cmdlet kullanarak zaman uyumlu olarak çalıştırmak için bu çalışma alanı kullanma gösteren bir [PowerShell](/dotnet/api/system.management.automation.powershell) nesne.
 
-**Runspace08**
+### <a name="runspace08"></a>Runspace08
 
-Komutlar ve bağımsız değişkenler ardışık düzenine nasıl ekleneceğini gösterir bir [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) nesne ve komutları eşzamanlı olarak çalıştırma.
+Komut ve bağımsız değişkenler için işlem hattı eklemeyi gösterir bir [PowerShell](/dotnet/api/system.management.automation.powershell) nesne ve zaman uyumlu olarak komutları çalıştırmayı öğrenin.
 
-**Runspace09**
+### <a name="runspace09"></a>Runspace09
 
-Bir komut dosyası ardışık düzenine eklemek gösterilmektedir bir [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) nesnesi ve komut dosyalarını zaman uyumsuz olarak çalıştırma.
+İşlem hattı için bir komut dosyası eklemeyi gösterir bir [PowerShell](/dotnet/api/system.management.automation.powershell) nesne ve komut zaman uyumsuz olarak çalıştırmayı öğrenin.
 Olaylar, komut çıktısı işlemek için kullanılır.
 
-**Runspace10**
+### <a name="runspace10"></a>Runspace10
 
-Varsayılan ilk oturum durumu oluşturmayı gösteren bir cmdlet ile ekleme [InitialSessionState](https://technet.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.aspx), ilk oturum durumu kullanan bir çalışma alanı oluşturma ve kullanarak komutu çalıştırmak nasıl bir [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx)nesnesi.
+Bir varsayılan ilk oturum durumu oluşturulacağını gösterir bir cmdlet'e ekleme [InitialSessionState](/dotnet/api/system.management.automation.runspaces.initialsessionstate), ilk oturum durumu kullanan bir çalışma alanı oluşturma ve komutu çalıştırmak amacıyla kullanmak üzere nasıl bir [PowerShell](/dotnet/api/system.management.automation.powershell)nesne.
 
-**Runspace11**
+### <a name="runspace11"></a>Runspace11
 
-Nasıl kullanılacağını gösterir [ProxyCommand](https://technet.microsoft.com/library/system.management.automation.proxycommand.aspx) var olan bir cmdlet'i çağırır, ancak kullanılabilir parametreleri kümesini sınırlayan bir proxy komutu oluşturmak için sınıfı.
-Proxy komutu daha sonra kısıtlı bir çalışma alanı oluşturmak için kullanılan bir ilk oturum durumu eklenir.
-Bu kullanıcının yalnızca proxy komutu aracılığıyla cmdlet işlevselliğini erişebileceği anlamına gelir.
+Nasıl kullanılacağını gösterir [ProxyCommand](/dotnet/api/system.management.automation.proxycommand) var olan bir cmdlet'i çağırır, ancak kullanılabilir parametreleri kümesini sınırlayan bir ara sunucu komutu oluşturmak için sınıf.
+Ara sunucu komutunu kısıtlı bir çalışma alanı oluşturmak için kullanılan bir ilk oturum durumunu daha sonra eklenir.
+Bu, kullanıcının yalnızca ara sunucu komutu cmdlet işlevselliğini erişebileceği anlamına gelir.
 
-**PowerShell01**
+### <a name="powershell01"></a>PowerShell01
 
-Kullanarak bir kısıtlanmış çalışma alanı oluşturmayı gösteren bir [InitialSessionState](https://technet.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.aspx) nesnesi.
+Kullanarak bir kısıtlı çalışma alanı oluşturma işlemi gösterilmektedir bir [InitialSessionState](/dotnet/api/system.management.automation.runspaces.initialsessionstate) nesne.
 
-**PowerShell02**
+### <a name="powershell02"></a>PowerShell02
 
-Bir çalışma alanı havuzu birden çok komutları aynı anda çalıştırmak için nasıl kullanılacağını gösterir.
+Aynı anda birden çok komut çalıştırmak için bir çalışma alanı havuzu kullanmayı gösterir.
 
-## <a name="host-samples"></a>Ana bilgisayar örnekleri
+## <a name="host-samples"></a>Konak örnekleri
 
-**Host01**
+### <a name="host01"></a>Host01
 
-Özel bir ana bilgisayar kullanan bir ana bilgisayar uygulaması uygulamak gösterilmiştir.
-Özel ana bilgisayar kullanan bir çalışma alanı oluşturulur bu örnekteki ve ardından [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) API "Çık" çağıran bir komut dosyası çalıştırmak için kullanılır.
-Ana bilgisayar uygulamasını komut dosyasının çıktıyı arar ve sonuçları yazdırır.
+Özel bir ana bilgisayar kullanan bir konak uygulamanın nasıl uygulanacağını gösterir.
+Özel ana bilgisayarı kullanan bu örnekte bir çalışma alanı oluşturulur ve ardından [PowerShell](/dotnet/api/system.management.automation.powershell) API "çıkış" çağıran bir betik çalıştırmak için kullanılır.
+Konak uygulama betiği çıktısına arar ve sonuçları yazdırır.
 
-**Host02**
+### <a name="host02"></a>Host02
 
-Windows PowerShell çalışma zamanı özel konak uygulaması birlikte kullanan bir ana bilgisayar uygulamasının nasıl yazılacağını gösterir.
-Konak uygulama ana bilgisayar kültür Almanca, çalışır ayarlar [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet'i ve yazarken sonuçları görüntüler bkz bunları pwrsh.exe ve geçerli veri ve saat sonra yazdırır Almanca kullanarak.
+Özel ana bilgisayar uygulaması ile birlikte Windows PowerShell'i çalışma zamanı kullanan bir ana bilgisayar uygulaması yazma işlemi gösterilmektedir.
+Ana bilgisayar uygulaması çalışır Almanca için konak kültürü ayarlar [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet ve aynı sonuçları görüntüler bkz bunları pwrsh.exe ve geçerli veri ve saat sonra yazdırır Almanca kullanarak.
 
-**Host03**
+### <a name="host03"></a>Host03
 
-Komut satırından komutları okuyan, komutları çalıştırır ve sonuçları konsola görüntüler bir etkileşimli konsol tabanlı ana bilgisayar uygulamasının nasıl oluşturulacağını gösterir.
+Komutları komut satırından okur, komutları yürütür ve ardından sonuçları konsolda görüntüler etkileşimli konsol tabanlı konak uygulamanın nasıl oluşturulacağını gösterir.
 
-**Host04**
+### <a name="host04"></a>Host04
 
-Komut satırından komutları okuyan, komutları çalıştırır ve sonuçları konsola görüntüler bir etkileşimli konsol tabanlı ana bilgisayar uygulamasının nasıl oluşturulacağını gösterir.
-Bu ana bilgisayar uygulaması, ayrıca birden çok seçenek belirtmesini izin görüntüleme istemleri destekler.
+Komutları komut satırından okur, komutları yürütür ve ardından sonuçları konsolda görüntüler etkileşimli konsol tabanlı konak uygulamanın nasıl oluşturulacağını gösterir.
+Bu ana bilgisayar uygulaması birden çok seçenek belirtmesini sağlayan görüntüleme yönergeleri de destekler.
 
-**Host05**
+### <a name="host05"></a>Konak05
 
-Komut satırından komutları okuyan, komutları çalıştırır ve sonuçları konsola görüntüler bir etkileşimli konsol tabanlı ana bilgisayar uygulamasının nasıl oluşturulacağını gösterir.
-Ayrıca bu ana bilgisayar uygulaması kullanarak uzak bilgisayarlara çağrıları destekler [Enter-PsSession](http://go.microsoft.com/fwlink/?LinkId=135210) ve [çıkış-PsSession](http://go.microsoft.com/fwlink/?LinkId=135212) cmdlet'leri.
+Komutları komut satırından okur, komutları yürütür ve ardından sonuçları konsolda görüntüler etkileşimli konsol tabanlı konak uygulamanın nasıl oluşturulacağını gösterir.
+Ayrıca bu ana bilgisayar uygulaması kullanarak uzak bilgisayarlara çağrıları destekleyen [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) ve [çıkış-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlet'leri.
 
-**Host06**
+### <a name="host06"></a>Host06
 
-Komut satırından komutları okuyan, komutları çalıştırır ve sonuçları konsola görüntüler bir etkileşimli konsol tabanlı ana bilgisayar uygulamasının nasıl oluşturulacağını gösterir.
-Ayrıca, bu örnek kullanıcı tarafından girilen metin rengini belirtmek için belirteç Oluşturucu API'lerini kullanır.
+Komutları komut satırından okur, komutları yürütür ve ardından sonuçları konsolda görüntüler etkileşimli konsol tabanlı konak uygulamanın nasıl oluşturulacağını gösterir.
+Ayrıca, bu örnek, kullanıcı tarafından girilen metin rengi belirtmek için belirteç Oluşturucu API kullanır.
 
 ## <a name="provider-samples"></a>Sağlayıcısı örnekleri
 
-**AccessDBProviderSample01**
+### <a name="accessdbprovidersample01"></a>AccessDBProviderSample01
 
-Doğrudan türeyen bir sağlayıcı sınıf bildirme gösterilmektedir [CmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.cmdletprovider.aspx) sınıfı.
+Doğrudan öğesinden türetilen bir sağlayıcı sınıfı bildirmek gösterilmektedir [CmdletProvider](/dotnet/api/system.management.automation.provider.cmdletprovider) sınıfı.
 Burada yalnızca bütünlük açısından dahil edilmiştir.
 
-**AccessDBProviderSample02**
+### <a name="accessdbprovidersample02"></a>AccessDBProviderSample02
 
-Üzerine gösterilmektedir [NewDrive](https://technet.microsoft.com/library/system.management.automation.provider.drivecmdletprovider.newdrive.aspx) ve [RemoveDrive](https://technet.microsoft.com/library/system.management.automation.provider.drivecmdletprovider.removedrive.aspx) yeni PSDrive ve Kaldır-PSDrive cmdlet'leri çağrıları desteklemek için yöntemleri.
-Bu örnek sağlayıcısı sınıfında türetilen [DriveCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.drivecmdletprovider.aspx) sınıfı.
+Üzerine yazma işlemi gösterilmektedir [NewDrive](/dotnet/api/system.management.automation.provider.drivecmdletprovider.newdrive) ve [RemoveDrive](/dotnet/api/system.management.automation.provider.drivecmdletprovider.removedrive) çağrıları desteklemek için yöntemler `New-PSDrive` ve `Remove-PSDrive` cmdlet'leri.
+Bu örnekteki sağlayıcı sınıfın türetildiği [DriveCmdletProvider](/dotnet/api/system.management.automation.provider.drivecmdletprovider) sınıfı.
 
-**AccessDBProviderSample03**
+### <a name="accessdbprovidersample03"></a>AccessDBProviderSample03
 
-Üzerine gösterilmektedir [GetItem](https://technet.microsoft.com/library/system.management.automation.provider.itemcmdletprovider.getitem.aspx) ve [SetItem](https://technet.microsoft.com/library/system.management.automation.provider.itemcmdletprovider.setitem.aspx) Get-Item ve Set-Item cmdlet'leri çağrıları desteklemek için yöntemleri.
-Bu örnek sağlayıcısı sınıfında türetilen [ItemCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.itemcmdletprovider.aspx) sınıfı.
+Üzerine yazma işlemi gösterilmektedir [GetItem](/dotnet/api/system.management.automation.provider.itemcmdletprovider.getitem) ve [SetItem](/dotnet/api/system.management.automation.provider.itemcmdletprovider.setitem) çağrıları desteklemek için yöntemler `Get-Item` ve `Set-Item` cmdlet'leri.
+Bu örnekteki sağlayıcı sınıfın türetildiği [ItemCmdletProvider](/dotnet/api/system.management.automation.provider.itemcmdletprovider) sınıfı.
 
-**AccessDBProviderSample04**
+### <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
-Copy-Item, Get-Childıtem çağrıları desteklemek için kapsayıcı yöntemleri üzerine gösterilmektedir yeni öğe ve Kaldır-Item cmdlet'leri.
-Veri deposu kapsayıcılar olan öğeler içeriyorsa, bu yöntemleri uygulanmalıdır.
-Ortak bir üst öğenin altında bir alt öğe grubunu bir kapsayıcıdır.
-Bu örnek sağlayıcısı sınıfında türetilen [ItemCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.itemcmdletprovider.aspx) sınıfı.
+Çağrıları desteklemek için kapsayıcı yöntemleri üzerine gösterilmektedir `Copy-Item`, `Get-ChildItem`, `New-Item`, ve `Remove-Item` cmdlet'leri.
+Veri deposu kapsayıcılar olan öğeleri içerdiğinde, bu yöntemleri uygulanmalıdır.
+Ortak bir üst öğe altında bir alt öğe grubunu bir kapsayıcıdır.
+Bu örnekteki sağlayıcı sınıfın türetildiği [ItemCmdletProvider](/dotnet/api/system.management.automation.provider.itemcmdletprovider) sınıfı.
 
-**AccessDBProviderSample05**
+### <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
-Taşıma öğesi ve birleştirme yolu cmdlet'leri çağrıları desteklemek için kapsayıcı yöntemleri üzerine nasıl yazılacağını gösterir.
-Bu yöntemler, kullanıcı bir kapsayıcı içindeki öğeleri taşımak gerektiğinde ve veri depolama alanı iç içe geçmiş kapsayıcılar içeriyorsa uygulanmalıdır.
-Bu örnek sağlayıcısı sınıfında türetilen [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) sınıfı.
+Çağrıları desteklemek için kapsayıcı yöntemleri üzerine gösterilmektedir `Move-Item` ve `Join-Path` cmdlet'leri.
+Bu yöntemler, bir kapsayıcı içindeki öğeleri taşımak gerektiğinde ve veri depolama alanı iç içe geçmiş kapsayıcılar varsa uygulanmalıdır.
+Bu örnekteki sağlayıcı sınıfın türetildiği [NavigationCmdletProvider](/dotnet/api/system.management.automation.provider.navigationcmdletprovider) sınıfı.
 
-**AccessDBProviderSample06**
+### <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
-Clear içerik çağrıları desteklemek için içerik yöntemleri üzerine gösterilmektedir Get-içerik ve Set-Content cmdlet'leri.
-Bu yöntemler, kullanıcı içeriği veri deposuna'ndeki öğelerin kullanımını yönetmek gerektiğinde uygulanmalıdır.
-Bu örnek sağlayıcısı sınıfında türetilen [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) sınıfı ve uygulayan [IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx) arabirimi.
+Çağrıları desteklemek için içerik yöntemleri üzerine gösterilmektedir `Clear-Content`, `Get-Content`, ve `Set-Content` cmdlet'leri.
+Veri deposundaki öğelerinin içeriğini yönetmek gerektiğinde bu yöntemleri uygulanmalıdır.
+Bu örnekteki sağlayıcı sınıfın türetildiği [NavigationCmdletProvider](/dotnet/api/system.management.automation.provider.navigationcmdletprovider) sınıf ve uyguladığı [IContentCmdletProvider](/dotnet/api/system.management.automation.provider.icontentcmdletprovider) arabirimi.
