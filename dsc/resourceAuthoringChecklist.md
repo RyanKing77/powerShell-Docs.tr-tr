@@ -1,20 +1,22 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
+keywords: DSC, powershell, yapılandırma, Kurulum
 title: Kaynak yazma denetim listesi
-ms.openlocfilehash: 76d9fecca8618fcc178975465f45cda0d0e04064
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 91942a174bc6f38fa77c1925dc3c690ecf2ab34b
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189967"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893564"
 ---
 # <a name="resource-authoring-checklist"></a>Kaynak yazma denetim listesi
-Bu denetim listesini yeni bir DSC kaynağı yazarken en iyi yöntemler bir listedir.
-## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>.Psd1 dosya ve schema.mof her kaynak için kaynak modülü içerir
-Kaynağınız doğru yapısına sahip ve tüm gerekli dosyaları içeren denetleyin. Her kaynak modül .psd1 dosyası içermelidir ve her bileşik olmayan kaynak schema.mof dosya sahip olmalıdır. Şema içermeyen kaynaklar tarafından listelenmez **Get-DscResource** ve kullanıcıların IntelliSense kodu bu modüller karşı ISE'de yazarken kullanmak mümkün olmayacak.
-Parçasıdır xRemoteFile kaynak dizin yapısı, [xPSDesiredStateConfiguration kaynak Modülü](https://github.com/PowerShell/xPSDesiredStateConfiguration), aşağıdaki gibi görünür:
 
+Bu denetim yeni bir DSC kaynağı yazma en iyi bir listedir.
+
+## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>Kaynak modülü .psd1 dosya ve her kaynak için schema.mof içerir.
+
+Kaynağınızı doğru yapıya sahiptir ve tüm gerekli dosyaları içeren denetleyin. Her kaynak modülü .psd1 dosya içermelidir ve her bileşik olmayan kaynak schema.mof dosyanız olmalıdır. Şema içermeyen kaynaklar tarafından listelenmez `Get-DscResource` ve kullanıcıların ISE'de modüller karşı kod yazarken IntelliSense kullanmanız mümkün olmayacaktır.
+Parçası olan xRemoteFile kaynak dizin yapısı, [xPSDesiredStateConfiguration resource Modülü](https://github.com/PowerShell/xPSDesiredStateConfiguration), şu şekilde görünür:
 
 ```
 xPSDesiredStateConfiguration
@@ -31,42 +33,48 @@ xPSDesiredStateConfiguration
     xPSDesiredStateConfiguration.psd1
 ```
 
-## <a name="resource-and-schema-are-correct"></a>Kaynak ve şema doğru ##
-Kaynak şemasını doğrulayın (*. schema.mof) dosyası. Kullanabileceğiniz [DSC kaynak Tasarımcısı](https://www.powershellgallery.com/packages/xDSCResourceDesigner/) geliştirmenizi ve test şemanızı yardımcı olacak.
-Olduğundan emin olun:
-- Özellik türleri doğru (dize, sayısal değerleri kabul özelliklerini örn kullanmayın, bunun yerine uint32 diğer sayısal türler kullanmalısınız)
-- Özellik öznitelikleri doğru olarak belirtilir: ([anahtarı], [gerekli], [yazma], [okuma])
-- [Anahtar] olarak işaretlenecek şemasında en az bir parametre içeriyor
-- özelliği olmayan bir arada herhangi biri ile birlikte [okuma]: [gerekli], [anahtarı], [yazma]
-- Birden çok niteleyicileri [dışında oku] belirtilmişse [anahtarı] öncelik kazanır
-- Varsa [yazma] ve [gerekli] belirtilen sonra [gerekli] önceliğe
-- ValueMap uygun yerlerde belirtilmiştir
+## <a name="resource-and-schema-are-correct"></a>Kaynak ve şema doğru
 
-Örnek:
-```
-[Read, ValueMap{"Present", "Absent"}, Values{"Present", "Absent"}, Description("Says whether DestinationPath exists on the machine")] String Ensure;
-```
+Kaynak şemayı doğrulayın (*. schema.mof) dosyası. Kullanabileceğiniz [DSC kaynak Tasarımcısı](https://www.powershellgallery.com/packages/xDSCResourceDesigner) geliştirip test şemanızı yardımcı olmak için.
+Emin olun:
+
+- Özellik türleri doğru (dize, sayısal değerleri kabul etmek için özellikleri örn kullanmayın, bunun yerine UInt32 ya da diğer sayısal türleri kullanmalısınız)
+- Özellik öznitelikleri doğru olarak belirtilir: ([anahtarı] [gerekli], [yazma], [okuma])
+- Şema en az bir parametresi [anahtar] olarak işaretlenmesi gerekir
+- [özelliği olmayan bir arada herhangi biri ile birlikte okuyun]: [gerekli], [key] [yazma]
+- Birden çok niteleyicileri dışında [oku] belirtilirse, [key] öncelik kazanır
+- Varsa [yazma] ve [gerekli] belirtilen sonra [gerekli] önceliğe
+- ValueMap belirtilen örnek uygun olduğunda:
+
+  ```
+  [Read, ValueMap{"Present", "Absent"}, Values{"Present", "Absent"}, Description("Says whether DestinationPath exists on the machine")] String Ensure;
+  ```
 
 - Kolay ad belirtilir ve DSC adlandırma kurallarına onaylar
 
-Örnek: ```[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]```
+  Örnek: `[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]`
 
-- Her alanı anlamlı bir açıklama içeriyor. PowerShell GitHub deposuna iyi örnek, aşağıdaki gibi olan [. xRemoteFile schema.mof](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof)
+- Her alan anlamlı bir açıklama bulunur. PowerShell GitHub deposunu iyi örnekler vardır [. schema.mof xRemoteFile için](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof)
 
-Ayrıca, kullanmanız gereken **Test xDscResource** ve **Test xDscSchema** cmdlet'leri [DSC kaynak Tasarımcısı](https://www.powershellgallery.com/packages/xDSCResourceDesigner/) kaynak ve şema otomatik olarak doğrulanamadı:
+Ayrıca, kullanmanız gereken **Test xDscResource** ve **Test xDscSchema** cmdlet'lerinden [DSC kaynak Tasarımcısı](https://www.powershellgallery.com/packages/xDSCResourceDesigner) kaynak ve şema otomatik olarak doğrulamak için:
+
 ```
 Test-xDscResource <Resource_folder>
 Test-xDscSchema <Path_to_resource_schema_file>
 ```
+
 Örneğin:
+
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="resource-loads-without-errors"></a>Kaynak hatasız yükler ##
-Kaynak modülü başarıyla yüklü olup olmadığını denetleyin.
-Bu el ile çalıştırarak elde edilebilir `Import-Module <resource_module> -force ` ve hiçbir hata oluştuğunu onaylayarak veya göre test Otomasyonu yazma. İkinci durumunda, bu yapıyı test durumunuzda izleyebilirsiniz:
+## <a name="resource-loads-without-errors"></a>Kaynak hatasız yükler.
+
+Kaynak modülü başarıyla yüklenmiş olup olmadığını denetleyin.
+Bu el ile çalıştırarak ulaşılabilecek `Import-Module <resource_module> -force` ve herhangi bir hata oluştuğunu onayladıktan veya göre test Otomasyonu yazma. İkinci olması durumunda, bu yapı, test çalışmasında izleyebilirsiniz:
+
 ```powershell
 $error = $null
 Import-Module <resource_module> –force
@@ -74,62 +82,79 @@ If ($error.count –ne 0) {
     Throw “Module was not imported correctly. Errors returned: $error”
 }
 ```
-## <a name="resource-is-idempotent-in-the-positive-case"></a>Idempotent pozitif durumda kaynaktır
-DSC kaynakları temel özelliklerini idempotence olması biridir. Bu, birden çok kez bu kaynak içeren bir DSC yapılandırma uygulama her zaman aynı sonucu elde edecek olduğunu anlamına gelir. Örneğin, aşağıdaki dosya kaynağı içeren bir yapılandırma oluşturuyoruz varsa:
+
+## <a name="resource-is-idempotent-in-the-positive-case"></a>Kaynak etkilidir pozitif durumda
+
+DSC kaynakları temel özelliklerini Eşkuvvetlilik olması biridir. Bu, birden çok kez bu kaynağı içeren bir DSC yapılandırması uygulama her zaman aynı sonucu elde edecek, anlamına gelir. Örneğin aşağıdaki dosya kaynağı içeren bir yapılandırma oluşturacağız:
+
 ```powershell
 File file {
     DestinationPath = "C:\test\test.txt"
     Contents = "Sample text"
 }
 ```
-İlk kez uyguladıktan sonra dosya sınama.txt C:\test klasöründeki görüntülenmelidir. Ancak, aynı yapılandırmaya sahip sonraki çalıştırır (örn. hiçbir kopya sınama.txt dosyasının oluşturulmalıdır) makinenin durumunu değiştirmemelisiniz.
-Bir kaynak art arda çağırabilir ıdempotent olduğundan emin olmak için **kümesi TargetResource** kaynak doğrudan test veya çağrı **başlangıç DscConfiguration** birden çok kez uçtan uca test yaparken. Sonuç sonra her çalıştırılışında aynı olması gerekir.
 
+İlk kez uyguladıktan sonra dosya test.txt gözükeceğini `C:\test` klasör. Ancak, aynı yapılandırmayı sonraki çalışmaları makinenin durumunu değiştirmemesi gerekir (örneğin hiçbir kopyalarını `test.txt` dosya oluşturulmalıdır).
+Bir kaynağa tekrar tekrar çağırmak bir kez etkili olduğundan emin olmak için `Set-TargetResource` kaynak doğrudan test veya çağrı `Start-DscConfiguration` birden çok kez baştan sona test yaparken. Her sonrasında çalıştırma sonucu aynı olması gerekir.
 
-## <a name="test-user-modification-scenario"></a>Test kullanıcı değişiklik senaryosu ##
-Makinenin durumunu değiştirme ve DSC yeniden çalıştırma olduğunu doğrulayabilirsiniz **kümesi TargetResource** ve **Test TargetResource** düzgün. Almanız gereken adımlar şunlardır:
-1.  İstenilen durumda değil kaynak başlayın.
-2.  Kaynağınız ile çalışma yapılandırması
-3.  Doğrulama **Test DscConfiguration** True değerini döndürür
-4.  İstenen durumdan yapılandırılmış öğeyi değiştirin
-5.  Doğrulama **Test DscConfiguration** döndürür yanlış kayıt defteri kaynak kullanımına daha somut bir örnek şudur:
-1.  Kayıt defteri anahtarı istenilen durumda değil başlayın
-2.  Çalıştırma **başlangıç DscConfiguration** istenilen durumda koyun ve doğrulamak için bir yapılandırmayla geçirir.
-3.  Çalıştırma **Test DscConfiguration** ve doğru döndürdüğü doğrulayın
-4.  İstenilen durumda olmaması anahtarının değerini değiştirme
-5.  Çalıştırma **Test DscConfiguration** ve false döndürdüğü doğrulayın
-6.  Get-TargetResource işlevselliği Get-DscConfiguration kullanılarak doğrulandı
+## <a name="test-user-modification-scenario"></a>Test kullanıcı değişiklik senaryosu
 
-Get-TargetResource kaynağın geçerli durumuyla ayrıntılarını döndürmelidir. Get-DscConfiguration yapılandırmayı uyguladıktan sonra arama ve çıkış doğru makinenin geçerli durumunu yansıtır doğrulama testi emin olun. Bu alandaki sorunları başlangıç DscConfiguration çağrılırken görünmez beri ayrı ayrı test etmek önemlidir.
+Makinenin durumunu değiştirme ve DSC artırarak algoritmanın yeniden çalıştırılması doğrulayabilirsiniz `Set-TargetResource` ve `Test-TargetResource` düzgün. Uygulamanız gereken adımlar şunlardır:
 
-## <a name="call-getsettest-targetresource-functions-directly"></a>Çağrı **Get/Set/Test-TargetResource** doğrudan işlevleri ##
+1. İstenen durumda değil kaynakla başlayın.
+2. Kaynağınız ile çalıştırma yapılandırma
+3. Doğrulama `Test-DscConfiguration` True döndürür
+4. İstenen durum dışında olacak şekilde yapılandırılmış öğesini değiştirin
+5. Doğrulama `Test-DscConfiguration` false döndürür
 
-Test emin olun **Get/Set/Test-TargetResource** , kaynak doğrudan çağırma ve beklendiği gibi çalıştığını doğrulama uygulanan işlevler.
+Registry kaynağı kullanarak daha somut bir örnek aşağıda verilmiştir:
 
-## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Uçtan uca kullanarak doğrulayın **başlangıç DscConfiguration** ##
+1. Kayıt defteri anahtarı istenen durumda değil başlayın
+2. Çalıştırma `Start-DscConfiguration` istenen durumda yerleştirin ve doğrulamak için bir yapılandırmayla geçirir.
+3. Çalıştırma `Test-DscConfiguration` ve doğrulayın, true döndürür
+4. İstenen durumda değil anahtarının değerini değiştirin
+5. Çalıştırma `Test-DscConfiguration` ve false döndürür doğrulayın
+6. `Get-TargetResource` işlevleri kullanılarak doğrulandı `Get-DscConfiguration`
 
-Sınama **Get/Set/Test-TargetResource** işlevlerini doğrudan çağırma tarafından önemlidir, ancak bu şekilde tüm sorunları bulunacaktır. Testinizin kullanarak önemli bir bölümü durmalısınız **başlangıç DscConfiguration** veya çekme sunucusunda. Aslında, kullanıcıların bu tür testleri önemini daha düşük olmayan şekilde kaynak nasıl kullanacağını budur.
-Olası sorunlar türleri:
-- DSC Aracısı hizmeti olarak çalıştığından kimlik bilgisi/oturum farklı davranabilir.  Burada herhangi bir özellik uçtan uca mutlaka test edin.
-- Hataları çıktı tarafından **başlangıç DscConfiguration** çağrılırken görüntülenen olanlar farklı olabilir **kümesi TargetResource** doğrudan işlev.
+`Get-TargetResource` Kaynağın geçerli durumu ayrıntıları döndürmelidir. Çağırarak sınayın `Get-DscConfiguration` sonra yapılandırmayı uygulamak ve çıktısını almak için doğru Bu doğrulama makinenin geçerli durumunu yansıtır. Bu alandaki tüm sorunları çağırırken görünmez olduğundan ayrı ayrı test etmek önemlidir `Start-DscConfiguration`.
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Test uyumluluk tüm DSC üzerinde desteklenen platformlar ##
-Kaynak tüm DSC desteklenen platformlarda çalışmalıdır (Windows Server 2008 R2 ve daha yeni). En son WMF (Windows Management Framework) DSC en son sürümünü almak için işletim sistemine yükleyebilir. Kaynağınız bazı bu platformlar tarafından tasarım çalışmazsa, belirli bir hata iletisi döndürülmelidir. Ayrıca, kaynak, aradığınız cmdlet'leri belirli makinede mevcut olup olmadığını denetler emin olun. Windows Server 2012, çok sayıda bile WMF yüklü Windows Server 2008R2 üzerinde kullanılabilir değil yeni cmdlet'ler eklenmiştir.
+## <a name="call-getsettest-targetresource-functions-directly"></a>Çağrı **Get/Set/Test-TargetResource** doğrudan işlevleri
 
-## <a name="verify-on-windows-client-if-applicable"></a>Windows istemcisinde (varsa) doğrulayın ##
-Yaygın bir test boşluk yalnızca, Windows server sürümlerinde kaynak doğruluyor. Birçok kaynağa ayrıca istemci SKU'larında çalışması için tasarlanmış, sizin durumunuzda true ise, bu platformlarda test unutmayın şekilde.
-## <a name="get-dscresource-lists-the-resource"></a>Get-DSCResource kaynak listeleri ##
-Modül dağıttıktan sonra Get-DscResource çağırma diğerlerinin yanı sıra, kaynak sonucunda listelenmelidir. Kaynağınız listede bulamazsanız, bu kaynak mevcut için o schema.mof dosya emin olun.
-## <a name="resource-module-contains-examples"></a>Kaynak modülü örnekleri içerir ##
-Başkalarının yardımcı olacak oluşturma nitelikli örnekler nasıl kullanılacağını anlayın. Özellikle çok sayıda kullanıcı örnek kod belgeleri davran beri bu, çok önemlidir.
-- İlk olarak, en az – modülüyle eklenecek örnekler belirlemeniz gerekir, kaynak için en önemli kullanım örneklerini kapsamalıdır:
-- Temel uçtan uca örnek ideal olarak, modül bir uçtan uca senaryo için birlikte çalışmak için gereken çeşitli kaynaklar içeriyorsa, ilk olacaktır.
-- İlk örnek çok basit--nasıl kaynaklarınızı (örn. yeni bir VHD oluşturma) küçük yönetilebilir yığınlar kullanmaya başlama
-- Sonraki örnekleri (örn. bir VM VM değiştirme VM kaldırma bir VHD'den oluşturma) Bu örnekleri oluşturmak ve gerekir (örn. bir VM ile dinamik bellek oluşturma) gelişmiş işlevselliği Göster
-- Örnek yapılandırmaları parametreli (tüm değerleri yapılandırmaya parametre olarak geçirilen ve sabit kodlanmış değerler olmalıdır):
-```powershell
-configuration Sample_xRemoteFile_DownloadFile
-{
+Test emin **Get/Set/Test-TargetResource** kaynağınızda doğrudan çağırmak ve beklendiği gibi çalıştığını doğrulama uygulanan işlevleri.
+
+## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Uçtan uca kullanarak doğrulama **Başlat-DscConfiguration**
+
+Test **Get/Set/Test-TargetResource** işlevlerini doğrudan çağırma tarafından önemlidir, ancak bu şekilde tüm sorunları bulunacaktır. Testinizin kullanma ile ilgili önemli bir bölümü durmalısınız `Start-DscConfiguration` veya çekme sunucusu. Aslında, bu kullanıcılar bu tür testler önemini düşük gösterdiğini olmayan şekilde kaynak nasıl kullanacağınız değerdir.
+Olası sorunları türleri:
+
+- DSC aracı bir hizmet olarak çalıştığı için kimlik bilgisi/oturum farklı davranabilir.  Burada herhangi bir özellik baştan sona test etmeyi unutmayın.
+- Hataları çıktı tarafından `Start-DscConfiguration` çağırırken görüntülenen alınanlardan farklı olabilir `Set-TargetResource` doğrudan işlev.
+
+## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Test uyumluluk tüm DSC üzerinde desteklenen platformlar
+
+Kaynak DSC desteklenen tüm platformlarda iş (Windows Server 2008 R2 ve üzeri). DSC en son sürümünü almak için işletim sisteminize en son WMF (Windows Management Framework) yükleyin. Kaynağınızı bu platformları bazılarında tasarım gereği çalışmazsa, belirli bir hata iletisi döndürülmelidir. Ayrıca kaynağınızın aradığınız cmdlet'leri belirli makinede mevcut olup olmadığını denetler emin olun. Windows Server 2012, çok sayıda bile WMF yüklü Windows Server 2008R2 üzerinde mevcut olmayan yeni cmdlet'ler eklendi.
+
+## <a name="verify-on-windows-client-if-applicable"></a>(Eğer varsa) Windows istemcide doğrulayın
+
+Çok yaygın bir test boşluk kaynağın yalnızca Windows server sürümlerini doğruluyor. Çok sayıda kaynağı da istemci SKU'ları üzerinde çalışacak şekilde tasarlanmıştır, sizin durumunuzda true ise, bu platformlarda test unutmamak.
+
+## <a name="get-dscresource-lists-the-resource"></a>Get-DSCResource kaynak listeler
+
+Modül dağıttıktan sonra çağırma `Get-DscResource` kaynağınızı diğerlerinin yanı sıra sonucunda listelemelisiniz. Kaynağınızı listede bulamazsanız, bu kaynağın mevcut için schema.mof osyanın emin olun.
+
+## <a name="resource-module-contains-examples"></a>Kaynak modülü örnekler içerir.
+
+Başkalarının yardımcı olacak oluşturma kalite örnekleri nasıl kullanılacağını anlamak. Özellikle çok sayıda kullanıcı belgeleri örnek kod işle olduğundan bu, çok önemlidir.
+
+- İlk olarak, en azından – modülüyle dahil edilecek örnekler belirlemelisiniz, kaynağınız için en önemli kullanım örneklerini kapsamalıdır:
+- Temel uçtan uca örnek ideal olarak, modül bir uçtan uca senaryo için birlikte çalışmak için gereken çeşitli kaynaklar varsa, ilk olacaktır.
+- İlk örnek çok basit--nasıl (örneğin yeni bir VHD oluşturma) küçük yönetilebilir yığınlar kaynaklarınızı kullanmaya başlama
+- Sonraki örneklerde (örneğin VM VM değiştirme, kaldırma, bir VHD'den VM oluşturma) Bu örnekleri oluşturmak ve gelişmiş işlevleri (örneğin dinamik bellek ile VM oluşturma) göster
+- Örnek yapılandırma parametreli (tüm değerler için yapılandırma parametreleri olarak geçirilmelidir ve sabit kodlanmış değer olması gerekir):
+
+  ```powershell
+  configuration Sample_xRemoteFile_DownloadFile
+  {
     param
     (
         [string[]] $nodeName = 'localhost',
@@ -159,38 +184,47 @@ configuration Sample_xRemoteFile_DownloadFile
             Headers = $headers
         }
     }
-}
-```
-- Örnek komut dosyası sonunda gerçek değerlerle yapılandırma çağırmak nasıl (out açıklamalı) örneği dahil etmek için iyi bir uygulamadır.
-Örneğin, yukarıdaki yapılandırmada UserAgent belirtmek için en iyi yolu olduğunu mutlaka açık değil:
+  }
+  ```
 
-`UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` Bu durumda bir yorum yapılandırmasının hedeflenen yürütme açıklık getirebilir:
-```
-<#
-Sample use (parameter values need to be changed according to your scenario):
+- Yapılandırmanın sonunda örnek betik, gerçek değerlerle çağırmak nasıl (out açıklamalı) örneği eklemek iyi bir uygulamadır.
+  Örneğin, yukarıdaki yapılandırmada UserAgent belirtmek için en iyi yolu olduğunu mutlaka belirgin değildir:
 
-Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
+  `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` Bu durumda bir açıklama yapılandırmasının hedeflenen yürütme açıklık getirebilirsiniz:
 
-Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
--userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
-#>
-```
-- Her örneğin ne yaptığını açıklayan kısa bir açıklama ve parametreleri anlamını yazma.
-- Örnekler, kaynak için en önemli senaryolarını kapsamak ve varsa eksik, hiçbir şey Tümünü Yürüt ve makine istenilen durumda put doğrulayın emin olun.
+  ```powershell
+  <#
+  Sample use (parameter values need to be changed according to your scenario):
 
-## <a name="error-messages-are-easy-to-understand-and-help-users-solve-problems"></a>Hata iletileri anlamak ve kullanıcıların sorunlarını gidermenize yardımcı olmak kolay ##
+  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
+
+  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
+  -userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
+  #>
+  ```
+
+- Her örneğin ne yaptığını açıklayan kısa bir açıklama ve parametreleri anlamını yazın.
+- Örnekler kaynağınızın birçok önemli senaryoyu kapsar ve şey eksik, yoksa tüm yürütün ve istenen durumda makine yerleştirebilir doğrulayın emin olun.
+
+## <a name="error-messages-are-easy-to-understand-and-help-users-solve-problems"></a>Anlama ve kullanıcılar sorunları çözmesine yardımcı olmak hata iletileri kolaydır
+
 İyi hata iletileri olmalıdır:
-- : Hata iletileri büyük sorun yoktur genellikle yoksa, bu nedenle bunlar bulunmadığından emin olun.
-- Kolay anlaşılır: İnsan okunabilir, Hayır belirsiz hata kodları
-- Kesin: tam olarak sorunun ne olduğunu açıklar
-- Yapıcı: Öneri sorunu gidermeye yönelik
-- Yumuşak: nedenlerle kullanıcı ya da bunları eşitleyerek hatalı yapma uçtan uca senaryolarda hataları doğrulayın emin yok (kullanarak **başlangıç DscConfiguration**), kaynak işlevlerini doğrudan çalıştırırken döndürülen olanlardan farklı olabilir.
 
-## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>Günlük iletilerini kolay anlaşılır ve bilgilendirici (dahil – ayrıntılı, – hata ayıklama hem de ETW günlükleri) ##
-Kaynak tarafından yüzdelik günlükleri anlama ve kullanıcıya değeri sağlamak kolay olduğundan emin olun. Kaynakları kullanıcı için yararlı olabilecek tüm bilgileri çıkış, ancak daha fazla günlükleri değil her zaman daha iyi. Artıklık önlemek ve gerekir içermeyen veri çıktısı ek değer sağlamanız – birisi aradıklarını bulmak için günlük girişlerini yüzlerce Git yapmayın. Elbette, hiçbir günlük değil Bu sorun için kabul edilebilir bir çözüm ya da.
+- : Hata iletileri en büyük sorun yoktur genellikle yoksa, bu nedenle bunlar olmadığından emin olun.
+- Kolay anlaşılır: insan tarafından okunabilir, Hayır belirsiz hata kodları
+- Kesin: tam olarak sorunun ne olduğunu açıklamak
+- Yapıcı: Öneri sorunun nasıl çözüleceğini
+- Yumuşak: Kullanıcı sorumlu veya yoksa onları hatalı gönderebilirsiniz
 
-Test edilirken de ayrıntılı çözümleyebilir ve hata ayıklama günlüklerini (çalıştırarak **başlangıç DscConfiguration** ile – ayrıntılı ve – anahtarları uygun şekilde hata ayıklama), yanı ETW günlükleri olarak. DSC ETW günlükleri görmek için Olay Görüntüleyici'ye gidin ve şu klasörü açın: uygulamaları ve Hizmetleri - Microsoft - Windows - istenen durum yapılandırması.  Varsayılan olarak var. işletimsel kanal olabilir, ancak analitik etkinleştirdiğinizden emin olun ve kanallar yapılandırma çalıştırmadan önce hata ayıklama.
-Analitik/Debug kanalları etkinleştirmek için aşağıdaki komut dosyası çalıştırabilirsiniz:
+Uçtan uca senaryolar Hataları Doğrula emin olun (kullanarak `Start-DscConfiguration`), kaynak işlevleri doğrudan çalıştırılırken döndürülen olanlardan farklı olabilir.
+
+## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>Kolay anlaşılır ve bilgilendirici günlük iletisi (dahil-verbose,-hata ayıklama ve ETW günlükleri)
+
+Kaynak tarafından yüzdelik günlükleri anlama ve kullanıcıya değeri sağlamak kolay olduğundan emin olun. Kaynakları, kullanıcıya yardımcı olabilecek tüm bilgileri oluşturmalıdır, ancak daha fazla günlükleri değil her zaman daha iyi. Yedeklilik önlemek ve gerekir içermeyen veri çıktısı ek değer sağlayın: birisi aradıklarını bulmak amacıyla günlük girişlerini yüzlerce Git yapmayın. Elbette, günlük değil Bu sorun için kabul edilebilir bir çözüm ya da.
+
+Test ederken de ayrıntılı analiz etmek ve hata ayıklama günlüklerini (çalıştırarak `Start-DscConfiguration` ile `–Verbose` ve `–Debug` uygun şekilde geçer) da ETW günlükleri olarak. DSC ETW günlükleri görmek için Olay Görüntüleyicisi'ne gidin ve şu klasörü açın: uygulama ve Hizmetleri - Microsoft - Windows - Desired State Configuration.  Varsayılan olarak yok işlevsel kanal olabilir, ancak analitik etkinleştirdiğinizden emin olun ve yapılandırmayı çalıştırmadan önce kanalları hata ayıklama.
+Analitik/Debug kanalları etkinleştirmek için aşağıdaki betiği yürütebilirsiniz:
+
 ```powershell
 $statusEnabled = $true
 # Use "Analytic" to enable Analytic channel
@@ -204,47 +238,66 @@ if($statusEnabled -eq $log.IsEnabled)
 }
 Invoke-Expression $commandToExecute
 ```
-## <a name="resource-implementation-does-not-contain-hardcoded-paths"></a>Kaynak uygulama sabit kodlanmış yolları içermiyor ##
-Özellikle bu bunlar dil olduğunu varsayarsak kaynak uygulamasında hiçbir sabit kodlanmış yol olmadığından emin olun (en-us), veya kullanılabilir sistem değişkenleri olduğunda.
-Kaynağınız belirli yollar erişmesi gerekirse, ortam değişkenleri diğer makinelerde farklı olabileceği yerine cmdlet'e kod yolu kullanın.
+
+## <a name="resource-implementation-does-not-contain-hardcoded-paths"></a>Kaynak uygulama, sabit kodlanmış yollar içermiyor
+
+Özellikle dil varsayarsanız kaynak uygulamasında, sabit kodlanmış yol olmadığından emin olun (en-us), veya kullanılabilir sistem değişkenlerini olduğunda.
+Kaynağınızı belirli yollar erişmeniz gerekiyorsa, diğer makinelere değişebilir gibi ortam değişkenleri yerine runbook'a kod yolu kullanın.
 
 Örnek:
 
 Onun yerine:
-```
+
+```powershell
 $tempPath = "C:\Users\kkaczma\AppData\Local\Temp\MyResource"
 $programFilesPath = "C:\Program Files (x86)"
- ```
-Şunu yazabilirsiniz:
 ```
+
+Şunu yazabilirsiniz:
+
+```powershell
 $tempPath = Join-Path $env:temp "MyResource"
 $programFilesPath = ${env:ProgramFiles(x86)}
 ```
-## <a name="resource-implementation-does-not-contain-user-information"></a>Kaynak uygulaması kullanıcı bilgisi içermiyor ##
-E-posta adlarını, hesap bilgilerini ya kodda kişilerin adlarını olmadığından emin olun.
-## <a name="resource-was-tested-with-validinvalid-credentials"></a>Kaynağın geçerli/geçersiz kimlik bilgileri ile test edilmiştir ##
-Kaynağınız parametre olarak bir kimlik bilgisi sürerse:
-- Yerel Sistem (veya uzak kaynaklar için bilgisayar hesabı) erişimi olmadığında kaynak çalıştığını doğrulayın.
-- Belirtilen kimlik bilgileriyle kaynak works Al ayarlayın ve sınayın doğrulayın
-- Kaynağınız paylaşımları erişirse, gibi desteklemeniz gereken tüm çeşitleri test edin:
+
+## <a name="resource-implementation-does-not-contain-user-information"></a>Kaynak uygulaması kullanıcı bilgisi içermiyor
+
+E-posta adları, hesap bilgileri veya kod kişilerin adları yok emin olun.
+
+## <a name="resource-was-tested-with-validinvalid-credentials"></a>Kaynak geçerli/geçersiz kimlik bilgileri ile test edilmiştir
+
+Kaynağınızı parametre olarak bir kimlik bilgisi sürerse:
+
+- Yerel Sistem (veya uzak kaynaklara yönelik bilgisayar hesabının) erişimi olmadığında, kaynak çalıştığını doğrulayın.
+- Bir kimlik bilgisi için belirtilen kaynak çalışır Al Ayarla ve Test doğrulayın
+- Kaynak paylaşımları erişirse, desteği, aşağıdaki gibi ihtiyacınız olan tüm çeşitleri test edin:
   - Standart windows paylaşımları.
   - DFS paylaşımları.
-  - SAMBA paylaşımları (Linux desteklemek istiyorsanız,.)
+  - SAMBA paylaşımları (Linux desteklemek isterseniz.)
 
-## <a name="resource-does-not-require-interactive-input"></a>Kaynak etkileşimli giriş gerektirmez ##
-**Get/Set/Test-TargetResource** işlevleri otomatik olarak yürütülüp ve kullanıcının herhangi bir yürütme aşamasında giriş için beklemesi gereken değil (örneğin kullanılamaz **Get-Credential** bu işlevler içinde). Kullanıcının giriş sağlamak ihtiyacınız varsa, bu yapılandırmaya parametre olarak derleme aşamasında geçirmelisiniz.
-## <a name="resource-functionality-was-thoroughly-tested"></a>Kaynak işlevselliği baştan sona test edilmiştir ##
-Bu denetim, sınanacak önemlidir ve/veya genellikle eksik öğeleri içerir. Testleri, test ve burada belirtilmeyen kaynak belirli olacağı çoğunlukla işlevsel olanları demet olacaktır. Negatif test çalışmaları hakkında unutmayın.
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Açısından en iyisi: kaynak modülü ResourceDesignerTests.ps1 betik klasörle testleri içerir ##
-İçinde kaynak modül klasörü "testleri" oluşturun, ResourceDesignerTests.ps1 dosyası oluşturun ve kullanarak testleri eklemek için iyi bir uygulamadır **Test xDscResource** ve **Test xDscSchema** belirtilen tüm kaynakların ilişkin Modül.
-Bu şekilde tüm kaynakların bir sağlamlık denetleyin yayımlanmadan önce belirtilen modülleri ve şemaları hızla doğrulayabilirsiniz.
-XRemoteFile için ResourceTests.ps1 kadar basit görünebilir:
+## <a name="resource-does-not-require-interactive-input"></a>Kaynak etkileşimli giriş gerektirmez
+
+**Get/Set/Test-TargetResource** işlevleri otomatik olarak yürütülüp ve kullanıcının herhangi bir yürütme aşamasında girişinin için beklemeyip gerekir (örneğin kullanmamalısınız `Get-Credential` bu işlevler içinde). Kullanıcının giriş sağlamanız gerekiyorsa, yapılandırma için parametre olarak derleme aşaması sırasında geçirdiğiniz.
+
+## <a name="resource-functionality-was-thoroughly-tested"></a>Kaynak işlevselliği kapsamlı olarak test edildi
+
+Bu denetim, test edilecek önemlidir ve/veya genellikle eksik öğeleri içerir. Testler, test ve burada belirtilmeyen kaynak belirli olacağı çoğunlukla işlevsel olanları sürü olacaktır. Negatif test çalışmaları hakkında unutmayın.
+
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>En iyi yöntem: kaynak modülünde ResourceDesignerTests.ps1 betiğiyle test klasörü
+
+Kaynak modülü içinde "testleri" klasör oluşturma, için iyi bir uygulamadır `ResourceDesignerTests.ps1` kullanarak testleri ekleyin ve dosya **Test xDscResource** ve **Test xDscSchema** içinde tüm kaynaklar için verilen modülü.
+Bu şekilde tüm kaynakların bir sağlamlık denetleyin yayımlanmadan önce belirtilen modülleri ve şemaları hızlı bir şekilde doğrulayabilirsiniz.
+XRemoteFile için `ResourceTests.ps1` kadar basit görünebilir:
+
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
-##<a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Açısından en iyisi: kaynak klasörünü içeren kaynak Tasarımcı betik şema ## oluşturmak için
-Her bir kaynağın kaynak mof şeması oluşturan bir kaynak Tasarımcı betik içermelidir. Bu dosya yerleştirilmelidir <ResourceName>\ResourceDesignerScripts ve Generate adlandırılması<ResourceName>xRemoteFile kaynak Schema.ps1 için bu dosyayı GenerateXRemoteFileSchema.ps1 çağrılır ve içerir:
+
+## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>En iyi yöntem: kaynak klasörünü içeren şema oluşturmak için kaynak Tasarımcı betiği
+
+Her kaynak bir kaynağın mof şema oluşturur bir kaynak Tasarımcı betiği içermelidir. Bu dosya yerleştirilmelidir `<ResourceName>\ResourceDesignerScripts` ve Oluştur adlandırılması `<ResourceName>Schema.ps1` xRemoteFile kaynağı için bu dosyayı çağırılan `GenerateXRemoteFileSchema.ps1` ve içerir:
+
 ```powershell
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
 $Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
@@ -256,10 +309,13 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
 ```
-## <a name="best-practice-resource-supports--whatif"></a>Açısından en iyisi: kaynak - whatIf destekler ##
-Kaynağınız "tehlikeli" işlemleri çalışıyorsa, - whatIf işlevselliği uygulamak için iyi bir uygulamadır. Bunu yaptıktan sonra whatIf çıkış doğru whatIf anahtarı olmadan komut yürütülürse olacağını işlemleri açıklayan emin olun.
-Ayrıca, operations yürütülmez doğrulayın (düğümün durumuna değişiklik yapılmaz) – whatIf anahtar olduğunda mevcut.
-Örneğin, dosya kaynağı test ettiğiniz varsayalım. "Test" dosyası "sınama.txt" içeriğiyle oluşturan basit yapılandırma aşağıdadır:
+
+## <a name="best-practice-resource-supports--whatif"></a>En iyi yöntem: kaynak - WhatIf destekler
+
+Kaynağınızı "tehlikeli" işlemleri gerçekleştiriliyorsa, uygulamak için iyi bir uygulamadır `-WhatIf` işlevselliği. Bunu yaptıktan sonra emin olun `-WhatIf` çıkış doğru olmadan komut yürütülürse olacağını işlemleri açıklar `-WhatIf` geçin.
+Ayrıca, operations yürütülmez doğrulayın (düğümün durumu için hiçbir değişiklik yapılmaz) olduğunda `–WhatIf` anahtar.
+Örneğin, şu dosya kaynak test varsayalım. Aşağıdaki dosya oluşturan basit yapılandırmadır `test.txt` "test" içeriğiyle:
+
 ```powershell
 configuration config
 {
@@ -274,9 +330,14 @@ configuration config
 }
 config
 ```
-Derleme ve yapılandırma – whatIf anahtarıyla yürütmek, çıktı bize biz yapılandırma çalıştırdığınızda tam olarak ne olacağını belirtiyor. Yapılandırma ancak yürütülmedi (sınama.txt dosyası oluşturulmadı).
+
+Derleme ve sonra yapılandırmasıyla yürütün `-WhatIf` anahtarı, çıkış unsurdur bize yapılandırma çalıştırıyoruz, tam olarak ne olacağını. Yapılandırma ancak yürütülmedi (`test.txt` dosyası oluşturulmadı).
+
 ```powershell
-Start-DscConfiguration -path .\config -ComputerName localhost -wait -verbose -whatif
+Start-DscConfiguration -Path .\config -ComputerName localhost -Wait -Verbose -WhatIf
+```
+
+```output
 VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' =
 SendConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' =
 root/Microsoft/Windows/DesiredStateConfiguration'.
@@ -299,4 +360,4 @@ VERBOSE: [X]: LCM:  [ End    Set      ]    in  0.1050 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 ```
 
-Bu liste geniş kapsamlı değildir, ancak tasarlama, geliştirme ve test etme DSC kaynakları hatayla karşılaştı birçok önemli sorunlar ele alınmaktadır.
+Bu liste kapsamlı değildir, ancak tasarlama, geliştirme ve test etme DSC kaynakları hatayla karşılaşıldı, birçok önemli sorunları kapsamaktadır.
