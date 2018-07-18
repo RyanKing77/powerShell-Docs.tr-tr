@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188437"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093727"
 ---
-# <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="ecab9-102">Bir JEA Uç Noktası Oluşturma ve Buna Bağlanma</span><span class="sxs-lookup"><span data-stu-id="ecab9-102">Creating and Connecting to a JEA Endpoint</span></span>
-<span data-ttu-id="ecab9-103">JEA uç noktası oluşturmak için oluşturmanız ve ile oluşturulan bir özel olarak yapılandırılmış PowerShell oturumu yapılandırma dosyasını kaydetmek için gereken **yeni PSSessionConfigurationFile** cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="ecab9-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="fb623-102">Bir JEA Uç Noktası Oluşturma ve Buna Bağlanma</span><span class="sxs-lookup"><span data-stu-id="fb623-102">Creating and Connecting to a JEA Endpoint</span></span>
+<span data-ttu-id="fb623-103">Bir JEA uç noktası oluşturmak için oluşturmak ve ile oluşturulan bir özel olarak yapılandırılmış PowerShell oturumu yapılandırma dosyasını kaydetmek gereken **yeni PSSessionConfigurationFile** cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="fb623-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-<span data-ttu-id="ecab9-104">Bu şuna benzer bir oturum yapılandırma dosyası oluşturacak:</span><span class="sxs-lookup"><span data-stu-id="ecab9-104">This will create a session configuration file that looks like this:</span></span>
+<span data-ttu-id="fb623-104">Bu, şuna benzer bir oturum yapılandırma dosyası oluşturur:</span><span class="sxs-lookup"><span data-stu-id="fb623-104">This will create a session configuration file that looks like this:</span></span>
 ```powershell
 @{
 
@@ -53,20 +53,20 @@ RoleDefinitions = @{
 
 }
 ```
-<span data-ttu-id="ecab9-105">JEA uç noktası oluştururken, aşağıdaki parametreleri komutu (ve karşılık gelen anahtarları dosyasındaki) ayarlamanız gerekir:</span><span class="sxs-lookup"><span data-stu-id="ecab9-105">When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:</span></span>
-1.  <span data-ttu-id="ecab9-106">RestrictedRemoteServer SessionType</span><span class="sxs-lookup"><span data-stu-id="ecab9-106">SessionType to RestrictedRemoteServer</span></span>
-2.  <span data-ttu-id="ecab9-107">İçin RunAsVirtualAccount **$true**</span><span class="sxs-lookup"><span data-stu-id="ecab9-107">RunAsVirtualAccount to **$true**</span></span>
-3.  <span data-ttu-id="ecab9-108">"Kama" dökümleri sonra her bir oturumu kaydedileceği dizinine TranscriptPath</span><span class="sxs-lookup"><span data-stu-id="ecab9-108">TranscriptPath to the directory where “over the shoulder” transcripts will be saved after each session</span></span>
-4.  <span data-ttu-id="ecab9-109">Hangi grupların tanımlayan bir hashtable için RoleDefinitions erişimi hangi "rolü yeteneklerine."</span><span class="sxs-lookup"><span data-stu-id="ecab9-109">RoleDefinitions to a hashtable that defines which groups have access to which “Role Capabilities.”</span></span>  <span data-ttu-id="ecab9-110">Bu alan tanımlar **kimin** yapabilirsiniz **ne** Bu uç noktada.</span><span class="sxs-lookup"><span data-stu-id="ecab9-110">This field defines **who** can do **what** on this endpoint.</span></span>   <span data-ttu-id="ecab9-111">Rol özellikleri, kısa süre içinde açıklanacaktır özel dosyalardır.</span><span class="sxs-lookup"><span data-stu-id="ecab9-111">Role Capabilities are special files that will be explained shortly.</span></span>
+<span data-ttu-id="fb623-105">Bir JEA uç noktası oluştururken, aşağıdaki parametreleri komut (ve karşılık gelen anahtarları dosyasındaki) ayarlamanız gerekir:</span><span class="sxs-lookup"><span data-stu-id="fb623-105">When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:</span></span>
+1.  <span data-ttu-id="fb623-106">SessionType RestrictedRemoteServer için</span><span class="sxs-lookup"><span data-stu-id="fb623-106">SessionType to RestrictedRemoteServer</span></span>
+2.  <span data-ttu-id="fb623-107">İçin RunAsVirtualAccount **$true**</span><span class="sxs-lookup"><span data-stu-id="fb623-107">RunAsVirtualAccount to **$true**</span></span>
+3.  <span data-ttu-id="fb623-108">"Omuz" dökümleri sonra her oturum kaydedileceği dizine TranscriptPath</span><span class="sxs-lookup"><span data-stu-id="fb623-108">TranscriptPath to the directory where “over the shoulder” transcripts will be saved after each session</span></span>
+4.  <span data-ttu-id="fb623-109">RoleDefinitions grupları tanımlayan bir hashtable için "Rolü becerilerine." erişimi</span><span class="sxs-lookup"><span data-stu-id="fb623-109">RoleDefinitions to a hashtable that defines which groups have access to which “Role Capabilities.”</span></span>  <span data-ttu-id="fb623-110">Bu alan tanımlar **kimin** yapabilirsiniz **ne** Bu uç noktada.</span><span class="sxs-lookup"><span data-stu-id="fb623-110">This field defines **who** can do **what** on this endpoint.</span></span>   <span data-ttu-id="fb623-111">Rol işlevleri, kısa bir süre sonra açıklanacaktır özel dosyalardır.</span><span class="sxs-lookup"><span data-stu-id="fb623-111">Role Capabilities are special files that will be explained shortly.</span></span>
 
 
-<span data-ttu-id="ecab9-112">Hangi grupların hangi rolü özellikleri erişebildiği RoleDefinitions alanı tanımlar.</span><span class="sxs-lookup"><span data-stu-id="ecab9-112">The RoleDefinitions field defines which groups had access to which Role Capabilities.</span></span>  <span data-ttu-id="ecab9-113">Bir rol özelliği kullanıcıları bağlamak için bir dizi sunulur özelliği tanımlayan bir dosyadır.</span><span class="sxs-lookup"><span data-stu-id="ecab9-113">A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.</span></span>  <span data-ttu-id="ecab9-114">Rol özellikleri ile oluşturabileceğiniz **yeni PSRoleCapabilityFile** komutu.</span><span class="sxs-lookup"><span data-stu-id="ecab9-114">You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.</span></span>
+<span data-ttu-id="fb623-112">Hangi grupların hangi rolü özelliklere erişim vardı RoleDefinitions alanı tanımlar.</span><span class="sxs-lookup"><span data-stu-id="fb623-112">The RoleDefinitions field defines which groups had access to which Role Capabilities.</span></span>  <span data-ttu-id="fb623-113">Bir rol özelliği kullanıcıları bağlamak için kullanıma sunulacak özellikler kümesini tanımlayan bir dosyadır.</span><span class="sxs-lookup"><span data-stu-id="fb623-113">A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.</span></span>  <span data-ttu-id="fb623-114">Rol işlevleri ile oluşturabileceğiniz **yeni PSRoleCapabilityFile** komutu.</span><span class="sxs-lookup"><span data-stu-id="fb623-114">You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.</span></span>
 
 ```powershell
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
-<span data-ttu-id="ecab9-115">Bu şuna benzeyen bir şablon rol özelliği oluşturur:</span><span class="sxs-lookup"><span data-stu-id="ecab9-115">This will generate a template role capability that looks like this:</span></span>
+<span data-ttu-id="fb623-115">Bu işlem şuna benzer bir şablon rolü özelliği oluşturur:</span><span class="sxs-lookup"><span data-stu-id="fb623-115">This will generate a template role capability that looks like this:</span></span>
 ```
 @{
 
@@ -128,22 +128,24 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
-<span data-ttu-id="ecab9-116">JEA oturum yapılandırması tarafından kullanılmak üzere rol özellikleri "RoleCapabilities" adlı bir dizinde geçerli bir PowerShell modülü kaydedilmesi gerekir.</span><span class="sxs-lookup"><span data-stu-id="ecab9-116">To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named “RoleCapabilities”.</span></span> <span data-ttu-id="ecab9-117">Bir modül, isterseniz birden çok Rol Yetenek dosya olabilir.</span><span class="sxs-lookup"><span data-stu-id="ecab9-117">A module may have multiple role capability files, if desired.</span></span>
 
-<span data-ttu-id="ecab9-118">Hangi cmdlet'ler, İşlevler, diğer adlar ve kullanıcı JEA oturumuna bağlanırken erişebilir betikleri yapılandırmaya başlamak için kendi kurallarınızı açıklamalı şablonları aşağıdaki Rol Yetenek dosyasına ekleyin.</span><span class="sxs-lookup"><span data-stu-id="ecab9-118">To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates.</span></span> <span data-ttu-id="ecab9-119">Rol özellikleri nasıl yapılandırabileceğiniz içine daha derin görünüm için tam denetleyin [Kılavuzu deneyimi](http://aka.ms/JEA).</span><span class="sxs-lookup"><span data-stu-id="ecab9-119">For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).</span></span>
+<span data-ttu-id="fb623-116">Bir JEA oturum yapılandırması tarafından kullanılacak rol özellikleri "RoleCapabilities" adlı bir dizinde geçerli bir PowerShell modülü olarak kaydedilmesi gerekir.</span><span class="sxs-lookup"><span data-stu-id="fb623-116">To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named “RoleCapabilities”.</span></span> <span data-ttu-id="fb623-117">Bir modülün birden çok rol özellik dosyaları, isterseniz olabilir.</span><span class="sxs-lookup"><span data-stu-id="fb623-117">A module may have multiple role capability files, if desired.</span></span>
 
-<span data-ttu-id="ecab9-120">Son olarak, oturum yapılandırması ve ilgili rol özellikleri özelleştirme tamamladıktan sonra bu oturum yapılandırmasını kaydetmek ve çalıştırarak uç noktası oluşturma **Register-PSSessionConfiguration**.</span><span class="sxs-lookup"><span data-stu-id="ecab9-120">Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running **Register-PSSessionConfiguration**.</span></span>
+<span data-ttu-id="fb623-118">Cmdlet'leri, işlevleri, diğer adlar ve bir kullanıcı bir JEA oturumuna bağlanırken erişebilir betikleri yapılandırmaya başlamak için kendi kurallarınızı açıklamalı şablonlara göz aşağıdaki rol özelliği dosyasına ekleyin.</span><span class="sxs-lookup"><span data-stu-id="fb623-118">To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates.</span></span> <span data-ttu-id="fb623-119">Rol işlevleri nasıl yapılandırabileceğinizi içinde daha ayrıntılı görünüm için tam denetleyin [Kılavuzu deneyimi](http://aka.ms/JEA).</span><span class="sxs-lookup"><span data-stu-id="fb623-119">For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).</span></span>
+
+<span data-ttu-id="fb623-120">Son olarak, oturum yapılandırmasının ve ilişkili rol işlevleri özelleştirme tamamladıktan sonra bu oturum yapılandırmasını kaydedin ve çalıştırarak uç noktası oluşturma **Register-PSSessionConfiguration**.</span><span class="sxs-lookup"><span data-stu-id="fb623-120">Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running **Register-PSSessionConfiguration**.</span></span>
 
 ```powershell
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-## <a name="connect-to-a-jea-endpoint"></a><span data-ttu-id="ecab9-121">JEA uç noktasına bağlanın</span><span class="sxs-lookup"><span data-stu-id="ecab9-121">Connect to a JEA Endpoint</span></span>
-<span data-ttu-id="ecab9-122">JEA uç noktasına bağlanmak için diğer bir PowerShell uç nokta works bağlanma aynı şekilde çalışır.</span><span class="sxs-lookup"><span data-stu-id="ecab9-122">Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.</span></span>  <span data-ttu-id="ecab9-123">Yalnızca "ConfigurationName" parametresi olarak JEA uç nokta adınız vermeniz gerekir **New-PSSession**, **Invoke-Command**, veya **Enter-PSSession**.</span><span class="sxs-lookup"><span data-stu-id="ecab9-123">You simply have to give your JEA endpoint name as the “ConfigurationName” parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.</span></span>
+## <a name="connect-to-a-jea-endpoint"></a><span data-ttu-id="fb623-121">Bir JEA uç noktasına bağlanma</span><span class="sxs-lookup"><span data-stu-id="fb623-121">Connect to a JEA Endpoint</span></span>
+
+<span data-ttu-id="fb623-122">Bir JEA uç noktaya bağlanmak için başka bir PowerShell uç noktası çalışmalar bağlanma aynı şekilde çalışır.</span><span class="sxs-lookup"><span data-stu-id="fb623-122">Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.</span></span>  <span data-ttu-id="fb623-123">Yalnızca "ConfigurationName" parametresi olarak JEA uç nokta adınız vermek zorunda **New-PSSession**, **Invoke-Command**, veya **Enter-PSSession**.</span><span class="sxs-lookup"><span data-stu-id="fb623-123">You simply have to give your JEA endpoint name as the “ConfigurationName” parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.</span></span>
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
-<span data-ttu-id="ecab9-124">JEA oturumuna bağlandığında komutları Güvenilenler listesine erişiminiz rol özellikleri çalışan için sınırlı olacaktır.</span><span class="sxs-lookup"><span data-stu-id="ecab9-124">Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to.</span></span> <span data-ttu-id="ecab9-125">Rolü için izin verilmiyor komutu çalıştırmayı denerseniz, hatayla karşılaşır.</span><span class="sxs-lookup"><span data-stu-id="ecab9-125">If you try to run any command not allowed for your role, you will encounter an error.</span></span>
+
+<span data-ttu-id="fb623-124">JEA oturuma bağlandıktan sonra komut izin verilenler listesinde erişiminiz rol işlevleri çalışan için sınırlı olacaktır.</span><span class="sxs-lookup"><span data-stu-id="fb623-124">Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to.</span></span> <span data-ttu-id="fb623-125">Rolünüz için izin verilmiyor herhangi bir komutu çalıştırmayı denerseniz, bir hatayla karşılaşırsınız.</span><span class="sxs-lookup"><span data-stu-id="fb623-125">If you try to run any command not allowed for your role, you will encounter an error.</span></span>
