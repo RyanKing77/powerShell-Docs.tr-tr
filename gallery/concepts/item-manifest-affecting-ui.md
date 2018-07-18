@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: PowerShell Galerisi UI etkileyen öğe bildirimi değerleri
-ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893486"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093982"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell Galerisi UI etkileyen öğe bildirimi değerleri
 
@@ -84,65 +84,67 @@ Başvuru için en yaygın kullanılan bazı etiketler 14/12/2017 itibarıyla aş
 Bazı durumlarda, benzer ancak belki de ideal seçenek etiketi listelenen daha az vardır.
 Daha az paraziti de neden ve tüketiciler için daha iyi arama sonuçları tercih edilen etiketini kullanmak için bir en iyi yöntemdir.
 
-| **Tercih edilen etiketi** | **Alternatifleri ve notlar** |
+| Tercih edilen etiketi | Alternatifleri ve notlar |
 | --- | --- |
-| **Azure** |  |
-| **DSC** | DesiredStateConfiguration daha az tercih edilir, çok uzun |
-| **ResourceManager** | ARM işlemci grubu tanımlamak için kullanılır ve Azure Resource Manager için kullanılmamalıdır | **DSCResourceKit** |  |
-| **SQL** |  |
-| **AWS** |  |
-| **DSCResource** |  |
-| **Otomasyon** |  |
-| **REST** |  |
-| **Active Directory** | Tek başına AD şu anda kullanılmıyor  |
-| **SQLServer** |  |
-| **DBA** |  |
-| **Güvenlik** | Savunma daha az kesin |
-| **Veritabanı** | Daha az tercih veritabanları (çoğul) |
-| **DevOps** |  |
-| **Windows** |  |
-| **Derleme** |  |
-| **Dağıtım** | Dağıtma biraz daha az sıklıkta kullanılan |
-| **Bulut** |  |
-| **GIT** |  |
-| **Test** | Testi daha az tercih edilir |
-| **VersionControl** | Sürüm daha sık kullanılan olsa da daha az kesin  |
-| **Günlüğe kaydetme** | Tercih edilen bir eylem olarak günlük kullanımı |
-| **Günlük** | Bir şey olarak tercih edilen kullanım günlüğü |
-| **Yedekleme** |  |
-| **Iaas** |  |
-| **Linux** |  |
-| **IIS** |  |
-| **AzureAutomation** |  |
-| **Depolama** |  |
-| **GitHub** |  |
-| **JSON** |  |
-| **Exchange** |  |
-| **Ağ** | Daha az sıklıkta kullanılan ağ benzer, |
-| **SharePoint** |  |
-| **Raporlama** | Raporlama bir eylem olduğundan, rapor bir şeydir |
-| **Rapor** | Rapor bir şeydir |
-| **WinRM** |  |
-| **İzleme** |  |
-| **VSTS** |  |
-| **Excel** |  |
-| **Google** |  |
-| **Renk** |  |
-| **DNS** |  |
-| **Office365** | Office Yazım tercih edilir. O365 daha az sık, daha kısa ancak kullanılır | **Gitlab** |  |
-| **Pester** |  |
-| **AzureAD** |  |
-| **HTML** |  |
-| **Hyper-V** | HyperV bir etiket olarak daha az yaygındır |
-| **Yapılandırma** |  |
-| **ChatOps** |  |
-| **PackageManagement** |  |
-| **WMI** |  |
-| **Güvenlik Duvarı** |  |
-| **Docker** |  |
-| **Appveyor** |  |
-| **AzureRm** | Öncelikle AzureRM modülleri için kullanılan |
-| **Zip** |  |
-| **MSI** |  |
-| **Mac** |  |
-| **PoshBot** |  |
+| Azure |  |
+| DSC | DesiredStateConfiguration daha az tercih edilir, çok uzun |
+| ResourceManager | ARM işlemci grubu tanımlamak için kullanılır ve Azure Resource Manager için kullanılmamalıdır |
+| DSCResourceKit |  |
+| SQL |  |
+| AWS |  |
+| DSCResource |  |
+| Otomasyon |  |
+| REST |  |
+| ActiveDirectory | Tek başına AD şu anda kullanılmıyor  |
+| SQLServer |  |
+| DBA |  |
+| Güvenlik | Savunma daha az kesin |
+| Veritabanı | Daha az tercih veritabanları (çoğul) |
+| DevOps |  |
+| Windows |  |
+| Derleme |  |
+| Dağıtım | Dağıtma biraz daha az sıklıkta kullanılan |
+| Bulut |  |
+| GIT |  |
+| Test | Testi daha az tercih edilir |
+| VersionControl | Sürüm daha sık kullanılan olsa da daha az kesin  |
+| Günlük | Tercih edilen bir eylem olarak günlük kullanımı |
+| Günlük | Bir şey olarak tercih edilen kullanım günlüğü |
+| Yedek |  |
+| Iaas |  |
+| Linux |  |
+| IIS |  |
+| AzureAutomation |  |
+| Depolama |  |
+| GitHub |  |
+| JSON |  |
+| Exchange |  |
+| Ağ | Daha az sıklıkta kullanılan ağ benzer, |
+| SharePoint |  |
+| Raporlama | Raporlama bir eylem olduğundan, rapor bir şeydir |
+| Rapor | Rapor bir şeydir |
+| WinRM |  |
+| İzleme |  |
+| VSTS |  |
+| Excel |  |
+| Google |  |
+| Renk |  |
+| DNS |  |
+| Office365 | Office Yazım tercih edilir. O365 daha az sık, daha kısa ancak kullanılır |
+| Gitlab |  |
+| Pester |  |
+| AzureAD |  |
+| HTML |  |
+| Hyper-V | HyperV bir etiket olarak daha az yaygındır |
+| Yapılandırma |  |
+| ChatOps |  |
+| PackageManagement |  |
+| WMI |  |
+| Güvenlik Duvarı |  |
+| Docker |  |
+| Appveyor |  |
+| AzureRm | Öncelikle AzureRM modülleri için kullanılan |
+| Zip |  |
+| MSI |  |
+| Mac |  |
+| PoshBot |  |

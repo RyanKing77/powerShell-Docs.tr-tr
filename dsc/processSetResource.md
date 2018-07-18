@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
+keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC ProcessSet kaynağı
-ms.openlocfilehash: 412cf1076996126f0d9b7a9a8ebbc9bdb7ecf377
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d18d2c96239abd83cea735e0fbce198d0456cea6
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189933"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093999"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess kaynağı
 
-> İçin geçerlidir: Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 5.0
 
-**ProcessSet** kaynağı içinde Windows PowerShell istenen durum yapılandırması (DSC), bir hedef düğümde işlemlerini yapılandırmak için bir mekanizma sağlar. Bu kaynak olmadığı bir [bileşik kaynak](authoringResourceComposite.md) çağrısı [WindowsProcess kaynak](windowsProcessResource.md) belirtilen her grup için `GroupName` parametresi.
+**ProcessSet** kaynak içinde Windows PowerShell Desired State Configuration (DSC), bir hedef düğümde işlemlerini yapılandırmak için bir mekanizma sağlar. Bu kaynak bir [bileşik kaynak](authoringResourceComposite.md) çağrılarının [WindowsProcess kaynağı](windowsProcessResource.md) belirtilen her grup için `GroupName` parametresi.
 
 ## <a name="syntax"></a>Sözdizimi
 
@@ -33,14 +33,15 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Özellikler
+
 |  Özellik  |  Açıklama   |
 |---|---|
-| Bağımsız değişkenler| İşlem olarak geçirilecek bağımsız değişkenleri içeren bir dize-değil. Birden fazla bağımsız değişken geçirmek gerekiyorsa, bunları bu dize tüm yerleştirin.|
-| Yol| İşlem yürütülebilir dosya yolları. Bunlar yürütülebilir dosyaları (tam olarak nitelenmiş yollar) adlarını varsa, DSC kaynağı ortam arama **yolu** değişkeni (`$env:Path`) dosyaları bulmak için. Bu özelliğin değerleri, tam yol varsa, DSC kullanmaz **yolu** dosyaları bulmak için ortam değişkeni ve yolların yoksa bir hata özel durum oluşturacak. Göreli yollar izin verilmiyor.|
-| kimlik bilgisi| İşlemi başlatmak için kimlik bilgilerini gösterir.|
-| Emin olun| İşlemler var olup olmadığını belirtir. Bu özelliği işlemi var olduğundan emin olmak için "var" olarak ayarlayın. Aksi takdirde, "Yok" ayarlayın. "Var" varsayılandır.|
-| StandardErrorPath| İşlemler yazma standart hatası yolu. Var. Varolan dosyanın üzerine yazılır.|
+| Bağımsız değişkenler| İşlem olarak geçirilecek bağımsız değişkenleri içeren bir dize-olduğu. Birden çok bağımsız değişkenleri geçirmek gerekiyorsa, bunları bu dize tüm yerleştirin.|
+| Yol| İşlem yürütülebilir dosya yolları. Bunlar yürütülebilir dosyaları (tam olarak nitelenmiş yollar) adlarıdır, DSC kaynak ortam arar **yolu** değişkeni (`$env:Path`) dosyaları bulmak için. Bu özellik değerlerini tam olarak nitelenmiş yollar, DSC kullanmaz **yolu** dosyaları bulmak için ortam değişkeni ve yoksa yolların herhangi bir hata oluşturur. Göreli yollar izin verilmez.|
+| Kimlik bilgisi| İşlemi başlatmak için kimlik bilgilerini belirtir.|
+| Emin olun| İşlemler var olup olmadığını belirtir. Bu işlem var olduğundan emin olmak için "var" özelliğini ayarlayın. Aksi takdirde, "Yok" ayarlayın. "Var" varsayılandır.|
+| StandardErrorPath| Standart hata yazma işlemleri için yolu. Var. Varolan dosyanın üzerine yazılır.|
 | StandardInputPath| İşlem standart giriş aldığı akış.|
-| StandardOutputPath| Standart çıktı yazma işlemleri için dosyanın yolu. Var. Varolan dosyanın üzerine yazılır.|
-| WorkingDirectory| Geçerli çalışma dizini olarak işlemleri için kullanılan konumu.|
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise **ResourceName** ve türünü **_ResourceType**, bu özelliği kullanmak için sözdizimi ' DependsOn = "[ ResourceType] KaynakAdı"''.|
+| StandardOutputPath| Standart çıkış yazma işlemleri için dosyanın yolu. Var. Varolan dosyanın üzerine yazılır.|
+| WorkingDirectory| Geçerli çalışma dizini işlemleri için kullanılan konum.|
+| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **_ResourceType**, bu özelliği kullanmak için söz dizimi ' DependsOn "[= ResourceType] ResourceName"''.|

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
 title: windows powershell web erişimi yükleme ve kullanma
-ms.openlocfilehash: d60670954d6ab6998e905382383d60ead1129d31
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: c14da421e372f6c4c4f203b16bbd37f28a9ba255
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893765"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094271"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yükleme ve Kullanma
 
@@ -329,29 +329,29 @@ Bu bölümdeki yönergeler, Windows PowerShell Web erişimi web uygulamasını y
 
    - Windows üzerinde **Başlat** ekranında, adının bir kısmını **Internet Information Services (IIS) Yöneticisi'ni**. İçinde gösterildiğinde kısayola tıklayın **uygulamaları** sonuçları.
 
-2. IIS Yöneticisi ağaç bölmesinde, Windows PowerShell Web Erişimi'nın yüklendiği kadar sunucu düğümünü genişletin **siteleri** klasördür görünür. Seçin **siteleri** klasör.
+1. IIS Yöneticisi ağaç bölmesinde, Windows PowerShell Web Erişimi'nın yüklendiği kadar sunucu düğümünü genişletin **siteleri** klasördür görünür. Seçin **siteleri** klasör.
 
-3. İçinde **eylemleri** bölmesinde tıklayın **Web sitesi Ekle**.
+1. İçinde **eylemleri** bölmesinde tıklayın **Web sitesi Ekle**.
 
-4. Web sitesi için bir ad yazın **Windows PowerShell Web erişimi**.
+1. Web sitesi için bir ad yazın **Windows PowerShell Web erişimi**.
 
-5. Yeni web sitesi için bir uygulama havuzu otomatik olarak oluşturulur. Farklı bir uygulama havuzu kullanmak için **seçin** yeni Web sitesiyle ilişkilendirilecek bir uygulama havuzu seçin. Diğer uygulama havuzunu seçin **uygulama havuzu Seç** iletişim kutusunu ve ardından **Tamam**.
+1. Yeni web sitesi için bir uygulama havuzu otomatik olarak oluşturulur. Farklı bir uygulama havuzu kullanmak için **seçin** yeni Web sitesiyle ilişkilendirilecek bir uygulama havuzu seçin. Diğer uygulama havuzunu seçin **uygulama havuzu Seç** iletişim kutusunu ve ardından **Tamam**.
 
-6. İçinde **fiziksel yolu** metin kutusunda, % gidin*windir*% / Web/PowerShellWebAccess/wwwroot.
+1. İçinde **fiziksel yolu** metin kutusunda, % gidin*windir*% / Web/PowerShellWebAccess/wwwroot.
 
-7. İçinde **türü** alanını **bağlama** alanında **https**.
+1. İçinde **türü** alanını **bağlama** alanında **https**.
 
-8. Web sitesine, başka bir site veya uygulama tarafından zaten kullanılmayan bir bağlantı noktası numarası atayın. Açık bağlantı noktalarını bulmak için çalıştırabilirsiniz **netstat** bir komut istemi penceresinde komutu. Varsayılan bağlantı noktası numarası 443'tür.
+1. Web sitesine, başka bir site veya uygulama tarafından zaten kullanılmayan bir bağlantı noktası numarası atayın. Açık bağlantı noktalarını bulmak için çalıştırabilirsiniz **netstat** bir komut istemi penceresinde komutu. Varsayılan bağlantı noktası numarası 443'tür.
 
    Varsayılan bağlantı noktası 443 başka bir web sitesi tarafından zaten kullanılıyorsa veya bağlantı noktası numarasını değiştirmek için başka güvenlik nedenleriniz varsa varsayılan bağlantı noktasını değiştirin. Ağ geçidi sunucunuzda çalışan başka bir Web sitesi seçtiğiniz bağlantı noktasını kullanıyorsa,'a tıkladığınızda bir uyarı görüntülenir **Tamam** içinde **Web sitesi Ekle** iletişim kutusu. Windows PowerShell Web Erişimi'ni çalıştırmak için kullanılmayan bir bağlantı noktası kullanmanız gerekir.
 
-9. İsteğe bağlı olarak, kuruluşunuz için gerekirse, kuruluş ve kullanıcılar gibi anlamlı bir konak adı belirtin **www.contoso.com**. **Tamam**’a tıklayın.
+1. İsteğe bağlı olarak, kuruluşunuz için gerekirse, kuruluş ve kullanıcılar gibi anlamlı bir konak adı belirtin **www.contoso.com**. **Tamam**’a tıklayın.
 
-10. Daha güvenli bir üretim ortamı için CA tarafından imzalanmış geçerli bir sertifikanın belirtilmesi önerilir. Kullanıcılar yalnızca Windows PowerShell Web erişimi için bir HTTPS Web sitesi kurabildiğinden bir SSL sertifikası sağlamanız gerekir. Bkz: [IIS Yöneticisi'nde bir SSL sertifikası yapılandırma](#to-configure-an-ssl-certificate-in-iis-Manager) bir sertifikanın nasıl alınacağı hakkında daha fazla bilgi için bu konuda.
+1. Daha güvenli bir üretim ortamı için CA tarafından imzalanmış geçerli bir sertifikanın belirtilmesi önerilir. Kullanıcılar yalnızca Windows PowerShell Web erişimi için bir HTTPS Web sitesi kurabildiğinden bir SSL sertifikası sağlamanız gerekir. Bkz: [IIS Yöneticisi'nde bir SSL sertifikası yapılandırma](#to-configure-an-ssl-certificate-in-iis-Manager) bir sertifikanın nasıl alınacağı hakkında daha fazla bilgi için bu konuda.
 
-11. Tıklayın **Tamam** kapatmak için **Web sitesi Ekle** iletişim kutusu.
+1. Tıklayın **Tamam** kapatmak için **Web sitesi Ekle** iletişim kutusu.
 
-12. Yükseltilmiş kullanıcı haklarıyla (yönetici olarak çalıştır) ile açılmış bir Windows PowerShell oturumunda, aşağıdaki betiği çalıştırarak *application_pool_name* adım 4 ' te oluşturduğunuz uygulama havuzu adını temsil eder Uygulama havuzu yetkilendirme dosyasına erişim hakları vermek için.
+1. Yükseltilmiş kullanıcı haklarıyla (yönetici olarak çalıştır) ile açılmış bir Windows PowerShell oturumunda, aşağıdaki betiği çalıştırarak _application_pool_name_ adım 4 ' te oluşturduğunuz uygulama havuzu adını temsil eder Uygulama havuzu yetkilendirme dosyasına erişim hakları vermek için.
 
     ```    
     $applicationPoolName = "<application_pool_name>"
@@ -365,11 +365,11 @@ Bu bölümdeki yönergeler, Windows PowerShell Web erişimi web uygulamasını y
     c:\windows\system32\icacls.exe $authorizationFile
     ```
 
-13. IIS Yöneticisi ağaç bölmesinde seçili yeni Web sitesi ile tıklayın **Başlat** içinde **eylemleri** bölmesinde Web sitesini başlatmak için.
+1. IIS Yöneticisi ağaç bölmesinde seçili yeni Web sitesi ile tıklayın **Başlat** içinde **eylemleri** bölmesinde Web sitesini başlatmak için.
 
-14. Bir istemci cihazda tarayıcı oturumu açın. Desteklenen tarayıcılar ve cihazlar hakkında daha fazla bilgi için bkz: [tarayıcı ve istemci cihaz desteği](#browser-and-client-device-support) bu belgedeki.
+1. Bir istemci cihazda tarayıcı oturumu açın. Desteklenen tarayıcılar ve cihazlar hakkında daha fazla bilgi için bkz: [tarayıcı ve istemci cihaz desteği](#browser-and-client-device-support) bu belgedeki.
 
-15. Yeni Windows PowerShell Web Erişimi Web sitesini açın.
+1. Yeni Windows PowerShell Web Erişimi Web sitesini açın.
 
     Kök Web sitesi için Windows PowerShell Web erişimi klasörünü işaret ettiğinden, açtığınızda tarayıcı Windows PowerShell Web erişimi oturum açma sayfası görüntülemelidir **https://\<*gateway_server_name* \>**. Ekleme gerekmez **/pswa** URL'si.
 
@@ -392,11 +392,11 @@ Windows PowerShell Web Erişimi yetkilendirme kuralları ve güvenlik hakkında 
 
    - Windows üzerinde **Başlat** ekranında, sağ **Windows PowerShell**ve ardından **yönetici olarak çalıştır**.
 
-2. ![Güvenlik Notu](images/SecurityNote.jpeg) Kullanıcı erişimini oturum yapılandırmaları kullanarak kısıtlamak için isteğe bağlı adım:
+1. ![Güvenlik Notu](images/SecurityNote.jpeg) Kullanıcı erişimini oturum yapılandırmaları kullanarak kısıtlamak için isteğe bağlı adım:
 
    Kullanmak istediğiniz kurallarınızda zaten oturum yapılandırmaları mevcut olduğunu doğrulayın. Bunlar henüz oluşturulmadı, içindeki oturum yapılandırmaları oluşturmak için yönergeleri kullanın [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
-3. Aşağıdaki komutu yazın ve ardından basın **Enter**.
+1. Aşağıdaki komutu yazın ve ardından basın **Enter**.
 
    Ekle-PswaAuthorizationRule - UserName < etki alanı\kullanıcı | bilgisayar\kullanıcı > - ComputerName < bilgisayar_adı > - ConfigurationName < session_configuration_name >
 
@@ -406,7 +406,7 @@ Windows PowerShell Web Erişimi yetkilendirme kuralları ve güvenlik hakkında 
 
    Ekle-PswaAuthorizationRule - UserName 'Contoso\JSmith' - ComputerName Contoso_214 - ConfigurationName NewAdminsOnly
 
-4. Kural çalıştırılarak oluşturulduğunu doğrulayın `Get-PswaAuthorizationRule` cmdlet'ini veya `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
+1. Kural çalıştırılarak oluşturulduğunu doğrulayın `Get-PswaAuthorizationRule` cmdlet'ini veya `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
    Örneğin, `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
@@ -420,9 +420,9 @@ Güvenli bir üretim ortamında her zaman bir sertifika yetkilisi (CA) tarafınd
 
 1. IIS Yöneticisi ağaç bölmesinde, Windows PowerShell Web erişimi yüklü olduğu sunucuyu seçin.
 
-2. İçerik bölmesinde çift tıklayarak **sunucu sertifikaları**.
+1. İçerik bölmesinde çift tıklayarak **sunucu sertifikaları**.
 
-3. İçinde **eylemleri** bölmesi, aşağıdakilerden birini yapın. IIS'de sunucu sertifikalarını yapılandırma hakkında daha fazla bilgi için bkz. [IIS 7'de sunucu sertifikalarını yapılandırma](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
+1. İçinde **eylemleri** bölmesi, aşağıdakilerden birini yapın. IIS'de sunucu sertifikalarını yapılandırma hakkında daha fazla bilgi için bkz. [IIS 7'de sunucu sertifikalarını yapılandırma](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Tıklayın **alma** ağınızdaki bir konumdan mevcut, geçerli bir sertifikayı içeri aktarmak için.
 
@@ -432,11 +432,11 @@ Güvenli bir üretim ortamında her zaman bir sertifika yetkilisi (CA) tarafınd
 
    - Tıklayın **otomatik olarak imzalanan sertifika oluşturma** hemen kullanabilirsiniz ve daha sonra bir CA tarafından istenirse, oturum açmış olan bir sertifika oluşturmak için. Otomatik olarak imzalanan sertifika için bir kolay ad belirtin **Windows PowerShell Web erişimi**. Bu seçenek güvenli olarak kabul edilmez ve yalnızca özel bir test ortamı için önerilir.
 
-4. Oluşturma veya bir sertifikayı aldıktan sonra sertifikayı uygulandığı Web sitesini seçin (örneğin, **varsayılan Web sitesi**) IIS Yöneticisi ağaç bölmesinde ve ardından **bağlamaları** içinde**Eylemleri** bölmesi.
+1. Oluşturma veya bir sertifikayı aldıktan sonra sertifikayı uygulandığı Web sitesini seçin (örneğin, **varsayılan Web sitesi**) IIS Yöneticisi ağaç bölmesinde ve ardından **bağlamaları** içinde**Eylemleri** bölmesi.
 
-5. İçinde **Site bağlaması Ekle** iletişim kutusunda bir **https** biri zaten görüntülenmiyorsa, site için bağlama. Otomatik olarak imzalanan bir sertifika kullanmıyorsanız, bu yordamın 3. adımındaki konak adını belirtin. Otomatik olarak imzalanan bir sertifika kullanıyorsanız, bu adım gerekli değildir.
+1. İçinde **Site bağlaması Ekle** iletişim kutusunda bir **https** biri zaten görüntülenmiyorsa, site için bağlama. Otomatik olarak imzalanan bir sertifika kullanmıyorsanız, bu yordamın 3. adımındaki konak adını belirtin. Otomatik olarak imzalanan bir sertifika kullanıyorsanız, bu adım gerekli değildir.
 
-6. Elde edilen veya bu yordamın 3. adımında oluşturulan sertifikayı seçin ve ardından **Tamam**.
+1. Elde edilen veya bu yordamın 3. adımında oluşturulan sertifikayı seçin ve ardından **Tamam**.
 
 ## <a name="using-the-web-based-windows-powershell-console"></a>Web tabanlı Windows PowerShell konsolunu kullanma
 

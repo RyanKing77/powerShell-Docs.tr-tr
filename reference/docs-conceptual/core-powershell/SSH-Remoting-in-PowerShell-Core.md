@@ -46,8 +46,8 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Son [Win32 OpenSSH] derleme [Kurulum] yönergeleri kullanarak Github'dan yükleyin
-3. Win32 OpenSSH yüklendiği konumda sshd_config dosyasında Düzenle
+1. Son [Win32 OpenSSH] derleme [Kurulum] yönergeleri kullanarak Github'dan yükleyin
+1. Win32 OpenSSH yüklendiği konumda sshd_config dosyasında Düzenle
    - Parola kimlik doğrulamasının etkin olduğundan emin olun
 
    ```
@@ -59,8 +59,8 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
     ```
 
     > [!NOTE]
-    OpenSSH için alanları alt sistemi yürütülebilir yollarında çalışmasını engelleyen Windows hata yoktur.
-    Bkz: [daha fazla bilgi için github'daki bu sorunu](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    > OpenSSH için alanları alt sistemi yürütülebilir yollarında çalışmasını engelleyen Windows hata yoktur.
+    > Bkz: [daha fazla bilgi için github'daki bu sorunu](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
     Tek bir çözüm, boşluk içermeyen Powershell yükleme dizinine hedefine sembolik bağlantı oluşturmaktır:
 
@@ -84,27 +84,27 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
    PubkeyAuthentication yes
    ```
 
-4. Sshd hizmetini yeniden başlatın
+1. Sshd hizmetini yeniden başlatın
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. OpenSSH, yol Env değişkenini yüklendiği yolu Ekle
+1. OpenSSH, yol Env değişkenini yüklendiği yolu Ekle
    - Bu satırlar olmalıdır `C:\Program Files\OpenSSH\`
    - Bu ssh.exe bulunmasına olanak sağlar
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) makinede Kur
 
 1. Son [Linux için PowerShell Core] derleme Github'dan yükleyin
-2. [Ubuntu SSH] gerektiği şekilde yükle
+1. [Ubuntu SSH] gerektiği şekilde yükle
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. Konum /etc/ssh sshd_config dosyasını Düzenle
+1. Konum /etc/ssh sshd_config dosyasını Düzenle
    - Parola kimlik doğrulamasının etkin olduğundan emin olun
 
    ```
@@ -123,7 +123,7 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
    PubkeyAuthentication yes
    ```
 
-4. Sshd hizmetini yeniden başlatın
+1. Sshd hizmetini yeniden başlatın
 
    ```bash
    sudo service sshd restart
@@ -137,7 +137,7 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
      - Tıklayın `Sharing`
      - Denetleme `Remote Login` -şeklinde olmalıdır `Remote Login: On`
      - Uygun kullanıcılar erişime izin ver
-2. Düzen `sshd_config` dosya konumunda `/private/etc/ssh/sshd_config`
+1. Düzen `sshd_config` dosya konumunda `/private/etc/ssh/sshd_config`
    - Tercih ettiğiniz düzenleyiciyi kullanın veya
 
      ```bash
@@ -162,7 +162,7 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
      PubkeyAuthentication yes
      ```
 
-3. Sshd hizmetini yeniden başlatın
+1. Sshd hizmetini yeniden başlatın
 
    ```bash
    sudo launchctl stop com.openssh.sshd
