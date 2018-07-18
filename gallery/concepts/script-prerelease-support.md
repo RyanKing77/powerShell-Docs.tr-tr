@@ -2,31 +2,31 @@
 ms.date: 10/17/2017
 contributor: keithb
 keywords: Galeri, powershell, cmdlet, psget
-title: Komut dosyaları uygulamasının yayım öncesi sürümleri
-ms.openlocfilehash: 5b93da418b836d537491d3f1e4e29fa2e61f2f77
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Betikleri uygulamasının yayım öncesi sürümleri
+ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188573"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093857"
 ---
-# <a name="prerelease-versions-of-scripts"></a>Komut dosyaları uygulamasının yayım öncesi sürümleri
+# <a name="prerelease-versions-of-scripts"></a>Betikleri uygulamasının yayım öncesi sürümleri
 
-1.6.0 sürümünden başlayarak, PowerShellGet ve PowerShell Galerisi sürümleri bir yayın öncesi olarak 1.0.0 büyük etiketleme için desteği. Bu özellik önce ön öğeleri 0 ile başlayan bir sürüm olması için sınırlı. Bu özellikler için daha fazla destek sağlamak için hedefidir [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) geriye doğru sürümleriyle uyumluluk PowerShell sürümleri 3 ve yukarıdaki veya varolan PowerShellGet çiğnemekten olmadan sürüm oluşturma kuralı. Bu konu betik özgü özelliklerine odaklanmıştır. Modüller için eşdeğer özellikler bulunan [yayın öncesi modül sürümleri](module-prerelease-support.md) konu. Bu özellikleri kullanarak, yayımcılar bir komut dosyası sürümü 2.5.0-alpha olarak tanımlamak ve daha sonra ön sürümü yerine geçen bir üretime hazır sürüm 2.5.0 bırakın.
+1.6.0 sürümünden itibaren PowerShellGet ve PowerShell Galerisi olarak ön sürüm 1.0.0 büyüktür sürümleri etiketleme için desteği. Bu özelliği önce yayın öncesi öğeleri 0 sürümü itibarıyla bulunması sınırlıydı. Bu özellikler için daha büyük destek sağlamak için hedefidir [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) geriye dönük uyumluluğu PowerShellGet, PowerShell sürüm 3 ve yukarıdaki veya mevcut sürümlerini bozucu olmadan sürüm oluşturma kuralı. Bu konu, betik özgü özellikler üzerinde odaklanır. Modüller için eşdeğer özellikleri [yayın öncesi modül sürümlerini](module-prerelease-support.md) konu. Bu özellikleri kullanarak yayımcılar bir betik sürümü 2.5.0-alpha olarak tanımlamak ve daha sonra yayım öncesi bir sürümü yerine geçen bir üretime hazır sürüm 2.5.0 bırakın.
 
-Yüksek düzeyde, yayın öncesi betiği özellikleri içerir:
+Yüksek düzeyde, yayın öncesi betik özellikler şunlardır:
 
-- Komut dosyası bildiriminde sürüm dizesi PrereleaseString sonek ekleme. PowerShell Galerisi betikleri yayımlandığında, bu veriler bildirimden ayıklanan ve yayın öncesi öğeleri tanımlamak için kullanılan.
-- Yayın öncesi öğeleri alınırken gerektirir - AllowPrerelease bayrağı PowerShellGet komutları Bul-komut dosyası, yükleme betiği ekleme güncelleştirme betiğini ve Kaydet-komut dosyası. Bayrak belirtilmezse, yayın öncesi öğeleri gösterilmez.
-- Komut dosyası sürümleri Bul-komut dosyası, Get-InstalledScript tarafından ve PowerShell Galerisi görüntülenen 2.5.0-alpha olduğu gibi PrereleaseString birlikte görüntülenir.
+- Sürüm dizesi betik bildiriminde PrereleaseString sonek ekleme. PowerShell Galerisi'nde betikleri yayımlandığında, bu verileri bildiriminden ayıklanır ve yayın öncesi öğeleri tanımlamak için kullanılan.
+- Yayın öncesi öğeler alınırken gerektirir PowerShellGet komutlarını Find-Script, yükleme betiği, - AllowPrerelease bayrağı ekleme güncelleştirme betiğini ve Save-Script. Bayrak belirtilmezse, yayın öncesi öğeleri gösterilmez.
+- Find-Script, Get-InstalledScript ve PowerShell Galerisi'ndeki görüntülenen betik sürümleri 2.5.0-alpha olduğu gibi PrereleaseString görüntülenir.
 
-Özellikler için Ayrıntılar aşağıda verilmiştir.
+Özellikler için ayrıntıları aşağıda verilmiştir.
 
-## <a name="identifying-a-script-version-as-a-prerelease"></a>Bir komut dosyası sürüm yayın öncesi tanımlama
+## <a name="identifying-a-script-version-as-a-prerelease"></a>Bir yayın öncesi bir betik sürümü tanımlama
 
-Yayın öncesi sürümler için PowerShellGet destek betikler için modülleri kolaydır. Yayın öncesi dize ekleyerek neden uyumluluk sorunu yok olduklarından betik sürüm yalnızca PowerShellGet tarafından desteklenir. Bir komut dosyasını bir yayın öncesi olarak PowerShell galerisinde tanımlamak için komut dosyası meta verilerde düzgün biçimlendirilmiş sürüm dizesi için yayın öncesi soneki ekleyin.
+Yayın öncesi sürümler için PowerShellGet destek betikler için modülleri kolaydır. Uyumluluk sorunu yok ön dize ekleyerek neden olduğundan betik sürüm oluşturma yalnızca PowerShellGet tarafından desteklenir. Bir komut dosyası ön sürüm olarak PowerShell galerisinde tanımlamak için bir komut dosyası meta verileri doğru şekilde biçimlendirildiğini sürüm dizesi için bir ön eki ekleyin.
 
-Bir komut dosyası bildirimi ön sürümü ile örnek bölümünde aşağıdaki gibi görünür:
+Bir örnek bölümü bir komut dosyası bildiriminin yayım öncesi bir sürümü ile aşağıdaki gibi görünür:
 
 ```powershell
 <#PSScriptInfo
@@ -38,31 +38,30 @@ Bir komut dosyası bildirimi ön sürümü ile örnek bölümünde aşağıdaki 
 ...
 
 #>
-
 ```
 
-Bir yayın öncesi soneki kullanmak için sürüm dizesi aşağıdaki gereksinimleri karşılamalıdır:
+Sürüm dizesi bir ön eki kullanmak için aşağıdaki gereksinimleri karşılaması gerekir:
 
-- Bir yayın öncesi soneki yalnızca sürüm 3 kesim birincil.İkincil.derleme için olduğunda belirtilebilir.
-  Bu SemVer v1.0.0 ile hizalar
-- Yayın öncesi soneki çizgi ile başlayan ve ASCII alfasayısal içerebilir bir dizedir [0-9A-Za - z-]
-- Yalnızca SemVer v1.0.0 yayın öncesi dizeler desteklenir şu anda, bu nedenle ön soneki __bulunmamalıdır__ ya da süresi içeren veya + [. +], SemVer 2. 0'verilir
-- Desteklenen PrereleaseString dizesi örnekleri:-alfasayısal, - alpha1,-BETA, - update20171020
+- Bir ön eki yalnızca sürümü Major.Minor.Build için 3 Kesimden olduğunda belirtilebilir.
+  Bu SemVer v1.0.0 ile hizalar.
+- Ön eki, kısa çizgi ile başlar ve alfasayısal ASCII karakterler içerebilir bir dizedir [0-9A-Za - z-]
+- Yalnızca SemVer v1.0.0 ön sürüm dizeleri desteklenir şu anda, bu nedenle ön eki __gerekir__ döneme içeren veya + [. +], SemVer 2. 0'verilir
+- Desteklenen PrereleaseString dize örnekleridir:-alfa, - alpha1,-BETA, - update20171020
 
-__Yayın öncesi sürüm etkisini sırası ve yükleme klasörleri sıralama__
+__Yayın öncesi sürüm oluşturma sırası ve yükleme klasörleri sıralama etkisi__
 
-Sıralama için PowerShell Galerisi yayımlarken önemlidir, bir yayın öncesi sürüm kullanırken ve PowerShellGet komutları kullanarak komut dosyalarını yüklerken değiştirir. İki sürüm numarasını sürümleriyle komut dosyaları var, sıralama düzeni tire aşağıdaki dize bölümü dayanır. Bu nedenle, sürüm 2.5.0-alpha 2.5.0-beta, hangi 2.5.0-gamma değerinden azdır. İki komut aynı sürüm numarasına sahip ve tek bir PrereleaseString komut dosyası varsa __olmadan__ yayın öncesi soneki üretime hazır sürüm olduğu varsayılır ve yayın öncesi sürümünden daha yüksek bir sürüm olarak sıralanmış Sürüm. Karşılaştırma bıraktığında 2.5.0 ve 2.5.0-beta, 2.5.0 örnek olarak, sürüm göz önünde bulundurulmalı iki daha büyük.
+Sıralama düzeni için PowerShell Galerisi yayımlama sırasında büyük/küçük harf önemlidir, bir ön sürümünü kullanırken ve betikleri PowerShellGet komutlarını kullanarak yüklerken değiştirir. İki sürüm numarasını sürümleriyle komutlar mevcut, kısa çizgi aşağıdaki dize bölümü temel sıralama düzenini temel alır. Bu nedenle, sürüm 2.5.0-alpha 2.5.0-beta, 2.5.0-gamma değerinden küçük olan küçüktür. İki komut aynı sürüm numarasına sahip ve tek bir PrereleaseString betik varsa __olmadan__ üretime hazır sürüm olduğu varsayılır ve yayın öncesi sürümünden büyük bir sürüm olarak sıralanmış, ön eki Sürüm. Karşılaştırma bıraktığında 2.5.0 ve 2.5.0-beta, 2.5.0 örnek olarak sürüm değerlendirilir iki büyük.
 
-PowerShell Galerisi yayımlama sırasında varsayılan olarak yayımlanmakta komut dosyasının sürümünü PowerShell Galerisi önceden yayımlanan sürümü'den büyük bir sürüm olmalıdır. Bir yayımcı sürüm 2.5.0-alpha 2.5.0-beta 2.5.0 (ile ön sonek) ile veya güncelleştirebilir.
+PowerShell Galerisi'nde yayımlama sırasında varsayılan olarak PowerShell Galerisi önceden yayımlanan sürümü daha büyük bir sürümse yayımlanmakta betik sürümüne sahip olmanız gerekir. Bir yayımcı, sürüm 2.5.0-alpha 2.5.0-beta 2.5.0 (ile ön sonek) ile veya güncelleştirebilir.
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Bulma ve PowerShellGet komutları kullanarak ön öğeleri alınıyor
+## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Bulma ve PowerShellGet komutlarını kullanarak ön öğeleri alınıyor
 
-PowerShellGet Bul-komut dosyası, yükleme betiğini güncelleştirmesi-komut dosyası, kullanarak ön öğelerle ilgili ve Kaydet komut gerektirir - AllowPrerelease bayrağı ekleme. -AllowPrerelease belirtilirse, mevcut olup olmadığını ön öğeleri dahil edilir. -AllowPrerelease bayrak belirtilmezse, yayın öncesi öğeleri gösterilmez.
+PowerShellGet Find-Script, yükleme betiği, Update-komut dosyası, yayın öncesi öğeleriyle ilgilenme ve Kaydet komut gerektirir - AllowPrerelease bayrağı ekleme. -AllowPrerelease belirtilmediği takdirde, mevcut değilse ön öğeleri dahil edilir. -AllowPrerelease bayrak belirtilmezse, yayın öncesi öğeleri gösterilmez.
 
-Yalnızca bu PowerShellGet betik komutlarda Get-InstalledScript ve bazı durumlarda kaldırma komut dosyası ile durumlardır.
+Bunun tek özel durum PowerShellGet betik komutlarında şunlardır: Get-InstalledScript ve kaldırma betiğini ile bazı durumlarda.
 
-- Varsa, get-InstalledScript her zaman otomatik olarak yayın öncesi bilgiler sürüm dizesi içinde gösterir.
-- Kaldırma komut dosyası varsayılan olarak kaldırılır bir komut dosyasının en son sürümünü, __hiçbir sürüm__ belirtilir. Bu davranışı değişmemiştir. Ancak, bir yayın öncesi sürüm - RequiredVersion, kullanarak belirtilmişse, - AllowPrerelease gerekli olacaktır.
+- Varsa, get-InstalledScript her zaman otomatik olarak yayın öncesi bilgiler sürüm dizesini gösterir.
+- Kaldırma betiği varsayılan olarak kaldırılır en son sürümünü bir betik, __sürüm__ belirtilir. Bu davranış değişmemiştir. Ancak, bir ön sürümünü kullanarak - RequiredVersion, belirtilirse - AllowPrerelease gerekli olacaktır.
 
 ## <a name="examples"></a>Örnekler
 
@@ -107,8 +106,8 @@ Version         Name                                Repository           Descrip
 # If -RequiredVersion is not specified, all installed scripts will be displayed by Get-InstalledScript
 ```
 
-Kaldırma komut dosyası geçerli bir komut dosyası sürümünü kaldırırsanız - RequiredVersion sağlanmadı.
--RequiredVersion belirtilir ve bir yayın öncesi ise, - AllowPrerelease komutu eklenmesi gerekir.
+-RequiredVersion sağlanmazsa, bir komut dosyası geçerli sürümü kaldırma betiği kaldırır.
+Belirtilen ve ön sürüm - RequiredVersion, - AllowPrerelease komutu eklenmesi gerekir.
 
 ``` powershell
 C:\windows\system32> Get-InstalledScript TestPackage
@@ -144,7 +143,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm
 - [Yayın öncesi modül sürümleri](module-prerelease-support.md)
 - [Bulma komut dosyası](/powershell/module/powershellget/find-script)
 - [Yükleme betiği](/powershell/module/powershellget/install-script)
-- [Kaydet-komut dosyası](/powershell/module/powershellget/save-script)
-- [Güncelleştirme komut dosyası](/powershell/module/powershellget/update-script)
+- [Save-script](/powershell/module/powershellget/save-script)
+- [Güncelleştirme betiği](/powershell/module/powershellget/update-script)
 - [Get-Installedscript](/powershell/module/powershellget/get-installedscript)
 - [Kaldırma betiği](/powershell/module/powershellget/uninstall-script)

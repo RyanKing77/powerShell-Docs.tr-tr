@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: PowerShell Desired State Configuration kısmi yapılandırmalar
-ms.openlocfilehash: 1f5ec5bd5055ccc3d83a60712aebe635f2548828
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6d344b666421aba5745945f6148570e4c8229c1a
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893010"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093941"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration kısmi yapılandırmalar
 
@@ -217,7 +217,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Adlandırma ve yapılandırma belgelerini (ConfigurationID) çekme sunucusunda yerleştirme
 
-Kısmi yapılandırma belgelerini olarak belirtilen klasöre yerleştirilmelidir **Yapılandırmayolu** içinde `web.config` çekme sunucusu için dosya (genellikle `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Yapılandırma belgelerini gibi adlandırılmalıdır: *ConfigurationName*. * ConfigurationID8`.mof`burada *ConfigurationName* kısmi yapılandırma adıdır ve *ConfigurationID* hedef düğümde bulunan LCM yapılandırma kimliği tanımlanır. Bizim örneğimizde, yapılandırma belgelerini şu şekilde adlandırılması:
+Kısmi yapılandırma belgelerini olarak belirtilen klasöre yerleştirilmelidir **Yapılandırmayolu** içinde `web.config` çekme sunucusu için dosya (genellikle `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Yapılandırma belgelerini gibi adlandırılmalıdır: _ConfigurationName_. * ConfigurationID8`.mof`burada _ConfigurationName_ kısmi yapılandırma adıdır ve _ConfigurationID_ hedef düğümde bulunan LCM yapılandırma kimliği tanımlanır. Bizim örneğimizde, yapılandırma belgelerini şu şekilde adlandırılması:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -330,7 +330,6 @@ Configuration ServiceAccountConfig
 
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
-
     Node localhost
     {
         Group LocalAdmins
@@ -340,7 +339,6 @@ Configuration ServiceAccountConfig
                                   'admins@example.domain'
             Ensure              = 'Present'
             Credential          = $Credential
-
         }
 
         WindowsFeature Telnet
@@ -351,7 +349,6 @@ Configuration ServiceAccountConfig
     }
 }
 ServiceAccountConfig
-
 ```
 
 ## <a name="example-sharepointconfig-partial-configuration"></a>Örnek SharePointConfig kısmi yapılandırma

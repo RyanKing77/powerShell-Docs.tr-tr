@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
-title: DSC Linux nxService kaynak için
-ms.openlocfilehash: 9cab889368469f2c854a387b919aea58a49f2210
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, yapılandırma, Kurulum
+title: DSC için Linux nxService kaynağı
+ms.openlocfilehash: ab6544762862c9b2477e92f0d782b13afb96f2c9
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187727"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093577"
 ---
-# <a name="dsc-for-linux-nxservice-resource"></a>DSC Linux nxService kaynak için
+# <a name="dsc-for-linux-nxservice-resource"></a>DSC için Linux nxService kaynağı
 
-**NxService** kaynağı içinde PowerShell istenen durum yapılandırması (DSC), bir Linux düğümü hizmetleri yönetmek için bir mekanizma sağlar.
+**NxService** kaynak içinde PowerShell Desired State Configuration (DSC), bir Linux düğümdeki hizmetleri yönetmek için bir mekanizma sağlar.
 
 ## <a name="syntax"></a>Sözdizimi
 
@@ -19,43 +19,40 @@ ms.locfileid: "34187727"
 nxService <string> #ResourceName
 {
     Name = <string>
-    [ Controller = <string> { init | upstart | systemd }  ]
+    [ Controller = <string> { init | upstart | systemd } ]
     [ Enabled = <bool> ]
     [ State = <string> { Running | Stopped } ]
     [ DependsOn = <string[]> ]
-
 }
 ```
 
 ## <a name="properties"></a>Özellikler
 |  Özellik |  Açıklama |
 |---|---|
-| Ad| Hizmeti/yapılandırmak için arka plan programı adı.|
-| Denetleyici| Hizmet yapılandırırken kullanmak için hizmet denetleyicisi türü.|
+| Ad| Yapılandırmak için hizmetin/daemon adı.|
+| Denetleyici| Hizmeti yapılandırırken kullanılacak hizmet denetleyicisi türü.|
 | Etkin| Hizmet önyükleme başlayıp başlamadığını gösterir.|
-| Durum| Hizmetin çalışıp çalışmadığını gösterir. Bu özelliği hizmeti çalışmadığından emin olmak için "durduruldu" olarak ayarlayın. "Hizmet çalışmıyor emin olmak için çalışıyor" olarak ayarlayın.|
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, varsa **kimliği** çalıştırmak istediğiniz yapılandırma betik bloğu ilk kaynaktır **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
-
+| Durum| Hizmetin çalışıp çalışmadığını gösterir. Bu özelliği hizmet çalışmadığından emin olmak için "Stopped" olarak ayarlayın. "Hizmet çalışmadığından emin olmak için çalışıyor" olarak ayarlayın.|
+| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, varsa **kimliği** kaynağın çalıştırmak istediğiniz yapılandırma komut dosyası bloğu ilk. **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Ek Bilgi
 
-**NxService** kaynak değil oluşturacak bir hizmet tanımı veya hizmet için komut dosyası henüz yoksa. PowerShell istenen durum yapılandırması kullanabilirsiniz **nxFile** varlığı ya da hizmet tanımı dosyası veya komut dosyası içeriğini yönetmek için kaynak kaynak.
+**NxService** kaynak değil oluşturur bir hizmet tanımı veya hizmet için betik yok. PowerShell Desired State Configuration kullanabileceğiniz **nxFile** varlığını veya Hizmet tanım dosyası veya komut dosyasının içeriğini yönetmek için kaynak kaynak.
 
 ## <a name="example"></a>Örnek
 
-Aşağıdaki örnek, kayıtlı yapılandırma (için Apache HTTP Server), "httpd" hizmetinin gösterir **SystemD** hizmet denetleyicisi.
+Aşağıdaki örnek, kayıtlı (için Apache HTTP Server), 'httpd' hizmetinin yapılandırmasını gösterir. **SystemD** hizmet denetleyicisi.
 
-```
+```powershell
 Import-DSCResource -Module nx
 
 Node $node {
-#Apache Service
-nxService ApacheService
-{
-Name = "httpd"
-State = "running"
-Enabled = $true
-Controller = "systemd"
-}
+    #Apache Service
+    nxService ApacheService {
+        Name = 'httpd'
+        State = 'running'
+        Enabled = $true
+        Controller = 'systemd'
+    }
 }
 ```

@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
-title: DSC paket kaynağı
-ms.openlocfilehash: 16f7f1b8fa7b84bcfdeb09fdc46db9c93113e70c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, yapılandırma, Kurulum
+title: Paket DSC kaynağı
+ms.openlocfilehash: 3046ba7d57776a996a0b917348a0e863db6cd0c8
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188539"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093812"
 ---
-# <a name="dsc-package-resource"></a>DSC paket kaynağı
+# <a name="dsc-package-resource"></a>Paket DSC kaynağı
 
-> İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-**Paket** kaynak olarak Windows PowerShell istenen durum yapılandırması (DSC) yüklemek veya bir hedef düğüm üzerinde Windows Installer ve setup.exe paketleri gibi paketleri kaldırmak için bir mekanizma sağlar.
+**Paket** kaynak olarak Windows PowerShell Desired State Configuration (DSC) yüklemek veya bir hedef düğüm üzerinde Windows Installer ve setup.exe paketleri gibi paketleri kaldırmak için bir mekanizma sağlar.
 
 ## <a name="syntax"></a>Sözdizimi
 
@@ -33,21 +33,22 @@ Package [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Özellikler
+
 |  Özellik  |  Açıklama   |
 |---|---|
 | Ad| Belirli bir durumu sağlamak istediğiniz paketinin adını belirtir.|
-| Yol| Paketin bulunduğu yolu gösterir.|
-| ProductID| Paketi benzersiz olarak tanıtan ürün kimliği gösterir.|
-| Bağımsız değişkenler| Paketi tam olarak sağlanan gibi geçirilen bağımsız değişken bir dize listeler.|
-| kimlik bilgisi| Uzak bir kaynağı üzerinde paket erişim sağlar. Bu özellik paketini yüklemek için kullanılmaz. Paket yerel sistem üzerindeki her zaman yüklenir.|
-| Emin olun| Paketin yüklü olup olmadığını gösterir. Bu özelliği paketi yüklü değil emin olun (veya paket yüklüyse kaldırmak için) "yok" olarak ayarlayın. "Paketinin yüklü emin olmak için (varsayılan değer) sunmak için" olarak ayarlayın.|
-| LogPath| Sağlayıcı yüklemek veya paket kaldırmak için bir günlük dosyasını kaydetmek istediğiniz yeri tam yolunu belirtir.|
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise **ResourceName** ve türünü **ResourceType**, bu özelliği kullanmak için sözdizimi ' DependsOn = "[ ResourceType] KaynakAdı"''.|
-| ReturnCode| Beklenen dönüş kodu gösterir. Gerçek kodu döndürmesi durumunda yapılandırma bir hata döndürecektir beklenen değer burada sağlanan adla eşleşmiyor.|
+| Yol| Paketin bulunduğu yol gösterir.|
+| ProductID| Paketi benzersiz olarak tanımlayan ürün Kimliğini belirtir.|
+| Bağımsız değişkenler| Paketi tam olarak sağlanan şekilde geçirilecek bağımsız değişken bir dize listeler.|
+| Kimlik bilgisi| Uzak bir kaynak üzerinde paket erişimi sağlar. Bu özellik, paketi yüklemek için kullanılmaz. Paket her zaman yerel sistemde yüklenir.|
+| Emin olun| Paketin yüklü olup olmadığını gösterir. Bu özelliği "Yok" paketi yüklü emin olun (veya paket yüklüyse kaldırmak için) olarak ayarlayın. "Paket yüklü emin olmak için (varsayılan değer) sunmak için" olarak ayarlayın.|
+| LogPath| Sağlayıcı yüklemek veya paket kaldırmak için bir günlük dosyasını kaydetmek istediğiniz tam yolunu belirtir.|
+| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için söz dizimi ' DependsOn "[= ResourceType] ResourceName"''.|
+| ReturnCode| Beklenen dönüş kodu gösterir. Gerçek kodu döndürmesi durumunda beklenen değer, burada, yapılandırma, bir hata döndürür sağlanan eşleşmiyor.|
 
 ## <a name="example"></a>Örnek
 
-Bu örnek belirtilen yolda bulunur ve belirtilen ürün kimliği olan .msi yükleyicisini çalıştırır
+Bu örnek belirtilen yolda bulunur ve belirtilen ürün kimliği olan .msi yükleyicisini çalıştırır.
 
 ```powershell
 Configuration PackageTest

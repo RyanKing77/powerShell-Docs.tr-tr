@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
-title: DSC günlük kaynak
-ms.openlocfilehash: c7e1957540da2fd85a30f739e0f69bdb6975a4d8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, yapılandırma, Kurulum
+title: DSC Log kaynağı
+ms.openlocfilehash: fade94efd8133ae0172737e4bb1aed89fc0f97d9
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219394"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093485"
 ---
-# <a name="dsc-log-resource"></a>DSC günlük kaynak
+# <a name="dsc-log-resource"></a>DSC Log kaynağı
 
-> İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-__Günlük__ kaynağı içinde Windows PowerShell istenen durum yapılandırması (DSC), Microsoft Windows istenen durum yapılandırması/analitik olay günlüğüne ileti yazmak için bir mekanizma sağlar.
+__Günlük__ kaynak olarak Windows PowerShell Desired State Configuration (DSC), Microsoft Windows Desired State Configuration / analitik olay günlüğüne ileti yazmak için bir mekanizma sağlar.
 
 ```
 Syntax
@@ -25,23 +25,22 @@ Log [string] #ResourceName
 }
 ```
 
-Not: yalnızca DSC için işlem günlüklerini varsayılan olarak etkindir.
-Analitik günlük kullanılabilir veya görünür olacak önce etkinleştirilmesi gerekir.
-Aşağıdaki makaleye bakın.
-
-[DSC olay günlüklerini nerede?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
+> [!NOTE]
+> Varsayılan olarak, yalnızca işlem günlüklerinde DSC için etkinleştirilir. Analitik günlüğü kullanılabilir veya görünür olacağını önce etkinleştirilmesi gerekir. Daha fazla bilgi için [DSC olay günlükleri nerede?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs).
 
 ## <a name="properties"></a>Özellikler
+
 |  Özellik  |  Açıklama   |
 |---|---|
-| İleti| Microsoft-Windows-Desired durumu yapılandırma/analitik olay günlüğüne yazmak için istediğiniz iletiyi belirtir.|
-| dependsOn | Bu günlüğü iletisi yazılmış önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
+| İleti| Yapılandırma/analitik Microsoft-Windows-Desired durumu olay günlüğüne yazmak için istediğiniz iletiyi gösterir.|
+| DependsOn | Bu günlük iletisi yazılan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise __ResourceName__ ve kendi türünün __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## <a name="example"></a>Örnek
 
-Aşağıdaki örnek, bir ileti Microsoft-Windows-Desired durumu yapılandırma/analitik olay günlüğüne dahil etmek gösterilmiştir.
+Aşağıdaki örnek, Microsoft-Windows-Desired durumu yapılandırma/analitik olay günlüğüne bir ileti içerecek şekilde gösterilmektedir.
 
-> **Not**: çalıştırırsanız [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) yapılandırılmış ile bu kaynak, her zaman döndürülecek **$false**.
+> [!NOTE]
+> Çalıştırırsanız [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) yapılandırılmış olan bu kaynak, her zaman döndüreceği **$false**.
 
 ```powershell
 Configuration logResourceTest
@@ -49,11 +48,10 @@ Configuration logResourceTest
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     Node localhost
-
     {
         Log LogExample
         {
-            Message = "This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log."
+            Message = 'This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log.'
         }
     }
 }

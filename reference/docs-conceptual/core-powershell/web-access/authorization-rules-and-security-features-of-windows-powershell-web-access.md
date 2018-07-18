@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri
-ms.openlocfilehash: a3a743d83ae3e387ee51056042c98753104e925e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893731"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094254"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri
 
@@ -163,9 +163,8 @@ Aşağıda bu senaryonun bazı örnekleri verilmiştir.
 
 - Bir yönetici bir özel test ortamı ayarlamış ve tüm yetkilendirilmiş ağ kullanıcılarına, tipik olarak erişime sahip oldukları ağdaki tüm bilgisayarlar için, tipik olarak erişime sahip olukları tüm oturum yapılandırmalarıyla erişim izni vermek istiyor. Bu özel bir test ortamı olduğundan, yönetici güvenli olmayan bir yetkilendirme kuralı oluşturuyor. -Yönetici cmdlet'ini çalıştırır `Add-PswaAuthorizationRule * * *`, joker karakterini kullanan **\*** tüm kullanıcılar, tüm bilgisayarlar ve tüm yapılandırmaları belirtmek için. -Bu kural aşağıdaki eşdeğerdir: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
-  >[!NOTE]
-  >
-  >Bu kural, güvenli bir ortamda önerilmez ve güvenlik Windows PowerShell Web erişimi tarafından sağlanan yetkilendirme kuralı katmanını atlar.
+  > [!NOTE]
+  > Bu kural, güvenli bir ortamda önerilmez ve güvenlik Windows PowerShell Web erişimi tarafından sağlanan yetkilendirme kuralı katmanını atlar.
 
 - Bir yönetici, kullanıcıların, hem çalışma grupları hem de etki alanları içeren, çalışma grubu bilgisayarların ara sıra etki alanlarındaki hedef bilgisayarlara bağlanmak için kullanıldığı ve etki alanlarındaki bilgisayarların ara sıra çalışma alanlarındaki hedef bilgisayarlara bağlanmak için kullanıldığı bir ortamdaki hedef bilgisayarlara bağlanmasına izin vermek istiyor. Yönetici olan bir ağ geçidi sunucusu *PswaServer*, bir çalışma grubunda; ve hedef bilgisayar *srv1.contoso.com* bir etki alanında. Kullanıcı *Chris* hem çalışma grubu Ağ Geçidi sunucusunda hem de hedef bilgisayarda yetkili bir yerel kullanıcı. Çalışma grubu sunucusundaki kullanıcı adı olan *chrisLocal*; ve hedef bilgisayardaki kullanıcı adı *contoso\\chris*. Chris’e srv1.contoso.com erişimini yetkilendirmek için, yönetici aşağıdaki kuralı ekler.
 
@@ -180,10 +179,9 @@ Yalnızca aşağıdakiler başarılı olduktan ve en az bir yetkilendirme kural�
 
 1. Bir kullanıcı adı biçiminde ekleyerek çalışma grubu Ağ Geçidi sunucusunda kimlik doğrulaması *sunucu_adı*\\*user_name* yetkilendirme kuralı için
 
-2. Kimlik doğrulaması oturum açma sayfasında sağlanan alternatif kimlik bilgileri kullanarak hedef bilgisayarda **isteğe bağlı bağlantı ayarları** alan
+1. Kimlik doğrulaması oturum açma sayfasında sağlanan alternatif kimlik bilgileri kullanarak hedef bilgisayarda **isteğe bağlı bağlantı ayarları** alan
 
    > [!NOTE]
-   >
    > Ağ geçidi ve hedef bilgisayarlar farklı çalışma gruplarında veya etki alanlarında ise, iki çalışma grubu bilgisayarı arasında, iki etki alanı arasında veya çalışma grubu ile etki alanı arasında bir güven ilişkisi oluşturulmalıdır. Bu ilişki, Windows PowerShell Web Erişimi yetkilendirme kuralı cmdlet'leri kullanılarak yapılandırılamaz. Yetkilendirme kuralları, bilgisayarlar arasında bir güven ilişkisi tanımlamaz; yalnızca kullanıcıları, belirli hedef bilgisayarlara ve oturum yapılandırmalarına bağlanmaya yetkilendirebilir. Farklı etki alanları arasında bir güven ilişkisi yapılandırma hakkında daha fazla bilgi için bkz. [oluşturma etki alanı ve orman güvenleri](https://technet.microsoft.com/library/cc794775.aspx").
    > Bir güvenilir konaklar listesine çalışma grubu bilgisayarları ekleme hakkında daha fazla bilgi için bkz. [Sunucu Yöneticisi ile uzaktan yönetim](https://technet.microsoft.com/library/dd759202.aspx)
 

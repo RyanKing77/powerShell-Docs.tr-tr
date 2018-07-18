@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Diğer Kullanışlı Betik Oluşturma Nesneleri
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-ms.openlocfilehash: 2ae9bc1864daedbcb0070c5f3862a6c98f8db2d4
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 58acfd05ff1ae1d9aa5f3a3576b8fb320ba4abbd
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893289"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093914"
 ---
 # <a name="other-useful-scripting-objects"></a>Diğer Kullanışlı Betik Oluşturma Nesneleri
 
@@ -40,12 +40,13 @@ Bağlama duyarlı Yardım konularını ve bunların ilişkili bağlantılarını
 $psLocalHelp | Format-List
 ```
 
-### <a name="pslocalhelp-sample-output"></a>$psLocalHelp örnek çıktı
+```output
+Key   : Add-Computer
+Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm
 
-|||
-|-|-|
-|Anahtar:-Bilgisayar Ekle|Değer: WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm|
-|Anahtar:-İçerik Ekle|Değer: WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm|
+Key   : Add-Content
+Value : WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm
+```
 
 Aşağıdaki betik, bir giriş listesine ekler.
 
@@ -61,12 +62,13 @@ Bağlama duyarlı Yardım konuları, konu başlıkları ve bunların ilişkili d
 $psOnlineHelp | Format-List
 ```
 
-## <a name="psonilnehelp-sample-output"></a>$psOnilneHelp örnek çıktı
+```output
+Key   : Add-Computer
+Value : http://go.microsoft.com/fwlink/p/?LinkID=135194
 
-|||
-|-|-|
-|Anahtar:-Bilgisayar Ekle|Değer: http://go.microsoft.com/fwlink/p/?LinkID=135194|
-|Anahtar:-İçerik Ekle|Değer: http://go.microsoft.com/fwlink/p/?LinkID=113278|
+Key   : Add-Content
+Value : http://go.microsoft.com/fwlink/p/?LinkID=113278
+```
 
 Aşağıdaki betik, bir giriş listesine ekler.
 

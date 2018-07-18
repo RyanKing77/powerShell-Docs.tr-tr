@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188437"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093727"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>Bir JEA Uç Noktası Oluşturma ve Buna Bağlanma
-JEA uç noktası oluşturmak için oluşturmanız ve ile oluşturulan bir özel olarak yapılandırılmış PowerShell oturumu yapılandırma dosyasını kaydetmek için gereken **yeni PSSessionConfigurationFile** cmdlet'i.
+Bir JEA uç noktası oluşturmak için oluşturmak ve ile oluşturulan bir özel olarak yapılandırılmış PowerShell oturumu yapılandırma dosyasını kaydetmek gereken **yeni PSSessionConfigurationFile** cmdlet'i.
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-Bu şuna benzer bir oturum yapılandırma dosyası oluşturacak:
+Bu, şuna benzer bir oturum yapılandırma dosyası oluşturur:
 ```powershell
 @{
 
@@ -53,20 +53,20 @@ RoleDefinitions = @{
 
 }
 ```
-JEA uç noktası oluştururken, aşağıdaki parametreleri komutu (ve karşılık gelen anahtarları dosyasındaki) ayarlamanız gerekir:
-1.  RestrictedRemoteServer SessionType
+Bir JEA uç noktası oluştururken, aşağıdaki parametreleri komut (ve karşılık gelen anahtarları dosyasındaki) ayarlamanız gerekir:
+1.  SessionType RestrictedRemoteServer için
 2.  İçin RunAsVirtualAccount **$true**
-3.  "Kama" dökümleri sonra her bir oturumu kaydedileceği dizinine TranscriptPath
-4.  Hangi grupların tanımlayan bir hashtable için RoleDefinitions erişimi hangi "rolü yeteneklerine."  Bu alan tanımlar **kimin** yapabilirsiniz **ne** Bu uç noktada.   Rol özellikleri, kısa süre içinde açıklanacaktır özel dosyalardır.
+3.  "Omuz" dökümleri sonra her oturum kaydedileceği dizine TranscriptPath
+4.  RoleDefinitions grupları tanımlayan bir hashtable için "Rolü becerilerine." erişimi  Bu alan tanımlar **kimin** yapabilirsiniz **ne** Bu uç noktada.   Rol işlevleri, kısa bir süre sonra açıklanacaktır özel dosyalardır.
 
 
-Hangi grupların hangi rolü özellikleri erişebildiği RoleDefinitions alanı tanımlar.  Bir rol özelliği kullanıcıları bağlamak için bir dizi sunulur özelliği tanımlayan bir dosyadır.  Rol özellikleri ile oluşturabileceğiniz **yeni PSRoleCapabilityFile** komutu.
+Hangi grupların hangi rolü özelliklere erişim vardı RoleDefinitions alanı tanımlar.  Bir rol özelliği kullanıcıları bağlamak için kullanıma sunulacak özellikler kümesini tanımlayan bir dosyadır.  Rol işlevleri ile oluşturabileceğiniz **yeni PSRoleCapabilityFile** komutu.
 
 ```powershell
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
-Bu şuna benzeyen bir şablon rol özelliği oluşturur:
+Bu işlem şuna benzer bir şablon rolü özelliği oluşturur:
 ```
 @{
 
@@ -128,22 +128,24 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
-JEA oturum yapılandırması tarafından kullanılmak üzere rol özellikleri "RoleCapabilities" adlı bir dizinde geçerli bir PowerShell modülü kaydedilmesi gerekir. Bir modül, isterseniz birden çok Rol Yetenek dosya olabilir.
 
-Hangi cmdlet'ler, İşlevler, diğer adlar ve kullanıcı JEA oturumuna bağlanırken erişebilir betikleri yapılandırmaya başlamak için kendi kurallarınızı açıklamalı şablonları aşağıdaki Rol Yetenek dosyasına ekleyin. Rol özellikleri nasıl yapılandırabileceğiniz içine daha derin görünüm için tam denetleyin [Kılavuzu deneyimi](http://aka.ms/JEA).
+Bir JEA oturum yapılandırması tarafından kullanılacak rol özellikleri "RoleCapabilities" adlı bir dizinde geçerli bir PowerShell modülü olarak kaydedilmesi gerekir. Bir modülün birden çok rol özellik dosyaları, isterseniz olabilir.
 
-Son olarak, oturum yapılandırması ve ilgili rol özellikleri özelleştirme tamamladıktan sonra bu oturum yapılandırmasını kaydetmek ve çalıştırarak uç noktası oluşturma **Register-PSSessionConfiguration**.
+Cmdlet'leri, işlevleri, diğer adlar ve bir kullanıcı bir JEA oturumuna bağlanırken erişebilir betikleri yapılandırmaya başlamak için kendi kurallarınızı açıklamalı şablonlara göz aşağıdaki rol özelliği dosyasına ekleyin. Rol işlevleri nasıl yapılandırabileceğinizi içinde daha ayrıntılı görünüm için tam denetleyin [Kılavuzu deneyimi](http://aka.ms/JEA).
+
+Son olarak, oturum yapılandırmasının ve ilişkili rol işlevleri özelleştirme tamamladıktan sonra bu oturum yapılandırmasını kaydedin ve çalıştırarak uç noktası oluşturma **Register-PSSessionConfiguration**.
 
 ```powershell
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-## <a name="connect-to-a-jea-endpoint"></a>JEA uç noktasına bağlanın
-JEA uç noktasına bağlanmak için diğer bir PowerShell uç nokta works bağlanma aynı şekilde çalışır.  Yalnızca "ConfigurationName" parametresi olarak JEA uç nokta adınız vermeniz gerekir **New-PSSession**, **Invoke-Command**, veya **Enter-PSSession**.
+## <a name="connect-to-a-jea-endpoint"></a>Bir JEA uç noktasına bağlanma
+
+Bir JEA uç noktaya bağlanmak için başka bir PowerShell uç noktası çalışmalar bağlanma aynı şekilde çalışır.  Yalnızca "ConfigurationName" parametresi olarak JEA uç nokta adınız vermek zorunda **New-PSSession**, **Invoke-Command**, veya **Enter-PSSession**.
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
-JEA oturumuna bağlandığında komutları Güvenilenler listesine erişiminiz rol özellikleri çalışan için sınırlı olacaktır. Rolü için izin verilmiyor komutu çalıştırmayı denerseniz, hatayla karşılaşır.
+
+JEA oturuma bağlandıktan sonra komut izin verilenler listesinde erişiminiz rol işlevleri çalışan için sınırlı olacaktır. Rolünüz için izin verilmiyor herhangi bir komutu çalıştırmayı denerseniz, bir hatayla karşılaşırsınız.

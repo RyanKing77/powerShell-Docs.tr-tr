@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
-title: DSC kayıt kaynağı
-ms.openlocfilehash: 8819b3704fa1a61d2be5ce11c974542f48177e09
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, yapılandırma, Kurulum
+title: DSC Registry kaynağı
+ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188709"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093594"
 ---
-# <a name="dsc-registry-resource"></a>DSC kayıt kaynağı
+# <a name="dsc-registry-resource"></a>DSC Registry kaynağı
 
-> İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-**Kayıt defteri** kaynağı içinde Windows PowerShell istenen durum yapılandırması (DSC), kayıt defteri anahtarları ve değerleri bir hedef düğümdeki yönetmek için bir mekanizma sağlar.
+**Kayıt defteri** kaynak olarak Windows PowerShell Desired State Configuration (DSC), kayıt defteri anahtarlarını ve değerlerini bir hedef düğümde yönetmek için bir mekanizma sağlar.
 
 ## <a name="syntax"></a>Sözdizimi
 
@@ -32,35 +32,22 @@ Registry [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Özellikler
+
 |  Özellik  |  Açıklama   |
 |---|---|
-| üzerine gelin| Belirli bir durumu sağlamak istediğiniz kayıt defteri anahtarının yolunu gösterir. Bu yol hive içermelidir.|
-| Değer adı| Kayıt defteri değerinin adını belirtir. Eklemek veya bir kayıt defteri anahtarı kaldırmak için ValueType veya ValueData belirtmeden bu özellik olarak boş bir dize belirtin. Değiştirmek veya bir kayıt defteri anahtarının varsayılan değeri kaldırmak için ValueType veya ValueData de belirtildiğinde bu özellik olarak boş bir dize belirtin.|
-| Emin olun| Anahtar ve değer var olup olmadığını gösterir. "Var" Bu özelliği ayarlayın emin olmak için. Mevcut olduğundan emin olmak için "Yok" özelliğini ayarlayın. "Var" varsayılan değerdir.|
-| Force| Belirtilen kayıt defteri anahtarı varsa, __zorla__ yeni değerle üzerine yazar. Alt anahtarlar içeren bir kayıt defteri anahtarının silinmesi, bu olması gerekir __$true__|
-| Onaltılık| Onaltılık biçimde belirtilecektir veri gösterir. Belirtilmişse, onaltılık biçimde DWORD/QWORD değer verisi sunulur. Diğer türleri için geçerli değil. Varsayılan değer __$false__.|
-| dependsOn| Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
-| ValueData| Kayıt defteri değeri verileri.|
-| ValueType| Değerin türünü belirtir. Desteklenen türler şunlardır:
-<ul><li>Dize (REG_SZ)</li>
-
-
-<li>İkili (ikili REG)</li>
-
-
-<li>DWORD 32-bit (REG_DWORD)</li>
-
-
-<li>QWORD 64-bit (REG_QWORD)</li>
-
-
-<li>Çoklu dize (REG_MULTI_SZ)</li>
-
-
-<li>Genişletilebilir dize (REG_EXPAND_SZ)</li></ul>
+| üzerine gelin| Belirli bir durumu sağlamak istediğiniz kayıt defteri anahtarının yolunu gösterir. Bu yol, hive içermelidir.|
+| değer adı| Kayıt defteri değerinin adını belirtir. Bir kayıt defteri anahtarı ekleyip için ValueType veya ValueData belirtmeden bu özellik boş bir dize belirtin. Bir kayıt defteri anahtarının varsayılan değeri kaldırın ya da değiştirmek için ValueType veya ValueData belirtirken de bu özellik boş bir dize belirtin.|
+| Emin olun| Anahtar ve değer olup olmadığını gösterir. "Var" Bu özelliği ayarlamak emin olmak için. Nesneler yok emin olmak için "Yok" özelliğini ayarlayın. "Var" varsayılan değerdir.|
+| Force| Belirtilen kayıt defteri anahtarı varsa **zorla** yeni değeri ile değiştirir. Alt anahtarlar içeren bir kayıt defteri anahtarının silinmesi, bu olması gereken **$true** |
+| Onaltılık| Onaltılık biçimde belirtilecektir verileri gösterir. Belirtilmişse DWORD/QWORD değer verisini onaltılık biçimde sunulur. Diğer türleri için geçerli değil. Varsayılan değer **$false**.|
+| DependsOn| Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
+| ValueData| Kayıt defteri değeri için veriler.|
+| ValueType| Değer türünü belirtir. Desteklenen türler: dize (REG_SZ), ikili dosya (ikili REG), Dword 32-bit (REG_DWORD), Qword 64-bit (REG_QWORD), çok dizeli (REG_MULTI_SZ), Genişletilebilir dize (REG_EXPAND_SZ) |
 
 ## <a name="example"></a>Örnek
+
 Bu örnekte "ExampleKey" adlı bir anahtar mevcut olmasını sağlar **HKEY\_yerel\_makine** hive.
+
 ```powershell
 Configuration RegistryTest
 {
@@ -74,5 +61,5 @@ Configuration RegistryTest
 }
 ```
 
->**Not:** bir kayıt defteri ayarını değiştirerek **HKEY\_geçerli\_kullanıcı** hive gerektirir yapılandırma sistemi olarak değil, kullanıcı kimlik bilgileriyle çalışır.
->Kullanabileceğiniz **PsDscRunAsCredential** özelliği yapılandırma için kullanıcı kimlik bilgilerini belirtin. Bir örnek için bkz: [çalıştıran DSC kullanıcı kimlik bilgileri](runAsUser.md)
+> [!NOTE]
+> Bir kayıt defteri ayarı değiştirerek **HKEY\_geçerli\_kullanıcı** hive gerektirir yapılandırma sistemi olarak değil, kullanıcı kimlik bilgileriyle çalışır. Kullanabileceğiniz **PsDscRunAsCredential** özelliği yapılandırması için kullanıcı kimlik bilgilerini belirtin. Bir örnek için bkz. [DSC çalıştıran kullanıcı kimlik bilgileriyle](runAsUser.md).

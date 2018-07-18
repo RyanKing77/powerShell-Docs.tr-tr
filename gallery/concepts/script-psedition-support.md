@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
 title: Komut dosyası ile uyumlu PowerShell sürümleri
-ms.openlocfilehash: 27b50be4e99b6c6b8fa089d1d4a436a27eeb17c9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219258"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093669"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Komut dosyası ile uyumlu PowerShell sürümleri
 
@@ -52,20 +52,18 @@ At line:1 char:1
     + FullyQualifiedErrorId : ScriptRequiresUnmatchedPSEdition
 ```
 
-PowerShell Galerisi kullanıcıların belirli bir PowerShell sürümünde desteklenen komut listesini bulabilirsiniz.
-Komut dosyaları PSEdition_Desktop ve PSEditon_Core olmadan PowerShell Masaüstü sürümlerinde ince çalışmaya olarak kabul edilir.
+PowerShell Galerisi kullanıcılar, belirli bir PowerShell sürümünde desteklenen betikler listesini bulabilirsiniz.
+Betikleri PSEdition_Desktop ve PSEditon_Core olmadan PowerShell Masaüstü sürümleri için üzerinde sorunsuz çalışacak şekilde değerlendirilir.
 
 ```powershell
-
 # Find scripts supported on PowerShell Desktop edition
 Find-Script -Tag PSEditon_Desktop
 
 # Find scripts supported on PowerShell Core editions
 Find-Script -Tag PSEditon_Core
-
 ```
 
 ## <a name="more-details"></a>Daha fazla ayrıntı
 
 - [PSEditions’ı olan Modüller](module-psedition-support.md)
-- [PowerShellGallery PSEditions desteği](../how-to/finding-items/searching-by-psedition.md)
+- [PowerShellGallery pseditions'ı desteği](../how-to/finding-items/searching-by-psedition.md)

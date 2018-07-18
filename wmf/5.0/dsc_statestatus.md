@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 0e8d0cb1e4afa7bc791d45bfb0b981654cb09ed5
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892578"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093890"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Birleşmiş ve Tutarlı Durum ve Durum Gösterimi
 
@@ -15,11 +15,11 @@ Bir dizi, bu sürümde otomasyonları LCM durumu ve DSC durumu için yapılan. B
 LCM durumu ve DSC işlem durumunu gösterimini revisited ve aşağıdaki kurallara göre birleşik:
 
 1. LCM durumu ve DSC durumu Notprocessed kaynak etkilemez.
-2. Yeniden başlatma isteği bir kaynak bulduğu sonra daha fazla işlem kaynaklarının LCM durdur.
-3. Yeniden başlatma gerçekten oluşuncaya kadar yeniden başlatma isteği bir kaynak istenen durumda değil.
-4. Başarısız bir bağımlı olmadıkları sürece başarısız olan bir kaynak karşılaştıktan sonra LCM daha fazla işleme kaynaklarına tutar.
-5. Tarafından döndürülen genel durumunu `Get-DscConfigurationStatus` cmdlet'tir tüm kaynakların durum süper kümesi.
-6. PendingReboot durumu PendingConfiguration durumu bir üst kümesidir.
+1. Yeniden başlatma isteği bir kaynak bulduğu sonra daha fazla işlem kaynaklarının LCM durdur.
+1. Yeniden başlatma gerçekten oluşuncaya kadar yeniden başlatma isteği bir kaynak istenen durumda değil.
+1. Başarısız bir bağımlı olmadıkları sürece başarısız olan bir kaynak karşılaştıktan sonra LCM daha fazla işleme kaynaklarına tutar.
+1. Tarafından döndürülen genel durumunu `Get-DscConfigurationStatus` cmdlet'tir tüm kaynakların durum süper kümesi.
+1. PendingReboot durumu PendingConfiguration durumu bir üst kümesidir.
 
    Sonuç aşağıdaki tabloda gösterilmiştir durum ilgili bazı tipik senaryoları altındaki özellikler.
 

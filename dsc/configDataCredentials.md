@@ -1,31 +1,31 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
-title: Yapılandırma verilerini seçeneklerinde kimlik bilgileri
-ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, yapılandırma, Kurulum
+title: Yapılandırma verilerinde kimlik bilgisi seçeneklerinden
+ms.openlocfilehash: 12bb8d8ce5fc4685e583e74d411b098320ac4fd4
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190052"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093686"
 ---
-# <a name="credentials-options-in-configuration-data"></a>Yapılandırma verilerini seçeneklerinde kimlik bilgileri
->İçin geçerlidir: Windows PowerShell 5.0
+# <a name="credentials-options-in-configuration-data"></a>Yapılandırma verilerinde kimlik bilgisi seçeneklerinden
+>Uygulama hedefi: Windows PowerShell 5.0
 
-## <a name="plain-text-passwords-and-domain-users"></a>Düz metin parola ve etki alanı kullanıcıları
+## <a name="plain-text-passwords-and-domain-users"></a>Düz metin şifreleri ve etki alanı kullanıcıları
 
-DSC yapılandırmaları şifreleme olmadan kimlik bilgisi içeren düz metin parolalarını ilgili bir hata iletisi oluşturur.
-Ayrıca, DSC etki alanı kimlik bilgileri kullanırken bir uyarı oluşturur.
-Gizlemek için bu hata ve uyarı iletileri DSC yapılandırma verileri anahtar sözcükler kullanın:
+DSC yapılandırmaları içeren bir kimlik bilgisi şifreleme olmadan düz metin parolalar ilgili bir hata iletisi oluşturur.
+Ayrıca, DSC etki alanı kimlik bilgilerini kullanarak bir uyarı oluşturur.
+Engellemek için bu hata ve uyarı iletilerini DSC yapılandırma verileri anahtar sözcükleri kullanın:
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
 > [!NOTE]
-> Depolama/iletmek düz metin parolalarını şifrelenmemiş genellikle güvenli değildir. Bu konuda açıklanan teknikleri kullanarak kimlik bilgilerini güvenli hale getirme önerilir.
-> Azure Otomasyonu DSC hizmet yapılandırmalarında derlenmiş ve güvenli şekilde depolanan kimlik bilgileri merkezi olarak yönetmenizi sağlar.
-> Bilgi için bkz: [derleme DSC yapılandırmaları / kimlik bilgisi varlıkları](/azure/automation/automation-dsc-compile#credential-assets)
+> Düz metin parolalar şifrelenmemiş depolayarak/iletme genellikle güvenli değildir. Bu konuda açıklanan teknikleri kullanarak kimlik bilgilerini güvenli hale getirme önerilir.
+> Azure Otomasyonu DSC hizmet yapılandırmasında derlenmiş olmaya ve güvenli şekilde depolanan kimlik bilgileri merkezi olarak yönetmenizi sağlar.
+> Bilgi için bkz: [DSC yapılandırmaları derleme / kimlik bilgisi varlıkları](/azure/automation/automation-dsc-compile#credential-assets)
 
-Düz metin kimlik bilgileri geçirme bir örnek verilmiştir:
+Düz metin kimlik bilgilerini geçirerek bir örnek verilmiştir:
 
 ```powershell
 #Prompt user for their credentials
@@ -127,18 +127,18 @@ Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 
 ## <a name="handling-credentials-in-dsc"></a>DSC kimlik bilgilerini işleme
 
-DSC yapılandırması kaynakları Farklı Çalıştır `Local System` varsayılan olarak.
-Ancak, bazı kaynaklar bir kimlik bilgileri, örneğin gerektiğinde `Package` kaynak belirli bir kullanıcı hesabı altında yazılımı yüklemeniz gerekir.
+DSC yapılandırma kaynaklarını Çalıştır `Local System` varsayılan olarak.
+Ancak, bazı kaynaklar bir kimlik bilgisi, örneğin gerektiğinde `Package` kaynak belirli bir kullanıcı hesabı altında yazılımı yüklemeniz gerekir.
 
-Önceki kaynakların kullanılan bir sabit kodlanmış `Credential` bu durumu çözmek için özellik adı.
-WMF 5.0 eklenen otomatik `PsDscRunAsCredential` tüm kaynaklar için özellik.
-Kullanma hakkında bilgi için `PsDscRunAsCredential`, bkz: [çalıştıran DSC kullanıcı kimlik bilgileriyle](runAsUser.md).
-Daha yeni kaynakları ve özel kaynakları için kimlik bilgilerini kendi özelliği oluşturmak yerine bu otomatik özelliğini kullanabilirsiniz.
+Önceki kaynakları kullanılan sabit olarak kodlanmış `Credential` bu durumu çözmek için özellik adı.
+WMF 5.0 otomatik eklenen `PsDscRunAsCredential` tüm kaynaklar için özellik.
+Kullanma hakkında bilgi için `PsDscRunAsCredential`, bkz: [DSC çalıştıran kullanıcı kimlik bilgileriyle](runAsUser.md).
+Yeni kaynaklar ve özel kaynakların otomatik bu özelliği kendi kimlik bilgilerini özelliği oluşturmak yerine kullanabilirsiniz.
 
 > [!NOTE]
-> Bazı kaynaklar tasarımını olan belirli bir nedenle birden çok kimlik bilgilerini kullanmayı ve kendi kimlik özelliklerine sahip olur.
+> Bazı kaynaklar tasarımını olan belirli bir nedenle birden çok kimlik bilgilerini kullanmayı ve kendi kimlik bilgisi özelliklerine sahip.
 
-Kullanılabilir kimlik bilgisi bulmak için bir kaynak özelliklerini kullanın ya da `Get-DscResource -Name ResourceName -Syntax` veya işe IntelliSense (`CTRL+SPACE`).
+Kullanılabilir kimlik bilgileri bulmak için bir kaynak özelliklerini kullanın `Get-DscResource -Name ResourceName -Syntax` veya işe IntelliSense (`CTRL+SPACE`).
 
 ```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
@@ -156,26 +156,26 @@ Group [String] #ResourceName
 }
 ```
 
-Bu örnekte bir [grup](https://msdn.microsoft.com/powershell/dsc/groupresource) kaynaktan `PSDesiredStateConfiguration` yerleşik DSC kaynakları modülü.
-Onu yerel gruplar oluşturabilir ve ekleyebilir veya üyeleri kaldırın.
-Her ikisini de kabul `Credential` özelliği ve otomatik `PsDscRunAsCredential` özelliği.
-Ancak, kaynak yalnızca kullanır `Credential` özelliği.
+Bu örnekte bir [grubu](https://msdn.microsoft.com/powershell/dsc/groupresource) kaynaktan `PSDesiredStateConfiguration` yerleşik DSC kaynak modülü.
+Bu yerel gruplarını oluşturun ve ekleyebilir veya üyeleri kaldırın.
+Hem kabul ettiği `Credential` özelliği ve otomatik `PsDscRunAsCredential` özelliği.
+Ancak, yalnızca kaynak kullanan `Credential` özelliği.
 
-Hakkında daha fazla bilgi için `PsDscRunAsCredential` özelliği, bkz: [çalıştıran DSC kullanıcı kimlik bilgileriyle](runAsUser.md).
+Hakkında daha fazla bilgi için `PsDscRunAsCredential` özelliğine bakın [DSC çalıştıran kullanıcı kimlik bilgileriyle](runAsUser.md).
 
-## <a name="example-the-group-resource-credential-property"></a>Örnek: Grup Kaynak kimlik bilgisi özelliği
+## <a name="example-the-group-resource-credential-property"></a>Örnek: Grubu kaynağının Credential özelliği
 
-DSC çalıştıran altında `Local System`, yerel kullanıcılar ve gruplar değiştirme izni zaten sahiptir.
-Yerel bir hesap eklenen üyesi ise, hiçbir kimlik bilgisi gereklidir.
-Varsa `Group` kaynak etki alanı hesabı yerel grubuna ekler, sonra bir kimlik bilgisi gereklidir.
+DSC çalıştıran altında `Local System`, yerel kullanıcılar ve gruplar değiştirmek için izinlere zaten sahip.
+Eklenen üye bir yerel hesapsa, hiçbir kimlik bilgisi gereklidir.
+Varsa `Group` kaynak, yerel gruba bir etki alanı hesabı ekler ve ardından bir kimlik bilgisi gereklidir.
 
-Active Directory anonim sorgularına izin verilmiyor.
-`Credential` Özelliği `Group` kaynak Active Directory'yi sorgulamak için kullanılan etki alanı hesabıdır.
-Çoğu amaç için varsayılan olarak kullanıcılar şunları yapabilir Bunun nedeni bir genel kullanıcı hesabı olabilir *okuma* Active Directory içindeki nesneleri çoğu.
+Active Directory anonim sorgulara izin verilmez.
+`Credential` Özelliği `Group` kullanılan sorgu için Active Directory etki alanı hesabı bir kaynaktır.
+Birçok amaç için bunun nedeni, varsayılan olarak, kullanıcıların yükleyebileceği bir genel kullanıcı hesabı olabilir *okuma* Active Directory içindeki nesneleri çoğu.
 
 ## <a name="example-configuration"></a>Örnek yapılandırma
 
-Aşağıdaki kod örneği, bir etki alanı kullanıcısı ile yerel bir grup doldurmak için DSC kullanır:
+Aşağıdaki kod örneği, bir yerel Grup bir etki alanı kullanıcısı ile doldurmak için DSC kullanır:
 
 ```powershell
 Configuration DomainCredentialExample
@@ -224,17 +224,17 @@ In order to suppress the warning, you can add a property named
 for node 'localhost'.
 ```
 
-Bu örnek iki sorunları vardır:
-1. Düz metin parolalarını önerilmez hata açıklar
-2. Bir uyarı etki alanı kimlik bilgilerini kullanarak karşı öneren
+Bu örnekte, iki sorun vardır:
+1. Bir hata düz metin parolalar önerilmez açıklar.
+2. Bir uyarı bir etki alanı kimlik bilgisi kullanılmamasını önerir.
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
-İlk hata iletisi belgelerine bir URL'ye sahip.
+İlk hata iletisi, belgeleri bir URL vardır.
 Bu bağlantıyı kullanarak parolaları şifrelemek açıklanmaktadır bir [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) yapısı ve bir sertifika.
-Sertifikalar ve DSC hakkında daha fazla bilgi için [bu gönderisini okuduğunuzu](http://aka.ms/certs4dsc).
+Sertifikaları ve DSC hakkında daha fazla bilgi için [Bu gönderiyi okuyun](http://aka.ms/certs4dsc).
 
-Düz metinli bir parola zorlamak için kaynak gerektiriyor `PsDscAllowPlainTextPassword` yapılandırma verilerinde anahtar sözcüğü bölümünde aşağıdaki gibi:
+Düz metin parola zorlamak için kaynak gerektiren `PsDscAllowPlainTextPassword` yapılandırma verilerini bir anahtar sözcük bölümünde şu şekilde:
 
 ```powershell
 Configuration DomainCredentialExample
@@ -270,26 +270,24 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
 > [!NOTE]
-> `NodeName` yıldız işareti, belirli düğüm adı zorunludur eşit olamaz.
+> `NodeName` yıldız işareti, belirli bir düğümün adı zorunludur eşit olamaz.
 
-**Düz metin parolalarını önemli güvenlik riski nedeniyle önlemek için Microsoft önerir.**
-
-Yalnızca (aktarımda, hizmet REST ve düğüm üzerinde bekleyen) şifreli her zaman verilerin depolandığı için bir özel durum Azure Otomasyonu DSC hizmetini kullanırken olacaktır.
+**Önemli güvenlik riski nedeniyle düz metin parolalar önlemek için Microsoft önerir.**
 
 ## <a name="domain-credentials"></a>Etki alanı kimlik bilgileri
 
-Örnek yapılandırma betiği yeniden (ile veya şifreleme olmadan) çalıştıran bir etki alanı hesabı bir kimlik bilgisi için önerilmez uyarı hala oluşturur.
-Yerel bir hesap kullanarak diğer sunucularda kullanılabilir etki alanı kimlik bilgileri olası riskini ortadan kaldırır.
+(İle veya şifreleme olmadan), yeniden örnekte yapılandırma betiği çalıştıran bir etki alanı kullanarak bir kimlik bilgisi hesabı önerilmez uyarı hala oluşturur.
+Yerel bir hesap kullanarak, diğer tüm sunucularda kullanılabilir etki alanı kimlik bilgilerini olası riskini ortadan kaldırır.
 
-**Kimlik bilgileri ile DSC kaynakları kullanılırken, yerel bir hesap bir etki alanı hesabı mümkün olduğunda tercih edilir.**
+**DSC kaynakları ile kimlik bilgilerini kullanarak, yerel bir hesap bir etki alanı hesabı mümkün olduğunda tercih edin.**
 
 Varsa bir '\' veya '\@' ın `Username` özelliği kimlik bilgisi, daha sonra DSC işlemek, bir etki alanı hesabı olarak.
-"Localhost", "127.0.0.1" için bir özel durum yoktur ve ":: 1" kullanıcı adı etki alanı kısmının.
+Bir özel durum için "localhost", "127.0.0.1" ve ":: 1" kullanıcı adının etki alanı bölümü içinde.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-DSC içinde `Group` yukarıda, bir Active Directory etki alanı sorgulama kaynak örnek *gerektirir* bir etki alanı hesabı.
-Bu durumda eklemek `PSDscAllowDomainUser` özelliğine `ConfigurationData` gibi engelle:
+DSC, `Group` yukarıda bir Active Directory etki alanı sorgulanıyor kaynak örnek *gerektirir* bir etki alanı hesabı.
+Bu durumda ekleme `PSDscAllowDomainUser` özelliğini `ConfigurationData` bloğunu şu şekilde:
 
 ```powershell
 $cd = @{
@@ -304,4 +302,4 @@ $cd = @{
 }
 ```
 
-Artık yapılandırma komut dosyası hata veya uyarı ile MOF dosyası oluşturur.
+Artık yapılandırma betiği ile bir hata veya uyarı MOF dosyası oluşturur.

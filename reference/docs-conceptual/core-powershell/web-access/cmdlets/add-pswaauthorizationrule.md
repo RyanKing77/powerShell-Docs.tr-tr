@@ -4,12 +4,12 @@ keywords: PowerShell cmdlet'i
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a5e55611ac59ff5bfecee59ba2b7d7669d08f840
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893748"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094237"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -191,8 +191,10 @@ Bu cmdlet döndürür bir yetkilendirme kuralı nesnesine.
 
 ### <a name="example-1"></a>ÖRNEK 1
 
-Bu örnekte oturum yapılandırması erişimi verir *PSWAEndpoint*, sınırlı çalışma alanı *SUN2* kullanıcılar için *SMAdmins* grup. \
-**Not**: bilgisayar adı tam etki alanı adı (FQDN) olmalıdır. Yöneticiler, sınırlı bir oturum yapılandırması veya sınırlı bir cmdlet'ler ve son kullanıcıların görevleri aralığıdır çalışma alanı tanımlayın. Sınırlı bir çalışma alanı tanımlanması, kullanıcıların izin verilen Windows PowerShell® çalışma alanında, bu nedenle daha güvenli bir bağlantı sunulmamaktadır diğer bilgisayarlara erişmesini engelleyebilir. Oturum yapılandırmaları hakkında daha fazla bilgi için bkz. [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) veya [yükleme ve kullanım Windows PowerShell Web erişimi](../install-and-use-windows-powershell-web-access.md).
+Bu örnekte oturum yapılandırması erişimi verir _PSWAEndpoint_, sınırlı çalışma alanı _SUN2_ kullanıcılar için _SMAdmins_ grubu.
+
+> [!NOTE]
+> Bilgisayar adı tam etki alanı adı (FQDN) olmalıdır. Yöneticiler, sınırlı bir oturum yapılandırması veya sınırlı bir cmdlet'ler ve son kullanıcıların görevleri aralığıdır çalışma alanı tanımlayın. Sınırlı bir çalışma alanı tanımlanması, kullanıcıların izin verilen Windows PowerShell® çalışma alanında, bu nedenle daha güvenli bir bağlantı sunulmamaktadır diğer bilgisayarlara erişmesini engelleyebilir. Oturum yapılandırmaları hakkında daha fazla bilgi için bkz. [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) veya [yükleme ve kullanım Windows PowerShell Web erişimi](../install-and-use-windows-powershell-web-access.md).
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
@@ -240,8 +242,10 @@ Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1
 ### <a name="example-6"></a>ÖRNEK 6
 
 Bu örnekte, tüm kullanıcıların tüm bilgisayarlarda tüm uç noktalara erişimi verir.
-Bu temelde yetkilendirme kuralları devre dışı bırakır. \
-**Not**: kullanım `*` joker karakter güvenlik açısından duyarlı dağıtımları için önerilmez ve yalnızca test ortamları için kabul veya güvenlik burada gevşetilebilir dağıtımda kullanılan.
+Bu temelde, yetkilendirme kuralları devre dışı bırakır.
+
+> [!NOTE]
+> Kullanım `*` joker karakter güvenlik açısından duyarlı dağıtımları için önerilmez ve yalnızca test ortamları için kabul veya güvenlik burada gevşetilebilir dağıtımda kullanılan.
 
 ````PowerShell
 Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *

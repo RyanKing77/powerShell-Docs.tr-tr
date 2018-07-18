@@ -58,8 +58,8 @@ Visual Studio Code, çıkmak için **Dosya -> çıkış**.
 Visual Studio Code ile belirli bir PowerShell yüklemesi kullanmak istiyorsanız, yeni bir değişken, kullanıcı ayarları dosyanıza ekleme gerekir.
 
 1. Tıklayın **dosya Tercihler -> Ayarlar ->**
-2. İki Düzenleyici bölme görünür.
-   En sağdaki bölmede (`settings.json`), aşağıdaki ayar Ekle iki süslü ayraçlar arasında bir yerde, işletim sistemi için uygun (`{` ve `}`) ve yerine *<version>* ile yüklü PowerShell sürümü:
+1. İki Düzenleyici bölme görünür.
+   En sağdaki bölmede (`settings.json`), aşağıdaki ayar Ekle iki süslü ayraçlar arasında bir yerde, işletim sistemi için uygun (`{` ve `}`) ve yerine **\<sürüm\>** yüklü PowerShell sürümü ile:
 
    ```json
     // On Windows:
@@ -72,8 +72,8 @@ Visual Studio Code ile belirli bir PowerShell yüklemesi kullanmak istiyorsanız
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
    ```
 
-3. Yürütülebilir istenen PowerShell yoluyla ayarını değiştirin
-4. Ayarlar dosyasını kaydedin ve Visual Studio Code'u yeniden başlatın
+1. Yürütülebilir istenen PowerShell yoluyla ayarını değiştirin
+1. Ayarlar dosyasını kaydedin ve Visual Studio Code'u yeniden başlatın
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Visual Studio Code için yapılandırma ayarları
 

@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: ryanpu
 title: Yeterli yönetim (JEA) geliştirmeleri
-ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a9a8a0fd2b726ded33aa07c205292efd7148f3f0
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892729"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093628"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Yeterli yönetim (JEA) geliştirmeleri
 
@@ -50,7 +50,7 @@ Ardından, kullanıcı sürücüde depolanan verileri işlemek ve kullanıcı ro
 
 Bazı durumlarda, bir kullanıcı bir JEA oturumda gerçekleştirmesi gereken bir görevi, yerel makine ötesindeki kaynaklara gerekebilir.
 Bir JEA oturumu, sanal bir hesabı kullanacak şekilde yapılandırıldığında, yerel makinenin kimlik, olmayan sanal hesap veya bağlı durumda olan kullanıcı gelen gibi kaynaklarına ulaşmak için her türlü girişim görünecektir.
-JEA [grup yönetilen hizmet hesabı] bağlamı altında çalıştırmak için desteği etkinleştirdik TP5'te (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), bir etki alanı kimliği'ni kullanarak ağ kaynaklarına erişmek çok daha kolay hale getirme.
+JEA bağlamında çalıştırma desteği etkinleştirdik TP5'te bir [Grup yönetilen hizmet hesabı](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431\(v=ws.11\)), bir etki alanı kimliği'ni kullanarak ağ kaynaklarına erişmek çok daha kolay hale getirme.
 
 Bir JEA oturumu gMSA hesabı altında çalışacak şekilde yapılandırmak için aşağıdaki yeni anahtarı PSSC dosyanızda kullanın:
 
