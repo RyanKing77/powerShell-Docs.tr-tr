@@ -1,0 +1,10 @@
+- name: PowerShell
+  tocHref: /powershell/
+  topicHref: /powershell
+  items:
+    - name: Komut dosyası oluşturma
+      tocHref: /powershell/scripting/
+      topicHref: /powershell/scripting/index
+    - name: Komut dosyası oluşturma
+      tocHref: /powershell/module/
+      topicHref: /powershell/scripting/index
