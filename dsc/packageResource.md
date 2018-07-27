@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Paket DSC kaynağı
-ms.openlocfilehash: 3046ba7d57776a996a0b917348a0e863db6cd0c8
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093812"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268679"
 ---
 # <a name="dsc-package-resource"></a>Paket DSC kaynağı
 
-> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 **Paket** kaynak olarak Windows PowerShell Desired State Configuration (DSC) yüklemek veya bir hedef düğüm üzerinde Windows Installer ve setup.exe paketleri gibi paketleri kaldırmak için bir mekanizma sağlar.
 
@@ -34,8 +34,8 @@ Package [string] #ResourceName
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik  |  Açıklama   |
-|---|---|
+| Özellik | Açıklama |
+| --- | --- |
 | Ad| Belirli bir durumu sağlamak istediğiniz paketinin adını belirtir.|
 | Yol| Paketin bulunduğu yol gösterir.|
 | ProductID| Paketi benzersiz olarak tanımlayan ürün Kimliğini belirtir.|
@@ -43,7 +43,7 @@ Package [string] #ResourceName
 | Kimlik bilgisi| Uzak bir kaynak üzerinde paket erişimi sağlar. Bu özellik, paketi yüklemek için kullanılmaz. Paket her zaman yerel sistemde yüklenir.|
 | Emin olun| Paketin yüklü olup olmadığını gösterir. Bu özelliği "Yok" paketi yüklü emin olun (veya paket yüklüyse kaldırmak için) olarak ayarlayın. "Paket yüklü emin olmak için (varsayılan değer) sunmak için" olarak ayarlayın.|
 | LogPath| Sağlayıcı yüklemek veya paket kaldırmak için bir günlük dosyasını kaydetmek istediğiniz tam yolunu belirtir.|
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için söz dizimi ' DependsOn "[= ResourceType] ResourceName"''.|
+| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
 | ReturnCode| Beklenen dönüş kodu gösterir. Gerçek kodu döndürmesi durumunda beklenen değer, burada, yapılandırma, bir hata döndürür sağlanan eşleşmiyor.|
 
 ## <a name="example"></a>Örnek

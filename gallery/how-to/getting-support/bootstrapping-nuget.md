@@ -3,24 +3,20 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
 title: NuGet önyükleniyor
-ms.openlocfilehash: 2d321097fda201c0d8f843b2194a161eceabe4e1
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: e82fe7bec2e6b7a321fb173cdf9a54c5a97d5f18
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094026"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267856"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet sağlayıcısı ve NuGet.exe önyükleme
 
-NuGet.exe en son NuGet sağlayıcısında yer almaz.
-Yayımlama işlemleri bir modül veya betik için ikili yürütülebilir NuGet.exe PowerShellGet gerektirir.
-NuGet sağlayıcısı gerekli diğer tüm işlemler için yalnızca dahil olmak üzere *bulmak*, *yükleme*, *Kaydet*, ve *kaldırma*.
-PowerShellGet, birleşik bir bootstrap NuGet sağlayıcısı ve NuGet.exe veya önyükleme NuGet sağlayıcısı ya da işlemek için mantığı içerir.
-Her iki durumda da, yalnızca tek bir komut istemi ileti gerçekleşmelidir.
-Makinenin Internet'e bağlı değilse, kullanıcı veya yönetici NuGet sağlayıcısı ve/veya NuGet.exe dosya güvenilen bir örneğini bağlantısı kesilmiş makineyi kopyalamanız gerekir.
+NuGet.exe en son NuGet sağlayıcısında yer almaz. Yayımlama işlemleri bir modül veya betik için ikili yürütülebilir NuGet.exe PowerShellGet gerektirir. NuGet sağlayıcısı gerekli diğer tüm işlemler için yalnızca dahil olmak üzere *bulmak*, *yükleme*, *Kaydet*, ve *kaldırma*.
+PowerShellGet, birleşik bir bootstrap NuGet sağlayıcısı ve NuGet.exe veya önyükleme NuGet sağlayıcısı ya da işlemek için mantığı içerir. Her iki durumda da, yalnızca tek bir komut istemi ileti gerçekleşmelidir. Makinenin Internet'e bağlı değilse, kullanıcı veya yönetici NuGet sağlayıcısı ve/veya NuGet.exe dosya güvenilen bir örneğini bağlantısı kesilmiş makineyi kopyalamanız gerekir.
 
 > [!NOTE]
-> NuGet sağlayıcısı sürüm 6 ile başlayarak, PowerShell yüklenmesi dahildir. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
+> NuGet sağlayıcısı sürüm 6 ile başlayarak, PowerShell yüklenmesi dahildir.
 
 ## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>NuGet sağlayıcısı Internet bir makinede yüklü olmayan, hatayı çözmede bağlı
 
@@ -123,15 +119,11 @@ VERBOSE: Successfully published module 'Contoso' to the module publish location 
 
 ## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a>NuGet sağlayıcısı Internet'e bağlı olmayan bir makineye el ile önyükleme
 
-Yukarıda gösterilen işlemler, makine Internet'e bağlı ve dosyalarını ortak bir konumdan indirebilirsiniz varsayılır.
-Bu mümkün değilse, yalnızca seçeneğin kullanılması, yukarıda verilen işlemlerin bir makine önyükleme ve sağlayıcı çevrimdışı bir güvenilen işlem yalıtılmış düğümünden el ile kopyalayın sağlamaktır.
-Bu senaryo için en yaygın kullanım örneği, özel bir galeri, yalıtılmış bir ortam desteklemek kullanılabilir andır.
+Yukarıda gösterilen işlemler, makine Internet'e bağlı ve dosyalarını ortak bir konumdan indirebilirsiniz varsayılır. Bu mümkün değilse, yalnızca seçeneğin kullanılması, yukarıda verilen işlemlerin bir makine önyükleme ve sağlayıcı çevrimdışı bir güvenilen işlem yalıtılmış düğümünden el ile kopyalayın sağlamaktır. Bu senaryo için en yaygın kullanım örneği, özel bir galeri, yalıtılmış bir ortam desteklemek kullanılabilir andır.
 
 İnternet'e bağlı bir makinede önyükleme için yukarıda işlemi tamamladıktan sonra sağlayıcı dosyalar konumda bulabilirsiniz:
 
-```
-C:\Program Files\PackageManagement\ProviderAssemblies\
-```
+`C:\Program Files\PackageManagement\ProviderAssemblies\`
 
 NuGet sağlayıcısı klasör/dosya yapısı (büyük olasılıkla farklı sürüm numarasıyla) olacaktır:
 
@@ -147,11 +139,9 @@ Bu klasör ve dosya kullanarak güvenilir bir işlemi çevrimdışı makinelere 
 
 Makine modüller ya da komut dosyaları için özel bir galeri kullanarak yayımlamak için kullanılacaksa NuGet sağlayıcısını el ile önyükleme işlemi yanı sıra `Publish-Module` veya `Publish-Script` cmdlet'lerini NuGet.exe ikili yürütülebilir dosya gerekecektir.
 
-Bu senaryo için en yaygın kullanım örneği, özel bir galeri, yalıtılmış bir ortam desteklemek kullanılabilir andır.
-NuGet.exe dosyası almak için iki seçenek vardır.
+Bu senaryo için en yaygın kullanım örneği, özel bir galeri, yalıtılmış bir ortam desteklemek kullanılabilir andır. NuGet.exe dosyası almak için iki seçenek vardır.
 
-İnternet'e bağlı olan bir makine önyükleme ve güvenilir bir işlem kullanılarak çevrimdışı makineler için dosyaları kopyalamak için bir seçenek var.
-İnternet'e bağlı makine önyüklemesinden sonra NuGet.exe ikili iki klasörlerden birinde yer alır:
+İnternet'e bağlı olan bir makine önyükleme ve güvenilir bir işlem kullanılarak çevrimdışı makineler için dosyaları kopyalamak için bir seçenek var. İnternet'e bağlı makine önyüklemesinden sonra NuGet.exe ikili iki klasörlerden birinde yer alır:
 
 Varsa `Publish-Module` veya `Publish-Script` cmdlet'leri (bir yönetici olarak) yükseltilmiş izinlerle yürütülmesini:
 
@@ -165,9 +155,7 @@ Cmdlet'lerin yükseltilmiş izinleri olmayan bir kullanıcı olarak yürütüld�
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-İkinci seçenek NuGet.Org Web sitesinden NuGet.exe indirmektir: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) NugGet sürümü için üretim makinelerinden seçerken 2.8.5.208 sonraki olduğundan emin olun ve etiketli sürümünüzü belirlemek " Önerilen".
-Bir tarayıcı kullanarak indirilen, dosyanın Engellemeyi Kaldır unutmayın.
-Bunu kullanarak gerçekleştirilebilir `Unblock-File` cmdlet'i.
+İkinci seçenek NuGet.Org Web sitesinden NuGet.exe indirmektir: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) NugGet sürümü için üretim makinelerinden seçerken 2.8.5.208 sonraki olduğundan emin olun ve etiketli sürümünüzü belirlemek " Önerilen". Bir tarayıcı kullanarak indirilen, dosyanın Engellemeyi Kaldır unutmayın. Bunu kullanarak gerçekleştirilebilir `Unblock-File` cmdlet'i.
 
 Her iki durumda da NuGet.exe dosyanın herhangi bir konuma kopyalanabilir `$env:path`, ancak Standart konumlar:
 

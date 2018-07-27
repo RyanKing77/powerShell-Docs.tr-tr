@@ -3,14 +3,9 @@
 
 ## <a name="overview"></a>Genel bakış
 
-PowerShell uzaktan iletişimini normalde WinRM bağlantı anlaşması ve veri aktarımı için kullanır.
-Hem Linux hem de Windows platformları için kullanıma sunulmuştur ve doğru çok platformlu PowerShell uzaktan iletişimini sağlar, SSH Bu uzaktan iletişim uygulama için seçildi.
-Ancak, WinRM bu uygulama henüz bunu PowerShell uzak oturumlar için sağlam bir barındırma modeli de sağlar.
-Ve bu PowerShell uzak uç nokta yapılandırması ve JEA (yeterli yönetim) henüz desteklenmiyor, bu uygulamada anlamına gelir.
+PowerShell uzaktan iletişimini normalde WinRM bağlantı anlaşması ve veri aktarımı için kullanır. Hem Linux hem de Windows platformları için kullanıma sunulmuştur ve doğru çok platformlu PowerShell uzaktan iletişimini sağlar, SSH Bu uzaktan iletişim uygulama için seçildi. Ancak, WinRM bu uygulama henüz bunu PowerShell uzak oturumlar için sağlam bir barındırma modeli de sağlar. Ve bu PowerShell uzak uç nokta yapılandırması ve JEA (yeterli yönetim) henüz desteklenmiyor, bu uygulamada anlamına gelir.
 
-PowerShell SSH uzak Windows ve Linux makinelerini arasındaki temel PowerShell oturumu uzaktan gerçekleştirmenize olanak tanır.
-Bu, barındırma işlemi bir SSH alt olarak hedef makinede bir PowerShell oluşturarak yapılır.
-Sonuçta bu WinRM uç nokta yapılandırması ve JEA desteklemek için işleyişi benzer daha genel barındırma modeliyle değiştirilecek.
+PowerShell SSH uzak Windows ve Linux makinelerini arasındaki temel PowerShell oturumu uzaktan gerçekleştirmenize olanak tanır. Bu, barındırma işlemi bir SSH alt olarak hedef makinede bir PowerShell oluşturarak yapılır. Sonuçta bu WinRM uç nokta yapılandırması ve JEA desteklemek için işleyişi benzer daha genel barındırma modeliyle değiştirilecek.
 
 `New-PSSession`, `Enter-PSSession` Ve `Invoke-Command` cmdlet'leri artık bu yeni uzaktan bağlantı sağlamak için yeni bir parametre vardır
 
@@ -18,24 +13,18 @@ Sonuçta bu WinRM uç nokta yapılandırması ve JEA desteklemek için işleyiş
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Bu yeni parametre kümesi, büyük olasılıkla değiştirir ancak şimdilik SSH komut satırından etkileşim veya komutları ve komut dosyaları, üzerinde çağırmak Pssessions'dan oluşturmanıza olanak sağlar.
-Hedef makine ana bilgisayar adı parametresi belirtin ve kullanıcı adı ile kullanıcı adını belirtin.
-Cmdlet'ler PowerShell komut satırından etkileşimli olarak çalıştırırken için bir parola istenir.
-Ancak, SSH anahtar kimlik doğrulamasını kullanmak ve bir özel anahtar dosyası yolu KeyFilePath parametresiyle sağlamak için seçeneğiniz de vardır.
+Bu yeni parametre kümesi, büyük olasılıkla değiştirir ancak şimdilik SSH komut satırından etkileşim veya komutları ve komut dosyaları, üzerinde çağırmak Pssessions'dan oluşturmanıza olanak sağlar. Hedef makine ana bilgisayar adı parametresi belirtin ve kullanıcı adı ile kullanıcı adını belirtin. Cmdlet'ler PowerShell komut satırından etkileşimli olarak çalıştırırken için bir parola istenir. Ancak, SSH anahtar kimlik doğrulamasını kullanmak ve bir özel anahtar dosyası yolu KeyFilePath parametresiyle sağlamak için seçeneğiniz de vardır.
 
 ## <a name="general-setup-information"></a>Genel Kurulum bilgilerini
 
-SSH tüm makinelerde yüklü olması gerekiyor.
-Hem de istemci yüklemeniz gerekir (`ssh.exe`) ve sunucu (`sshd.exe`) ve böylece uzak makinelere gelen ve giden deneyimleyebilirsiniz.
-Windows için yüklemeniz gerekecek [Win32 OpenSSH github'dan](https://github.com/PowerShell/Win32-OpenSSH/releases).
-Linux için SSH (dahil olmak üzere sshd sunucusunu) platformunuz için uygun yüklemeniz gerekir.
-En son PowerShell derleme veya GitHub SSH uzaktan erişim özelliği olan bir paketten de gerekir.
-SSH alt sistemler, uzak makinede bir PowerShell işlem oluşturmak için kullanılır ve SSH sunucusu için yapılandırılmış olması gerekir.
-Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı kimlik doğrulamasını etkinleştirmeniz gerekir.
+SSH tüm makinelerde yüklü olması gerekiyor. Hem de istemci yüklemeniz gerekir (`ssh.exe`) ve sunucu (`sshd.exe`) ve böylece uzak makinelere gelen ve giden deneyimleyebilirsiniz. Windows için yüklemeniz gerekecek [Win32 OpenSSH github'dan](https://github.com/PowerShell/Win32-OpenSSH/releases).
+Linux için SSH (dahil olmak üzere sshd sunucusunu) platformunuz için uygun yüklemeniz gerekir. En son PowerShell derleme veya GitHub SSH uzaktan erişim özelliği olan bir paketten de gerekir.
+SSH alt sistemler, uzak makinede bir PowerShell işlem oluşturmak için kullanılır ve SSH sunucusu için yapılandırılmış olması gerekir. Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı kimlik doğrulamasını etkinleştirmeniz gerekir.
 
 ## <a name="setup-on-windows-machine"></a>Windows makinesinde Kurulumu
 
 1. [İçin Windows PowerShell Core] en son sürümünü yükleyin
+
    - SSH remoting desteği bakarak varsa, parametre için ayarlar söyleyebilirsiniz. `New-PSSession`
 
    ```powershell
@@ -46,65 +35,68 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-1. Son [Win32 OpenSSH] derleme [Kurulum] yönergeleri kullanarak Github'dan yükleyin
-1. Win32 OpenSSH yüklendiği konumda sshd_config dosyasında Düzenle
+2. Son [Win32 OpenSSH] derleme [Kurulum] yönergeleri kullanarak Github'dan yükleyin
+3. Win32 OpenSSH yüklendiği konumda sshd_config dosyasında Düzenle
+
    - Parola kimlik doğrulamasının etkin olduğundan emin olun
 
-   ```
-   PasswordAuthentication yes
-   ```
+     ```
+     PasswordAuthentication yes
+     ```
 
-    ```
-    Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
-    > [!NOTE]
-    > OpenSSH için alanları alt sistemi yürütülebilir yollarında çalışmasını engelleyen Windows hata yoktur.
-    > Bkz: [daha fazla bilgi için github'daki bu sorunu](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+     > [!NOTE]
+     > OpenSSH için alanları alt sistemi yürütülebilir yollarında çalışmasını engelleyen Windows hata yoktur.
+     > Bkz: [daha fazla bilgi için github'daki bu sorunu](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-    Tek bir çözüm, boşluk içermeyen Powershell yükleme dizinine hedefine sembolik bağlantı oluşturmaktır:
+     Tek bir çözüm, boşluk içermeyen Powershell yükleme dizinine hedefine sembolik bağlantı oluşturmaktır:
 
-    ```powershell
-    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
-    ```
+     ```powershell
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+     ```
 
-    ve ardından alt girin:
+     ve ardından alt girin:
 
-    ```
-    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
-   ```
-   Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-   ```
+     ```
+     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
    - İsteğe bağlı olarak anahtar kimlik doğrulamasını etkinleştirme
 
-   ```
-   PubkeyAuthentication yes
-   ```
+     ```
+     PubkeyAuthentication yes
+     ```
 
-1. Sshd hizmetini yeniden başlatın
+4. Sshd hizmetini yeniden başlatın
 
    ```powershell
    Restart-Service sshd
    ```
 
-1. OpenSSH, yol Env değişkenini yüklendiği yolu Ekle
+5. OpenSSH, yol Env değişkenini yüklendiği yolu Ekle
+
    - Bu satırlar olmalıdır `C:\Program Files\OpenSSH\`
    - Bu ssh.exe bulunmasına olanak sağlar
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) makinede Kur
 
 1. Son [Linux için PowerShell Core] derleme Github'dan yükleyin
-1. [Ubuntu SSH] gerektiği şekilde yükle
+2. [Ubuntu SSH] gerektiği şekilde yükle
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-1. Konum /etc/ssh sshd_config dosyasını Düzenle
+3. Konum /etc/ssh sshd_config dosyasını Düzenle
+
    - Parola kimlik doğrulamasının etkin olduğundan emin olun
 
    ```
@@ -123,7 +115,7 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
    PubkeyAuthentication yes
    ```
 
-1. Sshd hizmetini yeniden başlatın
+4. Sshd hizmetini yeniden başlatın
 
    ```bash
    sudo service sshd restart
@@ -132,12 +124,15 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
 ## <a name="setup-on-macos-machine"></a>Mac OS makinesinde Kurulumu
 
 1. Son [MacOS için PowerShell Core] derleme yükleme
+
    - SSH uzaktan iletişim, aşağıdaki adımları izleyerek etkin olduğundan emin olun:
      - Açık `System Preferences`
      - Tıklayın `Sharing`
      - Denetleme `Remote Login` -şeklinde olmalıdır `Remote Login: On`
      - Uygun kullanıcılar erişime izin ver
-1. Düzen `sshd_config` dosya konumunda `/private/etc/ssh/sshd_config`
+
+2. Düzen `sshd_config` dosya konumunda `/private/etc/ssh/sshd_config`
+
    - Tercih ettiğiniz düzenleyiciyi kullanın veya
 
      ```bash
@@ -162,7 +157,7 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
      PubkeyAuthentication yes
      ```
 
-1. Sshd hizmetini yeniden başlatın
+3. Sshd hizmetini yeniden başlatın
 
    ```bash
    sudo launchctl stop com.openssh.sshd
@@ -171,10 +166,7 @@ Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı k
 
 ## <a name="powershell-remoting-example"></a>PowerShell uzaktan iletişimini örneği
 
-Uzaktan test etmek için en kolay yolu, tek bir makinede denemektir olmaktır.
-Burada miyim Linux kutusundaki aynı makineye bir uzak oturumu oluşturur.
-SSH ana bilgisayar yanı sıra parola istemlerinin doğrulamak isteyen istemleri görüyoruz için PowerShell cmdlet'leri bir komut isteminden kullanıyorum, dikkat edin.
-Uzaktan iletişim var. çalıştığından emin olmak için Windows makine ve ardından uzak ana bilgisayar adı yalnızca değiştirerek makine arasında aynı şeyi yapabilirsiniz.
+Uzaktan test etmek için en kolay yolu, tek bir makinede denemektir olmaktır. Burada miyim Linux kutusundaki aynı makineye bir uzak oturumu oluşturur. SSH ana bilgisayar yanı sıra parola istemlerinin doğrulamak isteyen istemleri görüyoruz için PowerShell cmdlet'leri bir komut isteminden kullanıyorum, dikkat edin. Uzaktan iletişim var. çalıştığından emin olmak için Windows makine ve ardından uzak ana bilgisayar adı yalnızca değiştirerek makine arasında aynı şeyi yapabilirsiniz.
 
 ```powershell
 #
@@ -301,7 +293,7 @@ GitCommitId                    v6.0.0-alpha.17
 
 ### <a name="known-issues"></a>Bilinen Sorunlar
 
-- Linux makinesi uzak oturumu sudo komutu çalışmaz.
+Linux makinesi uzak oturumu sudo komutu çalışmaz.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: bed1186c10082bbdac7249503bf623678f13fccd
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093890"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267948"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Birleşmiş ve Tutarlı Durum ve Durum Gösterimi
 
@@ -15,40 +15,41 @@ Bir dizi, bu sürümde otomasyonları LCM durumu ve DSC durumu için yapılan. B
 LCM durumu ve DSC işlem durumunu gösterimini revisited ve aşağıdaki kurallara göre birleşik:
 
 1. LCM durumu ve DSC durumu Notprocessed kaynak etkilemez.
-1. Yeniden başlatma isteği bir kaynak bulduğu sonra daha fazla işlem kaynaklarının LCM durdur.
-1. Yeniden başlatma gerçekten oluşuncaya kadar yeniden başlatma isteği bir kaynak istenen durumda değil.
-1. Başarısız bir bağımlı olmadıkları sürece başarısız olan bir kaynak karşılaştıktan sonra LCM daha fazla işleme kaynaklarına tutar.
-1. Tarafından döndürülen genel durumunu `Get-DscConfigurationStatus` cmdlet'tir tüm kaynakların durum süper kümesi.
-1. PendingReboot durumu PendingConfiguration durumu bir üst kümesidir.
+2. Yeniden başlatma isteği bir kaynak bulduğu sonra daha fazla işlem kaynaklarının LCM durdur.
+3. Yeniden başlatma gerçekten oluşuncaya kadar yeniden başlatma isteği bir kaynak istenen durumda değil.
+4. Başarısız bir bağımlı olmadıkları sürece başarısız olan bir kaynak karşılaştıktan sonra LCM daha fazla işleme kaynaklarına tutar.
+5. Tarafından döndürülen genel durumunu `Get-DscConfigurationStatus` cmdlet'tir tüm kaynakların durum süper kümesi.
+6. PendingReboot durumu PendingConfiguration durumu bir üst kümesidir.
 
-   Sonuç aşağıdaki tabloda gösterilmiştir durum ilgili bazı tipik senaryoları altındaki özellikler.
+Sonuç aşağıdaki tabloda gösterilmiştir durum ilgili bazı tipik senaryoları altındaki özellikler.
 
-   | Senaryo                    | LCMState       | Durum | İstenen yeniden başlatma  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
-   |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-   | S**^**                          | Boşta                 | Başarılı    | $false        | S                            | $null                          |
-   | F**^**                          | PendingConfiguration | Başarısız    | $false        | $null                        | F                              |
-   | S, F                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
-   | F, S                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
-   | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Başarısız    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
-   | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Başarısız    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-   | S, r                            | PendingReboot        | Başarılı    | $true         | S                            | r                              |
-   | F, r                            | PendingReboot        | Başarısız    | $true         | $null                        | F, r                           |
-   | r, S                            | PendingReboot        | Başarılı    | $true         | $null                        | r                              |
-   | r, F                            | PendingReboot        | Başarılı    | $true         | $null                        | r                              |
+| Senaryo                        | LCMState             | Durum     | İstenen yeniden başlatma | ResourcesInDesiredState   | ResourcesNotInDesiredState |
+|---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
+| S**^**                          | Boşta                 | Başarılı    | $false        | S                            | $null                          |
+| F**^**                          | PendingConfiguration | Başarısız    | $false        | $null                        | F                              |
+| S, F                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
+| F, S                             | PendingConfiguration | Başarısız    | $false        | S                            | F                              |
+| S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Başarısız    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
+| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Başarısız    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
+| S, r                            | PendingReboot        | Başarılı    | $true         | S                            | r                              |
+| F, r                            | PendingReboot        | Başarısız    | $true         | $null                        | F, r                           |
+| r, S                            | PendingReboot        | Başarılı    | $true         | $null                        | r                              |
+| r, F                            | PendingReboot        | Başarılı    | $true         | $null                        | r                              |
 
-   ^
-   S<sub>miyim</sub>: F başarıyla uygulandı kaynakları bir dizi<sub>miyim</sub>: bir dizi başarısız yeniden başlatma gerektiren bir r: kaynak uygulanan kaynakları \*
+- S<sub>miyim</sub>: bir dizi başarıyla uygulandı kaynakları
+- F<sub>miyim</sub>: bir dizi başarısız uygulanan kaynakları
+- r: yeniden başlatma gerektiren bir kaynak
 
-   ```powershell
-   $LCMState = (Get-DscLocalConfigurationManager).LCMState
-   $Status = (Get-DscConfigurationStatus).Status
+```powershell
+$LCMState = (Get-DscLocalConfigurationManager).LCMState
+$Status = (Get-DscConfigurationStatus).Status
 
-   $RebootRequested = (Get-DscConfigurationStatus).RebootRequested
+$RebootRequested = (Get-DscConfigurationStatus).RebootRequested
 
-   $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
+$ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
-   $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
-   ```
+$ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
+```
 
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus cmdlet'inde geliştirme
 
@@ -56,32 +57,32 @@ Birkaç iyileştirme yapılmıştır `Get-DscConfigurationStatus` cmdlet'i bu s�
 
 ```powershell
 (Get-DscConfigurationStatus).StartDate | Format-List *
-DateTime : Friday, November 13, 2015 1:39:44 PM
-Date : 11/13/2015 12:00:00 AM
-Day : 13
-DayOfWeek : Friday
-DayOfYear : 317
-Hour : 13
-Kind : Local
+
+DateTime    : Friday, November 13, 2015 1:39:44 PM
+Date        : 11/13/2015 12:00:00 AM
+Day         : 13
+DayOfWeek   : Friday
+DayOfYear   : 317
+Hour        : 13
+Kind        : Local
 Millisecond : 886
-Minute : 39
-Month : 11
-Second : 44
-Ticks : 635830187848860000
-TimeOfDay : 13:39:44.8860000
-Year : 2015
+Minute      : 39
+Month       : 11
+Second      : 44
+Ticks       : 635830187848860000
+TimeOfDay   : 13:39:44.8860000
+Year        : 2015
 ```
 
-Tüm DSC işlem kaydı bugün olarak haftanın aynı günde gerçekleşen döndüren bir örneği verilmiştir.
+Aşağıdaki örnek, aynı gün haftanın geçerli günü olarak gerçekleşen tüm DSC işlemi kayıtları döndürür.
 
 ```powershell
 (Get-DscConfigurationStatus –All) | Where-Object { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
-Geçersiz kayıt işlemlerinin (yani yalnızca işlem okuma) düğümün yapılandırmasını değişiklik yapmayın. Bu nedenle, `Test-DscConfiguration`, `Get-DscConfiguration` operations artık, döndürülen nesneleri adulterated `Get-DscConfigurationStatus` cmdlet'i.
-Kayıtları meta yapılandırma ayarı işleminin dönüşü için eklenen `Get-DscConfigurationStatus` cmdlet'i.
+Geçersiz kayıt işlemlerinin (yani yalnızca işlem okuma) düğümün yapılandırmasını değişiklik yapmayın. Bu nedenle, `Test-DscConfiguration`, `Get-DscConfiguration` operations artık, döndürülen nesneleri adulterated `Get-DscConfigurationStatus` cmdlet'i. Kayıtları meta yapılandırma ayarı işleminin dönüşü için eklenen `Get-DscConfigurationStatus` cmdlet'i.
 
-Öğesinden döndürülen sonuç örneği aşağıdadır `Get-DscConfigurationStatus` – tüm cmdlet'i.
+Öğesinden döndürülen sonuç örneği aşağıdadır `Get-DscConfigurationStatus –All` cmdlet'i.
 
 ```output
 All configuration operations:

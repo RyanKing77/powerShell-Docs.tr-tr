@@ -4,18 +4,18 @@ keywords: PowerShell cmdlet'i
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: bcf897730881551ec16ce970de6a1330961b67e6
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094237"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268274"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
 ## <a name="synopsis"></a>ÖZETİ
 
-Yeni bir yetkilendirme kuralı için Windows PowerShell® Web Erişimi yetkilendirme kuralı kümesi ekler.
+Yeni bir yetkilendirme kuralı için Windows PowerShell Web Erişimi yetkilendirme kuralı kümesi ekler.
 
 ## <a name="syntax"></a>Sözdizimi
 
@@ -45,12 +45,11 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 
 ## <a name="description"></a>AÇIKLAMA
 
-**Add-PswaAuthorizationRule** cmdlet'i yeni bir yetkilendirme kuralı için Windows PowerShell® Web Erişimi yetkilendirme kuralı kümesi ekler.
+**Add-PswaAuthorizationRule** cmdlet'i Windows PowerShell(r) Web Erişimi yetkilendirme kuralı kümesine yeni bir yetkilendirme kuralı ekler.
 
 Kullanıcılar, bilgisayarlar ve bu kural için Windows PowerShell uç noktası belirtmeniz gerekir. Kullanıcılar ve bilgisayarlar bireysel kullanıcı hesapları ve bilgisayar adlarını veya grup belirleyerek belirtebilirsiniz.
 
-Bir Active Directory etki alanına katılmış bir bilgisayar için cmdlet kuralı oluşturmak için bilgisayarın güvenlik tanımlayıcısı (SID) kullanır.
-Bu sayede kısa bir ad, bir tam etki alanı adı (FQDN) veya bir IP adresi için kullanılacak **bilgisayar adı** alan oturum açma sayfasında.
+Bir Active Directory etki alanına katılmış bir bilgisayar için cmdlet kuralı oluşturmak için bilgisayarın güvenlik tanımlayıcısı (SID) kullanır. Bu sayede kısa bir ad, bir tam etki alanı adı (FQDN) veya bir IP adresi için kullanılacak **bilgisayar adı** alan oturum açma sayfasında.
 
 Bir Active Directory etki alanına katılmamış bir bilgisayarda, cmdlet, yönetici tarafından sağlanan bilgisayar adını kullanarak kuralı oluşturur. Son Kullanıcı başarıyla bu makineye bağlanmak için kuralda göründüğü gibi bilgisayar adı sağlamanız gerekir.
 
@@ -66,12 +65,12 @@ Active Directory etki alanı Hizmetleri (AD DS) veya yerel gruplar bu kural eri�
 
 |||
 |-|-|
-| Diğer adlar                              | yok                                 |
-| Gerekli mi?                            | TRUE                                 |
-| Konumu?                            | adlı                                |
-| Varsayılan Değer                        | yok                                 |
-| Ardışık Düzen Girişi kabul edilsin mi?               | TRUE (ByPropertyName)                |
-| Joker Karakter Kabul Edilsin Mi?          | yanlış                                |
+| Diğer adlar                     | yok                  |
+| Gerekli mi?                   | TRUE                  |
+| Konumu?                   | adlı                 |
+| Varsayılan Değer               | yok                  |
+| Ardışık Düzen Girişi kabul edilsin mi?      | TRUE (ByPropertyName) |
+| Joker Karakter Kabul Edilsin Mi? | yanlış                 |
 
 ### <a name="-computername-string"></a>-ComputerName \<dize\>
 
@@ -79,12 +78,12 @@ Bu kural erişim veren bilgisayar adını belirtir.
 
 |||
 |-|-|
-| Diğer adlar                              | yok                                 |
-| Gerekli mi?                            | TRUE                                 |
-| Konumu?                            | adlı                                |
-| Varsayılan Değer                        | yok                                 |
-| Ardışık Düzen Girişi kabul edilsin mi?               | TRUE (ByPropertyName)                |
-| Joker Karakter Kabul Edilsin Mi?          | yanlış                                |
+| Diğer adlar                     | yok                  |
+| Gerekli mi?                   | TRUE                  |
+| Konumu?                   | adlı                 |
+| Varsayılan Değer               | yok                  |
+| Ardışık Düzen Girişi kabul edilsin mi?      | TRUE (ByPropertyName) |
+| Joker Karakter Kabul Edilsin Mi? | yanlış                 |
 
 ### <a name="-configurationname-string"></a>-ConfigurationName \<dize\>
 
@@ -92,12 +91,12 @@ Windows PowerShell oturumu yapılandırması, olarak da bilinen bu kural erişim
 
 |||
 |-|-|
-| Diğer adlar                              | yok                                 |
-| Gerekli mi?                            | TRUE                                 |
-| Konumu?                            | adlı                                |
-| Varsayılan Değer                        | yok                                 |
-| Ardışık Düzen Girişi kabul edilsin mi?               | TRUE (ByPropertyName)                |
-| Joker Karakter Kabul Edilsin Mi?          | yanlış                                |
+| Diğer adlar                     | yok                  |
+| Gerekli mi?                   | TRUE                  |
+| Konumu?                   | adlı                 |
+| Varsayılan Değer               | yok                  |
+| Ardışık Düzen Girişi kabul edilsin mi?      | TRUE (ByPropertyName) |
+| Joker Karakter Kabul Edilsin Mi? | yanlış                 |
 
 ### <a name="-credential--pscredential"></a>-Credential \<PSCredential\>
 
@@ -105,17 +104,16 @@ Belirtir bir **PSCredential** Windows PowerShell Web Erişimi yetkilendirme kura
 
 |||
 |-|-|
-| Diğer adlar                              | yok                                 |
-| Gerekli mi?                            | yanlış                                |
-| Konumu?                            | adlı                                |
-| Varsayılan Değer                        | yok                                 |
-| Ardışık Düzen Girişi kabul edilsin mi?               | yanlış                                |
-| Joker Karakter Kabul Edilsin Mi?          | yanlış                                |
+| Diğer adlar                     | yok  |
+| Gerekli mi?                   | yanlış |
+| Konumu?                   | adlı |
+| Varsayılan Değer               | yok  |
+| Ardışık Düzen Girişi kabul edilsin mi?      | yanlış |
+| Joker Karakter Kabul Edilsin Mi? | yanlış |
 
 ### <a name="-force"></a>-Force
 
-Komutu kullanıcı onayı istemeden çalışmaya zorlar. \
-Ayrıca, bir basit veya kısa bir bilgisayar adı (örneğin, bir etki alanı adı değil veya tam değil bir addır) girdiğinizde, ayrıca onaylamanızı ister. Böylece bir bilgisayar yalnızca bilgisayar bir çalışma grubunda ise eklemek için basit bir ad kullanabilirsiniz güvenlik nedenleriyle, onay istenir.
+Komutu, kullanıcı onayı istemeden çalışmaya zorlar. Ayrıca, bir basit veya kısa bir bilgisayar adı (örneğin, bir etki alanı adı değil veya tam değil bir addır) girdiğinizde, ayrıca onaylamanızı ister. Böylece bir bilgisayar yalnızca bilgisayar bir çalışma grubunda ise eklemek için basit bir ad kullanabilirsiniz güvenlik nedenleriyle, onay istenir.
 
 |||
 |-|-|
@@ -154,8 +152,7 @@ AD DS veya yerel gruplar bu kural erişim veren bir veya daha fazla kullanıcı 
 
 ### <a name="-username-string"></a>-UserName \<dize\[\]\>
 
-Bu kural erişim veren bir veya daha fazla kullanıcı belirtir. Kullanıcı adı, ağ geçidi bilgisayarınıza veya AD DS'de bir kullanıcı bir yerel kullanıcı hesabı olabilir.
-Biçim `domain\user` veya `computer\user`.
+Bu kural erişim veren bir veya daha fazla kullanıcı belirtir. Kullanıcı adı, ağ geçidi bilgisayarınıza veya AD DS'de bir kullanıcı bir yerel kullanıcı hesabı olabilir. Biçim `domain\user` veya `computer\user`.
 
 |||
 |-|-|
@@ -168,7 +165,9 @@ Biçim `domain\user` veya `computer\user`.
 
 ###  <a name="commonparameters"></a>\<CommonParameters\>
 
-Bu cmdlet genel parametreleri destekler:-Verbose,-Debug, - ErrorAction, - ErrorVariable,-OutBuffer ve - OutVariable.
+Bu cmdlet, ortak parametreleri destekler:
+
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer ve -OutVariable.
 Daha fazla bilgi için [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
 
 ## <a name="inputs"></a>GİRİŞ
@@ -194,9 +193,9 @@ Bu cmdlet döndürür bir yetkilendirme kuralı nesnesine.
 Bu örnekte oturum yapılandırması erişimi verir _PSWAEndpoint_, sınırlı çalışma alanı _SUN2_ kullanıcılar için _SMAdmins_ grubu.
 
 > [!NOTE]
-> Bilgisayar adı tam etki alanı adı (FQDN) olmalıdır. Yöneticiler, sınırlı bir oturum yapılandırması veya sınırlı bir cmdlet'ler ve son kullanıcıların görevleri aralığıdır çalışma alanı tanımlayın. Sınırlı bir çalışma alanı tanımlanması, kullanıcıların izin verilen Windows PowerShell® çalışma alanında, bu nedenle daha güvenli bir bağlantı sunulmamaktadır diğer bilgisayarlara erişmesini engelleyebilir. Oturum yapılandırmaları hakkında daha fazla bilgi için bkz. [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) veya [yükleme ve kullanım Windows PowerShell Web erişimi](../install-and-use-windows-powershell-web-access.md).
+> Bilgisayar adı tam etki alanı adı (FQDN) olmalıdır. Yöneticiler, sınırlı bir oturum yapılandırması veya sınırlı bir cmdlet'ler ve son kullanıcıların görevleri aralığıdır çalışma alanı tanımlayın. Sınırlı bir çalışma alanı tanımlanması, kullanıcıların izin verilen Windows PowerShell(r) çalışma alanında, bu nedenle daha güvenli bir bağlantı sunulmamaktadır diğer bilgisayarlara erişmesini engelleyebilir. Oturum yapılandırmaları hakkında daha fazla bilgi için bkz. [about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations) veya [yükleme ve kullanım Windows PowerShell Web erişimi](../install-and-use-windows-powershell-web-access.md).
 
-```PowerShell
+```powershell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
 ```
 
@@ -204,8 +203,8 @@ Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\
 
 Bu örnek, varsayılan Windows PowerShell oturum yapılandırması erişimi verir `Microsoft.PowerShell`, *SUN2* adlı kullanıcıları kullanıcılar için `contoso\user1`, `contoso\user2`, ve `contoso\user3`. Bu cmdlet, üç kuralları (kişi başına 1) oluşturur.
 
-```PowerShell
-Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user3 –ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
+```powershell
+Add-PswaAuthorizationRule -UserName contoso\user1, contoso\user2, contoso\user3 -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
 ### <a name="example-3"></a>ÖRNEK 3
@@ -213,18 +212,18 @@ Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user
 Bu örnekte, işlem hattı aracılığıyla kullanıcı adı değerleri giriş gösterilmektedir.
 
 ```powershell
-"contoso\user1","contoso\user2" | Add-pswaAuthorizationRule –ComputerName srv2.contoso.com –ConfigurationName Microsoft.PowerShell
+"contoso\user1","contoso\user2" | Add-pswaAuthorizationRule -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
 ### <a name="example-4"></a>ÖRNEK 4
 
 Bu örnekte nasıl tüm parametreler özellik adına göre işlem hattından değerleri alın.
 
-````PowerShell
+````powershell
 $o = New-Object -TypeName PSObject |
     Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
     Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
-    Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
+    Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" -PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell
 ````
@@ -236,19 +235,18 @@ Bu örnek adlı yerel kullanıcı izin verecek bir kural ekler `PswaServer\Chris
 Bu örnekte, burada bir çalışma grubundaki ağ geçididir ve hedef bilgisayar bir etki alanında bir senaryo gösterilmektedir. Yetkilendirme kuralı Gateway'de yerel kullanıcılar için geçerlidir. Windows PowerShell Web erişimi oturum açma sayfasında, kimliğini başarıyla doğrulamak için kullanıcı kimlik bilgilerini ikinci bir set sağlamalıdır **isteğe bağlı bağlantı ayarları** alan. Ağ Geçidi sunucusu, kullanıcı hedef bilgisayarda adlı bir sunucu kimlik doğrulaması için ek kimlik bilgileri kümesini kullanır. *srv1.contoso.com*.
 
 ````powershell
-Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1.contoso.com –ConfigurationName Microsoft.PowerShell
+Add-PswaAuthorizationRule -UserName PswaServer\ChrisLocal -ComputerName srv1.contoso.com -ConfigurationName Microsoft.PowerShell
 ````
 
 ### <a name="example-6"></a>ÖRNEK 6
 
-Bu örnekte, tüm kullanıcıların tüm bilgisayarlarda tüm uç noktalara erişimi verir.
-Bu temelde, yetkilendirme kuralları devre dışı bırakır.
+Bu örnekte, tüm kullanıcıların tüm bilgisayarlarda tüm uç noktalara erişimi verir. Bu temelde, yetkilendirme kuralları devre dışı bırakır.
 
 > [!NOTE]
 > Kullanım `*` joker karakter güvenlik açısından duyarlı dağıtımları için önerilmez ve yalnızca test ortamları için kabul veya güvenlik burada gevşetilebilir dağıtımda kullanılan.
 
-````PowerShell
-Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
+````powershell
+Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *
 ````
 
 ## <a name="see-also"></a>Ayrıca bkz:

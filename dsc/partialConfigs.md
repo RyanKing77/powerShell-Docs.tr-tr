@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: PowerShell Desired State Configuration kısmi yapılandırmalar
-ms.openlocfilehash: 6d344b666421aba5745945f6148570e4c8229c1a
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 1b9ff8534f4c11d6859587830a04075be55a7d54
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093941"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268390"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration kısmi yapılandırmalar
 
-> İçin geçerlidir: Windows PowerShell 5.0 ve üzeri.
+_İçin geçerlidir: Windows PowerShell 5.0 ve üzeri._
 
-PowerShell 5. 0'da, parçaları ve birden çok kaynaktan teslim edilecek yapılandırmaları Desired State Configuration ' nı (DSC) sağlar. Hedef düğümde yerel Configuration Manager (LCM) tek bir yapılandırma uygulamadan önce parçaların birlikte koyar. Bu özellik, paylaşım takımlar veya kişiler arasındaki yapılandırmasının denetimi sağlar.
-Bir hizmette Geliştirici ekipleri iki veya daha fazla işbirliği yapıyorsanız Örneğin, bunlar her hizmetin kendi parçası yönetmek için yapılandırmaları oluşturmak isteyebilirsiniz. Bu yapılandırmalardan birini her farklı çekme sunuculardan çekilmesi ve farklı yaşlardaki eklenemedi. Kısmi yapılandırmalar da farklı kişilere veya ekiplere düğümleri bir tek yapılandırma belgesini düzenleme koordine etmek zorunda kalmadan yapılandırma farklı yönlerini kontrol sağlar. Örneğin, bir takım başka bir takım, diğer uygulama ve hizmetlerin söz konusu VM'deki dağıtabilirsiniz ancak VM ve işletim sistemi dağıtmaktan sorumlu olabilir. Kısmi yapılandırmalar ile her ikisini gereksiz derecede karmaşık olmadan kendi yapılandırması her takım oluşturabilirsiniz.
+PowerShell 5. 0'da, parçaları ve birden çok kaynaktan teslim edilecek yapılandırmaları Desired State Configuration ' nı (DSC) sağlar. Hedef düğümde yerel Configuration Manager (LCM) tek bir yapılandırma uygulamadan önce parçaların birlikte koyar. Bu özellik, paylaşım takımlar veya kişiler arasındaki yapılandırmasının denetimi sağlar. Bir hizmette Geliştirici ekipleri iki veya daha fazla işbirliği yapıyorsanız Örneğin, bunlar her hizmetin kendi parçası yönetmek için yapılandırmaları oluşturmak isteyebilirsiniz. Bu yapılandırmalardan birini her farklı çekme sunuculardan çekilmesi ve farklı yaşlardaki eklenemedi. Kısmi yapılandırmalar da farklı kişilere veya ekiplere düğümleri bir tek yapılandırma belgesini düzenleme koordine etmek zorunda kalmadan yapılandırma farklı yönlerini kontrol sağlar. Örneğin, bir takım başka bir takım, diğer uygulama ve hizmetlerin söz konusu VM'deki dağıtabilirsiniz ancak VM ve işletim sistemi dağıtmaktan sorumlu olabilir. Kısmi yapılandırmalar ile her ikisini gereksiz derecede karmaşık olmadan kendi yapılandırması her takım oluşturabilirsiniz.
 
 Kısmi yapılandırmalar gönderme modunda, çekme modu veya ikisinin bir birleşimini kullanabilirsiniz.
 
@@ -24,8 +23,7 @@ Kısmi yapılandırmalar gönderim modunda kullanmak için kısmi yapılandırma
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Anında iletme modu kısmi yapılandırmalar için LCM yapılandırma
 
-Kısmi yapılandırmalar için LCM gönderim modunda yapılandırmak için oluşturduğunuz bir **DSCLocalConfigurationManager** bir yapılandırmayla **PartialConfiguration** kısmi her yapılandırma için blok. LCM yapılandırma hakkında daha fazla bilgi için bkz. [yerel Configuration Manager Yapılandırma Windows](/powershell/dsc/metaConfig).
-Aşağıdaki örnek, iki kısmi yapılandırmalar bekliyor bir LCM yapılandırma gösterir; işletim sistemini dağıtan ve diğeri dağıtan ve SharePoint yapılandırır.
+Kısmi yapılandırmalar için LCM gönderim modunda yapılandırmak için oluşturduğunuz bir **DSCLocalConfigurationManager** bir yapılandırmayla **PartialConfiguration** kısmi her yapılandırma için blok. LCM yapılandırma hakkında daha fazla bilgi için bkz. [yerel Configuration Manager Yapılandırma Windows](/powershell/dsc/metaConfig). Aşağıdaki örnek, iki kısmi yapılandırmalar bekliyor bir LCM yapılandırma gösterir; işletim sistemini dağıtan ve diğeri dağıtan ve SharePoint yapılandırır.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -111,8 +109,7 @@ Kısmi yapılandırmalar bir veya daha fazla çekme sunucusundan istenebilecek (
 
 Kısmi yapılandırmalar çekme sunucusundan çekmek için LCM yapılandırmak için çekme sunucusu ya da tanımladığınız bir **ConfigurationRepositoryWeb** (için HTTP çekme sunucusu) veya **ConfigurationRepositoryShare** () SMB çekme sunucusu için) blok. Ardından oluşturduğunuz **PartialConfiguration** kullanarak çekme sunucusuna başvuran blokları **ConfigurationSource** özelliği. Ayrıca oluşturmanıza gerek bir **ayarları** blok LCM çekme modu kullandığını belirtmek ve belirtmek için **ConfigurationNames** veya **ConfigurationID** , çekme sunucusu ve Hedef düğüm yapılandırmaları tanımlamak için kullanın. Şu meta-yapılandırmayı PullSrv CONTOSO adlı bir HTTP çekme sunucusu tanımlar ve çekme sunucusuna kullanan iki kısmi yapılandırmalar.
 
-LCM kullanarak yapılandırma hakkında daha fazla bilgi için **ConfigurationNames**, bkz: [yapılandırma adlarını kullanarak çekme istemcisi ayarlama](pullClientConfigNames.md).
-LCM kullanarak yapılandırma hakkında bilgi **ConfigurationID**, bkz: [yapılandırma Kimliğini kullanarak çekme istemcisi ayarlama](pullClientConfigID.md).
+LCM kullanarak yapılandırma hakkında daha fazla bilgi için **ConfigurationNames**, bkz: [yapılandırma adlarını kullanarak çekme istemcisi ayarlama](pullClientConfigNames.md). LCM kullanarak yapılandırma hakkında bilgi **ConfigurationID**, bkz: [yapılandırma Kimliğini kullanarak çekme istemcisi ayarlama](pullClientConfigID.md).
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>Yapılandırma adlarını kullanarak çekme modu yapılandırmaları için LCM yapılandırma
 
@@ -196,13 +193,12 @@ Meta-yapılandırma oluşturduktan sonra bunu bir yapılandırma belge (bir MOF 
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>Adlandırma ve yapılandırma belgelerini (ConfigurationNames) çekme sunucusunda yerleştirme
 
-Kısmi yapılandırma belgelerini olarak belirtilen klasöre yerleştirilmelidir **Yapılandırmayolu** içinde `web.config` çekme sunucusu için dosya (genellikle `C:\Program Files\WindowsPowerShell\DscService\Configuration`).
+Kısmi yapılandırma belgelerini olarak belirtilen klasöre yerleştirilmelidir **Yapılandırmayolu** içinde `web.config` çekme sunucusu için dosya (genellikle `C:\Program
+Files\WindowsPowerShell\DscService\Configuration`).
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>Yapılandırma belgelerini PowerShell 5.1 çekme sunucusunda adlandırma
 
-Bir çekme sunucusu yalnızca bir kısmi yapılandırmasından çeken, yapılandırma belgesi herhangi bir ad olabilir.
-Bir çekme sunucusu birden fazla kısmi yapılandırmasından çeken, yapılandırma belgesi ya da adlandırılabilir `<ConfigurationName>.mof`burada *ConfigurationName* kısmi yapılandırmanın adını veya `<ConfigurationName>.<NodeName>.mof`burada  *ConfigurationName* kısmi yapılandırma adıdır ve *NodeName* hedef düğüm adıdır.
-Bu, çekme yapılandırmaları Azure Automation DSC çekme sunucusundan sağlar.
+Bir çekme sunucusu yalnızca bir kısmi yapılandırmasından çeken, yapılandırma belgesi herhangi bir ad olabilir. Bir çekme sunucusu birden fazla kısmi yapılandırmasından çeken, yapılandırma belgesi ya da adlandırılabilir `<ConfigurationName>.mof`burada *ConfigurationName* kısmi yapılandırmanın adını veya `<ConfigurationName>.<NodeName>.mof`burada *ConfigurationName* kısmi yapılandırma adıdır ve *NodeName* hedef düğüm adıdır. Bu, çekme yapılandırmaları Azure Automation DSC çekme sunucusundan sağlar.
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>PowerShell 5.0 çekme sunucusunda yapılandırma belgelerini adlandırma
 
@@ -217,7 +213,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Adlandırma ve yapılandırma belgelerini (ConfigurationID) çekme sunucusunda yerleştirme
 
-Kısmi yapılandırma belgelerini olarak belirtilen klasöre yerleştirilmelidir **Yapılandırmayolu** içinde `web.config` çekme sunucusu için dosya (genellikle `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Yapılandırma belgelerini gibi adlandırılmalıdır: _ConfigurationName_. * ConfigurationID8`.mof`burada _ConfigurationName_ kısmi yapılandırma adıdır ve _ConfigurationID_ hedef düğümde bulunan LCM yapılandırma kimliği tanımlanır. Bizim örneğimizde, yapılandırma belgelerini şu şekilde adlandırılması:
+Kısmi yapılandırma belgelerini olarak belirtilen klasöre yerleştirilmelidir **Yapılandırmayolu** içinde `web.config` çekme sunucusu için dosya (genellikle `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Yapılandırma belgelerini gibi adlandırılmalıdır: `<ConfigurationName>.<ConfigurationID>.mof`burada _ConfigurationName_ kısmi yapılandırma adıdır ve _ConfigurationID_ kimliği tanımlanan yapılandırma Hedef düğümde bulunan LCM. Bizim örneğimizde, yapılandırma belgelerini şu şekilde adlandırılması:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -232,8 +228,7 @@ Hedef düğümde bulunan LCM yapılandırıldı ve belgeleri oluşturulduğundan
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>Karma gönderme ve çekme modlarında kısmi yapılandırmalar
 
-Ayrıca, anında iletme karıştırın ve modları için kısmi yapılandırmalar çekme. Diğer bir deyişle, başka bir kısmi yapılandırma gönderilir, bir çekme sunucusundan çekilen bir kısmi yapılandırmasına sahip. Önceki bölümlerde açıklandığı gibi her kısmi yapılandırması için yenileme modunu belirtin.
-Örneğin, aşağıdaki meta-yapılandırması ile aynı örneği açıklar `ServiceAccountConfig` çekme modu kısmi yapılandırmasında ve `SharePointConfig` gönderme modunda kısmi yapılandırma.
+Ayrıca, anında iletme karıştırın ve modları için kısmi yapılandırmalar çekme. Diğer bir deyişle, başka bir kısmi yapılandırma gönderilir, bir çekme sunucusundan çekilen bir kısmi yapılandırmasına sahip. Önceki bölümlerde açıklandığı gibi her kısmi yapılandırması için yenileme modunu belirtin. Örneğin, aşağıdaki meta-yapılandırması ile aynı örneği açıklar `ServiceAccountConfig` çekme modu kısmi yapılandırmasında ve `SharePointConfig` gönderme modunda kısmi yapılandırma.
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>ConfigurationNames kullanarak karma gönderme ve çekme modu
 
@@ -314,7 +309,8 @@ PartialConfigDemo
 
 Unutmayın **RefreshMode** blok içinde belirtilen "Pull" olan ancak **RefreshMode** için `SharePointConfig` kısmi yapılandırmadır "Gönderme".
 
-Ad ve bunların ilgili yenileme modları için yukarıda açıklandığı gibi yapılandırma MOF dosyaları bulun. Çağrı `Publish-DSCConfiguration` yayımlamak için `SharePointConfig` kısmi yapılandırma ve ya da bekle `ServiceAccountConfig` çekme sunucusundan çekilmesi veya çağırarak daha önce yenilemeye zorlamak için yapılandırma [güncelleştirme-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
+Ad ve bunların ilgili yenileme modları için yukarıda açıklandığı gibi yapılandırma MOF dosyaları bulun.
+Çağrı `Publish-DSCConfiguration` yayımlamak için `SharePointConfig` kısmi yapılandırma ve ya da bekle `ServiceAccountConfig` çekme sunucusundan çekilmesi veya çağırarak daha önce yenilemeye zorlamak için yapılandırma [güncelleştirme-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
 
 ## <a name="example-serviceaccountconfig-partial-configuration"></a>Örnek ServiceAccountConfig kısmi yapılandırma
 
@@ -381,4 +377,4 @@ SharePointConfig
 
 [Windows PowerShell Desired State Configuration çekme sunucuları](pullServer.md)
 
-[Windows yerel Configuration Manager'ı yapılandırma](/powershell/dsc/metaConfig)
+[Windows yerel Configuration Manager'ı yapılandırma](metaConfig.md)

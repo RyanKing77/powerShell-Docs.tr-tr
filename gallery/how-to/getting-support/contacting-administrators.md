@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: İlgili kişi galeri yöneticileri
-ms.openlocfilehash: c919848e93a1f061ac0bf7dec8ef568e41212ef7
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 71c8aa15ac0c6ec57e7e1bfe3cb20cac7e2c6b29
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093831"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268662"
 ---
 # <a name="contact-gallery-administrators"></a>İlgili kişi galeri yöneticileri
 
@@ -24,6 +24,6 @@ Galeri Yöneticiler başvurmalısınız olduğunda:
 
 ## <a name="how-to-contact-gallery-administrators"></a>Nasıl yapılır kişi galeri yöneticileri
 
-1. Bize bir e-posta gönderin: <cgadmin@microsoft.com>.
+1. Bize bir e-posta gönderin: cgadmin@microsoft.com.
 2. Bir öğenin kötüye bildiriyorsanız aşağıdaki öğe bilgileri Sol paneldeki uygunsuz bağlantısını bulabilirsiniz.
 3. Diğer genel hakkında tüm sorularınız için Galeri, lütfen sorunuzu gönderin [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)

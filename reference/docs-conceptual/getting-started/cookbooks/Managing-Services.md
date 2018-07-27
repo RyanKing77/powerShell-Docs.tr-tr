@@ -3,22 +3,22 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Hizmetleri Yönetme
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: e2388f5d73a320a69faae0772c8403a7d77f8b52
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 81fd8802215da80ce22fa3fd4750b1df6efe8206
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094179"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268084"
 ---
 # <a name="managing-services"></a>Hizmetleri Yönetme
 
-Çok çeşitli hizmeti görevleri için tasarlanmış, sekiz çekirdeği hizmeti cmdlet'leri vardır. Yalnızca listeleme ve çalışır durumda hizmetler için değiştirme atacağız ancak kullanarak hizmet cmdlet'lerin bir listesi alabilirsiniz **Get-Help \*-hizmet**, ve kullanarak, her hizmet cmdlet'i hakkında daha fazla bilgi bulabilirsiniz  **Get-Help \<Cmdlet-adı\>**, gibi **Get-Help yeni hizmet**.
+Çok çeşitli hizmeti görevleri için tasarlanmış, sekiz çekirdeği hizmeti cmdlet'leri vardır. Yalnızca listeleme ve çalışır durumda hizmetler için değiştirme atacağız ancak kullanarak hizmet cmdlet'lerin bir listesi alabilirsiniz `Get-Help \*-Service`, ve kullanarak, her hizmet cmdlet'i hakkında daha fazla bilgi bulabilirsiniz `Get-Help <Cmdlet-Name>`, gibi `Get-Help New-Service`.
 
 ## <a name="getting-services"></a>Hizmetleri alınıyor
 
-Bir yerel veya uzak bilgisayarda Hizmetleri kullanarak alabilirsiniz **Get-Service** cmdlet'i. Olduğu gibi **Get-Process**kullanarak **Get-Service** komutunu parametresiz tüm hizmetleri döndürür. Ada göre bile bir joker karakter olarak yıldız kullanarak filtreleyebilirsiniz:
+Bir yerel veya uzak bilgisayarda Hizmetleri kullanarak alabilirsiniz `Get-Service` cmdlet'i. Olduğu gibi `Get-Process`kullanarak `Get-Service` komutunu parametresiz tüm hizmetleri döndürür. Ada göre bile bir joker karakter olarak yıldız kullanarak filtreleyebilirsiniz:
 
-```
+```powershell
 PS> Get-Service -Name se*
 
 Status   Name               DisplayName
@@ -30,7 +30,7 @@ Stopped  ServiceLayer       ServiceLayer
 
 Her zaman hizmet gerçek adı nedir açık olduğundan, görünen ada göre hizmetleri bulmanız bulabilirsiniz. Belirli bir ada göre joker karakterler veya görüntü adlarının bir listesini kullanarak bunu yapabilirsiniz:
 
-```
+```powershell
 PS> Get-Service -DisplayName se*
 
 Status   Name               DisplayName
@@ -63,7 +63,7 @@ Bu parametrelerin değerlerini DependentServices ServicesDependedOn ve yalnızca
 
 Aşağıdaki komut LanmanWorkstation hizmeti gerektiren hizmetler alır.
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -RequiredServices
 
 Status   Name               DisplayName
@@ -76,7 +76,7 @@ Running  NSI                Network Store Interface Service
 
 Aşağıdaki komutu LanmanWorkstation hizmeti gerektiren hizmetleri alır.
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -DependentServices
 
 Status   Name               DisplayName
@@ -94,6 +94,7 @@ Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>Başlatma, durdurma, askıya alma ve hizmetler yeniden başlatılıyor
+
 Tüm hizmet cmdlet'leri, aynı genel form sahiptir. Hizmetleri ortak ad veya görünen ad belirtilebilir ve listeler ve değerleri joker karakterleri alır. Yazdırma Biriktiricisi durdurmak için kullanın:
 
 ```powershell
@@ -112,9 +113,9 @@ Yazdırma Biriktiricisi askıya almak için kullanın:
 Suspend-Service -Name spooler
 ```
 
-**Restart-Service** cmdlet'i bir hizmeti cmdlet'leri ile aynı şekilde çalışır, ancak daha karmaşık bazı örnekler için göstereceğiz. En basit kullanın, hizmetin adını belirtin:
+`Restart-Service` Cmdlet'i bir hizmeti cmdlet'leri ile aynı şekilde çalışır, ancak daha karmaşık bazı örnekler için göstereceğiz. En basit kullanın, hizmetin adını belirtin:
 
-```
+```powershell
 PS> Restart-Service -Name spooler
 
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
@@ -126,7 +127,7 @@ Başlatma yazdırma biriktiricisi yinelenen bir uyarı iletisi aldığını gör
 
 Birden çok hizmeti yeniden başlatmak istiyorsanız, hizmet listesini almak, bunları filtrelemek ve sonra yeniden gerçekleştirin:
 
-```
+```powershell
 PS> Get-Service | Where-Object -FilterScript {$_.CanStop} | Restart-Service
 
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
@@ -147,9 +148,10 @@ Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 
 ## <a name="setting-service-properties"></a>Hizmet özelliklerini ayarlama
 
-Set-Service cmdlet'i, yerel veya uzak bilgisayardaki bir hizmet özelliklerini değiştirir. Hizmet durumu, bir özellik olduğundan, başlatma, durdurma ve hizmet askıya almak için bu cmdlet'i kullanabilirsiniz. Set-Service cmdlet Ayrıca hizmet başlatma türünü değiştirmenize olanak sağlayan bir başlangıç türü parametresi vardır.
+`Set-Service` Cmdlet'i, yerel veya uzak bilgisayardaki bir hizmet özelliklerini değiştirir. Hizmet durumu, bir özellik olduğundan, başlatma, durdurma ve hizmet askıya almak için bu cmdlet'i kullanabilirsiniz.
+Set-Service cmdlet Ayrıca hizmet başlatma türünü değiştirmenize olanak sağlayan bir başlangıç türü parametresi vardır.
 
-Set-Service Windows Vista ve sonraki Windows sürümlerinde kullanmak için "Yönetici olarak çalıştır" seçeneğiyle Windows PowerShell'i açın.
+Kullanılacak `Set-Service` Windows Vista ve sonraki Windows sürümlerinde, Windows PowerShell ile "Yönetici olarak çalıştır" seçeneğini açın.
 
 Daha fazla bilgi için [hizmet belirleme [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 

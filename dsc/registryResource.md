@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Registry kaynağı
-ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 8d74473d167b70182c3a16c1d39d2a9e797afb1b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093594"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267730"
 ---
 # <a name="dsc-registry-resource"></a>DSC Registry kaynağı
 
-> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 **Kayıt defteri** kaynak olarak Windows PowerShell Desired State Configuration (DSC), kayıt defteri anahtarlarını ve değerlerini bir hedef düğümde yönetmek için bir mekanizma sağlar.
 
@@ -33,8 +33,8 @@ Registry [string] #ResourceName
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik  |  Açıklama   |
-|---|---|
+| Özellik | Açıklama |
+| --- | --- |
 | üzerine gelin| Belirli bir durumu sağlamak istediğiniz kayıt defteri anahtarının yolunu gösterir. Bu yol, hive içermelidir.|
 | değer adı| Kayıt defteri değerinin adını belirtir. Bir kayıt defteri anahtarı ekleyip için ValueType veya ValueData belirtmeden bu özellik boş bir dize belirtin. Bir kayıt defteri anahtarının varsayılan değeri kaldırın ya da değiştirmek için ValueType veya ValueData belirtirken de bu özellik boş bir dize belirtin.|
 | Emin olun| Anahtar ve değer olup olmadığını gösterir. "Var" Bu özelliği ayarlamak emin olmak için. Nesneler yok emin olmak için "Yok" özelliğini ayarlayın. "Var" varsayılan değerdir.|
@@ -62,4 +62,4 @@ Configuration RegistryTest
 ```
 
 > [!NOTE]
-> Bir kayıt defteri ayarı değiştirerek **HKEY\_geçerli\_kullanıcı** hive gerektirir yapılandırma sistemi olarak değil, kullanıcı kimlik bilgileriyle çalışır. Kullanabileceğiniz **PsDscRunAsCredential** özelliği yapılandırması için kullanıcı kimlik bilgilerini belirtin. Bir örnek için bkz. [DSC çalıştıran kullanıcı kimlik bilgileriyle](runAsUser.md).
+> Bir kayıt defteri ayarı değiştirerek `HKEY\CURRENT\USER` hive gerektirir yapılandırma sistemi olarak değil, kullanıcı kimlik bilgileriyle çalışır. Kullanabileceğiniz **PsDscRunAsCredential** özelliği yapılandırması için kullanıcı kimlik bilgilerini belirtin. Bir örnek için bkz. [DSC çalıştıran kullanıcı kimlik bilgileriyle](runAsUser.md).

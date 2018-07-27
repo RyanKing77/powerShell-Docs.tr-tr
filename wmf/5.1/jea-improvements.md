@@ -4,22 +4,18 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: ryanpu
 title: Yeterli yönetim (JEA) geliştirmeleri
-ms.openlocfilehash: a9a8a0fd2b726ded33aa07c205292efd7148f3f0
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 66cbacb78f8a365e9c8556c7c56b3c3525de7395
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093628"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267874"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Yeterli yönetim (JEA) geliştirmeleri
 
 ## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>JEA uç öğesine/öğesinden kısıtlanmış dosya kopyalama
 
-Artık dosyaları uzaktan kopyalayabilirsiniz/bağlanan kullanıcının yalnızca kopyalanamıyor bir JEA uç noktası ve rest garanti *herhangi* dosya sisteminize.
-Kullanıcıları bağlamak için bir kullanıcı sürücü için PSSC dosyanızı yapılandırarak bu mümkündür.
-Kullanıcı oturumu arasında kalıcıdır ve bağlanan her kullanıcı için benzersiz bir yeni PSDrive sürücüdür.
-Zaman `Copy-Item` olduğu için veya bir JEA oturumdan dosyaları kopyalamak için kullanılan, onu yalnızca kullanıcı sürücüye erişime izin vermek için sınırlıdır.
-Dosyaları kopyalamak için başka bir PSDrive girişimleri başarısız olur.
+Artık dosyaları uzaktan kopyalayabilirsiniz/bağlanan kullanıcının yalnızca kopyalanamıyor bir JEA uç noktası ve rest garanti *herhangi* dosya sisteminize. Kullanıcıları bağlamak için bir kullanıcı sürücü için PSSC dosyanızı yapılandırarak bu mümkündür. Kullanıcı oturumu arasında kalıcıdır ve bağlanan her kullanıcı için benzersiz bir yeni PSDrive sürücüdür. Zaman `Copy-Item` olduğu için veya bir JEA oturumdan dosyaları kopyalamak için kullanılan, onu yalnızca kullanıcı sürücüye erişime izin vermek için sınırlıdır. Dosyaları kopyalamak için başka bir PSDrive girişimleri başarısız olur.
 
 Kullanıcı bir sürücünün JEA oturum yapılandırma dosyanızda ayarlamak için aşağıdaki yeni alanları kullanın:
 
@@ -37,7 +33,8 @@ Kullanıcı sürücü yazılımınız ve/kullanıcı sürücü kullanıma sunmak
 $jeasession = New-PSSession -ComputerName 'srv01' -ConfigurationName 'UserDemo'
 
 # Copy a file in the local folder to the remote machine.
-# Note: you cannot specify the file name or subfolder on the remote machine. You must exactly type "User:"
+# Note: you cannot specify the file name or subfolder on the remote machine.
+# You must exactly type "User:"
 Copy-Item -Path .\SampleFile.txt -Destination User: -ToSession $jeasession
 
 # Copy the file back from the remote machine to your local machine
@@ -48,9 +45,7 @@ Ardından, kullanıcı sürücüde depolanan verileri işlemek ve kullanıcı ro
 
 ## <a name="support-for-group-managed-service-accounts"></a>Destek grubu için Yönetilen hizmet hesapları
 
-Bazı durumlarda, bir kullanıcı bir JEA oturumda gerçekleştirmesi gereken bir görevi, yerel makine ötesindeki kaynaklara gerekebilir.
-Bir JEA oturumu, sanal bir hesabı kullanacak şekilde yapılandırıldığında, yerel makinenin kimlik, olmayan sanal hesap veya bağlı durumda olan kullanıcı gelen gibi kaynaklarına ulaşmak için her türlü girişim görünecektir.
-JEA bağlamında çalıştırma desteği etkinleştirdik TP5'te bir [Grup yönetilen hizmet hesabı](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431\(v=ws.11\)), bir etki alanı kimliği'ni kullanarak ağ kaynaklarına erişmek çok daha kolay hale getirme.
+Bazı durumlarda, bir kullanıcı bir JEA oturumda gerçekleştirmesi gereken bir görevi, yerel makine ötesindeki kaynaklara gerekebilir. Bir JEA oturumu, sanal bir hesabı kullanacak şekilde yapılandırıldığında, yerel makinenin kimlik, olmayan sanal hesap veya bağlı durumda olan kullanıcı gelen gibi kaynaklarına ulaşmak için her türlü girişim görünecektir. JEA bağlamında çalıştırma desteği etkinleştirdik TP5'te bir [Grup yönetilen hizmet hesabı](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431\(v=ws.11\)), bir etki alanı kimliği'ni kullanarak ağ kaynaklarına erişmek çok daha kolay hale getirme.
 
 Bir JEA oturumu gMSA hesabı altında çalışacak şekilde yapılandırmak için aşağıdaki yeni anahtarı PSSC dosyanızda kullanın:
 
@@ -66,18 +61,13 @@ RunAsVirtualAccount = $false
 
 > [!NOTE]
 > Grup yönetilen hizmet hesapları yalıtım veya sanal hesaplar sınırlı kapsamı göze değil.
-> Bağlanan her kullanıcı izinlerinizi kuruluş genelinde aynı gMSA kimlik paylaşır.
-> Bir gmsa'yı kullanın ve her zaman mümkün olduğunda yerel makineye sınırlı olan sanal hesaplar tercih seçerken dikkatli olun.
+> Bağlanan her kullanıcı izinlerinizi kuruluş genelinde aynı gMSA kimlik paylaşır. Bir gmsa'yı kullanın ve her zaman mümkün olduğunda yerel makineye sınırlı olan sanal hesaplar tercih seçerken dikkatli olun.
 
 ## <a name="conditional-access-policies"></a>Koşullu erişim ilkeleri
 
-JEA olduğunda bunlar, ne yapmalı yönetmek için bir sisteme ayrıca sınırlamak istiyorsanız bağlandıktan birinin neler yapabileceğinizi sınırlama en harika *olduğunda* birisi JEA kullanabilir miyim?
-Güvenlik grupları bir kullanıcı bir JEA oturumu için ait olmalıdır belirtmenizi sağlar oturum yapılandırma dosyalarına (.pssc) yapılandırma seçeneği ekledik.
-Ortamınızda yalnızca zamanında (JIT) sisteminiz ve kullanıcılarınızın üst düzeyde ayrıcalıklı bir JEA uç noktası erişmeden önce kendi ayrıcalıklarını yükseltme yapmak istiyorsanız bu özellikle yararlı olabilir.
+JEA olduğunda bunlar, ne yapmalı yönetmek için bir sisteme ayrıca sınırlamak istiyorsanız bağlandıktan birinin neler yapabileceğinizi sınırlama en harika *olduğunda* birisi JEA kullanabilir miyim? Güvenlik grupları bir kullanıcı bir JEA oturumu için ait olmalıdır belirtmenizi sağlar oturum yapılandırma dosyalarına (.pssc) yapılandırma seçeneği ekledik. Ortamınızda yalnızca zamanında (JIT) sisteminiz ve kullanıcılarınızın üst düzeyde ayrıcalıklı bir JEA uç noktası erişmeden önce kendi ayrıcalıklarını yükseltme yapmak istiyorsanız bu özellikle yararlı olabilir.
 
-Yeni *RequiredGroups* PSSC dosyasında alan, bir kullanıcı için JEA bağlanabildiğini belirlemek için mantığı belirtmenize olanak sağlar.
-Kullanır (isteğe bağlı olarak iç içe) bir hashtable belirtme oluşur 'Ve' ve 'Veya' anahtarlar kurallarınızı oluşturmak için.
-Bu alan kullanmayı bazı örnekleri aşağıda verilmiştir:
+Yeni *RequiredGroups* PSSC dosyasında alan, bir kullanıcı için JEA bağlanabildiğini belirlemek için mantığı belirtmenize olanak sağlar. Kullanır (isteğe bağlı olarak iç içe) bir hashtable belirtme oluşur 'Ve' ve 'Veya' anahtarlar kurallarınızı oluşturmak için. Bu alan kullanmayı bazı örnekleri aşağıda verilmiştir:
 
 ```powershell
 # Example 1: Connecting users must belong to a security group called "elevated-jea"
@@ -93,5 +83,4 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Düzeltildi: Sanal hesaplar artık Windows Server 2008 R2 üzerinde desteklenir
 
-WMF 5.1, artık Windows Server 2008 tutarlı yapılandırmalar ve özellik eşliği arasında Windows Server 2008 R2 - 2016 etkinleştirme R2 sanal hesaplar kullanabilirsiniz.
-Jea'yı, Windows 7'de kullanırken sanal hesaplar desteklenmeyen kalır.
+WMF 5.1, artık Windows Server 2008 tutarlı yapılandırmalar ve özellik eşliği arasında Windows Server 2008 R2 - 2016 etkinleştirme R2 sanal hesaplar kullanabilirsiniz. Jea'yı, Windows 7'de kullanırken sanal hesaplar desteklenmeyen kalır.

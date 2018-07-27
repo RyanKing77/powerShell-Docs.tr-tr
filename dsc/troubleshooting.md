@@ -2,27 +2,26 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC’de sorun giderme
-ms.openlocfilehash: 1e8bfdf3540e65e3be94bf6a9b04e7d3b14ff044
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 93a2f3728968882f78d4c050238d226b71c11ca5
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094077"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268203"
 ---
 # <a name="troubleshooting-dsc"></a>DSC’de sorun giderme
 
->Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 Bu konuda, sorunları ortaya çıktığında DSC gidermenin yolları açıklanmaktadır.
 
 ## <a name="winrm-dependency"></a>WinRM bağımlılık
 
-WinRM üzerinde Windows PowerShell Desired State Configuration (DSC) bağlıdır. WinRM üzerinde Windows Server 2008 R2 ve Windows 7 varsayılan olarak etkin değil. Çalıştırma ```Set-WSManQuickConfig```, Windows PowerShell'de yükseltilmiş oturumu WinRM'yi etkinleştirin.
+WinRM üzerinde Windows PowerShell Desired State Configuration (DSC) bağlıdır. WinRM üzerinde Windows Server 2008 R2 ve Windows 7 varsayılan olarak etkin değil. Çalıştırma `Set-WSManQuickConfig`, Windows PowerShell'de yükseltilmiş oturumu WinRM'yi etkinleştirin.
 
 ## <a name="using-get-dscconfigurationstatus"></a>Get-DscConfigurationStatus kullanma
 
-[Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet'i, hedef düğüm yapılandırma durumu hakkında bilgi alır.
-Yapılandırma çalıştırma veya olup olmadığını başarılı hakkında üst düzey bilgileri içeren zengin bir nesne döndürülür. Nesnesine gibi yapılandırma ayrıntılarını bulmak için incelemek:
+[Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet'i, hedef düğüm yapılandırma durumu hakkında bilgi alır. Yapılandırma çalıştırma veya olup olmadığını başarılı hakkında üst düzey bilgileri içeren zengin bir nesne döndürülür. Nesnesine gibi yapılandırma ayrıntılarını bulmak için incelemek:
 
 - Başarısız olan tüm kaynakları
 - Bir sistem yeniden başlatması herhangi bir kaynağa
@@ -31,20 +30,20 @@ Yapılandırma çalıştırma veya olup olmadığını başarılı hakkında üs
 
 Aşağıdaki parametre kümesi son yapılandırma Çalıştır durum bilgilerini döndürür:
 
-```powershell
-Get-DscConfigurationStatus  [-CimSession <CimSession[]>]
-                            [-ThrottleLimit <int>]
-                            [-AsJob]
-                            [<CommonParameters>]
+```
+Get-DscConfigurationStatus [-CimSession <CimSession[]>]
+                           [-ThrottleLimit <int>]
+                           [-AsJob]
+                           [<CommonParameters>]
 ```
 Aşağıdaki parametre kümesi, önceki tüm yapılandırma çalıştırmalar için durum bilgileri döndürür:
 
-```powershell
-Get-DscConfigurationStatus  -All
-                            [-CimSession <CimSession[]>]
-                            [-ThrottleLimit <int>]
-                            [-AsJob]
-                            [<CommonParameters>]
+```
+Get-DscConfigurationStatus -All
+                           [-CimSession <CimSession[]>]
+                           [-ThrottleLimit <int>]
+                           [-AsJob]
+                           [<CommonParameters>]
 ```
 
 ## <a name="example"></a>Örnek
@@ -54,35 +53,36 @@ PS C:\> $Status = Get-DscConfigurationStatus
 
 PS C:\> $Status
 
-Status      StartDate               Type            Mode    RebootRequested     NumberOfResources
-------      ---------               ----            ----    ---------------     -----------------
-Failure     11/24/2015  3:44:56     Consistency     Push    True                36
+Status         StartDate                Type            Mode    RebootRequested        NumberOfResources
+------        ---------                ----            ----    ---------------        -----------------
+Failure        11/24/2015  3:44:56     Consistency        Push    True                36
 
 PS C:\> $Status.ResourcesNotInDesiredState
 
-ConfigurationName       :   MyService
-DependsOn               :
-ModuleName              :   PSDesiredStateConfiguration
-ModuleVersion           :   1.1
-PsDscRunAsCredential    :
-ResourceID              :   [File]ServiceDll
-SourceInfo              :   c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
-DurationInSeconds       :   0.19
-Error                   :   SourcePath must be accessible for current configuration. The related file/directory is:
-                            \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
-FinalState              :
-InDesiredState          :   False
-InitialState            :
-InstanceName            :   ServiceDll
-RebootRequested         :   False
-ReosurceName            :   File
-StartDate               :   11/24/2015  3:44:56
-PSComputerName          :
+ConfigurationName     :    MyService
+DependsOn             :
+ModuleName            :    PSDesiredStateConfiguration
+ModuleVersion         :    1.1
+PsDscRunAsCredential  :
+ResourceID            :    [File]ServiceDll
+SourceInfo            :    c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
+DurationInSeconds     :    0.19
+Error                 :    SourcePath must be accessible for current configuration. The related file/directory is:
+                           \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
+FinalState            :
+InDesiredState        :    False
+InitialState          :
+InstanceName          :    ServiceDll
+RebootRequested       :    False
+ReosurceName          :    File
+StartDate             :    11/24/2015  3:44:56
+PSComputerName        :
 ```
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>Betiğimde çalışmaz: betik hatalarını tanılamak için DSC kullanarak günlükleri
 
-Tüm Windows yazılım gibi DSC hatalarını ve olaylarını kaydeder [günlükleri](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx) alanından görüntülenebilir [Olay Görüntüleyicisi'ni](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer). Bu günlükleri İnceleme neden belirli bir işlem başarısız oldu ve hata gelecekte önlemek nasıl anlamanıza yardımcı olabilir. Yapılandırma komut dosyası yazma, bu nedenle, yazar olarak izleme hataları kolaylaştırmak, DSC günlük kaynak yapılandırmanızı ve DSC analitik olay günlüğüne ilerlemesini izlemek için kullanın zor olabilir.
+Tüm Windows yazılım gibi DSC hatalarını ve olaylarını kaydeder [günlükleri](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx) alanından görüntülenebilir [Olay Görüntüleyicisi'ni](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer).
+Bu günlükleri İnceleme neden belirli bir işlem başarısız oldu ve hata gelecekte önlemek nasıl anlamanıza yardımcı olabilir. Yapılandırma komut dosyası yazma, bu nedenle, yazar olarak izleme hataları kolaylaştırmak, DSC günlük kaynak yapılandırmanızı ve DSC analitik olay günlüğüne ilerlemesini izlemek için kullanın zor olabilir.
 
 ## <a name="where-are-dsc-event-logs"></a>DSC olay günlükleri nerededir?
 
@@ -92,16 +92,19 @@ Karşılık gelen PowerShell cmdlet [Get-WinEvent](https://technet.microsoft.com
 
 ```
 PS C:\> Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
+
    ProviderName: Microsoft-Windows-DSC
+
 TimeCreated                     Id LevelDisplayName Message
 -----------                     -- ---------------- -------
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-Yukarıda gösterildiği gibi DSC'ın birincil günlük adı olan **Microsoft -> Windows -> DSC** (Windows diğer günlük adlarla burada konuyu uzatmamak amacıyla gösterilmez). Birincil ad tam günlük adı oluşturmak için kanal adına eklenir. DSC altyapısını esas olarak üç tür günlükleri Yazar: [işlemsel, Analitik ve hata ayıklama günlükleri](https://technet.microsoft.com/library/cc722404.aspx). Bu yana Analitik ve hata ayıklama günlükleri devre dışı bırakma varsayılan olarak, Olay Görüntüleyicisi'nde etkinleştirmeniz gerekir. Bunu yapmak için Windows PowerShell'de Show-EventLog yazarak Olay Görüntüleyicisi'ni açın; veya tıklayın **Başlat** düğmesini tıklatın, **Denetim Masası**, tıklayın **Yönetimsel Araçlar**ve ardından **Olay Görüntüleyicisi'ni**. Üzerinde **görünümü** Olay Görüntüleyicisi'nde menüsünü **Analitik ve hata ayıklama günlüklerini göster**. Günlük adı analitik kanalı **Microsoft-Windows-Dsc/analitik**, ve hata ayıklama kanal **Microsoft-Windows-Dsc/Debug**. Ayrıca kullanabileceğinizi [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) yardımcı programını kullanarak aşağıdaki örnekte gösterildiği gibi günlüklerini etkinleştirin.
+Yukarıda gösterildiği gibi DSC'ın birincil günlük adı olan **Microsoft -> Windows -> DSC** (Windows diğer günlük adlarla burada konuyu uzatmamak amacıyla gösterilmez). Birincil ad tam günlük adı oluşturmak için kanal adına eklenir. DSC altyapısını esas olarak üç tür günlükleri Yazar: [işlemsel, Analitik ve hata ayıklama günlükleri](https://technet.microsoft.com/library/cc722404.aspx). Bu yana Analitik ve hata ayıklama günlükleri devre dışı bırakma varsayılan olarak, Olay Görüntüleyicisi'nde etkinleştirmeniz gerekir. Bunu yapmak için Windows PowerShell'de Show-EventLog yazarak Olay Görüntüleyicisi'ni açın; veya tıklayın **Başlat** düğmesini tıklatın, **Denetim Masası**, tıklayın **Yönetimsel Araçlar**ve ardından **Olay Görüntüleyicisi'ni**.
+Üzerinde **görünümü** Olay Görüntüleyicisi'nde menüsünü **Analitik ve hata ayıklama günlüklerini göster**. Günlük adı analitik kanalı **Microsoft-Windows-Dsc/analitik**, ve hata ayıklama kanal **Microsoft-Windows-Dsc/Debug**. Ayrıca kullanabileceğinizi [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) yardımcı programını kullanarak aşağıdaki örnekte gösterildiği gibi günlüklerini etkinleştirin.
 
 ```powershell
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
 ```
 
 ## <a name="what-do-dsc-logs-contain"></a>DSC günlükleri ne içerir?
@@ -118,8 +121,10 @@ Consistency engine was run successfully.
 
 Kullanıcının bir DSC projeden toplama olayları sağlar. belirli bir yapı DSC olayları günlüğe kaydedilir. Yapı aşağıdaki gibidir:
 
-**İş Kimliği: \<GUID\>**
-**\<olay iletisi\>**
+```
+Job ID : <Guid>
+<Event Message>
+```
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>Tek bir DSC işlemi toplama olayları
 
@@ -130,8 +135,8 @@ DSC olay günlükleri, çeşitli DSC işlemleri tarafından oluşturulan olaylar
  Step 1 : Enable analytic and debug DSC channels (Operational channel is enabled by default)
 ###########################################################################>
 
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Debug” /q:True /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Debug" /q:True /e:true
 
 <##########################################################################
  Step 2 : Perform the required DSC operation (Below is an example, you could run any DSC operation instead)
@@ -163,8 +168,11 @@ Count Name                      Group
 ----- ----                      -----
    48 {1A776B6A-5BAC-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
    40 {E557E999-5BA8-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
+
 PS C:\> $SeparateDscOperations[0].Group
+
    ProviderName: Microsoft-Windows-DSC
+
 TimeCreated                     Id LevelDisplayName Message
 -----------                     -- ---------------- -------
 12/2/2013 3:47:29 PM          4115 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
@@ -192,6 +200,7 @@ Tüm olaylar sahiptir [önem düzeyleri](https://msdn.microsoft.com/library/dd99
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
+
 Count Name                      Group
 ----- ----                      -----
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
@@ -204,6 +213,7 @@ Count Name                      Group
 ```powershell
 PS C:\> $DateLatest = (Get-Date).AddMinutes(-30)
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.TimeCreated -gt $DateLatest}
+
 Count Name                      Group
 ----- ----                      -----
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}
@@ -211,9 +221,10 @@ Count Name                      Group
 
 ### <a name="3-messages-from-the-latest-operation"></a>3: en son işlem iletileri
 
-En son işlemi dizi grubunun ilk dizininde depolanan `$SeparateDscOperations`. Dizin 0 için grubun iletileri sorgulama en son işlem için tüm iletileri döndürür:
+En son işlemi dizi grubunun ilk dizininde depolanan `$SeparateDscOperations`.
+Dizin 0 için grubun iletileri sorgulama en son işlem için tüm iletileri döndürür:
 
-```powershelll
+```powershell
 PS C:\> $SeparateDscOperations[0].Group.Message
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 Running consistency engine.
@@ -239,6 +250,7 @@ Displaying messages from built-in DSC resources:
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
 
 PS C:\> $myFailedEvent.Message
+
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 DSC Engine Error :
  Error Message Current configuration does not exist. Execute Start-DscConfiguration command with -Path pa
@@ -265,13 +277,11 @@ TimeCreated                     Id LevelDisplayName Message
 
 ## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>DSC çözümlemek için xDscDiagnostics kullanarak günlükleri
 
-**xDscDiagnostics** DSC hataları makinenizde çözümlemenize yardımcı olabilecek çeşitli işlevler içeren bir PowerShell modülüdür. Bu işlevler, tüm yerel olayları son DSC işlemlerden veya uzak bilgisayarlarda DSC olayları (geçerli kimlik bilgileriyle) belirlemenize yardımcı olabilir. Burada, DSC işlemi terimi, bir tek benzersiz DSC yürütmeyi, başlangıçtan sonuna tanımlamak için kullanılır. Örneğin, `Test-DscConfiguration` ayrı bir DSC işlemi olacaktır. Benzer şekilde, her diğer cmdlet DSC (gibi `Get-DscConfiguration`, `Start-DscConfiguration`, vs.) her ayrı DSC işlem olarak tanımlanamadı. İşlevler, açıklanmıştır [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics).
-Yardım kullanılabilir çalıştırarak `Get-Help <cmdlet name>`.
+**xDscDiagnostics** DSC hataları makinenizde çözümlemenize yardımcı olabilecek çeşitli işlevler içeren bir PowerShell modülüdür. Bu işlevler, tüm yerel olayları son DSC işlemlerden veya uzak bilgisayarlarda DSC olayları (geçerli kimlik bilgileriyle) belirlemenize yardımcı olabilir. Burada, DSC işlemi terimi, bir tek benzersiz DSC yürütmeyi, başlangıçtan sonuna tanımlamak için kullanılır. Örneğin, `Test-DscConfiguration` ayrı bir DSC işlemi olacaktır. Benzer şekilde, her diğer cmdlet DSC (gibi `Get-DscConfiguration`, `Start-DscConfiguration`, vs.) her ayrı DSC işlem olarak tanımlanamadı. İşlevler, açıklanmıştır [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics). Yardım kullanılabilir çalıştırarak `Get-Help <cmdlet name>`.
 
 ### <a name="getting-details-of-dsc-operations"></a>DSC işlemlerinin ayrıntıları alınıyor
 
-`Get-xDscOperation` İşlevi bir veya birden çok bilgisayarda çalıştırma DSC işlemlerinin sonuçlarını bulmanıza olanak tanır ve olayları koleksiyonu içeren bir nesne her DSC işlemiyle oluşturulan döndürür.
-Örneğin, aşağıdaki çıktı, üç komutu çalıştırılamadı. İlk geçirilen ve diğer iki başarısız oldu. Bu sonuçları çıktısında özetlenir `Get-xDscOperation`.
+`Get-xDscOperation` İşlevi bir veya birden çok bilgisayarda çalıştırma DSC işlemlerinin sonuçlarını bulmanıza olanak tanır ve olayları koleksiyonu içeren bir nesne her DSC işlemiyle oluşturulan döndürür. Örneğin, aşağıdaki çıktı, üç komutu çalıştırılamadı. İlk geçirilen ve diğer iki başarısız oldu. Bu sonuçları çıktısında özetlenir `Get-xDscOperation`.
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation
@@ -300,7 +310,8 @@ SRV1   5          6/23/2016 4:36:51 PM  Success                                 
 
 `Trace-xDscOperation` Cmdlet, olaylar, olay türlerini koleksiyonu içeren bir nesne döndürür ve ileti çıkış oluşturulan belirli bir DSC işlemi. Genellikle, ne zaman bulduğunuz hata kullanarak işlemleri hiçbirinde `Get-xDscOperation`, hangi olayların hata neden olduğunu bulmak için bu işlemi izleme.
 
-Kullanım `SequenceID` belirli bir bilgisayar için belirli bir işlemi için olaylar almak için parametre. Örneğin, belirttiğiniz bir `SequenceID` 9, `Trace-xDscOperaion` son işlemden 9 olan DSC işlemi için izleme alın:
+Kullanım `SequenceID` belirli bir bilgisayar için belirli bir işlemi için olaylar almak için parametre.
+Örneğin, belirttiğiniz bir `SequenceID` 9, `Trace-xDscOperaion` son işlemden 9 olan DSC işlemi için izleme alın:
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -SequenceID 9
@@ -367,7 +378,7 @@ PS C:\DiagnosticsTest> $Trace.Event
 
 Bu aynı sonuçları görüntüler `Get-WinEvent` gibi aşağıdaki çıktıyı cmdlet'inin:
 
-```powershell
+```output
    ProviderName: Microsoft-Windows-DSC
 
 TimeCreated                     Id LevelDisplayName Message
@@ -410,6 +421,7 @@ Kullanım `ComputerName` parametresinin `Trace-xDscOperation` uzak bir bilgisaya
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow
 ```
+
 Bu bilgisayar çağrınız belirtebilirsiniz artık `Trace-xDscOperation`:
 
 ```powershell
@@ -451,7 +463,8 @@ SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32
 
 ## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>Kaynaklarım güncelleştirme olmayacaktır: önbelleğini sıfırlama
 
-DSC altyapısını verimliliği amaçlar için bir PowerShell modülü olarak uygulanan kaynakları önbelleğe alır. Ancak, bir kaynak yazma ve işlemi yeniden başlatılana kadar DSC önbelleğe alınmış sürümünü yükler için aynı anda test bu sorunlara neden olabilir. DSC daha yeni sürümünü yükleme yapmak için tek açıkça DSC altyapısını barındıran işlemi sonlandırmak için yoludur.
+DSC altyapısını verimliliği amaçlar için bir PowerShell modülü olarak uygulanan kaynakları önbelleğe alır.
+Ancak, bir kaynak yazma ve işlemi yeniden başlatılana kadar DSC önbelleğe alınmış sürümünü yükler için aynı anda test bu sorunlara neden olabilir. DSC daha yeni sürümünü yükleme yapmak için tek açıkça DSC altyapısını barındıran işlemi sonlandırmak için yoludur.
 
 Benzer şekilde, çalıştırdığınızda `Start-DscConfiguration`, ekleme ve özel bir kaynağı değiştirme sonra değişiklik sürece yürütülmeyebilir veya bilgisayar yeniden başlatılana kadar. DSC WMI sağlayıcısı ana bilgisayar işlemi (WmiPrvSE) çalışır ve genellikle aynı anda çalışan WmiPrvSE birçok örneği mevcuttur nedeni budur. Bilgisayarı yeniden başlattığınızda ana bilgisayar işlemi başlatılır ve önbellek temizlenir.
 
@@ -479,10 +492,11 @@ DSC yerel Configuration Manager (kullanılacak LCM) yapılandırabileceğiniz `D
 
 Gösterilecek bir örnek aşağıdadır nasıl `DebugMode` önbellek otomatik olarak yenileyebilirsiniz. İlk olarak, varsayılan yapılandırmayı göz atalım:
 
-```
+```powershell
 PS C:\> Get-DscLocalConfigurationManager
+```
 
-
+```output
 AllowModuleOverwrite           : False
 CertificateID                  :
 ConfigurationID                :
@@ -550,7 +564,7 @@ Configuration ConfigTestDebugMode
 ConfigTestDebugMode
 ```
 
-Göreceksiniz dosyasının içeriğini: "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" olan **1**.
+Göreceksiniz dosyasının içeriğini: `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` olduğu **1**.
 
 Artık, aşağıdaki betiği kullanarak sağlayıcı kodu güncelleştirin:
 

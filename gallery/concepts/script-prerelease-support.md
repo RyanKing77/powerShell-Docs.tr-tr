@@ -3,12 +3,12 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: Galeri, powershell, cmdlet, psget
 title: Betikleri uygulamasının yayım öncesi sürümleri
-ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093857"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268475"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Betikleri uygulamasının yayım öncesi sürümleri
 
@@ -45,12 +45,12 @@ Sürüm dizesi bir ön eki kullanmak için aşağıdaki gereksinimleri karşıla
 - Bir ön eki yalnızca sürümü Major.Minor.Build için 3 Kesimden olduğunda belirtilebilir.
   Bu SemVer v1.0.0 ile hizalar.
 - Ön eki, kısa çizgi ile başlar ve alfasayısal ASCII karakterler içerebilir bir dizedir [0-9A-Za - z-]
-- Yalnızca SemVer v1.0.0 ön sürüm dizeleri desteklenir şu anda, bu nedenle ön eki __gerekir__ döneme içeren veya + [. +], SemVer 2. 0'verilir
+- Yalnızca SemVer v1.0.0 ön sürüm dizeleri desteklenir şu anda, bu nedenle ön eki **gerekir** döneme içeren veya + [. +], SemVer 2. 0'verilir
 - Desteklenen PrereleaseString dize örnekleridir:-alfa, - alpha1,-BETA, - update20171020
 
-__Yayın öncesi sürüm oluşturma sırası ve yükleme klasörleri sıralama etkisi__
+### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>Yayın öncesi sürüm oluşturma sırası ve yükleme klasörleri sıralama etkisi
 
-Sıralama düzeni için PowerShell Galerisi yayımlama sırasında büyük/küçük harf önemlidir, bir ön sürümünü kullanırken ve betikleri PowerShellGet komutlarını kullanarak yüklerken değiştirir. İki sürüm numarasını sürümleriyle komutlar mevcut, kısa çizgi aşağıdaki dize bölümü temel sıralama düzenini temel alır. Bu nedenle, sürüm 2.5.0-alpha 2.5.0-beta, 2.5.0-gamma değerinden küçük olan küçüktür. İki komut aynı sürüm numarasına sahip ve tek bir PrereleaseString betik varsa __olmadan__ üretime hazır sürüm olduğu varsayılır ve yayın öncesi sürümünden büyük bir sürüm olarak sıralanmış, ön eki Sürüm. Karşılaştırma bıraktığında 2.5.0 ve 2.5.0-beta, 2.5.0 örnek olarak sürüm değerlendirilir iki büyük.
+Sıralama düzeni için PowerShell Galerisi yayımlama sırasında büyük/küçük harf önemlidir, bir ön sürümünü kullanırken ve betikleri PowerShellGet komutlarını kullanarak yüklerken değiştirir. İki sürüm numarasını sürümleriyle komutlar mevcut, kısa çizgi aşağıdaki dize bölümü temel sıralama düzenini temel alır. Bu nedenle, sürüm 2.5.0-alpha 2.5.0-beta, 2.5.0-gamma değerinden küçük olan küçüktür. İki komut aynı sürüm numarasına sahip ve tek bir PrereleaseString betik varsa **olmadan** üretime hazır sürüm olduğu varsayılır ve yayın öncesi sürümünden büyük bir sürüm olarak sıralanmış, ön eki Sürüm. Karşılaştırma bıraktığında 2.5.0 ve 2.5.0-beta, 2.5.0 örnek olarak sürüm değerlendirilir iki büyük.
 
 PowerShell Galerisi'nde yayımlama sırasında varsayılan olarak PowerShell Galerisi önceden yayımlanan sürümü daha büyük bir sürümse yayımlanmakta betik sürümüne sahip olmanız gerekir. Bir yayımcı, sürüm 2.5.0-alpha 2.5.0-beta 2.5.0 (ile ön sonek) ile veya güncelleştirebilir.
 
@@ -61,7 +61,7 @@ PowerShellGet Find-Script, yükleme betiği, Update-komut dosyası, yayın önce
 Bunun tek özel durum PowerShellGet betik komutlarında şunlardır: Get-InstalledScript ve kaldırma betiğini ile bazı durumlarda.
 
 - Varsa, get-InstalledScript her zaman otomatik olarak yayın öncesi bilgiler sürüm dizesini gösterir.
-- Kaldırma betiği varsayılan olarak kaldırılır en son sürümünü bir betik, __sürüm__ belirtilir. Bu davranış değişmemiştir. Ancak, bir ön sürümünü kullanarak - RequiredVersion, belirtilirse - AllowPrerelease gerekli olacaktır.
+- Kaldırma betiği varsayılan olarak kaldırılır en son sürümünü bir betik, **sürüm** belirtilir. Bu davranış değişmemiştir. Ancak, bir ön sürümünü kullanarak belirtilirse `-RequiredVersion`, `-AllowPrerelease` gerekli olacaktır.
 
 ## <a name="examples"></a>Örnekler
 
@@ -83,13 +83,13 @@ Version        Name                                Repository           Descript
 # To install a prerelease, you must specify -AllowPrerelease. Specifying a prerelease version string is not sufficient.
 
 C:\windows\system32> Install-Script TestPackage -RequiredVersion 1.9.0-alpha
+
 PackageManagement\Find-Package : No match was found for the specified search criteria and script name 'TestPackage'.
 Try Get-PSRepository to see all available registered script repositories.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:1455 char:3
 +         PackageManagement\Find-Package @PSBoundParameters | Microsoft ...
 +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage) [Find-Package], Exceptio
-   n
+    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage)[Find-Package], Exception
     + FullyQualifiedErrorId : NoMatchFoundForCriteria,Microsoft.PowerShell.PackageManagement.Cmdlets.FindPackage
 
 # The previous command failed because -AllowPrerelease was not specified.

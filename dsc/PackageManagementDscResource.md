@@ -2,12 +2,12 @@
 ms.date: 06/20/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC PackageManagement kaynak
-ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892510"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268101"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement kaynak
 
@@ -39,8 +39,8 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik  |  Açıklama   |
-|---|---|
+| Özellik | Açıklama |
+| --- | --- |
 | Ad| Yüklenecek veya için paket adını belirtir.|
 | AdditionalParameters| Sağlayıcı belirli hashtable için geçirilir parametrelerinin `Get-Package -AdditionalArguments`. Örneğin, NuGet sağlayıcısı DestinationPath gibi ek parametreler geçirebilir.|
 | Emin olun| Paket yüklü veya kaldırılmış olup olmadığını belirler.|
@@ -54,10 +54,11 @@ PackageManagement [string] #ResourceName
 ## <a name="additional-parameters"></a>Ek parametreler
 
 Aşağıdaki tabloda, AdditionalParameters özelliği için seçenekleri listeler.
-|  Parametre  | Açıklama   |
-|---|---|
+
+| Parametre | Açıklama |
+| --- | --- |
 | DestinationPath| Yerleşik Nuget sağlayıcısı gibi sağlayıcıları tarafından kullanılır. Yüklenecek paket istediğiniz bir dosya konumu belirtir.|
-| InstallationPolicy| Yerleşik Nuget sağlayıcısı gibi sağlayıcıları tarafından kullanılır. Kaynak paketin güvendiğiniz olup olmadığını belirler. Şunlardan biri: "Güvenilmeyen", "Güvenilir".|
+| InstallationPolicy| Yerleşik Nuget sağlayıcısı gibi sağlayıcıları tarafından kullanılır. Kaynak paketin güvendiğiniz olup olmadığını belirler. Şunlardan biri: `Untrusted`, `Trusted`.|
 
 ## <a name="example"></a>Örnek
 
