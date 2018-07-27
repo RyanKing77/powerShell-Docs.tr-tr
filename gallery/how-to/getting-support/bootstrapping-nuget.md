@@ -3,26 +3,22 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
 title: NuGet önyükleniyor
-ms.openlocfilehash: 2d321097fda201c0d8f843b2194a161eceabe4e1
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: e82fe7bec2e6b7a321fb173cdf9a54c5a97d5f18
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094026"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267856"
 ---
-# <a name="bootstrap-the-nuget-provider-and-nugetexe"></a><span data-ttu-id="0ed45-103">NuGet sağlayıcısı ve NuGet.exe önyükleme</span><span class="sxs-lookup"><span data-stu-id="0ed45-103">Bootstrap the NuGet provider and NuGet.exe</span></span>
+# <a name="bootstrap-the-nuget-provider-and-nugetexe"></a><span data-ttu-id="dc637-103">NuGet sağlayıcısı ve NuGet.exe önyükleme</span><span class="sxs-lookup"><span data-stu-id="dc637-103">Bootstrap the NuGet provider and NuGet.exe</span></span>
 
-<span data-ttu-id="0ed45-104">NuGet.exe en son NuGet sağlayıcısında yer almaz.</span><span class="sxs-lookup"><span data-stu-id="0ed45-104">NuGet.exe is not included in the latest NuGet provider.</span></span>
-<span data-ttu-id="0ed45-105">Yayımlama işlemleri bir modül veya betik için ikili yürütülebilir NuGet.exe PowerShellGet gerektirir.</span><span class="sxs-lookup"><span data-stu-id="0ed45-105">For publish operations of either a module or script, PowerShellGet requires the binary executable NuGet.exe.</span></span>
-<span data-ttu-id="0ed45-106">NuGet sağlayıcısı gerekli diğer tüm işlemler için yalnızca dahil olmak üzere *bulmak*, *yükleme*, *Kaydet*, ve *kaldırma*.</span><span class="sxs-lookup"><span data-stu-id="0ed45-106">Only the NuGet provider is required for all other operations, including *find*, *install*, *save*, and *uninstall*.</span></span>
-<span data-ttu-id="0ed45-107">PowerShellGet, birleşik bir bootstrap NuGet sağlayıcısı ve NuGet.exe veya önyükleme NuGet sağlayıcısı ya da işlemek için mantığı içerir.</span><span class="sxs-lookup"><span data-stu-id="0ed45-107">PowerShellGet includes logic to handle either a combined bootstrap of the NuGet provider and NuGet.exe, or bootstrap of only the NuGet provider.</span></span>
-<span data-ttu-id="0ed45-108">Her iki durumda da, yalnızca tek bir komut istemi ileti gerçekleşmelidir.</span><span class="sxs-lookup"><span data-stu-id="0ed45-108">In either case, only a single prompt message should occur.</span></span>
-<span data-ttu-id="0ed45-109">Makinenin Internet'e bağlı değilse, kullanıcı veya yönetici NuGet sağlayıcısı ve/veya NuGet.exe dosya güvenilen bir örneğini bağlantısı kesilmiş makineyi kopyalamanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="0ed45-109">If the machine is not connected to the Internet, the user or an administrator must copy a trusted instance of the NuGet provider and/or the NuGet.exe file to the disconnected machine.</span></span>
+<span data-ttu-id="dc637-104">NuGet.exe en son NuGet sağlayıcısında yer almaz.</span><span class="sxs-lookup"><span data-stu-id="dc637-104">NuGet.exe is not included in the latest NuGet provider.</span></span> <span data-ttu-id="dc637-105">Yayımlama işlemleri bir modül veya betik için ikili yürütülebilir NuGet.exe PowerShellGet gerektirir.</span><span class="sxs-lookup"><span data-stu-id="dc637-105">For publish operations of either a module or script, PowerShellGet requires the binary executable NuGet.exe.</span></span> <span data-ttu-id="dc637-106">NuGet sağlayıcısı gerekli diğer tüm işlemler için yalnızca dahil olmak üzere *bulmak*, *yükleme*, *Kaydet*, ve *kaldırma*.</span><span class="sxs-lookup"><span data-stu-id="dc637-106">Only the NuGet provider is required for all other operations, including *find*, *install*, *save*, and *uninstall*.</span></span>
+<span data-ttu-id="dc637-107">PowerShellGet, birleşik bir bootstrap NuGet sağlayıcısı ve NuGet.exe veya önyükleme NuGet sağlayıcısı ya da işlemek için mantığı içerir.</span><span class="sxs-lookup"><span data-stu-id="dc637-107">PowerShellGet includes logic to handle either a combined bootstrap of the NuGet provider and NuGet.exe, or bootstrap of only the NuGet provider.</span></span> <span data-ttu-id="dc637-108">Her iki durumda da, yalnızca tek bir komut istemi ileti gerçekleşmelidir.</span><span class="sxs-lookup"><span data-stu-id="dc637-108">In either case, only a single prompt message should occur.</span></span> <span data-ttu-id="dc637-109">Makinenin Internet'e bağlı değilse, kullanıcı veya yönetici NuGet sağlayıcısı ve/veya NuGet.exe dosya güvenilen bir örneğini bağlantısı kesilmiş makineyi kopyalamanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="dc637-109">If the machine is not connected to the Internet, the user or an administrator must copy a trusted instance of the NuGet provider and/or the NuGet.exe file to the disconnected machine.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="0ed45-110">NuGet sağlayıcısı sürüm 6 ile başlayarak, PowerShell yüklenmesi dahildir.</span><span class="sxs-lookup"><span data-stu-id="0ed45-110">Starting with version 6, the NuGet provider is included in the installation of PowerShell.</span></span> [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
+> <span data-ttu-id="dc637-110">NuGet sağlayıcısı sürüm 6 ile başlayarak, PowerShell yüklenmesi dahildir.</span><span class="sxs-lookup"><span data-stu-id="dc637-110">Starting with version 6, the NuGet provider is included in the installation of PowerShell.</span></span>
 
-## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a><span data-ttu-id="0ed45-111">NuGet sağlayıcısı Internet bir makinede yüklü olmayan, hatayı çözmede bağlı</span><span class="sxs-lookup"><span data-stu-id="0ed45-111">Resolving error when the NuGet provider has not been installed on a machine that is Internet connected</span></span>
+## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a><span data-ttu-id="dc637-111">NuGet sağlayıcısı Internet bir makinede yüklü olmayan, hatayı çözmede bağlı</span><span class="sxs-lookup"><span data-stu-id="dc637-111">Resolving error when the NuGet provider has not been installed on a machine that is Internet connected</span></span>
 
 ```powershell
 Find-Module -Repository PSGallery -Verbose -Name Contoso
@@ -59,7 +55,7 @@ Version    Name                                Type       Repository           D
 2.5        Contoso                             Module     PSGallery        Contoso module
 ```
 
-## <a name="resolving-error-when-the-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a><span data-ttu-id="0ed45-112">NuGet sağlayıcısı kullanılabilir ve NuGet.exe bir makinede Internet yayımlama işlemi sırasında kullanılabilir olmadığında çözümlenirken hata oluştu bağlı</span><span class="sxs-lookup"><span data-stu-id="0ed45-112">Resolving error when the NuGet provider is available and NuGet.exe is not available during the publish operation on a machine that is Internet connected</span></span>
+## <a name="resolving-error-when-the-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a><span data-ttu-id="dc637-112">NuGet sağlayıcısı kullanılabilir ve NuGet.exe bir makinede Internet yayımlama işlemi sırasında kullanılabilir olmadığında çözümlenirken hata oluştu bağlı</span><span class="sxs-lookup"><span data-stu-id="dc637-112">Resolving error when the NuGet provider is available and NuGet.exe is not available during the publish operation on a machine that is Internet connected</span></span>
 
 ```powershell
 Publish-Module -Name Contoso -Repository PSGallery -Verbose
@@ -89,7 +85,7 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'https://www.powershellgallery.com/api/v2/'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-## <a name="resolving-error-when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a><span data-ttu-id="0ed45-113">NuGet sağlayıcısı ve NuGet.exe hem bir makinede Internet yayımlama işlemi sırasında mevcut olmadığı durumlarda hata giderme bağlı</span><span class="sxs-lookup"><span data-stu-id="0ed45-113">Resolving error when both NuGet provider and NuGet.exe are not available during the publish operation on a machine that is Internet connected</span></span>
+## <a name="resolving-error-when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a><span data-ttu-id="dc637-113">NuGet sağlayıcısı ve NuGet.exe hem bir makinede Internet yayımlama işlemi sırasında mevcut olmadığı durumlarda hata giderme bağlı</span><span class="sxs-lookup"><span data-stu-id="dc637-113">Resolving error when both NuGet provider and NuGet.exe are not available during the publish operation on a machine that is Internet connected</span></span>
 
 ```powershell
 Publish-Module -Name Contoso -Repository PSGallery -Verbose
@@ -121,19 +117,15 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'https://www.powershellgallery.com/api/v2/'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a><span data-ttu-id="0ed45-114">NuGet sağlayıcısı Internet'e bağlı olmayan bir makineye el ile önyükleme</span><span class="sxs-lookup"><span data-stu-id="0ed45-114">Manually bootstrapping the NuGet provider on a machine that is not connected to the Internet</span></span>
+## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a><span data-ttu-id="dc637-114">NuGet sağlayıcısı Internet'e bağlı olmayan bir makineye el ile önyükleme</span><span class="sxs-lookup"><span data-stu-id="dc637-114">Manually bootstrapping the NuGet provider on a machine that is not connected to the Internet</span></span>
 
-<span data-ttu-id="0ed45-115">Yukarıda gösterilen işlemler, makine Internet'e bağlı ve dosyalarını ortak bir konumdan indirebilirsiniz varsayılır.</span><span class="sxs-lookup"><span data-stu-id="0ed45-115">The processes demonstrated above assume the machine is connected to the Internet and can download files from a public location.</span></span>
-<span data-ttu-id="0ed45-116">Bu mümkün değilse, yalnızca seçeneğin kullanılması, yukarıda verilen işlemlerin bir makine önyükleme ve sağlayıcı çevrimdışı bir güvenilen işlem yalıtılmış düğümünden el ile kopyalayın sağlamaktır.</span><span class="sxs-lookup"><span data-stu-id="0ed45-116">If that is not possible, the only option is to bootstrap a machine using the processes given above, and manually copy the provider to the isolated node through an offline trusted process.</span></span>
-<span data-ttu-id="0ed45-117">Bu senaryo için en yaygın kullanım örneği, özel bir galeri, yalıtılmış bir ortam desteklemek kullanılabilir andır.</span><span class="sxs-lookup"><span data-stu-id="0ed45-117">The most common use case for this scenario is when a private gallery is available to support an isolated environment.</span></span>
+<span data-ttu-id="dc637-115">Yukarıda gösterilen işlemler, makine Internet'e bağlı ve dosyalarını ortak bir konumdan indirebilirsiniz varsayılır.</span><span class="sxs-lookup"><span data-stu-id="dc637-115">The processes demonstrated above assume the machine is connected to the Internet and can download files from a public location.</span></span> <span data-ttu-id="dc637-116">Bu mümkün değilse, yalnızca seçeneğin kullanılması, yukarıda verilen işlemlerin bir makine önyükleme ve sağlayıcı çevrimdışı bir güvenilen işlem yalıtılmış düğümünden el ile kopyalayın sağlamaktır.</span><span class="sxs-lookup"><span data-stu-id="dc637-116">If that is not possible, the only option is to bootstrap a machine using the processes given above, and manually copy the provider to the isolated node through an offline trusted process.</span></span> <span data-ttu-id="dc637-117">Bu senaryo için en yaygın kullanım örneği, özel bir galeri, yalıtılmış bir ortam desteklemek kullanılabilir andır.</span><span class="sxs-lookup"><span data-stu-id="dc637-117">The most common use case for this scenario is when a private gallery is available to support an isolated environment.</span></span>
 
-<span data-ttu-id="0ed45-118">İnternet'e bağlı bir makinede önyükleme için yukarıda işlemi tamamladıktan sonra sağlayıcı dosyalar konumda bulabilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="0ed45-118">After following the process above to bootstrap an Internet connected machine, you will find provider files in the location:</span></span>
+<span data-ttu-id="dc637-118">İnternet'e bağlı bir makinede önyükleme için yukarıda işlemi tamamladıktan sonra sağlayıcı dosyalar konumda bulabilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="dc637-118">After following the process above to bootstrap an Internet connected machine, you will find provider files in the location:</span></span>
 
-```
-C:\Program Files\PackageManagement\ProviderAssemblies\
-```
+`C:\Program Files\PackageManagement\ProviderAssemblies\`
 
-<span data-ttu-id="0ed45-119">NuGet sağlayıcısı klasör/dosya yapısı (büyük olasılıkla farklı sürüm numarasıyla) olacaktır:</span><span class="sxs-lookup"><span data-stu-id="0ed45-119">The folder/file structure of the NuGet provider will be (possibly with a different version number):</span></span>
+<span data-ttu-id="dc637-119">NuGet sağlayıcısı klasör/dosya yapısı (büyük olasılıkla farklı sürüm numarasıyla) olacaktır:</span><span class="sxs-lookup"><span data-stu-id="dc637-119">The folder/file structure of the NuGet provider will be (possibly with a different version number):</span></span>
 
 ```
 NuGet
@@ -141,43 +133,39 @@ NuGet
 ----Microsoft.PackageManagement.NuGetProvider.dll
 ```
 
-<span data-ttu-id="0ed45-120">Bu klasör ve dosya kullanarak güvenilir bir işlemi çevrimdışı makinelere kopyalayın.</span><span class="sxs-lookup"><span data-stu-id="0ed45-120">Copy these folders and file using a trusted process to the offline machines.</span></span>
+<span data-ttu-id="dc637-120">Bu klasör ve dosya kullanarak güvenilir bir işlemi çevrimdışı makinelere kopyalayın.</span><span class="sxs-lookup"><span data-stu-id="dc637-120">Copy these folders and file using a trusted process to the offline machines.</span></span>
 
-## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a><span data-ttu-id="0ed45-121">Yayımlama işlemleri Internet'e bağlı olmayan bir makineye el ile desteklemek için NuGet.exe önyüklemesi</span><span class="sxs-lookup"><span data-stu-id="0ed45-121">Manually bootstrapping NuGet.exe to support publish operations on a machine that is not connected to the Internet</span></span>
+## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a><span data-ttu-id="dc637-121">Yayımlama işlemleri Internet'e bağlı olmayan bir makineye el ile desteklemek için NuGet.exe önyüklemesi</span><span class="sxs-lookup"><span data-stu-id="dc637-121">Manually bootstrapping NuGet.exe to support publish operations on a machine that is not connected to the Internet</span></span>
 
-<span data-ttu-id="0ed45-122">Makine modüller ya da komut dosyaları için özel bir galeri kullanarak yayımlamak için kullanılacaksa NuGet sağlayıcısını el ile önyükleme işlemi yanı sıra `Publish-Module` veya `Publish-Script` cmdlet'lerini NuGet.exe ikili yürütülebilir dosya gerekecektir.</span><span class="sxs-lookup"><span data-stu-id="0ed45-122">In addition to the process to manually bootstrap the NuGet provider, if the machine will be used to publish modules or scripts to a private gallery using the `Publish-Module` or `Publish-Script` cmdlets, the NuGet.exe binary executable file will be required.</span></span>
+<span data-ttu-id="dc637-122">Makine modüller ya da komut dosyaları için özel bir galeri kullanarak yayımlamak için kullanılacaksa NuGet sağlayıcısını el ile önyükleme işlemi yanı sıra `Publish-Module` veya `Publish-Script` cmdlet'lerini NuGet.exe ikili yürütülebilir dosya gerekecektir.</span><span class="sxs-lookup"><span data-stu-id="dc637-122">In addition to the process to manually bootstrap the NuGet provider, if the machine will be used to publish modules or scripts to a private gallery using the `Publish-Module` or `Publish-Script` cmdlets, the NuGet.exe binary executable file will be required.</span></span>
 
-<span data-ttu-id="0ed45-123">Bu senaryo için en yaygın kullanım örneği, özel bir galeri, yalıtılmış bir ortam desteklemek kullanılabilir andır.</span><span class="sxs-lookup"><span data-stu-id="0ed45-123">The most common use case for this scenario is when a private gallery is available to support an isolated environment.</span></span>
-<span data-ttu-id="0ed45-124">NuGet.exe dosyası almak için iki seçenek vardır.</span><span class="sxs-lookup"><span data-stu-id="0ed45-124">There are two options to obtain the NuGet.exe file.</span></span>
+<span data-ttu-id="dc637-123">Bu senaryo için en yaygın kullanım örneği, özel bir galeri, yalıtılmış bir ortam desteklemek kullanılabilir andır.</span><span class="sxs-lookup"><span data-stu-id="dc637-123">The most common use case for this scenario is when a private gallery is available to support an isolated environment.</span></span> <span data-ttu-id="dc637-124">NuGet.exe dosyası almak için iki seçenek vardır.</span><span class="sxs-lookup"><span data-stu-id="dc637-124">There are two options to obtain the NuGet.exe file.</span></span>
 
-<span data-ttu-id="0ed45-125">İnternet'e bağlı olan bir makine önyükleme ve güvenilir bir işlem kullanılarak çevrimdışı makineler için dosyaları kopyalamak için bir seçenek var.</span><span class="sxs-lookup"><span data-stu-id="0ed45-125">One option is to bootstrap a machine that is Internet connected and copy the files to the offline machines using a trusted process.</span></span>
-<span data-ttu-id="0ed45-126">İnternet'e bağlı makine önyüklemesinden sonra NuGet.exe ikili iki klasörlerden birinde yer alır:</span><span class="sxs-lookup"><span data-stu-id="0ed45-126">After bootstrapping the Internet connected machine, the NuGet.exe binary will be located in one of two folders:</span></span>
+<span data-ttu-id="dc637-125">İnternet'e bağlı olan bir makine önyükleme ve güvenilir bir işlem kullanılarak çevrimdışı makineler için dosyaları kopyalamak için bir seçenek var.</span><span class="sxs-lookup"><span data-stu-id="dc637-125">One option is to bootstrap a machine that is Internet connected and copy the files to the offline machines using a trusted process.</span></span> <span data-ttu-id="dc637-126">İnternet'e bağlı makine önyüklemesinden sonra NuGet.exe ikili iki klasörlerden birinde yer alır:</span><span class="sxs-lookup"><span data-stu-id="dc637-126">After bootstrapping the Internet connected machine, the NuGet.exe binary will be located in one of two folders:</span></span>
 
-<span data-ttu-id="0ed45-127">Varsa `Publish-Module` veya `Publish-Script` cmdlet'leri (bir yönetici olarak) yükseltilmiş izinlerle yürütülmesini:</span><span class="sxs-lookup"><span data-stu-id="0ed45-127">If the `Publish-Module` or `Publish-Script` cmdlets were executed with elevated permissions (As an Administrator):</span></span>
+<span data-ttu-id="dc637-127">Varsa `Publish-Module` veya `Publish-Script` cmdlet'leri (bir yönetici olarak) yükseltilmiş izinlerle yürütülmesini:</span><span class="sxs-lookup"><span data-stu-id="dc637-127">If the `Publish-Module` or `Publish-Script` cmdlets were executed with elevated permissions (As an Administrator):</span></span>
 
 ```powershell
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 ```
 
-<span data-ttu-id="0ed45-128">Cmdlet'lerin yükseltilmiş izinleri olmayan bir kullanıcı olarak yürütüldü varsa:</span><span class="sxs-lookup"><span data-stu-id="0ed45-128">If the cmdlets were executed as a user without elevated permissions:</span></span>
+<span data-ttu-id="dc637-128">Cmdlet'lerin yükseltilmiş izinleri olmayan bir kullanıcı olarak yürütüldü varsa:</span><span class="sxs-lookup"><span data-stu-id="dc637-128">If the cmdlets were executed as a user without elevated permissions:</span></span>
 
 ```powershell
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-<span data-ttu-id="0ed45-129">İkinci seçenek NuGet.Org Web sitesinden NuGet.exe indirmektir: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) NugGet sürümü için üretim makinelerinden seçerken 2.8.5.208 sonraki olduğundan emin olun ve etiketli sürümünüzü belirlemek " Önerilen".</span><span class="sxs-lookup"><span data-stu-id="0ed45-129">A second option is to download NuGet.exe from the NuGet.Org website: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) When selecting a NugGet version for production machines, make sure it is later than 2.8.5.208, and identify the version that has been labeled "recommended".</span></span>
-<span data-ttu-id="0ed45-130">Bir tarayıcı kullanarak indirilen, dosyanın Engellemeyi Kaldır unutmayın.</span><span class="sxs-lookup"><span data-stu-id="0ed45-130">Remember to unblock the file if it was downloaded using a browser.</span></span>
-<span data-ttu-id="0ed45-131">Bunu kullanarak gerçekleştirilebilir `Unblock-File` cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="0ed45-131">This can be performed by using the `Unblock-File` cmdlet.</span></span>
+<span data-ttu-id="dc637-129">İkinci seçenek NuGet.Org Web sitesinden NuGet.exe indirmektir: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) NugGet sürümü için üretim makinelerinden seçerken 2.8.5.208 sonraki olduğundan emin olun ve etiketli sürümünüzü belirlemek " Önerilen".</span><span class="sxs-lookup"><span data-stu-id="dc637-129">A second option is to download NuGet.exe from the NuGet.Org website: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) When selecting a NugGet version for production machines, make sure it is later than 2.8.5.208, and identify the version that has been labeled "recommended".</span></span> <span data-ttu-id="dc637-130">Bir tarayıcı kullanarak indirilen, dosyanın Engellemeyi Kaldır unutmayın.</span><span class="sxs-lookup"><span data-stu-id="dc637-130">Remember to unblock the file if it was downloaded using a browser.</span></span> <span data-ttu-id="dc637-131">Bunu kullanarak gerçekleştirilebilir `Unblock-File` cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="dc637-131">This can be performed by using the `Unblock-File` cmdlet.</span></span>
 
-<span data-ttu-id="0ed45-132">Her iki durumda da NuGet.exe dosyanın herhangi bir konuma kopyalanabilir `$env:path`, ancak Standart konumlar:</span><span class="sxs-lookup"><span data-stu-id="0ed45-132">In either case, the NuGet.exe file can be copied to any location in `$env:path`, but the standard locations are:</span></span>
+<span data-ttu-id="dc637-132">Her iki durumda da NuGet.exe dosyanın herhangi bir konuma kopyalanabilir `$env:path`, ancak Standart konumlar:</span><span class="sxs-lookup"><span data-stu-id="dc637-132">In either case, the NuGet.exe file can be copied to any location in `$env:path`, but the standard locations are:</span></span>
 
-<span data-ttu-id="0ed45-133">Tüm kullanıcılar kullanabilmesi için yürütülebilir dosya kullanılabilir hale getirmek `Publish-Module` ve `Publish-Script` cmdlet'leri:</span><span class="sxs-lookup"><span data-stu-id="0ed45-133">To make the executable available so that all users can use `Publish-Module` and `Publish-Script` cmdlets:</span></span>
+<span data-ttu-id="dc637-133">Tüm kullanıcılar kullanabilmesi için yürütülebilir dosya kullanılabilir hale getirmek `Publish-Module` ve `Publish-Script` cmdlet'leri:</span><span class="sxs-lookup"><span data-stu-id="dc637-133">To make the executable available so that all users can use `Publish-Module` and `Publish-Script` cmdlets:</span></span>
 
 ```powershell
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 ```
 
-<span data-ttu-id="0ed45-134">Yürütülebilir dosyanın yalnızca belirli bir kullanıcı tarafından kullanılabilir hale getirmek için yalnızca bu kullanıcının profilinde bir konuma kopyalayın:</span><span class="sxs-lookup"><span data-stu-id="0ed45-134">To make the executable available to only a specific user, copy to the location within only that user's profile:</span></span>
+<span data-ttu-id="dc637-134">Yürütülebilir dosyanın yalnızca belirli bir kullanıcı tarafından kullanılabilir hale getirmek için yalnızca bu kullanıcının profilinde bir konuma kopyalayın:</span><span class="sxs-lookup"><span data-stu-id="dc637-134">To make the executable available to only a specific user, copy to the location within only that user's profile:</span></span>
 
 ```powershell
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
