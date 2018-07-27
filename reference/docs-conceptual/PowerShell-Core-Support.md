@@ -48,7 +48,7 @@ Olarak listelenen platformların `Experimental` resmi olarak desteklenmez, ancak
 | Debian 8,7 + ve 9                                | Desteklenir   | Desteklenir   |
 | CentOS 7                                          | Desteklenir   | Desteklenir   |
 | Red Hat Enterprise Linux 7                        | Desteklenir   | Desteklenir   |
-| OpenSUSE 42.2                                     | Desteklenir   | Desteklenir   |
+| OpenSUSE 42.3                                     | Desteklenir   | Desteklenir   |
 | Fedora 27                                         | Desteklenir   | Desteklenir   |
 | 28 fedora                                         |             | Desteklenir   |
 | macOS 10.12 +                                      | Desteklenir   | Desteklenir   |

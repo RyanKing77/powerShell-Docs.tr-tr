@@ -1,6 +1,6 @@
 # <a name="installing-powershell-core-on-linux"></a>Linux’ta PowerShell Core yükleme
 
-Destekler [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], ve [Arch Linux][arch].
+Destekler [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], ve [Arch Linux][arch].
 
 Değil resmi olarak desteklenen Linux dağıtımları için kullanmayı deneyebilirsiniz [PowerShell AppImage][lai].
 Linux kullanarak doğrudan PowerShell ikili dosyaları dağıtmaya de deneyebilirsiniz [ `tar.gz` arşiv][tar], ancak gerekli bağımlılıkları işletim sisteminde ayrı adımları göre ayarlamanız gerekir.
@@ -11,11 +11,12 @@ Paket yüklendikten sonra Çalıştır `pwsh` bir terminalden.
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
 [u17]: #ubuntu-1710
+[u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse-422
+[opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
@@ -29,7 +30,7 @@ Doğrudan indirme ile yükleme, dosya adı dışında değiştirmez.
 
 Çeşitli paket yöneticilerini kullanarak kararlı ve önizleme paketleri yüklemek için komut tablosu şu şekildedir:
 
-|Distrobution(s)|Kararlı komutu | Önizleme komutu |
+|Distribution(s)|Kararlı komutu | Önizleme komutu |
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
@@ -205,7 +206,7 @@ sudo apt-get update
 sudo apt-get install -y powershell-preview
 
 # Start PowerShell
-pwsh
+pwsh-preview
 ```
 
 Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.
@@ -225,7 +226,7 @@ sudo apt-get install -f
 > `dpkg -i` Komutu karşılaşılmamış bağımlılıklarıyla birlikte başarısız olur.
 > Sonraki komut `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.
 
-### <a name="uninstallation---ubuntu-1710"></a>Kaldırma - Ubuntu 17.10
+### <a name="uninstallation---ubuntu-1804"></a>Kaldırma - Ubuntu 18.04
 
 ```sh
 sudo apt-get remove powershell
@@ -416,7 +417,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0
 sudo yum remove powershell
 ```
 
-## <a name="opensuse-422"></a>OpenSUSE 42.2
+## <a name="opensuse-423"></a>OpenSUSE 42.3
 
 PowerShell Core yükleme sırasında `zypper` şu hatayı bildirin:
 
@@ -434,7 +435,7 @@ zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
 
 Ardından `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` PowerShell paketi yüklerken bir çözüm.
 
-### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Paket (tercih edilir) - deposu OpenSUSE 42.2 aracılığıyla yükleme
+### <a name="installation-via-package-repository-preferred---opensuse-423"></a>Paket (tercih edilir) - deposu OpenSUSE 42.3 aracılığıyla yükleme
 
 Linux için PowerShell Core, resmi Microsoft depolara kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
 
@@ -442,8 +443,8 @@ Linux için PowerShell Core, resmi Microsoft depolara kolay yükleme (ve güncel
 # Register the Microsoft signature key
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
-# Add the Microsoft Product feed
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/zypp/repos.d/microsoft.repo
+# Add the Microsoft Repository
+zypper ar https://packages.microsoft.com/rhel/7/prod/
 
 # Update the list of products
 sudo zypper update
@@ -455,7 +456,7 @@ sudo zypper install powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---opensuse-422"></a>Doğrudan indirme - OpenSUSE 42.2 aracılığıyla yükleme
+### <a name="installation-via-direct-download---opensuse-423"></a>Doğrudan indirme - OpenSUSE 42.3 aracılığıyla yükleme
 
 RPM paketini indirme `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [sürümleri][] OpenSUSE makine sayfaya.
 
@@ -471,7 +472,7 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---opensuse-422"></a>Kaldırma - OpenSUSE 42.2
+### <a name="uninstallation---opensuse-423"></a>Kaldırma - OpenSUSE 42.3
 
 ```sh
 sudo zypper remove powershell
@@ -676,7 +677,7 @@ Aşağıdaki tabloda farklı Linux dağıtımlarında resmi olarak desteklenen .
 | Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Esnetme) | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, openssl kitaplıkları, libicu |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE OpenSUSE 42.3 | libunwind, libcurl, openssl kitaplıkları, libicu |
 | Fedora 27 <br> 28 fedora | libunwind, libcurl, openssl kitaplıkları, libicu, compat openssl10 |
 
 Resmi olarak desteklenmez Linux dağıtımlarında PowerShell ikili dosyaları dağıtmak için ayrı adımları hedef işletim sistemi için gerekli bağımlılıkları yüklemeniz gerekir.
