@@ -2,44 +2,44 @@
 
 ## <a name="msi"></a>MSI
 
-Bir Windows İstemcisi veya Windows Server PowerShell yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve daha sonra), GitHub [sürümleri] [] sayfamızı MSI paketini indirin.
+Bir Windows istemci veya sunucuda Windows PowerShell'i yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve daha sonra), bizim Github'dan MSI paketini indirme [serbest][] sayfası.
 
-MSI dosyası şuna benzer- `PowerShell-<version>-win-<os-arch>.msi`
+MSI dosyası şu şekilde görünür- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
-Yüklendikten sonra yükleyici çift tıklayın ve yönergeleri izleyin.
+İndirildikten sonra yükleyiciye çift tıklayın ve yönergeleri izleyin.
 
-Yükleme sonrasında Başlat menüsü yerleştirilen bir kısayol yoktur.
+Bir kısayol Başlat menüsünde yükleme sonrasında yerleştirilen yoktur.
 
 - Varsayılan olarak, paket için yüklenir `$env:ProgramFiles\PowerShell\<version>`
 - Başlat menüsü aracılığıyla PowerShell başlatabilir veya `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 ### <a name="prerequisites"></a>Önkoşullar
 
-WSMan PowerShell uzaktan iletişimi etkinleştirmek için aşağıdaki önkoşulların karşılanması gerekir:
+WSMan PowerShell uzaktan iletişimini etkinleştirmek için aşağıdaki önkoşulların karşılanması gerekir:
 
-- Yükleme [Evrensel C çalışma zamanı](https://www.microsoft.com/download/details.aspx?id=50410) Windows 10'den önceki Windows sürümleri üzerinde.
+- Yükleme [Evrensel C çalışma zamanı](https://www.microsoft.com/download/details.aspx?id=50410) önce Windows 10 Windows sürümleri üzerinde.
   Doğrudan indirme veya Windows Update kullanılabilir.
-  Tam (isteğe bağlı paketleri dahil) düzeltme eki, desteklenen sistemleri zaten bu yüklü olacaktır.
+  Tam olarak düzeltme eki (isteğe bağlı paketleri dahil), desteklenen sistemleri zaten bu yüklü olacaktır.
 - Windows Management Framework (WMF) 4.0 veya daha yeni Windows 7 ve Windows Server 2008 R2 yükleyin.
 
 ## <a name="zip"></a>ZIP
 
-PowerShell ikili ZIP arşivini gelişmiş dağıtım senaryoları etkinleştirmek için sağlanır.
-ZIP arşivini kullanırken, VM'deki MSI paketini olduğu gibi Önkoşul denetimi vermeyecektir kaydedilmelidir.
-Windows 10'den önceki Windows sürümleri üzerinde düzgün çalışması için sırasıyla WSMan üzerinden uzaktan iletişim için emin olmanız gerekir. böylece [Önkoşullar](#prerequisites) karşılanır.
+Gelişmiş dağıtım senaryoları etkinleştirmek için PowerShell ikili ZIP arşivlerini sağlanır.
+ZIP arşivini kullanırken, önkoşul denetimi MSI paketini olduğu gibi vermeyecektir kaydedilmelidir.
+Windows 10 önceki Windows sürümlerinde düzgün çalışması için sırasıyla WSMan üzerinden uzaktan iletişim için emin olmamız gerekiyor. Bu nedenle [önkoşulları](#prerequisites) karşılanır.
 
-## <a name="deploying-on-windows-iot"></a>Üzerinde Windows IOT dağıtma
+## <a name="deploying-on-windows-iot"></a>Windows IOT dağıtma
 
-Windows IOT zaten PowerShell çekirdek 6'yı dağıtmak için kullanacağız Windows PowerShell ile birlikte gelir.
+Windows IOT zaten PowerShell Core 6'yı dağıtmak üzere kullanacağız Windows PowerShell ile birlikte gelir.
 
-1. Oluşturma `PSSession` hedef aygıta
+1. Oluşturma `PSSession` hedef cihaza
 
    ```powershell
    $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
-2. ZIP paketini cihaza kopyalayın
+2. ZIP paketini cihaza Kopyala
 
    ```powershell
    # change the destination to however you had partitioned it with sufficient
@@ -48,7 +48,7 @@ Windows IOT zaten PowerShell çekirdek 6'yı dağıtmak için kullanacağız Win
    Copy-Item .\PowerShell-6.0.2-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
-3. Cihaza bağlanın ve Arşiv genişletin
+3. Cihaza bağlayın ve Arşiv genişletin
 
    ```powershell
    Enter-PSSession $s
@@ -56,7 +56,7 @@ Windows IOT zaten PowerShell çekirdek 6'yı dağıtmak için kullanacağız Win
    Expand-Archive .\PowerShell-6.0.2-win-arm32.zip
    ```
 
-4. Kurulum uzak PowerShell çekirdek 6
+4. PowerShell Core 6 için'uzaktan iletişim kurma
 
    ```powershell
    cd .\PowerShell-6.0.2-win-arm32
@@ -66,33 +66,33 @@ Windows IOT zaten PowerShell çekirdek 6'yı dağıtmak için kullanacağız Win
    # You'll get an error message and will be disconnected from the device because it has to restart WinRM
    ```
 
-5. Cihaz PowerShell çekirdek 6 noktadaki bağlanın
+5. Cihazda PowerShell Core 6 uç noktasına bağlanma
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.0.2
    ```
 
-## <a name="deploying-on-nano-server"></a>Nano sunucuda dağıtma
+## <a name="deploying-on-nano-server"></a>Nano Sunucu'yu dağıtma
 
-Bu yönergeleri varsayar PowerShell sürümü Nano Server görüntüde zaten çalışıyor ve onu tarafından oluşturuldu [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).
-Nano, "gözetimsiz" işletim sistemi sunucusudur. Çekirdek ikili dosyalarını olması dağıtabilir iki farklı yöntemler kullanarak.
+Bu yönergeler, tarafından oluşturuldu ve Nano sunucu görüntüsünde PowerShell sürümü zaten çalışıyor varsayar [Nano sunucu görüntü Oluşturucusu](/windows-server/get-started/deploy-nano-server).
+Nano sunucu "gözetimsiz" bir işletim sistemi ' dir. Çekirdek ikili dosyalarını olması dağıtabilir iki farklı yöntemle.
 
-1. Çevrimdışı - Nano Server VHD'nin ve seçilen konumunuza bağlı görüntü içinde ZIP dosyasının içeriğini sıkıştırmasını açın.
-2. Çevrimiçi - ZIP dosyasının bir PowerShell oturumu üzerinden aktarım ve seçilen konumda sıkıştırmasını açın.
+1. Çevrimdışı - Nano sunucu VHD'sini bağlayın ve bağlı görüntü içinde seçilen konumunuza ZIP dosyasının içeriğini sıkıştırmasını açın.
+2. Çevrimiçi - zip dosyasını bir PowerShell oturumu üzerinden aktarım ve seçilen konumunuza sıkıştırmasını açın.
 
 Her iki durumda da, Windows 10 x64 ZIP yayın gerekir paketini ve bir "Yönetici" PowerShell örneği içindeki komutları çalıştırmanız gerekir.
 
-### <a name="offline-deployment-of-powershell-core"></a>PowerShell çekirdek çevrimdışı dağıtımı
+### <a name="offline-deployment-of-powershell-core"></a>PowerShell Core çevrimdışı dağıtımı
 
-1. Takılı Nano Server yansıması içindeki bir dizinin paketin sıkıştırmasını açmak için sık kullanılan sıkıştırma yardımcı programı kullanın.
-2. Yansımayı ve onu önyükleme.
-3. Windows PowerShell gelen örneğine bağlanın.
-4. Kullanarak bir uzak uç noktası oluşturmak için yönergeleri izleyin ["başka bir örneği teknik"](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+1. Bir dizine bağlı Nano sunucu görüntü içinde paketin sıkıştırmasını açmak için sık kullanılan sıkıştırma yardımcı programı kullanın.
+2. Yansımayı ve bunu önyükleme.
+3. Windows PowerShell'in gelen örneğine bağlanın.
+4. Uzaktan iletişimi kullanarak uç nokta oluşturmak için yönergeleri izleyin ["başka bir örnek yöntem"](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-### <a name="online-deployment-of-powershell-core"></a>PowerShell çekirdek çevrimiçi dağıtımı
+### <a name="online-deployment-of-powershell-core"></a>PowerShell Core çevrimiçi dağıtımı
 
-Aşağıdaki adımları çalışan örneği Nano Server ve onun uzak uç nokta yapılandırması için PowerShell çekirdek dağıtım kılavuzu.
+Aşağıdaki adımlar PowerShell Core dağıtımı çalışan bir Nano sunucu ve kendi uzak uç nokta yapılandırması örneği için yol.
 
 - Windows PowerShell gelen örneğine bağlanın
 
@@ -100,7 +100,7 @@ Aşağıdaki adımları çalışan örneği Nano Server ve onun uzak uç nokta y
   $session = New-PSSession -ComputerName <Nano Server IP address> -Credential <An Administrator account on the system>
   ```
 
-- Dosyayı Nano Server örneğine kopyalayın
+- Nano sunucu örneğine dosya kopyalayın
 
   ```powershell
   Copy-Item <local PS Core download location>\powershell-<version>-win-x64.zip c:\ -ToSession $session
@@ -119,25 +119,30 @@ Aşağıdaki adımları çalışan örneği Nano Server ve onun uzak uç nokta y
   Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShellCore_<version>"
   ```
 
-- WSMan tabanlı remoting istiyorsanız kullanarak bir uzak uç noktası oluşturmak için yönergeleri izleyin ["başka bir örneği teknik"](../core-powershell/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+- WSMan tabanlı uzak istiyorsanız, uzaktan iletişimi kullanarak uç nokta oluşturmak için yönergeleri izleyin ["başka bir örnek yöntem"](../core-powershell/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-## <a name="instructions-to-create-a-remoting-endpoint"></a>Bir uzak uç noktası oluşturmak için yönergeler
+## <a name="instructions-to-create-a-remoting-endpoint"></a>Bir uzak uç noktası oluşturmaya ilişkin yönergeler
 
-PowerShell çekirdeği WSMan ve SSH üzerinden PowerShell uzaktan iletişim protokolü (PSRP) destekler.
+PowerShell Core WSMan ve SSH üzerinden PowerShell uzaktan iletişim protokolü (PSRP) destekler.
 Daha fazla bilgi için bkz.:
 
-- [SSH PowerShell çekirdek Remoting] [ssh-remoting]
-- [WSMan Remoting PowerShell çekirdek.] [wsman-remoting]
+- [SSH PowerShell core'da uzaktan iletişim][ssh-remoting]
+- [PowerShell core'da WSMan uzaktan iletişim][wsman-remoting]
 
-## <a name="artifact-installation-instructions"></a>Yapı yükleme yönergeleri
+## <a name="artifact-installation-instructions"></a>Yapıt yükleme yönergeleri
 
-Biz her CI yapı [AppVeyor] [] ile CoreCLR BITS ile ilgili bir arşiv yayımlayın.
+Biz bir arşiv CoreCLR bitleri ile her bir CI yapısı ile yayımlama [AppVeyor][].
 
-PowerShell çekirdek CoreCLR yapıdan yüklemek için:
+PowerShell Core CoreCLR yapıdan yüklemek için:
 
-1. ZIP paketini indirin **yapıları** belirli yapı sekmesinde.
-2. Engellemeyi kaldırma ZIP dosyası: dosya Gezgini'nde sağ tıklatın, Özellikler -> 'Engellemeyi Kaldır kutusu ->' uygulamak onay ->
+1. ZIP paketini indirin **yapıtları** belirli yapı sekmesi.
+2. Engellemeyi kaldırma ZIP dosyası: dosya Gezgini'nde sağ -> Özellikler -> 'engellemeyi kaldırma kutusu ->' uygulama denetimi
 3. Zip dosyasını ayıklayın `bin` dizini
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO --> [serbest]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]:... /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.MD [wsman-remoting]:... /Core-PowerShell/wsman-Remoting-in-PowerShell-Core.MD [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO -->
+
+[serbest]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
