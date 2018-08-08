@@ -1,3 +1,14 @@
+---
+title: MacOS’ta PowerShell Core yükleme
+description: Macos'ta PowerShell Core yükleme hakkında bilgi
+ms.date: 08/06/2018
+ms.openlocfilehash: ff1814d95b3ca3fa8497069dff249fd2ad5576ef
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587474"
+---
 # <a name="installing-powershell-core-on-macos"></a>MacOS’ta PowerShell Core yükleme
 
 PowerShell Core macOS 10.12 ve üstünü destekler.
@@ -37,7 +48,7 @@ Son olarak, yükleme işleminiz düzgün çalıştığını doğrulayın:
 pwsh
 ```
 
-PowerShell betiğinden çıkın ve bash geri dönmek için 'Çık' komutunu kullanın. 
+PowerShell betiğinden çıkın ve bash geri dönmek için 'Çık' komutunu kullanın.
 ```sh
 exit
 ```

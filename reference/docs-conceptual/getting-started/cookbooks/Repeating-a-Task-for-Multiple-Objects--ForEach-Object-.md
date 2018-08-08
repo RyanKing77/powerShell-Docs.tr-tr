@@ -1,20 +1,20 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: Bir görev için birden çok nesne ForEach nesnesi yinelenen
+title: Birden çok nesne ForEach nesne için bir görevi tekrarlama
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-ms.openlocfilehash: 8b8002af3ade0905421760ce29cdc84b084236e9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 64d85edad4a6931b2376b95b6d1f5b4d5194399f
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954288"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587270"
 ---
-# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Birden çok nesne (ForEach-Object) için bir görev yinelenen
+# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Bir görevi tekrarlama (ForEach-Object) birden çok nesne için
 
-**ForEach-Object** ardışık her nesne üzerinde bir komut çalıştırmak olanak cmdlet kullanır komut dosyası blokları ve geçerli ardışık düzen nesne $_ tanımlayıcısı. Bu karmaşık bazı görevleri gerçekleştirmek için kullanılabilir.
+**ForEach-Object** komut dosyası blokları cmdlet'ini kullanır ve `$_` işlem hattındaki her bir nesne üzerinde bir komut çalıştırın izin vermek geçerli işlem hattı nesne tanımlayıcısı. Bu, karmaşık bazı görevleri gerçekleştirmek için kullanılabilir.
 
-Burada bu yararlı olabilir bir durum daha kullanışlı hale getirmek için veri düzenleme. Örneğin, WMI Win32_LogicalDisk sınıfından yerel her disk için boş alan bilgileri döndürmek için kullanılabilir. Veri bayt cinsinden, ancak okunması zor hale getiren verilir:
+Bir durum burada bu yararlı olabilir, daha kullanışlı hale getirmek için veri işleme. Örneğin, WMI Win32_LogicalDisk sınıfı yerel her disk için boş alan bilgileri döndürmek için kullanılabilir. Verilerin bayt cinsinden, ancak okunması zor hale getiren döndürülür:
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk
@@ -27,20 +27,20 @@ Size         : 203912880128
 VolumeName   : Local Disk
 ```
 
-Her değer 1024 tarafından iki kez bölerek biz FreeSpace değerini megabayt dönüştürebilirsiniz; İlk bölüm sonra verileri kilobayt cinsinden ve isteğe bağlı olarak ikinci ayırmadan sonra megabayt şeklindedir. Bunu ForEach-Object betik bloğu içinde yazarak yapabilirsiniz:
+Her bir değeri 1024 iki kez bölerek biz FreeSpace değerini megabayt dönüştürebilirsiniz; İlk bölüm sonra verileri kilobayttır ve isteğe bağlı olarak ikinci bölme işleminden megabayt gelir. Bir ForEach-Object betik bloğu içinde yazarak bunu yapabilirsiniz:
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {($_.FreeSpace)/1024.0/1024.0}
 48318.01171875
 ```
 
-Ne yazık ki, çıktı verileri ilişkili hiçbir etiketle sunulmuştur. Bu gibi WMI özellikleri salt okunur olduğundan, doğrudan FreeSpace dönüştürülemiyor. Bu yazarsanız:
+Ne yazık ki, çıkış verilerle ilişkili hiçbir etiket sunulmuştur. Bunun gibi WMI özellikleri salt okunur olduğundan, doğrudan FreeSpace dönüştürülemiyor. Bu türü:
 
 ```powershell
 Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-Bir hata iletisi alırsınız:
+Bir hata iletisi olursunuz:
 
 ```output
 "FreeSpace" is a ReadOnly property.
@@ -49,4 +49,4 @@ At line:1 char:70
 eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-Bazı gelişmiş teknikleri kullanarak veriyi yeniden düzenlemek, ancak kullanarak yeni bir nesne oluşturmak için basit bir yaklaşım olan **Select-Object**.
+Bazı gelişmiş teknikleri kullanarak verileri yeniden düzenleme, ancak basit bir yaklaşım kullanarak yeni bir nesne oluşturmak için olan **Select-Object**.

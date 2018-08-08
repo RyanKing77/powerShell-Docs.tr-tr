@@ -1,8 +1,19 @@
+---
+title: Linux’ta PowerShell Core yükleme
+description: PowerShell Core yükleme üzerinde çeşitli Linux dağıtımları hakkında bilgi
+ms.date: 08/06/2018
+ms.openlocfilehash: a6b0e3003f84ea6dc99cffcc7edf1b5b6963aa21
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587457"
+---
 # <a name="installing-powershell-core-on-linux"></a>Linux’ta PowerShell Core yükleme
 
-Destekler [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], ve [Arch Linux][arch].
+Destekler [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.10] [ u18], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], ve [Arch Linux][arch].
 
-Değil resmi olarak desteklenen Linux dağıtımları için kullanmayı deneyebilirsiniz [PowerShell AppImage][lai].
+Değil resmi olarak desteklenen Linux dağıtımları için kullanmayı deneyebilirsiniz [PowerShell Yasla paket][snap].
 Linux kullanarak doğrudan PowerShell ikili dosyaları dağıtmaya de deneyebilirsiniz [ `tar.gz` arşiv][tar], ancak gerekli bağımlılıkları işletim sisteminde ayrı adımları göre ayarlamanız gerekir.
 
 Tüm paketleri bizim Github'da kullanılabilir [sürümleri][] sayfası.
@@ -10,7 +21,7 @@ Paket yüklendikten sonra Çalıştır `pwsh` bir terminalden.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u17]: #ubuntu-1710
+[u18]: #ubuntu-1810
 [u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
@@ -19,7 +30,7 @@ Paket yüklendikten sonra Çalıştır `pwsh` bir terminalden.
 [opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
-[lai]: #linux-appimage
+[snap]: #snap-package
 [tar]: #binary-archives
 
 ## <a name="installing-preview-releases"></a>Önizleme sürümleri yükleme
@@ -132,56 +143,6 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1710"></a>Ubuntu 17.10
-
-> [!NOTE]
-> Sonra Ubuntu 17.04 desteği eklendi `6.1.0-preview.2`
-
-### <a name="installation-via-package-repository---ubuntu-1710"></a>Paket Deposu - Ubuntu 17.10 aracılığıyla yükleme
-
-Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
-Bu tercih edilen yöntemdir.
-
-```sh
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-# Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.10/prod.list
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.
-
-### <a name="installation-via-direct-download---ubuntu-1710"></a>Doğrudan indirme - Ubuntu 17.10 aracılığıyla yükleme
-
-Debian paketi indirme `powershell_6.0.2-1.ubuntu.17.10_amd64.deb` gelen [sürümleri][] Ubuntu makine sayfaya.
-
-Ardından aşağıdakileri terminalde yürütün:
-
-```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> `dpkg -i` Komutu karşılaşılmamış bağımlılıklarıyla birlikte başarısız olur.
-> Sonraki komut `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.
-
-### <a name="uninstallation---ubuntu-1710"></a>Kaldırma - Ubuntu 17.10
-
-```sh
-sudo apt-get remove powershell
-```
-
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
 > [!NOTE]
@@ -231,6 +192,14 @@ sudo apt-get install -f
 ```sh
 sudo apt-get remove powershell
 ```
+
+## <a name="ubuntu-1810"></a>Ubuntu 18.10
+
+> [!NOTE]
+> Ubuntu 18.10 desteği sonra eklenen `6.1.0-preview.3`.
+> 18.10 günlük bir derleme olduğundan, yalnızca desteklenen topluluk var.
+
+Üzerinde 18.10 yükleme aracılığıyla desteklenir `snapd`. Bkz: [Yasla paket] [ snap] için tam yönergeler;
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -550,6 +519,33 @@ AUR paketlerini yükleme hakkında daha fazla bilgi için bkz: [Arch Linux wiki]
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
+
+## <a name="snap-package"></a>Paket Yasla
+
+### <a name="getting-snapd"></a>Snapd alma
+
+`snapd` yaslar çalıştırmak için gereklidir.  Kullanım [bu yönergeleri](https://docs.snapcraft.io/core/install) sahip olduğunuzdan emin olmak için `snapd` yüklü.
+
+### <a name="installation-via-snap"></a>Ek bileşeni aracılığıyla yükleme
+
+Linux için PowerShell Core yayımlanmıştır [ek depolama](https://snapcraft.io/store) kolay yükleme (ve güncelleştirmeleri).
+Bu tercih edilen yöntemdir.
+
+```sh
+# Install PowerShell
+sudo snap install powershell-preview --classic
+
+# Start PowerShell
+pwsh-preview
+```
+
+Sonra ek yükleme otomatik olarak yükseltecek, ancak bir yükseltme kullanarak tetikleyebilirsiniz `sudo snap refresh powershell-preview`.
+
+### <a name="uninstallation"></a>Kaldırma
+
+```sh
+sudo snap remove powershell-preview
+```
 
 ## <a name="linux-appimage"></a>Linux AppImage
 

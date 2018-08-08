@@ -1,22 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 9aa7e92632c671751020687ddbfc374eeda7148b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189423"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587304"
 ---
-# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 içindeki yeni dil özellikleri
+# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 yeni dil özellikleri
 
-PowerShell 5.0, Windows PowerShell içinde aşağıdaki yeni dil öğeleri sunar:
+PowerShell 5.0, Windows PowerShell içinde aşağıdaki yeni dil öğelerini sunar:
 
 ## <a name="class-keyword"></a>Class anahtar sözcüğü
 
-**Sınıfı** anahtar sözcüğü yeni bir sınıf tanımlar. True .NET Framework türü budur.
-Sınıf üyeleri ortak, ancak yalnızca genel modülü kapsam içinde.
-Tür adı bir dize olarak başvuramaz (örneğin, `New-Object` çalışmıyor), ve bu sürümde, bir tür değişmez değeri kullanamazsınız (örneğin, `[MyClass]`) sınıf tanımlanır komut dosyası/modül dosyası dışında.
+**Sınıfı** anahtar sözcüğü, yeni bir sınıf tanımlar. Gerçek bir .NET Framework türü budur.
+Sınıf üyelerine genel, ancak yalnızca ortak modülü kapsamında değildir.
+Tür adı bir dize olarak başvurulamaz (örneğin, `New-Object` çalışmıyor), ve bu sürümde, bir tür sabit değer kullanamazsınız (örneğin, `[MyClass]`) sınıfı tanımlanır betik/modülü dosyanın dışında.
 
 ```powershell
 class MyClass
@@ -27,8 +27,8 @@ class MyClass
 
 ## <a name="enum-keyword-and-enumerations"></a>Enum anahtar sözcüğü ve numaralandırmalar
 
-Desteği **enum** anahtar sözcüğü eklendi, yeni satır ayırıcı olarak kullanır.
-Geçerli sınırlamalar: kendisi açısından bir numaralandırıcı tanımlayamazsınız, ancak aşağıdaki örnekte gösterildiği gibi bir numaralandırma başka bir enum bakımından başlatabilirsiniz.
+Destek **enum** anahtar sözcüğü eklendi, yeni satır ayırıcı olarak kullanır.
+Geçerli sınırlamalar: bir numaralandırıcı kendisi açısından tanımlayamazsınız ancak aşağıdaki örnekte gösterildiği gibi başka bir sabit listesi açısından enum başlatabilirsiniz.
 Ayrıca, şu anda temel türü belirtilemez; her zaman [int].
 
 ```powershell
@@ -38,7 +38,7 @@ enum Color2
 }
 ```
 
-Bir numaralandırıcı ayrıştırma zamanı sabiti olmalıdır; çağrılan komut sonucuna ayarlanamıyor.
+Numaralandırıcı değeri ayrıştırma zamanı sabiti olmalıdır; çağrılan bir komutun sonucuna ayarlanamaz.
 
 ```powershell
 enum MyEnum
@@ -50,57 +50,57 @@ enum MyEnum
 }
 ```
 
-Aşağıdaki örnekte gösterildiği gibi numaralandırmalar aritmetik işlemler destekler.
+Numaralandırmalar, aşağıdaki örnekte gösterildiği gibi aritmetik işlemleri destekler.
 
 ```powershell
 enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>İçeri aktarma DscResource
+## <a name="import-dscresource"></a>Import-DscResource
 
-**İçeri aktarma DscResource** true dinamik anahtar sözcüğü sunulmuştur.
-PowerShell içeren sınıfları aranıyor belirtilen modülünün kök modül ayrıştırır **DscResource** özniteliği.
+**Import-DscResource** true dinamik bir anahtar sözcüğü sunulmuştur.
+PowerShell içeren sınıflar için arama belirtilen modülün kök modül ayrıştırır **DscResource** özniteliği.
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-Yeni bir alan **ImplementingAssembly**, ModuleInfo için eklendi. Komut dosyası sınıfları tanımlıyorsa bir betik modülü için oluşturulan dinamik derleme ya da ikili modülleri için yüklenen derleme ayarlanır. Ne zaman ayarlanmadı ModuleType bildirimi =.
+Yeni bir alan **ImplementingAssembly**, ModuleInfo için eklendi. Sınıflar komut dosyasını tanımlayan bir betik modülü için oluşturulan dinamik derlemenin veya ikili modülleri için yüklü bütünleştirilmiş kodu için ayarlanır. Ne zaman ayarlanmadı ModuleType bildirimi =.
 
-Yansıma **ImplementingAssembly** alan bir modüldeki kaynakları bulur. Başka bir deyişle, PowerShell veya diğer yönetilen dilleri ile yazılmış kaynakları bulabilir.
+Yansıma **ImplementingAssembly** alan Modül içindeki kaynakları bulur. Başka bir deyişle, PowerShell veya başka yönetilen dillerde yazılmış kaynakları bulabilir.
 
-Başlatıcılar alanlarla:
+Başlatıcıları olan alanlar:
 
 ```powershell
 [int] $i = 5
 ```
 
-Statik desteklenir; herhangi bir sırada belirtilen tür kısıtlamaları bunun gibi bir öznitelik gibi çalışır.
+Statik desteklenir. herhangi bir sırada belirtilen tür kısıtlamaları bunun gibi bir öznitelik gibi çalışır.
 
 ```powershell
 static [int] $count = 0
 ```
 
-Bir isteğe bağlı türüdür.
+Bir tür isteğe bağlıdır.
 
 ```powershell
 $s = "hello"
 ```
 
-Tüm ortak üyeleridir.
+Tüm üyeleri ortaktır.
 
 ## <a name="constructors-and-instantiation"></a>Oluşturucular ve örnek oluşturma
 
-Windows PowerShell sınıfları oluşturucular olabilir; Bunlar kendi sınıf ile aynı ada sahip. Oluşturucular aşırı yüklenmiş. Statik oluşturucular desteklenir. Başlatma ifadeleri özelliklerle herhangi bir kod oluşturucu içinde çalıştırılmadan önce başlatılır. Statik özellikler statik oluşturucu gövdesi önce başlatılır ve örnek özelliklerini statik olmayan Oluşturucusu gövde önce başlatılır. Şu anda başka bir oluşturucudan bir oluşturucu çağırmak için hiçbir sözdizimi yoktur (ister C\# sözdizimi ": this()"). Bir ortak Init yöntemi tanımlamak için geçici bir çözüm değildir.
+Windows PowerShell sınıflarını oluşturucuları olabilir; Bunlar, sınıfı aynı ada sahip. Oluşturucu aşırı yüklenebilir. Statik oluşturucularda desteklenir. Başlatma ifadeleri özellikleriyle herhangi bir kod Oluşturucu çalıştırılmadan önce başlatılır. Statik özellikler statik Oluşturucu gövdesinde önce başlatılır ve örnek özelliklerini statik olmayan Oluşturucu gövdesinde önce başlatılır. Şu anda başka bir oluşturucudan bir oluşturucu çağırmak için hiçbir sözdizimi yoktur (ister C\# söz dizimi ": this()"). Geçici çözüm, ortak bir Init yöntemi tanımlamaktır.
 
-Bu sürümde başlatmasını sınıfların yollar şunlardır.
+Bu sürümde örnekleme sınıflarının yolları aşağıda verilmiştir.
 
-Varsayılan Oluşturucu kullanarak örnekleme. Yeni nesne bu sürümde desteklenmiyor unutmayın.
+Varsayılan oluşturucu kullanılarak örnekleme. New-Object bu sürümde desteklenmediğini unutmayın.
 
 ```powershell
 $a = [MyClass]::new()
 ```
 
-Bir parametre ile bir oluşturucu çağırma
+Bir parametresi olan yapılandırıcının
 
 ```powershell
 $b = [MyClass]::new(42)
@@ -111,17 +111,17 @@ Birden çok parametre ile bir oluşturucu için bir dizi geçirme
 $c = [MyClass]::new(@(42,43,44), "Hello")
 ```
 
-Bu sürümde, Windows PowerShell içinde tanımlanan sınıflar ile New-Object çalışmaz. Ayrıca bu sürüm için tür adı yalnızca sözcüksel olarak, modül veya sınıfı tanımlayan betik dışında görünür değil anlamı görünür olur. İşlevler Windows PowerShell içinde tanımlı bir sınıfın örneklerini döndürebilir ve iyi modül veya komut dosyası dışında çalışma örnekleri.
+Bu sürümde, Windows PowerShell içinde tanımlanan sınıflar ile New-Object çalışmaz. Ayrıca bu sürüm için tür adı yalnızca sözcüksel olarak, modül veya sınıf tanımlar betik dışında görünür olmadığı anlamına gelir görülebilir. İşlevler Windows PowerShell içinde tanımlanmış bir sınıfın örnekleri döndürebilir ve örnekleri de modül veya betik dışında çalışır.
 
-`Get-Member -Static` başka bir yöntem gibi aşırı görüntüleyebilmeniz Oluşturucular, listeler. Bu sözdiziminin performansını da New-Object önemli ölçüde daha hızlıdır.
+`Get-Member -Static` gibi başka bir yöntem aşırı yüklemeleri görebilecek şekilde oluşturucuları listeler. Bu söz dizimi performansını da New-Object önemli ölçüde daha hızlıdır.
 
-Adlı sözde statik yöntemi **yeni** aşağıdaki örnekte gösterildiği gibi .NET türleri ile çalışır.
+Adlı sözde statik yöntem **yeni** aşağıdaki örnekte gösterildiği gibi .NET türleri ile çalışır.
 
 ```powershell
 [hashtable]::new()
 ```
 
-Şimdi Oluşturucusu aşırı Get üyeyle ya da bu örnekte gösterildiği gibi görebilirsiniz:
+Get-Member veya bu örnekte gösterildiği gibi oluşturucu aşırı yüklemeleri artık görebilirsiniz:
 
 ```powershell
 PS> [hashtable]::new
@@ -134,7 +134,7 @@ hashtable new(int capacity, float loadFactor)
 
 ## <a name="methods"></a>Yöntemler
 
-Bir Windows PowerShell sınıf yöntemi yalnızca bir sonlandırma bloğu sahip bir ScriptBlock uygulanır. Tüm yöntemleri ortak. Adlı bir yöntem tanımlama örneği aşağıdaki gösterir **DoSomething**.
+Bir Windows PowerShell sınıfı yöntemi yalnızca bir sonlandırma bloğu sahip bir ScriptBlock gerçekleştirilir. Tüm yöntemleri herkese açık. Aşağıdaki adlı bir yöntemi tanımlayan bir örnek gösterilmektedir **DoSomething**.
 
 ```powershell
 class MyClass
@@ -154,31 +154,31 @@ $b = [MyClass]::new()
 $b.DoSomething(42)
 ```
 
-Aşırı yüklenmiş yöntemler, varolan bir yöntemi ile aynı adlı ancak belirtilen değerlerine göre--Ayrıştırılan de başka bir deyişle, desteklenir.
+Aşırı yüklenmiş yöntemler varolan bir yöntem ile aynı adlı ancak bunların belirtilen değerleri--Ayrıştırılan o da diğer bir deyişle, desteklenir.
 
 ## <a name="properties"></a>Özellikler
 
-Tüm ortak özelliklerdir. Bir satır başı karakteri veya noktalı virgül özellikleri gerektirir. Hiçbir nesne türü belirtilirse, özellik türü nesnesidir.
+Tüm özellikleri ortaktır. Noktalı virgül veya yeni satır özellikleri gerektirir. Hiçbir nesne türü belirtilirse, özellik türü nesnedir.
 
-Doğrulama öznitelikleri veya bağımsız değişken dönüşümü kullanmak özellikleri (örn. `[ValidateSet("aaa")]`) beklendiği gibi çalışmayabilir.
+Doğrulama öznitelikleri veya bağımsız değişken dönüşümü kullanan özellikler (örneğin `[ValidateSet("aaa")]`) beklendiği gibi çalışmayabilir.
 
 ## <a name="hidden"></a>Gizli
 
-Yeni bir anahtar sözcük **gizli**, eklendi. **Gizli** özellikleri ve yöntemleri (oluşturucular dahil) için uygulanabilir.
+Yeni bir anahtar sözcük **gizli**, eklendi. **Gizli** özelliklere ve yöntemlere (oluşturucular dahil) için uygulanabilir.
 
-Gizli üyeleri ortaktır, ancak Get-üye çıktısında sürece görünmez Force parametresini eklenir.
+Gizli üyeleri ortaktır, ancak Get-Member çıktısında sürece görünmez Force parametresi eklendi.
 
-Gizli üyeleri ne zaman dahil edilmez tamamlayarak veya IntelliSense tamamlanma gizli üye tanımlama sınıfında oluşmadığı sürece kullanarak sekmesinde.
+Gizli üyeleri ne zaman dahil edilmez tamamlayarak veya gizli üye tanımlama sınıfında tamamlama gerçekleşmediği sürece IntelliSense kullanarak sekmesi.
 
-Yeni bir öznitelik **System.Management.Automation.HiddenAttribute** C# kodu Windows PowerShell içinde aynı semantiğini böylece eklendi.
+Yeni bir öznitelik **System.Management.Automation.HiddenAttribute** C# kod içinde Windows PowerShell ile aynı semantiğe sahip olabilir, böylece eklendi.
 
 ## <a name="return-types"></a>Dönüş türleri
 
-Dönüş türü bir sözleşmedir; dönüş değeri, beklenen türe dönüştürülür. Dönüş türü belirtilmişse, dönüş türü void alır. Hiçbir nesnelerin akış yoktur; nesneleri ardışık düzene kasıtlı olarak veya yanlışlıkla tarafından yazılamaz.
+Dönüş türü bir sözleşmedir; dönüş değeri beklenen türe dönüştürülür. Dönüş türü belirtilirse, dönüş türü void. Akış yok nesnelerin yoktur; nesneleri işlem hattının yanlışlıkla veya kasıtlı olarak yazılamaz.
 
 ## <a name="attributes"></a>Öznitelikler
 
-İki yeni öznitelikler **DscResource** ve **DscProperty** eklenmiştir.
+İki yeni öznitelikler **DscResource** ve **DscProperty** sürümüne eklenmiştir.
 
 ## <a name="lexical-scoping-of-variables"></a>Sözcük değişkenlerinin kapsamı
 
@@ -208,10 +208,10 @@ $v = bar
 $v -eq $d # true
 ```
 
-## <a name="end-to-end-example"></a>Uçtan uca örnek
+## <a name="end-to-end-example"></a>Uçtan uca örneği
 
-Aşağıdaki örnek, bir HTML dinamik bir stil sayfası dili (DSL) uygulamak için birkaç yeni, özel sınıfları oluşturur.
-Ardından, türleri bir modül kapsamı dışında kullanıldığından örnek başlık stilleri ve tabloları gibi öğe sınıfının bir parçası olarak belirli öğe türleri oluşturmak için yardımcı işlevleri ekler.
+Aşağıdaki örnek, bir HTML dinamik stil sayfası dil (DSL) uygulamak için birçok yeni, özel sınıf oluşturur.
+Ardından, türleri, bir modül kapsamı dışında kullanılamaz çünkü örnek kapsamında başlığının stilleri ve tablolar gibi bir öğe sınıfı belirli bir öğe türleri oluşturmak için yardımcı işlevleri ekler.
 
 ```powershell
 # Classes that define the structure of the document
@@ -308,7 +308,7 @@ $bodyText += $Properties.foreach{TH $_}
 # Add the rows
 $bodyText += foreach ($row in $Data)
     {
-        TR (-join $Properties.Foreach{ TD ($row.$\_) } )
+        TR (-join $Properties.Foreach{ TD ($row.$_) } )
     }
 
     $table = [Element] @{

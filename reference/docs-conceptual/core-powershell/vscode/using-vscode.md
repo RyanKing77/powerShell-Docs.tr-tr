@@ -1,3 +1,14 @@
+---
+title: PowerShell geliştirme için Visual Studio Code'u kullanma
+description: PowerShell geliştirme için Visual Studio Code'u kullanma
+ms.date: 08/06/2018
+ms.openlocfilehash: f8e1e9af257037fc7bd74549e4197c9a1695e952
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587440"
+---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell geliştirme için Visual Studio Code'u kullanma
 
 Ek olarak [PowerShell ISE][ise], PowerShell Visual Studio Code'da iyi desteklenen de.

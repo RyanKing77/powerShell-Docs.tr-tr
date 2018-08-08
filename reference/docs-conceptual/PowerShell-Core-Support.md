@@ -1,3 +1,14 @@
+---
+title: PowerShell Core Destek Yaşam Döngüsü
+description: PowerShell Core için ilkelerimizin desteği
+ms.date: 08/06/2018
+ms.openlocfilehash: 2e0ca1b9c133e6f316a40aff13365d0489059165
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587168"
+---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core Destek Yaşam Döngüsü
 
 PowerShell Core araçları ve bileşenlerin sevk, yüklü ve Windows PowerShell üzerinden ayrı olarak yapılandırılmış ayrı bir kümesidir.
@@ -44,7 +55,8 @@ Olarak listelenen platformların `Experimental` resmi olarak desteklenmez, ancak
 | Windows Server 2008 R2, 2012 R2, 2016             | Desteklenir   | Desteklenir   |
 | [Windows Server yarı yıllık kanal][semi-annual] | Desteklenir   | Desteklenir   |
 | Ubuntu 14.04 ve 16.04                           | Desteklenir   | Desteklenir   |
-| Ubuntu 17.10 ve 18.04                           |             | Desteklenir   |
+| Ubuntu 18.04                                      |             | Desteklenir   |
+| Ubuntu 18.10 (aracılığıyla yaslama paketi)                   |             | Topluluk   |
 | Debian 8,7 + ve 9                                | Desteklenir   | Desteklenir   |
 | CentOS 7                                          | Desteklenir   | Desteklenir   |
 | Red Hat Enterprise Linux 7                        | Desteklenir   | Desteklenir   |
@@ -56,6 +68,10 @@ Olarak listelenen platformların `Experimental` resmi olarak desteklenmez, ancak
 | Raspbian                                          | Deneysel| Topluluk   |
 | Kali                                              | Topluluk   | Topluluk   |
 | AppImage (birden çok Linux platformlarında çalışır)     | Topluluk   | Topluluk   |
+| [Paket Yasla](https://snapcraft.io/powershell)   | Bkz. Not    | Bkz. Not    |
+
+> [!NOTE]
+> Yaslama paketleri bir süre için Deneysel olacaktır.  Sonra ek yeni destek sorunları sunmaz, destek paketini çalıştırmakta olduğunuz dağıtım izleyeceği başarılara duyuyoruz.
 
 ## <a name="platform-which-are-out-of-support"></a>Destek kapsamı dışında olan platform
 
@@ -65,13 +81,14 @@ Bu nedenle, aşağıdaki sürümleri dağıtım sahipleri tarafından sonlandır
 
 | İşletim sistemi       | Sürüm | Kullanım ömrü                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 26      | [Mayıs 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| Fedora   | 25      | [Aralık 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 24      | [Ağustos 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| OpenSUSE | 42.2    | [Ocak 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Fedora   | 25      | [Aralık 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [Mayıs 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | OpenSUSE | 42.1    | [Mayıs 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| Ubuntu   | 17.04   | [Ocak 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| OpenSUSE | 42.2    | [Ocak 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16.10   | [Temmuz 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17.04   | [Ocak 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [Temmuz 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## <a name="notes-on-licensing"></a>Lisanslama notları
 
