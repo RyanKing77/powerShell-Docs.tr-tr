@@ -1,41 +1,43 @@
 ---
 title: SSH üzerinden PowerShell Uzaktan İletişimi
 description: SSH kullanarak PowerShell core'da uzaktan iletişim
-ms.date: 08/06/2018
-ms.openlocfilehash: 27a8fc5623796a270a2ea67aa550c9a0998e766b
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.date: 08/14/2018
+ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587508"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133855"
 ---
-# <a name="powershell-remoting-over-ssh"></a><span data-ttu-id="dae7e-103">SSH üzerinden PowerShell Uzaktan İletişimi</span><span class="sxs-lookup"><span data-stu-id="dae7e-103">PowerShell Remoting Over SSH</span></span>
+# <a name="powershell-remoting-over-ssh"></a><span data-ttu-id="c3434-103">SSH üzerinden PowerShell Uzaktan İletişimi</span><span class="sxs-lookup"><span data-stu-id="c3434-103">PowerShell Remoting Over SSH</span></span>
 
-## <a name="overview"></a><span data-ttu-id="dae7e-104">Genel bakış</span><span class="sxs-lookup"><span data-stu-id="dae7e-104">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="c3434-104">Genel bakış</span><span class="sxs-lookup"><span data-stu-id="c3434-104">Overview</span></span>
 
-<span data-ttu-id="dae7e-105">PowerShell uzaktan iletişimini normalde WinRM bağlantı anlaşması ve veri aktarımı için kullanır.</span><span class="sxs-lookup"><span data-stu-id="dae7e-105">PowerShell remoting normally uses WinRM for connection negotiation and data transport.</span></span> <span data-ttu-id="dae7e-106">Hem Linux hem de Windows platformları için kullanıma sunulmuştur ve doğru çok platformlu PowerShell uzaktan iletişimini sağlar, SSH Bu uzaktan iletişim uygulama için seçildi.</span><span class="sxs-lookup"><span data-stu-id="dae7e-106">SSH was chosen for this remoting implementation since it is now available for both Linux and Windows platforms and allows true multiplatform PowerShell remoting.</span></span> <span data-ttu-id="dae7e-107">Ancak, WinRM bu uygulama henüz bunu PowerShell uzak oturumlar için sağlam bir barındırma modeli de sağlar.</span><span class="sxs-lookup"><span data-stu-id="dae7e-107">However, WinRM also provides a robust hosting model for PowerShell remote sessions which this implementation does not yet do.</span></span> <span data-ttu-id="dae7e-108">Ve bu PowerShell uzak uç nokta yapılandırması ve JEA (yeterli yönetim) henüz desteklenmiyor, bu uygulamada anlamına gelir.</span><span class="sxs-lookup"><span data-stu-id="dae7e-108">And this means that PowerShell remote endpoint configuration and JEA (Just Enough Administration) is not yet supported in this implementation.</span></span>
+<span data-ttu-id="c3434-105">PowerShell uzaktan iletişimini normalde WinRM bağlantı anlaşması ve veri aktarımı için kullanır.</span><span class="sxs-lookup"><span data-stu-id="c3434-105">PowerShell remoting normally uses WinRM for connection negotiation and data transport.</span></span> <span data-ttu-id="c3434-106">SSH, Linux ve Windows platformları için kullanıma sunulmuştur ve doğru çok platformlu PowerShell uzaktan iletişimini sağlar.</span><span class="sxs-lookup"><span data-stu-id="c3434-106">SSH is now available for Linux and Windows platforms and allows true multiplatform PowerShell remoting.</span></span>
 
-<span data-ttu-id="dae7e-109">PowerShell SSH uzak Windows ve Linux makinelerini arasındaki temel PowerShell oturumu uzaktan gerçekleştirmenize olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="dae7e-109">PowerShell SSH remoting lets you do basic PowerShell session remoting between Windows and Linux machines.</span></span> <span data-ttu-id="dae7e-110">Bu, barındırma işlemi bir SSH alt olarak hedef makinede bir PowerShell oluşturarak yapılır.</span><span class="sxs-lookup"><span data-stu-id="dae7e-110">This is done by creating a PowerShell hosting process on the target machine as an SSH subsystem.</span></span> <span data-ttu-id="dae7e-111">Sonuçta bu WinRM uç nokta yapılandırması ve JEA desteklemek için işleyişi benzer daha genel barındırma modeliyle değiştirilecek.</span><span class="sxs-lookup"><span data-stu-id="dae7e-111">Eventually this will be changed to a more general hosting model similar to how WinRM works in order to support endpoint configuration and JEA.</span></span>
+<span data-ttu-id="c3434-107">WinRM, uzak PowerShell oturumları için sağlam bir barındırma modeli sağlar.</span><span class="sxs-lookup"><span data-stu-id="c3434-107">WinRM provides a robust hosting model for PowerShell remote sessions.</span></span> <span data-ttu-id="c3434-108">Bu uygulama SSH tabanlı uzak şu anda değil, uzak uç nokta yapılandırması ve JEA (yeterli yönetim) destekler.</span><span class="sxs-lookup"><span data-stu-id="c3434-108">which this implementation SSH-based remoting doesn't currently support remote endpoint configuration and JEA (Just Enough Administration).</span></span>
 
-<span data-ttu-id="dae7e-112">`New-PSSession`, `Enter-PSSession` Ve `Invoke-Command` cmdlet'leri artık bu yeni uzaktan bağlantı sağlamak için yeni bir parametre vardır</span><span class="sxs-lookup"><span data-stu-id="dae7e-112">The `New-PSSession`, `Enter-PSSession` and `Invoke-Command` cmdlets now have a new parameter set to facilitate this new remoting connection</span></span>
+<span data-ttu-id="c3434-109">SSH, uzak Windows ve Linux makinelerini arasındaki temel PowerShell oturumu uzaktan gerçekleştirmenize olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="c3434-109">SSH remoting lets you do basic PowerShell session remoting between Windows and Linux machines.</span></span> <span data-ttu-id="c3434-110">SSH uzak PowerShell ana bilgisayar işlemi hedef makinede bir SSH alt oluşturur.</span><span class="sxs-lookup"><span data-stu-id="c3434-110">SSH Remoting creates a PowerShell host process on the target machine as an SSH subsystem.</span></span>
+<span data-ttu-id="c3434-111">Sonunda size bir genel barındırma modeli, uç nokta yapılandırması ve JEA desteklemek için WinRM ile benzer uygulayacaksınız.</span><span class="sxs-lookup"><span data-stu-id="c3434-111">Eventually we'll implement a general hosting model, similar to WinRM, to support endpoint configuration and JEA.</span></span>
+
+<span data-ttu-id="c3434-112">`New-PSSession`, `Enter-PSSession`, Ve `Invoke-Command` cmdlet'leri artık bu yeni uzaktan bağlantı desteklemek için yeni bir parametre vardır.</span><span class="sxs-lookup"><span data-stu-id="c3434-112">The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to support this new remoting connection.</span></span>
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-<span data-ttu-id="dae7e-113">Bu yeni parametre kümesi, büyük olasılıkla değiştirir ancak şimdilik SSH komut satırından etkileşim veya komutları ve komut dosyaları, üzerinde çağırmak Pssessions'dan oluşturmanıza olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="dae7e-113">This new parameter set will likely change but for now allows you to create SSH PSSessions that you can interact with from the command line or invoke commands and scripts on.</span></span> <span data-ttu-id="dae7e-114">Hedef makine ana bilgisayar adı parametresi belirtin ve kullanıcı adı ile kullanıcı adını belirtin.</span><span class="sxs-lookup"><span data-stu-id="dae7e-114">You specify the target machine with the HostName parameter and provide the user name with UserName.</span></span> <span data-ttu-id="dae7e-115">Cmdlet'ler PowerShell komut satırından etkileşimli olarak çalıştırırken için bir parola istenir.</span><span class="sxs-lookup"><span data-stu-id="dae7e-115">When running the cmdlets interactively at the PowerShell command line you will be prompted for a password.</span></span> <span data-ttu-id="dae7e-116">Ancak, SSH anahtar kimlik doğrulamasını kullanmak ve bir özel anahtar dosyası yolu KeyFilePath parametresiyle sağlamak için seçeneğiniz de vardır.</span><span class="sxs-lookup"><span data-stu-id="dae7e-116">But you also have the option to use SSH key authentication and provide a private key file path with the KeyFilePath parameter.</span></span>
+<span data-ttu-id="c3434-113">Uzak oturumu oluşturmak için hedef makine ile belirtin. `HostName` parametresi ve kullanıcı adını sağlayan `UserName`.</span><span class="sxs-lookup"><span data-stu-id="c3434-113">To create a remote session, you specify the target machine with the `HostName` parameter and provide the user name with `UserName`.</span></span> <span data-ttu-id="c3434-114">Cmdlet etkileşimli olarak çalıştırırken için bir parola istenir.</span><span class="sxs-lookup"><span data-stu-id="c3434-114">When running the cmdlets interactively, you're prompted for a password.</span></span> <span data-ttu-id="c3434-115">Ayrıca, bir özel anahtar dosyası ile kullanarak SSH anahtar kimlik doğrulamasını kullanmak `KeyFilePath` parametresi.</span><span class="sxs-lookup"><span data-stu-id="c3434-115">You can also, use SSH key authentication using a private key file with the `KeyFilePath` parameter.</span></span>
 
-## <a name="general-setup-information"></a><span data-ttu-id="dae7e-117">Genel Kurulum bilgilerini</span><span class="sxs-lookup"><span data-stu-id="dae7e-117">General setup information</span></span>
+## <a name="general-setup-information"></a><span data-ttu-id="c3434-116">Genel Kurulum bilgilerini</span><span class="sxs-lookup"><span data-stu-id="c3434-116">General setup information</span></span>
 
-<span data-ttu-id="dae7e-118">SSH tüm makinelerde yüklü olması gerekiyor.</span><span class="sxs-lookup"><span data-stu-id="dae7e-118">SSH is required to be installed on all machines.</span></span> <span data-ttu-id="dae7e-119">Hem de istemci yüklemeniz gerekir (`ssh.exe`) ve sunucu (`sshd.exe`) ve böylece uzak makinelere gelen ve giden deneyimleyebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="dae7e-119">You should install both client (`ssh.exe`) and server (`sshd.exe`) so that you can experiment with remoting to and from the machines.</span></span> <span data-ttu-id="dae7e-120">Windows için yüklemeniz gerekecek [Win32 OpenSSH github'dan](https://github.com/PowerShell/Win32-OpenSSH/releases).</span><span class="sxs-lookup"><span data-stu-id="dae7e-120">For Windows you will need to install [Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).</span></span>
-<span data-ttu-id="dae7e-121">Linux için SSH (dahil olmak üzere sshd sunucusunu) platformunuz için uygun yüklemeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="dae7e-121">For Linux you will need to install SSH (including sshd server) appropriate to your platform.</span></span> <span data-ttu-id="dae7e-122">En son PowerShell derleme veya GitHub SSH uzaktan erişim özelliği olan bir paketten de gerekir.</span><span class="sxs-lookup"><span data-stu-id="dae7e-122">You will also need a recent PowerShell build or package from GitHub having the SSH remoting feature.</span></span>
-<span data-ttu-id="dae7e-123">SSH alt sistemler, uzak makinede bir PowerShell işlem oluşturmak için kullanılır ve SSH sunucusu için yapılandırılmış olması gerekir.</span><span class="sxs-lookup"><span data-stu-id="dae7e-123">SSH subsystems is used to establish a PowerShell process on the remote machine and the SSH server will need to be configured for that.</span></span> <span data-ttu-id="dae7e-124">Ayrıca parola kimlik doğrulaması ve isteğe bağlı olarak anahtar tabanlı kimlik doğrulamasını etkinleştirmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="dae7e-124">In addition you will need to enable password authentication and optionally key based authentication.</span></span>
+<span data-ttu-id="c3434-117">SSH tüm makinelerde yüklü olması gerekir.</span><span class="sxs-lookup"><span data-stu-id="c3434-117">SSH must be installed on all machines.</span></span> <span data-ttu-id="c3434-118">SSH istemcisi yükleme (`ssh.exe`) ve sunucu (`sshd.exe`) makinelere gelen ve giden uzak yapabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="c3434-118">Install both the SSH client (`ssh.exe`) and server (`sshd.exe`) so that you can remote to and from the machines.</span></span> <span data-ttu-id="c3434-119">Windows için yükleme [Win32 OpenSSH github'dan](https://github.com/PowerShell/Win32-OpenSSH/releases).</span><span class="sxs-lookup"><span data-stu-id="c3434-119">For Windows, install [Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).</span></span>
+<span data-ttu-id="c3434-120">Linux için SSH (dahil olmak üzere sshd sunucusunu) platformunuz için uygun yükleyin.</span><span class="sxs-lookup"><span data-stu-id="c3434-120">For Linux, install SSH (including sshd server) appropriate to your platform.</span></span> <span data-ttu-id="c3434-121">Ayrıca SSH uzaktan iletişim özelliğini Al Github'dan PowerShell Core yüklemeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="c3434-121">You also need to install PowerShell Core from GitHub to get the SSH remoting feature.</span></span> <span data-ttu-id="c3434-122">SSH sunucusu, uzak makinede bir PowerShell işlem barındırmak için bir SSH alt oluşturmak için yapılandırılmalıdır.</span><span class="sxs-lookup"><span data-stu-id="c3434-122">The SSH server must be configured to create an SSH subsystem to host a PowerShell process on the remote machine.</span></span> <span data-ttu-id="c3434-123">Etkin parola veya anahtar tabanlı kimlik doğrulaması yapılandırmanız da gerekir.</span><span class="sxs-lookup"><span data-stu-id="c3434-123">You also must configure enable password or key-based authentication.</span></span>
 
-## <a name="setup-on-windows-machine"></a><span data-ttu-id="dae7e-125">Windows makinesinde Kurulumu</span><span class="sxs-lookup"><span data-stu-id="dae7e-125">Setup on Windows Machine</span></span>
+## <a name="set-up-on-windows-machine"></a><span data-ttu-id="c3434-124">Windows makinesinde ayarlama</span><span class="sxs-lookup"><span data-stu-id="c3434-124">Set up on Windows Machine</span></span>
 
-1. <span data-ttu-id="dae7e-126">[İçin Windows PowerShell Core] en son sürümünü yükleyin</span><span class="sxs-lookup"><span data-stu-id="dae7e-126">Install the latest version of [PowerShell Core for Windows]</span></span>
+1. <span data-ttu-id="c3434-125">[İçin Windows PowerShell Core] en son sürümünü yükleyin</span><span class="sxs-lookup"><span data-stu-id="c3434-125">Install the latest version of [PowerShell Core for Windows]</span></span>
 
-   - <span data-ttu-id="dae7e-127">SSH remoting desteği bakarak varsa, parametre için ayarlar söyleyebilirsiniz. `New-PSSession`</span><span class="sxs-lookup"><span data-stu-id="dae7e-127">You can tell if it has the SSH remoting support by looking at the parameter sets for `New-PSSession`</span></span>
+   - <span data-ttu-id="c3434-126">SSH remoting desteği bakarak varsa, parametre için ayarlar söyleyebilirsiniz. `New-PSSession`</span><span class="sxs-lookup"><span data-stu-id="c3434-126">You can tell if it has the SSH remoting support by looking at the parameter sets for `New-PSSession`</span></span>
 
    ```powershell
    Get-Command New-PSSession -syntax
@@ -45,138 +47,130 @@ ms.locfileid: "39587508"
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. <span data-ttu-id="dae7e-128">Son [Win32 OpenSSH] derleme [Kurulum] yönergeleri kullanarak Github'dan yükleyin</span><span class="sxs-lookup"><span data-stu-id="dae7e-128">Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions</span></span>
-3. <span data-ttu-id="dae7e-129">Win32 OpenSSH yüklendiği konumda sshd_config dosyasında Düzenle</span><span class="sxs-lookup"><span data-stu-id="dae7e-129">Edit the sshd_config file at the location where you installed Win32 OpenSSH</span></span>
+2. <span data-ttu-id="c3434-127">Son [Win32 OpenSSH] derleme [Kurulum] yönergeleri kullanarak Github'dan yükleyin</span><span class="sxs-lookup"><span data-stu-id="c3434-127">Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions</span></span>
+3. <span data-ttu-id="c3434-128">Win32 OpenSSH yüklendiği konumda sshd_config dosyasında Düzenle</span><span class="sxs-lookup"><span data-stu-id="c3434-128">Edit the sshd_config file at the location where you installed Win32 OpenSSH</span></span>
 
-   - <span data-ttu-id="dae7e-130">Parola kimlik doğrulamasının etkin olduğundan emin olun</span><span class="sxs-lookup"><span data-stu-id="dae7e-130">Make sure password authentication is enabled</span></span>
+   - <span data-ttu-id="c3434-129">Parola kimlik doğrulamasının etkin olduğundan emin olun</span><span class="sxs-lookup"><span data-stu-id="c3434-129">Make sure password authentication is enabled</span></span>
 
      ```
      PasswordAuthentication yes
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
-     > <span data-ttu-id="dae7e-131">OpenSSH için alanları alt sistemi yürütülebilir yollarında çalışmasını engelleyen Windows hata yoktur.</span><span class="sxs-lookup"><span data-stu-id="dae7e-131">There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.</span></span>
-     > <span data-ttu-id="dae7e-132">Bkz: [daha fazla bilgi için github'daki bu sorunu](https://github.com/PowerShell/Win32-OpenSSH/issues/784).</span><span class="sxs-lookup"><span data-stu-id="dae7e-132">See [this issue on GitHub for more information](https://github.com/PowerShell/Win32-OpenSSH/issues/784).</span></span>
+     > <span data-ttu-id="c3434-130">OpenSSH için alanları alt sistemi yürütülebilir yollarında çalışmasını engelleyen Windows hata yoktur.</span><span class="sxs-lookup"><span data-stu-id="c3434-130">There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.</span></span> <span data-ttu-id="c3434-131">Daha fazla bilgi için [bu GitHub sorunu](https://github.com/PowerShell/Win32-OpenSSH/issues/784).</span><span class="sxs-lookup"><span data-stu-id="c3434-131">For more information, see [this GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).</span></span>
 
-     <span data-ttu-id="dae7e-133">Tek bir çözüm, boşluk içermeyen Powershell yükleme dizinine hedefine sembolik bağlantı oluşturmaktır:</span><span class="sxs-lookup"><span data-stu-id="dae7e-133">One solution is to create a symlink to the Powershell installation directory that does not contain spaces:</span></span>
+     <span data-ttu-id="c3434-132">Tek bir çözüm Powershell yükleme dizinine boşluk olmayan bir sembolik bağlantısını oluşturmaktır:</span><span class="sxs-lookup"><span data-stu-id="c3434-132">One solution is to create a symlink to the Powershell installation directory that doesn't have spaces:</span></span>
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
      ```
 
-     <span data-ttu-id="dae7e-134">ve ardından alt girin:</span><span class="sxs-lookup"><span data-stu-id="dae7e-134">and then enter it in the subsystem:</span></span>
+     <span data-ttu-id="c3434-133">ve ardından alt girin:</span><span class="sxs-lookup"><span data-stu-id="c3434-133">and then enter it in the subsystem:</span></span>
 
      ```
      Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
-     ```
-     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-     ```
-
-   - <span data-ttu-id="dae7e-135">İsteğe bağlı olarak anahtar kimlik doğrulamasını etkinleştirme</span><span class="sxs-lookup"><span data-stu-id="dae7e-135">Optionally enable key authentication</span></span>
+   - <span data-ttu-id="c3434-134">İsteğe bağlı olarak anahtar kimlik doğrulamasını etkinleştirme</span><span class="sxs-lookup"><span data-stu-id="c3434-134">Optionally enable key authentication</span></span>
 
      ```
      PubkeyAuthentication yes
      ```
 
-4. <span data-ttu-id="dae7e-136">Sshd hizmetini yeniden başlatın</span><span class="sxs-lookup"><span data-stu-id="dae7e-136">Restart the sshd service</span></span>
+4. <span data-ttu-id="c3434-135">Sshd hizmetini yeniden başlatın</span><span class="sxs-lookup"><span data-stu-id="c3434-135">Restart the sshd service</span></span>
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. <span data-ttu-id="dae7e-137">OpenSSH, yol Env değişkenini yüklendiği yolu Ekle</span><span class="sxs-lookup"><span data-stu-id="dae7e-137">Add the path where OpenSSH is installed to your Path Env Variable</span></span>
+5. <span data-ttu-id="c3434-136">OpenSSH Path ortam değişkeninize yüklendiği yolu ekleyin.</span><span class="sxs-lookup"><span data-stu-id="c3434-136">Add the path where OpenSSH is installed to your Path environment variable.</span></span> <span data-ttu-id="c3434-137">Örneğin, `C:\Program Files\OpenSSH\`.</span><span class="sxs-lookup"><span data-stu-id="c3434-137">For example, `C:\Program Files\OpenSSH\`.</span></span> <span data-ttu-id="c3434-138">Bu giriş ssh.exe bulunmasına olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="c3434-138">This entry allows for the ssh.exe to be found.</span></span>
 
-   - <span data-ttu-id="dae7e-138">Bu satırlar olmalıdır `C:\Program Files\OpenSSH\`</span><span class="sxs-lookup"><span data-stu-id="dae7e-138">This should be along the lines of `C:\Program Files\OpenSSH\`</span></span>
-   - <span data-ttu-id="dae7e-139">Bu ssh.exe bulunmasına olanak sağlar</span><span class="sxs-lookup"><span data-stu-id="dae7e-139">This allows for the ssh.exe to be found</span></span>
+## <a name="set-up-on-linux-ubuntu-1404-machine"></a><span data-ttu-id="c3434-139">Linux (Ubuntu 14.04) makinesinde ayarlama</span><span class="sxs-lookup"><span data-stu-id="c3434-139">Set up on Linux (Ubuntu 14.04) Machine</span></span>
 
-## <a name="setup-on-linux-ubuntu-1404-machine"></a><span data-ttu-id="dae7e-140">Linux (Ubuntu 14.04) makinede Kur</span><span class="sxs-lookup"><span data-stu-id="dae7e-140">Setup on Linux (Ubuntu 14.04) Machine</span></span>
-
-1. <span data-ttu-id="dae7e-141">Son [Linux için PowerShell Core] derleme Github'dan yükleyin</span><span class="sxs-lookup"><span data-stu-id="dae7e-141">Install the latest [PowerShell Core for Linux] build from GitHub</span></span>
-2. <span data-ttu-id="dae7e-142">[Ubuntu SSH] gerektiği şekilde yükle</span><span class="sxs-lookup"><span data-stu-id="dae7e-142">Install [Ubuntu SSH] as needed</span></span>
+1. <span data-ttu-id="c3434-140">Son [Linux için PowerShell Core] derleme Github'dan yükleyin</span><span class="sxs-lookup"><span data-stu-id="c3434-140">Install the latest [PowerShell Core for Linux] build from GitHub</span></span>
+2. <span data-ttu-id="c3434-141">[Ubuntu SSH] gerektiği şekilde yükle</span><span class="sxs-lookup"><span data-stu-id="c3434-141">Install [Ubuntu SSH] as needed</span></span>
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. <span data-ttu-id="dae7e-143">Konum /etc/ssh sshd_config dosyasını Düzenle</span><span class="sxs-lookup"><span data-stu-id="dae7e-143">Edit the sshd_config file at location /etc/ssh</span></span>
+3. <span data-ttu-id="c3434-142">Konum /etc/ssh sshd_config dosyasını Düzenle</span><span class="sxs-lookup"><span data-stu-id="c3434-142">Edit the sshd_config file at location /etc/ssh</span></span>
 
-   - <span data-ttu-id="dae7e-144">Parola kimlik doğrulamasının etkin olduğundan emin olun</span><span class="sxs-lookup"><span data-stu-id="dae7e-144">Make sure password authentication is enabled</span></span>
+   - <span data-ttu-id="c3434-143">Parola kimlik doğrulamasının etkin olduğundan emin olun</span><span class="sxs-lookup"><span data-stu-id="c3434-143">Make sure password authentication is enabled</span></span>
 
    ```
    PasswordAuthentication yes
    ```
 
-   - <span data-ttu-id="dae7e-145">Bir PowerShell alt sistemi Girişi Ekle</span><span class="sxs-lookup"><span data-stu-id="dae7e-145">Add a PowerShell subsystem entry</span></span>
+   - <span data-ttu-id="c3434-144">Bir PowerShell alt sistemi Girişi Ekle</span><span class="sxs-lookup"><span data-stu-id="c3434-144">Add a PowerShell subsystem entry</span></span>
 
    ```
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
-   - <span data-ttu-id="dae7e-146">İsteğe bağlı olarak anahtar kimlik doğrulamasını etkinleştirme</span><span class="sxs-lookup"><span data-stu-id="dae7e-146">Optionally enable key authentication</span></span>
+   - <span data-ttu-id="c3434-145">İsteğe bağlı olarak anahtar kimlik doğrulamasını etkinleştirme</span><span class="sxs-lookup"><span data-stu-id="c3434-145">Optionally enable key authentication</span></span>
 
    ```
    PubkeyAuthentication yes
    ```
 
-4. <span data-ttu-id="dae7e-147">Sshd hizmetini yeniden başlatın</span><span class="sxs-lookup"><span data-stu-id="dae7e-147">Restart the sshd service</span></span>
+4. <span data-ttu-id="c3434-146">Sshd hizmetini yeniden başlatın</span><span class="sxs-lookup"><span data-stu-id="c3434-146">Restart the sshd service</span></span>
 
    ```bash
    sudo service sshd restart
    ```
 
-## <a name="setup-on-macos-machine"></a><span data-ttu-id="dae7e-148">Mac OS makinesinde Kurulumu</span><span class="sxs-lookup"><span data-stu-id="dae7e-148">Setup on MacOS Machine</span></span>
+## <a name="set-up-on-macos-machine"></a><span data-ttu-id="c3434-147">Mac OS makinesinde ayarlama</span><span class="sxs-lookup"><span data-stu-id="c3434-147">Set up on MacOS Machine</span></span>
 
-1. <span data-ttu-id="dae7e-149">Son [MacOS için PowerShell Core] derleme yükleme</span><span class="sxs-lookup"><span data-stu-id="dae7e-149">Install the latest [PowerShell Core for MacOS] build</span></span>
+1. <span data-ttu-id="c3434-148">Son [MacOS için PowerShell Core] derleme yükleme</span><span class="sxs-lookup"><span data-stu-id="c3434-148">Install the latest [PowerShell Core for MacOS] build</span></span>
 
-   - <span data-ttu-id="dae7e-150">SSH uzaktan iletişim, aşağıdaki adımları izleyerek etkin olduğundan emin olun:</span><span class="sxs-lookup"><span data-stu-id="dae7e-150">Make sure SSH Remoting is enabled by following these steps:</span></span>
-     - <span data-ttu-id="dae7e-151">Açık `System Preferences`</span><span class="sxs-lookup"><span data-stu-id="dae7e-151">Open `System Preferences`</span></span>
-     - <span data-ttu-id="dae7e-152">Tıklayın `Sharing`</span><span class="sxs-lookup"><span data-stu-id="dae7e-152">Click on `Sharing`</span></span>
-     - <span data-ttu-id="dae7e-153">Denetleme `Remote Login` -şeklinde olmalıdır `Remote Login: On`</span><span class="sxs-lookup"><span data-stu-id="dae7e-153">Check `Remote Login` - Should say `Remote Login: On`</span></span>
-     - <span data-ttu-id="dae7e-154">Uygun kullanıcılar erişime izin ver</span><span class="sxs-lookup"><span data-stu-id="dae7e-154">Allow access to appropriate users</span></span>
+   - <span data-ttu-id="c3434-149">SSH uzaktan iletişim, aşağıdaki adımları izleyerek etkin olduğundan emin olun:</span><span class="sxs-lookup"><span data-stu-id="c3434-149">Make sure SSH Remoting is enabled by following these steps:</span></span>
+     - <span data-ttu-id="c3434-150">Açık `System Preferences`</span><span class="sxs-lookup"><span data-stu-id="c3434-150">Open `System Preferences`</span></span>
+     - <span data-ttu-id="c3434-151">Tıklayın `Sharing`</span><span class="sxs-lookup"><span data-stu-id="c3434-151">Click on `Sharing`</span></span>
+     - <span data-ttu-id="c3434-152">Denetleme `Remote Login` -şeklinde olmalıdır `Remote Login: On`</span><span class="sxs-lookup"><span data-stu-id="c3434-152">Check `Remote Login` - Should say `Remote Login: On`</span></span>
+     - <span data-ttu-id="c3434-153">Uygun kullanıcılar erişime izin ver</span><span class="sxs-lookup"><span data-stu-id="c3434-153">Allow access to appropriate users</span></span>
 
-2. <span data-ttu-id="dae7e-155">Düzen `sshd_config` dosya konumunda `/private/etc/ssh/sshd_config`</span><span class="sxs-lookup"><span data-stu-id="dae7e-155">Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`</span></span>
+2. <span data-ttu-id="c3434-154">Düzen `sshd_config` dosya konumunda `/private/etc/ssh/sshd_config`</span><span class="sxs-lookup"><span data-stu-id="c3434-154">Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`</span></span>
 
-   - <span data-ttu-id="dae7e-156">Tercih ettiğiniz düzenleyiciyi kullanın veya</span><span class="sxs-lookup"><span data-stu-id="dae7e-156">Use your favorite editor or</span></span>
+   - <span data-ttu-id="c3434-155">Tercih ettiğiniz düzenleyiciyi kullanın veya</span><span class="sxs-lookup"><span data-stu-id="c3434-155">Use your favorite editor or</span></span>
 
      ```bash
      sudo nano /private/etc/ssh/sshd_config
      ```
 
-   - <span data-ttu-id="dae7e-157">Parola kimlik doğrulamasının etkin olduğundan emin olun</span><span class="sxs-lookup"><span data-stu-id="dae7e-157">Make sure password authentication is enabled</span></span>
+   - <span data-ttu-id="c3434-156">Parola kimlik doğrulamasının etkin olduğundan emin olun</span><span class="sxs-lookup"><span data-stu-id="c3434-156">Make sure password authentication is enabled</span></span>
 
      ```
      PasswordAuthentication yes
      ```
 
-   - <span data-ttu-id="dae7e-158">Bir PowerShell alt sistemi Girişi Ekle</span><span class="sxs-lookup"><span data-stu-id="dae7e-158">Add a PowerShell subsystem entry</span></span>
+   - <span data-ttu-id="c3434-157">Bir PowerShell alt sistemi Girişi Ekle</span><span class="sxs-lookup"><span data-stu-id="c3434-157">Add a PowerShell subsystem entry</span></span>
 
      ```
      Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
      ```
 
-   - <span data-ttu-id="dae7e-159">İsteğe bağlı olarak anahtar kimlik doğrulamasını etkinleştirme</span><span class="sxs-lookup"><span data-stu-id="dae7e-159">Optionally enable key authentication</span></span>
+   - <span data-ttu-id="c3434-158">İsteğe bağlı olarak anahtar kimlik doğrulamasını etkinleştirme</span><span class="sxs-lookup"><span data-stu-id="c3434-158">Optionally enable key authentication</span></span>
 
      ```
      PubkeyAuthentication yes
      ```
 
-3. <span data-ttu-id="dae7e-160">Sshd hizmetini yeniden başlatın</span><span class="sxs-lookup"><span data-stu-id="dae7e-160">Restart the sshd service</span></span>
+3. <span data-ttu-id="c3434-159">Sshd hizmetini yeniden başlatın</span><span class="sxs-lookup"><span data-stu-id="c3434-159">Restart the sshd service</span></span>
 
    ```bash
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
 
-## <a name="powershell-remoting-example"></a><span data-ttu-id="dae7e-161">PowerShell uzaktan iletişimini örneği</span><span class="sxs-lookup"><span data-stu-id="dae7e-161">PowerShell Remoting Example</span></span>
+## <a name="powershell-remoting-example"></a><span data-ttu-id="c3434-160">PowerShell uzaktan iletişimini örneği</span><span class="sxs-lookup"><span data-stu-id="c3434-160">PowerShell Remoting Example</span></span>
 
-<span data-ttu-id="dae7e-162">Uzaktan test etmek için en kolay yolu, tek bir makinede denemektir olmaktır.</span><span class="sxs-lookup"><span data-stu-id="dae7e-162">The easiest way to test remoting is to just try it on a single machine.</span></span> <span data-ttu-id="dae7e-163">Burada miyim Linux kutusundaki aynı makineye bir uzak oturumu oluşturur.</span><span class="sxs-lookup"><span data-stu-id="dae7e-163">Here I will create a remote session back to the same machine on a Linux box.</span></span> <span data-ttu-id="dae7e-164">SSH ana bilgisayar yanı sıra parola istemlerinin doğrulamak isteyen istemleri görüyoruz için PowerShell cmdlet'leri bir komut isteminden kullanıyorum, dikkat edin.</span><span class="sxs-lookup"><span data-stu-id="dae7e-164">Notice that I am using PowerShell cmdlets from a command prompt so we see prompts from SSH asking to verify the host computer as well as password prompts.</span></span> <span data-ttu-id="dae7e-165">Uzaktan iletişim var. çalıştığından emin olmak için Windows makine ve ardından uzak ana bilgisayar adı yalnızca değiştirerek makine arasında aynı şeyi yapabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="dae7e-165">You can do the same thing on a Windows machine to ensure remoting is working there and then remote between machines by simply changing the host name.</span></span>
+<span data-ttu-id="c3434-161">Uzaktan test etmek için en kolay yolu, tek bir makinede denemektir.</span><span class="sxs-lookup"><span data-stu-id="c3434-161">The easiest way to test remoting is to try it on a single machine.</span></span> <span data-ttu-id="c3434-162">Bu örnekte, bir uzak oturumu yeniden aynı Linux makine oluştururuz.</span><span class="sxs-lookup"><span data-stu-id="c3434-162">In this example, we create a remote session back to the same Linux machine.</span></span> <span data-ttu-id="c3434-163">PowerShell cmdlet etkileşimli olarak görüyoruz için gelen SSH ana bilgisayar doğrulamak isteyen ve için bir parola istemi ister kullanıyoruz.</span><span class="sxs-lookup"><span data-stu-id="c3434-163">We are using PowerShell cmdlets interactively so we see prompts from SSH asking to verify the host computer and prompting for a password.</span></span> <span data-ttu-id="c3434-164">Uzaktan iletişimini çalıştığından emin olmak için bir Windows makinede aynı şey yapabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="c3434-164">You can do the same thing on a Windows machine to ensure remoting is working.</span></span> <span data-ttu-id="c3434-165">Ardından uzak ana bilgisayar adını değiştirerek makineler arasında.</span><span class="sxs-lookup"><span data-stu-id="c3434-165">Then remote between machines by changing the host name.</span></span>
 
 ```powershell
 #
@@ -197,9 +191,9 @@ $session
 ```
 
 ```output
- Id Name            ComputerName    ComputerType    State         ConfigurationName     Availability
- -- ----            ------------    ------------    -----         -----------------     ------------
-  1 SSH1            UbuntuVM1       RemoteMachine   Opened        DefaultShell             Available
+ Id Name   ComputerName    ComputerType    State    ConfigurationName     Availability
+ -- ----   ------------    ------------    -----    -----------------     ------------
+  1 SSH1   UbuntuVM1       RemoteMachine   Opened   DefaultShell             Available
 ```
 
 ```powershell
@@ -301,20 +295,20 @@ GitCommitId                    v6.0.0-alpha.17
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents>
 ```
 
-### <a name="known-issues"></a><span data-ttu-id="dae7e-166">Bilinen Sorunlar</span><span class="sxs-lookup"><span data-stu-id="dae7e-166">Known Issues</span></span>
+### <a name="known-issues"></a><span data-ttu-id="c3434-166">Bilinen Sorunlar</span><span class="sxs-lookup"><span data-stu-id="c3434-166">Known Issues</span></span>
 
-<span data-ttu-id="dae7e-167">Linux makinesi uzak oturumu sudo komutu çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="dae7e-167">The sudo command does not work in remote session to Linux machine.</span></span>
+<span data-ttu-id="c3434-167">Sudo komutu Linux makinesine uzak oturumu işe yaramaz.</span><span class="sxs-lookup"><span data-stu-id="c3434-167">The sudo command doesn't work in remote session to Linux machine.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="dae7e-168">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="dae7e-168">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c3434-168">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="c3434-168">See Also</span></span>
 
-[<span data-ttu-id="dae7e-169">İçin Windows PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="dae7e-169">PowerShell Core for Windows</span></span>](../setup/installing-powershell-core-on-windows.md#msi)
+[<span data-ttu-id="c3434-169">İçin Windows PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="c3434-169">PowerShell Core for Windows</span></span>](../setup/installing-powershell-core-on-windows.md#msi)
 
-[<span data-ttu-id="dae7e-170">Linux için PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="dae7e-170">PowerShell Core for Linux</span></span>](../setup/installing-powershell-core-on-linux.md#ubuntu-1404)
+[<span data-ttu-id="c3434-170">Linux için PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="c3434-170">PowerShell Core for Linux</span></span>](../setup/installing-powershell-core-on-linux.md#ubuntu-1404)
 
-[<span data-ttu-id="dae7e-171">MacOS için PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="dae7e-171">PowerShell Core for MacOS</span></span>](../setup/installing-powershell-core-on-macos.md)
+[<span data-ttu-id="c3434-171">MacOS için PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="c3434-171">PowerShell Core for MacOS</span></span>](../setup/installing-powershell-core-on-macos.md)
 
-[<span data-ttu-id="dae7e-172">Win32 OpenSSH</span><span class="sxs-lookup"><span data-stu-id="dae7e-172">Win32 OpenSSH</span></span>](https://github.com/PowerShell/Win32-OpenSSH/releases)
+[<span data-ttu-id="c3434-172">Win32 OpenSSH</span><span class="sxs-lookup"><span data-stu-id="c3434-172">Win32 OpenSSH</span></span>](https://github.com/PowerShell/Win32-OpenSSH/releases)
 
-[<span data-ttu-id="dae7e-173">Yükleme</span><span class="sxs-lookup"><span data-stu-id="dae7e-173">installation</span></span>](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
+[<span data-ttu-id="c3434-173">Yükleme</span><span class="sxs-lookup"><span data-stu-id="c3434-173">installation</span></span>](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
-[<span data-ttu-id="dae7e-174">Ubuntu SSH</span><span class="sxs-lookup"><span data-stu-id="dae7e-174">Ubuntu SSH</span></span>](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
+[<span data-ttu-id="c3434-174">Ubuntu SSH</span><span class="sxs-lookup"><span data-stu-id="c3434-174">Ubuntu SSH</span></span>](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

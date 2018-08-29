@@ -1,31 +1,21 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
-title: DSC komut dosyası kaynağı
-ms.openlocfilehash: 1163d454972d8ee519d1c55b77bb85979faf3536
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.date: 08/24/2018
+keywords: DSC, powershell, yapılandırma, Kurulum
+title: DSC Script kaynağı
+ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189457"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43133902"
 ---
-# <a name="dsc-script-resource"></a><span data-ttu-id="24c21-103">DSC komut dosyası kaynağı</span><span class="sxs-lookup"><span data-stu-id="24c21-103">DSC Script Resource</span></span>
+# <a name="dsc-script-resource"></a><span data-ttu-id="b46e7-103">DSC Script kaynağı</span><span class="sxs-lookup"><span data-stu-id="b46e7-103">DSC Script Resource</span></span>
 
+> <span data-ttu-id="b46e7-104">Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.x</span><span class="sxs-lookup"><span data-stu-id="b46e7-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.x</span></span>
 
-> <span data-ttu-id="24c21-104">İçin geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="24c21-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+<span data-ttu-id="b46e7-105">**Betik** kaynak olarak Windows PowerShell Desired State Configuration (DSC), Windows PowerShell komut dosyası blokları hedef düğümleri üzerinde çalışmak için bir mekanizma sağlar.</span><span class="sxs-lookup"><span data-stu-id="b46e7-105">The **Script** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to run Windows PowerShell script blocks on target nodes.</span></span> <span data-ttu-id="b46e7-106">**Betik** kaynak kullanan `GetScript`, `SetScript`, ve `TestScript` tanımladığınız karşılık gelen DSC gerçekleştirmek için komut dosyası blokları içeren özelliğe işlem durumu.</span><span class="sxs-lookup"><span data-stu-id="b46e7-106">The **Script** resource uses `GetScript`, `SetScript`, and `TestScript` properties that contain script blocks you define to perform the corresponding DSC state operations.</span></span>
 
-<span data-ttu-id="24c21-105">**Betik** kaynağı içinde Windows PowerShell istenen durum yapılandırması (DSC), Windows PowerShell komut dosyası blokları hedef düğümlerinde çalıştırmak için bir mekanizma sağlar.</span><span class="sxs-lookup"><span data-stu-id="24c21-105">The **Script** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to run Windows PowerShell script blocks on target nodes.</span></span> <span data-ttu-id="24c21-106">`Script` Kaynak `GetScript`, `SetScript`, ve `TestScript` özellikleri.</span><span class="sxs-lookup"><span data-stu-id="24c21-106">The `Script` resource has `GetScript`, `SetScript`, and `TestScript` properties.</span></span> <span data-ttu-id="24c21-107">Bu özelliklerin her hedef düğümde çalışacak komut dosyası blokları ayarlamanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="24c21-107">These properties should be set to script blocks that will run on each target node.</span></span>
-
-<span data-ttu-id="24c21-108">`GetScript` Betik bloğu geçerli düğüm durumunu temsil eden bir hashtable döndürmelidir.</span><span class="sxs-lookup"><span data-stu-id="24c21-108">The `GetScript` script block should return a hashtable representing the state of the current node.</span></span> <span data-ttu-id="24c21-109">Hashtable yalnızca bir anahtar içermelidir `Result` ve değer türü olmalıdır `String`.</span><span class="sxs-lookup"><span data-stu-id="24c21-109">The hashtable must only contain one key `Result` and the value must be of type `String`.</span></span> <span data-ttu-id="24c21-110">Herhangi bir şeyi geri dönmek için gerekli değildir.</span><span class="sxs-lookup"><span data-stu-id="24c21-110">It is not required to return anything.</span></span> <span data-ttu-id="24c21-111">DSC çıkış bu betik bloğunun herhangi bir şey yapmaz.</span><span class="sxs-lookup"><span data-stu-id="24c21-111">DSC doesn't do anything with the output of this script block.</span></span>
-
-<span data-ttu-id="24c21-112">`TestScript` Betik bloğu geçerli düğüm değiştirilmesi gerekip gerekmediğini belirlemek.</span><span class="sxs-lookup"><span data-stu-id="24c21-112">The `TestScript` script block should determine if the current node needs to be modified.</span></span> <span data-ttu-id="24c21-113">Döndürme zorunluluğu `$true` düğümü güncel ise.</span><span class="sxs-lookup"><span data-stu-id="24c21-113">It should return `$true` if the node is up-to-date.</span></span> <span data-ttu-id="24c21-114">Döndürme zorunluluğu `$false` düğümün yapılandırma güncel değil ve tarafından güncelleştirilmesi `SetScript` betik bloğu.</span><span class="sxs-lookup"><span data-stu-id="24c21-114">It should return `$false` if the node's configuration is out-of-date and should be updated by the `SetScript` script block.</span></span> <span data-ttu-id="24c21-115">`TestScript` Betik bloğu DSC tarafından çağrılır.</span><span class="sxs-lookup"><span data-stu-id="24c21-115">The `TestScript` script block is called by DSC.</span></span>
-
-<span data-ttu-id="24c21-116">`SetScript` Betik bloğu düğüm değiştirmek.</span><span class="sxs-lookup"><span data-stu-id="24c21-116">The `SetScript` script block should modify the node.</span></span> <span data-ttu-id="24c21-117">Buna göre DSC denir `TestScript` engelleme return `$false`.</span><span class="sxs-lookup"><span data-stu-id="24c21-117">It is called by DSC if the `TestScript` block return `$false`.</span></span>
-
-<span data-ttu-id="24c21-118">Yapılandırma komut dosyanıza değişkenlerinden kullanmanız gerekip gerekmediğini `GetScript`, `TestScript`, veya `SetScript` komut dosyası blokları, kullanın `$using:` kapsam (bir örnek için aşağıya bakın).</span><span class="sxs-lookup"><span data-stu-id="24c21-118">If you need to use variables from your configuration script in the `GetScript`, `TestScript`, or `SetScript` script blocks, use the `$using:` scope (see below for an example).</span></span>
-
-
-## <a name="syntax"></a><span data-ttu-id="24c21-119">Sözdizimi</span><span class="sxs-lookup"><span data-stu-id="24c21-119">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="b46e7-107">Sözdizimi</span><span class="sxs-lookup"><span data-stu-id="b46e7-107">Syntax</span></span>
 
 ```
 Script [string] #ResourceName
@@ -38,37 +28,68 @@ Script [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="24c21-120">Özellikler</span><span class="sxs-lookup"><span data-stu-id="24c21-120">Properties</span></span>
+> [!NOTE]
+> <span data-ttu-id="b46e7-108">`GetScript`, `TestScript`, Ve `SetScript` blokları, dize olarak depolanır.</span><span class="sxs-lookup"><span data-stu-id="b46e7-108">The `GetScript`, `TestScript`, and `SetScript` blocks are stored as strings.</span></span>
 
-|  <span data-ttu-id="24c21-121">Özellik</span><span class="sxs-lookup"><span data-stu-id="24c21-121">Property</span></span>  |  <span data-ttu-id="24c21-122">Açıklama</span><span class="sxs-lookup"><span data-stu-id="24c21-122">Description</span></span>   |
-|---|---|
-| <span data-ttu-id="24c21-123">GetScript</span><span class="sxs-lookup"><span data-stu-id="24c21-123">GetScript</span></span>| <span data-ttu-id="24c21-124">Çağırdığınızda, çalıştırılan Windows PowerShell komut dosyası bloğunda sağlar [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="24c21-124">Provides a block of Windows PowerShell script that runs when you invoke the [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet.</span></span> <span data-ttu-id="24c21-125">Bu bloğu bir hashtable döndürmesi gerekir.</span><span class="sxs-lookup"><span data-stu-id="24c21-125">This block must return a hashtable.</span></span> <span data-ttu-id="24c21-126">Hashtable yalnızca bir anahtar içermelidir **sonuç** ve değer türü olmalıdır **dize**.</span><span class="sxs-lookup"><span data-stu-id="24c21-126">The hashtable must only contain one key **Result** and the value must be of type **String**.</span></span>|
-| <span data-ttu-id="24c21-127">SetScript</span><span class="sxs-lookup"><span data-stu-id="24c21-127">SetScript</span></span>| <span data-ttu-id="24c21-128">Windows PowerShell komut dosyası bloğunda sağlar.</span><span class="sxs-lookup"><span data-stu-id="24c21-128">Provides a block of Windows PowerShell script.</span></span> <span data-ttu-id="24c21-129">Ne zaman çağırmayı [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet'ini **TestScript** bloğu ilk çalışır.</span><span class="sxs-lookup"><span data-stu-id="24c21-129">When you invoke the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, the **TestScript** block runs first.</span></span> <span data-ttu-id="24c21-130">Varsa **TestScript** engelleme döndürür **$false**, **SetScript** bloğu çalıştırır.</span><span class="sxs-lookup"><span data-stu-id="24c21-130">If the **TestScript** block returns **$false**, the **SetScript** block will run.</span></span> <span data-ttu-id="24c21-131">Varsa **TestScript** engelleme döndürür **$true**, **SetScript** blok çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="24c21-131">If the **TestScript** block returns **$true**, the **SetScript** block will not run.</span></span>|
-| <span data-ttu-id="24c21-132">TestScript</span><span class="sxs-lookup"><span data-stu-id="24c21-132">TestScript</span></span>| <span data-ttu-id="24c21-133">Windows PowerShell komut dosyası bloğunda sağlar.</span><span class="sxs-lookup"><span data-stu-id="24c21-133">Provides a block of Windows PowerShell script.</span></span> <span data-ttu-id="24c21-134">Ne zaman çağırmayı [başlangıç DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet'i, bu bloğu çalıştırır.</span><span class="sxs-lookup"><span data-stu-id="24c21-134">When you invoke the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, this block runs.</span></span> <span data-ttu-id="24c21-135">Döndürürse **$false**, SetScript blok çalışır.</span><span class="sxs-lookup"><span data-stu-id="24c21-135">If it returns **$false**, the SetScript block will run.</span></span> <span data-ttu-id="24c21-136">Döndürürse **$true**, çalıştırılacak blok olacak SetScript.</span><span class="sxs-lookup"><span data-stu-id="24c21-136">If it returns **$true**, the SetScript block will not run.</span></span> <span data-ttu-id="24c21-137">**TestScript** bloğu ayrıca çalışır çağırdığınızda [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="24c21-137">The **TestScript** block also runs when you invoke the [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet.</span></span> <span data-ttu-id="24c21-138">Ancak, bu durumda, **SetScript** bloğu değil çalıştırmak, hangi TestScript değerin olsun engelle döndürür.</span><span class="sxs-lookup"><span data-stu-id="24c21-138">However, in this case, the **SetScript** block will not run, no matter what value the TestScript block returns.</span></span> <span data-ttu-id="24c21-139">**TestScript** gerçek yapılandırması geçerli istenen durum yapılandırması ve False eşleşirse, eşleşmiyorsa, blok True döndürmesi gerekir.</span><span class="sxs-lookup"><span data-stu-id="24c21-139">The **TestScript** block must return True if the actual configuration matches the current desired state configuration, and False if it does not match.</span></span> <span data-ttu-id="24c21-140">(Geçerli istenen durum yapılandırması, DSC kullanarak düğümde kamulaştırılmış son yapılandırmadır.)</span><span class="sxs-lookup"><span data-stu-id="24c21-140">(The current desired state configuration is the last configuration enacted on the node that is using DSC.)</span></span>|
-| <span data-ttu-id="24c21-141">kimlik bilgisi</span><span class="sxs-lookup"><span data-stu-id="24c21-141">Credential</span></span>| <span data-ttu-id="24c21-142">Bu komut dosyasını çalıştırmak için kimlik bilgileri gerekli olduğunda kullanılacak kimlik bilgilerini gösterir.</span><span class="sxs-lookup"><span data-stu-id="24c21-142">Indicates the credentials to use for running this script, if credentials are required.</span></span>|
-| <span data-ttu-id="24c21-143">dependsOn</span><span class="sxs-lookup"><span data-stu-id="24c21-143">DependsOn</span></span>| <span data-ttu-id="24c21-144">Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir.</span><span class="sxs-lookup"><span data-stu-id="24c21-144">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="24c21-145">Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise **ResourceName** ve türünü **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="24c21-145">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>
+## <a name="properties"></a><span data-ttu-id="b46e7-109">Özellikler</span><span class="sxs-lookup"><span data-stu-id="b46e7-109">Properties</span></span>
 
-## <a name="example-1"></a><span data-ttu-id="24c21-146">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="24c21-146">Example 1</span></span>
+|<span data-ttu-id="b46e7-110">Özellik</span><span class="sxs-lookup"><span data-stu-id="b46e7-110">Property</span></span>|<span data-ttu-id="b46e7-111">Açıklama</span><span class="sxs-lookup"><span data-stu-id="b46e7-111">Description</span></span>|
+|--------|-----------|
+|<span data-ttu-id="b46e7-112">GetScript</span><span class="sxs-lookup"><span data-stu-id="b46e7-112">GetScript</span></span>|<span data-ttu-id="b46e7-113">Düğüm geçerli durumunu döndüren bir betik bloğu.</span><span class="sxs-lookup"><span data-stu-id="b46e7-113">A script block that returns the current state of the Node.</span></span>|
+|<span data-ttu-id="b46e7-114">SetScript</span><span class="sxs-lookup"><span data-stu-id="b46e7-114">SetScript</span></span>|<span data-ttu-id="b46e7-115">DSC düğümü istenen durumda olmadığında uyumluluğu zorlamak için kullanan bir betik bloğu.</span><span class="sxs-lookup"><span data-stu-id="b46e7-115">A script block that DSC uses to enforce compliance when the Node is not in the desired state.</span></span>|
+|<span data-ttu-id="b46e7-116">TestScript</span><span class="sxs-lookup"><span data-stu-id="b46e7-116">TestScript</span></span>|<span data-ttu-id="b46e7-117">Düğüm istenen durumda olup olmadığını belirten bir betik bloğu.</span><span class="sxs-lookup"><span data-stu-id="b46e7-117">A script block that determines if the Node is in the desired state.</span></span>|
+|<span data-ttu-id="b46e7-118">Kimlik bilgisi</span><span class="sxs-lookup"><span data-stu-id="b46e7-118">Credential</span></span>| <span data-ttu-id="b46e7-119">Kimlik bilgileri gerekiyorsa bu betiği çalıştırmak için kullanılacak kimlik bilgilerini belirtir.</span><span class="sxs-lookup"><span data-stu-id="b46e7-119">Indicates the credentials to use for running this script, if credentials are required.</span></span>|
+|<span data-ttu-id="b46e7-120">DependsOn</span><span class="sxs-lookup"><span data-stu-id="b46e7-120">DependsOn</span></span>| <span data-ttu-id="b46e7-121">Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir.</span><span class="sxs-lookup"><span data-stu-id="b46e7-121">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="b46e7-122">Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="b46e7-122">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>
+
+### <a name="getscript"></a><span data-ttu-id="b46e7-123">GetScript</span><span class="sxs-lookup"><span data-stu-id="b46e7-123">GetScript</span></span>
+
+<span data-ttu-id="b46e7-124">DSC çıktısı kullanmayan `GetScript`.</span><span class="sxs-lookup"><span data-stu-id="b46e7-124">DSC does not use the output from `GetScript`.</span></span> <span data-ttu-id="b46e7-125">[Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet'ini çalıştırır `GetScript` düğümün geçerli durumu alınamadı.</span><span class="sxs-lookup"><span data-stu-id="b46e7-125">The [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet executes the `GetScript` to retrieve a node's current state.</span></span> <span data-ttu-id="b46e7-126">Dönüş değeri, gelen gerekli değildir. `GetScript`.</span><span class="sxs-lookup"><span data-stu-id="b46e7-126">A return value is not required from `GetScript`.</span></span> <span data-ttu-id="b46e7-127">Dönüş değeri belirtirseniz, olması gereken bir `hashtable` içeren bir **sonucu** anahtar değeri olan bir `String`.</span><span class="sxs-lookup"><span data-stu-id="b46e7-127">If you specify a return value, it must be a `hashtable` containing a **Result** key whose value is a `String`.</span></span>
+
+### <a name="testscript"></a><span data-ttu-id="b46e7-128">TestScript</span><span class="sxs-lookup"><span data-stu-id="b46e7-128">TestScript</span></span>
+
+<span data-ttu-id="b46e7-129">`TestScript` Belirlemek için DSC tarafından yürütülen `SetScript` çalıştırılmalıdır.</span><span class="sxs-lookup"><span data-stu-id="b46e7-129">The `TestScript` is executed by DSC to determine if the `SetScript` should be run.</span></span> <span data-ttu-id="b46e7-130">Varsa `TestScript` döndürür `$false`, DSC yürütür `SetScript` düğümü istenen duruma geri alma.</span><span class="sxs-lookup"><span data-stu-id="b46e7-130">If the `TestScript` returns `$false`, DSC executes the `SetScript` to bring the node back to the desired state.</span></span> <span data-ttu-id="b46e7-131">Döndürmesi gereken bir `boolean` değeri.</span><span class="sxs-lookup"><span data-stu-id="b46e7-131">It must return a `boolean` value.</span></span> <span data-ttu-id="b46e7-132">Sonucu `$true` düğümü uyumlu olduğunu gösterir ve `SetScript` çalıştırılmadı.</span><span class="sxs-lookup"><span data-stu-id="b46e7-132">A result of `$true` indicates that the node is compliant and `SetScript` should not executed.</span></span>
+
+<span data-ttu-id="b46e7-133">[Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) cmdlet'ini çalıştırır `TestScript` düğümleri uyumluluğu alınacak **betik** kaynakları.</span><span class="sxs-lookup"><span data-stu-id="b46e7-133">The [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) cmdlet, executes the `TestScript` to retrieve the nodes compliance with the  **Script** resources.</span></span> <span data-ttu-id="b46e7-134">Ancak, bu durumda, `SetScript` , ne olursa olsun çalıştırmaz `TestScript` block döndürür.</span><span class="sxs-lookup"><span data-stu-id="b46e7-134">However, in this case, the `SetScript` does not run, no matter what the `TestScript` block returns.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="b46e7-135">Tüm çıktı, `TestScript` dönüş değeri bir parçasıdır.</span><span class="sxs-lookup"><span data-stu-id="b46e7-135">All output from your `TestScript` is part of its return value.</span></span> <span data-ttu-id="b46e7-136">PowerShell anlamına unsuppressed çıkış olarak sıfır olmayan, yorumlar, `TestScript` döndüreceği `$true` bakılmaksızın, düğümün durumu.</span><span class="sxs-lookup"><span data-stu-id="b46e7-136">PowerShell interprets unsuppressed output as non-zero, which means that your `TestScript` will return `$true` regardless of your node's state.</span></span>
+> <span data-ttu-id="b46e7-137">Bu beklenmeyen sonuç, hatalı pozitif sonuç verir ve sorun giderme sırasında zorluk neden olur.</span><span class="sxs-lookup"><span data-stu-id="b46e7-137">This results in unpredictable results, false positives, and causes difficulty during troubleshooting.</span></span>
+
+### <a name="setscript"></a><span data-ttu-id="b46e7-138">SetScript</span><span class="sxs-lookup"><span data-stu-id="b46e7-138">SetScript</span></span>
+
+<span data-ttu-id="b46e7-139">`SetScript` Enfore istenen durum düğüme değiştirir.</span><span class="sxs-lookup"><span data-stu-id="b46e7-139">The `SetScript` modifies the node to enfore the desired state.</span></span> <span data-ttu-id="b46e7-140">Bu DSC tarafından çağrılır `TestScript` betik bloğu döndürür `$false`.</span><span class="sxs-lookup"><span data-stu-id="b46e7-140">It is called by DSC if the `TestScript` script block returns `$false`.</span></span> <span data-ttu-id="b46e7-141">`SetScript` Dönüş değeri olması gerekir.</span><span class="sxs-lookup"><span data-stu-id="b46e7-141">The `SetScript` should have no return value.</span></span>
+
+## <a name="examples"></a><span data-ttu-id="b46e7-142">Örnekler</span><span class="sxs-lookup"><span data-stu-id="b46e7-142">Examples</span></span>
+
+### <a name="example-1-write-sample-text-using-a-script-resource"></a><span data-ttu-id="b46e7-143">Örnek 1: bir betik kaynak kullanarak örnek metin yazma</span><span class="sxs-lookup"><span data-stu-id="b46e7-143">Example 1: Write sample text using a Script resource</span></span>
+
+<span data-ttu-id="b46e7-144">Bu örnekte varlığını test `C:\TempFolder\TestFile.txt` her düğümde.</span><span class="sxs-lookup"><span data-stu-id="b46e7-144">This example tests for the existence of `C:\TempFolder\TestFile.txt` on each node.</span></span> <span data-ttu-id="b46e7-145">Yoksa, onu kullanarak oluşturur `SetScript`.</span><span class="sxs-lookup"><span data-stu-id="b46e7-145">If it does not exist, it creates it using the `SetScript`.</span></span> <span data-ttu-id="b46e7-146">`GetScript` İçeriğini dosya ve dönüş değeri kullanılmaz döndürür.</span><span class="sxs-lookup"><span data-stu-id="b46e7-146">The `GetScript` returns the contents of the file, and its return value is not used.</span></span>
+
 ```powershell
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script ScriptExample
+    Node localhost
     {
-        SetScript =
+        Script ScriptExample
         {
-            $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
-            $sw.WriteLine("Some sample string")
-            $sw.Close()
+            SetScript = {
+                $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
+                $sw.WriteLine("Some sample string")
+                $sw.Close()
+            }
+            TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
+            GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
         }
-        TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
     }
 }
 ```
 
-## <a name="example-2"></a><span data-ttu-id="24c21-147">Örnek 2</span><span class="sxs-lookup"><span data-stu-id="24c21-147">Example 2</span></span>
+### <a name="example-2-compare-version-information-using-a-script-resource"></a><span data-ttu-id="b46e7-147">Örnek 2: sürüm bilgilerini kullanarak bir komut dosyası kaynak karşılaştırın</span><span class="sxs-lookup"><span data-stu-id="b46e7-147">Example 2: Compare version information using a Script resource</span></span>
+
+<span data-ttu-id="b46e7-148">Bu örnek alır *uyumlu* geliştirme bilgisayarında bir metin dosyasından sürüm bilgilerini ve depolar `$version` değişkeni.</span><span class="sxs-lookup"><span data-stu-id="b46e7-148">This example retrieves the *compliant* version information from a text file on the authoring computer and stores it in the `$version` variable.</span></span> <span data-ttu-id="b46e7-149">DSC düğümü MOF dosyası oluşturulurken değiştirir `$using:version` her komut dosyası değişkenleri block değeriyle `$version` değişkeni.</span><span class="sxs-lookup"><span data-stu-id="b46e7-149">When generating the node's MOF file, DSC replaces the `$using:version` variables in each script block with the value of the `$version` variable.</span></span> <span data-ttu-id="b46e7-150">Yürütme sırasında *uyumlu* sürümü bir metin dosyasındaki her bir düğümde depolanan ve karşılaştırma ve sonraki yürütmeleri üzerinde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b46e7-150">During execution, the *compliant* version is stored in a text file on each Node and compared and updated on subsequent executions.</span></span>
+
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -76,27 +97,30 @@ Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script UpdateConfigurationVersion
+    Node localhost
     {
-        GetScript = {
-            $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "$currentVersion" }
-        }
-        TestScript = {
-            $state = $GetScript
-            if( $state['Result'] -eq $using:version )
-            {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
-                return $true
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+                return @{ 'Result' = "$currentVersion" }
             }
-            Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
-            return $false
-        }
-        SetScript = {
-            $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            }
         }
     }
 }
 ```
-
-<span data-ttu-id="24c21-148">Bu kaynak yapılandırma sürümü bir metin dosyasına yazma.</span><span class="sxs-lookup"><span data-stu-id="24c21-148">This resource is writing the configuration's version to a text file.</span></span> <span data-ttu-id="24c21-149">Bu sürüm, istemci bilgisayarda kullanılabilir, ancak her biri için geçirilecek sahiptir herhangi bir düğüme değil `Script` kaynağın komut dosyası blokları PowerShell'ın ile `using` kapsam.</span><span class="sxs-lookup"><span data-stu-id="24c21-149">This version is available on the client computer, but isn't on any of the nodes, so it has to be passed to each of the `Script` resource's script blocks with PowerShell's `using` scope.</span></span> <span data-ttu-id="24c21-150">Ne zaman oluşturuluyor düğümün MOF dosyası değeri `$version` değişkeni istemci bilgisayardaki bir metin dosyasından okunur.</span><span class="sxs-lookup"><span data-stu-id="24c21-150">When generating the node's MOF file, the value of the `$version` variable is read from a text file on the client computer.</span></span> <span data-ttu-id="24c21-151">DSC değiştirir `$using:version` her komut dosyası değişkenleri engelleme değeriyle `$version` değişkeni.</span><span class="sxs-lookup"><span data-stu-id="24c21-151">DSC replaces the `$using:version` variables in each script block with the value of the `$version` variable.</span></span>
