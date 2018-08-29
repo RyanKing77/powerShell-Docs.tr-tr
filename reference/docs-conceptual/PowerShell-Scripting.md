@@ -1,78 +1,73 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
 title: PowerShell betik oluşturma
-ms.openlocfilehash: c6ba3abc2544834e2cbec16a524f79399a1d2599
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 754805148dc815a12c5c77e4894fb598c6927f7e
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094060"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134002"
 ---
 # <a name="powershell"></a>PowerShell
 
-PowerShell, .NET Framework üzerine oluşturulan bir görev tabanlı komut satırı kabuğu ve betik dilidir olur; Sistem yöneticileri ve ileri kullanıcılar, hızlı bir şekilde birden çok işletim sistemi (Linux, macOS, UNIX ve Windows) ve bu işletim sistemlerinde çalışan uygulamalar için ilgili işlemlerin yönetimini otomatik hale getirmek için özel olarak tasarlanmıştır.
+Bir görev tabanlı komut satırı kabuğu ve betik dilidir .NET Framework üzerine inşa edilmiş powershell'dir.
+PowerShell, sistem yöneticileri yardımcı olur ve ileri kullanıcılar (Linux, macOS ve Windows) işletim sistemleri ve işlemleri yönetme görevleri hızlı bir şekilde otomatik hale getirebilirsiniz.
 
-## <a name="powershell-is-open-source"></a>PowerShell açık kaynaktır
+PowerShell komutları, komut satırından bilgisayarları yönetmenizi sağlar. PowerShell sağlayıcıları, kayıt defteri gibi veri depolarında erişmek ve sertifika deposunu, dosya sistemine erişmelerini olarak kolayca belirlemenizi sağlar. PowerShell, kapsamlı bir ifade ayrıştırıcısı ve tam olarak geliştirilen bir betik dilini içerir.
+
+## <a name="powershell-is-open-source"></a>PowerShell açık kaynak
 
 PowerShell temel kaynak kodu github'da kullanılabilir ve topluluk Katkıları için açık sunulmuştur.
 Bkz: [PowerShell GitHub üzerinde kaynak](https://github.com/powershell/powershell).
 
 Gereksinim duyduğunuz, BITS ile başlayabilirsiniz [alma PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).
-Veya belki de hızlı bir tura ile [kullanmaya başlama](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)
+Veya belki de hızlı bir tura ile [Başlarken](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell).
 
 ## <a name="powershell-design-goals"></a>PowerShell tasarım hedefleri
+
 PowerShell, komut satırı ve betik ortamı değindiği sorunlarını ortadan kaldırılır ve yeni özellikler ekleyerek iyileştirmek için tasarlanmıştır.
 
 ### <a name="discoverability"></a>Bulunabilirlik
+
 PowerShell özellikleri bulmak daha kolay hale getirir. Örneğin, görüntüle ve Değiştir Windows Hizmetleri cmdlet'lerinin listesini bulmak için şunu yazın:
 
 ```powershell
 Get-Command *-Service
 ```
 
-Hangi cmdlet'i bir görev gerçekleştirir keşfetme sonra cmdlet'i hakkında daha fazla kullanarak öğrenebilirsiniz `Get-Help` cmdlet'i.
-Örneğin, hakkında Yardım görüntülemek için `Get-Service` cmdlet'i, türü:
+Hangi cmdlet'i bir görev gerçekleştirir keşfetme sonra cmdlet'i hakkında daha fazla kullanarak öğrenebilirsiniz `Get-Help` cmdlet'i. Örneğin, hakkında Yardım görüntülemek için `Get-Service` cmdlet'i, türü:
 
 ```powershell
 Get-Help Get-Service
 ```
-Çoğu cmdlet, yönetilebilir ve ardından metin görüntülemek için işlenen nesneleri gösterin.
-Bu cmdlet'in çıktısı, tam olarak anlamak için kendi çıktı için kanal `Get-Member` cmdlet'i.
-Örneğin, aşağıdaki komut nesnesi çıktı tarafından üyeleri hakkında bilgi görüntüler `Get-Service` cmdlet'i.
+
+Yönetilen ve ardından görüntülemek için metin olarak işlenen çoğu cmdlet'leri dönüş nesneleri. Bir cmdlet'in çıktısı, tam olarak anlamak için çıktı için kanal `Get-Member` cmdlet'i. Örneğin, aşağıdaki komut nesnesi çıktı tarafından üyeleri hakkında bilgi görüntüler `Get-Service` cmdlet'i.
 
 ```powershell
 Get-Service | Get-Member
 ```
 
 ### <a name="consistency"></a>Tutarlılık
-Sistemlerini yönetmeyi karmaşık bir çaba olabilir ve tutarlı bir arabirim üzerinden erişir Araçlar'ın devralınmış karmaşıklığı denetlemek için yardımcı olur.
-Ne yazık ki, komut satırı araçları ne kodlanabilir COM nesneleri için kendi tutarlılık bilinmektedir.
 
-PowerShell tutarlılığını birincil varlıklarını biridir.
-Örneğin nasıl kullanacağınızı öğrenin, `Sort-Object` cmdlet'i, herhangi bir cmdlet'in çıkışını sıralamak için bu bilgi kullanabilirsiniz.
-Farklı bir sıralama yordamları her cmdlet'in öğrenmek zorunda değildir.
+Sistemlerini yönetmeye, karmaşık bir görev olabilir. Tutarlı bir arabirimi olan araçlar, devralınan karmaşıklığı denetlemek için yardımcı olur. Ne yazık ki, komut satırı araçları ve kodlanabilir COM nesneleri için kendi tutarlılık bilinen değildir.
 
-Ayrıca, cmdlet geliştiriciler kendi cmdlet'leri için sıralama özellikleri tasarım gerekmez.
-PowerShell, bunları temel özellikleri sağlar ve bunları pek çok arabirimi yönleri hakkında tutarlı olmasını zorlar bir çerçeve sunar.
-Framework bazı geliştiriciler için genellikle bırakılan seçeneklerin ortadan kaldırır, ancak buna karşılık, güçlü ve kullanımı kolay cmdlet'lerini geliştirmeyi çok daha kolay kolaylaştırır.
+PowerShell tutarlılığını birincil varlıklarını biridir. Örneğin nasıl kullanacağınızı öğrenin, `Sort-Object` cmdlet'i, herhangi bir cmdlet'in çıkışını sıralamak için bu bilgi kullanabilirsiniz. Farklı bir sıralama yordamları her cmdlet'in öğrenmeniz gerekmez.
+
+Ayrıca, cmdlet geliştiriciler kendi cmdlet'leri için sıralama özellikleri tasarım gerekmez. PowerShell, tutarlılık zorlayan temel özelliklere sahip bir çerçeve sağlar. Framework, geliştiriciler için sol bazı seçenekler ortadan kaldırır. Ancak, cmdlet'leri geliştirilmesini çok daha kolay kolaylaştırır.
 
 ### <a name="interactive-and-scripting-environments"></a>Etkileşimli ve komut dosyası ortamlar
-PowerShell komut satırı araçları ve COM nesneleri için erişmenizi ve ayrıca güç, .NET Framework Sınıf Kitaplığı'nı (FCL) kullanmanıza olanak sağlayan bir birleşik etkileşimli ve komut dosyası ortamıdır.
 
-Bu ortama bağlı Windows komut birden fazla komut satırı araçlarıyla etkileşimli bir ortam sağlayan istemi artırır.
-Olanak veren Windows komut dosyası sistemi (WSH) betikleri da artırır birden çok komut satırı araçları ve COM Otomasyon nesneleri kullanabilirsiniz, ancak etkileşimli bir ortam sağlamaz.
+Windows komut istemi, etkileşimli bir kabuk komut satırı araçları ve temel betik erişmesini sağlar. Windows betik sistemi (WSH) kodlanabilir komut satırı araçları ve COM Otomasyon nesneleri var, ancak etkileşimli bir kabuk sağlamaz.
 
-Bu özelliklerin tümü, erişim birleştirerek, PowerShell etkileşimli kullanıcı ve komut dosyası yazan yeteneklerini genişletir ve sistem yönetimini daha kolay yönetilebilir hale getirir.
+PowerShell, etkileşimli bir kabuk ve komut dosyası ortamı birleştirir. PowerShell komut satırı araçları, COM nesnelerini ve .NET sınıf kitaplıkları erişebilirsiniz. Bu özellik bileşimi etkileşimli kullanıcı, betik yazarı ve Sistem Yöneticisi yeteneklerini genişletir.
 
 ### <a name="object-orientation"></a>Nesne yönü
-PowerShell ile metinde komutları yazarak etkileşim olsa da, PowerShell metin olmayan nesneler üzerinde temel alır.
-Komutun çıkışını bir nesnedir.
-Başka bir komuta çıkış nesnesi, giriş olarak gönderebilir.
-Sonuç olarak, PowerShell, yeni ve güçlü bir komut satırı paradigma tanıtırken diğer Kabuk ile karşılaşmış kişilere tanıdık bir arabirim sağlar.
-Metin yerine, nesneleri göndermek için yoluyla komutları arasında veri gönderme kavramı genişletir.
+
+PowerShell değil metin nesnesinde temel alır. Komutun çıkışını bir nesnedir. İşlem hattı aracılığıyla çıkış nesnesi giriş olarak başka bir komut gönderebilirsiniz.
+
+Bu işlem hattı ile diğer Kabukları deneyimli kişiler için tanıdık bir arabirim sağlar. PowerShell, metin yerine nesneleri göndererek bu kavramı genişletir.
 
 ### <a name="easy-transition-to-scripting"></a>Komut dosyası için kolay geçiş
-Oluşturma ve çalıştırma komut dosyaları yazmalarını geçiş kolay, etkileşimli olarak çok komutları PowerShell yapar.
-Bir görev gerçekleştiren komutları bulmak için PowerShell komut isteminde komutları yazabilirsiniz.
-Ardından, bunları bir dosyaya bir komut dosyası olarak kullanılmak üzere kopyalamadan önce bir döküm veya bir geçmiş komutlarda kaydedebilirsiniz.
+
+Oluşturma ve çalıştırma komut dosyaları yazmalarını geçiş kolay, etkileşimli olarak çok komutları PowerShell'in komut bulunabilirliği yapar. PowerShell dökümleri ve geçmişi, komutları bir komut dosyası olarak kullanılmak üzere bir dosya kopyalamak kolaylaştırır.

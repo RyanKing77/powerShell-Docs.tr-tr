@@ -1,58 +1,84 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
 title: Tanıdık Komut Adlarını Kullanma
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 08402aa5b959711c150fff89aa6747b6b43f8aa8
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952690"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134092"
 ---
-# <a name="using-familiar-command-names"></a>Tanıdık Komut Adlarını Kullanma
-Bir mekanizma kullanılarak adlı *yumuşatma*, Windows PowerShell komutları için alternatif adlarına göre başvurmak kullanıcıların sağlar. Yumuşatma deneyimine sahip kullanıcıların Windows PowerShell'de benzer işlemleri gerçekleştirmek için kullanıcılarınızın zaten bildikleri ortak komut adlarının yeniden kullanmak için diğer Kabukları verir. Windows PowerShell diğer adlar ayrıntılı aşağıdakiler ele alınacaktır değil de, Windows PowerShell ile çalışmaya başlama gibi bunları kullanmaya devam edebilirsiniz.
+# <a name="using-familiar-command-names"></a>Tanıdık komut adlarını kullanma
 
-Yumuşatma yazdığınız komut adı başka bir komutu ile ilişkilendirir. Örneğin, Windows PowerShell adlı bir iç işlev sahip **Clear-Host** çıktı penceresi temizler. Ya da yazarsanız **cls** veya **temizleyin** komutu bir komut isteminde, Windows PowerShell yorumlar için bir diğer ad budur **Clear-Host** işlev ve çalıştırır **Clear-Host** işlevi.
+PowerShell komutları için diğer adlar tarafından başvurmak için diğer adlar destekler. Diğer ad kullanımı deneyimi kullanıcılarla PowerShell de benzer işlemler için kullanıcılarınızın zaten bildikleri ortak komut adlarını kullanmak için diğer Kabukları sağlar.
 
-Bu özellik, Windows PowerShell öğrenmek için kullanıcıların yardımcı olur. İlk olarak, çoğu Cmd.exe ve UNIX kullanıcının kullanıcı adıyla zaten biliyor komutların büyük topluluğu vardır ve Windows PowerShell eşdeğeri aynı sonuçları vermeyebilir rağmen bunlar kullanıcılar bunları gerek kalmadan çalışmak için kullanabileceğiniz formunda yeterince Kapat ilk Windows PowerShell adları ezberleme. İkinci olarak, ana kullanıcı zaten başka bir kabuk ile alışkın olduğu zaman içinde yeni bir kabuk öğrenme sorun yaratabilir kaynağıdır "parmak bellekle" oluşan hatalar. Ne zaman çıktısını tam bir ekrana sahip ve bu reflexively yazarsınız temizlemek istediğiniz yıldır Cmd.exe kullandıysanız **cls** komut ve ENTER tuşuna basın. Diğer ad olmadan **Clear-Host** işlevi Windows PowerShell'de yalnızca hata iletisi elde edebileceğiniz "**'cls' cmdlet, işlev, çalıştırılabilir program veya komut dosyası tanınmıyor.**" ve çıktı temizlemek için hiçbir fikrini yapmanız gerekenler ile kalmış olabilir.
+Diğer ad kullanımı, yeni bir ad ile başka bir komuta ilişkilendirir. Örneğin, adında bir iç işlev PowerShell sahip `Clear-Host` , çıktı penceresini temizler. Yazabilirsiniz `cls` veya `clear` diğer bir komut isteminde. PowerShell, bu diğer adlar yorumlar ve çalışan `Clear-Host` işlevi.
 
-Windows PowerShell içinde kullanabileceğiniz ortak Cmd.exe ve UNIX komutları kısa bir listesi verilmiştir:
+Bu özelliği PowerShell öğrenmek için kullanıcılara yardımcı olur. İlk olarak, bir büyük topluluğunun kullanıcılar adına göre zaten bildiğiniz komutların çoğu Cmd.exe ve Unix kullanıcılarının sahip. PowerShell eşdeğeri aynıdır sonuçları vermeyebilir. Ancak, sonuçları Kapat kullanıcıların yeterli PowerShell komut adını bilmeden çalışmıyor. "Finger bellek" yeni bir komut kabuğunu öğrenme sıkıntıya başlıca kaynaklarından başka bir durumdur. Yıl için Cmd.exe kullandıysanız reflexively yazabilir `cls` ekranı temizlemek için komutu. Diğer olmadan `Clear-Host`, bir hata iletisi alır ve çıktıyı temizlemek için yapmanız gerekenler bilemezsiniz.
+
+Aşağıdaki listede, kullanabileceğiniz yaygın Cmd.exe ve UNIX komutları birkaçını PowerShell'de gösterir:
 
 |||||
 |-|-|-|-|
-|Kat|Dir|bağlama|rm|
-|cd|echo|Taşıma|rmdir|
-|chdir|silme|popd|Uyku|
-|Temizle|h|PS|Sıralama|
-|CLS|Geçmişi|pushd|t|
-|Kopyalama|sonlandırma|pwd|tür|
-|del|lp|r|yazma|
+|cat|dizini|bağlama|RM|
+|CD|echo|taşıma|rmdir|
+|chdir|Silme|popd|Uyku|
+|Temizle|H|PS|Sıralama|
+|CLS|geçmişi|pushd|Tee|
+|Kopyalama|sonlandırma|Parola|tür|
+|DEL|LP|r|yazma|
 |fark|Ls|ren||
 
-Kendinizi bulursanız bunlardan birini kullanarak reflexively komutları ve yerel Windows PowerShell komutunu gerçek adını öğrenmek istiyorsanız, kullanabileceğiniz **Get-diğer** komutu:
+`Get-Alias` Cmdlet'i bir diğer ad ile ilişkili yerel PowerShell komutunu gerçek adını gösterir.
 
-```
+```powershell
 PS> Get-Alias cls
-
-CommandType     Name                            Definition
------------     ----                            ----------
-Alias           cls                             Clear-Host
 ```
 
-Örnekler daha okunabilir hale getirmek için diğer adlar kullanarak Windows PowerShell Kullanıcı Kılavuzu genellikle önler. Rastgele parçacıkları başka bir kaynaktan Windows PowerShell kodu ile çalışma veya kendi diğer adlarını tanımlamak istiyorsanız ancak, diğer adları hakkında daha fazla bilerek bu erken hala yararlı olabilir. Bu bölümde rest standart diğer adlar ve kendi diğer adlarını tanımlamak nasıl ele alınacaktır.
-
-### <a name="interpreting-standard-aliases"></a>Standart diğer adlar yorumlama
-Ad-diğer arabirimleri ile uyumluluk için tasarlanmış, yukarıda açıklanan diğer adları farklı olarak Windows PowerShell içinde yerleşik diğer adlar genellikle kısaltma amacıyla tasarlanmıştır. Bu kısa adları hızlı bir şekilde yazılabilir, ancak, ne başvurdukları bilmiyorsanız okuma mümkün.
-
-Windows PowerShell, bir dizi ortak fiilleri ve isimleri için Toplu özellik adları dayalı standart diğer adlar sağlayarak daha anlaşılır olması ve kısaltma arasında tehlikeye dener. Bu toplu adları bildiğinizde okunabilir ortak cmdlet'leri için diğer adlar çekirdek kümesini sağlar. Örneğin, standart diğer adlar içinde fiili **almak** olarak kısaltılır **g**, fiili **ayarlamak** olarak kısaltılır **s**, isim**Öğesi** olarak kısaltılır **ı**, isim **konumu** olarak kısaltılır **l**ve komut için kısaltılmışisim**cm**.
-
-Aşağıda bunun nasıl çalıştığını göstermek için kısa bir örnek verilmiştir. Get-Item standart diğer birleştirme alanından gelir **g** get ve **ı** öğesi için: **GI**. Set-Item standart diğer Birleşen gelen gelen **s** kümesi için ve **ı** öğesi için: **si**. Get-Location standart diğer birleştirme alanından gelir **g** get ve **l** konumu **gl**. Set-Location için standart diğer ad alanından Birleşen gelen **s** kümesi için ve **l** konumu **sl**. Get-Command standart diğer birleştirme alanından gelir **g** get ve **cm** komutun **gcm**. Set-Command cmdlet'i yoktur, ancak olsaydı, biz standart diğer ad alanından gelir tahmin gerçekleştirebilir **s** kümesi için ve **cm** komutu için: **scm**. Ayrıca, karşılaştığınız Windows PowerShell yumuşatma ile tanıdık kişiler **scm** diğer adı ayarlama komutuna başvuruyor tahmin doğrulayamazsınız.
-
-### <a name="creating-new-aliases"></a>Yeni takma adlar oluşturma
-Set-diğer cmdlet'ini kullanarak kendi diğer adlar oluşturabilirsiniz. Örneğin, aşağıdaki deyimleri yorumlama standart diğer adlar ele alınan standart cmdlet diğer adlar oluşturma:
-
+```Output
+CommandType     Name                               Version    Source
+-----------     ----                               -------    ------
+Alias           cls -> Clear-Host
 ```
+
+## <a name="interpreting-standard-aliases"></a>Standart diğer adlar yorumlama
+
+Diğer adlar önceki açıkladığımız adı-diğer komut Kabuk ile uyumluluk için tasarlanmıştır.
+PowerShell'de yerleşik çoğu diğer adlar, konuyu uzatmamak amacıyla tasarlanmıştır. Daha kısa adları, tür, ancak bunlar ne başvuruda bulunulan tanımadığınız varsa okunması zor kolaydır.
+
+PowerShell diğer adları arasında netlik ve kısaltma tehlikeye deneyin. PowerShell, diğer adlar standart bir dizi ortak adlar ve fiiller için kullanır.
+
+Örnek kısaltmalar:
+
+| İsim veya fiili | Kısaltması |
+|--------------|--------------|
+| Alma          | G            |
+| Ayarla          | s            |
+| Öğe         | Ben            |
+| Konum     | M            |
+| Komut      | cm           |
+| Diğer Ad        | Al           |
+
+Kısaltılmış bildiğinizde bu diğer adlar anlaşılabilir.
+
+| Cmdlet adı    | Diğer Ad |
+|----------------|-------|
+| `Get-Item `    | GI    |
+| `Set-Item`     | sı    |
+| `Get-Location` | GL    |
+| `Set-Location` | SL    |
+| `Get-Command`  | GCM   |
+| `Get-Alias`    | Gal   |
+
+PowerShell diğer ad kullanımı ile ilgili bilgi sahibi olduğunuzda, tahmin edilmesi kolaydır **sal** diğer başvurduğu `Set-Alias`.
+
+## <a name="creating-new-aliases"></a>Yeni takma adlar oluşturma
+
+Kendi diğer adları kullanarak oluşturabileceğiniz `Set-Alias` cmdlet'i. Örneğin, aşağıdaki deyimleri, daha önce bahsedilen standart cmdlet diğer adlar oluşturma:
+
+```powershell
 Set-Alias -Name gi -Value Get-Item
 Set-Alias -Name si -Value Set-Item
 Set-Alias -Name gl -Value Get-Location
@@ -60,7 +86,8 @@ Set-Alias -Name sl -Value Set-Location
 Set-Alias -Name gcm -Value Get-Command
 ```
 
-Dahili olarak, Windows PowerShell komutları başlangıç sırasında aşağıdaki gibi kullanır, ancak bu diğer adları değiştirilebilir değildir. Gerçekte, bu komutlardan çalıştırma denemesi diğer adı değiştirilemez açıklayan bir hata alırsınız. Örneğin:
+Dahili olarak, başlatma sırasında benzer komutlarda PowerShell kullanır, ancak bu diğer adlar takımdaki herhangi biri değildir.
+Bu komutlardan birini yürütün çalışırsanız, diğer adı değiştirilemez açıklayan bir hata alırsınız. Örneğin:
 
 ```
 PS> Set-Alias -Name gi -Value Get-Item

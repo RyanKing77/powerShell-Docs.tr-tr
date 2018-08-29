@@ -1,89 +1,86 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/14/2018
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE’de Betik Yazma ve Çalıştırma
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 4d7c5352ef1dac6f63a50433676068f83a920db5
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 943752df2ecd3fce715dda0ca7ade97186620560
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483126"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133827"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Windows PowerShell ISE’de Betik Yazma ve Çalıştırma
 
-Bu konu, oluşturmak, düzenlemek, çalıştırmak ve komut dosyaları betik bölmesinde Kaydet açıklar.
+Bu makalede, oluşturma, düzenleme, çalıştırma ve betikler betik bölmesinde Kaydet açıklar.
 
-## <a name="how-to-create-and-run-scripts"></a>Oluşturma ve komut dosyalarını çalıştır
+## <a name="how-to-create-and-run-scripts"></a>Oluşturma ve betikleri çalıştırın
 
-Açın ve Windows PowerShell betik bölmesine dosyalarında düzenleyin. Belirli dosya ilgilendiğiniz Windows PowerShell komut dosyaları (.ps1), komut dosyası veri dosyaları (.psd1) ve betik Modülü dosyaları (.psm1) türleridir. Betik bölmesine Düzenleyicisi'nde renkli sözdizimi bu dosya türleridir. Betik bölmesinde açılabilir diğer ortak dosya yapılandırma dosyalarını (.ps1xml), XML dosyalarını ve metin dosyaları türleridir.
+Açın ve Windows PowerShell dosyaları betik bölmesine düzenleyin. Belirli dosya türleri ilgilendiğiniz Windows PowerShell komut dosyaları (.ps1), komut veri dosyaları (.psd1) ve betik Modülü dosyaları (.psm1) var. Betik bölmesine Düzenleyicisi'nde renkli söz dizimi bu dosya türleridir. Betik bölmesinde açılabilir ortak diğer dosya türleri, yapılandırma dosyalarını (.ps1xml), XML dosyalarını ve metin dosyaları olan.
 
 > [!NOTE]
-> Windows PowerShell yürütme ilkesini betik çalıştıran ve Windows PowerShell profilleri ve yapılandırma dosyalarını yükleme olup olmadığını belirler. Varsayılan yürütme ilkesini kısıtlı, tüm komut dosyalarının çalışmasını engeller ve yükleme profilleri engeller. Yürütme İlkesi yüklenmesi ve kullanılması profilleri izin verecek şekilde değiştirmek için bkz: [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) ve [about_Signing [v4]](https://technet.microsoft.com/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
+> Windows PowerShell yürütme İlkesi betikleri çalıştırabilir ve Windows PowerShell profilleri ve yapılandırma dosyalarını yükleme olup olmadığını belirler. Varsayılan yürütme ilkesini kısıtlı, tüm komut dosyalarının çalışmasını engeller ve yükleme profilleri önler. Yürütme İlkesi yüklenmesi ve kullanılması profilleri izin verecek şekilde değiştirmek için bkz [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy) ve [about_Signing](/powershell/module/microsoft.powershell.core/about/about_signing).
 
-### <a name="to-create-a-new-script-file"></a>Yeni bir komut dosyası oluşturmak için
+### <a name="to-create-a-new-script-file"></a>Yeni betik dosyası oluşturmak için
 
-Araç çubuğunda tıklatın **yeni** , veya **dosya** menüsünde tıklatın **yeni**. Yeni bir dosya sekmesinde geçerli PowerShell sekmesi altında oluşturulan dosya görüntülenir. Olduğunda birden fazla PowerShell sekmeleri yalnızca görünür olduğunu unutmayın. Varsayılan olarak bir dosya türü betiği (.ps1) oluşturuldu, ancak yeni adı ve uzantısı ile kaydedilebilir. Birden çok komut dosyaları aynı PowerShell sekmesindeki oluşturulabilir.
+Araç çubuğunda **yeni**, veya **dosya** menüsünü tıklatın **yeni**. Oluşturulan dosyanın yeni bir dosya sekmesinde geçerli bir PowerShell sekmesi altında görünür. Olduğunda birden fazla PowerShell sekmeleri yalnızca görünür olduğunu unutmayın. Bir dosya türü betik (.ps1), varsayılan olarak oluşturulur, ancak yeni bir ad ve uzantı ile kaydedilebilir. Birden çok komut dosyalarını aynı PowerShell sekmede oluşturulabilir.
 
 ### <a name="to-open-an-existing-script"></a>Varolan bir komut dosyasını açmak için
 
-Araç çubuğunda tıklatın **açık**, veya **dosya** menüsünde tıklatın **açık**. İçinde **açmak** iletişim kutusunda, açmak istediğiniz dosyayı seçin. Açılan dosyayı yeni bir sekmede görüntülenir.
+Araç çubuğunda **açık**, veya **dosya** menüsünü tıklatın **açık**. İçinde **açın** iletişim kutusunda, açmak istediğiniz dosyayı seçin. Açılan dosyayı yeni bir sekmede görünür.
 
 ### <a name="to-close-a-script-tab"></a>Bir komut dosyası sekmesini kapatmak için
 
-Kapatmak istediğiniz komut dosyası komut dosyası sekmesini tıklatın, ardından aşağıdakilerden birini yapın:
+Tıklayın **kapatmak** simgesini (X) Dosya sekmesini kapatın veya istediğiniz seçin **dosya** menüsüne ve ardından **kapatmak**.
 
-1. Tıklatın **Kapat** betik sekmesindeki simgesini (X).
-
-2. Üzerinde **dosya** menüsünde tıklatın **Kapat**.
-
-Dosyanın son kaydedilişinden değiştirildiyse kaydedin veya atmak istenir.
+Dosyanın son kez kaydedildiğinden beri değiştirilmişse kaydetmek veya atmak istenir.
 
 ### <a name="to-display-the-file-path"></a>Dosya yolu görüntülemek için
 
-Dosya sekmesinde dosya adının üzerine gelin. Komut dosyasının tam yoluna bir araç ipucunda görüntülenir.
+Dosya sekmesinde dosya adının üzerine gelin. Komut dosyasının tam yolu, bir araç ipucu olarak görüntülenir.
 
-### <a name="to-run-a-script"></a>Bir komut dosyasını çalıştırmak için
+### <a name="to-run-a-script"></a>Bir betiği çalıştırmak için
 
-Araç çubuğunda tıklatın **komut dosyasını Çalıştır**, veya **dosya** menüsünde tıklatın **çalıştırmak**.
+Araç çubuğunda **betiğini Çalıştır**, veya **dosya** menüsünde tıklatın **çalıştırma**.
 
 ### <a name="to-run-a-portion-of-a-script"></a>Bir bölümü bir komut çalıştırmak için
 
-1. Betik bölmesinde bir betiğin bir bölümü seçin.
-
-2. Üzerinde **dosya** menüsünde tıklatın **Seçimi Çalıştır**, veya araç çubuğunda tıklatın **Seçimi Çalıştır**.
+1. Betik bölmesinde bir komut dosyasının bir kısmını seçin.
+2. Üzerinde **dosya** menüsünü tıklatın **Seçimi Çalıştır**, veya araç çubuğunda **Seçimi Çalıştır**.
 
 ### <a name="to-stop-a-running-script"></a>Çalışan bir komut dosyası durdurmak için
 
-Araç çubuğunda tıklatın **durdurma işlemi**, CTRL + BREAK tuşlarına basın veya **dosya** menüsünde tıklatın **durdurma işlemi**. Tuşuna basarak **CTRL + C** bazı metinleri şu anda, bu durumda seçili değilse de çalışır **CTRL + C** kopyalama işlevi için seçili metni eşleştirir.
+Çalışan bir komut dosyası durdurmak için birkaç yolu vardır.
+
+- Tıklayın **durdurma işlemi** araç
+- CTRL + BREAK tuşlarına basın.
+- Seçin **dosya** menüsüne ve ardından **durdurma işlemi**.
+
+Tuşuna basarak **CTRL + C** metindir, bu durumda seçili olan sürece de çalışır **CTRL + C** kopyalama işlevi için seçili metni eşleştirir.
 
 ## <a name="how-to-write-and-edit-text-in-the-script-pane"></a>Yazma ve düzenleme metin betik bölmesine
 
-Betik bölmesine metnini düzenlemek için aşağıdaki adımları kullanın. Kopyalama, kesme, yapıştırma, bulmak ve metni Değiştir. Ayrıca, Geri Al ve yalnızca gerçekleştirdiğiniz en son eylemi yinele. Bu eylemleri gerçekleştirmek için klavye kısayolları tüm Windows uygulamaları için kullanılanlarla aynıdır.
+Kopyalama, kesme, yapıştırın, bulmak ve metin betik bölmesine değiştirin. Ayrıca Al ve az önce gerçekleştirdiğiniz son eylemi yineleyin. Bu eylemler için klavye kısayolları tüm Windows uygulamaları için kullanılan aynı kısayollarıdır.
 
 ### <a name="to-enter-text-in-the-script-pane"></a>Betik bölmesinde metin girmek için
 
-1. Betik bölmesinde herhangi bir yere tıklayarak veya tıklatarak imleci betik bölmesine gider **betik bölmesine gider** içinde **Görünüm** menüsü.
+1. İmleci betik bölmesine bir betik bölmesinde herhangi bir yere tıklayarak veya tıklayarak taşıma **betik bölmesine gidin** içinde **görünümü** menüsü.
+2. Bir komut dosyası oluşturun. Söz dizimi renklendirme ve sekme tamamlama, Windows PowerShell ıse'de daha zengin bir düzenleme deneyimi sağlar.
+3. Bkz: [betik bölmesi ve konsol bölmesinde sekme tamamlamayı kullanma nasıl](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) metin yardımcı olmak için sekmesinde Tamamlama özelliğini kullanmayla ilgili ayrıntılar için.
 
-2. Bir komut dosyası oluşturun. Sözdizimi renklendirmesi ve sekme tamamlama bu Windows PowerShell ISE daha zengin bir deneyim yapın.
+### <a name="to-find-text-in-the-script-pane"></a>Betik bölmesinde metni bulmak için
 
-3. Bkz: [kullanım sekme tamamlama betik bölmesine ve konsol bölmesinde nasıl](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) yazarak de yardımcı olmak için sekme tamamlama özelliğini kullanma hakkında ayrıntılı bilgi için.
-
-### <a name="to-find-text-in-the-script-pane"></a>Betik bölmesinde metin bulmak için
-
-1. Herhangi bir yere metin bulmak için basın **CTRL + F** veya **Düzenle** menüsünde tıklatın **komut dosyasında bulmak**.
-
-2. İmleci sonra metin bulmak için basın **F3** veya **Düzenle** menüsünde tıklatın **komut Sonrakini Bul**.
-
-3. İmleç önce metin bulmak için basın **SHIFT + F3** veya **Düzenle** menüsünde tıklatın **komut Öncekini Bul**.
+1. Herhangi bir metni bulmak için basın **CTRL + F** veya **Düzenle** menüsünde tıklayın **betikte Bul**.
+2. İmleci sonra metni bulmak için basın **F3** veya **Düzenle** menüsünde tıklatın **betiğinde Sonrakini Bul**.
+3. İmleç önce metni bulmak için basın **SHIFT + F3** veya **Düzenle** menüsünde tıklatın **betiğinde Öncekini Bul**.
 
 ### <a name="to-find-and-replace-text-in-the-script-pane"></a>Betik bölmesine metin bulma ve değiştirme için
 
-Tuşuna **CTRL + H** veya **Düzenle** menüsünde tıklatın **komut dosyasında Değiştir**. Bulmak istediğiniz metin ve istediğiniz tuşuna basın ve bunun yerine metin girin **ENTER**.
+Tuşuna **CTRL + H** veya **Düzenle** menüsünde tıklatın **betikte değiştirin**. İstediğiniz metin bulma ve değiştirme metnini girin tuşuna **ENTER**.
 
-### <a name="to-go-to-a-particular-line-of-text-in-the-script-pane"></a>Betik bölmesine metnin belirli bir satırın gitmek için
+### <a name="to-go-to-a-particular-line-of-text-in-the-script-pane"></a>Betik bölmesindeki metnin belirli bir satıra Git
 
-1. Betik bölmesinde basın **CTRL + G** veya **Düzenle** menüsünde tıklatın **satıra gitme**.
+1. Betik bölmesinde basın **CTRL + g'tuşlarını** veya **Düzenle** menüsünde tıklatın **satıra Git**.
 
 2. Bir satır numarası girin.
 
@@ -91,69 +88,65 @@ Tuşuna **CTRL + H** veya **Düzenle** menüsünde tıklatın **komut dosyasınd
 
 1. Betik bölmesinde kopyalamak istediğiniz metni seçin.
 
-2. Basın **CTRL + C** veya araç çubuğunda tıklatın **kopyalama** simgesi, veya **Düzenle** menüsünde tıklatın **kopyalama**.
+2. Tuşuna **CTRL + C** veya araç çubuğunda **kopyalama** simgesini veya **Düzenle** menüsünde tıklayın **kopyalama**.
 
-### <a name="to-cut-text-in-the-script-pane"></a>Betik bölmesinde metin kesme
+### <a name="to-cut-text-in-the-script-pane"></a>Betik bölmesinde metni kesmek için
 
 1. Betik bölmesinde kesmek istediğiniz metni seçin.
-
-2. Tuşuna basın **CTRL + X** veya araç çubuğunda tıklatın **Kes** simgesi, veya **Düzenle** menüsünde tıklatın **Kes**.
+2. Tuşuna **CTRL + X** veya araç çubuğunda **Kes** simgesini veya **Düzenle** menüsünde tıklayın **Kes**.
 
 ### <a name="to-paste-text-into-the-script-pane"></a>Betik bölmesine metni yapıştırmak için
 
-Tuşuna **CTRL + V** veya araç çubuğunda tıklatın **Yapıştır** simgesi, veya **Düzenle** menüsünde tıklatın **Yapıştır**.
+Tuşuna **CTRL + V** veya araç çubuğunda **Yapıştır** simgesini veya **Düzenle** menüsünde tıklayın **Yapıştır**.
 
 ### <a name="to-undo-an-action-in-the-script-pane"></a>Betik bölmesine bir eylemi geri almak için
 
-Tuşuna **CTRL + Z** veya araç çubuğunda tıklatın **geri** simgesi, veya **Düzenle** menüsünde tıklatın **geri**.
+Tuşuna **CTRL + Z** veya araç çubuğunda **geri** simgesini veya **Düzenle** menüsünde tıklayın **geri**.
 
-### <a name="to-redo-an-action-in-the-script-pane"></a>Betik bölmesine eylemi yinelemek için
+### <a name="to-redo-an-action-in-the-script-pane"></a>Betik bölmesine bir eylemi yinelemek için
 
-Tuşuna **CTRL + Y** veya araç çubuğunda tıklatın **Yinele** simgesi, veya **Düzenle** menüsünde tıklatın **Yinele**.
+Tuşuna **CTRL + Y** veya araç çubuğunda **Yinele** simgesini veya **Düzenle** menüsünde tıklayın **Yinele**.
 
 ## <a name="how-to-save-a-script"></a>Bir komut dosyasını kaydetme
 
-Kaydet ve bir betik adı için aşağıdaki adımları kullanın. Bir yıldız işareti, değiştirilmiş olduğundan kaydedilmedi bir dosya olarak işaretlemek için komut dosyası adı yanında görüntülenir. Dosyası kaydedildiğinde yıldız işareti kaybolur.
+Bunu değiştirilmesinden bu yana kaydedilmemiş bir dosyayı işaretlemek için betik adının yanında bir yıldız işareti görünür. Dosya kaydedildiğinde yıldız işareti kaybolur.
 
-### <a name="to-save-a-script"></a>Bir komut dosyası kaydetmek için
+### <a name="to-save-a-script"></a>Bir betiği kaydetmek için
 
-Tuşuna basın **CTRL + S** veya araç çubuğunda tıklatın **kaydetmek** simgesi veya **dosya** menüsünde tıklatın **kaydetmek**.
+Basın **CTRL + S** veya araç çubuğunda **Kaydet** simgesi veya **dosya** menüsünde tıklayın **Kaydet**.
 
 ### <a name="to-save-and-name-a-script"></a>Kaydet ve bir betik adı
 
 1. Üzerinde **dosya** menüsünde tıklatın **Kaydet**. **Kaydet** iletişim kutusu görüntülenir.
-
 2. İçinde **dosya adı** kutusuna, dosya için bir ad girin.
-
-3. İçinde **farklı türde Kaydet** kutusunda, bir dosya türünü seçin. Örneğin, **farklı türde Kaydet** kutusunda ' œPowerShell komut dosyaları (\* .ps1)'.
-
+3. İçinde **farklı kaydetme türü** kutusunda, bir dosya türünü seçin. Örneğin, **farklı kaydetme türü** kutusunda ' PowerShell betikleri (\*.ps1)'.
 4. **Kaydet**'e tıklayın.
 
-### <a name="to-save-a-script-in-ascii-encoding"></a>Bir komut dosyası ASCII kodlamasında kaydetmek için
+### <a name="to-save-a-script-in-ascii-encoding"></a>ASCII kodlaması bir komut dosyası kaydetmek için
 
-Varsayılan olarak, Windows PowerShell ISE yeni komut dosyaları (.ps1), komut dosyası veri dosyaları (.psd1) ve betik Modülü dosyaları (.psm1) Unicode (BigEndianUnicode) olarak varsayılan olarak kaydeder. Â için başka bir kodlamada bir komut dosyası kaydetme ASCII (ANSI gibi), kullanın **kaydetmek** veya **Farklı Kaydet** yöntemlere [$psISE.CurrentFile](https://technet.microsoft.com/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) nesnesi.
+Varsayılan olarak, Windows PowerShell ISE yeni komut dosyaları (.ps1), komut veri dosyaları (.psd1) ve betik Modülü dosyaları (.psm1) Unicode (BigEndianUnicode) olarak varsayılan olarak kaydeder. Â için başka bir kodlama, bir komut dosyası kaydetme ASCII (ANSI gibi), kullanın **Kaydet** veya **Farklı Kaydet** yöntemlerde [$psISE.CurrentFile](the-ise-object-model-hierarchy.md) nesne.
 
-Aşağıdaki komutu ASCII kodlama ile yeni bir komut dosyası MyScript.ps1 kaydeder.
+Aşağıdaki komut, yeni bir betik ASCII kodlaması ile MyScript.ps1 kaydeder.
 
 ```powershell
 $psISE.CurrentFile.SaveAs("MyScript.ps1", [System.Text.Encoding]::ASCII)
 ```
 
-Aşağıdaki komutu geçerli komut dosyasını aynı ada sahip, ancak ASCII kodlama ile bir dosya ile değiştirir.
+Aşağıdaki komutu, geçerli komut dosyasını bir dosyayla aynı ada sahip, ancak ASCII kodlaması ile değiştirir.
 
 ```powershell
 $psISE.CurrentFile.Save([System.Text.Encoding]::ASCII)
 ```
 
-Aşağıdaki komutu, geçerli dosyanın kodlamasını alır.
+Aşağıdaki komut, geçerli dosyanın kodlamasını alır.
 
 ```powershell
 $psISE.CurrentFile.encoding
 ```
 
-Windows PowerShell ISE aşağıdaki kodlama seçeneklerini destekler: ASCII, BigEndianUnicode, Unicode, UTF32, UTF7, UTF8 ve varsayılan. Varsayılan seçenek değerini sistemine göre farklılık gösterir.
+Windows PowerShell ISE aşağıdaki kodlama seçeneklerini destekler: ASCII ve BigEndianUnicode, Unicode, UTF32, UTF7, UTF8 ve varsayılan. Varsayılan seçenek değerini sistemine göre farklılık gösterir.
 
-Windows PowerShell ISE diğer düzenleyicilerde tarafından oluşturulan komut dosyalarını kodlama değiştirmez bile Kaydet veya Kaydet kullandığınızda, Windows PowerShell ISE komutları.
+Windows PowerShell ISE Kaydet veya Kaydet kullandığınızda komut dosyaları, kodlama değiştirmez komutları.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 

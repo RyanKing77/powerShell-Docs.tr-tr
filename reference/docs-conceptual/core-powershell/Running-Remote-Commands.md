@@ -1,89 +1,90 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/14/2018
 keywords: PowerShell cmdlet'i
 title: Uzak Komut Çalıştırma
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: d21d1def1e25895f65b3578bf2892d56f14cc150
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 2001b5509acde6ec4259bb1442944958a67aa66f
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482888"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133820"
 ---
 # <a name="running-remote-commands"></a>Uzak Komut Çalıştırma
 
-Bir ya da tek bir Windows PowerShell komut bilgisayarlarla yüzlerce komutları çalıştırabilirsiniz. Windows PowerShell, WMI, RPC ve WS-Management gibi çeşitli teknolojiler kullanılarak bir uzak bilgisayar destekler.
+Bir ya da tek bir PowerShell komutu bilgisayarlarla yüzlerce komutları çalıştırabilirsiniz. Windows PowerShell, WMI, RPC ve WS-Yönetimi dahil olmak üzere çeşitli teknolojiler kullanarak uzak bilgisayar destekler.
 
-## <a name="remoting-in-powershell-core"></a>PowerShell çekirdek uzaktan çalışma
+PowerShell Core destekler, WMI, WS-Management ve SSH uzaktan iletişim. RPC artık desteklenmiyor.
 
-PowerShell çekirdeği, Windows, macOS ve Linux, PowerShell daha yeni sürümünü destekler WMI, WS-Management ve SSH remoting.
-(RPC artık desteklenmiyor.)
+Uzak PowerShell core'da hakkında daha fazla bilgi için aşağıdaki makalelere bakın:
 
-Bu ayarlama ile ilgili daha fazla bilgi için bkz:
+- [SSH PowerShell core'da uzaktan iletişim][ssh-remoting]
+- [PowerShell core'da WSMan uzaktan iletişim][wsman-remoting]
 
-* [SSH PowerShell çekirdek uzaktan çalışma][ssh-remoting]
-* [PowerShell çekirdek WSMan uzaktan çalışma][wsman-remoting]
+## <a name="windows-powershell-remoting-without-configuration"></a>Windows PowerShell uzaktan iletişimini yapılandırma olmadan
 
-## <a name="remoting-without-configuration"></a>Yapılandırma olmadan uzaktan iletişim
-
-Birçok Windows PowerShell cmdlet'leri veri toplamak ve bir veya daha fazla uzak bilgisayarlarda ayarlarını değiştirmenizi sağlar ComputerName parametresi vardır. Tüm Windows işletim sistemlerinde özel bir yapılandırma Windows PowerShell destekleyen çeşitli iletişimi teknolojileri ve birçok iş kullanırlar.
+Birçok Windows PowerShell cmdlet'lerini sağlar, veri toplamak ve bir veya daha fazla uzak bilgisayar ayarlarını değiştirmek ComputerName parametresine sahip. Bu cmdlet'ler, farklı iletişim protokolleri kullanın ve özel bir yapılandırma olmadan tüm Windows işletim sistemlerinde çalışır.
 
 Şu cmdlet'leri içerir:
 
-* [Bilgisayarı yeniden Başlat](https://go.microsoft.com/fwlink/?LinkId=821625)
-* [Bağlantıyı Sına](https://go.microsoft.com/fwlink/?LinkId=821646)
-* [Olay günlüğünü Temizle](https://go.microsoft.com/fwlink/?LinkId=821568)
-* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
-* [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
-* [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
-* [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
-* [Hizmet belirleme](https://go.microsoft.com/fwlink/?LinkId=821633)
-* [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
-* [Get-WmiObject](https://go.microsoft.com/fwlink/?LinkId=821595)
+- [Bilgisayarı yeniden Başlat](/powershell/module/microsoft.powershell.management/restart-computer)
+- [Test-Connection](/powershell/module/microsoft.powershell.management/test-connection)
+- [EventLog Temizle](/powershell/module/microsoft.powershell.management/clear-eventlog)
+- [Get-EventLog](/powershell/module/microsoft.powershell.management/get-eventlog)
+- [Get-HotFix](/powershell/module/microsoft.powershell.management/get-hotfix)
+- [Get-Process](/powershell/module/microsoft.powershell.management/get-process)
+- [Get-Service](/powershell/module/microsoft.powershell.management/get-service)
+- [Hizmet belirleme](/powershell/module/microsoft.powershell.management/set-service)
+- [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/get-winevent)
+- [Get-WmiObject](/powershell/module/microsoft.powershell.management/get-wmiobject)
 
-Genellikle, özel bir yapılandırma olmadan remoting destekleyen cmdlet'ler ComputerName parametresi varsa ve oturum parametresi yok. Bu cmdlet'ler oturumunuzda bulmak için şunu yazın:
+Genellikle, özel bir yapılandırma olmadan uzaktan iletişimini destekleyen cmdlet'ler ComputerName parametresine sahip ve oturum parametresi yok. Bu cmdlet'ler oturumunuzda bulmak için şunu yazın:
 
 ```powershell
 Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
 ```
 
-## <a name="windows-powershell-remoting"></a>Windows PowerShell uzaktan iletişim
+## <a name="windows-powershell-remoting"></a>Windows PowerShell uzaktan iletişimi
 
-Bir veya daha çok uzak bilgisayarlarda herhangi bir Windows PowerShell komutunu çalıştırın WS-Management protokolü kullanır, Windows PowerShell uzaktan iletişim sağlar. Kalıcı bağlantılar kurmak, 1:1 etkileşimli oturumlarını başlatmak ve komut dosyaları birden çok bilgisayarda çalışacak olanak sağlar.
+WS-Management protokolü kullanarak, Windows PowerShell uzaktan iletişimini, bir veya daha fazla uzak bilgisayar üzerinde herhangi bir Windows PowerShell komutunu çalıştırmak olanak tanır. Kalıcı bağlantılar kurmanın, etkileşimli bir oturum başlatın ve uzak bilgisayarlarda betikleri çalıştırın.
 
-Windows PowerShell uzaktan iletişim kullanmak için uzak bilgisayara uzaktan yönetim için yapılandırılmalıdır. Yönergeleri dahil daha fazla bilgi için bkz: [hakkında uzaktan gereksinimleri](https://technet.microsoft.com/library/dd315349.aspx).
+Windows PowerShell uzaktan iletişimini kullanmak için uzak bilgisayara uzaktan yönetim için yapılandırılmalıdır.
+Yönergeleri de dahil daha fazla bilgi için bkz. [uzak gereksinimlerin](/powershell/module/microsoft.powershell.core/about/about_remote_requirements).
 
-Windows PowerShell uzaktan iletişimini yapılandırdıktan sonra birçok remoting strateji size kullanılabilir. Bu belgenin geri kalanında birkaçı bunları listeler. Daha fazla bilgi için bkz: [hakkında uzak](https://technet.microsoft.com/library/dd347744.aspx) ve [hakkında uzak SSS](https://technet.microsoft.com/library/dd347744.aspx).
+Windows PowerShell uzaktan iletişimini yapılandırdıktan sonra birçok remoting stratejileri sizin için kullanılabilir.
+Bu makalede, yalnızca birkaç tanesi listelenmektedir. Daha fazla bilgi için [hakkında uzak](/powershell/module/microsoft.powershell.core/about/about_remote).
 
-### <a name="start-an-interactive-session"></a>Etkileşimli oturum Başlat
+### <a name="start-an-interactive-session"></a>Etkileşimli bir oturum Başlat
 
-Tek bir uzak bilgisayarla bir etkileşimli oturum başlatmak için kullanmak [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) cmdlet'i.
-Örneğin, Server01 uzak bilgisayarla bir etkileşimli oturum başlatmak için şunu yazın:
+Tek bir uzak bilgisayar ile etkileşimli bir oturum başlatmak için kullanın [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet'i.
+Örneğin, Server01 uzak bilgisayarla etkileşimli bir oturum başlatmak için şunu yazın:
 
 ```powershell
 Enter-PSSession Server01
 ```
 
-Bağlı olduğunuz bilgisayar adını görüntülemek için komut istemi değişiklikler. Daha sonra uzak bilgisayarda komut istemine yazın herhangi bir komut çalıştırmak ve sonuçları yerel bilgisayarda görüntülenir.
+Uzak bilgisayarın adını görüntülemek için komut istemi değişiklikler. Uzak bilgisayarda herhangi bir komut isteminde çalıştırın ve sonuçları yerel bilgisayarda görüntülenir.
 
-Etkileşimli oturum sonlandırmak için aşağıdakini yazın:
+Etkileşimli oturumu sona erdirmek için şunu yazın:
 
 ```powershell
 Exit-PSSession
 ```
 
-Enter-PSSession ve çıkış-PSSession cmdlet'leri hakkında daha fazla bilgi için bkz: [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) ve [çıkış-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478).
+Enter-PSSession ve çıkış-PSSession cmdlet'ler hakkında daha fazla bilgi için bkz:
 
-### <a name="run-a-remote-command"></a>Uzak bir komutu çalıştırın
+- [PSSession girin](/powershell/module/microsoft.powershell.core/enter-pssession)
+- [Çıkış-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession)
 
-Bir veya daha çok uzak bilgisayarlarda herhangi bir komut çalıştırmak için kullandığınız [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493) cmdlet'i.
-Örneğin, çalıştırmak için bir [Get-UICulture](https://go.microsoft.com/fwlink/?LinkId=821806) komutunu Server01 ve Server02 uzak bilgisayarlarda, türü:
+### <a name="run-a-remote-command"></a>Uzak komut çalıştırma
+
+Bir veya daha çok bilgisayarda bir komut çalıştırmak için kullanın [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) cmdlet'i. Örneğin, çalıştırılacak bir [Get-UICulture](/powershell/module/microsoft.powershell.utility/get-uiculture) komutunu Server01 ve Server02 uzak bilgisayarlarda, türü:
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
 ```
 
-Çıktı bilgisayarınıza döndürülür.
+Çıkış bilgisayarınıza döndürülür.
 
 ```output
 LCID    Name     DisplayName               PSComputerName
@@ -92,39 +93,33 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
 
-Invoke-Command cmdlet'i hakkında daha fazla bilgi için bkz: [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).
+### <a name="run-a-script"></a>Betik çalıştırma
 
-### <a name="run-a-script"></a>Bir komut dosyasını çalıştır
+Bir veya birden çok uzak bilgisayarda bir betik çalıştırmak için FilePath parametresini kullanın. `Invoke-Command` cmdlet'i. Betik veya yerel bilgisayarınıza erişilebilir olmalıdır. Sonuçları, yerel bilgisayarınıza döndürülür.
 
-Bir veya daha çok uzak bilgisayarda bir komut dosyasını çalıştırmak için Invoke-Command cmdlet'i FilePath parametresini kullanın. Komut dosyası ya da yerel bilgisayarınıza erişilebilir olması gerekir. Sonuçlar, yerel bilgisayarınıza döndürülür.
-
-Örneğin, aşağıdaki komutu DiskCollect.ps1 betik Server01 ve Server02 uzak bilgisayarlarda çalışır.
+Örneğin, aşağıdaki komutu, uzak bilgisayarlarda, Server01 ve Server02 DiskCollect.ps1 betiği çalıştırır.
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
-Invoke-Command cmdlet'i hakkında daha fazla bilgi için bkz: [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).
+### <a name="establish-a-persistent-connection"></a>Kalıcı bir bağlantı kurun
 
-### <a name="establish-a-persistent-connection"></a>Kalıcı bağlantı kurun
-
-Bir dizi veri paylaşımı ilgili komutları çalıştırmak için uzak bilgisayarda bir oturumu oluşturmak ve oluşturduğunuz oturumunda komutları çalıştırmak için Invoke-Command cmdlet'ini kullanın. Uzak oturum oluşturmak için New-PSSession cmdlet'i kullanın.
-
-Örneğin, aşağıdaki komutu Server02 bilgisayarda bir uzak oturum Server01 bilgisayarda ve başka bir uzak oturum oluşturur. Bu oturum nesneleri $s değişkenine kaydeder.
+Kullanım `New-PSSession` kalıcı oturum uzak bir bilgisayar oluşturmak için cmdlet'i. Aşağıdaki örnek, Uzak Oturumlar Server01 ve Server02 oluşturur. Oturum nesneleri depolanan `$s` değişkeni.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01, Server02
 ```
 
-Oturum oluşturulur, bunları herhangi komutu çalıştırabilirsiniz. Ve oturumları kalıcı olduğundan, bir komut verileri toplamak ve bir sonraki komutunu kullanın.
+Oturumları kurulur, bunları herhangi bir komutu çalıştırabilirsiniz. Ve oturumları kalıcı olduğundan, bir komuttan toplayabilir ve başka bir komutta kullanın.
 
-Örneğin, aşağıdaki komutu oturumlarda $s değişkeninde bir Get-düzeltme komut çalıştırır ve sonuçları $h değişkenine kaydeder. Her $s oturumlarında $h değişkeni oluşturuldu, ancak yerel oturumunda yok.
+Örneğin, oturumlarında $s değişkenine Get-HotFix komutu şu komutu çalıştırır ve sonuçları $h değişkeninde kaydeder. $H değişken her $s oturumlarda oluşturulur, ancak yerel oturumu yok.
 
 ```powershell
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-Artık aşağıdaki biri gibi sonraki komutlarda $h değişkeninde verileri kullanabilirsiniz. Sonuçlar yerel bilgisayarda görüntülenir.
+Veriler artık `$h` aynı oturumda diğer komutlarla değişken. Sonuçlar, yerel bilgisayarda görüntülenir. Örneğin:
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
@@ -132,10 +127,11 @@ Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}
 
 ### <a name="advanced-remoting"></a>Gelişmiş uzaktan iletişim
 
-Windows PowerShell uzaktan yönetimi yalnızca burada başlar. Yüklü Windows PowerShell cmdlet'lerini kullanarak oluşturmak ve Uzak Oturumlar yapılandırma yerel ve uzak uç gerçekte Çalıştır komutları uzak oturumdan içeri aktarmak için kullanıcıların izin özelleştirilmiş ve kısıtlı oturumları oluşturma örtük olarak uzak oturum bir uzak oturum ve daha fazlasını güvenliğini yapılandırın.
+Windows PowerShell uzaktan yönetimi yalnızca burada başlar. Windows PowerShell ile yüklenen cmdlet'ler kullanarak oluşturmak ve Uzak Oturumlar yerel ve uzak uç çalıştırdığı komutları uzak oturum bağlantısını almak için kullanıcıların izin özelleştirilmiş ve kısıtlı oturumları oluşturma örtük uzak oturum uzak oturumu ve daha fazlasını güvenliğini yapılandırın.
 
-Uzak yapılandırmasını kolaylaştırmak için Windows PowerShell WSMan sağlayıcısı içerir. WSMAN: sağlayıcısı oluşturur sürücü yapılandırma ayarları yerel bilgisayarda ve uzak bilgisayarlarda hiyerarşisini gezinmek olanak sağlar.
-WSMan sağlayıcısı hakkında daha fazla bilgi için bkz: [WSMan sağlayıcısı](https://technet.microsoft.com/library/dd819476.aspx) ve [WS-Management cmdlet'leri hakkında](https://technet.microsoft.com/library/dd819481.aspx), veya Windows PowerShell konsolunda "Get-Help wsman" yazın.
+Windows PowerShell WSMan sağlayıcısı içerir. Sağlayıcı oluşturur bir `WSMAN:` bir hiyerarşi yapılandırma ayarlarını yerel bilgisayarda ve uzak bilgisayarlar arasında gezinmek sağlayan sürücü.
+
+WSMan sağlayıcısı hakkında daha fazla bilgi için bkz. [WSMan sağlayıcısı](https://technet.microsoft.com/library/dd819476.aspx) ve [WS-Management cmdlet'leri hakkında](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), veya Windows PowerShell konsolunda `Get-Help wsman`.
 
 Daha fazla bilgi için bkz.:
 
@@ -143,7 +139,7 @@ Daha fazla bilgi için bkz.:
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 
-Remoting hatalarla ilgili Yardım için bkz: [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
+Uzaktan iletişimini hatalarla ilgili Yardım için bkz. [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
@@ -153,9 +149,9 @@ Remoting hatalarla ilgili Yardım için bkz: [about_Remote_Troubleshooting](http
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 - [about_WS Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
+- [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
-- [Yeni PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
+- [Yeni-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [WSMan sağlayıcısı](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 

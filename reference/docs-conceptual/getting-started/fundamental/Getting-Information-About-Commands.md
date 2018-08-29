@@ -1,37 +1,43 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
-title: Komutlar Hakkında Bilgi Alma
+title: Komutlar hakkında bilgi alma
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: c51579fe2cdf4f2a0d3248d1aaf3f1f9cac83868
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: f4238927f10b4204cd3e23f0b0453011f54cb04a
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482735"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134019"
 ---
-# <a name="getting-information-about-commands"></a>Komutlar Hakkında Bilgi Alma
-Windows PowerShell `Get-Command` cmdlet'i Geçerli oturumunuzda kullanılabilir tüm komutları alır. Yazdığınızda `Get-Command` bir PowerShell komut isteminde, aşağıdakine benzer bir çıktı göreceksiniz:
+# <a name="getting-information-about-commands"></a>Komutlar hakkında bilgi alma
 
-```
-PS> Get-Command
-CommandType     Name                            Definition
------------     ----                            ----------
-Cmdlet          Add-Content                     Add-Content [-Path] <String[...
-Cmdlet          Add-History                     Add-History [[-InputObject] ...
-Cmdlet          Add-Member                      Add-Member [-MemberType] <PS...
+PowerShell `Get-Command` Geçerli oturumunuzda kullanılabilir komutları görüntüler.
+Çalıştırdığınızda `Get-Command` cmdlet'ini aşağıdaki çıktıya benzer bir şey görürsünüz:
+
+```output
+CommandType     Name                    Version    Source
+-----------     ----                    -------    ------
+Cmdlet          Add-Computer            3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Add-Content             3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Add-History             3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Add-JobTrigger          1.1.0.0    PSScheduledJob
+Cmdlet          Add-LocalGroupMember    1.0.0.0    Microsoft.PowerShell.LocalAccounts
+Cmdlet          Add-Member              3.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Add-PSSnapin            3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-Bu görünüm Cmd.exe Yardım çıktısı gibi çok çıktı: iç komutları tablo özetini. Alıntı içinde **Get-Command** yukarıda gösterilen her komut gösterilen çıktıyı içerir, bir CommandType Cmdlet komutu. Windows PowerShell'in iç komut türü - kabaca için karşılık gelen bir cmdlet'tir **dir** ve **cd** komutları Cmd.exe ve UNIX Kabukları BASH gibi öğelerin.
+Bu görünümler Cmd.exe Yardım çıktısını gibi çok çıkış: iç komutları tablosal bir özeti. Alıntı içinde `Get-Command` komut gösterilen her komut, yukarıda gösterilen çıkış, bir CommandType cmdlet'i vardır. Bir cmdlet, PowerShell'in iç komut türüdür. Bu tür komutlar gibi kabaca karşılık `dir` ve `cd` bash Kabuk Cmd.exe veya UNIX yerleşik komutlarını ister.
 
-Çıktısı olarak `Get-Command` komut, tüm tanımları bitiş PowerShell tüm içeriği görüntülenemiyor göstermek için üç nokta ile (...) kullanılabilir alanı. Windows PowerShell çıkış görüntülediğinde, çıktı metin olarak biçimlendirir ve düzgün bir şekilde penceresine sığacak veri olmak için düzenler. Biz bu konuda daha sonra bölümünde biçimlendiricileri üzerinde konuşur.
+`Get-Command` Cmdlet'i sahip bir **söz dizimi** her cmdlet'in söz dizimi döndüren parametresi. Aşağıdaki örnek söz dizimini alınacağı gösterilmektedir `Get-Help` cmdlet:
 
-`Get-Command` Cmdlet sahip bir **sözdizimi** her cmdlet sözdizimi alır parametresi. Get-Help cmdlet sözdizimi almak için aşağıdaki komutu kullanın:
-
-```
+```powershell
 Get-Command Get-Help -Syntax
+```
 
+```output
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>] [-Functionality <String[]>]
  [-Role <String[]>] [-Full] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 
@@ -45,8 +51,15 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Role <String[]>] [-Parameter <String>] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-### <a name="displaying-available-command-types"></a>Kullanılabilir komut türlerinden görüntüleme
-**Get-Command** komutu, Windows PowerShell içinde kullanılabilir olan her komut listesinde değil. Bunun yerine, **Get-Command** komutu geçerli oturumdaki yalnızca cmdlet'leri listeler. Windows PowerShell gerçekte birkaç komut türlerini destekler. Windows PowerShell Kullanıcı Kılavuzu'nda ayrıntılı açıklanmamaktadır diğer adları, işlevleri ve komut dosyaları da Windows PowerShell komutları, ancak. Yürütülebilir dosya veya bir kayıtlı dosya türü işleyicisi olan dış dosyalar da komutları olarak sınıflandırılır.
+## <a name="displaying-available-command-by-type"></a>Kullanılabilir komut türüne göre görüntüleme
+
+`Get-Command` Komut geçerli oturumda yalnızca cmdlet öğelerini listeler. PowerShell komutları diğer birçok türde gerçekten destekler:
+
+- Diğer adlar
+- İşlevler
+- Betikler
+
+Ayrıca Dış yürütülebilir dosyalar veya kayıtlı dosya türü işleyicisi dosyalar komut olarak sınıflandırılır.
 
 Tüm komutlar oturumda almak için şunu yazın:
 
@@ -54,26 +67,28 @@ Tüm komutlar oturumda almak için şunu yazın:
 Get-Command *
 ```
 
-Bu liste, arama yolunuzda dış dosyalar içerdiğinden, binlerce öğeye içerebilir. Azaltılmış bir grup komutları aramak daha kullanışlıdır.
-
-Diğer türleri yerel komutları almak için **CommandType** parametresinin `Get-Command` cmdlet'i.
+Bu liste, binlerce öğenin bulunabilir, arama yolunda dış komutları içerir.
+Sınırlı bir komut kümesini aramak daha yararlı olacaktır.
 
 > [!NOTE]
-> Yıldız işareti (\*) joker karakter eşleştirme Windows PowerShell komut bağımsız değişkenleri için kullanılır. \* "Eşleştirilmez ve bir veya daha fazla herhangi bir karakter". Yazabilirsiniz `Get-Command a*` harfiyle başlayan tüm komutları bulmak için "a". Joker karakter cmd.exe eşleştirme Windows PowerShell'in joker ayrıca bir süre eşleşir.
+> Yıldız işareti (\*) joker karakter eşleme PowerShell komut satırı bağımsız değişkenlerini için kullanılır. \* Eşleşme anlamına gelir"bir veya daha fazla herhangi bir karakter". Yazabilirsiniz `Get-Command a*` harfi ile başlayan tüm komutları bulmak için "a". Joker karakter eşleme cmd.exe içinde, PowerShell'in joker ayrıca bir süre eşleşir.
 
-Atanan takma adlar komutların olan komut diğer adları almak için aşağıdakileri yazın:
+Kullanım **CommandType** parametresinin `Get-Command` diğer tür yerel komutları almak için.
+cmdlet'ini çalıştırdığınızda döndürülen çekirdek kaynakları bilgilerini gözden geçirebilirsiniz.
+
+Komutların atanan takma adları olan komut diğer adları almak için aşağıdakileri yazın:
 
 ```powershell
 Get-Command -CommandType Alias
 ```
 
-Geçerli oturumdaki işlevleri almak için şunu yazın:
+Geçerli oturumda işlevleri almak için şunu yazın:
 
 ```powershell
 Get-Command -CommandType Function
 ```
 
-Windows PowerShell'in arama yolunda komut dosyalarını görüntülemek için şunu yazın:
+PowerShell'in arama yolunda komut dosyaları görüntülemek için şunu yazın:
 
 ```powershell
 Get-Command -CommandType Script

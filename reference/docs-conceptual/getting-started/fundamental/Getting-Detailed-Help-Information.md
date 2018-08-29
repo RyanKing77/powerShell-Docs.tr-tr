@@ -1,175 +1,182 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
 title: Ayrıntılı Yardım Bilgisi Alma
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483041"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134043"
 ---
-# <a name="getting-detailed-help-information"></a>Ayrıntılı Yardım Bilgisi Alma
-Windows PowerShell, Windows PowerShell kavramları ve Windows PowerShell dil açıklayan ayrıntılı Yardım konuları içerir. Ayrıca her bir cmdlet'i ve sağlayıcı için Yardım konularını ve vardır birçok işlevleri ve komut dosyaları için Yardım konularını.
+# <a name="getting-detailed-help-information"></a>Ayrıntılı Yardım bilgisi alma
 
-Komut isteminde bu Yardım konularını görüntülemek veya en yakın zamanda güncelleştirilmiş sürümleri bu konularda, Microsoft TechNet Library içinde görüntüleyin. Windows PowerShell, Windows PowerShell Tümleşik komut dosyası ortamı gibi konak birçok program derlenmiş Yardım dosyası (.chm) ve bağlama duyarlı Yardım gibi ek Yardım özellikler sağlar.
+PowerShell, PowerShell kavramlarını ve PowerShell dil açıklayan ayrıntılı yardım makaleleri içerir. Pek çok işlev ve betik ve her cmdlet sağlayıcısı için Yardım makaleleri de vardır.
+
+Komut isteminde bu Yardım makaleleri görüntüleyebilir veya görünümü en son güncelleştirilmiş aşağıdaki makalelerde sürümlerini [PowerShell](/powershell/scripting/powershell-scripting) belgelerine bakın.
 
 ## <a name="getting-help-for-cmdlets"></a>Cmdlet'leri için Yardım alma
-Windows PowerShell cmdlet'leri hakkında Yardım almak için kullanmak [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet'i. Örneğin, Yardım almak için [Get-Childıtem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet, türü:
 
-```
-get-help get-childitem
+PowerShell cmdlet'leri hakkında Yardım almak için kullanın [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet'i. Örneğin, Yardım almak için `Get-ChildItem` cmdlet'i, türü:
+
+```powershell
+Get-Help Get-ChildItem
 ```
 
 veya
 
-```
-get-childitem -?
+```powershell
+Get-ChildItem -?
 ```
 
 Hatta, Get-Help cmdlet'i hakkında Yardım alabilirsiniz. Örneğin:
 
-```
-get-help get-help
-```
-
-Oturumunuzda tüm cmdlet'i Yardım konularını listesini almak için şunu yazın:
-
-```
-get-help -category cmdlet
+```powershell
+Get-Help Get-Help
 ```
 
-Aynı anda her Yardım konusunun bir sayfasını görüntülemek için **yardımcı** işlevi veya diğer adını **ADAM**. Örneğin, Yardım için Get-Childıtem cmdlet'i görüntülemek için şunu yazın
+Tüm cmdlet listesi Yardım makaleleri oturumunuzda almak için şunu yazın:
 
+```powershell
+Get-Help -Category Cmdlet
 ```
-man get-childitem
+
+Bir kerede bir sayfa her Yardım makalesinin görüntülemek için kullanın `help` işlevi veya diğer adıyla `man`.
+Örneğin, Yardım için görüntülenecek `Get-ChildItem` cmdlet'i, türü
+
+```powershell
+man Get-ChildItem
 ```
 
 veya
 
-```
-help get-childitem
-```
-
-Cmdlet, işlev veya komut dosyası, kendi kullanım örnekleri ve parametre açıklamaları da dahil olmak üzere ilgili ayrıntılı bilgileri görüntülemek için kullanın *ayrıntılı* Get-Help cmdlet parametresi. Örneğin, Get-Childıtem cmdlet hakkında ayrıntılı bilgi almak için şunu yazın:
-
-```
-get-help get-childitem -detailed
+```powershell
+help Get-ChildItem
 ```
 
-Yardım konusundaki tüm içeriği görüntülemek için kullanın *tam* Get-Help cmdlet parametresi. Örneğin, Get-Childıtem cmdlet için Yardım konusundaki tüm içeriği görüntülemek için şunu yazın:
+Ayrıntılı bilgi görüntülemek için kullanın **ayrıntılı** parametresinin `Get-Help` cmdlet'i. Örneğin, hakkında ayrıntılı bilgi almak için `Get-ChildItem` cmdlet'i, türü:
 
-```
-get-help get-childitem -full
-```
-
-Almak için Yardım kullanımı bir cmdlet parametreleri hakkında ayrıntılı *parametresi* Get-Help cmdlet parametresi. Örneğin, tüm türü Get-Childıtem cmdlet'i parametreleri için Yardım ayrıntılı almak için:
-
-```
-get-help get-childitem -parameter *
+```powershell
+Get-Help Get-ChildItem -Detailed
 ```
 
-Yardım konusunun yalnızca örnekler görüntülemek için kullanın *örnek* Get-Help parametresi. Örneğin, yalnızca örnek Get-Childıtem cmdlet için Yardım konusu görüntülemek için şunu yazın:
+Yardım makalesi tüm içeriği görüntülemek için kullanın **tam** parametresinin `Get-Help` cmdlet'i. Örneğin, Yardım makalesi için tüm içeriği görüntülemek için `Get-ChildItem` cmdlet'i, türü:
 
-```
-get-help get-childitem -examples
+```powershell
+Get-Help Get-ChildItem -Full
 ```
 
-Yazdığınız cmdlet'leri için Yardım konuları yazma hakkında daha fazla bilgi için bkz: [yazma Cmdlet Yardım nasıl](https://go.microsoft.com/fwlink/?LinkID=123415) MSDN Kitaplığı'nda.
+Almak için Yardım kullanımı bir cmdlet parametreleri hakkında ayrıntılı **parametre** parametresinin `Get-Help` cmdlet'i. Örneğin, almak için ayrıntılı yardım almak için tüm parametreleri `Get-ChildItem` cmdlet'i, türü:
+
+```powershell
+Get-Help Get-ChildItem -Parameter *
+```
+
+Bir Yardım makalesinde yalnızca örnekleri görüntülemek için kullanın **örnekler** parametresinin `Get-Help`.
+Örneğin, Yardım makalesi için yalnızca örnekleri görüntülemek için `Get-ChildItem `cmdlet'i, türü:
+
+```powershell
+Get-Help Get-ChildItem -Examples
+```
+
+Yazdığınız cmdlet'leri için Yardım makaleleri yazma hakkında daha fazla bilgi için bkz: [yazma Cmdlet Yardım nasıl](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ## <a name="getting-conceptual-help"></a>Kavramsal Yardım alma
-Get-Help cmdlet'i Windows PowerShell, Windows PowerShell dili ile ilgili konular da dahil olmak üzere kavramsal konuları hakkında bilgi de görüntüler. Kavramsal Yardım konuları about_line_editing gibi "about_" öneki ile başlar. (Kavramsal konu adını İngilizce bile İngilizce dışındaki sürümlerinde Windows PowerShell girilmesi gerekir.)
 
-Kavramsal konu listesini görüntülemek için şunu yazın:
+`Get-Help` Cmdlet ayrıca görüntüler kavramsal makaleleri hakkında bilgi PowerShell, PowerShell dilinin hakkında makaleler de dahil olmak üzere. Kavramsal Yardım makaleleri başlamak about_line_editing gibi "about_" ön ekine sahip. (Makale adı İngilizce PowerShell bile İngilizce olmayan sürümleri üzerinde girilmesi gerekir.)
 
-```
-get-help about_*
-```
+Kavramsal makaleleri listesini görüntülemek için şunu yazın:
 
-Belirli bir Yardım konusu görüntülemek için konu adı, örneğin yazın:
-
-```
-get-help about_command_syntax
+```powershell
+Get-Help about_*
 ```
 
-Get-Help parametrelerinin gibi *ayrıntılı*, *parametresi*, ve *örnekler*, kavramsal Yardım konularının görüntülenmesini üzerinde hiçbir etkisi yoktur.
+Belirli bir Yardım makalesi görüntülemek için örneğin makale adı yazın:
+
+```powershell
+Get-Help about_command_syntax
+```
+
+Parametreleri `Get-Help`, gibi **ayrıntılı**, **parametre**, ve **örnekler**, kavramsal Yardım makaleleri görüntülenmesini üzerinde hiçbir etkisi yoktur.
 
 ## <a name="getting-help-about-providers"></a>Sağlayıcılar hakkında Yardım alma
-Get-Help cmdlet'i Windows PowerShell sağlayıcıları hakkında bilgi görüntüler. Ardından sağlayıcı adı için bir sağlayıcı Yardım almak için "Get-Help" yazın. Örneğin, kayıt defteri sağlayıcısı için Yardım almak için şunu yazın:
 
-```
-get-help registry
-```
+`Get-Help` Cmdlet'i, PowerShell sağlayıcıları hakkında daha fazla bilgi görüntüler. Sağlayıcı için Yardım almak için şunu yazın `Get-Help` ardından sağlayıcı adı. Örneğin, kayıt defteri sağlayıcısı için Yardım almak için şunu yazın:
 
-Tüm listesini almak için oturumunuzu sağlayıcısı Yardım konularında yazın
-
-```
-get-help -category provider
+```powershell
+Get-Help registry
 ```
 
-Get-Help parametrelerinin gibi *ayrıntılı*, *parametresi*, ve *örnekler*, sağlayıcı Yardım konularının görüntülenmesini üzerinde hiçbir etkisi yoktur.
+Sağlayıcı listesi Yardım makaleleri oturumunuzda almak için yazın
 
-## <a name="getting-help-about-scripts-and-functions"></a>Komut dosyaları ve işlevleri hakkında Yardım alma
-Çok sayıda betik ve işlevlerde Windows PowerShell'de Yardım konuları vardır. Betik ve işlevlerde için Yardım konularını görüntülemek için Get-Help cmdlet'ini kullanın.
-
-Bir işlev için Yardım görüntülemek için "get-help işlevi adından" yazın. Örneğin, devre dışı bırak-PSRemoting işlevi için Yardım almak için şunu yazın:
-
-```
-get-help disable-psremoting
+```powershell
+Get-Help -Category provider
 ```
 
-Bir komut dosyası için Yardım görüntülemek için komut dosyasının tam yolunu yazın. Komut dosyası Path ortam değişkeninde listelenen bir yol ise, komut yolundan atlayabilirsiniz.
+Parametreleri `Get-Help`, gibi **ayrıntılı**, **parametre**, ve **örnekler**, sağlayıcı Yardım makaleleri görüntülenmesini üzerinde hiçbir etkisi yoktur.
 
-Örneğin, C: "TestScript.ps1" adlı bir komut dosyası varsa\\PS Test dizin, komut dosyası türü için Yardım konusunu görüntülemek için:
+## <a name="getting-help-about-scripts-and-functions"></a>Betik ve işlevlerde hakkında Yardım alma
 
+Birçok betik ve işlevlerde PowerShell'de Yardım makaleleri sahip. Kullanım `Get-Help` betik ve işlevlerde kullanılan Yardım makaleleri görüntülemek için cmdlet'i.
+
+Bir işlev için Yardım görüntülemek üzere şunu yazın `Get-Help` ardından işlevi adı. Örneğin, Yardım almak için `Disable-PSRemoting` işlev, yazın:
+
+```powershell
+Get-Help Disable-PSRemoting
 ```
-get-help c:\ps-test\TestScript.ps1
+
+Bir komut için Yardım görüntülemek için betik dosyasının yolunu yazın. Betiği, Path ortam değişkeninde listelenen bir yol değil, tam yolu kullanmanız gerekir.
+
+Örneğin, C: "TestScript.ps1" adlı bir komut dosyası varsa\\Yardım makalesi betik, tür için görüntülenecek PS Test dizini:
+
+```powershell
+Get-Help c:\ps-test\TestScript.ps1
 ```
 
-Cmdlet görüntülemek için tasarlanmış olan parametreleri Yardım, gibi *ayrıntılı*, *tam*, *örnekler*, ve *parametresi*, iş için komut dosyası Yardım ve işlevi, çok yardımcı olur. Ancak, görüntülediğinizde tüm Yardım yazarak "get-help \*", yardımcı olmak için işlevleri ve komut dosyaları görünmez.
+Betik ve işlevi için cmdlet Yardım iş görüntülemek için tasarlanmış parametreleri, çok yardımcı olur. Programını çalıştırdığınızda işlev ve betik Yardımı ancak gösterilmez `Get-Help *`.
 
-İşlevleri ve komut dosyalarınız için Yardım konuları yazma hakkında daha fazla bilgi için bkz: [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af), ve [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
+Yardım makaleleri işlev ve betik yazma hakkında daha fazla bilgi için aşağıdaki makalelere bakın:
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
 
 ## <a name="getting-help-online"></a>Çevrimiçi Yardım alma
-Internet'e bağlıysanız, Yardım almak için en iyi yöntemleri çevrimiçi Yardım konularını görüntülemek için biridir. Çevrimiçi konuları güncelleştirmek kolay olduğundan, bunlar en güncel içeriği sağlamak olasıdır.
 
-Çevrimiçi Yardım almak için deneyin *çevrimiçi* Get-Help cmdlet parametresi. *Çevrimiçi* parametresi yalnızca cmdlet Yardım için Get-Help cmdlet'i çalışır, Yardım işlev ve Yardım komut dosyası. Kullanamazsınız *çevrimiçi* parametresiyle kavramsal (hakkında) konuları veya sağlayıcı Yardım konuları. Bu özellik isteğe bağlı olduğundan, ayrıca, her cmdlet, işlev veya komut dosyası Yardım konusunu çalışmaz.
+Çevrimiçi Yardım makaleleri görüntüleme konusunda yardım almak için en iyi yollarından biridir. Çevrimiçi makaleler, güncelleştirmek ve en güncel içeriği sağlamak daha kolay.
 
-Ancak, tüm Yardım konuları gelen sağlayıcısı Yardım dahil olmak üzere Windows PowerShell ile ve (hakkında) Yardım konuları, kavramsal çevrimiçi kullanılabilir [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116) Microsoft TechNet Library bölümü.
+Çevrimiçi Yardım almak için kullanın **çevrimiçi** parametresinin `Get-Help` cmdlet'i. Sağlayıcı Yardım dahil olmak üzere PowerShell ile gelen tüm Yardım makaleleri ve kavramsal (hakkında) Yardım makaleleri çevrimiçi kullanılabilir [PowerShell](/powershell/scripting/powershell-scripting) belgeleri.
 
-Kullanılacak *çevrimiçi* parametresi Get-Help cmdlet'i, aşağıdaki komut biçimi kullanın.
+> [!NOTE]
+> Kullanamazsınız **çevrimiçi** kavramsal (about_ *) veya sağlayıcı Yardım makaleleri ile parametre.
+> Çevrimiçi Yardım, isteğe bağlı olduğundan her cmdlet, işlev veya betiği için çalışmaz.
 
-```
-get-help <command-name> -online
-```
+Örneğin, hakkında Yardım makalesi'nın çevrimiçi sürümünü almak için `Get-ChildItem` cmdlet'i, türü:
 
-Örneğin, Get-Childıtem cmdlet'i hakkında Yardım konusunun çevrimiçi sürümünü almak için şunu yazın:
-
-```
-get-help get-childitem -online
+```powershell
+Get-Help Get-ChildItem -Online
 ```
 
-Yardım konusunun çevrimiçi sürümünü kullanılabilir durumda, varsayılan tarayıcıda açılır.
+Makalede, PowerShell varsayılan tarayıcınızda açılır. Çevrimiçi Yardım için Yardım makalesine destekleniyorsa, Yardım makalesi URL'sini de görüntüleyebilirsiniz. URL, bir Yardım makalesinin ilgili bağlantılar bölümünde görüntülenir.
 
-Çevrimiçi Yardım için Yardım konusunun destekleniyorsa, Yardım konusunun Internet adresi (URL) de görüntüleyebilirsiniz. Internet adresini Yardım konusunun ilgili bağlantılar bölümünde görüntülenir.
+Örneğin, Add-Computer cmdlet'ın çevrimiçi sürümünü URL'sini görmek için aşağıdakileri yazın:
 
-Örneğin, Add-Computer cmdlet çevrimiçi sürümünü URL'sini görmek için şunu yazın:
-
-```
-get-help add-computer
+```powershell
+Get-Help Add-Computer
 ```
 
-Konunun ilgili bağlantılar bölümündeki ilk satırı aşağıda gösterilmiştir.
+Makalenin ilgili bağlantılar bölümüne ilk satırı aşağıda gösterilmiştir.
 
-```
-Online version: http://go.microsoft.com/fwlink/?LinkID=135194
+```Output
+Online version: http://go.microsoft.com/fwlink/?LinkId=821564
 ```
 
-Çevrimiçi desteklemek için Yardım konuları hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)ve [yazma Cmdlet Yardım nasıl](https://go.microsoft.com/fwlink/?LinkID=123415) MSDN Kitaplığı'nda.
+Çevrimiçi destek için Yardım makaleleriniz sağlama hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 ## <a name="see-also"></a>Ayrıca bkz:
-- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [Get-Help](/powershell/module/microsoft.powershell.core/get-help)
