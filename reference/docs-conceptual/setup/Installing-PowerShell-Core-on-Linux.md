@@ -2,12 +2,12 @@
 title: Linux’ta PowerShell Core yükleme
 description: PowerShell Core yükleme üzerinde çeşitli Linux dağıtımları hakkında bilgi
 ms.date: 08/06/2018
-ms.openlocfilehash: a6b0e3003f84ea6dc99cffcc7edf1b5b6963aa21
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 0a1f30ef75a0feeb97df9a35a08d6b0d3edaeccf
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587457"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133825"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Linux’ta PowerShell Core yükleme
 
@@ -77,12 +77,13 @@ Daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` yüklemesin
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Doğrudan indirme - Ubuntu 14.04 aracılığıyla yükleme
 
-Debian paketi indirme `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` gelen [sürümleri][] Ubuntu makine sayfaya.
+Debian paketi indirin `powershell_6.0.3-1.ubuntu.14.04_amd64.deb`
+gelen [sürümleri][] Ubuntu makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.14.04_amd64.deb
+sudo dpkg -i powershell_6.0.3-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -124,12 +125,13 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Doğrudan indirme - Ubuntu 16.04 aracılığıyla yükleme
 
-Debian paketi indirme `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` gelen [sürümleri][] Ubuntu makine sayfaya.
+Debian paketi indirin `powershell_6.0.3-1.ubuntu.16.04_amd64.deb`
+gelen [sürümleri][] Ubuntu makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.0.3-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -174,7 +176,8 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Doğrudan indirme - Ubuntu 18.04 aracılığıyla yükleme
 
-Debian paketi indirme `powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb` gelen [sürümleri][] Ubuntu makine sayfaya.
+Debian paketi indirin `powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb`
+gelen [sürümleri][] Ubuntu makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
@@ -233,12 +236,13 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 
 ### <a name="installation-via-direct-download---debian-8"></a>Doğrudan indirme - Debian 8 aracılığıyla yükleme
 
-Debian paketi indirme `powershell_6.0.2-1.debian.8_amd64.deb` gelen [sürümleri][] Debian makine sayfaya.
+Debian paketi indirin `powershell_6.0.3-1.debian.8_amd64.deb`
+gelen [sürümleri][] Debian makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.debian.8_amd64.deb
+sudo dpkg -i powershell_6.0.3-1.debian.8_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -284,12 +288,13 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 
 ### <a name="installation-via-direct-download---debian-9"></a>Doğrudan indirme - Debian 9 aracılığıyla yükleme
 
-Debian paketi indirme `powershell_6.0.2-1.debian.9_amd64.deb` gelen [sürümleri][] Debian makine sayfaya.
+Debian paketi indirin `powershell_6.0.3-1.debian.9_amd64.deb`
+gelen [sürümleri][] Debian makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.debian.9_amd64.deb
+sudo dpkg -i powershell_6.0.3-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -323,18 +328,19 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidi
 
 ### <a name="installation-via-direct-download---centos-7"></a>Doğrudan indirme - CentOS 7 ile yükleme
 
-Kullanarak [CentOS 7][], RPM paketini indirme `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [sürümleri][] CentOS makine sayfaya.
+Kullanarak [CentOS 7][], RPM paketini indirme `powershell-6.0.3-1.rhel.7.x86_64.rpm`
+gelen [sürümleri][] CentOS makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
 ```sh
-sudo yum install powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 RPM karşıdan ara adım olmadan da yükleyebilirsiniz:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>Kaldırma - CentOS 7
@@ -366,18 +372,19 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidi
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Doğrudan indirme - Red Hat Enterprise Linux (RHEL) 7 aracılığıyla yükleme
 
-RPM paketini indirme `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [sürümleri][] Red Hat Enterprise Linux makine sayfaya.
+RPM paketini indirme `powershell-6.0.3-1.rhel.7.x86_64.rpm`
+gelen [sürümleri][] Red Hat Enterprise Linux makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
 ```sh
-sudo yum install powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 RPM karşıdan ara adım olmadan da yükleyebilirsiniz:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Kaldırma - Red Hat Enterprise Linux (RHEL) 7
@@ -427,18 +434,18 @@ pwsh
 
 ### <a name="installation-via-direct-download---opensuse-423"></a>Doğrudan indirme - OpenSUSE 42.3 aracılığıyla yükleme
 
-RPM paketini indirme `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [sürümleri][] OpenSUSE makine sayfaya.
+RPM paketini indirme `powershell-6.0.3-1.rhel.7.x86_64.rpm` gelen [sürümleri][] OpenSUSE makine sayfaya.
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo zypper install powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 RPM karşıdan ara adım olmadan da yükleyebilirsiniz:
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---opensuse-423"></a>Kaldırma - OpenSUSE 42.3
@@ -478,13 +485,14 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Doğrudan indirme - 27 Fedora, Fedora 28 aracılığıyla yükleme
 
-RPM paketini indirme `powershell-6.0.2-1.rhel.7.x86_64.rpm` gelen [sürümleri][] Fedora makine sayfaya.
+RPM paketini indirme `powershell-6.0.3-1.rhel.7.x86_64.rpm`
+gelen [sürümleri][] Fedora makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 RPM karşıdan ara adım olmadan da yükleyebilirsiniz:
@@ -581,7 +589,7 @@ wget http://security.debian.org/debian-security/pool/updates/main/o/openssl/libs
 sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
 
 # Install PowerShell
-sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.0.3-1.ubuntu.16.04_amd64.deb
 
 # Start PowerShell
 pwsh
@@ -624,13 +632,13 @@ Ayrıca CoreCLR (ve bu nedenle PowerShell Core) yalnızca Pi 2 ve Pi 3 cihazlar�
 sudo apt-get install libunwind8
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-linux-arm32.tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-linux-arm32.tar.gz
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-6.0.2-linux-arm32.tar.gz -C ~/powershell
+tar -xvf ./powershell-6.0.3-linux-arm32.tar.gz -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
@@ -710,7 +718,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## <a name="paths"></a>Yollar
 
-* `$PSHOME` olduğu `/opt/microsoft/powershell/6.0.2/`
+* `$PSHOME` olduğu `/opt/microsoft/powershell/6.0.3/`
 * Kullanıcı profillerini okuyabilir `~/.config/powershell/profile.ps1`
 * Varsayılan profiller okuyabilir `$PSHOME/profile.ps1`
 * Kullanıcı modülleri okuyabilir `~/.local/share/powershell/Modules`
