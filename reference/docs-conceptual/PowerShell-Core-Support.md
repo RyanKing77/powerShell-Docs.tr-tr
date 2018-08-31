@@ -102,7 +102,7 @@ Desteklemek için bu modülleri PowerShell Core açıkça desteklemedikçe Power
 Örneğin, kullanarak `ActiveDirectory` desteklenmeyen bir senaryo Windows Server'ın bir parçası olduğu gibi birlikte gelen modülü.
 
 Ancak, açıkça PowerShell Core desteklemeyen modülleri bazı durumlarda uyumlu olabilir.
-Yükleyerek [ `WindowsPSModulePath` ][] modülü, Windows PowerShell ekleyebilir `PSModulePath` , PowerShell Core `PSModulePath`.
+Yükleyerek [`WindowsPSModulePath`][] modülü, Windows PowerShell ekleyebilir `PSModulePath` , PowerShell Core `PSModulePath`.
 
 İlk olarak, yükleme `WindowsPSModulePath` modülü PowerShell Galerisi'ndeki:
 
