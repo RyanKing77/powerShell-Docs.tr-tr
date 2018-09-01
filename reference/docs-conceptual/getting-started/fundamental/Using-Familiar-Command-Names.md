@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
 title: Tanıdık Komut Adlarını Kullanma
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 08402aa5b959711c150fff89aa6747b6b43f8aa8
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134092"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353258"
 ---
 # <a name="using-familiar-command-names"></a>Tanıdık komut adlarını kullanma
 
@@ -16,9 +16,9 @@ PowerShell komutları için diğer adlar tarafından başvurmak için diğer adl
 
 Diğer ad kullanımı, yeni bir ad ile başka bir komuta ilişkilendirir. Örneğin, adında bir iç işlev PowerShell sahip `Clear-Host` , çıktı penceresini temizler. Yazabilirsiniz `cls` veya `clear` diğer bir komut isteminde. PowerShell, bu diğer adlar yorumlar ve çalışan `Clear-Host` işlevi.
 
-Bu özelliği PowerShell öğrenmek için kullanıcılara yardımcı olur. İlk olarak, bir büyük topluluğunun kullanıcılar adına göre zaten bildiğiniz komutların çoğu Cmd.exe ve Unix kullanıcılarının sahip. PowerShell eşdeğeri aynıdır sonuçları vermeyebilir. Ancak, sonuçları Kapat kullanıcıların yeterli PowerShell komut adını bilmeden çalışmıyor. "Finger bellek" yeni bir komut kabuğunu öğrenme sıkıntıya başlıca kaynaklarından başka bir durumdur. Yıl için Cmd.exe kullandıysanız reflexively yazabilir `cls` ekranı temizlemek için komutu. Diğer olmadan `Clear-Host`, bir hata iletisi alır ve çıktıyı temizlemek için yapmanız gerekenler bilemezsiniz.
+Bu özelliği PowerShell öğrenmek için kullanıcılara yardımcı olur. İlk olarak, çoğu **cmd.exe** ve UNIX kullanıcıları kullanıcılar adına göre zaten bildiğiniz komut büyük bir topluluğu. PowerShell eşdeğeri aynıdır sonuçları vermeyebilir. Ancak, sonuçları Kapat kullanıcıların yeterli PowerShell komut adını bilmeden çalışmıyor. "Finger bellek" yeni bir komut kabuğunu öğrenme sıkıntıya başlıca kaynaklarından başka bir durumdur. Kullandıysanız **cmd.exe** reflexively yazabilir, yıllardır `cls` ekranı temizlemek için komutu. Diğer olmadan `Clear-Host`, bir hata iletisi alır ve çıktıyı temizlemek için yapmanız gerekenler bilemezsiniz.
 
-Aşağıdaki listede, kullanabileceğiniz yaygın Cmd.exe ve UNIX komutları birkaçını PowerShell'de gösterir:
+Aşağıdaki listede, birkaç ortak gösterilir **cmd.exe** ve PowerShell'de kullanabilirsiniz UNIX komutları:
 
 |||||
 |-|-|-|-|

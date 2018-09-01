@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell cmdlet'i
 title: Önemli PowerShell kavramlarını anlama
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 5f8192f962cebb8ee5e5384e39b48de811b11003
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134218"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353203"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Önemli PowerShell kavramlarını anlama
 
@@ -23,10 +23,9 @@ Geçmiş verileri işlemek için metin işleme araçları kullandıysanız, fark
 
 ## <a name="the-command-family-is-extensible"></a>Komut seridir Genişletilebilir
 
-Arabirimleri Cmd.exe gibi yerleşik bir komut kümesini doğrudan genişletmek bir yol sunmaz.
-Cmd.exe içinde çalışan dış komut satırı araçları oluşturabilirsiniz. Ancak bu dış Araçlar Yardım tümleştirmesi gibi hizmetlerin yoktur. Cmd.exe otomatik olarak bu dış Araçlar geçerli komutları olduğunu bilmez.
+Gibi arabirimleri **cmd.exe**doğrudan yerleşik bir komut kümesi genişletmek bir yol sağlaması gerekmez. İçinde çalışan dış komut satırı araçları oluşturabilirsiniz **cmd.exe**. Ancak bu dış Araçlar Yardım tümleştirmesi gibi hizmetlerin yoktur. **cmd.exe**otomatik olarak bu dış Araçlar geçerli komutları olduğunu bilmez.
 
-PowerShell komutları yerel olarak da bilinir *cmdlet'leri* (command-let olarak okunur). Kendi cmdlet modülleri oluşturabilir ve işlevleri kullanarak kod veya betiklerde derlenir. Modülleri, cmdlet'leri ve sağlayıcıları kabuğa ekleyebilirsiniz. PowerShell UNIX Kabuk betikleri ve Cmd.exe toplu iş dosyaları benzer komut dosyalarını da destekler.
+PowerShell komutları yerel olarak da bilinir *cmdlet'leri* (command-let olarak okunur). Kendi cmdlet modülleri oluşturabilir ve işlevleri kullanarak kod veya betiklerde derlenir. Modülleri, cmdlet'leri ve sağlayıcıları kabuğa ekleyebilirsiniz. PowerShell UNIX Kabuk betikleri için benzer bir komut dosyalarını da destekler ve **cmd.exe** toplu iş dosyaları.
 
 ## <a name="powershell-handles-console-input-and-display"></a>PowerShell konsol girdisi ve görüntü işleme
 

@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: PowerShell cmdlet'i
 title: PowerShell adlarını öğrenme
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: d4e374530c8628df0d53fd860c4b7a149c58eb60
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 44c66488a20c38d8528c92d753f6b32dda5a2dcb
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134207"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353275"
 ---
 # <a name="learning-powershell-names"></a>PowerShell adlarını öğrenme
 
@@ -19,10 +19,13 @@ Her komutu ayrı bir aracı olduğundan, bu komut adlarını mantıksal görün�
 
 ## <a name="learning-command-names-in-traditional-shells"></a>Geleneksel Kabuk komut adlarını öğrenme
 
-Çoğu komutlar, işletim sistemi veya uygulama, hizmetler veya işlemleri gibi öğeleri yönetmek için oluşturulur. Komutları ailesi ile bir çözüm karşılamayabilir veya adlara sahip. Örneğin, Windows sistemlerinde kullanabilirsiniz `net start` ve `net stop` komutları bir hizmeti durdurmak ve başlatmak. **SC. EXE** Windows için başka bir hizmet denetimi araçtır. Bu ada adlandırma desenini içine uymayan `net` hizmet komutları. İşlem yönetimi için Windows sahip `tasklist` süreçleri Listele komutu ve `taskkill` işlemleri sonlandırmak için komutu.
+Çoğu komutlar, işletim sistemi veya uygulama, hizmetler veya işlemleri gibi öğeleri yönetmek için oluşturulur. Komutları ailesi ile bir çözüm karşılamayabilir veya adlara sahip. Örneğin, Windows sistemlerinde kullanabilirsiniz `net start` ve `net stop` komutları bir hizmeti durdurmak ve başlatmak. **SC.exe** Windows için başka bir hizmet denetimi araçtır. Bu ada adlandırma desenini içine uymayan **net.exe** hizmet komutları. İşlem yönetimi için Windows sahip **tasklist.exe** süreçleri Listele komutu ve **taskkill.exe** işlemleri sonlandırmak için komutu.
 
-Ayrıca, bu komutlar, düzensiz parametresi belirtimlerine sahip. Kullanamazsınız `net start` uzak bir bilgisayarda bir hizmeti başlatmak için komutu. `sc` Komut, uzak bir bilgisayarda hizmet başlayabilir.
-Ancak, uzak bilgisayarı belirtmek için adını çift ters eğik çizgi ile önek. DC01 adlı bir uzak bilgisayarda Biriktirici hizmetini başlatmak için yazdığınız `sc \\DC01 start spooler`. Listeye DC01 üzerinde çalışan görevler, kullandığınız **/S** parametresi ve ters eğik çizgi olmadan bilgisayar adı. Örneğin, `tasklist /S DC01`.
+Ayrıca, bu komutlar, düzensiz parametresi belirtimlerine sahip. Kullanamazsınız `net start` uzak bir bilgisayarda bir hizmeti başlatmak için komutu. **Sc.exe** komut, uzak bir bilgisayarda hizmet başlayabilir. Ancak, uzak bilgisayarı belirtmek için adını çift ters eğik çizgi ile önek. DC01 adlı bir uzak bilgisayarda Biriktirici hizmetini başlatmak için yazdığınız `sc.exe \\DC01 start spooler`.
+Listeye DC01 üzerinde çalışan görevler, kullandığınız **/S** parametresi ve ters eğik çizgi olmadan bilgisayar adı. Örneğin, `tasklist /S DC01`.
+
+> [!NOTE]
+> PowerShell v6 önce `sc` için bir diğer ad olduğu `Set-Content` cmdlet'i. Çalıştırılacak **sc.exe** komut, dosya uzantısını içermesi gerekir.
 
 Hizmetler ve işlemler iyi tanımlanmış yaşam döngülerine sahiptir yönetilebilir bir bilgisayar öğelerde örnekleridir. Başlangıç veya hizmetleri ve işlemleri durdurun veya tüm hizmetler ve işlemlerin şu anda çalışan bir listesini alın. Bunlar arasında önemli teknik farklılıklar olsa da, hizmetler ve işlemler üzerinde gerçekleştirdiğiniz eylemleri kavramsal olarak aynı değildir. Ayrıca, biz parametreleri belirterek bir eylemin özelleştirmek için yaptığınız seçimlere de kavramsal olarak benzer olabilir.
 
@@ -37,8 +40,7 @@ Standart fiiller önerilen bir dizi PowerShell sahiptir. İsimleri daha az kıs�
 Bu örnekte iki isimleri ve fiilleri o kadarlık öğrenme tutarlılık basitleştirin değil. Bu liste 10 fiilleri ve 10 isimleri standartlaştırılmış bir dizi genişletin. Artık yalnızca anlamak için 20 sözcükler vardır.
 Ancak, bu sözcükleri form 100 farklı komut adlarını birleştirilebilir.
 
-Bir PowerShell komut adını okuyarak ne yaptığını anlamak kolay bir işlemdir. Bir bilgisayarı kapatmak için komut `Stop-Computer`. Ağdaki tüm bilgisayarlarda listelemek için komut `Get-Computer`.
-Sistem tarihini almak için komut `Get-Date`.
+Bir PowerShell komut adını okuyarak ne yaptığını anlamak kolay bir işlemdir. Bir bilgisayarı kapatmak için komut `Stop-Computer`. Ağdaki tüm bilgisayarlarda listelemek için komut `Get-Computer`. Sistem tarihini almak için komut `Get-Date`.
 
 Belirli bir eylemiyle dahil tüm komutları listeleyerek **fiil** parametresi için `Get-Command`. Örneğin, fiili kullanan tüm cmdlet'leri görmek için `Get`, türü:
 

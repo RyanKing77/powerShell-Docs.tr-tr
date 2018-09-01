@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
 title: Komutlar hakkında bilgi alma
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: f4238927f10b4204cd3e23f0b0453011f54cb04a
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134019"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353179"
 ---
 # <a name="getting-information-about-commands"></a>Komutlar hakkında bilgi alma
 
@@ -29,7 +29,7 @@ Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-Bu görünümler Cmd.exe Yardım çıktısını gibi çok çıkış: iç komutları tablosal bir özeti. Alıntı içinde `Get-Command` komut gösterilen her komut, yukarıda gösterilen çıkış, bir CommandType cmdlet'i vardır. Bir cmdlet, PowerShell'in iç komut türüdür. Bu tür komutlar gibi kabaca karşılık `dir` ve `cd` bash Kabuk Cmd.exe veya UNIX yerleşik komutlarını ister.
+Bu görünümler gibi Yardım çıktısını çok çıktı **cmd.exe**: iç komutları tablosal bir özeti. Alıntı içinde `Get-Command` komut gösterilen her komut, yukarıda gösterilen çıkış, bir CommandType cmdlet'i vardır. Bir cmdlet, PowerShell'in iç komut türüdür. Bu tür komutlar gibi kabaca karşılık `dir` ve `cd` içinde **cmd.exe** veya bash gibi UNIX Kabukları'nın yerleşik komutlar.
 
 `Get-Command` Cmdlet'i sahip bir **söz dizimi** her cmdlet'in söz dizimi döndüren parametresi. Aşağıdaki örnek söz dizimini alınacağı gösterilmektedir `Get-Help` cmdlet:
 
@@ -71,7 +71,7 @@ Bu liste, binlerce öğenin bulunabilir, arama yolunda dış komutları içerir.
 Sınırlı bir komut kümesini aramak daha yararlı olacaktır.
 
 > [!NOTE]
-> Yıldız işareti (\*) joker karakter eşleme PowerShell komut satırı bağımsız değişkenlerini için kullanılır. \* Eşleşme anlamına gelir"bir veya daha fazla herhangi bir karakter". Yazabilirsiniz `Get-Command a*` harfi ile başlayan tüm komutları bulmak için "a". Joker karakter eşleme cmd.exe içinde, PowerShell'in joker ayrıca bir süre eşleşir.
+> Yıldız işareti (\*) joker karakter eşleme PowerShell komut satırı bağımsız değişkenlerini için kullanılır. \* Eşleşme anlamına gelir"bir veya daha fazla herhangi bir karakter". Yazabilirsiniz `Get-Command a*` harfi ile başlayan tüm komutları bulmak için "a". İçinde joker karakterlerle eşleşen aksine **cmd.exe**, PowerShell'in joker karakter, bir süre de eşleşir.
 
 Kullanım **CommandType** parametresinin `Get-Command` diğer tür yerel komutları almak için.
 cmdlet'ini çalıştırdığınızda döndürülen çekirdek kaynakları bilgilerini gözden geçirebilirsiniz.

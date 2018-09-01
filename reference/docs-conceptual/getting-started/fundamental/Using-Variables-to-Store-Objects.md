@@ -3,14 +3,14 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
 title: Nesne Depolamak için Değişkenleri Kullanma
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: 3168b64039a601857f9c684108de5770f88329e3
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134067"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353227"
 ---
-# <a name="using-variables-to-store-objects"></a>Nesneleri depolamak için değişkenleri kullanma
+# <a name="using-variables-to-store-objects"></a>Nesne depolamak için değişkenleri kullanma
 
 PowerShell nesneleri ile çalışır. PowerShell değişkenleri olarak bilinen adlandırılmış nesneleri oluşturmanızı sağlar.
 Değişken adları alt çizgi karakteri can herhangi bir alfasayısal karakter içerebilir. PowerShell'de kullanıldığında, bir değişkeni her zaman kullanarak belirtilen \$ karakteri ve ardından tarafından değişken adı.
@@ -80,13 +80,13 @@ Get-ChildItem variable:
 
 ## <a name="using-cmdexe-variables"></a>Cmd.exe değişkenlerini kullanma
 
-PowerShell, Windows işlemi Cmd.exe dahil olmak üzere tüm kullanılabilir aynı ortam değişkenlerini kullanabilirsiniz. Bu değişkenler adlı bir sürücüsü sunulan `env:`. Bu değişkenler, aşağıdaki komutu yazarak görüntüleyebilirsiniz:
+PowerShell herhangi bir Windows işlem için kullanılabilen aynı ortam değişkenlerini kullanma dahil olmak üzere **cmd.exe**. Bu değişkenler adlı bir sürücüsü sunulan `env:`. Bu değişkenler, aşağıdaki komutu yazarak görüntüleyebilirsiniz:
 
 ```powershell
 Get-ChildItem env:
 ```
 
-Standart `*-Variable` cmdlet'leri olmayan ortam değişkenleri ile çalışacak şekilde tasarlanmıştır. Ortam değişkenlerini kullanarak erişilen `env:` sürücü öneki. Örneğin, **% SystemRoot %** Cmd.exe değişkeninde işletim sisteminin kök dizin adı içerir. PowerShell'de, kullandığınız `$env:SystemRoot` aynı değere erişmek için.
+Standart `*-Variable` cmdlet'leri olmayan ortam değişkenleri ile çalışacak şekilde tasarlanmıştır. Ortam değişkenlerini kullanarak erişilen `env:` sürücü öneki. Örneğin, **% SystemRoot %** değişkeninde **cmd.exe** işletim sisteminin kök dizin adı içeriyor. PowerShell'de, kullandığınız `$env:SystemRoot` aynı değere erişmek için.
 
 ```
 PS> $env:SystemRoot
