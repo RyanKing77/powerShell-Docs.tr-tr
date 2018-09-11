@@ -1,60 +1,59 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
+keywords: DSC, powershell, yapılandırma, Kurulum
 title: Karar Verenler için İstenen Durum Yapılandırmasına Genel Bakış
-ms.openlocfilehash: 70fc5c55266970165dc16eac85f6b850cf409d64
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7c36aa5fadeab8bcb381f316288d102b5ce402e2
+ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189882"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44339846"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Karar Verenler için İstenen Durum Yapılandırmasına Genel Bakış
 
-Bu belge PowerShell istenen durum yapılandırması (DSC) kullanarak iş yararlarını açıklar. Teknik Kılavuzu değil.
+Bu belgede, Windows PowerShell Desired State Configuration (DSC) kullanarak iş avantajları açıklanmaktadır. Bu teknik bir kılavuz değildir.
 
-## <a name="what-is-desired-state-configuration"></a>İstenen durum Yapılandırması nedir?
+## <a name="what-is-desired-state-configuration"></a>Nedir Desired State Configuration?
 
-Windows PowerShell istenen durum yapılandırması (DSC), yerleşik açık standartlar temelinde Windows yapılandırma bir yönetim platformudur. DSC her bir aşamada (geliştirme, test, ön üretim, üretim) dağıtım yaşam döngüsünün yanı sıra genişletme sırasında güvenilir ve tutarlı bir şekilde çalışabilmesi için yeterince esnektir.
+PowerShell Desired State Configuration açık standartları temel alan Windows yerleşik bir yapılandırma yönetim platformudur. DSC (geliştirme, test, üretim öncesi ve üretim) dağıtım yaşam döngüsünün yanı sıra ölçek genişletme sırasında her aşamasında güvenilir ve tutarlı bir şekilde çalışması için yeterince esnektir.
 
-DSC merkezleri geçici "[yapılandırmaları](https://msdn.microsoft.com/powershell/dsc/configurations)".
-("Düğümler") belirli özelliklere sahip bilgisayarlardan oluşan bir ortama açıklayan bir kolay okunur belge bir yapılandırmadır.
-Bu özelliklere belirli bir Windows özelliği etkinleştirilmiş veya SharePoint dağıtma kadar karmaşık olduğundan olmanın olarak kadar basit olabilir.
+DSC merkezleri etrafında [yapılandırmaları](configurations.md).
+("Düğüm") belirli özelliklere sahip bilgisayarlardan oluşan bir ortamı tanımlayan bir kolay okunur belgesi bir yapılandırmadır.
+Bu özelliklere, belirli bir Windows özelliği etkin veya SharePoint dağıtımı gibi karmaşık sunulmasını sağlarken diğer yandan olarak basit olabilir.
 
-DSC de sahip izleme ve raporlama yerleşik olarak bulunur.
-Bir sistem artık uyumlu değilse, DSC bir uyarı oluştur ve sistem düzeltmek için hareket.
+DSC ayrıca sahip izleme ve raporlama yerleşik olarak bulunur.
+Bir sistem artık uyumlu değilse, DSC bir uyarı oluşturmalı ve sistem düzeltmek için harekete geçin.
 
-## <a name="benefits-of-using-desired-state-configuration"></a>İstenen durum yapılandırması kullanmanın yararları
+## <a name="benefits-of-using-desired-state-configuration"></a>Desired State Configuration ' ı kullanmanın avantajları
 
-Yapılandırmaları kolayca okuma, depolanan güncelleştirildi ve için tasarlanmıştır.
-Yapılandırmaları durumu hedef cihazlar, bu durumda yerleştirilecek hakkında yönergeler yazmak yerine olması gerektiğini bildirin.
-Bu bilgi, benimsemeyi, uygulama ve yapılandırma DSC aracılığıyla koruma daha az maliyetli kılar.
+Yapılandırmaları kolayca okuyun, güncelleştirilen ve depolanacak şekilde tasarlanmıştır.
+Yapılandırmaları durumu hedef cihazlar durumundaki koymak yönergeleri yazmak yerine olması bildirin.
+Bu, benimseme, uygulamak ve aracılığıyla DSC yapılandırması korumak daha az yüke neden olur.
 
-Yapılandırmaları oluşturma karmaşık dağıtım adımları "tek bir kaynağı gerçekte" tek bir konumda yakalanır anlamına gelir.
-Bu makinelerin belirli bir kümesinin yinelenen dağıtımları daha az hataya hale getirir.
-Buna karşılık, hızlı bir döngü karmaşık dağıtımlarda sağlayan dağıtımları daha hızlı ve daha güvenilir yapılıyor.
+Yapılandırmaları oluşturma, tek bir konumda bir "tek gerçeklik kaynağı" karmaşık dağıtım adımları yakalanan anlamına gelir.
+Bu yinelenen dağıtımlar, belirli makineler kümesinden çok daha az hata yapmaya açık hale getirir.
+Buna karşılık, karmaşık dağıtımları üzerinde hızlı bir döngü sağlayan dağıtımları daha hızlı ve daha güvenilir yapılıyor.
 
-Yapılandırmaları aracılığıyla paylaşılabilir de [PowerShell Galerisi](https://powershellgallery.com) yaygın senaryolar ve en iyi yöntemler anlamına zaten var olabilecek ihtiyacınız çalışmanın için.
+Yapılandırmaları aracılığıyla paylaşılabilir ayrıca [PowerShell Galerisi](https://powershellgallery.com) yaygın senaryolar ve en iyi anlamına zaten var olabilecek için yapılması gereken çalışmayı.
 
 
-## <a name="desired-state-configuration-and-devops"></a>İstenen durum yapılandırması ve aygıt kullanıcıları
+## <a name="desired-state-configuration-and-devops"></a>Desired State Configuration ve DevOps
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) kişiler, işlem ve hızlı dağıtım ve son kullanıcılara değeri sunmaya odaklanır odaklanmış yineleme için iç veya dış izin araçları birleşimidir.
-DSC ile DevOps göz önünde tasarlanmıştır.
-Tek bir yapılandırmasına sahip bir ortamda tanımlamak geliştiriciler kendi yapılandırma gereksinimlerini kodlamak, kaynak denetimine bu yapılandırmasını denetleyin ve işletim ekipleri kolayca dağıtabilirsiniz kod hataya yatkın üzerinden geçmek zorunda kalmadan anlamına gelir el ile işlemler.
+DSC ile tasarlanmış [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) göz önünde bulundurun, kişileri, süreçleri ve hızlı dağıtım ve yineleme izin araçları birleşimi odaklanmış iç veya dış değeri son kullanıcılara sunmaya.
+Geliştiriciler kendi yapılandırma gereksinimleri kodlama, kaynak denetimine bu yapılandırmayı kontrol edin ve işlem ekipleri bir ortam tanımlayabilme tek bir yapılandırma kolayca kod hataya Git gerek kalmadan dağıtabilirsiniz el ile gerçekleştirilen işlemleri.
 
-Bağlantılardır de [verilere](https://msdn.microsoft.com/powershell/dsc/configdata), hangi kolaylaştırır ops ekiplerin tanımlamak ve geliştirici müdahalesi olmadan ortamları değiştirin.
+Yapılandırmalarıdır ayrıca [verilerle](configData.md), kolaylaştırır tanımlamak ve geliştirici müdahalesi olmadan ortamları değiştirmek ops için.
 
-## <a name="desired-state-configuration-on--and-off-premises"></a>İstenen durum yapılandırması üzerinde - ve şirket dışı
+## <a name="desired-state-configuration-on--and-off-premises"></a>Ve kapalı-şirket içinde Desired State Configuration
 
-DSC, şirket içi ve şirket dışı dağıtımlarını yönetmek için kullanılabilir.
-Şirket içi çözümler için DSC sahip bir [çekme sunucu](https://msdn.microsoft.com/powershell/dsc/pullserver) makinelerin yönetimini merkezileştirme ve bunların durumunu raporlamak için kullanılabilir.
-Bulut çözümleri için Windows yerde kullanılabilir, DSC kullanılabilir durumda değil.
-Ayrıca belirli teklifleri istenen durum yapılandırması gibi yerleşik azure'dan olan [Azure Otomasyonu](https://azure.microsoft.com/en-us/documentation/services/automation/), hangi merkezi hale getirir DSC raporlama.
+DSC, hem şirket içi hem de kapalı içi dağıtımlarını yönetmek için kullanılabilir.
+Şirket içi çözümler için DSC sahip bir [çekme sunucusu](pullServer.md) makinelerin yönetimini merkezileştirme ve bunların durumunu raporlamak için kullanılabilir.
+Bulut çözümleri için DSC Windows kullanılabilir her yerde kullanılabilir.
+Azure Desired State Configuration ' üzerinde gibi yerleşik belirli teklifleri de vardır [Azure Otomasyonu](https://azure.microsoft.com/en-us/documentation/services/automation/), DSC raporlama merkezileştirir.
 
 ## <a name="dsc-and-compatibility"></a>DSC ve uyumluluk
 
-DSC Windows Server 2012 R2'de tanıtılan karşın, Windows Management Framework (WMF) paket aracılığıyla alt düzey işletim sistemleri için kullanılabilir.
-WMF hakkında daha fazla bilgi bulunabilir [PowerShell giriş sayfası](https://msdn.microsoft.com/en-us/powershell/).
+DSC, Windows Server 2012 R2'de kullanılmaya başlanan olsa da, alt düzey işletim sistemleri için Windows Management Framework (WMF) paketi aracılığıyla kullanılabilir.
+WMF hakkında daha fazla bilgi bulunabilir [PowerShell giriş sayfası](/powershell/).
 
-DSC, Linux yönetmek için de kullanılabilir. Daha fazla bilgi için bkz: [Linux DSC ile çalışmaya başlama](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted).
+DSC, Linux'ı yönetmek için de kullanılabilir. Daha fazla bilgi için [Linux için DSC ile çalışmaya başlama](lnxGettingStarted.md).
