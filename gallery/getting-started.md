@@ -3,20 +3,24 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: PowerShell Galerisi ile çalışmaya başlama
-ms.openlocfilehash: 83974698152e75efac66ea725a9c220486676d6f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 39998df1a2bf9363dd008dc96a802157c8d691d7
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190171"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523068"
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>PowerShell Galerisi ile çalışmaya başlama
 
-Sisteminize PowerShell Galerisi'nden öğe indirme gerektirir [PowerShellGet](/powershell/module/powershellget) modülü. Aşağıdakilerden birini PowerShellGet modülü bulabilirsiniz. PowerShell Galerisi'nden öğe indirme oturum açmak gerekmez.
+Öğeleri PowerShell Galerisi'nden yüklemek için en uygun yolu cmdlet'ler kullanmaktır [PowerShellGet](/powershell/module/powershellget) modülü. PowerShell Galerisi'nden öğeleri indirmek oturum açmanız gerekmez.
 
-## <a name="discovering-items-from-the-powershell-gallery"></a>PowerShell Galerisi'nden öğeleri bulma
+> [!NOTE]
+> Bir paket doğrudan PowerShell Galerisi'nden yüklemek mümkündür, ancak bu önerilen bir yaklaşım değildir. Daha fazla ayrıntı için [el ile indirme paketi](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/how-to/working-with-items/manual-download.md).  
 
-PowerShell galerisinde öğelerini kullanarak bulabilirsiniz **arama** denetim bu Web sitesinde veya modüller ve komut dosyaları sayfalarıyla giderek. PowerShell Galerisi'nden öğe çalıştırarak bulabileceğiniz [bulma Modülü][] ve [bulma komut dosyası][] cmdlet'leri ile öğe türüne bağlı olarak, `-Repository PSGallery`.
+
+## <a name="discovering-items-from-the-powershell-gallery"></a>PowerShell Galerisi'nden öğeler bulunuyor
+
+PowerShell galerisinde öğelerini kullanarak bulabilirsiniz **arama** bu Web sitesinde veya modülleri ve betikleri sayfalarıyla atarak denetimi. Çalıştırarak PowerShell Galerisi'ndeki öğeleri bulabilirsiniz [Modül Bul][] ve [Bulma komut dosyası][] cmdlet'leri ile öğe türüne bağlı olarak, `-Repository PSGallery`.
 
 Galeri sonuçlarını filtreleme, aşağıdaki parametreleri kullanarak gerçekleştirilebilir:
 
@@ -31,70 +35,71 @@ Galeri sonuçlarını filtreleme, aşağıdaki parametreleri kullanarak gerçekl
 - Komut
 - Filtre
 
-Yalnızca galerisinde belirli DSC kaynakları bulmak isterseniz, çalıştırabilirsiniz [Bul DscResource] cmdlet'i. Bul DscResource DSC kaynakları galeride yer alan verileri döndürür.
-DSC kaynakları her zaman bir modül bir parçası olarak teslim edildiğinden, hala çalıştırmanız gereken [yükleme-Module][] bu DSC kaynakları yüklemek için.
+Yalnızca galerideki belirli DSC kaynakları keşfetme içinde ilginizi çeken, çalıştırabileceğiniz [Bul-DscResource] cmdlet'i. Bul-DscResource galeride bulunan DSC kaynaklardaki verileri döndürür.
+DSC kaynakları her zaman bir modülün bir parçası olarak teslim edildiğinden, çalıştırmanız yine [Install-Module][] bu DSC kaynakları yüklenecek.
 
-## <a name="learning-about-items-in-the-powershell-gallery"></a>PowerShell galerisinde öğeleri hakkında bilgi
+## <a name="learning-about-items-in-the-powershell-gallery"></a>PowerShell galeride bulunan öğeler hakkında daha fazla bilgi
 
-İlgilendiğiniz öğeyi tanımladıktan sonra hakkında daha fazla bilgi edinmek isteyebilirsiniz. Bu öğeye ait belirli galeri sayfasında inceleyerek bunu yapabilirsiniz. Bu sayfada tüm öğe ile karşıya meta verileri görmek mümkün olur. Bir öğe için bu meta veri öğesi'nin yazarı tarafından sağlanan ve Microsoft tarafından doğrulanmaz. Öğenin sahibi öğesini yayımlamak için kullanılan galeri hesabı kesinlikle bağlıdır ve yazar alanı daha güvenilirdir.
+İlgilendiğiniz öğeyi belirledikten sonra ilgili daha fazla bilgi edinmek isteyebilirsiniz. Bu öğenin özel galeri sayfasında inceleyerek bunu yapabilirsiniz. Bu sayfada tüm öğeyle karşıya meta verileri görmek mümkün olacaktır. Bu meta veriler için bir öğe öğenin yazarı tarafından sağlanan ve Microsoft tarafından doğrulanmaz. Öğenin sahibi kesin galeri öğesi yayımlamak için kullanılan hesaba bağlıdır ve yazar alanı daha güvenilirdir.
 
-Düşündüğünüz bir öğe iyi niyetli içinde yayımlanmamışsa bulursanız tıklatın **rapor kötüye** bu öğeye ait sayfasında.
+Sizin de böyle bir öğe inancıyla içinde yayımlanmamışsa keşfederseniz tıklayın **uygunsuz** bu öğeye ait sayfasında.
 
-Çalıştırıyorsanız [bulma Modülü][] veya [bulma komut dosyası][], döndürülen PSGetModuleInfo nesnesinde bu verilerini görüntüleyebilir. Örneğin, çalışan `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` galerisinde PSReadLine modül verileri döndürür.
+Çalıştırıyorsanız [Modül Bul][] veya [Bulma komut dosyası][], döndürülen PSGetModuleInfo nesnesinde bu verileri görüntüleyebilirsiniz. Örneğin, çalışan `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member`
+Galerideki PSReadLine modül verileri döndürür.
 
 ## <a name="downloading-items-from-the-powershell-gallery"></a>PowerShell Galerisi'nden öğe indirme
 
-PowerShell Galerisi'nden öğe indirme sırasında şu işlem öneririz:
+PowerShell Galerisi'nden öğe indirme işlemi gerçekleştirirken aşağıdaki işlem öneririz:
 
-### <a name="inspect"></a>İnceleyin.
+### <a name="inspect"></a>İnceleme
 
-İnceleme için Galeriden bir öğe indirmek için ya da çalıştırın [Kaydet-Module][] veya [Kaydet-komut dosyası][] cmdlet öğesi türüne bağlı olarak. Bu, yüklemeden öğeyi yerel olarak kaydedin ve öğenin içeriğini incelemek sağlar. Kaydedilen öğeyi el ile silmek unutmayın.
+Galeri denetimi için bir öğe indirmesine izin ya da çalıştırmak [Save-Module][] veya [Save-Script][] cmdlet'i, öğe türüne bağlı olarak. Bu, yüklemeden öğe yerel olarak kaydedin ve öğe içeriği İnceleme sağlar. Kaydedilen öğeyi el ile silmeyi unutmayın.
 
-Bu öğelerin bazıları, Microsoft tarafından yazılan ve diğerleri PowerShell topluluğu tarafından yazılan.
-Microsoft, yüklemeden önce bu galeri öğeleri kodunu ve içeriğini gözden önerir.
+Bu öğelerin bazıları, Microsoft tarafından yazılmış ve diğer PowerShell topluluğu tarafından yazıldı.
+Microsoft, içeriği ve yüklemeden önce bu galeri öğeleri, kod gözden geçirme önerir.
 
-Düşündüğünüz bir öğe iyi niyetli içinde yayımlanmamışsa bulursanız tıklatın **rapor kötüye** bu öğeye ait sayfasında.
+Sizin de böyle bir öğe inancıyla içinde yayımlanmamışsa keşfederseniz tıklayın **uygunsuz** bu öğeye ait sayfasında.
 
 ### <a name="install"></a>Yükle
 
-Kullanmak için Galeriden bir öğe yüklemek için ya da çalıştırın [yükleme-Module][] veya [yükleme betiği][] cmdlet öğesi türüne bağlı olarak.
+Galeri kullanmak için bir öğe yüklemek için ya da çalıştırmak [Install-Module][] veya [Yükleme betiği][] cmdlet'i, öğe türüne bağlı olarak.
 
-[yükleme-Module][] modülünü yükler `$env:ProgramFiles\WindowsPowerShell\Modules` varsayılan olarak.
-Bu yönetici hesabı gerektirir. Eklerseniz `-Scope CurrentUser` parametresi modülü için yüklüdür `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
+[Install-Module][] modülünü yükler `$env:ProgramFiles\WindowsPowerShell\Modules` varsayılan olarak.
+Bu, bir yönetici hesabı gerektirir. Eklerseniz `-Scope CurrentUser` parametresi modülünün yüklü için `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
 
-[yükleme betiği][] komut dosyasına yükler `$env:ProgramFiles\WindowsPowerShell\Scripts` varsayılan olarak.
-Bu yönetici hesabı gerektirir. Eklerseniz `-Scope CurrentUser` parametresi, komut dosyası için yüklendiğini `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
+[Yükleme betiği][] betiğe yükler `$env:ProgramFiles\WindowsPowerShell\Scripts` varsayılan olarak.
+Bu, bir yönetici hesabı gerektirir. Eklerseniz `-Scope CurrentUser` parametresi, komut dosyası yüklü olduğu için `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
 
-Varsayılan olarak, [yükleme-Module][] ve [yükleme betiği][] öğeyi en güncel sürümünü yükler.
-Öğe daha eski bir sürümü yüklemek için add `-RequiredVersion` parametresi.
+Varsayılan olarak, [Install-Module][] ve [Yükleme betiği][] öğenin en son sürümünü yükler.
+Öğesi daha eski bir sürümünü yüklemek için ekleme `-RequiredVersion` parametresi.
 
 ### <a name="deploy"></a>Dağıt
 
-PowerShell Galerisi'nden bir öğe Azure Automation ile dağıtmak için **Azure Otomasyonu Dağıt** öğe Ayrıntıları sayfasında. Burada Azure hesabı kimlik bilgilerinizi kullanarak oturum Azure yönetim portalına yönlendirilir. Bağımlılıkları olan öğeleri dağıtmak için Azure Otomasyonu tüm bağımlılıkları dağıtması unutmayın. 'Azure Otomasyonu Dağıt' düğmesini ekleyerek devre dışı bırakılabilir **AzureAutomationNotSupported** öğe meta etiketi.
+Azure Otomasyonu PowerShell Galerisi'ndeki bir öğeye dağıtmak için **Azure Otomasyonu Dağıt** öğe Ayrıntıları sayfasında. Burada Azure hesabı kimlik bilgilerinizi kullanarak oturum açtığınızda Azure yönetim portalına yönlendirilirsiniz. Bağımlılıkları olan öğeleri dağıtma tüm bağımlılıkları için Azure Otomasyonu dağıtacağınız olduğunu unutmayın. 'Azure otomasyonu için Dağıt' düğmesini ekleyerek devre dışı bırakılabilir **AzureAutomationNotSupported** öğesi meta verileriniz için etiket.
 
 Azure Otomasyonu hakkında daha fazla bilgi için bkz: [Azure Otomasyonu](/azure/automation) belgeleri.
 
-## <a name="updating-items-from-the-powershell-gallery"></a>PowerShell Galerisi'nden öğeler güncelleştiriliyor
+## <a name="updating-items-from-the-powershell-gallery"></a>Öğeleri PowerShell Galerisi'ndeki güncelleştiriliyor
 
-PowerShell Galerisi'nden yüklü öğeleri güncelleştirmek için [güncelleştirme-Module] [] veya [güncelleştirme betiğini] [] cmdlet'ini çalıştırın. Ek parametreler çalıştırdığınızda [güncelleştirme-Module] [] çalıştırarak yüklü her modülü güncelleştirme girişiminde [yükleme-Module][]. Modülleri seçmeli olarak güncelleştirmek için ekleyin `-Name` parametresi.
+Yüklü PowerShell Galerisi'nden öğeleri güncelleştirmek için Update-Module [] veya [güncelleştirme betiğini] [] cmdlet'ini çalıştırın. Update-Module [] herhangi ek bir parametre çalıştırdığınızda çalıştırarak yüklü her modülü güncelleştirme çalışır [Install-Module][]. Modüller seçmeli olarak güncelleştirmek için ekleme `-Name` parametresi.
 
-Benzer şekilde, ek parametreler çalıştırdığınızda, [güncelleştirme betiğini] [] de her komut dosyası çalıştırarak yüklü güncelleştirme girişiminde [yükleme betiği][]. Komut dosyaları seçmeli olarak güncelleştirmek için ekleyin `-Name` parametresi.
+Benzer şekilde, hiçbir ek parametre olmadan çalıştırdığınızda, [güncelleştirme betiğini] [] de her komut dosyası çalıştırarak yüklü güncelleştirme girişiminde [Yükleme betiği][]. Komut dosyaları seçmeli olarak güncelleştirmek için ekleme `-Name` parametresi.
 
 ## <a name="list-items-that-you-have-installed-from-the-powershell-gallery"></a>PowerShell Galerisi'nden yüklediğiniz liste öğeleri
 
-PowerShell Galerisi'nden yüklü modüllerine öğrenmek için Çalıştır [Get-InstalledModule][] cmdlet'i. Bu komut tüm doğrudan PowerShell Galerisi'nden yüklenen sisteminizde yüklü modülleri listeler.
+Hangi modülleri PowerShell Galerisi'nden yüklediğiniz öğrenmek için çalıştırma [Get-InstalledModule][] cmdlet'i. Bu komut, sisteminizde yüklü modülleri PowerShell Galerisi'nden doğrudan yüklenen tüm listeler.
 
-PowerShell Galerisi'nden yüklü hangi komut dosyaları bulmak için benzer şekilde, çalıştırmak [Get-InstalledScript][] cmdlet'i. Bu komut doğrudan PowerShell Galerisi'nden yüklenen sisteminizde yüklü komut dosyalarının tümü listeler.
+Benzer şekilde, hangi betiklerin PowerShell Galerisi'nden yüklediğiniz öğrenmek için çalıştırma [Get-InstalledScript][] cmdlet'i. Bu komut tüm doğrudan PowerShell Galerisi'nden yüklenen, sisteminizde yüklü betikleriniz listeler.
 
-[Bul DscResource]: /powershell/module/powershellget/Find-DscResource
-[bulma Modülü]: /powershell/module/powershellget/Find-Module
-[bulma komut dosyası]: /powershell/module/powershellget/Find-Script
+[Bul-DscResource]: /powershell/module/powershellget/Find-DscResource
+[Modül Bul]: /powershell/module/powershellget/Find-Module
+[Bulma komut dosyası]: /powershell/module/powershellget/Find-Script
 [Get-InstalledModule]: /powershell/module/powershellget/Get-InstalledModule
 [Get-InstalledScript]: /powershell/module/powershellget/Get-InstalledScript
-[yükleme-Module]: /powershell/module/powershellget/Install-Module
-[yükleme betiği]: /powershell/module/powershellget/Install-Script
+[Install-Module]: /powershell/module/powershellget/Install-Module
+[Yükleme betiği]: /powershell/module/powershellget/Install-Script
 [Publish-Module]: /powershell/module/powershellget/Publish-Module
 [Publish-Script]: /powershell/module/powershellget/Publish-Script
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
-[Kaydet-Module]: /powershell/module/powershellget/Save-Module
-[Kaydet-komut dosyası]: /powershell/module/powershellget/Save-Script
+[Save-Module]: /powershell/module/powershellget/Save-Module
+[Save-Script]: /powershell/module/powershellget/Save-Script

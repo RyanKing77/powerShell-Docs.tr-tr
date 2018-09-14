@@ -2,12 +2,12 @@
 title: PowerShell Core 6.0 yenilikler nelerdir?
 description: Yeni özellikler ve PowerShell Core 6. 0'yayımlanan değişiklikleri
 ms.date: 08/06/2018
-ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 9bd59dc1821e2fb3ec2d30254ab1fac4089f0340
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587253"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557241"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 yenilikler nelerdir?
 
@@ -373,14 +373,14 @@ Düzeltmeler ve değişiklikler tam listesi için kullanıma sunduğumuz [change
   - işletim sistemi Platformu (`$PSVersionTable.OSDescription`)
   - PowerShell'ün tam sürümünü (`$PSVersionTable.GitCommitId`)
 
-Çevirme bu telemetri istiyorsanız, yalnızca silme `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` veya oluşturma `POWERSHELL_TELEMETRY_OPTOUT` ortam değişkeni aşağıdaki değerlerden biriyle: `true`, `1` veya `yes`.
-Bu dosya silme veya değişkeni oluşturma PowerShell ilk çalıştırmada önce tüm telemetri atlar.
+Çevirme bu telemetri isterseniz, basitçe oluşturma `POWERSHELL_TELEMETRY_OPTOUT` ortam değişkeni aşağıdaki değerlerden biriyle: `true`, `1` veya `yes`.
+Değişken oluşturma PowerShell ilk çalıştırmada önce tüm telemetri atlar.
 Ayrıca bu telemetri verilerini ve biz telemetriden bı'yi ınsights gösterme üzerinde planlıyoruz [topluluk Panosu][community-dashboard].
 Biz bu verileri bu kullanma hakkında daha fazla bilgi bulabilirsiniz [blog gönderisi][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
