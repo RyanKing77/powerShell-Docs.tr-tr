@@ -3,28 +3,28 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Katalog cmdlet’leri
-ms.openlocfilehash: 7eaca09667af0eb5d719f23e987bb112e8514978
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ec5fc866fe27a894b23b93d3ea46ad9c0cba288e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189076"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522897"
 ---
 # <a name="catalog-cmdlets"></a>Katalog cmdlet'leri
 
-İki yeni cmdlet'leri ekledik [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) oluşturmak ve windows katalog dosyaları doğrulamak için modülü.
+İçinde iki yeni cmdlet ekledik [Microsoft.Powershell.Secuity](https://technet.microsoft.com/library/hh847877.aspx) oluşturmak ve windows katalog dosyaları doğrulamak için modülü.
 
-## <a name="new-filecatalog"></a>FileCatalog yeni
+## <a name="new-filecatalog"></a>Yeni FileCatalog
 --------------------------------
 
-`New-FileCatalog` Dosya ve klasörleri kümesi için bir windows katalog dosyası oluşturur. Bir katalog dosyası belirtilen yolda tüm dosyalar için karmaları içerir. Kullanıcılar bu klasörleri temsil eden katalog dosyası karşılık gelen birlikte klasörler kümesi dağıtabilirsiniz. Bir katalog dosyası içeriği alıcı tarafından katalog oluşturulduktan sonra klasörlere hiçbir değişiklik yapılmadan olup olmadığını doğrulamak için kullanılabilir.
+`New-FileCatalog` klasörleri ve dosyaları kümesi için bir windows katalog dosyası oluşturur. Bir katalog dosyası belirtilen yolda tüm dosyaların karmalarını içerir. Kullanıcılar, bu klasörleri temsil eden bir katalog dosyası karşılık gelen birlikte klasör kümesi dağıtabilirsiniz. Bir katalog dosyası içeriği alıcı tarafından Kataloğu oluşturulduktan sonra klasörlere yapılan herhangi bir değişiklik olup olmadığını doğrulamak için kullanılabilir.
 
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
-Oluşturma katalog sürüm 1 ve 2 destekliyoruz. Sürüm 1 dosya karmaları ve sürüm 2 SHA256 kullanır oluşturmak için SHA1 karma algoritmasını kullanır. Katalog sürüm 2 desteklenmiyor *Windows Server 2008 R2* ve *Windows 7*. Katalog sürüm 2 platformları kullanıyorsanız kullanmak için önerilen *Windows 8*, *Windows Server 2012* ve üstü.
+Oluşturma Kataloğu sürüm 1 ve 2 destekliyoruz. Sürüm 1, dosya karmalarını ve sürüm 2 SHA256 kullanan oluşturmak için SHA1 karma algoritmasını kullanır. Katalog sürümü 2 üzerinde desteklenmiyor *Windows Server 2008 R2* ve *Windows 7*. Katalog sürüm 2 platformlarını kullanıyorsa kullanmak için önerilen *Windows 8*, *Windows Server 2012* ve üstü.
 
-Var olan bir modül üzerinde bu komutu kullanmak için modül bildirimi konumunu eşleşecek şekilde CatalogFilePath ve yol değişkenleri belirtin. Aşağıdaki örnekte, C:\Program Files\Windows PowerShell\Modules\Pester modülü bildirimidir.
+Var olan bir modülde bu komutu kullanmak için modül bildirimini konumunu eşleşecek şekilde CatalogFilePath ve yol değişkenleri belirtin. Aşağıdaki örnekte C:\Program Files\Windows PowerShell\Modules\Pester modülü bildirimidir.
 
 ![](../images/NewFileCatalog.jpg)
 
@@ -34,13 +34,13 @@ Bu, katalog dosyası oluşturur.
 
 ![](../images/CatalogFile2.jpg)
 
-Bir katalog dosyası (exmaple yukarıda içinde Pester.cat) bütünlüğünü doğrulamak için bu kullanılarak imzalanmalıdır [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet'i.
+Bir katalog dosyası (Yukarıdaki örneği de Pester.cat) bütünlüğünü doğrulamak için bu kullanılarak imzalanıp imzalanmayacağını [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet'i.
 
 
 ## <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
 
-`Test-FileCatalog` klasörleri kümesini temsil eden katalog doğrular.
+`Test-FileCatalog` klasörleri kümesini temsil eden Kataloğu doğrular.
 
 ```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -48,6 +48,6 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-Bu cmdlet, tüm dosyaları ve bunların göreli yollar diske kaydedilmiş bulunanlarla katalog dosyasında bulunan karmaları karşılaştırır. Herhangi dosya karmaları ve yolları arasında uyuşmazlık algılarsa durumunu döndürür `ValidationFailed`.
-Kullanıcılar, tüm bu bilgileri kullanarak alabilir `Detailed` geçin. Kataloğun imzalama durumu görüntülenir `Signature` çağırmak kadar aynı alan [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) katalog dosyası cmdlet'ini.
+Bu cmdlet, tüm dosyaları ve diske kaydedilmiş bulunanlarla katalog dosyasında bulunan kendi göreli yolları karma değerlerini karşılaştırır. Dosya karmalarını ve yolları arasında herhangi bir uyuşmazlık algılarsa durumunu döndürür. `ValidationFailed`.
+Kullanıcılar, tüm bu bilgileri kullanarak alabilir `Detailed` geçin. Katalog imzalama durumu görüntülenir `Signature` çağırmak kadar aynı alanı [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet'i katalog dosyası üzerinde.
 Kullanıcılar ayrıca atlayabilirsiniz herhangi bir dosya doğrulama sırasında kullanarak `FilesToSkip` parametresi.

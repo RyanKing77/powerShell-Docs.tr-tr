@@ -1,35 +1,35 @@
 ---
 ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
-title: JEA yapılandırmaları kaydetme
-ms.openlocfilehash: cda899b20378b0183a3d88ecfd593aaf7356e967
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: JEA yapılandırmaları kaydediliyor
+ms.openlocfilehash: 2c4a8f64c966903a6eb8fcabe4cd25ae7f98b2c4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188522"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522863"
 ---
-# <a name="registering-jea-configurations"></a>JEA yapılandırmaları kaydetme
+# <a name="registering-jea-configurations"></a>JEA yapılandırmaları kaydediliyor
 
-> Uygulandığı öğe: Windows PowerShell 5.0
+> İçin geçerlidir: Windows PowerShell 5.0
 
-Son adım bulduktan sonra JEA kullanmadan önce [rol özellikleri](role-capabilities.md) ve [oturum yapılandırma dosyası](session-configurations.md) JEA uç noktasını kaydetmek için oluşturulmuştur.
-Bu işlem için sistem oturum yapılandırma bilgilerini uygular ve uç nokta kullanıcıları ve Otomasyon motorları tarafından kullanılabilir hale getirir.
+Yapılandırmasını tamamladıktan JEA kullanabilmeniz için önce son adım, [rol işlevleri](role-capabilities.md) ve [oturum yapılandırma dosyası](session-configurations.md) JEA uç noktasını kaydetmek için oluşturulmuştur.
+Bu işlem, oturum yapılandırma bilgilerini sistem için geçerlidir ve uç nokta kullanıcılar ve Otomasyon motoru tarafından kullanılabilir hale getirir.
 
 ## <a name="single-machine-configuration"></a>Tek makine yapılandırması
 
 Küçük ortamlarda oturum yapılandırma dosyası kullanarak kaydederek JEA dağıtabilirsiniz [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet'i.
 
-Başlamadan önce aşağıdaki önkoşulların karşılandığından emin olun:
-- Bir veya daha fazla rol oluşturulur ve geçerli bir PowerShell Modülü 'RoleCapabilities' klasörüne yerleştirilir.
+Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
+- Bir veya daha fazla rol oluşturuldu ve geçerli bir PowerShell Modülü 'RoleCapabilities' klasörüne yerleştirilir.
 - Bir oturum yapılandırma dosyası oluşturulur ve test.
-- JEA yapılandırması kaydediliyor kullanıcının sistemleri üzerinde yönetici haklarına sahip.
+- Jea'yı yapılandırma kaydetme kullanıcı sistemleri üzerinde yönetici haklarına sahip.
 
-JEA uç noktanız için bir ad seçmek gerekir.
-Kullanıcıların JEA kullanarak sisteme bağlanmak istediğinizde JEA uç noktanın adı gerekli olacaktır.
-Kullanabileceğiniz [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'ini sistemde mevcut uç nokta adlarını denetleyin.
-'Microsoft' ile başlayan uç noktaları genellikle Windows ile birlikte gönderilir.
-'Microsoft.powershell' uç noktası bir uzak PowerShell bitiş noktasına bağlanırken kullanılan varsayılan uç noktadır.
+JEA uç noktanız için bir ad seçin gerekecektir.
+Jea'yı kullanarak sisteme bağlanmak kullanıcıların istediğinizde JEA uç noktası adı gerekli olacaktır.
+Kullanabileceğiniz [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'ini sistemde mevcut uç nokta adları denetleyin.
+'Microsoft' ile başlayan uç noktaları, genellikle Windows ile gönderilir.
+'Microsoft.powershell' uç noktası bir uzak PowerShell uç noktasına bağlanırken kullanılan varsayılan uç noktadır.
 
 ```powershell
 PS C:\> Get-PSSessionConfiguration | Select-Object Name
@@ -49,40 +49,40 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 
 > [!WARNING]
 > Yukarıdaki komut sistem üzerindeki WinRM hizmeti yeniden başlatılır.
-> Bu, devam eden tüm DSC yapılandırmaları yanı sıra tüm PowerShell uzaktan iletişim oturumları sonlandırılacak.
-> İş işlemlerini kesintiye önlemek için komutu çalıştırmadan önce tüm üretim makinelerinin çevrimdışı olması önerilir.
+> Devam eden herhangi bir DSC yapılandırması yanı sıra tüm PowerShell uzak oturum sona erer.
+> İşle ilgili işlemlerin kesintiye önlemek için komutu çalıştırmadan önce tüm üretim makinelerinden çevrimdışı olması önerilir.
 
-Kayıt başarılı olursa hazırsınız [JEA kullanmak](using-jea.md).
-Oturum yapılandırma dosyası herhangi bir anda silebilir; kayıttan sonra kullanılmaz.
+Kayıt başarılı olursa, hazır olduğunuz [JEA kullanın](using-jea.md).
+Dilediğiniz zaman oturum yapılandırma dosyasını silebilir; kayıt sonrasında kullanılmaz.
 
-## <a name="multi-machine-configuration-with-dsc"></a>DSC ile çoklu makine yapılandırması
+## <a name="multi-machine-configuration-with-dsc"></a>DSC ile çok makineli yapılandırma
 
-Birden çok makineye JEA dağıtıyorsanız, basit dağıtım modeli JEA kullanmaktır [istenen durum Yapılandırması](https://msdn.microsoft.com/en-us/powershell/dsc/overview) hızlı ve tutarlı bir şekilde JEA her makine dağıtmak için kaynak.
+Birden fazla makinede JEA dağıtıyorsanız, en basit dağıtım modeli JEA kullanmaktır [Desired State Configuration](https://msdn.microsoft.com/powershell/dsc/overview) hızlı ve tutarlı bir şekilde JEA her makineye dağıtmak için kaynak.
 
-JEA DSC ile dağıtmak için aşağıdaki önkoşulların karşılandığından emin olmak gerekir:
-- Bir veya daha fazla rol özellikleri yazılan ve geçerli bir PowerShell modülü eklenir.
-- Rolleri içeren PowerShell Modülü (salt okunur) erişilebilen bir dosya paylaşımı her makine tarafından depolanır.
-- Oturum yapılandırması ayarlarını belirlediniz. JEA DSC kaynağı kullanırken oturum yapılandırma dosyası oluşturmak gerekmez.
-- Her makinede yönetici eylemleri gerçekleştirmenize izin veren veya makineleri yönetmek için kullanılan bir DSC çekme sunucusuna erişimi olan kimlik bilgilerine sahip.
+JEA DSC ile dağıtmak için aşağıdaki önkoşulların karşılandığından emin olmanız gerekir:
+- Bir veya daha fazla rol işlevleri yazılan ve geçerli bir PowerShell modülüne eklendi.
+- Rolleri içeren PowerShell modülünü (salt okunur) erişilebilen bir dosya paylaşımı her makine tarafından depolanır.
+- Oturum yapılandırması ayarlarını belirlediniz. JEA DSC kaynağı kullanan bir oturum yapılandırma dosyası oluşturduğunuzda gerekmez.
+- Her makine üzerinde yönetimsel Eylemler gerçekleştirmenize olanak sağlayan veya makineleri yönetmek için kullanılan bir DSC çekme sunucusuna erişimi olan kimlik bilgileri var.
 - Yüklediğiniz [JEA DSC kaynağı](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource)
 
-Bir hedef makine (veya çekme sunucu birini kullanıyorsanız), JEA uç noktanız için bir DSC yapılandırmasını oluşturun.
-Bu yapılandırmada, oturum yapılandırma dosyasını ayarlamaya JustEnoughAdministration DSC kaynağı ve rol yetenekler dosya paylaşımından kopyalamak için dosya kaynağı kullanır.
+Bir hedef makine (veya çekme sunucusu birini kullanıyorsanız), bir JEA uç noktanız için DSC yapılandırması oluşturun.
+Bu yapılandırmada, oturum yapılandırma dosyası oluşturma JustEnoughAdministration DSC kaynak rol işlevleri dosya paylaşımı kopyalamak için dosya kaynağı kullanır.
 
 Aşağıdaki özellikler DSC kaynağı kullanılarak yapılandırılabilir:
 - Rol tanımları
 - Sanal hesap grupları
 - Grup yönetilen hizmet hesabı adı
-- Dökümü dizini
+- Transkript dizini
 - Kullanıcı sürücü
 - Koşullu erişim kuralları
-- JEA oturumu için başlangıç betiklerini
+- JEA oturumu için başlangıç betikleri
 
-DSC yapılandırması bu özelliklerin her biri için söz dizimi PowerShell oturumu yapılandırma dosyası ile tutarlıdır.
+DSC yapılandırması bu özelliklerden her biri için söz dizimi PowerShell oturumu yapılandırma dosyası ile tutarlıdır.
 
-Genel sunucu bakım modülü için örnek bir DSC yapılandırma aşağıdadır.
+Genel sunucu bakım modülü için örnek DSC yapılandırması aşağıda verilmiştir.
 
-Rol özellikleri 'RoleCapabilities' bir alt klasör içeren geçerli bir PowerShell modülü bulunan varsayar '\\\\myfileshare\\JEA' dosya paylaşımı.
+Rol işlevleri bir 'RoleCapabilities' alt içeren geçerli bir PowerShell modülü bulunan varsayar '\\\\myfileshare\\JEA' dosya paylaşımı.
 
 
 ```powershell
@@ -110,16 +110,16 @@ Configuration JEAMaintenance
 }
 ```
 
-Bu yapılandırmayı daha sonra bir sistemde tarafından uygulanabilir [yerel Configuration Manager doğrudan çağırma](https://msdn.microsoft.com/en-us/powershell/dsc/metaconfig) veya güncelleştirme [çekme sunucu yapılandırması](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver).
+Bu yapılandırma tarafından bir sistemde sonra uygulanabilir [doğrudan yerel Configuration Manager'ı çağırma](https://msdn.microsoft.com/powershell/dsc/metaconfig) veya güncelleştirme [çekme sunucusu yapılandırmasını](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
-DSC kaynağı varsayılan Microsoft.PowerShell uzak uç değiştirmenizi sağlar.
-Bunu yaparsanız, kaynak "WinRM (Uzak Yönetim kullanıcıları ve yerel Yöneticiler grubu üyeleri erişmek izin vererek) ACL varsayılan olan Microsoft.PowerShell.Restricted" adlı bir yedekleme unconstrainted uç noktası otomatik olarak kaydeder.
+DSC kaynağı da varsayılan Microsoft.PowerShell uzak uç nokta çoğaltmanıza imkan tanır.
+Bunu yaparsanız, kaynak "varsayılan WinRM (Uzak Yönetim kullanıcıları ve yerel Yöneticiler grup üyelerine erişim verme) ACL olan Microsoft.PowerShell.Restricted" adlı bir yedekleme unconstrainted uç noktası otomatik olarak kaydedilecek.
 
-## <a name="unregistering-jea-configurations"></a>Kaydı siliniyor JEA yapılandırmaları
+## <a name="unregistering-jea-configurations"></a>JEA yapılandırmaları kaydı siliniyor
 
-Bir sistem JEA noktadaki kaldırmak için kullanın [Unregister-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Unregister-PSSessionConfiguration) cmdlet'i.
-JEA endpoint kaydını yeni kullanıcıların sistemde yeni JEA oturumlar oluşturmaktan engel olur.
-Ayrıca, aynı uç nokta adı kullanarak güncelleştirilmiş oturum yapılandırma dosyası yeniden kaydederek JEA yapılandırmasını güncelleştirmenizi sağlar.
+Bir JEA uç noktası bir sistemde kaldırmak için [Unregister-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Unregister-PSSessionConfiguration) cmdlet'i.
+Bir JEA uç noktası kaydı yeni kullanıcıların sistemde yeni JEA oturumları oluşturmasını engeller.
+Ayrıca, aynı uç nokta adı kullanarak güncelleştirilmiş oturum yapılandırma dosyası yeniden kaydederek bir JEA yapılandırmasını güncelleştirmek sağlar.
 
 ```powershell
 # Unregister the JEA endpoint called "ContosoMaintenance"
@@ -128,9 +128,9 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 
 > [!WARNING]
 > Bir JEA kaydını yeniden başlatmak WinRM Hizmeti uç noktası neden olur.
-> Bu, devam eden diğer PowerShell oturumları, WMI çağrılarını ve bazı yönetim araçları dahil olmak üzere, çoğu uzak yönetim işlemlerini kesintiye uğratır.
-> Yalnızca PowerShell uç noktaları planlı bakım pencerelerini kaydını silin.
+> Bu, devam eden diğer PowerShell oturumları, WMI çağrıları ve bazı yönetim araçları dahil olmak üzere, en uzak yönetim işlemlerini kesintiye uğratır.
+> Yalnızca PowerShell uç noktaları, planlı bakım pencereleri sırasında kaydını silin.
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
-- [JEA endpoint test](using-jea.md)
+- [JEA uç test etme](using-jea.md)

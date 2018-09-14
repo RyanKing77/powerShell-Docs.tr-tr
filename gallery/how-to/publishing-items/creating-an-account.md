@@ -1,42 +1,35 @@
 ---
-ms.date: 06/12/2017
+ms.date: 09/11/2018
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
-title: Bir PowerShell Galerisi hesabı oluşturma
-ms.openlocfilehash: 4a44b51967ea8acdd331f6b3c682fc5884bd2f54
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: PowerShell Galerisi hesabı oluşturma
+ms.openlocfilehash: 08d18310d9e18b00bd9e22efcc552dfd29f8982c
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219574"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522852"
 ---
-## <a name="creating-a-powershell-gallery-account"></a>Bir PowerShell Galerisi hesabı oluşturma
+# <a name="creating-a-powershell-gallery-account"></a>PowerShell Galerisi hesabı oluşturma
 
-Bir PowerShell Galerisi hesabı herhangi bir şey için PowerShell Galerisi yayımlamadan önce oluşturulmalıdır.
-PowerShell Galerisi hesapları e-posta etkin bir Azure Active Directory hesabı veya bir Microsoft e-posta hesabıyla (bir etki alanı outlook.com, hotmail.com, vs.) ile bağlantılı olması gerekir
+Her şeyi PowerShell Galerisi'nden yayımlamadan önce PowerShell Galerisi hesabı oluşturmanız gerekir.
+PowerShell Galerisi hesapları bir e-posta etkin bir oturum açma hesabına bağlanması gerekir. Bu hesap Azure Active Directory hesabını veya bir e-posta hesabından outlook.com veya hotmail.com gibi a Microsoft ID olabilir.
 
-Bir PowerShell Galerisi hesabı oluşturmak için şu adrese gidin https://PowerShellGallery.com ve "Kayıt"'i tıklatın (aşağıdaki görüntü bakın).
+PowerShell Galerisi hesabı oluşturmak için Git [ https://PowerShellGallery.com ](https://PowerShellGallery.com) tıklayın **oturum** aşağıdaki görüntüde gösterildiği gibi.
 
-![Yeni hesabı Kaydettir](../../Images/CreatingAccount-Register.png)
+![Yeni hesabı Kaydet](../../Images/CreateAccount-Register.png)
 
-Sonraki sayfada bir Azure Active Directory hesabı kullanmak için "İş veya Okul hesabı" seçin ve hesabınızla oturum açın.
--Hotmail.com veya Outlook.com domain - birinde gibi bir Microsoft hesabı kullanmak için "Kişisel hesap" seçin ve oturum açın.
+Bir Azure Active Directory hesabını kullanmayı tercih **iş veya Okul hesabı**ve hesabınızla oturum açın. A Microsoft ID kullanmayı tercih **kişisel hesap** ve oturum açın.
 
-Oturum açtıktan sonra PowerShell Galerisi için bir kullanıcı adı oluşturmak için istenir.
-Bağlı kullanım koşulları ve gizlilik ilkesini inceleyin, bir kullanıcı adı girin ve Kaydet'i tıklatın.
+Ardından, PowerShell Galerisi için bir kullanıcı adı oluşturmanız istenir. Kullanım koşulları ve gizlilik ilkesi gözden geçirin, bir kullanıcı adı girin ve ardından **kaydetme**.
 
-Not: Bu hesap adı oluşturulduktan sonra değiştirilemez.
-Bkz: [yönetme öğesi sahiplerinin](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) bu konuyla ilgili ek ayrıntılar için.
+> [!NOTE]
+> Hesap adı, oluşturulduktan sonra değiştirilemez. Daha fazla bilgi için [öğe sahiplerini yönetme](managing-item-owners.md).
 
 ## <a name="recommended-practices-for-powershell-gallery-accounts"></a>PowerShell Galerisi hesaplar için önerilen uygulamalar
 
-PowerShell Galerisi hesabınızla kullanılan e-posta hesabı etkin bir şekilde izlenmesi önemlidir.
-PowerShell Galerisi hesabınızla ilişkili adresini kullanarak e-posta aracılığıyla tüm communiction PowerShell galeri öğeleri sahipleri sahip olur.
-Bir öğe sahibine başvurun bağlanamıyoruz, işletim ekibi bazı koşullarda bir öğeyi silmek için gerekebilir.
+PowerShell Galerisi hesabınızla kullanılan e-posta hesabı etkin bir şekilde izlemek önemlidir. PowerShell Galerisi öğelerinin sahibi olan tüm iletişim bu e-posta adresidir. PowerShell Galerisi operasyon ekibinin öğesi sahibi ile iletişim kuramıyor, biz bir öğeyi silmek için gerekli.
 
-PowerShell galerisinde genellikle yayımlamak kuruluşlar, Outlook.com veya başka bir Microsoft hesabı etki alanında bu amaç için benzersiz bir hesabı oluşturur.
-Çoğu durumda bu hesabı düzenli olarak izlenmiyor.
-En iyi uygulama bu durumda Outlook iletme genellikle bir sahibi öğesi görüntülemenize tarafından izlenecek kuruluş içinde başka bir hesap için e-posta göndermek için kullanmaktır.
+PowerShell Galerisi için sık sık yayımlayın kuruluşların bu amaç için benzersiz bir dış hesap oluşturun. Kuruluşunuzda bir adresine bildirimleri iletecek şekilde e-posta iletme kullanmanızı öneririz.
 
-Bir öğesiyle ilişkili birden çok sahipleri varsa, PowerShell Galerisi'nden gelen tüm iletişimlerin tüm sahiplerine gidin.
-Bkz: [yönetme öğesi sahiplerinin](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) sahipleri için bir öğe ekleme hakkında ek bilgi.
+Birden fazla sahibe sahip bir öğe ilişkilendirildiğinde, tüm PowerShell Galerisi bildirimleri tüm sahiplerine gönderilir. Daha fazla bilgi için [öğe sahiplerini yönetme](managing-item-owners.md).

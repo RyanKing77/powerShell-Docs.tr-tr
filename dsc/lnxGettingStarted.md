@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Linux için Desired State Configuration (DSC) ile çalışmaya başlama
-ms.openlocfilehash: d5a4a17fbcffbbbd6df3dd902dbd104769b7d17e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: d436fc3b451efb8a12dfdc44909824934b5fcbe4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893605"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523055"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux için Desired State Configuration (DSC) ile çalışmaya başlama
 
@@ -75,7 +75,7 @@ Windows PowerShell yapılandırma anahtar sözcüğü, tıpkı Windows bilgisaya
 
 1. Nx modülünü içeri aktarın. Nx Windows PowerShell modülünü şeması için yerleşik kaynaklar için DSC Linux için içerir ve yerel bilgisayarınıza yüklenmeli ve yapılandırmada içeri aktarıldı.
 
-   - Nx modülünü yüklemek için nx modülü dizini ya da kopyalama `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` veya `$PSHOME\Modules`. Nx modülü DSC Linux yükleme paketinin (MSI) dahildir. Yapılandırmanızda nx modülü içeri aktarmak için kullanın `Import-DSCResource` komutu:
+   - Nx modülünü yüklemek için nx modülü dizini ya da kopyalama `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` veya `$PSHOME\Modules`. Nx modülü Linux yükleme paketinin DSC dahildir. Yapılandırmanızda nx modülü içeri aktarmak için kullanın `Import-DSCResource` komutu:
 
    ```powershell
    Configuration ExampleConfiguration{

@@ -2,120 +2,120 @@
 ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
-title: Oluşturma ve öğe yayımlama
-ms.openlocfilehash: 7c2a2be6986bf65c168d7c3960366fac4ee31301
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Oluşturma ve bir öğe yayımlama
+ms.openlocfilehash: c5027c5fb357bb187611880ba75610a8f33074e0
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189542"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522982"
 ---
-# <a name="creating-and-publishing-an-item"></a>Oluşturma ve öğe yayımlama
+# <a name="creating-and-publishing-an-item"></a>Oluşturma ve bir öğe yayımlama
 
-PowerShell Galerisi yayımlama ve daha geniş PowerShell kullanıcı topluluğuyla kararlı PowerShell modülleri, betikler ve DSC kaynakları paylaşmak için yerdir.
+PowerShell Galerisi yayımlama ve kararlı PowerShell modülleri, betikler ve DSC kaynakları daha geniş PowerShell kullanıcı toplulukla paylaşmak için yerdir.
 
-Bu makalede, bir komut dosyası veya modülü hazırlama ve PowerShell Galerisi yayımlama için önemli adımlar ve mekanizması kapsar.
-Gözden geçirmenizi öneririz [yayımlama kılavuzları](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) yayımladığınız öğeleri daha geniş PowerShell Galerisi kullanıcılar tarafından kabul edilecek emin olmak nasıl anlamak için.
+Bu makalede mechanics ve bir betik veya modül hazırlamak ve PowerShell Galerisi'nde yayımlama için önemli adımlar anlatılmaktadır.
+Gözden geçirmenizi önemle öneririz [yayımlama kılavuzları](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines) yayımladığınız öğeleri daha yaygın olarak PowerShell Galerisi kullanıcılar tarafından kabul edilecek emin olmak nasıl yapılacağını görmek için.
 
 Bir öğe PowerShell galerisinde yayımlamak için en düşük gereksinimleri şunlardır:
 
-- PowerShell Galerisi hesabınız varsa ve API anahtarını ilişkili
-- Gerekli meta veriler, öğesinde olduğundan emin olun
-- Öğenizi yayımlamak hazır olduğundan emin olmak için ön doğrulama araçlarını kullanın
-- Öğesi Yayımla-Module ve yayımlama betik komutlarını kullanarak PowerShell Galerisi yayımlama
-- Sorunuz veya endişeniz öğenizi için yanıt verme
+- PowerShell Galerisi hesabınız ve ilişkili API anahtarı
+- Öğenizi içinde gerekli meta verileri olduğundan emin olun
+- Öğenizi yayımlamaya hazır olduğundan emin olmak için ön doğrulama araçları kullanın
+- Publish-Module ve Publish-Script komutlarını kullanarak PowerShell Galerisi'nde öğesi yayımlama
+- Sorularınız veya endişeleriniz öğeniz hakkında için yanıt verme
 
-PowerShell Galerisi PowerShell modülleri ve PowerShell betikleri kabul eder.
-Biz betiklere başvurduğunuzda size bir tek dosya ve daha büyük bir modül parçası olmayan bir PowerShell Betiği anlamına gelir.
+PowerShell Galerisi, PowerShell modülleri ve PowerShell betiklerini kabul eder.
+Betikleri diyoruz, tek dosyayı ve daha büyük bir modülün parçası olan bir PowerShell Betiği demek isteriz.
 
 ## <a name="powershell-gallery-account-and-api-key"></a>PowerShell Galerisi hesabı ve API anahtarı
 
-Bkz: [PowerShell Galerisi hesabı oluşturma](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account) nasıl PowerShell Galerisi hesabınızı kurmak.
+Bkz: [PowerShell Galerisi hesabı oluşturma](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery_creating_an_account) PowerShell Galerisi hesabınızı ayarlarken öğrenmek için.
 
-Bir hesap oluşturduktan sonra öğeyi yayımlamak için gereken API anahtarını elde edebilirsiniz.
-Hesabıyla oturum sonra kullanıcı adınızı kaydı yerine PowerShell Galerisi sayfaların üst görüntülenir.
-Kullanıcı adınıza tıklayarak API anahtarını bulabileceğiniz hesabım sayfasına gideceksiniz.
+Bir hesap oluşturduktan sonra öğeyi yayımlamak için gereken API anahtar alabilirsiniz.
+Hesabıyla oturum açın, sonra kullanıcı adınızı, YAZMAÇ yerine PowerShell Galerisi sayfaların üst kısmındaki görüntülenir.
+Kullanıcı adınıza tıklayarak API anahtarı nerede hesabım sayfasına gideceksiniz.
 
-Not: API anahtarını oturum açma ve parola olarak güvenli bir şekilde değerlendirilmesi gerekir.
-Bu anahtarla, siz veya başkalarının, PowerShell galerisinde sahip herhangi bir öğeyi güncelleştirebilirsiniz.
-Yapılabilir anahtarı düzenli olarak güncelleştirilmesi önerilir hesabım sayfanızda sıfırlama anahtarı kullanarak.
+Not: API anahtarı kullanıcı adı ve parola olarak güvenli bir şekilde değerlendirilmesi gerekir.
+Bu anahtar ile siz veya başka biri PowerShell Galerisi'nde olduğunuz herhangi bir öğeyi güncelleştirebilirsiniz.
+Yapılabilir anahtarı düzenli olarak güncelleştirilmesi önerilir, Hesabım sayfasında sıfırlama anahtarını kullanarak.
 
-## <a name="required-metadata-for-items-published-to-the-powershell-gallery"></a>PowerShell Galerisi yayımlanan öğeler için gerekli meta veriler
+## <a name="required-metadata-for-items-published-to-the-powershell-gallery"></a>PowerShell Galerisi'nde yayımlanmış öğeler için gerekli meta veriler
 
-PowerShell Galerisi, komut dosyası veya modül bildiriminde dahil meta veri alanlarından çizilmiş galeri kullanıcılara bilgi sağlar.
-Oluşturma veya PowerShell Galerisi yayına öğeleri değiştirme öğesi bildiriminde sağlanan bilgileri için gereksinimleri, küçük bir kümesini sahiptir.
-Öğe meta verisi bölümünü gözden geçirmeniz önerilir [yayımlama kılavuzları](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) öğelerinizi ile kullanıcılara en iyi bilgi sağlamak hakkında bilgi edinmek için.
+PowerShell Galerisi, Galeri kullanıcılara komut veya modül bildiriminde bulunan meta verileri alanlarından alınan bilgi sağlar.
+PowerShell Galerisi yayına öğeleri oluşturmak veya küçük bir öğe bildiriminde sağlanan bilgi gereksinimleri vardır.
+Öğe meta verileri bölümünü gözden geçirmeniz önemle öneririz [yayımlama kılavuzları](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines) öğelerinizle kullanıcıları için en iyi bilgileri sağlama hakkında bilgi edinmek için.
 
-[Yeni ModuleManifest](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/ModuleManifest-Reference) ve [yeni ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo) cmdlet'leri oluşturacak bildirim şablonu, tüm bildirim öğeleri yer tutucular ile.
+[Yeni ModuleManifest](https://msdn.microsoft.com/powershell/gallery/psget/module/ModuleManifest-Reference) ve [yeni ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo) cmdlet'leri oluşturacaktır bildirim şablonu, bildirim tüm öğeler için yer tutucu ile.
 
-Hem bildirimlerinin yayımlama için önemli olan iki bölümü vardır, birincil anahtar veri ve PSData PrivateData birincil anahtar verilerini bir PowerShell modülü bildiriminde PrivateData bölüm dışında her şeyi alanıdır.
-Birincil anahtarlar PowerShell sürüm kullanımda bağlıdır ve tanımsız desteklenmez.
-PowerShell Galerisi belirli öğeleri PSData böylece yeni anahtarlar ekleme PrivateData destekler.
-
-
-PowerShell galerisinde yayımlamak öğesi için doldurmak en önemli bildirim öğeleri şunlardır:
-
-- Komut dosyası veya modül adı - bu adlarından çizilir. Bir komut dosyası için PS1 veya. Bir modül için PSD1.
-- Sürüm - bu gerekli bir birincil anahtar, biçimi (en iyi uygulamalar için ayrıntılara bakın) SemVer yönergeleri izlemelidir
-- Yazar - bu gerekli bir birincil anahtar ve öğeyle ilişkilendirilecek adı içerir (aşağıda yazarlar ve sahipleri, bakın)
-- -Bu açıklamasıdır gerekli bir birincil anahtar kullanılan bu öğe ne yaptığını ve kullanım herhangi bir koşul kısaca açıklayan
-- ProjectURI - bu özellikle önerilir URI Github deposuna bağlantı sağlar PSData veya öğenin geliştirmenizi yaptığınız benzer konumunda bir alandır
-
-Yazarlar ve PowerShell Galerisi sahipleri öğeler ilgili kavramlar, ancak her zaman eşleşmiyor.
-Öğesi sahiplerinin öğesi korumak için izne sahip PowerShell Galerisi hesaplarıyla kullanıcılardır. Herhangi bir öğeyi güncelleştirebilirsiniz birçok sahipleri olabilir.
-Sahibi yalnızca PowerShell Galerisi'nden kullanılabilir ve öğe bir sistemden diğerine kopyalansa kaybolur.
-Yazar her zaman öğesinin bir parçası olacak şekilde, bildirim verisine yerleşik olarak bulunan bir dizedir.
-Microsoft ürünleri öğelerinden önerileri:
-
-- Birden çok sahipleri, en az bir öğe üreten takım adı olması gerekir;
-- İyi bilinen takım adı (örneğin, Azure SDK ekibi) yazar ya da Microsoft Corporation'ın sahip.
+Hem bildirimlerinin yayımlama için önemli olan iki bölümü vardır, birincil anahtar verileri ve PSData PrivateData PowerShell modül bildirimindeki birincil anahtar veri PrivateData bölümün dışında her şeyi alanıdır.
+Birincil bir anahtar kümesini kullanmak PowerShell sürümünde bağlı ve tanımsız desteklenmez.
+PrivateData, PowerShell Galerisi'nde belirli öğeleri PSData böylece yeni anahtarları eklenmesini destekler.
 
 
-## <a name="pre-validate-your-item"></a>Öğenizi önceden doğrula
+Öğe PowerShell galerisinde yayımlamak için doldurmak en önemli olan bildirim öğeler şunlardır:
 
-Öğenizi PowerShell Galerisi yayımlamadan önce kodunuzu karşı çalıştırmak için gereken birkaç araç vardır:
+- Komut veya modül adı - bu adlarından çizilir. Bir komut dosyası PS1 veya. Bir modül için PSD1.
+- Sürüm - bu gerekli bir birincil anahtar, biçimi (en iyi yöntemler için ayrıntılara bakın) SemVer yönergeleri izlemelidir
+- Yazar - bu gerekli bir birincil anahtar ve öğeyle ilişkilendirilecek adı içeriyor (aşağıda yazarlar ve sahipleri, bakın)
+- Açıklama - budur bu öğeyi yapar ve kullanım gereksinimlerini kısaca açıklamak için gereken birincil bir anahtar kullanılan
+- ProjectURI - bu önerilir URI, Github deposuna bağlantı sağlayan PSData veya benzer konumunda geliştirmenizi öğesi üzerinde yaptığınız bir alandır
 
-- [PowerShell komut dosyası Çözümleyicisi](https://www.powershellgallery.com/packages/PSScriptAnalyzer/), PowerShell galerisinde olduğu
-- Modüller, PowerShell parçası olan Test ModuleManifest
-- Komut dosyaları için PowerShell Get ile birlikte gelen Test ScriptFileInfo
+Yazarlar ve PowerShell sahipleri galeri öğeleri, ilgili kavramlardır, ancak her zaman eşleşmiyor.
+Öğe sahipleriyle öğesi korumak için izne sahip bir PowerShell Galerisi hesaplarıyla kullanıcılardır. Herhangi bir öğeyi güncelleştirebilirsiniz fazla sahip olabilir.
+Sahibi yalnızca PowerShell Galerisi'nden kullanılabilir ve öğe başka bir sistemden kopyalanırsa kaybolur.
+Yazar, her zaman bir öğenin bir parçası olacak şekilde bildirim verileri, yerleşik bir dizedir.
+Microsoft ürünleri öğelerinden önerilerdir:
 
-[PowerShell komut dosyası Çözümleyicisi](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) emin olmak için kodunuzu tarayarak statik kod çözümleme aracı karşılayan kodlama yönergeleri temel PowerShell olduğu. Bu araç yaygın ve kritik sorunları kodunuzda tanımlayacak ve öğenizi yayımlamak hazırlanmanıza yardımcı olmak için düzenli olarak geliştirme sırasında çalıştırmanız gerekir.
-PowerShell komut dosyası Çözümleyicisi hatalar, uyarı ve bilgi tanımlanan sorunların listesini sağlar.
-PowerShell Galerisi yayımlamadan önce tüm hataları ele alınması gerekir. Uyarıları gözden geçirilmesi gerekir ve çoğu ilgilenilmesi gerekir.
-PowerShell komut dosyası Çözümleyicisi öğeyi yayımlanan veya PowerShell galerisinde güncelleştirilmiş her zaman çalıştırılır.
-Galeri işlemler ekibinin öğesi sahiplerinin bulunan adres hataları için sizinle iletişim kuracaktır.
+- En az bir öğe oluşturan takım adı olan birden fazla sahibe sahip;
+- Bir bilinen takım adı (örneğin, Azure SDK'sı ekibi) yazar veya Microsoft Corporation'ın sahip.
 
-Öğenizi bildirim bilgileri PowerShell Galerisi altyapısı tarafından okunamadığında yayımlama mümkün olmaz.
-[Test-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) modülün yüklü olduğunda kullanılabilir olmaması için neden olacağından yaygın sorunlar yakalar. PowerShell Galerisi yayımlamadan önce her modül için çalıştırılması gerekir.
 
-Benzer şekilde, [Test ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) bir komut dosyası meta verilerde doğrular ve Powershell Galerisi yayımlamadan önce her komut (yayımlanan ayrı bir modülden) çalıştırmanız gerekir.
+## <a name="pre-validate-your-item"></a>Öğeniz önceden doğrulanamadı
+
+PowerShell Galerisi'nde öğeniz yayımlamadan önce kodunuzu çalıştırmak için ihtiyacınız olan birkaç araç vardır:
+
+- [PowerShell betik Çözümleyicisi](https://www.powershellgallery.com/packages/PSScriptAnalyzer/), PowerShell Galerisi'nde olduğu
+- Modüller için PowerShell parçası olan Test ModuleManifest
+- PowerShell Get ile sunulan Test ScriptFileInfo betikleri için
+
+[PowerShell betik Çözümleyicisi](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) kodunuzu emin olmak için tarama yapmadan bir statik kod analizi aracı karşılayan kodlama yönergeleri temel PowerShell olduğu. Bu araç, kodunuzdaki yaygın ve kritik sorunları tanımlayacak ve öğeniz yayımlamaya hazır yardımcı olmak için düzenli olarak geliştirme sırasında çalıştırılmalıdır.
+PowerShell betik Çözümleyicisi, hatalar, uyarı ve bilgi tanımlanan sorunların listesini sağlar.
+PowerShell Galerisi'nde yayımlamadan önce tüm hataları ele alınması gerekir. Çoğu ilgilenilmesi gerekir ve Uyarıları gözden geçirilmesi gerekir.
+PowerShell betik Çözümleyicisi bir öğe yayımlanmış veya güncelleştirilmiş PowerShell Galerisi'nde her zaman çalışır.
+Galeri operasyon ekibinin bulunan hatalarını gidermek için öğe sahipleriyle iletişime geçeceğiz.
+
+PowerShell Galerisi altyapısı tarafından öğeniz bildirim bilgileri okunamadığında yayımlamak mümkün olmayacaktır.
+[Test-ModuleManifest](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) Modülü yüklü olduğunda kullanılabilir olmaması neden olan yaygın sorunlar yakalar. Her modülü PowerShell Galerisi'nden yayımlamadan önce çalıştırılması gerekir.
+
+Benzer şekilde, [Test ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_test-scriptfileinfo) betikteki meta verileri doğrular ve Powershell galeride yayımlamadan önce her komut (yayımlanan ayrı bir modülden) çalıştırmanız gerekir.
 
 
 ## <a name="publishing-items"></a>Yayımlama öğeleri
 
-Kullanmalısınız [Yayımla-komut dosyası](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) veya [Yayımla-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) öğeleri PowerShell galerisinde yayımlamak için.
+Kullanmalısınız [Publish-Script](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_publish-script) veya [Publish-Module](https://msdn.microsoft.com/powershell/gallery/psget/module/psget_publish-module) öğeleri PowerShell galerisinde yayımlamak için.
 Bu komutlar gerektirir
 
-- Yayımlayacak öğe yolu. Bir modül için modülü için adlı klasörü kullanın. Aynı modülü birden fazla sürümünü içeren bir klasör belirtirseniz, RequiredVersion belirtmeniz gerekir.
-- Bir Nuget API anahtarı. Bu, PowerShell Galerisi hesabım sayfasında bulunan API anahtarıdır.
+- Yayımlayacağınız öğenin yolu. Bir modül, modül için adlı klasörü kullanın. Birden çok sürümünü aynı modülde içeren bir klasör belirtirseniz RequiredVersion belirtmeniz gerekir.
+- Bir Nuget API anahtarı. PowerShell Galerisi hesabım sayfasında bulunan API anahtarı budur.
 
-Komutta belirtmeniz gerekmez böylece komut satırında diğer seçeneklerin çoğu yayımlama, öğesi için bildirim verilerdeki olmalıdır.
+Böylece bunları komutta belirtmeniz gerekmez komut satırında diğer seçeneklerin çoğu yayımlamakta olduğunuz öğesi için bildirim veri olması gerekir.
 
-Hatalarını önlemek için - whatIf kullanarak komutları deneyin önerilir-Verbose, yayımlamadan önce.
-PowerShell galerisinde yayımlamak her zaman bu yana önemli ölçüde zaman kazandırır, öğenin bildirim bölümünde sürüm numarasını güncelleştirmeniz gerekir.
+Hataları önlemek için - Whatif kullanarak komutları deneyin önerilir-Verbose, yayımlamadan önce.
+PowerShell galerisinde yayımlamak her zaman bu yana önemli ölçüde zaman kazandırır, öğe bildirimi bölümündeki sürüm numarasını güncelleştirmeniz gerekir.
 
-Örnekler olacaktır: ' Yayımla-Module-yolu ". \MyModule" - RequiredVersion "0.0.1" - NugetAPIKey "GUID" - Whatif-ayrıntılı ' ' Yayımla-komut dosyası-yolu ".\MyScriptFile.PS1" - NugetAPIKey "GUID" - Whatif-Verbose'
+Örnekler olacaktır: ' Publish-Module-yolu ". \MyModule" - RequiredVersion "0.0.1'e" - NugetAPIKey "GUID" - Whatif-Verbose' ' Publish-Script-yolu ".\MyScriptFile.PS1" - NugetAPIKey "GUID" - Whatif-ayrıntılı '
 
-Çıktı dikkatle gözden geçirin ve hiçbir hata veya uyarı görürseniz, - whatIf olmadan komutu yineleyin.
+Çıkış dikkatle gözden geçirin ve bir hata veya uyarı görürseniz, - Whatif olmadan komutu yineleyin.
 
-PowerShell Galerisi yayımlanan tüm öğeleri virüs taraması ve PowerShell komut dosyası Çözümleyicisi kullanarak Analiz.
-O zaman ortaya çıkan sorunları geri Publisher'a çözümlemesi için gönderilir.
+PowerShell Galerisi'nde yayımlanmış öğeler virüs taraması ve PowerShell betik Çözümleyicisi'ni kullanarak analiz edilir.
+O anda ortaya çıkan sorunları yayımcıya çözümlemesi için gönderilir.
 
-Bir öğe için PowerShell Galerisi yayımladıktan sonra öğenizi geribildirim izlemesi gerekir.
+Bir öğe için PowerShell Galerisi yayımladıktan sonra öğeniz hakkında geri bildirim izlemesi gerekir.
 
-- Olun yayımlamak için kullanılan hesapla ilişkili e-posta adresi izleyin.
-Kullanıcılar ve PowerShell Galerisi işlemler ekibinin PSSA veya virüsten koruma taraması sorunları da dahil olmak üzere bu hesap aracılığıyla geri bildirim sağlar.
-E-posta hesabı geçersiz ya da hesap ve uzun bir süredir çözümlenmemiş sol ciddi sorunlar bildirildiğinde, öğeleri terk ve PowerShell Galerisi'nden açıklandığı gibi kaldırılacak kabul edilebilir bizim [Kullanım Koşulları'nı](https://www.powershellgallery.com/policies/Terms).
-- Yorumlara yayımladığınız her PowerShell galeri öğesi için abone öneririz.
-Bu, herkesin PowerShell Galerisi, öğelerde yorumları olursa bildirilir olanak sağlar.
-Bir hesap ile LiveFyre oluşturma gerektirdiğinden bu isteğe bağlı, budur.
+- Olun yayımlamak için kullanılan hesap ile ilişkili e-posta adresini izleyin.
+Kullanıcılar ve PowerShell Galerisi operasyon ekibinin sorunları PSSA veya virüsten koruma taraması dahil olmak üzere bu hesap aracılığıyla geri bildirim sağlar.
+E-posta hesabı geçersiz ya da hesap ve uzun bir süredir çözümlenmemiş sol bildirilen önemli sorunları, öğe bırakıldı ve PowerShell Galerisi'nden açıklandığı kaldırılacak kabul edilebilir bizim [kullanım](https://www.powershellgallery.com/policies/Terms).
+- Yayımladığınız her PowerShell galeri öğesi için yorumlara abone ol öneririz.
+Bu, herkesin öğelerinizi PowerShell Galerisi hakkında yorumlar durumunda sağlar.
+LiveFyre ile bir hesabı oluşturuluyor gerektirdiği isteğe bağlıdır.

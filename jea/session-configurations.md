@@ -2,78 +2,78 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA oturum yapılandırmaları
-ms.openlocfilehash: 3e5a663be8e7aba09a2592c278224cd892c89a20
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190103"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522971"
 ---
 # <a name="jea-session-configurations"></a>JEA oturum yapılandırmaları
 
-> Uygulandığı öğe: Windows PowerShell 5.0
+> İçin geçerlidir: Windows PowerShell 5.0
 
-JEA uç noktası oluşturarak ve belirli bir şekilde bir PowerShell oturumu yapılandırma dosyası kaydediliyor bir sistemde kayıtlı.
-Oturum yapılandırmaları belirlemek *kimin* JEA endpoint kullanabilirsiniz ve hangi rollere erişime sahip.
-Bunlar aynı zamanda JEA oturumunda herhangi bir rolü kullanıcılar için geçerli genel ayarlarını tanımlar.
+Bir JEA uç noktası oluşturarak ve belirli bir şekilde bir PowerShell oturumu yapılandırma dosyası kaydedilirken bir sistemde kayıtlı.
+Oturum yapılandırmaları belirlemek *kimin* JEA uç noktası kullanabilir ve hangi rolleri erişimleri.
+JEA oturumda herhangi bir rol kullanıcıları için geçerli genel ayarlar da tanımlarlar.
 
-Bu konuda, bir PowerShell oturumu yapılandırma dosyası oluşturun ve JEA uç noktasını kaydetme açıklar.
+Bu konuda, bir PowerShell oturumu yapılandırma dosyası oluşturun ve bir JEA uç noktasını kaydetme açıklar.
 
 ## <a name="create-a-session-configuration-file"></a>Oturum yapılandırma dosyası oluşturma
 
-JEA uç noktasını kaydetmek için bu uç nasıl yapılandırılmalıdır belirtmeniz gerekir.
-Burada, en önemli hangi kimin JEA uç noktası erişimi olması gereken olmaya biri, hangi rollerin olacak bunlar dikkate alınması gereken birçok seçenek atanabilir, hangi kimlik JEA perde arkasında kullanacağı vardır ve ne JEA uç noktanın adı olacaktır.
-Bunlar tüm tanımlanmış bir PowerShell oturumu yapılandırma dosyasında hangi .pssc uzantısı ile bir PowerShell veri dosyasını sonlandırıyor.
+Bir JEA uç nokta kaydetmek için uç noktanın nasıl yapılandırılmalıdır belirtmeniz gerekir.
+Burada, en önemli hangi JEA uç noktasına erişimi olması gereken olan biri, hangi rollerin bunlar dikkate alınır için birçok seçenek atanabilir, hangi kimlik perde JEA kullanacağı vardır ve hangi JEA uç noktası adı olacaktır.
+Bu tüm tanımlanmış bir PowerShell oturumu yapılandırma dosyasında, bir PowerShell veri dosyası .pssc uzantısı ile sona eriyor.
 
-JEA uç noktaları için bir iskelet oturum yapılandırma dosyası oluşturmak için aşağıdaki komutu çalıştırın.
+Bir JEA uç noktalar için iskelet oturum yapılandırma dosyası oluşturmak için aşağıdaki komutu çalıştırın.
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEAEndpoint.pssc
 ```
 
 > [!TIP]
-> Yalnızca en yaygın yapılandırma seçenekleri varsayılan olarak iskelet dosyasına dahil edilir.
-> Kullanım `-Full` anahtar içinde oluşturulan PSSC tüm ilgili ayarları içerir.
+> En yaygın yapılandırma seçenekleri çatı dosyasında varsayılan olarak dahil edilir.
+> Kullanım `-Full` geçme içinde oluşturulan PSSC tüm ilgili ayarları içerir.
 
-Herhangi bir metin düzenleyicisinde oturum yapılandırma dosyası açabilirsiniz.
-`-SessionType RestrictedRemoteServer` Alan, oturum yapılandırması için güvenli yönetim JEA tarafından kullanılacak gösterir.
-Bu şekilde yapılandırılan oturumları çalışacağı [NoLanguage modu](https://technet.microsoft.com/library/dn433292.aspx) ve yalnızca aşağıdaki 8 varsayılan komutları (ve diğer adlar) kullanılabilir:
+Herhangi bir metin düzenleyicisinde oturum yapılandırma dosyasını açabilirsiniz.
+`-SessionType RestrictedRemoteServer` Alan, oturum yapılandırması güvenli yönetimi için JEA tarafından kullanılacak gösterir.
+Bu şekilde yapılandırılan oturumları çalışır [NoLanguage modu](https://technet.microsoft.com/library/dn433292.aspx) ve yalnızca aşağıdaki 8 varsayılan komutları (ve diğer adları) olan kullanılabilir:
 
 - Clear-Host (cls, Temizle)
 - Çıkış-PSSession (exsn, çıkış)
 - Get-Command (gcm)
 - Get-FormatData
 - Get-Help
-- Ölçü nesnesi (ölçüm)
-- Dışarı varsayılan
-- Select-Object (seçin)
+- Ölçü nesnesi (ölçü)
+- Varsayılan dışarı
+- Select-Object (Seç)
 
-Herhangi bir PowerShell sağlayıcısı kullanılabilir veya tüm dış (yürütülebilir dosyaları, komut dosyaları, vb.) programlardır.
+PowerShell yok sağlayıcıları kullanılabilir ya da herhangi bir dış (yürütülebilir dosyaları, betikler, vb.) programlardır.
 
-JEA oturumu için yapılandırmak istediğiniz bazı alanlar vardır.
+JEA oturumu için yapılandırmak da isteyeceksiniz bazı alanlar vardır.
 Bunlar aşağıdaki bölümlerde ele alınmıştır.
 
 ### <a name="choose-the-jea-identity"></a>JEA kimliğini seçin
 
 Arka planda JEA bağlı kullanıcının komutlarını çalıştırırken kullanılacak bir kimliği (hesap) gerekir.
-JEA oturum yapılandırma dosyasında kullanacağı hangi kimlik karar verin.
+JEA oturum yapılandırma dosyasında kullanacağınız kimliği karar sizin.
 
 #### <a name="local-virtual-account"></a>Yerel sanal hesap
 
-Bu JEA bitiş noktası tarafından desteklenen roller tüm yerel makine yönetmek için kullanılır ve yerel yönetici hesabı komutları başarıyla çalıştırmak yeterli ise, yerel sanal hesap kullanmak için JEA yapılandırmanız gerekir.
-Sanal hesap belirli bir kullanıcı için benzersiz ve kendi PowerShell oturumu süresince yalnızca son geçici hesaplardır.
-Üye sunucusu veya iş istasyonu sanal hesaplar yerel bilgisayarın ait **Yöneticiler** grup ve çoğu sistem kaynaklarına erişimi vardır.
-Bir Active Directory etki alanı denetleyicisinde sanal hesaplar etki alanına ait ait **Domain Admins** grubu.
+Rolleri bu JEA uç noktası tarafından desteklenen tüm yerel makine yönetmek için kullanılır ve yerel yönetici hesabı komutlar başarıyla çalıştırmak için yeterli ise JEA sanal yerel hesap kullanmak için yapılandırmanız gerekir.
+Belirli bir kullanıcı için benzersiz ve kendi PowerShell oturumu süresi için yalnızca son geçici hesaplarının sanal hesaplarıdır.
+Üye sunucu veya iş istasyonunun Sanal hesaplar yerel bilgisayarın ait **Yöneticiler** grup ve çoğu sistem kaynaklarına erişimi vardır.
+Bir Active Directory etki alanı denetleyicisinde etki alanı için sanal hesaplar ait **Domain Admins** grubu.
 
 ```powershell
 # Setting the session to use a virtual account
 RunAsVirtualAccount = $true
 ```
 
-Oturum yapılandırması tarafından desteklenen roller gibi geniş ayrıcalıklarına gerek duymuyorsanız, isteğe bağlı olarak sanal hesap ait olacağı güvenlik gruplarını belirtebilirsiniz.
-Üye sunucusu veya iş istasyonu belirtilen güvenlik grupları yerel gruplar, olmayan bir etki alanından grupları olması gerekir.
+Oturum yapılandırması tarafından desteklenen rolleri gibi geniş ayrıcalıkları gerektirmez, isteğe bağlı olarak sanal hesap ait olacak güvenlik gruplarını belirtebilirsiniz.
+Üye sunucu veya iş istasyonunun belirli güvenlik grupları yerel gruplar, bir etki alanından grupları değil olmalıdır.
 
-Bir veya daha fazla güvenlik grubu belirtilirse, sanal hesap artık yerel veya etki alanı yöneticileri grubuna ait.
+Belirtilen bir veya daha fazla güvenlik grubu, sanal hesap yerel veya etki alanı yöneticileri grubuna ait olur.
 
 ```powershell
 # Setting the session to use a virtual account that only belongs to the NetworkOperator and NetworkAuditor local groups
@@ -84,59 +84,59 @@ RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 #### <a name="group-managed-service-account"></a>Grup Yönetilen Hizmet Hesabı
 
 
-Diğer makinelerin veya web Hizmetleri gibi ağ kaynaklarına erişmek için JEA kullanıcının gerektiren senaryolar için bir grup yönetilen hizmet hesabı (gMSA) kullanmak için bir daha uygun kimliğidir.
-gMSA hesapları etki alanındaki herhangi bir makinede kaynaklarına karşı kimlik doğrulaması için kullanılan bir etki alanı kimlik sağlayabilirsiniz.
-Erişmeye çalıştığınız hakları kaynaklar tarafından belirlenir. gMSA hesabı sağlar.
-Makine/Hizmet Yöneticisi Yönetici ayrıcalıkları gMSA hesabını açıkça verildi sürece tüm makineler veya hizmetler üzerinde yönetici hakları otomatik olarak olmayacaktır.
+JEA kullanıcı diğer makineler veya web Hizmetleri gibi ağ kaynaklarına erişmek için gerektiren senaryolar için bir grup yönetilen hizmet hesabı (gMSA) kullanmak için daha uygun bir kimliği var.
+gMSA hesabı etki alanı içinde herhangi bir makinede kaynaklarına karşı kimlik doğrulaması için kullanılabilecek bir etki alanı kimliği verir.
+Erişmeye çalıştığınız hakları kaynaklara göre belirlenir gMSA hesabı sağlar.
+Makine/Hizmet Yöneticisi açıkça gMSA hesabı yönetici ayrıcalıkları vermedikçe, otomatik olarak tüm makineler veya hizmetler üzerinde yönetici hakları yoktur.
 
 ```powershell
 # Configure JEA sessions to use the gMSA account in the local computer's domain with the sAMAccountName of 'MyJEAgMSA'
 GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 ```
 
-gMSA hesapları yalnızca kullanılmalıdır ağ kaynaklarına erişim olduğunda gereken birkaç nedeni:
+gMSA hesabı yalnızca kullanılmalıdır ağ kaynaklarına erişimi olduğunda gerekli birkaç nedeni:
 
-- Her kullanıcı aynı Çalıştır kimlik paylaşır beri gMSA hesabı kullanırken, bir kullanıcıya eylemleri geri izlemek için daha zor olduğu. PowerShell oturumu dökümleri ve kullanıcılar kendi eylemleri ile ilişkilendirmek için günlükleri danışmanız gerekir.
+- Her kullanıcı Çalıştır aynı kimliği paylaşıyor beri gMSA hesabı kullanılırken bir kullanıcı için Eylemler geri izleme için daha zor olan. PowerShell oturumu dökümleri ve kullanıcıların eylemlerini ile ilişkilendirmek için günlükleri başvurmanız gerekir.
 
-- GMSA hesabı bağlanan kullanıcı erişimi gerekmez birçok ağ kaynaklarına erişim olabilir. En az ayrıcalık ilkesini izlemek için bir JEA oturumunda etkili izinleri sınırlamak her zaman deneyin.
+- Bağlanan kullanıcının erişim gerekmeyen birçok ağ kaynaklarına erişim gMSA hesabı olabilir. En düşük öncelik ilkesini izlemek için bir JEA oturumunda etkili izinleri sınırlamak her zaman deneyin.
 
 > [!NOTE]
-> Grup yönetilen hizmet hesapları yalnızca Windows PowerShell 5.1 kullanılabilir veya daha yeni ve etki alanına katılmış makinelerde.
+> Grup yönetilen hizmet hesapları, yalnızca Windows PowerShell 5.1 kullanılabilir veya daha yeni ve etki alanına katılmış makinelerde.
 
 
 #### <a name="more-information-about-run-as-users"></a>Hakkında daha fazla bilgi kullanıcı olarak çalıştırın
 
-Kimlikleri ve bunlar JEA oturumu güvenlik nasıl faktör olarak çalıştır hakkında ek bilgiler bulunabilir [güvenlik konuları](security-considerations.md) makalesi.
+Kimlikleri ve bunların bir JEA oturum güvenliğini nasıl faktörü olarak çalışma hakkında ek bilgiler bulunabilir [güvenlik konuları](security-considerations.md) makalesi.
 
 ### <a name="session-transcripts"></a>Oturum dökümleri
 
-Kullanıcıların oturumunu otomatik olarak kayıt dökümleri JEA oturum yapılandırma dosyasına yapılandırmanız önerilir.
-PowerShell oturumu dökümleri, atanmış kimlik Çalıştır bağlanan kullanıcı hakkındaki bilgileri içerir ve kullanıcı tarafından komutları çalıştırın.
-Bunlar, bir sistem için belirli bir değişiklik gerçekleştiren anlamak için gereken bir denetim ekibi için yararlı olabilir.
+Bir JEA oturum yapılandırma dosyasına otomatik olarak kayıt dökümleri, kullanıcıların oturumlarının yapılandırma önerilir.
+PowerShell oturumu dökümleri bağlanan kullanıcının, farklı çalıştır kimlik atanmamış hakkındaki bilgileri içerir ve kullanıcı tarafından komutları çalıştırın.
+Bunlar, belirli bir değişiklik sisteme gerçekleştiren anlaşılması gereken bir denetim ekibine yararlı olabilir.
 
-Oturum yapılandırma dosyasında otomatik transcription yapılandırmak için dökümleri depolanacağı klasörün yolunu girin.
+Oturum yapılandırma dosyasında otomatik döküm yapılandırmak için dökümleri nerede depolanması gereken bir klasöre bir yol sağlar.
 
 ```powershell
 TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 ```
 
-Belirtilen klasör, değiştirme veya silme içindeki tüm veriler kullanıcıların önlemek için yapılandırılmalıdır.
-Dökümleri, okuma ve yazma erişimi dizinine gerektiren yerel sistem hesabı tarafından klasörüne yazılır.
+Belirtilen klasör değiştirmekten veya silmekten içindeki tüm veriler kullanıcıların önlemek için yapılandırılmalıdır.
+Dökümler, okuma ve dizine yazma erişimi gerektiren yerel sistem hesabı tarafından klasörüne yazılır.
 Standart kullanıcılar klasörüne erişimi olmalıdır ve güvenlik yöneticileri sınırlı sayıda dökümleri denetim erişimi olması gerekir.
 
 ### <a name="user-drive"></a>Kullanıcı sürücü
 
-Bağlanan kullanıcıların dosyaları için/JEA uç noktası bir komut çalıştırmak için kopyalamak gerekiyorsa oturum yapılandırma dosyasındaki kullanıcı sürücü etkinleştirebilirsiniz.
-Kullanıcı sürücü bir [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) bağlanan her kullanıcı için benzersiz bir klasör için eşlenmedi.
-Bu klasör, bunları bunları tam dosya sistemine erişim veren veya dosya sistemi sağlayıcısı gösterme denetleyicisinden sistem dosyaları kopyalamak bir alan olarak görev yapar.
-Kullanıcı disk içeriği ağ bağlantısı nerede kesintiye durumlarda oturumlarında kalıcıdır.
+Bağlanan kullanıcıların bir komutu çalıştırmak için dosyaları JEA uç noktası kopyalamak istiyorsanız, oturum yapılandırma dosyasındaki kullanıcı sürücü etkinleştirebilirsiniz.
+Kullanıcı sürücüdür bir [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) bağlanan her kullanıcı için benzersiz bir klasöre eşlendi.
+Bu klasör, bunları tam dosya sistemine erişim vermeden veya dosya sistemi sağlayıcısı gösterme öğesine/öğesinden sistem dosyalarını kopyalamak için bir alan olarak görev yapar.
+Kullanıcı sürücü içeriğini burada ağ bağlantısı kesilebilir durumlarda oturumları arasında kalıcıdır.
 
 ```powershell
 MountUserDrive = $true
 ```
 
-Varsayılan olarak, kullanıcı sürücüsünde en fazla kullanıcı başına veri 50 MB depolamanıza olanak sağlar.
-Bir kullanıcı ile tüketebileceği veri miktarını sınırlamak *UserDriveMaximumSize* alan.
+Varsayılan olarak, kullanıcı sürücüsünde en fazla kullanıcı başına veri 50 MB'ın depolamanıza olanak sağlar.
+Bir kullanıcı ile kullanabileceği veri miktarını sınırlamak *UserDriveMaximumSize* alan.
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -144,17 +144,17 @@ MountUserDrive = $true
 UserDriveMaximumSize = 524288000
 ```
 
-Kalıcı olması için kullanıcı sürücüde veri istemiyorsanız, zamanlanmış bir görev klasörü her gece otomatik olarak temizlemek için sistemde yapılandırabilirsiniz.
+Verilerin kalıcı olmasını kullanıcı sürücüsündeki istemiyorsanız, sistemde klasörü her gece otomatik olarak temizlemek için zamanlanmış bir görev yapılandırabilirsiniz.
 
 > [!NOTE]
 > Kullanıcı yalnızca Windows PowerShell 5.1 bulunan ya da daha yeni sürücüdür.
 
 ### <a name="role-definitions"></a>Rol tanımları
 
-Rol tanımları oturum yapılandırma dosyasında tanımlayın eşleme *kullanıcılar* için *rolleri*.
-Otomatik olarak onu kaydedildikten sonra her bir kullanıcı veya grup bu alana dahil JEA endpoint izni verilecektir.
-Her bir kullanıcı veya grup yalnızca bir kez anahtar hashtable olarak dahil edilebilir, ancak birden çok rol atanabilir.
-Rol özelliğin adına .psrc uzantısı olmadan Rol Yetenek dosyasının adı olmalıdır.
+Rol tanımları oturum yapılandırma dosyasında tanımlama eşleme *kullanıcılar* için *rolleri*.
+Otomatik olarak kaydedildiğinde her kullanıcı veya grup bu alanda bulunan JEA uç noktasına izin verilir.
+Her bir kullanıcı veya grubu yalnızca bir kez anahtar karma tablosu olarak dahil edilebilir, ancak birden çok rol atanabilir.
+Rol özelliğin adına .psrc uzantısı olmadan rolü özelliği dosyasının adı olmalıdır.
 
 ```powershell
 RoleDefinitions = @{
@@ -164,10 +164,10 @@ RoleDefinitions = @{
 }
 ```
 
-Bir kullanıcı birden fazla rol tanımı grubuna aitse, her rol için erişim elde.
-İki rolleri aynı cmdlet'leri erişim izni, en fazla izne sahip parametre kümesi kullanıcıya verilecektir.
+Bir kullanıcı birden fazla rol tanımı grubuna dahilse, her rol için erişim alırlar.
+İki rol aynı cmdlet'lere erişim sağlıyorsa, en esnek parametre kümesi kullanıcıya verilir.
 
-Yerel kullanıcılar veya gruplar rol tanımları alanı belirtirken, bilgisayar adı kullandığınızdan emin olun (değil *localhost* veya *.*) ters eğik çizgi önce.
+Yerel kullanıcı veya grup rol tanımları alanını belirtirken, bilgisayar adını kullandığınız emin olun (değil *localhost* veya *.*) önce ters eğik çizgi.
 Bilgisayar adı inceleyerek denetleyebilirsiniz `$env:computername` değişkeni.
 
 ```powershell
@@ -176,28 +176,28 @@ RoleDefinitions = @{
 }
 ```
 
-### <a name="role-capability-search-order"></a>Rol Yetenek arama sırası
-Yukarıdaki örnekte gösterildiği gibi rol özellikleri Rol Yetenek dosya düz adıyla (dosya adı uzantısı olmadan) başvurulur.
-Birden çok rol özellikleri varsa düz adında sisteminde PowerShell etkili Rol Yetenek dosyasını seçmek için kendi örtük arama sırası kullanacaksınız.
-İçinde **değil** aynı ada sahip tüm Rol Yetenek dosyaları erişim verin.
+### <a name="role-capability-search-order"></a>Rol özellik arama sırası
+Yukarıdaki örnekte gösterildiği gibi rol işlevleri rol özellik dosyası düz adıyla (dosya adı uzantısı olmadan) olarak başvurulur.
+Sistem düz aynı ada sahip birden çok rol özellikleri mevcuttur, etkin bir rol özelliği dosyayı seçmek için örtük arama sırası PowerShell kullanacaksınız.
+Götürür **değil** aynı ada sahip tüm rol özellik dosyaları için erişim verin.
 
-JEA kullanan `$env:PSModulePath` Rol Yetenek dosyaları taramak için hangi yolları belirlemek için ortam değişkeni.
-Her bu yollar içinde bir "RoleCapabilities" alt klasör içeren geçerli PowerShell modülleri için JEA arar.
-Modülleri gibi içeri aktarma ile aynı ada sahip özel rol özellikleri için Windows ile birlikte rol özellikleri JEA tercih eder.
-Tüm diğer adlandırma çakışmaları için öncelik Windows (alfabetik olması garanti değil) dizindeki dosyaların numaralandırır sıraya göre belirlenir.
-İstenen eşleşen ilk Rol Yetenek dosyası bulundu adı bağlanan kullanıcı için kullanılır.
+Jea'yı kullanan `$env:PSModulePath` rol özellik dosyaları taramak için hangi yolları belirlemek için ortam değişkeni.
+Her bu yollar içinde bir "RoleCapabilities" alt klasör içeren geçerli PowerShell modülleri için JEA görünecektir.
+JEA modülleri alma gibi Windows ile aynı ada sahip özel rol özellikleri için sağlanan rol işlevleri tercih eder.
+Tüm diğer adlandırma çakışmaları için öncelik, Windows (alfabetik olması garanti edilmez) dizindeki dosyaları listeler sıraya göre belirlenir.
+İstenen eşleşen ilk rol özellik dosyası bulunamadı. adı bağlanan kullanıcı için kullanılır.
 
-Rol Yetenek arama sırası iki belirleyici değil veya daha fazla rol özellikleri aynı adı paylaşan beri olan **önemle tavsiye** rol özellikleri makinenize benzersiz adlara sahip olun.
+Rol özellik arama sırası, iki belirleyici değil veya daha fazla rol işlevleri aynı adı paylaşan olduğu **önemle tavsiye** rol işlevleri makinenizde benzersiz adlara sahip olun.
 
 ### <a name="conditional-access-rules"></a>Koşullu erişim kuralları
 
-Otomatik olarak tüm kullanıcılar ve gruplar RoleDefinitions alanında bulunan JEA Uç noktalara erişimi verilir.
-Koşullu erişim kuralları, bu erişim daraltın ve kullanıcıların, bunlar atanan rollerden etkilemeyen ek güvenlik gruplarına ait zorunlu olanak tanır.
-Bu bir "biraz zaman" ayrıcalıklı tümleştirmek istediğiniz durumlarda yararlı olabilir erişim yönetimi çözümü, akıllı kart kimlik doğrulaması veya başka bir çok faktörlü kimlik doğrulama çözümü JEA ile.
+Otomatik olarak tüm kullanıcılar ve gruplar RoleDefinitions alanında bulunan JEA uç noktalarına erişimi verilir.
+Koşullu erişim kuralları, bu erişimi iyileştirin ve kullanıcıların, atanmış olan rolleri etkilemez ek güvenlik gruplarına ait zorunlu olanak tanır.
+Bu bir "tam zamanında" ayrıcalıklı tümleştirmek istiyorsanız yararlı olabilir erişim yönetimi çözümü, akıllı kart kimlik doğrulaması veya diğer çok faktörlü kimlik doğrulaması çözümüyle JEA.
 
-Koşullu erişim kuralları, bir oturum yapılandırma dosyası RequiredGroups alanında tanımlanır.
-Burada, kullanır (isteğe bağlı olarak iç içe) bir hashtable sağlayabilir 'Ve' ve 'Veya' anahtarları kurallarınızı oluşturmak için.
-Bu alan yararlanmak nasıl bazı örnekleri şunlardır:
+Koşullu erişim kuralları, bir oturum yapılandırması dosyasını RequiredGroups alanında tanımlanır.
+Kullanan bir hashtable (iç içe isteğe bağlı olarak) sağlar, 'Ve' ve 'Veya' anahtarlar kurallarınızı oluşturmak için.
+Bu alan kullanmayı bazı örnekleri aşağıda verilmiştir:
 
 ```powershell
 # Example 1: Connecting users must belong to a security group called "elevated-jea"
@@ -212,24 +212,24 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ```
 
 > [!NOTE]
-> Koşullu erişim kuralları yalnızca Windows PowerShell 5.1 bulunan ya da daha yeni.
+> Koşullu erişim kuralları yalnızca, Windows PowerShell 5.1 veya yeni kullanılabilir.
 
 ### <a name="other-properties"></a>Diğer özellikler
-Oturum yapılandırma dosyalarını bir rol özelliği dosyası yalnızca farklı komutları bağlanan kullanıcılara erişim vermek özelliği olmadan yapabilirsiniz her şeyi da yapabilirsiniz.
-Tüm kullanıcıların belirli cmdlet'ler, İşlevler veya sağlayıcıları erişmesine izin vermek istiyorsanız, bunu yapabilirsiniz sağ oturum yapılandırma dosyası.
-Desteklenen özellikler oturum yapılandırma dosyasında tam listesi için çalıştırın `Get-Help New-PSSessionConfigurationFile -Full`.
+Oturum yapılandırma dosyalarını da rol özellik dosyası için farklı komutlar bağlantı kullanıcı erişimi vermek için yalnızca özelliği olmadan yapabileceği her şeyi yapabilirsiniz.
+Erişimi belirli cmdlet'ler, İşlevler veya sağlayıcıları tüm kullanıcılara izin vermek istiyorsanız, bunu yapabilirsiniz oturum yapılandırma dosyasında sağ.
+Oturum yapılandırma dosyasında desteklenen özellikler tam listesi için çalıştırma `Get-Help New-PSSessionConfigurationFile -Full`.
 
-## <a name="testing-a-session-configuration-file"></a>Bir oturum yapılandırma dosyası test etme
+## <a name="testing-a-session-configuration-file"></a>Test oturumu yapılandırma dosyası
 
-Bir oturum Yapılandırması kullanılarak test [Test PSSessionConfigurationFile](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet'i.
-El ile sözdizimi doğru olduğundan emin olmak için bir metin düzenleyicisi kullanarak pssc dosyayı düzenlerseniz, oturum yapılandırma dosyanızı test önerilir.
-Bir oturum yapılandırma dosyası bu test geçemezse, sistemde başarıyla kaydedilmesi mümkün olmaz.
+Kullanarak bir oturum yapılandırması test [Test PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet'i.
+El ile söz dizimi doğru olduğundan emin olmak için bir metin düzenleyicisi kullanarak pssc dosyasını düzenlediyseniz oturum yapılandırma dosyanızı test önemle tavsiye edilir.
+Bu test oturumu yapılandırma dosyası geçemezse, başarıyla sistemde kayıtlı olması mümkün olmayacaktır.
 
 ## <a name="sample-session-configuration-file"></a>Örnek oturum yapılandırma dosyası
 
-Aşağıda nasıl oluşturulacağı ve bir oturum yapılandırması doğrulamak için JEA gösteren tam bir örnek verilmiştir.
-Rol tanımları oluşturulur ve depolanır Not `$roles` kolaylık sağlamak ve Okunabilirlik için değişken.
-Bunu yapmak için zorunlu değildir.
+Oluşturma ve oturum yapılandırmasını doğrulamak için JEA gösteren tam bir örnek aşağıda verilmiştir.
+Rol tanımları oluşturulur ve depolanır Not `$roles` convenience ve Okunabilirlik için değişken.
+Bunu yapmak için bir gereksinim değildir.
 
 ```powershell
 $roles = @{
@@ -242,12 +242,12 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\JEACo
 Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 ```
 
-## <a name="updating-session-configuration-files"></a>Oturum yapılandırma dosyaları güncelleştiriliyor
+## <a name="updating-session-configuration-files"></a>Oturum yapılandırma dosyalarını güncelleştirme
 
-Rolleri, kullanıcılara eşleme dahil olmak üzere bir JEA oturum yapılandırmasının özelliklerini değiştirmeniz gerekiyorsa, gerekir [kaydı](register-jea.md#unregistering-jea-configurations) ve [yeniden kaydettirin](register-jea.md) JEA oturum yapılandırması.
-JEA oturum yapılandırmasını yeniden kaydettiğinizde, istediğiniz değişiklikleri içeren güncelleştirilmiş bir PowerShell oturumu yapılandırma dosyası kullanın.
+Kullanıcıların rollere, eşleme içeren bir JEA oturum yapılandırması özelliklerini değiştirmek gerekiyorsa, [kaydını](register-jea.md#unregistering-jea-configurations) ve [yeniden kaydettirin](register-jea.md) JEA oturum yapılandırması.
+JEA oturum yapılandırması yeniden kaydettiğinizde, istediğiniz değişiklikleri içeren güncelleştirilmiş bir PowerShell oturumu yapılandırma dosyası kullanın.
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
-- [JEA yapılandırma kaydetme](register-jea.md)
+- [Bir JEA yapılandırmasını Kaydet](register-jea.md)
 - [Yazar JEA rolleri](role-capabilities.md)

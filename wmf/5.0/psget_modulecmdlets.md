@@ -1,49 +1,49 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 02aebbd2557298b1b88229fdf5f67bdd08cea452
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29b11e8b11f27fc5be60ea8c5cd56138326b3998
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190613"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522848"
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>Modül Yönetimi için PowerShellGet Cmdlet’leri
 
-- [Bul DscResource](https://technet.microsoft.com/library/mt654006.aspx)
-- [Bulma Modülü](https://technet.microsoft.com/library/dn807167.aspx)
+- [Bul-DscResource](https://technet.microsoft.com/library/mt654006.aspx)
+- [Modül Bul](https://technet.microsoft.com/library/dn807167.aspx)
 - [Bulma komut dosyası](https://technet.microsoft.com/library/mt654001.aspx)
-- [Get-InstalledModule](https://technet.microsoft.com/en-us/library/mt653990.aspx)
-- [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
-- [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)
-- [Yükleme Modülü](https://technet.microsoft.com/en-us/library/dn807162.aspx)
-- [Yükleme betiği](https://technet.microsoft.com/en-us/library/mt653998.aspx)
-- [ScriptFileInfo yeni](https://technet.microsoft.com/en-us/library/mt653995.aspx)
-- [Yayımlama Modülü](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [Yayımlama-komut dosyası](https://technet.microsoft.com/en-us/library/mt654003.aspx)
-- [Register-PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
-- [Kaydet-Modülü](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [Kaydet-komut dosyası](https://technet.microsoft.com/en-us/library/mt654004.aspx)
-- [Set-PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
-- [Test-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
-- [Kaldırma Modülü](https://technet.microsoft.com/en-us/library/mt653996.aspx)
-- [Kaldırma betiği](https://technet.microsoft.com/en-us/library/mt653989.aspx)
-- [Güncelleştirme Modülü](https://technet.microsoft.com/en-us/library/dn807166.aspx)
-- [Güncelleştirme ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
-- [Güncelleştirme komut dosyası](https://technet.microsoft.com/en-us/library/mt653997.aspx)
-- [Güncelleştirme ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [Kaydı PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [Get-InstalledModule](https://technet.microsoft.com/library/mt653990.aspx)
+- [Get-InstalledScript](https://technet.microsoft.com/library/mt653994.aspx)
+- [Get-PSRepository](https://technet.microsoft.com/library/dn807170.aspx)
+- [Install-Module](https://technet.microsoft.com/library/dn807162.aspx)
+- [Yükleme betiği](https://technet.microsoft.com/library/mt653998.aspx)
+- [Yeni ScriptFileInfo](https://technet.microsoft.com/library/mt653995.aspx)
+- [Yayımlama Modülü](https://technet.microsoft.com/library/dn807163.aspx)
+- [Yayımlama-komut dosyası](https://technet.microsoft.com/library/mt654003.aspx)
+- [Register-PSRepository](https://technet.microsoft.com/library/dn807168.aspx)
+- [Save-Module](https://technet.microsoft.com/library/mt653992.aspx)
+- [Save-Script](https://technet.microsoft.com/library/mt654004.aspx)
+- [Set-PSRepository](https://technet.microsoft.com/library/dn807165.aspx)
+- [Test-ScriptFileInfo](https://technet.microsoft.com/library/mt654005.aspx)
+- [Modül kaldırma](https://technet.microsoft.com/library/mt653996.aspx)
+- [Kaldırma betiği](https://technet.microsoft.com/library/mt653989.aspx)
+- [Güncelleştirme Modülü](https://technet.microsoft.com/library/dn807166.aspx)
+- [Güncelleştirme ModuleManifest](https://technet.microsoft.com/library/mt654002.aspx)
+- [Güncelleştirme betiği](https://technet.microsoft.com/library/mt653997.aspx)
+- [Güncelleştirme ScriptFileInfo](https://technet.microsoft.com/library/mt653991.aspx)
+- [Kaydı-PSRepository](https://technet.microsoft.com/library/dn807161.aspx)
 
 ## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Modül bağımlılık yükleme desteği, Get-InstalledModule ve Kaldır-Module cmdlet'leri
-- Modül bağımlılıkları popülasyon Yayımla-Module cmdlet'te eklendi. PSModuleInfo RequiredModules ve NestedModules listesi yayımlanmasını bir modül bağımlılık listesi hazırlamak için kullanılır.
-- Install-Module ve güncelleştirme modülü cmdlet'leri eklenen bağımlılık yükleme desteği. Modül bağımlılıkları yüklenir ve varsayılan olarak güncelleştirildi.
-- Sonuçlarda modülü bağımlılıkları içerecek şekilde bulma modülü cmdlet - IncludeDependencies parametresi eklendi.
-- Bulma modülü üzerinde - MaximumVersion destek eklemiştir yükleme modülü ve güncelleştirme modülü cmdlet'leri.
-- Eklenen yeni Get-InstalledModule ve Kaldır-Module cmdlet'leri.
+- Modül bağımlılıkları popülasyon Publish-Module cmdlet'i eklendi. Yayımlanacak bir modül bağımlılık listesi hazırlarken PSModuleInfo RequiredModules ve NestedModules listesi kullanılır.
+- Install-Module ve güncelleştirme modülü cmdlet'lerini eklenen bağımlılık yükleme desteği. Modül bağımlılıklarının yüklenir ve varsayılan olarak güncelleştirildi.
+- -IncludeDependencies parametre sonuçları modülü bağımlılıkları içerecek şekilde Find-Module cmdlet'i eklendi.
+- Find-Module üzerinde - MaximumVersion desteği eklendi Install-Module ve güncelleştirme modülü cmdlet'leri.
+- Yeni Get-InstalledModule ve Kaldır-Module cmdlet'ler eklendi.
 
-## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>Modül bağımlılıkları PowerShellGet cmdlet'leri tanıtım destekler:
+## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>Modül bağımlılıklarının ile PowerShellGet cmdlet'leri Tanıtımı destekler:
 
-### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>Modül bağımlılıkları Havuzda kullanılabilir olduğundan emin olun:
+### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>Modül bağımlılıklarının Havuzda kullanılabilir olduğundan emin olun:
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
@@ -57,7 +57,7 @@ Version    Name                     Repository    Description
 2.0        RequiredModule3          LocalRepo     RequiredModule3 module
 ```
 
-### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>Bir modül modül bildirimi RequiredModules ve NestedModules özelliklerinde belirtilen bağımlılıkları oluşturun.
+### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>Bir modül, modül bildirimi RequiredModules ve NestedModules özelliklerinde belirtilen bağımlılıklara sahip oluşturun.
 ```powershell
 $RequiredModules = @('RequiredModule1',
                      @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.5'; },
@@ -71,12 +71,12 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>İki sürüm yayımlayın (**"1.0"** ve **"2.0"**) depo bağımlılıklarla birlikte TestDepWithNestedRequiredModules1 modülün.
+###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>İki sürümü yayımlamak (**"1.0"** ve **"2.0"**) depoya bağımlılıklarla TestDepWithNestedRequiredModules1 modülü.
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
 
-###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>-IncludeDependencies belirterek bağımlılıklarını TestDepWithNestedRequiredModules1 modülüyle bulun.
+###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>-IncludeDependencies belirterek TestDepWithNestedRequiredModules1 modülü ile bağımlılıkları bulun.
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
@@ -91,7 +91,7 @@ Version    Name                                Repository  Description
 2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
 ```
 
-### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>Modül bağımlılıkları bulmak için bulma modülü meta veri kullanın.
+### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>Modül bağımlılıklarının bulmak için bulma modülü meta verileri kullanın.
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -130,7 +130,7 @@ RequiredVersion 2.5
 CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v2/
 ```
 
-###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>TestDepWithNestedRequiredModules1 modülü bağımlılıkları ile yükleyin.
+###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>TestDepWithNestedRequiredModules1 modülü ile bağımlılıkları yükleyin.
 ```powershell
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
@@ -172,8 +172,8 @@ Version    Name                                Repository  Description
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>PowerShellGet kullanarak yüklü bir modül kaldırmak için Uninstall-Module cmdlet'ini çalıştırın.
-Silmek istediğiniz modülü üzerinde başka bir modül bağımlı olması durumunda, PowerShellGet bir hata oluşturur.
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>PowerShellGet kullanarak yüklü bir modülünü kaldırmak için Uninstall-Module cmdlet'ini çalıştırın.
+PowerShellGet, başka bir modül, silmek istediğiniz modüldeki bağlıysa, bir hata oluşturur.
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
 
@@ -185,7 +185,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-## <a name="save-module-cmdlet"></a>Kaydet-Module cmdlet'i
+## <a name="save-module-cmdlet"></a>Save-Module cmdlet'i
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -204,11 +204,11 @@ d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
 ## <a name="update-modulemanifest-cmdlet"></a>Güncelleştirme ModuleManifest cmdlet'i
-Bu yeni cmdlet Yardım giriş özellik değerlerini dosyasıyla bildirim güncelleştirmesi için kullanılır. Test ModuleManifest yaptığı tüm parametreleri alır.
+Bu yeni cmdlet, güncelleştirme bildirim dosyası giriş özelliği değerlerle yardımcı olmak için kullanılır. Bu Test ModuleManifest yapan tüm parametreleri alır.
 
-Çok sayıda modülü yazarlar belirtmek istediğiniz fark "\*" gibi FunctionsToExport, CmdletsToExport, dışarı aktarılan değerleri vb. PowerShell Galerisi modülü yayımlama sırasında belirtilmeyen işlevleri ve komutları düzgün galeri doldurulmaz. Bu nedenle, modül yazarlar güncelleştirme kendi bildirimleri uygun değerlerle öneririz.
+Çok fazla modül yazarları belirtmek istiyorsanız fark "\*" vb. gibi FunctionsToExport, CmdletsToExport, dışarı aktarılan değerler. PowerShell Galerisi modülü yayımlama sırasında belirtilmeyen işlevleri ve komutları düzgün galeri doldurulmaz. Bu nedenle, modül yazarları güncelleştirme kendi bildirimleri uygun değerlerle öneririz.
 
-Özellikler dışarı aktardığınız modülleri varsa, güncelleştirme ModuleManifest belirtilen bildirim dosyası dışarı aktarılan işlevler, cmdlet'leri, değişkenler vb. alınan bilgilerle doldurun:
+Özellikleri dışarı aktardığınız modülleri varsa, güncelleştirmeyi ModuleManifest belirtilen bildirim dosyası dışarı aktarılan işlevleri, cmdlet'leri, değişkenler vb. alınan bilgilerle doldurur:
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -257,7 +257,7 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 }
 ```
 
-Her modül için de ilişkili meta veri alanları vardır. Meta veri PowrShell galerisinde düzgün görüntülemek için güncelleştirme ModuleManifest PrivateData altında bu alanları doldurmak için kullanabilirsiniz.
+Her modül için Ayrıca ilişkili meta verileri alan vardır. Meta veri PowrShell galerisinde düzgün görüntülenmesi için güncelleştirme ModuleManifest PrivateData altında bu alanları doldurmak için kullanabilirsiniz.
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
@@ -286,4 +286,4 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-***Not:*** DscResourcesToExport yalnızca en son PowerShell sürüm 5.0 desteklenir. Önceki bir PowerShell sürümünde çalıştırıyorsanız, alanın güncelleştirmek mümkün olmayacaktır.
+***Not:*** DscResourcesToExport yalnızca en son PowerShell sürüm 5.0 desteklenir. Önceki PowerShell sürümünde çalıştırıyorsanız alanın güncelleştirmek mümkün olmayacaktır.

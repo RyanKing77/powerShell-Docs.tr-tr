@@ -4,12 +4,12 @@ keywords: PowerShell cmdlet'i
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: bcf897730881551ec16ce970de6a1330961b67e6
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: fe2b71dcfa870ba3f92484ae3fd3c45b3107a1bc
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268274"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523088"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -176,7 +176,7 @@ Daha fazla bilgi için [about_CommonParameters](https://msdn.microsoft.com/power
 
 Bu cmdlet bir dize veya dizeler dizisi girdi olarak kabul eder.
 
-### <a name="string"></a>Dize\[\]
+### <a name="string"></a>dize\[\]
 
 Bu cmdlet bir dize veya dizeler dizisi girdi olarak kabul eder.
 
@@ -251,13 +251,13 @@ Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)
+[Get-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592891(v=wps.630).aspx)
 
-[Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
+[Remove-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592893(v=wps.630).aspx)
 
-[Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
+[Test-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592892(v=wps.630).aspx)
 
-[Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
+[Install-PswaWebApplication](https://technet.microsoft.com/library/jj592894(v=wps.630).aspx)
 
 [Üye Ekle](http://go.microsoft.com/fwlink/p/?LinkId=113280)
 

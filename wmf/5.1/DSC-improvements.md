@@ -2,49 +2,49 @@
 ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
-title: WMF 5.1 DSC yenilikleri
-ms.openlocfilehash: 32bdde6d43d17cc76c454fe10b00097753a9eebe
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
+title: WMF 5.1 DSC geliştirmeleri
+ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309551"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523065"
 ---
-# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>İstenen durum yapılandırması (DSC) WMF 5.1'yenilikleri
+# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 içinde Desired State Configuration (DSC) iyileştirmeleri
 
-## <a name="dsc-class-resource-improvements"></a>DSC sınıfı kaynak geliştirmeleri
+## <a name="dsc-class-resource-improvements"></a>DSC sınıf kaynak geliştirmeleri
 
-WMF 5.1, biz aşağıdaki bilinen sorunlar düzeltildi:
+WMF 5.1, aşağıdaki bilinen sorunlar düzelttik:
 
-- Karmaşık/karma tablo türü bir sınıf tabanlı DSC kaynağı Get() işlevi tarafından döndürülürse, get-DscConfiguration boş değerler (boş) veya hatalar döndürebilir.
+- Karmaşık/karma tablo türünde bir sınıf tabanlı DSC kaynağı Get() işlevi tarafından döndürülen, get-DscConfiguration boş değerler (null) ya da hataları döndürebilir.
 - DSC yapılandırması RunAs kimlik bilgileri kullanılıyorsa, get-DscConfiguration hata döndürür.
 - Kaynak sınıf tabanlı bileşik bir yapılandırmada kullanılamaz.
-- Kaynak sınıf tabanlı kendi türünde bir özellik varsa Başlangıç DscConfiguration askıda kalır.
+- Kaynak sınıf tabanlı kendi türünün bir özelliği varsa Başlat-DscConfiguration yanıt vermemeye başlıyor.
 - Kaynak sınıf tabanlı özel bir kaynak kullanılamaz.
 
-## <a name="dsc-resource-debugging-improvements"></a>DSC kaynağı geliştirmeleri hata ayıklama
+## <a name="dsc-resource-debugging-improvements"></a>DSC kaynak hata ayıklama iyileştirmeleri
 
-WMF 5. 0'da, PowerShell hata ayıklayıcı kaynak sınıf tabanlı bir yöntem (Get/Set/Test) doğrudan durdurulmadı.
-WMF 5.1, hata ayıklayıcı MOF tabanlı kaynaklara yöntemleri için olduğu gibi aynı şekilde at sınıf tabanlı kaynak yöntemi durdurur.
+WMF 5. 0'da, PowerShell hata ayıklayıcı kaynak sınıf tabanlı yöntemini (Get/Set/Test) doğrudan durdurulmadı.
+WMF 5.1 MOF temelli kaynak yöntemleri olduğu gibi sınıf tabanlı kaynak yöntem hata ayıklayıcıyı durdurur.
 
-## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>TLS 1.1 ve TLS 1.2 DSC çekme istemci destekler
+## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>DSC çekme istemcisi, TLS 1.1 ve TLS 1.2 destekler.
 
-Daha önce DSC çekme istemci yalnızca SSL3.0 ve TLS1.0 HTTPS bağlantıları üzerinden desteklenir.
-Daha güvenli protokolleri kullanmak üzere zorlandığında, çekme istemci çalışmayı durdurmasına.
-WMF 5.1 DSC çekme istemci artık SSL 3.0 destekler ve daha güvenli TLS 1.1 ve TLS 1.2 protokolleri için destek ekler.
+Daha önce DSC çekme istemcisi yalnızca SSL3.0 ve TLS1.0 HTTPS bağlantılarında desteklenir.
+Daha güvenli protokollerini kullanacak şekilde zorlandığında, çekme istemcisi çalışmamaya.
+WMF 5.1 DSC çekme istemcisi artık SSL 3.0 destekler ve daha güvenli TLS 1.1 ve TLS 1.2 protokolleri için destek ekler.
 
-## <a name="improved-pull-server-registration"></a>Geliştirilmiş çekme sunucu kaydı
+## <a name="improved-pull-server-registration"></a>Geliştirilmiş çekme sunucusu kaydı
 
-WMF önceki sürümlerinde, eşzamanlı kayıtlar/raporlama istekleri ESENT veritabanı kullanılırken bir DSC çekme sunucusuna kaydetmek ve/veya rapor başarısız LCM'yi sunulmasını sağlar.
-Böyle durumlarda, olay günlükleri çekme sunucusunda şunlardır hata "Örnek adı zaten kullanımda."
-Çok iş parçacıklı senaryoda ESENT veritabanına erişmek için kullanılan hatalı desen nedeniyle, bu.
+WMF önceki sürümlerinde eşzamanlı kayıtları/reporting istekleri ESENT veritabanını kullanırken bir DSC çekme sunucusuna kaydedin ve/veya raporu yüklerken LCM için yol açar.
+Bu gibi durumlarda, olay günlüklerini çekme sunucusunda sahip hata "Örnek adı zaten kullanımda."
+Bu, hatalı bir çok iş parçacıklı senaryosunda ESENT veritabanına erişmek için kullanılan desen nedeniyle oluştu.
 WMF 5.1, bu sorun düzeltilmiştir.
-Eşzamanlı kayıtlar veya (ESENT veritabanını içeren) raporlama WMF 5.1 düzgün çalışır.
-Bu sorun yalnızca ESENT veritabanı için geçerlidir ve OLEDB veritabanı için geçerli değil.
+Eşzamanlı kaydı veya (ESENT veritabanını içeren) raporlama WMF 5.1 düzgün çalışır.
+Bu sorun yalnızca ESENT veritabanı için geçerlidir ve OLEDB veritabanı için geçerli değildir.
 
-## <a name="enable-circular-log-on-esent-database-instance"></a>ESENT veritabanı örneğinde döngüsel günlüğü etkinleştir
+## <a name="enable-circular-log-on-esent-database-instance"></a>ESENT veritabanı örneğinde dairesel günlüğünü etkinleştir
 
-DSC PullServer eariler sürümünde veritabanı örneği olmadan döngüsel günlüğü oluşturulurken pullserver becouse disk alan ESENT veritabanı günlük dosyalarını doldurma. Bu sürümde, web.config dosyasının pullserver kullanarak örneğini döngüsel günlüğü davranışını denetlemek için seçeneğiniz vardır. Varsayılan olarak CircularLogging TRUE olarak ayarlanır.
+DSC PullServer eariler sürümünde, döngüsel günlüğü olmadan veritabanı örneği oluşturulurken pullserver becouse, disk alanı ESENT veritabanı günlük dosyalarını doldurma. Bu sürümde, web.config dosyasının pullserver kullanarak örneğini döngüsel günlüğü davranışını denetlemek için seçeneğiniz vardır. Varsayılan olarak CircularLogging TRUE olarak ayarlanır.
 
 ```
 <appSettings>
@@ -55,15 +55,15 @@ DSC PullServer eariler sürümünde veritabanı örneği olmadan döngüsel gün
   </appSettings>
 ```
 
-## <a name="pull-partial-configuration-naming-convention"></a>Kısmi yapılandırma adlandırma kuralı isteme
+## <a name="pull-partial-configuration-naming-convention"></a>Kısmi yapılandırma adlandırma kuralı çekme
 
-MOF dosya adı çekme Sunucu/hizmetinde sırayla eşleşmelidir yerel configuration manager ayarlarında belirtilen kısmi yapılandırma adı eşleşmelidir önceki sürümde, kısmi bir yapılandırma için adlandırma kuralı edildi Yapılandırma adı MOF dosyasında katıştırılmış.
+Önceki bir sürümde çekme Sunucusu/hizmetinde MOF dosyası adı belirtilen sırayla eşleşmelidir yerel configuration manager ayarlarında kısmi yapılandırma adıyla eşleşmelidir kısmi bir yapılandırma için adlandırma kuralı oluştu. Yapılandırma adı MOF dosyası içinde gömülü.
 
 Aşağıdaki anlık görüntüleri bakın:
 
 - Bir düğüm alma izni olan bir kısmi yapılandırmasını tanımlayan yerel yapılandırma ayarları.
 
-![Örnek meta yapılandırmasını](../images/MetaConfigPartialOne.png)
+![Örnek metaconfiguration](../images/MetaConfigPartialOne.png)
 
 - Örnek kısmi yapılandırma tanımı
 
@@ -82,18 +82,18 @@ Configuration PartialOne
 PartialOne
 ```
 
-- 'ConfigurationName' oluşturulan MOF dosyasında katıştırılmış.
+- Oluşturulan MOF dosyasında ekli ConfigurationName'.
 
 ![Örnek oluşturulan mof dosyası](../images/PartialGeneratedMof.png)
 
-- Çekme yapılandırma deposundaki FileName
+- Çekme yapılandırma deposundaki dosya adı
 
-![Yapılandırma deposundaki FileName](../images/PartialInConfigRepository.png)
+![Yapılandırma deposundaki dosya adı](../images/PartialInConfigRepository.png)
 
-Azure Otomasyonu hizmet adı MOF dosyaları olarak oluşturulan `<ConfigurationName>.<NodeName>.mof`.
-Bu nedenle yapılandırma PartialOne.localhost.mof için derler.
+Azure Otomasyonu hizmeti adı MOF dosyaları olarak oluşturulan `<ConfigurationName>.<NodeName>.mof`.
+Bu nedenle aşağıdaki yapılandırmayı PartialOne.localhost.mof için derler.
 
-Bu olanaksız çekme kısmi yapılandırmanızın bir Azure Otomasyonu hizmetinden kılan.
+Bunu mümkün olmayan çekme kısmi yapılandırmanızın bir Azure Otomasyonu hizmetinden yapılan.
 
 ```powershell
 Configuration PartialOne
@@ -110,11 +110,11 @@ Configuration PartialOne
 PartialOne
 ```
 
-WMF 5.1, kısmi bir çekme sunucu/hizmet yapılandırmasında olarak adlandırılabilir `<ConfigurationName>.<NodeName>.mof`.
-Ayrıca, bir makine çekme tek yapılandırmasından çekiyor, sunucu/hizmet ardından çekme sunucusu yapılandırma deposu yapılandırma dosyası herhangi bir dosya adı olabilir.
-Bu adlandırma esneklik düğümünüz için bazı yapılandırma Azure Automation DSC'de bulunan ve yerel olarak yönetme kısmi bir yapılandırmaya sahip olduğu gelen düğümleriniz Azure Otomasyon hizmeti tarafından kısmen yönetmenizi sağlar.
+WMF 5.1, kısmi bir çekme sunucusu/hizmet yapılandırmasında olarak adlandırılabilir `<ConfigurationName>.<NodeName>.mof`.
+Ayrıca, bir makine bir tek bir çekme yapılandırmasından çekiyor, sunucu/hizmet yapılandırma dosyasını ardından çekme sunucusu yapılandırma deposu üzerindeki herhangi bir dosya adı olabilir.
+Bu adlandırma esneklik düğümü için bazı yapılandırmalar Azure Automation DSC ve yerel olarak yönettiğiniz kısmi bir yapılandırma ile nereden geldiğini düğümlerinizi kısmen Azure Otomasyonu hizmeti tarafından yönetmenize olanak sağlar.
 
-Bir düğüm olarak ayarlar aşağıda meta yapılandırmasını hem de yönetilen yerel olarak yanı sıra Azure Otomasyonu hizmet.
+Bir düğüm olacak şekilde ayarlar aşağıda metaconfiguration hem de yönetilen yerel olarak hem de Azure Otomasyonu tarafından hizmet.
 
 ```powershell
 [DscLocalConfigurationManager()]
@@ -154,15 +154,15 @@ Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>DSC bileşik kaynaklarla PsDscRunAsCredential kullanma
 
-Kullanma desteği ekledik [ *PsDscRunAsCredential* ](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) DSC ile [bileşik](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) kaynakları.
+Kullanma desteği ekledik [ *PsDscRunAsCredential* ](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) DSC ile [bileşik](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite) kaynakları.
 
-Yapılandırmaları içindeki bileşik kaynakların kullanırken, şimdi PsDscRunAsCredential için bir değer belirtebilirsiniz.
-Belirtildiğinde, tüm kaynakları bileşik bir kaynak içinde bir RunAs kullanıcı olarak çalıştırın.
-Bileşik bir kaynağı başka bir bileşik kaynak çağırırsa, kaynaklarının tümü de RunAs kullanıcı olarak çalıştırılır.
-RunAs kimlik bilgileri bileşik kaynak hiyerarşi herhangi bir düzeyde yayılır.
-Bileşik bir kaynak içinde herhangi bir kaynak için PsDscRunAsCredential kendi değerini belirtiyorsa, birleştirme hata yapılandırma derleme sırasında oluşur.
+Bileşik kaynaklar içinde yapılandırmaları kullanırken, artık PsDscRunAsCredential için bir değer belirtebilirsiniz.
+Belirtildiğinde, tüm kaynaklar bir bileşik kaynak içinde bir RunAs kullanıcı olarak çalıştırın.
+Bileşik kaynak başka bir bileşik kaynak çağırırsa, tüm kaynaklarını RunAs kullanıcı olarak yürütülür.
+RunAs kimlik Bilgileri'ni bileşik kaynak hiyerarşi düzeyine yayılır.
+Bileşik kaynak içinde herhangi bir kaynak için PsDscRunAsCredential kendi değeri belirtiyorsa, yapılandırma derleme sırasında bir birleştirme hatası oluşur.
 
-Bu örnek ile kullanımını gösterir [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) bileşik kaynağı da PSDesiredStateConfiguration modülünde yer alan.
+Bu örnek, kullanımını gösterir. [WindowsFeatureSet](https://msdn.microsoft.com/powershell/wmf/dsc_newresources) da PSDesiredStateConfiguration modülüne dahil edilen bileşik kaynak.
 
 ```powershell
 Configuration InstallWindowsFeature
@@ -195,33 +195,33 @@ $configData = @{
 InstallWindowsFeature -ConfigurationData $configData
 ```
 
-## <a name="dsc-module-and-configuration-signing-validations"></a>DSC modülü ve doğrulamaları imzalama yapılandırma
+## <a name="dsc-module-and-configuration-signing-validations"></a>DSC modülünü ve doğrulamaları imzalama yapılandırma
 
-DSC yapılandırmaları ve modülleri yönetilen bilgisayarlar için istek sunucusundan dağıtılır.
-Çekme sunucunun aşılırsa, bir saldırganın olası çekme sunucusunda modülleri ve yapılandırmaları değiştirebilir ve tüm yönetilen düğümlere dağıtılan hepsinde tehlikeye olması.
+DSC yapılandırmaları ve modülleri çekme sunucusundan yönetilen bilgisayarlara dağıtılır.
+Çekme sunucusu ele geçirilirse saldırgan potansiyel olarak çekme sunucusunda modülleri ve yapılandırmaları değiştirmek ve tüm yönetilen düğümlere dağıtılmış tümünün ödün sahip.
 
-WMF 5.1, DSC destekleyen katalog ve yapılandırma dijital imzaları doğrulama (. MOF) dosyası.
-Bu özellik, yapılandırmalar veya güvenilen bir imzalayan tarafından imzalanmamış veya güvenilen imzalayan tarafından imzalanmış sonra hangi oynanmış modül dosyaları yürütülmesini düğümleri engeller.
+WMF 5.1 DSC destekler katalog ve yapılandırmasına dijital imzalarını doğrulama (. MOF) dosyası.
+Bu özellik, düğüm yapılandırmaları veya güvenilen bir imzalayan tarafından imzalanmamış veya güvenilen imzalayan tarafından imzalanmış sonra kurcalanmış Modülü dosyaları yürütülmesini engeller.
 
-### <a name="how-to-sign-configuration-and-module"></a>Oturum yapılandırması ve modülü
+### <a name="how-to-sign-configuration-and-module"></a>Yapılandırma ve modül oturum açma
 
 ***
-* Yapılandırma dosyaları (. MOF dosyalarından): Varolan PowerShell cmdlet'ini [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) MOF dosyaları imzalama destekleyecek şekilde genişletilmiştir.
-* Modüller: modüller imzalama, aşağıdaki adımları kullanarak karşılık gelen modülü katalog imzalayarak gerçekleştirilir:
-    1. Bir katalog dosyası oluşturun: bir katalog dosyası şifreleme karmalarını ya da parmak izleri koleksiyonunu içerir.
-       Her parmak izi modülünde yer alan bir dosyaya karşılık gelir.
-       Yeni cmdlet [yeni FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), kullanıcıların kendi modül için bir katalog dosyası oluşturmak eklendi.
-    2. Katalog dosyası oturum: kullanım [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) katalog dosyasını imzalamak için.
-    3. Katalog dosyası modülü klasöre yerleştirin.
-Kurala göre modül katalog dosyası modülü aynı ada sahip modülü klasörü altında yerleştirilmelidir.
+* Yapılandırma dosyaları (. MOF'lar): mevcut PowerShell cmdlet'i [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) MOF dosyaları imzalama destekleyecek şekilde genişletilmiştir.
+* Modüller: modüllerini imzalama, aşağıdaki adımları kullanarak karşılık gelen modülü Kataloğu açarak gerçekleştirilir:
+    1. Bir katalog dosyası oluştur: bir katalog dosyası şifreleme karmalarını ya da parmak izleri koleksiyonunu içerir.
+       Her bir parmak izi modülüne dahil edilen bir dosyaya karşılık gelir.
+       Yeni cmdlet [yeni FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), kendi modül için bir katalog dosyası oluşturmak için kullanıcıları etkinleştirmek üzere eklenmiştir.
+    2. Oturum kataloğu dosyası: kullanım [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) katalog dosyasını imzalamak için.
+    3. Katalog dosyası modülü klasörün içine yerleştirin.
+Kural gereği, modül olarak aynı ada sahip modülü klasörü altında modülü katalog dosyası yerleştirilmelidir.
 
-### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>İmza doğrulama etkinleştirmek için LocalConfigurationManager ayarları
+### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>İmzalama doğrulamaları etkinleştirmek için LocalConfigurationManager ayarları
 
 #### <a name="pull"></a>Çekme
 
-Bir düğümün LocalConfigurationManager modülleri ve yapılandırmaları geçerli ayarlarına bağlı imza doğrulaması gerçekleştirir.
+Bir düğümün LocalConfigurationManager modülleri ve yapılandırmaları, geçerli ayarları temel alarak imza doğrulaması gerçekleştirir.
 Varsayılan olarak, imza doğrulaması devre dışı bırakıldı.
-İmza doğrulaması etkin düğüm gösterildiği gibi meta yapılandırma tanımını 'SignatureValidation' blok ekleyerek:
+İmza doğrulama düğümü gösterildiği meta-yapılandırma tanımını 'SignatureValidation' bloğu ekleyerek etkinleştirebilirsiniz:
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -249,35 +249,35 @@ EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ```
 
-Bir düğümde yukarıdaki meta yapılandırmasını ayarlama indirilen yapılandırmaları ve modülleri İmza doğrulamasını sağlar.
+Bir düğümde yukarıdaki metaconfiguration ayarlamak, indirilen yapılandırmaları ve modülleri İmza doğrulamasını sağlar.
 Yerel Configuration Manager dijital imzaları doğrulamak için aşağıdaki adımları gerçekleştirir.
 
-1. Bir yapılandırma dosyası imzayı doğrulamak (. MOF) geçerli değil.
-   PowerShell cmdlet kullanır [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), 5.1 MOF imza doğrulaması desteklemek için genişletilmiş.
-2. İmzalayan yetkili sertifika yetkilisi güvenilir olduğunu doğrulayın.
+1. Bir yapılandırma dosyası üzerinde imzasını (. MOF) geçerli değil.
+   PowerShell cmdlet'ini kullanır [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), 5.1 MOF imza doğrulaması destekleyecek şekilde genişletilmiş.
+2. Yetkili imzalayan sertifika yetkilisi güvenildiğinden emin olun.
 3. Modül/kaynak bağımlılıkları yapılandırmasının geçici bir konuma indirin.
-4. Modülün dahil katalog imzasını doğrular.
-    * Bulma bir `<moduleName>.cat` dosyası ve cmdlet kullanılarak imzası doğrulayın [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx).
-    * İmzalayan kimlik doğrulaması sertifika yetkilisi güvenilir olduğunu doğrulayın.
-    * Modülleri içeriğini yok değiştirilmediğini yeni cmdlet'ini kullanarak doğrulama [Test FileCatalog](https://technet.microsoft.com/library/cc732148.aspx).
-5. Install-modülüne $env: ProgramFiles\WindowsPowerShell\Modules\
+4. İçinde modülüne dahil edilen Kataloğu imzasını doğrular.
+    * Bulma bir `<moduleName>.cat` dosyası ve cmdlet kullanarak kendi imzasını [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx).
+    * İmzalayan kimlik doğrulaması sertifika yetkilisi güvenildiğinden emin olun.
+    * Modüller içeriğini değil kurcalanıp yeni cmdlet'ini kullanarak doğrulama [Test FileCatalog](https://technet.microsoft.com/library/cc732148.aspx).
+5. Install-Module $env: ProgramFiles\WindowsPowerShell\Modules\
 6. İşlem Yapılandırması
 
-> Not: yapılandırma sisteme ilk kez veya modül karşıdan yüklenip uygulandığında imza doğrulama modülü katalog ve yapılandırma yalnızca gerçekleştirilir.
-Tutarlılık çalışır Current.mof veya modülü bağımlılıklarını imzasını doğrulamaz.
-Herhangi bir aşamada doğrulama başarısız olursa, örneği için yapılandırma öğesinden çekilen varsa çekme sunucunun imzalanmamış, ardından yapılandırmanın işlenmesi aşağıda gösterilen hata ile sona erer ve tüm geçici dosyalar silinir.
+> Not: yapılandırmanın ilk kez veya modül indirilir ve yüklenir, sisteme uygulandığında imzası doğrulama modülü katalog ve yapılandırmasına yalnızca gerçekleştirilir.
+Tutarlılık çalıştırmaları Current.mof veya modül bağımlılıklarını imzasını doğrulamaz.
+Herhangi bir aşamasında doğrulama başarısız olursa, örneği için yapılandırmayı çekilen, çekme sunucusu imzalanmamış, ardından yapılandırmanın işleme aşağıda gösterilen hata ile sona erer ve tüm geçici dosyalar silinir.
 
 ![Örnek hata çıkış yapılandırması](../images/PullUnsignedConfigFail.png)
 
-Benzer şekilde, katalog olmayan bir modül çekme aşağıdaki hata sonuçlarında imzalı:
+Benzer şekilde, katalog değil bir modül çekme şu hata sonuçlarında imzalı:
 
 ![Örnek hata çıkış modülü](../images/PullUnisgnedCatalog.png)
 
-#### <a name="push"></a>Anında iletme
+#### <a name="push"></a>anında iletme
 
-Düğüme teslim önce teslim gönderme yöntemini kullanarak bir yapılandırma kendi kaynakta değiştirilmiş.
-Yerel Configuration Manager basılmış veya yayımlanmış yapılandırmalar için benzer imza doğrulama adımları gerçekleştirir.
-İmza doğrulaması anında iletme için tam örnek aşağıdadır.
+Düğüme teslim önce yükleme kullanılarak teslim edilen yapılandırma, kaynakta değiştirilmiş.
+Yerel Configuration Manager için gönderildi veya yayımlanmış yapılandırmaları benzer imzası doğrulama adımları gerçekleştirir.
+Gönderim için imza doğrulaması için tam bir örnek aşağıdadır.
 
 - İmza doğrulaması düğüm üzerinde etkinleştirin.
 
@@ -315,7 +315,7 @@ Configuration Test
 Test
 ```
 
-- İmzasız yapılandırma dosyası düğüme Ftp'den deneyin.
+- İşaretsiz bir yapılandırma dosyası düğüme gönderme deneyin.
 
 ```powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
@@ -323,10 +323,10 @@ Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 
 ![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)
 
-- Kod imzalama sertifikası kullanarak yapılandırma dosyasını imzalayın.
+- Yapılandırma dosyası, kod imzalama sertifikası kullanarak oturum açın.
 
 ![SignMofFile](../images/SignMofFile.png)
 
-- İmzalı MOF dosyası Ftp'den deneyin.
+- İmzalı MOF dosyası göndermek deneyin.
 
 ![SignMofFile](../images/PushSignedMof.png)
