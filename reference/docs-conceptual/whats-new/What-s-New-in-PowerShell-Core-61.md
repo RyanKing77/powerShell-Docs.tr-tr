@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 yenilikler nelerdir?
 description: Yeni özellikler ve PowerShell Core 6.1 yayımlanan değişiklikleri
 ms.date: 09/13/2018
-ms.openlocfilehash: 27e7e846e9ba6ab34d83a084c2589b67a9d5cba9
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: b95b9dd504ea2a165a4689a3b28d2298644e5e68
+ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557326"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45611531"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 yenilikler nelerdir?
 
@@ -34,6 +34,11 @@ Windows üzerinde .NET ekibi sevk [Windows Uyumluluk Paketi .NET Core için](htt
 Böylece bunlar üzerinde kullanılabilir olan tüm modülleri veya bu API'leri kullanan betikler güvenebilirsiniz PowerShell Core 6.1 sürümüne Windows Uyumluluk Paketi ekledik.
 
 Windows Uyumluluk Paketi kullanmak PowerShell Core sağlayan **ile Windows 10 Ekim 2018 sevk 1900'den fazla cmdlet Update ve Windows Server 2019**.
+
+## <a name="support-for-application-whitelisting"></a>Uygulama beyaz listeye ekleme desteği
+
+PowerShell Core 6.1, Windows PowerShell 5.1 destekleme ile eşlik sahip [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) ve [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) uygulama beyaz listeye ekleme.
+Uygulama beyaz listesini hangi ikili dosyalarını yürütülmek üzere PowerShell ile kullanılan izin ayrıntılı denetim sağlar [kısıtlı dil modu](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Performans iyileştirmeleri
 
@@ -153,7 +158,7 @@ Manifest   1.0.0.0    NetworkSwitchManager        Desk      {Disable-NetworkSwit
 Manifest   1.0.0.0    NetworkTransition           Desk      {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
 ```
 
-Bu davranışı hakkında daha fazla bilgi için kullanıma [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/2-Draft-Accepted/RFC0025-PSCore6-and-Windows-Modules.md).
+Bu davranışı hakkında daha fazla bilgi için kullanıma [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).
 
 ## <a name="markdown-cmdlets-and-rendering"></a>Markdown cmdlet'leri ve işleme
 
