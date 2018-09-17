@@ -2,12 +2,12 @@
 title: MacOS’ta PowerShell Core yükleme
 description: Macos'ta PowerShell Core yükleme hakkında bilgi
 ms.date: 08/06/2018
-ms.openlocfilehash: 50b8dbbf26f02580e4be45978c926d5337da6b63
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: 042c933dfa83f3ab52e315036e4f817145116d00
+ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557169"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45611496"
 ---
 # <a name="installing-powershell-core-on-macos"></a>MacOS’ta PowerShell Core yükleme
 
@@ -15,17 +15,46 @@ PowerShell Core macOS 10.12 ve üstünü destekler.
 Tüm paketleri bizim Github'da kullanılabilir [sürümleri][] sayfası.
 Paket yüklendikten sonra Çalıştır `pwsh` bir terminalden.
 
-### <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>En son Önizleme yüklenmesini Homebrew macOS 10.12 ya da daha yüksek sürüm
+## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Homebrew aracılığıyla en son kararlı sürüm MacOS 10.12 veya üzeri yüklemesi
+
+[Homebrew] [ brew] macOS için tercih edilen bir paket yöneticisidir.
+Varsa `brew` komutu bulunamazsa, Homebrew aşağıdakileri yüklemeniz gerekir [kendi yönergeleri][brew].
+
+Şimdi, PowerShell'i yükleyebilirsiniz:
+
+```sh
+brew cask install powershell
+```
+
+Son olarak, yükleme işleminiz düzgün çalıştığını doğrulayın:
+
+```sh
+pwsh
+```
+
+PowerShell'in yeni sürümü yayımlandığında, yalnızca formüllerini Homebrew'ın güncelleştirin ve PowerShell yükseltme:
+
+```sh
+brew update
+brew cask upgrade powershell
+```
+
+> [!NOTE]
+> Yukarıdaki komutlar içindeki bir PowerShell (pwsh) ana çağrılabilir, ancak daha sonra PowerShell Kabuk çıkıldı ve gerekir yükseltmeyi tamamlamak için bilgisayarınızın yeniden başlatılması.
+> ve $PSVersionTable içinde gösterilen değerleri yenileyin.
+
+[brew]: http://brew.sh/
+
+## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>En son Önizleme yüklenmesini Homebrew macOS 10.12 ya da daha yüksek sürüm
 
 [Homebrew] [ brew] macOS için tercih edilen bir paket yöneticisidir.
 Varsa `brew` komutu bulunamazsa, Homebrew aşağıdakileri yüklemeniz gerekir [kendi yönergeleri][brew].
 
 Homebrew yükledikten sonra PowerShell'i yükleme kolaydır.
-İlk olarak, yükleme [Homebrew Cask][cask], daha fazla paketleri yükleyebilirsiniz ve sağlayan yükleme [Cask-sürüm] [cask-sürüm] paketlerin diğer sürümlerini yüklemek için:
+İlk olarak, yükleme [Cask sürümleri] [ cask-versions] olanak sağlayan diğer sürümlerini cask paketleri yükleyin:
 
 ```sh
-brew tap caskroom/cask
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 ```
 
 Şimdi, PowerShell'i yükleyebilirsiniz:
@@ -51,51 +80,7 @@ brew cask upgrade powershell-preview
 > Yukarıdaki komutlar içindeki bir PowerShell (pwsh) ana çağrılabilir, ancak daha sonra PowerShell Kabuk çıkıldı ve gerekir yükseltmeyi tamamlamak için bilgisayarınızın yeniden başlatılması.
 > ve $PSVersionTable içinde gösterilen değerleri yenileyin.
 
-[brew]: http://brew.sh/
-[cask]: https://caskroom.github.io/
-[cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
-
-### <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>En son Önizleme yüklenmesini Homebrew macOS 10.12 ya da daha yüksek sürüm
-
-[Homebrew] [ brew] macOS için tercih edilen bir paket yöneticisidir.
-Varsa `brew` komutu bulunamazsa, Homebrew aşağıdakileri yüklemeniz gerekir [kendi yönergeleri][brew].
-
-Homebrew yükledikten sonra PowerShell'i yükleme kolaydır.
-İlk olarak, yükleme [Homebrew Cask][cask], daha fazla paketleri yükleyebilirsiniz ve sağlayan yükleme [Cask-sürüm] [cask-sürüm] paketlerin diğer sürümlerini yüklemek için:
-
-```sh
-brew tap caskroom/cask
-brew tap caskroom/versions
-```
-
-Şimdi, PowerShell'i yükleyebilirsiniz:
-
-```sh
-brew cask install powershell-preview
-```
-
-Son olarak, yükleme işleminiz düzgün çalıştığını doğrulayın:
-
-```sh
-pwsh-preview
-```
-
-PowerShell'in yeni sürümü yayımlandığında, yalnızca formüllerini Homebrew'ın güncelleştirin ve PowerShell yükseltme:
-
-```sh
-brew update
-brew cask upgrade powershell-preview
-```
-
-> [!NOTE]
-> Yukarıdaki komutlar içindeki bir PowerShell (pwsh) ana çağrılabilir, ancak daha sonra PowerShell Kabuk çıkıldı ve gerekir yükseltmeyi tamamlamak için bilgisayarınızın yeniden başlatılması.
-> ve $PSVersionTable içinde gösterilen değerleri yenileyin.
-
-[brew]: http://brew.sh/
-[cask]: https://caskroom.github.io/
-[cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
-
-### <a name="installation-via-direct-download"></a>Doğrudan indirme ile yükleme
+## <a name="installation-via-direct-download"></a>Doğrudan indirme ile yükleme
 
 PKG paketini indirme `powershell-6.1.0-osx-x64.pkg`
 gelen [sürümleri][] macOS makinenizde sayfaya.
@@ -108,7 +93,7 @@ sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 
 ## <a name="binary-archives"></a>İkili Arşivi
 
-PowerShell ikili `tar.gz` arşivleri, macOS ve Linux platformlarında gelişmiş dağıtım senaryoları etkinleştirmek için sağlanır.
+PowerShell ikili `tar.gz` arşivleri gelişmiş dağıtım senaryoları etkinleştirmek macOS platformu için sağlanır.
 
 ### <a name="installing-binary-archives-on-macos"></a>Macos'ta yükleme ikili Arşivi
 
@@ -143,12 +128,10 @@ PowerShell doğrudan indirme yüklü değilse, PowerShell el ile kaldırılması
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-Ek PowerShell yolları kaldırmak için lütfen bkz [yolları][] bölümü bu belgede ve istenen kullanarak yollarını kaldırma `sudo rm`.
+Ek PowerShell yolları kaldırmak için lütfen bkz [yolları](#paths) bölümü bu belgede ve istenen kullanarak yollarını kaldırma `sudo rm`.
 
 > [!NOTE]
 > Bu, Homebrew ile yüklediyseniz gerekli değildir.
-
-[Yolları]:#paths
 
 ## <a name="paths"></a>Yollar
 
@@ -175,7 +158,8 @@ Bu nedenle, `$PSHOME` olduğu `/usr/local/microsoft/powershell/6.1.0/`, ve sembo
 * [Homebrew Cask][cask]
 
 [brew]: http://brew.sh/
-[GitHub]: https://github.com/Homebrew
 [Cask]: https://github.com/Homebrew/homebrew-cask
+[cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
+[GitHub]: https://github.com/Homebrew
 [sürümleri]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
