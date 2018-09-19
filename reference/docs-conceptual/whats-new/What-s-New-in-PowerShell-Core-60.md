@@ -2,12 +2,12 @@
 title: PowerShell Core 6.0 yenilikler nelerdir?
 description: Yeni özellikler ve PowerShell Core 6. 0'yayımlanan değişiklikleri
 ms.date: 08/06/2018
-ms.openlocfilehash: 9bd59dc1821e2fb3ec2d30254ab1fac4089f0340
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557241"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289251"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 yenilikler nelerdir?
 
@@ -80,7 +80,7 @@ Bir dizi değişiklik, macOS ve Linux'ta Windows üzerinde değil, geleneksel ol
   - Geçmişini kaydetme yolu şu konumdadır: `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
   - Kullanıcı modül yolu bulunur `~/.local/share/powershell/Modules`
 - UNIX virgül karakteri içeren dosya ve klasör adları için destek. (#4959)
-- Betik adı veya virgül olan tam yolu için destek. (#4136) (Performanstan @TimCurwick!)
+- Betik adı veya virgül olan tam yolu için destek. (#4136) (Performanstan [ @TimCurwick ](https://github.com/TimCurwick)!)
 - Algılama `-LiteralPath` Gezinti cmdlet'leri için joker karakter genişletmesi gizlemek için kullanılır. (#5038)
 - Güncelleştirilmiş `Get-ChildItem` daha fazla benzer çalışmak için * nix `ls -R` ve Windows `DIR /S` yerel komutları.
   `Get-ChildItem` yinelemeli arama sırasında karşılaşılan sembolik bağlantıları artık döndürür ve dizinleri aramaz, bu bağlantıları hedef. (#3780)
@@ -118,7 +118,7 @@ Ek değişiklikler `pwsh(.exe)` gelen `powershell.exe`:
   Ancak, bu değişiklik açıkça belirttiğiniz gerektirir `-c` veya `-Command` gibi komutları çalıştırmak çalışırken `pwsh.exe -Command Get-Command`. (#4019)
 - PowerShell Core kabul `-i` (veya `-Interactive`) etkileşimli bir kabuk göstermek için anahtar. (#3558) Bu, bir Unix platformlarında üzerindeki varsayılan kabuk olarak kullanılmak üzere PowerShell sağlar.
 - Parametreleri kaldırıldı `-importsystemmodules` ve `-psconsoleFile` gelen `pwsh.exe`. (#4995)
-- Değiştirilen `pwsh -version` ve yerleşik Yardım `pwsh.exe` yerel diğer araçlar ile hizalamak için. (#4958 & #4931) (Teşekkürler @iSazonov)
+- Değiştirilen `pwsh -version` ve yerleşik Yardım `pwsh.exe` yerel diğer araçlar ile hizalamak için. (#4958 & #4931) (Teşekkürler [ @iSazonov ](https://github.com/iSazonov))
 - Geçersiz bağımsız değişken için hata iletileri `-File` ve `-Command` ve çıkış kodları UNIX standartları ile tutarlı (#4573)
 - Eklenen `-WindowStyle` Windows parametresi. (#4573) Benzer şekilde, paket tabanlı yüklemeler güncelleştirmeleri Windows dışı platformlarda yerinde güncelleştirmelerdir.
 
@@ -214,21 +214,21 @@ PowerShell işleri hakkında daha fazla bilgi için bkz. [about_Jobs](https://ms
 
 ## <a name="semantic-versioning"></a>Semantic versioning
 
-- Yapılan `SemanticVersion` uyumlu `SemVer 2.0`. (#5037) (Teşekkürler @iSazonov!)
-- Değiştirilen varsayılan `ModuleVersion` içinde `New-ModuleManifest` için `0.0.1` SemVer ile hizalamak için. (#4842) (Teşekkürler @LDSpits)
-- Eklenen `semver` için tür Hızlandırıcı olarak `System.Management.Automation.SemanticVersion`. (#4142) (Performanstan @oising!)
+- Yapılan `SemanticVersion` uyumlu `SemVer 2.0`. (#5037) (Teşekkürler [ @iSazonov ](https://github.com/iSazonov)!)
+- Değiştirilen varsayılan `ModuleVersion` içinde `New-ModuleManifest` için `0.0.1` SemVer ile hizalamak için. (#4842) (Teşekkürler [ @LDSpits ](https://github.com/LDSpits))
+- Eklenen `semver` için tür Hızlandırıcı olarak `System.Management.Automation.SemanticVersion`. (#4142) (Performanstan [ @oising ](https://github.com/oising)!)
 - Karşılaştırma arasında etkin bir `SemanticVersion` örneği ve bir `Version` yalnızca ile oluşturulan örnek `Major` ve `Minor` sürüm değerleri.
 
 ## <a name="language-updates"></a>Dil güncelleştirmeleri
 
-- Unicode kaçış kullanıcılar Unicode karakter bağımsız değişkenleri, dize veya değişken adları kullanabilmesi için ayrıştırma uygulayın. (#3958) (Performanstan @rkeithhill!)
+- Unicode kaçış kullanıcılar Unicode karakter bağımsız değişkenleri, dize veya değişken adları kullanabilmesi için ayrıştırma uygulayın. (#3958) (Performanstan [ @rkeithhill ](https://github.com/rkeithhill)!)
 - Eklenen yeni kaçış karakteri ESC için: `` `e``
-- Numaralandırmalar (#4318) dize dönüştürme için destek eklendi (teşekkürler @KirkMunro)
+- Numaralandırmalar (#4318) dize dönüştürme için destek eklendi (teşekkürler [ @KirkMunro ](https://github.com/KirkMunro))
 - Sabit atama tek öğeli bir dizi için bir genel koleksiyon. (#3170)
-- Eklenen karakter aralığı aşırı `..` işleci, bu nedenle `'a'..'z'` 'bir kaynak'-'z' karakterleri döndürür. (#5026) (Teşekkürler @IISResetMe!)
+- Eklenen karakter aralığı aşırı `..` işleci, bu nedenle `'a'..'z'` 'bir kaynak'-'z' karakterleri döndürür. (#5026) (Teşekkürler [ @IISResetMe ](https://github.com/IISResetMe)!)
 - Salt okunur değişkenler üzerine değil, sabit değişken ataması
 - Otomatik değişkenlerin Yereller 'DottedScopes' için betik cmdlet'lerini dotting push (#4709)
-- Bölme işleci 'Singleline, çok satırlı' seçeneğinin kullanımını etkinleştir (#4721) (teşekkürler @iSazonov)
+- Bölme işleci 'Singleline, çok satırlı' seçeneğinin kullanımını etkinleştir (#4721) (teşekkürler [ @iSazonov ](https://github.com/iSazonov))
 
 ## <a name="engine-updates"></a>Altyapı güncelleştirmeleri
 
@@ -240,12 +240,12 @@ PowerShell işleri hakkında daha fazla bilgi için bkz. [about_Jobs](https://ms
   - `Platform`: Tarafından döndürülen bu `[System.Environment]::OSVersion.Platform` ayarlanır `Win32NT` , Windows üzerinde `Unix` , MacOS ve `Unix` Linux üzerinde.
 - Kaldırılan `BuildVersion` özelliğinden `$PSVersionTable`.
   Bu özellik, Windows yapı sürümüne bağlı.
-  Bunun yerine kullanmanızı öneriyoruz `GitCommitId` PowerShell Core tam derleme sürümü almak için. (#3877) (Performanstan @iSazonov!)
+  Bunun yerine kullanmanızı öneriyoruz `GitCommitId` PowerShell Core tam derleme sürümü almak için. (#3877) (Performanstan [ @iSazonov ](https://github.com/iSazonov)!)
 - Kaldırma `ClrVersion` özelliğinden `$PSVersionTable`.
   Bu özellik, .NET Core için ilgisizdir ve PowerShell için geçerli değil ve eski belirli amaçlar için de .NET Core yalnızca korundu.
 - PowerShell belirli bir işletim sisteminde çalışır durumda olup olmadığını belirlemek için üç yeni Otomatik değişkenleri eklenmiştir: `$IsWindows`, `$IsMacOs`, ve `$IsLinux`.
 - Ekleme `GitCommitId` için PowerShell Core başlığı.
-  Şimdi Çalıştır gerekmez `$PSVersionTable` sürümü almak için PowerShell başlar başlamaz! (#3916) (Performanstan @iSazonov!)
+  Şimdi Çalıştır gerekmez `$PSVersionTable` sürümü almak için PowerShell başlar başlamaz! (#3916) (Performanstan [ @iSazonov ](https://github.com/iSazonov)!)
 - Adlı bir JSON yapılandırma dosyasını ekleyin `powershell.config.json` içinde `$PSHome` başlangıç zamanından önce gereken bazı ayarları depolamak için (örneğin `ExecutionPolicy`).
 - İşlem hattı Windows EXE'ın çalıştırırken engelleme
 - COM koleksiyonları etkin numaralandırması. (#4553)
@@ -255,93 +255,93 @@ PowerShell işleri hakkında daha fazla bilgi için bkz. [about_Jobs](https://ms
 ### <a name="new-cmdlets"></a>Yeni cmdlet'ler
 
 - Ekleme `Get-Uptime` için `Microsoft.PowerShell.Utility`.
-- Ekleme `Remove-Alias` komutu. (#5143) (Teşekkürler @PowershellNinja!)
-- Ekleme `Remove-Service` yönetim modülü. (#4858) (Teşekkürler @joandrsn!)
+- Ekleme `Remove-Alias` komutu. (#5143) (Teşekkürler [ @PowershellNinja ](https://github.com/PowershellNinja)!)
+- Ekleme `Remove-Service` yönetim modülü. (#4858) (Teşekkürler [ @joandrsn ](https://github.com/joandrsn)!)
 
 ### <a name="web-cmdlets"></a>Web cmdlet'leri
 
-- Web cmdlet'leri için sertifika kimlik doğrulaması desteği eklendi. (#4646) (Teşekkürler @markekraus)
-- İçerik üstbilgileri için destek web cmdlet'leri eklendi. (#4494 & #4640) (Teşekkürler @markekraus)
-- Web Cmdlet'lerine birden çok bağlantı üstbilgi desteği eklendi. (#5265) (Teşekkürler @markekraus!)
+- Web cmdlet'leri için sertifika kimlik doğrulaması desteği eklendi. (#4646) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
+- İçerik üstbilgileri için destek web cmdlet'leri eklendi. (#4494 & #4640) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
+- Web Cmdlet'lerine birden çok bağlantı üstbilgi desteği eklendi. (#5265) (Teşekkürler [ @markekraus ](https://github.com/markekraus)!)
 - Bağlantı üstbilgi sayfalandırma web cmdlet'lerinde destek (#3828)
   - İçin `Invoke-WebRequest`, oluşturduğumuz RelationLink özelliği URL'leri temsil eden bir sözlük olarak bir bağlantı üstbilgisi yanıt içerir ve `rel` öznitelikleri ve geliştirici kullanmayı kolaylaştırmak için mutlak URL'ler olduğundan emin olun.
   - İçin `Invoke-RestMethod`, yanıt kullanıma sunuyoruz bağlantı üstbilgi içerdiğinde bir `-FollowRelLink` otomatik olarak izlemek için anahtar `next` `rel` artık mevcut kadar bağlantılar veya bir kez biz isabet isteğe bağlı `-MaximumFollowRelLink` parametre değeri.
-- Ekleme `-CustomMethod` web cmdlet'leri için standart yöntemi fiillere izin vermek için parametre. (#3142) (Performanstan @Lee303!)
-- Ekleme `SslProtocol` Web cmdlet'leri için destek. (#5329) (Teşekkürler @markekraus!)
-- Çok bölümlü ekleme web cmdlet'leri için destek. (#4782) (Teşekkürler @markekraus)
-- Ekleme `-NoProxy` web Cmdlet'lerine böylece bunlar sistem genelinde proxy ayarı yoksayar. (#3447) (Performanstan @TheFlyingCorpse!)
-- Kullanıcı Aracısı, Web cmdlet'leri, işletim sistemi platformu artık raporları (#4937) (teşekkürler @LDSpits)
+- Ekleme `-CustomMethod` web cmdlet'leri için standart yöntemi fiillere izin vermek için parametre. (#3142) (Performanstan [ @Lee303 ](https://github.com/Lee303)!)
+- Ekleme `SslProtocol` Web cmdlet'leri için destek. (#5329) (Teşekkürler [ @markekraus ](https://github.com/markekraus)!)
+- Çok bölümlü ekleme web cmdlet'leri için destek. (#4782) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
+- Ekleme `-NoProxy` web Cmdlet'lerine böylece bunlar sistem genelinde proxy ayarı yoksayar. (#3447) (Performanstan [ @TheFlyingCorpse ](https://github.com/TheFlyingCorpse)!)
+- Kullanıcı Aracısı, Web cmdlet'leri, işletim sistemi platformu artık raporları (#4937) (teşekkürler [ @LDSpits ](https://github.com/LDSpits))
 - Ekleme `-SkipHeaderValidation` üstbilgi değeri doğrulamadan ekleme üstbilgileri destekleyen web cmdlet'ler geçin. (#4085)
 - Sunucusunun HTTPS sertifikası gerekli değil doğrulanacak web cmdlet'leri etkinleştirin.
-- Kimlik doğrulama parametreleriyle web Cmdlet'lerine eklendi. (#5052) (Thanks @markekraus)
+- Kimlik doğrulama parametreleriyle web Cmdlet'lerine eklendi. (#5052) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
   - Ekleme `-Authentication` bu seçeneklerin üçünü de sunar: temel, OAuth ve taşıyıcı.
   - Ekleme `-Token` OAuth ve taşıyıcı seçeneklerini taşıyıcı belirteci alma işlemi.
   - Ekleme `-AllowUnencryptedAuthentication` HTTPS dışında herhangi bir taşıma şeması için sağlanan kimlik doğrulamasını atlamak için.
-- Ekleme `-ResponseHeadersVariable` için `Invoke-RestMethod` yanıt üst bilgilerini yakalama olanağı. (#4888) (Teşekkürler @markekraus)
+- Ekleme `-ResponseHeadersVariable` için `Invoke-RestMethod` yanıt üst bilgilerini yakalama olanağı. (#4888) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
 - HTTP yanıtı yanıt durum kodu başarılı olmadığında özel duruma dahil etmek için web cmdlet'leri düzeltildi. (#3201)
-- Değiştirme web cmdlet'leri `UserAgent` gelen `WindowsPowerShell` için `PowerShell`. (#4914) (Teşekkürler @markekraus)
+- Değiştirme web cmdlet'leri `UserAgent` gelen `WindowsPowerShell` için `PowerShell`. (#4914) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
 - Açık ekleme `ContentType` algılamayı `Invoke-RestMethod` (#4692)
-- Web cmdlet'leri düzeltme `-SkipHeaderValidation` standart kullanıcı aracısını üst bilgileri ile çalışmak için. (#4479 & #4512) (Teşekkürler @markekraus)
+- Web cmdlet'leri düzeltme `-SkipHeaderValidation` standart kullanıcı aracısını üst bilgileri ile çalışmak için. (#4479 & #4512) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>JSON cmdlet'leri
 
-- Ekleme `-AsHashtable` için `ConvertFrom-Json` döndürülecek bir `Hashtable` yerine. (#5043) (Teşekkürler @bergmeister!)
+- Ekleme `-AsHashtable` için `ConvertFrom-Json` döndürülecek bir `Hashtable` yerine. (#5043) (Teşekkürler [ @bergmeister ](https://github.com/bergmeister)!)
 - İle prettier biçimlendiricisini kullanmayı `ConvertTo-Json` çıktı. (#2787) (Performanstan @kittholland!)
 - Ekleme `Jobject` serileştirme desteklemek için `ConvertTo-Json`. (#5141)
 - Düzeltme `ConvertFrom-Json` işlem hattından birlikte eksiksiz bir JSON dizesi oluşturmak bir dize dizisi seri durumdan çıkarılacak.
   Bu, bazı durumlarda yeni satırlardan JSON ayrıştırma nerede kesmek düzeltir. (#3823)
 - Kaldırma `AliasProperty "Count"` için tanımlanan `System.Array`.
-  Bu fazlalık kaldırır `Count` bazı özellik `ConvertFrom-Json` çıktı. (#3231) (Performanstan @PetSerAl!)
+  Bu fazlalık kaldırır `Count` bazı özellik `ConvertFrom-Json` çıktı. (#3231) (Performanstan [ @PetSerAl ](https://github.com/PetSerAl)!)
 
 ### <a name="csv-cmdlets"></a>CSV cmdlet'leri
 
-- Ekleme `PSTypeName` desteği `Import-Csv` ve `ConvertFrom-Csv`. (#5389) (Teşekkürler @markekraus!)
-- Olun `Import-Csv` Destek `CR`, `LF`, ve `CRLF` ayırıcıları hat. (#5363) (Teşekkürler @iSazonov!)
-- Olun `-NoTypeInformation` varsayılan `Export-Csv` ve `ConvertTo-Csv`. (#5164) (Thanks @markekraus)
+- Ekleme `PSTypeName` desteği `Import-Csv` ve `ConvertFrom-Csv`. (#5389) (Teşekkürler [ @markekraus ](https://github.com/markekraus)!)
+- Olun `Import-Csv` Destek `CR`, `LF`, ve `CRLF` ayırıcıları hat. (#5363) (Teşekkürler [ @iSazonov ](https://github.com/iSazonov)!)
+- Olun `-NoTypeInformation` varsayılan `Export-Csv` ve `ConvertTo-Csv`. (#5164) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
 
 ### <a name="service-cmdlets"></a>Hizmeti cmdlet'leri
 
-- Özellikler ekleme `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, ve `StartupType` için `ServiceController` tarafından döndürülen nesne `Get-Service`. (#4907) (Teşekkürler @joandrsn)
-- Kimlik bilgilerini ayarlamak için işlevsellik ekleyen `Set-Service` komutu. (#4844) (Teşekkürler @joandrsn)
+- Özellikler ekleme `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, ve `StartupType` için `ServiceController` tarafından döndürülen nesne `Get-Service`. (#4907) (Teşekkürler [ @joandrsn ](https://github.com/joandrsn))
+- Kimlik bilgilerini ayarlamak için işlevsellik ekleyen `Set-Service` komutu. (#4844) (Teşekkürler [ @joandrsn ](https://github.com/joandrsn))
 
 ### <a name="other-cmdlets"></a>Diğer cmdlet'ler
 
 - Bir parametre ekleyin `Get-ChildItem` adlı `-FollowSymlink` bağlantı döngüler için denetimleri ile isteğe bağlı olarak çözümlemeyin erişir. (#4020)
-- Güncelleştirme `Add-Type` desteklemek için `CSharpVersion7`. (#3933) (Performanstan @iSazonov)
+- Güncelleştirme `Add-Type` desteklemek için `CSharpVersion7`. (#3933) (Performanstan [ @iSazonov ](https://github.com/iSazonov))
 - Kaldırma `Microsoft.PowerShell.LocalAccounts` daha iyi bir çözüm bulunana kadar desteklenmeyen API kullanımı nedeniyle modülü. (#4302)
 - Kaldırma `*-Counter` cmdlet'leri `Microsoft.PowerShell.Diagnostics` daha iyi bir çözüm bulunana kadar desteklenmeyen API kullanımı nedeniyle. (#4303)
 - İçin destek ekleme `Invoke-Item -Path <folder>`. (#4262)
-- Ekleme `-Extension` ve `-LeafBase` geçer `Split-Path` böylece dosya adı uzantısı ve dosya adını geri kalanı arasındaki yolları bölebilirsiniz. (#2721) (Performanstan @powercode!)
+- Ekleme `-Extension` ve `-LeafBase` geçer `Split-Path` böylece dosya adı uzantısı ve dosya adını geri kalanı arasındaki yolları bölebilirsiniz. (#2721) (Performanstan [ @powercode ](https://github.com/powercode)!)
 - Parametre ekleme `-Top` ve `-Bottom` için `Sort-Object` için üst/alt N sıralama
-- Bir işlem üst işlemi ekleyerek kullanıma `CodeProperty "Parent"` için `System.Diagnostics.Process`. (#2850) (Performanstan @powercode!)
+- Bir işlem üst işlemi ekleyerek kullanıma `CodeProperty "Parent"` için `System.Diagnostics.Process`. (#2850) (Performanstan [ @powercode ](https://github.com/powercode)!)
 - MB bellek sütunlar için KB yerine kullanın. `Get-Process`
-- Ekleme `-NoNewLine` için geçiş `Out-String`. (#5056) (Thanks @raghav710)
+- Ekleme `-NoNewLine` için geçiş `Out-String`. (#5056) (Teşekkürler [ @raghav710 ](https://github.com/raghav710))
 - `Move-Item` cmdlet geliştirir `-Include`, `-Exclude`, ve `-Filter` parametreleri. (#3878)
 - İzin `*` kayıt defteri yolu için kullanılacak `Remove-Item`. (#4866)
 - Ekleme `-Title` için `Get-Credential` ve platformlar arasında istemi deneyimi birleştirin.
 - Ekleme `-TimeOut` parametresi `Test-Connection`. (#2492)
 - `Get-AuthenticodeSignature` cmdlet'leri artık dosya imza zaman damgası alabilirsiniz. (#4061)
 - Desteklenmeyen Kaldır `-ShowWindow` geçmek `Get-Help`. (#4903)
-- Düzeltme `Get-Content -Delimiter` (#3706) döndürülen dizi öğelerinde sınırlayıcı eklememeyi (teşekkürler @mklement0)
-- Ekleme `Meta`, `Charset`, ve `Transitional` parametreleri `ConvertTo-HTML` (#4184) (teşekkürler @ergo3114)
+- Düzeltme `Get-Content -Delimiter` (#3706) döndürülen dizi öğelerinde sınırlayıcı eklememeyi (teşekkürler [ @mklement0 ](https://github.com/mklement0))
+- Ekleme `Meta`, `Charset`, ve `Transitional` parametreleri `ConvertTo-HTML` (#4184) (teşekkürler [ @ergo3114 ](https://github.com/ergo3114))
 - Ekleme `WindowsUBR` ve `WindowsVersion` özelliklerine `Get-ComputerInfo` sonucu
 - Ekleme `-Group` parametresi `Get-Verb`
-- Ekleme `ShouldProcess` desteği `New-FileCatalog` ve `Test-FileCatalog` (düzeltmeler `-WhatIf` ve `-Confirm`). (#3074) (Performanstan @iSazonov!)
-- Ekleme `-WhatIf` geçin `Start-Process` cmdlet'i (#4735) (teşekkürler @sarithsutha)
+- Ekleme `ShouldProcess` desteği `New-FileCatalog` ve `Test-FileCatalog` (düzeltmeler `-WhatIf` ve `-Confirm`). (#3074) (Performanstan [ @iSazonov ](https://github.com/iSazonov)!)
+- Ekleme `-WhatIf` geçin `Start-Process` cmdlet'i (#4735) (teşekkürler [ @sarithsutha ](https://github.com/sarithsutha))
 - Ekleme `ValidateNotNullOrEmpty` var olan çok fazla sayıda parametre.
 
 ## <a name="tab-completion"></a>Sekme tamamlama
 
-- Çalışma zamanı değişken değerlerine göre sekme tamamlama içinde tür çıkarımı iyileştirdik. (#2744) (Performanstan @powercode!) Bu gibi durumlarda sekme tamamlama sağlar:
+- Çalışma zamanı değişken değerlerine göre sekme tamamlama içinde tür çıkarımı iyileştirdik. (#2744) (Performanstan [ @powercode ](https://github.com/powercode)!) Bu gibi durumlarda sekme tamamlama sağlar:
 
   ```powershell
   $p = Get-Process
   $p | Foreach-Object Prio<tab>
   ```
 
-- Hashtable için sekmesinde tamamlama ekleme `-Property` , `Select-Object`. (#3625) (Performanstan @powercode)
-- Bağımsız değişkeni için otomatik tamamlanmasını etkinleştirin `-ExcludeProperty` ve `-ExpandProperty` , `Select-Object`. (#3443) (Performanstan @iSazonov!)
-- Bir hatayı düzeltme yapmak için sekme tamamlamayı `native.exe --<tab>` olanak sağlayacak tamamlayıcısı yerel çağrı. (#3633) (Performanstan @powercode!)
+- Hashtable için sekmesinde tamamlama ekleme `-Property` , `Select-Object`. (#3625) (Performanstan [ @powercode ](https://github.com/powercode))
+- Bağımsız değişkeni için otomatik tamamlanmasını etkinleştirin `-ExcludeProperty` ve `-ExpandProperty` , `Select-Object`. (#3443) (Performanstan [ @iSazonov ](https://github.com/iSazonov)!)
+- Bir hatayı düzeltme yapmak için sekme tamamlamayı `native.exe --<tab>` olanak sağlayacak tamamlayıcısı yerel çağrı. (#3633) (Performanstan [ @powercode ](https://github.com/powercode)!)
 
 ## <a name="breaking-changes"></a>Bozucu değişiklikler
 
