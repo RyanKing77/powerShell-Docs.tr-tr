@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 yenilikler nelerdir?
 description: Yeni özellikler ve PowerShell Core 6.1 yayımlanan değişiklikleri
 ms.date: 09/13/2018
-ms.openlocfilehash: b95b9dd504ea2a165a4689a3b28d2298644e5e68
-ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
+ms.openlocfilehash: 5e2fe3c819ed638b2c14d7d40e08b7c32953147f
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45611531"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289234"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 yenilikler nelerdir?
 
@@ -91,9 +91,9 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 | Süre (sn)   | 0.259                  | 0.577               | 0,125                  |
 | Hız yükselmesi (%) | YOK                    | -%122.8             | %78.3 (WPS %51.7) |
 
-## <a name="check-system32-for-compatible-inbox-modules-on-windows"></a>Denetleme `system32` Windows üzerinde uyumlu gelen modüller için
+## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Denetleme `system32` uyumlu yerleşik modülleri Windows üzerinde
 
-Windows 10 1809 güncelleştirmesi ve Windows Server 2019, gelen PowerShell modülleri bunları PowerShell Core ile uyumlu olarak işaretlemek için bir dizi güncelleştirdik.
+Windows 10 1809 güncelleştirmesi ve Windows Server 2019, yerleşik PowerShell modülleri bunları PowerShell Core ile uyumlu olarak işaretlemek için bir dizi güncelleştirdik.
 
 PowerShell Core 6.1 başlatıldığında otomatik olarak içerecektir `$windir\System32` parçası olarak `PSModulePath` ortam değişkeni.
 Ancak, yalnızca modüllerle kullanıma sunduğu `Get-Module` ve `Import-Module` varsa kendi `CompatiblePSEdition` ile uyumlu olarak işaretlenmiş `Core`.
@@ -143,7 +143,7 @@ Get-Module Net* -ListAvailable -SkipEditionCheck
 ModuleType Version    Name                        PSEdition ExportedCommands
 ---------- -------    ----                        --------- ----------------
 Manifest   2.0.0.0    NetAdapter                  Core,Desk {Disable-NetAdapter, Disable-NetAdapterBinding, ...
-Manifest   1.0.0.0    NetConnection               Desk      {Get-NetConnectionProfile, Set-NetConnectionProf...
+Manifest   1.0.0.0    NetConnection               Core,Desk {Get-NetConnectionProfile, Set-NetConnectionProf...
 Manifest   1.0.0.0    NetDiagnostics              Desk      Get-NetView
 Manifest   1.0.0.0    NetEventPacketCapture       Core,Desk {New-NetEventSession, Remove-NetEventSession, Ge...
 Manifest   2.0.0.0    NetLbfo                     Core,Desk {Add-NetLbfoTeamMember, Add-NetLbfoTeamNic, Get-...
@@ -151,11 +151,11 @@ Manifest   1.0.0.0    NetNat                      Core,Desk {Get-NetNat, Get-Net
 Manifest   2.0.0.0    NetQos                      Core,Desk {Get-NetQosPolicy, Set-NetQosPolicy, Remove-NetQ...
 Manifest   2.0.0.0    NetSecurity                 Core,Desk {Get-DAPolicyChange, New-NetIPsecAuthProposal, N...
 Manifest   1.0.0.0    NetSwitchTeam               Core,Desk {New-NetSwitchTeam, Remove-NetSwitchTeam, Get-Ne...
-Manifest   1.0.0.0    NetTCPIP                    Desk      {Get-NetIPAddress, Get-NetIPInterface, Get-NetIP...
+Manifest   1.0.0.0    NetTCPIP                    Core,Desk {Get-NetIPAddress, Get-NetIPInterface, Get-NetIP...
 Manifest   1.0.0.0    NetWNV                      Core,Desk {Get-NetVirtualizationProviderAddress, Get-NetVi...
-Manifest   1.0.0.0    NetworkConnectivityStatus   Desk      {Get-DAConnectionStatus, Get-NCSIPolicyConfigura...
-Manifest   1.0.0.0    NetworkSwitchManager        Desk      {Disable-NetworkSwitchEthernetPort, Enable-Netwo...
-Manifest   1.0.0.0    NetworkTransition           Desk      {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
+Manifest   1.0.0.0    NetworkConnectivityStatus   Core,Desk {Get-DAConnectionStatus, Get-NCSIPolicyConfigura...
+Manifest   1.0.0.0    NetworkSwitchManager        Core,Desk {Disable-NetworkSwitchEthernetPort, Enable-Netwo...
+Manifest   1.0.0.0    NetworkTransition           Core,Desk {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
 ```
 
 Bu davranışı hakkında daha fazla bilgi için kullanıma [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).
@@ -186,7 +186,7 @@ Bu Deneysel özelliklerin desteklenmez ve hatalar içerebilir.
 
 ## <a name="web-cmdlet-improvements"></a>Web cmdlet'i geliştirmeleri
 
-Performanstan @markekraus, bizim web cmdlet'leri için tam bir slew geliştirmeler yapıldı: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+Performanstan [ @markekraus ](https://github.com/markekraus), bizim web cmdlet'leri için tam bir slew geliştirmeler yapıldı: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
 ve [ `Invoke-RestMethod` ](/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 
 - [Çekme isteği #6109](https://github.com/PowerShell/PowerShell/pull/6109) -UTF-8 için kodlama kümesi varsayılan `application-json` yanıtları
@@ -268,7 +268,7 @@ SSH istemcileri genellikle bir bağlantı dizesi şu biçimde desteklemek `user@
 
 ## <a name="msi-option-to-add-explorer-shell-context-menu-on-windows"></a>Üzerinde Windows Gezgini Kabuk bağlam menüsü eklemeye MSI seçeneği
 
-Performanstan @bergmeisterartık Windows bağlam menüsünden etkinleştirebilirsiniz. Artık sistem genelinde yüklemenizin PowerShell 6.1, Windows Gezgini'nde herhangi bir klasörden açabilirsiniz:
+Performanstan [ @bergmeister ](https://github.com/bergmeister)artık Windows bağlam menüsünden etkinleştirebilirsiniz. Artık sistem genelinde yüklemenizin PowerShell 6.1, Windows Gezgini'nde herhangi bir klasörden açabilirsiniz:
 
 ![PowerShell 6 Kabuk bağlam menüsü](./images/shell_context_menu.png)
 
@@ -276,7 +276,7 @@ Performanstan @bergmeisterartık Windows bağlam menüsünden etkinleştirebilir
 
 ### <a name="run-as-administrator-in-the-windows-shortcut-jump-list"></a>"Windows kısayol atlama listesinde yönetici olarak çalıştır"
 
-Performanstan @bergmeister, PowerShell Core kısayolun atlama listesi artık "Yönetici olarak çalıştır" içerir:
+Performanstan [ @bergmeister ](https://github.com/bergmeister), PowerShell Core kısayolun atlama listesi artık "Yönetici olarak çalıştır" içerir:
 
 ![PowerShell 6 atlama listesinde yönetici olarak çalıştırın](./images/jumplist.png)
 
@@ -296,11 +296,11 @@ PS /usr/bin> cd -
 PS /etc>
 ```
 
-Ayrıca, `cd --` değişikliklerini `$HOME`.
+Ayrıca, `cd` ve `cd --` değiştirmek `$HOME`.
 
 ### `Test-Connection`
 
-Performanstan @iSazonov, [ `Test-Connection` ](/powershell/module/microsoft.powershell.management/test-connection) cmdlet'i, PowerShell Core için unity'nin.
+Performanstan [ @iSazonov ](https://github.com/iSazonov), [ `Test-Connection` ](/powershell/module/microsoft.powershell.management/test-connection) cmdlet'i, PowerShell Core için unity'nin.
 
 ### <a name="update-help-as-non-admin"></a>`Update-Help` Yönetici olmayan
 
@@ -309,7 +309,7 @@ Popüler isteğe bağlı olarak `Update-Help` artık yönetici olarak çalışt�
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Yeni yöntemler/özellikler hakkında `PSCustomObject`
 
-Performanstan @iSazonov, yeni yöntemleri ve özellikleri ekledik `PSCustomObject`.
+Performanstan [ @iSazonov ](https://github.com/iSazonov), yeni yöntemleri ve özellikleri ekledik `PSCustomObject`.
 `PSCustomObject` artık bir `Count` / `Length` öğe sayısını veren özellik.
 
 Bu örneklerin ikisi de `2` sayısı arttıkça `PSCustomObjects` koleksiyondaki.
@@ -368,7 +368,7 @@ Güncelleştirdik BOM daha az UTF-8'PowerShell 6. 0'de alındığında, `New-Mod
 
 ### <a name="conversions-from-psmethod-to-delegate"></a>Temsilci PSMethod öğesinden dönüştürme
 
-Performanstan @powercode, artık dönüştürülmesi destekliyoruz bir `PSMethod` içinde bir temsilci.
+Performanstan [ @powercode ](https://github.com/powercode), artık dönüştürülmesi destekliyoruz bir `PSMethod` içinde bir temsilci.
 Bu sayede geçirme gibi şeyleri `PSMethod` `[M]::DoubleStrLen` olarak bir temsilci değerde `[M]::AggregateString`:
 
 ```powershell
@@ -391,7 +391,7 @@ Bu değişiklikle ilgili daha fazla bilgi için kullanıma [çekme isteği #5287
 
 ### <a name="standard-deviation-in-measure-object"></a>Standart sapma `Measure-Object`
 
-Performanstan @CloudyDino, ekledik bir `StandardDeviation` özelliğini `Measure-Object`:
+Performanstan [ @CloudyDino ](https://github.com/CloudyDino), ekledik bir `StandardDeviation` özelliğini `Measure-Object`:
 
 ```powershell
 Get-Process | Measure-Object -Property CPU -AllStats
@@ -409,7 +409,7 @@ Property          : CPU
 
 ### `GetPfxCertificate -Password`
 
-Performanstan @maybe-hello-world, `Get-PfxCertificate` artık `Password` alan parametresi bir `SecureString`. Bu, etkileşimli olmayan kullanmanıza olanak sağlar:
+Performanstan [ @maybe-hello-world ](https://github.com/maybe-hello-world), `Get-PfxCertificate` artık `Password` alan parametresi bir `SecureString`. Bu, etkileşimli olmayan kullanmanıza olanak sağlar:
 
 ```powershell
 $certFile = '\\server\share\pwd-protected.pfx'
@@ -429,7 +429,7 @@ Ayrıca `help` işlevi değiştirilen kullanılacak `more.com` Windows ya da sis
 
 Daha önce kullanarak `Set-Location` veya `cd` kullanıcılar söz konusu sürücünün varsayılan konuma gönderilen bir PSDrive penceresine dönün.
 
-Performanstan @mcbobke, kullanıcıların son bilinen geçerli çalışma dizini için artık bu oturum için gönderilir.
+Performanstan [ @mcbobke ](https://github.com/mcbobke), kullanıcıların son bilinen geçerli çalışma dizini için artık bu oturum için gönderilir.
 
 ### <a name="windows-powershell-type-accelerators"></a>Windows PowerShell türü Hızlandırıcılar
 
@@ -451,11 +451,10 @@ Bu tür AD kolayca oluşturulmasında yararlı olan ve WMI nesneleri.
 [adsi]'LDAP://CN=FooUse,OU=People,DC=contoso,DC=com'
 ```
 
-Bu örneklerin her ikisi Win32_OperatingSystem CIM nesnesi oluşturun:
+Aşağıdaki örnek, bir Win32_OperatingSystem CIM nesnesi oluşturur:
 
 ```powershell
-[wmi]"win32_operatingsystem=@"
-[wmiclass]"win32_operatingsystem"
+[wmi]"Win32_OperatingSystem=@"
 ```
 
 ```Output
@@ -467,9 +466,23 @@ SerialNumber    : 12345-67890-ABCDE-F0123
 Version         : 10.0.18234
 ```
 
+Bu örnek için Win32_OperatingSystem sınıfını bir ManagementClass nesnesi döndürür.
+
+```powershell
+[wmiclass]"Win32_OperatingSystem"
+```
+
+```Output
+   NameSpace: ROOT\cimv2
+
+Name                                Methods              Properties
+----                                -------              ----------
+Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumber, BuildType, Caption...}
+```
+
 ### <a name="-lp-alias-for-all--literalpath-parameters"></a>`-lp` diğer tüm `-LiteralPath` parametreleri
 
-Performanstan @kvprasoon, artık bir parametre diğer adını sahibiz `-lp` sahip tüm yerleşik PowerShell cmdlet'lerinin bir `-LiteralPath` parametresi.
+Performanstan [ @kvprasoon ](https://github.com/kvprasoon), artık bir parametre diğer adını sahibiz `-lp` sahip tüm yerleşik PowerShell cmdlet'lerinin bir `-LiteralPath` parametresi.
 
 ## <a name="breaking-changes"></a>Bozucu değişiklikler
 
