@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: PowerShell Galerisi UI etkileyen öğe bildirimi değerleri
-ms.openlocfilehash: 60415193129fe040b53d35b1f8701408cfc4989d
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e7e9910504a665e464add0a83454cec64c1a0937
+ms.sourcegitcommit: 601609575a3214ea7086a3bcb586ae0d1df3d418
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268186"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532979"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell Galerisi UI etkileyen öğe bildirimi değerleri
 
@@ -44,6 +44,8 @@ Aşağıdaki tabloda, yayımcı tarafından denetlenen PowerShell Galerisi öğe
 | **Sürüm Geçmişi** | Sürüm Geçmişi bir modülün PowerShell Galerisi'nde yapılan güncelleştirmeleri yansıtır. Bir öğenin sürümünü silme özelliği kullanarak gizli ise, bu sürüm geçmişine dışında öğesi sahiplerine görüntülenmez. | Hayır | Hayır |
 | **Proje sitesi** | Proje sitesi bir ProjectURI belirterek modüllerin modül bildirimini Privatedata\PSData bölümünde sağlanır. Betik bildiriminde belirterek denetlenir. PROJECTURI. | Evet | Evet |
 | **Lisans** | Bir lisans bağlantı bir LicenseURI belirterek modül bildirimini Privatedata\PSData bölümünde modüller için sağlanır. Betik bildiriminde belirterek denetlenir. LICENSEURI. Bir lisansı LicenseURI sağlanmadı veya içinde bir modül, PowerShell Galerisi için kullanım koşullarını ardından kullanım koşullarını öğe için belirtin. dikkat etmeniz önemlidir. Kullanım koşullarını ayrıntılı bilgi için bkz. | Evet | Evet |
+| **Simgesi** | Bir simge PowerShell galerisinde herhangi bir öğe için betik bildiriminde veya modül bildirimini Privatedata PSData bölümünde IconURI bayrağı sağlanarak belirtilebilir. Saydam arka planlı bir 32 x 32 görüntü için iconuri öğesinin işaret etmelidir. URI **gerekir** doğrudan resim URL'si olması ve **gerekir** görüntü veya PowerShell galeri paketi içindeki bir dosya içeren bir web sayfasına gidin. | Evet | Evet |
+
 
 ## <a name="editing-item-details"></a>Öğe ayrıntılarını düzenleme
 
