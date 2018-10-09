@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Bilgisayar Durumunu Değiştirme
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 4b5b4adb349dd8036117c364ed2ebb1ffaf8c88f
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267894"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851092"
 ---
 # <a name="changing-computer-state"></a>Bilgisayar Durumunu Değiştirme
 
@@ -52,14 +52,20 @@ Bilgisayarları yeniden başlatma ve kapatma genellikle aynı görevi türleridi
 
 Kapatma gerçekleştirme ve işlemleri de Windows PowerShell üzerinden doğrudan yeniden başlatın.
 
-Bilgisayarı kapatmak için stop-computer komutunu kullanın.
+Bilgisayarı kapatmak için Stop-Computer komutunu kullanın.
 
 ```powershell
-stop-computer
+Stop-Computer
 ```
 
-İşletim sistemi yeniden başlatmak için bilgisayarı yeniden başlat komutu kullanın.
+İşletim sistemi yeniden başlatmak için Restart-Computer komutunu kullanın.
 
 ```powershell
-restart-computer
+Restart-Computer
+```
+
+Bir bilgisayarı hemen yeniden zorlamak için kullanın - Force parametresini.
+
+```powershell
+Restart-Computer -Force
 ```

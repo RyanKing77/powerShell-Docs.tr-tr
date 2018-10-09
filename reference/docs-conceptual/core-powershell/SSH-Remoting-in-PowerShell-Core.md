@@ -2,12 +2,12 @@
 title: SSH üzerinden PowerShell Uzaktan İletişimi
 description: SSH kullanarak PowerShell core'da uzaktan iletişim
 ms.date: 08/14/2018
-ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
-ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
+ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46134289"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851246"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH üzerinden PowerShell Uzaktan İletişimi
 
@@ -35,7 +35,7 @@ Linux için SSH (dahil olmak üzere sshd sunucusunu) platformunuz için uygun y�
 
 ## <a name="set-up-on-windows-machine"></a>Windows makinesinde ayarlama
 
-1. [İçin Windows PowerShell Core] en son sürümünü yükleyin
+1. En son sürümünü yükleyin [için Windows PowerShell Core](../setup/installing-powershell-core-on-windows.md#msi)
 
    - SSH remoting desteği bakarak varsa, parametre için ayarlar söyleyebilirsiniz. `New-PSSession`
 
@@ -47,7 +47,7 @@ Linux için SSH (dahil olmak üzere sshd sunucusunu) platformunuz için uygun y�
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Son [Win32 OpenSSH] derleme [Kurulum] yönergeleri kullanarak Github'dan yükleyin
+2. Son yükleme [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) GitHub kullanarak yapı [yükleme](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) yönergeleri
 3. Win32 OpenSSH yüklendiği konumda sshd_config dosyasında Düzenle
 
    - Parola kimlik doğrulamasının etkin olduğundan emin olun
@@ -91,8 +91,8 @@ Linux için SSH (dahil olmak üzere sshd sunucusunu) platformunuz için uygun y�
 
 ## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) makinesinde ayarlama
 
-1. Son [Linux için PowerShell Core] derleme Github'dan yükleyin
-2. [Ubuntu SSH] gerektiği şekilde yükle
+1. Son yükleme [Linux için PowerShell Core](../setup/installing-powershell-core-on-linux.md#ubuntu-1404) Github'dan oluşturun
+2. Yükleme [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) gerektiğinde
 
    ```bash
    sudo apt install openssh-client
@@ -127,7 +127,7 @@ Linux için SSH (dahil olmak üzere sshd sunucusunu) platformunuz için uygun y�
 
 ## <a name="set-up-on-macos-machine"></a>Mac OS makinesinde ayarlama
 
-1. Son [MacOS için PowerShell Core] derleme yükleme
+1. Son yükleme [MacOS için PowerShell Core](../setup/installing-powershell-core-on-macos.md) oluşturun
 
    - SSH uzaktan iletişim, aşağıdaki adımları izleyerek etkin olduğundan emin olun:
      - Açık `System Preferences`
@@ -316,7 +316,5 @@ Sudo komutu Linux makinesine uzak oturumu işe yaramaz.
 [MacOS için PowerShell Core](../setup/installing-powershell-core-on-macos.md)
 
 [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
-
-[Yükleme](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

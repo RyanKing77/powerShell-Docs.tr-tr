@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 yenilikler nelerdir?
 description: Yeni özellikler ve PowerShell Core 6.1 yayımlanan değişiklikleri
 ms.date: 09/13/2018
-ms.openlocfilehash: 5e2fe3c819ed638b2c14d7d40e08b7c32953147f
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289234"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851316"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 yenilikler nelerdir?
 
@@ -197,11 +197,11 @@ ve [ `Invoke-RestMethod` ](/powershell/module/microsoft.powershell.utility/invok
 
 ## <a name="remoting-improvements"></a>Uzaktan iletişimini geliştirmeleri
 
-### <a name="powershell-direct-tries-to-use-powershell-core-first"></a>PowerShell Direct PowerShell Core kullanmayı dener
+### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a>Kapsayıcılar için PowerShell Direct PowerShell Core kullanmayı dener
 
-[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) PowerShell ve bir Hyper-V VM ağ bağlantısı olmayan veya diğer uzaktan yönetim hizmetlere bağlanmasına olanak sağlayan Hyper-V özelliğidir.
+[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) PowerShell ve ağ bağlantısını veya diğer Uzaktan Yönetim Hizmetleri bir Hyper-V VM veya kapsayıcı bağlanmasına olanak sağlayan Hyper-V özelliğidir.
 
-Geçmişte, PowerShell Direct VM'ye gelen Windows PowerShell örneğini kullanarak bağlı.
+Geçmişte, PowerShell Direct kapsayıcıdaki gelen Windows PowerShell örneğini kullanarak bağlı.
 Şimdi, PowerShell Direct önce herhangi bir kullanılabilir kullanarak bağlanmayı dener `pwsh.exe` üzerinde `PATH` ortam değişkeni.
 Varsa `pwsh.exe` değilse kullanılabilir, PowerShell Direct geri kullanmaya döner `powershell.exe`.
 
@@ -310,45 +310,44 @@ Popüler isteğe bağlı olarak `Update-Help` artık yönetici olarak çalışt�
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Yeni yöntemler/özellikler hakkında `PSCustomObject`
 
 Performanstan [ @iSazonov ](https://github.com/iSazonov), yeni yöntemleri ve özellikleri ekledik `PSCustomObject`.
-`PSCustomObject` artık bir `Count` / `Length` öğe sayısını veren özellik.
-
-Bu örneklerin ikisi de `2` sayısı arttıkça `PSCustomObjects` koleksiyondaki.
+`PSCustomObject` artık bir `Count` / `Length` özelliği gibi diğer nesneler.
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Length
+$PSCustomObject = [pscustomobject]@{foo = 1}
+
+$PSCustomObject.Length
+```
+
+```Output
+1
 ```
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Count
+$PSCustomObject.Count
+```
+
+```Output
+1
 ```
 
 Bu iş yöntemlerine `ForEach` ve `Where` çalıştırmak ve filtrelemek olanak sağlayan yöntemleri `PSCustomObject` öğeleri:
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).ForEach({$_.foo+1})
+$PSCustomObject.ForEach({$_.foo + 1})
 ```
 
 ```Output
 2
-3
 ```
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).Where({$_.foo -gt 1})
+$PSCustomObject.Where({$_.foo -gt 0})
 ```
 
 ```Output
 foo
 ---
-  2
+  1
 ```
 
 ### `Where-Object -Not`
@@ -507,7 +506,7 @@ PowerShell Core başlatıldığında temel telemetri verilerini Microsoft'a gön
 
 Şifrelenmemiş trafik kullanımını önlemek için PowerShell uzaktan iletişimini Unix platformlarında NTLM/anlaşma ya da HTTPS kullanımını gerektirir.
 
-Bu değişiklikler hakkında daha fazla bilgi için kullanıma [çekme isteği #6799](https://github.com/PowerShell/PowerShell/pull/6799).
+Bu değişiklikler hakkında daha fazla bilgi için kullanıma [sorun #6779](https://github.com/PowerShell/PowerShell/issues/6779).
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Kaldırılan `VisualBasic` desteklenen dilde Add-Type olarak
 

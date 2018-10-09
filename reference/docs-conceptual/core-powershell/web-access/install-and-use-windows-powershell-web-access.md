@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
 title: windows powershell web erişimi yükleme ve kullanma
-ms.openlocfilehash: 8fa965ff30cd9e0b688bcc46d01d843a0f1c2e0b
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268424"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851333"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yükleme ve Kullanma
 
@@ -327,7 +327,7 @@ Bu bölümdeki yönergeler, Windows PowerShell Web erişimi web uygulamasını y
 
    Varsayılan bağlantı noktası 443 başka bir web sitesi tarafından zaten kullanılıyorsa veya bağlantı noktası numarasını değiştirmek için başka güvenlik nedenleriniz varsa varsayılan bağlantı noktasını değiştirin. Ağ geçidi sunucunuzda çalışan başka bir Web sitesi seçtiğiniz bağlantı noktasını kullanıyorsa,'a tıkladığınızda bir uyarı görüntülenir **Tamam** içinde **Web sitesi Ekle** iletişim kutusu. Windows PowerShell Web Erişimi'ni çalıştırmak için kullanılmayan bir bağlantı noktası kullanmanız gerekir.
 
-1. İsteğe bağlı olarak, kuruluşunuz için gerekirse, kuruluş ve kullanıcılar gibi anlamlı bir konak adı belirtin **www.contoso.com**. **Tamam**’a tıklayın.
+1. İsteğe bağlı olarak, kuruluşunuz için gerekirse, kuruluş ve kullanıcılar gibi anlamlı bir konak adı belirtin **`www.contoso.com`**. **Tamam**’a tıklayın.
 
 1. Daha güvenli bir üretim ortamı için CA tarafından imzalanmış geçerli bir sertifikanın belirtilmesi önerilir. Kullanıcılar yalnızca Windows PowerShell Web erişimi için bir HTTPS Web sitesi kurabildiğinden bir SSL sertifikası sağlamanız gerekir. Bkz: [IIS Yöneticisi'nde bir SSL sertifikası yapılandırma](#to-configure-an-ssl-certificate-in-iis-Manager) bir sertifikanın nasıl alınacağı hakkında daha fazla bilgi için bu konuda.
 
@@ -406,7 +406,7 @@ Güvenli bir üretim ortamında her zaman bir sertifika yetkilisi (CA) tarafınd
    - Tıklayın **alma** ağınızdaki bir konumdan mevcut, geçerli bir sertifikayı içeri aktarmak için.
    - Tıklayın **sertifika isteği oluştur** gibi bir CA'dan bir sertifika istemeniz [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), veya [GeoTrust](https://www.geotrust.com/). Sertifikanın ortak adı, istekte konak üst bilgisi ile eşleşmelidir.
 
-     Örneğin, istemci tarayıcısı isterse http://www.contoso.com/, ortak ad ayrıca olmalıdır http://www.contoso.com/. Windows PowerShell Web erişimi ağ geçidini bir sertifikasıyla sağlamak için en güvenli ve önerilen seçenek budur.
+     Örneğin, istemci tarayıcısı isterse `http://www.contoso.com/`, ortak ad ayrıca olmalıdır `http://www.contoso.com/`. Windows PowerShell Web erişimi ağ geçidini bir sertifikasıyla sağlamak için en güvenli ve önerilen seçenek budur.
 
    - Tıklayın **otomatik olarak imzalanan sertifika oluşturma** hemen kullanabilirsiniz ve daha sonra bir CA tarafından istenirse, oturum açmış olan bir sertifika oluşturmak için. Otomatik olarak imzalanan sertifika için bir kolay ad belirtin **Windows PowerShell Web erişimi**. Bu seçenek güvenli olarak kabul edilmez ve yalnızca özel bir test ortamı için önerilir.
 

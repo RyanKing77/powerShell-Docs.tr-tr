@@ -3,14 +3,14 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
 title: Ayrıntılı Yardım Bilgisi Alma
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: d2578604ec7c01c0b2734bd180e1babaca58b153
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134043"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851281"
 ---
-# <a name="getting-detailed-help-information"></a>Ayrıntılı Yardım bilgisi alma
+# <a name="getting-detailed-help-information"></a>Ayrıntılı yardım bilgisi alma
 
 PowerShell, PowerShell kavramlarını ve PowerShell dil açıklayan ayrıntılı yardım makaleleri içerir. Pek çok işlev ve betik ve her cmdlet sağlayıcısı için Yardım makaleleri de vardır.
 
@@ -149,7 +149,7 @@ Yardım makaleleri işlev ve betik yazma hakkında daha fazla bilgi için aşağ
 Çevrimiçi Yardım almak için kullanın **çevrimiçi** parametresinin `Get-Help` cmdlet'i. Sağlayıcı Yardım dahil olmak üzere PowerShell ile gelen tüm Yardım makaleleri ve kavramsal (hakkında) Yardım makaleleri çevrimiçi kullanılabilir [PowerShell](/powershell/scripting/powershell-scripting) belgeleri.
 
 > [!NOTE]
-> Kullanamazsınız **çevrimiçi** kavramsal (about_ *) veya sağlayıcı Yardım makaleleri ile parametre.
+> Kullanamazsınız **çevrimiçi** kavramsal parametresiyle (about_\*) ya da sağlayıcı Yardım makaleleri.
 > Çevrimiçi Yardım, isteğe bağlı olduğundan her cmdlet, işlev veya betiği için çalışmaz.
 
 Örneğin, hakkında Yardım makalesi'nın çevrimiçi sürümünü almak için `Get-ChildItem` cmdlet'i, türü:

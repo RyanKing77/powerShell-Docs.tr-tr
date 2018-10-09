@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 description: Yayımcılar için yönergeler
 title: PowerShell Galerisi kılavuzları ve en iyi uygulamaları yayımlama
-ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 2ddeae9fdb33a58f97bfeb66079541bb7c5791b1
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523057"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851178"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery kılavuzları ve en iyi uygulamaları yayımlama
 
@@ -39,6 +39,7 @@ Aşağıdaki yönergeleri izleyin öğeleri indirilebilir ve başkaları tarafı
 - İzleyin [SemVer](http://semver.org/) sürüm oluşturma için yönergeler
 - Ortak PowerShell Galerisi etiketleri belgelendiği gibi ortak etiketleri kullanma
 - Yerel depo kullanmaya test yayımlama
+- Yayımlamak için PowerShellGet kullanma
 
 Her birini aşağıdaki bölümlerde kısaca ele alınmaktadır.
 
@@ -215,6 +216,12 @@ Bu çözümlerden birini ile Register-PSRepository "Publish-Module depo özelli�
 Test yayımlama hakkında bir ek noktası: hiçbir şey yayımlamak istediğiniz öğenin bağımlı olduğunu onaylar operasyon ekibinin Yardım olmadan PowerShell Galerisi'nden yayımladığınız herhangi bir öğe silinemiyor.
 Bu nedenle şu PowerShell Galerisi test hedefi olarak desteklemez ve yazılabilmesine herhangi bir yayımcı bağlantı kurar.
 
+## <a name="use-powershellget-to-publish"></a>Yayımlamak için PowerShellGet kullanma
+
+Yayımcılar PowerShell Galerisi ile çalışırken Publish-Module ve Publish-Script cmdlet'leri kullanmanız önerilir. PowerShellGet PowerShell Galerisi'nden bir yayımlama yükleme hakkında önemli ayrıntıları hatırlamak önlemek için oluşturuldu. Bazen, yayımcılar PowerShellGet atlayın ve Publish-Module yerine NuGet istemcisi veya PackageManagement cmdlet'leri seçtiniz. Destek isteklerini çeşitli sonuçları bir kolayca eksik ayrıntıları sayısı vardır.
+
+Publish-Module veya Publish-Script kullanamazsınız bir neden varsa, lütfen bize bildirin. PowerShellGet GitHub deposunda sorun kaydedebilir ve NuGet ya da PackageManagement seçmek neden ayrıntılarını sağlayın. 
+
 ## <a name="recommended-workflow"></a>Önerilen iş akışı
 
 PowerShell Galerisi'nde yayımlanmış öğeler için bulduk en başarılı yaklaşım budur:
@@ -229,3 +236,4 @@ PowerShell Galerisi'nde yayımlanmış öğeler için bulduk en başarılı yakl
 - Kod için istediğinize karar öğeniz oturum
 - Proje bir üretim ortamında kullanıma hazır olduğunu hissettiğinizde, bir 1.0.0 yayımlama sürüme PowerShell Galerisi
 - Geri bildirim toplamak ve kullanıcı girişini temel alarak kodunuz üzerinde yinelemek devam edin
+

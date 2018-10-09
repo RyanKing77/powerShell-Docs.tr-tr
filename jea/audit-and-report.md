@@ -1,26 +1,26 @@
 ---
 ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
-title: Denetim ve JEA üzerinde raporlama
-ms.openlocfilehash: e68206cd6fe94c51507f42ae2c3e6702f6fd4e0f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: JEA'da raporlama ve denetleme
+ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188861"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851229"
 ---
-# <a name="auditing-and-reporting-on-jea"></a>Denetim ve JEA üzerinde raporlama
+# <a name="auditing-and-reporting-on-jea"></a>JEA'da raporlama ve denetleme
 
-> Uygulandığı öğe: Windows PowerShell 5.0
+> İçin geçerlidir: Windows PowerShell 5.0
 
-JEA dağıtıldıktan sonra düzenli olarak JEA yapılandırma denetim isteyeceksiniz.
-Bu, doğru kişilerin JEA endpoint erişiminiz varsa ve atanan rollerinin hala uygun değilse değerlendirmenize yardımcı olur.
+JEA dağıttıktan sonra düzenli olarak JEA yapılandırmayı denetlemek isteyebilirsiniz.
+Bu, doğru kişilerin JEA uç noktasına erişebildiğinden ve atanan rollerinin hala uygun değerlendirmenize yardımcı olur.
 
-Bu konuda bir JEA uç noktası denetim çeşitli yolları açıklanmaktadır.
+Bu konu, bir JEA uç noktası denetleyebilirsiniz çeşitli yolları açıklar.
 
-## <a name="find-registered-jea-sessions-on-a-machine"></a>Bir makinede kayıtlı JEA oturumları Bul
+## <a name="find-registered-jea-sessions-on-a-machine"></a>Bir makinede kayıtlı JEA oturumu bulun
 
-Hangi JEA oturumlarının bir makinede kayıtlı denetlemek için kullanın [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'i.
+Hangi JEA oturumlarının bir makinede kayıtlı denetlemek için kullanmak [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'i.
 
 ```powershell
 # Filter for sessions that are configured as 'RestrictedRemoteServer' to find JEA-like session configurations
@@ -34,10 +34,10 @@ RunAsUser     :
 Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS AccessAllowed, CONTOSO\JEA_DNS_AUDITORS AccessAllowed
 ```
 
-Uç noktası için etkili haklar "İzni" özelliğinde listelenir.
-Bu kullanıcılar JEA uç noktası, hangi rollerin ancak (ve uzantılarının, komutları) bağlanmak için izniniz "RoleDefinitions" alanına göre belirlenir için erişime sahip oldukları [oturum yapılandırma dosyası](session-configurations.md) kaydetmek için kullanıldı uç noktası.
+Uç noktası için etkin hakları "İzni" özelliğinde listelenir.
+Bu kullanıcılar JEA uç noktası, ancak hangi rollerin (ve uzantısıyla komutları) bağlanma izniniz "RoleDefinitions" alanı tarafından belirlenir için erişime sahip oldukları [oturum yapılandırma dosyası](session-configurations.md) kaydetmek için kullanılan uç nokta.
 
-Kayıtlı bir JEA uç noktası rolü eşlemelerin "RoleDefinitions" özelliği verilerde genişleterek değerlendirebilirsiniz.
+Kayıtlı bir JEA uç noktası rolü eşlemelerin "RoleDefinitions" özelliğinde veri genişleterek değerlendirebilirsiniz.
 
 ```powershell
 # Get the desired session configuration
@@ -47,10 +47,10 @@ $jea = Get-PSSessionConfiguration -Name 'JEAMaintenance'
 $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{ Name = 'Role Capabilities'; Expression = { $_.Value.RoleCapabilities } }
 ```
 
-## <a name="find-available-role-capabilities-on-the-machine"></a>Makinede kullanılabilir rol özelliklerini Bul
+## <a name="find-available-role-capabilities-on-the-machine"></a>Makinede kullanılabilir rol işlevleri Bul
 
-Geçerli bir PowerShell modülü içinde "RoleCapabilities" klasöründe depolanıyorsa Rol Yetenek dosyaları yalnızca JEA tarafından kullanılır.
-Bir bilgisayarda kullanılabilen tüm rol özellikleri kullanılabilir modüllerin listesini arayarak bulabilirsiniz.
+Geçerli bir PowerShell modülü içinde bir "RoleCapabilities" klasöründe depolanıyorsa rol özellik dosyaları yalnızca JEA tarafından kullanılır.
+Tüm rol özellikleri bir bilgisayarda kullanılabilir modüllerin listesini arayarak bulabilirsiniz.
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -70,51 +70,51 @@ function Find-LocalRoleCapability {
 ```
 
 > [!NOTE]
-> Bu işlev sonuçlarından sırasını mutlaka birden çok rol özellikleri aynı adı paylaşan durumunda hangi rolü özellikleri seçilecektir sırası değildir.
+> Bu işlev sonuçlardan sırasını mutlaka aynı adlı birden çok rol işlevleri paylaşırsanız, hangi rol işlevleri seçilir sırası değildir.
 
-## <a name="check-effective-rights-for-a-specific-user"></a>Belirli bir kullanıcı için etkin haklarını denetleme
+## <a name="check-effective-rights-for-a-specific-user"></a>Belirli bir kullanıcı için etkin haklarını denetleyin
 
-JEA uç nokta ayarlamayı ayarladıktan sonra hangi komutların JEA oturumda belirli bir kullanıcı tarafından kullanılabilir denetlemek isteyebilirsiniz.
-Kullanabileceğiniz [Get-PSSessionCapability](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Get-PSSessionCapability) geçerli grup üyeliklerini JEA oturumu başlatmak için olsaydı bir kullanıcıya uygulanabilir komutların tümünü numaralandırılamıyor.
-Çıktısını `Get-PSSessionCapability` çalıştıran belirtilen kullanıcı için aynı `Get-Command -CommandType All` JEA oturumunda.
+Bir JEA uç noktası ayarladıktan sonra hangi komutları belirli bir kullanıcıya bir JEA oturumunda kullanılabilir denetlemek isteyebilirsiniz.
+Kullanabileceğiniz [Get-PSSessionCapability](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Get-PSSessionCapability) olsaydı ile geçerli grup üyeliklerini bir JEA oturumu başlatmak için bir kullanıcı için geçerli komutların tümü numaralandırılamadı.
+Çıkışı `Get-PSSessionCapability` çalıştıran belirtilen kullanıcı için aynı `Get-Command -CommandType All` bir JEA oturumda.
 
 ```powershell
 Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\Alice'
 ```
 
-Kullanıcılarınızın bunları ek JEA haklar gruplarını kalıcı üyesi değilseniz, bu cmdlet bu ek izinler yansıtmayabilir.
-Bu genellikle yalnızca zaman ayrıcalıklı erişim yönetimi sistemleri geçici olarak bir güvenlik grubuna ait yapmalarına izin vermek için kullanırken durumdur.
-Kullanıcıları rollere eşleme ve kullanıcılar yalnızca en az miktarda işlerini başarıyla yapmak için gerekli komutları erişimi aldıklarından emin olmak için her rolün içeriği her zaman dikkatlice değerlendirin.
+Bu cmdlet, kullanıcılarınızın bunları JEA ek haklar verilir gruplarının kalıcı üyesi değilseniz, bu ek izinleri yansıtmayabilir.
+Bu genellikle kullanıcıların geçici olarak bir güvenlik grubuna ait izin vermek için tam zamanında ayrıcalıklı erişim yönetimi sistemleri kullanılırken geçerlidir.
+Rollere kullanıcı eşleme ve kullanıcılar yalnızca komutlar başarıyla işlerini yapmak için gereken en az miktarda erişim aldıklarından emin olmak için her rolün içeriğini her zaman dikkatli bir şekilde değerlendirin.
 
 ## <a name="powershell-event-logs"></a>PowerShell olay günlükleri
 
-Sistemde oturum modülü ve/veya betik bloğu etkinleştirilirse, bir kullanıcı kendi JEA oturumlarında çalışan her komut için Windows olay günlüklerini olayları bulmak kuramaz.
-Bu olayları bulmak için Windows Olay Görüntüleyicisi'ni açın, gitmek **Microsoft-Windows-PowerShell/Operational** olay günlüğü ve olay kimliği olan olaylar için Görünüm **4104**.
+Sistemde oturum modülü ve/veya betik bloğu etkinleştirilirse, bir kullanıcı JEA oturumlarını çalıştırdığınız her komut için Windows olay günlüklerindeki olaylarını bulmak mümkün olacaktır.
+Bu olayları bulmak için Windows Olay Görüntüleyicisi'ni açın, gitmek **Microsoft-Windows-PowerShell/Operational** olay günlüğü ve olay kimliği ile olayları arayın **4104**.
 
-Her olay günlüğü girişi komutu çalıştırıldı oturumu hakkında bilgi içerir.
-JEA oturumları için bu önemli hakkında bilgiler içerir **ConnectedUser**, JEA oturum oluşturan gerçek kullanıcı olduğu yanı sıra **farklıkullanıcı** JEA için kullanılan hesabı tanımlayan komutu yürütün.
-Uygulama olay günlükleri bu nedenle dökümleri sahip farklıkullanıcı tarafından yapılan değişiklikleri gösterir veya modül/komut dosyası günlüğü etkin bir kullanıcıya geri belirli komut çağırma izleme yapabilmek önemlidir.
+Her olay günlüğü girişi komutun çalıştırıldığı oturumu hakkında bilgi içerir.
+JEA oturumları için bu önemli hakkında bilgiler içerir **ConnectedUser**, JEA oturumu oluşturan gerçek kullanıcı olduğu yanı sıra **farklıkullanıcı** JEA için kullanılan hesabı tanımlayan komutu yürütün.
+Bu nedenle dökümleri sahip farklıkullanıcı tarafından yapılan değişiklikleri gösterir uygulama olay günlüklerini veya modül/komut dosyası ünlüğe kaydetme etkin bir özel komut çağırma geri kullanıcıya kadar izleyebiliyor olmanız önemlidir.
 
 ## <a name="application-event-logs"></a>Uygulama olay günlükleri
 
-Bir dış uygulama veya hizmet ile etkileşime giren JEA oturumda bir komut çalıştırdığınızda, bu uygulamaları kendi olay günlüklerini olayları oturum açabilir.
-PowerShell günlükleri ve dökümleri, aksine diğer günlük mekanizmaları JEA oturumunun bağlı olan kullanıcı yakalamaz ve bunun yerine yalnızca Çalıştır sanal kullanıcı veya grup yönetilen hizmet hesabı oturum.
-Kimin komutun çalıştığını belirlemek için başvurun gerekecektir bir [oturum dökümü](#session-transcripts) veya PowerShell olay günlüklerini saat ve uygulama olay günlüğünde gösterilen kullanıcı ile ilişkilendirilmesi.
+Bir dış uygulama veya hizmeti ile etkileşime giren bir JEA oturumda bir komut çalıştırdığınızda, söz konusu uygulamaların kendi olay günlüklerine olayları oturum açabilir.
+PowerShell günlükleri ve dökümler, aksine diğer günlük mekanizmaları JEA oturumun bağlı olan kullanıcı yakalamaz ve bunun yerine yalnızca Çalıştır sanal kullanıcı veya grup yönetilen hizmet hesabı günlüğe kaydedecektir.
+Kimin komutun çalıştığını belirlemek için başvurun gerekecektir bir [oturumu döküm](#session-transcripts) veya PowerShell olay günlükleri uygulama olay günlüğünde gösterilen kullanıcı ve saat ile ilişkilendirin.
 
-Günlük ayrıca ilişkilendirmenize yardımcı olur WinRM bağlanan kullanıcı bir uygulama olay günlüğünde kullanıcılarla farklı çalıştır.
-Olay Kimliği **193** içinde **Microsoft Windows Windows Uzaktan Yönetimi/Operational** günlük kayıtlarının güvenlik tanımlayıcısı (SID) ve hesap adı için bağlanan kullanıcı ve kullanıcı olarak her zaman bir JEA çalıştırın. oturum oluşturulur.
+Günlük da ilişkilendirmenize yardımcı olabilir WinRM uygulama olay günlüğüne kullanıcı bağlanan kullanıcı ile çalıştırın.
+Olay Kimliği **193** içinde **Microsoft Windows Windows Uzaktan Yönetimi/Operational** günlük kayıtlarının güvenlik tanımlayıcısı (SID) ve hesap için bağlama kullanıcı adı ve kullanıcı olarak bir JEA her defasında Çalıştır oturum oluşturulur.
 
 ## <a name="session-transcripts"></a>Oturum dökümleri
 
-Her bir kullanıcı oturumu için bir dökümü oluşturmak için JEA yapılandırdıysanız, her kullanıcının Eylemler metin kopyasına belirtilen klasörde depolanır.
+Jea'yı her bir kullanıcı oturumu için bir döküm oluşturmak için yapılandırılmışsa, her kullanıcının eylemleri metin kopyasını belirtilen klasörde depolanır.
 
-Tüm dökümü dizinleri bulmak için aşağıdaki komutu bilgisayarda yönetici olarak çalıştır JEA ile yapılandırılmış:
+Tüm döküm dizinleri bulmak için aşağıdaki komutu bilgisayarda yönetici olarak çalıştırın JEA ile yapılandırılmış:
 
 ```powershell
 Get-PSSessionConfiguration | Where-Object { $_.TranscriptDirectory -ne $null } | Format-Table Name, TranscriptDirectory
 ```
 
-Oturum, başlatıldığında oturumu ve hangi JEA kimlik atanmış bağlı hangi kullanıcı hakkında bilgi içeren her dökümü başlatır.
+Transkript her zaman oturum başlatıldığında, oturum ve JEA kimliği atanmış bağlı kullanıcı hakkında bilgi ile başlar.
 
 ```
 **********************
@@ -126,9 +126,9 @@ Machine: SERVER01 (Microsoft Windows NT 10.0.14393.0)
 [...]
 ```
 
-Dökümü gövdesinde kullanıcının çağrılan her komutu hakkında bilgileri günlüğe kaydedilir.
-Yürütüldü etkili komutu hala belirleyebilir ancak kullanıcı çalıştırdı komut söz dizimi JEA oturumlarda komutları PowerShell uzaktan iletişim için dönüştürülen şekilde nedeniyle kullanılamıyor.
-Bir örnek dökümü parçacığı çalıştıran bir kullanıcıdan aşağıdadır `Get-Service Dns` JEA oturumunda:
+Transkripti gövdesinde kullanıcının çağrılan her komut hakkında bilgileri günlüğe kaydedilir.
+Yürütülen etkili komut hala belirleyebilirsiniz ancak kullanıcı çalıştırılan komut söz dizimi JEA oturumlarında komutları PowerShell uzaktan iletişim için dönüştürülme biçimini nedeniyle kullanılamıyor.
+Çalıştıran bir kullanıcıdan bir örnek dökümü kod parçacığı aşağıda verilmiştir `Get-Service Dns` bir JEA oturumda:
 
 ```
 PS>CommandInvocation(Get-Service): "Get-Service"
@@ -139,15 +139,14 @@ PS>CommandInvocation(Get-Service): "Get-Service"
 Running  Dns                DNS Server
 ```
 
-Bir kullanıcı çalıştıran her komut için bir "CommandInvocation" satır cmdlet açıklayan yazılır veya kullanıcının çağrılan işlev.
-Her bir parametre ve komutu ile sağlanan değer hakkında bilgi için her CommandInvocation ParameterBindings izleyin.
-Yukarıdaki örnekte, "adı" parametresi "Dns" değeri "Get-Service" cmdlet için sağlanan görebilirsiniz.
+Bir kullanıcı çalıştırır, her komut için "CommandInvocation" satır cmdlet açıklayan yazılır veya kullanıcının çağrılan işlev.
+Her bir parametre ve komutu ile sağlanan değeri hakkında bilgi için her CommandInvocation ParameterBindings izleyin.
+Yukarıdaki örnekte, "ad" parametresi ' % s'değeri "Dns" "Get-Service" cmdlet için sağlanan görebilirsiniz.
 
-Her komut çıktısı ayrıca bir CommandInvocation genellikle dışarı varsayılan olarak tetikler.
-Inputobject Out-Default komuttan döndürülen PowerShell nesnesidir.
-Bu nesnenin ayrıntılarını yazdırılır altında hangi kullanıcı görülen yakından mimicking birkaç satır.
+Her komutun çıktısı da bir CommandInvocation genellikle dışarı varsayılan tetikler.
+Inputobject Out-Default, komuttan döndürülen PowerShell nesnedir.
+Bu nesnenin ayrıntılarını yazdırılır aşağıda yakından kullanıcı gördünüz yakından taklit eden birkaç satır kod.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-- [JEA oturumunda denetim kullanıcı eylemleri](audit-and-report.md)
-- [*PowerShell ♥ mavi takım* güvenlik blog gönderisi](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+- [*PowerShell mavi takımın ♥* güvenlik blog gönderisi](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
