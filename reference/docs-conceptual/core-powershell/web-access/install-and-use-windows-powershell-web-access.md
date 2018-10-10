@@ -6,7 +6,7 @@ ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
 ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/08/2018
+ms.lasthandoff: 10/09/2018
 ms.locfileid: "48851333"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yükleme ve Kullanma
@@ -156,7 +156,7 @@ Varsayılan olarak, cmdlet web uygulaması yükler **pswa** (ve ona ait bir uygu
 
    `Install-PswaWebApplication`
 
-   Aşağıdaki ağ geçidi ayarları cmdlet çalıştırılarak yapılandırılır. İsterseniz bunları IIS Yöneticisi konsolunda el ile değiştirebilirsiniz. `Install-PswaWebApplication` cmdlet’inin `WebsiteName` ve `WebApplicationName` parametreleri için de değer belirtebilirsiniz.
+   Aşağıdaki ağ geçidi ayarları cmdlet çalıştırılarak yapılandırılır. İsterseniz bunları IIS Yöneticisi konsolunda el ile değiştirebilirsiniz. `WebsiteName` cmdlet’inin `WebApplicationName` ve `Install-PswaWebApplication` parametreleri için de değer belirtebilirsiniz.
 
    - Yol: / pswa
    - ApplicationPool: pswa_pool
@@ -208,7 +208,7 @@ Windows PowerShell Web Erişimi yetkilendirme kuralları ve güvenlik hakkında 
 
    Bu yetkilendirme kuralı genellikle, kullanıcının tipik komut dosyası için kapsamı belirli bir oturum yapılandırması erişimi ile erişimleri ve cmdlet gereksinimlerine ağ üzerinde bir bilgisayara bir kullanıcıya erişim sağlar.
 
-   Aşağıdaki örnekte, `Contoso` etki alanında `JSmith` adlı bir kullanıcıya, `Contoso_214` bilgisayarını yönetmek ve `NewAdminsOnly` adlı bir oturum yapılandırması kullanmak için erişim verilir.
+   Aşağıdaki örnekte, `JSmith` etki alanında `Contoso` adlı bir kullanıcıya, `Contoso_214` bilgisayarını yönetmek ve `NewAdminsOnly` adlı bir oturum yapılandırması kullanmak için erişim verilir.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -381,7 +381,7 @@ Windows PowerShell Web Erişimi yetkilendirme kuralları ve güvenlik hakkında 
 
    Bu yetkilendirme kuralı belirli bir bilgisayar erişmesine izin verir, genellikle sahip oldukları erişimi kullanıcıya kapsayan belirli bir oturum yapılandırması erişimi ile ağ '™ s tipik komut dosyası ve cmdlet gereksinimlerine.
 
-   Aşağıdaki örnekte, `Contoso` etki alanında `JSmith` adlı bir kullanıcıya, `Contoso_214` bilgisayarını yönetmek ve `NewAdminsOnly` adlı bir oturum yapılandırması kullanmak için erişim verilir.
+   Aşağıdaki örnekte, `JSmith` etki alanında `Contoso` adlı bir kullanıcıya, `Contoso_214` bilgisayarını yönetmek ve `NewAdminsOnly` adlı bir oturum yapılandırması kullanmak için erişim verilir.
 
    `Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
