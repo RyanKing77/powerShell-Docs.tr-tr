@@ -1,3 +1,4 @@
+items:
 - name: Genel bakış
   href: readme.md
 - name: PowerShellGet yükleme
@@ -6,79 +7,93 @@
   href: getting-started.md
 - name: Nasıl Yapılır
   items:
-    - name: Galeride Öğe Bulma
-      items:
-        - name: Öğe Arama
-          href: how-to/finding-items/search-syntax.md
-        - name: PSEdition’a Göre Arama
-          href: how-to/finding-items/searching-by-psedition.md
-        - name: Arama Sonuçlarını Filtreleme
-          href: how-to/finding-items/filtering-items.md
-    - name: Galeride Yayımlama
-      items:
-        - name: Öğe oluşturma ve yayımlama
-          href: how-to/publishing-items/publishing-an-item.md
-        - name: PowerShellGallery Hesabı Oluşturma
-          href: how-to/publishing-items/creating-an-account.md
-        - name: Öğeleri listeden kaldırma
-          href: how-to/publishing-items/unlisting-items.md
-        - name: Öğeleri silme
-          href: how-to/publishing-items/deleting-items.md
-        - name: Öğe sahiplerini yönetme
-          href: how-to/publishing-items/managing-item-owners.md
-    - name: Öğeler ile Çalışma
-      items:
-        - name: FileList görünümü
-          href: how-to/working-with-items/filelist-view.md
-        - name: Azure Otomasyonuna Dağıtma
-          href: how-to/working-with-items/deploy-to-azure-automation.md
-        - name: Lisans Kabulü Gerektiren Öğeler
-          href: how-to/working-with-items/items-that-require-license-acceptance.md
-        - name: Öğe sahipleriyle iletişime geçme
-          href: how-to/working-with-items/contacting-item-owners.md
-        - name: Sosyal Medya veya Yorumlar Aracılığıyla Geri Bildirim Sağlama
-          href: how-to/working-with-items/social-media-feedback.md
+  - name: Galeride Öğe Bulma
+    items:
+    - name: Öğe Arama
+      href: how-to/finding-items/search-syntax.md
+    - name: PSEdition’a Göre Arama
+      href: how-to/finding-items/searching-by-psedition.md
+    - name: Arama Sonuçlarını Filtreleme
+      href: how-to/finding-items/filtering-items.md
+  - name: Galeride Yayımlama
+    items:
+    - name: Öğe oluşturma ve yayımlama
+      href: how-to/publishing-items/publishing-an-item.md
+    - name: PowerShellGallery Hesabı Oluşturma
+      href: how-to/publishing-items/creating-an-account.md
+    - name: Öğeleri listeden kaldırma
+      href: how-to/publishing-items/unlisting-items.md
+    - name: Öğeleri silme
+      href: how-to/publishing-items/deleting-items.md
+    - name: Öğe sahiplerini yönetme
+      href: how-to/publishing-items/managing-item-owners.md
+  - name: Öğeler ile Çalışma
+    items:
+    - name: FileList görünümü
+      href: how-to/working-with-items/filelist-view.md
+    - name: Azure Otomasyonuna Dağıtma
+      href: how-to/working-with-items/deploy-to-azure-automation.md
+    - name: Elle Paket İndirme
+      href: how-to/working-with-items/manual-download.md
+    - name: Lisans Kabulü Gerektiren Öğeler
+      href: how-to/working-with-items/items-that-require-license-acceptance.md
+    - name: Öğe sahipleriyle iletişime geçme
+      href: how-to/working-with-items/contacting-item-owners.md
+    - name: Sosyal Medya veya Yorumlar Aracılığıyla Geri Bildirim Sağlama
+      href: how-to/working-with-items/social-media-feedback.md
+  - name: Hesap Profili Yönetme
+    items:
+    - name: PowerShell Galerisi Hesap Ayarları
+      href: how-to/managing-profile/managing-account.md
+    - name: API Anahtarlarını Yönetme
+      href: how-to/managing-profile/creating-apikeys.md
 - name: Kavramlar
   items:
-    - name: Yayımlama kılavuzları ve en iyi yöntemler
-      href: concepts/publishing-guidelines.md
-    - name: Öğe bildirimi ve Galeri Kullanıcı Arabirimi
-      href: concepts/item-manifest-affecting-ui.md
-    - name: Belirli PSEdition’ları Gerektirme
-      items:
-        - name: PSEdition Desteği ile Betik Yazma
-          href: concepts/script-psedition-support.md
-        - name: PSEdition Desteği ile Modül Yazma
-          href: concepts/module-psedition-support.md
-    - name: Lisans Kabulü Gerektirme
-      items:
-        - name: Betikler için Lisans Kabulü Gerektirme
-          href: concepts/script-license-acceptance.md
-        - name: Modüller için Lisans Kabulü Gerektirme
-          href: concepts/module-license-acceptance.md
-    - name: Öğeleri Ön Sürüm Olarak Tanımlama
-      items:
-        - name: Bir Modülü Ön Sürüm Olarak Tanımlama
-          href: concepts/module-prerelease-support.md
-        - name: Bir Betiği Ön Sürüm Olarak Tanımlama
-          href: concepts/script-prerelease-support.md
-    - name: PSScriptAnalyzer Kural Profili
-      href: concepts/scriptanalyzer-rule-profile.md
+  - name: Yayımlama kılavuzları ve en iyi yöntemler
+    href: concepts/publishing-guidelines.md
+  - name: Öğe bildirimi ve Galeri Kullanıcı Arabirimi
+    href: concepts/item-manifest-affecting-ui.md
+  - name: Belirli PSEdition’ları Gerektirme
+    items:
+    - name: PSEdition Desteği ile Betik Yazma
+      href: concepts/script-psedition-support.md
+    - name: PSEdition Desteği ile Modül Yazma
+      href: concepts/module-psedition-support.md
+  - name: Lisans Kabulü Gerektirme
+    items:
+    - name: Betikler için Lisans Kabulü Gerektirme
+      href: concepts/script-license-acceptance.md
+    - name: Modüller için Lisans Kabulü Gerektirme
+      href: concepts/module-license-acceptance.md
+  - name: Öğeleri Ön Sürüm Olarak Tanımlama
+    items:
+    - name: Bir Modülü Ön Sürüm Olarak Tanımlama
+      href: concepts/module-prerelease-support.md
+    - name: Bir Betiği Ön Sürüm Olarak Tanımlama
+      href: concepts/script-prerelease-support.md
+  - name: PSScriptAnalyzer Kural Profili
+    href: concepts/scriptanalyzer-rule-profile.md
 - name: Destek Alma
   items:
-    - name: Uygunsuz Kullanımı Bildirme
-      href: how-to/getting-support/report-abuse.md
-    - name: Uyuşmazlık çözümü
-      href: how-to/getting-support/dispute-resolution.md
-    - name: Yöneticilerle iletişime geçme
-      href: how-to/getting-support/contacting-administrators.md
-    - name: Sorun giderme
-      href: how-to/getting-support/troubleshooting-cmdlets.md
-    - name: NuGet sağlayıcısı ve NuGet.exe önyüklemesi
-      href: how-to/getting-support/bootstrapping-nuget.md
-    - name: GDPR Uyumluluğu
-      href: how-to/getting-support/gdpr-dsr-policy.md
+  - name: Uygunsuz Kullanımı Bildirme
+    href: how-to/getting-support/report-abuse.md
+  - name: Uyuşmazlık çözümü
+    href: how-to/getting-support/dispute-resolution.md
+  - name: Yöneticilerle iletişime geçme
+    href: how-to/getting-support/contacting-administrators.md
+  - name: Sorun giderme
+    href: how-to/getting-support/troubleshooting-cmdlets.md
+  - name: NuGet sağlayıcısı ve NuGet.exe önyüklemesi
+    href: how-to/getting-support/bootstrapping-nuget.md
+  - name: GDPR Uyumluluğu
+    href: how-to/getting-support/gdpr-dsr-policy.md
 - name: Galeri SSS
   href: faqs.md
 - name: PowerShellGet cmdlet’leri
-  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
+  href: https://docs.microsoft.com/powershell/module/powershellget/
+ms.openlocfilehash: 32577b81229d456922a6be9bfdc8156d337fd719
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.translationtype: HT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522931"
