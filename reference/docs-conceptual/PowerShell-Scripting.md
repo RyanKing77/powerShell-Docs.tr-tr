@@ -2,17 +2,17 @@
 ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
 title: PowerShell betik oluşturma
-ms.openlocfilehash: 8a152ab338d42f861b7ff38de44d68db14262abb
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851195"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451039"
 ---
 # <a name="powershell"></a>PowerShell
 
 Bir görev tabanlı komut satırı kabuğu ve betik dilidir .NET üzerinde oluşturulmuş powershell'dir.
-PowerShell, sistem yöneticileri yardımcı olur ve ileri kullanıcılar (Linux, macOS ve Windows) işletim sistemleri ve işlemleri yönetme görevleri hızlı bir şekilde otomatik hale getirebilirsiniz.
+PowerShell, sistem yöneticileri yardımcı olur ve ileri kullanıcılar (Linux, macOS ve Windows) işletim sistemleri ve işlemleri yönetme görevleri hızla otomatikleştirin.
 
 PowerShell komutları, komut satırından bilgisayarları yönetmenizi sağlar. PowerShell sağlayıcıları, kayıt defteri gibi veri depolarında erişmek ve sertifika deposunu, dosya sistemine erişmelerini olarak kolayca belirlemenizi sağlar. PowerShell, kapsamlı bir ifade ayrıştırıcısı ve tam olarak geliştirilen bir betik dilini içerir.
 

@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, çekirdek
 title: PowerShell 6.0 için bilinen sorunlar
-ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268015"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451005"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 için bilinen sorunlar
 
@@ -90,9 +90,9 @@ Kısıtlı Yönetim (JEA) uzaktan iletişimi uç noktaları oluşturma özelliğ
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`ve PowerShell
 
-PowerShell (örneğin, Python veya Ruby) bellekte komutların çoğu çalıştığından, sudo ile yerleşik PowerShell olanları doğrudan kullanamazsınız. (Doğal olarak çalıştırabileceğiniz `powershell` sudo gelen.) Sudo ile Örneğin, PowerShell içinde bir PowerShell cmdlet'i çalıştırmak gerekli değilse `sudo `Set-tarih` 8/18/2016`, yaptığınız sonra `sudo powershell `Set-tarih` 8/18/2016`. Benzer şekilde, bir yerleşik PowerShell exec doğrudan yükleyemezsiniz. Bunun yerine yapmak zorunda olabilirsiniz `exec powershell item_to_exec`.
+PowerShell (örneğin, Python veya Ruby) bellekte komutların çoğu çalıştığından, sudo ile yerleşik PowerShell olanları doğrudan kullanamazsınız. (Doğal olarak çalıştırabileceğiniz `pwsh` sudo gelen.) Sudo ile Örneğin, PowerShell içinde bir PowerShell cmdlet'i çalıştırmak gerekli değilse `sudo Set-Date 8/18/2016`, yaptığınız sonra `sudo pwsh Set-Date 8/18/2016`. Benzer şekilde, bir yerleşik PowerShell exec doğrudan yükleyemezsiniz. Bunun yerine yapmak zorunda olabilirsiniz `exec pwsh item_to_exec`.
 
-Bu sorun şu anda #3232 bir parçası olarak izleniyor.
+Bu sorun şu anda bir parçası olarak izlenmekte olan [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
 ### <a name="missing-cmdlets"></a>Eksik cmdlet'leri
 

@@ -2,12 +2,12 @@
 title: SSH üzerinden PowerShell Uzaktan İletişimi
 description: SSH kullanarak PowerShell core'da uzaktan iletişim
 ms.date: 08/14/2018
-ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 842e67e96661bca8be54aab33cbc11aa23dbd1c0
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851246"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451074"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH üzerinden PowerShell Uzaktan İletişimi
 
@@ -15,7 +15,7 @@ ms.locfileid: "48851246"
 
 PowerShell uzaktan iletişimini normalde WinRM bağlantı anlaşması ve veri aktarımı için kullanır. SSH, Linux ve Windows platformları için kullanıma sunulmuştur ve doğru çok platformlu PowerShell uzaktan iletişimini sağlar.
 
-WinRM, uzak PowerShell oturumları için sağlam bir barındırma modeli sağlar. Bu uygulama SSH tabanlı uzak şu anda değil, uzak uç nokta yapılandırması ve JEA (yeterli yönetim) destekler.
+WinRM, uzak PowerShell oturumları için sağlam bir barındırma modeli sağlar. SSH temelli remoting, uzak uç nokta yapılandırması ve JEA (yeterli yönetim) şu anda desteklemiyor.
 
 SSH, uzak Windows ve Linux makinelerini arasındaki temel PowerShell oturumu uzaktan gerçekleştirmenize olanak tanır. SSH uzak PowerShell ana bilgisayar işlemi hedef makinede bir SSH alt oluşturur.
 Sonunda size bir genel barındırma modeli, uç nokta yapılandırması ve JEA desteklemek için WinRM ile benzer uygulayacaksınız.
@@ -48,7 +48,7 @@ Linux için SSH (dahil olmak üzere sshd sunucusunu) platformunuz için uygun y�
    ```
 
 2. Son yükleme [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) GitHub kullanarak yapı [yükleme](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) yönergeleri
-3. Win32 OpenSSH yüklendiği konumda sshd_config dosyasında Düzenle
+3. Konumundaki sshd_config dosyasında Düzenle `%ProgramData%\ssh`.
 
    - Parola kimlik doğrulamasının etkin olduğundan emin olun
 
@@ -57,7 +57,7 @@ Linux için SSH (dahil olmak üzere sshd sunucusunu) platformunuz için uygun y�
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
@@ -66,7 +66,7 @@ Linux için SSH (dahil olmak üzere sshd sunucusunu) platformunuz için uygun y�
      Tek bir çözüm Powershell yükleme dizinine boşluk olmayan bir sembolik bağlantısını oluşturmaktır:
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
      ```
 
      ve ardından alt girin:
