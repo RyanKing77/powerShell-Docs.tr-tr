@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
+keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC yapılandırmaları için yardım sayfasını yazma
-ms.openlocfilehash: 316fd69ab1eae66ebe141b2575a05b502fc261ea
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a4b5e688744b9a4519ce06d920ad8f11efeb99ad
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222672"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225701"
 ---
-# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="80e8d-103">DSC yapılandırmaları için yardım sayfasını yazma</span><span class="sxs-lookup"><span data-stu-id="80e8d-103">Writing help for DSC configurations</span></span>
+# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="e2377-103">DSC yapılandırmaları için yardım sayfasını yazma</span><span class="sxs-lookup"><span data-stu-id="e2377-103">Writing help for DSC configurations</span></span>
 
-><span data-ttu-id="80e8d-104">İçin geçerlidir: Windows Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="80e8d-104">Applies To: Windows Windows PowerShell 5.0</span></span>
+><span data-ttu-id="e2377-104">Uygulama hedefi: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="e2377-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="80e8d-105">DSC yapılandırmalarında açıklama tabanlı Yardım kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="80e8d-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="80e8d-106">Kullanıcıların, Yardım ile yapılandırma işlevini çağırarak erişebileceği `-?`, veya kullanarak [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="80e8d-106">Users can access the help by calling the configuration function with `-?`, or by using the [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet.</span></span> <span data-ttu-id="80e8d-107">PowerShell açıklama tabanlı Yardım hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).</span><span class="sxs-lookup"><span data-stu-id="80e8d-107">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).</span></span>
+<span data-ttu-id="e2377-105">DSC yapılandırmalarında, açıklama tabanlı Yardım kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="e2377-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="e2377-106">Kullanıcıların, Yardım yapılandırma işlevini çağırarak erişebileceği `-?`, kullanarak veya [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="e2377-106">Users can access the help by calling the configuration function with `-?`, or by using the [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet.</span></span> <span data-ttu-id="e2377-107">PowerShell açıklama tabanlı Yardım hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).</span><span class="sxs-lookup"><span data-stu-id="e2377-107">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).</span></span>
 
-<span data-ttu-id="80e8d-108">Aşağıdaki örnek bir yapılandırma ve onun için açıklama tabanlı Yardım içeren bir komut dosyası gösterilmektedir:</span><span class="sxs-lookup"><span data-stu-id="80e8d-108">The following example shows a script that contains a configuration and comment-based help for it:</span></span>
+<span data-ttu-id="e2377-108">Aşağıdaki örnek, bir yapılandırma ve bunun için açıklama tabanlı Yardım içeren bir betik gösterir:</span><span class="sxs-lookup"><span data-stu-id="e2377-108">The following example shows a script that contains a configuration and comment-based help for it:</span></span>
 
 ```powershell
 <#
@@ -50,18 +50,18 @@ This example will be labeled "EXAMPLE 2" when help is displayed to the user.
 
 configuration HelpSample1
 {
-    param([string]$ComputerName,[string]$FilePath)
-    File f
-    {
+    param([string]$ComputerName,[string]$FilePath)
+    File f
+    {
         Contents="Hello World"
-        DestinationPath = "c:\Destination.txt"
-    }
+        DestinationPath = "c:\Destination.txt"
+    }
 }
 ```
 
-## <a name="viewing-configuration-help"></a><span data-ttu-id="80e8d-109">Yapılandırma Yardımı görüntüleme</span><span class="sxs-lookup"><span data-stu-id="80e8d-109">Viewing configuration help</span></span>
+## <a name="viewing-configuration-help"></a><span data-ttu-id="e2377-109">Yapılandırma Yardımı görüntüleme</span><span class="sxs-lookup"><span data-stu-id="e2377-109">Viewing configuration help</span></span>
 
-<span data-ttu-id="80e8d-110">Bir yapılandırması için Yardım görüntülemek için kullanın **Get-Help** işlevi veya türü adını cmdlet'iyle işlevin adını ve ardından `-?`.</span><span class="sxs-lookup"><span data-stu-id="80e8d-110">To view the help for a configuration, use the **Get-Help** cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="80e8d-111">Önceki işlevi için geçirildiğinde çıkışı aşağıdadır **Get-Help**:</span><span class="sxs-lookup"><span data-stu-id="80e8d-111">The following is the output of the previous function when passed to **Get-Help**:</span></span>
+<span data-ttu-id="e2377-110">Bir yapılandırma için Yardım görüntülemek için kullanın **Get-Help** cmdlet'i işlev veya tür adıyla işlevin adını ve ardından `-?`.</span><span class="sxs-lookup"><span data-stu-id="e2377-110">To view the help for a configuration, use the **Get-Help** cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="e2377-111">Önceki işlevi için geçirildiğinde çıktısı aşağıdaki gibidir **Get-Help**:</span><span class="sxs-lookup"><span data-stu-id="e2377-111">The following is the output of the previous function when passed to **Get-Help**:</span></span>
 
 ```powershell
 PS C:\> Get-Help HelpSample1
@@ -90,5 +90,5 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-## <a name="see-also"></a><span data-ttu-id="80e8d-112">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="80e8d-112">See Also</span></span>
-* [<span data-ttu-id="80e8d-113">DSC yapılandırmaları</span><span class="sxs-lookup"><span data-stu-id="80e8d-113">DSC Configurations</span></span>](configurations.md)
+## <a name="see-also"></a><span data-ttu-id="e2377-112">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="e2377-112">See Also</span></span>
+* [<span data-ttu-id="e2377-113">DSC yapılandırmaları</span><span class="sxs-lookup"><span data-stu-id="e2377-113">DSC Configurations</span></span>](configurations.md)

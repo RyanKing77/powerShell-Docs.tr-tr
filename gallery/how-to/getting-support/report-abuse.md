@@ -2,14 +2,14 @@
 ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
-title: Rapor Uygunsuz kullanım
-ms.openlocfilehash: 49f68ba634644c5d22d38a254b4c8c93ea9374d0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Uygunsuz kullanımı bildir
+ms.openlocfilehash: 70e599a26c6f04312ed7fc188047721bf96fefe2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218340"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002027"
 ---
-# <a name="report-abuse"></a><span data-ttu-id="e8042-103">Rapor Uygunsuz kullanım</span><span class="sxs-lookup"><span data-stu-id="e8042-103">Report abuse</span></span>
+# <a name="report-abuse"></a><span data-ttu-id="9f706-103">Uygunsuz kullanımı bildir</span><span class="sxs-lookup"><span data-stu-id="9f706-103">Report abuse</span></span>
 
-<span data-ttu-id="e8042-104">İhlal bu öğelerden herhangi birini bir öğeyi bulursanız tıklatın **rapor kötüye** bağlantı öğe Ayrıntıları sayfasında ve bir rapor gönderin.</span><span class="sxs-lookup"><span data-stu-id="e8042-104">If you find a item that is in violation of any of these items, click the **Report Abuse** link on the item details page and submit a report.</span></span>
+<span data-ttu-id="9f706-104">İhlal bu öğelerden herhangi birinin bir paketi bulursanız, tıklayın **uygunsuz** Paket Ayrıntıları sayfasına bağlantı ve bir rapor gönderin.</span><span class="sxs-lookup"><span data-stu-id="9f706-104">If you find a package that is in violation of any of these items, click the **Report Abuse** link on the package details page and submit a report.</span></span>
