@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
 title: NuGet önyükleniyor
-ms.openlocfilehash: e82fe7bec2e6b7a321fb173cdf9a54c5a97d5f18
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267856"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002147"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet sağlayıcısı ve NuGet.exe önyükleme
 

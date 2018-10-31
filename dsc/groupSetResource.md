@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 description: Hedef düğüm üzerindeki yerel grupların yönetmek için bir mekanizma sağlar.
 title: DSC GroupSet kaynağı
-ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6fa8e9637da896848e859dc60a42add12e973b34
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892435"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226126"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet kaynağı
 
-> Uygulama hedefi: Windows Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 5.0
 
 **GroupSet** kaynak olarak Windows PowerShell Desired State Configuration (DSC) hedef düğümde yerel grupları yönetmek için bir mekanizma sağlar. Bu kaynak bir [bileşik kaynak](authoringResourceComposite.md) çağrılarının [kaynak grubunda](groupResource.md) belirtilen her grup için `GroupName` parametresi.
 

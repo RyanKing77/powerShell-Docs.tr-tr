@@ -1,31 +1,31 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
-title: PowerShell sınıfları içeren özel bir DSC kaynağı yazma
-ms.openlocfilehash: f2500bfb41302cbeaf3cb9d23b843f26f01c1d5b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, yapılandırma, Kurulum
+title: PowerShell sınıfları ile özel bir DSC kaynağı yazma
+ms.openlocfilehash: a8f08323f2cced8a17de4224bea94a54ba5ef0cd
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189474"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226092"
 ---
-# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell sınıfları içeren özel bir DSC kaynağı yazma
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell sınıfları ile özel bir DSC kaynağı yazma
 
-> İçin geçerlidir: Windows Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 5.0
 
-Windows PowerShell 5.0 PowerShell sınıflarda başlanmasıyla, bir sınıf oluşturarak şimdi DSC kaynağı tanımlayabilirsiniz. Bu yüzden ayrı bir MOF dosyası oluşturmaya gerek sınıfı hem şema hem de kaynak uyarlamasını tanımlar. Sınıf tabanlı bir kaynak klasör yapısını de daha basit, çünkü bir **DSCResources** klasörü gerekli değildir.
+Windows PowerShell 5.0 PowerShell sınıflarını sunulmasıyla birlikte, bir sınıf oluşturarak artık bir DSC kaynağı tanımlayabilirsiniz. Ayrı bir MOF dosyası oluşturmanız gerekmez. Bu nedenle sınıf hem şema hem de kaynak uygulamasını tanımlar. Sınıf tabanlı bir kaynak klasör yapısını de daha basit, çünkü bir **DSCResources** klasörü gerekli değildir.
 
-Sınıf tabanlı DSC kaynağı ' bir şema, özellik türü belirtmek özniteliklerle değiştirilebilir sınıfının özelliklerine olarak tanımlanır... Kaynak tarafından uygulanan **Get()**, **Set()**, ve **Test()** yöntemleri (eşdeğer **Get-TargetResource**, **Kümesi TargetResource**, ve **Test TargetResource** bir komut dosyası kaynağı işlevlerde.
+Sınıf tabanlı DSC kaynak, şema özellikleri özellik türü belirtmek için özniteliklerle değiştirilebilir sınıfı olarak tanımlanır... Kaynak tarafından uygulanan **Get()**, **Set()**, ve **Test()** yöntemleri (eşdeğer **Get-TargetResource**, **Kümesi TargetResource**, ve **Test TargetResource** betik kaynağa işlevleri.
 
-Bu konuda, basit bir kaynağı oluşturacağız **FileResource** belirtilen yolda bir dosya yönetir.
+Bu konuda, basit bir kaynağı oluşturacağız **FileResource** , belirtilen yolda bir dosya yönetir.
 
-DSC kaynakları hakkında daha fazla bilgi için bkz: [yapı özel Windows PowerShell istenen durum yapılandırma kaynağı](authoringResource.md)
+DSC kaynakları hakkında daha fazla bilgi için bkz. [derleme özel Windows PowerShell Desired State Configuration kaynakları](authoringResource.md)
 
->**Not:** genel koleksiyonlar sınıf tabanlı kaynaklara desteklenmiyor.
+>**Not:** genel koleksiyonlar sınıf tabanlı kaynaklar desteklenmiyor.
 
-## <a name="folder-structure-for-a-class-resource"></a>Bir sınıf kaynak için klasör yapısı
+## <a name="folder-structure-for-a-class-resource"></a>Bir sınıf kaynak klasör yapısı
 
-PowerShell sınıfı ile özel bir DSC kaynağı uygulamak için aşağıdaki klasör yapısını oluşturun. Sınıf tanımlanan **MyDscResource.psm1** ve modül bildirimi tanımlanan **MyDscResource.psd1**.
+DSC özel kaynak PowerShell sınıfı ile uygulamak için aşağıdaki klasör yapısını oluşturun. Sınıfı içinde tanımlanan **MyDscResource.psm1** ve modül bildirimini tanımlanan **MyDscResource.psd1**.
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -36,7 +36,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 ## <a name="create-the-class"></a>Sınıf oluşturma
 
-Class anahtar sözcüğü bir PowerShell sınıfı oluşturmak için kullanın. Bir sınıf bir DSC kaynağı olduğunu belirtmek için kullanın **DscResource()** özniteliği. Sınıfın adını DSC kaynağı adıdır.
+Class anahtar sözcüğü, bir PowerShell sınıfı oluşturmak için kullanın. DSC kaynağı bir sınıf olduğunu belirtmek için kullanın **DscResource()** özniteliği. DSC kaynak adını sınıf adıdır.
 
 ```powershell
 [DscResource()]
@@ -46,7 +46,7 @@ class FileResource {
 
 ### <a name="declare-properties"></a>Özellikleri bildirme
 
-DSC kaynağı şeması sınıfının özelliklerine tanımlanır. Şu üç özellik aşağıdaki gibi bildirin.
+DSC kaynak şema özellikleri sınıfı olarak tanımlanır. Şu üç özellik gibi bildirin.
 
 ```powershell
 [DscProperty(Key)]
@@ -62,14 +62,14 @@ DSC kaynağı şeması sınıfının özelliklerine tanımlanır. Şu üç özel
 [Nullable[datetime]] $CreationTime
 ```
 
-Özellikler öznitelikleri tarafından değiştirildiğinde dikkat edin. Öznitelikleri anlamını aşağıdaki gibidir:
+Özellikleri öznitelikleri tarafından değiştirildiğini dikkat edin. Öznitelikleri anlamını aşağıdaki gibidir:
 
-- **DscProperty(Key)**: gerekli bir özelliktir. Özelliği bir anahtardır. Tüm özellik değerlerini anahtarları kaynak örnek bir yapılandırma içinde benzersiz şekilde tanımlamak için birleştirmeniz gerekir olarak işaretlenmiş.
-- **DscProperty(Mandatory)**: gerekli bir özelliktir.
-- **DscProperty(NotConfigurable)**: özelliği salt okunur durumdadır. Bu özniteliği ile işaretlenmiş özellikleri yapılandırma tarafından ayarlanamaz, ancak tarafından doldurulur **Get()** yöntemi varsa.
+- **DscProperty(Key)**: özelliği gereklidir. Özelliği bir anahtardır. Tüm özelliklerin değerlerini, bir kaynak örneği yapılandırması içindeki benzersiz olarak tanımlanabilmesi için anahtarları birleştirmeniz olarak işaretlendi.
+- **DscProperty(Mandatory)**: özelliği gereklidir.
+- **DscProperty(NotConfigurable)**: salt okunur özelliktir. Bu özniteliği ile işaretlenmiş özellikleri yapılandırma tarafından ayarlanamaz, ancak tarafından doldurulur **Get()** varsa yöntemi.
 - **DscProperty()**: özellik yapılandırılabilir, ancak gerekli değildir.
 
-**$Path** ve **$SourcePath** özellikleri her iki dizelerdir. **$CreationTime** olan bir [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) özelliği. **$Ensure** şu şekilde tanımlanan bir numaralandırma türü bir özelliktir.
+**$Path** ve **$SourcePath** özellikleri her iki dizelerdir. **$CreationTime** olduğu bir [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) özelliği. **$Ensure** gibi tanımlı bir numaralandırma türü, bir özelliktir.
 
 ```powershell
 enum Ensure
@@ -79,11 +79,11 @@ enum Ensure
 }
 ```
 
-### <a name="implementing-the-methods"></a>Yöntemler uygulama
+### <a name="implementing-the-methods"></a>Yöntem uygulama
 
-**Get()**, **Set()**, ve **Test()** yöntemleri benzer **Get-TargetResource**, **kümesi TargetResource** , ve **Test TargetResource** bir komut dosyası kaynağı işlevlerde.
+**Get()**, **Set()**, ve **Test()** yöntemlerdir alınmak üzere **Get-TargetResource**, **TargetResource Ayarla** , ve **Test TargetResource** betik kaynağa işlevleri.
 
-Bu kod ayrıca CopyFile() işlevi, dosyadan kopyalar yardımcı bir işlev içerir **$SourcePath** için **$Path**.
+Bu kod ayrıca dosyasından kopyalayan bir yardımcı işlevini CopyFile() işlevi içerir **$SourcePath** için **$Path**.
 
 ```powershell
 
@@ -217,7 +217,7 @@ Bu kod ayrıca CopyFile() işlevi, dosyadan kopyalar yardımcı bir işlev içer
 ```
 
 ### <a name="the-complete-file"></a>Tam dosya
-Tüm sınıf dosya izler.
+Tam sınıf dosyası izler.
 
 ```powershell
 enum Ensure
@@ -417,7 +417,7 @@ class FileResource
 
 ## <a name="create-a-manifest"></a>Bir bildirimi oluşturma
 
-Bir sınıf tabanlı kaynak DSC altyapısı kullanılabilir hale getirmek için içermelidir bir **DscResourcesToExport** deyimi bildirim dosyasındaki kaynak verilecek modül bildirir. Bizim bildirimi şöyle görünür:
+Bir sınıf tabanlı kaynak DSC altyapısı kullanılabilir hale getirmek için içermelidir bir **DscResourcesToExport** deyimi bildirimi dosyasındaki kaynak dışarı aktarılacak modülü bildirir. Bizim bildiriminin şöyle görünür:
 
 ```powershell
 @{
@@ -453,9 +453,9 @@ PowerShellVersion = '5.0'
 }
 ```
 
-## <a name="test-the-resource"></a>Kaynak test
+## <a name="test-the-resource"></a>Test kaynağı
 
-Sınıf ve bildirim dosyaları daha önce açıklandığı gibi Klasör yapısındaki kaydedildikten sonra yeni kaynak kullanan bir yapılandırması oluşturabilirsiniz. DSC yapılandırması çalıştırma hakkında daha fazla bilgi için bkz: [yapılandırmaları ederek ilerlemesini kabul ederek](enactingConfigurations.md). Aşağıdaki yapılandırma denetleyeceği olup olmadığını dosyasını `c:\test\test.txt` var ve aksi durumda, dosyadan kopyalar `c:\test.txt` (oluşturmanız gerekir `c:\test.txt` yapılandırma çalıştırmadan önce).
+Sınıf ve bildirim dosyaları daha önce açıklandığı gibi klasör yapısında kaydettikten sonra yeni kaynak kullanan yapılandırması oluşturabilirsiniz. DSC yapılandırması çalıştırma hakkında daha fazla bilgi için bkz: [yapılandırmaları kabul etme](enactingConfigurations.md). Aşağıdaki yapılandırmayı denetleyeceği olmadığını dosyasını `c:\test\test.txt` var ve aksi durumda, dosyayı kopyalar `c:\test.txt` (oluşturmanız gerekir `c:\test.txt` yapılandırma çalıştırmadan önce).
 
 ```powershell
 Configuration Test
@@ -474,22 +474,22 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential destekleme
 
->**Not:** **PsDscRunAsCredential** PowerShell 5.0 ve sonraki sürümlerinde desteklenir.
+>**Not:** **PsDscRunAsCredential** PowerShell 5.0 ve sonraki sürümlerde desteklenir.
 
-**PsDscRunAsCredential** özelliği kullanılabilir [DSC yapılandırmaları](configurations.md) kaynak belirtilen kimlik bilgileri kümesi altında çalışması gerektiğini belirtmek için kaynak bloğu.
-Daha fazla bilgi için bkz: [çalıştıran DSC kullanıcı kimlik bilgileriyle](runAsUser.md).
+**PsDscRunAsCredential** özelliği kullanılabilir [DSC yapılandırmaları](configurations.md) kaynak belirtilen kimlik bilgileri kümesi altında çalışması gerektiğini belirtmek için kaynak blok.
+Daha fazla bilgi için [DSC çalıştıran kullanıcı kimlik bilgileriyle](runAsUser.md).
 
-### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>Gerektiren veya PsDscRunAsCredential, kaynak için izin verme
+### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>Gerektiren veya PsDscRunAsCredential kaynağınız için izin verme
 
 **DscResource()** özniteliği isteğe bağlı bir parametre alır **RunAsCredential**.
 Bu parametre üç değerden birini alır:
 
-- `Optional` **PsDscRunAsCredential** bu kaynak çağrısına yapılandırmaları için isteğe bağlıdır. Bu varsayılan değerdir.
-- `Mandatory` **PsDscRunAsCredential** bu kaynak çağıran herhangi bir yapılandırma için kullanılması gerekir.
-- `NotSupported` Bu kaynak çağrısına yapılandırmaları kullanamaz **PsDscRunAsCredential**.
+- `Optional` **PsDscRunAsCredential** bu kaynak çağrısı yapılandırmalar için isteğe bağlıdır. Bu varsayılan değerdir.
+- `Mandatory` **PsDscRunAsCredential** bu kaynak çağıran herhangi bir yapılandırma için kullanılmalıdır.
+- `NotSupported` Bu kaynak çağrısı yapılandırmaları kullanamaz **PsDscRunAsCredential**.
 - `Default` Aynı `Optional`.
 
-Örneğin, özel kaynak kullanımını desteklemez belirtmek için aşağıdaki öznitelik kullanın **PsDscRunAsCredential**:
+Örneğin, özel kaynağınızın kullanarak desteklemiyor belirtin için aşağıdaki öznitelik kullanın **PsDscRunAsCredential**:
 
 ```powershell
 [DscResource(RunAsCredential=NotSupported)]
@@ -497,11 +497,11 @@ class FileResource {
 }
 ```
 
-### <a name="access-the-user-context"></a>Access kullanıcı bağlamı
+### <a name="access-the-user-context"></a>Erişim kullanıcı bağlamı
 
-Özel bir kaynak içinde kullanıcı bağlamından erişmek için otomatik değişkeni kullanabilirsiniz `$global:PsDscContext`.
+Özel bir kaynak içinde kullanıcı bağlamından erişmek için otomatik değişken kullanabilirsiniz `$global:PsDscContext`.
 
-Örneğin aşağıdaki kodu kaynak ayrıntılı çıktı akışına çalıştırıldığı kullanıcı bağlamı yazarsınız:
+Örneğin aşağıdaki kod, kaynak ayrıntılı çıkış akışına çalıştırıldığı kullanıcı bağlamı yazmalısınız:
 
 ```powershell
 if (PsDscContext.RunAsUser) {
@@ -511,4 +511,4 @@ if (PsDscContext.RunAsUser) {
 
 ## <a name="see-also"></a>Ayrıca bkz:
 ### <a name="concepts"></a>Kavramlar
-[Özel Windows PowerShell istenen durum yapılandırması kaynakları oluşturma](authoringResource.md)
+[Derleme özel Windows PowerShell Desired State Configuration kaynakları](authoringResource.md)

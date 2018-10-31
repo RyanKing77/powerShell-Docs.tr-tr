@@ -1,227 +1,227 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: Windows PowerShell 5.0 yenilikler nelerdir?
-ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+title: Windows PowerShell 5.0 yenilikler
+ms.openlocfilehash: 7a2ef581f2cd867b35533597d4942fd5bfc94570
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483194"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225820"
 ---
-# <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 yenilikler nelerdir?
-Windows PowerShell 5.0 kullanımını genişleten, kullanılabilirliğini artıran ve denetime izin ver ve Windows tabanlı ortamları daha kolay ve kapsamlı bir şekilde yönetmek, önemli yeni özellikler içerir.
+# <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 yenilikler
+Windows PowerShell 5.0 kullanımını genişleten, kullanılabilirliğini iyileştiren ve şekilde denetlemenizi ve Windows tabanlı ortamları daha kolay ve kapsamlı bir şekilde yönetmenizi, önemli yeni özellikler içerir.
 
-Windows PowerShell 5.0 geriye dönük olarak uyumludur. Cmdlet'leri, sağlayıcıları, modüller, ek bileşenler, komut dosyaları, İşlevler ve Windows PowerShell 4.0, Windows PowerShell 3.0 ve Windows PowerShell 2.0 için genellikle tasarlanmış profilleri Windows PowerShell 5. 0 ' değişiklik yapılmadan çalışır.
+Windows PowerShell 5.0 geriye dönük olarak uyumludur. Cmdlet'leri, sağlayıcıları, modüller, ek bileşenler, betikleri, işlevleri ve Windows PowerShell 4.0, Windows PowerShell 3.0 ve Windows PowerShell 2.0 için genel olarak tasarlanmış profilleri Windows PowerShell 5. 0'değişikliğe gerek kalmadan çalışır.
 
 # <a name="installing-windows-powershell"></a>Windows PowerShell Yükleme
-Windows PowerShell 5.0, Windows Server 2016 Technical Preview ve Windows 10 varsayılan olarak yüklenir.
+Windows PowerShell 5.0, Windows Server 2016 Technical Preview ve Windows 10 üzerinde varsayılan olarak yüklenir.
 
-Windows Server 2012 R2, Windows 8.1 Enterprise veya Windows 8.1 Pro üzerinde Windows PowerShell 5. 0'ı yüklemek için karşıdan yükleyip [Windows Management Framework 5.0](http://aka.ms/wmf5download). Yükleme ayrıntılarını okuduğunuzdan ve Windows Management Framework 5.0 yüklemeden önce tüm sistem gereksinimlerini karşıladığından emin olun.
+Windows Server 2012 R2, Windows 8.1 Enterprise veya Windows 8.1 Pro Windows PowerShell 5.0 yüklemek için indirme ve yükleme [Windows Management Framework 5.0](http://aka.ms/wmf5download). İndirme ayrıntıları okuyun ve Windows Management Framework 5.0 yüklemeden önce tüm sistem gereksinimlerini karşılamak emin olun.
 
 ## <a name="in-this-topic"></a>Bu konuda,
 
 - [BB 3000850 Windows PowerShell 4.0 DSC güncelleştirmeleri](#windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850)
-- [Windows PowerShell 5. 0'teki yeni özellikler](#new-features-in-windows-powershell-50)
+- [Windows PowerShell 5.0 yeni özellikler](#new-features-in-windows-powershell-50)
 - [Windows PowerShell 4. 0'ı yeni özellikler](#new-features-in-windows-powershell-40)
 - [Windows PowerShell 3. 0'ı yeni özellikler](#new-features-in-windows-powershell-30)
 
 ## <a name="windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a>Windows PowerShell 4.0 güncelleştirmeleri Kasım 2014 güncelleştirme paketi (KB 3000850)
-Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell istenen durum yapılandırması (DSC) Windows PowerShell 4. 0'ı kullanılabilir olan [Windows RT 8.1, Windows 8.1 ve Windows Server 2012 R2 için Kasım 2014 güncelleştirme paketi](https://support.microsoft.com/kb/3000850/) (KB 3000850 ). BB 3000850 sisteminizde çalıştırarak yüklü olup olmadığını belirlemek `Get-Hotfix -Id KB3000850` Windows PowerShell'de.
+Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell Desired State Configuration (DSC) Windows PowerShell 4. 0'ı kullanılabilir [Windows RT 8.1, Windows 8.1 ve Windows Server 2012 R2 için Kasım 2014 güncelleştirme paketi](https://support.microsoft.com/kb/3000850/) (KB 3000850 ). BB 3000850 sisteminizde çalıştırarak yüklü olup olmadığını belirlemek `Get-Hotfix -Id KB3000850` Windows PowerShell'de.
 
-- Mevcut cmdlet'leri güncelleştirmeleri [da PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) Modülü
+- Mevcut cmdlet'ler için güncelleştirmeler [da PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) Modülü
 
     -   [Get-DscResource](http://technet.microsoft.com/library/dn521625.aspx) (özellikle ISE) daha hızlıdır.
 
-    -   [Başlangıç DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) - hangi son uygulanan yapılandırma yeniden uygular UseExisting, yeni bir parametre içeriyor.
+    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) - son uygulanan yapılandırma yeniden uygular, UseExisting, yeni bir parametresi vardır.
 
-    -   [Başlangıç DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force sabit.
+    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force düzeltildi.
 
-    -   [Get-DscLocalConfigurationManager](http://technet.microsoft.com/library/dn407378.aspx) daha kullanışlı motoru durumu bilgilerini görüntüler.
+    -   [Get-DscLocalConfigurationManager](http://technet.microsoft.com/library/dn407378.aspx) motoru durumu hakkında daha faydalı bilgiler görüntüler.
 
     -   [Test-DscConfiguration](http://technet.microsoft.com/library/dn407382.aspx) artık doğru veya yanlış yanı sıra bilgisayar adını döndürür.
 
-    -   [DscChecksum yeni](http://technet.microsoft.com/library/dn521622.aspx) artık UNC yollarını destekler.
+    -   [Yeni DscChecksum](http://technet.microsoft.com/library/dn521622.aspx) artık UNC yollarını desteklemektedir.
 
-- Yeni cmdlet'leri [da PSDesiredStateConfiguration](http://technet.microsoft.com/library/dn391651(v=wps.640).aspx) Modülü
+- Yeni cmdlet'ler [da PSDesiredStateConfiguration](http://technet.microsoft.com/library/dn391651(v=wps.640).aspx) Modülü
 
-    -   [Güncelleştirme DscConfiguration](http://technet.microsoft.com/library/mt143541(v=wps.630).aspx): bir isteğe bağlı çekme sunucu denetimi gerçekleştirir.
+    -   [Update-DscConfiguration](http://technet.microsoft.com/library/mt143541(v=wps.630).aspx): bir isteğe bağlı çekme sunucusu denetimi gerçekleştirir.
 
-    -   [Stop-DscConfiguration](http://technet.microsoft.com/library/mt143542(v=wps.630).aspx): zaten çalışmakta olan bir yapılandırma durdurur.
+    -   [Stop-DscConfiguration](http://technet.microsoft.com/library/mt143542(v=wps.630).aspx): zaten çalışan bir yapılandırma durdurur.
 
-    -   [Remove-DscConfigurationDocument](http://technet.microsoft.com/library/mt143544(v=wps.630).aspx): çeşitli aşamalarda (Beklemede, önceki veya geçerli) yapılandırma belgelerini kaldırmanıza olanak sağlar.
+    -   [Remove-DscConfigurationDocument](http://technet.microsoft.com/library/mt143544(v=wps.630).aspx): yapılandırma belgelerini (Bekleyen, önceki veya geçerli) çeşitli aşamalarda kaldırmanıza olanak sağlar.
 
-- Dil geliştirmeleri
+- Dil iyileştirmeleri
 
-    -   DependsOn artık bileşik kaynakları destekler.
+    -   DependsOn bileşik kaynakları artık desteklemektedir.
 
-    -   DependsOn numaraları artık kaynak örnek adlarını destekler.
+    -   DependsOn, artık sayıları kaynak örnek adlarını destekler.
 
-    -   Artık değerlendirmek için boş bir düğüm ifade hataları atar.
+    -   Artık değerlendirmek için boş düğüm ifadeleri hataları atar.
 
-    -   Bir düğüm ifadesi için boş değerlendirilirse oluşan bir hata düzeltildi.
+    -   Bir düğüm ifadesi boş olarak değerlendirilirse oluşan hata düzeltildi.
 
-    -   Yapılandırmalar artık çağırma yapılandırmaları Windows PowerShell konsolunda da çalışır.
+    -   Windows PowerShell konsolunda yapılandırmalar artık çağırma yapılandırmaları çalışır.
 
 - Çekme modu geliştirmeleri
 
-    -   Çekme mod şimdi tüm ZIP dosyaları destekler.
+    -   Çekme modu, artık tüm ZIP dosyalarını destekler.
 
-    -   **AllowModuleOverwrite** şimdi düzgün çalışır.
+    -   **AllowModuleOverwrite** artık düzgün şekilde çalışır.
 
 - Dayanıklılık geliştirmeleri
 
-    -   Yeni **DebugMode** kaynak modülleri yeniden olanak tanır.
+    -   Yeni **DebugMode** kaynak modülleri yeniden olanak sağlar.
 
-    -   Bir yapılandırma hatası oluşursa, pending.mof dosya silinmez.
+    -   Bir yapılandırma hatası meydana gelirse, pending.mof dosya silinmez.
 
-    -   Meta yapılandırmasını ayarları bozulmuş olduğunda yerel Configuration Manager (LCM'yi) artık daha esnektir.
+    -   Metaconfiguration ayarları bozulmuş, yerel Configuration Manager (LCM) artık daha esnektir.
 
 - Tanılama geliştirmeleri
 
-    -   LCM'yi belirtilenden farklı ayarlar Zamanlayıcı ayarlar bir uyarı görüntülenir.
+    -   LCM belirtilenden farklı ayarlar Zamanlayıcıyı ayarlar bir uyarı görüntülenir.
 
-    -   Hata günlük dosyalarını artık Windows PowerShell kaynaklar için çağrı yığını içerir.
+    -   Hata günlük dosyaları, artık Windows PowerShell kaynaklar için çağrı yığını içerir.
 
 - Esneklik geliştirmeleri
 
-    -   Yeni bir özellik LocalConfigurationManager kaynak sahip **ActionAfterReboot**.
+    -   Yeni bir özellik LocalConfigurationManager kaynakta yok **ActionAfterReboot**.
 
-        -   ContinueConfiguration (varsayılan değer): hedef düğüm yeniden başlatıldıktan sonra yapılandırma otomatik olarak devam ettirir.
+        -   ContinueConfiguration (varsayılan değer): hedef düğümü yeniden başlatıldıktan sonra yapılandırma otomatik olarak sürdürür.
 
         -   StopConfiguration: bir düğümü yeniden başlatıldıktan sonra otomatik olarak bir yapılandırma devam.
 
-    -   Bir tutarlılık çalıştırma artık ÇEKME işlemi ya da tam tersini kıyasla daha sık oluşabilir.
+    -   Tutarlılık çalıştırma artık bir ÇEKME işlemi ya da tam tersi çok sık gerçekleşebilir.
 
-    -   Sürüm oluşturma desteği: DSC daha yeni bir istemci üzerinde oluşturulan bir belgeyi artık algılayabilir (ile birlikte gelen [WMF 5.0](http://aka.ms/wmf5download)).
+    -   Sürüm oluşturma desteği: DSC daha yeni bir istemci üzerinde oluşturulmuş bir belge artık algılayabilir (birlikte [WMF 5.0](http://aka.ms/wmf5download)).
 
-- Hata Engellemesi geliştirmeleri
+- Hata önleme geliştirmeleri
 
-    -   Bir yapılandırma uygulanmadan önce Modül sürümü artık zorlanır.
+    -   Bir yapılandırma uygulanmadan önce Modül sürümü artık uygulanmaz.
 
-    -   **DebugPreference** artık doğru Get-, Set- veya Test TargetResource aramalar için ayarlanır.
+    -   **DebugPreference** artık doğru şekilde Get-, Set- veya Test TargetResource aramalar için ayarlanır.
 
-- Kimlik bilgisi geliştirmeleri işleme
+- Kimlik bilgisi işleme geliştirmeleri
 
-    -   Bir sertifika, her iki kullanılan **sertifika** ve **PSDscAllowPlainTextPassword** belirtilir.
+    -   Sertifika artık, her iki kullanıldığında **sertifika** ve **PSDscAllowPlainTextPassword** belirtilir.
 
-    -   Kimlik bilgileri, hatta Get-TargetResource için şifresi çözülür.
+    -   Kimlik bilgileri, bile Get-TargetResource için şifresi çözülür.
 
-    -   Meta yapılandırmasını kimlik bilgileri şifrelenir ve şifreleri çözülür.
+    -   Metaconfiguration kimlik bilgileri şifrelenir ve şifresi çözülür.
 
     -   Katıştırılmış nesne olduklarında PSCredentials artık şifresi çözülür.
 
 - Yerleşik kaynak geliştirmeleri
 
-    -   Paket kaynağı
+    -   Package kaynağı
 
-        -   Artık yanlış paketi yükler (yerel uygulamasından veya web kaynakları).
+        -   Artık yanlış paketi yükler (yerel uygulamasından veya web kaynaklarını).
 
         -   Artık HTTPS destekler.
 
-    -   HTTPS için şimdi destek [paket kaynak](http://technet.microsoft.com/library/dn282132.aspx).
+    -   HTTPS için artık destek [paket kaynak](http://technet.microsoft.com/library/dn282132.aspx).
 
-    -   [Arşiv kaynak](http://technet.microsoft.com/library/dn249917.aspx) artık kimlik bilgilerini destekler.
+    -   [Kaynak arşiv](http://technet.microsoft.com/library/dn249917.aspx) artık kimlik bilgilerini destekler.
 
-## <a name="new-features-in-windows-powershell-50"></a>Windows PowerShell 5. 0'teki yeni özellikler
+## <a name="new-features-in-windows-powershell-50"></a>Windows PowerShell 5.0 yeni özellikler
 
 - [Windows PowerShell'de yeni özellikler](#new-features-in-windows-powershell)
-- [Windows PowerShell istenen durum Yapılandırması'deki yeni özellikler](#new-features-in-windows-powershell-desired-state-configuration)
-- [Windows PowerShell ISE yeni özellikler](#new-features-in-windows-powershell-ise)
-- [Windows PowerShell Web Hizmetleri'ndeki yeni özellikler](#new-features-in-windows-powershell-web-services-management-odata-iis-extension)
-- [Windows PowerShell 5. 0 ' önemli hata düzeltmeleri](#notable-bug-fixes-in-windows-powershell-50)
+- [Windows PowerShell Desired State Configuration ' deki yeni özellikler](#new-features-in-windows-powershell-desired-state-configuration)
+- [Windows PowerShell ıse'de yeni özellikler](#new-features-in-windows-powershell-ise)
+- [Windows PowerShell Web Hizmetleri yenilikleri](#new-features-in-windows-powershell-web-services-management-odata-iis-extension)
+- [Windows PowerShell 5.0 önemli hata düzeltmeleri](#notable-bug-fixes-in-windows-powershell-50)
 
 ### <a name="new-features-in-windows-powershell"></a>Windows PowerShell'de yeni özellikler
 
-- Windows PowerShell 5. 0'dan başlayarak, sınıflar, resmi sözdizimi ve diğer nesne odaklı programlama dili için benzer semantiği kullanarak geliştirebilirsiniz. **Sınıf**, **Enum**, ve diğer anahtar sözcükler yeni özellik desteklemek için Windows PowerShell dil eklenmiştir. About_Classes sınıfları ile çalışma hakkında daha fazla bilgi için bkz.
+- Windows PowerShell 5.0 ile başlayarak, sınıflar, biçimsel sözdizimi ve diğer nesne yönelimli programlama dillerinde benzer semantiği kullanarak geliştirebilirsiniz. **Sınıf**, **Enum**, ve diğer anahtar sözcükleri yeni özelliği desteklemek için Windows PowerShell dil sürümüne eklenmiştir. About_Classes sınıfları ile çalışma hakkında daha fazla bilgi için bkz.
 
-- Windows PowerShell 5.0, bir komut dosyası ve arayanlar (veya barındırma ortamı) arasındaki yapılandırılmış veri iletmek için kullanabileceğiniz bir yeni, yapılandırılmış bilgi akış tanıtır. Write-Host artık bilgi akış çıkışı yaymak üzere de kullanabilirsiniz. Bilgi akışlarını PowerShell.Streams, işler, zamanlanmış işler ve iş akışları için de çalışır. Aşağıdaki özellikleri bilgi akışını destekler.
+- Windows PowerShell 5.0, bir komut dosyası ve çağıranlar (veya barındırma ortamı) arasındaki yapılandırılmış veri aktarmak için kullanabileceğiniz bir yeni, yapılandırılmış bilgi akışı sunar. Write-Host artık bilgi akışına çıkış yaymak için de kullanabilirsiniz. Bilgi akışları da PowerShell.Streams, işler, zamanlanmış işler ve iş akışları için çalışır. Bilgi akışı aşağıdaki özellikleri destekler.
 
-    -   Windows PowerShell komutu için bilgi akışını veri işleme biçimini belirtmenize olanak sağlar. yeni bir yazma bilgi cmdlet'i. Write-Host yazma bilgisi için sarmalayıcı ' dir. Yazma bilgileri de bir desteklenen iş akışı etkinliğidir.
+    -   Windows PowerShell komutu için akış veri bilgileri nasıl işlediğini belirtmenize olanak sağlar. yeni bir yazma bilgi cmdlet. Write-Host yazma bilgi bir sarmalayıcıdır. Yazma-ayrıca desteklenen bir iş akışı etkinlik bilgilerdir.
 
-    -   İki yeni ortak parametreleri, Informationvariable ve Informationaction, bir komut bilgi akışlardan nasıl görüntüleneceğini belirlemenize olanak tanır. SilentlyContinue, Durdur, devam et, Inquire, Yoksay veya varsayılan değer olan SilentlyContinue ile askıya alma Informationaction için geçerli değerler. Informationvariable bir dize olarak kaydedilmiş bir komut Write-Host verilerden istediğiniz bir değişkeni adını belirtir.
+    -   İki yeni ortak parametreleri Informationvariable ve Informationaction, bir komut bilgileri akışlardan nasıl görüntüleneceğini belirlemenize olanak tanır. SilentlyContinue, durdurma, devam et, Inquire, Yoksay veya askıya alma, varsayılan olan SilentlyContinue ile Informationaction için geçerli değerlerdir. Informationvariable bir dize olarak kaydedilmiş bir komut Write-Host verilerinden istediğiniz değişken adını belirtir.
 
     -   Yeni tercih değişkeni, InformationPreference, varsayılan tercihinizi bilgi veri akışı için bir Windows PowerShell oturumunda belirtir. SilentlyContinue varsayılan değerdir.
 
-    -   İki yeni iş akışı ortak parametreleri, PSInformation ve Informationaction, eklenmiştir.
+    -   İki yeni iş akışı ortak parametreleri PSInformation ve Informationaction, sürümüne eklenmiştir.
 
-    -   Tablo Biçimlendir komutunu kullandığınızda, tablo sütunları artık otomatik olarak akışını geçirir verilerin ilk 300ms değerlendirerek biçimlendirilir.
+    -   Format-Table komutunu kullandığınızda, tablo sütunları artık otomatik olarak akış geçen veri ilk 300ms değerlendirerek biçimlendirilir.
 
-- İşbirliğiyle [Microsoft Research](http://research.microsoft.com/), ConvertFrom dizesi, yeni bir cmdlet eklendi. ConvertFrom dize ayıklayın ve metin dizelerini içeriğini yapılandırılmış nesnelerden ayrıştırma olanak sağlar. Daha fazla bilgi için bkz: ConvertFrom dize.
+- İşbirliği ile [Microsoft Research](http://research.microsoft.com/), ConvertFrom-dize, yeni bir cmdlet eklendi. ConvertFrom-dize çıkarma ve metin dizelerini içeriğini yapılandırılmış nesnelerden sağlar. Daha fazla bilgi için bkz: ConvertFrom-dize.
 
-- Yeni bir dönüştürme dizesi cmdlet'i bir - örnek parametresinde sağlayan örnek göre metin otomatik olarak biçimlendirir.
+- Yeni dize dönüştürme cmdlet örnek parametresi sağladığınız örneği temel metin otomatik olarak biçimlendirir.
 
-- Arşiv (ZIP da bilinir) dosyaları, klasörlere var olan posta dosyalarından dosyaları ayıklayın ve bunların içinde sıkıştırılmış dosyaların daha yeni sürümlerle ZIP dosyaları güncelleştirmek ve Microsoft.PowerShell.Archive, yeni bir modül dosyaları sıkıştırın olanak tanıyan cmdlet'leri içerir.
+- Dosyaları sıkıştır sağlayan cmdlet'ler Microsoft.PowerShell.Archive, yeni bir modül içerir ve klasörler halinde (ZIP olarak da bilinir) arşiv dosyaları ZIP dosyaları var olan dosyaları ayıklayın ve bunları sıkıştırılmış dosya daha yeni sürümleriyle ZIP dosyalarını güncelleştirme.
 
-- PackageManagement, yeni bir modülü bulmak ve Internet'te yazılım paketleri yüklemek olanak sağlar. PackageManagement (önceki adıyla OneGet da bilinir) Yöneticisi'ni veya var olan paketi yöneticileri (paket sağlayıcıları olarak da bilinir) çoğaltıcı tek bir Windows PowerShell arabirimi ile Windows paket Yönetimi birleştirmek için modülüdür.
+- PackageManagement, yeni bir modül, bulma ve Internet'te yazılım paketlerini yükleme sağlar. PackageManagement (önceki adıyla OneGet da bilinir) Yöneticisi'ni veya var olan paket yöneticileri (paket sağlayıcıları olarak da bilinir) çoğaltıcı tek bir Windows PowerShell arabirimine sahip Windows paket Yönetimi buluşturulan modülüdür.
 
-- PowerShellGet, yeni bir modülü bulmak, yükleme, yayımlama ve güncelleştirme modülleri ve DSC kaynakları üzerinde sağlar [PowerShell Galerisi](http://www.powershellgallery.com/), veya Register-PSRepository cmdlet'ini çalıştırarak ayarlayabileceğiniz bir iç modül deposu.
+- PowerShellGet, yeni bir modülü bulma, yükleme, yayımlama ve güncelleştirme modülleri ve DSC kaynakları üzerinde sağlar [PowerShell Galerisi](http://www.powershellgallery.com/), veya bir iç modül deposunda, Register-PSRepository cmdlet çalıştırılarak ayarlayabilirsiniz.
 
-- Yeni bir dil anahtar sözcüğü **gizli**, bir üye (bir özellik veya yöntem) varsayılan Get-üye sonuçlarında gösterilmez belirtmek için eklenene (eklediğiniz sürece - Force parametresini). Burada üye görünmesi gereken bir bağlamda olmadıkça özellikleri veya gizli olarak işaretlenmiş yöntemler de IntelliSense sonuçlarında görünmüyor; Örneğin, otomatik değişken $bu sınıf yöntemi, gizli üyeleri göstermelidir.
+- Yeni bir dil anahtar kelimesi **gizli**, bir üye (bir özellik veya yöntem), Get-Member sonuçlarında varsayılan olarak gösterilmez belirtmek için eklendi (eklediğiniz sürece - Force parametresi). Üye görünür olması gereken yerde bağlamında olmadığı sürece özellikleri veya gizli olarak işaretlenmiş bir yöntem aynı zamanda IntelliSense sonuçlarında gösterilmez; Örneğin, otomatik değişken $bu sınıf yöntemi, gizli üyeleri göstermelidir.
 
-- Yeni öğe, Kaldır öğesini ve Get-Childıtem oluşturma ve yönetme desteği veren geliştirilmiş [sembolik bağlantılar](http://en.wikipedia.org/wiki/Symbolic_link). **- ItemType** yeni öğesi için parametre kabul eden yeni bir değer **SymbolicLink**. Artık yeni öğe cmdlet'ini çalıştırarak tek bir satırda sembolik bağlantılar oluşturabilirsiniz.
+- Yeni öğe, öğe kaldırma ve Get-Childıtem oluşturma ve yönetme desteklemek için Gelişmiş [simgesel bağlantılar](http://en.wikipedia.org/wiki/Symbolic_link). **- Itemtype** yeni öğe için parametre kabul eder, yeni bir değer **SymbolicLink**. Artık yeni öğe cmdlet'ini çalıştırarak tek bir satırda simgesel bağlantılar oluşturabilirsiniz.
 
-- Get-Childıtem de sahip yeni - derinliği özyineleme sınırlamak için Recurse parametresiyle kullanmak parametresi. Örneğin, Get-Childıtem-Recurse - derinliği 2 sonuçları klasörleri geçerli klasörden, geçerli klasördeki tüm alt klasörleri ve tüm alt klasörlerde döndürür.
+- Get-Childıtem de sahip yeni - Depth parametresi özyineleme sınırlamak için ile Recurse parametresini kullanın. Örneğin, Get-Childıtem-Recurse - derinliği 2 sonuçları klasörlerin geçerli klasörde geçerli klasördeki tüm alt klasörlerde ve tüm alt klasörlerde döndürür.
 
-- Öğeyi Kopyala şimdi kopyaladığınız dosya veya klasör bir Windows PowerShell oturumundan diğerine, uzak bir bilgisayara bağlı oturuma dosyalarını kopyalayabilirsiniz anlamı sağlar (çalıştıran bilgisayarlar da dahil olmak üzere [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), ve Bu nedenle başka bir arabirim vardır). Dosyaları kopyalamak için yeni - FromSession ve - ToSession parametre değeri olarak PSSession kimlikleri belirlemek ve - Path ve - kaynak yolunu belirtmek için hedef ve hedef, sırasıyla ekleyin. Örneğin, Copy-Item-yol c:\\dosyam.txt - ToSession $s-hedef d:\\destinationFolder.
+- Artık, dosyaları veya klasörleri bir Windows PowerShell oturumundan diğerine kopyalama, uzak bir bilgisayara bağlı oturuma dosyalarını kopyalayabilirsiniz anlamı sağlar Copy-Item (çalıştıran bilgisayarlar da dahil olmak üzere [Nano sunucu](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), ve Bu nedenle herhangi bir arabirim sahip). Dosyaları kopyalamak için PSSession kimlikleri yeni - FromSession ve - ToSession parametrelerinin değeri belirtin ve - Path ve - kaynak yolu belirtmek için hedef ve hedef, sırasıyla ekleyin. Örneğin, Copy-Item-c: yol\\myFile.txt - ToSession $s-hedef d:\\destinationFolder.
 
-- Konsolu konak yanı sıra tüm barındırma uygulamaları (örneğin, Windows PowerShell ISE) uygulamak için Windows PowerShell transcription geliştirilmiştir (**powershell.exe**). (Sistem genelindeki dökümü etkinleştirme dahil) transcription seçenekleri sağlayarak yapılandırılabilir **PowerShell Transcription üzerinde kapatma** Yönetim Şablonları/Windows bileşenleri/Windows'ta bulunan, Grup İlkesi ayarı PowerShell.
+- Konsol konağı yanı sıra tüm barındırma uygulamalarının (örneğin, Windows PowerShell ISE) uygulamak için Windows PowerShell transkripsiyonu geliştirildi (**powershell.exe**). (Bir sistem genelinde döküm etkinleştirme dahil) transkripsiyon seçenekleri sağlayarak yapılandırılabilir **PowerShell Transkripsiyonu kapatma** Grup İlkesi ayarı, Yönetim Şablonları/Windows bileşenleri/Windows içinde bulunamadı PowerShell.
 
-- Yeni bir ayrıntılı betik izleme özelliği, ayrıntılı izleme ve çözümleme sisteminde Windows PowerShell komut dosyası kullanımı olanak tanır. Ayrıntılı betik izleme etkinleştirdikten sonra Windows PowerShell tüm komut dosyası blokları olay izleme için Windows (ETW) olayı günlüğe kaydeder. **Microsoft-Windows-PowerShell/Operational**.
+- Yeni bir betik ayrıntılı izleme özelliği, ayrıntılı izleme ve çözümleme sisteminde Windows PowerShell komut dosyası kullanımı etkinleştirmenize olanak tanır. Ayrıntılı betik izlemeyi etkinleştirdikten sonra Windows PowerShell tüm betik bloklarını olay izleme için Windows (ETW) olayı günlüğe kaydeder. **Microsoft-Windows-PowerShell/Operational**.
 
-- Windows PowerShell 5. 0'dan başlayarak, yeni şifreleme iletisi söz dizimi cmdlet'leri şifreleme ve şifre çözme içeriğin şifreli olarak iletileri tarafından belgelenen şekilde korumak için IETF standart biçimi kullanarak destek [RFC5652](http://tools.ietf.org/html/rfc5652). Get-CmsMessage, koruma CmsMessage ve Unprotect-CmsMessage cmdlet'leri için eklenene [Microsoft.PowerShell.Security](http://technet.microsoft.com/library/hh849807.aspx) modülü.
+- Windows PowerShell 5.0 ile başlayarak, yeni şifreli ileti söz dizimi cmdlet'leri şifreleme ve şifre çözme içeriğin şifreli olarak iletileri tarafından belirtildiği gibi korumak için IETF standart biçimi kullanarak desteklemek [RFC5652](http://tools.ietf.org/html/rfc5652). Get-CmsMessage ve Koru-CmsMessage Unprotect-CmsMessage cmdlet'leri eklenmiş [Microsoft.PowerShell.Security](http://technet.microsoft.com/library/hh849807.aspx) modülü.
 
-- Yeni cmdlet'leri [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) modülü, Get-çalışma alanı, hata ayıklama çalışma, Get-RunspaceDebug, etkinleştirme RunspaceDebug ve devre dışı bırak-RunspaceDebug, izin, bir çalışma alanı ve başlatma ve durdurma hata ayıklama seçeneklerini ayarlama bir çalışma alanı üzerinde hata ayıklama. Rastgele çalışma alanlarını hata ayıklama için "başka bir deyişle, bir Windows PowerShell konsolu veya Windows PowerShell ISE oturumu için varsayılan çalışma olmayan çalışma alanlarını '"Windows PowerShell sağlar kesme bir komut dosyası ve kesme noktaları Durdur betikten eklediyseniz Çalışma alanı komut dosyası hata ayıklamak için bir hata ayıklayıcı ekleyebileceğini kadar çalışıyor. Çalışma alanları için Windows PowerShell komut dosyası hata ayıklayıcı için rasgele çalışma alanlarını iç içe geçmiş hata ayıklama desteği eklendi.
+- Yeni cmdlet'ler [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) modülü, Get-çalışma, hata ayıklama çalışma, Get-RunspaceDebug, RunspaceDebug etkinleştirme ve devre dışı bırak-RunspaceDebug, bir çalışma alanı ve başlatılması ve durdurulması hata ayıklama seçeneklerini ayarlamanızı sağlar bir çalışma alanı üzerinde hata ayıklama. İsteğe bağlı çalışma alanları hata ayıklama için "diğer bir deyişle, bir Windows PowerShell konsolu veya Windows PowerShell ISE oturumu için varsayılan çalışma olmayan çalışma alanları '"Windows PowerShell sayesinde bir betikte kesme noktaları ayarlayın ve kesme noktaları durdurun betikten eklendi Çalışma alanı hataları ayıklamak için bir debugger iliştirebilmek için kadar çalışıyor. Çalışma alanları için Windows PowerShell komut dosyası hata ayıklayıcı rastgele çalışma alanları için iç içe geçmiş hata ayıklama desteği eklendi.
 
-- Yeni bir biçim onaltılık cmdlet eklendi [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) modülü. Biçim onaltılık metin veya ikili veri onaltılık biçimde görüntülemenize olanak tanır.
+- Yeni biçimi onaltılık cmdlet eklendi [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) modülü. Onaltılık biçiminde metin veya ikili veri onaltılık biçimde görüntülemenize olanak tanır.
 
-- Get-Pano ve Set-Pano cmdlet'leri eklenmiştir [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) modülü; içerik için ve bir Windows PowerShell oturumundan aktarımını kolaylaştırır. Pano cmdlet'leri görüntüleri, ses dosyaları, dosya listelerinin ve metin destekler.
+- Pano get ve Set-Pano cmdlet'leri eklenmiştir [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) modülü; bunlar için ve bir Windows PowerShell oturumundan içerik aktarımını kolaylaştırır. Pano cmdlet'leri görüntüleri, ses dosyaları, dosya listeler ve metin destekler.
 
-- Clear-geridönüşüm kutusu, yeni bir cmdlet için eklenen [Microsoft.PowerShell.Management](http://technet.microsoft.com/library/hh849827(v=wps.640).aspx) modülü; dönüşüm dış sürücüleri içeren bir sabit sürücü için bu cmdlet'i kutusunu boşaltır. Varsayılan olarak, cmdlet'in Confirmımpact özelliği için ConfirmImpact.High ayarlandığından Temizle geridönüşüm kutusu komutu onaylamanız istenir.
+- Clear-geridönüşüm kutusu, yeni bir cmdlet eklendi [Microsoft.PowerShell.Management](http://technet.microsoft.com/library/hh849827(v=wps.640).aspx) modülü; Geri Dönüşüm Kutusu'nu dış sürücüleri içeren bir sabit sürücü için bu boşaltır cmdlet'i. Cmdlet Confirmımpact özelliği için ConfirmImpact.High olarak ayarlandığından varsayılan olarak, bir düz geridönüşüm kutusu komutu onaylamanız istenir.
 
-- Yeni bir cmdlet, New-TemporaryFile, komut dosyası bir parçası olarak geçici bir dosya oluşturmanıza olanak sağlar. Varsayılan olarak, yeni geçici dosya oluşturulan ```C:\Users\<user name>\AppData\Local\Temp```.
+- Yeni cmdlet, New-TemporaryFile, betik oluşturma işleminin parçası olarak geçici bir dosya oluşturmanıza olanak sağlar. Varsayılan olarak, yeni bir geçici dosya içinde oluşturulan ```C:\Users\<user name>\AppData\Local\Temp```.
 
-- Şimdi Out-File, Add-Content ve Set-Content cmdlet'leri çıktıdan sonra yeni bir satır atlar bir yeni - NoNewline parametreye sahip.
+- Çıktıdan sonra yeni bir satır atlar yeni - NoNewline parametresi Out-File, içerik ekleyin ve Set-Content cmdlet'leri artık var.
 
-- Yeni GUID cmdlet komut dosyaları veya DSC kaynakları yazarken yararlı bir GUID oluşturmak için .NET Framework GUID sınıfı yararlanır.
+- Yeni GUID cmdlet betikleri veya DSC kaynakları yazarken yararlı bir GUID oluşturmak için .NET Framework GUID sınıfı yararlanır.
 
-- Bir dosya özellikle uygulandıktan sonra dosya sürümü bilgilerini yanıltıcı, olabileceğinden, yeni FileVersionRaw ve ProductVersionRaw komut dosyası özellikleri FileInfo nesneler için kullanılamaz. Örneğin, burada $pid çalışan bir Windows PowerShell oturumu için işlem kimliği içerir, powershell.exe için bu özelliklerin değerlerini görüntülemek için aşağıdaki komutu çalıştırabilirsiniz:  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- Özellikle dosya uygulandıktan sonra dosya sürümü bilgilerini yanıltıcı olabilir bu nedenle, yeni FileVersionRaw ve ProductVersionRaw betik özellikleri FileInfo nesneler için kullanılabilir. Örneğin, burada $pid çalışan bir Windows PowerShell oturumu için işlem Kimliğini içeren için powershell.exe, bu özelliklerin değerlerini görüntülemek için aşağıdaki komutu çalıştırabilirsiniz:  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 
-- Yeni cmdlet'leri Enter PSHostProcess ve çıkış PSHostProcess Windows PowerShell betikleri Windows PowerShell konsolunda çalışan geçerli işlemi ayrı işlemlerde hata ayıklama sağlar. Girin ya da belirli işlem kimliği için iliştirmek için ENTER-PSHostProcess çalıştırın ve ardından işlemdeki etkin çalışma alanlarını döndürmek için Get-çalışma çalıştırın. İşlem içindeki komut dosyası hata ayıklaması bittiğinde işleminden ayırmak için çıkış-PSHostProcess çalıştırın.
+- Yeni cmdlet'ler Enter PSHostProcess ve çıkış PSHostProcess Windows PowerShell betikleri Windows PowerShell konsolunu çalıştıran geçerli işleminden ayrı işlemlerde hata ayıklamanıza olanak tanır. Girin veya bir özel işlem kimliği için eklemek için ENTER-PSHostProcess çalıştırın ve sonra etkin çalışma alanları işlemde döndürülecek Get-çalışma çalıştırın. İşiniz bittiğinde işlemdeki betik hata ayıklama işlemden ayırmak için çıkış-PSHostProcess çalıştırın.
 
-- Yeni bir bekleme hata ayıklayıcı cmdlet eklendi [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) modülü. Sonraki deyim komut dosyasını çalıştırmadan önce bir komut dosyası hata ayıklayıcı durdurmak için bekleme-hata ayıklayıcı çalıştırabilirsiniz.
+- Yeni bir bekleme hata ayıklayıcı cmdlet'i eklendi [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) modülü. Sonraki deyim komut dosyasını çalıştırmadan önce bir betikte hata ayıklayıcıyı durdurmak için bekleme-hata ayıklayıcı çalıştırabilirsiniz.
 
-- Windows PowerShell iş akışı hata ayıklayıcı komut veya sekme tamamlama artık destekler ve iç içe geçmiş iş akışı işlevleri ayıklayabilirsiniz. Şimdi basabilirsiniz **Ctrl + Break** çalışan bir komut dosyası, hem yerel hem de uzak oturumlar ve bir iş akışı komut dosyası hata ayıklayıcı girmek için.
+- Windows PowerShell iş akışı hata ayıklayıcısını artık komutu veya sekme tamamlama destekler ve iç içe geçmiş iş akışı işlevleri ayıklayabilirsiniz. Artık basabilirsiniz **Ctrl + Break** hata ayıklayıcı, çalışan bir komut dosyası, hem yerel hem de uzak oturumlar ve bir iş akışı betiği girmek için.
 
-- Hata ayıklama işi cmdlet eklendi [Microsoft.PowerShell.Core](http://technet.microsoft.com/library/hh849695.aspx) çalışan iş komutlar Windows PowerShell iş akışı, arka plan ve uzak oturumlarında çalışan işleri için hata ayıklamak için modülü.
+- Hata ayıklama işi cmdlet'i eklendi [Microsoft.PowerShell.Core](http://technet.microsoft.com/library/hh849695.aspx) Windows PowerShell iş akışı, arka plan ve uzak oturumlarında çalışan işler çalışan iş betikleri hata ayıklamak için modülü.
 
-- Yeni bir durum, AtBreakpoint, Windows PowerShell işleri eklendi. Komut dosyasını bir kesme noktası isabet ve bir iş kümesi kesme noktaları içeren bir komut dosyası çalıştırılırken AtBreakpoint durum geçerlidir. Bir işi hata ayıklama kesme noktasında durdurulduğunda, hata ayıklama işi cmdlet'ini çalıştırarak iş hata ayıklama gerekir.
+- Yeni bir durum AtBreakpoint, Windows PowerShell işleri için eklendi. Kesme noktaları belirleyin içeren bir betiği bir iş çalışırken AtBreakpoint durumu uygular ve betik, bir kesme noktası isabet. Bir işi hata ayıklama kesme noktasında durdurulduğu zaman hata ayıklama işi cmdlet'ini çalıştırarak bu işin hatalarını gerekir.
 
-- Windows PowerShell 5.0 $PSModulePath aynı klasörde birden fazla sürümünü tek bir Windows PowerShell modülü için destek uygular. RequiredVersion özelliği bir modülü istenen sürümü alma yardımcı olmak için ModuleSpecification sınıfı eklendi; Bu özellik ModuleVersion özelliğiyle karşılıklı olarak birbirini dışlar. Get-modülünün FullyQualifiedName parametresinin değeri bir parçası olarak RequiredVersion desteklenen şimdi Import-Module ve Kaldır-Module cmdlet'leri.
+- Windows PowerShell 5.0 $PSModulePath aynı klasörde birden çok sürümünü tek bir Windows PowerShell modülü için destek uygular. Bir RequiredVersion özelliği bir modülün istenen sürümünü almak amacıyla ModuleSpecification sınıfı eklenmiştir; Bu özellik ModuleVersion özelliği ile birbirini dışlayan. Get-Module, karşılık gelen fullyqualifiedname öğesi parametresinin değeri bir parçası olarak RequiredVersion desteklenen artık Import-Module ve Remove-Module cmdlet'leri.
 
-- Modül sürümü doğrulama artık Test ModuleManifest cmdlet'ini çalıştırarak da gerçekleştirebilirsiniz.
+- Artık Test ModuleManifest cmdlet'ini çalıştırarak modülü sürüm doğrulama gerçekleştirebilirsiniz.
 
-- Get-Command cmdlet'i sonuçlarını şimdi sürüm sütununda görüntüleyin; Yeni bir sürüm özelliği CommandInfo sınıfı eklendi. Get-Command aynı modülü birden fazla sürümünü komutları gösterir. Version özelliği de CmdletInfo türetilmiş sınıfları parçasıdır: CmdletInfo ve ApplicationInfo.
+- Get-Command cmdlet'inin sonuçlarını, sürüm sütununda artık görüntüler; Yeni bir sürüm özelliği CommandInfo sınıfı eklendi. Get-Command birden çok sürümünü aynı modülde komutları gösterir. Version özelliği ayrıca CmdletInfo türetilmiş sınıfları parçasıdır: CmdletInfo ve ApplicationInfo.
 
-- Get-Command - PSObjects olarak ShowCommand bilgilerini döndürür ShowCommandInfo, yeni bir parametre vardır. Bu Windows PowerShell uzaktan iletişimi kullanarak, Göster komutu Windows PowerShell ISE çalıştırdığınızda için kullanışlı bir işlevdir. -ShowCommandInfo parametresi Microsoft.PowerShell.Utility modülü mevcut Get-SerializedCommand işlevinde değiştirir, ancak Get-SerializedCommand betik alt düzey komut dosyasını destekleyen hala kullanılabilir.
+- Get-Command - PSObjects ShowCommand bilgileri döndürür ShowCommandInfo, yeni bir parametre vardır. Bu Windows PowerShell uzaktan iletişimi kullanarak, Show komutunu Windows PowerShell ISE'de çalıştırdığınızda için kullanışlı bir işlevdir. -ShowCommandInfo parametre Microsoft.PowerShell.Utility modülünde mevcut Get-SerializedCommand işlevi değiştirir ancak Get-SerializedCommand betik alt düzey komut dosyasını destekleyen hala kullanılabilir.
 
-- Yeni bir Get-ItemPropertyValue cmdlet'i noktalı gösterim kullanmadan bir özelliğin değerini alabilmenizi sağlar. Örneğin, Windows PowerShell eski sürümlerini uygulama temel özellik PowerShellEngine kayıt defteri anahtarının değerini almak için aşağıdaki komutu çalıştırabilirsiniz: **(Get-ItemProperty-yolu HKLM:\\yazılım\\ Microsoft\\PowerShell\\3\\PowerShellEngine-ad ApplicationBase). ApplicationBase**. Windows PowerShell 5. 0'dan başlayarak, çalıştırabilirsiniz **Get-ItemPropertyValue-yolu HKLM:\\yazılım\\Microsoft\\PowerShell\\3\\PowerShellEngine-Name ApplicationBase** .
+- Yeni cmdlet Get-ItemPropertyValue noktalı gösterim kullanmadan bir özelliğin değerini almanıza olanak tanır. Örneğin, Windows PowerShell daha eski sürümleri, uygulama tabanı özelliği PowerShellEngine kayıt defteri anahtarının değerini almak için aşağıdaki komutu çalıştırabilirsiniz: **(Get-Itemproperty-yolu HKLM:\\yazılım\\ Microsoft\\PowerShell\\3\\PowerShellEngine-ad ApplicationBase). ApplicationBase**. Çalıştırabileceğiniz Windows PowerShell 5.0 ile başlayarak, **ItemPropertyValue Get-yolu HKLM:\\yazılım\\Microsoft\\PowerShell\\3\\PowerShellEngine-adı ApplicationBase öğesi** .
 
-- Windows PowerShell Konsolu şimdi söz dizimi renklendirme, yalnızca Windows PowerShell ISE olduğu gibi kullanır.
+- Windows PowerShell konsolu, artık söz dizimi renklendirme, yalnızca Windows PowerShell ISE olduğu gibi kullanır.
 
-- Yeni bir NetworkSwitch modül anahtarı, sanal LAN (VLAN) ve temel Katman 2 ağ anahtarı bağlantı noktası yapılandırmasını Windows Server 2012 R2 logo sertifikalı ağ anahtarlara uygulamak etkinleştirmeniz cmdlet'leri içerir.
+- Yeni bir NetworkSwitch modülü, Windows Server 2012 R2 logo sertifikalı ağ anahtarları için anahtar ve sanal LAN (VLAN) temel Katman 2 ağ anahtarı bağlantı noktası yapılandırması uygulamanıza imkan sağlayan cmdlet'ler içerir.
 
-- FullyQualifiedName parametresi, tek bir modülün birden fazla sürümünü depolama desteklemek için Import-Module ve Kaldır-Module cmdlet'leri için eklendi.
+- Karşılık gelen fullyqualifiedname öğesi parametresi, tek bir modülün birden çok sürümünü saklama desteklemek için Import-Module ve Remove-Module cmdlet'leri eklendi.
 
-- Save-Help, Update-Help, içeri aktarma-PSSession, Export-PSSession ve Get-Command türü ModuleSpecification FullyQualifiedModule yeni bir parametre vardır. Bir modül tarafından tam olarak nitelenmiş adını belirtmek için bu parametreyi ekleyin.
+- Save-Help, Update-Help, Import-PSSession, Export-PSSession ve Get-Command FullyQualifiedModule, ModuleSpecification türünde yeni bir parametre vardır. Bir modül tarafından tam olarak nitelenmiş adını belirtmek için bu parametreyi ekleyin.
 
-- Değeri **$PSVersionTable.PSVersion** 5.0 için güncelleştirilmiştir.
+- Değerini **$PSVersionTable.PSVersion** 5.0 güncelleştirildi.
 
-### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Windows PowerShell istenen durum Yapılandırması'deki yeni özellikler
+### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration ' deki yeni özellikler
 
-- Windows PowerShell dil geliştirmeleri, sınıflarını kullanarak Windows PowerShell istenen durum yapılandırması (DSC) kaynakları tanımlamanıza olanak sağlar. İçeri aktarma DscResource true dinamik anahtar sözcüğü sunulmuştur; Windows PowerShell Belirtilen modül ayrıştırır '™ DscResource özniteliği içeren sınıfları aranıyor s kök modül. Sınıfları artık hangi hiçbiri bir MOF dosyası ya da modül klasöründe DSCResource alt gerekli değil, DSC kaynakları tanımlamak için de kullanabilirsiniz. Bir Windows PowerShell modülü dosyası birden çok DSC kaynağı sınıfları içerebilir.
+- Windows PowerShell dil iyileştirmeleri sınıflarını kullanarak Windows PowerShell Desired State Configuration (DSC) kaynakları tanımlamanıza olanak sağlar. Import-DscResource true dinamik bir anahtar sözcüğü sunulmuştur; Windows PowerShell, belirtilen modül ayrıştırır '™ s kök modül DscResource özniteliği içeren sınıfları aranıyor. Artık, hangi ne bir MOF dosyası ya da modül klasöründe bir DSCResource alt gerekli değil, DSC kaynakları tanımlamak için sınıflar da kullanabilirsiniz. Bir Windows PowerShell modülü dosyası birden çok DSC kaynak sınıfları içerebilir.
 
-- ThrottleLimit, yeni bir parametre da PSDesiredStateConfiguration modülündeki aşağıdaki cmdlet'ler eklenmiştir. Hedef bilgisayarları ve aygıtları aynı anda çalışması için komutu istediğiniz sayısını belirtmek için ThrottleLimit parametresini ekleyin.
+- Şu cmdlet'lere da PSDesiredStateConfiguration modülünde ThrottleLimit, yeni bir parametre eklendi. Hedef bilgisayarları veya cihazları komutu aynı anda çalışmak istediğiniz sayısını belirtmek için ThrottleLimit parametresini ekleyin.
 
     -   Get-DscConfiguration
 
@@ -229,325 +229,325 @@ Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell istenen dur
 
     -   Get-DscLocalConfigurationManager
 
-    -   Geri yükleme DscConfiguration
+    -   Geri yükleme-DscConfiguration
 
     -   Test-DscConfiguration
 
-    -   Karşılaştırma DscConfiguration
+    -   COMPARE-DscConfiguration
 
-    -   Yayımlama DscConfiguration
+    -   Yayımlama-DscConfiguration
 
     -   Set-DscLocalConfigurationManager
 
     -   Start-DscConfiguration
 
-    -   Güncelleştirme DscConfiguration
+    -   Update-DscConfiguration
 
-- Olay günlüğü, ancak sonraki çözümleme için merkezi bir konuma gönderilebilir merkezi DSC hata raporlama ile zengin hata bilgileri yalnızca günlüğe kaydedilmez. Kullanıcıların, ortamlarında herhangi bir sunucu için oluşmuş DSC yapılandırma hataları depolamak için bu merkezi bir konum kullanın. Rapor sunucusu meta yapılandırmasında tanımlandıktan sonra tüm hataları rapor sunucusuna gönderilir ve sonra bir veritabanında depolanır. Bir çekme sunucudan yapılandırmaları çıkarmak için hedef düğüm yapılandırılmış olup olmadığına bakılmaksızın bu işlevselliği ayarlayabilirsiniz.
+- Olay günlüğü, ancak daha sonra analiz için merkezi bir konuma gönderilebilir merkezi DSC hata raporlama ile zengin hata bilgileri yalnızca günlüğe kaydedilmez. DSC yapılandırması ortamlarında herhangi bir sunucu için oluşan bir hata depolamak için bu merkezi bir konum kullanabilirsiniz. Rapor sunucusu meta yapılandırmasında tanımlandıktan sonra tüm hataları rapor sunucusuna gönderilen ve ardından bir veritabanında saklanır. Bir çekme sunucusu yapılandırmaları çekmek için hedef düğümü yapılandırılmış olup olmadığına bakılmaksızın bu işlevselliği ayarlayabilirsiniz.
 
-- Windows PowerShell ISE geliştirmeleri DSC kaynağı yazma kolaylaştırır. Şimdi aşağıdakileri yapabilirsiniz.
+- Windows PowerShell ISE kolayca DSC kaynağı yazma geliştirmeleri. Şimdi aşağıdakileri yapabilirsiniz.
 
-    -   İçindeki tüm DSC kaynakları listesinde bir **yapılandırma** veya **düğümü** girerek blok **Ctrl + Ara çubuğu** bloğu içinde boş bir satıra.
+    -   İçindeki tüm DSC kaynakları listesinden bir **yapılandırma** veya **düğüm** girerek blok **Ctrl + boşluk** bloğu içinde boş bir satıra.
 
-    -   Kaynak özelliklerini üzerinde otomatik tamamlama **numaralandırma** türü.
+    -   Kaynak özellikleri otomatik tamamlama **numaralandırma** türü.
 
-    -   Otomatik Tamamlama sonrasında **DependsOn** DSC kaynakları, diğer kaynak örnekleri yapılandırma temel özelliği.
+    -   Otomatik Tamamlama üzerinde **DependsOn** DSC kaynakları, diğer kaynak örnekleri yapılandırma temel özelliğidir.
 
-    -   Geliştirilmiş sekme tamamlama kaynak özellik değeri.
+    -   Geliştirilmiş sekme tamamlama kaynak özellik değerleri.
 
-- Kullanıcı artık belirtilen kimlik bilgileri kümesi altında bir kaynak ekleyerek çalıştırabilirsiniz **PSDscRunAsCredential** özniteliği bir düğüm bloğu. Örneğin, PSDscRunAsCredential Get-Credential Contoso =\\DscUser. Bu işlevsellik, Windows Installer ve yürütülebilir yükleyicileri çalıştırın, kullanıcı başına kayıt defteri kovanı erişim ya da diğer görevleri geçerli kullanıcı içeriğini dışında yapılandırmaları oluşturmak için kullanışlıdır.
+- Kullanıcı artık belirtilen kimlik bilgileri kümesi altında bir kaynak ekleyerek çalıştırabilirsiniz **PSDscRunAsCredential** özniteliği için bir düğüm bloğu. Örneğin, PSDscRunAsCredential = Get-Credential Contoso\\DscUser. Bu işlevsellik, Windows Installer ve yürütülebilir yükleyicileri çalıştırmak, kullanıcı başına kayıt defteri kovanı erişmek veya geçerli kullanıcı bağlamı dışında diğer görevleri gerçekleştirmek yapılandırmaları oluşturmak için kullanışlıdır.
 
-- 32-bit (x86 tabanlı) desteği eklendi **yapılandırma** anahtar sözcüğü.
+- 32-bit (x86 tabanlı) desteği için eklenmiştir **yapılandırma** anahtar sözcüğü.
 
-- Windows PowerShell artık ekleyerek tanımlanan DSC yapılandırmaları için özel Yardım için destek içerir \[CmdletBinding()] üretilen yapılandırma işlevi.
+- Windows PowerShell artık ekleyerek tanımlanan DSC yapılandırmaları için özel bir Yardım için destek içerir \[CmdletBinding()] oluşturulan yapılandırmayı işlevi.
 
-- Yeni bir **DscLocalConfigurationManager** özniteliği bir meta-DSC Local Configuration Manager yapılandırmak için kullanılan yapılandırma, bir yapılandırma bloğu belirler. Bu öznitelik, DSC Local Configuration Manager yapılandırma öğelerini içeren bir yapılandırma kısıtlar. Bu yapılandırma işlemi sırasında oluşturur bir \*. uygun hedef düğümleri kümesi DscLocalConfigurationManager cmdlet'ini çalıştırarak gönderilir meta.mof dosya.
+- Yeni bir **DscLocalConfigurationManager** özniteliği bir meta-DSC Local Configuration Manager'ı yapılandırmak için kullanılan yapılandırma, bir yapılandırma bloğu belirler. Bu öznitelik, DSC Local Configuration Manager yapılandırma öğelerini içeren bir yapılandırma kısıtlar. İşlem sırasında yapılandırmanın oluşturduğu bir \*. uygun hedef düğümler için Set-DscLocalConfigurationManager cmdlet'i çalıştırarak gönderilir oluşturduğunuzdan dosya.
 
-- Kısmi yapılandırmaları artık Windows PowerShell 5. 0 ' izin verilir. Parçada bir düğüme yapılandırma belgelerini sunabilir. Birden çok düğüm yapılandırması belge parçalarını almak bir düğüm için '™ s yerel Configuration Manager önce ayarlanmalıdır beklenen parçaları belirtmek için
+- Kısmi yapılandırmalar artık Windows PowerShell 5. 0 ' izin verilir. Yapılandırma belgelerini parçaları bir düğüme sunabilir. Düğüm yapılandırması belgenin birden çok parçaya almak bir düğüm için '™ s yerel Configuration Manager önce ayarlanmalıdır beklenen parçaları belirtin
 
-- Bilgisayarlar arası eşitleme DSC Windows PowerShell 5. 0'ın yeni bir özelliktir. Yerleşik WAITFOR kullanarak\* kaynakları (**WaitForAll**, **WaitForAny**, ve **WaitForSome**), bilgisayarlar arasında bağımlılıkları artık belirtebilirsiniz Yapılandırma çalıştığında sırasında dış düzenlemelerin olmadan. Bu kaynaklar, WS-Man protokolü üzerinden CIM bağlantıları kullanarak düğümü düğümü eşitleme sağlar. Başka bir bilgisayar için bir yapılandırma bekleyebilirsiniz '™ s belirli kaynak durumunu değiştirmek için.
+- Bilgisayarlar arası eşitleme, Windows PowerShell 5.0 DSC yenidir. Yerleşik WAITFOR kullanarak\* kaynakları (**WaitForAll**, **WaitForAny**, ve **WaitForSome**), bilgisayarlar arasında bağımlılıklar artık belirtebilirsiniz yapılandırma işlemleri sırasında dış düzenlemeler olmadan. Bu kaynaklar, WS-Man protokolü üzerinden CIM bağlantıları kullanarak düğümden düğüme eşitleme sağlar. Başka bir bilgisayar için bir yapılandırma bekleyebilir '™ s belirli kaynak durumunu değiştirmek için.
 
-- Yalnızca yetecek kadar Yönetim (JEA), yeni bir temsilci güvenlik özelliği, DSC yararlanır ve Windows PowerShell kısıtlı çalışma alanları olsa da kasıtlı olarak veya yanlışlıkla veri kaybı veya çalışanlar tarafından güvenliğinin aşılmasına güvenli kuruluşların Yardım. JEA, xJEA DSC kaynağı yükleyebileceğiniz dahil olmak üzere hakkında daha fazla bilgi için bkz: [yalnızca yeterince yönetim, adım adım](http://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx).
+- Yalnızca yeterli yönetim (JEA), yeni bir temsilci güvenlik özelliği, DSC yararlanır ve Windows PowerShell kısıtlı çalışma alanları kasıtlı veya yanlışlıkla veri kaybı veya güvenlik ihlali çalışanlar tarafından güvenli kullanmasına yardımcı olacak. JEA xJEA DSC kaynak indirebileceğiniz dahil olmak üzere hakkında daha fazla bilgi için bkz. [yeterli yönetim, adım adım](http://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx).
 
-- Da PSDesiredStateConfiguration Modülü aşağıdaki yeni cmdlet'ler eklenmiştir.
+- Da PSDesiredStateConfiguration Modülü aşağıdaki yeni cmdlet eklendi.
 
-    -   Yeni bir Get-DscConfigurationStatus cmdlet'i, hedef düğüm yapılandırma durumu hakkında üst düzey bilgileri alır. Durum edinebilirsiniz son ya da tüm yapılandırmaları.
+    -   Yeni cmdlet Get-DscConfigurationStatus hedef düğüm yapılandırma durumu hakkında üst düzey bilgileri alır. Durum edinebilirsiniz son veya tüm yapılandırmalar.
 
-    -   Yeni bir karşılaştırma DscConfiguration cmdlet'i belirtilen bir yapılandırma bir veya daha fazla hedef düğümleri gerçek durumu ile karşılaştırır.
+    -   Yeni bir karşılaştırma-DscConfiguration cmdlet'i belirtilen bir yapılandırma bir veya daha fazla hedef düğümleri gerçek durumuyla karşılaştırır.
 
-    -   Yeni bir yayımlama DscConfiguration cmdlet'i bir yapılandırma MOF dosyası hedef düğüme kopyalar, ancak yapılandırma uygulanmaz. Yapılandırma sonraki tutarlılık geçişi sırasında veya güncelleştirme DscConfiguration cmdlet'ini çalıştırdığınızda uygulanır.
+    -   Yeni bir Yayımla-DscConfiguration cmdlet'i bir yapılandırma MOF dosyasının hedef düğüme kopyalar, ancak yapılandırma geçerli değildir. Yapılandırma, sonraki tutarlılık geçişi sırasında veya Update-DscConfiguration cmdlet'i çalıştırdığınızda uygulanır.
 
-    -   Yeni bir Test DscConfiguration cmdlet, sonuçta elde edilen yapılandırma yapılandırma istenen yapılandırma ya da False eşleşirse gerçek yapılandırma istenen eşleşmiyorsa ya da True döndürüyor, istenen yapılandırma ile eşleştiğini doğrulayın olanak tanır yapılandırma.
+    -   Yeni bir Test-DscConfiguration cmdlet'i, sonuçta elde edilen yapılandırma gerçek yapılandırmasını istenen eşleşmiyorsa istenen yapılandırma veya yanlış yapılandırma eşleşmesi durumunda ya da True döndüren bir istenen yapılandırma eşleştiğini doğrulayın olanak tanır yapılandırma.
 
-    -   Yeni bir güncelleştirme DscConfiguration cmdlet işlenmek üzere bir yapılandırma zorlar. Yerel Configuration Manager çekme modda ise, cmdlet uygulamadan önce istek sunucusundan yapılandırmasını alır.
+    -   Yeni bir güncelleştirme-DscConfiguration cmdlet'i işlenmek üzere bir yapılandırma zorlar. Yerel Configuration Manager çekme modunda ise, cmdlet uygulamadan önce çekme sunucusundan yapılandırmasını alır.
 
-### <a name="new-features-in-windows-powershell-ise"></a>Windows PowerShell ISE yeni özellikler
+### <a name="new-features-in-windows-powershell-ise"></a>Windows PowerShell ıse'de yeni özellikler
 
-- Bilgisayarda bir uzak oturum başlatmak için Enter-PSSession çalıştırarak uzaktan Windows PowerShell komut dosyaları ve Windows PowerShell ISE, yerel bir kopyasını dosyalarında şimdi düzenleyebileceğiniz, '™ s düzenlemek istediğiniz dosyaları depolamak ve çalıştırmayı **PSEdit <path and file name on the remote computer>**. Bu özellik, Windows Server, Windows PowerShell ISE burada çalıştıramazsınız Sunucu Çekirdeği yükleme seçeneği depolanan düzenleme Windows PowerShell dosyaları kolaylaştırır.
+- Bilgisayarda bir uzak oturumu başlatmak için Enter-PSSession çalıştırarak uzak Windows PowerShell betikleri ve dosyaları yerel bir Windows PowerShell ISE'yi kopyasını artık düzenleyebilirsiniz, '™ s düzenlemek istediğiniz dosyaların depolanması ve çalıştırmayı **PSEdit <path and file name on the remote computer>**. Bu özellik, Windows PowerShell ISE çalıştırdığı olamaz, Windows Server'ın Sunucu Çekirdeği yükleme seçeneğini üzerinde depolanan düzenleme Windows PowerShell dosyaları kolaylaştırır.
 
-- Başlangıç dökümü cmdlet, Windows PowerShell ISE'de artık desteklenmektedir.
+- Başlangıç döküm cmdlet, Windows PowerShell ISE'de artık desteklenmektedir.
 
-- Şimdi, uzaktan komut dosyalarında Windows PowerShell ISE ayıklayabilirsiniz.
+- Şimdi uzak Windows PowerShell ISE'de betiklerde hata ayıklaması yapabilirsiniz.
 
-- Yeni bir menü komutu **bölün tüm** (Ctrl + B), hem yerel hem de uzaktan çalışan bir komut dosyası hata ayıklayıcı içine keser.
+- Yeni bir menü komutu **tümünü Kes** hem yerel hem de uzaktan çalışan betikler için hata ayıklayıcısına (Ctrl + B) keser.
 
-### <a name="new-features-in-windows-powershell-web-services-management-odata-iis-extension"></a>Windows PowerShell Web Hizmetleri (Yönetim OData IIS uzantısı)'deki yeni özellikler
+### <a name="new-features-in-windows-powershell-web-services-management-odata-iis-extension"></a>Yeni özellikler Windows PowerShell Web Hizmetleri (Management OData IIS uzantısı)
 
-- Windows PowerShell 5. 0'dan başlayarak, yeni bulunan verme ODataEndpointProxy cmdlet çalıştırılarak belirli bir OData uç tarafından sunulan işlevselliği temel Windows PowerShell cmdlet'leri kümesini oluşturabilir [ Microsoft.PowerShell.OdataUtils](http://technet.microsoft.com/library/dn818507(v=wps.640).aspx) modülü.
+- Windows PowerShell 5.0 ile başlayarak, Windows PowerShell cmdlet'leri yeni bulunan dışarı aktarma ODataEndpointProxy cmdlet'ini çalıştırarak belirli bir OData uç tarafından sunulan işlevselliği göre bir dizi oluşturabilirsiniz [ Microsoft.PowerShell.OdataUtils](http://technet.microsoft.com/library/dn818507(v=wps.640).aspx) modülü.
 
-### <a name="notable-bug-fixes-in-windows-powershell-50"></a>Windows PowerShell 5. 0 ' önemli hata düzeltmeleri
+### <a name="notable-bug-fixes-in-windows-powershell-50"></a>Windows PowerShell 5.0 önemli hata düzeltmeleri
 
-- Windows PowerShell 5. 0 ile COM nesneleri çalışırken önemli performans geliştirmeleri sunan yeni bir COM uygulaması içerir. Etkisi video gösterimi için bkz: [Com_Perf_Improvements](http://1drv.ms/1qu3UPZ).
+- Windows PowerShell 5.0 COM nesneleriyle çalışırken önemli performans geliştirmeleri sunan yeni bir COM uygulamasını içerir. Etkisi video gösterimi için bkz. [Com_Perf_Improvements](http://1drv.ms/1qu3UPZ).
 
-- Önemli performans geliştirmeleri sekme tamamlama süresi yaklaşık 500 ms tarafından kısaltmayı ilk sekme tamamlama bir Windows PowerShell oturumunda yapılmıştır.
+- Sekme tamamlama süresi yaklaşık 500 ms tarafından kısaltmayı ilk sekme tamamlama bir Windows PowerShell oturumunda önemli performans geliştirmeleri yapılmıştır.
 
 ## <a name="new-features-in-windows-powershell-40"></a>Windows PowerShell 4. 0'ı yeni özellikler
-Windows PowerShell 4.0 geriye dönük olarak uyumludur. Cmdlet'leri, sağlayıcıları, modüller, ek bileşenler, komut dosyaları, İşlevler ve Windows PowerShell 3.0 ve Windows PowerShell 2.0 için tasarlanmış olan profilleri Windows PowerShell 4. 0 ' değişiklik yapılmadan çalışır.
+Windows PowerShell 4.0 geriye dönük olarak uyumludur. Cmdlet'leri, sağlayıcıları, modüller, ek bileşenler, betikleri, işlevleri ve Windows PowerShell 3.0 ve Windows PowerShell 2.0 için tasarlanmış olan profilleri Windows PowerShell 4. 0'değişikliğe gerek kalmadan çalışır.
 
-Windows PowerShell 4.0, Windows 8.1 ve Windows Server 2012 R2 üzerinde varsayılan olarak yüklenir. Windows 7 SP1 veya Windows Server 2008 R2 ile Windows PowerShell 4.0 sürümünü yüklemek için karşıdan yükleyip [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855). Yükleme ayrıntılarını okuduğunuzdan ve Windows Management Framework 4.0 yüklemeden önce tüm sistem gereksinimlerini karşıladığından emin olun.
+Windows PowerShell 4.0, Windows 8.1 ve Windows Server 2012 R2 üzerinde varsayılan olarak yüklenir. Windows 7 SP1 veya Windows Server 2008 R2 ile Windows PowerShell 4.0 sürümünü yüklemek için indirme ve yükleme [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855). İndirme ayrıntıları okuyun ve Windows Management Framework 4.0 yüklemeden önce tüm sistem gereksinimlerini karşılamak emin olun.
 
 - [Windows PowerShell'de yeni özellikler](#new-features-in-windows-powershell-1)
 - [Yeni özellikler, Windows PowerShell Tümleşik komut dosyası ortamı (ISE)](#new-features-in-windows-powershell-integrated-scripting-environment-ise)
-- [Windows PowerShell iş akışı yeni özellikler](#new-features-in-windows-powershell-workflow)
-- [Windows PowerShell Web Hizmetleri'ndeki yeni özellikler](#new-features-in-windows-powershell-web-services)
+- [Yeni Windows PowerShell iş akışı özellikleri](#new-features-in-windows-powershell-workflow)
+- [Windows PowerShell Web Hizmetleri yenilikleri](#new-features-in-windows-powershell-web-services)
 - [Windows PowerShell Web Erişimi'nde yeni özellikler](#new-features-in-windows-powershell-web-access)
-- [Windows PowerShell 4. 0 ' önemli hata düzeltmeleri](#notable-bug-fixes-in-windows-powershell-40)
+- [Windows PowerShell 4. 0'ı önemli hata düzeltmeleri](#notable-bug-fixes-in-windows-powershell-40)
 
 Windows PowerShell 4.0, aşağıdaki yeni özellikler içerir.
 
 ### <a name="new-features-in-windows-powershell"></a>Windows PowerShell'de yeni özellikler
 
-- **Windows PowerShell istenen durum Yapılandırması** (DSC) olan Windows PowerShell 4.0'de, dağıtım ve yönetim yazılımı Hizmetleri ve bu hizmetleri çalıştırdığınız ortamı için yapılandırma verileri sağlayan yeni bir yönetim sistemi. DSC hakkında daha fazla bilgi için bkz: [Windows PowerShell istenen durum yapılandırması ile çalışmaya başlama](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
+- **Windows PowerShell Desired State Configuration** (DSC), dağıtımını ve yazılım hizmetleri ve bu hizmetlerin çalıştırıldığı ortam için yapılandırma verilerini yönetimini sağlayan Windows PowerShell 4.0 yeni bir yönetim sistemidir. DSC hakkında daha fazla bilgi için bkz: [Windows PowerShell Desired State Configuration ile'çalışmaya başlama](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
 
-- **Save-Help** şimdi Yardım uzak bilgisayarlarda yüklü olan modüller için kaydetme olanak sağlar. Save-Help (üzerinde tümü Yardım istediğiniz modüllerin mutlaka yüklenmez) bir Internet'e bağlı istemciden modül Yardım yükleyin ve kaydedilmiş Yardım uzak bir paylaşılan klasör veya Internet olmayan uzak bir bilgisayara kopyalamak için kullanabileceğiniz erişim.
+- **Save-Help** şimdi uzak bilgisayarlara yüklü modüller için Yardım tasarruf sağlar. Save-Help modül Yardım (üzerinde tüm Yardım istediğiniz modüllerini mutlaka yüklenir) bir İnternet'e bağlı istemcisinden yükleyin ve ardından uzak, paylaşılan bir klasöre veya İnternet'e sahip olmayan bir uzak bilgisayar kaydedilmiş Yardım kopyalamak için kullanabilirsiniz erişim.
 
-- Windows PowerShell hata ayıklayıcıyı uzak bilgisayarlarda çalışan komut dosyalarının yanı sıra Windows PowerShell iş akışları, hata ayıklama izin verecek şekilde geliştirilmiştir. Windows PowerShell iş akışları artık Windows PowerShell komut satırı ya da Windows PowerShell ISE betik düzeyinde hata ayıklaması yapılabilir. İş akışları dahil olmak üzere Windows PowerShell komut dosyaları artık Uzak Oturumlar hata ayıklaması yapılabilir. Uzaktan hata ayıklama oturumları, bağlantısı kesilen ve daha sonra yeniden bağlantı kuruldu Windows PowerShell uzak oturum korunur.
+- Windows PowerShell hata ayıklayıcı, Windows PowerShell iş akışlarının yanı sıra uzak bilgisayarlarda çalıştırılan betikler, hata ayıklamaya izin verecek şekilde geliştirilmiştir. Windows PowerShell iş akışları artık Windows PowerShell komut satırından veya Windows PowerShell ISE betik düzeyinde ayıklanabilir. Windows PowerShell komut dosyaları, komut dosyası iş akışları dahil olmak üzere artık Uzak Oturumlar ayıklanabilir. Uzaktan hata ayıklama oturumlarında, bağlantısı kesilmiş ve sonraki kesilince Windows PowerShell uzak oturum korunur.
 
-- A **RunNow** parametresi için **Register-ScheduledJob** ve **Set-ScheduledJob** kullanarakbirhemenbaşlangıçtarihivesaatiprojeleriçinayarlamagereğiniortadankaldırır**Tetikleyici** parametresi.
+- A **RunNow** parametresi için **Register-ScheduledJob** ve **Set-ScheduledJob** kullanarakbirhemenbaşlangıçtarihivesaatiişleriiçinayarlanacakihtiyacınıortadankaldıran**Tetikleyici** parametresi.
 
-- **Invoke-RestMethod** ve **Invoke-WebRequest** artık üstbilgileri parametresini kullanarak tüm üstbilgileri ayarlamanıza olanak tanır. Bu parametre her zaman olmamış rağmen özel durumlar veya hatalar sonuçlandı web cmdlet'leri için birkaç parametrelerden biri oluştu.
+- **Invoke-RestMethod** ve **Invoke-WebRequest** şimdi üstbilgiler parametresini kullanarak tüm üst bilgilerini ayarlayacak sağlar. Bu parametre her zaman mevcut olsa da, özel durumlar veya hata ile sonuçlandı web cmdlet'leri için birkaç parametrelerinden biri oldu.
 
-- **Get-Module** yeni bir parametre içeriyor **FullyQualifiedName**, türü **ModuleSpecification\[]**. **FullyQualifiedName** Get-Module parametresinin artık bir modül modülün adı, sürüm ve isteğe bağlı olarak, bunun GUID'sini kullanarak belirtmenizi sağlar.
+- **Get-Module** yeni bir parametreye sahip **karşılık gelen fullyqualifiedname öğesi**, türün **ModuleSpecification\[]**. **Karşılık gelen fullyqualifiedname öğesi** parametresi Get-Module artık bir modül modülün adı, sürüm ve isteğe bağlı olarak, bunun GUID'sini kullanarak belirtmenizi sağlar.
 
-- Varsayılan yürütme İlkesi ayarı Windows Server 2012 R2 üzerinde **RemoteSigned**. Windows 8.1 varsayılan ayarı değişiklik yoktur.
+- Windows Server 2012 R2'de varsayılan yürütme İlkesi ayarı **RemoteSigned**. Windows 8.1 üzerinde varsayılan ayarı değişiklik yoktur.
 
-- Windows PowerShell 4. 0'dan başlayarak, dinamik yöntemi adlarını kullanarak yöntem çağırma desteklenmiyor. Değişkeni çağrılarak yöntemi dinamik olarak çağırmak ve bir yöntem adı depolamak için bir değişken kullanın.
+- Windows PowerShell 4.0 başlayarak, dinamik yöntem adlarını kullanarak yöntem çağırma desteklenmiyor. Bir yöntem adı depolamak için bir değişken kullanın ve değişkeni çağrılarak yöntemi dinamik olarak çağırır.
 
-- Zaman aşımı süresi, by belirtildiğinde, zaman uyumsuz iş akışı işleri silinmiş artık **PSElapsedTimeoutSec** iş akışı ortak parametresi geçtikten.
+- Zaman aşımı süresi, tarafından belirtildiğinde, zaman uyumsuz iş akışı işleri silinmiş artık **PSElapsedTimeoutSec** iş akışı ortak parametresi geçti.
 
-- Yeni bir parametre **RepeatIndefinitely**, eklendi **New-JobTrigger** ve **Set-JobTrigger** cmdlet'leri. Bu belirtmenin gerekliliğini ortadan kaldıran bir **TimeSpan.MaxValue** değerini **RepetitionDuration** zamanlanmış bir işi belirsiz bir süre için tekrar tekrar çalıştırmak için parametre.
+- Yeni bir parametre **RepeatIndefinitely**, eklenmiş **New-JobTrigger** ve **Set-JobTrigger** cmdlet'leri. Bu belirtme ihtiyacını ortadan kaldıran bir **TimeSpan.MaxValue** değerini **RepetitionDuration** zamanlanmış bir iş belirsiz bir süre için tekrar tekrar çalıştırmak için parametre.
 
-- A **Passthru** parametresi eklenmiştir **Enable-JobTrigger** ve **devre dışı bırak-JobTrigger** cmdlet'leri. Passthru parametresi, komut tarafından değiştirilen veya oluşturulan tüm nesneleri görüntüler.
+- A **Passthru** parametresi eklendi **Enable-JobTrigger** ve **devre dışı bırak-JobTrigger** cmdlet'leri. Passthru parametresini oluşturulan veya değiştirilen komutunuz tarafından tüm nesneleri görüntüler.
 
-- Bir çalışma grubunda belirtmek için parametre adları **Add-Computer** ve **Remove-Computer** cmdlet'leri tutarlı şimdi. Her iki cmdlet'leri şimdi parametresini kullanın **ÇalışmaGrubuAdı**.
+- Bir çalışma grubu belirtmek için parametre adları **Add-Computer** ve **Remove-Computer** cmdlet'leri tutarlı şimdi. Her iki cmdlet de artık ilgili parametreyi kullanın **ÇalışmaGrubuAdı**.
 
-- Yeni bir ortak parametre **PipelineVariable**, eklendi. PipelineVariable yöneltilen komut (veya piped komutun bir parçası) sonuçlarını kaydetmenizi ardışık geri kalanı geçirilen bir değişken olarak sağlar.
+- Yeni bir ortak parametre **PipelineVariable**, eklendi. İşlem hattı geri kalanı ile geçirilebilir bir değişken olarak PipelineVariable, yöneltilen komutu (veya piped komutun bir parçası) sonuçlarını kaydetmek sağlar.
 
-- Bir yöntem sözdizimi kullanarak filtreleme koleksiyonu artık desteklenmez. Başka bir deyişle, artık nesneler koleksiyonunu Basitleştirilmiş söz dizimi, benzer Where() veya Where-Object, yöntem çağrısı biçimlendirilmiş kullanarak filtreleyebilirsiniz. Bir örnek şudur: (Get-Process) .where ({$_. Name - eşleşen 'powershell'})
+- Bir yöntem sözdizimi kullanarak filtreleme koleksiyonu artık desteklenmez. Bu, artık nesnelerinin bir koleksiyonunu Basitleştirilmiş söz dizimi, benzer Where() veya Where-Object, bir yöntem çağrısının biçimlendirilmiş kullanarak filtreleyebilirsiniz, anlamına gelir. Bir örnek şudur: (Get-Process) .where ({$_. Adı - eşleşen 'powershell'})
 
-- **Get-Process** cmdlet sahip yeni bir anahtar parametre **IncludeUserName**.
+- **Get-Process** cmdlet'i yeni bir anahtar parametresi olan **IncludeUserName**.
 
-- Yeni bir cmdlet **Get-FileHash**, belirtilen bir dosya için birkaç biçimlerden birinde bir dosya karma değeri döndürür, eklendi.
+- Yeni bir cmdlet **Get-FileHash**, dosyayı belirtilen dosya için çeşitli biçimlerden birinde döndürür, eklendi.
 
-- Bir modül kullanıyorsa, Windows PowerShell 4.0, **DefaultCommandPrefix** kendi bildiriminde anahtar ya da kullanıcı sahip bir modül alıyorsa **önek** parametresi **ExportedCommands**modülün özelliği önekle modülünde komutları gösterir. Modül adı Modül sözdizimini kullanarak komutları çalıştırdığınızda\\CommandName, komut adlarının öneki içermelidir.
+- Windows PowerShell 4.0 modülü kullanıyorsa, **DefaultCommandPrefix** kendi bildirimindeki anahtar veya kullanıcı ile bir modülü içeri aktarırsa **önek** parametresi **ExportedCommands**modülünün özelliği önekiyle modüldeki komutlar gösterir. Modül adı Modül tam sözdizimini kullanarak komutlar çalıştırıldığında\\CommandName, komut adlarını ön ekini içermelidir.
 
-- Değeri **$PSVersionTable.PSVersion** 4.0 için güncelleştirilmiştir.
+- Değerini **$PSVersionTable.PSVersion** 4.0 için güncelleştirilmiştir.
 
-- **WHERE()** işleci davranışı değişti. `Collection.Where('property -match name')` bir dize ifadesi biçimde kabul `"Property -CompareOperator Value"` artık desteklenmiyor. Ancak, **Where()** işleci bir scriptblock biçimde dizesi ifadeleri kabul eder; Bu hala desteklenmektedir.
+- **Birlikte WHERE()** işleci davranışı değişti. `Collection.Where('property -match name')` Biçim string ifadesinde kabul `"Property -CompareOperator Value"` artık desteklenmiyor. Ancak, **Where()** işleci bir scriptblock biçimde dize ifadeleri kabul eder; Bu hala desteklenmektedir.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Yeni özellikler, Windows PowerShell Tümleşik komut dosyası ortamı (ISE)
 
-- Windows PowerShell ISE hem Windows PowerShell iş akışı hata ayıklama ve uzaktan hata ayıklamayı destekler.
+- Windows PowerShell ISE hem Windows PowerShell iş akışı hata ayıklama hem de uzaktan hata ayıklamayı destekler.
 
-- Windows PowerShell istenen durum yapılandırması sağlayıcıları ve yapılandırmaları için IntelliSense desteği eklendi.
+- Windows PowerShell Desired State Configuration sağlayıcıları ve yapılandırmalar için IntelliSense desteği eklendi.
 
-### <a name="new-features-in-windows-powershell-workflow"></a>Windows PowerShell iş akışı yeni özellikler
+### <a name="new-features-in-windows-powershell-workflow"></a>Yeni Windows PowerShell iş akışı özellikleri
 
-- Destek eklenmiştir yeni bir **PipelineVariable** olanlar gibi yinelemeli ardışık düzen bağlamında ortak parametresi System Center Orchestrator tarafından kullanılan; yalnızca soldan sağa, tersine komutları çalıştıran diğer bir deyişle, ardışık düzenleri Akış kullanarak karıştırılarak çalışıyor.
+- Destek eklendi. yeni bir **PipelineVariable** olanlar gibi yinelemeli işlem hatları bağlamında ortak parametresi System Center Orchestrator tarafından kullanılan; diğer bir deyişle, yalnızca soldan sağa, başlangıcı yerine sonundan komutları çalıştıran işlem hatları Akış'ı kullanarak çalışan karışık olarak kullanıldı.
 
-- Parametre bağlama, geçerli çalışma alanında var olmayan komutları gibi sekme tamamlama senaryoları dışında çalışmak için önemli ölçüde geliştirilmiştir.
+- Parametre bağlaması, geçerli çalışma alanında var olmayan komutları gibi sekme tamamlama senaryoları dışında çalışacak şekilde önemli ölçüde geliştirilmiştir.
 
-- Windows PowerShell iş akışına özel kapsayıcı etkinlikler için destek eklenmiştir. Bir etkinlik parametresi türlerini ise **etkinlik**, **etkinlik\[]**' "veya bir genel koleksiyon etkinliklerin" ve kullanıcı bir betik bloğu bağımsız değişken olarak, sonra Windows sağlamadı. PowerShell iş akışı komut dosyası bloğunda normal olarak Windows PowerShell komut dosyası iş akışı derleme ile XAML biçimine dönüştürür.
+- Windows PowerShell iş akışına özel kapsayıcı etkinlikleri için destek eklendi. Bir etkinlik parametre türleri ise **etkinlik**, **etkinlik\[]**' "veya etkinliklerin genel koleksiyonu" ve kullanıcı bir betik bloğu bağımsız değişken olarak, daha sonra Windows sağlanan PowerShell iş akışı komut dosyası bloğu normal olarak Windows PowerShell komut dosyası iş akışı derleme ile XAML için dönüştürür.
 
 - Kilitlenme sonrasında, Windows PowerShell iş akışı yönetilen düğümlere otomatik olarak yeniden bağlanır.
 
-- Şimdi daraltabilir **Foreach-Parallel** kullanarak etkinlik deyimleri **ThrottleLimit** özelliği.
+- Artık kısıtlama **Foreach-paralel** kullanarak etkinlik deyimleri **ThrottleLimit** özelliği.
 
-- **ErrorAction** ortak parametresine sahip yeni bir geçerli değer **askıya alma**, yani iş akışları için özel olarak.
+- **ErrorAction** ortak parametrenin yeni geçerli bir değer **askıya alma**, yani yalnızca iş akışları için.
 
-- Hiçbir etkin oturumlar, devam eden işler ve bekleyen iş varsa bir iş akışı uç noktası artık otomatik olarak kapatılır. Bu özellik otomatik kapatma koşullar sağlandığında, iş akışı sunucusu gibi davranan bilgisayardaki kaynakların tasarrufu sağlar.
+- Hiçbir etkin oturumları, devam eden işlerden ve bekleyen iş varsa bir iş akışı uç noktası artık otomatik olarak kapanır. Bu özellik otomatik kapatma koşullar karşılandığında iş akışı sunucusu olarak hareket eden bilgisayardaki kaynak kullanımını azaltır.
 
-### <a name="new-features-in-windows-powershell-web-services"></a>Windows PowerShell Web Hizmetleri'ndeki yeni özellikler
+### <a name="new-features-in-windows-powershell-web-services"></a>Windows PowerShell Web Hizmetleri yenilikleri
 
-- Windows PowerShell Web Hizmetleri (PSWS, ayrıca adlı yönetim OData IIS uzantısı), bir hata oluştuğunda bir cmdlet çalışıyor, ayrıntılı hata iletilerini çağırana döndürülür. Ayrıca, hata kodları izleyin [Windows Azure REST API hata kodu yönergeleri](http://msdn.microsoft.com/library/windowsazure/dd179357.aspx).
+- Windows PowerShell Web Hizmetleri (PSWS, ayrıca çağrılan Management OData IIS uzantısı), bir hata oluştuğunda bir cmdlet çalışıyor, ayrıntılı hata iletilerini çağırana döndürülür. Ayrıca, hata kodlarını izleyin [Windows Azure REST API'si hata kodu yönergeleri](http://msdn.microsoft.com/library/windowsazure/dd179357.aspx).
 
-- Bir uç nokta şimdi API sürümü tanımlamak, aynı zamanda belirli bir API sürümü kullanımını zorunlu. İstemci ve sunucu arasında sürüm uyuşmazlığı meydana geldiğinde, hatalar için istemci ve sunucu görüntülenir.
+- Bir uç nokta artık API sürümü tanımlamak yanı belirli bir API sürümü kullanımı zorla. İstemci ile sunucu arasında sürüm uyuşmazlığı meydana geldiğinde, hatalar için istemci ve sunucu görüntülenir.
 
-- Eksik tüm alanlar için değerleri otomatik olarak şemada oluşturarak gönderme şema yönetimi basitleştirilmiştir. Gönderme şeması yok olsa bile oluşturma, yararlı bir başlangıç noktası olarak gerçekleşir.
+- Yönetim gönderme şemasının şemada tüm eksik alanlar için değerleri otomatik olarak oluşturarak basitleştirilmiştir. Gönderme şema mevcut olsa bile oluşturma, faydalı bir başlangıç noktası olarak gerçekleşir.
 
-- İçinde PSWS işleme türü, benzer şekilde davranmakta tarafından varsayılan oluşturucu daha farklı bir oluşturucu kullanın türlerini desteklemek için geliştirilmiştir **pstypeconverter'ı** Windows PowerShell'de. Bu karmaşık türler ile PSWS kullanmanıza olanak tanır.
+- Türü içinde PSWS işleme benzer şekilde davrandığından tarafından varsayılan oluşturucu değerinden farklı bir oluşturucu kullanan türlerini destekleyecek şekilde geliştirildi **pstypeconverter'ı** Windows PowerShell'de. Bu karmaşık türler ile PSWS kullanmanıza olanak sağlar.
 
-- PSWS artık ilişkili bir örnek bir sorgu çalıştırılırken genişletilmesini sağlar. Büyük ikili içeriği (örneğin, görüntüler, ses veya video) aktarımı maliyeti önemlidir ve kodlamadan ikili veri aktarımı daha iyidir. PSWS kodlamadan aktarmak için adlandırılmış kaynak akışlarını kullanır. Adlandırılmış kaynak akışı, bir varlığın özelliğidir **Edm.Stream** türü. Her adlandırılmış kaynak akışı alma ya da güncelleştirme işlemleri için ayrı bir URI'ya sahip.
+- Sorgu çalıştırılırken ilişkili bir örnek genişletme PSWS artık sağlar. Büyük ikili içeriği (örneğin, görüntüleri, ses veya video) aktarımı maliyeti önemli olduğu ve kodlamadan ikili veri aktarımı daha iyidir. PSWS kodlamadan aktarmak için adlandırılmış kaynağı akışları kullanır. Adlandırılmış bir kaynak akışı, bir varlığın özelliğidir **Edm.Stream** türü. Her adlandırılmış bir kaynak akışı, GET veya güncelleştirme işlemleri için ayrı bir URI'ya sahip.
 
-- OData eylemlerinin şimdi bir kaynakta CRUD olmayan (oluşturma, okuma, güncelleştirme ve silme) yöntemlerini çağırma için bir mekanizma sağlar. Bir eylem için eylem tanımlanan URI HTTP POST isteği göndererek çağırabilirsiniz. Eylem parametrelerini POST isteğinin gövdesinde tanımlanır.
+- OData eylemleri, artık kaynakta olmayan CRUD (oluşturma, okuma, güncelleştirme ve silme) yöntemlerini çağırma için bir mekanizma sağlar. Bir eylem için eylem tanımlanan URI HTTP POST isteği göndererek çağırabilirsiniz. Eylem parametrelerini POST isteğinin gövdesi içinde tanımlanır.
 
-- Windows Azure yönergelerle tutarlı olması için tüm URL'leri Basitleştirilmiş. Dahil bir değişiklik **anahtar olarak Segment** parçaları olarak gösterilemeyecek kadar tek anahtarlarına izin verir. Birden çok anahtar değerlerini kullanın başvuruları virgülle ayrılmış değerler parantez gösteriminde eskisi gerektiriyor unutmayın.
+- Windows Azure yönergeleri ile tutarlı olması için tüm URL'leri Basitleştirilmiş. Bir değişikliğin dahil **anahtarı olarak Segment** parçaları olarak gösterilemeyecek kadar tek anahtarlarına izin verir. Birden çok anahtar değerlerinde başvurular parantez gösterimde, virgülle ayrılmış değerler önceki gibi gerektirdiğine dikkat edin.
 
-- PSWS, bu sürümünden önce şekilde oluştur, güncelleştirme veya silme gerçekleştirmek için işlemleri yalnızca Post çağırmak için Put veya üst düzey bir kaynakta silin. Yeni PSWS bu sürümünde bulunan kaynak işlemlerinin bu kaynakları yer alacağı yaklaşan aynı kaynak daha az doğrudan ulaşmasını sırasında aynı sonucu elde açmalarına olanak tanır.
+- PSWS, bu sürümünden önce yolu oluşturma, güncelleştirme veya silme gerçekleştirme işlemleri yalnızca Post çağırmak için Put veya üzerinde üst düzey bir kaynakla silin. Yeni PSWS bu sürümünde, kullanıcılar aynı kaynak bu kaynakları yer alacağı yaklaşan daha az doğrudan ulaşmasını sırasında aynı sonuçları elde etmek yer alan kaynak işlemleri sağlar.
 
 ### <a name="new-features-in-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi'nde yeni özellikler
 
-- Bağlantıyı kesmek ve web tabanlı Windows PowerShell Web erişimi konsolunda var olan oturumlar için yeniden bağlanın. A **kaydetmek** web tabanlı konsolda düğmesi silmeden bir oturumun bağlantısını kesmek ve başka bir oturuma yeniden olanak tanır zaman.
+- Bağlantısını kesmek ve Windows PowerShell Web erişimi web tabanlı konsolunda mevcut oturumlar için yeniden bağlayın. A **Kaydet** web tabanlı konsolunda düğmesi sayesinde silmeden bir oturumun bağlantısını kesmek ve başka bir oturuma yeniden zaman.
 
-- Oturum açma sayfasında varsayılan parametreleri görüntülenebilir. Varsayılan parametreleri görüntülemek için görüntülenen tüm ayarlar değerlerini yapılandırmak **isteğe bağlı bağlantı ayarları** adlı bir dosyaya oturum açma sayfasının alanı **web.config**. Kullanabileceğiniz **web.config** ikinci veya alternatif bir kimlik bilgileri kümesi hariç tüm isteğe bağlı bağlantı ayarlarını yapılandırmak için bir dosya.
+- Oturum açma sayfasında varsayılan parametreleri görüntülenebilir. Varsayılan parametreleri görüntülemek için görüntülenen tüm ayarları için değerleri yapılandırma **isteğe bağlı bağlantı ayarları** alanını adlı bir dosya içinde oturum açma sayfasının **web.config**. Kullanabileceğiniz **web.config** ikinci veya alternatif kimlik bilgileri kümesi dışında tüm isteğe bağlı bağlantı ayarlarını yapılandırmak için bir dosya.
 
-- Windows Server 2012 R2'de Windows PowerShell Web erişimi için yetkilendirme kuralları uzaktan yönetebilirsiniz. **Add-PswaAuthorizationRule** ve **Test-PswaAuthorizationRule** cmdlet'ler yöneticilerin yetkilendirme kuralları uzak bir bilgisayardan veya yönetmelerine olanak sağlayan bir kimlik bilgisi parametresi artık içeren bir Windows PowerShell Web erişimi oturumu.
+- Windows Server 2012 R2'de Windows PowerShell Web erişimi için yetkilendirme kuralları uzaktan yönetebilirsiniz. **Add-PswaAuthorizationRule** ve **Test-PswaAuthorizationRule** cmdlet'ler artık uzak bir bilgisayardan veya yetkilendirme kurallarını yönetme olanağı sağlayan bir kimlik bilgisi parametresi içeren bir Windows PowerShell Web erişimi oturumu.
 
-- Her oturum için yeni bir tarayıcı sekmesi kullanarak tek bir tarayıcı oturumu içinde birden fazla Windows PowerShell Web erişimi oturumları artık olabilir. Artık web tabanlı Windows PowerShell konsolunda yeni bir oturumda bağlanmak için yeni bir tarayıcı oturumunu açmanız gerekir.
+- Ayrıca, her oturum için yeni bir tarayıcı sekmesi kullanarak tek tarayıcı oturumunda birden çok Windows PowerShell Web erişimi oturumu artık sahip olabilir. Artık web tabanlı Windows PowerShell konsolunda yeni bir oturum bağlanmak için yeni bir tarayıcı oturumu açmanız gerekir.
 
-### <a name="notable-bug-fixes-in-windows-powershell-40"></a>Windows PowerShell 4. 0 ' önemli hata düzeltmeleri
+### <a name="notable-bug-fixes-in-windows-powershell-40"></a>Windows PowerShell 4. 0'ı önemli hata düzeltmeleri
 
-- **Get-Counter** Fransızca Windows sürümlerinde kesme işareti karakteri içeren sayaçları şimdi geri dönebilirsiniz.
+- **Get-Counter** Fransızca Windows sürümleri bir kesme işareti karakteri sayaçları artık döndürebilir.
 
-- Artık görüntüleyebilirsiniz **GetType** seri durumdan çıkarılmış nesneler üzerinde yöntemi.
+- Artık görüntüleyebilirsiniz **GetType** seri durumdan çıkarılmış nesne yöntemi.
 
 - **#Requires** deyimleri gerekirse yönetici erişim hakları gerektiren kullanıcılar artık sağlar.
 
-- **Alma Csv** cmdlet şimdi boş satırlar yok sayar.
+- **Alma Csv** cmdlet artık boş satırlar yok sayar.
 
-- Bir sorun olduğu Windows PowerShell ISE kullanan çok fazla bellek çalıştırırken bir **Invoke-WebRequest** komutu sabit.
+- Burada Windows PowerShell ISE kullanan çok fazla bellek çalıştırırken bir sorun bir **Invoke-WebRequest** komutu düzeltildi.
 
-- **Get-Module** şimdi modülü sürümlerde görüntüler bir **sürüm** sütun.
+- **Get-Module** modülü sürümlerde artık görüntüler bir **sürüm** sütun.
 
-- Remove-Item - Recurse şimdi beklendiği gibi bu öğeleri alt kaldırır.
+- Remove-öğesi - Recurse şimdi beklendiği gibi bu öğeleri alt klasörlerdeki kaldırır.
 
-- A **kullanıcıadı** özelliği eklenmiştir **Get-Process** çıkış nesneleri.
+- A **kullanıcıadı** özelliği eklendi **Get-Process** çıkış nesneleri.
 
-- **Invoke-RestMethod** cmdlet'i şimdi tüm kullanılabilir sonuçlarını döndürür.
+- **Invoke-RestMethod** cmdlet artık tüm kullanılabilir sonuçları döndürür.
 
-- **Üye Ekle** şimdi alır hashtable'da, etkisi hashtable'da değil henüz erişilene olsa bile.
+- **Üye Ekle** artık alıyor olmalarına rağmen etkisi hashtable'da değil henüz erişilmiş bile.
 
-- **Select-Object - genişletin** artık başarısız olduğunda veya özelliğin değeri null veya boş ise, bir özel durum oluşturur.
+- **Select-Object - genişletin** artık başarısız olursa veya özelliğinin değeri null veya boş ise bir özel durum oluşturur.
 
-- **Get-Process** alma diğer komutlarla ardışık düzeninde artık kullanılabilir **ComputerName** nesnelerinden özelliği.
+- **Get-Process** alma diğer komutlarla işlem hattında artık kullanılabilir **ComputerName** nesnelerden özelliği.
 
-- **ConvertTo-Json** ve **ConvertFrom Json** şimdi çift tırnak işareti içinde koşullarını kabul edebilir ve kendi hata iletileri yerelleştirilebilir sunulmuştur.
+- **ConvertTo-Json** ve **ConvertFrom-Json** çift tırnak içindeki terimler artık kabul edebilir ve hata iletilerini yerelleştirilebilir sunulmuştur.
 
-- **Get-Job** şimdi herhangi tamamlandı zamanlanmış işler, hatta yeni oturumlar döndürür.
+- **Get-Job** artık herhangi bir tamamlanmış zamanlanmış işler, hatta yeni bir oturum döndürür.
 
-- Bağlama ve çıkarma VHD'ler kullanarak sorunları **FileSystem** sağlayıcısı Windows PowerShell 4. 0'ı sabit. Windows PowerShell artık aynı oturum bağlı oldukları zaman yeni sürücüsü algılayabilir.
+- Bağlama ve VHD çıkarma kullanarak sorunları **dosya sistemi** Windows PowerShell 4. 0'ı sağlayıcısı düzeltilmiştir. Windows PowerShell artık aynı oturumda bağlı oldukları zaman yeni sürücüler algılayabilir.
 
-- Artık açıkça yüklemek gereken **ScheduledJob** veya **iş akışı** modülleri kendi iş türleri ile çalışır.
+- Artık açıkça yüklemek gerekmez **ScheduledJob** veya **iş akışı** kendi işlem türleriyle çalışmak için modüller.
 
-- İç içe geçmiş iş akışları tanımlamak iş akışlarını içeri aktarma işlemi için performans iyileştirmeler yapılmıştır; Bu işlem şimdi daha hızlıdır.
+- İç içe geçmiş iş akışları tanımlamak iş akışlarını içeri aktarma işlemi için performans geliştirmeleri yapılmıştır; Bu işlem artık daha hızlıdır.
 
 ## <a name="new-features-in-windows-powershell-30"></a>Windows PowerShell 3. 0'ı yeni özellikler
-Windows PowerShell 3.0 aşağıdaki yeni özellikler içerir.
+Windows PowerShell 3.0, aşağıdaki yeni özellikler içerir.
 
 - [Windows PowerShell iş akışı](#windows-powershell-workflow)
 - [Windows PowerShell Web erişimi](#windows-powershell-web-access)
 - [Yeni Windows PowerShell ISE Özellikleri](#new-windows-powershell-ise-features)
-- [Microsoft .NET Framework 4.0 için destek](#support-for-microsoft-net-framework-4)
+- [Microsoft .NET Framework 4.0 desteği](#support-for-microsoft-net-framework-4)
 - [Windows önyükleme ortamı için destek](#support-for-windows-preinstallation-environment)
-- [Bağlantısı kesik oturumlar](#disconnected-sessions)
-- [Sağlam oturum bağlantısı](#robust-session-connectivity)
+- [Oturumlara](#disconnected-sessions)
+- [Güçlü oturum bağlantısı](#robust-session-connectivity)
 - [Güncelleştirilebilir Yardımı](#updatable-help-system)
 - [Gelişmiş çevrimiçi Yardım](#enhanced-online-help)
 - [CIM tümleştirme](#cim-integration)
 - [Oturum yapılandırma dosyaları](#session-configuration-files)
-- [Zamanlanan işler ve Görev Zamanlayıcı tümleştirme](#scheduled-jobs-and-task-scheduler-integration)
-- [Windows PowerShell dil geliştirmeleri](#windows-powershell-language-enhancements)
+- [Zamanlanmış işleri ve Görev Zamanlayıcı'yı tümleştirme](#scheduled-jobs-and-task-scheduler-integration)
+- [Windows PowerShell dil iyileştirmeleri](#windows-powershell-language-enhancements)
 - [Yeni çekirdek cmdlet'leri](#new-core-cmdlets)
-- [Varolan çekirdek cmdlet'leri ve sağlayıcıları geliştirmeleri](#improvements-to-existing-core-cmdlets-and-providers)
-- [Uzak modülü içe aktarma ve bulma](#remote-module-import-and-discovery)
-- [Gelişmiş sekmesi tamamlama](#enhanced-tab-completion)
+- [Var olan çekirdek cmdlet'leri ve sağlayıcıları geliştirmeleri](#improvements-to-existing-core-cmdlets-and-providers)
+- [Uzak modül içeri aktarma ve bulma](#remote-module-import-and-discovery)
+- [Gelişmiş sekme tamamlama](#enhanced-tab-completion)
 - [Modül otomatik yükleme](#module-auto-loading)
 - [Modül deneyimi geliştirmeleri](#module-experience-improvements)
-- [Basitleştirilmiş komutu bulma](#simplified-command-discovery)
-- [Gelişmiş günlüğe kaydetme, tanılama ve Grup İlkesi desteği](#improved-logging-diagnostics-and-group-policy-support)
-- [Biçimlendirme ve çıktı geliştirmeleri](#formatting-and-output-improvements)
+- [Basitleştirilmiş komut bulma](#simplified-command-discovery)
+- [Gelişmiş günlük kaydı, tanılama ve Grup İlkesi desteği](#improved-logging-diagnostics-and-group-policy-support)
+- [Biçimlendirme ve çıkış geliştirmeleri](#formatting-and-output-improvements)
 - [Gelişmiş konsol konak deneyimi](#enhanced-console-host-experience)
-- [Yeni Cmdlet ve API'leri barındırma](#new-cmdlet-and-hosting-apis)
+- [Yeni Cmdlet ve API'ler barındırma](#new-cmdlet-and-hosting-apis)
 - [Performans iyileştirmeleri](#performance-improvements)
-- [RunAs ve paylaşılan Host desteği](#runas-and-shared-host-support)
+- [Farklı Çalıştır ve paylaşılan konak desteği](#runas-and-shared-host-support)
 - [Özel karakter işleme geliştirmeleri](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell iş akışı
-Windows PowerShell iş akışı Windows PowerShell için Windows Workflow Foundation kazandırır. İş akışı XAML veya Windows PowerShell dilde yazmak ve bir cmdlet çalıştırmak gibi çalıştırabilirsiniz. [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet'i workflw komutları alır ve [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet'i iş akışları için Yardım alır.
+Windows PowerShell iş akışı Windows Workflow Foundation'ın gücünü, Windows PowerShell'e getirir. İş akışları XAML veya Windows PowerShell dilde yazabilir ve bir cmdlet çalıştırırken çalıştırabilirsiniz. [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet'i workflw komutlar alır ve [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet'i iş akışları için Yardım alır.
 
-Uzun süre çalışan, yinelenebilir, sık, paralelleştirilebilir, kesilebilir, suspendable ve yeniden başlatılabilir multicomputer yönetim etkinlik iş akışlarıdır. İş akışları, bir ağ kesintisi, Windows yeniden başlatma veya elektrik kesintisi gibi bir kasıtlı olarak veya yanlışlıkla kesinti gelen ettirilebilir.
+Uzun süre çalışan, yinelenebilir, sık sık, paralelleştirilebilir, kesilebilir, suspendable ve yeniden başlatılabilir multicomputer Yönetimi etkinlik iş akışlarıdır. İş akışları, ağ kesintisi, Windows yeniden başlatma veya güç kesintisi gibi bir kasıtlı olarak veya yanlışlıkla kesinti gelen sürdürülebilir.
 
-İş akışları da taşınabilir; Bunlar yüklenebilir olarak dışa veya XAML dosyalarını içeri aktarıldı. İş akışı veya etkinlikleri temsilci veya bağımlı kullanıcılar tarafından çalıştırılacak bir iş akışında izin veren özel oturum yapılandırmaları yazabilirsiniz.
+İş akışları da taşınabilir; Bunlar olarak dışarı veya içeri aktarılan XAML dosyaları. Temsilci veya bağımlı kullanıcılar tarafından çalıştırılacak bir iş akışındaki iş akışı ve etkinlikleri sağlayan özel oturum yapılandırmaları yazabilirsiniz.
 
-Windows PowerShell iş akışının avantajları aşağıda verilmiştir
+Windows PowerShell iş akışı avantajları şunlardır:
 
-- Otomasyon sıralı, uzun süre çalışan görevler.
+- Sıralı, uzun süre çalışan görevleri otomatikleştirme.
 
-- **Uzun süre çalışan görevler Uzaktan izleme**. Durumunu ve ilerlemesini etkinliklerin herhangi bir zamanda görünür.
+- **Uzaktan izleme uzun soluklu görevlerin**. Herhangi bir zamanda, durum ve ilerlemesini etkinlikleri görülebilir.
 
 - **Multicomputer yönetimi.** Aynı anda görevlerini yüzlerce yönetilen düğüme iş akışları olarak çalıştırın. Windows PowerShell iş akışı içeren yerleşik bir kitaplık ortak yönetim parametrelerinin gibi **PSComputerName**, çoklu bilgisayar yönetimi senaryoları etkinleştirin.
 
-- **Karmaşık işlemlere yürütülmesi tek bir görev.** Tüm uçtan uca senaryoda tek bir iş akışı ile uygulayan ilgili betikleri birleştirebilirsiniz.
+- **Karmaşık işlemleri tek bir görev yürütme.** Tek bir iş akışı tüm uçtan uca senaryo uygulayan ilgili betikleri birleştirebilirsiniz.
 
-- **Kalıcılık.** : bir iş akışı kaydedildi (onay işaret iş akışını en baştan yeniden başlatmak yerine son kalıcı görevi (veya denetim noktası) iş akışı devam edebilmek için yazar tarafından tanımlanan belirli zamanlarda ya da).
+- **Kalıcılık.** : bir iş akışı kaydedildi (onay işaret iş akışını baştan yeniden başlatmak yerine son kalıcı görevden (veya Denetim) akışından devam edebilmek için yazar tarafından tanımlanan belirli noktalarda veya).
 
-- **Sağlamlık.** Otomatik hatadan kurtarma. İş akışları planlanmış ve planlanmamış yeniden başlatmalarda. İş akışı yürütme askıya alma ve son Kalıcılık noktası iş akışını sürdürme. İş akışı yazarları başarısız olması durumunda bir veya daha fazla yönetilen düğümde yeniden çalıştırılacak belirli etkinlikleri belirleyebilirsiniz.
+- **Sağlamlık.** Otomatik hatadan kurtarma. İş akışları, planlı ve plansız başlatmalarda. İş akışı yürütmeyi askıya almak ve sonra iş akışı son Kalıcılık noktadan devam. İş akışı yazarları, hata durumunda bir veya daha fazla yönetilen düğümde yeniden çalıştırılması için belirli etkinlikleri belirleyebilirsiniz.
 
-- **Özelliği bağlantısını kesmek için yeniden bağlanın ve bağlantısı kesilmiş oturumlarında çalıştırırlar.** Kullanıcılar bağlanabilir ve iş akışı sunucu bağlantısını kesin, ancak iş akışı sürekli olarak çalışır. İstemci bilgisayar oturumunu veya istemci bilgisayarı yeniden başlatın ve iş akışını kesintiye uğratmadan iş akışı yürütme başka bir bilgisayardan izleyebilirsiniz.
+- **Bağlantıyı kesmek için özelliği yeniden bağlayın ve bağlantısı kesilmiş oturumlarında çalışan.** Kullanıcılar bağlanır ve iş akışı sunucu bağlantısını kesin, ancak iş akışı sürekli olarak çalışır. İstemci bilgisayar oturumunu veya istemci bilgisayarı yeniden başlatın ve iş akışını kesintiye uğratmadan iş akışı yürütme başka bir bilgisayardan izleyin.
 
 - **Zamanlama.** Herhangi bir Windows PowerShell cmdlet veya betik gibi iş akışı görevleri zamanlanabilir.
 
-- **İş akışı ve bağlantı azaltma.** İş akışı yürütme ve düğümlerin bağlantılarını, böylece ölçeklenebilirlik ve yüksek kullanılabilirlik senaryolarını etkinleştirme kısıtlanan.
+- **İş akışı ve bağlantı daraltma.** İş akışı yürütme ve bağlantıları düğümlere böylece ölçeklenebilirlik ve yüksek kullanılabilirlik senaryolarını etkinleştirme kısıtlanabilir.
 
 ### <a name="windows-powershell-web-access"></a>Windows PowerShell Web Erişimi
-Windows PowerShell Web erişimi kullanıcıların bir web tabanlı konsolda Windows PowerShell komutları ve komut dosyaları çalıştırmasına olanak sağlayan bir Windows Server 2012 özelliğidir. Web tabanlı konsol kullanan cihazları, Windows PowerShell, uzaktan yönetim yazılımı veya tarayıcı eklentisi yüklemelerini gerektirmez. Gerekli olan tek şey düzgün yapılandırılmış Windows PowerShell Web erişimi ağ geçidi ve JavaScript destekleyen ve tanımlama bilgilerini kabul eden bir istemci cihazdır.
+Windows PowerShell Web erişimi kullanıcıların bir web tabanlı konsolunda Windows PowerShell komutları ve betikleri çalıştırmasına olanak sağlayan bir Windows Server 2012 özelliğidir. Web tabanlı konsolda kullanan cihazları, Windows PowerShell, uzaktan yönetim yazılımı veya tarayıcı eklentisi yükleme gerektirmez. Gerekli olan tek şey düzgün yapılandırılmış Windows PowerShell Web erişimi ağ geçidi ve JavaScript destekleyen ve tanımlama bilgilerini kabul eden bir istemci cihaz tarayıcısı.
 
-Daha fazla bilgi için bkz: [Windows PowerShell Web erişimi dağıtma](http://go.microsoft.com/fwlink/p/?LinkID=221050).
+Daha fazla bilgi için [Windows PowerShell Web erişimi dağıtma](http://go.microsoft.com/fwlink/p/?LinkID=221050).
 
 ### <a name="new-windows-powershell-ise-features"></a>Yeni Windows PowerShell ISE Özellikleri
-Windows PowerShell 3.0, Windows PowerShell Tümleşik komut dosyası ortamı (ISE) için IntelliSense, Göster komut penceresinde, birçok yeni özellik, bir birleşik Konsol bölmesinde, parçacıkları, ayraç eşleştirme genişletme-daraltma bölümleri, otomatik kayıt, son kullanılan öğeler Liste, zengin kopyalama, blok kopyalama ve Windows PowerShell komut dosyası iş akışları yazmak için tam destek. Daha fazla bilgi için bkz: [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
+Windows PowerShell 3.0, Windows PowerShell Tümleşik komut dosyası ortamı (ISE) için IntelliSense, Göster komut penceresinde de dahil olmak üzere birçok yeni özellik bir birleşik Konsol bölmesinde, kod parçacıkları, ayraç eşleştirme Genişlet-Daralt bölümler, otomatik kaydetme, son öğeler Liste, zengin kopyalama, blok kopyalama ve Windows PowerShell komut dosyası iş akışları yazmak için tam destek. Daha fazla bilgi için [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
 
 ### <a name="support-for-microsoft-net-framework-4"></a>Microsoft .NET Framework 4 için destek
-Windows PowerShell ortak dil çalışma zamanı 4.0 karşı yerleşik olarak bulunur. Cmdlet, komut dosyası ve iş akışı yazarları yeni Microsoft .NET Framework 4 sınıfları içeren uygulama uyumluluğu ve dağıtım, Yönetilen Genişletilebilirlik Çerçevesi, paralel ağ, bilgi işlem, özelliklerle Windows Windows PowerShell'de kullanabilirsiniz Communication Foundation ve Windows Workflow Foundation.
+Windows PowerShell ortak dil çalışma zamanı 4.0 karşı yerleşik olarak bulunur. Cmdlet'i, betik ve iş akışı yazarları yeni Microsoft .NET Framework 4 sınıfları içeren uygulama uyumluluğu ve dağıtımı, Managed Extensibility Framework, paralel, ağ, hesaplama, özellikleri ile Windows Windows PowerShell'de kullanabilirsiniz Communication Foundation ve Windows Workflow Foundation.
 
 ### <a name="support-for-windows-preinstallation-environment"></a>Windows önyükleme ortamı için destek
-Windows PowerShell 3.0, Windows Önyükleme Ortamı (Windows PE) 4.0 Windows 8 için isteğe bağlı bir bileşenidir. Windows PE hiçbir işletim sistemi ve Windows yüklemesine hazırlayan bilgisayar başlatıldığında en az bir işletim sistemi ' dir. Windows PE bölümü için kullanılabilir ve sabit sürücüyü biçimlendirmek, disk görüntüleri bir bilgisayara kopyalayın ve bir ağ paylaşımından Windows Kurulum başlatılamadı. Windows PowerShell 3.0, dağıtım, tanılama ve kurtarma senaryolarını yönetmek için Windows PE üzerinde kullanılabilir.
+Windows PowerShell 3.0, Windows Önyükleme Ortamı (Windows PE) 4.0 Windows 8 için isteğe bağlı bir bileşenidir. Windows PE, hiçbir işletim sistemi ve Windows yüklemesi için hazırlayan bir bilgisayar başlatıldığında en az bir işletim sistemi ' dir. Windows PE bölümü için kullanılabilir ve sabit sürücüler biçimlendirmek, disk görüntüleri bir bilgisayara kopyalayın ve bir ağ paylaşımındaki Windows Kurulumu başlatın. Windows PowerShell 3.0, Windows PE'de dağıtım, tanılama ve kurtarma senaryolarını yönetmek için kullanılabilir.
 
-### <a name="disconnected-sessions"></a>Bağlantısı kesik oturumlar
-Windows PowerShell 3. 0'den itibaren New-PSSession cmdlet'i kullanarak oluşturduğunuz kalıcı kullanıcı yönetilen oturumları ("Pssessions'dan") uzak bilgisayarda kaydedilir. Artık, oluşturuldukları sırada oturum bağımlı değildir.
+### <a name="disconnected-sessions"></a>Oturumlara
+New-PSSession cmdlet'i kullanarak oluşturduğunuz kalıcı kullanıcı tarafından yönetilen oturumları ("Pssessions'dan"), Windows PowerShell 3. 0'den itibaren uzak bilgisayarda kaydedilir. Artık oluşturulmuş olan oturum bağımlı değildir.
 
-Artık oturumda çalışan komutlar kesintiye uğratmadan oturumu bağlantısını kesebilirsiniz. Oturumu kapatın ve bilgisayarınızı kapatın. Daha sonra aynı veya farklı bir bilgisayara farklı bir oturumdan oturuma bağlanabilirsiniz.
+Şimdi, oturumda çalışan komutlar kesintiye uğratmadan oturum bağlantısını kesebilirsiniz. Oturumu kapatın ve bilgisayarınızı kapatın. Daha sonra aynı veya farklı bir bilgisayara farklı bir oturumdan oturuma bağlanabilirsiniz.
 
-**ComputerName** parametresinin [Get-PSSession](https://technet.microsoft.com/library/b2b10531-d0df-4746-b877-e75c09955cb6) cmdlet'i şimdi alır bilgisayara bağlanan kullanıcının oturumlara farklı bir bilgisayara farklı bir oturumda başlatılmış olsa bile. Oturumlara bağlamak, komutları sonuçlar almak, yeni komutları başlatın ve oturum bağlantısını kesebilir.
+**ComputerName** parametresinin [Get-PSSession](https://technet.microsoft.com/library/b2b10531-d0df-4746-b877-e75c09955cb6) cmdlet'i artık alır bilgisayara bağlanan kullanıcının oturumların farklı bir bilgisayara farklı bir oturumda başlatıldıkları bile. Oturumlara bağlamak, komutlarının sonuçlarını Al, yeni komutları başlatın ve ardından oturum bağlantısını kesebilir.
 
-Bağlantısı kesilen oturumlara özelliğini desteklemek için yeni cmdlet'ler eklenmiştir dahil olmak üzere [Disconnect-PSSession](https://technet.microsoft.com/library/f8f95111-612f-4cba-9098-77904b0473d8), [Connect-PSSession](https://technet.microsoft.com/library/b803dd29-f208-4079-80d4-db04d778f060), ve alma-PSSession ve yeni parametreler eklenmiştir Pssessions'dan, gibi yönetme cmdlet'leri **InDisconnectedSession** parametresinin [Invoke-Command](https://technet.microsoft.com/library/906b4b41-7da8-4330-9363-e7164e5e6970) cmdlet'i.
+Bağlantısı kesilen oturumlara özelliğini desteklemek için yeni cmdlet'ler eklenmiştir dahil olmak üzere [Disconnect-PSSession](https://technet.microsoft.com/library/f8f95111-612f-4cba-9098-77904b0473d8), [Connect-PSSession](https://technet.microsoft.com/library/b803dd29-f208-4079-80d4-db04d778f060), ve için alma-PSSession ve yeni parametreler eklendi Pssessions'dan, gibi yönetme cmdlet'leri **InDisconnectedSession** parametresinin [Invoke-Command](https://technet.microsoft.com/library/906b4b41-7da8-4330-9363-e7164e5e6970) cmdlet'i.
 
-Bağlantısı kesilen oturumlara özelliği yalnızca her ikisi de bilgisayarların kaynaklanan ("istemci") ve bağlantı ("server") ucunun sonlandırma Windows PowerShell 3.0 çalıştırırken desteklenir.
+Bağlantısı kesilen oturumlara özelliği, yalnızca bilgisayarları hem kaynak ("istemci") ve ("Sunucu") sona erer bağlantının sonlandırılması Windows PowerShell 3.0 çalışırken desteklenir.
 
-### <a name="robust-session-connectivity"></a>Sağlam oturum bağlantısı
-Windows PowerShell 3.0 istemci ve sunucu arasındaki bağlantı beklenmeyen zararları algılar ve bağlantıyı yeniden kurmak ve yürütme otomatik olarak devam dener. Ayrılan sürede istemci-sunucu bağlantısı kurulamıyor, kullanıcı bildirimi ve oturum bağlantısı kesilir. Yeniden bağlanma girişimi sırasında Windows PowerShell kullanıcıya sürekli geri bildirim sağlar.
+### <a name="robust-session-connectivity"></a>Güçlü oturum bağlantısı
+Windows PowerShell 3.0, istemci ve sunucu arasındaki bağlantı beklenmeyen kayıpları algılar ve bağlantınızın yeniden kurulması ve sürdürebilir otomatik olarak çalışır. İstemci-sunucu bağlantısı ayrılan sürede yeniden kurulamıyor, kullanıcı bilgilendirilir ve oturum bağlantısı kesilir. Yeniden bağlanma girişimi sırasında Windows PowerShell, kullanıcıya sürekli geri bildirim sağlar.
 
-Bağlantısı kesilmiş bir oturuma Invokecommand kullanılarak başlatıldıysa, Windows PowerShell için yeniden bağlanın ve yürütme sürdürmek daha kolay hale getirmek bağlantısı kesilmiş bir oturuma bir işi oluşturur.
+Bağlantısı kesilen bir oturuma Invokecommand kullanarak başlatılmışsa, Windows PowerShell bağlantısı kesilen bir oturuma bağlanın ve sürdürebilir daha kolay hale getirmek bir iş oluşturur.
 
-Bu özellikleri daha güvenilir ve kurtarılabilir remoting deneyimi sağlar ve iş akışları gibi sağlam oturumları gerektiren uzun süre çalışan görevleri gerçekleştirmek kullanıcıların.
+Bu özellikler daha güvenli ve kurtarılabilir bir uzak deneyimi sağlamak ve iş akışları gibi güçlü oturumları gerektiren uzun süre çalışan görevleri gerçekleştirmek kullanıcıların.
 
 ### <a name="updatable-help-system"></a>Güncelleştirilebilir Yardımı
-Cmdlet'leri için güncelleştirilmiş Yardım dosyalarını modüllerinizi indirebilirsiniz. [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet en yeni Yardım dosyalarını tanımlar, Internet'ten indirir, bunları ayıklar, bunları doğrular ve bunları modülü için doğru dile özgü dizinde yükler.
+Cmdlet'leri için güncelleştirilmiş Yardım dosyaları, modülleri indirebilirsiniz. [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet'i en yeni Yardım dosyaları tanımlar, bunları Internetten indirir, bunları ayıklar, bunları doğrular ve modülü için doğru dile özgü dizinde yükler.
 
-Güncelleştirilmiş Yardım dosyalarını kullanmak için yalnızca yazın `Get-Help`. Windows veya Windows PowerShell yeniden başlatmanız gerekmez. $Pshome dizininde modülleri için Yardımı güncelleştirmek için Windows PowerShell'i "Yönetici olarak çalıştır" seçeneğiyle başlatın.
+Güncelleştirilmiş Yardım dosyalarını kullanmak için yazmanız yeterlidir `Get-Help`. Windows veya Windows PowerShell yeniden başlatmanız gerekmez. $Pshome dizinde modüller için Yardım'ı güncelleştirmek için Windows PowerShell "Yönetici olarak çalıştır" seçeneğiyle başlatın.
 
-Internet erişimi ve güvenlik duvarı arkasında kullanıcıların, yeni olmayan kullanıcıları desteklemek üzere [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet'i bir dosya paylaşımı gibi bir dosya sistemi dizinine Yardım dosyalarını indirir. Kullanıcılar daha sonra kullanabilir [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) dosya paylaşımından güncelleştirilmiş Yardım dosyaları almak için cmdlet.
+Internet erişimi ve güvenlik duvarı arkasına kullanıcılar, yeni dağıtılmayan kullanıcılar desteklemek için [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet'i, bir dosya paylaşımı gibi bir dosya sistemi dizine Yardım dosyalarını indirir. Kullanıcılar daha sonra kullanabileceğiniz [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) güncelleştirilmiş Yardım dosyaları dosya paylaşımından almak için cmdlet.
 
-Kullanabileceğiniz [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet'i Yardımı güncelleştirmek için tüm dosyaları veya belirli modüller tüm desteklenen UI kültürü. Hatta koyabilirsiniz bir [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) Windows PowerShell profilinizde komutu. Varsayılan olarak, Windows PowerShell modülü için Yardım dosyaları en fazla günde bir kez yükler.
+Kullanabileceğiniz [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) Yardım güncelleştirmek için cmdlet tüm dosyaları veya belirli modüller tüm desteklenen UI kültür. Hatta koyabilirsiniz bir [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) Windows PowerShell profilinizde komutu. Varsayılan olarak, Windows PowerShell modülü için Yardım dosyaları en fazla günde bir kez yükler.
 
-Windows 8 ve Windows Server 2012 modülleri Yardım dosyalarını içermez. En son Yardım dosyalarını indirmek için şunu yazın `Update-Help`. Daha fazla bilgi için türü `Get-Help` (parametresiz) veya bkz [about_Updatable_Help](https://technet.microsoft.com/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
+Windows 8 ve Windows Server 2012 modülleri Yardım dosyaları eklemeyin. En son Yardım dosyalarını indirmek için şunu yazın `Update-Help`. Daha fazla bilgi için `Get-Help` (parametresiz) veya [about_Updatable_Help](https://technet.microsoft.com/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
 
-Bir cmdlet için Yardım dosyalarını bilgisayarda yüklü olmadığında [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet artık otomatik olarak oluşturulan Yardımı görüntüler. Otomatik olarak oluşturulan Yardım komut sözdizimi ve kullanımıyla ilgili yönergeleri içerir [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet Yardım dosyalarını yükleyin.
+Bir cmdlet için Yardım dosyaları bilgisayarda yüklü olmadığında [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet artık otomatik olarak oluşturulmuş Yardım görüntüler. Otomatik olarak oluşturulmuş Yardım komut sözdizimi ve kullanımına ilişkin yönergeler içerir [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) Yardım dosyalarını indirmek için cmdlet'i.
 
-Tüm modül yazarına güncelleştirilebilir Yardımı için kendi modülü destekler. Yardım dosyaları dahil modüldeki ve bunları güncelleştirin veya Yardım dosyalarını atlayın ve bunları yüklemek için güncelleştirilebilir Yardım'ı kullanmak için güncelleştirilebilir Yardımı kullanın. Güncelleştirilebilir Yardımı destekleme hakkında daha fazla bilgi için bkz: [güncelleştirilebilir Yardımı destekleme](http://go.microsoft.com/FWLink/?LinkID=242129) MSDN'de.
+Hiçbir modül yazarına güncelleştirilebilir Yardımı için kendi modülü destekler. Modülde Yardım dosyaları içerir ve bunları güncelleştirin veya Yardım dosyalarını atlamak ve bunları yüklemek için güncelleştirilebilir Yardımı'nı kullanmak için güncelleştirilebilir Yardımı'ı kullanın. Güncelleştirilebilir Yardımı destekleme hakkında daha fazla bilgi için bkz. [güncelleştirilebilir Yardımı destekleme](http://go.microsoft.com/FWLink/?LinkID=242129) MSDN'de.
 
 ### <a name="enhanced-online-help"></a>Gelişmiş çevrimiçi Yardım
-Windows PowerShell çevrimiçi Yardım, tüm kullanıcılar için değerli bir kaynak olmakla birlikte bulunmayan veya güncelleştirilmiş Yardım dosyaları yükleyemiyor kullanıcıları için özellikle önemlidir.
+Windows PowerShell çevrimiçi Yardım tüm kullanıcılar için değerli bir kaynaktır, ancak olmayan veya güncelleştirilmiş Yardım dosyaları yükleyemezsiniz kullanıcıları için özellikle önemlidir.
 
 Herhangi bir Windows PowerShell cmdlet'i için çevrimiçi Yardım almak için şunu yazın:
 
@@ -555,161 +555,161 @@ Herhangi bir Windows PowerShell cmdlet'i için çevrimiçi Yardım almak için �
 Get-Help <cmdlet-name> -Online
 ```
 
-Windows PowerShell, varsayılan Internet tarayıcınız Yardım konusunun çevrimiçi sürümünü açar.
+Windows PowerShell Yardım konusunun çevrimiçi sürümünü, varsayılan Internet tarayıcısında açar.
 
-**Get-Help-çevrimiçi** özelliği Windows PowerShell 3. 0'ı şimdi daha güçlü bile cmdlet için Yardım dosyalarını bilgisayarda yüklenmediğinde çalıştığından. **Get-Help-çevrimiçi** özelliği cmdlet'ler ve gelişmiş işlevler HelpUri özelliğinden Yardım konusunun URI'sini alır.
+**Get-Help-Online** özelliği Windows PowerShell 3.0, artık çok daha güçlü bile, cmdlet için Yardım dosyaları bilgisayarda yüklü değil çalıştığından. **Get-Help-Online** özelliği cmdlet'ler ve gelişmiş işlevleri HelpUri özelliğinden Yardım konusunun URI'sini alır.
 
 ```
 PS C:\>(Get-Command Get-ScheduledJob).HelpUri
 http://go.microsoft.com/fwlink/?LinkID=223923
 ```
 
-Windows PowerShell 3. 0'den itibaren C# cmdlet'leri yazarları doldurabilirsiniz **HelpUri** oluşturarak özelliği bir **HelpUri** cmdlet Sınıf özniteliği. Gelişmiş işlevler yazarları tanımlayabilirsiniz bir **HelpUri** özelliği **CmdletBinding** özniteliği. Değeri **HelpUri** özelliği "http" veya "https" ile başlamalıdır.
+Windows PowerShell 3.0 yazarları başlayarak C# cmdlet'leri doldurma **HelpUri** oluşturarak özelliği bir **HelpUri** cmdlet'i Sınıf özniteliği. Gelişmiş işlevleri yazarları tanımlayabilirsiniz bir **HelpUri** özelliği **CmdletBinding** özniteliği. Değerini **HelpUri** özelliği "http" veya "https" ile başlamalıdır.
 
-Ayrıca ekleyebilirsiniz bir **HelpUri** bir XML temelli cmdlet Yardım dosyasının ilk ilgili bağlantı değeri veya. Bir işlevdeki açıklama tabanlı Yardım bağlantısını yönergesi.
+De içerebilir bir **HelpUri** değeri bir XML temelli cmdlet Yardım dosyasının ilk ilgili bağlantı veya. Bir işlev açıklama tabanlı Yardım bağlantısı yönergesi.
 
-Çevrimiçi Yardımı destekleme hakkında daha fazla bilgi için bkz: [çevrimiçi Yardımı destekleme](http://go.microsoft.com/fwlink/?LinkId=242132) MSDN'de.
+Çevrimiçi Yardımı destekleme hakkında daha fazla bilgi için bkz. [çevrimiçi Yardımı destekleme](http://go.microsoft.com/fwlink/?LinkId=242132) MSDN'de.
 
 ### <a name="cim-integration"></a>CIM tümleştirme
-Ortak Bilgi Modeli (CIM için destek sistemler, ağlar, uygulamalar ve hizmetler için ortak tanımlara yönetim bilgilerini sağlayan exchange arasında yönetim bilgisi vermeden), Windows PowerShell 3.0 içerir heterojen sistemler. Windows PowerShell 3.0, yeni veya var olan CIM sınıflarını, komutları temel Windows PowerShell cmdlet'leri yazma özelliği de dahil olmak üzere CIM desteği CIM .NET Framework desteği, XML dosyalarını cmdlet tanımına dayalı. API, CIM Yönetimi cmdlet'leri ve WMI 2.0 sağlayıcıları.
+Ortak Bilgi Modeli (CIM için destek sistemler, ağlar, uygulamalar ve hizmetler için yönetim bilgilerin ortak tanımlara sağlayan arasında yönetim bilgi alışverişi olanak), Windows PowerShell 3.0 içerir heterojen sistemler. Windows PowerShell cmdlet'leri yeni veya mevcut CIM sınıflarını, komutları temel yazma özelliği dahil olmak üzere Windows PowerShell 3.0 CIM desteği CIM .NET Framework desteği, XML dosyalarını cmdlet'i tanımını temel. API, CIM Yönetimi cmdlet'leri ve sağlayıcıları WMI 2.0.
 
 ### <a name="session-configuration-files"></a>Oturum yapılandırma dosyaları
-Windows PowerShell 3. 0'den başlayarak, bir dosyayı kullanarak özel bir oturum yapılandırması tasarlayabilirsiniz. Yeni oturum yapılandırma dosyası modüllerine, komut dosyaları da dahil olmak üzere oturum yapılandırması kullanan oturumları ortamının belirlemenize olanak tanır ve biçim dosyalarını modüllerine hangi cmdlet'leri ve dil öğeleri kullanıcılar kullanabilir, oturumlara yüklenir ve komut dosyaları çalıştırabilirler ve hangi değişkenleri görürler.
+Windows PowerShell 3. 0'den itibaren bir dosyayı kullanarak özel bir oturum yapılandırması tasarlayabilirsiniz. Yeni bir oturum yapılandırma dosyası betikleri, hangi modüllerin de dahil olmak üzere, bir oturum yapılandırması kullanan oturumları ortamının belirlemenize olanak tanır ve biçimi dosyaları modüllerine hangi cmdlet'leri ve dil öğeleri kullanıcıların kullanabileceği oturumlara yüklenir ve betikleri çalıştırdığı ve hangi değişkenleri görürler.
 
-Hangi kullanıcıların yalnızca cmdlet'ler belirli bir modülden çalıştırabilirsiniz bir oturum ya da kullanıcıların tam dil, erişimi olan tüm modülleri ve erişim gelişmiş görevler gerçekleştirmek komut dosyalarına sahip bir oturum tasarlayabilirsiniz.
+Bir oturumu, kullanıcılar yalnızca cmdlet'ler belirli bir modülden çalıştırabilir ya da kullanıcıların tam dil ve tüm modüllere erişim için Gelişmiş görevler betikler erişimi olan bir oturum tasarlayabilirsiniz.
 
-Windows PowerShell önceki sürümlerinde, bu düzeyde denetimi yalnızca bir C# programı veya karmaşık başlatma komut dosyası yazabilirsiniz olan aşağıdakiler için kullanılabilir. Şimdi, herhangi bir bilgisayarda Administrators grubunun üyesi bir yapılandırma dosyası kullanarak bir oturum yapılandırması özelleştirebilirsiniz.
+Windows PowerShell önceki sürümlerinde, bu düzeyde denetimi yalnızca yazabilirsiniz olan olanlar için kullanılabilir bir C# program veya karmaşık başlatma komut dosyası. Artık, herhangi bir bilgisayarda Administrators grubunun üyesi, bir yapılandırma dosyası kullanarak bir oturum yapılandırması özelleştirebilirsiniz.
 
-Bir oturum yapılandırma dosyası oluşturmak üzere kullanmanız [yeni PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet'i. Bir oturum yapılandırması oturum yapılandırma dosyasını uygulamak için kullanmak [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) veya [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlet'leri.
+Bir oturum yapılandırma dosyası oluşturmak için kullanın [yeni PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet'i. Oturum yapılandırma dosyası için bir oturum yapılandırması uygulamak için [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) veya [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlet'leri.
 
-Daha fazla bilgi için bkz: [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) ve [yeni PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
+Daha fazla bilgi için [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.0) ve [yeni PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
 
-### <a name="scheduled-jobs-and-task-scheduler-integration"></a>Zamanlanan işler ve Görev Zamanlayıcı tümleştirme
-Artık Windows PowerShell arka plan işleri zamanlamak ve bunları Windows PowerShell ve Görev Zamanlayıcı yönetin.
+### <a name="scheduled-jobs-and-task-scheduler-integration"></a>Zamanlanmış işleri ve Görev Zamanlayıcı'yı tümleştirme
+Şimdi, Windows PowerShell arka plan işleri zamanlama ve Windows PowerShell'de ve Görev Zamanlayıcısı'nı yönetme.
 
-Windows PowerShell arka plan işleri Görev Zamanlayıcı görevlerini ve yararlı bir karma olan Windows PowerShell zamanlanan işleri.
+Zamanlanmış Windows PowerShell, Windows PowerShell arka plan işleri Görev Zamanlayıcı görevlerini ve kullanışlı bir karma işlerdir.
 
-Windows PowerShell arka plan işleri gibi zamanlanmış işler arka planda zaman uyumsuz olarak çalıştırın. Tamamlanan zamanlanmış işler örneklerini gibi iş cmdlet'lerini kullanarak yönetilebilir [başlangıç işi](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) ve [Get-Job](https://technet.microsoft.com/library/1352c534-7193-46ca-9ab1-0c5219a661ad).
+Zamanlanmış işleri, Windows PowerShell arka plan işleri gibi arka planda zaman uyumsuz olarak çalışır. Tamamlanan zamanlanmış işleri örneklerini gibi iş cmdlet'lerini kullanarak yönetilebilir [Start-Job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) ve [Get-Job](https://technet.microsoft.com/library/1352c534-7193-46ca-9ab1-0c5219a661ad).
 
-Görev Zamanlayıcı görevlerini gibi tek seferlik veya yinelenen bir zamanlamaya göre veya yanıt olarak bir eylem veya olay zamanlanmış işler çalıştırabilirsiniz. Görüntülemek ve Görev Zamanlayıcı zamanlanmış işlerde yönetebilir, etkinleştirmek ve bunları, bunları çalıştırmak veya şablon olarak kullanın ve koşulları altında işler başlamadan ayarlayın gerektiği gibi devre dışı bırakın.
+Görev Zamanlayıcı görevlerini gibi tek seferlik veya yinelenen bir zamanlamaya göre veya bir eylem veya olay yanıt zamanlanmış işleri çalıştırabilirsiniz. Görüntüleyebilir ve görev scheduler'da zamanlanmış işler yönetmek, etkinleştirmek ve bunları çalıştırın veya bunları şablon olarak kullanarak ve koşullar altında işleri başlatmak, gerektiği gibi devre dışı.
 
-Ayrıca, zamanlanmış işler bunları yönetmek için cmdlet'ler özelleştirilmiş bir dizi gelir. Cmdlet'ler, oluşturma, düzenleme, yönetmek, devre dışı bırak ve zamanlanan işleri yeniden etkinleştirmek, zamanlanmış işi Tetikleyicileri oluşturma ve zamanlanmış işi seçeneklerini ayarlama olanak tanır.
+Ayrıca, bunları yönetmek için cmdlet'ler özelleştirilmiş bir zamanlanmış işleri gelir. Cmdlet'ler, oluşturma, düzenleme, yönetme, devre dışı ve zamanlanmış işleri yeniden etkinleştirmek, zamanlanmış işi Tetikleyicileri oluşturma ve zamanlanmış işi seçenekleri sağlar.
 
-Zamanlanan işler hakkında daha fazla bilgi için bkz: [about_Scheduled_Jobs](https://technet.microsoft.com/library/3b546629-703c-4939-b44f-52dd567bce92).
+Zamanlanmış işler hakkında daha fazla bilgi için bkz. [about_Scheduled_Jobs](https://technet.microsoft.com/library/3b546629-703c-4939-b44f-52dd567bce92).
 
-### <a name="windows-powershell-language-enhancements"></a>Windows PowerShell dil geliştirmeleri
-Windows PowerShell 3.0 daha basit ve kullanmak için ve ortak hatalarını önlemek için daha kolay dili sağlamak üzere tasarlanmış birçok özellik içerir. Özellik numaralandırma, sayısı ve uzunluğu özelliklerinin skaler nesneler, yeni yeniden yönlendirme işleçleri, $Using kapsam değiştiricisi, PSItem biçimlendirme otomatik değişken, esnek komut dosyası, değişkenleri, Basitleştirilmiş özniteliği özniteliklerini geliştirmeler bağımsız değişkenler, sayısal komut adları, Dur ayrıştırma işleci, geliştirilmiş dizi sıçratmaya, yeni bit işleçleri, sıralı sözlükler, PSCustomObject atama ve geliştirilmiş açıklama tabanlı Yardım.
+### <a name="windows-powershell-language-enhancements"></a>Windows PowerShell dil iyileştirmeleri
+Windows PowerShell 3.0, daha basit ve kolay kullanın ve sık karşılaşılan hataları önlemek için dili sağlamak üzere tasarlanmış birçok özellik içerir. Özellik sabit listesi, sayısı ve uzunluğu özelliklerinin skaler nesneleri yeni yönlendirme işleçlerini, $Using kapsam değiştiricisi, otomatik bir değişken, esnek betik PSItem biçimlendirme, değişkenlerin Basitleştirilmiş özniteliği öznitelikleri geliştirmeleri bağımsız değişkenler, sayısal komut adlarını, Dur ayrıştırma işleci, geliştirilmiş dizi sıçratmaya, yeni bit işleçleri, sıralanmış sözlük, PSCustomObject atama ve geliştirilmiş açıklama tabanlı Yardım.
 
 ### <a name="new-core-cmdlets"></a>Yeni çekirdek cmdlet'leri
-Yeni cmdlet'leri zamanlanmış işler, bağlantısı kesilmiş oturumları, CIM tümleştirme ve güncelleştirilebilir Yardım sistemi yönetmek için cmdlet'leri dahil olmak üzere Windows PowerShell çekirdeği yüklemesine eklenmiştir.
+Zamanlanmış işler, oturumlara, CIM tümleştirme ve güncelleştirilebilir Yardım sistemi yönetmek için cmdlet'leri dahil olmak üzere Windows PowerShell Core yükleme için yeni cmdlet'ler eklendi.
 
 |||
 |-|-|
-|Add-JobTrigger|Yeni-JobTrigger|
-|Connect-PSSession|PSSessionConfigurationFile yeni|
-|ConvertFrom Json|New-PSTransportOption|
-|ConvertTo-Json|PSWorkflowExecutionOption yeni|
-|Devre dışı bırak-JobTrigger|New-PSWorkflowSession|
-|Devre dışı bırak-ScheduledJob|ScheduledJobOption yeni|
-|Bağlantı kesme-PSSession|Yeni-WinEvent|
-|Enable-JobTrigger|Alma-PSSession|
-|Enable-ScheduledJob|Register-CimIndicationEvent|
+|Ekle-JobTrigger|Yeni-JobTrigger|
+|Connect-PSSession|Yeni PSSessionConfigurationFile|
+|ConvertFrom-Json|New-PSTransportOption|
+|ConvertTo-Json|Yeni-PSWorkflowExecutionOption|
+|Disable-JobTrigger|Yeni-PSWorkflowSession|
+|Disable-ScheduledJob|Yeni ScheduledJobOption|
+|Bağlantıyı Kes-PSSession|Yeni-WinEvent|
+|Etkinleştir-JobTrigger|Al-PSSession|
+|Etkinleştir-ScheduledJob|Register-CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
-|Get-CimClass|Remove-CimInstance|
-|Get-CimInstance|Remove-CimSession|
+|Get-CimClass|Remove-Cimınstance|
+|Get-Cimınstance|Remove-CimSession|
 |Get-CimSession|Remove-TypeData|
-|Get-ControlPanelItem|Rename-Computer|
+|Get-ControlPanelItem|Bilgisayarı yeniden adlandırma|
 |Get-IseSnippet|Resume-Job|
 |Get-JobTrigger|Save-Help|
-|Get-ScheduledJob|Set-CimInstance|
+|Get-ScheduledJob|Set-Cimınstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
 |İçeri aktarma IseSnippet|Set-ScheduledJobOption|
 |Çağırma AsWorkflow|Göster komutu|
-|Çağırma CimMethod|ControlPanelItem Göster|
+|Invoke-CimMethod|ControlPanelItem Göster|
 |Çağırma RestMethod|İşi askıya alma|
-|Çağırma WebRequest|Test-PSSessionConfigurationFile|
-|CimInstance yeni|Engellemesini dosyası|
+|Invoke-WebRequest|Test-PSSessionConfigurationFile|
+|Yeni-Cimınstance|Dosya engelini kaldırma|
 |Yeni-CimSession|Unregister-ScheduledJob|
-|CimSessionOption yeni|Update-Help|
-|IseSnippet yeni||
+|Yeni CimSessionOption|Update-Help|
+|Yeni IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Varolan çekirdek cmdlet'leri ve sağlayıcıları geliştirmeleri
-Windows PowerShell 3.0 Basitleştirilmiş söz dizimi ve aşağıdaki cmdlet'ler yeni parametreleri de dahil olmak üzere mevcut cmdlet'leri için yeni özellikler içerir: bilgisayar cmdlet'leri, CSV cmdlet'leri, Get-Childıtem, Get-Command, Get-içerik, Get-geçmişi, ölçü-nesnesi, güvenlik cmdlet, Select-Object, Seç-dize, bölünmüş yolu, Start-işlem, t-Object, Bağlantıyı Sına Üye Ekle ve WMI cmdlet'leri.
+### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Var olan çekirdek cmdlet'leri ve sağlayıcıları geliştirmeleri
+Windows PowerShell 3.0 Basitleştirilmiş bir sözdizimi ve aşağıdaki cmdlet'leri için yeni parametreler dahil olmak üzere mevcut cmdlet'ler için yeni özellikler içerir: bilgisayar cmdlet'leri, CSV cmdlet'leri, Get-Childıtem, Get-Command, Get-içerik alma geçmişi, ölçü nesnesi, güvenlik cmdlet'leri Select-Object, String seçin, bölünmüş yolu, işlemini Başlat, t-Object, Test-Connection Üye Ekle ve WMI cmdlet'leri.
 
-Windows PowerShell sağlayıcıları Ayrıca önemli ölçüde, web barındırma için Güvenli Yuva Katmanı (SSL) sertifikalarını yönetmek için sertifika sağlayıcı desteği de dahil olmak üzere geliştirilmiş, kimlik bilgisi, kalıcı ağ sürücülerini ve alternatif veri akışları için destek dosya sistemi sürücülerine.
+Windows PowerShell sağlayıcıları Ayrıca önemli ölçüde, web barındırma için Güvenli Yuva Katmanı (SSL) sertifikalarını yönetmek için sertifika sağlayıcı desteği dahil olmak üzere geliştirildi, kimlik bilgisi, kalıcı bir ağ sürücülerini ve alternatif veri akışlarını desteği dosya sistemi sürücü.
 
-### <a name="remote-module-import-and-discovery"></a>Uzak modülü içe aktarma ve bulma
-Windows PowerShell 3.0 modülü bulma, içeri aktarma ve uzak bilgisayarlarda örtük remoting özelliklerini genişletir. Modül cmdlet modülleri uzak bilgisayarlarda alın ve Windows PowerShell uzaktan iletişimini kullanarak uzak veya yerel bilgisayarda modülleri alın. Yeni CIM oturum desteği, uzak bilgisayarda örtük olarak çalıştırmak yerel bilgisayarda komutları içeri aktararak Windows olmayan bilgisayarları yönetmek için CIM ve WMI kullanmanıza olanak sağlar.
+### <a name="remote-module-import-and-discovery"></a>Uzak modül içeri aktarma ve bulma
+Windows PowerShell 3.0 modülü bulma, alma ve uzak bilgisayarlarda örtük uzak iletişim yeteneklerini genişletir. Modülü cmdlet'lerini uzak bilgisayarlarda modüllerini alın ve Windows PowerShell uzaktan iletişimini kullanarak uzak veya yerel bilgisayarda modülleri içeri aktarın. Yeni CIM oturumu desteği örtük olarak uzak bilgisayarda çalışan yerel bilgisayarda komutları içeri aktararak Windows olmayan bilgisayarları yönetmek için CIM ve WMI kullanmanıza olanak tanır.
 
-Daha fazla bilgi için için Yardım konularına bakın [Get-Module](https://technet.microsoft.com/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) ve [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet'leri.
+Daha fazla bilgi için Yardım konularını görmek [Get-Module](https://technet.microsoft.com/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) ve [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet'leri.
 
-### <a name="enhanced-tab-completion"></a>Gelişmiş sekmesi tamamlama
-Şimdi sekme tamamlama Windows PowerShell konsolunda cmdlet'leri, parametreleri, parametre değerlerini, listeleme, .NET Framework türleri, COM nesneleri, gizli dizinler ve daha fazla adlarını tamamlar. Sekme tamamlama özelliği, tamamen yeni Ayrıştırıcı ve bellek içi ayrıştırma ağacı ve Orta çizgi sekme tamamlama dahil olmak üzere daha fazla senaryoları desteklemek için soyut söz dizimi ağaç göre yeniden yazılmıştır.
+### <a name="enhanced-tab-completion"></a>Gelişmiş sekme tamamlama
+Windows PowerShell Konsolu sekme tamamlamayı artık cmdlet'leri, parametreleri, parametre değerleri, numaralandırma, .NET Framework türleri, COM nesneleri, gizli dizinler ve diğer adlarını tamamlar. Sekme tamamlama özelliği tamamen yeni Ayrıştırıcı ve bellek içi ayrıştırma ağaçlarını ve Orta çizgi sekme tamamlama dahil olmak üzere daha fazla senaryoları desteklemek için soyut sözdizimi ağacını göre yeniden.
 
 ### <a name="module-auto-loading"></a>Modül otomatik yükleme
-[Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet'i şimdi alır tüm cmdlet'ler ve İşlevler bilgisayarda yüklü olan tüm modüllerdeki dahi modülü geçerli oturuma içe aktarılmaz.
+[Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet'i artık alır tüm cmdlet'ler ve İşlevler bilgisayarda yüklü tüm modüllerdeki bile modülü geçerli oturuma içe aktarılmaz.
 
-Gereksinim duyduğunuz cmdlet'i aldığınızda, bunu hemen modülleriniz almadan kullanabilirsiniz. Modüldeki herhangi bir cmdlet'i kullandığınızda, Windows PowerShell modülleri artık otomatik olarak içeri aktarılır. Artık modülü aratın ve cmdlet'lerini kullanmak için almak gerekmez.
+İhtiyacınız olan bir cmdlet'i aldığınızda, bunu hemen modüllerin içeri aktarmadan kullanabilirsiniz. Sürümünde modüldeki herhangi bir cmdlet'i kullandığınızda Windows PowerShell modülleri artık otomatik olarak içeri aktarılır. Artık bu modül araması gerçekleştirin ve cmdlet'lerini kullanmak için içeri aktarılması gerekmez.
 
-Otomatik modüllerini içeri aktarma tetiklenir cmdlet çalışan bir komut kullanarak **Get-Command** joker karakterler veya çalışan olmadan bir cmdlet [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) joker karakter bulunmayan bir cmdlet için.
+Otomatik modüllerini içeri aktarma tetiklenir cmdlet'ini çalışan bir komut kullanarak **Get-Command** joker karakterler veya çalışan olmadan bir cmdlet için [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) joker karakter içermeyen bir cmdlet için.
 
-Etkinleştirme, devre dışı bırakın ve otomatik modülleri içeri kullanarak yapılandırma **$PSModuleAutoLoadingPreference** tercih değişkeni.
+Etkinleştirme, devre dışı bırakın ve otomatik modüllerini kullanarak içe aktarma yapılandırma **$PSModuleAutoLoadingPreference** tercih değişkeni.
 
-Daha fazla bilgi için bkz: [about_Modules [v4]](https://technet.microsoft.com/library/94f57429-a539-4aee-bb0d-205cd7e801f9), [tercih değişkenleri hakkında [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b)ve için Yardım konularını [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) ve [Import-Module ](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet'leri.
+Daha fazla bilgi için [about_Modules](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.0), [tercih değişkenleri hakkında [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b)ve için Yardım konularını [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) ve [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet'leri.
 
 ### <a name="module-experience-improvements"></a>Modül deneyimi geliştirmeleri
-Windows PowerShell 3.0 Gelişmiş özellik desteği aşağıdaki yeni özellikler de dahil olmak üzere modüllerle getirir.
+Windows PowerShell 3.0 modüllerine aşağıdaki yeni özellikler dahil olmak üzere, gelişmiş özellik desteği sunar.
 
-1. Tek tek modülleri (LogPipelineExecutionDetails) için modülü günlüğe kaydetme ve yeni "Kapatma modülü oturum" Grup İlkesi ayarı
+1. Tek tek modüller (LogPipelineExecutionDetails) için modülü günlüğe kaydetmeyi ve yeni "Kapatma modülü oturum" Grup İlkesi ayarı
 
-2. Genişletilmiş modül bildirimi değerleri kullanıma modülü nesneleri
+2. Genişletilmiş modül bildirimindeki değerlerini göstermesi modülü nesneleri
 
-3. Yeni **ExportedCommands** özelliği de dahil olmak üzere modüllerin, her türlü komutları birleştirir modülleri, iç içe geçmiş
+3. Yeni **ExportedCommands** özelliği dahil olmak üzere modüllerinin, her türden komutlar birleştirir modüller, iç içe geçmiş
 
-4. Gelişmiş bulma izin vererek dahil olmak üzere kullanılabilir (içe aktarılan beklemediğiniz) modülleri **yolu** ve **listavailable birlikte** aynı komutu parametreleri
+4. Geliştirilmiş izin verme dahil olmak üzere, kullanılabilir (içe aktarılan beklemediğiniz) modülleri bulunmasını **yolu** ve **ListAvailable** aynı komutu parametreleri
 
-5. Yeni **DefaultCommandPrefix** modülü kodunu değiştirmeden ad çakışmalarını önler modülü bildirimlerinde anahtar.
+5. Yeni **DefaultCommandPrefix** modülü kodunu değiştirmeden ad çakışmaları önler, modül bildirimlerinde anahtar.
 
-6. Geliştirilmiş tam gerekli modüllerini sürümü ve GUID ve otomatik gerekli modüllerini içeri aktarma ile dahil olmak üzere modülü gereksinimleri
+6. Gerekli modülleri tam sürümü ve GUID ve otomatik gerekli modülleri içeri aktarma da dahil olmak üzere, modül gereksinimleri geliştirildi
 
-7. Sessiz, kolaylaştırılmış işlemi [yeni ModuleManifest](https://technet.microsoft.com/library/512adced-f42f-4e88-ba7c-834fc9e5d047) cmdlet'i.
+7. Sessiz, kolaylaştırılmış işleyişini [yeni ModuleManifest](https://technet.microsoft.com/library/512adced-f42f-4e88-ba7c-834fc9e5d047) cmdlet'i.
 
 8. Yeni **Modülü** parametresi için #Requires
 
-9. Geliştirilmiş [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) her ikisi de cmdlet'iyle **MinimumVersion** ve **RequiredVersion** parametreleri.
+9. Geliştirilmiş [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet'i hem **MinimumVersion** ve **RequiredVersion** parametreleri.
 
-### <a name="simplified-command-discovery"></a>Basitleştirilmiş komutu bulma
-Artık oturumunuz için kullanılabilen komutları bulmak için tüm modülleri içeri aktarmanız gerekir. Windows PowerShell 3. 0'da, [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet'i tüm komutları yüklü olan tüm modülleri alır. Ve bir komutunu kullanırsanız, komut verir modülü oturumunuza otomatik olarak içeri aktarılır.
+### <a name="simplified-command-discovery"></a>Basitleştirilmiş komut bulma
+Artık oturumunuza kullanılabilir komutları bulmak için tüm modülleri içeri aktarmak gerekir. Windows PowerShell 3. 0'da, [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet'i tüm komutlar yüklü tüm modüllerden alır. Ve oturumunuza bir komutunu kullanırsanız, bir komut verir modülü otomatik olarak aktarılır.
 
-Yeni [Göster komutu](https://technet.microsoft.com/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) cmdlet, özellikle yeni başlayanlar için tasarlanmıştır. Bir penceresindeki komutları arayabilirsiniz. Tüm komutları görüntülemek veya modülü tarafından filtre, bir düğmeye tıklayarak bir modülü içeri aktarmak, geçerli bir komut oluşturun ve ardından kopyalama veya pencere ayrılmadan komutu çalıştırmak için metin kutusu ve aşağı açılan listeleri kullanın.
+Yeni [Show komutunu](https://technet.microsoft.com/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) cmdlet'i, özellikle de yeni başlayanlar için tasarlanmıştır. Bir penceresindeki komutları için arama yapabilirsiniz. Tüm komutlar görüntülemek veya modülü tarafından filtrelemek için bir düğmeye tıklayarak bir modülü içeri aktarmak, geçerli bir komut oluşturun ve ardından kopyalayın veya pencerenin çıkmadan komutu çalıştırın, metin kutusu ve aşağı açılan listeleri kullanın.
 
-### <a name="improved-logging-diagnostics-and-group-policy-support"></a>Gelişmiş günlüğe kaydetme, tanılama ve Grup İlkesi desteği
-Windows PowerShell 3.0 artırır günlüğe kaydetme ve olay izleme desteği Windows (ETW) günlüklerinde, bir düzenlenebilir komutları ve modülleri desteğiyle izleme **LogPipelineExecutionDetails** modülleri ve "kapatma üzerinde modülü özelliği Günlüğe kaydetme"Grup İlkesi ayarı. Parametre değerleri şimdi günlüğü ayrıntılarının günlük özelliklerini görüntüleyerek de alabilirsiniz.
+### <a name="improved-logging-diagnostics-and-group-policy-support"></a>Gelişmiş günlük kaydı, tanılama ve Grup İlkesi desteği
+Windows PowerShell 3.0, günlüğe kaydetme ve izleme komutları ve modüller için destek Windows (ETW) günlükleri, düzenlenebilir bir olay izleme desteği ile artırır **LogPipelineExecutionDetails** modülleri ve "kapatma üzerinde modülü özelliği Günlüğe kaydetme"Grup İlkesi ayarı. Artık, parametre değerlerini günlük özelliklerini görüntüleyerek günlük ayrıntılarını alabilirsiniz.
 
-### <a name="formatting-and-output-improvements"></a>Biçimlendirme ve çıktı geliştirmeleri
-Yeni biçimlendirme ve çıkış geliştirmeleri tüm Windows PowerShell kullanıcıları verimliliğini artırmak. Çıktı yeniden yönlendirme tüm akışlar, türleri Format.ps1xml dosyaları, sözcük kaydırma çıkışında, olmadan dinamik olarak varsayılan biçimlendirme özel nesnelerin özelliklerini ekler Gelişmiş bir güncelleştirme türü cmdlet'i için geliştirmeler **PSCustomObject** WMI nesneleri ve heterojen nesneleri ve yöntemi aşırı bulmak için destek biçimlendirme geliştirilmiş türü.
+### <a name="formatting-and-output-improvements"></a>Biçimlendirme ve çıkış geliştirmeleri
+Yeni biçimlendirme ve çıkış geliştirmeleri tüm Windows PowerShell kullanıcıları verimliliğini artırın. Tüm akışlar, türleri Format.ps1xml dosyaları çıkışında, sözcük kaydırma olmadan dinamik olarak varsayılan özel nesnelerin biçimlendirme özellikleri ekleyen bir Gelişmiş güncelleştirme türü cmdlet çıktı yeniden yönlendirme geliştirmeleri **PSCustomObject** WMI nesnelerini heterojen nesne ve yöntem aşırı yüklemeleri bulmaya yönelik destek için biçimlendirme, geliştirilmiş türü.
 
 ### <a name="enhanced-console-host-experience"></a>Gelişmiş konsol konak deneyimi
-Windows PowerShell Konsolu ana bilgisayar programı varsayılan olarak tek iş parçacıklı dahil olmak üzere Windows PowerShell 3.0 yeni özellikler vardır. Dosya Gezgini'nde yeni "PowerShell ile Çalıştır" seçeneğini yalnızca sağ tıklayarak sınırsız bir oturumda komut dosyalarını çalıştır olanak sağlar. Yeni konsol konak başlatma mantık Windows PowerShell daha hızlı başlatır ve yeni yazı tipleri tanıdık konsol penceresi deneyimini kişiselleştirmek izin verir.
+Windows PowerShell Konsolu ana bilgisayar programı varsayılan olarak tek iş parçacıklı dahil olmak üzere Windows PowerShell 3.0 yeni özelliklere sahiptir. Dosya Gezgini yeni "PowerShell ile Çalıştır" seçeneğini yalnızca sağ tıklayarak sınırsız bir oturumda betikleri çalıştırmanıza olanak tanır. Yeni konsol konak başlatma mantıksal Windows PowerShell daha hızlı başlatılan ve tanıdık bir konsol penceresi deneyimini kişiselleştirmek yeni yazı tipleri izin verir.
 
-Daha fazla bilgi için bkz: [about_Run_With_PowerShell](https://technet.microsoft.com/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb).
+Daha fazla bilgi için [about_Run_With_PowerShell](https://technet.microsoft.com/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb).
 
-### <a name="new-cmdlet-and-hosting-apis"></a>Yeni Cmdlet ve API'leri barındırma
-Yeni Cmdlet API ve barındırma API ardışık düzen disk belleği, iç içe geçmiş işlem hatları, çalışma havuzları sekme tamamlama, Windows RT, artık kullanılmayan cmdlet özniteliği ve FunctionInfo nesnesinin fiil ve isim özellikleri için ortak Gelişmiş sözdizimi ağacı (AST) API'ları ve API içerir.
+### <a name="new-cmdlet-and-hosting-apis"></a>Yeni Cmdlet ve API'ler barındırma
+Yeni Cmdlet API'si ve barındırma API'si genel Gelişmiş söz dizimi ağacı (AST) API'ları ve API'ler için işlem hattı disk belleği, iç içe işlem hatları, çalışma havuzları sekme tamamlama, Windows RT, eski cmdlet özniteliği ve fiil ve isim FunctionInfo nesnesinin özelliklerini içerir.
 
 ### <a name="performance-improvements"></a>Performans iyileştirmeleri
-Üzerinde dinamik çalışma zamanı dil (DLR) .NET Framework 4'te yerleşik yeni dil Ayrıştırıcıyı gelen Windows PowerShell önemli performans geliştirmeleri., çalışma zamanı komut dosyası derleme, altyapısı güvenilirlik yenilikleri ve değişiklikleri birlikte algoritması [Get-Childıtem](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) , kendi performansı artırır, özellikle ağ arama paylaştığında.
+Windows PowerShell önemli performans geliştirmeleri, üzerinde dinamik çalışma zamanı dil (DLR) .NET Framework 4'te oluşturulan yeni dil ayrıştırıcı geldiğini., çalışma zamanı betik derlemesi, altyapı güvenilirlik geliştirmeleri ve değişiklikleri birlikte algoritması, [Get-Childıtem](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) , iyileştirmek, performansı, özellikle ağ arama paylaştığında.
 
-### <a name="runas-and-shared-host-support"></a>RunAs ve paylaşılan Host desteği
-Windows PowerShell 3.0 RunAs ve paylaşılan konak özellikleri için destek içerir.
+### <a name="runas-and-shared-host-support"></a>Farklı Çalıştır ve paylaşılan konak desteği
+Windows PowerShell 3.0, farklı çalıştır ve paylaşılan konak özellikleri için destek içerir.
 
-*RunAs* özelliği, Windows PowerShell iş akışı için tasarlanmış bir oturum yapılandırması paylaşılan bir kullanıcı hesabını izniyle çalıştırmak oturumları oluşturmak kullanıcılarının olanak sağlar. Bu daha az ayrıcalıklı kullanıcıların yönetici izinlerine sahip belirli komutları ve komut dosyaları çalıştırmasına izin verir ve daha az Kıdemli kullanıcı Administrators grubuna ekleme gereksinimini azaltır.
+*RunAs* özelliği, Windows PowerShell iş akışı için tasarlanmış bir oturum yapılandırması kullanıcıları paylaşılan bir kullanıcı hesabını izinleriyle çalıştırın oturumları oluşturmasına olanak tanır. Bu belirli komutları ve komut dosyalarını yönetici izinleriyle çalıştırmak daha az ayrıcalıklı kullanıcıların sağlar ve daha üst düzey kullanıcı Administrators grubuna ekleme gereksinimini azaltır.
 
-**SharedHost** özelliği birden çok kullanıcı aynı anda bir iş akışı oturumuna bağlanabilir ve bir iş akışı ilerlemesini izlemek için birden çok bilgisayar üzerinde sağlar. Kullanıcılar bir bilgisayarda bir iş akışı başlatmalarını ve sonra başka bir bilgisayarda iş akışı oturum özgün bilgisayardan oturumun bağlantısını kesmeden bağlanın. Kullanıcıları ve aynı oturum yapılandırması kullanan aynı izinlere sahip olmalıdır. Daha fazla bilgi için "Çalıştıran bir Windows PowerShell iş akışında" Windows PowerShell iş akışı ile çalışmaya başlama bakın.
+**SharedHost** özelliği aynı anda bir iş akışı oturumu bağlanıp bir iş akışı ilerlemesini izlemek için birden çok bilgisayar üzerinde birden fazla kullanıcı sağlar. Kullanıcılar tek bir bilgisayarda bir iş akışı başlatın ve ardından başka bir bilgisayardaki iş akışı oturumu özgün bilgisayardan oturumun bağlantısını kesmeden bağlanın. Kullanıcılar aynı izinlere sahip olmalıdır ve aynı oturum yapılandırmasına kullanıyor. Daha fazla bilgi için bkz: "Çalıştıran bir Windows PowerShell iş akışı" içinde Windows PowerShell iş akışı ile çalışmaya başlama.
 
 ### <a name="special-character-handling-improvements"></a>Özel karakter işleme geliştirmeleri
-Yorumlar ve özel karakterler düzgün işlemek için Windows PowerShell 3.0 yeteneklerini geliştirmek için **LiteralPath** yolları bulunan özel karakterleri işler, parametre sahip neredeyse tüm cmdlet'leri üzerinde geçerli bir  **Yol** parametresi, yeni dahil olmak üzere [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) ve [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet'leri. Ayrıştırıcının da backtick karakter işlenmesini artırmak için özel bir mantık içerir (\`) ve dosya adlarını ve yollarını köşeli ayraç.
+Yorumlar ve özel karakterleri doğru bir şekilde işlemek için Windows PowerShell 3.0 yeteneğini artırmak için **LiteralPath** olan neredeyse tüm Cmdlet'lerde yolları bulunan özel karakterleri işleyen parametresi geçerli bir  **Yol** yeni dahil olmak üzere parametre [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) ve [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet'leri. Ayrıştırıcının da işleme vurgulamasını belirtir karakterin geliştirmek için özel mantığı içerir (\`) ve köşeli parantez içindeki dosya adlarını ve yollarını.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)

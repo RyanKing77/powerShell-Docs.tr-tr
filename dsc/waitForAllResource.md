@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
-title: DSC WaitForAll kaynağı
-ms.openlocfilehash: 4413220bb0b5eeef5fd1599f794cd551f15a2925
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, yapılandırma, Kurulum
+title: DSC WaitForAll kaynak
+ms.openlocfilehash: 367f95caaa71ebec9c8e0a7c31fa5c0f5be27945
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221791"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226109"
 ---
-# <a name="dsc-waitforall-resource"></a>DSC WaitForAll kaynağı
+# <a name="dsc-waitforall-resource"></a>DSC WaitForAll kaynak
 
-> İçin geçerlidir: Windows PowerShell 5.0 ve sonraki sürümleri
+> Uygulama hedefi: Windows PowerShell 5.0 ve üzeri
 
-**WaitForAll** istenen durum Yapılandırması'nı (DSC) kaynak, bir düğüm bloğu içinde kullanılabilir bir [DSC Yapılandırması](configurations.md) diğer düğümlerde yapılandırmalarında bağımlılıklarını belirtmek için.
+**WaitForAll** Desired State Configuration ' nı (DSC) kaynak, bir düğüm bloğunda içinde kullanılabilir bir [DSC Yapılandırması](configurations.md) diğer düğümlerde yapılandırmalarında bağımlılıklarını belirtmek için.
 
-Bu kaynak, başarılı kaynak tarafından belirtilmişse **ResourceName** özelliktir tanımlanan tüm hedef düğümleri üzerinde istenen durumda **NodeName** özelliği.
+Bu kaynak tarafından belirtilen kaynağı, başarılı **ResourceName** özelliği içinde tanımlanan tüm hedef düğümler üzerinde istenen durumda **NodeName** özelliği.
 
 
 ## <a name="syntax"></a>Sözdizimi
@@ -36,14 +36,14 @@ WaitForAll [string] #ResourceName
 
 |  Özellik  |  Açıklama   |
 |---|---|
-| resourceName| Bağımlı kaynak adı. Bu kaynak için farklı bir yapılandırma aitse, adı olarak biçim "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "|
-| nodeName| Hedef düğümleri kaynağın bağlıdır.|
+| ResourceName| Bağımlı kaynak adı. Bu kaynak farklı bir yapılandırmaya aitse, adı olarak Biçimlendir "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "|
+| NodeName| Hedef düğümleri kaynak bağlıdır.|
 | RetryIntervalSec| Yeniden denemeden önce saniye sayısı. Minimum is 1.|
-| retryCount| Yeniden deneneceğini maksimum sayısı.|
-| ThrottleLimit| Makinelerin aynı anda bağlanmasına sayısı. Varsayılan yeni-cimsession varsayılandır.|
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, kaynak yapılandırması Kimliğini komut dosyası çalıştırmak istediğiniz bloğu ilk ise __ResourceName__ ve türünü __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
+| retryCount| Yeniden deneme sayısı.|
+| ThrottleLimit| Aynı anda bağlanmak makineleri sayısı. Yeni-cimsession varsayılan varsayılandır.|
+| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise __ResourceName__ ve kendi türünün __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 ## <a name="example"></a>Örnek
 
-Bu kaynak kullanma örneği için bkz: [arası düğümlü bağımlılıkları belirtme](crossNodeDependencies.md)
+Bu kaynağı kullanmaya ilişkin bir örnek için bkz: [çapraz düğüm bağımlılıklarını belirtme](crossNodeDependencies.md)

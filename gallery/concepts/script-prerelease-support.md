@@ -3,21 +3,21 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: Galeri, powershell, cmdlet, psget
 title: Betikleri uygulamasının yayım öncesi sürümleri
-ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268475"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002744"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Betikleri uygulamasının yayım öncesi sürümleri
 
-1.6.0 sürümünden itibaren PowerShellGet ve PowerShell Galerisi olarak ön sürüm 1.0.0 büyüktür sürümleri etiketleme için desteği. Bu özelliği önce yayın öncesi öğeleri 0 sürümü itibarıyla bulunması sınırlıydı. Bu özellikler için daha büyük destek sağlamak için hedefidir [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) geriye dönük uyumluluğu PowerShellGet, PowerShell sürüm 3 ve yukarıdaki veya mevcut sürümlerini bozucu olmadan sürüm oluşturma kuralı. Bu konu, betik özgü özellikler üzerinde odaklanır. Modüller için eşdeğer özellikleri [yayın öncesi modül sürümlerini](module-prerelease-support.md) konu. Bu özellikleri kullanarak yayımcılar bir betik sürümü 2.5.0-alpha olarak tanımlamak ve daha sonra yayım öncesi bir sürümü yerine geçen bir üretime hazır sürüm 2.5.0 bırakın.
+1.6.0 sürümünden itibaren PowerShellGet ve PowerShell Galerisi olarak ön sürüm 1.0.0 büyüktür sürümleri etiketleme için desteği. Bu özelliği önce yayın öncesi paketleri 0 sürümü itibarıyla bulunması sınırlıydı. Bu özellikler için daha büyük destek sağlamak için hedefidir [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) geriye dönük uyumluluğu PowerShellGet, PowerShell sürüm 3 ve yukarıdaki veya mevcut sürümlerini bozucu olmadan sürüm oluşturma kuralı. Bu konu, betik özgü özellikler üzerinde odaklanır. Modüller için eşdeğer özellikleri [yayın öncesi modül sürümlerini](module-prerelease-support.md) konu. Bu özellikleri kullanarak yayımcılar bir betik sürümü 2.5.0-alpha olarak tanımlamak ve daha sonra yayım öncesi bir sürümü yerine geçen bir üretime hazır sürüm 2.5.0 bırakın.
 
 Yüksek düzeyde, yayın öncesi betik özellikler şunlardır:
 
-- Sürüm dizesi betik bildiriminde PrereleaseString sonek ekleme. PowerShell Galerisi'nde betikleri yayımlandığında, bu verileri bildiriminden ayıklanır ve yayın öncesi öğeleri tanımlamak için kullanılan.
-- Yayın öncesi öğeler alınırken gerektirir PowerShellGet komutlarını Find-Script, yükleme betiği, - AllowPrerelease bayrağı ekleme güncelleştirme betiğini ve Save-Script. Bayrak belirtilmezse, yayın öncesi öğeleri gösterilmez.
+- Sürüm dizesi betik bildiriminde PrereleaseString sonek ekleme. PowerShell Galerisi'nde betikleri yayımlandığında, bu verileri bildiriminden ayıklanır ve yayın öncesi paketleri tanımlamak için kullanılan.
+- Yayın öncesi paketleri alınıyor gerektirir PowerShellGet komutlarını Find-Script, yükleme betiği, - AllowPrerelease bayrağı ekleme güncelleştirme betiğini ve Save-Script. Bayrak belirtilmezse, yayın öncesi paketleri gösterilmez.
 - Find-Script, Get-InstalledScript ve PowerShell Galerisi'ndeki görüntülenen betik sürümleri 2.5.0-alpha olduğu gibi PrereleaseString görüntülenir.
 
 Özellikler için ayrıntıları aşağıda verilmiştir.
@@ -54,9 +54,9 @@ Sıralama düzeni için PowerShell Galerisi yayımlama sırasında büyük/küç
 
 PowerShell Galerisi'nde yayımlama sırasında varsayılan olarak PowerShell Galerisi önceden yayımlanan sürümü daha büyük bir sürümse yayımlanmakta betik sürümüne sahip olmanız gerekir. Bir yayımcı, sürüm 2.5.0-alpha 2.5.0-beta 2.5.0 (ile ön sonek) ile veya güncelleştirebilir.
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Bulma ve PowerShellGet komutlarını kullanarak ön öğeleri alınıyor
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Bulma ve PowerShellGet komutlarını kullanarak yayın öncesi paketleri alınıyor
 
-PowerShellGet Find-Script, yükleme betiği, Update-komut dosyası, yayın öncesi öğeleriyle ilgilenme ve Kaydet komut gerektirir - AllowPrerelease bayrağı ekleme. -AllowPrerelease belirtilmediği takdirde, mevcut değilse ön öğeleri dahil edilir. -AllowPrerelease bayrak belirtilmezse, yayın öncesi öğeleri gösterilmez.
+PowerShellGet Find-Script, yükleme betiği, Update-komut dosyası, yayın öncesi paketlerle ilgilenme ve Kaydet komut gerektirir - AllowPrerelease bayrağı ekleme. -AllowPrerelease belirtilmediği takdirde, mevcut değilse yayın öncesi paketleri dahil edilir. -AllowPrerelease bayrak belirtilmezse, yayın öncesi paketleri gösterilmez.
 
 Bunun tek özel durum PowerShellGet betik komutlarında şunlardır: Get-InstalledScript ve kaldırma betiğini ile bazı durumlarda.
 

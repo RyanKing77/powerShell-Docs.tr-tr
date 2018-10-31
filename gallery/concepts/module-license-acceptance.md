@@ -3,18 +3,18 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Lisans Kabulü Gerektiren Modüller
-ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893119"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002676"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Lisans Kabulü Gerektiren Modüller
 
 ## <a name="synopsis"></a>ÖZETİ
 
-Müşteriler açıkça lisans kendi modülü PowerShell Galerisi'nden yüklemeden önce kabul etmesi gereken bazı modülü yayımcılar için yasal Departmanlar gerektirir. Bir kullanıcı yükler, güncelleştirmeleri veya PowerShellGet, doğrudan ya da başka bir öğe için bir bağımlılık olarak kullanarak bir modülü kaydeder ve bu modül lisansı kabul etmesi gerekir, kullanıcı lisansı kabul veya işlem başarısız belirtmeniz gerekir.
+Müşteriler açıkça lisans kendi modülü PowerShell Galerisi'nden yüklemeden önce kabul etmesi gereken bazı modülü yayımcılar için yasal Departmanlar gerektirir. Bir kullanıcı yükler, güncelleştirmeleri veya PowerShellGet, doğrudan ya da başka bir paket için bir bağımlılık olarak kullanarak bir modülü kaydeder ve bu modül lisansı kabul etmesi gerekir, kullanıcı lisansı kabul veya işlem başarısız belirtmeniz gerekir.
 
 ## <a name="publish-requirements-for-modules"></a>Modüller için gereksinimleri yayımlama
 
@@ -43,7 +43,7 @@ Kullanıcıların lisans kabul etmesini gerektirmek için istediğiniz modüller
 
 - Yükleme/kaydetme/güncelleştirme sırasında işlemi (başka bir modüldeki bağlıdır) bağımlı bir modül lisans kabulü sonra lisans kabulü davranışı (yukarıda) gerektiriyorsa, gerekli olacaktır.
 - Modül sürümü sistemde yüklü olarak yerel kataloğunda zaten listedeyse, biz lisansı denetleniyor atlar.
-- Yükleme/kaydetme/güncelleştirme işlemi sırasında lisansı bağımlı bir modül gerektirir ve lisans kabulü oluşmaz, işlemi başarısız ve yükleme/kaydetme/güncelleştir başarısız öğe için normal işlemleri izleyin.
+- Yükleme/kaydetme/güncelleştirme işlemi sırasında lisansı bağımlı bir modül gerektirir ve lisans kabulü oluşmaz, işlemi başarısız ve kaydetme/yükleme/güncelleştirme işlemi başarısız oldu paketi için normal işlemleri izleyin.
 
 ## <a name="impact-on--force"></a>-Force üzerindeki etki
 
@@ -219,6 +219,6 @@ Modül lisansını kabul etmek için herhangi bir istem olmadan güncelleştiril
 
 [Betikler için Lisans Kabulü Gerektir](./script-license-acceptance.md)
 
-[PowerShellGallery desteğini lisans kabulü gerektir](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[PowerShellGallery desteğini lisans kabulü gerektir](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[Azure Otomasyonuna Dağıtmada Lisans Kabulü Gerektir](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Azure Otomasyonuna Dağıtmada Lisans Kabulü Gerektir](../how-to/working-with-packages/deploy-to-azure-automation.md)

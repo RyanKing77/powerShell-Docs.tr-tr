@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC için Linux nxFileLine kaynağı
-ms.openlocfilehash: f2a989dd3a6746948e09ba94e279c02be8ebe2de
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6a91db25638b09659adfabcec78f91bcb2e69dd9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893306"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225599"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>DSC için Linux nxFileLine kaynağı
 
-**NxFileLine** kaynak içinde PowerShell Desired State Configuration (DSC), bir Linux düğümde bir yapılandırma dosyası içindeki satırların yönetmek üzere bir mekanizma sağlar.
+**NxFileLine** kaynak içinde PowerShell Desired State Configuration (DSC), bir Linux düğümde bir yapılandırma dosyası içindeki satırların yönetmek için bir mekanizma sağlar.
 
 ## <a name="syntax"></a>Sözdizimi
 

@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC SMB çekme sunucusu ayarlama
-ms.openlocfilehash: 1eac6c51aeca3ed573ba8fa27188103436004920
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: ebf9ac7923a7c226bc01014d890d993d452af578
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892874"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225871"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB çekme sunucusu ayarlama
 
@@ -132,7 +132,7 @@ Tüm yapılandırma MOF dosyasının adlandırılmalıdır *ConfigurationID*.mof
 > [!NOTE]
 > Bir SMB çekme sunucusu kullanıyorsanız, yapılandırma kimliklerinin kullanmanız gerekir. Yapılandırma adları, SMB için desteklenmez.
 
-Her kaynak modülü sıkıştırılmasını ve uygun adında gereken şu desene `{Module Name}_{Module Version}.zip`. Örneğin, xWebAdminstration 3.1.2.0 modülü sürümü ile adlı bir modül 'xWebAdministration_3.2.1.0.zip' adlı. Her bir modül sürümü tek zip dosyasında yer almalıdır. WMF 5. 0'ile bir modül biçimi eklenen her zip dosyasında, bir kaynağın yalnızca tek bir sürüm olduğundan tek bir dizinde birden çok modül sürümleri için destek desteklenmiyor. Bu DSC çekme server ile kullanmak için kaynak modülleri'kurmak paketleme önce küçük bir değişiklik yapmak için dizin yapısını gerektiği anlamına gelir. WMF 5.0 DSC kaynağı içeren modüllerin varsayılan biçimi `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Çekme sunucusu için paketleme önce kaldırmanız `{Module version}` klasör yolu olacak şekilde `{Module Folder}\DscResources\{DSC Resource Folder}\`. Bu değişiklik, yukarıda açıklandığı gibi klasör zip ve bu zip dosyaları SMB paylaşımı klasörüne yerleştirin.
+Her kaynak modülü sıkıştırılmasını ve şu desene uygun adında gereken `{Module Name}_{Module Version}.zip`. Örneğin, xWebAdminstration 3.1.2.0 modülü sürümü ile adlı bir modül 'xWebAdministration_3.2.1.0.zip' adlı. Her bir modül sürümü tek zip dosyasında yer almalıdır. WMF 5. 0'ile bir modül biçimi eklenen her zip dosyasında, bir kaynağın yalnızca tek bir sürüm olduğundan tek bir dizinde birden çok modül sürümleri için destek desteklenmiyor. Bu DSC çekme server ile kullanmak için kaynak modülleri'kurmak paketleme önce küçük bir değişiklik yapmak için dizin yapısını gerektiği anlamına gelir. WMF 5.0 DSC kaynağı içeren modüllerin varsayılan biçimi `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Çekme sunucusu için paketleme önce kaldırmanız `{Module version}` klasör yolu olacak şekilde `{Module Folder}\DscResources\{DSC Resource Folder}\`. Bu değişiklik, yukarıda açıklandığı gibi klasör zip ve bu zip dosyaları SMB paylaşımı klasörüne yerleştirin.
 
 ## <a name="creating-the-mof-checksum"></a>MOF sağlama toplamı oluşturma
 

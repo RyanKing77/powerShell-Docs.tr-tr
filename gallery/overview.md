@@ -3,49 +3,50 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery, psget
 title: PowerShell Galerisi
-ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482939"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225627"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell Galerisi
 
-PowerShell Galerisi PowerShell içerik için merkezi depodur. İçinde PowerShell komutlarını ve istenen durum Yapılandırması'nı (DSC) kaynakları içeren yararlı PowerShell modülleri bulabilirsiniz.
-PowerShell komut dosyaları, bazıları PowerShell iş akışları ve hangi bir dizi görevi anahat içeren ve bu görevler için sıralama sağlamak da bulabilirsiniz. Bu öğelerin bazıları, Microsoft tarafından yazılan ve diğerleri PowerShell topluluğu tarafından yazılan.
+PowerShell Galerisi, PowerShell içeriği için merkezi depodur. İçinde yararlı PowerShell modülleri PowerShell komutlarını ve Desired State Configuration ' nı (DSC) kaynakları içeren bulabilirsiniz.
+PowerShell betikleri, bazıları PowerShell iş akışları ve bir dizi görevi, anahat içeren ve bu görevler için sıralama sağlamak da bulabilirsiniz. Bu paketler bazıları Microsoft tarafından yazılmış ve başkaları PowerShell topluluğu tarafından yazılan.
 
 ## <a name="powershellget-overview"></a>PowerShellGet genel bakış
 
-PowerShellGet modülü bulmak, yükleme, güncelleştirme ve modülleri, DSC kaynakları, rol özellikleri ve komut dosyalarından gibi PowerShell yapılarını yayımlama yönelik cmdlet'ler içeren [PowerShell Galerisi](https://www.PowerShellGallery.com) ve diğer özel depoları.
+PowerShellGet modülü bulma, yükleme, güncelleştirme, modüller, DSC kaynakları, rol işlevleri ve komut dosyasından gibi yapıları içeren PowerShell paketleri yayımlama için cmdlet'leri içerir [PowerShell Galerisi](https://www.PowerShellGallery.com)ve diğer özel depolar.
 
-## <a name="getting-started-with-the-gallery"></a>Galerisi'ni kullanmaya başlama
+## <a name="getting-started-with-the-gallery"></a>Galeri ile çalışmaya başlama
 
-Galeriden öğeleri yükleme PowerShellGet modülü en son sürümünü gerektirir.
-Bkz: [yükleme PowerShellGet](installing-psget.md) tam yönergeler için.
+Galeriden paketlerini yükleme PowerShellGet modülünün en son sürümünü gerektirir.
+Bkz: [PowerShellGet yükleme](installing-psget.md) eksiksiz yönergeler için.
 
-Kullanıma [Başlarken](getting-started.md) PowerShellGet komutları Galerisi ile kullanma hakkında daha fazla bilgi için. De çalıştırabilirsiniz *Update-Help-modülü PowerShellGet* bu komutları için yerel Yardım yüklemek için.
+Kullanıma [Başlarken](getting-started.md) galeri ile PowerShellGet komutlarını kullanma hakkında daha fazla bilgi için sayfa. Ayrıca çalıştırabileceğiniz *Update-Help-PowerShellGet Modülü* bu komutları için yerel Yardım'ı yüklemek için.
 
 ## <a name="supported-operating-systems"></a>Desteklenen işletim sistemleri
 
-**PowerShellGet** modülü gerektirir **Windows PowerShell 3.0 veya daha yeni**, veya **PowerShell çekirdek 6.0 veya daha yeni**.
+**PowerShellGet** modülü gerektirir **Windows PowerShell 3.0 veya daha yeni**, veya **PowerShell Core 6.0 veya daha yeni**.
 
-Uygun bir sürümünü **Windows PowerShell** bu işletim sistemleri için kullanılabilir:
+Uygun bir sürümünü **Windows PowerShell** bu işletim sistemlerinde kullanılabilir:
 
 - Windows 10
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
 - Windows 7 SP1
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** de .NET Framework 4.5 gerektirir veya üstü. .NET Framework 4.5 yükleyebilirsiniz ya da yukarıdaki gelen [burada](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** gerektiren .NET Framework 4.5 veya üzeri. .NET Framework 4.5 yüklemek ya da yukarıdaki gelen [burada](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
-**PowerShell çekirdek** birçok işletim sistemlerini destekler. Bkz: [bu makalede](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/) tam listesi için.
+Bu yana **PowerShell Core** platformlar arası ve Windows, Linux ve Macos'ta çalıştığı anlamına gelir, ayrıca yapıyorsa **PowerShellGet** bu sistemlerde kullanılabilir. Tarafından desteklenen sistemlerinin tam listesi için **PowerShell Core** bkz [PowerShell'i yükleme](/powershell/scripting/setup/installing-powershell).
 
-Birçok modül galeride barındırılan, farklı işletim sistemleri destekler ve ek gereksinimleri vardır. Lütfen daha fazla bilgi için modülleri için belgelere bakın.
+Galeride bulunan birçok modülleri, farklı işletim sistemleri destekler ve ek gereksinimleri vardır. Modüller için daha fazla bilgi için belgelere bakın.
 
-## <a name="got-a-question-have-feedback"></a>Bir soru var mı? Geri bildirim var mı?
+## <a name="got-a-question-have-feedback"></a>Bir sorunuz var mı? Geri bildirim var mı?
 
-PowerShell Galerisi ve PowerShellGet hakkında daha fazla bilgi bulunabilir [Başlarken](getting-started.md) sayfası. Kullanarak geri bildirim ve rapor sorunlarını lütfen [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
+PowerShellGet ve PowerShell Galerisi hakkında daha fazla bilgi bulunabilir [Başlarken](getting-started.md) sayfası. Lütfen kullanarak geri bildirim ve rapor sorunlarını sağlayın [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

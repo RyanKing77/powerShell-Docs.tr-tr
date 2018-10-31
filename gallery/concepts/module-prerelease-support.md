@@ -3,21 +3,21 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: Galeri, powershell, cmdlet, psget
 title: Yayın öncesi modül sürümleri
-ms.openlocfilehash: 9c3ddb623fbcb7f4b3453dd70cdc56a8dc2e9f6a
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268628"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002778"
 ---
 # <a name="prerelease-module-versions"></a>Yayın öncesi modül sürümleri
 
-1.6.0 sürümünden itibaren PowerShellGet ve PowerShell Galerisi olarak ön sürüm 1.0.0 büyüktür sürümleri etiketleme için desteği. Bu özelliği önce yayın öncesi öğeleri 0 sürümü itibarıyla bulunması sınırlıydı. Bu özellikler için daha büyük destek sağlamak için hedefidir [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) geriye dönük uyumluluğu PowerShellGet, PowerShell sürüm 3 ve yukarıdaki veya mevcut sürümlerini bozucu olmadan sürüm oluşturma kuralı. Bu konu, modül özgü özellikler üzerinde odaklanır. Betikler için eşdeğer özellikleri [, yayın öncesi sürümler betikleri](script-prerelease-support.md) konu. Bu özellikleri kullanarak yayımcılar modül veya betik sürümü 2.5.0-alpha olarak tanımlamak ve daha sonra yayım öncesi bir sürümü yerine geçen bir üretime hazır sürüm 2.5.0 bırakın.
+1.6.0 sürümünden itibaren PowerShellGet ve PowerShell Galerisi olarak ön sürüm 1.0.0 büyüktür sürümleri etiketleme için desteği. Bu özelliği önce yayın öncesi paketleri 0 sürümü itibarıyla bulunması sınırlıydı. Bu özellikler için daha büyük destek sağlamak için hedefidir [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) geriye dönük uyumluluğu PowerShellGet, PowerShell sürüm 3 ve yukarıdaki veya mevcut sürümlerini bozucu olmadan sürüm oluşturma kuralı. Bu konu, modül özgü özellikler üzerinde odaklanır. Betikler için eşdeğer özellikleri [, yayın öncesi sürümler betikleri](script-prerelease-support.md) konu. Bu özellikleri kullanarak yayımcılar modül veya betik sürümü 2.5.0-alpha olarak tanımlamak ve daha sonra yayım öncesi bir sürümü yerine geçen bir üretime hazır sürüm 2.5.0 bırakın.
 
 Yüksek düzeyde, yayın öncesi modülü özellikler şunlardır:
 
-- Modül bildirimini PSData bölümünü yayın öncesi bir dize ekleme modülü yayım öncesi bir sürümü tanımlar. Modülün PowerShell Galerisi'nde yayımlandığında, bu verileri bildiriminden ayıklanır ve yayın öncesi öğeleri tanımlamak için kullanılan.
-- Yayın öncesi öğeler alınırken gerektirir ekleme `-AllowPrerelease` PowerShellGet komutlarını bayrak `Find-Module`, `Install-Module`, `Update-Module`, ve `Save-Module`. Bayrak belirtilmezse, yayın öncesi öğeleri gösterilmez.
+- Modül bildirimini PSData bölümünü yayın öncesi bir dize ekleme modülü yayım öncesi bir sürümü tanımlar. Modülün PowerShell Galerisi'nde yayımlanmış olan, bu verileri bildiriminden ayıklanır ve yayın öncesi paketleri tanımlamak için kullanılır.
+- Yayın öncesi paketleri alınıyor gerektirir ekleme `-AllowPrerelease` PowerShellGet komutlarını bayrak `Find-Module`, `Install-Module`, `Update-Module`, ve `Save-Module`. Bayrak belirtilmezse, yayın öncesi paketleri gösterilmez.
 - Modül sürümlerini tarafından görüntülenen `Find-Module`, `Get-InstalledModule`ve PowerShell galerisinde, olduğu gibi 2.5.0-alpha eklenen ön sürüm dizesi ile tek bir dize olarak görüntülenir.
 
 Özellikler için ayrıntıları aşağıda verilmiştir.
@@ -51,7 +51,7 @@ Bir modül ön tanımlayan bir modül bildirimi bir örnek bölümünde aşağı
 
 - Yayın öncesi dize yalnızca ModuleVersion için birincil.İkincil.derleme 3 Kesimden olduğunda belirtilebilir. Bu, SemVer v1.0.0 ile hizalar.
 - Derleme numarası ve ön sürüm dizesi bölücüyü tire olur. Bir tire ön dizedeki ilk karakter yalnızca eklenebilir.
-- Yayın öncesi dize yalnızca ASCII alfasayısal karakterler içerebilir. [0-9A-Za - z-]. Ön sürümün süresi başlatmak için en iyi bir yöntemdir bu öğelerin listesini taranırken yayım öncesi bir sürümü olduğunu belirlemek daha kolay olacak şekilde bir alfa karakter dize.
+- Yayın öncesi dize yalnızca ASCII alfasayısal karakterler içerebilir. [0-9A-Za - z-]. Ön sürümün süresi başlatmak için en iyi bir yöntemdir bu paketlerin listesini taranırken yayım öncesi bir sürümü olduğunu belirlemek daha kolay olacak şekilde bir alfa karakter dize.
 - Şu anda yalnızca SemVer v1.0.0 ön sürüm dizeleri desteklenir. Yayın öncesi dize **gerekir** döneme içeren veya + [. +], SemVer 2. 0'verilir.
 - Desteklenen bir ön sürüm dizesi örnekleri şunlardır:-alfa, - alpha1,-BETA, - update20171020
 
@@ -61,9 +61,9 @@ Sıralama düzeni için PowerShell Galerisi yayımlama sırasında büyük/küç
 
 PowerShell Galerisi'nde yayımlama sırasında varsayılan olarak PowerShell Galerisi'nde olan önceden yayımlanan sürümü daha büyük bir sürümse yayımlanmakta modülü sürümüne sahip olmanız gerekir.
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Bulma ve PowerShellGet komutlarını kullanarak ön öğeleri alınıyor
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Bulma ve PowerShellGet komutlarını kullanarak yayın öncesi paketleri alınıyor
 
-PowerShellGet bulma modülü, Install-Module güncelleştirme-Module kullanarak ön öğelerle ilgilenme ve Save-Module komutları gerektirir - AllowPrerelease bayrağı ekleme. -AllowPrerelease belirtilmediği takdirde, mevcut değilse ön öğeleri dahil edilir. -AllowPrerelease bayrak belirtilmezse, yayın öncesi öğeleri gösterilmez.
+PowerShellGet bulma modülü, Install-Module güncelleştirme-Module kullanarak yayın öncesi paketleri ile ilgilenen ve Save-Module komutları gerektirir - AllowPrerelease bayrağı ekleme. -AllowPrerelease belirtilmediği takdirde, mevcut değilse yayın öncesi paketleri dahil edilir. -AllowPrerelease bayrak belirtilmezse, yayın öncesi paketleri gösterilmez.
 
 Yalnızca bu PowerShellGet modülü komutlarda Get-InstalledModule ve bazı durumlarda kaldırma modülü ile özel durumlardır.
 

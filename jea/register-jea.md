@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA yapılandırmaları kaydediliyor
-ms.openlocfilehash: 2c4a8f64c966903a6eb8fcabe4cd25ae7f98b2c4
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522863"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002915"
 ---
 # <a name="registering-jea-configurations"></a>JEA yapılandırmaları kaydediliyor
 
 > İçin geçerlidir: Windows PowerShell 5.0
 
-Yapılandırmasını tamamladıktan JEA kullanabilmeniz için önce son adım, [rol işlevleri](role-capabilities.md) ve [oturum yapılandırma dosyası](session-configurations.md) JEA uç noktasını kaydetmek için oluşturulmuştur.
-Bu işlem, oturum yapılandırma bilgilerini sistem için geçerlidir ve uç nokta kullanıcılar ve Otomasyon motoru tarafından kullanılabilir hale getirir.
+Sonra [rol işlevleri](role-capabilities.md) ve [oturum yapılandırma dosyası](session-configurations.md) , son adım JEA kullanabilmeniz için önce JEA uç noktasını kaydetmek için oluşturulmuştur.
+Sistemiyle JEA uç noktası kaydediliyor uç nokta kullanıcılar ve Otomasyon motoru tarafından kullanılabilir hale getirir.
 
 ## <a name="single-machine-configuration"></a>Tek makine yapılandırması
 
@@ -25,8 +25,8 @@ Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
 - Bir oturum yapılandırma dosyası oluşturulur ve test.
 - Jea'yı yapılandırma kaydetme kullanıcı sistemleri üzerinde yönetici haklarına sahip.
 
-JEA uç noktanız için bir ad seçin gerekecektir.
-Jea'yı kullanarak sisteme bağlanmak kullanıcıların istediğinizde JEA uç noktası adı gerekli olacaktır.
+Ayrıca JEA uç noktanız için bir ad seçmeniz gerekir.
+Jea'yı kullanarak sisteme bağlanmak kullanıcıların istediğinizde JEA uç nokta adı gereklidir.
 Kullanabileceğiniz [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'ini sistemde mevcut uç nokta adları denetleyin.
 'Microsoft' ile başlayan uç noktaları, genellikle Windows ile gönderilir.
 'Microsoft.powershell' uç noktası bir uzak PowerShell uç noktasına bağlanırken kullanılan varsayılan uç noktadır.
@@ -48,12 +48,12 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 ```
 
 > [!WARNING]
-> Yukarıdaki komut sistem üzerindeki WinRM hizmeti yeniden başlatılır.
-> Devam eden herhangi bir DSC yapılandırması yanı sıra tüm PowerShell uzak oturum sona erer.
+> Yukarıdaki komut, sistem üzerindeki WinRM hizmetini yeniden başlatır.
+> Bu, devam eden herhangi bir DSC yapılandırması yanı sıra tüm PowerShell uzaktan iletişimini oturumlarını sonlandırır.
 > İşle ilgili işlemlerin kesintiye önlemek için komutu çalıştırmadan önce tüm üretim makinelerinden çevrimdışı olması önerilir.
 
 Kayıt başarılı olursa, hazır olduğunuz [JEA kullanın](using-jea.md).
-Dilediğiniz zaman oturum yapılandırma dosyasını silebilir; kayıt sonrasında kullanılmaz.
+Dilediğiniz zaman oturum yapılandırma dosyasını silebilir; Kayıt uç noktasının sonrasında kullanılmaz.
 
 ## <a name="multi-machine-configuration-with-dsc"></a>DSC ile çok makineli yapılandırma
 
@@ -63,11 +63,11 @@ JEA DSC ile dağıtmak için aşağıdaki önkoşulların karşılandığından 
 - Bir veya daha fazla rol işlevleri yazılan ve geçerli bir PowerShell modülüne eklendi.
 - Rolleri içeren PowerShell modülünü (salt okunur) erişilebilen bir dosya paylaşımı her makine tarafından depolanır.
 - Oturum yapılandırması ayarlarını belirlediniz. JEA DSC kaynağı kullanan bir oturum yapılandırma dosyası oluşturduğunuzda gerekmez.
-- Her makine üzerinde yönetimsel Eylemler gerçekleştirmenize olanak sağlayan veya makineleri yönetmek için kullanılan bir DSC çekme sunucusuna erişimi olan kimlik bilgileri var.
+- Her makine üzerinde yönetimsel Eylemler gerçekleştirmenize olanak sağlayan kimlik bilgilerine sahip olması veya makineleri yönetmek için kullanılan bir DSC çekme sunucusuna erişimi vardır.
 - Yüklediğiniz [JEA DSC kaynağı](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource)
 
 Bir hedef makine (veya çekme sunucusu birini kullanıyorsanız), bir JEA uç noktanız için DSC yapılandırması oluşturun.
-Bu yapılandırmada, oturum yapılandırma dosyası oluşturma JustEnoughAdministration DSC kaynak rol işlevleri dosya paylaşımı kopyalamak için dosya kaynağı kullanır.
+Bu yapılandırmada JustEnoughAdministration DSC kaynağı oturum yapılandırma dosyası oluşturma ve rol işlevleri dosya paylaşımı kopyalamak için dosya kaynağı kullanın.
 
 Aşağıdaki özellikler DSC kaynağı kullanılarak yapılandırılabilir:
 - Rol tanımları
@@ -113,12 +113,12 @@ Configuration JEAMaintenance
 Bu yapılandırma tarafından bir sistemde sonra uygulanabilir [doğrudan yerel Configuration Manager'ı çağırma](https://msdn.microsoft.com/powershell/dsc/metaconfig) veya güncelleştirme [çekme sunucusu yapılandırmasını](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
 DSC kaynağı da varsayılan Microsoft.PowerShell uzak uç nokta çoğaltmanıza imkan tanır.
-Bunu yaparsanız, kaynak "varsayılan WinRM (Uzak Yönetim kullanıcıları ve yerel Yöneticiler grup üyelerine erişim verme) ACL olan Microsoft.PowerShell.Restricted" adlı bir yedekleme unconstrainted uç noktası otomatik olarak kaydedilecek.
+Bunu yaparsanız, kaynak, "WinRM (Uzak Yönetim kullanıcıları ve yerel Yöneticiler grup üyelerine erişim verme) ACL varsayılan olan Microsoft.PowerShell.Restricted" adlı bir yedekleme unconstrainted uç noktası otomatik olarak kaydeder.
 
 ## <a name="unregistering-jea-configurations"></a>JEA yapılandırmaları kaydı siliniyor
 
 Bir JEA uç noktası bir sistemde kaldırmak için [Unregister-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Unregister-PSSessionConfiguration) cmdlet'i.
-Bir JEA uç noktası kaydı yeni kullanıcıların sistemde yeni JEA oturumları oluşturmasını engeller.
+Bir JEA uç noktası kaydı, yeni kullanıcıların sistemde yeni JEA oturumları oluşturmasını engeller.
 Ayrıca, aynı uç nokta adı kullanarak güncelleştirilmiş oturum yapılandırma dosyası yeniden kaydederek bir JEA yapılandırmasını güncelleştirmek sağlar.
 
 ```powershell

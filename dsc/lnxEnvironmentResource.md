@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
-title: DSC Linux nxEnvironment kaynak için
-ms.openlocfilehash: 3c9f39760e0fba7fac060f29f9e808a3a434401f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, yapılandırma, Kurulum
+title: DSC için Linux nxEnvironment kaynağı
+ms.openlocfilehash: 763ec560faa6adaf42aef3c21c9045be95f780bc
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189491"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225990"
 ---
-# <a name="dsc-for-linux-nxenvironment-resource"></a>DSC Linux nxEnvironment kaynak için
+# <a name="dsc-for-linux-nxenvironment-resource"></a>DSC için Linux nxEnvironment kaynağı
 
-**NxEnvironment** kaynağı içinde PowerShell istenen durum yapılandırması (DSC), sistem ortam değişkenlerini Linux düğümde yönetmek için bir mekanizma sağlar.
+**NxEnvironment** kaynak içinde PowerShell Desired State Configuration (DSC), sistem ortam değişkenlerini Linux düğümde yönetmek için bir mekanizma sağlar.
 
 ## <a name="syntax"></a>Sözdizimi
 
@@ -31,20 +31,20 @@ nxEnvironment <string> #ResourceName
 
 |  Özellik |  Açıklama |
 |---|---|
-| Ad| Belirli bir durumu sağlamak istediğiniz ortam değişkeninin adını belirtir.|
+| Ad| Belirli bir durumu sağlamak istediğiniz ortam değişkeninin adı gösterir.|
 | Değer| Ortam değişkenine atanacak değer.|
-| Emin olun| Değişkeni var olup olmadığını denetlemek belirler. Bu özelliği değişkeni mevcut emin olmak için "var" olarak ayarlayın. "Mevcut için" değişkeni var olmadığından emin olmak için ayarlayın. "Var" varsayılan değerdir.|
-| Yol| Yapılandırılmakta olan ortam değişkeni tanımlar. Bu özelliği ayarlamak **$true** değişken ise **yolu** değişken, aksi takdirde ayarlamak **$false**. Varsayılan değer **$false**. Yapılandırılmakta değişken ise **yolu** değişken değeri sağlanan **değeri** özelliği, var olan değerin eklenir.|
-| dependsOn | Bu kaynak yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmalısınız gösterir. Örneğin, varsa **kimliği** çalıştırmak istediğiniz yapılandırma betik bloğu ilk kaynaktır **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
+| Emin olun| Değişkeni mevcut olup olmadığını denetleyin belirler. Bu özelliği değişkeni var. olmak için "var" olarak ayarlayın. Kümesi "Yok" değişken sağlamak için mevcut değil. "Var" varsayılan değerdir.|
+| Yol| Yapılandırılan ortam değişkenini tanımlar. Bu özellik kümesine **$true** değişken ise **yolu** değişken; Aksi takdirde ayarlayın **$false**. Varsayılan değer **$false**. Yapılandırılan değişken ise **yolu** değişkeni aracılığıyla belirtilen değer **değer** özelliği için mevcut değeri eklenir.|
+| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, varsa **kimliği** kaynağın çalıştırmak istediğiniz yapılandırma komut dosyası bloğu ilk. **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Ek Bilgi
 
-* Varsa **yolu** yok veya kümesine **$false**, ortam değişkenleri yönetilen `/etc/environment`. Programları veya komut dosyalarını kaynağı için yapılandırma gerekebilir `/etc/environment` yönetilen ortam değişkenleri erişmek için dosya.
-* Varsa **yolu** ayarlanır **$true**, ortam değişkeni dosyasında yönetilen `/etc/profile.d/DSCenvironment.sh`. Bu dosya, henüz yoksa oluşturulur. Varsa **emin olun** ayarlanır "Yok" için ve **yolu** ayarlanır **$true**, varolan bir ortam değişkeni yalnızca konumundan kaldırılacak `/etc/profile.d/DSCenvironment.sh` ve diğer dosyalarından.
+* Varsa **yolu** yok veya kümesine **$false**, ortam değişkenleri yönetilen `/etc/environment`. Programlar veya betiklerde kaynak yapılandırma gerektirebilir `/etc/environment` yönetilen ortam değişkenlerine erişmek için dosya.
+* Varsa **yolu** ayarlanır **$true**, ortam değişkeni dosyasında yönetilen `/etc/profile.d/DSCenvironment.sh`. Bu dosya yoksa, oluşturulur. Varsa **emin olun** ayarlanmış "Yok" için ve **yolu** ayarlanır **$true**, var olan bir ortam değişkeni yalnızca kaldırılacak. `/etc/profile.d/DSCenvironment.sh` ve diğer dosyalardan.
 
 ## <a name="example"></a>Örnek
 
-Aşağıdaki örnekte nasıl kullanılacağını gösterir **nxEnvironment** emin olmak için kaynak **TestEnvironmentVariable** var ve "Test-Value" değerine sahip. Varsa **TestEnvironmentVariable** olan yoksa, oluşturulur.
+Aşağıdaki örnek nasıl kullanılacağını gösterir **nxEnvironment** emin olmak için kaynak **TestEnvironmentVariable** mevcut olduğundan ve "Test-Value" değerine sahip. Varsa **TestEnvironmentVariable** olduğunu yoksa oluşturulacaktır.
 
 ```
 Import-DSCResource -Module nx

@@ -2,12 +2,12 @@
 title: PowerShell geliştirme için Visual Studio Code'u kullanma
 description: PowerShell geliştirme için Visual Studio Code'u kullanma
 ms.date: 08/06/2018
-ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134109"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225803"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell geliştirme için Visual Studio Code'u kullanma
 
@@ -124,12 +124,11 @@ Ancak, çalışma hata ayıklama, şu anda açık dosya yalnızca hata ayıklama
 - Hata ayıklayıcı etkileşimli bir oturum başlatın
 - Bir PowerShell ana bilgisayar işlemi için hata ayıklayıcının
 
-  Hata ayıklama yapılandırma dosyanızı oluşturmak için aşağıdaki adımları izleyin:
+Hata ayıklama yapılandırma dosyanızı oluşturmak için aşağıdaki adımları izleyin:
 
   1. Açık **hata ayıklama** tuşuna basarak görünümü **Ctrl + SHIFT + D** (**Cmd + SHIFT + D** Mac üzerinde).
   2. Tuşuna **yapılandırma** araç çubuğundaki dişli simgesi.
-  3. Visual Studio Code ister **ortamı seçin**.
-  Seçin **PowerShell**.
+  3. Visual Studio Code ister **ortamı seçin**. Seçin **PowerShell**.
 
   Bunu yaptığınızda, Visual Studio Code kullanarak çalışma klasörünüzde kök dizininde bir dizin ve dosya ".vscode\launch.json" oluşturur.
   Bu, hata ayıklama yapılandırması depolandığı yerdir. Dosyalarınızı Git deposunda ise genellikle launch.json dosyası işleme istersiniz.
@@ -171,9 +170,7 @@ Ancak, çalışma hata ayıklama, şu anda açık dosya yalnızca hata ayıklama
 
   Hata ayıklama yapılandırması kurulduktan sonra hata ayıklama oturumu sırasında bir hata ayıklama yapılandırması açılan listesinde seçerek kullanmak istediğiniz yapılandırmayı seçebilirsiniz **hata ayıklama** görünümünün araç çubuğu.
 
-  Visual Studio Code için PowerShell uzantısını kullanarak başlamanıza yardımcı olmak yardımcı olabilecek birkaç blogları vardır.
-
-Visual Studio kodu:
+Visual Studio Code için PowerShell uzantısını kullanarak başlamanıza yardımcı olmak yardımcı olabilecek birkaç blogları vardır:
 
 - [PowerShell uzantısı][ps-extension]
 - [Yazma ve PowerShell betikleri Visual Studio code'da Hata Ayıkla][debug]

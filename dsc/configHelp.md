@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kur
+keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC yapılandırmaları için yardım sayfasını yazma
-ms.openlocfilehash: 316fd69ab1eae66ebe141b2575a05b502fc261ea
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a4b5e688744b9a4519ce06d920ad8f11efeb99ad
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222672"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225701"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>DSC yapılandırmaları için yardım sayfasını yazma
 
->İçin geçerlidir: Windows Windows PowerShell 5.0
+>Uygulama hedefi: Windows PowerShell 5.0
 
-DSC yapılandırmalarında açıklama tabanlı Yardım kullanabilirsiniz. Kullanıcıların, Yardım ile yapılandırma işlevini çağırarak erişebileceği `-?`, veya kullanarak [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet'i. PowerShell açıklama tabanlı Yardım hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).
+DSC yapılandırmalarında, açıklama tabanlı Yardım kullanabilirsiniz. Kullanıcıların, Yardım yapılandırma işlevini çağırarak erişebileceği `-?`, kullanarak veya [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet'i. PowerShell açıklama tabanlı Yardım hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).
 
-Aşağıdaki örnek bir yapılandırma ve onun için açıklama tabanlı Yardım içeren bir komut dosyası gösterilmektedir:
+Aşağıdaki örnek, bir yapılandırma ve bunun için açıklama tabanlı Yardım içeren bir betik gösterir:
 
 ```powershell
 <#
@@ -50,18 +50,18 @@ This example will be labeled "EXAMPLE 2" when help is displayed to the user.
 
 configuration HelpSample1
 {
-    param([string]$ComputerName,[string]$FilePath)
-    File f
-    {
+    param([string]$ComputerName,[string]$FilePath)
+    File f
+    {
         Contents="Hello World"
-        DestinationPath = "c:\Destination.txt"
-    }
+        DestinationPath = "c:\Destination.txt"
+    }
 }
 ```
 
 ## <a name="viewing-configuration-help"></a>Yapılandırma Yardımı görüntüleme
 
-Bir yapılandırması için Yardım görüntülemek için kullanın **Get-Help** işlevi veya türü adını cmdlet'iyle işlevin adını ve ardından `-?`. Önceki işlevi için geçirildiğinde çıkışı aşağıdadır **Get-Help**:
+Bir yapılandırma için Yardım görüntülemek için kullanın **Get-Help** cmdlet'i işlev veya tür adıyla işlevin adını ve ardından `-?`. Önceki işlevi için geçirildiğinde çıktısı aşağıdaki gibidir **Get-Help**:
 
 ```powershell
 PS C:\> Get-Help HelpSample1

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: WMF 5.1'de bilinen sorunlar
-ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: e59ea1b9a5282eb5727a37ce605c71724a219827
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892146"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225854"
 ---
 # <a name="known-issues-in-wmf-51"></a>WMF 5.1'de bilinen sorunlar
 
@@ -33,7 +33,7 @@ Bu sürümde, Pester Nano Sunucu'da kullanırken bilmeniz gereken iki sorun vard
 
 ## <a name="dsc-after-uninstall-wmf"></a>DSC sonra WMF kaldırma
 
-- WMF kaldırma DSC MOF belgeleri yapılandırma klasörden silmez. MOF belgeleri eski sistemlerde kullanılabilir olmayan yeni özellikler içeriyorsa DSC düzgün şekilde çalışmaz. Bu durumda, aşağıdaki komut dosyasını yükseltilmiş bir PowerShell Konsolu DSC durumları temizlemek için çalıştırın.
+- WMF kaldırma DSC MOF belgeleri yapılandırma klasörden silmez. MOF belgeleri eski sistemlerde kullanılabilir olmayan yeni özellikler içeriyorsa DSC düzgün şekilde çalışmaz. Bu durumda, DSC durumları temizlemek için yükseltilmiş bir PowerShell konsolundan aşağıdaki betiği çalıştırın.
 
   ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",

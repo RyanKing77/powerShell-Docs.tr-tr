@@ -2,15 +2,15 @@
 ms.date: 09/05/2018
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
-title: PowerShell Galerisi hesap ayarları
-ms.openlocfilehash: dd7b8b3a99b5b7fbfec5d7f82b81dd6d5cfb906c
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+title: PowerShell Galerisi Hesap Ayarları
+ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523392"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002795"
 ---
-# <a name="powershell-gallery-account-settings"></a>PowerShell Galerisi hesap ayarları
+# <a name="powershell-gallery-account-settings"></a>PowerShell Galerisi Hesap Ayarları
 
 PowerShell Galerisi hesabınız için bir kimlik bağlı herkese görünür bir addır. Bu kimliği gibi ya da a Microsoft ID, fark `user@hotmail.com` veya `user@outlook.com`, veya bir Azure Active Directory (AAD) hesabı.
 
@@ -34,7 +34,7 @@ Yeni bir e-posta adresi girin, PowerShell Galerisi bu adresine bir doğrulama e-
 PowerShell Galerisi, aşağıdaki bildirim seçeneklerini sağlar:
 
 - Kullanıcılar PowerShell Galerisi'nde benimle iletişime geçebilirsiniz
-- Bir öğe Hesabımı kullanarak PowerShell Galerisi'nde gönderildiğinde bildirim alın
+- Bir paket Hesabımı kullanarak PowerShell Galerisi'nde gönderildiğinde bildirim alın
 
 ![E-posta adresini değiştirme](../../Images/PSGallery_AccountEmailOptions.png)
 
