@@ -1,13 +1,13 @@
 ---
 title: MacOS’ta PowerShell Core yükleme
 description: Macos'ta PowerShell Core yükleme hakkında bilgi
-ms.date: 08/06/2018
-ms.openlocfilehash: e226cd64f8788ae74dc72fdc0cd219923b7a2cd6
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.date: 11/02/2018
+ms.openlocfilehash: 162e841bf71d708e9db84ea1bb2dbef13924783b
+ms.sourcegitcommit: f4247d3f91d06ec392c4cd66921ce7d0456a2bd9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002368"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50998512"
 ---
 # <a name="installing-powershell-core-on-macos"></a>MacOS’ta PowerShell Core yükleme
 
@@ -15,10 +15,14 @@ PowerShell Core macOS 10.12 ve üstünü destekler.
 Tüm paketleri bizim Github'da kullanılabilir [sürümleri][] sayfası.
 Paket yüklendikten sonra Çalıştır `pwsh` bir terminalden.
 
-## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Homebrew aracılığıyla en son kararlı sürüm MacOS 10.12 veya üzeri yüklemesi
+## <a name="about-brew"></a>Brew hakkında
 
 [Homebrew] [ brew] macOS için tercih edilen bir paket yöneticisidir.
 Varsa `brew` komutu bulunamazsa, Homebrew aşağıdakileri yüklemeniz gerekir [kendi yönergeleri][brew].
+
+## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Homebrew aracılığıyla en son kararlı sürüm MacOS 10.12 veya üzeri yüklemesi
+
+Bkz: [hakkında Brew](#about-brew) Brew hakkında bilgi için.
 
 Şimdi, PowerShell'i yükleyebilirsiniz:
 
@@ -46,8 +50,7 @@ brew cask upgrade powershell
 
 ## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>En son Önizleme yüklenmesini Homebrew macOS 10.12 ya da daha yüksek sürüm
 
-[Homebrew] [ brew] macOS için tercih edilen bir paket yöneticisidir.
-Varsa `brew` komutu bulunamazsa, Homebrew aşağıdakileri yüklemeniz gerekir [kendi yönergeleri][brew].
+Bkz: [hakkında Brew](#about-brew) Brew hakkında bilgi için.
 
 Homebrew yükledikten sonra PowerShell'i yükleme kolaydır.
 İlk olarak, yükleme [Cask sürümleri] [ cask-versions] olanak sağlayan diğer sürümlerini cask paketleri yükleyin:
@@ -90,6 +93,8 @@ Dosyaya çift tıklayın ve yönergeleri izleyin veya terminalden yükleyin:
 sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 ```
 
+Yükleme [OpenSSL](#install-openssl) olarak PowerShell uzaktan iletişim ve CIM işlemleri için bu gereklidir.
+
 ## <a name="binary-archives"></a>İkili Arşivi
 
 PowerShell ikili `tar.gz` arşivleri gelişmiş dağıtım senaryoları etkinleştirmek macOS platformu için sağlanır.
@@ -111,6 +116,41 @@ sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
 
 # Create the symbolic link that points to pwsh
 sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+```
+
+Yükleme [OpenSSL](#install-openssl) olarak PowerShell uzaktan iletişim ve CIM işlemleri için bu gereklidir.
+
+## <a name="installing-dependencies"></a>Bağımlılıklar yükleniyor
+
+### <a name="install-xcode-command-line-tools"></a>XCode komut satırı araçlarını yükleyin
+
+```shell
+xcode-select -install
+```
+
+### <a name="install-openssl"></a>OpenSSL yükleyin
+
+OpenSSL PowerShell uzaktan iletişim ve CIM işlemleri için gereklidir.  Yükleyebileceğiniz MacPorts veya Brew aracılığıyla.
+
+#### <a name="install-openssl-via-brew"></a>OpenSSL Brew aracılığıyla yükleme
+
+Bkz: [hakkında Brew](#about-brew) Brew hakkında bilgi için.
+
+Çalıştırma `brew install openssl` OpenSSL yüklemek için.
+
+#### <a name="install-openssl-via-macports"></a>OpenSSL MacPorts aracılığıyla yükleme
+
+1. Tümünü Yükle [XCode komut satırı araçları](#install-xcode-command-line-tools)
+1. MacPorts yükleyin.
+   Bkz: [Yükleme Kılavuzu](https://guide.macports.org/chunked/installing.macports.html) yönergelere ihtiyacınız varsa.
+1. Çalıştırarak MacPorts güncelleştir `sudo port selfupdate`
+1. Çalıştırarak MacPorts paketlerini yükseltin `sudo port upgrade outdated`
+1. OpenSSL çalıştırarak çalıştırıp yükleyin. `sudo port instal openssl`
+1. PowerShell kullanabilmesi kitaplıkları bağlayın.
+
+```shell
+sudo mkdir -p /usr/local/opt/openssl
+sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
 ## <a name="uninstalling-powershell-core"></a>PowerShell Core kaldırma
