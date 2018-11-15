@@ -7,9 +7,9 @@ items:
   href: getting-started.md
 - name: Nasıl Yapılır
   items:
-  - name: Galeride Öğe Bulma
+  - name: Galeride Paketleri Bulma
     items:
-    - name: Öğe Arama
+    - name: Paketleri Arama
       href: how-to/finding-packages/search-syntax.md
     - name: PSEdition’a Göre Arama
       href: how-to/finding-packages/searching-by-psedition.md
@@ -17,17 +17,17 @@ items:
       href: how-to/finding-packages/filtering-packages.md
   - name: Galeride Yayımlama
     items:
-    - name: Öğe oluşturma ve yayımlama
+    - name: Paketleri oluşturma ve yayımlama
       href: how-to/publishing-packages/publishing-a-package.md
     - name: PowerShellGallery Hesabı Oluşturma
       href: how-to/publishing-packages/creating-an-account.md
-    - name: Öğeleri listeden kaldırma
+    - name: Paketleri listeden kaldırma
       href: how-to/publishing-packages/unlisting-packages.md
-    - name: Öğeleri silme
+    - name: Paketleri silme
       href: how-to/publishing-packages/deleting-packages.md
-    - name: Öğe sahiplerini yönetme
+    - name: Paket sahiplerini yönetme
       href: how-to/publishing-packages/managing-package-owners.md
-  - name: Öğeler ile Çalışma
+  - name: Paketler ile çalışma
     items:
     - name: FileList görünümü
       href: how-to/working-with-packages/filelist-view.md
@@ -35,9 +35,9 @@ items:
       href: how-to/working-with-packages/deploy-to-azure-automation.md
     - name: Elle Paket İndirme
       href: how-to/working-with-packages/manual-download.md
-    - name: Lisans Kabulü Gerektiren Öğeler
+    - name: Lisans Kabulü Gerektiren Paketler
       href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-    - name: Öğe sahipleriyle iletişime geçme
+    - name: Paket sahipleriyle iletişime geçme
       href: how-to/working-with-packages/contacting-package-owners.md
     - name: Sosyal Medya veya Yorumlar Aracılığıyla Geri Bildirim Sağlama
       href: how-to/working-with-packages/social-media-feedback.md
@@ -47,11 +47,13 @@ items:
       href: how-to/managing-profile/managing-account.md
     - name: API Anahtarlarını Yönetme
       href: how-to/managing-profile/creating-apikeys.md
+  - name: Yerel PowerShellGet Depoları ile çalışma
+    href: how-to/working-with-local-psrepositories.md
 - name: Kavramlar
   items:
   - name: Yayımlama kılavuzları ve en iyi yöntemler
     href: concepts/publishing-guidelines.md
-  - name: Öğe bildirimi ve Galeri Kullanıcı Arabirimi
+  - name: Paket bildirimleri ve Galeri Kullanıcı Arabirimi
     href: concepts/package-manifest-affecting-ui.md
   - name: Belirli PSEdition’ları Gerektirme
     items:
@@ -65,7 +67,7 @@ items:
       href: concepts/script-license-acceptance.md
     - name: Modüller için Lisans Kabulü Gerektirme
       href: concepts/module-license-acceptance.md
-  - name: Öğeleri Ön Sürüm Olarak Tanımlama
+  - name: Paketleri Yayım Öncesi Olarak tanımlama
     items:
     - name: Bir Modülü Ön Sürüm Olarak Tanımlama
       href: concepts/module-prerelease-support.md
@@ -91,9 +93,9 @@ items:
   href: faqs.md
 - name: PowerShellGet cmdlet’leri
   href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 386e86b4a27ea840cc688b47f597e845f041af60
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 123607d3ce1139511ee0006b9ec6ed2e9ae99010
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002334"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619135"
