@@ -3,12 +3,12 @@ ms.date: 08/14/2018
 keywords: PowerShell cmdlet'i
 title: PowerShell.exe Komut Satırı Yardımı
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
+ms.sourcegitcommit: 03c7672ee72698fe88a73e99702ceaadf87e702f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133824"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51691839"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe komut satırı Yardımı
 
@@ -51,7 +51,10 @@ Geçerli oturum için varsayılan yürütme ilkesini ayarlar ve içinde $env kay
 
 Geçerli oturumda betik değişkenleri ve işlevleri kullanılabilir olacak şekilde belirtilen betik ("dot kaynaklı"), yerel kapsamda çalıştırır. Betik dosyası yolu ve herhangi bir parametre girin. **Dosya** komutta son parametre olmalıdır. Sonra yazılan tüm değerleri **-dosya** parametresi betik olarak yorumlanır dosyası yolu ve parametreleri bu betiğe geçirilen.
 
-Komut dosyasına iletilen parametreler (yorumu geçerli kabuk tarafından sonra) değişmez değer dizeleri geçirilir. Örneğin, cmd.exe içinde olan ve bir ortam değişken değerini geçirmek istiyorsanız cmd.exe sözdizimini kullanırsınız: `powershell -File .\test.ps1 -Sample %windir%` Bu örnekte, komut dosyası sabit dizesini alır. `$env:windir` ve bu ortam değişkeninin değerini değil: `powershell -File .\test.ps1 -Sample $env:windir`
+Betiğe geçirilen parametreler geçerli kabuk tarafından yorumu sonra değişmez değer dizeleri geçirilir. Örneğin, cmd.exe içinde olan ve bir ortam değişken değerini geçirmek istiyorsanız cmd.exe söz dizimini kullanın: `powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+Buna karşılık, çalışan `powershell.exe -File .\test.ps1 -TestParam $env:windir` sabit dizesini alma betiği cmd.exe sonucu `$env:windir` çünkü geçerli cmd.exe Kabuğu özel bir anlamı yoktur.
+`$env:windir` Ortam değişkeni başvurusu stilini _olabilir_ içinde kullanılabilir bir `-Command` var. PowerShell kodu olarak yorumlanacaktır olduğundan parametre.
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {metin | XML}
 
@@ -103,22 +106,31 @@ Oturum için pencere stilini ayarlar. Geçerli değerler şunlardır: Normal, k�
 
 ### <a name="-command"></a>-Komutu
 
-PowerShell komut isteminde türü belirtilmiş gibi sorgulamanıza (herhangi bir parametre ile) belirtilen komutları yürütür. Yürütmeden sonra PowerShell sürece çıkar `-NoExit` parametre belirtildi.
-Sonra herhangi bir metin `-Command` PowerShell tek bir komut satırı gönderilir. Bu nasıl farklı `-File` parametreleri için bir komut dosyası gönderilen işler.
+PowerShell komut isteminde türü belirtilmiş gibi sorgulamanıza (herhangi bir parametre ile) belirtilen komutları yürütür.
+Yürütmeden sonra PowerShell sürece çıkar **NoExit** parametre belirtildi.
+Sonra herhangi bir metin `-Command` PowerShell tek bir komut satırı gönderilir.
+Bu nasıl farklı `-File` parametreleri için bir komut dosyası gönderilen işler.
 
-Komut değeri olabilir "-", bir dize. veya bir betik bloğu. Komut değerini ise "-", Standart girdiden okunan komut metni.
+Değerini `-Command` olabilir "-", bir dize veya bir betik bloğu.
+Komutun sonuçlarını üst kabuğa değil Canlı nesneleri seri durumdan çıkarılmış XML nesneler olarak döndürülür.
 
-Komut dosyası blokları küme ayraçları içine alınmalıdır ({}). PowerShell.exe PowerShell'de çalıştırırken bir betik bloğu belirtebilirsiniz. Betik sonuçlarını üst kabuğa değil Canlı nesneleri seri durumdan çıkarılmış XML nesneler olarak döndürülür.
+Varsa değerini `-Command` olan "-", Standart girdiden okunan komut metni.
 
-Komut değeri bir dize ise **komut** komutu yorumlanır sonra komut bağımsız herhangi bir karakter yazdığınızdan komutta, son parametre olmalıdır.
+Zaman değerini `-Command` bir dizedir, **komut** _gerekir_ komutu yorumlanır sonra komut bağımsız herhangi bir karakter türü belirtilmiş olduğundan belirtilen son parametre olmalıdır.
 
-Bir PowerShell komutu çalışan bir dize yazmak için biçimi kullanın:
+**Komut** parametresi için geçirilen değer tanıyabilmesi zaman yürütme için bir betik bloğu yalnızca kabul `-Command` ScriptBlock türü.
+Bu _yalnızca_ PowerShell.exe başka bir PowerShell konaktan çalıştırırken mümkün.
+Türü yer almalıdır bir değişken, bir ifadeden döndürülen veya PowerShell ayrıştırılmış varolan ScriptBlock konak küme ayraçları içine alınmış bir değişmez değer betik bloğu olarak `{}`PowerShell.exe iletilmeden önce.
 
-```powershell
+Cmd.exe içinde yoktur de bir betik bloğu (veya Scriptblock'u türü), bu nedenle için geçirilen değer **komut** olacak _her zaman_ bir dize olması gerekiyor.
+Bir betik bloğu içinde dize yazabilirsiniz, ancak yürütülen yerine, tam olarak davranacak tipik bir PowerShell isteminde yazılı olarak da, komut dosyasının içeriğini yazdırma bloke geri için.
+
+Geçirilen bir dize `-Command` betik blok küme ayraçları ilk başta cmd.exe çalışırken gerekli genellikle olmadıklarından yine de PowerShell yürütülür.
+Bir dize içinde tanımlanan bir satır içi betik bloğu yürütülecek [çağrısı işleci](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&` kullanılabilir:
+
+```console
 "& {<command>}"
 ```
-
-Tırnak işaretleri dize ve Invoke işleci (&) yürütülecek komut neden olur.
 
 ### <a name="-help---"></a>-Help-?, /?
 
