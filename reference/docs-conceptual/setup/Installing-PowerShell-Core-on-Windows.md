@@ -2,18 +2,18 @@
 title: Windows’da PowerShell Core yükleme
 description: Üzerinde Windows PowerShell Core yükleme hakkında bilgi
 ms.date: 08/06/2018
-ms.openlocfilehash: 2b21908c38796117308f2ac1219db00ff9086408
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: ba159a69df7e117e90e21dd26228b61146260475
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850988"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320900"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows’da PowerShell Core yükleme
 
 ## <a name="msi"></a>MSI
 
-Bir Windows istemci veya sunucuda Windows PowerShell'i yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve daha sonra), bizim Github'dan MSI paketini indirme [serbest][] sayfası.
+Bir Windows istemci veya sunucuda Windows PowerShell'i yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve daha sonra), bizim Github'dan MSI paketini indirme [yayınları][] sayfası.
 
 MSI dosyası şu şekilde görünür- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -99,7 +99,7 @@ Her iki durumda da, Windows 10 x64 ZIP yayın gerekir paketini ve bir "Yönetici
 1. Bir dizine bağlı Nano sunucu görüntü içinde paketin sıkıştırmasını açmak için sık kullanılan sıkıştırma yardımcı programı kullanın.
 2. Yansımayı ve bunu önyükleme.
 3. Windows PowerShell'in gelen örneğine bağlanın.
-4. Uzaktan iletişimi kullanarak uç nokta oluşturmak için yönergeleri izleyin ["başka bir örnek yöntem"](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+4. Uzaktan iletişimi kullanarak uç nokta oluşturmak için yönergeleri izleyin ["başka bir örnek yöntem"](../core-powershell/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
 ### <a name="online-deployment-of-powershell-core"></a>PowerShell Core çevrimiçi dağıtımı
 
@@ -153,7 +153,7 @@ PowerShell Core CoreCLR yapıdan yüklemek için:
 
 <!-- [download-center]: TODO -->
 
-[serbest]: https://github.com/PowerShell/PowerShell/releases
+[yayınları]: https://github.com/PowerShell/PowerShell/releases
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
