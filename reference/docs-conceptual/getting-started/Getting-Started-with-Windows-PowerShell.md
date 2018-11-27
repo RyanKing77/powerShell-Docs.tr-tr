@@ -3,23 +3,23 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Kullanmaya Başlama
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-ms.openlocfilehash: d8f1a416c1618040311ec0ea3b98b28aa432bcf1
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 8a158427d319e43ec011898fe4e1826d48d5b951
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30949494"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320848"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Windows PowerShell Kullanmaya Başlama
-Windows PowerShell, özellikle sistem yöneticileri için tasarlanmış bir Windows komut satırı kabuğu olan. Windows PowerShell, etkileşimli bir istemi ve bağımsız olarak veya birlikte kullanılan bir komut dosyası ortamı içerir.
+Sistem yöneticileri için özellikle tasarlanmış bir Windows komut satırı kabuğu Windows powershell'dir. Windows PowerShell, etkileşimli bir istemi ve bağımsız olarak veya birlikte kullanılabilecek bir komut dosyası ortamı içerir.
 
-Kabul edin ve metni döndürür, çoğu Kabukları aksine Windows PowerShell .NET Framework ortak dil çalışma zamanı (CLR) ve .NET Framework üzerinde yerleşik olarak bulunur ve kabul eder ve .NET Framework nesneleri döndürür. Bu temel bir değişiklik ortamında Windows yapılandırmasını ve Yönetim için tamamen yeni araç ve yöntemleri getirir.
+Metin kabul edip döndüren, çoğu kabuğun aksine Windows PowerShell .NET Framework ortak dil çalışma zamanı (CLR) ve .NET Framework üzerine kurulu ve kabul eder ve .NET Framework nesnelerini döndürür. Bu temel bir değişiklik ortamında Windows yapılandırmasını ve Yönetim için tamamen yeni araçları ve yöntemleri getirir.
 
-Windows PowerShell ("command-let" denilir) bir cmdlet'i kabuğundan yerleşik basit, tek işlevi bir komut satırı aracı kavramını sunmaktadır. Her cmdlet ayrı olarak kullanabilirsiniz, ancak bu basit araçları birlikte karmaşık görevleri gerçekleştirmek için kullandığınız zaman kendi güç gerçekleşmiş. Windows PowerShell birden fazla yüz temel çekirdek cmdlet içerir ve kendi cmdlet'leri yazmak ve diğer kullanıcılarla paylaşmak.
+Windows PowerShell cmdlet'in ("command-let" olarak okunur) bir kabuk ile basit, tek işlevli bir komut satırı aracı kavram tanıtılmaktadır. Ayrı ayrı her cmdlet'ini kullanabilirsiniz, ancak bu basit Araçlar birlikte karmaşık görevleri gerçekleştirmek için kullandığınız zaman, güç gerçekleştirilir. Windows PowerShell yüzden fazla temel cmdlet içerir ve kendi cmdlet'leri yazmak ve bunları diğer kullanıcılarla paylaşabilir.
 
-Birçok Kabukları gibi Windows PowerShell, bilgisayarın dosya sisteminde erişmenizi sağlar. Ayrıca, Windows PowerShell *sağlayıcıları* kayıt defteri ve dijital imza sertifika depoları gibi diğer veri depolarına dosya sistemine erişim kadar kolay erişim sağlar.
+Çoğu kabuğun gibi Windows PowerShell bilgisayarda dosya sistemi erişmenizi sağlar. Ayrıca, Windows PowerShell *sağlayıcıları* kayıt defteri ve dijital imza sertifika depoları gibi diğer veri depoları dosya sistemine erişmelerini olarak kolayca erişmenizi sağlar.
 
-Bu Başlarken Kılavuzu Windows PowerShell tanıtılmaktadır: dil, cmdlet'ler, sağlayıcılar ve nesnelerinin kullanımını.
+Bu Başlarken kılavuzunda Windows PowerShell tanıtır: dil, cmdlet'ler, sağlayıcıları ve nesnelerin kullanın.
 
 Bu konuda:
 
@@ -28,5 +28,3 @@ Bu konuda:
 - [Windows PowerShell'i yükleme](../setup/Installing-Windows-PowerShell.md)
 
 - [Windows PowerShell'i başlatma](../setup/Starting-Windows-PowerShell.md)
-
-- [Windows PowerShell kullanmaya başlama](Getting-Ready-to-Use-Windows-PowerShell.md)

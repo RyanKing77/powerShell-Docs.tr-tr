@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: PowerShell hakkında daha fazla şey
-ms.openlocfilehash: 17f96620bbb483ca580d351584d5650a6734b876
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.openlocfilehash: da9dfeca3d2d2cfadf6ace0aa98007d16a548aae
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289217"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320423"
 ---
 # <a name="more-powershell-learning"></a>PowerShell hakkında daha fazla şey
 
@@ -33,23 +33,23 @@ Komut satırında kullanılabilir Yardım ek olarak, daha fazla bilgi için Wind
 
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Meşgul bir yönetici seri için Windows PowerShell temelleri
 
-- [PowerShell 'SmowerShell' — Windows PowerShell bölüm 1 öğrenmelisiniz neden](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [İşlem hattı üzerinden heard — nasıl bileşik için Windows PowerShell komutları için eğlenceli ve kar 2. Bölüm](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Tek sağlayıcısı? Zor değildir — Windows PowerShell sağlayıcıları bölüm 3 bakma](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [Ana olay — Windows PowerShell 4. olay günlüklerini bölüm yok](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Birden fazla uzaktan olası — Uzak Masaüstü bölüm 5 yönetmek için Windows PowerShell kullanma](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell 'SmowerShell' — Windows PowerShell bölüm 1 öğrenmelisiniz neden](https://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [İşlem hattı üzerinden heard — nasıl bileşik için Windows PowerShell komutları için eğlenceli ve kar 2. Bölüm](https://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [Tek sağlayıcısı? Zor değildir — Windows PowerShell sağlayıcıları bölüm 3 bakma](https://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [Ana olay — Windows PowerShell 4. olay günlüklerini bölüm yok](https://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [Birden fazla uzaktan olası — Uzak Masaüstü bölüm 5 yönetmek için Windows PowerShell kullanma](https://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>Acil önce hemen öğrenin
 
-- [Windows PowerShell: Acil - 1. Bölüm önce bunu şimdi öğrenin](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
-- [Windows PowerShell: Acil - bölüm 2 önce bunu şimdi öğrenin](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
-- [Windows PowerShell: Önce bir Acil Durum - bölüm 3, daha fazla bilgi](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
-- [Windows PowerShell: Acil - 4. Bölüm önce bunu şimdi öğrenin](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
-- [Windows PowerShell: Acil - 5. Bölüm önce bunu şimdi öğrenin](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
+- [Windows PowerShell: Acil - 1. Bölüm önce bunu şimdi öğrenin](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
+- [Windows PowerShell: Acil - bölüm 2 önce bunu şimdi öğrenin](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
+- [Windows PowerShell: Önce bir Acil Durum - bölüm 3, daha fazla bilgi](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
+- [Windows PowerShell: Acil - 4. Bölüm önce bunu şimdi öğrenin](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
+- [Windows PowerShell: Acil - 5. Bölüm önce bunu şimdi öğrenin](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
 
 ## <a name="resources-for-windows-powershell-developers"></a>Windows PowerShell geliştiriciler için kaynaklar
 
 Aşağıdaki kaynaklar, geliştiricilerin kendi Windows PowerShell modülleri, İşlevler, cmdlet'leri, sağlayıcılarının ve barındırma uygulamaları oluşturmanıza yardımcı olacak kaynaklar sağlar.
 
-- [Windows PowerShell SDK'sı](http://go.microsoft.com/fwlink/p/?LinkID=89595). Başvuru içeriği sağlar.
-- [Windows PowerShell Programcı Kılavuzu](http://go.microsoft.com/fwlink/p/?LinkID=89596). Eğitim sağlar. Ayrıca, Windows PowerShell temel kavramları hakkında bilgi içerir.
+- [Windows PowerShell SDK'sı](https://go.microsoft.com/fwlink/p/?LinkID=89595). Başvuru içeriği sağlar.
+- [Windows PowerShell Programcı Kılavuzu](https://go.microsoft.com/fwlink/p/?LinkID=89596). Eğitim sağlar. Ayrıca, Windows PowerShell temel kavramları hakkında bilgi içerir.

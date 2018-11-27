@@ -3,76 +3,76 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell 2.0 Altyapısını Yükleme
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: 0b3282a1a67886509e749af0f499c47fe7a99411
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: fb5ed1a5508ddca6925e9281a53caf5e6701870f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952350"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320508"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 Altyapısını Yükleme
-Bu konuda, Windows PowerShell 2.0 Altyapısı'nı açıklanmaktadır.
+Bu konu, Windows PowerShell 2.0 altyapısını yükleme açıklanmaktadır.
 
-Windows PowerShell 3.0, Windows PowerShell 2.0 ile geriye dönük olarak uyumlu olacak şekilde tasarlanmıştır. Cmdlet'leri, sağlayıcıları, ek bileşenler, modüller ve Windows PowerShell 2.0 için yazılan komut dosyaları Windows PowerShell 3.0 ve Windows PowerShell 4.0 değişmeden çalıştırın. Ancak, Microsoft .NET Framework 4 çalışma zamanı etkinleştirme ilkesi değişikliği nedeniyle, Windows PowerShell 2.0 için yazılmış ve ortak dil çalışma zamanı (CLR ile) 2.0 derlenmiş Windows PowerShell konak programları değişiklik olmadan daha sonra çalıştıramaz CLR 4.0 ile derlenmiş Windows PowerShell sürümleri.
+Windows PowerShell 3.0, Windows PowerShell 2.0 ile geriye dönük olarak uyumlu olacak şekilde tasarlanmıştır. Cmdlet'leri, sağlayıcıları, ek bileşenler, modülleri ve Windows PowerShell 2.0 için yazılan betikler içinde Windows PowerShell 3.0 ve Windows PowerShell 4.0 değişmeden çalıştırın. Ancak, Microsoft .NET Framework 4 çalışma zamanı etkinleştirme ilkesini bir değişiklikten dolayı Windows PowerShell ana bilgisayar Windows PowerShell 2.0 için yazılmış ve ortak dil çalışma zamanı (CLR ile) 2.0 derlenmiş bir program gerektirmeden daha sonra çalıştırılamıyor CLR 4.0 ile derlenmiş olan Windows PowerShell sürümleri.
 
-Komutları ve bu değişikliklerden etkilenir konak programları ile geriye dönük uyumluluğu korumak için Windows PowerShell 2.0, Windows PowerShell 3.0 ve Windows PowerShell 4.0 altyapılarının yan yana çalıştırmak için tasarlanmıştır. Ayrıca, Windows PowerShell 2.0 altyapısı, Windows Server 2012 R2, Windows 8.1, Windows 8, Windows Server 2012 ve Windows Management Framework 3.0 dahil edilir. Windows PowerShell 2.0 altyapısı varolan bir komut dosyasının kullanılması amaçlanmıştır veya Windows PowerShell 3.0, Windows PowerShell 4.0 veya Microsoft .NET Framework 4 ile uyumlu olmadığı için konak program çalıştırılamıyor. Bu gibi durumlarda nadir olması beklenir.
+Komutlar ve bu değişikliklerden etkilenen ana bilgisayar programlarının ile geriye dönük uyumluluk sağlamak için Windows PowerShell 2.0, Windows PowerShell 3.0 ve Windows PowerShell 4.0 altyapıları yan yana çalıştırmak için tasarlanmıştır. Ayrıca, Windows PowerShell 2.0 altyapısını Windows Server 2012 R2, Windows 8.1, Windows 8, Windows Server 2012 ve Windows Management Framework 3.0 dahildir. Mevcut bir komut dosyasının yaparken kullanılmak üzere Windows PowerShell 2.0 altyapısını amaçlanmamıştır veya Windows PowerShell 3.0, Windows PowerShell 4.0 veya Microsoft .NET Framework 4 ile uyumsuz olduğundan ana program çalıştırılamıyor. Böyle durumlarda, nadir olmaları beklenir.
 
-Windows PowerShell 2.0 altyapısı, Windows Server 2012 R2, Windows 8.1, Windows® 8 ve Windows Server® 2012 isteğe bağlı bir özelliktir. Windows Management Framework 3.0 yüklediğinizde, Windows'un önceki sürümlerinde, Windows PowerShell 3.0 yükleme Windows PowerShell 2.0 yükleme Windows PowerShell yükleme dizininde tamamen değiştirir. Ancak, Windows PowerShell 2.0 altyapısı korunur.
+Windows PowerShell 2.0 altyapısı, Windows Server 2012 R2, Windows 8.1, Windows® 8 ve Windows Server® 2012 isteğe bağlı bir özelliktir. Önceki Windows sürümlerinde Windows Management Framework 3.0, yükleme sırasında Windows PowerShell 3.0 yükleme Windows PowerShell 2.0 yükleme Windows PowerShell yükleme dizininde tamamen değiştirir. Ancak, Windows PowerShell 2.0 altyapısını korunur.
 
-Windows PowerShell 2.0 altyapısı başlatma hakkında daha fazla bilgi için bkz: [Windows PowerShell 2.0 altyapısı başlangıç](Starting-the-Windows-PowerShell-2.0-Engine.md).
+Windows PowerShell 2.0 altyapısını başlatma hakkında daha fazla bilgi için bkz: [Windows PowerShell 2.0 altyapısını başlatma](Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## <a name="on-windows-81-and-windows-8"></a>Windows 8.1 ve Windows 8
-Windows 8.1 ve Windows 8'de, Windows PowerShell 2.0 altyapısı özelliği varsayılan olarak açıktır. Ancak, kullanmak için bunu gerektiren seçeneği Microsoft .NET Framework 3.5, açmak gerekir. Bu bölümde ayrıca Windows PowerShell 2.0 altyapısı özelliğini açıp kapatmak açıklanmaktadır.
+Windows 8.1 ve Windows 8'de, Windows PowerShell 2.0 altyapısı özelliği varsayılan olarak açıktır. Ancak, bunu kullanmak için gerektiren seçeneği için Microsoft .NET Framework 3.5, açmanız gerekir. Bu bölümde ayrıca Windows PowerShell 2.0 altyapısını özelliğini açıp kapatmak açıklanmaktadır.
 
-#### <a name="to-turn-on-net-framework-35"></a>.NET Framework 3.5 etkinleştirmek için
+#### <a name="to-turn-on-net-framework-35"></a>.NET Framework 3.5 üzerinde etkinleştirmek için
 
-1. Üzerinde **Başlat** ekranında, yazın **Windows özelliklerini**.
+1. Üzerinde **Başlat** ekranında, yazın **Windows özellikleri**.
 
-2. Üzerinde **uygulamaları** çubuğu, tıklatın **ayarları**ve ardından **kapatma Windows özelliklerini aç veya Kapat**.
+2. Üzerinde **uygulamaları** çubuğunda tıklatın **ayarları**ve ardından **kapatma Windows özelliklerini aç veya Kapat**.
 
-3. İçinde **Windows özelliklerini** kutusunda, **.NET Framework 3.5 (.NET 2.0 ve 3.0 dahildir** seçin.
+3. İçinde **Windows özellikleri** kutusunun **.NET Framework 3.5 (.NET 2.0 ve 3.0 içerir** seçin.
 
-    Seçtiğinizde, **.NET Framework 3.5 (.NET 2.0 ve 3.0 dahildir**, özelliği yalnızca bir kısmını seçildiğini belirtmek için kutusunu doldurur. Ancak, bu Windows PowerShell 2.0 altyapısı için yeterli olur.
+    Seçtiğinizde, **.NET Framework 3.5 (.NET 2.0 ve 3.0 içerir**, özelliği yalnızca bir kısmını seçildiğini belirtmek için kutusunu doldurur. Ancak, bu Windows PowerShell 2.0 altyapısı için yeterli olur.
 
-#### <a name="to-turn-the-windows-powershell-20-engine-on-and-off"></a>Windows PowerShell 2.0 altyapısı üzerinde ve devre dışı bırakma
+#### <a name="to-turn-the-windows-powershell-20-engine-on-and-off"></a>Windows PowerShell 2.0 altyapısını açıp kapatmak için
 
-1. Üzerinde **Başlat** ekranında, yazın **Windows özelliklerini**.
+1. Üzerinde **Başlat** ekranında, yazın **Windows özellikleri**.
 
-2. Üzerinde **uygulamaları** çubuğu, tıklatın **ayarları**ve ardından **kapatma Windows özelliklerini aç veya Kapat**.
+2. Üzerinde **uygulamaları** çubuğunda tıklatın **ayarları**ve ardından **kapatma Windows özelliklerini aç veya Kapat**.
 
-3. İçinde **Windows özelliklerini** kutusunda, genişletin **Windows PowerShell 2.0** düğümü ve tıklatın **Windows PowerShell 2.0 altyapısı** kutusunu işaretleyin veya temizleyin.
+3. İçinde **Windows özellikleri** kutusunda **Windows PowerShell 2.0** düğüm seçeneğine tıklayıp **Windows PowerShell 2.0 altyapısını** kutusunu seçin veya temizleyin.
 
-## <a name="on-windows-server-2012-r2-and-windows-server-2012"></a>Windows Server 2012 R2 ve Windows Server 2012
-Windows PowerShell 2.0 altyapısı ve Microsoft .NET Framework 3.5 özellikleri eklemek için aşağıdaki yordamları kullanın. Windows PowerShell 2.0 altyapısı en az Microsoft .NET Framework 2.0.50727 gerektirir. Bu gereksinim, Microsoft .NET Framework 3.5 tarafından karşılanır.
+## <a name="on-windows-server-2012-r2-and-windows-server-2012"></a>Windows Server 2012 R2 ve Windows Server 2012 üzerinde
+Windows PowerShell 2.0 altyapısını ve Microsoft .NET Framework 3.5 özellikleri eklemek için aşağıdaki yordamları kullanın. Windows PowerShell 2.0 altyapısını en az Microsoft .NET Framework 2.0.50727 gerektirir. Bu gereksinim, Microsoft .NET Framework 3.5 tarafından karşılanır.
 
 #### <a name="to-add-the-net-framework-35-feature"></a>.NET Framework 3.5 özellik eklemek için
 
-1. İçinde **Sunucu Yöneticisi'ni**, gelen **Yönet** menüsünde, select **rol ve Özellik Ekle**.
+1. İçinde **Sunucu Yöneticisi'ni**, gelen **Yönet** menüsünde **rol ve Özellik Ekle**.
 
-    Veya **Sunucu Yöneticisi'ni**, tıklatın **tüm sunucuları**bir sunucu adına sağ tıklayın ve ardından **rol ve Özellik Ekle**.
+    Veya **Sunucu Yöneticisi'ni**, tıklayın **tüm sunucuları**sunucu adına sağ tıklayın ve ardından **rol ve Özellik Ekle**.
 
-2. Üzerinde **yükleme türü** sayfasında, **rol tabanlı veya özellik tabanlı yükleme**.
+2. Üzerinde **yükleme türünü** sayfasında **rol tabanlı veya özellik tabanlı yükleme**.
 
-3. Üzerinde **özellikleri** sayfasında **.NET 3.5 Framework özellikleri** düğümü ve select **.NET Framework 3.5 (.NET 2.0 ve 3.0 içerir)**.
+3. Üzerinde **özellikleri** sayfasında **.NET 3.5 Framework özellikleri** düğümünü seçip alt **.NET Framework 3.5 (.NET 2.0 ve 3.0 içerir)**.
 
-    Bu düğüm altındaki diğer seçenekleri için Windows PowerShell 2.0 altyapısı gerekli değildir.
+    Bu düğüm altında diğer seçenekleri için Windows PowerShell 2.0 altyapısı gerekli değildir.
 
-#### <a name="to-add-the-windows-powershell-20-engine-feature"></a>Windows PowerShell 2.0 altyapısı özelliği eklemek için
+#### <a name="to-add-the-windows-powershell-20-engine-feature"></a>Bir Windows PowerShell 2.0 altyapısı özelliği eklemek için
 
-- İçinde **Sunucu Yöneticisi'ni**, gelen **Yönet** menüsünde, select **rol ve Özellik Ekle**.
+- İçinde **Sunucu Yöneticisi'ni**, gelen **Yönet** menüsünde **rol ve Özellik Ekle**.
 
-    Veya **Sunucu Yöneticisi'ni**, tıklatın **tüm sunucuları**bir sunucu adına sağ tıklayın ve ardından **rol ve Özellik Ekle**.
+    Veya **Sunucu Yöneticisi'ni**, tıklayın **tüm sunucuları**sunucu adına sağ tıklayın ve ardından **rol ve Özellik Ekle**.
 
-- Üzerinde **yükleme türü** sayfasında, **rol tabanlı veya özellik tabanlı yükleme**.
+- Üzerinde **yükleme türünü** sayfasında **rol tabanlı veya özellik tabanlı yükleme**.
 
-- Üzerinde **özellikleri** sayfasında **Windows PowerShell (yüklü)** düğümü ve select **Windows PowerShell 2.0 altyapısı**.
+- Üzerinde **özellikleri** sayfasında **Windows PowerShell (yüklü)** düğümünü seçip alt **Windows PowerShell 2.0 altyapısını**.
 
-Windows PowerShell 2.0 altyapısı başlatma hakkında daha fazla bilgi için bkz: [Windows PowerShell 2.0 altyapısı başlangıç](Starting-the-Windows-PowerShell-2.0-Engine.md).
+Windows PowerShell 2.0 altyapısını başlatma hakkında daha fazla bilgi için bkz: [Windows PowerShell 2.0 altyapısını başlatma](Starting-the-Windows-PowerShell-2.0-Engine.md).
 
-## <a name="on-earlier-systems"></a>Önceki sistemlerde
-[Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) Windows 7, Windows Server 2008 R2 ve Windows Server 2012'de, Windows PowerShell 4.0 sürümünü yükler paketi Windows PowerShell 2.0 altyapısı içerir. Windows PowerShell 2.0 altyapısı gerekiyorsa, ek yükleme, Kurulum ve yapılandırma olmadan etkin ve kullanıma hazır.
+## <a name="on-earlier-systems"></a>Eski sistemlerde
+[Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) üzerinde Windows 7, Windows Server 2008 R2 ve Windows Server 2012'de, Windows PowerShell 4.0 sürümünü yükler. paket, Windows PowerShell 2.0 altyapısını içerir. Windows PowerShell 2.0 altyapısı gerekli ek yükleme, Kurulum veya yapılandırma olmadan etkin ve kullanıma hazır olur.
 
-Windows 7, Windows Server 2008 R2 ve Windows Server 2008, Windows PowerShell 3.0 yükleyen Windows Management Framework 3.0 Paketi, Windows PowerShell 2.0 altyapısı içerir. Windows PowerShell 2.0 altyapısı gerekiyorsa, ek yükleme, Kurulum ve yapılandırma olmadan etkin ve kullanıma hazır.
+Windows PowerShell 3.0, Windows 7, Windows Server 2008 R2 ve Windows Server 2008 ' in üzerinde yükler Windows Management Framework 3.0 Paketi, Windows PowerShell 2.0 altyapısını içerir. Windows PowerShell 2.0 altyapısı gerekli ek yükleme, Kurulum veya yapılandırma olmadan etkin ve kullanıma hazır olur.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 - [Windows PowerShell sistem gereksinimleri](Windows-PowerShell-System-Requirements.md)

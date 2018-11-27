@@ -3,17 +3,17 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
 title: Nesne Depolamak için Değişkenleri Kullanma
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: d166ec58dc658c1b134030c9a9592249ee40d4f5
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353227"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320967"
 ---
 # <a name="using-variables-to-store-objects"></a>Nesne depolamak için değişkenleri kullanma
 
 PowerShell nesneleri ile çalışır. PowerShell değişkenleri olarak bilinen adlandırılmış nesneleri oluşturmanızı sağlar.
-Değişken adları alt çizgi karakteri can herhangi bir alfasayısal karakter içerebilir. PowerShell'de kullanıldığında, bir değişkeni her zaman kullanarak belirtilen \$ karakteri ve ardından tarafından değişken adı.
+Değişken adları alt çizgi karakterini ve herhangi bir alfasayısal karakter içerebilir. PowerShell'de kullanıldığında, bir değişkeni her zaman kullanarak belirtilen \$ karakteri ve ardından tarafından değişken adı.
 
 ## <a name="creating-a-variable"></a>Bir değişken oluşturma
 

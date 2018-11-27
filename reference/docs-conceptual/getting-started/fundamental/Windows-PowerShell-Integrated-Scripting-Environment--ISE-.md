@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Tümleşik komut dosyası ortamı ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: d116ec107c2d07e9fd55ee974008b3636b4ab049
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952078"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320525"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Tümleşik Komut Dosyası Ortamı (ISE)
 
-Windows PowerShell Tümleşik komut dosyası ortamı (ISE) Windows PowerShell altyapısı ve dil için iki ana biridir. Onunla yazabileceğiniz, çalıştırma ve komut dosyaları Windows PowerShell konsolunda kullanılabilir olmayan yollarla test etme. ISE söz dizimi renklendirme, sekme tamamlama, IntelliSense, visual hata ayıklama ve bağlama duyarlı Yardım ekler.
+Windows PowerShell Tümleşik komut dosyası ortamı (ISE), Windows PowerShell altyapısı ve dil için iki ana biridir. Yazabileceğiniz bunlarla çalıştırın ve test betikleri yollarla Windows PowerShell konsolunda kullanılabilir değil. ISE söz dizimi renklendirme, sekme tamamlama, IntelliSense, görsel hata ayıklama ve içerik duyarlı Yardım ekler.
 
-Konsol bölmesinde komutları çalıştırmak işe sağlar, ancak aynı anda komut dosyanızı ve işe takın başka araçlar kaynak kodunu görüntülemek için kullanabileceğiniz bölmeleri de destekler. Diğer komut veya modülleri tanımlı işlevlerini kullanan bir komut dosyası hata ayıklama sırasında özellikle yardımcı olan aynı anda birden çok komut dosyası windows Kurulumu bile açabilirsiniz.
+ISE, komutları bir konsol bölmesinde çalıştırmanıza olanak tanır, ancak aynı anda betiğinizi ISE'ye takılabilir diğer araçlar ve kaynak kodunu görüntülemek için kullanabileceğiniz bölmeleri da destekler. Diğer betikleri ya da modül içinde tanımlanan işlevleri kullanan bir komut dosyası hata ayıklaması yapıyorsanız, özellikle yararlı olan aynı anda birden çok betik Windows'u bile açabilirsiniz.
 
 ## <a name="whats-new"></a>Yenilikler
 
@@ -22,39 +22,39 @@ En son sürümlerde PowerShell ISE eklenen özelliklerden bazıları aşağıda 
 
 ### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>PowerShell 3.0 (Windows Server 2012, Windows 8) eklendi
 
-**IntelliSense** yazarken eşleşen cmdlet'leri, parametreleri, parametre değerlerini, dosya veya klasörleri menüleri görüntüleyerek komutlarınızı otomatik olarak tamamlar.
+**IntelliSense** menüleri eşleşen cmdlet'leri, parametreleri, parametre değerleri, dosyaları veya klasörleri siz yazarken göstererek Komutlarınızın otomatik olarak tamamlar.
 
-**Kod parçacıkları** kısa bölümler kod, yazma komut dosyalarına kolayca ekleyebilirsiniz. Yararlı parçacıkları koleksiyonu kutusuna eklenir ve daha kullanarak yapabilirsiniz **yeni kod parçacığında** cmdlet'i.
+**Kod parçacıkları** kısa bölümler kod yazma, komut dosyalarına kolayca ekleyebilirsiniz. Faydalı kod parçacıkları koleksiyonu kutuya eklenir ve daha kullanarak yapabilirsiniz **yeni kod parçacığı** cmdlet'i.
 
-**Eklenti Araçları** eklemek işe özellikleri ile etkileşime giren yazma kodu tarafından oluşturulabilir [Windows PowerShell ISE komut dosyası nesne modeli](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+**Eklenti Araçları** eklemek ISE Özellikleri ile etkileşime giren yazma kod tarafından oluşturulabilir [Windows PowerShell ISE betik oluşturma nesne modeli](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
 
-Bu araçları denetimleri sekmeli bölmede görüntüleyebilir veya görünmez arka planda çalışır. **Komutları** eklenti iyi bir örnektir ve sürüm 3.0 bulunur ve daha sonra kullanılabilir komutlar ve kendilerine Yardım listesini görüntüler.
+Bu araçlar, sekmeli bir bölmeye denetimlerini görüntülemek veya arka planda görünmez şekilde çalışır. **Komutları** eklenti iyi bir örnektir ve sürüm 3.0 ile bulunur ve daha sonra kullanılabilir komutları ve bunların Yardım listesini görüntüler.
 
-**Yöneticisi ve otomatik kayıt yeniden** otomatik olarak komut dosyalarınızı her iki dakikada bir kilitlenme veya beklenmeyen bir yeniden başlatma durumunda iş kaybı önlemenize yardımcı kaydedin.
+**Yöneticisi ve Otomatik Kaydet yeniden** otomatik olarak bir kilitlenme veya beklenmeyen bir yeniden başlatma durumunda İş kaybını önlemek için her iki dakikada betiklerinizi kaydedin.
 
-**En kısa süre önce kullanılan liste** en sık kullandığınız dosyaları almak daha kolay hale getirmek için Dosya Aç menüsünde artık parçasıdır.
+**En son kullanılan liste** Dosya Aç menüsünde en sık kullandığınız dosyaları almak daha kolay hale getirmek için artık parçasıdır.
 
-**Birleştirilmiş Konsol bölmesinde**. ISE önceki sürümlerinde ayrı komut ve çıktı bölmeleri vardı. Bunlar tek bir bölmesine daha doğrudan taklit eder, Windows Powershell konsolunda gördüğünüz birleştirildi.
+**Birleştirilmiş bir konsol bölmesinde**. ISE önceki sürümlerinde ayrı komut ve çıkış bölmeleri vardı. Bunlar tek bir bölmesine daha doğrudan taklit eder, Windows Powershell konsolunda gördüğünüz birleştirildi.
 
-**Komut satırı anahtarları**. Birkaç yeni komut satırı anahtarları hakkında daha fazla denetime işe çalışma şeklini verin. -NoProfile bir profil betiği çalıştırmadan işe başlatır. -Help ISE ile Yardım penceresini açar. -mta "birden çok iş parçacıklı modunda" ISE başlatır. Tek iş parçacıklı varsayılandır.
+**Komut satırı anahtarları**. Birkaç yeni komut satırı anahtarları ISE çalıştığı yolu üzerinde daha fazla denetim verir. -NoProfile profili betiği çalıştırmadan işe başlar. -Help ISE ile bir Yardım penceresini açar. -mta "çok iş parçacıklı bölme modunda" işe başlar. Tek iş parçacıklı varsayılandır.
 
-**Yeni Düzenleyicisi özellikleri** oluşturmak ve kodunuzu okuma kolaylaştırır:
+**Yeni Düzenleyici Özellikleri** oluşturmak ve kodunuzun okumak kolaylaştırır:
 
-- **XML sözdizimi renklendirmesi**. Windows PowerShell kodu sözdizimi renkleri gibi işe Düzenleyicisi'ni aynı şekilde şimdi XML sözdizimi renkleri.
+- **XML sözdizimi renklendirme**. Windows PowerShell kod söz dizimi renkleri gibi ISE Düzenleyici artık aynı şekilde XML sözdizimi renkleri.
 
-- **Ayraç eşleştirme**. Açılış eşleşecek şekilde küme ayraçları kapatma sağ sayısı sahip olmanıza yardımcı olması için eşleşen küme parantezleri ISEWindows PowerShell ISE vurgular olanları. CTRL - kullanın\[ imlecin bulunduğu açılan parantez eşleşen kapanış ayracı bulunamadı.
+- **Ayraç eşleştirme**. Kapatma küme ayraçlarını açılış eşleşecek şekilde doğru sayısını sahip olmanıza yardımcı olmak için eşleşen küme ayraçlarını ISEWindows PowerShell ISE vurgular hizmetlerdir. CTRL - kullanma\[ imlecin bulunduğu açılış ayracından eşleşen kapanış ayracı bulunacak.
 
-- **Anahat görünümü**. Daraltma veya tıklatarak artı ve eksi işaretlerine sol kenar boşluğunda kodunuzu bölümleri genişletin. Bu, uzun bir komut dosyası aradığınız kod bulmayı kolaylaştırır.
+- **Anahat görünümü**. Daraltabilir veya artı işaretine tıklayarak ve eksi işaretlerine sol kenar boşluğunda, kod bölümlerini genişletin. Bu, uzun bir betikte aradığınız kodu bulmak kolaylaştırır.
 
-- **Sürükle ve bırak metin düzenleme**. Bir metin bloğunu seçin ve taşımak için başka bir konuma sürükleyin. Ctrl tuşunu basılı tutarak yerine kopyalama seçili metni sürükleyin taşıyın.
+- **Sürükle ve bırak metin düzenlemesini**. Metin bloğu seçin ve taşımak için başka bir konuma sürükleyin. Seçili metnin yerine kopyalama sürüklerken Ctrl tuşunu basılı tutun taşıyın.
 
-- **Hata ekranı ayrıştırma**. Siz yazarken Windows PowerShell komut dosyanızı inceler. Bir hata tespit ederse, sorunlu kodu altında kırmızı dalgalı gösterir. Belirtilen hata geldiğinizde, bir araç ipucunu bulundu sorunu gösterir.
+- **Hata ekranı ayrıştırma**. Siz yazarken, Windows PowerShell komut dosyanızı inceler. Bir hata algılarsa bir kırmızı dalgalı sorunlu kod altında gösterilir. Belirtilen hata geldiğinizde, araç ipucu bulundu sorunu gösterir.
 
-- **Yakınlaştırma**. Okuma veya işe penceresinin sağ alt köşesinde kaydırıcıyı kullanarak büyük resmi görmek için Uzaklaştır kolaylaştırmak için metin yakınlaştırabilirsiniz.
+- **Yakınlaştırma**. Metninizi okumayı veya ISE penceresi sağ alt köşesinde bulunan kaydırıcıyı kullanarak büyük resmi görmek için daha kolay hale getirmek için yakınlaştırabilirsiniz.
 
-- **Zengin Metin Kopyala ve Yapıştır**. Pano, yazı tipi, boyut ve renk bilgilerini seçili metnin işe kopyaladığınızda dahil edilir.
+- **Zengin Metin Kopyala ve Yapıştır**. Pano, yazı tipi, boyut ve renk bilgilerini seçili metnin ISE'den kopyaladığınızda dahil edilir.
 
-- **Blok Seçi**. Metin bloğu şeklinde bir öbek basarak veya betik bölmesine fareyi metin seçerken ALT tuşunu basılı tutarak seçebilirsiniz **Alt + üst karakter + ok**.
+- **Blok seçimi**. Betik bölmesindeki farenizi metin seçim sırasında ALT tuşunu basılı tutarak veya tuşuna basarak metin bloğu şeklinde bir öbek seçebilirsiniz **Alt + SHIFT + ok**.
 
 ### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>PowerShell 2.0 (Windows Server 2008 R2, Windows 7) eklendi
 
@@ -62,11 +62,11 @@ ISE PowerShell v2.0 sunulmuştur.
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>Windows PowerShell ISE çalıştırmak için gereksinimler
 
-İŞE Windows PowerShell v2.0 çalıştırabilirsiniz herhangi bir Windows bilgisayarda veya sonraki sürümlerinde kullanılabilir. Her sürümü Windows ve Windows Server, Windows PowerShell ISE ve bir sürümünü içerir, ancak en son kullanılabilir Windows Management Framework (WMF) yükleyerek yükseltebilirsiniz. Bkz: [WMF](/powershell/wmf/readme) daha fazla bilgi için.
+ISE sonraki veya Windows PowerShell v2.0 çalıştırabilirsiniz herhangi bir Windows bilgisayarda kullanılabilir. Windows PowerShell ve ISE bir sürümünü her Windows ve Windows Server sürümünü içerir, ancak en son kullanılabilir Windows Management Framework (WMF) yükleyerek yükseltebilirsiniz. Bkz: [WMF](/powershell/wmf) daha fazla bilgi için belgelere bakın.
 
 > [!NOTE]
-> Windows PowerShell ISE bir grafik kullanıcı arabirimi gerektirdiğinden, Windows Server'ın Sunucu Çekirdeği seçeneğini üzerinde çalıştırılamaz.
+> Windows PowerShell ISE'de bir grafik kullanıcı arabirimi gerektirdiğinden, Windows Server'ın Sunucu Çekirdeği seçeneğini üzerinde çalıştırılamaz.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[Nesne modeli komut dosyası windows power shell ISE amacı](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[Windows power shell ISE betik oluşturma nesne modelinin amacı](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

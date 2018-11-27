@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: PowerShell cmdlet'i
 title: PowerShell adlarını öğrenme
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851264"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320491"
 ---
 # <a name="learning-powershell-names"></a>PowerShell adlarını öğrenme
 
-Komutlar ve parametreler adlarını öğrenme çoğu komut satırı arabirimine sahip bir önemli zaman yatırımı gerektirir. Sorun birkaç desenleri yoktur. Anımsama, yalnızca komutları ve düzenli olarak kullanmak için gereken parametreleri bilgi yolu.
+Komutlar ve parametreler adlarını öğrenme çoğu komut satırı arabirimine sahip bir önemli zaman yatırımı gerektirir. Sorun birkaç desenleri yoktur. Anımsama komutları ve düzenli olarak kullanmak için gereken parametreleri öğrenmek için tek yoludur.
 
 Yeni bir komut veya parametresi ile çalışırken, her zaman, zaten tanıdığınız kullanamazsınız. Ve yeni bir ad öğrenin gerekir. Geleneksel olarak, komut satırı arabirimi, küçük bir araçlar kümesi ile başlayın ve artımlı eklemeleriyle büyütün. Öğrenmek kolaydır hiçbir standart yapısı olmasının.
 Her komutu ayrı bir aracı olduğundan, bu komut adlarını mantıksal görünüyor. PowerShell komut adlarını başa çıkmanın daha iyi bir yolu vardır.

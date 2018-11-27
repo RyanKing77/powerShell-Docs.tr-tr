@@ -3,70 +3,70 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell 2.0 Altyapısını Başlatma
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 618745ff4865dd046acf46487e87c3ca0e324f95
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: b600c1f5ea122df9bd53132ccc8edbbc6fa1e9f6
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482973"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320797"
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 Altyapısını Başlatma
 
-Bu bölümde, Windows PowerShell 2.0 altyapısı Windows 8.1, Windows Server 2012 R2, Windows 8 ve Windows Server 2012'de, Windows PowerShell 2.0 altyapısı içeren ve diğer sistemlerde hangi Windows PowerShell 2.0, Windows PowerShell'i başlatmak açıklanmaktadır 3.0 ve Windows PowerShell 4.0 yüklenir.
+Bu bölümde Windows 8.1, Windows Server 2012 R2, Windows 8 ve Windows Server 2012, Windows PowerShell 2.0 altyapısını içeren ve diğer sistemlerde hangi Windows PowerShell 2.0, Windows PowerShell, Windows PowerShell 2.0 altyapısını başlatma açıklanmaktadır. 3.0 ve Windows PowerShell 4.0 yüklenir.
 
-Windows PowerShell 4.0 ve Windows PowerShell 3.0, Windows PowerShell 2.0 ile geriye dönük olarak uyumlu olacak şekilde tasarlanmıştır. Cmdlet'leri, sağlayıcıları, ek bileşenler, modüller ve Windows PowerShell 2.0 için yazılan komut dosyaları Windows PowerShell 4.0 ve Windows PowerShell 3.0 değişmeden çalıştırın. Microsoft .NET Framework 4 çalışma zamanı etkinleştirme ilkede bir değişiklik nedeniyle Windows yapmadan olan Windows PowerShell 2.0 için yazılmış ve ortak dil çalışma zamanı (CLR ile) 2.0 derlenmiş Windows PowerShell konak programları ancak çalıştıramazsınız PowerShell 3.0 veya CLR 4.0 ile derlenen Windows PowerShell 4.0. Windows PowerShell 2.0 altyapısı varolan bir komut dosyasının kullanılması amaçlanmıştır veya Windows PowerShell 4.0, Windows PowerShell 3.0 veya Microsoft .NET Framework 4 ile uyumlu olmadığı için konak program çalıştırılamıyor. Bu gibi durumlarda nadir olması beklenir.
+Windows PowerShell 4.0 ve Windows PowerShell 3.0, Windows PowerShell 2.0 ile geriye dönük olarak uyumlu olacak şekilde tasarlanmıştır. Windows PowerShell 3.0 ve Windows PowerShell 4.0 ile değişmeden cmdlet'leri, sağlayıcıları, ek bileşenler, modülleri ve Windows PowerShell 2.0 için yazılan betikler çalıştırın. Microsoft .NET Framework 4 çalışma zamanı etkinleştirme ilkesini bir değişiklikten dolayı Windows gerektirmeden ancak Windows PowerShell ana bilgisayar Windows PowerShell 2.0 için yazılmış ve ortak dil çalışma zamanı (CLR ile) 2.0 derlenmiş bir program çalıştırılamıyor PowerShell 3.0 veya CLR 4.0 ile derlenmiş Windows PowerShell 4.0. Mevcut bir komut dosyasının yaparken kullanılmak üzere Windows PowerShell 2.0 altyapısını amaçlanmamıştır veya Windows PowerShell 4.0, Windows PowerShell 3.0 veya Microsoft .NET Framework 4 ile uyumsuz olduğundan ana program çalıştırılamıyor. Böyle durumlarda, nadir olmaları beklenir.
 
-Windows PowerShell 2.0 altyapısı gerektiren birçok programlar otomatik olarak başlar. Bu yönergeleri altyapısı el ile başlatmak gereken nadir durumlarda dahil edilir.
+Windows PowerShell 2.0 altyapısı gerektiren birçok programlar otomatik olarak başlatın. Bu yönergeler, altyapıyı el ile başlatmak gereken bazı nadir durumlar için dahil edilir.
 
-## <a name="installing-and-enabling-required-programs"></a>Yükleme ve gereken tüm programları etkinleştirme
+## <a name="installing-and-enabling-required-programs"></a>Yükleme ve etkinleştirme gerekli programlar
 
-Windows PowerShell 2.0 altyapısı başlatmadan önce Microsoft .NET Framework 3.5 Service Pack 1 ve Windows PowerShell 2.0 altyapısı etkinleştirin. Yönergeler için bkz: [Windows PowerShell'i yükleme](Installing-Windows-PowerShell.md).
+Windows PowerShell 2.0 altyapısını başlamadan önce Microsoft .NET Framework 3.5 Service Pack 1 ve Windows PowerShell 2.0 altyapısını etkinleştirin. Yönergeler için [Windows PowerShell'i yükleme](Installing-Windows-PowerShell.md).
 
-Hangi sistemlerde [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) ya da Windows Management Framework 3.0 yüklü tüm gerekli bileşenleri. Ek yapılandırma gerekli değildir. Yükleme hakkında bilgi için [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) ya da Windows Management Framework 3.0, bkz: [Windows PowerShell'i yükleme](Installing-Windows-PowerShell.md).
+Sistemleri sahip tüm gerekli bileşenleri üzerinde hangi Windows Management Framework 4.0 ya da Windows Management Framework 3.0 yüklenir. Ek yapılandırma gerekli değildir. Yükleme hakkında daha fazla bilgi için [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) veya bkz. Windows Management Framework 3.0 [Windows PowerShell'i yükleme](Installing-Windows-PowerShell.md).
 
-## <a name="how-to-start-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 altyapısı başlatma
+## <a name="how-to-start-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 altyapısını başlatma
 
-Windows PowerShell başlattığınızda, en yeni sürümü varsayılan olarak başlatır. Windows PowerShell 2.0 altyapısı ile Windows PowerShell'i başlatmak için PowerShell.exe sürüm parametresini kullanın. Komut Windows PowerShell ve Cmd.exe dahil olmak üzere tüm isteminde komutu çalıştırabilirsiniz.
+Windows PowerShell'i başlatın varsayılan olarak en yeni sürümü başlatılır. Windows PowerShell ile Windows PowerShell 2.0 altyapısını başlatmak için PowerShell.exe sürüm parametresini kullanın. Komut Windows PowerShell ve Cmd.exe dahil olmak üzere tüm isteminde komutu çalıştırabilirsiniz.
 
 ```
 PowerShell.exe -Version 2
 ```
 
-## <a name="how-to-start-a-remote-session-with-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 altyapısı ile bir uzak oturum başlatma
+## <a name="how-to-start-a-remote-session-with-the-windows-powershell-20-engine"></a>Uzak oturumu ile Windows PowerShell 2.0 altyapısını başlatma
 
-Uzak bir oturumda Windows PowerShell 2.0 altyapısı çalıştırmak için Windows PowerShell 2.0 altyapısı yükler uzak bilgisayarda bir oturum yapılandırması (olarak da bilinen bir "uç nokta") oluşturun. Oturum yapılandırması, uzak bilgisayarda kaydedilir ve Windows PowerShell 2.0 Altyapısı'nı kullanan oturumları oluşturmak için yetkili bir kullanıcı tarafından kullanılabilir.
+Uzak bir oturumda Windows PowerShell 2.0 altyapısını çalıştırmak için uzak bilgisayarda Windows PowerShell 2.0 altyapısını yükleyen bir oturum yapılandırması (olarak da bilinen bir "uç noktası") oluşturun. Oturum yapılandırması, uzak bilgisayarda kaydedilir ve Windows PowerShell 2.0 Altyapısı'nı kullanan oturumları oluşturmak için yetkili bir kullanıcı tarafından kullanılabilir.
 
 Bu genellikle bir sistem yöneticisi tarafından gerçekleştirilen Gelişmiş bir görevdir.
 
-Aşağıdaki yordam kullanır **PSVersion** parametresinin [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) Windows PowerShell 2.0 altyapısı kullanan bir oturum yapılandırması oluşturmak için cmdlet'i. Aynı zamanda **PowerShellVersion** parametresinin [yeni PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) Windows PowerShell 2.0 altyapısı yükleyen oturum için bir oturum yapılandırma dosyası oluşturmak için cmdlet'i ve kullanabileceğiniz **PSVersion** parametresinin [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) Windows PowerShell 2.0 altyapısı kullanmak için bir oturum yapılandırmasını değiştirmek için parametre.
+Aşağıdaki yordam kullanır **PSVersion** parametresinin [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) Windows PowerShell 2.0 altyapısını kullanan bir oturum yapılandırması oluşturmak için cmdlet'i. Ayrıca **PowerShellVersion** parametresinin [yeni PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) yükleyen Windows PowerShell 2.0 altyapısını oturum için bir oturum yapılandırma dosyası oluşturmak için cmdlet'i ve kullanabileceğiniz **PSVersion** parametresinin [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) Windows PowerShell 2.0 altyapısı kullanmak için bir oturum yapılandırmasını değiştirmek için parametre.
 
-Oturum yapılandırma dosyaları hakkında daha fazla bilgi için bkz: [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8). Kurulum ve güvenlik dahil olmak üzere oturum yapılandırmaları hakkında bilgi için bkz: [about_Session_Configurations [v4]](https://technet.microsoft.com/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
+Oturum yapılandırma dosyaları hakkında daha fazla bilgi için bkz. [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8). Kurulum ve güvenlik dahil olmak üzere, oturum yapılandırmaları hakkında bilgi için bkz. [about_Session_Configurations [v4]](https://technet.microsoft.com/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
 
 #### <a name="to-start-a-remote-windows-powershell-20-session"></a>Uzak bir Windows PowerShell 2.0 oturumu başlatmak için
 
-1. Windows PowerShell 2.0 altyapısı gerektiren bir oturum yapılandırması oluşturmak için kullanın **PSVersion** parametresinin [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet "2.0" değerine sahip. Bu komut, "sunucu tarafı" veya bağlantı alıcı sonunda bilgisayarda çalıştırın.
+1. Windows PowerShell 2.0 altyapısı gerektiren bir oturum yapılandırması oluşturmak için kullanın **PSVersion** parametresinin [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet'i "2.0" değerine sahip. "Sunucu tarafı" veya bağlantı alıcı sonunda bilgisayarda şu komutu çalıştırın.
 
-   Aşağıdaki örnek komut Server01 bilgisayarda PS2 oturum yapılandırması oluşturur. Bu komutu çalıştırmak için Windows PowerShell 4.0 veya Windows PowerShell 3.0 ile başlangıç **yönetici olarak çalıştır** seçeneği.
+   Aşağıdaki örnek komutta Server01 bilgisayar PS2 oturum yapılandırması oluşturur. Bu komutu çalıştırmak için Windows PowerShell 4.0 veya Windows PowerShell 3. 0'ile Başlat **yönetici olarak çalıştır** seçeneği.
 
    ```powershell
    Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
    ```
 
-2. PS2 oturum yapılandırması kullanan Server01 bilgisayarda oturum oluşturmak için kullanmak **ConfigurationName** uzak bir oturum oluşturun cmdlet'leri parametresinin [New-PSSession](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) cmdlet'i.
+2. PS2 oturum yapılandırması kullanan Server01 bilgisayarda oturum oluşturmak için kullanın **ConfigurationName** gibi bir uzak oturumu oluşturma cmdlet'lerinin parametresine [New-PSSession](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) cmdlet'i.
 
-   Oturum yapılandırması kullanan bir oturum başlatıldığında, Windows PowerShell 2.0 altyapısı oturuma otomatik olarak yüklenir.
+   Oturum yapılandırması kullanan bir oturum başlatıldığında, Windows PowerShell 2.0 altyapısını oturuma otomatik olarak yüklenir.
 
-   Aşağıdaki komut PS2 oturum yapılandırması kullanan Server01 bilgisayarda bir oturum başlatır. Komut oturum $s değişkenine kaydeder.
+   Aşağıdaki komut, PS2 oturum yapılandırması kullanan Server01 bilgisayarda oturum başlatır. Komutu, oturum $s değişkenine kaydeder.
 
    ```powershell
    $s = New-PSSession -ComputerName Server01 -ConfigurationName PS2
    ```
 
-## <a name="how-to-start-a-background-job-with-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 altyapısı ile arka plan işi başlatma
+## <a name="how-to-start-a-background-job-with-the-windows-powershell-20-engine"></a>Arka plan işi ile Windows PowerShell 2.0 altyapısını başlatma
 
-Windows PowerShell 2.0 altyapısı ile bir arka plan işi başlatmak için kullanmak **PSVersion** parametresinin [başlangıç işi](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) cmdlet'i.
+Windows PowerShell 2.0 altyapısı ile arka plan işi başlatmak için kullanın **PSVersion** parametresinin [Start-Job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) cmdlet'i.
 
-Aşağıdaki komut bir arka plan işi Windows PowerShell 2.0 altyapısı ile başlatır.
+Aşağıdaki komut, bir arka plan işi ile Windows PowerShell 2.0 altyapısını başlatır.
 
 ```powershell
 Start-Job {Get-Process} -PSVersion 2.0

@@ -3,26 +3,26 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Out Cmdlet’leri ile Verileri Yeniden Yönlendirme
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: 3ca7984e831a995e80cbd8a4d83ae9225c2a4f4c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952129"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321018"
 ---
-# <a name="redirecting-data-with-out--cmdlets"></a>Verilerle çıkış - yeniden yönlendirme * cmdlet'leri
+# <a name="redirecting-data-with-out--cmdlets"></a>Out - ile verileri yeniden yönlendirme * cmdlet'leri
 
-Windows PowerShell doğrudan çıktı veri denetlemenize olanak sağlayan birkaç cmdlet'leri sağlar. Bu cmdlet'ler iki önemli özellikleri paylaşır.
+Windows PowerShell doğrudan çıkış veri denetlemenize olanak sağlayan birçok cmdlet sağlar. Bu cmdlet'ler iki önemli özellikleri paylaşır.
 
-İlk olarak, bunlar genellikle metin çeşit verileri dönüştürün. Metin girişi gerektiren sistem bileşenleri verileri çıktı çünkü bunu. Bu metin olarak nesneleri temsil etmek ihtiyaç duydukları anlamına gelir. Bu nedenle, Windows PowerShell konsol penceresinde gördüğünüz metin biçimlendirilir.
+İlk olarak, bunlar genellikle bazı metin biçimindeki verilere dönüştürün. Bunlar, metin girişi gerektiren sistem bileşenleri için veri çıktı çünkü bunlar bunu yapabilirsiniz. Bu nesnelerin metin olarak göstermek ihtiyaç duydukları anlamına gelir. Bu nedenle, bir Windows PowerShell konsol penceresi gördüğünüz gibi metin biçimlendirilir.
 
-İkinci olarak, bu cmdlet'ler Windows PowerShell fiil kullanın **çıkışı** bunlar bilgileri Windows Powershell'den başka bir yere için göndermek için. **Dışarı konak** cmdlet'tir hiçbir özel durum: Windows PowerShell dışında ana penceresi görüntülenir. Windows PowerShell dışında veri gönderildiğinde, aslında kaldırıldığı için bu önemlidir. Bir ardışık düzen konak penceresine bu sayfaları verileri oluşturmayı deneyin ve ardından bir liste olarak biçimlendirmek aşağıda gösterildiği gibi çalışır, bu görebilirsiniz:
+İkinci olarak, bu cmdlet'ler Windows PowerShell fiili kullanın **kullanıma** çünkü bunlar bilgileri Windows Powershell'den başka bir yere için gönderin. **Dışarı konak** cmdlet'tir hiçbir özel durum: Windows PowerShell dışında ana penceresi görüntülenir. Bu önemlidir, çünkü Windows PowerShell dışında veri gönderildiğinde, aslında kaldırılır. Bu sayfa verileri ana penceresi için bir işlem hattı oluşturmayı deneyin ve ardından bir liste olarak biçimlendirmek burada gösterildiği gibi çalışır, bu görebilirsiniz:
 
 ```powershell
 Get-Process | Out-Host -Paging | Format-List
 ```
 
-İşlem bilgileri sayfaların listesi biçimde görüntülemek için komutu bekleyebilirsiniz. Bunun yerine, varsayılan Tablo listesi görüntülenir:
+İşlem bilgileri sayfaların liste biçiminde görüntülemek için komut bekleyebilirsiniz. Bunun yerine, varsayılan Tablo listesini görüntüler:
 
 ```output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
@@ -36,9 +36,9 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ...
 ```
 
-**Dışarı konak** cmdlet verileri doğrudan konsola gönderir böylece **Format-List** komutu hiçbir zaman alan biçimlendirmek için herhangi bir şey.
+**Dışarı konak** cmdlet verileri doğrudan konsola gönderir böylece **Format-List** komutu hiçbir zaman aldığı biçimlendirmek için herhangi bir şey.
 
-Bu komut yapısı doğru yerleştirilecek yoludur **dışarı konak** cmdlet'ini aşağıda gösterildiği gibi ardışık düzen sonunda. Bu, disk belleği olan ve görüntülenen önce listede Biçimlendirilecek işlem verileri neden olur.
+Bu komut yapısı doğru şekilde eklemektir **dışarı konak** cmdlet'ini aşağıda gösterildiği gibi işlem hattının sonunda. Bu, disk belleği ve görüntülenen önce listesindeki Biçimlendirilecek verilerini işleme neden olur.
 
 ```
 PS> Get-Process | Format-List | Out-Host -Paging
@@ -63,26 +63,26 @@ Name    : explorer
 ...
 ```
 
-Bu tümüne uygulanır **çıkışı** cmdlet'leri. Bir **çıkışı** cmdlet'inin ardışık düzen sonunda her zaman görünmelidir.
+Bu tümüne uygulanır **kullanıma** cmdlet'leri. Bir **kullanıma** cmdlet'i her zaman ardışık düzen sonunda görünmelidir.
 
 > [!NOTE]
-> Tüm **çıkışı** cmdlet'leri yürürlükte biçimlendirme satır uzunluğu sınırları dahil olmak üzere konsol penceresi için kullanarak bir metin olarak çıkış işleme.
+> Tüm **kullanıma** cmdlet'leri işleme çıkış metin olarak geçerli satırı uzunluk sınırları dahil olmak üzere, konsol penceresi için biçimlendirme kullanma.
 
-#### <a name="paging-console-output-out-host"></a>Konsol çıktısı disk belleği (dışarı ana bilgisayar)
+#### <a name="paging-console-output-out-host"></a>Konsol çıktısı sayfalama (dışarı barındırma)
 
-Varsayılan olarak, Windows PowerShell verileri tam olarak ne olduğunu konak penceresine gönderir cmdlet dışarı ana bilgisayar içermiyor. Birincil kullanım dışarı konak cmdlet'tir disk belleği veri daha önce bahsedildiği gibi. Örneğin, aşağıdaki komut kullandığı Get-Command cmdlet'i çıktısını sayfası dışarı ana bilgisayar:
+Varsayılan olarak, Windows PowerShell verileri tam olarak ne olduğunu ana penceresine gönderir cmdlet dışarı konak yapar. Birincil kullanım dışarı konak cmdlet'tir verilerini sayfalama daha önce bahsedildiği gibi. Örneğin, aşağıdaki komutu kullanır Get-Command cmdlet'in çıktısı, sayfa için dışarı barındırın:
 
 ```powershell
 Get-Command | Out-Host -Paging
 ```
 
-Aynı zamanda **daha fazla** sayfa verilerine işlevi. Windows PowerShell'de **daha fazla** çağıran bir işlev değil **dışarı ana bilgisayar-disk belleği**. Aşağıdaki komutu kullanarak gösteren **daha fazla** işlevi Get-Command çıktısını sayfasında:
+Ayrıca **daha fazla** sayfa verilerine işlevi. Windows PowerShell'de **daha fazla** çağıran bir işlev, **dışarı ana-disk belleği**. Aşağıdaki komutu kullanarak gösterir **daha fazla** işlevini alma komutunun çıktısı sayfasında:
 
 ```powershell
 Get-Command | more
 ```
 
-Daha fazla işlevi bağımsız değişken olarak bir veya daha fazla dosya adlarını dahil ederseniz, işlevi belirtilen dosyaları okuma ve içeriklerini ana sayfa:
+Daha fazla işlev bağımsız değişkenleri olarak bir veya daha fazla dosya adlarını dahil ederseniz, işlev belirtilen dosyaları okur ve içeriklerini ana sayfasında:
 
 ```
 PS> more c:\boot.ini
@@ -95,13 +95,13 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 
 #### <a name="discarding-output-out-null"></a>Çıkış atma (dışarı Null)
 
-**Dışarı Null** cmdlet hemen aldığı herhangi bir giriş atmak için tasarlanmıştır. Bu, bir yan-bir komutu çalıştırmak, sonuç elde gereksiz verileri atılıyor için kullanışlıdır. Ne zaman aşağıdaki komutu yazın, herhangi bir şey komuttan ulaşırsınız değil:
+**Dışarı Null** cmdlet'i hemen aldığı herhangi bir giriş atmak için tasarlanmıştır. Bu, yan komutu çalıştırmanın etkisi size gereksiz verileri atılıyor için kullanışlıdır. Aşağıdaki komutu yazın, hiçbir şey komuttan ulaşırsınız değil:
 
-```powreshell
+```powershell
 Get-Command | Out-Null
 ```
 
-**Dışarı Null** cmdlet hata çıkış atma değil. Örneğin, aşağıdaki komutu girin, bir ileti Windows PowerShell 'Olan NotACommand' tanımıyor bildiren görüntülenir:
+**Dışarı Null** cmdlet'i hata çıkış atma değil. Örneğin, aşağıdaki komutu girin, bir ileti Windows PowerShell 'Olan NotACommand' tanımıyor bildiren görüntülenir:
 
 ```
 PS> Get-Command Is-NotACommand | Out-Null
@@ -113,35 +113,35 @@ At line:1 char:12
 
 #### <a name="printing-data-out-printer"></a>Yazdırma veri (Out-yazıcı)
 
-Kullanarak verileri yazdırabilirsiniz **Out-yazıcı** cmdlet'i. **Out-yazıcı** cmdlet'i bir yazıcı adı belirtmezseniz, varsayılan yazıcı kullanır. Görünen adını belirterek herhangi bir Windows tabanlı yazıcıyı kullanabilirsiniz. Yazıcı bağlantı noktası eşlemesi veya hatta gerçek fiziksel yazıcı herhangi bir tür için gerek yoktur. Yüklü Microsoft Office belge görüntü oluşturma araçlarının varsa, örneğin, verileri bir görüntü dosyasına yazarak gönderebilirsiniz:
+Kullanarak verileri yazdırabilirsiniz **Out-yazıcı** cmdlet'i. **Out-yazıcı** cmdlet'i bir yazıcının adı belirtmezseniz varsayılan yazıcıyı kullanır. Görüntü adı belirterek herhangi bir Windows tabanlı yazıcı kullanabilirsiniz. Her türden yazıcı bağlantı noktası eşlemesi ya da gerçek fiziksel bir yazıcı için gerek yoktur. Yüklü Microsoft Office belge görüntüleme araçları varsa, örneğin, verileri bir görüntü dosyasına yazarak gönderebilirsiniz:
 
 ```powershell
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### <a name="saving-data-out-file"></a>Verileri kaydetme (out-File)
+#### <a name="saving-data-out-file"></a>Verileri kaydetme (dışarı dosya)
 
-Kullanarak bir dosyaya konsol penceresi yerine çıktı gönderebilirsiniz **out-File** cmdlet'i. Aşağıdaki komut satırını işlemlerin listesini dosyasına gönderir **C:\\temp\\processlist.txt**:
+Kullanarak bir dosyaya konsol penceresinde yerine çıkış gönderebilirsiniz **dışarı dosya** cmdlet'i. Aşağıdaki komut satırını işlemlerin bir listesi için dosya gönderir. **C:\\temp\\processlist.txt**:
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt
 ```
 
-Kullanarak sonuçlarını **out-File** cmdlet geleneksel çıktı yeniden yönlendirme için kullanılıyorsa, beklediğiniz olmayabilir. Davranışını anlamak için bağlamı bilmeniz gerekir **out-File** cmdlet'i çalışır.
+Kullanarak sonuçları **dışarı dosya** cmdlet'i geleneksel çıktı yeniden yönlendirme için kullanılan beklediğiniz olmayabilir. Davranışını anlamak için hangi bağlamda bilmeniz gerekir **dışarı dosya** cmdlet'i çalışır.
 
-Varsayılan olarak, **out-File** cmdlet'i bir Unicode dosyası oluşturur. Bu en iyi uzun vadede varsayılandır ancak ASCII dosyalarını beklediğiniz araçları ile varsayılan çıkış biçimi düzgün çalışmaz anlamına gelir. Varsayılan çıkış biçimi için ASCII kullanarak değiştirebileceğiniz **kodlama** parametre:
+Varsayılan olarak, **dışarı dosya** cmdlet'i bir Unicode dosyası oluşturur. Bu en iyi uzun vadede varsayılandır ancak ASCII dosyalarını beklediğiniz araçları ile varsayılan çıkış biçimini düzgün çalışmaz anlamına gelir. Varsayılan çıkış biçimini kullanarak ASCII'ye değiştirebilirsiniz **kodlama** parametresi:
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt -Encoding ASCII
 ```
 
-**Out-File** dosya biçimleri gibi konsol çıktısı aramak için içeriği. Bu, çoğu durumda konsol penceresinde olduğu gibi kesilecek çıkış neden olur. Örneğin aşağıdaki komutu çalıştırın:
+**Dosya Dışarı** dosya biçimleri gibi konsol çıktısı aramak için içeriği. Bu, çoğu durumda bir konsol penceresi içinde olduğu gibi kesilecek çıkış neden olur. Örneğin aşağıdaki komutu çalıştırın:
 
 ```powershell
 Get-Command | Out-File -FilePath c:\temp\output.txt
 ```
 
-Çıktı şuna benzeyecektir:
+Çıkış şuna benzeyecektir:
 
 ```output
 CommandType     Name                            Definition
@@ -151,10 +151,10 @@ Cmdlet          Add-History                     Add-History [[-InputObject] ...
 ...
 ```
 
-Ekran genişliği eşleşecek şekilde satır sarmalayan zorlamaz çıkış almak için kullanabileceğiniz **genişliği** çizgi genişliğini belirlemek için parametre. Çünkü **genişliği** 32 bit tamsayı parametresi sahip olabilir en fazla 2147483647 değerdir. Çizgi genişliği bu maksimum değere ayarlamak için aşağıdaki komutu yazın:
+Ekran genişliği eşleştirilecek satırı sarar zorlamaz çıktısını almak için kullanabileceğiniz **genişliği** çizgi genişliği belirtmek için parametre. Çünkü **genişliği** bir 32 bit tam sayı parametresi sahip olabilir en büyük değer 2147483647'dir. Çizgi genişliği bu maksimum değeri ayarlamak için aşağıdaki komutu yazın:
 
 ```powershell
 Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
 ```
 
-**Out-File** konsolda görüntülenen gibi çıkışı kaydetmek istediğinizde cmdlet en kullanışlıdır. Çıktı biçimi üzerinde daha hassas denetim için daha gelişmiş araçlar gerekir. Sonraki bölümde nesnesi düzenleme hakkında ayrıntılarla birlikte de ele alacağız.
+**Dışarı dosya** cmdlet'tir en kullanışlı konsolda görüntülenen gibi çıkış kaydetmek istediğinizde. Çıkış biçimi üzerinde daha hassas denetim için daha gelişmiş araçlar gerekir. Nesne düzenlemesini hakkında ayrıntılarla birlikte sonraki bölümde de atacağız.

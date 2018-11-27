@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Sistem Gereksinimleri
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 5e1fdb9cb4f10fd71c2d2daf693cb359fddcc5bc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 8850cf26b0313dfb8898ccb66b4767d695860d4c
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002727"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320746"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell Sistem Gereksinimleri
 Bu konu, Windows PowerShell 3.0, Windows PowerShell 4.0 ve Windows PowerShell 5.0 ve Windows PowerShell 5.1 ve özel özellikler gibi Windows PowerShell Tümleşik komut dosyası ortamı (ISE), CIM komutları için sistem gereksinimleri listeler ve İş akışları.
@@ -87,9 +87,9 @@ Windows PowerShell 4.0, Microsoft .NET Framework 4.5 tam olarak yüklenmesini ge
 
 Microsoft .NET Framework 4 tam yüklemesi Windows PowerShell 3.0 gerektirir. Windows 8 ve Windows Server 2012, bu gereksinimi karşılayan varsayılan olarak Microsoft .NET Framework 4.5 içerir.
 
-Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe) yüklemek için bkz: [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919) Microsoft Download Center.
+Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe) yüklemek için bkz: [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/?LinkID=242919) Microsoft Download Center.
 
-Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) tam yüklemesini yüklemek için bkz [Microsoft .NET Framework 4 (Web Yükleyicisi)](http://go.microsoft.com/fwlink/?LinkID=212931) Microsoft Download Center.
+Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) tam yüklemesini yüklemek için bkz [Microsoft .NET Framework 4 (Web Yükleyicisi)](https://go.microsoft.com/fwlink/?LinkID=212931) Microsoft Download Center.
 
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
 Windows PowerShell 5.0, önceden Windows Server 2008 R2 SP1 ve Windows 7 SP1 Windows Management Framework 4.0 gerektirir.
@@ -138,7 +138,7 @@ Ekleme veya Windows PowerShell 2.0 altyapısını yükleme ve ekleme veya Micros
 ## <a name="windows-preinstallation-environment"></a>Windows Önyükleme Ortamı
 Windows PowerShell 2.0, Windows PowerShell 3.0 ve Windows PowerShell 4.0, Windows Önyükleme Ortamı (Windows PE) çalıştırın. Ancak, aşağıdaki cmdlet desteklenmez.
 
-- [Arka Plan Akıllı Aktarım Hizmeti (BITS) cmdlet'leri](http://go.microsoft.com/fwlink/?LinkId=257514)
+- [Arka Plan Akıllı Aktarım Hizmeti (BITS) cmdlet'leri](https://go.microsoft.com/fwlink/?LinkId=257514)
 
 - [Get-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 

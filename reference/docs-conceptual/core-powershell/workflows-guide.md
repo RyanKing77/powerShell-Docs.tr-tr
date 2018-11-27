@@ -2,20 +2,20 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: İş akışları Kılavuzu
-ms.openlocfilehash: 7c4cbcb03bf5abaeba65563156acd588f7671d93
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: e2c91299f064a10fd27ab195d0309a9bef6a7ded
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482803"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320389"
 ---
 # <a name="psworkflow-module"></a>PSWorkflow Modülü
 
-Bu bölüm için Yardım konularını içerir **PSWorkflow** modülü, Windows PowerShell iş akışı özelliğini desteklemek cmdlet'lerini içerir. **PSWorkflow** modülü, Windows PowerShell ile yüklenir.
+Bu bölüm için Yardım konularını içerir **PSWorkflow** modülü, Windows PowerShell iş akışı özelliğini destekleyen cmdlet'ler içerir. **PSWorkflow** modülü, Windows PowerShell ile yüklenir.
 
 ## <a name="help-topics"></a>Yardım konuları
 
-[İş akışı cmdlet'leri](http://go.microsoft.com/fwlink/?LinkID=245865)
+[İş akışı cmdlet'leri](https://go.microsoft.com/fwlink/?LinkID=245865)
 
 [about_Workflows](https://technet.microsoft.com/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 
@@ -35,4 +35,4 @@ Bu bölüm için Yardım konularını içerir **PSWorkflow** modülü, Windows P
 
 [about_Suspend iş akışı](https://technet.microsoft.com/library/be2ded75-1eca-493e-96c1-758f92b5f199)
 
-[PowerShell iş akışı yardımcı programı cmdlet'leri](https://technet.microsoft.com/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)
+[PowerShell iş akışı yardımcı program cmdlet'lerini](https://technet.microsoft.com/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)

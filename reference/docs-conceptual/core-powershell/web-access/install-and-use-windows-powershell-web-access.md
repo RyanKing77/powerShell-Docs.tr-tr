@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
 title: windows powershell web erişimi yükleme ve kullanma
-ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48851333"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320695"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yükleme ve Kullanma
 
@@ -25,7 +25,7 @@ Başarılı ağ geçidi kurulumu ve yapılandırmasının ardından kullanıcıl
 
 Windows PowerShell Web erişimi kurulumu ve yapılandırması üç adımlık bir işlemdir şöyledir:
 
-1. [Windows PowerShell Web erişimi yükleme](#install-windows-powershell-web-access)
+1. [Windows PowerShell Web erişimi yükleme](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Ağ geçidini yapılandırma](#configure-the-gateway)
 1. [Kısıtlayıcı yetkilendirme kuralı yapılandırma](#configure-a-restrictive-authorization-rule)
 
@@ -58,10 +58,10 @@ Yalnızca tanımlama bilgilerini kabul eden, JavaScript çalıştıran ve HTTPS 
 
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>Minimumda test edilen mobil cihazlar veya tarayıcılar
 
-- Windows Phone 7 ve 7.5
-- Google Android WebKit 3.1 tarayıcısı Android 2.2.1 (Kernel 2.6)
+- Windows Phone 7 ve 7.5
+- Google Android WebKit 3.1 Tarayıcısı Android 2.2.1 (Kernel 2.6)
 - iPhone işletim sistemi 5.0.1 için Apple Safari
-- İPad 2 işletim sistemi 5.0.1 için Apple Safari
+- iPad 2 işletim sistemi 5.0.1 için Apple Safari
 
 ### <a name="browser-requirements"></a>Tarayıcı gereksinimleri
 
@@ -75,7 +75,7 @@ Windows PowerShell Web erişimi web tabanlı konsolunu kullanmak için tarayıc�
 
 Ya da Windows PowerShell cmdlet'lerini kullanarak veya Ekle roller ve Özellikler Sunucu Yöneticisi içinde açılan Sihirbazı'nı kullanarak, Windows Server 2012 R2 çalıştıran bir sunucu veya Windows Server 2012 üzerinde Windows PowerShell Web erişimi ağ geçidi yükleyebilirsiniz. Hızlı yükleme ve yapılandırma için bu bölümde açıklandığı gibi Windows PowerShell cmdlet'lerini kullanın.
 
-1. [Windows PowerShell Web erişimi yükleme](#install-Windows-powershell-web-access)
+1. [Windows PowerShell Web erişimi yükleme](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Ağ geçidini yapılandırma](#configure-the-gateway)
 1. [Kısıtlayıcı yetkilendirme kuralı yapılandırma](#configure-a-restrictive-authorization-rule)
 
@@ -189,7 +189,7 @@ Varsayılan olarak, cmdlet web uygulaması yükler **pswa** (ve ona ait bir uygu
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Kısıtlayıcı yetkilendirme kuralı yapılandırma
 
-Windows PowerShell Web erişimi yüklendikten ve ağ geçidi yapılandırıldıktan sonra kullanıcılar oturum açma sayfasını bir tarayıcıda açabilir, ancak açıkça erişim Windows PowerShell Web erişimi yönetici kullanıcılar verene kadar oturum olamaz. Windows PowerShell Web erişimi erişim denetimi aşağıdaki tabloda açıklanan Windows PowerShell cmdlet'leri kümesi kullanılarak yönetilir. Yetkilendirme kuralları eklemek veya yönetmek için karşılaştırılabilir GUI yoktur. Windows PowerShell Web erişimi cmdlet'leri hakkında daha ayrıntılı bilgi için cmdlet başvuru konularına bakın [Windows PowerShell Web erişimi cmdlet'leri](cmdlets/web-access-cmdlets.md).
+Windows PowerShell Web erişimi yüklendikten ve ağ geçidi yapılandırıldıktan sonra kullanıcılar oturum açma sayfasını bir tarayıcıda açabilir, ancak açıkça erişim Windows PowerShell Web erişimi yönetici kullanıcılar verene kadar oturum olamaz. Windows PowerShell Web erişimi erişim denetimi aşağıdaki tabloda açıklanan Windows PowerShell cmdlet'leri kümesi kullanılarak yönetilir. Yetkilendirme kuralları eklemek veya yönetmek için karşılaştırılabilir GUI yoktur. Windows PowerShell Web erişimi cmdlet'leri hakkında daha ayrıntılı bilgi için cmdlet başvuru konularına bakın [Windows PowerShell Web erişimi cmdlet'leri](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Windows PowerShell Web Erişimi yetkilendirme kuralları ve güvenlik hakkında daha fazla ayrıntı için [yetkilendirme kuralları ve güvenlik özellikleri, Windows PowerShell Web erişimi](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -360,7 +360,7 @@ Bu bölümdeki yönergeler, Windows PowerShell Web erişimi web uygulamasını y
 
 ### <a name="configuring-a-restrictive-authorization-rule"></a>Kısıtlayıcı yetkilendirme kuralı yapılandırma
 
-Windows PowerShell Web erişimi yüklendikten ve ağ geçidi yapılandırıldıktan sonra kullanıcılar oturum açma sayfasını bir tarayıcıda açabilir, ancak açıkça erişim Windows PowerShell Web erişimi yönetici kullanıcılar verene kadar oturum olamaz. Windows PowerShell Web erişimi erişim denetimi aşağıdaki tabloda açıklanan Windows PowerShell cmdlet'leri kümesi kullanılarak yönetilir. Yetkilendirme kuralları eklemek veya yönetmek için karşılaştırılabilir GUI yoktur. Windows PowerShell Web erişimi cmdlet'leri hakkında daha ayrıntılı bilgi için cmdlet başvuru konularına bakın [Windows PowerShell Web erişimi cmdlet'leri](cmdlets/web-access-cmdlets.md).
+Windows PowerShell Web erişimi yüklendikten ve ağ geçidi yapılandırıldıktan sonra kullanıcılar oturum açma sayfasını bir tarayıcıda açabilir, ancak açıkça erişim Windows PowerShell Web erişimi yönetici kullanıcılar verene kadar oturum olamaz. Windows PowerShell Web erişimi erişim denetimi aşağıdaki tabloda açıklanan Windows PowerShell cmdlet'leri kümesi kullanılarak yönetilir. Yetkilendirme kuralları eklemek veya yönetmek için karşılaştırılabilir GUI yoktur. Windows PowerShell Web erişimi cmdlet'leri hakkında daha ayrıntılı bilgi için cmdlet başvuru konularına bakın [Windows PowerShell Web erişimi cmdlet'leri](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Windows PowerShell Web Erişimi yetkilendirme kuralları ve güvenlik hakkında daha fazla ayrıntı için [yetkilendirme kuralları ve güvenlik özellikleri, Windows PowerShell Web erişimi](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -404,7 +404,7 @@ Güvenli bir üretim ortamında her zaman bir sertifika yetkilisi (CA) tarafınd
 1. İçinde **eylemleri** bölmesi, aşağıdakilerden birini yapın. IIS'de sunucu sertifikalarını yapılandırma hakkında daha fazla bilgi için bkz. [IIS 7'de sunucu sertifikalarını yapılandırma](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Tıklayın **alma** ağınızdaki bir konumdan mevcut, geçerli bir sertifikayı içeri aktarmak için.
-   - Tıklayın **sertifika isteği oluştur** gibi bir CA'dan bir sertifika istemeniz [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), veya [GeoTrust](https://www.geotrust.com/). Sertifikanın ortak adı, istekte konak üst bilgisi ile eşleşmelidir.
+   - Tıklayın **sertifika isteği oluştur** gibi bir CA'dan bir sertifika istemeniz [VeriSign](https://www.verisign.com/), [Thawte](https://www.thawte.com/), veya [GeoTrust](https://www.geotrust.com/). Sertifikanın ortak adı, istekte konak üst bilgisi ile eşleşmelidir.
 
      Örneğin, istemci tarayıcısı isterse `http://www.contoso.com/`, ortak ad ayrıca olmalıdır `http://www.contoso.com/`. Windows PowerShell Web erişimi ağ geçidini bir sertifikasıyla sağlamak için en güvenli ve önerilen seçenek budur.
 

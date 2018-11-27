@@ -3,20 +3,20 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Grafik Tarih Seçici Oluşturma
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-ms.openlocfilehash: 3727c90c314a6fc1b3a338ec60e44259f153d954
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6dd43a3b1f4c67633ad1755de3db88eb8c6772c8
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954849"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320338"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Grafik Tarih Seçici Oluşturma
 
-Ayın gününü kullanıcıların seçmesine izin veren bir grafik, Takvim stili denetimi ile bir form oluşturmak için Windows PowerShell 3.0 ve sonraki sürümlerinde kullanın.
+Ayın gününü seçebilmelerini sağlayan bir grafik, Takvim stil denetimi ile bir form oluşturmak için Windows PowerShell 3.0 ve sonraki sürümleri kullanın.
 
-## <a name="create-a-graphical-date-picker-control"></a>Bir grafik tarih seçici denetim oluşturma
+## <a name="create-a-graphical-date-picker-control"></a>Grafik tarih seçici denetimi oluşturma
 
-Kopyalayın ve aşağıdaki Windows PowerShell ISE yapıştırın ve sonra Windows PowerShell Betiği (.ps1) kaydedin.
+Kopyalayın ve ardından aşağıdaki Windows PowerShell ISE'ye yapıştırın ve bir Windows PowerShell Betiği (.ps1) kaydedin.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -60,19 +60,19 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-İki .NET Framework sınıf yükleyerek komut dosyasının başlar: **System.Drawing** ve **System.Windows.Forms**. .NET Framework sınıfının yeni bir örneğini sonra Başlat **Windows.Forms.Form**; boş bir form sağlayan veya olduğu başlatabilirsiniz ekleme penceresi denetler.
+İki .NET Framework sınıfları yükleyerek komut başlar: **System.Drawing** ve **System.Windows.Forms**. Ardından yeni bir .NET Framework sınıfı örneğini Başlat **Windows.Forms.Form**; sağlayan boş bir form veya denetimleri için başlangıç ekleme penceresi.
 
 ```powershell
 $form = New-Object Windows.Forms.Form
 ```
 
-Form sınıfının bir örneği oluşturduktan sonra bu sınıfın üç özelliklerine değerler atayın.
+Form sınıfının bir örneğini oluşturduktan sonra bu sınıfın üç özelliğe değerler atayın.
 
-- **metin.** Bu, pencere başlığı olur.
+- **Metin.** Bu pencerenin başlığı olur.
 
-- **Boyutu.** Piksel cinsinden formun boyutudur. Önceki komut 243 piksel genişliğinde 230 piksel uzunluğunda olan bir form oluşturur.
+- **Boyutu.** Formun piksel cinsinden boyutu budur. Önceki komut 243 piksel genişliğinde ve 230 piksel yüksekliğinde bir formu oluşturur.
 
-- **StartingPosition.** Bu isteğe bağlı özellik kümesine **CenterScreen** yukarıdaki komut. Bu özellik eklemezseniz Windows formu açıldığında bir konum seçer. Ayarlayarak **StartingPosition** için **CenterScreen**, otomatik olarak formun ekran ortasında her yüklenişinde görüntülediğiniz.
+- **Başlangıçkonumu.** Bu isteğe bağlı bir özellik kümesine **CenterScreen** önceki komut. Bu özellik eklemezseniz, Windows formu açıldığında bir konum seçer. Ayarlayarak **Başlangıçkonumu** için **CenterScreen**, otomatik olarak formun ekranın ortasında her yüklenişinde görüntülediğinizden.
 
 ```powershell
 $form.Text = 'Select a Date'
@@ -80,7 +80,7 @@ $form.Size = New-Object Drawing.Size @(243,230)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Ardından, oluşturun ve ardından bir Takvim denetimi formunuzda ekleyin. Bu örnekte, geçerli gün vurgulanmış yuvarlak içine alınmıştır veya değil. Kullanıcıların yalnızca bir gününü takvimde bir kerede seçebilirsiniz.
+Ardından, oluşturma ve formunuza bir Takvim denetimi ekleyin. Bu örnekte, geçerli gün vurgulanmış daire içinde veya desteklenmez. Kullanıcılar yalnızca bir gününü Takvim üzerinde aynı anda seçebilirsiniz.
 
 ```powershell
 $calendar = New-Object System.Windows.Forms.MonthCalendar
@@ -89,7 +89,7 @@ $calendar.MaxSelectionCount = 1
 $form.Controls.Add($calendar)
 ```
 
-Ardından, oluşturun bir **Tamam** formunuz için düğmesi. Boyut ve davranışını belirtin **Tamam** düğmesi. Bu örnekte, düğme formun üst köşeden 165 piksel ve sol kenarından 38 piksel konumdur. Düğme yüksekliği 23 piksel cinsinden açıkken düğmesi uzunluğu 75 pikseldir. Komut dosyasını önceden tanımlanmış Windows Forms türleri düğmesi davranışları belirlemek için kullanır.
+Ardından, oluşturun bir **Tamam** formunuz için düğmesi. Boyut ve davranışını belirtin **Tamam** düğmesi. Bu örnekte, düğmeyi formun üst kenarından 165 piksel ve sol kenarından 38 piksel konumdur. Düğme yüksekliği 23 piksel açıkken düğmesi uzunluğu 75 pikseldir. Betik önceden tanımlanmış bir Windows Forms türleri düğmesi davranışlarını belirlemek için kullanır.
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -101,7 +101,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-Benzer şekilde, oluşturduğunuz bir **iptal** düğmesi. **İptal** üstten 165 piksel ancak penceresinin sol kenarından 113 piksel düğme vardır.
+Benzer şekilde, oluşturduğunuz bir **iptal** düğmesi. **İptal** düğmesidir üst 165 piksel, ancak pencerenin sol kenardan 113 piksel.
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -113,19 +113,19 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-Ayarlama **Topmost** özelliğine **$true** diğer pencereler ve iletişim kutuları üzerinde penceresini zorlamak için.
+Ayarlama **en üstteki** özelliğini **$true** diğer pencereler ve iletişim kutuları penceresini zorlama.
 
 ```powershell
 $form.Topmost = $true
 ```
 
-Aşağıdaki Windows formu görüntülemek için kod satırını ekleyin.
+Kod içinde Windows formu görüntülemek için aşağıdaki satırı ekleyin.
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-Son olarak, içinde kod **varsa** blok bildirir Windows kullanıcıları takvim günü seçin ve ardından sonra ne formla **Tamam** düğmesini veya tuşuna **Enter** anahtar. Windows PowerShell kullanıcıları için seçilen tarihi görüntüler.
+Son olarak, kod içinde **varsa** blok bildirir Windows form ile kullanıcılar, bir takvim günü seçin ve ardından sonra yapmanız gerekenler **Tamam** düğme veya basın **Enter** anahtarı. Windows PowerShell, kullanıcılara seçilen tarihi görüntüler.
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -137,6 +137,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-- [Merhaba Scripting Guy: neden bu PowerShell GUI örnekler çalışmaz?](http://go.microsoft.com/fwlink/?LinkId=506644)
+- [Hey Scripting Guy: neden bu PowerShell GUI örnekler çalışmıyor?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt'ın WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Haftanın Windows PowerShell İpucu: bir grafik tarih seçici oluşturma](http://technet.microsoft.com/library/ff730942.aspx)
+- [Haftanın Windows PowerShell İpucu: bir grafik tarih seçici oluşturma](https://technet.microsoft.com/library/ff730942.aspx)

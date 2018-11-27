@@ -3,30 +3,30 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: ISEFile Nesnesi
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
-ms.openlocfilehash: 276e8f04a827e18999b5b3ecb08f47de4f4b23b1
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951401"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320882"
 ---
 # <a name="the-isefile-object"></a>ISEFile Nesnesi
 
-Bir **ISEFile** nesnesi, bir dosya olarak Windows PowerShell® Tümleşik komut dosyası ortamı (ISE) temsil eder. Microsoft.PowerShell.Host.ISE.ISEFile sınıfının bir örneğidir. Bu konu, üye yöntemleri ve üye özellikleri listeler. **$PsISE.CurrentFile** ve bir PowerShell sekmede dosyaları koleksiyonundaki dosyalar Microsoft.PowerShell.Host.ISE.ISEFile sınıfın tüm örnekleri.
+Bir **Isefile** nesnesi bir dosya içinde Windows PowerShell® Tümleşik komut dosyası ortamı (ISE) temsil eder. Microsoft.PowerShell.Host.ISE.ISEFile sınıfının bir örneğidir. Bu konu, üye yöntemleri ve üye özellikleri listeler. **$PsISE.CurrentFile** ve bir PowerShell sekmesi dosyaları koleksiyonda dosyalarında Microsoft.PowerShell.Host.ISE.ISEFile sınıfın tüm örnekleri.
 
 ## <a name="methods"></a>Yöntemler
 
 ### <a name="save-saveencoding-"></a>Kaydet\( \[saveEncoding\] \)
 
-Windows PowerShell ISE 2.0 ve sonrasında desteklenir.
+Windows PowerShell ISE 2.0 ve sonraki sürümlerde desteklenir.
 
 Dosyayı diske kaydeder.
 
-**\[saveEncoding\]**  - isteğe bağlı [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) isteğe bağlı bir karakter parametresi kaydedilen dosya için kullanılacak kodlama. Varsayılan değer **UTF8**.
+**\[saveEncoding\]**  : isteğe bağlı [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) kaydedilen dosya için kullanılacak parametre kodlama isteğe bağlı bir karakter. Varsayılan değer **UTF8**.
 
 ### <a name="exceptions"></a>Özel Durumlar
 
-- **System.IO.ıoexception**: dosya kaydedilemedi.
+- **System.IO.ıoexception**: dosyası kaydedilemedi.
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -40,21 +40,21 @@ $myfile = $psISE.CurrentFile
 $myfile.Encoding
 ```
 
-### <a name="saveasfilename-saveencoding"></a>Farklı Kaydet\(filename, \[saveEncoding\]\)
+### <a name="saveasfilename-saveencoding"></a>Farklı Kaydet\(dosya \[saveEncoding\]\)
 
-Windows PowerShell ISE 2.0 ve sonrasında desteklenir.
+Windows PowerShell ISE 2.0 ve sonraki sürümlerde desteklenir.
 
-Dosyayı belirtilen dosya adıyla kaydeder ve kodlama.
+Dosyayı belirtilen dosya adı ile kaydeder ve kodlama.
 
-**Dosya adı** -adlı dosyayı kaydetmek için kullanılacak dize.
+**filename** -adı, dosyayı kaydetmek için kullanılacak dize.
 
-**\[saveEncoding\]**  - isteğe bağlı [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) isteğe bağlı bir karakter parametresi kaydedilen dosya için kullanılacak kodlama. Varsayılan değer **UTF8**.
+**\[saveEncoding\]**  : isteğe bağlı [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) kaydedilen dosya için kullanılacak parametre kodlama isteğe bağlı bir karakter. Varsayılan değer **UTF8**.
 
 ### <a name="exceptions"></a>Özel Durumlar
 
 - **System.ArgumentNullException**: **filename** parametresi null.
-- **System.ArgumentException**: **filename** parametre boş.
-- **System.IO.ıoexception**: dosya kaydedilemedi.
+- **System.ArgumentException**: **filename** parametresi boş.
+- **System.IO.ıoexception**: dosyası kaydedilemedi.
 
 ```powershell
 # Save the file with a full path and name.
@@ -68,20 +68,20 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 
 ### <a name="displayname"></a>Görünen Ad
 
-Windows PowerShell ISE 2.0 ve sonrasında desteklenir.
+Windows PowerShell ISE 2.0 ve sonraki sürümlerde desteklenir.
 
-Bu dosya görünen adını içeren dize alır salt okunur özellik. Adı gösterilir **dosya** Düzenleyicisi üstündeki sekmesi. Bir yıldız işareti varlığını \( \* \) dosyasına kaydedilmemiş değişiklikler var. adının sonuna gösterir.
+Bu dosya görünen adını içeren dize alan salt okunur özelliği. Şirket adı gösterilir **dosya** Düzenleyici üst kısmındaki sekme. Bir yıldız işareti varlığını \( \* \) adın sonunda dosya kaydedilmemiş değişiklikler sahip olduğunu gösterir.
 
 ```powershell
 # Shows the display name of the file.
 $psISE.CurrentFile.DisplayName
 ```
 
-### <a name="editor"></a>Düzenleyicisi
+### <a name="editor"></a>Düzenleyici
 
-Windows PowerShell ISE 2.0 ve sonrasında desteklenir.
+Windows PowerShell ISE 2.0 ve sonraki sürümlerde desteklenir.
 
-Alır salt okunur özellik [editor nesnesi](The-ISEEditor-Object.md) için belirtilen dosya kullanılır.
+Salt okunur özelliği [Düzenleyici nesnesi](The-ISEEditor-Object.md) belirtilen dosya için kullanılır.
 
 ```powershell
 # Gets the editor and the text.
@@ -90,9 +90,9 @@ $psISE.CurrentFile.Editor.Text
 
 ### <a name="encoding"></a>Kodlama
 
-Windows PowerShell ISE 2.0 ve sonrasında desteklenir.
+Windows PowerShell ISE 2.0 ve sonraki sürümlerde desteklenir.
 
-Özgün dosya kodlamasını alır salt okunur özellik. Bu bir **System.Text.Encoding** nesnesi.
+Özgün dosya kodlamasını alır salt okunur özellik. Bu bir **System.Text.Encoding** nesne.
 
 ```powershell
 # Shows the encoding for the file.
@@ -101,9 +101,9 @@ $psISE.CurrentFile.Encoding
 
 ### <a name="fullpath"></a>FullPath
 
-Windows PowerShell ISE 2.0 ve sonrasında desteklenir.
+Windows PowerShell ISE 2.0 ve sonraki sürümlerde desteklenir.
 
-Dizeyi alır salt okunur özellik açılan dosyasının tam yolunu belirtir.
+Dize, salt okunur özelliği açık dosyanın tam yolunu belirtir.
 
 ```powershell
 # Shows the full path for the file.
@@ -112,9 +112,9 @@ $psISE.CurrentFile.FullPath
 
 ### <a name="issaved"></a>Kaydedilirken
 
-Windows PowerShell ISE 2.0 ve sonrasında desteklenir.
+Windows PowerShell ISE 2.0 ve sonraki sürümlerde desteklenir.
 
-Döndüren özelliği salt okunur Boolean **$true** en son değiştirildiği sonra dosya kaydedilmişse.
+Döndürür salt okunur Boolean özelliği **$true** dosyanın son değiştirilme zamanı sonra kaydedilmişse.
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -124,9 +124,9 @@ $myfile.IsSaved
 
 ### <a name="isuntitled"></a>IsUntitled
 
-Windows PowerShell ISE 2.0 ve sonrasında desteklenir.
+Windows PowerShell ISE 2.0 ve sonraki sürümlerde desteklenir.
 
-Döndüren salt okunur özelliği **$true** dosya hiçbir zaman bir başlık verildiyse.
+Döndüren salt okunur özelliği **$true** dosya hiçbir zaman bir başlık verilmişse.
 
 ```powershell
 # Determines whether the file has never been given a title.
@@ -137,6 +137,6 @@ $psISE.CurrentFile.IsUntitled
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-- [The ISEFileCollectionObject](The-ISEFileCollection-Object.md)
-- [Nesne modeli komut dosyası Windows PowerShell ISE amacı](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [ISEFileCollectionObject](The-ISEFileCollection-Object.md)
+- [Windows PowerShell ISE betik oluşturma nesne modelinin amacı](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [ISE Nesne Modeli Hiyerarşisi](The-ISE-Object-Model-Hierarchy.md)

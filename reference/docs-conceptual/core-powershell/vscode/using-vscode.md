@@ -2,12 +2,12 @@
 title: PowerShell geliştirme için Visual Studio Code'u kullanma
 description: PowerShell geliştirme için Visual Studio Code'u kullanma
 ms.date: 08/06/2018
-ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.openlocfilehash: 6433a875c233283f94d70c7acd7d394c73029b6d
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225803"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320457"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell geliştirme için Visual Studio Code'u kullanma
 
@@ -35,7 +35,7 @@ Geleneksel Windows PowerShell iş yükleri için bkz: [Windows PowerShell'i yük
 
   > [!IMPORTANT]
   > MacOS üzerinde doğru çalışması için PowerShell uzantısı için OpenSSL yüklemeniz gerekir.
-  > Bunu yapmanın en kolay yolu yüklemektir [Homebrew](http://brew.sh/) ve ardından çalıştırın `brew install openssl`.
+  > Bunu yapmanın en kolay yolu yüklemektir [Homebrew](https://brew.sh/) ve ardından çalıştırın `brew install openssl`.
   > VS Code PowerShell uzantısı şimdi başarıyla yükleyebilirsiniz.
 
 - **Windows**: yükleme yönergelerini izleyin [Windows üzerinde çalışan VS Code](https://code.visualstudio.com/docs/setup/windows) sayfası

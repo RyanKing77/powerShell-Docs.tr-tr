@@ -3,20 +3,20 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Bir Liste Kutusundan Öğe Seçme
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
-ms.openlocfilehash: 6ff6bff8f6ce4e9236d7877c4cca24a10932cbe0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951690"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320831"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Bir Liste Kutusundan Öğe Seçme
 
-Windows PowerShell 3.0 ve sonraki sürümlerinde öğeleri bir liste kutusu denetimini kullanıcıların seçmesine izin veren bir iletişim kutusu oluşturmak için kullanın.
+Windows PowerShell 3.0 ve sonraki sürümleri, kullanıcıların bir liste kutusu denetimi öğeleri seçin sağlayan bir iletişim kutusu oluşturmak için kullanın.
 
-## <a name="create-a-list-box-control-and-select-items-from-it"></a>Liste kutusu denetimi oluşturma ve öğeleri seçin
+## <a name="create-a-list-box-control-and-select-items-from-it"></a>Liste kutusu denetimi oluşturun ve öğeleri seçin
 
-Kopyalayın ve aşağıdaki Windows PowerShell ISE yapıştırın ve sonra Windows PowerShell Betiği (.ps1) kaydedin.
+Kopyalayın ve ardından aşağıdaki Windows PowerShell ISE'ye yapıştırın ve bir Windows PowerShell Betiği (.ps1) kaydedin.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -75,20 +75,20 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-İki .NET Framework sınıf yükleyerek komut dosyasının başlar: **System.Drawing** ve **System.Windows.Forms**. .NET Framework sınıfının yeni bir örneğini sonra Başlat **System.Windows.Forms.Form'dan**; boş bir form sağlayan veya olduğu başlatabilirsiniz ekleme penceresi denetler.
+İki .NET Framework sınıfları yükleyerek komut başlar: **System.Drawing** ve **System.Windows.Forms**. Ardından yeni bir .NET Framework sınıfı örneğini Başlat **System.Windows.Forms.Form'dan**; sağlayan boş bir form veya denetimleri için başlangıç ekleme penceresi.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 ```
 
-Form sınıfının bir örneği oluşturduktan sonra bu sınıfın üç özelliklerine değerler atayın.
+Form sınıfının bir örneğini oluşturduktan sonra bu sınıfın üç özelliğe değerler atayın.
 
-- **metin.** Bu, pencere başlığı olur.
+- **Metin.** Bu pencerenin başlığı olur.
 
-- **Boyutu.** Piksel cinsinden formun boyutudur. Önceki komut 300 piksel genişliğinde 200 piksel uzunluğunda olan bir form oluşturur.
+- **Boyutu.** Formun piksel cinsinden boyutu budur. Önceki komut, 300 piksel genişliğinde ve 200 piksel yüksekliğinde bir formu oluşturur.
 
-- **StartingPosition.** Bu isteğe bağlı özellik kümesine **CenterScreen** yukarıdaki komut. Bu özellik eklemezseniz Windows formu açıldığında bir konum seçer. Ayarlayarak **StartingPosition** için **CenterScreen**, otomatik olarak formun ekran ortasında her yüklenişinde görüntülediğiniz.
+- **Başlangıçkonumu.** Bu isteğe bağlı bir özellik kümesine **CenterScreen** önceki komut. Bu özellik eklemezseniz, Windows formu açıldığında bir konum seçer. Ayarlayarak **Başlangıçkonumu** için **CenterScreen**, otomatik olarak formun ekranın ortasında her yüklenişinde görüntülediğinizden.
 
 ```powershell
 $form.Text = 'Select a Computer'
@@ -96,7 +96,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Ardından, oluşturun bir **Tamam** formunuz için düğmesi. Boyut ve davranışını belirtin **Tamam** düğmesi. Bu örnekte, düğme formun üst köşeden 120 piksel ve sol kenarından 75 piksel konumdur. Düğme yüksekliği 23 piksel cinsinden açıkken düğmesi uzunluğu 75 pikseldir. Komut dosyasını önceden tanımlanmış Windows Forms türleri düğmesi davranışları belirlemek için kullanır.
+Ardından, oluşturun bir **Tamam** formunuz için düğmesi. Boyut ve davranışını belirtin **Tamam** düğmesi. Bu örnekte, düğmeyi formun üst kenarından 120 piksel ve sol kenarından 75 piksel konumdur. Düğme yüksekliği 23 piksel açıkken düğmesi uzunluğu 75 pikseldir. Betik önceden tanımlanmış bir Windows Forms türleri düğmesi davranışlarını belirlemek için kullanır.
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -108,7 +108,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-Benzer şekilde, oluşturduğunuz bir **iptal** düğmesi. **İptal** üstten 120 piksel ancak penceresinin sol kenarından 150 piksel düğme vardır.
+Benzer şekilde, oluşturduğunuz bir **iptal** düğmesi. **İptal** düğmesidir üst 120 piksel, ancak pencerenin sol kenardan 150 piksel.
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -120,7 +120,7 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-Ardından, etiket metnini sağlamak için kullanıcıların istediğiniz bilgileri açıklayan pencerenizi üzerinde sağlar. Bu durumda, bir bilgisayar seçin seçeneğini belirleyin.
+Ardından, etiket metnini sağlamak üzere kullanıcıları istediğiniz bilgileri tanımlar, penceresinde sağlar. Bu durumda, bir bilgisayar seçin seçeneğini belirleyin.
 
 ```powershell
 $label = New-Object System.Windows.Forms.Label
@@ -130,7 +130,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-Etiket metinde açıklanan bilgiler sağlayan kullanıcıların sağlayan denetimi (Bu durumda, bir liste kutusunda) ekleyin. Liste kutuları yanı sıra uygulayabilirsiniz birçok denetimleri vardır; Daha fazla bilgi için bkz [System.Windows.Forms Namespace](http://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) konusuna bakın.
+Kullanıcıların, etiket metinde açıklanan bilgileri sağlayan olanak sağlayan denetimi (Bu durumda, bir liste kutusunda) ekleyin. Liste kutuları yanı sıra uygulayabilirsiniz birçok diğer denetimler bulunur; Daha fazla bilgi için bkz [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) MSDN'de.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -142,7 +142,7 @@ $listBox.Height = 80
 Sonraki bölümde, kullanıcılara görüntülenecek liste kutusu istediğiniz değerleri belirtin.
 
 > [!NOTE]
-> Bu komut dosyası tarafından oluşturulan liste kutusu yalnızca bir seçilmesine izin verir. Birden çok seçimin sağlayan bir liste kutusu denetimi oluşturmak için bir değer belirtin **SelectionMode** özelliği, aşağıdakine benzer: `$listBox.SelectionMode = 'MultiExtended'`. Daha fazla bilgi için bkz: [çoklu seçim liste kutuları](Multiple-selection-List-Boxes.md).
+> Bu betiği tarafından oluşturulan liste kutusu tek seçim sağlar. Çoklu seçime izin veren bir liste kutusu denetimi oluşturmak için bir değer belirtin. **SelectionMode** aşağıdakine benzer şekilde, özellik: `$listBox.SelectionMode = 'MultiExtended'`. Daha fazla bilgi için [birden çok seçim liste kutusu](Multiple-selection-List-Boxes.md).
 
 ```powershell
 [void] $listBox.Items.Add('atl-dc-001')
@@ -154,31 +154,31 @@ Sonraki bölümde, kullanıcılara görüntülenecek liste kutusu istediğiniz d
 [void] $listBox.Items.Add('atl-dc-007')
 ```
 
-Liste kutusu denetimini formunuza ekleyin ve diğer windows ve iletişim kutuları üzerinde formu açıldığında açmak için Windows isteyin.
+Liste kutusu denetimini formunuza eklemek ve diğer pencereler ve iletişim kutuları üzerine formu açıldığında açmak için Windows isteyin.
 
 ```powershell
 $form.Controls.Add($listBox)
 $form.Topmost = $true
 ```
 
-Aşağıdaki Windows formu görüntülemek için kod satırını ekleyin.
+Kod içinde Windows formu görüntülemek için aşağıdaki satırı ekleyin.
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-Son olarak, içinde kod **varsa** blok bildirir Windows kullanıcıları liste kutusundan bir seçenek belirleyin ve ardından sonra ne formla **Tamam** düğmesini veya tuşuna **Enter**anahtarı.
+Son olarak, kod içinde **varsa** blok bildirir Windows form ile kullanıcılar liste kutusundan bir seçenek belirleyin ve ardından sonra yapmanız gerekenler **Tamam** düğme veya basın **Enter**anahtarı.
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $listBox.SelectedItem
-    $x
+    $x = $listBox.SelectedItem
+    $x
 }
 ```
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-- [Merhaba Scripting Guy: neden bu PowerShell GUI örnekler çalışmaz?](http://go.microsoft.com/fwlink/?LinkId=506644)
+- [Hey Scripting Guy: neden bu PowerShell GUI örnekler çalışmıyor?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt'ın WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Haftanın Windows PowerShell İpucu: bir liste kutusundan öğeler seçme](http://technet.microsoft.com/library/ff730949.aspx)
+- [Haftanın Windows PowerShell İpucu: bir liste kutusundan öğe seçme](https://technet.microsoft.com/library/ff730949.aspx)

@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri
-ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
-ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
+ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43133865"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321095"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri
 
@@ -20,19 +20,19 @@ Windows Server 2012 R2 ve Windows Server 2012, Windows PowerShell Web erişimi, 
 ## <a name="configuring-authorization-rules-and-site-security"></a>Yetkilendirme kuralları ve site güvenliği yapılandırma
 
 Windows PowerShell Web erişimi yüklendikten ve ağ geçidi yapılandırıldıktan sonra kullanıcılar oturum açma sayfasını bir tarayıcıda açabilir, ancak açıkça erişim Windows PowerShell Web erişimi yönetici kullanıcılar verene kadar oturum olamaz. 'Windows PowerShell Web Erişimi' erişim denetimi aşağıdaki tabloda açıklanan Windows PowerShell cmdlet'leri kümesi kullanılarak yönetilir. Yetkilendirme kuralları eklemek veya yönetmek için karşılaştırılabilir GUI yoktur.
-Bkz: [Windows PowerShell Web erişim cmdlet'leri](cmdlets/web-access-cmdlets.md).
+Bkz: [Windows PowerShell Web erişim cmdlet'leri](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Yöneticiler tanımlayabilirsiniz `{0-n}` Windows PowerShell Web erişimi için kimlik doğrulama kuralları. Varsayılan güvenlik esnek değil kısıtlayıcıdır; sıfır kimlik doğrulama kuralı, hiçbir kullanıcının herhangi bir şeye erişimi olmadığı anlamına gelir.
 
-[Ekle-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) ve [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) Windows Server 2012 R2'de ekleyin ve bir uzak Windows PowerShell Web Erişimi yetkilendirme kuralları test etmenize olanak tanıyan bir kimlik bilgisi parametresi içerir bilgisayar veya etkin bir Windows PowerShell Web erişimi oturumu içinde. Olarak bir kimlik bilgisi parametresi olan diğer Windows PowerShell cmdlet'leriyle, bir PSCredential nesnesi parametresinin değeri belirtebilirsiniz. Uzak bir bilgisayara geçirmek istediğiniz kimlik bilgilerini içeren bir PSCredential nesnesi oluşturmak için çalıştırılması [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) cmdlet'i.
+[Ekle-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) ve [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) Windows Server 2012 R2'de ekleyin ve bir uzak Windows PowerShell Web Erişimi yetkilendirme kuralları test etmenize olanak tanıyan bir kimlik bilgisi parametresi içerir bilgisayar veya etkin bir Windows PowerShell Web erişimi oturumu içinde. Olarak bir kimlik bilgisi parametresi olan diğer Windows PowerShell cmdlet'leriyle, bir PSCredential nesnesi parametresinin değeri belirtebilirsiniz. Uzak bir bilgisayara geçirmek istediğiniz kimlik bilgilerini içeren bir PSCredential nesnesi oluşturmak için çalıştırılması [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) cmdlet'i.
 
-Windows PowerShell Web erişimi kimlik doğrulama kuralları beyaz liste kurallarıdır. Her kural, belirli Windows PowerShellÂ kullanıcılar ve hedef bilgisayarlar arasında izin verilen bir bağlantının tanımıdır [oturum yapılandırmaları](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (uç noktaları olarak da adlandırılan veya _çalışma alanları_) üzerinde Belirtilen hedef bilgisayarlar.
+Windows PowerShell Web erişimi kimlik doğrulama kuralları beyaz liste kurallarıdır. Her kural, kullanıcılar ve hedef bilgisayarlar için belirli bir Windows PowerShell arasındaki izin verilen bir bağlantının tanımıdır [oturum yapılandırmaları](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) (uç noktaları olarak da adlandırılan veya _çalışma alanları_) üzerinde Belirtilen hedef bilgisayarlar.
 Açıklaması **çalışma alanları** bkz [başına kullanım, PowerShell çalışma alanları](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > [!IMPORTANT]
 > Bir kullanıcının, erişim elde etmek için yalnızca bir kuralın doğru olmasına ihtiyacı vardır. Bir kullanıcı bir bilgisayara tam dil erişimi veya web tabanlı konsoldan, yalnızca için Windows PowerShell uzak yönetim Cmdlet'lerine erişimi ile erişim verilirse, kullanıcı oturum (veya atlama) ilk hedef bilgisayara bağlı diğer bilgisayarlara. Windows PowerShell Web erişimi yapılandırmak için en güvenli yolu, kullanıcılara normalde uzaktan yapmak için ihtiyaç duydukları belirli görevleri gerçekleştirmelerine olanak tanıyan kısıtlı oturum yapılandırmalarına erişim imkanı sağlamaktır.
 
-Başvurulan cmdlet'leri [Windows PowerShell Web erişimi cmdlet'leri](cmdlets/web-access-cmdlets.md) erişim kuralları, bir kullanıcı Windows PowerShell Web erişim ağ geçidinde yetkilendirmek için kullanılan bir dizi oluşturulmasına izin verin. Kurallar, hedef bilgisayardaki erişim denetimi listelerinden (ACL) farklıdır ve web erişimi için ek bir güvenlik katmanı sağlar. Güvenlik hakkında daha fazla ayrıntı, aşağıdaki bölümde açıklanmıştır.
+Başvurulan cmdlet'leri [Windows PowerShell Web erişimi cmdlet'leri](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) erişim kuralları, bir kullanıcı Windows PowerShell Web erişim ağ geçidinde yetkilendirmek için kullanılan bir dizi oluşturulmasına izin verin. Kurallar, hedef bilgisayardaki erişim denetimi listelerinden (ACL) farklıdır ve web erişimi için ek bir güvenlik katmanı sağlar. Güvenlik hakkında daha fazla ayrıntı, aşağıdaki bölümde açıklanmıştır.
 
 Kullanıcılar herhangi bir önceki güvenlik katmanını geçemezse, Tarayıcı pencerelerinde bir genel erişim reddedildi' iletisi alırsınız. Güvenlik ayrıntıları, ağ geçidi sunucusunda günlüğe kaydedilmiş olsa da, son kullanıcılara, kaç adet güvenlik katmanı geçtikleri ya da oturum açma ya da kimlik doğrulama hatasının hangi katmanda gerçekleştiğine dair bilgi gösterilmez.
 
@@ -229,4 +229,4 @@ Ağ Geçidi sunucusu Windows Server 2012 R2 çalıştırıyorsa, sonraki bir zam
 
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 
-[Windows PowerShell Web erişim cmdlet'leri](cmdlets/web-access-cmdlets.md)
+[Windows PowerShell Web erişim cmdlet'leri](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)
