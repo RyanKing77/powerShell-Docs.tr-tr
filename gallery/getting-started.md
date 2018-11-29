@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: PowerShell Galerisi ile çalışmaya başlama
-ms.openlocfilehash: 85b0a754aba25d850dc918024419318554f92b33
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.openlocfilehash: c8beba3009e462ce52cdecd34fc0313d9234f289
+ms.sourcegitcommit: 1082b13115c5c5be4b76574ba55307b3e567983f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225684"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52576898"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>PowerShell Galerisi ile çalışmaya başlama
 
-PowerShell Galerisi'nden paketleri yüklemek için en uygun yolu cmdlet'ler kullanmaktır [PowerShellGet](/powershell/module/powershellget) modülü. PowerShell Galerisi'nden öğeleri indirmek oturum açmanız gerekmez.
+PowerShell Galerisi, betikleri ve modülleri indirin ve yararlanarak DSC kaynakları içeren bir paket depodur. Cmdlet'leri kullanmak [PowerShellGet](/powershell/module/powershellget) modülü PowerShell Galerisi'nden paketlerini yükleyin. PowerShell Galerisi'nden öğeleri indirmek oturum açmanız gerekmez.
 
 > [!NOTE]
 > Bir paket doğrudan PowerShell Galerisi'nden yüklemek mümkündür, ancak bu önerilen bir yaklaşım değildir.
@@ -20,9 +20,9 @@ PowerShell Galerisi'nden paketleri yüklemek için en uygun yolu cmdlet'ler kull
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>Paketler PowerShell Galerisi'ndeki keşfetme
 
-Kullanarak PowerShell Galerisi'nde paketleri bulabilirsiniz **arama** bu Web sitesinde veya modülleri ve betikleri sayfalarıyla atarak denetimi. Çalıştırarak PowerShell Galerisi'ndeki paketleri bulabilirsiniz [Modül Bul][] ve [Bulma komut dosyası][] cmdlet'leri ile öğe türüne bağlı olarak, `-Repository PSGallery`.
+Kullanarak PowerShell Galerisi'nde paketleri bulabilirsiniz **arama** PowerShell galeri denetiminde [giriş sayfası](https://www.powershellgallery.com), betikleri ve modülleri gözatarak veya gelen [paketleri sayfası ](https://www.powershellgallery.com/packages). Çalıştırarak PowerShell Galerisi'ndeki paketleri bulabilirsiniz [Find-Module][], [Find-DscResource], ve [Find-Script][] cmdlet'leri, paket türüne bağlı olarak ile `-Repository PSGallery`.
 
-Galeri sonuçlarını filtreleme, aşağıdaki parametreleri kullanarak gerçekleştirilebilir:
+Aşağıdaki parametreleri kullanarak Galeriden sonuçlarını filtreleyebilirsiniz:
 
 - Ad
 - AllVersions
@@ -35,7 +35,7 @@ Galeri sonuçlarını filtreleme, aşağıdaki parametreleri kullanarak gerçekl
 - Komut
 - Filtre
 
-Yalnızca galerideki belirli DSC kaynakları keşfetme içinde ilginizi çeken, çalıştırabileceğiniz [Bul-DscResource] cmdlet'i. Bul-DscResource galeride bulunan DSC kaynaklardaki verileri döndürür.
+Yalnızca galerideki belirli DSC kaynakları keşfetme içinde ilginizi çeken, çalıştırabileceğiniz [Find-DscResource] cmdlet'i. Bul-DscResource galeride bulunan DSC kaynaklardaki verileri döndürür.
 DSC kaynakları her zaman bir modülün bir parçası olarak teslim edildiğinden, çalıştırmanız yine [Install-Module][] bu DSC kaynakları yüklenecek.
 
 ## <a name="learning-about-packages-in-the-powershell-gallery"></a>PowerShell Galerisi paketleri hakkında daha fazla bilgi
@@ -44,7 +44,7 @@ DSC kaynakları her zaman bir modülün bir parçası olarak teslim edildiğinde
 
 Sizin de böyle bir paket iyi niyetle içinde yayımlanmamışsa keşfederseniz tıklayın **uygunsuz** sayfasında bu paketin.
 
-Çalıştırıyorsanız [Modül Bul][] veya [Bulma komut dosyası][], döndürülen PSGetModuleInfo nesnesinde bu verileri görüntüleyebilirsiniz. Örneğin, çalışan `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member`
+Çalıştırıyorsanız [Find-Module][] veya [Find-Script][], döndürülen PSGetModuleInfo nesnesinde bu verileri görüntüleyebilirsiniz. Örneğin, çalışan `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member`
 Galerideki PSReadLine modül verileri döndürür.
 
 ## <a name="downloading-packages-from-the-powershell-gallery"></a>PowerShell Galerisi'nden paketleri yükleniyor
@@ -62,28 +62,28 @@ Sizin de böyle bir paket iyi niyetle içinde yayımlanmamışsa keşfederseniz 
 
 ### <a name="install"></a>Yükle
 
-Galeri kullanmak için bir paket yüklemek için ya da çalıştırmak [Install-Module][] veya [Yükleme betiği][] cmdlet'i, paket türüne bağlı olarak.
+Galeri kullanmak için bir paket yüklemek için ya da çalıştırmak [Install-Module][] veya [Install-Script][] cmdlet'i, paket türüne bağlı olarak.
 
 [Install-Module][] modülünü yükler `$env:ProgramFiles\WindowsPowerShell\Modules` varsayılan olarak.
 Bu, bir yönetici hesabı gerektirir. Eklerseniz `-Scope CurrentUser` parametresi modülünün yüklü için `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
 
-[Yükleme betiği][] betiğe yükler `$env:ProgramFiles\WindowsPowerShell\Scripts` varsayılan olarak.
+[Install-Script][] betiğe yükler `$env:ProgramFiles\WindowsPowerShell\Scripts` varsayılan olarak.
 Bu, bir yönetici hesabı gerektirir. Eklerseniz `-Scope CurrentUser` parametresi, komut dosyası yüklü olduğu için `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
 
-Varsayılan olarak, [Install-Module][] ve [Yükleme betiği][] bir paketin en son sürümünü yükler.
+Varsayılan olarak, [Install-Module][] ve [Install-Script][] bir paketin en son sürümünü yükler.
 Paketin daha eski bir sürümünü yüklemek için ekleme `-RequiredVersion` parametresi.
 
 ### <a name="deploy"></a>Dağıt
 
-Azure Otomasyonu PowerShell Galerisi'ndeki bir pakete dağıtmak için **Azure Otomasyonu Dağıt** Paket Ayrıntıları sayfasında. Burada Azure hesabı kimlik bilgilerinizi kullanarak oturum açtığınızda Azure yönetim portalına yönlendirilirsiniz. Bağımlılıkları olan paketler dağıtılıyor tüm bağımlılıkları için Azure Otomasyonu dağıtacağınız olduğunu unutmayın. 'Azure otomasyonu için Dağıt' düğmesini ekleyerek devre dışı bırakılabilir **AzureAutomationNotSupported** paket meta verileriniz için etiket.
+Azure Otomasyonu PowerShell Galerisi'ndeki bir pakete dağıtmak için **Azure Otomasyonu**, ardından **Azure Otomasyonu Dağıt** Paket Ayrıntıları sayfasında. Burada Azure hesabı kimlik bilgilerinizi kullanarak oturum açtığınızda Azure yönetim portalına yönlendirilirsiniz. Bağımlılıkları olan paketler dağıtılıyor tüm bağımlılıkları için Azure Otomasyonu dağıttığı unutmayın. 'Azure otomasyonu için Dağıt' düğmesini ekleyerek devre dışı bırakılabilir **AzureAutomationNotSupported** paket meta verileriniz için etiket.
 
 Azure Otomasyonu hakkında daha fazla bilgi için bkz: [Azure Otomasyonu](/azure/automation) belgeleri.
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>PowerShell Galerisi'nden paketler güncelleştiriliyor
 
-PowerShell Galerisi'nden yüklü paketleri güncelleştirmek için Update-Module [] veya [güncelleştirme betiğini] [] cmdlet'ini çalıştırın. Update-Module [] herhangi ek bir parametre çalıştırdığınızda çalıştırarak yüklü her modülü güncelleştirme çalışır [Install-Module][]. Modüller seçmeli olarak güncelleştirmek için ekleme `-Name` parametresi.
+PowerShell Galerisi'nden yüklü paketleri güncelleştirmek için Update-Module [] veya [Update-Script] [] cmdlet'ini çalıştırın. Ek parametreler çalıştırdığınızda, güncelleştirme-Module [] çalıştırarak yüklü tüm modüllerin güncelleştirmek çalışır [Install-Module][]. Modüller seçmeli olarak güncelleştirmek için ekleme `-Name` parametresi. 
 
-Benzer şekilde, hiçbir ek parametre olmadan çalıştırdığınızda, [güncelleştirme betiğini] [] de her komut dosyası çalıştırarak yüklü güncelleştirme girişiminde [Yükleme betiği][]. Komut dosyaları seçmeli olarak güncelleştirmek için ekleme `-Name` parametresi.
+Benzer şekilde, hiçbir ek parametre olmadan çalıştırdığınızda, [Update-Script] [] ayrıca tüm betikleri çalıştırarak yüklü güncelleştirme girişiminde [Install-Script][]. Komut dosyaları seçmeli olarak güncelleştirmek için ekleme `-Name` parametresi.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>PowerShell Galerisi'nden yüklediğiniz listeyi paketleri
 
@@ -91,13 +91,13 @@ Hangi modülleri PowerShell Galerisi'nden yüklediğiniz öğrenmek için çalı
 
 Benzer şekilde, hangi betiklerin PowerShell Galerisi'nden yüklediğiniz öğrenmek için çalıştırma [Get-InstalledScript][] cmdlet'i. Bu komut tüm doğrudan PowerShell Galerisi'nden yüklenen, sisteminizde yüklü betikleriniz listeler.
 
-[Bul-DscResource]: /powershell/module/powershellget/Find-DscResource
-[Modül Bul]: /powershell/module/powershellget/Find-Module
-[Bulma komut dosyası]: /powershell/module/powershellget/Find-Script
+[Find-DscResource]: /powershell/module/powershellget/Find-DscResource
+[Find-Module]: /powershell/module/powershellget/Find-Module
+[Find-Script]: /powershell/module/powershellget/Find-Script
 [Get-InstalledModule]: /powershell/module/powershellget/Get-InstalledModule
 [Get-InstalledScript]: /powershell/module/powershellget/Get-InstalledScript
 [Install-Module]: /powershell/module/powershellget/Install-Module
-[Yükleme betiği]: /powershell/module/powershellget/Install-Script
+[Install-Script]: /powershell/module/powershellget/Install-Script
 [Publish-Module]: /powershell/module/powershellget/Publish-Module
 [Publish-Script]: /powershell/module/powershellget/Publish-Script
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
