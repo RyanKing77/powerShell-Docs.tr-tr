@@ -3,22 +3,23 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Galeri arama söz dizimi
-ms.openlocfilehash: 9aadb6771c85845cc3fa05cb56f0194b060d1c1b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004146"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742865"
 ---
 # <a name="gallery-search-syntax"></a>Galeri arama söz dizimi
 
-PowerShell Galerisi, burada sözcük ve tümcecikleri anahtar ifadeleri arama sonuçları daraltmak için kullanabileceğiniz bir metin searchbox sunar.
+PowerShell Galerisi kullanılarak arama [PowerShell galerinin web sitesi](https://www.powershellgallery.com/).
+Burada sözcük ve tümcecikleri anahtar ifadeleri arama sonuçları daraltmak için kullanabileceğiniz bir metin searchbox PowerShell Galerisi web sitesi sunar.
 
 ## <a name="search-by-keywords"></a>Anahtar sözcüklere göre ara
 
     dsc azure sql
 
-Arama tüm 3 anahtar sözcükleri içeren ilgili belgeleri bulmak için en iyi deneme yapın ve eşleşen belgeleri döndürür.
+Arama, tüm 3 anahtar sözcükleri içeren ilgili belgeleri bulun ve eşleşen belgelerin dönüş dener.
 
 ## <a name="search-using-phrases-and-keywords"></a>İfadeler ve anahtar sözcükleri kullanarak arama
 
@@ -37,10 +38,9 @@ Bir belirli bir paket kimliği (veya 'Id' veya 'id') arama yapabilirsiniz veya a
 
 ## <a name="examples"></a>Örnekler
 
-    ID:"PSReadline"
-    id:"AzureRM.Profile"
-
-"PSReadline" veya "AzureRM.Profile" olan paketleri kendi Kimliği alanında sırasıyla bulur.
+    ID:PSReadline
+    
+"PSReadline" içeren bir kimliği paketleri bulur.
 
     Id:"AzureRM.Profile"
 
@@ -50,40 +50,35 @@ Bir belirli bir paket kimliği (veya 'Id' veya 'id') arama yapabilirsiniz veya a
 
     Id:"azure"
 
-'AzureRM.Profile' ve 'Azure.Storage' benzer bir sonuç elde edersiniz.
+Bu AzureRM.Profile içeren sonuçları sağlar ' ve 'Azure.Storage'.
 
-Tek bir alanda birden çok anahtar sözcük için arama da yapabilirsiniz. Veya karıştırıp eşleştirebilirsiniz alanları.
+Tek bir alanda birden çok anahtar sözcük için arama da yapabilirsiniz. 
 
     id:azure tags:intellisense
-    id:azure id:storage
 
-Ve tümcecik aramaları gerçekleştirebilirsiniz:
+Ve tümcecik aramaları çift tırnak işareti kullanarak gerçekleştirebilirsiniz:
 
     id:"azure.storage"
 
-
 DSC etikete sahip tüm paketleri aramak için kullanılır.
 
-    Tags:"DSC"
+    Tags:DSC
 
 Belirtilen işlev olan tüm paketleri aramak için kullanılır.
 
-    Functions:"Update-AzureRM"
+    Functions:Get-TreeSize
 
 Belirtilen cmdlet'i ile tüm paketleri aramak için kullanılır.
 
-    Cmdlets:"Get-AzureRmEnvironment"
+    Cmdlets:Get-AzureRmEnvironment
 
 Belirtilen DSC kaynak adına sahip tüm paketleri aramak için kullanılır.
 
-    DscResources:"xArchive"
+    DscResources:xArchive
 
 Belirtilen PowerShellVersion olan tüm paketleri aramak için
 
-    PowerShellVersion:"5.0"
-    PowerShellVersion:"3.0"
-    PowerShellVersion:"2.0"
-
+    PowerShellVersion:2.0
 
 Son olarak, bir alan, 'komutları gibi' desteklemiyoruz kullanırsanız, biz yalnızca yoksayabilir ve tüm alanları arayın. Bu nedenle sorguyu aşağıdaki
 

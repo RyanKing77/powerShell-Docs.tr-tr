@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: Galeri, powershell, psgallery
 title: Elle Paket İndirme
-ms.openlocfilehash: 0952aa4ec474850af5219fb2e0e9ee3e954b0f9a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004145"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742831"
 ---
 # <a name="manual-package-download"></a>Elle Paket İndirme
 
-Powershell Galerisi PowerShellGet cmdlet'leri kullanmadan, doğrudan Web sitesinden bir paket indiriliyor destekler. Paket, daha sonra kolayca iç bir depoya kopyalanabilir bir NuGet paketi (.nupkg) dosyası olarak indirilir.
+Powershell Galerisi PowerShellGet cmdlet'leri kullanmadan, doğrudan Web sitesinden bir paket indiriliyor destekler. Herhangi bir paket, ardından bir iç deposuna kopyalayabilirsiniz NuGet paketini (.nupkg) dosyası olarak indirebilirsiniz.
 
 > [!NOTE]
 > El ile paket **değil** Install-Module cmdlet'i bir ardılı olarak yöneliktir.
@@ -45,7 +45,7 @@ En kolay yaklaşım, NuGet özgü öğeleri klasöründen kaldırmaktır. Bu pak
 1. Yerel bir klasöre NuGet paketinin içeriğini ayıklayın.
 2. NuGet özgü öğeleri klasöründen silin.
 3. Klasörünü yeniden adlandırın. Varsayılan klasör adı genellikle olan `<name>.<version>`. Sürüm içerebilir "-yayın öncesi" modül yayım öncesi bir sürümü etiketlenmiş olması durumunda. Klasörü yeniden adlandırmak için yalnızca modül adı. Örneğin, "azurerm.storage.5.0.4-preview", "azurerm.storage" haline gelir.
-4. Klasör için PSModulePath kopyalayın.
+4. Klasörlerinde birine klasörünü kopyalayın `$env:PSModulePath value`. `$env:PSModulePath` PowerShell modülleri için görünmelidir yollarının noktalı virgülle ayrılmış kümesidir.
 
 > [!IMPORTANT]
 > El ile yükleme modülü tarafından gerekli herhangi bir bağımlılığın içermez. Paket bağımlılıkları varsa, sistemde düzgün çalışması için bu modülü yüklenmelidir. PowerShell Galerisi, paket için gerekli tüm bağımlılıkları gösterir.
