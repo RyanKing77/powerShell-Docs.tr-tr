@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Kaynak yazma denetim listesi
-ms.openlocfilehash: 91942a174bc6f38fa77c1925dc3c690ecf2ab34b
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 2b6e972776dba4ecc6fd1ab5c21361d653e1a469
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893564"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742848"
 ---
 # <a name="resource-authoring-checklist"></a>Kaynak yazma denetim listesi
 
@@ -85,7 +85,7 @@ If ($error.count –ne 0) {
 
 ## <a name="resource-is-idempotent-in-the-positive-case"></a>Kaynak etkilidir pozitif durumda
 
-DSC kaynakları temel özelliklerini Eşkuvvetlilik olması biridir. Bu, birden çok kez bu kaynağı içeren bir DSC yapılandırması uygulama her zaman aynı sonucu elde edecek, anlamına gelir. Örneğin aşağıdaki dosya kaynağı içeren bir yapılandırma oluşturacağız:
+DSC kaynakları temel özelliklerini Eşkuvvetlilik biridir. Bu, birden çok kez bu kaynağı içeren bir DSC yapılandırması uygulama her zaman aynı sonucu elde edecek, anlamına gelir. Örneğin aşağıdaki dosya kaynağı içeren bir yapılandırma oluşturacağız:
 
 ```powershell
 File file {
