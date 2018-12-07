@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell 5.0 yenilikler
-ms.openlocfilehash: 78304b0eac6e58e43bffc3abb7059a1e4b02de23
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
+ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320729"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52978904"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 yenilikler
 Windows PowerShell 5.0 kullanımını genişleten, kullanılabilirliğini iyileştiren ve şekilde denetlemenizi ve Windows tabanlı ortamları daha kolay ve kapsamlı bir şekilde yönetmenizi, önemli yeni özellikler içerir.
@@ -410,7 +410,7 @@ Windows PowerShell 3.0 yazarları başlayarak C# cmdlet'leri doldurma **HelpUri*
 
 De içerebilir bir **HelpUri** değeri bir XML temelli cmdlet Yardım dosyasının ilk ilgili bağlantı veya. Bir işlev açıklama tabanlı Yardım bağlantısı yönergesi.
 
-Çevrimiçi Yardımı destekleme hakkında daha fazla bilgi için bkz. [çevrimiçi Yardımı destekleme](https://go.microsoft.com/fwlink/?LinkId=242132) MSDN'de.
+Çevrimiçi Yardımı destekleme hakkında daha fazla bilgi için bkz. [çevrimiçi Yardımı destekleme](/powershell/developer/module/supporting-online-help) Microsoft Docs içinde.
 
 ### <a name="cim-integration"></a>CIM tümleştirme
 
