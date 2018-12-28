@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 description: Yayımcılar için yönergeler
 title: PowerShell Galerisi kılavuzları ve en iyi uygulamaları yayımlama
-ms.openlocfilehash: 7e9eca8d3372ddf0b94ab42e125991b857456551
-ms.sourcegitcommit: aa1129cc2b0ae6e18918b2b0ea70c74915ed019b
+ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235414"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655404"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery kılavuzları ve en iyi uygulamaları yayımlama
 
@@ -33,6 +33,7 @@ Aşağıdaki yönergeleri izleyin paketlerin yüklenmesini ve başkaları taraf�
 - Geri bildirime yanıt
 - Betikler yerine modülleri belirtin
 - Proje sitesi bağlantılar sağlar
+- Paketiniz uyumlu PSEdition(s) ve platformlarla etiketi 
 - Sınamalar, modülleri
 - Dahil ve/veya lisans koşullarını bağlantı
 - Kod imzalama
@@ -92,8 +93,8 @@ Paketi, geliştirmeye yardımcı olmak denemek için yeterince ilgilenen oldukla
 
 PowerShell galerisinde kullanılabilir geri bildirim iki yöntem vardır:
 
-- Kişi sahibi: Bu paket sahip için bir e-posta göndermek bir kullanıcı sağlar. Bir paket sahibi olarak, PowerShell Galerisi paketlerle kullanılan e-posta adresi izleyebilir ve oluşan sorunlara yanıt önemlidir. Bu yöntem bir dezavantajı sahip birden çok kez aynı soruyu yanıtlamak zorunda yalnızca kullanıcı ve sahibi şimdiye kadar iletişim görecek olmasıdır.
-- Açıklama: Paket sayfanın alt kısmında bir yorum alandır.
+- Sahibiyle iletişime geçin: Bu, bir kullanıcı için paket sahip bir e-posta göndermek sağlar. Bir paket sahibi olarak, PowerShell Galerisi paketlerle kullanılan e-posta adresi izleyebilir ve oluşan sorunlara yanıt önemlidir. Bu yöntem bir dezavantajı sahip birden çok kez aynı soruyu yanıtlamak zorunda yalnızca kullanıcı ve sahibi şimdiye kadar iletişim görecek olmasıdır.
+- Açıklama: Paket alt kısmında bir yorum alanı sayfasıdır.
   Bu sisteme avantajı diğer kullanıcıların açıklamalar ve yanıtları herhangi tek soru yanıtlanması gereken sayısını azaltan görebilmenizdir.
   Paket sahibi olarak, her paket için açıklamalar izleyin önemle tavsiye edilir.
 Bkz: [sosyal medya veya yorumlar aracılığıyla geri bildirim sağlayarak](../how-to/working-with-packages/social-media-feedback.md) bunu nasıl yapacağınız hakkında ayrıntılı bilgi için.
@@ -134,6 +135,16 @@ Bir bağlantının eklenmesi ProjectURI gibi bildirim PSData bölümünü ekleye
         ProjectUri = 'https://github.com/powershell/powershell'
 
 Bir ProjectURI sağlandığında, PowerShell Galerisi paket sayfanın sol tarafındaki proje siteye bir bağlantı bulunur.
+
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Paketiniz uyumlu PSEdition(s) ve platformlarla etiketi 
+
+Paketleri kendi ortamı ile iyi çalışacak kullanıcılara göstermek için aşağıdaki etiketlerin kullanın:
+
+- PSEdition_Desktop: Windows PowerShell ile uyumlu olan paketler 
+- PSEdition_Core: Powershell Core ile uyumlu olan paketler 
+- Windows: Windows işletim sistemiyle uyumlu olan paketler
+- Linux: Linux işletim sistemleri ile uyumlu olan paketler 
+- MacOS: Mac işletim sistemiyle uyumlu olan paketler
 
 ## <a name="include-tests"></a>Sınamalar
 

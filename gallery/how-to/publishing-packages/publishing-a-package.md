@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Oluşturma ve bir öğe yayımlama
-ms.openlocfilehash: ced892b558b81c3ef9575b5a01e74932515b412a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 3875c7ae8231f254e655f149c788503cb0b3077c
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004151"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655438"
 ---
 # <a name="creating-and-publishing-an-item"></a>Oluşturma ve bir öğe yayımlama
 
@@ -56,10 +56,11 @@ PrivateData, PowerShell Galerisi'nde belirli öğeleri PSData böylece yeni anah
 Öğe PowerShell galerisinde yayımlamak için doldurmak en önemli olan bildirim öğeler şunlardır:
 
 - Komut veya modül adı - bu adlarından çizilir. Bir komut dosyası PS1 veya. Bir modül için PSD1.
-- Sürüm - bu gerekli bir birincil anahtar, biçimi (en iyi yöntemler için ayrıntılara bakın) SemVer yönergeleri izlemelidir
-- Yazar - bu gerekli bir birincil anahtar ve öğeyle ilişkilendirilecek adı içeriyor (aşağıda yazarlar ve sahipleri, bakın)
+- Sürüm - bu gerekli bir birincil anahtar, biçim SemVer yönergeleri izlemelidir. Ayrıntılar için bkz.
+- Yazar - bu gerekli bir birincil anahtar ve öğeyle ilişkilendirilecek adı içerir. Yazarlar ve sahipleri aşağıya bakın.
 - Açıklama - budur bu öğeyi yapar ve kullanım gereksinimlerini kısaca açıklamak için gereken birincil bir anahtar kullanılan
 - ProjectURI - bu önerilir URI, Github deposuna bağlantı sağlayan PSData veya benzer konumunda geliştirmenizi öğesi üzerinde yaptığınız bir alandır
+- Etiketler - paketinizi pseditions'ı ve Platform uyumluluğunu göre etiket güçlü önerilir. Bkz: [yayımlama kılavuzları](/powershell/gallery/concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms) Ayrıntılar için.
 
 Yazarlar ve PowerShell sahipleri galeri öğeleri, ilgili kavramlardır, ancak her zaman eşleşmiyor.
 Öğe sahipleriyle öğesi korumak için izne sahip bir PowerShell Galerisi hesaplarıyla kullanıcılardır. Herhangi bir öğeyi güncelleştirebilirsiniz fazla sahip olabilir.
@@ -104,7 +105,7 @@ Böylece bunları komutta belirtmeniz gerekmez komut satırında diğer seçenek
 Hataları önlemek için - Whatif kullanarak komutları deneyin önerilir-Verbose, yayımlamadan önce.
 PowerShell galerisinde yayımlamak her zaman bu yana önemli ölçüde zaman kazandırır, öğe bildirimi bölümündeki sürüm numarasını güncelleştirmeniz gerekir.
 
-Örnekler olacaktır: ' Publish-Module-yolu ". \MyModule" - RequiredVersion "0.0.1'e" - NugetAPIKey "GUID" - Whatif-Verbose' ' Publish-Script-yolu ".\MyScriptFile.PS1" - NugetAPIKey "GUID" - Whatif-ayrıntılı '
+Örnek şöyle olacaktır: ' Yayımlama-Module-yolu ". \MyModule" - RequiredVersion "0.0.1'e" - NugetAPIKey "GUID" - Whatif-Verbose' ' yayımlama betik-yolu ".\MyScriptFile.PS1" - NugetAPIKey "GUID" - Whatif-ayrıntılı '
 
 Çıkış dikkatle gözden geçirin ve bir hata veya uyarı görürseniz, - Whatif olmadan komutu yineleyin.
 

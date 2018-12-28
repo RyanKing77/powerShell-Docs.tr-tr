@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA oturum yapılandırmaları
-ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522971"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655472"
 ---
 # <a name="jea-session-configurations"></a>JEA oturum yapılandırmaları
 
-> İçin geçerlidir: Windows PowerShell 5.0
+> Şunun için geçerlidir: Windows PowerShell 5.0
 
 Bir JEA uç noktası oluşturarak ve belirli bir şekilde bir PowerShell oturumu yapılandırma dosyası kaydedilirken bir sistemde kayıtlı.
 Oturum yapılandırmaları belirlemek *kimin* JEA uç noktası kullanabilir ve hangi rolleri erişimleri.
@@ -80,6 +80,8 @@ Belirtilen bir veya daha fazla güvenlik grubu, sanal hesap yerel veya etki alan
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+> [!NOTE]
+> Sanal hesaplar, yerel sunucu güvenlik ilkesini içinde bir hizmet olarak oturum açma geçici olarak verilir.  Belirtilen VirtualAccountGroups birini zaten ilkesinde bu hak verilmemişse, tek tek sanal hesap artık eklendi ve ilkeden kaldırılır.  Bu, burada etki alanı denetleyicisi güvenlik ilkesi uyarlamaları yakından denetlendiği etki alanı denetleyicileri gibi senaryolarda yararlı olabilir.  Bu seçenek yalnızca Kasım 2018'den Windows Server 2016 veya sonraki toplama ve Windows Server 2019 Ocak 2019 ile'veya sonraki toplama kullanılabilir.
 
 #### <a name="group-managed-service-account"></a>Grup Yönetilen Hizmet Hesabı
 
