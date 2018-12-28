@@ -1,0 +1,31 @@
+---
+ms.date: 06/05/2017
+keywords: PowerShell cmdlet'i
+title: Windows PowerShell ISE’de Konsol Bölmesini Kullanma
+ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
+ms.openlocfilehash: 5bbbdd3b1f0324ff1a4f2298459f58640c4dc9a6
+ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53405914"
+---
+# <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a><span data-ttu-id="80aa1-103">Windows PowerShell ISE’de Konsol Bölmesini Kullanma</span><span class="sxs-lookup"><span data-stu-id="80aa1-103">How to Use the Console Pane in the Windows PowerShell ISE</span></span>
+
+<span data-ttu-id="80aa1-104">Konsol bölmesinde, Windows PowerShell Tümleşik komut dosyası ortamı (ISE) tam olarak tek başına Windows PowerShell ISE'de konsol penceresi gibi çalışır.</span><span class="sxs-lookup"><span data-stu-id="80aa1-104">The Console pane in the Windows PowerShell Integrated Scripting Environment (ISE) operates exactly like the stand-alone Windows PowerShell ISE console window.</span></span>
+
+<span data-ttu-id="80aa1-105">Konsol bölmesinde bir komutu çalıştırmak için bir komut yazın ve ENTER tuşuna basın.</span><span class="sxs-lookup"><span data-stu-id="80aa1-105">To run a command in the Console Pane, type a command, and then press ENTER.</span></span> <span data-ttu-id="80aa1-106">Sırayla yürütmek istediğiniz birden fazla komut girmek için SHIFT + ENTER'ı arasında komutları yazın.</span><span class="sxs-lookup"><span data-stu-id="80aa1-106">To enter multiple commands that you want to execute in sequence, type SHIFT+ENTER between commands.</span></span> <span data-ttu-id="80aa1-107">Bkz: [betik bölmesi ve konsol bölmesinde sekme tamamlamayı kullanma nasıl](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) komutları yazarak Yardım için.</span><span class="sxs-lookup"><span data-stu-id="80aa1-107">See [How to Use Tab Completion in the Script Pane and Console Pane](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) for help in typing commands.</span></span>
+
+<span data-ttu-id="80aa1-108">Araç çubuğunda bir komut durdurmak için tıklatın **durdurma işlemi**, ya da CTRL + BREAK tuşlarına basın.</span><span class="sxs-lookup"><span data-stu-id="80aa1-108">To stop a command, on the toolbar, click **Stop Operation**, or press CTRL+BREAK.</span></span> <span data-ttu-id="80aa1-109">Bağlam belirsiz ise bir komut durdurmak için CTRL + C de kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="80aa1-109">You can also use CTRL+C to stop a command if the context is unambiguous.</span></span> <span data-ttu-id="80aa1-110">Örneğin, bazı metinleri geçerli bölmesinde seçilmişse, CTRL + C kopyalama işlemine eşler.</span><span class="sxs-lookup"><span data-stu-id="80aa1-110">For example, if some text has been selected in the current Pane, then CTRL+C maps to the copy operation.</span></span>
+
+<span data-ttu-id="80aa1-111">Windows PowerShell v3 sürümünde başlayarak, çıkış bölmesine konsolunda bölmesinin birleştirilmiş.</span><span class="sxs-lookup"><span data-stu-id="80aa1-111">Beginning in Windows PowerShell v3, the Output pane was combined with the Console pane.</span></span> <span data-ttu-id="80aa1-112">Bu, tek başına bir Windows PowerShell konsolu gibi davrandığından avantajına sahiptir ve bunlar ayrı yalnızca gerekli olan yordamları farklılıkları ortadan kaldırır.</span><span class="sxs-lookup"><span data-stu-id="80aa1-112">This has the benefit of behaving like the stand-alone Windows PowerShell console and eliminates the differences in procedures that were needed when they were separate.</span></span> <span data-ttu-id="80aa1-113">Şunları yapabilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="80aa1-113">You can:</span></span>
+
+- <span data-ttu-id="80aa1-114">Seçin ve metin ve konsol bölmesinde yapıştırma başka bir pencerede panonuza kopyalayın.</span><span class="sxs-lookup"><span data-stu-id="80aa1-114">Select and copy text from the Console pane to the Clipboard for pasting in any other window.</span></span> <span data-ttu-id="80aa1-115">Metni seçmek için tıklayın ve fare yakalamak istediğiniz metnin üzerine sürüklerken fareyi çıkış Bölmesi'nde tutun.</span><span class="sxs-lookup"><span data-stu-id="80aa1-115">To select text, click and hold the mouse in the output pane while dragging the mouse over the text you want to capture.</span></span> <span data-ttu-id="80aa1-116">Tutarken imleç ok tuşlarını kullanabilirsiniz **SHIFT** metni seçmek için.</span><span class="sxs-lookup"><span data-stu-id="80aa1-116">You can also use the cursor arrow keys while holding **SHIFT** to select text.</span></span> <span data-ttu-id="80aa1-117">Ardından CTRL + C tuşlarına basın veya **kopyalama** araç çubuğunda simge.</span><span class="sxs-lookup"><span data-stu-id="80aa1-117">Then press CTRL+C or click the **Copy** icon in the toolbar.</span></span>
+
+- <span data-ttu-id="80aa1-118">Geçerli bir imleç konumundaki seçilen metni yapıştırın.</span><span class="sxs-lookup"><span data-stu-id="80aa1-118">Paste the selected text at a current cursor position.</span></span> <span data-ttu-id="80aa1-119">Tıklayın **Yapıştır** araç çubuğundaki simgeye.</span><span class="sxs-lookup"><span data-stu-id="80aa1-119">Click the **Paste** icon on the toolbar.</span></span>
+
+- <span data-ttu-id="80aa1-120">Konsol bölmesinde tüm metni silin.</span><span class="sxs-lookup"><span data-stu-id="80aa1-120">Clear all the text in the Console pane.</span></span> <span data-ttu-id="80aa1-121">Konsol bölmesinde temizlemek için tıklayabilirsiniz **Temizle konsolunda bölmesinin** simgesi araç çubuğu veya şu komutu çalıştırın **Clear-Host** veya diğer adıyla **cls**.</span><span class="sxs-lookup"><span data-stu-id="80aa1-121">To clear the Console pane, you can click the **Clear Console Pane** icon on the toolbar, or run the command **Clear-Host** or its alias, **cls**.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="80aa1-122">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="80aa1-122">See Also</span></span>
+
+- [<span data-ttu-id="80aa1-123">Windows PowerShell ISE Tanıtımı</span><span class="sxs-lookup"><span data-stu-id="80aa1-123">Introducing the Windows PowerShell ISE</span></span>](Introducing-the-Windows-PowerShell-ISE.md)
