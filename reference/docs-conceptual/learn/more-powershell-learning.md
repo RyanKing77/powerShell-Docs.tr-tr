@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: PowerShell hakkında daha fazla şey
-ms.openlocfilehash: da9dfeca3d2d2cfadf6ace0aa98007d16a548aae
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5e81801df99a55a358d1d1405bdc79f882aae92f
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405864"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012560"
 ---
 # <a name="more-powershell-learning"></a>PowerShell hakkında daha fazla şey
 
@@ -29,23 +29,9 @@ Komut satırında kullanılabilir Yardım ek olarak, daha fazla bilgi için Wind
 - [PowerShell 3.0 ile Başlarken hızlı başlangıç](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
 - [Gelişmiş araçları ve PowerShell 3.0 Hızlı Başlangıç ile betik oluşturma](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8277)
 
-### <a name="script-center-learn"></a>Betik merkezi bilgi edinin
+### <a name="channel-9-videos"></a>Channel 9 videoları
 
-#### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Meşgul bir yönetici seri için Windows PowerShell temelleri
-
-- [PowerShell 'SmowerShell' — Windows PowerShell bölüm 1 öğrenmelisiniz neden](https://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [İşlem hattı üzerinden heard — nasıl bileşik için Windows PowerShell komutları için eğlenceli ve kar 2. Bölüm](https://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Tek sağlayıcısı? Zor değildir — Windows PowerShell sağlayıcıları bölüm 3 bakma](https://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [Ana olay — Windows PowerShell 4. olay günlüklerini bölüm yok](https://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Birden fazla uzaktan olası — Uzak Masaüstü bölüm 5 yönetmek için Windows PowerShell kullanma](https://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
-
-#### <a name="learn-it-now-before-its-an-emergency"></a>Acil önce hemen öğrenin
-
-- [Windows PowerShell: Acil - 1. Bölüm önce hemen öğrenin](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
-- [Windows PowerShell: Acil - bölüm 2 önce hemen öğrenin](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
-- [Windows PowerShell: Acil - bölüm 3 önce hemen öğrenin](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
-- [Windows PowerShell: Acil - 4. Bölüm önce hemen öğrenin](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
-- [Windows PowerShell: Acil - 5. Bölüm önce hemen öğrenin](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
+Kanal 9 video bizim yayımlama platformudur. PowerShell ile ilgili videolar yüzlerce kullanılabilir. ["PowerShell" için arama](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) videoları kullanılabildiğini görmek için.
 
 ## <a name="resources-for-windows-powershell-developers"></a>Windows PowerShell geliştiriciler için kaynaklar
 
