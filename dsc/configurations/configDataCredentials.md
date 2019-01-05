@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Yapılandırma verilerinde kimlik bilgisi seçeneklerinden
-ms.openlocfilehash: c4057457bf6beb2c5fc9dffef9122cd488ccdcd7
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 10cf3456fcc7104b7dd779db30aebace54ba087a
+ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012441"
+ms.locfileid: "54046650"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Yapılandırma verilerinde kimlik bilgisi seçeneklerinden
 >Şunun için geçerlidir: Windows PowerShell 5.0
@@ -115,7 +115,8 @@ configuration unencryptedPasswordDemo
     }
 }
 
-# We declared the ConfigurationData in a local variable, but we need to pass it in to our configuration function
+# We declared the ConfigurationData in a local variable, but we need to pass it
+# in to our configuration function
 # We need to invoke the configuration function we created to generate a MOF
 unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 
@@ -127,7 +128,7 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-"TestMachine1" yapılandırması tarafından oluşturulan ".mof" dosyasından bir alıntı budur. `System.Security.SecureString` Kullanılan yapılandırma düz metne dönüştürülür ve ".mof" dosyası olarak depolanan bir `MSF_Credential`. A `SecureString` geçerli bir kullanıcı profili ile şifrelenir. Bu da PowerShell uzaktan yönetiminin tüm formları ile çalışır. Bir ".mof" dosyası, bir tek başına yapılandırma mekanizması olacak şekilde tasarlanmıştır. PowerShell 5. 0'den itibaren bekleyen, ancak geçiş düğüme bir düğüm üzerindeki ".mof" dosyalar şifrelenir. Bu, bir düğüme uyguladığınızda ".mof" dosyasında parolaları düz metin ifşa anlamına gelir. Kullanmak istediğiniz kimlik bilgilerini şifrelemek için bir **çekme sunucusu**. Daha fazla bilgi için [sertifikalar ile güvenli hale getirme MOF dosyaları](./pull-server/secureMOF.md).
+"TestMachine1" yapılandırması tarafından oluşturulan ".mof" dosyasından bir alıntı budur. `System.Security.SecureString` Kullanılan yapılandırma düz metne dönüştürülür ve ".mof" dosyası olarak depolanan bir `MSF_Credential`. A `SecureString` geçerli bir kullanıcı profili ile şifrelenir. Bu da PowerShell uzaktan yönetiminin tüm formları ile çalışır. Bir ".mof" dosyası, bir tek başına yapılandırma mekanizması olacak şekilde tasarlanmıştır. PowerShell 5. 0'den itibaren bekleyen, ancak geçiş düğüme bir düğüm üzerindeki ".mof" dosyalar şifrelenir. Bu, bir düğüme uyguladığınızda ".mof" dosyasında parolaları düz metin ifşa anlamına gelir. Kullanmak istediğiniz kimlik bilgilerini şifrelemek için bir **çekme sunucusu**. Daha fazla bilgi için [sertifikalar ile güvenli hale getirme MOF dosyaları](../pull-server/secureMOF.md).
 
 ```syntax
 instance of MSFT_Credential as $MSFT_Credential1ref

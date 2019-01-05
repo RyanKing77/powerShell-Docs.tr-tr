@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC kaynakları
-ms.openlocfilehash: 02e1b9856942cf28e77d83dac89681a08cf6bb74
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
+ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012458"
+ms.locfileid: "54046700"
 ---
 # <a name="dsc-resources"></a>DSC kaynakları
 
@@ -104,3 +104,53 @@ Configuration TestConfig
 > PowerShell 5. 0'den itibaren IntelliSense için DSC eklendi. Bu yeni özellik kullanmanıza olanak sağlar. \<sekmesini\> ve \<Ctrl + boşluk\> anahtar adları otomatik olarak tamamlamak için.
 
 ![Kaynak sekme tamamlama](../media/resource-tabcompletion.png)
+
+## <a name="built-in-resources"></a>Yerleşik kaynaklar
+
+Topluluk kaynakları yanı sıra Windows, Linux için kaynaklar ve çapraz düğüm bağımlılığı kaynakları için yerleşik kaynaklar vardır. Sözdizimi, bu kaynakları ve bunların nasıl kullanılacağını belirlemek için yukarıdaki adımları kullanabilirsiniz. Bu kaynaklar hizmet sayfaları altında arşivlenmiştir **başvuru**.
+
+Windows yerleşik kaynaklar
+
+* [Archive Kaynağı](../reference/resources/windows/archiveResource.md)
+* [Environment Kaynağı](../reference/resources/windows/environmentResource.md)
+* [File Kaynağı](../reference/resources/windows/fileResource.md)
+* [Group Kaynağı](../reference/resources/windows/groupResource.md)
+* [GroupSet Kaynağı](../reference/resources/windows/groupSetResource.md)
+* [Log Kaynağı](../reference/resources/windows/logResource.md)
+* [Package Kaynağı](../reference/resources/windows/packageResource.md)
+* [ProcessSet Kaynağı](../reference/resources/windows/ProcessSetResource.md)
+* [Registry Kaynağı](../reference/resources/windows/registryResource.md)
+* [Script Kaynağı](../reference/resources/windows/scriptResource.md)
+* [Service Kaynağı](../reference/resources/windows/serviceResource.md)
+* [ServiceSet Kaynağı](../reference/resources/windows/serviceSetResource.md)
+* [User Kaynağı](../reference/resources/windows/userResource.md)
+* [WindowsFeature Kaynağı](../reference/resources/windows/windowsFeatureResource.md)
+* [WindowsFeatureSet Kaynağı](../reference/resources/windows/windowsFeatureSetResource.md)
+* [WindowsOptionalFeature Kaynağı](../reference/resources/windows/windowsOptionalFeatureResource.md)
+* [WindowsOptionalFeatureSet Kaynağı](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
+* [WindowsPackageCabResource kaynak](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsProcess Kaynağı](../reference/resources/windows/windowsProcessResource.md)
+
+[Çapraz düğüm bağımlılık](../configurations/crossNodeDependencies.md) kaynakları
+
+* [WaitForAll kaynak](../reference/resources/windows/waitForAllResource.md)
+* [WaitForSome kaynak](../reference/resources/windows/waitForSomeResource.md)
+* [WaitForAny kaynak](../reference/resources/windows/waitForAnyResource.md)
+
+Paket Yönetimi kaynakları
+
+* [PackageManagement kaynak](../reference/resources/packagemanagement/PackageManagementDscResource.md)
+* [PackageManagementSource kaynak](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+
+Linux kaynakları
+
+* [Linux Archive kaynağı](../reference/resources/linux/lnxArchiveResource.md)
+* [Linux Environment kaynağı](../reference/resources/linux/lnxEnvironmentResource.md)
+* [Linux FileLine kaynak](../reference/resources/linux/lnxFileLineResource.md)
+* [Linux dosya kaynağı](../reference/resources/linux/lnxFileResource.md)
+* [Linux Group kaynağı](../reference/resources/linux/lnxGroupResource.md)
+* [Linux paket kaynağı](../reference/resources/linux/lnxPackageResource.md)
+* [Linux Script kaynağı](../reference/resources/linux/lnxScriptResource.md)
+* [Linux Service kaynağı](../reference/resources/linux/lnxServiceResource.md)
+* [Linux SshAuthorizedKeys kaynak](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
+* [Linux kullanıcı kaynağı](../reference/resources/linux/lnxUserResource.md)
