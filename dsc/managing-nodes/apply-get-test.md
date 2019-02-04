@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: ', Get, uygulamak ve Test yapılandırmaları bir düğümde'
+title: Düğümlerde Test Yapılandırmaları Uygulama, Edinme ve Sınama
 ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405869"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684342"
 ---
-# <a name="apply-get-and-test-configurations-on-a-node"></a>, Get, uygulamak ve Test yapılandırmaları bir düğümde
+# <a name="apply-get-and-test-configurations-on-a-node"></a>Düğümlerde Test Yapılandırmaları Uygulama, Edinme ve Sınama
 
 Bu kılavuz, bir hedef düğüm yapılandırmaları ile çalışmaya nasıl gösterir. Bu kılavuz, aşağıdaki adımlar ayrılır:
 
@@ -219,6 +219,6 @@ PowerShell 5. 0'den itibaren [Yayımla-DSCConfiguration](/powershell/module/PSDe
 Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
 ```
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [, Test, alma ve ayarlama](../resources/get-test-set.md)

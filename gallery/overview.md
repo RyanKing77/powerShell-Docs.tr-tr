@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery, psget
 title: PowerShell Galerisi
 ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225627"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685462"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell Galerisi
 

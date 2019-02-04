@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Hizmet kaynağı
 ms.openlocfilehash: 09571bd0eaa428e7d0bb7a533d6ad1c0c936e2cf
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048632"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688304"
 ---
 # <a name="dsc-service-resource"></a>DSC Hizmet kaynağı
 
@@ -38,7 +38,7 @@ Service [string] #ResourceName
 
 |  Özellik  |  Açıklama   |
 |---|---|
-| Ad| Hizmet adını belirtir. Bazen bu görünen addan farklı olduğunu unutmayın. Hizmetler ve Get-Service cmdlet'i ile bunların geçerli durumunu listesini alabilirsiniz.|
+| Adı| Hizmet adını belirtir. Bazen bu görünen addan farklı olduğunu unutmayın. Hizmetler ve Get-Service cmdlet'i ile bunların geçerli durumunu listesini alabilirsiniz.|
 | BuiltInAccount| Hizmet için kullanılacak oturum açma hesabı gösterir. Bu özellik için izin verilen değerler şunlardır: **Yerelhizmet**, **LocalSystem**, ve **NetworkService**.|
 | Kimlik bilgisi| Hizmet, altında çalışacağı hesabın kimlik bilgilerini belirtir. Bu özellik ve __BuiltinAccount__ özelliği birlikte kullanılamaz.|
 | DependsOn| Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise __ResourceName__ ve kendi türünün __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|

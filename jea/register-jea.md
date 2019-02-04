@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA yapılandırmaları kaydediliyor
 ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002915"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689067"
 ---
 # <a name="registering-jea-configurations"></a>JEA yapılandırmaları kaydediliyor
 
-> İçin geçerlidir: Windows PowerShell 5.0
+> Şunun için geçerlidir: Windows PowerShell 5.0
 
 Sonra [rol işlevleri](role-capabilities.md) ve [oturum yapılandırma dosyası](session-configurations.md) , son adım JEA kullanabilmeniz için önce JEA uç noktasını kaydetmek için oluşturulmuştur.
 Sistemiyle JEA uç noktası kaydediliyor uç nokta kullanıcılar ve Otomasyon motoru tarafından kullanılabilir hale getirir.

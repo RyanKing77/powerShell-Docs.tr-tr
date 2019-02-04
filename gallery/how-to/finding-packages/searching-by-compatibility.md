@@ -4,11 +4,11 @@ contributor: JKeithB, SydneyhSmith
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Paketler uyumlu PowerShell sürümleri veya işletim sistemi
 ms.openlocfilehash: 8230866561d3021379a48cc2c83fb4104a4058c1
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747713"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685959"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>PowerShell sürümleri veya işletim sistemleriyle uyumlu paketleri
 

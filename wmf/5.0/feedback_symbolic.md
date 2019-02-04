@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 82451c550014c684958aaf0f324457db8f0d8ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1c4a7ad30b04d138ba8a840968a6bf1763448ac6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222014"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688269"
 ---
-# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Geliştirilmiş öğesi cmdlet'lerini kullanarak sembolik bağlantılar ile etkileşim
+# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Geliştirilmiş öğe cmdlet'leri kullanarak simgesel bağlantılar ile etkileşim kurma
 
-Sembolik bağlantılar desteklemek için  **\*-öğesi** ve birkaç ilgili cmdlet'leri genişletilmiştir. Sembolik bağlantılar içeren basit, tek bir satırı oluşturabileceğiniz artık **yeni öğe**. Olduğunu fark edeceksiniz öğesi ile ilgili cmdlet'ler (**Kaldır öğesini, Get-Childıtem**) için önce çok benzer şekilde davranır.
+Sembolik bağlantıları desteklemek için  **\*-öğesi** ve birkaç ilgili cmdlet'lerle genişletilmiştir. Sembolik bağlantılar ile basit, tek bir satır oluşturabileceğiniz artık **yeni öğe**. Olduğunu fark edeceksiniz öğesi ile ilgili cmdlet'ler (**Kaldır öğesini, Get-Childıtem**) için önce çok benzer şekilde davranır.
 
-Aşağıdaki yeni özellikleri, bazı kullanım gösterir:
+Aşağıdaki yeni özelliklerin bazı kullanım gösterir:
 
 ## <a name="new-item"></a>YENİ ÖĞE
 
@@ -52,7 +52,7 @@ New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshom
 # Same combinations of Path and Name allowed as described above
 ```
 
-### <a name="directory-junctions"></a>DİZİN KAVŞAKLARI
+### <a name="directory-junctions"></a>DİZİN MERKEZLERİYLE
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome

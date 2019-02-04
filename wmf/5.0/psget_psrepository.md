@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 9a9bdac652512640209c20e3deb20d7abc0142c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5ac9566979e1b761249f5cc7c62ed44047a2b9f6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219540"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685238"
 ---
 # <a name="register-a-powershell-repository"></a>Bir PowerShell Deposu Kaydetme
-PowerShellGet karşı iç depoları çalışmak üzere yapılandırabilirsiniz. Bu, aşağıdaki eklemelerle kullanarak gerçekleştirilir:
-- Register-PSRepository: geçerli kullanıcı için depo kaydeder.
-- Unregister-PSRepository: geçerli kullanıcı için kayıtlı depo kaldırır.
-- Set-PSRepository: bir kayıtlı deposu değerlerini ayarlayın.
-- Get-PSRepository: geçerli kullanıcı için tüm kayıtlı depoları alın.
+PowerShellGet karşı iç depoları çalışmak üzere yapılandırabilirsiniz. Bu, aşağıdaki eklemelerle kullanılarak gerçekleştirilir:
+- Register-PSRepository: Geçerli kullanıcı için bir depoya kaydeder.
+- Kaydı-PSRepository: Geçerli kullanıcı için kayıtlı bir depo kaldırır.
+- Set-PSRepository: Kayıtlı depoyu değerlerini ayarlayın.
+- Get-PSRepository: Geçerli kullanıcı için kayıtlı tüm depoları alın.
 
-Bir depo kaydedildikten sonra ile çalışmak için bulma modülü ve Install-Module kullanabilirsiniz.
+Bir depo kaydedildikten sonra çalışma Find-Module ve Install-Module kullanabilirsiniz.
 
 ```powershell
 \#Register a default repository

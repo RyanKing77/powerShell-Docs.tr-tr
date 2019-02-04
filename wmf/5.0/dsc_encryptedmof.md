@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 4c2a3fb15b108f1a8e9fd271a620bcb1cb8c77ed
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9af931a1a2b545ba36826246c4155f42052a16bf
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222345"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688437"
 ---
-# <a name="mof-documents-are-encrypted-by-default"></a>Varsayılan olarak şifrelenmiş MOF belgeleri
+# <a name="mof-documents-are-encrypted-by-default"></a>Varsayılan olarak MOF belgeler şifrelenir
 
-Yapılandırma belgeler hassas bilgiler içerir. DSC önceki sürümlerinde dağıtmak ve bir yapılandırma içinde kimlik bilgilerini güvenli hale getirmek için sertifikaları yönetmek için gerekli olmuştur. Çoğu için önemli yönetim yükü, bu ve bunu hala değildi ve güvenli, bazı yapılandırma bilgilerini bırakıldı yapmak için bile tüm iş ile sürdü.
+Yapılandırma belgelerini, hassas bilgiler içerir. DSC önceki sürümlerinde dağıtmak ve yapılandırması içindeki kimlik bilgilerini güvenli hale getirmek için sertifikaları yönetmek için gerekli olmuştur. Çoğu için bile tüm işleri ile değildi ve güvenli, bazı yapılandırma bilgilerini kalan dosyalar hala bunu sürdü ve bu önemli yönetim yüklerini şeklindeydi.
 
-Artık söz konusu değildir çünkü **tüm yapılandırma MOF dosyalarından varsayılan olarak güvenlidir**. Hiçbir sertifika veya meta yapılandırma ayarları gereklidir. MOF kaydedildiğinde bir yapılandırma kurduğunda tarafından yerel Configuration Manager (LCM'yi) bir hedef düğümdeki diske şifrelenir. MOF dosyalarından kullanılarak şifrelenmiş [DPAPI](https://msdn.microsoft.com/library/ms995355.aspx). **Not:** yapılandırma komut dosyası tarafından oluşturulan MOF dosyalarından şifrelenmez.
+Artık durumu değildir çünkü **tüm yapılandırma MOF'lar varsayılan olarak güvenlidir**. Hiçbir sertifika veya meta-yapılandırma ayarları gereklidir. MOF kaydedildiğinde bir yapılandırma için istediğiniz zaman tarafından yerel Configuration Manager (LCM) hedef düğümde diske şifrelenir. Kullanarak şifreli MOF'lar [DPAPI](https://msdn.microsoft.com/library/ms995355.aspx). **Not:** Bir yapılandırma betiği tarafından oluşturulan MOF'lar şifrelenmez.
 
-**Örnek:** zorlama modunda şifrelemesi ![MOF şifreleme](../images/MOF_Encryption.jpg)
+**Örnek:** Şifreleme gönderme modunda ![MOF şifreleme](../images/MOF_Encryption.jpg)
 
-Parolaları şifrelemek için sertifika yöntemi zaten kullanıyorsanız, veya ek güvenlik için parolaları, gerekirse [sertifika tabanlı şifreleme varolan yöntemi](https://msdn.microsoft.com/powershell/dsc/securemof) çalışmaya devam eder. Sonuç tam olarak DPAPIs kullanılarak şifrelenmiş bir MOF belgenin ve ayrıca parolalara sahip içinde şifrelenmiş.
+Parolaları şifrelemek için sertifika yöntemi zaten kullanıyorsanız, veya ek güvenlik için parolaları, gerekiyorsa [sertifika tabanlı şifreleme varolan bir yöntem](https://msdn.microsoft.com/powershell/dsc/securemof) çalışmaya devam eder. Sonuç DPAPIs kullanarak tam olarak şifrelendiğinden bir MOF belgesi olabilir ve ayrıca parola mı içinde şifreli.
 
-Bu şifreleme yalnızca yapılandırma MOF belgeleri (pending.mof, current.mof, previous.mof ve kısmi MOF dosyalarından) için geçerlidir. Büyük olasılıkla daha az gizli içerdikleri beri Meta yapılandırma MOF dosyalarından hala düz metin olarak kaydedilir.
+Bu şifreleme, yalnızca (pending.mof, current.mof, previous.mof ve kısmi MOF'lar) yapılandırma MOF belgeler için de geçerlidir. Daha büyük bir olasılıkla gizli dizileri içerdikleri beri Meta-yapılandırma MOF'lar hala düz metin olarak kaydedilir.

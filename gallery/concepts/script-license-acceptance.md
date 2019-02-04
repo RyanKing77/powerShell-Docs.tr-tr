@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Betikler için lisans kabulü gerektiren
 ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002591"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684216"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>Betikler için lisans kabulü gerektiren
 
@@ -18,7 +18,7 @@ Betik commands(Install-Script/Save-Script/Update-Script) destekleyen yeni bir pa
 
 ## <a name="examples"></a>ÖRNEKLERİ
 
-### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>Örnek 1: Lisans kabulü gerektiren bağımlılıkları olan yükleme betiği
+### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>Örnek 1: Lisans kabulü gerektiren bağımlılıkları olan komut dosyası yükleme
 
 Betik 'ScriptRequireLicenseAcceptance' modülünde 'ModuleRequireLicenseAcceptance' bağlıdır. Kullanıcı lisansı kabul istenir.
 
@@ -38,7 +38,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Örnek 2: Lisans kabulü ve - AcceptLicense gerektiren bağımlılıkları olan yükleme betiği
+### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Örnek 2: Lisans kabulü ve - AcceptLicense gerektiren bağımlılıkları olan komut dosyası yükleme
 
 Betik 'ScriptRequireLicenseAcceptance' modülünde 'ModuleRequireLicenseAcceptance' bağlıdır. -AcceptLicense olarak lisansını kabul etmek için kullanıcıya sorulmaz.
 

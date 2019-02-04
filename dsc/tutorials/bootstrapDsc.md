@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC kullanarak bir sanal makineler ilk önyüklemede yapılandırma
-ms.openlocfilehash: 7b9ebc6c818aa39365759945667426c8976997e5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2ae6f7a85af3d08bad9e97b90efaefb2ff8410ca
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405878"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686911"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>DSC kullanarak bir sanal makineler ilk önyüklemede yapılandırma
 
@@ -18,16 +18,17 @@ ms.locfileid: "53405878"
 
 > [!NOTE]
 > **DSCAutomationHostEnabled** kayıt defteri anahtarı bu konuda açıklanan PowerShell 4. 0'kullanılabilir değil.
-> [Otomatik olarak yapılandırma bilgisayarınızı makineleri kullanarak DSC, ilk önyükleme yukarı istiyorsunuz?] yeni sanal makineler PowerShell 4.0 ilk önyükleme yukarı yapılandırma hakkında daha fazla bilgi için bkz. > ()https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
+> Yeni sanal makineler PowerShell 4.0 ilk önyükleme yukarı yapılandırma hakkında daha fazla bilgi için bkz: [otomatik olarak yapılandırma bilgisayarınızı makineleri kullanarak DSC, ilk önyükleme yukarı istiyorsunuz?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
 Bu örnekleri çalıştırmak için ihtiyacınız olacak:
 
-- Çalışmak için önyüklenebilir bir VHD. Bir Windows Server 2016'da kopyasının bir ISO indirebileceğiniz [TechNet değerlendirme Merkezi](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Bir VHD ISO görüntüsünü oluşturma konusunda yönergeler bulabilirsiniz [önyükleme sanal sabit diskler oluşturarak](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
+- Çalışmak için önyüklenebilir bir VHD. Bir Windows Server 2016'da kopyasının bir ISO indirebileceğiniz [TechNet değerlendirme Merkezi](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
+  Bir VHD ISO görüntüsünü oluşturma konusunda yönergeler bulabilirsiniz [önyükleme sanal sabit diskler oluşturarak](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
 - Hyper-V etkin olan bir konak bilgisayarı. Bilgi için [Hyper-V'ye Genel Bakış](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 
   DSC kullanarak bir bilgisayarda ilk önyükleme artırma için yazılım yükleme ve yapılandırma otomatik hale getirebilirsiniz.
   Böylece ilk önyükleme işlemi sırasında çalıştırılan ya da bir yapılandırma MOF belgesi ya da bir metaconfiguration (VHD gibi) önyüklenebilir medya içine ekleyerek bunu yapabilirsiniz.
-  Bu davranış tarafından belirtilen [DSCAutomationHostEnabled kayıt defteri anahtarı](DSCAutomationHostEnabled.md) kayıt defteri anahtarı altında `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies`.
+  Bu davranış tarafından belirtilen [DSCAutomationHostEnabled kayıt defteri anahtarı](DSCAutomationHostEnabled.md) kayıt defteri anahtarı altında `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`.
   Varsayılan olarak, bu anahtarın değeri, önyükleme sırasında çalıştırılacak DSC sağlayan 2 olan.
 
   Önyükleme sırasında çalıştırılacak DSC istemiyorsanız ayarlayın [DSCAutomationHostEnabled kayıt defteri anahtarı](DSCAutomationHostEnabled.md) kayıt defteri anahtarını 0.
@@ -172,7 +173,7 @@ Bunu çağırarak doğrulamak [Get-WindowsFeature](/powershell/module/servermana
 
 ## <a name="disable-dsc-at-boot-time"></a>DSC önyükleme sırasında devre dışı bırak
 
-Varsayılan olarak, değerini `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled` anahtar ayarlanmış 2'ye bir DSC yapılandırması veren bilgisayar ise çalıştırmak için bekleyen veya geçerli durumunda. İlk önyüklemede çalıştırmak için bir yapılandırma istemiyorsanız, bu anahtarın değeri 0'olacak şekilde ayarlamanız:
+Varsayılan olarak, değerini `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled` anahtar ayarlanmış 2'ye bir DSC yapılandırması veren bilgisayar ise çalıştırmak için bekleyen veya geçerli durumunda. İlk önyüklemede çalıştırmak için bir yapılandırma istemiyorsanız, bu anahtarın değeri 0'olacak şekilde ayarlamanız:
 
 1. Çağırarak VHD'nin [VHD'yi Bağla](/powershell/module/hyper-v/mount-vhd) cmdlet'i. Örneğin:
 
@@ -186,10 +187,10 @@ Varsayılan olarak, değerini `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Cur
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`
    ```
 
-3. Gidin `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*` PowerShell kayıt defteri sağlayıcıyı kullanarak.
+3. Gidin `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` PowerShell kayıt defteri sağlayıcıyı kullanarak.
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
+   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
    ```
 
 4. Değiştirin `DSCAutomationHostEnabled` 0.

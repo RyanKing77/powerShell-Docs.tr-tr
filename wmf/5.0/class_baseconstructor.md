@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 9486fdbaeca66c83551564c76ce47482f77c36b9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 424e0b7a4d62fc35e5040a7e425950e887021d7e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225615"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683782"
 ---
 # <a name="call-base-class-constructor"></a>Temel Sınıf Oluşturucusunu Çağırma
 
-Bir alt sınıfı bir temel sınıf oluşturucu çağrısı için anahtar kullanın **temel**:
+Bir temel sınıf oluşturucusunu bir alt sınıfı için anahtar sözcüğünü kullanın **temel**:
 
 ```powershell
 class A
@@ -31,7 +31,7 @@ class B : A
 [B]::new().a # return 103
 ```
 
-Bir taban sınıf (parametre) varsayılan bir oluşturucu varsa, bir açık oluşturucu çağrısı atlayabilirsiniz:
+Bir temel sınıf (parametre) varsayılan bir oluşturucusu varsa, bir açık oluşturucu çağrısı atlayabilirsiniz:
 
 ```powershell
 class C : B

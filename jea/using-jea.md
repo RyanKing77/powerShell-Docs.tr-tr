@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA’yı kullanma
 ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522999"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686862"
 ---
 # <a name="using-jea"></a>JEA’yı kullanma
 
-> İçin geçerlidir: Windows PowerShell 5.0
+> Şunun için geçerlidir: Windows PowerShell 5.0
 
 Bu konuda çeşitli şekillerde bağlanmak ve bir JEA uç noktası kullanma açıklanmaktadır.
 

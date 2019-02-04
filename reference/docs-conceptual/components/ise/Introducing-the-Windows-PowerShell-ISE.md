@@ -2,12 +2,12 @@
 ms.date: 08/14/2018
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE Tanıtımı
-ms.openlocfilehash: 09a28b295855fd2a3c62bba8a681399dae3454f8
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
+ms.openlocfilehash: 729c8535dbcfcd2c51070b8beac5d328375f36ae
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411591"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685105"
 ---
 # <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
 
@@ -15,8 +15,8 @@ Windows PowerShell Tümleşik komut dosyası ortamı (ISE), Windows PowerShell i
 
 ## <a name="support"></a>Destek
 
-ISE ilk olarak Windows PowerShell V2 ile sunulmuştur ve PowerShell V3 ile yeniden tasarlanmıştır. ISE yedeklemek için Windows PowerShell dahil olmak üzere Windows PowerShell V5.1 ve tüm desteklenen sürümlerinde desteklenir. ISE ancak maintennce modunda ve herhangi bir yeni özellik eklenmesini olasılığı yüksektir.
-Ayrıca, PowerShell v6 ve ötesinde ISE için desteği yoktur. Yönetmek istediğiniz PowerShell scrips, vb., grafik bir araç kullanmak isteyen kullanıcıların göz önünde bulundurmalıdır [Visual Studio Code](https://code.visualstudio.com/).
+ISE ilk olarak Windows PowerShell V2 ile sunulmuştur ve PowerShell V3 ile yeniden tasarlanmıştır. ISE yedeklemek için Windows PowerShell dahil olmak üzere Windows PowerShell V5.1 ve tüm desteklenen sürümlerinde desteklenir. ISE ancak bakım modunda olduğundan ve hiçbir yeni özellikler eklenmesi olasılığı yüksektir.
+Ayrıca, PowerShell v6 ve ötesinde ISE için desteği yoktur. Yönetmek istediğiniz PowerShell betikleri, vb., grafik bir araç kullanmak isteyen kullanıcıların göz önünde bulundurmalıdır [Visual Studio Code](https://code.visualstudio.com/).
 
 ## <a name="key-features"></a>Temel Özellikler
 

@@ -3,11 +3,11 @@ ms.date: 08/25/2017
 keywords: PowerShell cmdlet'i
 title: ObjectModelRoot Nesnesi
 ms.openlocfilehash: 2670321ebac1eac4ecc8457afb796f9f260da471
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406032"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684377"
 ---
 # <a name="the-objectmodelroot-object"></a>ObjectModelRoot Nesnesi
 

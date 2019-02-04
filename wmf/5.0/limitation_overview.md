@@ -2,17 +2,17 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892993"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687030"
 ---
 # <a name="known-issues-and-limitations"></a>Bilinen Sorunlar ve Sınırlamalar
 
 ## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>İlk kez kullanıldığında PowerShell kısayolları bozuk
 
-**Çözüm:** aşağıdaki eylemlerden birini gerçekleştirin:
+**Çözüm:** Aşağıdaki eylemlerden birini gerçekleştirin:
 
 1. Sağ PowerShell kısayolunun tıklayın. Yükseltilmiş olmayan modunda başlatmak için "Windows PowerShell" seçin.
 2. Sağ PowerShell kısayolunun tıklayın. "Windows PowerShell üzerinde" sağ tıklayıp "Yönetici olarak çalıştır bir yükseltilmiş modda başlatmak için" seçin.
@@ -23,7 +23,7 @@ Yukarıdaki işlemleri gerçekleştirdikten sonra PowerShell kısayolları çal�
 
 Windows 7'de PowerShell modülleri ve DSC kaynakları ExecutionPolicy hakkında rapor edilen hata neden olabilir.
 
-**Çözüm:** (yönetici olarak çalıştır) yükseltilmiş bir PowerShell oturumunda aşağıdaki komutu çalıştırarak ExecutionPolicy RemoteSigned olarak ayarlayın:
+**Çözüm:** (Yönetici olarak çalıştır) yükseltilmiş bir PowerShell oturumunda aşağıdaki komutu çalıştırarak, ExecutionPolicy RemoteSigned olarak ayarlayın:
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -33,19 +33,19 @@ Set-ExecutionPolicy RemoteSigned
 
 Eski değişimi uç noktası, yeni bir uç noktasına yönlendirir. Bir hata olduğunu yeniden yönlendirme mantığının bu sonuçları içindeki bir kilitlenme.
 
-**Çözüm:** yeni uç nokta doğrudan bağlanın.
+**Çözüm:** Yeni uç nokta doğrudan bağlanın.
 
 ## <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a>Windows Server 2012 R2'de WMF 5.0 yüklemeden sonra yazılım envanter günlüğü özelliği deneyebileceğinizi durduruldu
 
 WMF 5.0 bir Windows Server 2012 önceden SIL çalıştıran R2 üzerinde yükleme sırasında yazılım envanter günlüğü özelliği deneyebileceğinizi yüklemeden sonra durdurulur.
 
-**Çözüm:** yükleme işlemi, yazılım envanter günlüğü özelliği errantly durduracak şekilde kez WMF yükleme işleminden sonra Start-SilLogging cmdlet'ini çalıştırın.
+**Çözüm:** Yükleme işlemi, yazılım envanter günlüğü özelliği errantly durduracak şekilde kez WMF yükleme işleminden sonra Start-SilLogging cmdlet'ini çalıştırın.
 
 ## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem` -LiteralPath ve - Recurse birlikte kullanılması durumunda çalışmıyor
 
 Bir dizin adı bir geçersiz joker karakter içeriyorsa `Get-ChildItem` - LiteralPath hem - Recurse birlikte kullanıldığında beklenen sonuçları oluşturmaz.
 
-**Çözüm:** ideal değildir, ancak geçerli bir geçici çözüm etmektir özyineleme betikte uygulamak yerine cmdlet'ini kullanır.
+**Çözüm:** İdeal değildir, ancak geçerli çözüm yerine özyineleme betikte cmdlet'ini kullanan olabilir.
 
 ## <a name="sysprep-fails-after-wmf-50-installation"></a>WMF 5.0 yüklemeden sonra Sysprep başarısız
 

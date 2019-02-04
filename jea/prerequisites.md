@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA önkoşulları
 ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893044"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688360"
 ---
 # <a name="prerequisites"></a>Önkoşullar
 
-> İçin geçerlidir: Windows PowerShell 5.0
+> Şunun için geçerlidir: Windows PowerShell 5.0
 
 Yeterli yönetim, Windows PowerShell 5.0 ve üzeri bulunan bir özelliktir.
 Bu konuda jea'yı kullanmaya başlamak için karşılanması gereken önkoşulları açıklanmaktadır.
@@ -32,7 +32,7 @@ JEA, ev veya iş bilgisayarınızda de kullanabilirsiniz:
 
 İstemci işletim sistemi   | JEA kullanılabilirlik
 --------------------------|-----------------------------------------------------
-Windows 10 1607 +          | Önceden
+Windows 10 1607+          | Önceden
 Windows 10 1603, 1511     | Önceden, ile işlevselliği azaltılmış<sup>2</sup>
 Windows 10 1507           | Mevcut değil
 Windows 8, 8.1            | WMF 5.1 tam işlevselliğiyle
@@ -109,7 +109,7 @@ Sistem genelinde PowerShell transkripsiyonu Grup İlkesi aracılığıyla da etk
 
 [Oturum yapılandırma dosyası oluşturma](session-configurations.md)
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 [PowerShell uzaktan iletişimini ve WinRM güvenliği hakkında ek bilgi](/powershell/scripting/setup/winrmsecurity)
 

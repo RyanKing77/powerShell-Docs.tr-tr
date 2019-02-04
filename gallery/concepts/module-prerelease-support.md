@@ -4,11 +4,11 @@ contributor: keithb
 keywords: Galeri, powershell, cmdlet, psget
 title: Yayın öncesi modül sürümleri
 ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002778"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684279"
 ---
 # <a name="prerelease-module-versions"></a>Yayın öncesi modül sürümleri
 

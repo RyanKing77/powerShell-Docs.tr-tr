@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC için Linux nxFileLine kaynağı
 ms.openlocfilehash: 6a91db25638b09659adfabcec78f91bcb2e69dd9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048624"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684972"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>DSC için Linux nxFileLine kaynağı
 

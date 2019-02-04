@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: a2938c168f476e5f9c38ba55ceb45fa2b95571e2
-ms.sourcegitcommit: bad40d59598ae5597051fa381986316a2d9bf6c8
+ms.openlocfilehash: ac845a461eef4f567b74f813621f6bfa38419afb
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36271186"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687849"
 ---
 # <a name="powershellget-cmdlets-for-script-management"></a>Betik Yönetimi için PowerShellGet Cmdlet’leri
 
-## <a name="find-script-cmdlet"></a>Bulma komut dosyası cmdlet'i
-Bulma komut dosyası cmdlet'i, farklı arama ölçütleri ad, etiket, filtre, komutu ad, sürüm aralığı, tam sürümünü, bağımlılıklarını dahil olmak üzere tüm sürümleri gibi ve belirli veya tüm kayıtlı depoları ile komut dosyaları bulmak için olanak tanır.
+## <a name="find-script-cmdlet"></a>Find-Script cmdlet'i
+Find-Script cmdlet adı, etiket, filtre, komut adı, sürüm aralığı, tam sürümünü, bağımlılıkları da dahil olmak üzere tüm sürümleri ve belirli veya tüm kayıtlı depolarından farklı arama ölçütleri ile komut dosyalarını bulmak için sağlar.
 
 Örnek Kullanım:
 ```powershell
@@ -149,8 +149,8 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## <a name="save-script-cmdlet"></a>Kaydet-komut dosyası cmdlet'i
-Kaydet-komut dosyası cmdlet belirtilen bir konuma kaydederek komut dosyasını gözden geçirmenizi sağlar.
+## <a name="save-script-cmdlet"></a>Save-Script cmdlet'i
+Save-Script cmdlet'i betiğin belirtilen bir konuma kaydetme tarafından gözden geçirmenizi sağlar.
 ```powershell
 \# Save a script file to the specified location for the script analysis
 \# Piping the Find-Script output to Save-Script cmdlet
@@ -162,10 +162,10 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-## <a name="install-script-and-get-installedscript-cmdlets"></a>Yükleme komut dosyası ve Get-InstalledScript cmdlet'leri
-Yükleme betiği cmdlet'i, belirtilen kapsam için bir özel komut dosyası bağımlılıklarını birlikte yüklemek için olanak tanır. Varsayılan olarak, komut dosyaları AllUsers kapsama yüklenir. Get-InstalledScript cmdlet yükleme betiği cmdlet'i kullanılarak yüklenen komut dosyalarını listesini almak için olanak sağlar.
+## <a name="install-script-and-get-installedscript-cmdlets"></a>Yükleme betiğini ve Get-InstalledScript cmdlet'leri
+Yükleme betiğini cmdlet'i, belirtilen kapsam için bir özel komut dosyası bağımlılıkları ile birlikte yüklemek için sağlar. Varsayılan olarak, betikleri AllUsers kapsamına yüklenir. Get-InstalledScript cmdlet'i, yükleme betiğini cmdlet'ini kullanarak yüklenen komut dosyalarını listesini almak için sağlar.
 
-Kullanım Not: Yönetim ve komut dosyaları onlar yüklendikten sonra bulma izin vermek için yükleme betiği $home\Documents\WindowsPowerShell\Scripts adresindeki komut dosyaları depolamak için varsayılan klasörü oluşturur ve bu klasörü yolu ortamınıza eklemek. Yolun değiştirilmesi önemliyse, yükleme komut dosyası yerine Kaydet-komut dosyası kullanın. Yalnızca GET-InstalledScripts ve kaldırma komut dosyası yükleme komut dosyasını kullanarak sistemde yerleştirilmiş komut dosyaları ile çalışabilirsiniz.
+Not kullanın: Yönetim ve bunlar yüklendikten sonra komut dosyaları bulma izin vermek için yükleme betiğini $home\Documents\WindowsPowerShell\Scripts, komut dosyaları depolamak için varsayılan klasör oluşturun ve bu klasörün yolu ortamınıza eklemek. Yolun değiştirilmesi bir konudur, Save-Script yerine yükleme betiğini kullanın. Yalnızca GET-InstalledScripts ve kaldırma betiğini yükleme betiğini kullanarak sistem tablolarına betikleri ile çalışabilir.
 ```powershell
 \# Install locations for scripts:
 \# Default scope is AllUsers.
@@ -221,7 +221,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-Get-Command de kullanabilirsiniz – adı &lt;InstalledScriptFileName&gt; edinilir. İki yükleme konumları PATH ortam değişkeninde belirtilen bir kapsamın ilk kullanımda eklenir.
+Get-Command de kullanabilirsiniz: adı &lt;InstalledScriptFileName&gt; edinilir. İki yükleme konumları, belirtilen kapsam ilk kullanımında yol ortam değişkenine eklenir.
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -344,7 +344,7 @@ Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
 ## <a name="update-script-cmdlet"></a>Güncelleştirme betiğini cmdlet'i
-Güncelleştirme betiğini cmdlet, yerinde yükleme betiği cmdlet'i kullanılarak yüklenen komut dosyalarını güncelleştirilmesini sağlar.
+Güncelleştirme betiğini cmdlet'i yerinde güncelleştirme yükleme betiğini cmdlet'ini kullanarak yüklenen komut dosyalarını olanak sağlar.
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -385,7 +385,7 @@ Version Name Type Repository Description
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
 
-## <a name="uninstall-script-cmdlet"></a>Kaldırma komut dosyası cmdlet'i
+## <a name="uninstall-script-cmdlet"></a>Kaldırma betiği cmdlet'i
 ```powershell
 Uninstall-Script cmdlet lets you to uninstall the installed script files.
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -423,7 +423,7 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 ```
 
 ## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a>Yeni ScriptFileInfo ve Test ScriptFileInfo cmdlet'leri
-ScriptFileInfo yeni cmdlet ile meta veri sürümü, GUID, yazar ve açıklaması gibi yeni bir komut dosyası oluşturma olanak tanır vs. Test-ScriptFileInfo cmdlet'i doğrulamak ve komut dosyası meta verilerini almak için olanak sağlar.
+ScriptFileInfo yeni cmdlet sağlar, sürüm, GUID, yazar ve açıklama gibi meta verilerle yeni betik dosyası oluşturmak için vs. Test ScriptFileInfo cmdlet'i, doğrulamak ve betik dosyası meta verilerini almak için sağlar.
 ```powershell
 \# Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Description "Script file description goes here"
@@ -575,7 +575,7 @@ DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
 ## <a name="update-scriptfileinfo-cmdlet"></a>Güncelleştirme ScriptFileInfo cmdlet'i
-Güncelleştirme ScriptFileInfo cmdlet, var olan komut dosyası meta verilerini güncelleştirmek için olanak tanır.
+Güncelleştirme ScriptFileInfo cmdlet'i mevcut betik dosyası meta verilerini güncelleştirmek için sağlar.
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
 Update-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-ScriptWithCompletePSScriptInfo.ps1 -Version 2.0
@@ -585,8 +585,8 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>Destek paylaşımı betiği ile kayıt PSRepository ve Set-PSRepository cmdlet'leri
-Register-PSRepository/Set-PSRepository cmdlet öğelerini eklemek için kullanmak **ScriptSourceLocation** ve **ScriptPublishLocation** PSRepository için.
+## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>Destek paylaşımı betiğiyle Register-PSRepository ve Set-PSRepository cmdlet'leri
+Register-PSRepository/Set-PSRepository cmdlet'leri eklersiniz **ScriptSourceLocation** ve **ScriptPublishLocation** PSRepository için.
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
 Register-PSRepository -Name GalleryINT \`
@@ -644,7 +644,7 @@ ProviderOptions : {}
 ```
 
 ## <a name="publish-script-cmdlet"></a>Yayımlama betik cmdlet'i
-Yayımlama betik cmdlet komut dosyanızı sürüm, GUID, yazar ve açıklaması gibi geçerli meta veri yayımlama olanak tanır vs.
+Yayımlama betik cmdlet'i komut dosyanızı sürümü, GUID, yazar ve açıklama gibi geçerli meta veri yayımlamayı sağlar vs.
 ```powershell
 \# Publish the really basic script file with required metadata
 Publish-Script -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Repository GalleryINT -NuGetApiKey cad91af7-a49c-4026-9570-a4c16564e785 -Verbose

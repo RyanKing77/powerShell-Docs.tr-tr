@@ -2,12 +2,12 @@
 title: PowerShell geliştirme için Visual Studio Code'u kullanma
 description: PowerShell geliştirme için Visual Studio Code'u kullanma
 ms.date: 08/06/2018
-ms.openlocfilehash: 3101fa57896996a696385801303333e4a6406d20
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 03f370d0906790b573ea42290b9ccdec2cf84f2e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405695"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686701"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell geliştirme için Visual Studio Code'u kullanma
 
@@ -63,6 +63,24 @@ Geleneksel Windows PowerShell iş yükleri için bkz: [Windows PowerShell'i yük
 Bunu kaydetmek için tıklatın **Dosya -> Kaydet** ve ardından bir dosya adı, şimdi deyin sağlayın `HelloWorld.ps1`.
 Dosyayı kapatmak için dosya adının yanındaki "x" tıklayın.
 Visual Studio Code, çıkmak için **Dosya -> çıkış**.
+
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>Kısıtlı sistemlerde PowerShell uzantısı yükleniyor
+
+Bazı sistemler, tüm kod imzası gözden geçirilmesini gerektirir ve bu nedenle PowerShell Düzenleyicisi Services'ı el ile sistem üzerinde çalışacak şekilde onaylanması gerekir şekilde ayarlanır.
+PowerShell uzantısı yüklü ancak gibi bir hata ulaşıyor yürütme İlkesi değiştiren bir Grup İlkesi güncelleştirmesini olası bir nedeni:
+
+```
+Language server startup failed.
+```
+
+El ile onaylamanız için bir PowerShell istemi ve çalışma PowerShell Düzenleyicisi Hizmetleri ve bu nedenle VSCode için PowerShell uzantısı açın:
+
+```powershell
+Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
+```
+
+"Yazılım bu güvenilmeyen yayımcıdan çalıştırmak istediğiniz yapmak ile?" istenir.
+Tür `R` dosyayı çalıştırın. Ardından, Visual Studio Code'u açın ve PowerShell uzantısı düzgün çalışıp çalışmadığını denetleyin. Başlarken konuları hala varsa, üzerinde bize [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
 #### <a name="using-a-specific-installed-version-of-powershell"></a>Belirli yüklü PowerShell sürümü kullanıyor
 

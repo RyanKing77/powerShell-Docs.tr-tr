@@ -1,43 +1,43 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 11b5e36f703c242e0bc820ab19d11d39305fa90c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 61c5df1b64cb9c54f9c7372a56e77abf319658dd
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187920"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683768"
 ---
 # <a name="network-switch-management-with-powershell"></a>PowerShell ile Ağ Anahtarı Yönetimi
 
-**Get-NetworkSwitchEthernetPort** cmdlet'i şimdi örnekleri aşağıdaki ek bilgilerle döndürür:
+**Get-NetworkSwitchEthernetPort** cmdlet örnekleri aşağıdaki ek bilgilerle artık döndürür:
 
-- IPADDRESS – bağlantı noktasıyla ilişkili IP adresi
+- IPADDRESS: bağlantı noktası ile ilişkili IP adresi
 - PortMode – bağlantı noktası modu: erişim, yönlendirme veya santral
 - Bu bağlantı noktası erişim modunda VLAN kimliği AccessVLAN – ilişkili
-- Bu bağlantı noktası santral modundaki kimlikleri VLAN'ları, listesini TrunkedVLANList – ilişkili
+- Bu bağlantı noktası santral modunda, kimlikleri VLAN'ların listesini TrunkedVLANList – ilişkili
 
 ## <a name="fundamental-network-switch-management-with-windows-powershell"></a>Windows PowerShell ile temel ağ anahtarı yönetimi
 
-WMF 5. 0'da, sunulan ağ geçiş cmdlet'leri anahtarı, sanal LAN (VLAN) ve temel Katman 2 ağ anahtarı bağlantı noktası yapılandırmasını Windows Server 2012 R2 logo sertifikalı ağ anahtarlara uygulamak sağlar. Microsoft destek kaydedilmiş kalır [veri merkezi soyutlama](http://technet.microsoft.com/cloud/dal.aspx) düzeyi (DAL) görme ve müşterilerimizin ve iş ortakları bu alan için değer göstermek için. Bu cmdlet'leri kullanarak şunları yapabilirsiniz:
+WMF 5. 0'da, sunulan ağ anahtarı cmdlet'leri Windows Server 2012 R2 logo sertifikalı ağ anahtarları için anahtar ve sanal LAN (VLAN) temel Katman 2 ağ anahtarı bağlantı noktası yapılandırması uygulamanıza imkan sağlar. Microsoft kalır desteklemeye [veri merkezi soyutlama](http://technet.microsoft.com/cloud/dal.aspx) düzeyi (DAL) işleme ve müşterilerimiz ve iş ortakları bu alandaki değer göstermek için. Bu cmdlet'leri kullanarak şunları yapabilirsiniz:
 
-- Genel yapılandırma, gibi anahtarı:
-    - Küme ana bilgisayar adı
+- Genel yapılandırma, aşağıdaki gibi geçin:
+    - Kümesi konak adı
     - Set anahtar başlığı
-    - Yapılandırma Sürdür
-    - Etkinleştirmek veya özelliği devre dışı bırakma
+    - Yapılandırma
+    - Etkinleştirmek veya devre dışı özelliği
 
 - VLAN yapılandırması:
-    - Oluşturma veya VLAN kaldırma
-    - Etkinleştirmek veya VLAN devre dışı bırakma
+    - Oluşturma veya VLAN'ı kaldırma
+    - Etkinleştirmek veya VLAN devre dışı
     - VLAN listeleme
-    - VLAN kolay adını ayarlama
+    - VLAN kolay adı ayarlayın
 
 - Katman 2 bağlantı noktası yapılandırması:
-    - Bağlantı noktalarını listeleme
+    - Bağlantı noktalarını Listele
     - Etkinleştirmek veya devre dışı bağlantı noktaları
-    - Set bağlantı noktası modları ve özellikleri
-    - Ekleme veya VLAN santral veya bağlantı noktası erişimi ilişkilendirme
+    - Küme bağlantı modları ve özellikleri
+    - Ekleme veya VLAN santral veya numaralı bağlantı noktasında ilişkilendirin
 
 Tüm NetworkSwitch cmdlet'leri için bakarak keşfetmeye başlayın!
 
@@ -68,4 +68,4 @@ PS> Get-Command *-NetworkSwitch*
 | Function    | Set-NetworkSwitchVlanProperty             | NetworkSwitch |
 ```
 
-Daha fazla bilgi Gamze Snover'ın WMF 5.0 Önizleme Duyurusu blog postasına mevcuttur: <http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>
+Daha fazla bilgi Jeffrey Snover'ın WMF 5.0 Önizleme Duyurusu blog gönderisinde bulabilirsiniz: <http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>

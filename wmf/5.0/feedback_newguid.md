@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 2d6b4e3045bc8cff90576c345d1ccb97b2487426
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 90fd26f9f27d2398da839b309c17b921bb3b8521
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225598"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685112"
 ---
 # <a name="new-guid"></a>New-Guid
-Genellikle komut dosyası (veya belki de DSC kaynağı yazma) benzersiz bir tanımlayıcı gerek vardır. GUID'ler işe ve çağrı biri oluşturmak için .NET Framework GUID sınıfı kolaydır, ancak bir cmdlet bu ile .NET Framework sınıf tanıdık olmayan kullanıcılar için daha bulunabilmesini sağlar:
+Genellikle komut dosyası (veya belki de bir DSC kaynağı yazma) benzersiz bir tanımlayıcı gerek vardır. GUID'ler işe ve .NET Framework Guid sınıfı için bir çağrı kolaydır ancak bir cmdlet sahip bu .NET Framework sınıf ile tanıdık olmayan son kullanıcılar için daha bulunabilir hale getirir:
 
-PS C:\\ &gt; yeni GUID
+PS C:\\&gt; New-Guid
 
 GUID
 

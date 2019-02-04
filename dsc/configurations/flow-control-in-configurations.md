@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: Koşul deyimlerini ve yapılandırmaları döngüler
+title: Yapılandırmalarda koşullu deyimler ve döngüler
 ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405711"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689053"
 ---
-# <a name="conditional-statements-and-loops-in-configurations"></a>Koşul deyimlerini ve yapılandırmaları döngüler
+# <a name="conditional-statements-and-loops-in-configurations"></a>Yapılandırmalarda koşullu deyimler ve döngüler
 
 Yapabileceğiniz, [yapılandırmaları](configurations.md) daha dinamik PowerShell akış denetimi anahtar sözcüklerini kullanarak. Bu makalede, yapılandırmalarınızı daha dinamik hale getireceğinizi koşullu ifadeleri ve döngüler nasıl kullanabileceğinizi gösterir. Birleştirme koşullu ve döngüler ile [parametreleri](add-parameters-to-a-configuration.md) ve [yapılandırma verilerini](configData.md) yapılandırmalarınızı derleme sırasında daha fazla esneklik ve denetim sağlar.
 
@@ -107,7 +107,7 @@ Bu gibi şeyleri içerir:
 
 Bir yapılandırmada tanımlanmış herhangi bir PowerShell kod, derleme zamanında değerlendirilir, ancak kod yapılandırmanızı içeren betik yerleştirebilirsiniz. Yapılandırma içeri aktardığınızda yapılandırma bloğu dışında herhangi bir kod yürütülür.
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [İçin yapılandırma parametreleri Ekle](add-parameters-to-a-configuration.md)
 - [Yapılandırmaları yapılandırma verilerinden ayrı](configData.md)

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Teknik İncelemeler
 ms.openlocfilehash: 645378802e1ab592857e442db5bc86ac33817e5e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405703"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688822"
 ---
 # <a name="whitepapers"></a>Teknik İncelemeler
 

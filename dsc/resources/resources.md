@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC kaynakları
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54046700"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686071"
 ---
 # <a name="dsc-resources"></a>DSC kaynakları
 
@@ -109,7 +109,7 @@ Configuration TestConfig
 
 Topluluk kaynakları yanı sıra Windows, Linux için kaynaklar ve çapraz düğüm bağımlılığı kaynakları için yerleşik kaynaklar vardır. Sözdizimi, bu kaynakları ve bunların nasıl kullanılacağını belirlemek için yukarıdaki adımları kullanabilirsiniz. Bu kaynaklar hizmet sayfaları altında arşivlenmiştir **başvuru**.
 
-Windows yerleşik kaynaklar
+Windows yerleşik kaynakları
 
 * [Archive Kaynağı](../reference/resources/windows/archiveResource.md)
 * [Environment Kaynağı](../reference/resources/windows/environmentResource.md)

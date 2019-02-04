@@ -2,12 +2,12 @@
 ms.date: 10/16/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Yapılandırmaları Kabul Etme
-ms.openlocfilehash: 4a6e7e511446ab27307683ad3d5676391e7c791c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405929"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684181"
 ---
 # <a name="enacting-configurations"></a>Yapılandırmaları Kabul Etme
 
@@ -48,6 +48,6 @@ Ancak, bu uygulamayla sınırlı özelliklere ve bazı "bunu kendiniz" tümleşt
 
 Aşağıdaki konularda, çekme hizmetini ve istemcilerin açıklanır:
 
-- [Azure Automation DSC genel bakış](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Azure Automation DSC genel bakış](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Bir SMB çekme sunucusu ayarlama](pullServerSMB.md)
 - [Çekme istemcisi yapılandırma](pullClientConfigID.md)

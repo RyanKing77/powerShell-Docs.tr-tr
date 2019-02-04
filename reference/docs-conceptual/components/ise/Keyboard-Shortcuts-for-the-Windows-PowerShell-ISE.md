@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE için Klavye Kısayolları
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405698"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686715"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE için Klavye Kısayolları
 
@@ -27,10 +27,10 @@ Metin düzenlerken aşağıdaki klavye kısayollarını kullanabilirsiniz.
 |**Betikte Bul**|CTRL+F|Betik bölmesi|
 |**Betikte Sonrakini Bul**|F3|Betik bölmesi|
 |**Betikte Öncekini Bul**|SHIFT+F3|Betik bölmesi|
-|**Ayraç eşleştirme Bul**|CTRL +]|Betik bölmesi|
+|**Ayraç eşleştirme Bul**|CTRL+]|Betik bölmesi|
 |**Yapıştır**|CTRL+V|Betik bölmesi, komut bölmesi|
-|**Yinele**|CTRL + Y|Betik bölmesi, komut bölmesi|
-|**Betikte değiştirin**|CTRL + H|Betik bölmesi|
+|**Yinele**|CTRL+Y|Betik bölmesi, komut bölmesi|
+|**Betikte değiştirin**|CTRL+H|Betik bölmesi|
 |**Kaydet**|CTRL+S|Betik bölmesi|
 |**Tümünü Seç**|CTRL+A|Betik bölmesi, komut bölmesi, çıkış bölmesi|
 |**Parçacıkları Göster**|CTRL+J|Betik bölmesi, komut bölmesi|
@@ -42,8 +42,8 @@ Betik bölmesinde komut dosyalarını çalıştırdığınızda, aşağıdaki kl
 
 |Eylem|Klavye kısayolu|
 |----------|---------------------|
-|**Yeni**|CTRL + N|
-|**Açık**|CTRL + O|
+|**Yeni**|CTRL+N|
+|**Açık**|CTRL+O|
 |**Çalıştırma**|F5|
 |**Seçimi Çalıştır**|F8|
 |**Yürütmeyi durdur**|CTRL + BREAK. CTRL + C (hiçbir metin seçili olduğunda) bağlam belirsiz olduğunda kullanılabilir.|
@@ -56,14 +56,14 @@ Windows PowerShell ıse'de görünümünü özelleştirmek için aşağıdaki kl
 
 |Eylem|Klavye kısayolu|
 |----------|---------------------|
-|**Git komut (v2) veya konsol (v3 ve üzeri) bölmesi**|CTRL + D|
-|**Çıkış Bölmesi'ne (yalnızca v2) gidin**|CTRL + SHIFT + O|
-|**Betik bölmesine gidin**|CTRL + I|
-|**Betik bölmesini göster**|CTRL + R|
-|**Betik Bölmesini Gizle**|CTRL + R|
+|**Git komut (v2) veya konsol (v3 ve üzeri) bölmesi**|CTRL+D|
+|**Çıkış Bölmesi'ne (yalnızca v2) gidin**|CTRL+SHIFT+O|
+|**Betik bölmesine gidin**|CTRL+I|
+|**Betik bölmesini göster**|CTRL+R|
+|**Betik Bölmesini Gizle**|CTRL+R|
 |**Betik bölmesine Yukarı Taşı**|CTRL+1|
-|**Betik bölmesine Sağa Taşı**|CTRL + 2|
-|**Betik bölmesine en üst düzeye çıkarın**|CTRL + 3|
+|**Betik bölmesine Sağa Taşı**|CTRL+2|
+|**Betik bölmesine en üst düzeye çıkarın**|CTRL+3|
 |**Yakınlaştır**|CTRL + ARTI İŞARETİ|
 |**Uzaklaştır**|CTRL + EKSİ İŞARETİ|
 
@@ -104,10 +104,10 @@ Windows PowerShell sekmeleri kullandığınızda aşağıdaki klavye kısayollar
 
 |Eylem|Klavye kısayolu|
 |----------|---------------------|
-|**PowerShell sekmesini kapatın**|CTRL + W|
+|**PowerShell sekmesini kapatın**|CTRL+W|
 |**Yeni bir PowerShell sekmesi**|CTRL+T|
-|**Önceki PowerShell sekmesi**|CTRL + SHIFT + SEKME. Bu kısayol, hiçbir dosya açık herhangi bir Windows PowerShell sekme üzerinde olduğunda çalışır.|
-|**Sonraki Windows PowerShell sekmesi**|CTRL + SEKME. Bu kısayol, hiçbir dosya açık herhangi bir Windows PowerShell sekme üzerinde olduğunda çalışır.|
+|**Önceki PowerShell sekmesi**|CTRL+SHIFT+TAB. Bu kısayol, hiçbir dosya açık herhangi bir Windows PowerShell sekme üzerinde olduğunda çalışır.|
+|**Sonraki Windows PowerShell sekmesi**|CTRL+TAB. Bu kısayol, hiçbir dosya açık herhangi bir Windows PowerShell sekme üzerinde olduğunda çalışır.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Başlangıç ve çıkma için klavye kısayolları
 

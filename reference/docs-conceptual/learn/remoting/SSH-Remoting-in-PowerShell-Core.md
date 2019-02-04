@@ -2,12 +2,12 @@
 title: SSH üzerinden PowerShell Uzaktan İletişimi
 description: SSH kullanarak PowerShell core'da uzaktan iletişim
 ms.date: 08/14/2018
-ms.openlocfilehash: b5c6bd70841e270c2c128601612c07af9d9aa6e4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655302"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687135"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH üzerinden PowerShell Uzaktan İletişimi
 
@@ -47,7 +47,7 @@ SSH tüm makinelerde yüklü olması gerekir. SSH istemcisi yükleme (`ssh.exe`)
    ```
 
 2. En son Win32 OpenSSH yükleyin. Yükleme yönergeleri için bkz. [yükleme, OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
-3. Düzen `sshd_config` konumundaki dosya `%ProgramData%\ssh`.
+3. Düzen `sshd_config` konumundaki dosya `$env:ProgramData\ssh`.
 
    - Parola kimlik doğrulamasının etkin olduğundan emin olun
 

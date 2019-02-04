@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Dosya, Klasör ve Kayıt Defteri Anahtarları ile Çalışma
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
 ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405953"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685735"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Dosya, klasör ve kayıt defteri anahtarları ile çalışma
 

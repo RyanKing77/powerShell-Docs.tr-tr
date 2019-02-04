@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: fcf2adf67f36edb534df3e2a849459fb20e1c2de
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892372"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685623"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Yapılandırılmış Nesneleri Dizeden Çıkarma ve Ayıklama
 
@@ -31,8 +31,8 @@ Varsayılan olarak, sınırlandırılmış ayrıştırma boşluk konumundaki gir
 ```
 
 ```output
-P1     P2
---     --
+P1     P2
+--     --
 Hello  World
 ```
 
@@ -41,49 +41,49 @@ Cmdlet, ayrıca otomatik olarak oluşturulan göre örnek temelli ayrıştırma 
 Başlamak için bir metin tabanlı adres defteri göz önünde bulundurun:
 
 ```
-    Ana Trujillo
+    Ana Trujillo
 
-    Redmond, WA
+    Redmond, WA
 
-    Antonio Moreno
+    Antonio Moreno
 
-    Renton, WA
+    Renton, WA
 
-    Thomas Hardy
+    Thomas Hardy
 
-    Seattle, WA
+    Seattle, WA
 
-    Christina Berglund
+    Christina Berglund
 
-    Redmond, WA
+    Redmond, WA
 
-    Hanna Moos
+    Hanna Moos
 
-    Puyallup, WA
+    Puyallup, WA
 ```
 
 Bazı örnekler, şablon olarak kullanacağınız bir dosyaya kopyalayın:
 
 ```
-    Ana Trujillo
+    Ana Trujillo
 
-    Redmond, WA
+    Redmond, WA
 
-    Antonio Moreno
+    Antonio Moreno
 
-    Renton, WA
+    Renton, WA
 ```
 
 Bunu gibi bir ad verip ayıklamak istediğiniz verileriyle küme ayracı yerleştirin. Çünkü **adı** özelliği (ve ilgili diğer özellikleri) birden çok kez görünür, bir yıldız işareti kullanın (\*) bu birden çok kayıt (yerine tek bir sürü özellikleri ayıklama sonuçları göstermek için kayıt için):
 
 ```
-    {Name\*:Ana Trujillo}
+    {Name\*:Ana Trujillo}
 
-    {City:Redmond}, {State:WA}
+    {City:Redmond}, {State:WA}
 
-    {Name\*:Antonio Moreno}
+    {Name\*:Antonio Moreno}
 
-    {City:Renton}, {State:WA}
+    {City:Renton}, {State:WA}
 ```
 
 Bu örnekler, kümesinden `ConvertFrom-String` artık otomatik olarak nesne tabanlı çıkış benzer yapıya sahip giriş dosyalarından ayıklayabilir.
@@ -93,13 +93,13 @@ Get-Content .\addresses.output.txt | ConvertFrom-String -TemplateFile .\addresse
 ```
 
 ```output
-ExtentText                     Name               City     State
-----------                     ----               ----     -----
-Ana Trujillo...                Ana Trujillo       Redmond  WA
-Antonio Moreno...              Antonio Moreno     Renton   WA
-Thomas Hardy...                Thomas Hardy       Seattle  WA
-Christina Berglund...          Christina Berglund Redmond  WA
-Hanna Moos...                  Hanna Moos         Puyallup WA
+ExtentText                     Name               City     State
+----------                     ----               ----     -----
+Ana Trujillo...                Ana Trujillo       Redmond  WA
+Antonio Moreno...              Antonio Moreno     Renton   WA
+Thomas Hardy...                Thomas Hardy       Seattle  WA
+Christina Berglund...          Christina Berglund Redmond  WA
+Hanna Moos...                  Hanna Moos         Puyallup WA
 ```
 
 Ayıklanan metin üzerinde ek veri işleme yapmak için **ExtentText** özelliği kendisinden kaydı çıkarılan ham metni yakalar. Bu özellik hakkında geri bildirim sağlamak veya zorluk örnekler yazmak zorunda içeriği paylaşmak için lütfen e-posta <psdmfb@microsoft.com>.

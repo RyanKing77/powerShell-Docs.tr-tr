@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: ISEAddOnToolCollection Nesnesi
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
 ms.openlocfilehash: ff4f19d1a85a592f2f4f09c62caa0971751bdff7
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405916"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685567"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>ISEAddOnToolCollection Nesnesi
 

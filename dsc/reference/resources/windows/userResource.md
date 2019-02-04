@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC kullanıcı kaynağı
 ms.openlocfilehash: 04543351df19160a2da05ccea96e5d392d8c55bf
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048818"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687506"
 ---
 # <a name="dsc-user-resource"></a>DSC kullanıcı kaynağı
 
@@ -39,13 +39,13 @@ User [string] #ResourceName
 |---|---|
 | UserName| Belirli bir durumu sağlamak istediğiniz hesap adını gösterir.|
 | Açıklama| Kullanıcı hesabı için kullanmak istediğiniz açıklamayı gösterir.|
-| Devre Dışı| Hesabın etkin olup olmadığını gösterir. Bu özellik kümesine `$true` bu hesabı devre dışı ayarlamanız gerektiğini ve emin olmak için `$false` etkinleştirildiğinden emin olmak için.|
+| Devre dışı| Hesabın etkin olup olmadığını gösterir. Bu özellik kümesine `$true` bu hesabı devre dışı ayarlamanız gerektiğini ve emin olmak için `$false` etkinleştirildiğinden emin olmak için.|
 | Emin olun| Hesap var olup olmadığını gösterir. Bu hesabı var olduğundan emin olmak için "var" özelliğini ayarlayın ve "Eksik için" hesabı yok emin olmak için ayarlayın.|
 | Tam adı| Kullanıcı hesabı için kullanmak istediğiniz tam ada sahip bir dizeyi temsil eder.|
 | Parola| Bu hesap için kullanmak istediğiniz parolayı gösterir. |
-| PasswordChangeNotAllowed| Kullanıcı parola değiştirip değiştiremeyeceğini belirtir. Bu özellik kümesine `$true` kullanıcı olamaz parolasını değiştirmek, ayarlayın sağlamak ve `$false` parolayı değiştirmek izin vermek için. Varsayılan değer `$false`.|
-| PasswordChangeRequired| Kullanıcı bir sonraki oturum açma sırasında parola değiştirmeli gösterir. Bu özellik kümesine `$true` kullanıcı parolasını değiştirmeniz gerekiyorsa. Varsayılan değer `$true`.|
-| PasswordNeverExpires| Parola dolacak gösterir. Bu hesap süresi asla sona için parolayı bu özelliği ayarlayın emin olmak için `$true`ve `$false` parola doluyorsa. Varsayılan değer `$false`.|
+| PasswordChangeNotAllowed| Kullanıcı parola değiştirip değiştiremeyeceğini belirtir. Bu özellik kümesine `$true` kullanıcı olamaz parolasını değiştirmek, ayarlayın sağlamak ve `$false` parolayı değiştirmek izin vermek için. Varsayılan değer: `$false`.|
+| PasswordChangeRequired| Kullanıcı bir sonraki oturum açma sırasında parola değiştirmeli gösterir. Bu özellik kümesine `$true` kullanıcı parolasını değiştirmeniz gerekiyorsa. Varsayılan değer: `$true`.|
+| PasswordNeverExpires| Parola dolacak gösterir. Bu hesap süresi asla sona için parolayı bu özelliği ayarlayın emin olmak için `$true`ve `$false` parola doluyorsa. Varsayılan değer: `$false`.|
 | DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Örnek

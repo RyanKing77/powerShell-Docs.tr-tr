@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri
-ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405824"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686421"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yetkilendirme Kuralları ve Güvenlik Özellikleri
 
@@ -186,13 +186,13 @@ Yalnızca aşağıdakiler başarılı olduktan ve en az bir yetkilendirme kural�
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Birden çok site için tek bir yetkilendirme kuralları kümesi kullanma
 
-Yetkilendirme kuralları, bir XML dosyasında depolanır. Varsayılan olarak, XML dosyasının yol adı olan `%windir%\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
+Yetkilendirme kuralları, bir XML dosyasında depolanır. Varsayılan olarak, XML dosyasının yol adı olan `$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
 
-Yetkilendirme kurallarının XML dosyası yolu depolanan **powwa.config** içinde bulunan dosya `%windir%\Web\PowershellWebAccess\data`. Yönetici içinde varsayılan yol referansını değiştirme esnekliğine sahiptir **powwa.config** tercihlerine veya gereksinimlerine uyacak şekilde. Bu tür bir yapılandırma istenirse dosyasının konumunu değiştirmek için yöneticiye izin verme, aynı yetkilendirme kurallarını birden fazla Windows PowerShell Web erişimi ağ geçidi olanak tanır.
+Yetkilendirme kurallarının XML dosyası yolu depolanan **powwa.config** içinde bulunan dosya `$env:windir\Web\PowershellWebAccess\data`. Yönetici içinde varsayılan yol referansını değiştirme esnekliğine sahiptir **powwa.config** tercihlerine veya gereksinimlerine uyacak şekilde. Bu tür bir yapılandırma istenirse dosyasının konumunu değiştirmek için yöneticiye izin verme, aynı yetkilendirme kurallarını birden fazla Windows PowerShell Web erişimi ağ geçidi olanak tanır.
 
 ## <a name="session-management"></a>Oturum yönetimi
 
-Varsayılan olarak, Windows PowerShell Web erişimi bir kullanıcı aynı anda üç oturumla sınırlar. Web uygulamasının düzenleyebileceğiniz **web.config** farklı bir kullanıcı başına oturum sayısı desteklemek için IIS Yöneticisi'nde dosya. Yolu **web.config** dosyasıdır `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
+Varsayılan olarak, Windows PowerShell Web erişimi bir kullanıcı aynı anda üç oturumla sınırlar. Web uygulamasının düzenleyebileceğiniz **web.config** farklı bir kullanıcı başına oturum sayısı desteklemek için IIS Yöneticisi'nde dosya. Yolu **web.config** dosyasıdır `$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
 
 Varsayılan olarak, IIS Web sunucusu herhangi bir ayar düzenlendiğinde uygulama havuzunu yeniden başlatmak üzere yapılandırılır. Örneğin, değişiklikler yapılırsa uygulama havuzu yeniden başlatılır **web.config** dosya. > çünkü **Windows PowerShell Web erişimi** kullanan bellek içi oturum durumları > kullanıcıların oturumu **Windows PowerShell Web erişimi** oturumlarını uygulama havuzu başlatıldığında oturumlarını kaybeder.
 

@@ -1,54 +1,54 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 9ead27fd5d4f146e9062488c1c8cc22a073b922e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 22a027ebc97e15075980bc77ce272d8ecdae0b5f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187111"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686995"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>PowerShell Betik Hata Ayıklama İyileştirmeleri
 
-Bazı geliştirmeler, hata ayıklama deneyimini geliştirmek için PowerShell 5. 0 ' yapıldı:
+Hata ayıklama deneyimini geliştirmek için PowerShell 5. 0'iyileştirmeler yapılmıştır:
 
-## <a name="break-all"></a>Tüm bölün
+## <a name="break-all"></a>Tümünü Kes
 
-PowerShell konsolunda ve Windows PowerShell ISE artık betikleri çalıştırmak için hata ayıklayıcısında araya girmektir olanak sağlar. Bu, hem yerel hem de uzak oturumlarda çalışır.
+Artık PowerShell konsolunu ve Windows PowerShell ISE, komut dosyaları çalıştırmak için hata ayıklayıcıya girdikten olanak tanır. Bu, hem yerel hem de uzak oturumlarda çalışır.
 
-Konsolda basın **Ctrl + Break**.
+Konsolda, basın **Ctrl + Break**.
 
-ISE içinde basın **Ctrl + B**, veya kullanmak **hata ayıklama -> bölün tüm** menü komutu.
+ISE'de basın **Ctrl + B**, veya **hata ayıklama -> Tümünü Kes** menü komutu.
 
-## <a name="remote-debugging-and-remote-file-editing-in-windows-powershell-ise"></a>Uzaktan hata ayıklama ve Windows PowerShell ISE uzaktan dosya düzenleme
+## <a name="remote-debugging-and-remote-file-editing-in-windows-powershell-ise"></a>Uzaktan hata ayıklama ve Windows PowerShell ISE'de uzaktan dosya düzenleme
 
-Windows PowerShell ISE şimdi açın ve PSEdit komutunu çalıştırarak uzak bir oturumda dosyaları düzenlemenize olanak sağlar.
+Windows PowerShell ISE'de artık, dosyaları açabilir ve uzak bir oturumda PSEdit komutuna çalıştırarak düzenleyebilirsiniz olanak tanır.
 Örneğin, komut satırından aşağıdaki gibi uzak bir oturumda düzenlemek için bir dosya açabilirsiniz:
 
 ```powershell
 [RemoteComputer1]: PS C:\> PSEdit C:\DebugDemoScripts\Test-GetMutex.ps1
 ```
 
-Ayrıca, artık düzenleyebilir ve değişiklikleri bir kesme noktası isabet yükleyen Windows PowerShell ISE açıldığında otomatik olarak uzak bir dosyaya kaydedin.
-Şimdi, uzak bir bilgisayarda çalışan bir komut dosyası hata ayıklama, hata düzeltme ve değiştirilen komut dosyası yeniden dosyasını düzenleyin.
+Ayrıca, artık düzenleyebilir ve değişiklikleri bir kesme noktasına ulaştığınızda, Windows PowerShell ISE'de otomatik olarak açılmış uzak bir dosyaya kaydedin.
+Şimdi, uzak bir bilgisayarda çalışan bir komut dosyası hata ayıklama, ortaya çıkan hata düzeltildi ve değiştirilmiş betiği yeniden dosyasını düzenleyin.
 
-## <a name="advanced-script-debugging"></a>Gelişmiş komut dosyası hata ayıklaması
+## <a name="advanced-script-debugging"></a>Gelişmiş komut dosyası hata ayıklama
 
-Windows PowerShell yükledi herhangi bir yerel bilgisayarda işlem ekleyin ve bu işlem rasgele alanlarında hata ayıklama izin veren yeni, Gelişmiş hata ayıklama özellikleri vardır.
+Windows PowerShell yüklü herhangi bir yerel bilgisayar işleme eklemesine ve rastgele çalışma alanları bu işlemde hata ayıklama izin veren yeni, Gelişmiş hata ayıklama özellikleri vardır.
 
 ### <a name="runspace-debugging"></a>Çalışma hata ayıklama
 
-İşlemin geçerli çalışma alanlarını listelemek ve komut dosyası hata ayıklama için bu çalışma alanı Windows PowerShell konsolu veya işe hata ayıklayıcı ekleme imkan sağlayan yeni cmdlet'ler eklenmiştir:
+İşlemin geçerli çalışma alanlarını listelemek ve ISE hata ayıklayıcı ve Windows PowerShell Konsolu komut dosyası hata ayıklama için bu çalışma alanı ekleme izin veren yeni cmdlet'ler eklenmiştir:
 
 -   Get-çalışma
 -   Hata ayıklama çalışma
--   Enable-RunspaceDebug
+-   RunspaceDebug etkinleştir
 -   RunspaceDebug devre dışı bırak
 -   Get-RunspaceDebug
 
-### <a name="attach-to-process-hosting-powershell"></a>PowerShell barındırma işlem ekleme
+### <a name="attach-to-process-hosting-powershell"></a>PowerShell barındırma işleme
 
-Windows PowerShell yüklü olan herhangi bir bilgisayarda işlem şimdi ekleyebilirsiniz. Etkileşimli oturum işlemine nasıl Enter-PSSession cmdlet'i çalıştırarak etkileşimli bir uzak oturuma girin benzer şekilde, içine girerek yapın:
+Artık Windows PowerShell yüklü olan herhangi bir bilgisayar işleme iliştirilebilir. Bunun için etkileşimli bir oturum ile nasıl Enter-PSSession cmdlet'i çalıştırarak etkileşimli bir uzak oturuma girmek için benzer şekilde, işlem içine girerek:
 
--   Girin PSHostProcess
+-   PSHostProcess girin
 -   Çıkış PSHostProcess

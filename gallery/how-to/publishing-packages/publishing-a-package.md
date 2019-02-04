@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Oluşturma ve bir öğe yayımlama
 ms.openlocfilehash: 70696535a3bf540ff75a2dc43bca80cb1adf8f45
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012543"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684363"
 ---
 # <a name="creating-and-publishing-an-item"></a>Oluşturma ve bir öğe yayımlama
 

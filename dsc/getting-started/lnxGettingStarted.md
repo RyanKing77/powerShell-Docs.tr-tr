@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Linux için Desired State Configuration (DSC) ile çalışmaya başlama
 ms.openlocfilehash: 69f087434455aae8e97ea07c79c52e493412d134
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405757"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686603"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux için Desired State Configuration (DSC) ile çalışmaya başlama
 
@@ -28,8 +28,8 @@ Aşağıdaki tabloda, Linux için DSC için gerekli Paket bağımlılıklarını
 
 |  Gerekli paket |  Açıklama |  En düşük sürüm |
 |---|---|---|
-| glibc| GNU Kitaplığı| 2... 4 – 31.30|
-| Python| Python| 2.4-3.4|
+| glibc| GNU Kitaplığı| 2…4 – 31.30|
+| Python| Python| 2.4 – 3.4|
 | omiserver| Açık Yönetim Altyapısı| 1.0.8.1|
 | openssl| OpenSSL kitaplıkları| 0.9.8 veya 1.0|
 | ctypes| Python CTypes kitaplığı| Python sürümü ile eşleşmelidir|

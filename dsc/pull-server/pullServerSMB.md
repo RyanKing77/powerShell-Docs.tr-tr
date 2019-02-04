@@ -3,11 +3,11 @@ ms.date: 04/11/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC SMB çekme sunucusu ayarlama
 ms.openlocfilehash: 722120369df9ff383a02c69111e0bacf2e2e76a5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405697"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684909"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB çekme sunucusu ayarlama
 
@@ -212,7 +212,7 @@ $ConfigurationData = @{
 - Bu konudaki içeriğin bildirmek için DSC SMB kullanarak, gönderiler Yardım Mike F. Robbins. Blog altındadır [Mike F Robbins](http://mikefrobbins.com/).
 - Kimin yazılan serge Nikalaichyk **cNtfsAccessControl** modülü. Bu modülü için kaynak altındadır [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 [Windows PowerShell Desired State Configuration ' ne genel bakış](../overview/overview.md)
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Sistem Gereksinimleri
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 164ccefa050373064977108aaa13a3ecbeb28713
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: a9a7dc434d26876d6747526ad3ef6fa598376ac1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405766"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687765"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell Sistem Gereksinimleri
 Bu konu, Windows PowerShell 3.0, Windows PowerShell 4.0 ve Windows PowerShell 5.0 ve Windows PowerShell 5.1 ve özel özellikler gibi Windows PowerShell Tümleşik komut dosyası ortamı (ISE), CIM komutları için sistem gereksinimleri listeler ve İş akışları.
@@ -36,7 +36,7 @@ Windows PowerShell 5.1, aşağıdaki Windows sürümleri üzerinde çalışır.
 
 - Windows 7 Hizmet Paketi 1 yükleme [Windows Management Framework 5.1](https://aka.ms/wmf5download) Windows PowerShell 5.1 çalıştırmak için
 
-Windows PowerShell 5.0 (Windows PowerShell 5.1 tarafından Superceeded), aşağıdaki Windows sürümleri üzerinde çalışır.
+Windows PowerShell 5.0 (Windows PowerShell 5.1 tarafından yenisiyle değiştirilmiş), aşağıdaki Windows sürümleri üzerinde çalışır.
 
 - Windows Server 2019, varsayılan olarak yüklenen daha yüksek sürüm
 

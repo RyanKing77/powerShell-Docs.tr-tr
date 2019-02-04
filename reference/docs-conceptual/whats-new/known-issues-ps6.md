@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell, çekirdek
 title: PowerShell 6.0 için bilinen sorunlar
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49451005"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686764"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 için bilinen sorunlar
 
@@ -15,7 +15,7 @@ ms.locfileid: "49451005"
 
 Linux ve Macos'ta PowerShell alfa sürümleri çoğunlukla işlevsel ancak bazı önemli sınırlamalar ve kullanılabilirlik sorunlarını sahip değilsiniz. Linux'ta PowerShell beta sürümleri ve macOS daha işlevsel ve alfa sürümleri daha kararlı ancak yine de bazı özellikler kümesi eksik ve hataları içerebilir. Bazı durumlarda, bu, yalnızca sabit henüz yapmadıysanız hataları sorunlardır. Diğer durumlarda (olduğu gibi varsayılan takma adları ls, cp, vb.), geri bildirim için sunduğumuz seçenekler ile ilgili topluluğundan arıyoruz.
 
-Not: birçok temel alt benzerlikler nedeniyle, Linux ve Macos'ta PowerShell eğilimli aynı hem özellikleri hem de hataları olgunluk düzeyini paylaşmak için. Aşağıda belirtildiği gibi bu bölümdeki konular, her iki işletim sistemlerine uygulanacak dışında.
+Not: Aynı hem özellikleri hem de hataları olgunluk düzeyini paylaşmak için birçok temel alt benzerlikler nedeniyle, Linux ve Macos'ta PowerShell eğilimi gösterir. Aşağıda belirtildiği gibi bu bölümdeki konular, her iki işletim sistemlerine uygulanacak dışında.
 
 ### <a name="case-sensitivity-in-powershell"></a>Büyük küçük harf duyarlılığı PowerShell
 
@@ -107,7 +107,7 @@ Aşağıdaki tabloda, Linux/macos'ta PowerShell çalışmıyor bilinen komutlar�
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Kullanılabilir değil.|Bu komutlar tanınmaz. Bu, gelecekteki bir sürümde düzeltilmelidir.|
 |`Get-Acl`, `Set-Acl`|Kullanılamaz.|Bu komutlar tanınmaz. Bu, gelecekteki bir sürümde düzeltilmelidir.|
 |`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Kullanılamaz.|Bu komutlar tanınmaz. Bu, gelecekteki bir sürümde düzeltilmelidir.|
-|`Wait-Process`|Kullanılabilir, düzgün şekilde çalışmaz. |Örneğin ' işlemini başlat gvim - PassThru | Bekleme işlem içi çalışmaz; işlemin tamamlanmasını beklemek başarısız olur.|
+|`Wait-Process`|Kullanılabilir, düzgün şekilde çalışmaz. |Örneğin `Start-Process gvim -PassThru | Wait-Process` çalışmaz; işleminin tamamlanmasını başarısız olur.|
 |`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Kullanılabilir ancak çalışmaz.|Komutları çalışmıyor belirten bir hata iletisi yazar. Bu, gelecekteki bir sürümde düzeltilmelidir.|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Kullanılabilir, ancak hiçbir olay kaynakları kullanılabilir.|PowerShell olay komutlarını var ancak çoğu komutlarını (örneğin, System.Timers.Timer) ile birlikte olay kaynakları komutları alfa sürümü gereksiz yapmadan Linux'ta kullanılabilir değildir.|
 |`Set-ExecutionPolicy`|Kullanılabilir ancak çalışmaz.|Bu platformda desteklenmiyor iletisini döndürür. Yürütme, bir kullanıcı odaklı "güvenlik kullanıcı pahalı hataları yapmasını önlemeye yardımcı olur, bandı" ilkesidir. Bu bir güvenlik sınırı yoktur.|

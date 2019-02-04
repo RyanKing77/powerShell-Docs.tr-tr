@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Bir çekme yapılandırma kimliklerinin (v4/v5) kullanarak sunucuda yayımlayın
 ms.openlocfilehash: 0144fec43d7a8d65b79891567cc0dc3952175343
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405732"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686372"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Bir çekme yapılandırma kimliklerinin (v4/v5) kullanarak sunucuda yayımlayın
 
@@ -119,7 +119,7 @@ Ardından, belirtilen yapılandırmayı almayı çekme istemcileri yapılandırm
 - [Bir çekme yapılandırma kimliklerinin (v5) kullanarak istemcisi ayarlama](pullClientConfigId.md)
 - [Bir çekme (v5) yapılandırma adlarını kullanarak istemcisi ayarlama](pullClientConfigNames.md)
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [Bir DSC SMB çekme sunucusu ayarlama](pullServerSmb.md)
 - [Bir DSC HTTP çekme sunucusu ayarlama](pullServer.md)

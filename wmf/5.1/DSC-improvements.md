@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: WMF 5.1 DSC geliştirmeleri
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523065"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683803"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 içinde Desired State Configuration (DSC) iyileştirmeleri
 
@@ -206,12 +206,12 @@ Bu özellik, düğüm yapılandırmaları veya güvenilen bir imzalayan tarafın
 ### <a name="how-to-sign-configuration-and-module"></a>Yapılandırma ve modül oturum açma
 
 ***
-* Yapılandırma dosyaları (. MOF'lar): mevcut PowerShell cmdlet'i [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) MOF dosyaları imzalama destekleyecek şekilde genişletilmiştir.
-* Modüller: modüllerini imzalama, aşağıdaki adımları kullanarak karşılık gelen modülü Kataloğu açarak gerçekleştirilir:
-    1. Bir katalog dosyası oluştur: bir katalog dosyası şifreleme karmalarını ya da parmak izleri koleksiyonunu içerir.
+* Yapılandırma dosyaları (. MOF'lar): Mevcut PowerShell cmdlet'i [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) MOF dosyaları imzalama destekleyecek şekilde genişletilmiştir.
+* Modüller: Aşağıdaki adımları kullanarak karşılık gelen modülü Kataloğu açarak modüllerini imzalama gerçekleştirilir:
+    1. Bir katalog dosyası oluşturun: Bir katalog dosyası şifreleme karmalarını ya da parmak izleri koleksiyonunu içerir.
        Her bir parmak izi modülüne dahil edilen bir dosyaya karşılık gelir.
        Yeni cmdlet [yeni FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), kendi modül için bir katalog dosyası oluşturmak için kullanıcıları etkinleştirmek üzere eklenmiştir.
-    2. Oturum kataloğu dosyası: kullanım [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) katalog dosyasını imzalamak için.
+    2. Katalog dosyasını imzalayın: Kullanım [kümesi AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) katalog dosyasını imzalamak için.
     3. Katalog dosyası modülü klasörün içine yerleştirin.
 Kural gereği, modül olarak aynı ada sahip modülü klasörü altında modülü katalog dosyası yerleştirilmelidir.
 
@@ -263,7 +263,7 @@ Yerel Configuration Manager dijital imzaları doğrulamak için aşağıdaki ad�
 5. Install-Module $env: ProgramFiles\WindowsPowerShell\Modules\
 6. İşlem Yapılandırması
 
-> Not: yapılandırmanın ilk kez veya modül indirilir ve yüklenir, sisteme uygulandığında imzası doğrulama modülü katalog ve yapılandırmasına yalnızca gerçekleştirilir.
+> Not: Yapılandırmayı ilk kez veya modül indirilir ve yüklenir, sisteme uygulandığında imzası doğrulama modülü katalog ve yapılandırmasına yalnızca gerçekleştirilir.
 Tutarlılık çalıştırmaları Current.mof veya modül bağımlılıklarını imzasını doğrulamaz.
 Herhangi bir aşamasında doğrulama başarısız olursa, örneği için yapılandırmayı çekilen, çekme sunucusu imzalanmamış, ardından yapılandırmanın işleme aşağıda gösterilen hata ile sona erer ve tüm geçici dosyalar silinir.
 

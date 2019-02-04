@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC rapor sunucusu kullanma
 ms.openlocfilehash: 8647f80c311ee49a5cc4d57360472386e01b044e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405891"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686582"
 ---
 # <a name="using-a-dsc-report-server"></a>DSC rapor sunucusu kullanma
 

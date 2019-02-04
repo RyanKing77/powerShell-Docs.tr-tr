@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Paket DSC kaynağı
 ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048660"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686064"
 ---
 # <a name="dsc-package-resource"></a>Paket DSC kaynağı
 
@@ -36,7 +36,7 @@ Package [string] #ResourceName
 
 | Özellik | Açıklama |
 | --- | --- |
-| Ad| Belirli bir durumu sağlamak istediğiniz paketinin adını belirtir.|
+| Adı| Belirli bir durumu sağlamak istediğiniz paketinin adını belirtir.|
 | Yol| Paketin bulunduğu yol gösterir.|
 | ProductID| Paketi benzersiz olarak tanımlayan ürün Kimliğini belirtir.|
 | Bağımsız değişkenler| Paketi tam olarak sağlanan şekilde geçirilecek bağımsız değişken bir dize listeler.|

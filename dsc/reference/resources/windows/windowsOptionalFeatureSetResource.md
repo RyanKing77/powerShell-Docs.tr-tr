@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC WindowsOptionalFeatureSet kaynağı
 ms.openlocfilehash: c27d026e01bbb443a82112e37f1d199fb3482e49
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048668"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683950"
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet kaynağı
 
@@ -39,7 +39,7 @@ WindowsOptionalFeature [string] #ResourceName
 
 |  Özellik  |  Açıklama   |
 |---|---|
-| Ad| Sağlamak istediğiniz özelliklerini adını etkin veya devre dışı gösterir.|
+| Adı| Sağlamak istediğiniz özelliklerini adını etkin veya devre dışı gösterir.|
 | Emin olun| Özelliklerin etkinleştirilip etkinleştirilmeyeceğini belirtir. Özellikleri olmasını sağlamak için etkin olarak ayarlayın "Etkinleştir" özellikleri devre dışı olduğunu, emin olmak için bu özelliği ayarlayın "Devre dışı bırak" özelliğini.|
 | Kaynak| Henüz uygulanmadı.|
 | NoWindowsUpdateCheck| DISM özellikleri etkinleştirmek kaynak dosyalarının aranacağı Windows Update (WU) kişiler olup olmadığını belirtir. $True, DISM WU sizinle iletişime değil.|

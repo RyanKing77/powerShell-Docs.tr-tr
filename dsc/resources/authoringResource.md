@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Derleme özel Windows PowerShell Desired State Configuration kaynakları
 ms.openlocfilehash: 882b6efed4564d2354183d7472b301e1e1758335
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405701"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684594"
 ---
 # <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>Derleme özel Windows PowerShell Desired State Configuration kaynakları
 

@@ -1,26 +1,26 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 76aa4a372602d78e013b2138eb6409304a4dfb76
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: add6bec798713f00d4b23414b172445e38bbfa44
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190069"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685329"
 ---
-# <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>İstenen durum yapılandırması (DSC) bilinen sorunlar ve sınırlamalar
+# <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) bilinen sorunlar ve sınırlamalar
 
-<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Yeni değişiklik: DSC yapılandırmaları parolalarda şifreleme/şifre çözme için kullanılan sertifikaları WMF 5.0 RTM yükledikten sonra çalışmayabilir
+<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Yeni değişiklik: DSC yapılandırmaları parolaları şifreleme/şifre çözme için kullanılan sertifikaları WMF 5.0 RTM'ye yükledikten sonra çalışmayabilir
 --------------------------------------------------------------------------------------------------------------------------------
 
-WMF 4.0 ve WMF 5.0 Önizleme sürümlerde DSC parolaları uzunlukta yapılandırmasında izin vermez birden fazla 121 karakter. DSC uzun ve güçlü parola gerekli olsa bile kısa parolalarını zorlama. Bu önemli değişiklik parolaları DSC yapılandırması, rastgele uzunlukta olmasını sağlar.
+WMF 4.0 ve WMF 5.0 Önizleme sürümlerinde DSC parolaları uzunlukta yapılandırmada izin vermez 121'den fazla karakter. DSC bile uzun ve güçlü bir parola istenen kısa parolalarını zorlama. Bu değişiklik, parolalar DSC yapılandırma rastgele uzunlukta olmasını sağlar.
 
-**Çözüm:** verileri şifreleme veya anahtar şifreleme anahtarı kullanımını ve belge şifreleme Gelişmiş anahtar kullanımı (1.3.6.1.4.1.311.80.1) sertifikayla yeniden oluşturun. TechNet makalesine <https://technet.microsoft.com/library/dn807171.aspx> daha fazla bilgi bulunur.
+**Çözüm:** Veri şifreleme veya anahtar şifreleme anahtarı kullanım yanı sıra, belge şifreleme Gelişmiş anahtar kullanımı (1.3.6.1.4.1.311.80.1) sertifikayla yeniden oluşturun. TechNet makalesine <https://technet.microsoft.com/library/dn807171.aspx> daha fazla bilgi bulunur.
 
 
-<a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>DSC cmdlet'leri WMF 5.0 RTM yükledikten sonra başarısız olabilir
+<a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>WMF 5.0 RTM'ye yükledikten sonra DSC cmdlet başarısız olabilir
 ------------------------------------------------------------------------------------
-Başlangıç DscConfiguration ve diğer DSC cmdlet'lerini şu hata ile WMF 5.0 RTM yükledikten sonra başarısız olabilir:
+Start-DscConfiguration ve diğer DSC cmdlet'leri WMF 5.0 RTM'ye şu hata ile yükledikten sonra başarısız olabilir:
 ```powershell
     LCM failed to retrieve the property PendingJobStep from the object of class dscInternalCache .
     + CategoryInfo : ObjectNotFound: (root/Microsoft/...gurationManager:String) [], CimException
@@ -28,67 +28,67 @@ Başlangıç DscConfiguration ve diğer DSC cmdlet'lerini şu hata ile WMF 5.0 R
     + PSComputerName : localhost
 ```
 
-**Çözüm:** (yönetici olarak çalıştır) yükseltilmiş bir PowerShell oturumunda aşağıdaki komutu çalıştırarak DSCEngineCache.mof silin:
+**Çözüm:** (Yönetici olarak çalıştır) yükseltilmiş bir PowerShell oturumunda aşağıdaki komutu çalıştırarak DSCEngineCache.mof silin:
 
 ```powershell
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
 
 
-<a name="dsc-cmdlets-may-not-work-if-wmf-50-rtm-is-installed-on-top-of-wmf-50-production-preview"></a>WMF 5.0 RTM WMF 5.0 üretim Önizleme üzerinde yüklüyse, DSC cmdlet'leri çalışmayabilir.
+<a name="dsc-cmdlets-may-not-work-if-wmf-50-rtm-is-installed-on-top-of-wmf-50-production-preview"></a>WMF 5.0 RTM'ye WMF 5.0 üretim önizlemesi üzerine yüklenirse, DSC cmdlet'leri çalışmayabilir
 ------------------------------------------------------
-**Çözüm:** (yönetici olarak çalıştır) yükseltilmiş bir PowerShell oturumunda aşağıdaki komutu çalıştırın:
+**Çözüm:** (Yönetici olarak çalıştır) yükseltilmiş bir PowerShell oturumunda aşağıdaki komutu çalıştırın:
 ```powershell
     mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 ```
 
 
-<a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>LCM'yi yönteminde Get-DscConfiguration kullanırken kararsız bir duruma gidebilirsiniz
+<a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>Get-DscConfiguration yönteminde kullanırken kararsız bir duruma LCM gidebilirsiniz
 -------------------------------------------------------------------------------
 
-LCM'yi yönteminde ise, Get-DscConfiguration işlenmesini durdurmak için CTRL + C tuşlarına basarak gitmek LCM'yi neden olabilir bir kararsız duruma gibi bu DSC cmdlet'leri çoğunluğu çalışmaz.
+Yönteminde LCM ise, Get-DscConfiguration işlenmesini durdurmak için CTRL + C tuşlarına basarak Git LCM neden olabilir, DSC cmdlet'leri çoğunu bir kararsız duruma gibi çalışmaz.
 
-**Çözüm:** Get-DscConfiguration cmdlet'i hata ayıklama sırasında CTRL + C tuşlarına yok.
+**Çözüm:** Get-DscConfiguration cmdlet'i hata ayıklama sırasında CTRL + C tuşlarına basın yok.
 
 
 <a name="stop-dscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration yönteminde kilitlenebilir
 ------------------------------------------------------------------------------------------------------------------------
-LCM'yi yönteminde ise, Get-DscConfiguration tarafından başlatılan bir işlem durdurulmaya çalışılırken sırasında durdurma DscConfiguration kilitlenebilir
+Yönteminde LCM ise bir işlem durdurulmaya çalışılırken Get-DscConfiguration başlatılırken Stop-DscConfiguration kilitlenebilir
 
-**Çözüm:** bölümde özetlendiği gibi Get-DscConfiguration tarafından başlatılan işlem hata ayıklaması son '[hata ayıklama DSC kaynakları](https://msdn.microsoft.com/powershell/dsc/debugresource)'.
+**Çözüm:** Son bölümde açıklandığı gibi Get-DscConfiguration tarafından başlatılan işlem hata ayıklama '[hata ayıklama DSC kaynakları](https://msdn.microsoft.com/powershell/dsc/debugresource)'.
 
 
-<a name="no-verbose-error-messages-are-shown-in-debugmode"></a>Yönteminde hiçbir ayrıntılı hata iletileri gösterilir
+<a name="no-verbose-error-messages-are-shown-in-debugmode"></a>Hiçbir ayrıntılı hata iletilerini yönteminde gösterilir
 -----------------------------------------------------------------------------------
-LCM'yi yönteminde ise, DSC kaynaklarından herhangi bir ayrıntılı hata iletisi görüntülenir.
+LCM yönteminde, DSC kaynaklarından herhangi bir ayrıntılı hata iletisi görüntülenir.
 
-**Çözüm:** devre dışı *DebugMode* kaynaktan ayrıntılı iletiler görmek için
+**Çözüm:** Devre dışı *DebugMode* kaynaktan ayrıntılı iletileri görüntülemek için
 
 
-<a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus cmdlet'i tarafından çağırma DscResource işlemler alınamıyor
+<a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Invoke-DscResource işlemler Get-DscConfigurationStatus cmdlet'i tarafından geri alınamaz
 --------------------------------------------------------------------------------------
-Invoke-DscResource cmdlet'i herhangi kaynağın yöntemlerini doğrudan çağırmak için kullandıktan sonra bu tür işlemi kayıtları Get-DscConfigurationStatus daha sonraki bir zamanda alınamıyor.
+Herhangi bir kaynağın yöntemleri doğrudan çağırmak için Invoke-DscResource cmdlet'i kullandıktan sonra bu işlemi kayıtlarını Get-DscConfigurationStatus daha sonraki bir zamanda alınamıyor.
 
-**Çözüm:** yok.
+**Çözüm:** Yok.
 
 
 <a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus döndürür çekme döngüsü işlemleri türü olarak *tutarlılık*
 ---------------------------------------------------------------------------------
-Bir düğüm gerçekleştirilen, her bir çekme işlemin ÇEKME yenileme modu ayarlandığında Get-DscConfigurationStatus cmdlet'i işlemi türü olarak raporlar *tutarlılık* yerine *ilk*
+Bir düğüm her çekme işleminde gerçekleştirilen, ÇEKME yenileme moduna ayarlandığında Get-DscConfigurationStatus cmdlet'i işlem türü olarak raporlar *tutarlılık* yerine *ilk*
 
-**Çözüm:** yok.
+**Çözüm:** Yok.
 
-<a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Çağırma DscResource cmdlet üretilmiş olan sırada ileti döndürmüyor
+<a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-DscResource cmdlet'i üretilmiş olan sırayla ileti döndürmez
 ---------------------------------------------------------------------------------
-Invoke-DscResource cmdlet'i uyarı, ayrıntılı döndürmüyor ve LCM'yi veya DSC kaynağı tarafından üretilmiş olan sırada bir hata iletileri.
+Invoke-DscResource cmdlet uyarı, ayrıntılı döndürmüyor ve LCM veya DSC kaynağı tarafından üretilmiş olan sırayla hata iletileri.
 
-**Çözüm:** yok.
+**Çözüm:** Yok.
 
 
-<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>DSC kaynakları kolayca Invoke-DscResource ile kullanıldığında hata ayıklaması yapılabilir olamaz
+<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>DSC kaynakları kolayca Invoke-DscResource ile kullanıldığında ayıklanamıyor
 -----------------------------------------------------------------------
-Hata ayıklama modunda LCM'yi çalışırken (bkz [hata ayıklama DSC kaynakları](https://msdn.microsoft.com/powershell/dsc/debugresource) daha fazla ayrıntı için), Invoke-DscResource cmdlet'i hata ayıklama için bağlanmak için çalışma alanı hakkında bilgi vermek değil.
-**Çözüm:** bulma ve cmdlet'lerini kullanarak çalışma attach **Get-PSHostProcessInfo**, **Enter PSHostProcess** , **Get-çalışma** ve **Hata ayıklama çalışma** DSC kaynağı hata ayıklamak için.
+LCM hata ayıklama modunda çalışırken (bkz [hata ayıklama DSC kaynakları](https://msdn.microsoft.com/powershell/dsc/debugresource) daha fazla ayrıntı için), Invoke-DscResource cmdlet'i, hata ayıklama için bağlanmak için çalışma alanı hakkında bilgi vermek değil.
+**Çözüm:** Bulma ve cmdlet'lerini kullanarak bir çalışma ekleme **Get-PSHostProcessInfo**, **Enter PSHostProcess** , **Get-çalışma** ve **hataayıklama-çalışmaalanı** DSC kaynak hata ayıklamak için.
 
 ```powershell
 # Find all the processes hosting PowerShell
@@ -116,76 +116,76 @@ Debug-Runspace -Id 2
 ```
 
 
-<a name="various-partial-configuration-documents-for-same-node-cannot-have-identical-resource-names"></a>Çeşitli kısmi yapılandırma belgeleri aynı düğüm için aynı kaynak adları olamaz
+<a name="various-partial-configuration-documents-for-same-node-cannot-have-identical-resource-names"></a>Aynı kaynak adları aynı düğüm için çeşitli kısmi yapılandırma belgelerini sahip olamaz
 ------------------------------------------------------------------------------------------
 
-Tek bir düğüme dağıtılan birkaç kısmi yapılandırmaları için kaynakları neden aynı adlarını çalıştırma hatası.
+Tek bir düğüme dağıtılır birkaç kısmi yapılandırmalar için kaynakları neden aynı adları çalıştırma hatası.
 
-**Çözüm:** farklı kısmi yapılandırmalarında bile aynı kaynakları için farklı adlar kullanın.
+**Çözüm:** Kısmi farklı yapılandırmalarda bile aynı kaynakları için farklı adlar kullanın.
 
 
-<a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Başlangıç DscConfiguration – UseExisting çalışmıyor ile - kimlik bilgisi
+<a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration – UseExisting çalışmıyor - ile kimlik bilgisi
 ------------------------------------------------------------------
 
-Başlangıç DscConfiguration – UseExisting parametresiyle kullanırken kimlik bilgisi parametresi yoksayılır. DSC işlemi devam etmek için varsayılan işlem kimliğini kullanır. Uzak düğümde devam etmek için farklı bir kimlik bilgisi gerektiğinde bu hataya neden olur.
+Start-DscConfiguration – UseExisting parametresiyle birlikte kullanıldığında Credential parametresi yok sayıldı. DSC, işleme devam etmek için varsayılan işlem kimliğini kullanır. Uzak düğüm üzerinde devam etmek için farklı bir kimlik bilgisi gerektiğinde bu hataya neden olur.
 
-**Çözüm:** kullanım CIM oturumu uzak DSC işlemler için:
+**Çözüm:** CIM oturumu, uzak DSC işlemleri için kullanın:
 ```powershell
 $session = New-CimSession -ComputerName $node -Credential $credential
 Start-DscConfiguration -UseExisting -CimSession $session
 ```
 
 
-<a name="ipv6-addresses-as-node-names-in-dsc-configurations"></a>IPv6 adresleri DSC yapılandırmalarında düğüm adı olarak
+<a name="ipv6-addresses-as-node-names-in-dsc-configurations"></a>DSC yapılandırmaları düğüm adları olarak IPv6 adresleri
 --------------------------------------------------
-IPv6 adresleri düğüm adları DSC yapılandırma komut olarak bu sürümde desteklenmez.
+IPv6 adresleri DSC yapılandırma betiklerini düğüm adları olarak bu sürümde desteklenmez.
 
-**Çözüm:** yok.
+**Çözüm:** Yok.
 
 
-<a name="debugging-of-class-based-dsc-resources"></a>Sınıf tabanlı DSC kaynakları hata ayıklama
+<a name="debugging-of-class-based-dsc-resources"></a>Sınıf tabanlı DSC kaynaklarında hata ayıklama
 --------------------------------------
-Sınıf tabanlı DSC kaynakları hata ayıklama bu sürümde desteklenmiyor.
+DSC kaynakları sınıf tabanlı hata ayıklama bu sürümde desteklenmiyor.
 
-**Çözüm:** yok.
+**Çözüm:** Yok.
 
 
-<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Değişkenleri & DSC sınıf tabanlı kaynak $script kapsamda tanımlanan işlevleri DSC kaynağı için birden fazla çağrı arasında korunmaz
+<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Değişkenleri İşle & vleri DSC sınıf tabanlı kaynak $script kapsamda tanımlanan birden çok çağrı DSC kaynak arasında korunmaz
 -------------------------------------------------------------------------------------------------------------------------------------
 
-Yapılandırma değişkenleri veya işlevleri $script kapsamda tanımlı olan tüm sınıf tabanlı kaynak kullanıyorsa, başlangıç DSCConfiguration birden çok ardışık çağrıları başarısız olur.
+Yapılandırma değişkenleri veya $script kapsamında tanımlanan işlevleri olan tüm sınıf tabanlı kaynak kullanıyorsa, birden çok ardışık Başlat-DSCConfiguration çağrı başarısız olur.
 
-**Çözüm:** tüm değişkenleri ve işlevleri DSC kaynağı sınıfında kendisini tanımlayın. No $script kapsam değişkenleri/işlevler.
+**Çözüm:** Tüm değişkenlerin ve işlevlerin DSC kaynak kendisini tanımlayan sınıf. No $script kapsam değişkenleri/işlevler.
 
 
-<a name="dsc-resource-debugging-when-a-resource-is-using-psdscrunascredential"></a>DSC kaynağı bir kaynak PSDscRunAsCredential kullanılırken hata ayıklama
+<a name="dsc-resource-debugging-when-a-resource-is-using-psdscrunascredential"></a>DSC kaynak bir kaynak PSDscRunAsCredential kullanılırken hata ayıklama
 ----------------------------------------------------------------------
-Bir kaynak kullanırken DSC kaynak hata ayıklama *PSDscRunAsCredential* yapılandırma özelliğinde desteklenen bu sürümde değil.
+DSC kaynak bir kaynak kullanılırken hata ayıklama *PSDscRunAsCredential* Yapılandırma özelliği bu sürümde vnet'i değil.
 
-**Çözüm:** yok.
+**Çözüm:** Yok.
 
 
-<a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>PsDscRunAsCredential DSC bileşik kaynaklar için desteklenmiyor
+<a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>PsDscRunAsCredential bileşik DSC kaynakları için desteklenmiyor
 ----------------------------------------------------------------
 
-**Çözüm:** kullanım kimlik bilgisi özelliği varsa. Örnek ServiceSet ve WindowsFeatureSet
+**Çözüm:** Kimlik bilgisi özelliği varsa kullanın. Örnek ServiceSet ve WindowsFeatureSet
 
 
-<a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource-sözdizimi* PsDscRunAsCredential doğru şekilde yansıtmaz
+<a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource-söz dizimi* PsDscRunAsCredential doğru şekilde yansıtmaz
 -------------------------------------------------------------------------
-Get-DscResource-sözdizimi değil yansıtacak PsDscRunAsCredential doğru kaynak zorunlu olarak işaretler veya bunu desteklemiyor.
+Get-DscResource-söz dizimi yansıtmıyor PsDscRunAsCredential doğru kaynak zorunlu olarak işaretler ya da bunu desteklemiyor.
 
-**Çözüm:** yok. Ancak, işe yapılandırmasında yazma PsDscRunAsCredential özelliği hakkında doğru meta veri IntelliSense kullanırken'yansıtır.
+**Çözüm:** Yok. Ancak, işe yapılandırmasında yazma PsDscRunAsCredential özelliği doğru meta verilerini IntelliSense kullanırken'yansıtır.
 
 
-<a name="windowsoptionalfeature-is-not-available-in-windows-7"></a>Windows 7'de WindowsOptionalFeature kullanılamıyor
+<a name="windowsoptionalfeature-is-not-available-in-windows-7"></a>WindowsOptionalFeature Windows 7'de kullanılamıyor
 -----------------------------------------------------
 
-WindowsOptionalFeature DSC kaynağı, Windows 7'de kullanılamaz. Bu kaynak DISM modülünü ve Windows 8 ve Windows işletim sisteminin daha yeni sürümleri başlayarak kullanılabilir DISM cmdlet'leri gerektirir.
+WindowsOptionalFeature DSC kaynak, Windows 7'de kullanılamıyor. Bu kaynak, DISM modülünü ve Windows 8 Windows işletim sisteminin daha yeni sürümlerde başlayarak kullanılabilir olan DISM cmdlet'leri gerektirir.
 
-<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Sınıf tabanlı DSC kaynakları için içeri aktarma DscResource - ModuleVersion beklendiği gibi çalışmayabilir.
+<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Sınıf tabanlı DSC kaynakları için Import-DscResource - ModuleVersion beklendiği gibi çalışmayabilir
 ------------------------------------------------------------------------------------------
-Derleme düğümü bir sınıf tabanlı DSC kaynağı modülü, birden fazla sürümü varsa `Import-DscResource -ModuleVersion` belirtilen sürüm çekme değil ve aşağıdaki derleme hata neden olur.
+Derleme düğümü DSC kaynak sınıf tabanlı modülü birden fazla sürümü varsa `Import-DscResource -ModuleVersion` belirtilen sürümde çekme değil ve aşağıdaki derleme hatasına neden olur.
 
 ```
 ImportClassResourcesFromModule : Exception calling "ImportClassResourcesFromModule" with "3" argument(s): "Keyword 'MyTestResource' already defined in the configuration."
@@ -196,20 +196,20 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-**Çözüm:** tanımlayarak gerekli sürümü alma *ModuleSpecification* nesnesini `-ModuleName` ile `RequiredVersion` gibi belirtilen anahtarı:
+**Çözüm:** Tanımlayarak gerekli sürümü alma *ModuleSpecification* nesnesini `-ModuleName` ile `RequiredVersion` gibi belirtilen bir anahtarı:
 ``` PowerShell
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
 ```
 
-<a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Kayıt defteri kaynak gibi bazı DSC kaynakları isteğini işlemek için uzun zaman başlayabilir.
+<a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Registry kaynağı gibi bazı DSC kaynakları isteği işlemek için uzun süren başlayabilir.
 --------------------------------------------------------------------------------------------------------------------------------
 
-**Resolution1:** aşağıdaki klasörü düzenli aralıklarla temizlenir bir zamanlama görevi oluşturun.
+**Resolution1:** Aşağıdaki klasörü düzenli aralıklarla temizleyen bir zamanlama görev oluşturun.
 ``` PowerShell
 $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
-**Resolution2:** temizlemek için DSC yapılandırmasını değiştirme *CommandAnalysis* yapılandırmasının sonunda klasör.
+**Resolution2:** Temizlemek için DSC yapılandırmasını değiştirmek *CommandAnalysis* yapılandırmanın sonunda klasör.
 ``` PowerShell
 Configuration $configName
 {

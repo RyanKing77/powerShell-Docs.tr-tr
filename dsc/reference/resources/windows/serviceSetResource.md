@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC ServiceSet kaynağı
 ms.openlocfilehash: 5694c2abc5c0caf0098670b629af464b35125583
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048643"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685665"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet kaynağı
 
@@ -37,7 +37,7 @@ Service [string] #ResourceName
 
 |  Özellik  |  Açıklama   |
 |---|---|
-| Ad| Hizmet adlarını gösterir. Bazen bu görünen adları farklı olduğunu unutmayın. Hizmetler ve bunların geçerli durumunu içeren bir listesini alabilirsiniz [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet'i.|
+| Adı| Hizmet adlarını gösterir. Bazen bu görünen adları farklı olduğunu unutmayın. Hizmetler ve bunların geçerli durumunu içeren bir listesini alabilirsiniz [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet'i.|
 | Başlangıç türü| Hizmet başlangıç türünü gösterir. Bu özellik için izin verilen değerler şunlardır: **Otomatik**, **devre dışı bırakılmış**, ve **el ile**|
 | BuiltInAccount| Hizmetleri kullanmak için oturum açma hesabını belirtir. Bu özellik için izin verilen değerler şunlardır: **Yerelhizmet**, **LocalSystem**, ve **NetworkService**.|
 | Durum| Hizmetler için sağlamak istediğiniz durumunu gösterir: **Durduruldu** veya **çalıştıran**.|

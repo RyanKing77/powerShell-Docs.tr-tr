@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows PowerShell sözlüğü
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405943"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686337"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell sözlüğü
 

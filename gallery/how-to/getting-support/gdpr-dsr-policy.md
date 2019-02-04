@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeri, powershell, psgallery, GDPR
 title: PowerShell Galerisi GDPR uyumluluğu
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002659"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687821"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell Galerisi GDPR uyumluluğu
 
@@ -53,7 +53,7 @@ PowerShell Galerisi veya tarafından gönderilen e-postaları, olası güvenlik 
 E-posta İlkesi tarafından 90 gün sonra silinir.
 
 Gelen e-posta adresinizi ve PowerShell Galerisi veya önceki 90 gün içinde gönderilen tüm e-posta kopyalarını isteyebilir.
-Bu yazışma istemek için bir e-posta Gönder [ cgadmin@microsoft.com ](mailto:cgadmin@microsoft.com), başlıklı: "Bu hesaba ilişkin e-postalar için DSR istek".
+Bu yazışma istemek için bir e-posta Gönder [ cgadmin@microsoft.com ](mailto:cgadmin@microsoft.com), başlık ile: "DSR istek bu hesaba ilişkin e-postalar için".
 Hangi bilgilerin istiyorsunuz iletisinin gövdesinde, durum (örneğin: Lütfen bu e-posta adresinden alınan veya gönderilen tüm e-posta gönderin.) 7 iş günü içinde e-posta adresinizi isteğin 90 gün içinde ilgili tüm e-postalar gönderilir.
 
 ### <a name="powershell-gallery-account-information"></a>PowerShell Galerisi hesap bilgileri
@@ -92,7 +92,7 @@ Yazar ve kaydedilmesi için paketlerini istediğiniz klasör sisteminize sağlam
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>PowerShell Galerisi'nden kişisel verileri silme
 
-PowerShell Galerisi hesabınız veya PowerShell Galerisi'nde olduğunuz herhangi bir paket silmek için e-posta Gönder cgadmin@microsoft.com başlığıyla: "Bu hesaba ilişkin öğeleri için GDPR isteği".
+PowerShell Galerisi hesabınız veya PowerShell Galerisi'nde olduğunuz herhangi bir paket silmek için e-posta Gönder cgadmin@microsoft.com başlığıyla: "GDPR istemek için bu hesaba ilişkin öğeleri".
 Hangi bilgilerin, silinen istediğiniz iletisinin gövdesindeki durumu. Örneğin:
 
 - Lütfen "Paket adı" my paketinin sürümü x.y.z silin

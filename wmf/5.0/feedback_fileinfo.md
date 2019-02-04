@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 63c3b8237a9883b147380dfe9cb173107cea9aa9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5280ef5ff95679dc8721be8f5f81031a4ffe796f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225649"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687072"
 ---
 # <a name="updates-to-fileinfo-object"></a>FileInfo nesnesi güncelleştirmeleri
-Dosya sürümü bilgilerini, özellikle dosya burada oluşturulmuştur durumlarda yanıltıcı. Bu sürüm WMF 5.0 yeni ekler **FileVersionRaw** ve **ProductVersionRaw** komut nesnelere FileInfo özellikleri. (PowerShell işlem Kimliğini $pid olduğunu varsayarak) powershell.exe için görüntülendiği gibi özellikleri şunlardır:
+Dosya sürümü bilgilerini, özellikle dosyasının nerede oluşturulmuştur durumlarda yanıltıcı. WMF 5.0, bu sürümünde yeni ekler **FileVersionRaw** ve **ProductVersionRaw** betik FileInfo nesnelere özellikler. Powershell.exe (PowerShell işlemin Kimliğini $pid olduğunu varsayarak) için görüntülenen özellikler şunlardır:
 
 ```powershell
 PS C:\> Get-Process -Id $pid -FileVersionInfo | fl *version* -Force

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC kaynağı yöntemlerini doğrudan çağırma
 ms.openlocfilehash: cf237f638593706e5959e2bcc0d851b0e55baf0e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405705"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685679"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>DSC kaynağı yöntemlerini doğrudan çağırma
 

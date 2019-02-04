@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 3f73b7cf0cdf033cbd561b3412734692bb7decd7
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 28f4f8ae2bbddc8fb5ef9d95d3061a91fcc8ffe2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187553"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687366"
 ---
-# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Yapılandırmasında aynı yinelenen kaynaklar için izin verme
+# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Bir yapılandırmada aynı kaynağa izin verme
 
-DSC vermek veya çakışan kaynak tanımları bir yapılandırma içinde işler. Çakışmayı çözmek çalışırken yerine, yalnızca başarısız olur. Yapılandırma yeniden daha bileşik kaynaklara aracılığıyla kullanılan hale gibi vb. çakışmaları daha sık meydana gelir. Çakışan kaynak tanımları aynı olduğunda, DSC Akıllı ve bu, olanak gerekir. Bu sürümle birlikte, aynı tanımlara sahip birden çok kaynak örneği sahip destekler:
+DSC izin ver veya yapılandırması içindeki çakışan kaynak tanımlarını işlemek desteklemez. Çakışmayı çözmek çalışmak yerine, basitçe başarısız olur. Yapılandırma yeniden daha bileşik kaynaklarında kullanılan haline gelir gibi vb. çakışmaları daha sık meydana gelir. Çakışan kaynak tanımları aynı olduğunda, DSC Akıllı ve buna izin gerekir. Bu sürümle birlikte, aynı tanımlara sahip birden çok kaynak örneğini sahip destekliyoruz:
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -51,9 +51,9 @@ Configuration WebApplication
 }
 ```
 
-Önceki sürümlerde, sonuç WindowsFeature FE_IIS ve 'Web sunucusu' rolü emin olmak çalışırken WindowsFeature Worker_IIS örnekleri arasında bir çakışma nedeniyle başarısız derleme yüklü olacaktır. Dikkat *tüm* bu iki yapılandırmada yapılandırılan özelliklerini aynıdır. Bu yana *tüm* bu iki özelliklerinin kaynakları aynıdır, bunu şimdi başarılı bir derlemede neden olur.
+Önceki sürümlerde, sonuç WindowsFeature FE_IIS ve 'Web-Server' rolü emin olmak çalışırken WindowsFeature Worker_IIS örnekleri arasında bir çakışma nedeniyle başarısız bir derleme yüklü olacaktır. Dikkat *tüm* bu iki yapılandırmada yapılandırılmış olan özellikleri aynıdır. Bu yana *tüm* bu iki özellik kaynakların aynı olduğundan, bu artık başarılı bir derleme içinde neden olur.
 
-Özelliklerinden herhangi birini iki kaynak arasında farklıysa, bunlar aynı kabul edilmez ve derleme başarısız olur:
+Özelliklerinden herhangi birini iki kaynakları arasında farklıysa, bunlar aynı kabul edilmez ve derleme başarısız olur:
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -94,4 +94,4 @@ Configuration WebApplication
 }
 ```
 
-WindowsFeature FE_IIS WindowsFeature Worker_IIS kaynakları artık aynıdır ve bu nedenle çakışma nedeniyle bu çok benzer yapılandırma başarısız olur.
+WindowsFeature FE_IIS WindowsFeature Worker_IIS kaynakları artık aynıdır ve bu nedenle çakışma nedeniyle bu çok benzer yapılandırmanız başarısız olur.

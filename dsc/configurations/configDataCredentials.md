@@ -2,14 +2,15 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Yapılandırma verilerinde kimlik bilgisi seçeneklerinden
-ms.openlocfilehash: 10cf3456fcc7104b7dd779db30aebace54ba087a
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54046650"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686379"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Yapılandırma verilerinde kimlik bilgisi seçeneklerinden
+
 >Şunun için geçerlidir: Windows PowerShell 5.0
 
 ## <a name="plain-text-passwords-and-domain-users"></a>Düz metin şifreleri ve etki alanı kullanıcıları
@@ -17,146 +18,14 @@ ms.locfileid: "54046650"
 DSC yapılandırmaları içeren bir kimlik bilgisi şifreleme olmadan düz metin parolalar ilgili bir hata iletisi oluşturur.
 Ayrıca, DSC etki alanı kimlik bilgilerini kullanarak bir uyarı oluşturur.
 Engellemek için bu hata ve uyarı iletilerini DSC yapılandırma verileri anahtar sözcükleri kullanın:
-* **PsDscAllowPlainTextPassword**
-* **PsDscAllowDomainUser**
+
+- **PsDscAllowPlainTextPassword**
+- **PsDscAllowDomainUser**
 
 > [!NOTE]
 > Düz metin parolalar şifrelenmemiş depolayarak/iletme genellikle güvenli değildir. Bu konuda açıklanan teknikleri kullanarak kimlik bilgilerini güvenli hale getirme önerilir.
 > Azure Otomasyonu DSC hizmet yapılandırmasında derlenmiş olmaya ve güvenli şekilde depolanan kimlik bilgileri merkezi olarak yönetmenizi sağlar.
 > Bilgi için bkz: [DSC yapılandırmaları derleme / kimlik bilgisi varlıkları](/azure/automation/automation-dsc-compile#credential-assets)
-
-Düz metin kimlik bilgilerini geçirerek bir örnek verilmiştir:
-
-```powershell
-#Prompt user for their credentials
-#credentials will be unencrypted in the MOF
-$promptedCreds = get-credential -Message "Please enter your credentials to generate a DSC MOF:"
-
-# Store passwords in plaintext, in the document itself
-# will also be stored in plaintext in the mof
-$password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
-$username = "User1"
-[PSCredential] $credential = New-Object System.Management.Automation.PSCredential($username,$password)
-
-# DSC requires explicit confirmation before storing passwords insecurely
-$ConfigurationData = @{
-    AllNodes = @(
-            @{
-                # The "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
-                NodeName="*"
-                PSDscAllowPlainTextPassword = $true
-            },
-            #however, each node still needs to be explicitly defined for "*" to have meaning
-            @{
-                NodeName = "TestMachine1"
-            },
-            #we can also use a property to define node-specific passwords, although this is no more secure
-            @{
-                NodeName = "TestMachine2";
-                UserName = "User2"
-                LocalPassword = "ThisIsYetAnotherPlaintextPassword"
-            }
-        )
-}
-
-configuration unencryptedPasswordDemo
-{
-    Node "TestMachine1"
-    {
-        # We use the plaintext password to generate a new account
-        User User1
-        {
-            UserName = $username
-            Password = $credential
-            Description = "local account"
-            Ensure = "Present"
-            Disabled = $false
-            PasswordNeverExpires = $true
-            PasswordChangeRequired = $false
-        }
-        # We use the prompted password to add this account to the local admins group
-        Group addToAdmin
-        {
-            # Ensure the user exists before we add the user to a group
-            DependsOn = "[User]User1"
-            Credential = $promptedCreds
-            GroupName = "Administrators"
-            Ensure = "Present"
-            MembersToInclude = "User1"
-        }
-    }
-
-    Node "TestMachine2"
-    {
-        # Now we'll use a node-specific password to this machine
-        $password = $Node.LocalPassword | ConvertTo-SecureString -asPlainText -Force
-        $username = $node.UserName
-        [PSCredential] $nodeCred = New-Object System.Management.Automation.PSCredential($username,$password)
-
-        User User2
-        {
-            UserName = $username
-            Password = $nodeCred
-            Description = "local account"
-            Ensure = "Present"
-            Disabled = $false
-            PasswordNeverExpires = $true
-            PasswordChangeRequired = $false
-        }
-
-        Group addToAdmin
-        {
-            Credential = $promptedCreds
-            GroupName = "Administrators"
-            DependsOn = "[User]User2"
-            Ensure = "Present"
-            MembersToInclude = "User2"
-        }
-    }
-}
-
-# We declared the ConfigurationData in a local variable, but we need to pass it
-# in to our configuration function
-# We need to invoke the configuration function we created to generate a MOF
-unencryptedPasswordDemo -ConfigurationData $ConfigurationData
-
-# We need to pass the MOF to the machines we named.
-#-wait: doesn't use jobs so we get blocked at the prompt until the configuration is done
-#-verbose: so we can see what's going on and catch any errors
-#-force: for testing purposes, I run start-dscconfiguration frequently + want to make sure i'm
-#        not blocked by previous configurations that are still running
-Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
-```
-
-"TestMachine1" yapılandırması tarafından oluşturulan ".mof" dosyasından bir alıntı budur. `System.Security.SecureString` Kullanılan yapılandırma düz metne dönüştürülür ve ".mof" dosyası olarak depolanan bir `MSF_Credential`. A `SecureString` geçerli bir kullanıcı profili ile şifrelenir. Bu da PowerShell uzaktan yönetiminin tüm formları ile çalışır. Bir ".mof" dosyası, bir tek başına yapılandırma mekanizması olacak şekilde tasarlanmıştır. PowerShell 5. 0'den itibaren bekleyen, ancak geçiş düğüme bir düğüm üzerindeki ".mof" dosyalar şifrelenir. Bu, bir düğüme uyguladığınızda ".mof" dosyasında parolaları düz metin ifşa anlamına gelir. Kullanmak istediğiniz kimlik bilgilerini şifrelemek için bir **çekme sunucusu**. Daha fazla bilgi için [sertifikalar ile güvenli hale getirme MOF dosyaları](../pull-server/secureMOF.md).
-
-```syntax
-instance of MSFT_Credential as $MSFT_Credential1ref
-{
-Password = "ThisIsYetAnotherPlaintextPassword";
- UserName = "User2";
-
-};
-
-instance of MSFT_UserResource as $MSFT_UserResource1ref
-{
-ResourceID = "[User]User2";
- Description = "local account";
- UserName = "User2";
- Ensure = "Present";
- Password = $MSFT_Credential1ref;
- Disabled = False;
- SourceInfo = "::66::9::User";
- PasswordNeverExpires = True;
- ModuleName = "PsDesiredStateConfiguration";
- PasswordChangeRequired = False;
-
-ModuleVersion = "1.0";
-
- ConfigurationName = "unencryptedPasswordDemo";
-
-};
-```
 
 ## <a name="handling-credentials-in-dsc"></a>DSC kimlik bilgilerini işleme
 
@@ -237,31 +106,40 @@ DomainCredentialExample -DomainCredential $cred
 Bu kod, bir hata ve uyarı iletisi oluşturur:
 
 ```
-ConvertTo-MOFInstance : System.InvalidOperationException error processing
-property 'Credential' OF TYPE 'Group': Converting and storing encrypted
-passwords as plain text is not recommended. For more information on securing
-credentials in MOF file, please refer to MSDN blog:
-http://go.microsoft.com/fwlink/?LinkId=393729
+ConvertTo-MOFInstance : System.InvalidOperationException error processing property 'Credential' OF
+TYPE 'Group': Converting and storing encrypted passwords as plain text is not recommended.
+For more information on securing credentials in MOF file, please refer to MSDN blog:
+https://go.microsoft.com/fwlink/?LinkId=393729
 
 At line:11 char:9
 +   Group
-At line:297 char:16
+At line:341 char:16
 +     $aliasId = ConvertTo-MOFInstance $keywordName $canonicalizedValue
 +                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidOperation: (:) [Write-Error], InvalidOperationException
     + FullyQualifiedErrorId : FailToProcessProperty,ConvertTo-MOFInstance
+WARNING: It is not recommended to use domain credential for node 'localhost'. In order to suppress
+the warning, you can add a property named 'PSDscAllowDomainUser' with a value of $true to your DSC
+configuration data for node 'localhost'.
 
-WARNING: It is not recommended to use domain credential for node 'localhost'.
-In order to suppress the warning, you can add a property named
-'PSDscAllowDomainUser' with a value of $true to your DSC configuration data
-for node 'localhost'.
+Compilation errors occurred while processing configuration
+'DomainCredentialExample'. Please review the errors reported in error stream and modify your
+configuration code appropriately.
+At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\PSDesiredStateConfiguration.psm1:3917 char:5
++     throw $ErrorRecord
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (DomainCredentialExample:String) [], InvalidOperationException
+    + FullyQualifiedErrorId : FailToProcessConfiguration
 ```
 
 Bu örnekte, iki sorun vardır:
+
 1. Bir hata düz metin parolalar önerilmez açıklar.
 2. Bir uyarı bir etki alanı kimlik bilgisi kullanılmamasını önerir.
 
-## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
+Bayrakları **PSDSCAllowPlainTextPassword** ve **PSDSCAllowDomainUser** hata ve söz konusu riski kullanıcısı bildiren bir uyarı bastırır.
+
+## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
 İlk hata iletisi, belgeleri bir URL vardır.
 Bu bağlantıyı kullanarak parolaları şifrelemek açıklanmaktadır bir [ConfigurationData](./configData.md) yapısı ve bir sertifika.
@@ -270,12 +148,12 @@ Sertifikaları ve DSC hakkında daha fazla bilgi için [Bu gönderiyi okuyun](ht
 Düz metin parola zorlamak için kaynak gerektiren `PsDscAllowPlainTextPassword` yapılandırma verilerini bir anahtar sözcük bölümünde şu şekilde:
 
 ```powershell
+$password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
+$username = "contoso\Administrator"
+[PSCredential] $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+
 Configuration DomainCredentialExample
 {
-    param
-    (
-        [PSCredential] $DomainCredential
-    )
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     node localhost
@@ -284,7 +162,7 @@ Configuration DomainCredentialExample
         {
             GroupName        = 'ApplicationAdmins'
             MembersToInclude = 'contoso\alice'
-            Credential       = $DomainCredential
+            Credential       = $credential
         }
     }
 }
@@ -298,12 +176,56 @@ $cd = @{
     )
 }
 
-$cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
-DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
+DomainCredentialExample -ConfigurationData $cd
 ```
 
-> [!NOTE]
-> `NodeName` yıldız işareti, belirli bir düğümün adı zorunludur eşit olamaz.
+### <a name="localhostmof"></a>localhost.mof
+
+**PSDSCAllowPlainTextPassword** bayrağı gerektiren kullanıcı MOF dosyasında düz metin parolaların saklanması riskini kabul etme. Oluşturulan MOF dosyasındaki olsa bile bir **PSCredential** nesne içeren bir **SecureString** kullanılan, parolaları düz metin olarak görünmeye devam eder. Kimlik bilgilerinin ifşa edildiği yalnızca bir kez budur. Herkes yönetici hesabına bu MOF dosyası erişmenizi erişmesini.
+
+```
+/*
+@TargetNode='localhost'
+@GeneratedBy=Administrator
+@GenerationDate=01/31/2019 06:43:13
+@GenerationHost=Server01
+*/
+
+instance of MSFT_Credential as $MSFT_Credential1ref
+{
+Password = "ThisIsAPlaintextPassword";
+ UserName = "Administrator";
+
+};
+
+instance of MSFT_GroupResource as $MSFT_GroupResource1ref
+{
+ResourceID = "[Group]DomainUserToLocalGroup";
+ MembersToInclude = {
+    "contoso\\alice"
+};
+ Credential = $MSFT_Credential1ref;
+ SourceInfo = "::11::9::Group";
+ GroupName = "ApplicationAdmins";
+ ModuleName = "PSDesiredStateConfiguration";
+
+ModuleVersion = "1.0";
+
+ ConfigurationName = "DomainCredentialExample";
+
+};
+```
+
+### <a name="credentials-in-transit-and-at-rest"></a>Aktarımda ve bekleme sırasında kimlik bilgileri
+
+- **PSDscAllowPlainTextPassword** bayrağı, düz metin parolalar içeren MOF dosyaları derlenmesini sağlar.
+  Düz metin parolalar içeren MOF dosyaları depolarken önlemleri alın.
+- Ne zaman MOF dosyasını girmediklerinden bir düğüme **anında iletme** modu, WinRM şifreler varsayılan yazmadığınız sürece düz metin parolası korumak için iletişim **AllowUnencrypted** parametresi.
+  - Bir sertifika ile MOF şifreleme, bir düğüme uygulanan önce bekleyen MOF dosyasını korur.
+- İçinde **çekme** modu, Internet Information Server'ın belirtilen protokolünü kullanarak trafiği şifrelemek için HTTPS kullanmak üzere Windows çekme sunucusu yapılandırabilirsiniz. Daha fazla bilgi için makalelere bakın [DSC çekme istemcisi ayarlama](../pull-server/pullclient.md) ve [sertifikalar ile güvenli hale getirme MOF dosyaları](../pull-server/secureMOF.md).
+  - İçinde [Azure Otomasyon durum Yapılandırması](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) hizmeti, çekme trafik her zaman şifrelenir.
+- Düğümde, MOF dosyaları bekleme sırasında şifrelenir PowerShell 5. 0'den itibaren.
+  - Gönderilen veya düğüme çekilen bir sertifika ile şifrelenir sürece içinde PowerShell 4.0 MOF dosyaları bekleme sırasında şifrelenmemiş olarak.
 
 **Önemli güvenlik riski nedeniyle düz metin parolalar önlemek için Microsoft önerir.**
 
@@ -314,7 +236,7 @@ Yerel bir hesap kullanarak, diğer tüm sunucularda kullanılabilir etki alanı 
 
 **DSC kaynakları ile kimlik bilgilerini kullanarak, yerel bir hesap bir etki alanı hesabı mümkün olduğunda tercih edin.**
 
-Varsa bir '\' veya '\@' ın `Username` özelliği kimlik bilgisi, daha sonra DSC işlemek, bir etki alanı hesabı olarak.
+Varsa bir '\\'veya'\@' nda `Username` özelliği kimlik bilgisi, daha sonra DSC işlemek, bir etki alanı hesabı olarak.
 Bir özel durum için "localhost", "127.0.0.1" ve ":: 1" kullanıcı adının etki alanı bölümü içinde.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
@@ -323,16 +245,36 @@ DSC, `Group` yukarıda bir Active Directory etki alanı sorgulanıyor kaynak ör
 Bu durumda ekleme `PSDscAllowDomainUser` özelliğini `ConfigurationData` bloğunu şu şekilde:
 
 ```powershell
+$password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
+$username = "contoso\Administrator"
+[PSCredential] $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+
+Configuration DomainCredentialExample
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+    node localhost
+    {
+        Group DomainUserToLocalGroup
+        {
+            GroupName        = 'ApplicationAdmins'
+            MembersToInclude = 'contoso\alice'
+            Credential       = $credential
+        }
+    }
+}
+
 $cd = @{
     AllNodes = @(
         @{
             NodeName = 'localhost'
             PSDscAllowDomainUser = $true
-            # PSDscAllowPlainTextPassword = $true
-            CertificateFile = "C:\PublicKeys\server1.cer"
+            PSDscAllowPlainTextPassword = $true
         }
     )
 }
+
+DomainCredentialExample -ConfigurationData $cd
 ```
 
 Artık yapılandırma betiği ile bir hata veya uyarı MOF dosyası oluşturur.

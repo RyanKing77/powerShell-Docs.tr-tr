@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: İlgili kişi galeri yöneticileri
 ms.openlocfilehash: f9197dfbf0cedb642259f554b42ec6f63eae30a4
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002181"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684986"
 ---
 # <a name="contact-gallery-administrators"></a>İlgili kişi galeri yöneticileri
 

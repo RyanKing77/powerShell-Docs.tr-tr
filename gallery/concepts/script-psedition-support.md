@@ -4,11 +4,11 @@ contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
 title: Komut dosyası ile uyumlu PowerShell sürümleri
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655285"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686638"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Komut dosyası ile uyumlu PowerShell sürümleri
 

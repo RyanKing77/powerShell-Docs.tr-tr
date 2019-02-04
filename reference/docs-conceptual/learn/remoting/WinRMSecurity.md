@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: WinRMSecurity
 ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405767"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688311"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell uzaktan iletişim güvenlik konuları
 
@@ -23,7 +23,7 @@ PowerShell uzaktan iletişimini kullanarak aynı değil **ComputerName** çalı�
 
 PowerShell uzaktan iletişimini (ve WinRM) aşağıdaki bağlantı noktalarında dinlemek:
 
-- HTTP: 5985'tir
+- HTTP: 5985
 - HTTPS: 5986
 
 Varsayılan olarak PowerShell uzaktan iletişimini bağlantıları yalnızca Administrators grubunun üyeleri sağlar. Oturumlarının tüm işletim sistemi erişim denetimleri bireysel kullanıcılara uygulanan ve gruplar varken üzerinden PowerShell uzaktan iletişimi için uygulamaya devam etmek için kullanıcının bağlamında başlatılabilir.

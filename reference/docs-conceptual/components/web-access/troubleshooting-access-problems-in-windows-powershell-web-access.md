@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
 title: windows powershell web erişiminde erişim sorunlarını giderme
-ms.openlocfilehash: c9b98c7a1685679eb88b718de0351154cb84e92e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405765"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688122"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi’nde Erişim Sorunlarını Giderme
 
@@ -139,4 +139,4 @@ IPv6 adresleri hakkında daha fazla bilgi için bkz. [IPv6 nasıl çalışır](h
 
 - [Yetkilendirme kuralları ve güvenlik özellikleri Windows PowerShell Web erişimi](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 - [Web tabanlı Windows PowerShell konsolunu kullanma](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

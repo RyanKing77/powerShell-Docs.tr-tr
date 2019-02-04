@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Paketleri silme
 ms.openlocfilehash: ca5e68fcad52e4c7561d2c2b3858228652f22e0b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004211"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684979"
 ---
 # <a name="deleting-packages"></a>Paketleri silme
 

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA'da raporlama ve denetleme
 ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851229"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688605"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>JEA'da raporlama ve denetleme
 
-> İçin geçerlidir: Windows PowerShell 5.0
+> Şunun için geçerlidir: Windows PowerShell 5.0
 
 JEA dağıttıktan sonra düzenli olarak JEA yapılandırmayı denetlemek isteyebilirsiniz.
 Bu, doğru kişilerin JEA uç noktasına erişebildiğinden ve atanan rollerinin hala uygun değerlendirmenize yardımcı olur.
@@ -147,6 +147,6 @@ Her komutun çıktısı da bir CommandInvocation genellikle dışarı varsayıla
 Inputobject Out-Default, komuttan döndürülen PowerShell nesnedir.
 Bu nesnenin ayrıntılarını yazdırılır aşağıda yakından kullanıcı gördünüz yakından taklit eden birkaç satır kod.
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [*PowerShell mavi takımın ♥* güvenlik blog gönderisi](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

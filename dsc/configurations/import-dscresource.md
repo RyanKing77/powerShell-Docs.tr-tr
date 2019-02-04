@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Import-DSCResource kullanma
 ms.openlocfilehash: 6bc3c1aa1d34a05e3188666da825322235c0672e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405825"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686617"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource kullanma
 
@@ -144,6 +144,6 @@ Modül dizinini, en üst düzeye istenen modülün sürümünüzü içeriğini k
 
 Geliştirme ve yapılandırmaları derleme kaynaklarınızı tarafından belirtilen herhangi bir dizinini depolanabilir, [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). PowerShell 4. 0'da, "Program Files\WindowsPowerShell\Modules" altında depolanan tüm DSC kaynak modülleri LCM gerektirir veya `$pshome\Modules`. PowerShell 5. 0'den itibaren bu gereksinimi kaldırıldı ve kaynak modülleri tarafından belirtilen herhangi bir dizinini depolanabilir `PSModulePath`.
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [Kaynaklar](../resources/resources.md)

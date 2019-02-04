@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows PowerShell Tümleşik komut dosyası ortamı ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
 ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405679"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683838"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Tümleşik Komut Dosyası Ortamı (ISE)
 
@@ -67,6 +67,6 @@ ISE sonraki veya Windows PowerShell v2.0 çalıştırabilirsiniz herhangi bir Wi
 > [!NOTE]
 > Windows PowerShell ISE'de bir grafik kullanıcı arabirimi gerektirdiğinden, Windows Server'ın Sunucu Çekirdeği seçeneğini üzerinde çalıştırılamaz.
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 [Windows power shell ISE betik oluşturma nesne modelinin amacı](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

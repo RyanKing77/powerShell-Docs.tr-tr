@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, kaynak, Galeri, Kurulum
-title: İçin yapılandırma parametreleri Ekle
+title: Yapılandırmalara Parametre Ekleme
 ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405771"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685406"
 ---
-# <a name="add-parameters-to-a-configuration"></a>İçin yapılandırma parametreleri Ekle
+# <a name="add-parameters-to-a-configuration"></a>Yapılandırmalara Parametre Ekleme
 
 İşlevler, ister [yapılandırmaları](configurations.md) kullanıcı girişini temel alarak daha dinamik yapılandırmaları izin vermek için parametreli olabilir. İçinde açıklananlara benzer adımlarla [parametreleri olan işlevlere](/powershell/module/microsoft.powershell.core/about/about_functions).
 
@@ -224,7 +224,7 @@ Configuration TestConfig
 }
 ```
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [DSC yapılandırmaları için Yardım yazma](configHelp.md)
 - [Dinamik yapılandırmaları](flow-control-in-configurations.md)

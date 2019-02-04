@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Ayrıntılı Yardım Bilgisi Alma
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ms.openlocfilehash: 8b56f003fdef38b0f126cfe82eefcc145cc54783
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411608"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684090"
 ---
 # <a name="getting-detailed-help-information"></a>Ayrıntılı yardım bilgisi alma
 
@@ -174,7 +174,7 @@ Online version: http://go.microsoft.com/fwlink/?LinkId=821564
 
 Çevrimiçi destek için Yardım makaleleriniz sağlama hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
 - [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)

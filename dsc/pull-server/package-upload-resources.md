@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Paket ve karşıya yükleme kaynakları için bir çekme sunucusu
 ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405707"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688808"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Paket ve karşıya yükleme kaynakları için bir çekme sunucusu
 
@@ -95,7 +95,7 @@ ConfigurationRepositoryShare SMBPullServer
 
 Arşivin adı sürüm numarasını değiştirmek veya yeni bir sağlama toplamı oluşturarak kaynaklarını güncelleştirmek için bir düğüm zorlayabilirsiniz. Çekme istemcisi daha yeni sürümleri gerekli kaynakları için kontrol eder, aynı zamanda kendi LCM yenilendiğinde sağlama, güncelleştirilmiş.
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [Bir DSC SMB çekme sunucusu ayarlama](pullServerSmb.md)
 - [Bir DSC HTTP çekme sunucusu ayarlama](pullServer.md)

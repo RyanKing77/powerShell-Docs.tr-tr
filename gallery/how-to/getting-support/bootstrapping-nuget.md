@@ -4,11 +4,11 @@ contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
 title: NuGet önyükleniyor
 ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002147"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683971"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet sağlayıcısı ve NuGet.exe önyükleme
 
@@ -155,7 +155,7 @@ Cmdlet'lerin yükseltilmiş izinleri olmayan bir kullanıcı olarak yürütüld�
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-İkinci seçenek NuGet.Org Web sitesinden NuGet.exe indirmektir: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) NugGet sürümü için üretim makinelerinden seçerken 2.8.5.208 sonraki olduğundan emin olun ve etiketli sürümünüzü belirlemek " Önerilen". Bir tarayıcı kullanarak indirilen, dosyanın Engellemeyi Kaldır unutmayın. Bunu kullanarak gerçekleştirilebilir `Unblock-File` cmdlet'i.
+NuGet.exe NuGet.Org Web sitesinden indirme ikinci bir seçenektir: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) NugGet sürümü için üretim makinelerinden seçerken, 2.8.5.208 sonraki olduğundan emin olun ve "önerilen" etiketli sürümü tanımlayın. Bir tarayıcı kullanarak indirilen, dosyanın Engellemeyi Kaldır unutmayın. Bunu kullanarak gerçekleştirilebilir `Unblock-File` cmdlet'i.
 
 Her iki durumda da NuGet.exe dosyanın herhangi bir konuma kopyalanabilir `$env:path`, ancak Standart konumlar:
 

@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: WMI nesnelerini alma Get WmiObject
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
 ms.openlocfilehash: 522822ac3ea6f08b20fa5af6c9accb48b01035d3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405687"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688465"
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>WMI nesnelerini (Get-WmiObject)
 

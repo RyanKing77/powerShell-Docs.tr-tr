@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Birleştirme ve İşbirliği için Gelişmiş DSC Yazma
 ms.openlocfilehash: 3e40ba94de0a53c1c9663553c4ec443b5e0df3fd
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405894"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687177"
 ---
 # <a name="advanced-dsc-authoring-for-composition-and-collaboration"></a>Birleştirme ve İşbirliği için Gelişmiş DSC Yazma
 

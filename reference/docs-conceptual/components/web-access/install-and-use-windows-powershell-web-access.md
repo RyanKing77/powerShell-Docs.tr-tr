@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
 title: windows powershell web erişimi yükleme ve kullanma
-ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405839"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683831"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yükleme ve Kullanma
 
@@ -133,10 +133,10 @@ Varsayılan olarak, cmdlet web uygulaması yükler **pswa** (ve ona ait bir uygu
 
    Aşağıdaki ayarlar cmdlet çalıştırılarak yapılandırılır. İsterseniz bunları IIS Yöneticisi konsolunda el ile değiştirebilirsiniz.
 
-   - Yol: / pswa
+   - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
    **Örnek**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
@@ -158,10 +158,10 @@ Varsayılan olarak, cmdlet web uygulaması yükler **pswa** (ve ona ait bir uygu
 
    Aşağıdaki ağ geçidi ayarları cmdlet çalıştırılarak yapılandırılır. İsterseniz bunları IIS Yöneticisi konsolunda el ile değiştirebilirsiniz. `WebsiteName` cmdlet’inin `WebApplicationName` ve `Install-PswaWebApplication` parametreleri için de değer belirtebilirsiniz.
 
-   - Yol: / pswa
+   - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
 3. Aşağıdakilerden birini yaparak IIS Yöneticisi konsolunu açın.
 
@@ -271,7 +271,7 @@ Bu bölümdeki yönergeler, Windows PowerShell Web erişimi web uygulamasını y
 
 7. İçinde **uygulama havuzu** alanında, adım 3'te oluşturduğunuz uygulama havuzunu seçin.
 
-8. İçinde **fiziksel yolu** alan, için uygulamanın konumuna göz atın. Varsayılan konumu kullanabileceğiniz `%windir%/Web/PowerShellWebAccess/wwwroot`. **Tamam**’a tıklayın.
+8. İçinde **fiziksel yolu** alan, için uygulamanın konumuna göz atın. Varsayılan konumu kullanabileceğiniz `$env:windir/Web/PowerShellWebAccess/wwwroot`. **Tamam**’a tıklayın.
 
 9. Yordamdaki adımları [IIS Yöneticisi'nde bir SSL sertifikası yapılandırma](#to-configure-an-ssl-certificate-in-iis-Manager) bu konuda.
 
@@ -318,7 +318,7 @@ Bu bölümdeki yönergeler, Windows PowerShell Web erişimi web uygulamasını y
 
 1. Yeni web sitesi için bir uygulama havuzu otomatik olarak oluşturulur. Farklı bir uygulama havuzu kullanmak için **seçin** yeni Web sitesiyle ilişkilendirilecek bir uygulama havuzu seçin. Diğer uygulama havuzunu seçin **uygulama havuzu Seç** iletişim kutusunu ve ardından **Tamam**.
 
-1. İçinde **fiziksel yolu** metin kutusunda, % gidin*windir*% / Web/PowerShellWebAccess/wwwroot.
+1. İçinde **fiziksel yolu** metin kutusunda, Windir%/Web/PowerShellWebAccess/Wwwroot için gidin.
 
 1. İçinde **türü** alanını **bağlama** alanında **https**.
 

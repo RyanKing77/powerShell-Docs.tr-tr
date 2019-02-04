@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Hızlı Başlangıç - DSC ile bir Web sitesi oluşturma
 ms.openlocfilehash: c62e2d8af46bf74c4dd13069ddff6cc39763a209
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405680"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684258"
 ---
 > Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: PowerShell sınıfları ile özel bir DSC kaynağı yazma
-ms.openlocfilehash: 0759685b04688f574d72b62a15833832ad19e816
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405850"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688318"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell sınıfları ile özel bir DSC kaynağı yazma
 
@@ -30,8 +30,8 @@ DSC özel kaynak PowerShell sınıfı ile uygulamak için aşağıdaki klasör y
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1
-           MyDscResource.psd1
+        MyDscResource.psm1
+        MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>Sınıf oluşturma
@@ -86,7 +86,6 @@ enum Ensure
 Bu kod ayrıca dosyasından kopyalayan bir yardımcı işlevini CopyFile() işlevi içerir **$SourcePath** için **$Path**.
 
 ```powershell
-
     <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
@@ -217,6 +216,7 @@ Bu kod ayrıca dosyasından kopyalayan bir yardımcı işlevini CopyFile() işle
 ```
 
 ### <a name="the-complete-file"></a>Tam dosya
+
 Tam sınıf dosyası izler.
 
 ```powershell
@@ -414,7 +414,6 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
-
 ## <a name="create-a-manifest"></a>Bir bildirimi oluşturma
 
 Bir sınıf tabanlı kaynak DSC altyapısı kullanılabilir hale getirmek için içermelidir bir **DscResourcesToExport** deyimi bildirimi dosyasındaki kaynak dışarı aktarılacak modülü bildirir. Bizim bildiriminin şöyle görünür:
@@ -497,6 +496,36 @@ class FileResource {
 }
 ```
 
+### <a name="declaring-multiple-class-resources-in-a-module"></a>Modül içindeki birden fazla sınıf kaynakları bildirme
+
+Bir modülün birden fazla temel sınıf DSC kaynakları tanımlayabilirsiniz. Klasör yapısı aşağıdaki yollarla oluşturabilirsiniz:
+
+1. İlk kaynak tanımlama "<ModuleName>.psm1" dosya ve sonraki kaynaklarınıza **DSCResources** klasör.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. Altındaki tüm kaynakları tanımlayan **DSCResources** klasör.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
+
+> [!NOTE]
+> Yukarıdaki örneklerde, altındaki tüm PSM1 dosyaları ekleme **DSCResources** için **NestedModules** PSD1 dosyanızdaki anahtar.
+
 ### <a name="access-the-user-context"></a>Erişim kullanıcı bağlamı
 
 Özel bir kaynak içinde kullanıcı bağlamından erişmek için otomatik değişken kullanabilirsiniz `$global:PsDscContext`.
@@ -510,5 +539,5 @@ if (PsDscContext.RunAsUser) {
 ```
 
 ## <a name="see-also"></a>Ayrıca bkz:
-### <a name="concepts"></a>Kavramlar
+
 [Derleme özel Windows PowerShell Desired State Configuration kaynakları](authoringResource.md)

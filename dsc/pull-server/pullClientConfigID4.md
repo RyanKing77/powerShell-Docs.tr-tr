@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Yapılandırma kimliklerinin PowerShell 4. 0'kullanarak bir çekme istemcisi ayarlama
 ms.openlocfilehash: 9adc767e91ff19d373c122a0d493e7b8703d5476
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405880"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685483"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Yapılandırma kimliklerinin PowerShell 4. 0'kullanarak bir çekme istemcisi ayarlama
 

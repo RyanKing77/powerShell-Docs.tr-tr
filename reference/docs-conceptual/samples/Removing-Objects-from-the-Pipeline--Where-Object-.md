@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Komut zincirinden nesne kaldırma nesne
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405947"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685728"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Nesneler (Where-Object) komut zincirinden nesne kaldırma
 

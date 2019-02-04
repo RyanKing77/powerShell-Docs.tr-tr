@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: Yüklü olan bir kaynağın belirli bir sürümünü içeri aktarın
+title: Yüklü bir kaynağın belirli bir sürümünü içeri aktarma
 ms.openlocfilehash: 5ed81e11aa67eb6590d958647f48a33b1b5f1c0e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405684"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683887"
 ---
-# <a name="import-a-specific-version-of-an-installed-resource"></a>Yüklü olan bir kaynağın belirli bir sürümünü içeri aktarın
+# <a name="import-a-specific-version-of-an-installed-resource"></a>Yüklü bir kaynağın belirli bir sürümünü içeri aktarma
 
 > Şunun için geçerlidir: Windows PowerShell 5.0
 
@@ -95,7 +95,7 @@ configuration VersionTest
 
 Bu PowerShell 5. 0'da çalışır, ancak kullanmanızı tavsiye edilir **ModuleVersion** parametresi.
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [DSC yapılandırmaları](configurations.md)
 - [DSC kaynakları](../resources/resources.md)

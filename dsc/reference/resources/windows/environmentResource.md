@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Environment kaynağı
 ms.openlocfilehash: 2bc1600a9df32538d59efa712569b12fa9e3beee
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048664"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685987"
 ---
 # <a name="dsc-environment-resource"></a>DSC Environment kaynağı
 
@@ -31,7 +31,7 @@ Environment [string] #ResourceName
 
 |  Özellik  |  Açıklama   |
 |---|---|
-| Ad| Belirli bir durumu sağlamak istediğiniz ortam değişkeninin adı gösterir.|
+| Adı| Belirli bir durumu sağlamak istediğiniz ortam değişkeninin adı gösterir.|
 | Emin olun| Bir değişkenin olup olmadığını gösterir. Bu özellik kümesine __mevcut__ henüz yoksa ortam değişkenini oluşturmak veya değerini aracılığıyla sağlanan eşleştiğinden emin olmak için __değer__ değişkeni zaten varsa, özelliği. Ayarlayın __devamsızlık__ varsa değişken silinemedi.|
 | Yol| Yapılandırılan ortam değişkenini tanımlar. Bu özellik kümesine __$true__ değişken ise __yolu__ değişken; Aksi takdirde ayarlayın __$false__. Varsayılan değer __$false__. Yapılandırılan değişken ise __yolu__ değişkeni aracılığıyla belirtilen değer __değer__ özelliği için mevcut değeri eklenir.|
 | DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise __ResourceName__ ve kendi türünün __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|

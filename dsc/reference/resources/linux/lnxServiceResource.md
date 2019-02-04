@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC için Linux nxService kaynağı
 ms.openlocfilehash: fe8043995205649378725f2ab0a78e19313739c9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048640"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684251"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC için Linux nxService kaynağı
 
@@ -30,7 +30,7 @@ nxService <string> #ResourceName
 
 | Özellik | Açıklama |
 |---|---|
-| Ad| Yapılandırmak için hizmetin/daemon adı.|
+| Adı| Yapılandırmak için hizmetin/daemon adı.|
 | Denetleyici| Hizmeti yapılandırırken kullanılacak hizmet denetleyicisi türü.|
 | Etkin| Hizmet önyükleme başlayıp başlamadığını gösterir.|
 | Durum| Hizmetin çalışıp çalışmadığını gösterir. Bu özelliği hizmet çalışmadığından emin olmak için "Stopped" olarak ayarlayın. "Hizmet çalışmadığından emin olmak için çalışıyor" olarak ayarlayın.|

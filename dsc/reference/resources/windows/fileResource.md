@@ -2,23 +2,21 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC dosya kaynağı
-ms.openlocfilehash: e5f7a91e5f19c8c7bbada090804d8f29a7cfedd5
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.openlocfilehash: b5bc2c305b8cfccbd044274811df631264a24279
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048749"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688430"
 ---
 # <a name="dsc-file-resource"></a>DSC dosya kaynağı
 
 > Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Dosya kaynağı, Windows PowerShell Desired State Configuration (DSC) hedef düğüm üzerindeki dosya ve klasörleri yönetmek için bir mekanizma sağlar.
-
->**Not:** Varsa **MatchSource** özelliği **$false** (varsayılan değer olan), yapılandırmanın geçerli olduğu ilk kez kopyalanacak içeriği önbelleğe alınır.
->Yapılandırmanın sonraki uygulamalar için güncelleştirilmiş dosyaları ve/veya klasörleri tarafından belirtilen yoldaki kontrol etmez **SourcePath**. Dosyaları ve/veya klasörleri güncelleştirmeleri denetlemesini istiyorsanız **SourcePath** yapılandırmanın uygulanması her zaman ayarlamak **MatchSource** için **$true**.
+Dosya kaynağı, Windows PowerShell Desired State Configuration (DSC) hedef düğüm üzerindeki dosya ve klasörleri yönetmek için bir mekanizma sağlar. **HedefYolu** ve **SourcePath** hem de hedef düğüm tarafından erişilebilir olması gerekir.
 
 ## <a name="syntax"></a>Sözdizimi
+
 ```
 File [string] #ResourceName
 {
@@ -39,24 +37,48 @@ File [string] #ResourceName
 
 ## <a name="properties"></a>Özellikler
 
-|  Özellik  |  Açıklama   |
-|---|---|
-| DestinationPath| Bir dosya veya dizin durumu sağlamak istediğiniz yeri gösterir.|
-| Öznitelikler| İstenen durum hedeflenen dosya veya dizin özniteliklerini belirtir.|
-| Sağlama| İki dosya aynı olup olmadığını belirlerken kullanılacak sağlama türünü gösterir. Varsa __sağlama toplamı__ belirtilmezse, yalnızca dosya veya dizin adı, karşılaştırma için kullanılır. Geçerli değerler şunlardır: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate.|
-| İçerikler| Belirli bir dize gibi bir dosyanın içeriğini belirtir.|
-| Kimlik bilgisi| Erişimi gerekiyorsa, kaynak dosyaları gibi kaynaklarına erişmek için gerekli kimlik bilgilerini gösterir.|
-| Emin olun| Dosya veya dizin var olup olmadığını gösterir. "Yok" dosya veya dizin yok sağlamak için bu özelliği ayarlayın. "Dosya veya dizin var olmadığından emin olmak için mevcut" olarak ayarlayın. "Var" varsayılandır.|
-| Force| Belirli dosya işlemleri (örneğin, bir dosyanın üzerine veya boş olmayan bir dizini silme) bir hataya neden olur. Zorla özelliğini kullanarak bu tür hatalar geçersiz kılar. Varsayılan değer __$false__.|
-| Recurse| Alt dizinleri dahil olup olmadığını gösterir. Bu özellik kümesine __$true__ dahil edilmesi için alt dizinler istediğinizi belirtmek için. Varsayılan değer __$false__. **Not**: Bu özellik yalnızca dizinine Type özelliği ayarlandığında geçerlidir.|
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise __ResourceName__ ve kendi türünün __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
-| Kaynak yolu| Dosya veya klasör kaynak kopyalanacak yolunu gösterir.|
-| Tür| Yapılandırılan kaynak bir dizin veya bir dosya olup olmadığını gösterir. Bu özelliği kaynak dizin olduğunu belirtmek için "dizin" olarak ayarlayın. "Kaynağı bir dosya olduğunu belirtmek üzere dosyaya" ayarlayın. "Dosya" varsayılan değerdir.|
-| MatchSource| Varsayılan değerine ayarlanmasından __$false__, ardından yapılandırmanın geçerli olduğu ilk kez hedefe (örneğin, A, B ve C dosyaları) kaynak dosyaları eklenir. (D) yeni bir dosya için kaynak eklediyseniz, hatta yapılandırmayı daha sonra yeniden uygulandığında, bu hedefe eklenmeyecek. Değer ise __$true__, ardından yapılandırma uygulanır, her zaman sonradan kaynak (örneğin, bu örnekte dosyası D) bulunan yeni dosyaları hedefe eklenir. Varsayılan değer **$false**.|
+|Özellik       |Açıklama                                                                   |Gerekli|Varsayılan|
+|---------------|------------------------------------------------------------------------------|--------|-------|
+|DestinationPath|Sağlamak istediğiniz hedef düğümde konumu olan `Present` veya `Absent`.|Evet|Hayır|
+|Öznitelikler     |Hedef dosya veya dizin özniteliklerini istenen durum. Geçerli değerler **arşiv**, **gizli**, **salt okunur**, ve **sistem**.|Hayır|Yok|
+|Sağlama      |İki dosya aynı olup olmadığını belirlerken kullanılacak sağlama türü. Geçerli değerler şunlardır: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate.|Hayır|Yalnızca dosya veya dizin adı karşılaştırılır.|
+|İçerikler       |İle kullanıldığında geçerli `File` türü. Olun içeriğini gösterir `Present` veya `Absent` hedeflenen dosyasından. |Hayır|Yok|
+|Kimlik bilgisi     |Kaynak dosyaları gibi kaynaklarına erişmek için gerekli olan kimlik bilgileri.|Hayır|Hedef düğümün bilgisayar hesabı. (*bkz. Not*)|
+|Emin olun         |Hedef dosya veya dizin istenen durumu. |Hayır|**Mevcut**|
+|Force          |(Örneğin, bir dosyanın üzerine veya boş olmayan bir dizini silme) bir hata ile sonuçlandı erişim işlemleri geçersiz kılar.|Hayır|`$false`|
+|Recurse        |İle kullanıldığında geçerli `Directory` türü. Durum işlem yinelemeli olarak tüm alt dizinler için gerçekleştirir.|Hayır|`$false`|
+|DependsOn      |Belirtilen kaynaklar üzerinde bir bağımlılık ayarlar. Bu kaynak, yalnızca tüm bağımlı kaynakları başarılı yürütme sonrasında yürütülür. Bağımlı kaynaklar söz dizimini kullanarak belirttiğiniz `"[ResourceType]ResourceName"`. Bkz: [about_DependsOn](../../../configurations/resource-depends-on.md)|Hayır|Yok|
+|Kaynak yolu     |Dosya veya klasör kaynak kopyalama kaynağı yolu.|Hayır|Yok|
+|Tür           |Yapılandırılan kaynak türü. Geçerli değerler `Directory` ve `File`.|Hayır|`File`|
+|MatchSource    |Kaynak ilk kopyayı sonra kaynak dizine eklenen yeni dosyalar için izlemeniz gerekir, belirler. Değerini `$true` ilk kopyalamadan sonra yeni kaynak dosyalarını hedefe kopyalanması gereken olduğunu belirtir. Varsa kümesine `$False`, kaynağın kaynak dizinin içeriğini önbelleğe alır ve ilk kopyalamadan sonra eklenen tüm dosyaları yok sayar.|Hayır|`$false`|
+
+> [!WARNING]
+> İçin bir değer belirtmezseniz `Credential` veya `PSRunAsCredential` (PS V.5), kaynak bilgisayar hesabını hedef düğüme erişmek için kullanacağı `SourcePath`.  Zaman `SourcePath` olduğu bir UNC paylaşımı, bu bir "Erişim reddedildi" hata neden olabilir. Lütfen izinlerinizi buna uygun olarak ayarlayın ya da kullanmak olun `Credential` veya `PSRunAsCredential` özellikler kullanılması gereken hesabı belirtin.
+
+## <a name="present-vs-absent"></a>Mevcut vs. Yok
+
+Her DSC kaynak için belirttiğiniz değere göre farklı işlemler gerçekleştiren `Ensure` özelliği. Yukarıdaki özelliklerini belirler durumu işlemi için belirttiğiniz değerleri gerçekleştirdi.
+
+### <a name="existence"></a>Varlığı
+
+Yalnızca belirttiğinizde bir `DestinationPath`, yolun var olduğundan kaynak sağlar (`Present`) veya yok (`Absent`).
+
+### <a name="copy-operations"></a>Kopyalama işlemleri
+
+Belirttiğinizde bir `SourcePath` ve `DestinationPath` ile bir `Type` değerini **dizin**, hedef yol için kaynak kopya kaynak dizini. Özellikleri `Recurse`, `Force`, ve `MatchSource` kopyalama işlemi türünü değiştirme gerçekleştirilirse, while `Credential` kaynak dizinine erişmek için kullanacağınız hesabı belirler.
+
+### <a name="limitations"></a>Sınırlamalar
+
+Değeri belirtilmişse `ReadOnly` için `Attributes` özelliğinin yanı sıra bir `DestinationPath`, `Ensure = "Present"` belirtilen yol oluşturacak sırada `Contents` dosyasının içeriğini ayarlamanız gerekir.  Bir `Absent` durumu işlemi yoksayacaktır `Attributes` özelliği tamamen ve belirtilen yoldaki tüm dosyayı kaldırın.
 
 ## <a name="example"></a>Örnek
 
-Aşağıdaki örnek bir dizin yolu ile emin olmak için dosyayı kaynak kullanmayı gösterir `C:\Users\Public\Documents\DSCDemo\DemoSource` bir kaynak bilgisayar (örneğin, "çekme" sunucusu) de (yanı sıra tüm alt dizinleri) varsa hedef düğümde bulunan. Ayrıca günlüğe tamamlandığında confirmatory bir ileti yazar ve dosya denetimini işlemi önce günlüğe kaydetme işlemi çalıştığından emin olmak için bir deyimi içerir.
+Aşağıdaki örnek bir dizin ve alt dizinlerinde çekme sunucusundan dosya kaynağı kullanan bir hedef düğüme kopyalar. İşlem başarılı olursa, Log kaynağı bir onay iletisi olay günlüğüne yazar.
+
+Kaynak dizini UNC yoludur (`\\PullServer\DemoSource`) çekme sunucusundan paylaşılan. `Recurse` Özelliği sağlar tüm alt dizinler de kopyalanır.
+
+> [!IMPORTANT]
+> LCM hedef düğüm varsayılan olarak yerel sistem hesabı bağlamında çalışır. Erişim izni vermek için **SourcePath**, hedef düğümün bilgisayar hesabının uygun izinleri verin. **Kimlik bilgisi** ve **PSDSCRunAsCredential** (v5) hem de erişmek için kullandığı bağlam LCM değiştirme **SourcePath**. Kullanılacak hesap erişim vermek yine erişimi **SourcePath**.
 
 ```powershell
 Configuration FileResourceDemo
@@ -65,10 +87,10 @@ Configuration FileResourceDemo
     {
         File DirectoryCopy
         {
-            Ensure = "Present"  # You can also set Ensure to "Absent"
-            Type = "Directory" # Default is "File".
-            Recurse = $true # Ensure presence of subdirectories, too
-            SourcePath = "C:\Users\Public\Documents\DSCDemo\DemoSource"
+            Ensure = "Present" # Ensure the directory is Present on the target node.
+            Type = "Directory" # The default is File.
+            Recurse = $true # Recursively copy all subdirectories.
+            SourcePath = "\\PullServer\DemoSource"
             DestinationPath = "C:\Users\Public\Documents\DSCDemo\DemoDestination"
         }
 
@@ -76,8 +98,10 @@ Configuration FileResourceDemo
         {
             # The message below gets written to the Microsoft-Windows-Desired State Configuration/Analytic log
             Message = "Finished running the file resource with ID DirectoryCopy"
-            DependsOn = "[File]DirectoryCopy" # This means run "DirectoryCopy" first.
+            DependsOn = "[File]DirectoryCopy" # Depends on successful execution of the File resource.
         }
     }
 }
 ```
+
+Daha fazla üzerinde kullanma **kimlik bilgilerini** DSC görüyor [kullanıcı olarak çalıştır](../../../configurations/runAsUser.md) veya [yapılandırma veri kimlik bilgileri](../../../configurations/configDataCredentials.md).

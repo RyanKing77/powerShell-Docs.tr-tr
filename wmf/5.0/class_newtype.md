@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587304"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688479"
 ---
 # <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 yeni dil özellikleri
 

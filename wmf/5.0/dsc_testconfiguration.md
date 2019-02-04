@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 10f8dd0f5097260eb4a8516f9662df3d219bdfe5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4008a7f91af41150f26c4147135b30aa8835281c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187570"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688563"
 ---
-# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>Test-DscConfiguration cmdlet başvuru yapılandırmayı destekler.
+# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>Test-DscConfiguration cmdlet'i başvuru yapılandırmalarını destekler
 
-Test-DscConfiguration cmdlet'i karşılaştırma için bir başvuru yapılandırma belgesini belirterek bir veya daha fazla hedef düğümleri istenen yapılandırma durumunu sınama izin vermek için güncelleştirilmiştir.
+Test-DscConfiguration cmdlet'i, karşılaştırma için bir başvuru yapılandırma belgesini belirterek bir veya daha fazla hedef düğümleri istenen yapılandırma durumunu sınama izin verecek şekilde güncelleştirildi.
 
-Aşağıdaki yeni parametre kümeleri yalnızca test için belirtilen yol DSC yapılandırmalarını kullanabilir ve hiçbir zaman her yapılandırma üzerinde belirtilen hedef düğümde uygulamak. Başlangıç DscConfiguration ve diğer DSC cmdlet'leri'te olduğu gibi her MOF adını hangi hedef düğüm üzerinde yapılandırmayı test belirlemek için kullanılır.
+Aşağıdaki yeni parametre kümeleri yalnızca test için belirtilen yol DSC yapılandırmaları kullanın ve her yapılandırma belirtilen hedef düğüm üzerinde hiçbir zaman uygulamak. Start-DscConfiguration ve diğer DSC cmdlet'leri gibi her MOF adını üzerinde test yapılandırması için hangi hedef düğümü belirlemek için kullanılır.
 
 ```powershell
 Test-DscConfiguration   [-Path] <string>
@@ -29,7 +29,7 @@ Test-DscConfiguration   [-Path] <string>
                         [<CommonParameters>]
 ```
 
-Aşağıdaki yeni parametre kümeleri yalnızca sınama ve hiçbir zaman yapılandırmayı belirtilen hedef düğümde uygulamak için tek bir DSC yapılandırması kullanın.
+Aşağıdaki yeni parametre kümeleri yalnızca test ve hiçbir zaman belirtilen hedef düğüm üzerinde yapılandırmayı uygulamak için tek bir DSC yapılandırması kullanın.
 
 ```powershell
 Test-DscConfiguration   -ReferenceConfiguration <string>

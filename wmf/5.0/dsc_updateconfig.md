@@ -1,25 +1,25 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 6d37fbc5091d69925d60349f3acbdecc92da1b95
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 31fde15e644455dbe77f68bca713bf026544fdc7
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34220351"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688535"
 ---
 # <a name="on-demand-pull-of-dsc-configurations"></a>DSC Yapılandırmalarının isteğe bağlı ÇEKME işlemi
 
-Yeni güncelleştirme DscConfiguration cmdlet meta yapılandırmada tanımlanan çekme sunucuları gelen çekme tetikler. Davranış genellikle 'Pull şimdi ' adlandırılır.
+Yeni güncelleştirme-DscConfiguration cmdlet'i bir çekme meta yapılandırmasında tanımlı çekme sunucuları işlemini tetikler. Davranış genellikle 'Pull şimdi ' adlandırılır.
 
 
-Ne zaman yaptığınız gibi tetiklenen sonra çekme tam olarak aynı şekilde davranır normal sıklıığı tetiklenen:
+Ne zaman yaptığınız gibi tetiklenen sonra çekme tam olarak aynı şekilde davranır normal sıklıığı tetikleyen:
 
-1. Geçerli yapılandırma için sağlama toplamı çekme sunucusunda yapılandırması için sağlama toplamı karşılaştırılır.
-2. Aynı olmaları durumunda yapılandırma uygulamadan başarıyla tamamlanır.
-3. Bunlar farklıysa, yapılandırma istek sunucusundan çekilen ve uygulanır.
+1. Geçerli yapılandırma için sağlama toplamı çekme sunucusunda yapılandırma için sağlama toplamı karşılaştırılır.
+2. Aynı olmaları durumunda yapılandırma uygulamadan başarıyla tamamlar.
+3. Bunlar farklıysa, yapılandırma çekme sunucusundan aşağı çektiğiniz ve uygulanır.
 
-**Not:** varsa Meta yapılandırma RefreshMode 'Push' = hedef düğüm 'Push' modunda olduğunda bu cmdlet her zaman hiçbir şey yapmaz şekilde Bu cmdlet ile bir hata döndürülür.
+**Not:** Yapılandırma Meta RefreshMode 'Push' = hedef düğüme 'Push' modunda olduğunda bu cmdlet her zaman nothing kadar bu cmdlet'i tarafından döndürülen bir hata oluştu.
 
 ```powershell
 Update-DscConfiguration     [[-ComputerName] <string[]>]

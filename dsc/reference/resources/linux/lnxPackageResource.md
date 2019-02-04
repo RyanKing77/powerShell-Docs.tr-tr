@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC için Linux nxPackage kaynağı
 ms.openlocfilehash: 64bb89a95bd6cbaea4e74b8a9979de52428fef3f
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048663"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685686"
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC için Linux nxPackage kaynağı
 
@@ -34,7 +34,7 @@ nxPackage <string> #ResourceName
 
 |  Özellik |  Açıklama |
 |---|---|
-| Ad| Belirli bir durumu sağlamak istediğiniz paketin adı.|
+| Adı| Belirli bir durumu sağlamak istediğiniz paketin adı.|
 | Emin olun| Paket mevcut olup olmadığını denetleyin belirler. "Var" Paket var. olmak için bu özelliği ayarlayın. Kümesi "Yok" Paket sağlamak için mevcut değil. "Var" varsayılan değerdir.|
 | PackageManager| Desteklenen değerler şunlardır: "yum", "apt" ve "zypper". Paket Yöneticisi paketleri yüklerken kullanılacak belirtir. Varsa **FilePath** belirtilirse, sağlanan yol, paketi yüklemek için kullanılır. Aksi takdirde, bir paket Yöneticisi, önceden yapılandırılmış bir depodan paketini yüklemek için kullanılır. Kullanılmazsa **PackageManager** ya da **FilePath** sağlanır, varsayılan Paket Yöneticisi için sistem kullanılır.|
 | Dosya yolu| Paketin bulunduğu dosya yolu|

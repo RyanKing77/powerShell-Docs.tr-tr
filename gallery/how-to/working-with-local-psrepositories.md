@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery, psget
 title: Yerel PSRepositories ile çalışma
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51619266"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688395"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>Yerel PowerShellGet depoları ile çalışma
 
@@ -25,7 +25,7 @@ Bu makalede, yerel bir PowerShell deposu ayarlama açıklar. Makaleyi de kapsaya
 
 Yerel PSRepository oluşturmanın iki yolu vardır: NuGet sunucusu veya dosya paylaşımı. Her tür avantajları ve dezavantajları vardır:
 
-NuGet sunucusu
+NuGet Server
 
 | Olumlu yönleri| Olumsuz yönleri |
 | --- | --- |

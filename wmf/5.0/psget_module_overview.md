@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 9efc640dfda7e08e59d2c56746facd9658b1f9de
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a0b1573611c5d4232082c19ca19b4cca79d0699e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222182"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685259"
 ---
-# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>PowerShell modülü bulma, yükleme ve PowerShellGet ile stok
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>PowerShell modülü bulma, yükleme ve envanteri PowerShellGet ile
 
-PowerShellGet WMF bu sürümde eklenmiştir:
--   Bulma modülü modülü meta filtreleyebilir Tag parametresini ile
--   Bulma modülü deposu özgü arama dili filtreleyebilir filtre parametresi ile
--   Bulma modülü için modüle bağlı filtre Command - DscResource, içeriği ve - parametreleri içerir
--   Depoları tek tek DSC kaynakları bulma bulma DscResource sağlar
--   Yükleme ve dosya paylaşımları NuGet ile yayımlamak için destek
+PowerShellGet WMF bu sürümünde yer almaktadır:
+-   Find-Module modülü meta verilerine göre filtreleme yapabilirsiniz etiket parametresi
+-   Find-Module depo özgü arama diline filtreleme yapabilirsiniz filtre parametresi
+-   Find-Module olabilir modülünü göre filtreleme Command - DscResource, içeriği ve - parametreleri içerir
+-   Bul-DscResource depolardaki DSC kaynakların bulunmasını sağlar.
+-   Yükleme ve dosya paylaşımlarına NuGet ile yayımlama desteği
 
 ## <a name="example-commands"></a>Örnek komutlar
 ```powershell
@@ -55,7 +55,7 @@ Find-Module -Filter RBAC -Repository PSGallery
 ## <a name="new-features-in-powershellget"></a>PowerShellGet yeni özellikler
 -   Windows PowerShell 5.0 veya daha yeni yan yana sürüm desteği
 -   Modül bağımlılık yükleme desteği
--   Üç yeni cmdlet'leri
+-   Üç yeni cmdlet
     -   Get-InstalledModule
-    -   Kaldırma Modülü
-    -   Kaydet-Modülü
+    -   Modül kaldırma
+    -   Save-Module

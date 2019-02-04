@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows Powershell Başlatma
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
 ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405905"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688325"
 ---
 # <a name="starting-windows-powershell"></a>Windows Powershell Başlatma
 Birden çok konaklarına katıştırılmış bir komut dosyası altyapısı dll powershell'dir.  En yaygın konak, başlar, etkileşimli komut satırı PowerShell.exe ve etkileşimli betik ortamı PowerShell_ISE.exe verilmiştir.
@@ -89,14 +89,14 @@ Ancak, bazen çalıştırmak ihtiyacınız olabilecek **Windows PowerShell (x86)
 
 Windows PowerShell 32 bit sürümünü başlatmak için aşağıdaki yordamlardan birini kullanın.
 
-#### <a name="in-windows-server-2012-r2"></a>Windows Server® 2012 R2'de
+#### <a name="in-windows-server-2012-r2"></a>In Windows Server® 2012 R2
 
 - Üzerinde **Başlat** ekranında, yazın **Windows PowerShell (x86)**. Tıklayın **Windows PowerShell x86** Döşe.
 - İçinde **Sunucu Yöneticisi'ni**, gelen **Araçları** menüsünde **Windows PowerShell (x86)**.
 - İmleç bölmenin sağ üst köşedeki için masaüstünde **arama**, türü **PowerShell x86** ve ardından **Windows PowerShell (x86)**.
 - Komut satırı girin: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### <a name="in-windows-server-2012"></a>Windows Server® 2012
+#### <a name="in-windows-server-2012"></a>In Windows Server® 2012
 
 - Üzerinde **Başlat** ekranında, yazın **PowerShell** ve ardından **Windows PowerShell (x86)**.
 - İçinde **Sunucu Yöneticisi'ni**, gelen **Araçları** menüsünde **Windows PowerShell (x86)**.

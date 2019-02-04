@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 802196d821303fcf2d3e87784ca2064c386f882e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: cc859d68491c817d641cc598513efb3208db0619
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221833"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685245"
 ---
-# <a name="separation-of-configuration-resource-and-report-repositories"></a>Yapılandırma, kaynak ve rapor depoları ayrımı
+# <a name="separation-of-configuration-resource-and-report-repositories"></a>Yapılandırma, kaynak ve rapor depolarının ayrımı
 
-Bu sürümde biz tüm çıkarmak için gereksinim duyduğunuz esnekliği sağlar ve bir veya daha fazla DSC çekme sunucusuna rapor. Böylece, yapılandırmaları bir konuma, başka kaynaklardan ve rapor henüz başka bir konuma çekebilir her bitiş ayrı olarak tanımlanabilir.
+Bu sürümde, tüm çekmek için gereksinim duyduğunuz esnekliği izin veriyoruz ve bir veya daha fazla DSC çekme sunucusuna rapor. Böylece, yapılandırmaları bir konum, başka bir kaynak ve rapor henüz başka bir konuma çekebilirsiniz her uç nokta ayrı ayrı tanımlanabilir.
 
-Daha fazla bilgi için bkz: [yapılandırma Kimliğini kullanarak bir çekme istemcisi kurarken](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid) veya [yapılandırma adları kullanarak bir çekme istemci ayarlama](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)
+Daha fazla bilgi için [yapılandırma Kimliğini kullanarak çekme istemcisi ayarlama](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid) veya [yapılandırma adlarını kullanarak çekme istemcisi ayarlama](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)

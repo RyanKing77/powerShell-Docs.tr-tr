@@ -5,11 +5,11 @@ keywords: Galeri, powershell, cmdlet, psgallery
 description: Yayımcılar için yönergeler
 title: PowerShell Galerisi kılavuzları ve en iyi uygulamaları yayımlama
 ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655404"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689123"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery kılavuzları ve en iyi uygulamaları yayımlama
 
@@ -143,8 +143,8 @@ Paketleri kendi ortamı ile iyi çalışacak kullanıcılara göstermek için a�
 - PSEdition_Desktop: Windows PowerShell ile uyumlu olan paketler 
 - PSEdition_Core: Powershell Core ile uyumlu olan paketler 
 - Windows: Windows işletim sistemiyle uyumlu olan paketler
-- Linux: Linux işletim sistemleri ile uyumlu olan paketler 
-- MacOS: Mac işletim sistemiyle uyumlu olan paketler
+- Linux : Linux işletim sistemleri ile uyumlu olan paketler 
+- MacOS : Mac işletim sistemiyle uyumlu olan paketler
 
 ## <a name="include-tests"></a>Sınamalar
 

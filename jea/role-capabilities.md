@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA rol özellikleri
 ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522955"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685497"
 ---
 # <a name="jea-role-capabilities"></a>JEA rol özellikleri
 
-> İçin geçerlidir: Windows PowerShell 5.0
+> Şunun için geçerlidir: Windows PowerShell 5.0
 
 Bir JEA uç noktası oluştururken, "tanımlayan bir veya daha fazla rol özellikleri" tanımlamanız gerekir *ne* birisi bir JEA oturumda yapabilirsiniz.
 Bir rol özelliği, tüm cmdlet'ler, İşlevler, sağlayıcıları ve kullanıcıları bağlamak için kullanılabilir hale dış programlarda listeleyen .psrc uzantısına sahip bir PowerShell veri dosyasıdır.

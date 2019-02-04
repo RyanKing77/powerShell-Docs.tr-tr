@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 188ede0c558210a746ad0f6c6cef6f571b280878
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 8b3ebd22e03bf9bdd5f26965137a1b1ce9f47c3e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219914"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686750"
 ---
 # <a name="declare-base-class"></a>Temel Sınıf Bildirme
-Bir Windows PowerShell sınıf, bir başka bir Windows PowerShell sınıf için bir taban türü olarak bildirebilir.
+Bir Windows PowerShell sınıfı, başka bir Windows PowerShell sınıfı için bir temel tür olarak bildirebilirsiniz.
 
 ```powershell
 class bar
@@ -25,7 +25,7 @@ class baz : bar {}
 [baz]::new().foo() # return 100500
 ```
 
-Temel sınıflar olarak var olan .NET Framework türlerini de kullanabilirsiniz:
+Temel sınıf olarak var olan .NET Framework türleri de kullanabilirsiniz:
 
 ```powershell
 class MyIntList : system.collections.generic.list[int]

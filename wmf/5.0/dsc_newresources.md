@@ -1,22 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 18f77922a30e8b6fb73c08f0d218f2655a129bce
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 64a00e041bbeeea117db43116b486e83dfe923b0
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225581"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688262"
 ---
 # <a name="new-built-in-dsc-resources"></a>Yeni yerleşik DSC kaynakları
 
-WMF 5.0 RTM 4 yeni DSC kaynakları sahiptir:
+WMF 5.0 RTM'ye 4 yeni DSC kaynakları sahiptir:
 * WindowsFeatureSet
 * WindowsOptionalFeatureSet
 * ServiceSet
 * ProcessSet
 
-Bu kaynaklar, tek kaynak çağrısı kullanarak birden çok örneği yapılandırmak için kolay bir yol sağlar.
+Bu kaynakları tek kaynak çağrısı kullanarak birden çok örneği yapılandırmak için kolay bir yol sağlar.
 
 ## <a name="windowsfeatureset"></a>WindowsFeatureSet
 
