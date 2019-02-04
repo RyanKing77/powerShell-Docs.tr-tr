@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: d8ff24b0aba55e1ef964ee05db14b2fddadafdf0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5d0065fb3d65c5ccc520bcabc76f0e23d4265818
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222029"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684174"
 ---
-# <a name="wow64-support-for-configuration-keyword"></a><span data-ttu-id="6274d-102">Yapılandırma anahtar sözcüğü için WOW64 desteği</span><span class="sxs-lookup"><span data-stu-id="6274d-102">WOW64 support for Configuration Keyword</span></span>
+# <a name="wow64-support-for-configuration-keyword"></a><span data-ttu-id="7d1ab-102">Yapılandırma anahtar sözcüğü için WOW64 desteği</span><span class="sxs-lookup"><span data-stu-id="7d1ab-102">WOW64 support for Configuration Keyword</span></span>
 
-<span data-ttu-id="6274d-103">Yapılandırma anahtar sözcük, 64-bit bir bilgisayarda WOW64 artık desteklenmektedir.</span><span class="sxs-lookup"><span data-stu-id="6274d-103">The Configuration keyword is now supported in WOW64 on a 64-bit computer.</span></span> <span data-ttu-id="6274d-104">Bu DSC yapılandırması tanımlanabilir ve işlemdeki bir 64-bit bilgisayarda çalıştırılan bir 32 bit Windows PowerShell ISE gibi (x 86) derlenmiş olduğunu anlamına gelir.</span><span class="sxs-lookup"><span data-stu-id="6274d-104">This means that a DSC configuration can be defined and compiled within a 32-bit process such as Windows PowerShell ISE (x86) running on a 64-bit computer.</span></span>
+<span data-ttu-id="7d1ab-103">Yapılandırma anahtar sözcüğü, bir 64 bit bilgisayarda WOW64 artık desteklenmektedir.</span><span class="sxs-lookup"><span data-stu-id="7d1ab-103">The Configuration keyword is now supported in WOW64 on a 64-bit computer.</span></span> <span data-ttu-id="7d1ab-104">Bu, bir DSC yapılandırması tanımlanabilir ve 64 bit bilgisayarda çalışan bir 32-bit işlem içinde Windows PowerShell ISE gibi (x 86) derlenmiş, anlamına gelir.</span><span class="sxs-lookup"><span data-stu-id="7d1ab-104">This means that a DSC configuration can be defined and compiled within a 32-bit process such as Windows PowerShell ISE (x86) running on a 64-bit computer.</span></span>

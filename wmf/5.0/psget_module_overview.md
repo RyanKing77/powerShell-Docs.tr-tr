@@ -1,23 +1,23 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 9efc640dfda7e08e59d2c56746facd9658b1f9de
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a0b1573611c5d4232082c19ca19b4cca79d0699e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222182"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685259"
 ---
-# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a><span data-ttu-id="2f685-102">PowerShell modülü bulma, yükleme ve PowerShellGet ile stok</span><span class="sxs-lookup"><span data-stu-id="2f685-102">PowerShell Module Discovery, Install and Inventory with PowerShellGet</span></span>
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a><span data-ttu-id="de1a0-102">PowerShell modülü bulma, yükleme ve envanteri PowerShellGet ile</span><span class="sxs-lookup"><span data-stu-id="de1a0-102">PowerShell Module Discovery, Install and Inventory with PowerShellGet</span></span>
 
-<span data-ttu-id="2f685-103">PowerShellGet WMF bu sürümde eklenmiştir:</span><span class="sxs-lookup"><span data-stu-id="2f685-103">PowerShellGet is included in this release of WMF:</span></span>
--   <span data-ttu-id="2f685-104">Bulma modülü modülü meta filtreleyebilir Tag parametresini ile</span><span class="sxs-lookup"><span data-stu-id="2f685-104">Find-Module can filter on module metadata with the -Tag parameter</span></span>
--   <span data-ttu-id="2f685-105">Bulma modülü deposu özgü arama dili filtreleyebilir filtre parametresi ile</span><span class="sxs-lookup"><span data-stu-id="2f685-105">Find-Module can filter on repository-specific search language with the -Filter parameter</span></span>
--   <span data-ttu-id="2f685-106">Bulma modülü için modüle bağlı filtre Command - DscResource, içeriği ve - parametreleri içerir</span><span class="sxs-lookup"><span data-stu-id="2f685-106">Find-Module can filter based on module contents with the -Command, -DscResource, and -Includes parameters</span></span>
--   <span data-ttu-id="2f685-107">Depoları tek tek DSC kaynakları bulma bulma DscResource sağlar</span><span class="sxs-lookup"><span data-stu-id="2f685-107">Find-DscResource allows discovery of individual DSC resources in repositories</span></span>
--   <span data-ttu-id="2f685-108">Yükleme ve dosya paylaşımları NuGet ile yayımlamak için destek</span><span class="sxs-lookup"><span data-stu-id="2f685-108">Support for installing from and publishing to file shares with NuGet</span></span>
+<span data-ttu-id="de1a0-103">PowerShellGet WMF bu sürümünde yer almaktadır:</span><span class="sxs-lookup"><span data-stu-id="de1a0-103">PowerShellGet is included in this release of WMF:</span></span>
+-   <span data-ttu-id="de1a0-104">Find-Module modülü meta verilerine göre filtreleme yapabilirsiniz etiket parametresi</span><span class="sxs-lookup"><span data-stu-id="de1a0-104">Find-Module can filter on module metadata with the -Tag parameter</span></span>
+-   <span data-ttu-id="de1a0-105">Find-Module depo özgü arama diline filtreleme yapabilirsiniz filtre parametresi</span><span class="sxs-lookup"><span data-stu-id="de1a0-105">Find-Module can filter on repository-specific search language with the -Filter parameter</span></span>
+-   <span data-ttu-id="de1a0-106">Find-Module olabilir modülünü göre filtreleme Command - DscResource, içeriği ve - parametreleri içerir</span><span class="sxs-lookup"><span data-stu-id="de1a0-106">Find-Module can filter based on module contents with the -Command, -DscResource, and -Includes parameters</span></span>
+-   <span data-ttu-id="de1a0-107">Bul-DscResource depolardaki DSC kaynakların bulunmasını sağlar.</span><span class="sxs-lookup"><span data-stu-id="de1a0-107">Find-DscResource allows discovery of individual DSC resources in repositories</span></span>
+-   <span data-ttu-id="de1a0-108">Yükleme ve dosya paylaşımlarına NuGet ile yayımlama desteği</span><span class="sxs-lookup"><span data-stu-id="de1a0-108">Support for installing from and publishing to file shares with NuGet</span></span>
 
-## <a name="example-commands"></a><span data-ttu-id="2f685-109">Örnek komutlar</span><span class="sxs-lookup"><span data-stu-id="2f685-109">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="de1a0-109">Örnek komutlar</span><span class="sxs-lookup"><span data-stu-id="de1a0-109">Example commands</span></span>
 ```powershell
 \# Find all modules with tags Azure or DSC
 Find-Module -Tag Azure, DSC
@@ -52,10 +52,10 @@ Find-Module -Filter Cookbook -Repository PSGallery
 Find-Module -Filter RBAC -Repository PSGallery
 ```
 
-## <a name="new-features-in-powershellget"></a><span data-ttu-id="2f685-110">PowerShellGet yeni özellikler</span><span class="sxs-lookup"><span data-stu-id="2f685-110">New features in PowerShellGet</span></span>
--   <span data-ttu-id="2f685-111">Windows PowerShell 5.0 veya daha yeni yan yana sürüm desteği</span><span class="sxs-lookup"><span data-stu-id="2f685-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
--   <span data-ttu-id="2f685-112">Modül bağımlılık yükleme desteği</span><span class="sxs-lookup"><span data-stu-id="2f685-112">Module dependency installation support</span></span>
--   <span data-ttu-id="2f685-113">Üç yeni cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="2f685-113">Three new cmdlets</span></span>
-    -   <span data-ttu-id="2f685-114">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="2f685-114">Get-InstalledModule</span></span>
-    -   <span data-ttu-id="2f685-115">Kaldırma Modülü</span><span class="sxs-lookup"><span data-stu-id="2f685-115">Uninstall-Module</span></span>
-    -   <span data-ttu-id="2f685-116">Kaydet-Modülü</span><span class="sxs-lookup"><span data-stu-id="2f685-116">Save-Module</span></span>
+## <a name="new-features-in-powershellget"></a><span data-ttu-id="de1a0-110">PowerShellGet yeni özellikler</span><span class="sxs-lookup"><span data-stu-id="de1a0-110">New features in PowerShellGet</span></span>
+-   <span data-ttu-id="de1a0-111">Windows PowerShell 5.0 veya daha yeni yan yana sürüm desteği</span><span class="sxs-lookup"><span data-stu-id="de1a0-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
+-   <span data-ttu-id="de1a0-112">Modül bağımlılık yükleme desteği</span><span class="sxs-lookup"><span data-stu-id="de1a0-112">Module dependency installation support</span></span>
+-   <span data-ttu-id="de1a0-113">Üç yeni cmdlet</span><span class="sxs-lookup"><span data-stu-id="de1a0-113">Three new cmdlets</span></span>
+    -   <span data-ttu-id="de1a0-114">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="de1a0-114">Get-InstalledModule</span></span>
+    -   <span data-ttu-id="de1a0-115">Modül kaldırma</span><span class="sxs-lookup"><span data-stu-id="de1a0-115">Uninstall-Module</span></span>
+    -   <span data-ttu-id="de1a0-116">Save-Module</span><span class="sxs-lookup"><span data-stu-id="de1a0-116">Save-Module</span></span>
