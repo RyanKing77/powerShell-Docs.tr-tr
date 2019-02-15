@@ -1,55 +1,58 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, yapılandırma, Kurulum
+keywords: DSC, powershell, yapılandırma, Kur
 title: Import-DSCResource kullanma
-ms.openlocfilehash: 6bc3c1aa1d34a05e3188666da825322235c0672e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f22c741969b1429074e7307a00a5c014cf563089
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686617"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265510"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource kullanma
 
-`Import-DScResource` yalnızca bir yapılandırma komut dosyası bloğu içinde kullanılabilir dinamik bir anahtar sözcüktür. `Import-DSCResource` Yapılandırmanızda gerekli tüm kaynakları almak için anahtar sözcüğü. Kaynaklarınıza `$phsome` otomatik olarak alınır ancak bu, açıkça içinde kullanılan tüm kaynakları almak için en iyi varsayılır, [yapılandırma](Configurations.md).
+`Import-DScResource` yalnızca bir yapılandırma komut dosyası bloğunun içine kullanılabilir dinamik bir anahtar sözcüktür. `Import-DSCResource` Yapılandırmanızda gereken herhangi bir kaynağa alınacak anahtar. Kaynaklarınıza `$phsome` otomatik olarak alınır ancak hala açık olarak kullanılan tüm kaynakları içeri aktarmak için en iyi yöntem kabul edilir, [yapılandırma](Configurations.md).
 
-Sözdizimi `Import-DSCResource` aşağıda gösterilmiştir.
+Sözdizimi `Import-DSCResource` aşağıda gösterilmiştir.  Modülleri adıyla belirtirken, her yeni bir satıra listelemek için gerekli değildir.
 
 ```syntax
-Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>]
+Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 ```
 
 |Parametre  |Açıklama  |
 |---------|---------|
-|`-Name`|İçeri aktarmalısınız DSC kaynak adları. Modül adı belirtilmezse, komut bu DSC kaynakları bu modül içinde arar; Aksi takdirde komut DSC kaynakları tüm DSC kaynak yollarını arar. Joker karakterleri desteklenir.|
-|`-ModuleName`|Kapsayıcı modülü adları, veya modül specification(s).  Bir modülü içeri aktarmak için kaynakları belirtirseniz, yalnızca bu kaynakları almak komut deneyecek. Komut modülü yalnızca belirtirseniz, modüldeki tüm DSC kaynaklarını içeri aktarır.|
-
-Joker karakter olarak kullanabileceğiniz `-Name` kullanırken parametresi `Import-DSCResource`.
+|`-Name`|İçeri aktarmanız gerekir DSC kaynak adları. Modül adı belirtilmezse, komut bu DSC kaynakları bu modül içinde arar; Aksi takdirde komut tüm DSC kaynağı yollarında DSC kaynakları arar. Joker karakterleri desteklenir.|
+|`-ModuleName`|Modül adı veya modülü belirtimi.  Bir modülü içeri aktarmak için kaynakları belirtirseniz, komutun yalnızca kaynakları alma dener. Modül yalnızca belirtirseniz, komut modülündeki tüm DSC kaynakları alır.|
 
 ```powershell
-Import-DscResource -Name * -ModuleName xActiveDirectory;
+Import-DscResource -ModuleName xActiveDirectory;
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>Örnek: Import-DSCResource içine bir yapılandırmayı kullanın.
+## <a name="example-use-import-dscresource-within-a-configuration"></a>Örnek: İçinde bir yapılandırma alma DSCResource kullanın
 
 ```powershell
 Configuration MSDSCConfiguration
 {
     # Search for and imports Service, File, and Registry from the module PSDesiredStateConfiguration.
-    Import-DSCResource -ModuleName MS_DSC1 -name Service, File, Registry
-
+    Import-DSCResource -ModuleName PSDesiredStateConfiguration -Name Service, File, Registry
+    
     # Search for and import Resource1 from the module that defines it.
     # If only –Name parameter is used then resources can belong to different PowerShell modules as well.
     # TimeZone resource is from the ComputerManagementDSC module which is not installed by default.
-    Import-DSCResource -Name File, TimeZone
+    # As a best practice, list each requirement on a different line if possible.  This makes reviewing
+    # multiple changes in source control a bit easier.
+    Import-DSCResource -Name File
+    Import-DSCResource -Name TimeZone
 
     # Search for and import all DSC resources inside the module PSDesiredStateConfiguration.
+    # When specifying the modulename parameter, it is a requirement to list each on a new line.
     Import-DSCResource -ModuleName PSDesiredStateConfiguration
+    Import-DSCResource -ModuleName ComputerManagementDsc
 ...
 ```
 
 > [!NOTE]
-> Kaynak adları ve modülleri adları için birden çok değer aynı komutta belirtme desteklenmez. Bu durumda birden çok modül içinde aynı kaynak var. hangi modülü yüklemek için hangi kaynak hakkında kararlı olmayan davranışı olabilir. Komut, derleme sırasında hataya neden olur.
+> Aynı komutta kaynak adları ve modülleri adları için birden fazla değer belirten desteklenmez. Birden çok modüllerde aynı kaynak mevcut durumda hangi modülünden yüklemek için hangi kaynak hakkında belirleyici olmayan davranış olabilir. Aşağıdaki komutunu derleme sırasında hataya neden olur.
 >
 > ```powershell
 > Import-DscResource -Name UserConfigProvider*,TestLogger1 -ModuleName UserConfigProv,PsModuleForTestLogger
@@ -58,34 +61,34 @@ Configuration MSDSCConfiguration
 Name parametresi kullanırken dikkat edilmesi gerekenler:
 
 - Bu, makinede yüklü modülleri sayısına bağlı olarak kaynak yoğunluklu bir işlemdir.
-- Verilen ada sahip bulunan ilk kaynak yüklemek. Örnekte yüklü aynı ada sahip birden fazla kaynak olduğunda, yanlış kaynak yükleyebilir.
+- Verilen ada sahip bulunan ilk kaynak yükler. Durumda yüklü aynı ada sahip birden fazla kaynak burada yanlış kaynak yüklemek.
 
-Önerilen kullanım belirlemektir `–ModuleName` ile `-Name` aşağıda açıklandığı gibi parametre.
+Önerilen kullanım belirtmektir `–ModuleName` ile `-Name` aşağıda açıklandığı gibi parametre.
 
-Bu kullanım aşağıdaki faydaları sağlar:
+Bu kullanım aşağıdaki faydaları vardır:
 
-- Belirtilen kaynak için arama kapsamını sınırlayarak, performans etkisini azaltır.
-- Doğru kaynak yüklenen sağlama kaynak tanımlama modülü açıkça tanımlar.
+- Performans etkisi belirtilen kaynak için arama kapsamını sınırlayarak azaltır.
+- Açıkça, doğru kaynak yüklenen sağlama kaynak tanımlama modülü tanımlar.
 
 > [!NOTE]
-> PowerShell 5.0, DSC kaynaklarını birden çok sürümü olabilir ve sürümleri bir bilgisayarda yan yana üzerinde yüklenebilir. Bu, bir kaynak modülü aynı modül klasöründe bulunan birden çok sürümünü sağlayarak uygulanır.
-> Daha fazla bilgi için [birden çok sürümü olan kaynakları kullanma](sxsresource.md).
+> PowerShell 5. 0'da, DSC kaynakları birden çok sürümü olabilir ve bir bilgisayar yan yana üzerinde sürümleri yüklenebilir. Bu, aynı modülü klasörde yer alan birden çok kaynak Modül sürümü sağlayarak uygulanır.
+> Daha fazla bilgi için bkz: [birden çok sürümü ile kaynakları kullanarak](sxsresource.md).
 
-## <a name="intellisense-with-import-dscresource"></a>Import-DSCResource ile IntelliSense
+## <a name="intellisense-with-import-dscresource"></a>İçeri aktarma DSCResource IntelliSense
 
-DSC yapılandırması ıse'de yazarken, PowerShell IntelliSence kaynakları ve kaynak özellikleri sağlar. Kaynak tanımları altında `$pshome` modül yolu otomatik olarak yüklenir. Kullanarak kaynakları aktardığınızda `Import-DSCResource` anahtar sözcüğü, belirtilen kaynak tanımları eklenir ve IntelliSense, içeri aktarılan kaynak şemayı içerecek şekilde genişletilir.
+İşe DSC yapılandırması yazılırken PowerShell IntelliSence kaynaklar ve kaynak özellikleri sağlar. Kaynak tanımları altında `$pshome` modül yolu otomatik olarak yüklenir. Kullanarak kaynakları aktardığınızda `Import-DSCResource` anahtar sözcüğü, belirtilen kaynak tanımları eklenir ve IntelliSense içeri aktarılan kaynağın şema içerecek şekilde genişletilmiştir.
 
 ![Kaynak IntelliSense](/media/resource-intellisense.png)
 
 > [!NOTE]
-> PowerShell 5. 0'den itibaren sekme tamamlamayı ISE DSC kaynakları ve bunların özelliklerini için eklendi. Daha fazla bilgi için [kaynakları](../resources/resources.md).
+> PowerShell 5. 0'den itibaren sekme tamamlama DSC kaynakları ve bunların özelliklerini için işe eklendi. Daha fazla bilgi için bkz: [kaynakları](../resources/resources.md).
 
-PowerShell içeri aktarılan kaynak tanımları yapılandırması derlenirken tüm kaynak bloklar yapılandırmasında doğrulamak için kullanır.
-Her kaynak blok kaynağın şema tanımı için aşağıdaki kurallar kullanılarak doğrulanır.
+Yapılandırma derlerken PowerShell alınan kaynak tanımları yapılandırmasında tüm kaynak blokları doğrulamak için kullanır.
+Her kaynak bloğu kaynağın şema tanımı için aşağıdaki kurallar kullanılarak doğrulanır.
 
 - Şemada tanımlanan özellikler kullanılır.
-- Veri türleri her bir özellik için doğrudur.
-- Anahtar özellikler belirtilmedi.
+- Veri türleri her bir özellik için doğru.
+- Anahtarları özellikler belirtilir.
 - Salt okunur bir özellik kullanılır.
 - Doğrulama değeri türleri eşler.
 
@@ -114,35 +117,35 @@ Bu yapılandırma sonuçları hata derleniyor.
 PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
 ```
 
-IntelliSense ve şema doğrulama daha fazla hata ayrıştırma ve derleme zamanında çalışma zamanında zorluklar önleme catch olanak tanır.
+IntelliSense ve şema doğrulama zorluklar çalışma zamanında önleme ayrıştırma ve derleme süre boyunca, daha fazla hatalarını yakalama olanak tanır.
 
 > [!NOTE]
-> Her DSC kaynağı bir ad olabilir ve bir **FriendlyName** kaynağın şeması tarafından tanımlanır. İlk iki satırını "MSFT_ServiceResource.shema.mof" aşağıda verilmiştir.
+> Her DSC kaynağı bir ad olabilir ve bir **FriendlyName** kaynağın şema tarafından tanımlanan. "MSFT_ServiceResource.shema.mof" ilk iki satır aşağıda verilmiştir.
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
-> Bu kaynak bir yapılandırmada kullanılırken, belirtebileceğiniz **MSFT_ServiceResource** veya **hizmet**.
+> Bu kaynak bir yapılandırmada kullanırken belirtebilirsiniz **MSFT_ServiceResource** veya **hizmet**.
 
 ## <a name="powershell-v4-and-v5-differences"></a>PowerShell v4 ve v5 farklılıkları
 
-Yapılandırmalar PowerShell 4.0 vs'de yazarken gördüğünüz birden çok fark yoktur. PowerShell 5.0 ve üzeri. Bu bölümde farklar vurgular ilgili bu makaleye bakın.
+Yapılandırmalar PowerShell 4.0 vs yazarken gördüğünüz birden çok farklılıklar vardır. PowerShell 5.0 ve sonraki sürümleri. Bu bölümde farklar vurgular ilgili bu makaleye bakın.
 
 ### <a name="multiple-resource-versions"></a>Birden çok kaynak sürümü
 
-Yükleme ve birden çok sürümünü yan yana kaynakları kullanarak PowerShell 4. 0'desteklenmiyor. Kaynakları yapılandırmanızı içeri aktarmayla ilgili sorunları fark ederseniz, bir sürümü yüklü kaynak yalnızca olduğundan emin olun.
+Yükleme ve kaynakları yan yana birden fazla sürümünü kullanarak PowerShell 4. 0'desteklenmiyor. Kaynakları yapılandırmanızı alma sorunları fark ederseniz, yalnızca bir sürümü yüklü kaynak olduğundan emin olun.
 
-İki sürümü aşağıda resimde **xPSDesiredStateConfiguration** Modülü yüklü.
+Aşağıda, iki sürümü görüntüsündeki **xPSDesiredStateConfiguration** modülü yüklenir.
 
 ![Sabit birden çok kaynak sürümü](/media/multiple-resource-versions-broken.md)
 
-Modül dizinini, en üst düzeye istenen modülün sürümünüzü içeriğini kopyalayın.
+İstenen modülü sürümünüzü içeriğini modülü dizininin en üst düzeye kopyalayın.
 
 ![Sabit birden çok kaynak sürümü](/media/multiple-resource-versions-fixed.md)
 
 ### <a name="resource-location"></a>Kaynak konumu
 
-Geliştirme ve yapılandırmaları derleme kaynaklarınızı tarafından belirtilen herhangi bir dizinini depolanabilir, [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). PowerShell 4. 0'da, "Program Files\WindowsPowerShell\Modules" altında depolanan tüm DSC kaynak modülleri LCM gerektirir veya `$pshome\Modules`. PowerShell 5. 0'den itibaren bu gereksinimi kaldırıldı ve kaynak modülleri tarafından belirtilen herhangi bir dizinini depolanabilir `PSModulePath`.
+Geliştirme ve yapılandırmaları derleme, kaynaklarınızın tarafından belirtilen herhangi bir dizini depolanabilir, [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). PowerShell 4. 0'da, tüm DSC kaynağı modülleri "Altında Program Files\WindowsPowerShell\Modules" depolanması için LCM'yi gerektirir veya `$pshome\Modules`. PowerShell 5. 0'den itibaren bu gereksinimi kaldırıldı ve kaynak modülleri tarafından belirtilen herhangi bir dizini depolanabilir `PSModulePath`.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

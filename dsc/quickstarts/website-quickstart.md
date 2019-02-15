@@ -1,34 +1,34 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kurulum
+keywords: DSC, powershell, yapılandırma, Kur
 title: Hızlı Başlangıç - DSC ile bir Web sitesi oluşturma
-ms.openlocfilehash: c62e2d8af46bf74c4dd13069ddff6cc39763a209
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d98607939ccd3cc5e660936d8c0a6d54fce7d65f
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684258"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265493"
 ---
 > Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 # <a name="quickstart---create-a-website-with-dsc"></a>Hızlı Başlangıç - DSC ile bir Web sitesi oluşturma
 
-Bu alıştırmada oluşturmak ve uygulamak başlangıçtan bitişe kadar bir Desired State Configuration ' nı (DSC) yapılandırma gösterilmektedir.
-Kullanacağız örnek bir sunucuya sahip olmasını sağlar `Web-Server` (IIS) özelliği etkin ve basit bir "Hello World" Web sitesi için içeriğin mevcut olduğu `intepub\wwwroot` sunucusunun dizin.
+Bu alıştırmada oluşturma ve istenen durum Yapılandırması'nı (DSC) yapılandırma başlangıçtan bitişe kadar uygulama anlatılmaktadır.
+Bir sunucu olduğunu kullanırız örnek sağlar `Web-Server` (IIS) özelliği etkin ve basit bir "Hello World" Web sitesi için içeriğin mevcut olduğunu `inetpub\wwwroot` o sunucunun dizin.
 
-DSC nedir ve nasıl çalıştığını genel bakış için bkz: [karar alıcılar için genel Desired State Configuration](../overview/decisionMaker.md).
+DSC nedir ve nasıl çalıştığı genel bakış için bkz: [istenen durum yapılandırması için genel bakış karar alıcılar](../overview/decisionMaker.md).
 
 ## <a name="requirements"></a>Gereksinimler
 
 Bu örneği çalıştırmak için Windows Server 2012 veya sonraki sürümünü ve PowerShell 4.0 veya sonraki sürümü çalıştıran bir bilgisayar gerekir.
 
-## <a name="write-and-place-the-indexhtm-file"></a>Yazma ve index.htm dosyası yerleştirin
+## <a name="write-and-place-the-indexhtm-file"></a>Yazma ve index.htm dosyasını yerleştirin
 
 İlk olarak, Web sitesi içeriği olarak kullanacağız HTML dosyası oluşturacağız.
 
 Kök klasörünüzde adlı bir klasör oluşturun `test`.
 
-Bir metin düzenleyicisinde, aşağıdaki metni yazın:
+Bir metin Düzenleyicisi'nde, aşağıdaki metni yazın:
 
 ```html
 <head></head>
@@ -39,11 +39,11 @@ Bir metin düzenleyicisinde, aşağıdaki metni yazın:
 
 Bu olarak Kaydet `index.htm` içinde `test` daha önce oluşturduğunuz klasör.
 
-## <a name="write-the-configuration"></a>Yapılandırmasını yazın
+## <a name="write-the-configuration"></a>Yazma yapılandırması
 
 A [DSC Yapılandırması](../configurations/configurations.md) tanımlayan bir veya daha fazla hedef bilgisayarların (düğümlerin) yapılandırmak istediğiniz nasıl özel bir PowerShell işlevdir.
 
-PowerShell ISE'de aşağıdaki komutu yazın:
+PowerShell ISE aşağıdaki komutu yazın:
 
 ```powershell
 Configuration WebsiteTest {
@@ -72,16 +72,16 @@ Configuration WebsiteTest {
 
 Dosyayı Farklı Kaydet `WebsiteTest.ps1`.
 
-Anahtar sözcüğü ile birlikte bir PowerShell işlevi gibi görünüyor görebilirsiniz **yapılandırma** işlevin adını önce kullanılır.
+Bir PowerShell işleviyle anahtar sözcüğü eklenmesi gibi görünüyor görebilirsiniz **yapılandırma** işlevi adı önce kullanıldı.
 
-**Düğüm** blok belirtir, bu durumda yapılandırılması için hedef düğümü `localhost`.
+**Düğümü** blok belirtir, bu durumda yapılandırılması için hedef düğümü `localhost`.
 
-İki yapılandırma çağırır [kaynakları](../resources/resources.md), **WindowsFeature** ve **dosya**.
-Kaynak hedef düğüm yapılandırması tarafından tanımlanmış durumda sağlayarak iş yapın.
+Yapılandırmanın iki çağırır [kaynakları](../resources/resources.md), **WindowsFeature** ve **dosya**.
+Kaynakları hedef düğüm yapılandırması tarafından tanımlanan durumda sağlama iş yapın.
 
-## <a name="compile-the-configuration"></a>Yapılandırma derleme
+## <a name="compile-the-configuration"></a>Yapılandırmayı derleme
 
-DSC yapılandırması düğüme uygulanacak ilk MOF dosyasına derlenmelidir.
+DSC yapılandırması bir düğüme uygulanacak ilk MOF dosyasına derlenmelidir.
 Bunu yapmak için yapılandırmanın bir işlev gibi çalıştırın.
 Bir PowerShell konsolunda yapılandırmanızı kaydettiğiniz klasöre gidin ve bir MOF dosyasına yapılandırmayı derlemek için aşağıdaki komutları çalıştırın:
 
@@ -90,7 +90,7 @@ Bir PowerShell konsolunda yapılandırmanızı kaydettiğiniz klasöre gidin ve 
 WebsiteTest
 ```
 
-Bu, aşağıdaki çıktıyı oluşturur:
+Şu çıkışı üretir:
 
 ```
 Directory: C:\ConfigurationTest\WebsiteTest
@@ -103,16 +103,16 @@ Mode                LastWriteTime         Length Name
 
 İlk satırı yapılandırma işlevi konsolunda kullanılabilir hale getirir.
 İkinci satır yapılandırması çalıştırılır.
-Adlı yeni bir klasörün sonucudur `WebsiteTest` bir alt klasör geçerli klasörde oluşturulur.
-`WebsiteTest` Klasör adlı dosyayı içeren `localhost.mof`.
-Ardından hedef düğüme uygulanan bu dosyasıdır.
+Yeni bir klasör adında sonucudur `WebsiteTest` bir alt klasör geçerli klasörde oluşturulur.
+`WebsiteTest` Adlı bir dosyayı içeren klasör `localhost.mof`.
+Daha sonra hedef düğüme uygulanan bu dosyasıdır.
 
 ## <a name="apply-the-configuration"></a>Yapılandırmasını Uygula
 
-Derlenmiş MOF olduğuna göre yapılandırma (Bu durumda, yerel bilgisayar) hedef düğüm çağırarak uygulayabileceğiniz [Başlat-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet'i.
+Derlenmiş MOF sahip olduğunuza göre yapılandırma (Bu durumda, yerel bilgisayar) hedef düğüm çağırarak uygulayabileceğiniz [başlangıç DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet'i.
 
-`Start-DscConfiguration` Cmdlet'i söyler [yerel Configuration Manager'ı (LCM)](../managing-nodes/metaConfig.md), yapılandırmayı uygulamak için DSC, altyapı olduğu.
-LCM yapılandırmayı uygulamak için DSC kaynakları çağırma çalışır.
+`Start-DscConfiguration` Cmdlet söyler [yerel Configuration Manager (LCM'yi)](../managing-nodes/metaConfig.md), yapılandırmayı uygulamak için DSC altyapısı olduğu.
+Yapılandırmayı uygulamak için DSC kaynakları çağırma işini LCM'yi yapar.
 
 Bir PowerShell konsolunda yapılandırmanızı kaydettiğiniz klasöre gidin ve aşağıdaki komutu çalıştırın:
 
@@ -120,15 +120,15 @@ Bir PowerShell konsolunda yapılandırmanızı kaydettiğiniz klasöre gidin ve 
 Start-DscConfiguration .\WebsiteTest
 ```
 
-## <a name="test-the-configuration"></a>Test yapılandırması
+## <a name="test-the-configuration"></a>Yapılandırmayı test etme
 
-Çağırabilirsiniz [Get-DscConfigurationStatus](/powershell/module/psdesiredstateconfiguration/get-dscconfigurationstatus) Yapılandırması başarılı olup olmadığını görmek için cmdlet.
+Çağırabilirsiniz [Get-DscConfigurationStatus](/powershell/module/psdesiredstateconfiguration/get-dscconfigurationstatus) yapılandırmanın başarılı olup olmadığını görmek için cmdlet.
 
 Ayrıca sonuçları doğrudan, bu durumda göz atarak sınayabilirsiniz `http://localhost/` bir web tarayıcısında.
 Bu örnekte ilk adım olarak, oluşturduğunuz "Hello World" HTML sayfası görmeniz gerekir.
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
-- DSC yapılandırmalar hakkında daha fazla bilgi edinin [DSC yapılandırmaları](../configurations/configurations.md).
-- Hangi DSC kaynakların kullanılabilir olduğundan ve özel DSC kaynakları oluşturmak nasıl [DSC kaynakları](../resources/resources.md).
-- DSC yapılandırmaları ve kaynakları Bul [PowerShell Galerisi](https://www.powershellgallery.com/).
+- DSC yapılandırmaları hakkında daha fazla bilgi [DSC yapılandırmaları](../configurations/configurations.md).
+- Hangi DSC kaynakları kullanılabilir ve özel DSC kaynakları oluşturma bkz [DSC kaynakları](../resources/resources.md).
+- DSC yapılandırmaları ve kaynakları bulmak [PowerShell Galerisi](https://www.powershellgallery.com/).

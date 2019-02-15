@@ -4,163 +4,163 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 description: Yayımcılar için yönergeler
 title: PowerShell Galerisi kılavuzları ve en iyi uygulamaları yayımlama
-ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689123"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265578"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery kılavuzları ve en iyi uygulamaları yayımlama
 
-Bu konuda PowerShell Galerisi'nde yayımlanmış paketleri yaygın olarak benimsenen ve kullanıcılara, PowerShell Galerisi bildirim verileri nasıl işlediğini ve büyük görüşlerine dayalı yüksek değerli sağlamak emin olmak için Microsoft ekipleri tarafından kullanılan önerilen adımlar açıklanır. PowerShell Galerisi kullanıcılara sayılar.
-Bu yönergeleri izleyerek yayımlanan paketleri yüklenecek, daha büyük olasılıkla güvenilir ve daha fazla kullanıcıların ilgisini çekin.
+Bu konuda Microsoft ekipleri tarafından PowerShell Galerisi yayımlanan paket geniş ölçüde benimsenmesi ve PowerShell Galerisi bildirim verileri nasıl işler ve büyük görüşleri dayalı kullanıcılara yüksek bir değer sağlayın sağlamak için kullanılan önerilen adımları açıklanmaktadır PowerShell Galerisi kullanıcılar sayıları.
+Bu yönergeleri izleyerek yayımlanan paketleri yüklenmesi büyük olasılıkla güvenilir ve daha fazla kullanıcı çekebilir.
 
-Aşağıdaki ilk gözden geçirenler geri bildirimi ile kodunuzu geliştirme isteğe bağlı bildirim ayarları en önemli olan bir iyi PowerShell Galerisi paket kılan yönergeleri içerir ve [Powershell betik Çözümleyicisi](https://aka.ms/psscriptanalyzer), sürüm oluşturma modülü, belgeler, testleri ve örnekler için paylaşılan sahip kullanma.
-Bu belge çoğunu yayımlama yönergelerine uyduğundan [yüksek kalite DSC kaynak modülleri](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
+Aşağıda bulunan isteğe bağlı bildirim ayarları en önemli olan ilk gözden geçirenler görüşleri ile kodunuzu iyileştirme iyi bir PowerShell Galerisi paket kılan için yönergelerdir ve [Powershell komut dosyası Çözümleyicisi](https://aka.ms/psscriptanalyzer), sürüm oluşturma modülü, belgeler, testleri ve örnekler için paylaşılan kullanma.
+Bu belge çoğunu yayımlama yönelik yönergeleri izleyen [yüksek kaliteli DSC kaynakları modüllerinin](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-Mekanizması bir paket için PowerShell Galerisi yayımlama bkz [oluşturma ve bir paket yayımlama](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
+Bir paket için PowerShell Galerisi yayımlama mekanizması için bkz: [oluşturma ve yayımlama bir paketi](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
 
-Bu yönergelere geri Hoş Geldiniz. Geri bildiriminiz varsa, lütfen sorunları Aç bizim [Github belge deposuna](https://github.com/powershell/powershell-docs/issues).
+Bu yönergeleri geribildirim Hoş Geldiniz. Görüş bildirmek isterseniz, lütfen sorunları açın bizim [Github belgeleri deposu](https://github.com/powershell/powershell-docs/issues).
 
-## <a name="best-practices-for-publishing-packages"></a>Paketleri yayımlama için en iyi yöntemler
+## <a name="best-practices-for-publishing-packages"></a>Paketleri yayımlama için en iyi uygulamalar
 
-Aşağıdaki en iyi ne önemlidir PowerShell galeri öğelerini kullanıcıları söyleyin misiniz ve çok düşük öncelik sırasına göre listelenir.
-Aşağıdaki yönergeleri izleyin paketlerin yüklenmesini ve başkaları tarafından benimsenen çok daha yüksektir.
+Aşağıdaki en iyi yöntemleri ne önemlidir PowerShell galeri öğeleri kullanıcılarının söyleyin olan ve nominal öncelik sırasına göre listelenmiştir.
+Bu yönergelere paketlerin yüklenmesini ve başkaları tarafından benimsenen kadar daha yüksektir.
 
 - PSScriptAnalyzer kullanın
 - Belgeler ve örnekler dahil
-- Geri bildirime yanıt
-- Betikler yerine modülleri belirtin
-- Proje sitesi bağlantılar sağlar
-- Paketiniz uyumlu PSEdition(s) ve platformlarla etiketi 
-- Sınamalar, modülleri
-- Dahil ve/veya lisans koşullarını bağlantı
-- Kod imzalama
+- Geri bildirim için yanıt
+- Komut dosyaları yerine modülleri sağlar
+- Proje sitesi için bağlantılar sağlar
+- Paketinizi uyumlu PSEdition(s) ve platformlarla etiketi 
+- Modüllerinizi testleriyle içerir
+- İçerir ve/veya lisans koşullarını bağlantı
+- Kodunuzu oturum
 - İzleyin [SemVer](http://semver.org/) sürüm oluşturma için yönergeler
-- Ortak PowerShell Galerisi etiketleri belgelendiği gibi ortak etiketleri kullanma
-- Yerel depo kullanmaya test yayımlama
-- Yayımlamak için PowerShellGet kullanma
+- Ortak PowerShell Galerisi etiketlerinde belirtildiği gibi ortak etiketleri kullanma
+- Yerel deposu kullanarak test yayımlama
+- Yayımlamak için PowerShellGet kullanın
 
-Her birini aşağıdaki bölümlerde kısaca ele alınmaktadır.
+Bunların her biri kısaca aşağıdaki bölümlerde ele alınmıştır.
 
 ## <a name="use-psscriptanalyzer"></a>PSScriptAnalyzer kullanın
 
-[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) PowerShell kod üzerinde çalışan bir ücretsiz statik kod analizi aracıdır.
-PowerShell kodu ve genellikle bir öneri için sorunu düzeltmek için görülen yaygın sorunların çoğunu PSScriptAnalyzer tanımlar.
-Araç kullanımı kolaydır ve sorunları hata olarak kategorilere ayıran (önemli, ele alınması gerekir), uyarı (gözden geçirilmesi gereken ve ilgilenilmesi gerekir) ve bilgi (değer için en iyi kullanıma).
-PowerShell Galerisi'nde yayımlanmış tüm paketleri PSScriptAnalyzer kullanarak taranır ve hataları sahibine geri raporlanacak ve ele alınması gerekir.
+[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) PowerShell kodu üzerinde çalıştığı bir ücretsiz statik kod çözümleme aracıdır.
+PSScriptAnalyzer PowerShell kodu ve genellikle sorun gidermeye yönelik bir öneri görülen en sık karşılaşılan sorunları tanımlar.
+Aracın kullanımı kolaydır ve sorunları hata olarak kategorilere ayıran (önemli, ele alınması gereken), uyarı (gözden geçirilmesi gereken & ilgilenilmesi gerekir) ve bilgiler (değer için en iyi uygulamaları kullanıma).
+PowerShell Galerisi yayımlanan tüm paketler PSScriptAnalyzer kullanarak taranacak ve hataları sahibine geri bildirilir ve ele alınması gereken.
 
 Çalıştırmak için en iyi uygulamadır `Invoke-ScriptAnalyzer` ile `-Recurse` ve `-Severity` uyarı.
 
 Sonuçları gözden geçirin ve emin olun:
 
-- Tüm hatalar düzeltildi ve, belgelerinde ele
-- Tüm Uyarıları gözden geçirdi ve uygunsa ele
+- Tüm hatalar düzeltildi veya belgelerinizde ele
+- Tüm Uyarıları gözden ve uygunsa ele
 
-Paketler PowerShell Galerisi'ndeki alma kullanıcılar PSScriptAnalyzer çalıştırın ve tüm hataları ve Uyarıları değerlendirmek için önerilir.
-Büyük olasılıkla PSScriptAnalyzer tarafından raporlanan bir hata olduğunu görürseniz, paket sahipleriyle temas kullanıcılardır.
-Paketiniz hata olarak işaretlenmiş kod tutmak için yeterli bir neden varsa, bu bilgileri birden çok kez aynı soruyu yanıtlamak zorunda kalmamak için belgelerine ekleyin.
+PowerShell Galerisi'nden paketleri elde kullanıcılar PSScriptAnalyzer çalıştırın ve tüm hataları ve Uyarıları değerlendirmek için önemle önerilir.
+Kullanıcılar, büyük olasılıkla PSScriptAnalyzer tarafından raporlanan bir hata olduğunu görürseniz paket sahipleri başvurun.
+Hata olarak işaretlenmiş kod tutmak paketinize ilgi çekici bir neden varsa, bu bilgileri birçok kez aynı soruyu yanıtlamak zorunda kalmamak için belgelerine ekleyin.
 
 ## <a name="include-documentation-and-examples"></a>Belgeler ve örnekler dahil
 
-Belgeler ve örnekler kullanıcıların herhangi bir paylaşılan kod yararlanabilirsiniz emin olmak için en iyi yoludur.
+Belgeler ve örnekler kullanıcıların herhangi bir paylaşılan kod yararlanabilir emin olmak için en iyi yoludur.
 
-Belgeleri, PowerShell Galerisi'nde yayımlanmış paketleri dahil etmek için en faydalı bir şeydir.
-Paket nedir ve nasıl kullanılacağını anlamak için kodu okumak için alternatif olarak kullanıcıların belgeleri olmadan paketleri genellikle atlama.
-Kullanılabilir belgeler de dahil olmak üzere PowerShell paketleriyle sağlama hakkında birkaç makale vardır:
+Belgeleri, PowerShell Galerisi yayımlanan paketleri dahil etmek için en yararlı bir şeydir.
+Paket nedir ve nasıl kullanılacağını anlamak için kodu okumak için alternatif olarak kullanıcıların belgeleri olmadan paketleri genellikle atlayacaktır.
+Belgeleri dahil olmak üzere PowerShell paketleri ile sağlamak nasıl hakkında kullanılabilen çeşitli makaleler vardır:
 
-- Yardım sağlama yönergeleri alanlarındadır [cmdlet'i Yardımı yazma hakkında](https://go.microsoft.com/fwlink/?LinkID=123415)
-- Cmdlet yardımına oluşturmadan, en iyi yaklaşım herhangi bir PowerShell Betiği, işlev veya cmdlet'i için olan.
-  Cmdlet yardımına oluşturma hakkında daha fazla bilgi için başlayan [yazma Cmdlet Yardım nasıl](https://go.microsoft.com/fwlink/?LinkID=123415).
-  Bir betik içinde Yardım eklemek için bkz [hakkında açıklama tabanlı Yardım](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
-- Birçok modülleri belgeleri MarkDown dosyaları gibi metin biçiminde de içerir.
-  Github Markdown yoğun olarak kullanılan bir biçim olduğu, proje sitesi olduğunda bu özellikle yararlı olabilir.
+- Yardım sağlama yönergeleri olan [nasıl Cmdlet Yardım yazma](https://go.microsoft.com/fwlink/?LinkID=123415)
+- Cmdlet Yardım oluşturma, herhangi bir PowerShell komut dosyası, işlevini veya cmdlet'ini için en iyi yaklaşımı olduğu.
+  Cmdlet Yardım oluşturma hakkında daha fazla bilgi için başlayın [yazma Cmdlet Yardım nasıl](https://go.microsoft.com/fwlink/?LinkID=123415).
+  Bir komut dosyası içinde Yardım eklemek için bkz: [hakkında açıklama tabanlı Yardım](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+- Birçok modül belgelerine MarkDown dosyaları gibi metin biçiminde de içerir.
+  Markdown yoğun olarak kullanılan bir biçimde olduğu Github'da proje sitesi olduğunda bu özellikle yararlı olabilir.
   Kullanmak için en iyi uygulamadır [Github özellikli Markdown](https://help.github.com/categories/writing-on-github/)
 
 Örnekler için paketin nasıl kullanılmak kullanıcıları göster.
-Birçok geliştirici belgeleri nasıl bir şey kullanılacağını anlamak için önce örnekler, Ara yazar.
-En iyi örnekler show temel kullanım yanı sıra sanal gerçekçi kullanım örneği ve kod iyi açıklamalı türüdür.
-PowerShell Galerisi'nde yayımlanmış olan modüller için örnekler modülü kökü altındaki örnekler klasöründe olmalıdır.
+Çoğu geliştirici belgeleri nasıl bir şey kullanılacağını anlamak için önce örnekler, Ara söyleyin.
+En iyi örnekleri Göster temel kullanım, artı benzetimli gerçekçi kullanım örneği ve kod iyi açıklamalı türüdür.
+Örnekler için PowerShell Galerisi yayımlanmış modül için modülü kökü altındaki bir örnekler klasöründe olması gerekir.
 
-Örnekler için iyi bir düzen bulunabilir [PSDscResource Modülü](https://www.powershellgallery.com/packages/PSDscResources) Examples\RegistryResource klasörü altında.
-Ne gösterilen bu belgeleri dört örnek kullanım örneklerini kısaca her dosya üst kısmındaki vardır.
+Örnekler için iyi bir desen bulunabilir [PSDscResource Modülü](https://www.powershellgallery.com/packages/PSDscResources) Examples\RegistryResource klasörü altında.
+Ne gösterilen bu belgelerin her dosyanın üst kısa bir açıklama ile dört örnek kullanım durumları vardır.
 
-## <a name="respond-to-feedback"></a>Geri bildirime yanıt
+## <a name="respond-to-feedback"></a>Geri bildirim için yanıt
 
 Düzgün bir şekilde geri bildirime yanıt paketi sahiplerine topluluk tarafından yüksek değerli.
-Paketi, geliştirmeye yardımcı olmak denemek için yeterince ilgilenen oldukları gibi yanıt kullanıcılar, yapıcı geri bildirim sağlamak önemlidir.
+Bunu geliştirmeye yardımcı olmak denemeye paketinde yeterince ilgi olarak yapıcı görüş kullanıcılar, yanıt önemlidir.
 
-PowerShell galerisinde kullanılabilir geri bildirim iki yöntem vardır:
+PowerShell galerisinde iki geri bildirim yöntemleri vardır:
 
-- Sahibiyle iletişime geçin: Bu, bir kullanıcı için paket sahip bir e-posta göndermek sağlar. Bir paket sahibi olarak, PowerShell Galerisi paketlerle kullanılan e-posta adresi izleyebilir ve oluşan sorunlara yanıt önemlidir. Bu yöntem bir dezavantajı sahip birden çok kez aynı soruyu yanıtlamak zorunda yalnızca kullanıcı ve sahibi şimdiye kadar iletişim görecek olmasıdır.
-- Açıklama: Paket alt kısmında bir yorum alanı sayfasıdır.
-  Bu sisteme avantajı diğer kullanıcıların açıklamalar ve yanıtları herhangi tek soru yanıtlanması gereken sayısını azaltan görebilmenizdir.
-  Paket sahibi olarak, her paket için açıklamalar izleyin önemle tavsiye edilir.
-Bkz: [sosyal medya veya yorumlar aracılığıyla geri bildirim sağlayarak](../how-to/working-with-packages/social-media-feedback.md) bunu nasıl yapacağınız hakkında ayrıntılı bilgi için.
+- Sahibine başvurun: Bu, sahibi paket görüntülemenize için bir e-posta göndermek bir kullanıcı sağlar. Bir paket sahibi olarak PowerShell Galerisi paketlerle kullanılan e-posta adresi izlemek ve ortaya sorunları yanıt önemlidir. Bu yöntem bir dezavantajı sahibi birçok kez aynı soruyu yanıtlamak zorunda kalabilirsiniz şekilde yalnızca kullanıcı ve sahip herhangi bir zamanda iletişimi görecek olmasıdır.
+- Açıklama: Paket altındaki bir yorum alanı sayfasıdır.
+  Bu sisteme avantajı, diğer kullanıcıların yorumlar ve yanıtları, tek bir soru yanıtlanması gereken sayısını azaltır görebileceği ' dir.
+  Paket sahibi olarak, her paket için yorumların izlemeniz önerilir.
+Bkz: [sosyal medya veya açıklamalar aracılığıyla geribildirim sağlama](../how-to/working-with-packages/social-media-feedback.md) nasıl hakkında ayrıntılı bilgi için.
 
-Topluluk tarafından constructively geri bildirime yanıt sahipleri geri bildirimlerinize.
-Bir güncelleştirme bir problemi çözdüyse tanımlamak veya raporda fırsatı kullanın gerekirse daha fazla bilgi istemek için geçici bir çözüm sağlar.
+Geri bildirim için constructively yanıt sahiplerine topluluk tarafından takdir.
+Bir güncelleştirme bir sorunu giderir belirlemek veya raporda fırsatı kullanın gerekirse daha fazla bilgi istemek için geçici bir çözüm sağlar.
 
-Bu iletişim kanallarını birinden gözlemlenen uygunsuz davranışı varsa, Galeri yöneticilerle iletişim için PowerShell Galerisi Uygunsuz kullanım bildir özelliğini kullanın.
+Bu iletişim kanalları birinden gözlenen uygunsuz davranışı varsa, Galeri yöneticilerle iletişim için PowerShell Galerisi rapor kötüye özelliğini kullanın.
 
-## <a name="modules-versus-scripts"></a>Betikleri ve modülleri
+## <a name="modules-versus-scripts"></a>Komut dosyaları ve modüller
 
-Bir betik diğer kullanıcılarla paylaşma idealdir ve diğerleri olabilir sorunları nasıl çözeceğinizi örnekleriyle sağlar.
-PowerShell Galerisi betiklerde ayrı bir belge, örnekler ve testler olmadan tek dosyaların olduğunu sorunudur.
+Bir komut dosyası diğer kullanıcılarla paylaşımını harikadır ve diğerleri sahip olabilir sorunları nasıl çözeceğinizi örnekleriyle sağlar.
+PowerShell galerisinde komut ayrı bir belge, örnekler ve testleri olmadan tek dosyaları içeren konudur.
 
-PowerShell modülleri, birden çok dosya ve klasörleri paketine dahil olmasını sağlayan bir klasör yapısına sahiptir.
-Modül yapısı sağlar ki listesinde en iyi yöntemler diğer paketleri de dahil olmak üzere: cmdlet, belgeler, örnekler ve testleri yardımcı olur.
-En büyük dezavantajı, bir komut dosyası bir modül içinde kullanıma sunulan ve bir işlev olarak kullanılması gerekir, ' dir.
+PowerShell modülleri birden çok paketiyle dahil edilecek dosya ve klasörleri izin veren bir klasör yapısına sahip.
+Modül yapısı sağlar biz listesinde en iyi yöntemler diğer paketleri de dahil olmak üzere: cmdlet Yardım, belgeler, örnekler ve testleri.
+En büyük dezavantajı, bir komut dosyası bir modül içinde kullanıma sunulan ve bir işlevi olarak kullanılması gerekir, ' dir.
 Bir modül oluşturma hakkında daha fazla bilgi için bkz: [bir Windows PowerShell modülü yazma](http://go.microsoft.com/fwlink/?LinkId=144916).
 
-Bazı durumlarda burada bir betik özellikle DSC yapılandırmaları olan bir kullanıcı için daha iyi bir deneyim sağlar.
-DSC yapılandırmaları için en iyi uygulama olarak bir komut dosyası belgeleri, örnekler ve testleri içeren bir eşlik eden modülü ile yapılandırma yayımlamaktır.
-Betik RequiredModules kullanarak eşlik eden modülü listeler = @(modülünün adı).
-Bu yaklaşım, tüm betiklerde olduğu kullanılabilir.
+Bazı durumlarda, bir komut dosyası özellikle DSC yapılandırmaları olan bir kullanıcı için daha iyi bir deneyim sağlar.
+DSC yapılandırmaları için en iyi uygulama olarak bir komut dosyası belgeleri, örnekler ve testleri içeren bir eşlik eden modülüyle yapılandırma yayımlamaktır.
+Betik RequiredModules kullanarak eşlik eden modülü listeleri = @(modül adı).
+Bu yaklaşım, komut dosyaları ile kullanılabilir.
 
-Diğer en iyi uygulamaları izleyin tek başına komut diğer kullanıcılara gerçek değeri belirtin.
-Yürütmeyi açıklama tabanlı belge ve bir proje siteye bir bağlantı PowerShell Galerisi'nden bir betik yayımlarken kesinlikle önerilir.
+Diğer en iyi uygulamaları izleyerek tek başına komut dosyaları, diğer kullanıcılara gerçek değer girin.
+Açıklama tabanlı belge ve proje siteye bir bağlantı bir komut dosyası için PowerShell Galerisi yayımlarken kesinlikle önerilir sağlanması.
 
 ## <a name="provide-a-link-to-a-project-site"></a>Proje sitesi için bir bağlantı sağlayın
 
-Burada, bir yayımcı doğrudan PowerShell Galerisi paketlerini kullanıcılarla etkileşim kurabilir bir proje sitedir.
-Kullanıcılar daha kolay paketi hakkında bilgi almak bunları verdiğinden bu sağlayan paketleri tercih eder.
-Github'da PowerShell galerisinde birçok paketi geliştirilir, diğer bir adanmış bir web varlığı bir kuruluşlarıyla tarafından sağlanır.
-Bunların her biri proje sitesi kabul edilebilir.
+Burada bir yayımcı doğrudan kendi PowerShell Galerisi paketleri kullanıcılarla etkileşim kurabilen bir proje sitesidir.
+Bunları daha kolay paketi hakkında bilgi almak izin verdiği ölçüde kullanıcı bunu sağlamak paketleri tercih eder.
+PowerShell galerisinde birçok paketleri Github'da geliştirilir, diğerleri adanmış web varlığı olan kuruluşlar tarafından sağlanır.
+Bunların her biri bir proje sitesi kabul edilebilir.
 
-Bir bağlantının eklenmesi ProjectURI gibi bildirim PSData bölümünü ekleyerek gerçekleştirilir:
+Bağlantı ekleme ProjectURI bildirim PSData bölümünde aşağıdaki gibi ekleyerek yapılır:
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/powershell/powershell'
 
-Bir ProjectURI sağlandığında, PowerShell Galerisi paket sayfanın sol tarafındaki proje siteye bir bağlantı bulunur.
+Bir ProjectURI sağlandığında, PowerShell Galerisi paket sayfanın sol tarafında projeye siteye bir bağlantı içerir.
 
-## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Paketiniz uyumlu PSEdition(s) ve platformlarla etiketi 
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Paketinizi uyumlu PSEdition(s) ve platformlarla etiketi 
 
-Paketleri kendi ortamı ile iyi çalışacak kullanıcılara göstermek için aşağıdaki etiketlerin kullanın:
+Paketleri kendi ortamı ile iyi çalışır kullanıcılara göstermek için aşağıdaki etiketlerin kullanın:
 
 - PSEdition_Desktop: Windows PowerShell ile uyumlu olan paketler 
-- PSEdition_Core: Powershell Core ile uyumlu olan paketler 
-- Windows: Windows işletim sistemiyle uyumlu olan paketler
-- Linux : Linux işletim sistemleri ile uyumlu olan paketler 
-- MacOS : Mac işletim sistemiyle uyumlu olan paketler
+- PSEdition_Core: Powershell çekirdek ile uyumlu olan paketler 
+- Windows: Windows işletim sistemiyle uyumlu paketleri
+- Linux : Linux işletim sistemleriyle uyumlu paketleri 
+- MacOS : Mac işletim sistemiyle uyumlu paketleri
 
-## <a name="include-tests"></a>Sınamalar
+## <a name="include-tests"></a>Sınamalar içerir
 
-Açık kaynak kod ile testler de dahil olmak üzere, neleri doğrulamak ve kodunuzun nasıl çalıştığı hakkında bilgi sağlar hakkında güvence verir olarak kullanıcılar için önemlidir. Ayrıca, kendi ortamlarında uyacak şekilde kodunuzu değiştirirseniz, bunlar, özgün işlevi bozulmaz emin olmak kullanıcıların sağlar.
+Açık kaynak kodu ile testleri de dahil olmak üzere, neleri doğrulamak ve kodunuzu nasıl çalıştığı hakkında bilgi sağlar hakkında güvence verir olarak kullanıcılar için önemlidir. Kodunuzu ortamlarına uyacak şekilde değiştirirseniz, bunlar, özgün işlevselliği bozmadığını emin olmak kullanıcılara izin verir.
 
-PowerShell için özellikle tasarlanmış Pester test çerçevesi yararlanmak için testleri yazılması önemle tavsiye edilir.
+Testleri PowerShell için özellikle tasarlanmış Pester test çerçevesinden yararlanamazsınız yazılması önerilir.
 Pester kullanılabilir [GitHub](https://github.com/Pester/Pester), [PowerShell Galerisi](https://www.powershellgallery.com/packages/Pester/)ve Windows 10, Windows Server 2016, WMF 5.0 ve WMF 5.1 birlikte gelir.
 
-[Pester proje sitesi github'da](https://github.com/Pester/Pester) Pester testleri için en iyi Başlarken yazma iyi belgeleri içerir.
+[Pester proje sitesi github'da](https://github.com/Pester/Pester) Pester testleri için en iyi yöntemler Başlarken yazma iyi belgeleri içerir.
 
-Test kapsamı hedeflerini anılmaktadır [yüksek kalite Resource modülü belgeleri](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md), önerilen kod kapsamı ile % 70'in birim test.
+Test kapsamı hedefleri olarak çağrıldığı [yüksek kaliteli kaynak modülünün belgelerine](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md), önerilen kod kapsamı ile % 70 birim testi.
 
-## <a name="include-andor-link-to-license-terms"></a>Dahil ve/veya lisans koşullarını bağlantı
+## <a name="include-andor-link-to-license-terms"></a>İçerir ve/veya lisans koşullarını bağlantı
 
-PowerShell Galerisi'nde yayımlanmış tüm paketler Lisans Koşulları'nı belirtmeniz gerekir veya dahil lisans bağlayıcılığını [kullanım](https://www.powershellgallery.com/policies/Terms) altında "Ek A".
-Farklı bir lisans belirtmek için en iyi yaklaşım bir bağlantı içinde PSData LicenseURI kullanma lisansına sağlamaktır.
+PowerShell Galerisi yayımlanan tüm paketler Lisans Koşulları'nı belirtmeniz gerekir ya da dahil lisans tarafından bağlanması [Kullanım Koşulları'nı](https://www.powershellgallery.com/policies/Terms) "Sergi A" altında.
+Farklı lisans belirtmek için en iyi yaklaşımı LicenseURI içinde PSData kullanarak lisans bağlantı sağlamaktır.
 Önerilen bildirim alanları konusunda bir örnek bulabilirsiniz.
 
 ```powershell
@@ -174,81 +174,81 @@ PrivateData = @{
         LicenseUri = 'http://www.apache.org/licenses/LICENSE-2.0'
 ```
 
-## <a name="sign-your-code"></a>Kod imzalama
+## <a name="sign-your-code"></a>Kodunuzu oturum
 
-Kod imzalama güvencesi kimin yayımlanan paket için en yüksek düzeyde kullanıcılarla sağlar ve kod kopyası bunlar alma tam olarak ne yayımcı yayımlanan.
+Kod kopyası bunlar elde tam ne yayımcı serbest olduğundan ve kod imzalama en üst düzeye kimin paket yayımlanan güvence kullanıcılarla sağlar.
 Kod genellikle imzalama hakkında daha fazla bilgi için bkz: [kod imzalama giriş](http://go.microsoft.com/fwlink/?LinkId=106296).
-PowerShell kod imzalama iki birincil yaklaşım doğrulama destekler:
+PowerShell iki birincil yaklaşım imzalama kod doğrulama destekler:
 
 - Komut dosyalarını imzalama
 - Bir modül imzalama Kataloğu
 
-PowerShell dosyaları imzalama yürütülen kod güvenilir bir kaynak tarafından üretilen ve değiştirilmemiş sağlamak için bir tanınmış bir yaklaşımdır.
-PowerShell komut dosyalarını imzalama hakkında ayrıntılı bilgi alınmıştır [hakkında imzalama](/powershell/module/microsoft.powershell.core/about/about_signing) konu.
-Genel bakış sayfasında herhangi bir imza eklenebilir. PowerShell betik yüklendiğinde doğrulayan PS1 dosyası.
+PowerShell dosyaları imzalama yürütülen kod güvenilir bir kaynak tarafından üretilen ve değiştirilmedi sağlayarak bir tanınmış yaklaşımdır.
+PowerShell komut dosyalarını imzalama hakkında ayrıntıları ele [hakkında imzalama](/powershell/module/microsoft.powershell.core/about/about_signing) konu.
+Genel bakış, herhangi bir imza eklenebilir. PowerShell komut dosyası yüklendiğinde doğrulayan PS1 dosyası.
 PowerShell kısıtlı kullanarak [yürütme İlkesi](/powershell/module/microsoft.powershell.core/about/about_execution_policies) kullanımını sağlamak için cmdlet'leri imzalanmış betikler.
 
-Katalog modülleri imzalama için PowerShell sürüm 5.1 eklenen bir özelliktir.
-Bir modül oturum açma ele alınmıştır [katalog cmdlet'leri](/powershell/wmf/5.1/catalog-cmdlets) konu.
-Genel bakış sayfasında Kataloğu imzalama modüldeki her dosya için bir karma değer içeren bir katalog dosyası oluşturma ve ardından bu dosya imzalama gerçekleştirilir.
-PowerShellGet yayımlama modülü, Install-module, save-module ve güncelleştirme modülü cmdlet'lerini geçerli olduğundan emin olmak için imza denetleyin, sonra her paket için karma değer katalogda nedir eşleştiğini onaylayın.
-Sistemde bir modülün önceki bir sürümünü yüklediyseniz, Install-module yeni sürüm için imzalama yetkisini ne daha önce yüklü olduğu eşleştiğini doğrulayın.
-Katalog imzalama ile çalışır, ancak imzalama komut dosyalarının yerini almaz. PowerShell modülü yükleme zamanında Kataloğu imzaları doğrulamaz.
+Modülleri imzalama Kataloğu, PowerShell sürüm 5.1 eklenen bir özelliktir.
+Bir modül imzalamak nasıl ele [katalog cmdlet'leri](/powershell/wmf/5.1/catalog-cmdlets) konu.
+Genel bakış, katalog imzalama modüldeki her dosya için bir karma değer içeren bir katalog dosyası oluşturma ve ardından bu dosya imzalama yapılır.
+PowerShellGet yayımlama modülü, yükleme modülü, kaydetme modülü ve güncelleştirme modülü cmdlet'leri geçerli olduğundan emin olmak için imza denetleyin ve sonra her paket için karma değer katalogda nedir eşleştiğini doğrulayın.
+Sistemde modülünün önceki bir sürümünü yüklediyseniz, yükleme-module yeni sürümü için imzalama yetkilisi ne önceden yüklenmişse eşleştiğini onaylayın.
+Katalog imzalama ile çalışır, ancak imzalama komut dosyalarının yerini almaz. PowerShell modülü yükleme zamanında katalog imzaları doğrulamaz.
 
 ## <a name="follow-semver-guidelines-for-versioning"></a>Sürüm oluşturma için SemVer yönergeleri izleyin
 
-[SemVer](http://semver.org/) nasıl yapılandırılacağı ve değişiklikleri kolay intepretation izin vermek için bir sürüm değiştirin açıklayan genel bir kuraldır.
-Bildirim verileri, Paket sürümü yeniden eklenmesi gerekir.
+[SemVer](http://semver.org/) yapısı ve değişiklikleri kolay intepretation izin vermek için bir sürüm değiştirin açıklar ortak bir kuraldır.
+Sürüm paketiniz için bildirim verileri eklenmesi gerekir.
 
-- Sürüm 3 sayısal blokları 0.1.1 veya 4.11.192 noktayla ayrılmış olarak yapılandırılmalıdır
-- "0" ile başlayan sürümleri paket henüz üretime hazır değildir ve ilk sayı yalnızca "0" ile başlamalıdır, kullanılan tek sayı olup olmadığını gösterir
-- Değişiklikler, ilk sayısı (için 1.9.9999 2.0.0) sürümleri arasında önemli ve derleyicideki en güncel değişiklikler gösteriyor
-- Değişiklikler, ikinci sayı (1.01 için 1,02) için yeni cmdlet'ler modül ekleme gibi özellik düzeyinde değişiklikleri gösteriyor
-- Üçüncü sayıyı değişiklikleri yeni parametreler, güncelleştirilmiş örnekleri ve yeni testler gibi hataya neden olmayan değişiklikleri gösterir.
-- 1.01.0 1.001.0 daha büyük olarak kabul edilecek şekilde sürümlerin listelenmesi zaman PowerShell sürümleri dize olarak sıralanır
+- Sürüm 3 sayısal blokları 0.1.1 veya 4.11.192 olduğu gibi dönemlere göre ayrılmış olarak yapılandırılmalıdır
+- "0" ile başlayan sürümleri paketi henüz üretim hazır değil ve kullanılan tek sayı ise, ilk sayı yalnızca "0" ile başlaması gereken gösterir
+- İlk sayı (1.9.9999 için 2.0.0) değişiklikleri sürümleri arasında önemli ve yeni değişiklik gösteren
+- İkinci sayı (1.1 için 1.2) yapılan değişiklikler yeni cmdlet'leri modül ekleme gibi özellik düzeyinde değişiklikleri gösterir
+- Yeni parametreler, güncelleştirilmiş örnekleri ya da yeni testleri gibi bölünemez değişiklikleri üçüncü sayıyı değişiklikleri gösterir
+- 1.01.0 1.001.0'den büyük olarak kabul edilecek şekilde sürümleri listelerken PowerShell sürümleri dize olarak sıralayacağını
 
-SemVer yayımlanmadan önce PowerShell desteği SemVer, çoğu ancak tüm öğeler için özellikle sağladığı için oluşturulmuştur:
+SemVer yayımlanmadan önce destek SemVer, çoğu ancak tüm öğeler için özellikle sağlar şekilde PowerShell oluşturuldu:
 
-- Dizeleri yayın öncesi sürüm numaraları desteklemez. Bir yayımcı, sürüm 1.0.0 girdikten sonra yeni bir ana sürüm'in bir önizleme sürümünü sunmak istediğinde, bu yararlıdır. Bu PowerShell Galerisi ve PowerShellGet cmdlet'leri gelecekteki bir sürümde desteklenecek.
-- PowerShell ve PowerShell Galerisi sürümüne dizeleriyle 1, 2 ve 4 Kesimden izin verir. Pek çok erken modülleri yönergeleri izleyin değil ve Microsoft Ürün sürümlerinden (örneğin 5.1.14393.1066) sayıda bir 4 engelleme gibi yapı bilgilerini içerir. Sürüm oluşturma açısından, bu farklılıkları göz ardı edilir.
+- Sürüm numaraları ön dizelerini desteklemez. Bir yayımcı sürümü 1.0.0 sağladıktan sonra yeni bir ana sürüm Önizleme sürümü teslim istediğinde kullanışlıdır. Bu PowerShell Galerisi ve PowerShellGet cmdlet'leri gelecekteki bir sürümde desteklenmez.
+- PowerShell ve PowerShell Galerisi sürüm 1, 2 ve 4 kesimleri dizelerle izin verir. Pek çok erken modülleri yönergelerini izleyin değil ve Microsoft Ürün sürümlerden numaralarını (örneğin 5.1.14393.1066) bir 4 engelleme gibi yapı bilgileri içerir. Sürüm oluşturma açısından, bu farklılıklar göz ardı edilir.
 
-## <a name="test-using-a-local-repository"></a>Yerel bir depoyu kullanarak test edin
+## <a name="test-using-a-local-repository"></a>Yerel deposu kullanmadan test edin
 
-PowerShell Galerisi yayımlama işlemini test etmek için bir hedef olarak tasarlanmamıştır.
-PowerShell Galerisi yayımlama, uçtan uca sürecinizin test etmek için en iyi yolu, ayarlamak ve yerel deponuzu kullanmaktır.
-Bu, birkaç yolla yapılabilir:
+PowerShell Galerisi yayımlama işlemini test etmek için bir hedef olacak şekilde tasarlanmamıştır.
+PowerShell Galerisi yayımlama uçtan uca sürecinizin test etmek için en iyi yolu, yerel deponuza ayarlamak ve kullanmaktır.
+Bu da dahil olmak üzere birkaç şekillerde yapılabilir:
 
-- Yerel bir PowerShell Galerisi örneği oluşturan kümesi kullanarak [PS Özel Galeri proje](https://github.com/PowerShell/PSPrivateGallery) github'da. Bu önizleme proje denetleyebileceğiniz PowerShell Galerisi ve testleriniz için kullanım örneği ayarlamanıza yardımcı olur.
-- Ayarlanmış bir [iç Nuget depo](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). Bunu ayarlamak için daha fazla iş gerektirir, ancak özellikle bir API anahtarı ve yayımladığınızda, alınıp alınmayacağını bağımlılıkları hedefte mevcut olduğundan doğrulama gereksinimleri birkaç daha fazla doğrulama avantajı gerekir.
-- Bir dosya paylaşım test "depo" olarak ayarlayın. Bunu ayarlamak kolaydır, ancak bir dosya paylaşımı olduğundan, yukarıda belirtilen doğrulamaları yerde olmaz. Olası bir avantajı, dosya paylaşımı (gerekli) API anahtarını denetlemez, aynı kullanabilmeniz için anahtar PowerShell galerisinde yayımlamak için yaptığınız bu durumda olur.
+- Yerel bir PowerShell Galerisi örneği kümesi kullanarak [PS Özel Galeri proje](https://github.com/PowerShell/PSPrivateGallery) github'da. Bu önizleme proje kontrol edebilirsiniz PowerShell Galerisi ve testleriniz için kullanım örneği ayarlamanıza yardımcı olur.
+- Ayarlanmış bir [iç Nuget deposu](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). Bu ayarlamak için daha fazla iş gerektirir, ancak özellikle bir API anahtarı ve yayımladığınızda, karşılamadığını bağımlılıkları hedef mevcut kullanımını doğrulama gereksinimlerinin birkaç daha fazla doğrulama avantajı vardır.
+- Bir dosya paylaşımı test "repository" olarak ayarlayın. Bunu ayarlamak kolaydır, ancak bir dosya paylaşımı olduğuna göre yukarıda belirtilen doğrulama gerçekleşecek değil. Olası bir avantajı, dosya paylaşımı (gerekli) API anahtarı denetlemez, aynı kullanabilmeniz için anahtar PowerShell galerisinde yayımlamak için yaptığınız bu durumda olur.
 
-Bu çözümlerden birini ile Register-PSRepository "Publish-Module depo özelliği kullanan yeni bir havuz", tanımlamak için kullanın.
+Bu çözümlerden birini ile Register-PSRepository "Yayımla-Module depo özelliği kullanan yeni bir havuz", tanımlamak için kullanın.
 
-Test yayımlama hakkında bir ek noktası: hiçbir şey yayımlamak istediğiniz paket bağımlı olduğunu onaylar operasyon ekibinin Yardım olmadan PowerShell Galerisi'nden yayımladığınız herhangi bir paket silinemez.
-Bu nedenle şu PowerShell Galerisi test hedefi olarak desteklemez ve yazılabilmesine herhangi bir yayımcı bağlantı kurar.
+Test yayımlama hakkında bir ek noktası: hiçbir şey yayımlamak istediğiniz paket bağımlı olduğunu onaylar takımın işlemleri Yardım olmadan PowerShell Galerisi yayımlama herhangi bir paket silinemiyor.
+Bu nedenle, sizi bir sınama hedefi olarak PowerShell Galerisi desteklemez ve bunu yapar herhangi bir yayımcıyı sizinle iletişim kuracaktır.
 
-## <a name="use-powershellget-to-publish"></a>Yayımlamak için PowerShellGet kullanma
+## <a name="use-powershellget-to-publish"></a>Yayımlamak için PowerShellGet kullanın
 
-Yayımcılar PowerShell Galerisi ile çalışırken Publish-Module ve Publish-Script cmdlet'leri kullanmanız önerilir.
-PowerShellGet yükleme ve yayımlama için PowerShell Galerisi hakkında önemli ayrıntıları hatırlamak önlemek için oluşturuldu.
-Bazen, yayımcılar PowerShellGet atlayın ve Publish-Module yerine NuGet istemcisi veya PackageManagement cmdlet'leri seçtiniz.
-Destek isteklerini çeşitli sonuçları bir kolayca eksik ayrıntıları sayısı vardır.
+Yayımcılar PowerShell Galerisi ile çalışırken, Yayımla modülü ve Yayımla-komut dosyası cmdlet'lerini kullanmanızı kesinlikle önerilir.
+PowerShellGet yükleme ve PowerShell Galerisi yayımlama hakkında önemli ayrıntıları hatırlamak önlemenize yardımcı olmak için oluşturuldu.
+Bazen, yayımcılar PowerShellGet atlayın ve Yayımla-Module yerine NuGet istemci veya PackageManagement cmdlet'leri kullanın seçtiniz.
+Destek istekleri çeşitli sonuçları kolayca eksik Ayrıntılar dizi vardır.
 
-Publish-Module veya Publish-Script kullanamazsınız bir neden varsa, lütfen bize bildirin.
-PowerShellGet GitHub deposunda sorun kaydedebilir ve NuGet ya da PackageManagement seçmek neden ayrıntılarını sağlayın.
+Yayımla-Module veya Yayımla-komut dosyası kullanamazsınız bir neden varsa, lütfen bize bildirin.
+Bir sorun PowerShellGet GitHub depo dosya ve NuGet veya PackageManagement seçmenizi neden ayrıntıları sağlayın.
 
 ## <a name="recommended-workflow"></a>Önerilen iş akışı
 
-PowerShell Galerisi'nde yayımlanmış paketleri için bulduk en başarılı yaklaşım budur:
+PowerShell Galerisi yayımlanan paketler için bulduk en başarılı yaklaşım şudur:
 
-- Geliştirme ilk bir açık kaynak proje site. PowerShell ekibi, Github kullanır.
-- Gözden geçirenler geri bildirimi kullanın ve [Powershell betik Çözümleyicisi](https://aka.ms/psscriptanalyzer) kararlı durumda kodu almak için
-- Belgeler, böylece başkaları çalışmanıza nasıl kullanılacağını dahil
-- Yerel depo kullanmaya yayımlama eyleme test edin.
-- Bir kararlı veya alfa sürümü belgeleri ve bağlantı proje sitenize eklediğinizden emin olmak PowerShell Galerisi yayımlama
-- Geri bildirim toplayın ve proje sitenizde kod üzerinde yinelemek ve ardından PowerShell Galerisi'nde kararlı güncelleştirmeleri yayımlama
-- Projenizi ve modülünüzde örnekler ve Pester testleri Ekle
-- Kod için istediğinize karar paketinizi oturum
-- Proje bir üretim ortamında kullanıma hazır olduğunu hissettiğinizde, bir 1.0.0 yayımlama sürüme PowerShell Galerisi
-- Geri bildirim toplamak ve kullanıcı girişini temel alarak kodunuz üzerinde yinelemek devam edin
+- Geliştirme ilk bir açık kaynaklı proje sitesi. Github PowerShell ekip kullanır.
+- Gözden geçirenler görüşleri kullanın ve [Powershell komut dosyası Çözümleyicisi](https://aka.ms/psscriptanalyzer) kararlı durum kodu almak için
+- Belgeler, diğerleri çalışmanızı kullanmayı bilmesi içerir
+- Yerel deposu kullanarak yayımlama eyleme sınayın.
+- Kararlı ya da alfa sürüm belgeleri ve proje sitenize bağlantı eklediğinizden emin olmak PowerShell Galerisi Yayımla
+- Geri bildirimi toplama ve proje sitenizdeki kodu yinelemek sonra kararlı güncelleştirmeleri yayımlamak için PowerShell Galerisi
+- Projenizi ve modülünüzün örnekler ve Pester testleri ekleme
+- Kodu isteyip istemediğinize karar verin ve paketinizi oturum
+- Proje bir üretim ortamında kullanıma hazır olduğunu hissettiğinizde, bir 1.0.0 yayımlama PowerShell Galerisi sürüme
+- Geri bildirim toplamak ve kullanıcı girişini temel alarak kodunuzu yinelemek devam edin
 

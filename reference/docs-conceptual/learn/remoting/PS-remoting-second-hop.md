@@ -1,87 +1,88 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
-title: PowerShell uzaktan iletişim'de ikinci atlamayı yapma
-ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+title: PowerShell Uzaktan İletişim’de ikinci atlamayı yapma
+ms.openlocfilehash: 1b6e5ad53346324adc7be2d013e154c8600afa4f
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405781"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265595"
 ---
-# <a name="making-the-second-hop-in-powershell-remoting"></a>PowerShell uzaktan iletişim'de ikinci atlamayı yapma
+# <a name="making-the-second-hop-in-powershell-remoting"></a>PowerShell Uzaktan İletişim’de ikinci atlamayı yapma
 
-"İkinci atlama sorun" aşağıdaki gibi bir durumla ifade eder:
+"İkinci atlama sorun" aşağıdaki gibi bir durumla başvuruyor:
 
-1. Oturum açtığınız _ServerA_.
+1. Oturum açmış _ServerA_.
 2. Gelen _ServerA_, bağlanmak için Uzak PowerShell oturumu Başlat _SunucuB_.
-3. Bir komutu çalıştırdığınız _SunucuB_ , PowerShell uzaktan iletişimini oturum üzerinde bir kaynağa erişmeye çalışır. _SunucuC ise_.
-4. Şirket kaynağına erişim _SunucuC ise_ reddedildi, PowerShell uzaktan iletişimini oturumu oluşturmak için kullanılan kimlik bilgilerini gelen geçirilen değil çünkü _SunucuB_ için _SunucuC ise_.
+3. Çalıştırdığınız bir komut _SunucuB_ , PowerShell uzaktan iletişimi oturum üzerindeki bir kaynağa erişim girişiminde _SunucuC ise_.
+4. Kaynağa erişim _SunucuC ise_ engellendi, PowerShell uzak oturum oluşturmak için kullanılan kimlik bilgileri gelen değil geçirildiğinden _SunucuB_ için _SunucuC ise_.
 
-Bu sorunu çözmek için birkaç yolu vardır. Bu konuda, ikinci atlama sorun en popüler çözümleri birkaçı şu konuları inceleyeceğiz.
+Bu sorunu gidermek için birkaç yolu vardır. Bu konuda, birkaç ikinci atlama sorun en popüler çözümleri inceleyeceğiz.
 
 ## <a name="credssp"></a>CredSSP
 
-Kullanabileceğiniz [kimlik bilgileri güvenlik desteği sağlayıcısı (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) kimlik doğrulaması için. CredSSP kimlik bilgilerini uzak sunucuda önbelleğe alır (_SunucuB_), onu kullanarak kimlik bilgisi hırsızlığı saldırılarını kadar açılmasını sağlayın. Uzak bilgisayarın tehlikede olursa saldırganın kullanıcının kimlik bilgilerine erişebilir. CredSSP hem istemci hem de sunucu bilgisayarlarda varsayılan olarak devre dışıdır. Yalnızca en çok güvenilen ortamlarda CredSSP etkinleştirmeniz gerekir. Örneğin, bir etki alanı yöneticisi etki alanı denetleyicisi yüksek oranda güvenilir olmadığı için bir etki alanı denetleyicisine bağlanma.
+Kullanabileceğiniz [kimlik bilgileri güvenlik desteği sağlayıcısı (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) kimlik doğrulaması için. CredSSP kimlik bilgileri uzak sunucuda önbelleğe alır (_SunucuB_), bunu kullanarak kimlik bilgisi hırsızlığı saldırıları kadar açar. Uzak bilgisayar tehlikede olsa saldırganın kullanıcının kimlik bilgilerine erişebilir. CredSSP hem istemci hem de sunucu bilgisayarlarda varsayılan olarak devre dışıdır. Yalnızca en güvenilir ortamlarında CredSSP etkinleştirmeniz gerekir. Örneğin, bir etki alanı yöneticisi etki alanı denetleyicisi yüksek oranda güvenilir olmadığı için bir etki alanı denetleyicisine bağlanma.
 
-PowerShell uzaktan iletişimi için CredSSP kullanırken, güvenlik sorunları hakkında daha fazla bilgi için bkz. [yanlışlıkla Sabotaj: CredSSP dikkat](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
+PowerShell uzaktan iletişim için CredSSP kullanırken, güvenlik sorunları hakkında daha fazla bilgi için bkz: [yanlışlıkla Sabotaj: CredSSP dikkat](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
-Kimlik bilgisi hırsızlığı saldırılarını hakkında daha fazla bilgi için bkz: [Azaltıcı Pass--Hash (PtH) saldırılarını ve diğer kimlik bilgisi Hırsızlıklarını](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
+Kimlik bilgisi hırsızlığı saldırıları hakkında daha fazla bilgi için bkz: [Azaltıcı Pass--Hash (PtH) saldırılarını ve diğer kimlik bilgisi hırsızlığını](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
 
-Etkinleştirmek ve PowerShell uzaktan iletişimi için CredSSP kullanma örneği için bkz: [ikinci atlama sorunu çözmek için CredSSP kullanarak](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).
+Etkinleştirmek ve PowerShell uzaktan iletişim için CredSSP kullanma örneği için bkz: [ikinci atlama sorunu çözmek için CredSSP kullanarak](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).
 
 ### <a name="pros"></a>Artıları
 
-- Tüm sunucular için Windows Server 2008 veya daha sonra çalışır.
+- Tüm sunucular için Windows Server 2008 veya sonraki sürümleriyle çalışır.
 
 ### <a name="cons"></a>Eksileri
 
 - Güvenlik açıkları vardır.
-- İstemci ve sunucu rollerini yapılandırılmasını gerektirir.
+- İstemci ve sunucu rollerinin yapılandırılmasını gerektirir.
 
-## <a name="kerberos-delegation-unconstrained"></a>Kerberos temsilcisi seçme (sınırlandırılmamış)
+## <a name="kerberos-delegation-unconstrained"></a>Kerberos temsilcisi (kısıtlanmamış)
 
-Ayrıca kullanabilir Kısıtlanmamış Kerberos yetkilendirmesi ikinci atlamayı yapma. Ancak, bu yöntem, temsilci seçilen kimlik bilgilerinin kullanıldığı bir denetim yok sağlar.
+Ayrıca kullanabilir Kısıtlanmamış Kerberos yetkilendirmesi ikinci atlama yapma. Ancak, bu yöntem atanmış kimlik bilgileri kullanıldığı hiçbir denetim sağlar.
 
->**Not:** Olan active Directory hesaplarını **Hesap duyarlıdır ve devredilemez** özellik kümesi için temsilci olarak seçilemez. Daha fazla bilgi için [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**Not:** Sahip active Directory hesapları **Hesap duyarlıdır ve devredilemez** özellik kümesi temsilci seçilemez. Daha fazla bilgi için bkz: [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>Artıları
 
-- Özel kodlama gerektirir.
+- Hiçbir özel kodlama gerektirir.
 
 ### <a name="cons"></a>Eksileri
 
 - İkinci atlama için WinRM desteklemez.
-- Bir güvenlik açığı oluşturarak, kimlik bilgilerinin kullanıldığı hiçbir denetim sağlar.
+- Bir güvenlik açığı oluşturma, kimlik bilgilerinin kullanıldığı üzerinde hiçbir denetimi sağlar.
 
 ## <a name="kerberos-constrained-delegation"></a>Kısıtlı Kerberos temsilcisi seçme
 
-İkinci atlamayı yapma, eski Kısıtlı temsilci (değil kaynak tabanlı) kullanabilirsiniz.
+Eski Kısıtlı temsilci (değil kaynak tabanlı), ikinci atlama yapmak için kullanabilirsiniz. "Herhangi bir kimlik doğrulama protokolünü kullan" seçeneği ile kısıtlı Kerberos temsilcisi yapılandırma protokol geçişi izin vermek için.
 
->**Not:** Olan active Directory hesaplarını **Hesap duyarlıdır ve devredilemez** özellik kümesi için temsilci olarak seçilemez. Daha fazla bilgi için [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+> [!NOTE]
+> Sahip active Directory hesapları **Hesap duyarlıdır ve devredilemez** özellik kümesi temsilci seçilemez. Daha fazla bilgi için bkz: [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>Artıları
 
-- Özel kodlama gerektirir
+- Hiçbir özel kodlama gerektirir
 
 ### <a name="cons"></a>Eksileri
 
 - İkinci atlama için WinRM desteklemez.
-- Uzak sunucuya Active Directory nesne üzerinde yapılandırılmış olması gerekir (_SunucuB_).
-- Bir etki alanı ile sınırlıdır. Etki alanları veya ormanlar arası olamaz.
-- Nesneleri ve hizmet asıl adları (SPN) güncelleştirmek için hakları gerekir.
+- Uzak sunucuya Active Directory nesnesinde yapılandırılmış olması gerekir (_SunucuB_).
+- Bir etki alanı sınırlıdır. Etki alanları veya ormanlar arası olamaz.
+- Nesneleri ve hizmet asıl adları (SPN) güncelleştirmek için hakları gerektirir.
 
 ## <a name="resource-based-kerberos-constrained-delegation"></a>Kaynak tabanlı kısıtlı Kerberos temsilcisi seçme
 
-Kaynak tabanlı Kerberos kısıtlı temsilcisi (Windows Server 2012'de sunulmuştur), kaynakların nerede sunucu nesnesinde kimlik bilgileri temsilcisi yapılandırın.
+Kaynak tabanlı Kerberos kısıtlı temsilcisi (Windows Server 2012'de sunulmuştur), kimlik bilgileri temsilcisi kaynakları bulunduğu sunucu nesnesinde yapılandırın.
 Yukarıda açıklanan ikinci atlama senaryoda yapılandırdığınız _SunucuC ise_ belirtmek için burada kabul edeceği kimlik bilgileri temsilcisi.
 
->**Not:** Olan active Directory hesaplarını **Hesap duyarlıdır ve devredilemez** özellik kümesi için temsilci olarak seçilemez. Daha fazla bilgi için [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**Not:** Sahip active Directory hesapları **Hesap duyarlıdır ve devredilemez** özellik kümesi temsilci seçilemez. Daha fazla bilgi için bkz: [güvenlik odak: 'Hesap duyarlıdır ve devredilemez' ayrıcalıklı hesaplar için analiz](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) ve [Kerberos kimlik doğrulaması araçları ve ayarları](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>Artıları
 
 - Kimlik bilgileri depolanmaz.
-- PowerShell cmdlet'leri--özel kodlama gerekmeden kullanarak yapılandırmak daha kolay.
+- Görece kolay PowerShell cmdlet'leri--gerekli özel kodlama kullanılarak yapılandırılabilir.
 - Özel etki alanı erişimi gereklidir.
 - Etki alanları ve ormanlar arasında çalışır.
 - PowerShell kodu.
@@ -90,21 +91,21 @@ Yukarıda açıklanan ikinci atlama senaryoda yapılandırdığınız _SunucuC i
 
 - Windows Server 2012 veya sonraki sürümünü gerektirir.
 - İkinci atlama için WinRM desteklemez.
-- Nesneleri ve hizmet asıl adları (SPN) güncelleştirmek için hakları gerekir.
+- Nesneleri ve hizmet asıl adları (SPN) güncelleştirmek için hakları gerektirir.
 
 ### <a name="example"></a>Örnek
 
-Kaynak yapılandıran örnek üzerinde kısıtlı temsilci tabanlı bir PowerShell göz atalım _SunucuC ise_ temsilci seçilen kimlik bilgilerinden izin vermek için bir _SunucuB_.
+Kaynak yapılandırır örnek temel Kısıtlı temsilci PowerShell bakalım _SunucuC ise_ yetki verilen kimlik bilgilerinden izin vermek için bir _SunucuB_.
 Bu örnek, tüm sunucular Windows Server 2012 veya sonraki sürümünü, çalıştığını varsayar ve hangi sunuculardan herhangi biri için her bir etki alanı en az bir Windows Server 2012 etki alanı denetleyicisi olduğunu ait.
 
-Kısıtlanmış temsilciyi yapılandırmak önce eklemelisiniz `RSAT-AD-PowerShell` Active Directory PowerShell modülü yüklemek için özellik ve daha sonra oturumunuz bu modülü içeri aktarın:
+Kısıtlanmış temsilci yapılandırmadan önce eklemelisiniz `RSAT-AD-PowerShell` Active Directory PowerShell modülünü yüklemek için özellik ve oturumunuza bu modülünü içeri aktarın:
 
 ```powershell
 PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
 
 PS C:\> Import-Module ActiveDirectory
 ```
-Birkaç kullanılabilir cmdlet'lerin artık sahip bir **PrincipalsAllowedToDelegateToAccount** parametresi:
+Birkaç kullanılabilir cmdlet'leri şimdi sahip bir **PrincipalsAllowedToDelegateToAccount** parametre:
 
 ```powershell
 PS C:\> Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
@@ -119,9 +120,9 @@ Cmdlet      Set-ADServiceAccount ActiveDirectory
 Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
-**PrincipalsAllowedToDelegateToAccount** parametre ayarlar Active Directory nesne özniteliği **msDS-AllowedToActOnBehalfOfOtherIdentity**, erişim denetimi listesi (ACL) içeriyor, hangi hesapların ilişkili hesabı kimlik bilgilerini temsil izniniz belirtir (Bizim örneğimizde, makine hesabını olacaktır _sunucu_).
+**PrincipalsAllowedToDelegateToAccount** parametre kümeleri Active Directory nesne özniteliği **msDS-AllowedToActOnBehalfOfOtherIdentity**, bir erişim denetimi listesi (ACL) içeren, hangi hesapların ilişkili hesabın kimlik bilgilerini temsil izniniz olan belirtir (örneğimizde, makine hesabını olacaktır _Server_).
 
-Artık sunucuları temsil etmek için kullanacağız değişkenleri ayarlayalım:
+Şimdi şimdi sunucuları temsil etmek amacıyla değişkenlerini ayarlamak:
 
 ```powershell
 # Set up variables for reuse
@@ -130,7 +131,7 @@ $ServerB = Get-ADComputer -Identity ServerB
 $ServerC = Get-ADComputer -Identity ServerC
 ```
 
-WinRM (ve bu nedenle PowerShell uzaktan iletişimini) varsayılan olarak bilgisayar hesabı olarak çalışır. Bu bakarak görebilirsiniz **StartName** özelliği `winrm` hizmeti:
+WinRM (ve bu nedenle PowerShell uzaktan iletişimini) varsayılan olarak bilgisayar hesabı olarak çalışır. Bu bakarak bkz **StartName** özelliği `winrm` hizmeti:
 
 ```powershell
 PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartName
@@ -138,7 +139,7 @@ PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartNa
 StartName : NT AUTHORITY\NetworkService
 ```
 
-İçin _SunucuC ise_ PowerShell uzaktan iletişimini oturumundan temsilci izni _SunucuB_, biz ayarlayarak erişim izni verir **PrincipalsAllowedToDelegateToAccount** parametresi _SunucuC ise_ için bilgisayar nesnesine göre _SunucuB_:
+İçin _SunucuC ise_ PowerShell uzaktan iletişim oturumundan temsilci sağlamak için _SunucuB_, biz ayarlayarak erişim izni verecek **PrincipalsAllowedToDelegateToAccount** parametresini _SunucuC ise_ bilgisayar nesnesi _SunucuB_:
 
 ```powershell
 # Grant resource-based Kerberos constrained delegation
@@ -152,7 +153,7 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-Kerberos [Anahtar Dağıtım Merkezi (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) önbellekler 15 dakika boyunca erişim denemesi (negatif önbellek) reddedildi. Varsa _SunucuB_ daha önce erişmeyi denedi _SunucuC ise_, üzerinde önbelleği temizlemek ihtiyacınız olacak _SunucuB_ aşağıdaki komutunu çağırarak:
+Kerberos [Anahtar Dağıtım Merkezi (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) önbellekleri erişim denemesi (negatif önbelleğini) 15 dakika için reddedildi. Varsa _SunucuB_ önceden erişmeyi denedi _SunucuC ise_, üzerinde önbelleğini temizlemek gerekir _SunucuB_ göre aşağıdaki komutu çalıştırır:
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -160,7 +161,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-Ayrıca bilgisayarı yeniden başlatın veya önbelleği temizlemek için en az 15 dakika bekleyin.
+Ayrıca bilgisayarı yeniden başlatın veya önbelleğini temizlemek için en az 15 dakika bekleyin.
 
 Önbelleği temizledikten sonra koddan başarıyla çalıştırabilirsiniz _ServerA_ aracılığıyla _SunucuB_ için _SunucuC ise_:
 
@@ -176,9 +177,9 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-Bu örnekte, `$using` değişkeni sağlamak için kullanılan `$ServerC` değişken görünür _SunucuB_. Hakkında daha fazla bilgi için `$using` değişken, bkz: [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
+Bu örnekte, `$using` değişkeni yapmak için kullanılan `$ServerC` değişkeni görünür _SunucuB_. Hakkında daha fazla bilgi için `$using` değişken, bkz: [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
-Kimlik bilgileri için temsilci seçmek birden çok sunucu izin vermek için _SunucuC ise_, değerini **PrincipalsAllowedToDelegateToAccount** parametresi _SunucuC ise_ bir dizi:
+Kimlik bilgileri için temsilci seçme birden çok sunucu izin vermek için _SunucuC ise_, değerini **PrincipalsAllowedToDelegateToAccount** parametresini _SunucuC ise_ bir dizi:
 
 ```powershell
 # Set up variables for each server
@@ -192,7 +193,7 @@ Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
 
-Etki alanları arasında ikinci atlama yapmak istiyorsanız, tam etki alanı adı (FQDN) etki alanının etki alanı denetleyicisini kendisine ekleme _SunucuB_ aittir:
+Etki alanları arasında ikinci atlama yapmak istiyorsanız, tam etki alanı adı (FQDN) etki alanının etki alanı denetleyicisini kendisine eklemek _SunucuB_ ait:
 
 ```powershell
 # For ServerC in Contoso domain and ServerB in other domain
@@ -201,7 +202,7 @@ $ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
-Temsilci SunucuC ise kimlik özelliği kaldırmak için değerini ayarlamak **PrincipalsAllowedToDelegateToAccount** parametresi _SunucuC ise_ için `$null`:
+Kimlik bilgileri SunucuC ise için temsilci seçme olanağı kaldırmak için değerini ayarlayın **PrincipalsAllowedToDelegateToAccount** parametresini _SunucuC ise_ için `$null`:
 
 ```powershell
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
@@ -209,16 +210,16 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 
 ### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>Kaynak tabanlı kısıtlı Kerberos temsilcisi seçme hakkında bilgi
 
-- [Kerberos kimlik doğrulamasındaki yenilikler](https://technet.microsoft.com/library/hh831747.aspx)
-- [Nasıl Windows Server 2012 hızları kolaylaştırın, Kerberos kısıtlı temsilcisi, bölüm 1](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
-- [Nasıl Windows Server 2012 hızları kolaylaştırın, Kerberos kısıtlı temsilcisi, bölüm 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
-- [Anlama Kerberos kısıtlı temsilcisi tümleşik Windows kimlik doğrulaması ile Azure Active Directory Uygulama Ara sunucusu dağıtımları için](https://aka.ms/kcdpaper)
+- [Kerberos kimlik doğrulamasındaki yenilikler nelerdir?](https://technet.microsoft.com/library/hh831747.aspx)
+- [Windows Server 2012 hızları Kerberos sorunun nasıl kısıtlı temsilcisi, bölüm 1](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
+- [Windows Server 2012 hızları Kerberos sorunun nasıl kısıtlı temsilcisi, bölüm 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
+- [Anlama Kerberos Kısıtlanmış temsilci seçme için tümleşik Windows kimlik doğrulaması ile Azure Active Directory Uygulama proxy'si dağıtımları](https://aka.ms/kcdpaper)
 - [[MS-ADA2]: Active Directory şema öznitelikleri M2.210 özniteliği msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
 - [[MS-SFU]: Kerberos Protokolü uzantıları: Kullanıcı için hizmet ve kısıtlanmış temsil protokolü 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
-- [Kaynak tabanlı Kerberos kısıtlı temsil](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
-- [Kısıtlanmış temsilci kullanarak PrincipalsAllowedToDelegateToAccount olmadan uzaktan yönetim](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
+- [Kaynak tabanlı Kerberos Kısıtlı temsilci](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
+- [Kısıtlanmış temsilci PrincipalsAllowedToDelegateToAccount kullanarak olmadan uzaktan yönetim](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
-## <a name="pssessionconfiguration-using-runas"></a>Farklı Çalıştır'ı kullanarak PSSessionConfiguration
+## <a name="pssessionconfiguration-using-runas"></a>Runas komutunu kullanarak PSSessionConfiguration
 
 Bir oturum yapılandırması oluşturabilirsiniz _SunucuB_ ve kendi **RunAsCredential** parametresi.
 
@@ -226,31 +227,31 @@ Bir oturum yapılandırması oluşturabilirsiniz _SunucuB_ ve kendi **RunAsCrede
 
 ### <a name="pros"></a>Artıları
 
-- Herhangi bir sunucu WMF 3.0 veya üstü ile çalışır.
+- WMF 3.0 veya daha sonra herhangi bir sunucu ile çalışır.
 
 ### <a name="cons"></a>Eksileri
 
-- Yapılandırılmasını gerektirir **PSSessionConfiguration** ve **RunAs** Ara her sunucuda (_SunucuB_).
-- Bir etki alanı kullanırken parola bakıma gerek duyacağını **RunAs** hesabı
+- Yapılandırmasını gerektirir **PSSessionConfiguration** ve **RunAs** Ara her sunucuda (_SunucuB_).
+- Bir etki alanı kullanırken parola bakım gerektiren **RunAs** hesabı
 
 ## <a name="just-enough-administration-jea"></a>Yeterli Yönetim (JEA)
 
-JEA, yönetici bir PowerShell oturumunda çalıştırmak hangi komutları sınırlamanıza olanak tanır. İkinci atlama sorunu çözmek için kullanılabilir.
+JEA, yönetici bir PowerShell oturumunda çalıştırmak hangi komutları sınırlamanıza olanak sağlar. İkinci atlama sorunu çözmek için kullanılabilir.
 
-JEA hakkında daha fazla bilgi için bkz. [yeterli yönetim](https://docs.microsoft.com/powershell/jea/overview).
+JEA hakkında daha fazla bilgi için bkz: [yalnızca yeterince Yönetim](https://docs.microsoft.com/powershell/jea/overview).
 
 ### <a name="pros"></a>Artıları
 
-- Sanal bir hesap kullanırken hiçbir parola Bakım.
+- Sanal hesap kullanırken hiçbir parola Bakım.
 
 ### <a name="cons"></a>Eksileri
 
-- WMF 5.0 veya sonraki sürümünü gerektirir.
-- Her bir ara sunucu yapılandırma gerektirir (_SunucuB_).
+- WMF 5.0 veya sonrasını gerektirir.
+- Her ara sunucusu üzerindeki yapılandırmayı gerektirir (_SunucuB_).
 
-## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Invoke-Command betik bloğunun Pass kimlik bilgileri
+## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Invoke-Command betik bloğu içinde geçişi kimlik bilgileri
 
-Kimlik bilgileri içine geçirebilirsiniz **ScriptBlock** çağrısına parametre [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet'i.
+Kimlik bilgileri içinde geçirdiğiniz **ScriptBlock** yapılan bir çağrı parametresinin [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet'i.
 
 ### <a name="pros"></a>Artıları
 
@@ -260,11 +261,11 @@ Kimlik bilgileri içine geçirebilirsiniz **ScriptBlock** çağrısına parametr
 ### <a name="cons"></a>Eksileri
 
 - Garip kod teknik gerektirir.
-- WMF 2.0 çalıştırılıyorsa, uzak oturumu bağımsız değişkenleri geçirmek için farklı bir sözdizimi gerektirir.
+- WMF 2.0 çalıştıran, bir uzak oturum için bağımsız değişkenleri geçirme farklı bir sözdizimi gerektirir.
 
 ### <a name="example"></a>Örnek
 
-Aşağıdaki örnek, kimlik bilgilerini geçirmek nasıl gösterir bir **Invoke-Command** betik bloğu:
+Aşağıdaki örnek, kimlik bilgileri geçirmek gösterilmiştir bir **Invoke-Command** betik bloğu:
 
 ```powershell
 # This works without delegation, passing fresh creds
@@ -276,6 +277,6 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 }
 ```
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 [PowerShell Uzaktan İletişim Güvenlik Konuları](WinRMSecurity.md)
