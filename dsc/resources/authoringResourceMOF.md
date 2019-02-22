@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: MOF ile özel bir DSC kaynağı yazma
-ms.openlocfilehash: 2dcdeb49b50e23bc8b9d87293ebb8d8ec5e7b57d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405692"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687569"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>MOF ile özel bir DSC kaynağı yazma
 
@@ -290,3 +290,16 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
+
+## <a name="rebooting-the-node"></a>Düğümü yeniden başlatma
+
+Gerçekleştirilen eylemleri, `Set-TargetResource` işlevi yeniden başlatma gerektiren, Genel Bayrak düğümü yeniden başlatma için LCM'yi bildirmek için kullanabilirsiniz. Metodundan hemen sonra bu yeniden başlatma gerçekleşir `Set-TargetResource` işlevi tamamlandı.
+
+İçinde `Set-TargetResource` işlev, aşağıdaki kod satırını ekleyin.
+
+```powershell
+# Include this line if the resource requires a system reboot.
+$global:DSCMachineStatus = 1
+```
+
+Düğümü yeniden başlatma için LCM'yi sırayla **RebootNodeIfNeeded** bayrağının ayarlanması gerekiyor `$true`. **ActionAfterReboot** ayarı da ayarlanmalıdır **ContinueConfiguration**, varsayılan değerdir. LCM yapılandırma hakkında daha fazla bilgi için bkz. [yerel Configuration Manager Yapılandırma](../managing-nodes/metaConfig.md), veya [yerel Configuration Manager'ı (v4) yapılandırma](../managing-nodes/metaConfig4.md).
