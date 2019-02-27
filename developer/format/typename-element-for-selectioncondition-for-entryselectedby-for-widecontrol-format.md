@@ -1,0 +1,68 @@
+---
+title: TypeName öğesi EntrySelectedBy WideControl (biçimi) için için SelectionCondition için | Microsoft Docs
+ms.custom: ''
+ms.date: 09/13/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: article
+ms.assetid: 6d6d43fa-c900-4e2f-952d-deccd584236f
+caps.latest.revision: 11
+ms.openlocfilehash: 0d7bbfd8be3bf2bd1af75a45ca4db016dfb6bff6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "56848184"
+---
+# <a name="typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format"></a>WideControl EntrySelectedBy için SelectionCondition TypeName Öğesi (Biçim)
+
+Koşul tetikleyen bir .NET türünü belirtir. Bu tür, mevcut olduğunda tanımı kullanılır.
+
+Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünümü öğesi (biçimi) WideControl öğesi (biçimi) WideEntries öğesi (biçimi) WideEntry öğesi (biçimi) EntrySelectedBy öğesi SelectionCondition öğesinin WideEntry (biçimi) EntrySelectedBy EntrySelectedBy WideEntry (biçimi) için için SelectionCondition TypeName öğesinin WideEntry (biçimi)
+
+## <a name="syntax"></a>Sözdizimi
+
+```xml
+<TypeName>Nameof.NetType</TypeName>
+```
+
+## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+
+Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `TypeName` öğesi.
+
+### <a name="attributes"></a>Öznitelikler
+
+Yok.
+
+### <a name="child-elements"></a>Alt Öğeler
+
+Yok.
+
+### <a name="parent-elements"></a>Üst Öğeler
+
+|Öğe|Açıklama|
+|-------------|-----------------|
+|[EntrySelectedBy WideEntry (biçimi) için için SelectionCondition öğesi](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|Bu geniş bir girdi kullanılacak bulunmalıdır koşulu tanımlar.|
+
+## <a name="text-value"></a>Metin Değeri
+
+.NET türünün tam adını belirttiğinizden `System.IO.DirectoryInfo`.
+
+## <a name="remarks"></a>Açıklamalar
+
+Seçim koşulu .NET türü belirtebilir veya bir seçim ayarlandı, ancak ikisini birden belirtemezsiniz. Seçimi koşulları kullanma hakkında daha fazla bilgi için bkz. [veri görüntülendiğinde için koşulları tanımlama](./defining-conditions-for-displaying-data.md).
+
+Geniş bir görünüm diğer bileşenler hakkında daha fazla bilgi için bkz. [geniş bir görünüm oluşturma](./creating-a-wide-view.md).
+
+## <a name="see-also"></a>Ayrıca bkz:
+
+[Geniş bir görünüm uygulaması](./creating-a-wide-view.md)
+
+[Veri görüntülendiğinde koşulları tanımlama](./defining-conditions-for-displaying-data.md)
+
+[EntrySelectedBy WideEntry (biçimi) için için SelectionCondition öğesi](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)
+
+[SelectionCondition WideEntry (biçimi) için EntrySelectedBy için için SelectionSetName öğesi](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
+
+[Dosya biçimlendirme bir PowerShell yazma](./writing-a-powershell-formatting-file.md)
