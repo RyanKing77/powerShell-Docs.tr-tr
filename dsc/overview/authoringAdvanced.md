@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: Birleştirme ve İşbirliği için Gelişmiş DSC Yazma
-ms.openlocfilehash: 3e40ba94de0a53c1c9663553c4ec443b5e0df3fd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+title: CI/CD işlem hattında DSC'ın rolünü anlama
+ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
+ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687177"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56803387"
 ---
-# <a name="advanced-dsc-authoring-for-composition-and-collaboration"></a>Birleştirme ve İşbirliği için Gelişmiş DSC Yazma
+# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>CI/CD işlem hattında DSC'ın rolünü anlama
 
 Bu makalede, yapılandırmaları ve kaynakları birleştirmek için kullanılabilen yaklaşımlardan türleri açıklanmaktadır.
 Her senaryo için hedef, birden fazla yapılandırması, bir sunucu dağıtımı bitiş durumuna ulaşmak için tercih edilen zaman karmaşıklığını azaltmak için aynıdır.
