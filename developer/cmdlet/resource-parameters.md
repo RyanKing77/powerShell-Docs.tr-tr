@@ -8,115 +8,47 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 460c43aa-f5c5-4a1a-a6f2-5e07db143de1
 caps.latest.revision: 5
-ms.openlocfilehash: f58e8ecb67238939e90d4c5650bddd03da3c9409
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9752570e5c997ef4da56a08df14f39b77ba37a4a
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851754"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251209"
 ---
-# <a name="resource-parameters"></a><span data-ttu-id="e2fbb-102">Kaynak Parametreleri</span><span class="sxs-lookup"><span data-stu-id="e2fbb-102">Resource Parameters</span></span>
+# <a name="resource-parameters"></a><span data-ttu-id="37b07-102">Kaynak Parametreleri</span><span class="sxs-lookup"><span data-stu-id="37b07-102">Resource Parameters</span></span>
 
-<span data-ttu-id="e2fbb-103">Aşağıdaki tabloda, kaynak parametreleri için işlevselliği ve önerilen adlarını listeler.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-103">The following table lists the recommended names and functionality for resource parameters.</span></span> <span data-ttu-id="e2fbb-104">Bu parametreler için cmdlet'i sınıf ya da cmdlet'in çalıştığı ana bilgisayar uygulaması içeren derleme kaynakları olabilir.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-104">For these parameters, the resources could be the assembly that contains the cmdlet class or the host application that is running the cmdlet.</span></span>
+<span data-ttu-id="37b07-103">Aşağıdaki tabloda, kaynak parametreleri için işlevselliği ve önerilen adlarını listeler.</span><span class="sxs-lookup"><span data-stu-id="37b07-103">The following table lists the recommended names and functionality for resource parameters.</span></span> <span data-ttu-id="37b07-104">Bu parametreler için cmdlet'i sınıf ya da cmdlet'in çalıştığı ana bilgisayar uygulaması içeren derleme kaynakları olabilir.</span><span class="sxs-lookup"><span data-stu-id="37b07-104">For these parameters, the resources could be the assembly that contains the cmdlet class or the host application that is running the cmdlet.</span></span>
 
-<span data-ttu-id="e2fbb-105">Uygulama veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-105">Application Data type: String</span></span>
+|<span data-ttu-id="37b07-105">Parametre</span><span class="sxs-lookup"><span data-stu-id="37b07-105">Parameter</span></span>|<span data-ttu-id="37b07-106">İşlevsellik</span><span class="sxs-lookup"><span data-stu-id="37b07-106">Functionality</span></span>|
+|---|---|
+|<span data-ttu-id="37b07-107">**Uygulama**</span><span class="sxs-lookup"><span data-stu-id="37b07-107">**Application**</span></span><br><span data-ttu-id="37b07-108">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-108">Data type: String</span></span>|<span data-ttu-id="37b07-109">Bu parametre, kullanıcı bir uygulama belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-109">Implement this parameter so that the user can specify an application.</span></span>|
+|<span data-ttu-id="37b07-110">**Derleme**</span><span class="sxs-lookup"><span data-stu-id="37b07-110">**Assembly**</span></span><br><span data-ttu-id="37b07-111">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-111">Data type: String</span></span>|<span data-ttu-id="37b07-112">Kullanıcı bir derlemeyi belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-112">Implement this parameter so that the user can specify an assembly.</span></span>|
+|<span data-ttu-id="37b07-113">**Özniteliği**</span><span class="sxs-lookup"><span data-stu-id="37b07-113">**Attribute**</span></span><br><span data-ttu-id="37b07-114">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-114">Data type: String</span></span>|<span data-ttu-id="37b07-115">Bu parametre, kullanıcının bir öznitelik belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-115">Implement this parameter so that the user can specify an attribute.</span></span>|
+|<span data-ttu-id="37b07-116">**Sınıfı**</span><span class="sxs-lookup"><span data-stu-id="37b07-116">**Class**</span></span><br><span data-ttu-id="37b07-117">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-117">Data type: String</span></span>|<span data-ttu-id="37b07-118">Bu parametre, kullanıcının bir Microsoft .NET Framework sınıfı belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-118">Implement this parameter so that the user can specify a Microsoft .NET Framework class.</span></span>|
+|<span data-ttu-id="37b07-119">**Küme**</span><span class="sxs-lookup"><span data-stu-id="37b07-119">**Cluster**</span></span><br><span data-ttu-id="37b07-120">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-120">Data type: String</span></span>|<span data-ttu-id="37b07-121">Bu parametre, kullanıcı bir küme belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-121">Implement this parameter so that the user can specify a cluster.</span></span>|
+|<span data-ttu-id="37b07-122">**Kültür**</span><span class="sxs-lookup"><span data-stu-id="37b07-122">**Culture**</span></span><br><span data-ttu-id="37b07-123">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-123">Data type: String</span></span>|<span data-ttu-id="37b07-124">Bu parametre, kullanıcının cmdlet'ini çalıştırmak için kullanılan kültür belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-124">Implement this parameter so that the user can specify the culture in which to run the cmdlet.</span></span>|
+|<span data-ttu-id="37b07-125">**Etki alanı**</span><span class="sxs-lookup"><span data-stu-id="37b07-125">**Domain**</span></span><br><span data-ttu-id="37b07-126">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-126">Data type: String</span></span>|<span data-ttu-id="37b07-127">Kullanıcı etki alanı adını belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-127">Implement this parameter so that the user can specify the domain name.</span></span>|
+|<span data-ttu-id="37b07-128">**Sürücü**</span><span class="sxs-lookup"><span data-stu-id="37b07-128">**Drive**</span></span><br><span data-ttu-id="37b07-129">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-129">Data type: String</span></span>|<span data-ttu-id="37b07-130">Kullanıcı bir sürücü adı belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-130">Implement this parameter so that the user can specify a drive name.</span></span>|
+|<span data-ttu-id="37b07-131">**Olay**</span><span class="sxs-lookup"><span data-stu-id="37b07-131">**Event**</span></span><br><span data-ttu-id="37b07-132">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-132">Data type: String</span></span>|<span data-ttu-id="37b07-133">Kullanıcı bir olay adı belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-133">Implement this parameter so that the user can specify an event name.</span></span>|
+|<span data-ttu-id="37b07-134">**Arabirimi**</span><span class="sxs-lookup"><span data-stu-id="37b07-134">**Interface**</span></span><br><span data-ttu-id="37b07-135">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-135">Data type: String</span></span>|<span data-ttu-id="37b07-136">Kullanıcı bir ağ arabirimi adı belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-136">Implement this parameter so that the user can specify a network interface name.</span></span>|
+|<span data-ttu-id="37b07-137">**IP adresi**</span><span class="sxs-lookup"><span data-stu-id="37b07-137">**IpAddress**</span></span><br><span data-ttu-id="37b07-138">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-138">Data type: String</span></span>|<span data-ttu-id="37b07-139">Bu parametre, kullanıcının IP adresi belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-139">Implement this parameter so that the user can specify an IP address.</span></span>|
+|<span data-ttu-id="37b07-140">**İşi**</span><span class="sxs-lookup"><span data-stu-id="37b07-140">**Job**</span></span><br><span data-ttu-id="37b07-141">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-141">Data type: String</span></span>|<span data-ttu-id="37b07-142">Kullanıcı, bir işi belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-142">Implement this parameter so that the user can specify a job.</span></span>|
+|<span data-ttu-id="37b07-143">**LiteralPath**</span><span class="sxs-lookup"><span data-stu-id="37b07-143">**LiteralPath**</span></span><br><span data-ttu-id="37b07-144">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-144">Data type: String</span></span>|<span data-ttu-id="37b07-145">Joker karakterler desteklenmediği durumlarda kullanıcı bir kaynağın yolunu belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-145">Implement this parameter so that the user can specify the path to a resource when wildcard characters are not supported.</span></span> <span data-ttu-id="37b07-146">(Kullanım **yolu** parametre joker karakterleri desteklenir.)</span><span class="sxs-lookup"><span data-stu-id="37b07-146">(Use the **Path** parameter when wildcard characters are supported.)</span></span>|
+|<span data-ttu-id="37b07-147">**Mac**</span><span class="sxs-lookup"><span data-stu-id="37b07-147">**Mac**</span></span><br><span data-ttu-id="37b07-148">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-148">Data type: String</span></span>|<span data-ttu-id="37b07-149">Kullanıcı bir ortam erişim denetleyicisi (MAC) adresini belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-149">Implement this parameter so that the user can specify a media access controller (MAC) address.</span></span>|
+|<span data-ttu-id="37b07-150">**parentId**</span><span class="sxs-lookup"><span data-stu-id="37b07-150">**ParentId**</span></span><br><span data-ttu-id="37b07-151">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-151">Data type: String</span></span>|<span data-ttu-id="37b07-152">Bu parametre, kullanıcının üst tanımlayıcı belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-152">Implement this parameter so that the user can specify the parent identifier.</span></span>|
+|<span data-ttu-id="37b07-153">**Yolu**</span><span class="sxs-lookup"><span data-stu-id="37b07-153">**Path**</span></span><br><span data-ttu-id="37b07-154">Veri türü: Dize, String]</span><span class="sxs-lookup"><span data-stu-id="37b07-154">Data type: String, String[]</span></span>|<span data-ttu-id="37b07-155">Joker karakterler desteklendiğinde, kullanıcı bir kaynak yolları belirtmek üzere bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-155">Implement this parameter so that the user can indicate the paths to a resource when wildcard characters are supported.</span></span> <span data-ttu-id="37b07-156">(Kullanım **LiteralPath** parametre joker karakterler desteklenmez.) Bu parametre tam destekler, böylece geliştirme öneririz `provider:path` sağlayıcıları tarafından kullanılan sözdizimi.</span><span class="sxs-lookup"><span data-stu-id="37b07-156">(Use the **LiteralPath** parameter when wildcard characters are not supported.) We recommend that you develop this parameter so that it supports the full `provider:path` syntax used by providers.</span></span> <span data-ttu-id="37b07-157">Mümkün olduğu kadar çok sağlayıcıları ile çalışır, böylece onu geliştirme öneririz.</span><span class="sxs-lookup"><span data-stu-id="37b07-157">We also recommend that you develop it so that it works with as many providers as possible.</span></span>|
+|<span data-ttu-id="37b07-158">**Bağlantı noktası**</span><span class="sxs-lookup"><span data-stu-id="37b07-158">**Port**</span></span><br><span data-ttu-id="37b07-159">Veri türü: Tamsayı, dize</span><span class="sxs-lookup"><span data-stu-id="37b07-159">Data type: Integer, String</span></span>|<span data-ttu-id="37b07-160">Kullanıcı ağ için bir tamsayı değeri veya bağlantı noktası, diğer türler için "biztalk" gibi bir dize değeri belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-160">Implement this parameter so that the user can specify an integer value for networking or a string value such as "biztalk" for other types of port.</span></span>|
+|<span data-ttu-id="37b07-161">**Yazıcı**</span><span class="sxs-lookup"><span data-stu-id="37b07-161">**Printer**</span></span><br><span data-ttu-id="37b07-162">Veri türü: Tamsayı, dize</span><span class="sxs-lookup"><span data-stu-id="37b07-162">Data type: Integer, String</span></span>|<span data-ttu-id="37b07-163">Bu parametre, kullanıcı kullanmak cmdlet için yazıcının belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-163">Implement this parameter so that the user can specify the printer for the cmdlet to use.</span></span>|
+|<span data-ttu-id="37b07-164">**Boyutu**</span><span class="sxs-lookup"><span data-stu-id="37b07-164">**Size**</span></span><br><span data-ttu-id="37b07-165">Veri türü: Int32</span><span class="sxs-lookup"><span data-stu-id="37b07-165">Data type: Int32</span></span>|<span data-ttu-id="37b07-166">Bu parametre, kullanıcının bir boyut belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-166">Implement this parameter so that the user can specify a size.</span></span>|
+|<span data-ttu-id="37b07-167">**TID**</span><span class="sxs-lookup"><span data-stu-id="37b07-167">**TID**</span></span><br><span data-ttu-id="37b07-168">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-168">Data type: String</span></span>|<span data-ttu-id="37b07-169">Bu parametre, kullanıcı cmdlet'i için işlem tanımlayıcısını (TID) belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-169">Implement this parameter so that the user can specify a transaction identifier (TID) for the cmdlet.</span></span>|
+|<span data-ttu-id="37b07-170">**Tür**</span><span class="sxs-lookup"><span data-stu-id="37b07-170">**Type**</span></span><br><span data-ttu-id="37b07-171">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-171">Data type: String</span></span>|<span data-ttu-id="37b07-172">Bu parametre, kullanıcının kaynak üzerinde çalışacağı türünü belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-172">Implement this parameter so that the user can specify the type of resource on which to operate.</span></span>|
+|<span data-ttu-id="37b07-173">**URL**</span><span class="sxs-lookup"><span data-stu-id="37b07-173">**URL**</span></span><br><span data-ttu-id="37b07-174">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-174">Data type: String</span></span>|<span data-ttu-id="37b07-175">Bu parametre, kullanıcı bir Tekdüzen Kaynak Konum Belirleyicisi (URL) belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-175">Implement this parameter so that the user can specify a Uniform Resource Locator (URL).</span></span>|
+|<span data-ttu-id="37b07-176">**Kullanıcı**</span><span class="sxs-lookup"><span data-stu-id="37b07-176">**User**</span></span><br><span data-ttu-id="37b07-177">Veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="37b07-177">Data type: String</span></span>|<span data-ttu-id="37b07-178">Kullanıcı adlarının veya başka bir kullanıcının adını belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="37b07-178">Implement this parameter so that the user can specify their name or the name of another user.</span></span>|
 
-<span data-ttu-id="e2fbb-106">Bu parametre, kullanıcı bir uygulama belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-106">Implement this parameter so that the user can specify an application.</span></span>
+## <a name="see-also"></a><span data-ttu-id="37b07-179">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="37b07-179">See Also</span></span>
 
-<span data-ttu-id="e2fbb-107">Derleme veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-107">Assembly Data type: String</span></span>
+[<span data-ttu-id="37b07-180">Cmdlet parametreleri</span><span class="sxs-lookup"><span data-stu-id="37b07-180">Cmdlet Parameters</span></span>](./cmdlet-parameters.md)
 
-<span data-ttu-id="e2fbb-108">Kullanıcı bir derlemeyi belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-108">Implement this parameter so that the user can specify an assembly.</span></span>
+[<span data-ttu-id="37b07-181">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="37b07-181">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
 
-<span data-ttu-id="e2fbb-109">Öznitelik veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-109">Attribute Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-110">Bu parametre, kullanıcının bir öznitelik belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-110">Implement this parameter so that the user can specify an attribute.</span></span>
-
-<span data-ttu-id="e2fbb-111">Sınıf veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-111">Class Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-112">Bu parametre, kullanıcının bir Microsoft .NET Framework sınıfı belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-112">Implement this parameter so that the user can specify a Microsoft .NET Framework class.</span></span>
-
-<span data-ttu-id="e2fbb-113">Küme veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-113">Cluster Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-114">Bu parametre, kullanıcı bir küme belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-114">Implement this parameter so that the user can specify a cluster.</span></span>
-
-<span data-ttu-id="e2fbb-115">Kültür veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-115">Culture Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-116">Bu parametre, kullanıcının cmdlet'ini çalıştırmak için kullanılan kültür belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-116">Implement this parameter so that the user can specify the culture in which to run the cmdlet.</span></span>
-
-<span data-ttu-id="e2fbb-117">Etki alanı veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-117">Domain Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-118">Kullanıcı etki alanı adını belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-118">Implement this parameter so that the user can specify the domain name.</span></span>
-
-<span data-ttu-id="e2fbb-119">Sürücü veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-119">Drive Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-120">Kullanıcı bir sürücü adı belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-120">Implement this parameter so that the user can specify a drive name.</span></span>
-
-<span data-ttu-id="e2fbb-121">Olay verilerini yazın: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-121">Event Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-122">Kullanıcı bir olay adı belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-122">Implement this parameter so that the user can specify an event name.</span></span>
-
-<span data-ttu-id="e2fbb-123">Arabirim veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-123">Interface Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-124">Kullanıcı bir ağ arabirimi adı belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-124">Implement this parameter so that the user can specify a network interface name.</span></span>
-
-<span data-ttu-id="e2fbb-125">IPADDRESS veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-125">IpAddress Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-126">Bu parametre, kullanıcının IP adresi belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-126">Implement this parameter so that the user can specify an IP address.</span></span>
-
-<span data-ttu-id="e2fbb-127">İşi veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-127">Job Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-128">Kullanıcı, bir işi belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-128">Implement this parameter so that the user can specify a job.</span></span>
-
-<span data-ttu-id="e2fbb-129">LiteralPath veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-129">LiteralPath Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-130">Joker karakterler desteklenmediği durumlarda kullanıcı bir kaynağın yolunu belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-130">Implement this parameter so that the user can specify the path to a resource when wildcard characters are not supported.</span></span> <span data-ttu-id="e2fbb-131">(Kullanım `Path` parametre joker karakterleri desteklenir.)</span><span class="sxs-lookup"><span data-stu-id="e2fbb-131">(Use the `Path` parameter when wildcard characters are supported.)</span></span>
-
-<span data-ttu-id="e2fbb-132">Mac veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-132">Mac Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-133">Kullanıcı bir ortam erişim denetleyicisi (MAC) adresini belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-133">Implement this parameter so that the user can specify a media access controller (MAC) address.</span></span>
-
-<span data-ttu-id="e2fbb-134">ParentId veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-134">ParentId Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-135">Bu parametre, kullanıcının üst tanımlayıcı belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-135">Implement this parameter so that the user can specify the parent identifier.</span></span>
-
-<span data-ttu-id="e2fbb-136">Yol veri türü: Dize, String]</span><span class="sxs-lookup"><span data-stu-id="e2fbb-136">Path Data type: String, String[]</span></span>
-
-<span data-ttu-id="e2fbb-137">Joker karakterler desteklendiğinde, kullanıcı bir kaynak yolları belirtmek üzere bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-137">Implement this parameter so that the user can indicate the paths to a resource when wildcard characters are supported.</span></span> <span data-ttu-id="e2fbb-138">(Kullanım `LiteralPath` parametre joker karakterler desteklenmez.)</span><span class="sxs-lookup"><span data-stu-id="e2fbb-138">(Use the `LiteralPath` parameter when wildcard characters are not supported.)</span></span>
-
-<span data-ttu-id="e2fbb-139">Sağlayıcıları tarafından kullanılan tam "sağlayıcı: yol" sözdizimini destekler, böylece bu parametre geliştirmeniz kesinlikle öneririz.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-139">We recommend that you develop this parameter so that it supports the full "provider:path" syntax used by providers.</span></span> <span data-ttu-id="e2fbb-140">Mümkün olduğu kadar çok sağlayıcıları ile çalışır, böylece onu geliştirme öneririz.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-140">We also recommend that you develop it so that it works with as many providers as possible.</span></span>
-
-<span data-ttu-id="e2fbb-141">Bağlantı noktası veri türü: Tamsayı, dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-141">Port Data type: Integer, String</span></span>
-
-<span data-ttu-id="e2fbb-142">Kullanıcı ağ için bir tamsayı değeri veya bağlantı noktası, diğer türler için "biztalk" gibi bir dize değeri belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-142">Implement this parameter so that the user can specify an integer value for networking or a string value such as "biztalk" for other types of port.</span></span>
-
-<span data-ttu-id="e2fbb-143">Yazıcı veri türü: Tamsayı, dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-143">Printer Data type: Integer, String</span></span>
-
-<span data-ttu-id="e2fbb-144">Bu parametre, kullanıcı kullanmak cmdlet için yazıcının belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-144">Implement this parameter so that the user can specify the printer for the cmdlet to use.</span></span>
-
-<span data-ttu-id="e2fbb-145">Veri türü boyut: Int32</span><span class="sxs-lookup"><span data-stu-id="e2fbb-145">Size Data type: Int32</span></span>
-
-<span data-ttu-id="e2fbb-146">Bu parametre, kullanıcının bir boyut belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-146">Implement this parameter so that the user can specify a size.</span></span>
-
-<span data-ttu-id="e2fbb-147">TID veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-147">TID Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-148">Bu parametre, kullanıcı cmdlet'i için işlem tanımlayıcısını (TID) belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-148">Implement this parameter so that the user can specify a transaction identifier (TID) for the cmdlet.</span></span>
-
-<span data-ttu-id="e2fbb-149">Veri türü yazın: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-149">Type Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-150">Bu parametre, kullanıcının kaynak üzerinde çalışacağı türünü belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-150">Implement this parameter so that the user can specify the type of resource on which to operate.</span></span>
-
-<span data-ttu-id="e2fbb-151">URL veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-151">URL Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-152">Bu parametre, kullanıcı bir Tekdüzen Kaynak Konum Belirleyicisi (URL) belirtebilirsiniz böylece uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-152">Implement this parameter so that the user can specify a Uniform Resource Locator (URL).</span></span>
-
-<span data-ttu-id="e2fbb-153">Kullanıcı veri türü: Dize</span><span class="sxs-lookup"><span data-stu-id="e2fbb-153">User Data type: String</span></span>
-
-<span data-ttu-id="e2fbb-154">Kullanıcı adlarının veya başka bir kullanıcının adını belirtmek için bu parametreyi uygulayın.</span><span class="sxs-lookup"><span data-stu-id="e2fbb-154">Implement this parameter so that the user can specify their name or the name of another user.</span></span>
-
-## <a name="see-also"></a><span data-ttu-id="e2fbb-155">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="e2fbb-155">See Also</span></span>
-
-[<span data-ttu-id="e2fbb-156">Cmdlet parametreleri</span><span class="sxs-lookup"><span data-stu-id="e2fbb-156">Cmdlet Parameters</span></span>](./cmdlet-parameters.md)
-
-[<span data-ttu-id="e2fbb-157">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="e2fbb-157">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
-
-[<span data-ttu-id="e2fbb-158">Windows PowerShell SDK'sı</span><span class="sxs-lookup"><span data-stu-id="e2fbb-158">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="37b07-182">Windows PowerShell SDK'sı</span><span class="sxs-lookup"><span data-stu-id="37b07-182">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
