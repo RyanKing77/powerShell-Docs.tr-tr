@@ -8,36 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8c0bd8a9-1749-4885-ab24-38c0a4d9f2cb
 caps.latest.revision: 6
-ms.openlocfilehash: 6a7c66eb94f69029b5abea85c421a0c8db646851
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7a3efc60fcc8729d833f6de070016cfd08cc9b88
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847967"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251379"
 ---
 # <a name="quantity-parameters"></a>Miktar Parametreleri
 
 Önerilen adlarını ve işlevsellik miktarı parametreler için aşağıdaki tabloda listelenmektedir.
 
-Tüm veri türü: Boolean
-
-Bu parametre uygulamak için `true` tüm kaynakları yerine varsayılan alt kümesini işlem yapılması olduğunu belirtir. Bu parametre uygulamak için `false` kaynakların alt kümesini gösterir.
-
-Ayırma veri türü: Int32
-
-Kullanıcı ayrılacak öğe sayısını belirtmek için bu parametreyi uygulayın.
-
-BlockCount veri türü: Int64
-
-Bu parametre, kullanıcının blok sayısı belirtebilirsiniz böylece uygulayın.
-
-Sayı veri türü: Int64
-
-Bu parametre, kullanıcı sayısı belirtebilirsiniz böylece uygulayın.
-
-Kapsam veri türü: Anahtar sözcüğü
-
-Bu parametre, kullanıcının üzerinde çalışacağı kapsam belirtebilirsiniz böylece uygulayın.
+|Parametre|İşlevsellik|
+|---|---|
+|**Tümü**<br>Veri türü: Boolean|Bu parametre uygulamak için `true` tüm kaynakları yerine varsayılan alt kümesini işlem yapılması olduğunu belirtir. Bu parametre uygulamak için `false` kaynakların alt kümesini gösterir.|
+|**ayırma**<br>Veri türü: Int32|Kullanıcı ayrılacak öğe sayısını belirtmek için bu parametreyi uygulayın.|
+|**BlockCount**<br>Veri türü: Int64|Bu parametre, kullanıcının blok sayısı belirtebilirsiniz böylece uygulayın.|
+|**Sayısı**<br>Veri türü: Int64|Bu parametre, kullanıcı sayısı belirtebilirsiniz böylece uygulayın.|
+|**Kapsam**<br>Veri türü: Anahtar sözcüğü|Bu parametre, kullanıcının üzerinde çalışacağı kapsam belirtebilirsiniz böylece uygulayın.|
 
 ## <a name="see-also"></a>Ayrıca bkz:
 

@@ -8,84 +8,36 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d17e0d66-42ea-4e4c-a85b-3ca09b146492
 caps.latest.revision: 6
-ms.openlocfilehash: 431ed002fdcf682072552e8b64134f130503dfbb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cc0742b86a7a36e5712707c077fd1952691f3f4b
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849997"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251430"
 ---
 # <a name="property-parameters"></a>Özellik Parametreleri
 
 Aşağıdaki tabloda, özellik parametreleri için işlevselliği ve önerilen adlarını listeler.
 
-Sayı veri türü: Int32
-
-Kullanıcı işlenecek nesne sayısını belirtmek için bu parametreyi uygulayın.
-
-Açıklama veri türü: Dize
-
-Bu parametre, kullanıcının bir kaynak için bir açıklama belirtebilirsiniz böylece uygulayın.
-
-Veri türünden: Dize
-
-Bu parametre, kullanıcı bilgilerini almak için başvuru nesnesi belirtebilirsiniz böylece uygulayın.
-
-Veri türü kimliği:
-
-Kullanıcının kaynak tanımlayıcısını belirtmek için bu parametreyi uygulayın.
-
-Giriş veri türü: Dize
-
-Bu parametre, kullanıcının giriş dosyası belirtimi belirtebilirsiniz böylece uygulayın.
-
-Konum veri türü: Dize
-
-Kullanıcının kaynak konumunu belirtmek için bu parametreyi uygulayın.
-
-Günlükadı veri türü: Dize
-
-Kullanıcı veya işlem günlük dosyasının adını belirtmek için bu parametreyi uygulayın.
-
-Veri türü adı: Dize
-
-Kullanıcının kaynak adını belirtmek için bu parametreyi uygulayın.
-
-Çıkış veri türü: Dize
-
-Kullanıcı çıkış dosyası belirtmek için bu parametreyi uygulayın.
-
-Sahip veri türü: Dize
-
-Kullanıcının kaynak sahibinin adını belirtmek için bu parametreyi uygulayın.
-
-Özellik verilerinin türü: Dize
-
-Kullanıcı adı veya adları özelliklerini kullanmak üzere belirtmek için bu parametreyi uygulayın.
-
-Neden veri türü: Dize
-
-Bu parametre, kullanıcının bu cmdlet neden çağrılan belirtebilirsiniz böylece uygulayın.
-
-Regex veri türü: SwitchParameter
-
-Bu parametre, böylece parametresi belirtildiğinde normal ifadeler kullanılan uygulayın. Bu parametre belirtildiğinde, joker karakterler çözümlenmiyor.
-
-Hızlı veri türü: Int32
-
-Bu parametre, kullanıcının baud hızı belirtebilirsiniz böylece uygulayın. Bu parametre, kullanıcı kaynak hızını ayarlar.
-
-Durum veri türü: Anahtar sözcük dizisi
-
-Bu parametre, kullanıcı adlarını KEYDOWN gibi bir durum belirtebilirsiniz böylece uygulayın.
-
-Değer veri türü: Nesne
-
-Bu parametre, kullanıcının cmdlet'e sağlamak için bir değer belirtebilirsiniz, böylece uygulayın.
-
-Sürüm veri türü: Dize
-
-Bu parametre, kullanıcı özelliği sürümünü belirtebilirsiniz böylece uygulayın.
+|Parametre|İşlevsellik|
+|---|---|
+|**Sayısı**<br>Veri türü: Int32|Kullanıcı işlenecek nesne sayısını belirtmek için bu parametreyi uygulayın.|
+|**Açıklama**<br>Veri türü: Dize|Bu parametre, kullanıcının bir kaynak için bir açıklama belirtebilirsiniz böylece uygulayın.|
+|**Kaynak**<br>Veri türü: Dize|Bu parametre, kullanıcı bilgilerini almak için başvuru nesnesi belirtebilirsiniz böylece uygulayın.|
+|**Kimlik**<br>Veri türü: Bağımlı kaynak|Kullanıcının kaynak tanımlayıcısını belirtmek için bu parametreyi uygulayın.|
+|**Girdi**<br>Veri türü: Dize|Bu parametre, kullanıcının giriş dosyası belirtimi belirtebilirsiniz böylece uygulayın.|
+|**Konum**<br>Veri türü: Dize|Kullanıcının kaynak konumunu belirtmek için bu parametreyi uygulayın.|
+|**Günlükadı**<br>Veri türü: Dize|Kullanıcı veya işlem günlük dosyasının adını belirtmek için bu parametreyi uygulayın.|
+|**Ad**<br>Veri türü: Dize|Kullanıcının kaynak adını belirtmek için bu parametreyi uygulayın.|
+|**Çıktı**<br>Veri türü: Dize|Kullanıcı çıkış dosyası belirtmek için bu parametreyi uygulayın.|
+|**Sahibi**<br>Veri türü: Dize|Kullanıcının kaynak sahibinin adını belirtmek için bu parametreyi uygulayın.|
+|**Özelliği**<br>Veri türü: Dize|Kullanıcı adı veya adları özelliklerini kullanmak üzere belirtmek için bu parametreyi uygulayın.|
+|**Nedeni**<br>Veri türü: Dize|Bu parametre, kullanıcının bu cmdlet neden çağrılan belirtebilirsiniz böylece uygulayın.|
+|**Regex**<br>Veri türü: SwitchParameter|Bu parametre, böylece parametresi belirtildiğinde normal ifadeler kullanılan uygulayın. Bu parametre belirtildiğinde, joker karakterler çözümlenmiyor.|
+|**hızı**<br>Veri türü: Int32|Bu parametre, kullanıcının baud hızı belirtebilirsiniz böylece uygulayın. Bu parametre, kullanıcı kaynak hızını ayarlar.|
+|**State**<br>Veri türü: Anahtar sözcük dizisi|Bu parametre, kullanıcı adlarını KEYDOWN gibi bir durum belirtebilirsiniz böylece uygulayın.|
+|**Değer**<br>Veri türü: Nesne|Bu parametre, kullanıcının cmdlet'e sağlamak için bir değer belirtebilirsiniz, böylece uygulayın.|
+|**Sürüm**<br>Veri türü: Dize|Bu parametre, kullanıcı özelliği sürümünü belirtebilirsiniz böylece uygulayın.|
 
 ## <a name="see-also"></a>Ayrıca bkz:
 

@@ -2,12 +2,12 @@
 title: PowerShell geliştirme için Visual Studio Code'u kullanma
 description: PowerShell geliştirme için Visual Studio Code'u kullanma
 ms.date: 08/06/2018
-ms.openlocfilehash: 03f370d0906790b573ea42290b9ccdec2cf84f2e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686701"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251396"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell geliştirme için Visual Studio Code'u kullanma
 
@@ -116,17 +116,28 @@ Visual Studio Code için aşağıdaki yapılandırma ayarları öneririz:
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "omnisharp.projectLoadTimeout": 120,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
 }
 ```
+
+Bu ayarlar, tüm dosya türlerini etkilemesini istemiyorsanız VSCode dil başına yapılandırmaları da sağlar. Ayarları koyarak belirli bir dil ayarı oluşturma bir `[<language-name>]` alan. Örneğin:
+
+```json
+"[powershell]": {
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
+}
+```
+
+VS Code'da kodlama dosya hakkında daha fazla bilgi için bkz: [dosya kodlama anlama](understanding-file-encoding.md).
 
 ## <a name="debugging-with-visual-studio-code"></a>Visual Studio kodu ile hata ayıklama
 
 ### <a name="no-workspace-debugging"></a>Hayır-çalışma hata ayıklama
 
-Visual Studio Code sürümü 1.9 itibarıyla PowerShell komut dosyasını içeren klasörü açmak zorunda kalmadan PowerShell betikleri hata ayıklaması yapabilirsiniz.
-PowerShell komut dosyasıyla açmanız yeterlidir **Dosya -> Dosya Aç...** satırında (F9 tuşuna basın) bir kesme noktası ayarlayın ve ardından hata ayıklamayı başlatmak için F5 tuşuna basın.
-Hata ayıklayıcı, adım, sürdürme ve hata ayıklamayı durdurmak sonu sağlayan görünen hata ayıklama Eylemler bölmesinde görmeniz gerekir.
+Visual Studio Code sürümü 1.9 itibarıyla PowerShell komut dosyasını içeren klasörü açmak zorunda kalmadan PowerShell betikleri hata ayıklaması yapabilirsiniz. PowerShell betik dosyasını açın **Dosya -> Dosya Aç...** satırında (F9 tuşuna basın) bir kesme noktası ayarlayın ve ardından hata ayıklamayı başlatmak için F5 tuşuna basın. Hata ayıklayıcı, adım, sürdürme ve hata ayıklamayı durdurmak sonu sağlayan görünen hata ayıklama Eylemler bölmesinde görmeniz gerekir.
 
 ### <a name="workspace-debugging"></a>Çalışma hata ayıklama
 
