@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: ade8fbd38e4f4a675e825b0d8850af0379c9d211
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4ed15dabffa933dee9becf2f839887eb9108775d
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848842"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430018"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Windows PowerShell Özellik Sağlayıcısı Oluşturma
 
 Bu konuda, bir veri deposuna öğelerin özelliklerini değiştirmek kullanıcının sağlayan bir sağlayıcı oluşturmayı açıklar. Sonuç olarak, bu tür sağlayıcısı için Windows PowerShell özelliği sağlayıcısı olarak adlandırılır. Örneğin, kayıt defteri sağlayıcısı kayıt defteri anahtarı öğesi özelliklerini Windows PowerShell tanıtıcıları kayıt defteri anahtarı değerleri tarafından sağlanan. Bu tür sağlayıcısı eklemelisiniz [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) .NET sınıfın uygulaması için arabirim.
 
 > [!NOTE]
-> Windows PowerShell, Windows PowerShell sağlayıcısındaki geliştirmek için kullanabileceğiniz bir şablon dosyası sağlar. .NET Framework 3.0 çalışma zamanı bileşenleri ve Microsoft Windows Yazılım Geliştirme Seti için Windows Vista üzerinde kullanılabilir TemplateProvider.cs dosyasıdır. Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 > Windows PowerShell, Windows PowerShell sağlayıcısındaki geliştirmek için kullanabileceğiniz bir şablon dosyası sağlar. .NET Framework 3.0 çalışma zamanı bileşenleri ve Microsoft Windows Yazılım Geliştirme Seti için Windows Vista üzerinde kullanılabilir TemplateProvider.cs dosyasıdır. Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > İndirilen şablon kullanılabilir  **\<PowerShell örnekleri >** dizin. Bu dosyanın bir kopyasını alın ve gerekmeyen işlevleri kaldırma yeni bir Windows PowerShell sağlayıcısı oluşturmak için kopyalama kullanmalısınız.
@@ -150,7 +149,6 @@ Varsayılan uygulaması işte [System.Management.Automation.Provider.Ipropertycm
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell sağlayıcısı oluşturma
 
 Bkz: [cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-Bkz: [cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
@@ -159,9 +157,5 @@ Bkz: [cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](h
 [Tasarım bilgisayarınızı Windows PowerShell sağlayıcısı](./designing-your-windows-powershell-provider.md)
 
 [Nesne türlerini genişletme ve biçimlendirme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Nesne türlerini genişletme ve biçimlendirme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

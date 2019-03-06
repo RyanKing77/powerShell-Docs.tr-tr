@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 6e5d79487539d4f58922e2686f1fdba08797f305
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5e35d2fdfa4c6bd70c1b69ca1f357ee8d8ebcdc4
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846329"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429984"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Windows PowerShell İçerik Sağlayıcısı Oluşturma
 
 Bu konuda, kullanıcı bir veri deposundaki öğeleri içeriğini işlemek etkinleştiren bir Windows PowerShell sağlayıcısı oluşturmayı açıklar. Sonuç olarak, öğeleri içeriğini işlemek bir sağlayıcı için bir Windows PowerShell içerik sağlayıcısı olarak adlandırılır.
 
 > [!NOTE]
-> İndirebileceğiniz C# .NET Framework 3.0 çalışma zamanı bileşenleri ve Microsoft Windows Yazılım Geliştirme Seti için Windows Vista'yı kullanarak bu sağlayıcı için kaynak dosyası (AccessDBSampleProvider06.cs). Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 > İndirebileceğiniz C# .NET Framework 3.0 çalışma zamanı bileşenleri ve Microsoft Windows Yazılım Geliştirme Seti için Windows Vista'yı kullanarak bu sağlayıcı için kaynak dosyası (AccessDBSampleProvider06.cs). Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > İndirilen kaynak dosyaları kullanılabilir  **\<PowerShell örnekleri >** dizin.
@@ -233,11 +232,9 @@ Tam örnek kod için bkz: [AccessDbProviderSample06 kod örneği](./accessdbprov
 ## <a name="defining-object-types-and-formatting"></a>Nesne türlerini tanımlama ve biçimlendirme
 
 Bir sağlayıcı yazarken, var olan nesnelerde üye eklemek veya yeni nesneleri tanımlamak gerekli olabilir. Bu yapıldığında, Windows PowerShell nesnesinin üyelerini tanımlamak için kullanabileceğiniz bir türleri dosyası ve nesne nasıl görüntüleneceğini tanımlayan bir biçim dosyası oluşturmanız gerekir. Daha fazla bilgi için [genişletme nesne türleri ve biçimlendirme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Bir sağlayıcı yazarken, var olan nesnelerde üye eklemek veya yeni nesneleri tanımlamak gerekli olabilir. Bu yapıldığında, Windows PowerShell nesnesinin üyelerini tanımlamak için kullanabileceğiniz bir türleri dosyası ve nesne nasıl görüntüleneceğini tanımlayan bir biçim dosyası oluşturmanız gerekir. Daha fazla bilgi için [genişletme nesne türleri ve biçimlendirme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell sağlayıcısı oluşturma
 
-Bkz: [cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Bkz: [cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell sağlayıcıyı test etme
@@ -285,11 +282,7 @@ Country   : USA
 
 [Nesne türlerini genişletme ve biçimlendirme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Nesne türlerini genişletme ve biçimlendirme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [Gezinti Windows PowerShell sağlayıcıyı uygulama](./creating-a-windows-powershell-navigation-provider.md)
-
-[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

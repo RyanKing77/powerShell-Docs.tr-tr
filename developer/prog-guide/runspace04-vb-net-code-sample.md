@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f0dea3c-4354-4d7d-9823-5e6234c9a89e
 caps.latest.revision: 6
-ms.openlocfilehash: 348d34dc0132705fa4a50fb6fe1fd43f510ae210
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c1d38c23ea20d7e5ccbc8e475b0c2246f9670ec3
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845146"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429899"
 ---
 # <a name="runspace04--vbnet-code-sample"></a>RunSpace04 (VB.NET) Kod Örneği
 
 VB.NET kaynak kodu Runspace04 örneği aşağıda verilmiştir. Bu örnekte [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) bir sonlandırma hatası oluşturur bir betik yürütmek için sınıf. Hata yakalama ve hata kaydı yorumlama konak uygulama sorumludur.
 
 > [!NOTE]
-> Bu örnek için Microsoft .NET Framework 3.0 çalışma zamanı bileşenleri ve Windows Vista için Windows yazılım geliştirme Seti'ni kullanarak VB.NET kaynak dosyası (runspace02.vb) indirebilirsiniz. Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 > Bu örnek için Microsoft .NET Framework 3.0 çalışma zamanı bileşenleri ve Windows Vista için Windows yazılım geliştirme Seti'ni kullanarak VB.NET kaynak dosyası (runspace02.vb) indirebilirsiniz. Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > İndirilen kaynak dosyaları kullanılabilir  **\<PowerShell örnekleri >** dizin.

@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 60873d0f-c5f1-4d5b-ade1-49ad0df43245
 caps.latest.revision: 5
-ms.openlocfilehash: 406e40065d95f657e41ecac994eee02e281744c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e4ab19db16b8137c833f9ef89e69f31f141f9932
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847225"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429525"
 ---
 # <a name="stopproc01-code-samples"></a>StopProc01 Kod Örnekleri
 
 StopProc01 örnek cmdlet için kod örneği aşağıda verilmiştir. Bu `Stop-Process` cmdlet örnek açıklanan [bir Cmdlet oluşturma sistemi değiştirir](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md). `Stop-Process` Cmdlet Get-Proc cmdlet'i kullanılarak alınır işlemleri durdurmak için tasarlanmıştır (açıklanan [oluşturma bilgisayarınızı ilk Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
 
 > [!NOTE]
-> İndirebileceğiniz C# .NET Framework 3.0 çalışma zamanı bileşenleri ve Microsoft Windows Yazılım Geliştirme Seti için Windows Vista'yı kullanarak Stop-Proc cmdlet'i için kaynak dosyası (stopproc01.cs). Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 > İndirebileceğiniz C# .NET Framework 3.0 çalışma zamanı bileşenleri ve Microsoft Windows Yazılım Geliştirme Seti için Windows Vista'yı kullanarak Stop-Proc cmdlet'i için kaynak dosyası (stopproc01.cs). Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > İndirilen kaynak dosyaları kullanılabilir  **\<PowerShell örnekleri >** dizin.

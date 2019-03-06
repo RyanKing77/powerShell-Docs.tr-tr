@@ -2,12 +2,12 @@
 ms.date: 08/09/2017
 keywords: PowerShell cmdlet'i, indirme, yükleme, Kurulum, windows 10, windows 8.1, windows 8.0, windows 7
 title: Windows PowerShell Yükleme
-ms.openlocfilehash: 1630ba445c88953b2729232ae7d80afa326f25e6
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405770"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429882"
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell Yükleme
 
@@ -17,7 +17,7 @@ PowerShell 6 ve üzeri ilgileniyorsanız, PowerShell Core yerine Windows PowerSh
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>PowerShell, Windows 10 ve 8.1, 8.0 ve 7 bulma
 
-Konumu bir Windows sürümünden diğerine taşınırken bazen PowerShell bulma konsolu veya Windows (tümleşik komut dosyası ortamı) ISE'de zor olabilir.
+Konumuna bir Windows sürümünden diğerine taşınırken bazen PowerShell bulma konsolu veya Windows (tümleşik komut dosyası ortamı) ISE'de zor olabilir.
 
 Aşağıdaki tablolarda, PowerShell, Windows sürümünde bulmanıza yardımcı olmalıdır.
 Burada listelenen tüm özgün sürümle, hiçbir güncelleştirme ile serbest bırakıldı sürümleridir.
@@ -70,9 +70,9 @@ Mevcut PowerShell sürümünüz güncelleştirmeniz gerekiyorsa Windows, yükley
 
 Windows | PS 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
 --|--|--|--|--|
-Windows 10 (Note1 bakın)<br/>Windows Server 2016 | - | - | - | yüklü
-Windows 8.1<br/>Windows Server 2012 R2 | - | yüklü | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
-Windows 8<br/>Windows Server 2012 | yüklü | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 10 (Note1 bakın)<br/>Windows Server 2016 | - | - | - | Yüklü
+Windows 8.1<br/>Windows Server 2012 R2 | - | Yüklü | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 8<br/>Windows Server 2012 | Yüklü | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
 > [!NOTE]
@@ -85,7 +85,7 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
 
 Aradığınız varsa **Azure PowerShell**, ile başlatabilir [genel bakış, Azure PowerShell](/powershell/azure/overview).
 
-Aksi takdirde, gerek duyabileceğiniz olduğu [yüklemek ve Azure PowerShell yapılandırma](/powershell/azure/install-azurerm-ps)
+Aksi takdirde, gerek duyabileceğiniz olduğu [yüklemek ve Azure PowerShell yapılandırma](/powershell/azure/install-az-ps)
 
 ## <a name="see-also"></a>Ayrıca bkz:
 

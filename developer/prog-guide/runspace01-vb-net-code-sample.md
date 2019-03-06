@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: fbc90a6736d841fe184b86ab143809ad23c7977a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846854"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429780"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01 (VB.NET) Kod Örneği
 
-İşte kod örnekleri için bir çalışma açıklanan [belirtilen bir komutu bir konsol uygulaması, çalışır oluşturma](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). Bunu yapmak için uygulama bir çalışma alanı çağırır ve ardından bir komut çalıştırır. (Unutmayın. Bu uygulama çalışma alanı yapılandırma bilgileri belirtmiyor veya açıkça bir işlem hattı oluşturur.) Çağrılan komut `Get-Process` cmdlet'i.
 İşte kod örnekleri için bir çalışma açıklanan [belirtilen bir komutu bir konsol uygulaması, çalışır oluşturma](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). Bunu yapmak için uygulama bir çalışma alanı çağırır ve ardından bir komut çalıştırır. (Unutmayın. Bu uygulama çalışma alanı yapılandırma bilgileri belirtmiyor veya açıkça bir işlem hattı oluşturur.) Çağrılan komut `Get-Process` cmdlet'i.
 
 ## <a name="code-sample"></a>Kod örneği

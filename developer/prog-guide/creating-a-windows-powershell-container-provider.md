@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 8c111f8f2943043e4ad2a6a8677db4afe1b3cdab
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0d83a742eae2bcde2e691860a5f2b3e5862d2de
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851831"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430052"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Windows PowerShell Kapsayıcı Sağlayıcısı Oluşturma
 
@@ -25,7 +25,6 @@ Bu konuda, çok katmanlı veri depolarına üzerinde çalışabilen bir Windows 
 Çok düzeyli veri depolarını çalışabilir sağlayıcıları, Windows PowerShell kapsayıcı sağlayıcıları olarak adlandırılır. Ancak, yalnızca bir kapsayıcı (iç içe geçmiş kapsayıcılar yok) içindeki öğeler olduğunda bir Windows PowerShell kapsayıcısı sağlayıcısı kullanılabileceğini unutmayın. İç içe geçmiş kapsayıcılar varsa, Windows PowerShell Gezinti sağlayıcıyı uygulama gerekir. Windows PowerShell Gezinti sağlayıcıyı uygulama hakkında daha fazla bilgi için bkz. [bir Windows PowerShell Gezinti sağlayıcı oluşturma](./creating-a-windows-powershell-navigation-provider.md).
 
 > [!NOTE]
-> İndirebileceğiniz C# .NET Framework 3.0 çalışma zamanı bileşenleri ve Microsoft Windows Yazılım Geliştirme Seti için Windows Vista'yı kullanarak bu sağlayıcı için kaynak dosyası (AccessDBSampleProvider04.cs). Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 > İndirebileceğiniz C# .NET Framework 3.0 çalışma zamanı bileşenleri ve Microsoft Windows Yazılım Geliştirme Seti için Windows Vista'yı kullanarak bu sağlayıcı için kaynak dosyası (AccessDBSampleProvider04.cs). Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > İndirilen kaynak dosyaları kullanılabilir  **\<PowerShell örnekleri >** dizin.
@@ -418,7 +417,6 @@ Tam örnek kod için bkz: [AccessDbProviderSample04 kod örneği](./accessdbprov
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell sağlayıcısı oluşturma
 
 Bkz: [cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-Bkz: [cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell sağlayıcıyı test etme
 
@@ -537,8 +535,6 @@ Windows PowerShell ile Windows PowerShell sağlayıcısı kayıtlı, komut satı
 [Bir öğe Windows PowerShell sağlayıcısı uygulama](./creating-a-windows-powershell-item-provider.md)
 
 [Bir gezinti Windows PowerShell sağlayıcısı uygulama](./creating-a-windows-powershell-navigation-provider.md)
-
-[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

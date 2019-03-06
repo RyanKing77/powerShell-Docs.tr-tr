@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dc68af2b-f622-47c4-964f-b07f3d5bdf14
 caps.latest.revision: 5
-ms.openlocfilehash: fdb78ac93befba66041c4e45834f8a857e3670b6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 367fecfe5417e0e4cc41b076bac6fefbe185624f
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851096"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429661"
 ---
 # <a name="stopprocesssample04-code-samples"></a>StopProcessSample04 Kod Örnekleri
 
 StopProc00 örnek cmdlet için kod örnekleri aşağıda verilmiştir. Bu `Stop-Process` cmdlet örnek açıklanan [bir cmdlet'e parametre kümeleri ekleme](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). `Stop-Process` Cmdlet Get-Proc cmdlet'i kullanılarak alınır işlemleri durdurmak için tasarlanmıştır (açıklanan [oluşturma bilgisayarınızı ilk Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
 
 > [!NOTE]
-> İndirebileceğiniz C# (stopprocesssample04.cs) ve .NET Framework 3.0 çalışma zamanı bileşenleri ve Microsoft Windows Yazılım Geliştirme Seti için Windows Vista'yı kullanarak bu Stop-Proc cmdlet'in VB.NET (stopprocesssample04.vb). Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 > İndirebileceğiniz C# (stopprocesssample04.cs) ve .NET Framework 3.0 çalışma zamanı bileşenleri ve Microsoft Windows Yazılım Geliştirme Seti için Windows Vista'yı kullanarak bu Stop-Proc cmdlet'in VB.NET (stopprocesssample04.vb). Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > İndirilen kaynak dosyaları kullanılabilir  **\<PowerShell örnekleri >** dizin.

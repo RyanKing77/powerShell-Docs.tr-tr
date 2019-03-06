@@ -1,15 +1,15 @@
 ---
-title: VSCode ve PowerShell dosya kodlama anlama
+title: VSCode ve PowerShell’de dosya kodlamayı anlama
 description: VSCode ve PowerShell dosya kodlamasını yapılandırma
 ms.date: 02/28/2019
-ms.openlocfilehash: f3b133b4bee7688821a5960429e2f26b69b01e12
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251730"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429814"
 ---
-# <a name="understanding-file-encoding-in-vscode-and-powershell"></a>VSCode ve PowerShell dosya kodlama anlama
+# <a name="understanding-file-encoding-in-vscode-and-powershell"></a>VSCode ve PowerShell’de dosya kodlamayı anlama
 
 VS Code kullanarak oluşturma ve PowerShell betiklerini Düzenle, dosyalarınızın doğru karakter kodlama biçimi kullanılarak kaydedilir önemlidir.
 
@@ -68,7 +68,7 @@ Bu kullanışlı [başvuru](https://www.i18nqa.com/debug/utf8-debug.html) UTF-8/
 PowerShell uzantısı solucanlar, betiklerde etkileşime geçer:
 
 1. VSCode içinde komut dosyaları düzenlenirken, içeriği uzantısı tarafından VSCode gönderilir. [Dil sunucusu Protokolü][] gerektiren bu içerik UTF-8'de aktarılır. Bu nedenle, uzantısı yanlış kodlama almak mümkün değildir.
-2. Doğrudan tümleşik konsolunda komut yürütüldüğünde dosyasından PowerShell tarafından doğrudan okurlar. Tf PowerShell'in kodlama Vscode'dan 's farklıdır, bir şey burada yanlış gidebilirsiniz.
+2. Doğrudan tümleşik konsolunda komut yürütüldüğünde dosyasından PowerShell tarafından doğrudan okurlar. Burada PowerShell'in kodlama Vscode'dan 's farklıysa, bir şeyler yanlış gidebilirsiniz.
 3. VSCode içinde açık olan bir betik VSCode içinde açık değil başka bir komut dosyası başvuruları, genişletme dosya sisteminden, betiğin içeriği yüklemek için geri döner. PowerShell uzantısı UTF-8 kodlaması için'varsayılan olarak, ancak kullandığı [bayt sırası işareti][], veya AĞACI, algılama doğru kodlama seçin.
 
 BOM daha az biçimlerini kodlama varsayılarak sorun oluşur (gibi [UTF-8][] hiçbir BOM ile ve [Windows-1252][]).
