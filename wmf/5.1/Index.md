@@ -1,16 +1,11 @@
 ---
 ms.date: 08/12/2017
 ms.topic: conceptual
-keywords: wmf,powershell,setup
+keywords: 'wmf,powershell,setup'
 title: WMF 5.1 Sürüm Notları
-ms.openlocfilehash: 3081d200f0c6aac6074719bb1c204900aabf96c2
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
-ms.contentlocale: tr-TR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522914"
 ---
-# <a name="windows-management-framework-wmf-51"></a>Windows Management Framework (WMF) 5.1 #
+
+# <a name="windows-management-framework-wmf-51"></a>Windows Management Framework (WMF) 5.1
 
 WMF; kullanıcılara mevcut Windows sistemlerini Windows Server 2016 ile yayımlanan PowerShell, WMI, WinRM ve Yazılım Envanter Günlüğü (SIL) bileşenleri ile güncelleştirme imkanı verir.
 

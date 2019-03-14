@@ -2,12 +2,12 @@
 title: Linux’ta PowerShell Core yükleme
 description: PowerShell Core yükleme üzerinde çeşitli Linux dağıtımları hakkında bilgi
 ms.date: 08/06/2018
-ms.openlocfilehash: afb11f053517af592fe42754d543f9f4a9966c5b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 718be0f03f136d6eb7d78fff51abdc36f6a8f0c2
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405799"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795734"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Linux’ta PowerShell Core yükleme
 
@@ -16,7 +16,7 @@ Destekler [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04] [ u1804], [Ub
 Değil resmi olarak desteklenen Linux dağıtımları için kullanmayı deneyebilirsiniz [PowerShell Yasla paket][snap].
 Linux kullanarak doğrudan PowerShell ikili dosyaları dağıtmaya de deneyebilirsiniz [ `tar.gz` arşiv][tar], ancak gerekli bağımlılıkları işletim sisteminde ayrı adımları göre ayarlamanız gerekir.
 
-Tüm paketleri bizim Github'da kullanılabilir [sürümleri][] sayfası.
+Tüm paketleri bizim Github'da kullanılabilir [Yayınları][] sayfası.
 Paket yüklendikten sonra Çalıştır `pwsh` bir terminalden.
 
 [u14]: #ubuntu-1404
@@ -77,7 +77,7 @@ Daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` yüklemesin
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Doğrudan indirme - Ubuntu 14.04 aracılığıyla yükleme
 
 Debian paketi indirin `powershell_6.1.0-1.ubuntu.14.04_amd64.deb`
-gelen [sürümleri][] Ubuntu makine sayfaya.
+gelen [Yayınları][] Ubuntu makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
@@ -125,7 +125,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Doğrudan indirme - Ubuntu 16.04 aracılığıyla yükleme
 
 Debian paketi indirin `powershell_6.1.0-1.ubuntu.16.04_amd64.deb`
-gelen [sürümleri][] Ubuntu makine sayfaya.
+gelen [Yayınları][] Ubuntu makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
@@ -145,9 +145,6 @@ sudo apt-get remove powershell
 ```
 
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
-
-> [!NOTE]
-> Sonra Ubuntu 18.04 desteği eklendi `6.1.0-preview.2`
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Paket Deposu - Ubuntu 18.04 aracılığıyla yükleme
 
@@ -176,7 +173,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Doğrudan indirme - Ubuntu 18.04 aracılığıyla yükleme
 
 Debian paketi indirin `powershell_6.1.0-1.ubuntu.18.04_amd64.deb`
-gelen [sürümleri][] Ubuntu makine sayfaya.
+gelen [Yayınları][] Ubuntu makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
@@ -198,8 +195,7 @@ sudo apt-get remove powershell
 ## <a name="ubuntu-1810"></a>Ubuntu 18.10
 
 > [!NOTE]
-> Ubuntu 18.10 desteği sonra eklenen `6.1.0-preview.3`.
-> 18.10 günlük bir derleme olduğundan, yalnızca desteklenen topluluk var.
+> 18.10 olduğu gibi bir [Ara Sürüm](https://www.ubuntu.com/about/release-cycle), yalnızca [desteklenen topluluk](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
 
 Üzerinde 18.10 yükleme aracılığıyla desteklenir `snapd`. Bkz: [Yasla paket] [ snap] için tam yönergeler;
 
@@ -236,7 +232,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 ### <a name="installation-via-direct-download---debian-8"></a>Doğrudan indirme - Debian 8 aracılığıyla yükleme
 
 Debian paketi indirin `powershell_6.1.0-1.debian.8_amd64.deb`
-gelen [sürümleri][] Debian makine sayfaya.
+gelen [Yayınları][] Debian makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
@@ -288,7 +284,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanma
 ### <a name="installation-via-direct-download---debian-9"></a>Doğrudan indirme - Debian 9 aracılığıyla yükleme
 
 Debian paketi indirin `powershell_6.1.0-1.debian.9_amd64.deb`
-gelen [sürümleri][] Debian makine sayfaya.
+gelen [Yayınları][] Debian makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
@@ -328,7 +324,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidi
 ### <a name="installation-via-direct-download---centos-7"></a>Doğrudan indirme - CentOS 7 ile yükleme
 
 Kullanarak [CentOS 7][], RPM paketini indirme `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-gelen [sürümleri][] CentOS makine sayfaya.
+gelen [Yayınları][] CentOS makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
@@ -372,7 +368,7 @@ Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidi
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Doğrudan indirme - Red Hat Enterprise Linux (RHEL) 7 aracılığıyla yükleme
 
 RPM paketini indirme `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-gelen [sürümleri][] Red Hat Enterprise Linux makine sayfaya.
+gelen [Yayınları][] Red Hat Enterprise Linux makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
@@ -386,13 +382,13 @@ RPM karşıdan ara adım olmadan da yükleyebilirsiniz:
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Kaldırma - Red Hat Enterprise Linux (RHEL) 7
+### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Uninstallation - Red Hat Enterprise Linux (RHEL) 7
 
 ```sh
 sudo yum remove powershell
 ```
 
-## <a name="opensuse"></a>OpenSUSE
+## <a name="opensuse"></a>openSUSE
 
 ### <a name="installation---opensuse-423"></a>Yükleme - openSUSE 42.3
 
@@ -482,7 +478,7 @@ pwsh
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Doğrudan indirme - 27 Fedora, Fedora 28 aracılığıyla yükleme
 
 RPM paketini indirme `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-gelen [sürümleri][] Fedora makine sayfaya.
+gelen [Yayınları][] Fedora makine sayfaya.
 
 Ardından aşağıdakileri terminalde yürütün:
 
@@ -509,7 +505,7 @@ sudo dnf remove powershell
 > [!NOTE]
 > Deneysel yay desteği.
 
-PowerShell kullanılabilir [Arch Linux][] kullanıcı deposu (AUR).
+PowerShell kullanılabilir [Linux arch][] kullanıcı deposu (AUR).
 
 * İle derlenebilir [en son sürümü etiketlendi][arch-release]
 * Gelen derlenebilir [ana son kaydetme][arch-git]
@@ -519,7 +515,7 @@ AUR paketlerinde saklanır topluluk - resmi desteği yoktur.
 
 AUR paketlerini yükleme hakkında daha fazla bilgi için bkz: [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) veya topluluk [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Arch Linux]: https://www.archlinux.org/download/
+[Linux arch]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
@@ -659,21 +655,21 @@ Aşağıdaki tabloda farklı Linux dağıtımlarında resmi olarak desteklenen .
 
 | İşletim sistemi                 | Bağımlılıkları |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
-| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
-| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Debian 9 (Esnetme) | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
+| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
+| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
+| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Debian 9 (Esnetme) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, openssl kitaplıkları, libicu |
-| OpenSUSE 42.3 | libcurl4, libopenssl1_0_0, libicu52_1 |
+| openSUSE 42.3 | libcurl4, libopenssl1_0_0, libicu52_1 |
 | openSUSE Leap 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
-| Fedora 27 <br> 28 fedora | libunwind, libcurl, openssl kitaplıkları, libicu, compat openssl10 |
+| Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl kitaplıkları, libicu, compat openssl10 |
 
 Resmi olarak desteklenmez Linux dağıtımlarında PowerShell ikili dosyaları dağıtmak için ayrı adımları hedef işletim sistemi için gerekli bağımlılıkları yüklemeniz gerekir.
 Örneğin, bizim [Amazon Linux dockerfile] [ amazon-dockerfile] ilk bağımlılıkları yükler ve ardından Linux ayıklar `tar.gz` arşiv.
 
-[amazon-dockerfile]: https://github.com/PowerShell/PowerShell/blob/master/docker/community/amazonlinux/Dockerfile
+[amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
 ### <a name="installation---binary-archives"></a>Yükleme - ikili Arşivi
 
@@ -716,5 +712,5 @@ Varsayılan konak özel profilleri var Bu nedenle, PowerShell'in konak başına 
 
 PowerShell uyar [XDG temel dizin belirtimi] [ xdg-bds] Linux üzerinde.
 
-[sürümleri]: https://github.com/PowerShell/PowerShell/releases/latest
+[Yayınları]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

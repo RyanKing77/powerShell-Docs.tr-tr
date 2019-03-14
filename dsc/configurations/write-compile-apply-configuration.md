@@ -1,17 +1,17 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, hizmet, Kurulum
-title: Yazma, derlemek ve bir yapılandırmasını Uygula
-ms.openlocfilehash: fa4d98fd12202439ba7025fd8af3fa398653ca05
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+title: Yapılandırma Yazma, Derleme ve Uygulama
+ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405719"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795428"
 ---
 > Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-# <a name="write-compile-and-apply-a-configuration"></a>Yazma, derlemek ve bir yapılandırmasını Uygula
+# <a name="write-compile-and-apply-a-configuration"></a>Yapılandırma Yazma, Derleme ve Uygulama
 
 Bu alıştırmada oluşturmak ve uygulamak başlangıçtan bitişe kadar bir Desired State Configuration ' nı (DSC) yapılandırma gösterilmektedir.
 Aşağıdaki örnekte, yazma ve çok basit bir yapılandırmayı uygulamak öğreneceksiniz. Yapılandırma, yerel makinenizde "HelloWorld.txt" dosyasından sağlayacaktır. Dosyayı silerseniz, DSC, sonraki güncelleştirdiğinde yeniden oluşturur.
@@ -60,7 +60,9 @@ Bir işlev gibi bir yapılandırmayı çalıştırma derleme bir ".mof" dosyası
 Yapılandırma çalıştırmak için için gereken *nokta kaynak* "HelloWorld.ps1" betiğinizi geçerli kapsama.
 Daha fazla bilgi için [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
 
+<!-- markdownlint-disable MD038 -->
 *Nokta kaynak* depolandığı, sonra yolunda yazarak "HelloWorld.ps1" betiğinizi `. ` (nokta, alan). Daha sonra olabilir gibi bir işlev çağırarak yapılandırmanızı çalıştırın.
+<!-- markdownlint-enable MD038 -->
 
 ```powershell
 . C:\Scripts\WebsiteTest.ps1

@@ -1,22 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 01d4989711c22db20431876c52740afb350caad0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1153738fdf6f926d5d819bbf91450408dcb17f71
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219557"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794510"
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>OData Uç Noktasına göre PowerShell Cmdlet’leri Oluşturma
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Bir OData uç noktada tabanlı Windows PowerShell cmdlet'leri oluştur
---------------------------------------------------------------
 
-**Dışarı aktarma ODataEndpointProxy** belirli bir OData uç noktası tarafından sunulan işlevselliği temel Windows PowerShell cmdlet'leri kümesini oluşturan bir cmdlet.
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Bir OData uç noktasına göre Windows PowerShell cmdlet'leri oluşturma
 
-Aşağıdaki örnek, bu yeni cmdlet'inin nasıl kullanılacağı gösterilmektedir:
+**Dışarı aktarma ODataEndpointProxy** bir cmdlet'i belirtilen bir OData uç noktası tarafından sunulan işlevselliği temel Windows PowerShell cmdlet'leri bir dizi oluşturur.
 
-\# Dışarı aktarma ODataEndpointProxy temel kullanım örneği
+Aşağıdaki örnek, yeni bu cmdlet'in nasıl kullanılacağı gösterilmektedir:
 
 ```powershell
 Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -OutputModule C:\Users\user\Generated.psd1
@@ -46,19 +44,20 @@ ipmo 'C:\Users\user\Generated.psd1'
 #
 ```
 
-Geliştirme dahil ancak bunlarla sınırlı olmamak üzere, bu işlev için anahtar kullanım durumlarında bölümlerini hala vardır:
+Hala geliştirme dahil ancak bunlarla sınırlı olmamak üzere, bu işlev için anahtar kullanım durumlarında bölümleri şunlardır:
 -   İlişkilendirmeleri
--   Akışlar geçirme
+-   Akışları geçirme
 
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>Bir OData uç nokta ODataUtils ile temel Windows PowerShell cmdlet'leri oluştur
-------------------------------------------------------------------------------
-ODataUtils modülü OData desteği REST uç noktalarını Windows PowerShell cmdlet'leri oluşturulmasını sağlar. Aşağıdaki artımlı iyileştirmeleri Microsoft.PowerShell.ODataUtils Windows PowerShell modülündeki ' dir.
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>OData uç noktası ile ODataUtils temel Windows PowerShell cmdlet'leri oluşturma
+
+ODataUtils modül OData desteği REST uç noktalarını Windows PowerShell cmdlet'lerinden oluşturulmasını sağlar. Aşağıdaki artımlı iyileştirmeleri Microsoft.PowerShell.ODataUtils Windows PowerShell modülünde olan.
 -   Sunucu tarafı uç noktasından ek bilgi için istemci tarafı kanal.
--   İstemci-tarafı sayfalama desteği
--   Kullanarak sunucu tarafı filtreleme parametre seçimi
--   Web isteği üstbilgileri desteği
+-   İstemci tarafı sayfalama desteği
+-   Kullanarak sunucu tarafı filtreleme Select parametresi
+-   Web isteği üst bilgileri için destek
 
-Dışarı aktarma ODataEndPointProxy cmdlet tarafından oluşturulan proxy cmdlet'leri ek bilgileri (istemci-tarafı proxy oluşturma sırasında kullanılan $metadata belirtilen değil) sunucudan yan OData uç noktası bilgileri akışta (yeni Windows sağlar PowerShell 5.0 özelliği). Bu bilgilerin nasıl alınacağını bir örneği burada verilmiştir.
+Dışarı aktarma ODataEndPointProxy cmdlet tarafından oluşturulan proxy cmdlet'leri ek bilgileri (istemci-tarafı proxy oluşturma sırasında kullanılan $metadata belirtilen değil) sunucudan yan OData uç noktası bilgi akışını (bir yeni Windows sağlar PowerShell 5.0 özelliği). Bu bilgileri almak nasıl bir örnek aşağıda verilmiştir.
+
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
 $generatedProxyModuleDir = Join-Path -Path $env:SystemDrive -ChildPath 'ODataDemoProxy'
@@ -80,7 +79,8 @@ $additionalInfo = $infoStream.GetEnumerator() | % MessageData
 $additionalInfo['odata.count']
 ```
 
-Kayıtları, istemci-tarafı sayfalama desteğini kullanarak sunucu tarafı yığınlardaki'nden edinebilirsiniz. Bu, ağ üzerinde büyük miktarda veri sunucudan almalısınız durumunda faydalı olur.
+Kayıtları, istemci tarafı sayfalama desteğini kullanarak sunucu tarafı toplu sayfasından edinebilirsiniz. Sunucudan ağ üzerinden büyük miktarda veri almalısınız istediğinizde yararlıdır.
+
 ```powershell
 $skipCount = 0
 $batchSize = 3
@@ -93,14 +93,16 @@ $skipCount += $batchSize
 }
 ```
 
-Oluşturulan proxy cmdlet'leri destekleyen istemci gereken kaydı özellikler almak için bir filtre olarak kullanabilirsiniz Select parametresini. Filtreleme sunucu tarafında oluştuğundan bu ağ üzerinden aktarılan veri miktarını azaltır.
+Oluşturulan proxy cmdlet'leri desteği yalnızca istemci kayıt özelliklerini almak için filtre kullanabilir Select parametresini. Filtreleme sunucu tarafında oluştuğu için bu ağ üzerinden aktarılan veri miktarını azaltır.
+
 ```powershell
 # In the below example only the Name property of the
 # Product record is retrieved from the server side.
 Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
-Dışarı aktarma ODataEndpointProxy cmdlet ve işlem tarafından oluşturulan proxy cmdlet'lerini artık sunucu tarafı OData uç noktası tarafından beklenen ek bilgileri kanal kullandığınız üstbilgileri parametre (tedarik değerler) bir karma tablosu olarak destekler. Aşağıdaki örnekte, kimlik doğrulaması için bir abonelik anahtar bekleniyor Hizmetleri için bir abonelik anahtar üstbilgileri aracılığıyla yönlendirebilir.
+Dışarı aktarma ODataEndpointProxy cmdlet ve işlem tarafından oluşturulan proxy cmdlet'leri artık sunucu tarafı OData uç noktası tarafından beklenen herhangi bir ek bilgi kanal için kullanabileceğiniz üst bilgiler parametre (tedarik değerler) bir karma tablosu olarak destekler. Aşağıdaki örnekte, üst bilgileri ile kimlik doğrulaması için bir abonelik anahtarı görmeyi Hizmetleri için bir abonelik anahtarı yönlendirebilir.
+
 ```powershell
 # As an example, in the below command 'XXXX' is the authentication used by the
 # Export-ODataEndpointProxy cmdlet to interact with the server-side

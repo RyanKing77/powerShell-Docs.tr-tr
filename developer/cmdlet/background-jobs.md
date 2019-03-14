@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
-ms.openlocfilehash: 9aff23647e55e8c9c41c54e5b62cedc15fb28a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847631"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794714"
 ---
 # <a name="background-jobs"></a>Arka Plan İşleri
 
@@ -21,7 +21,6 @@ Dahili olarak veya bir Windows PowerShell cmdlet'leri, eylem gerçekleştirebili
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>Arka plan işleri, alt işler ve iş havuz
 
-Arka plan işleri destekleyen cmdlet'ler tarafından döndürülen iş nesnesi, iş tanımlar. ( [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet ayrıca bir iş nesnesi döndürür.) İş, iş, durum bilgisi ve alt projeleri belirtmek için kullanılan tanımlayıcı adını bu tanımında dahil edilir. İşi iş gerçekleştirmez. Alt iş asıl işi gerçekleştirdiğinden her bir arka plan iş en az bir alt iş sahiptir. Böylece iş arka plan işi olarak gerçekleştirilen bir cmdlet'ini çalıştırdığınızda, cmdlet işi ve alt işlerin olarak adlandırılır, ortak bir depoya eklemeniz gerekir *iş depo*.
 Arka plan işleri destekleyen cmdlet'ler tarafından döndürülen iş nesnesi, iş tanımlar. ( [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet ayrıca bir iş nesnesi döndürür.) İş, iş, durum bilgisi ve alt projeleri belirtmek için kullanılan tanımlayıcı adını bu tanımında dahil edilir. İşi iş gerçekleştirmez. Alt iş asıl işi gerçekleştirdiğinden her bir arka plan iş en az bir alt iş sahiptir. Böylece iş arka plan işi olarak gerçekleştirilen bir cmdlet'ini çalıştırdığınızda, cmdlet işi ve alt işlerin olarak adlandırılır, ortak bir depoya eklemeniz gerekir *iş depo*.
 
 Arka plan işleri komut satırında nasıl işleneceğini hakkında daha fazla bilgi için aşağıdakilere bakın:

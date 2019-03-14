@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
 caps.latest.revision: 5
-ms.openlocfilehash: 3c70296cb22c325ace10dc04c8b1fd941742857b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 29f1be6a1215219ddd16367a31f528a4f0dbc2e3
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851712"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795139"
 ---
 # <a name="creating-a-constrained-runspace"></a>Kısıtlanmış bir çalışma alanı oluşturma
 
@@ -110,7 +110,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 ## <a name="making-commands-private"></a>Komutları özelleştirme
 
  Ayrıca bir komutu özel ayarını belirleyerek yapabilirsiniz 's [System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) özelliğini [System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private) . Konak uygulama ve diğer komutlar, komut çağırabilir, ancak uygulamanın kullanamazsınız. Aşağıdaki örnekte, [Get-Childıtem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) özel komutu.
-Ayrıca bir komutu özel ayarını belirleyerek yapabilirsiniz 's [System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) özelliğini [System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private) . Konak uygulama ve diğer komutlar, komut çağırabilir, ancak uygulamanın kullanamazsınız. Aşağıdaki örnekte, [Get-Childıtem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) özel komutu.
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();

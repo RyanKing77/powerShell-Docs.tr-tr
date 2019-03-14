@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Çekme Hizmeti
-ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 27effe0cd3b9d90dcfaaf1bd4e38edf3c04c9cfb
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429967"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794731"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration çekme hizmeti
 
@@ -88,7 +88,7 @@ Aşağıdaki adımlarda, kaynak web hizmeti oluşturmaya ayarlar bir yapılandı
 2. Bir SSL sertifikası güvenilen bir sertifika yetkilisi, kuruluşunuz veya bir ortak yetkilisi ya da DSC çekme sunucusu alın. Genellikle yetkilisinden alınan sertifika PFX biçimi ' dir.
 3. DSC çekme sunucusu olmalıdır varsayılan konumda olacak düğüme sertifikayı yükleme `CERT:\LocalMachine\My`.
    - Sertifika parmak izini not edin.
-4. Kayıt anahtarı kullanılacak bir GUID seçin. İçin bir PowerShell kullanarak, PS istemine aşağıdakileri girin ve enter tuşuna basın: ` [guid]::newGuid()` veya `New-Guid`. Bu anahtar tarafından istemci düğümleri kayıt sırasında kimlik doğrulaması için paylaşılan bir anahtar olarak kullanılır. Daha fazla bilgi için kayıt anahtarı bölümüne bakın.
+4. Kayıt anahtarı kullanılacak bir GUID seçin. İçin bir PowerShell kullanarak, PS istemine aşağıdakileri girin ve enter tuşuna basın: `[guid]::newGuid()` veya `New-Guid`. Bu anahtar tarafından istemci düğümleri kayıt sırasında kimlik doğrulaması için paylaşılan bir anahtar olarak kullanılır. Daha fazla bilgi için kayıt anahtarı bölümüne bakın.
 5. PowerShell ISE'de (F5) aşağıdaki yapılandırma betiğini Başlat (örnekler klasöründe bulunan **xPSDesiredStateConfiguration** modül olarak `Sample_xDscWebServiceRegistration.ps1`). Bu betik, çekme sunucusu ayarlar.
 
     ```powershell

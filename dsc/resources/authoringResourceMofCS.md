@@ -2,14 +2,14 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC kaynak yazmaC#
-ms.openlocfilehash: dcda36d27f2191f140eaaf209e1c85263d2cd8e1
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 6f2bb4d411237f13e2735c2e5f630b4f40dc6842
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405735"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794238"
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a>DSC kaynak yazmaC#
+# <a name="authoring-a-dsc-resource-in-c"></a>C dilinde bir DSC kaynağı yazma\#
 
 > Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 

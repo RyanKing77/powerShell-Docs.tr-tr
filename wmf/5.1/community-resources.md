@@ -3,14 +3,14 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Topluluk Kaynakları
-ms.openlocfilehash: 2bd006b1b873f475e04ebb00cc89d593e114cafc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a26f6eefeb3beb41575675b3dd4077f056606a70
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685091"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794884"
 ---
-# <a name="community-resources"></a>Topluluk Kaynakları #
+# <a name="community-resources"></a>Topluluk Kaynakları
 > Not: Bu bilgiler geçicidir ve değiştirilebilir.
 
 PowerShell ekibi karşılayan ve müşteri geri bildirimleri ürünün teşvik eder ve kullanıcılar bizimle iletişime geçmek için birden çok yaklaşımın destekler.

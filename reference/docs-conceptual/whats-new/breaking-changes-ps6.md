@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, çekirdek
 title: PowerShell 6.0 için bozucu değişiklikler
-ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685266"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795700"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 için bozucu değişiklikler
 
@@ -65,6 +65,10 @@ Desteklenmeyen API kullanımı nedeniyle `Microsoft.PowerShell.LocalAccounts` Po
 ### <a name="-counter-cmdlets"></a>`*-Counter` cmdlet'leri
 
 Desteklenmeyen API kullanımı nedeniyle `*-Counter` PowerShell çekirdek, daha iyi bir çözüm bulunana kadar kaldırıldı.
+
+### <a name="-eventlog-cmdlets"></a>`*-EventLog` cmdlet'leri
+
+Desteklenmeyen API kullanımı nedeniyle `*-EventLog` PowerShell çekirdek kaldırıldı. daha iyi bir çözüm bulunana kadar. `Get-WinEvent` ve `Create-WinEvent` almak ve Windows üzerinde olayları oluşturmak kullanılabilir.
 
 ## <a name="enginelanguage-changes"></a>Altyapısı/dil değişiklikleri
 
@@ -181,7 +185,7 @@ Desteklenmeyen API nedeniyle `LocalAccounts` modülü ve `Counter` cmdlet'leri `
 
 ### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Bool parametresiyle birlikte PowerShell Betiği Yürütülüyor çalışmıyor [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Daha önce powershell.exe kullanarak (artık `pwsh.exe`) kullanarak bir PowerShell Betiği yürütmek için `-File` $true başarılı şekilde sağlanan/$false olarak parametre değerleri. $True desteği/$false ayrıştırılmış değerler için parametre olarak eklendi. Şu anda belgelenmiş söz dizimi işe yaramazsa gibi anahtar değerlerini de desteklenir.
+Daha önce kullanarak **powershell.exe** (artık **pwsh.exe**) kullanarak bir PowerShell Betiği yürütmek için `-File` başarılı şekilde sağlanan `$true` / `$false` parametre olarak değerler. Destek `$true` / `$false` ayrıştırılmış değerler için parametre olarak eklendi. Şu anda belgelenmiş söz dizimi işe yaramazsa gibi anahtar değerlerini de desteklenir.
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Kaldırma `ClrVersion` özelliğinden `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
@@ -193,7 +197,7 @@ Windows dışı platformlarda shebang'i PowerShell kullanımını etkinleştirin
 
 ### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Unicode kaçış ayrıştırma uygulamak [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u#### `` veya `` `u{####} `` karşılık gelen bir Unicode karakter için dönüştürülür. Bir sabit değer çıkış `` `u ``, kaçış vurgulamasını belirtir: ``` ``u ```.
+`` `u####`` veya `` `u{####}`` karşılık gelen bir Unicode karakter için dönüştürülür. Bir sabit değer çıkış `` `u``, kaçış vurgulamasını belirtir: ``` ``u```.
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Değişiklik `New-ModuleManifest` kodlamasını `UTF8NoBOM` Windows dışı platformlarda [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 

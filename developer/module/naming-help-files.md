@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
-ms.openlocfilehash: 06281a1260dbdc120867fce89e6d5c8dd0754b87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847281"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795360"
 ---
 # <a name="naming-help-files"></a>Yardım Dosyalarını Adlandırma
 
-Bu konu başlığında, bir XML tabanlı Yardım dosyasını adlandırmak açıklanmaktadır böylece [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet'i, bulabilirsiniz. Ad gereksinimleri, her komut türü için farklılık gösterir.
 Bu konu başlığında, bir XML tabanlı Yardım dosyasını adlandırmak açıklanmaktadır böylece [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet'i, bulabilirsiniz. Ad gereksinimleri, her komut türü için farklılık gösterir.
 
 ## <a name="cmdlet-help-files"></a>Cmdlet Yardım dosyaları
@@ -30,7 +29,6 @@ Bu konu başlığında, bir XML tabanlı Yardım dosyasını adlandırmak açık
 
 Derleme bir iç içe modül olsa bile, derleme adı biçimi gereklidir.
 
-Örneğin, [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet'i Microsoft.PowerShell.Diagnostics.dll derlemesinde tanımlanmıştır. `Get-Help` Cmdlet için Yardım konusunun arar `Get-WinEvent` cmdlet'i yalnızca modül dizinini Microsoft.PowerShell.Diagnostics.dll help.xml dosyasında.
 Örneğin, [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet'i Microsoft.PowerShell.Diagnostics.dll derlemesinde tanımlanmıştır. `Get-Help` Cmdlet için Yardım konusunun arar `Get-WinEvent` cmdlet'i yalnızca modül dizinini Microsoft.PowerShell.Diagnostics.dll help.xml dosyasında.
 
 ## <a name="provider-help-files"></a>Sağlayıcı Yardım dosyaları
@@ -47,7 +45,6 @@ Derleme bir iç içe modül olsa bile, derleme adı biçimi gereklidir.
 
 ## <a name="function-help-files"></a>Yardım dosyaları işlevi
 
-İşlevleri kullanarak konusunda açıklanmaktadır [açıklama tabanlı Yardım](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) veya bir XML Yardım dosyasında belirtilmiştir. İşlevi, bir XML dosyasında belirtildiği zaman, işlev olmalıdır bir `.ExternalHelp` işlevi olan XML dosyası ilişkilendirir anahtar sözcüğü açıklama satırı yapın. Aksi takdirde, `Get-Help` cmdlet Yardım dosyasını bulamıyor.
 İşlevleri kullanarak konusunda açıklanmaktadır [açıklama tabanlı Yardım](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) veya bir XML Yardım dosyasında belirtilmiştir. İşlevi, bir XML dosyasında belirtildiği zaman, işlev olmalıdır bir `.ExternalHelp` işlevi olan XML dosyası ilişkilendirir anahtar sözcüğü açıklama satırı yapın. Aksi takdirde, `Get-Help` cmdlet Yardım dosyasını bulamıyor.
 
 Bir işlev Yardım dosyasının adı için teknik gereksinimi yoktur. Ancak, en iyi uygulama işlevi tanımlandığı betik modülü için Yardım dosyasına ad sağlamaktır. Örneğin, aşağıdaki işlev MyModule.psm1 dosyasında tanımlanır.

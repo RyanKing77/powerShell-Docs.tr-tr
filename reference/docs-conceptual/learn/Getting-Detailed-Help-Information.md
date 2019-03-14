@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
 title: Ayrıntılı Yardım Bilgisi Alma
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 8b56f003fdef38b0f126cfe82eefcc145cc54783
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e58814f512aa2c5914f92f942cf2a4a76956ee20
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684090"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794578"
 ---
 # <a name="getting-detailed-help-information"></a>Ayrıntılı yardım bilgisi alma
 
@@ -74,7 +74,7 @@ Get-Help Get-ChildItem -Parameter *
 ```
 
 Bir Yardım makalesinde yalnızca örnekleri görüntülemek için kullanın **örnekler** parametresinin `Get-Help`.
-Örneğin, Yardım makalesi için yalnızca örnekleri görüntülemek için `Get-ChildItem `cmdlet'i, türü:
+Örneğin, Yardım makalesi için yalnızca örnekleri görüntülemek için `Get-ChildItem` cmdlet'i, türü:
 
 ```powershell
 Get-Help Get-ChildItem -Examples

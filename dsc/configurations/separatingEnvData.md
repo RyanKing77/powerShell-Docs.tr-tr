@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Yapılandırma ve ortam verilerini ayırma
-ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405725"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794935"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Yapılandırma ve ortam verilerini ayırma
 
@@ -88,7 +88,7 @@ Mode                LastWriteTime         Length Name
 
 Bir Web sitesi geliştirme ve üretim ortamları ayarlamak için tek bir yapılandırması kullanan tam bir örneğe bakalım. Geliştirme ortamında, hem IIS hem de SQL Server tek düğümlerine yüklenir. Üretim ortamında, IIS ve SQL Server ayrı düğümde yüklü. İki farklı ortamlar için verileri belirtmek için bir yapılandırma verileri .psd1 dosyası kullanacağız.
 
- ### <a name="configuration-data-file"></a>Yapılandırma verileri dosyası
+### <a name="configuration-data-file"></a>Yapılandırma verileri dosyası
 
 Geliştirme ve üretim ortamı veri adındaki bir dosyada tanımlarsınız `DevProdEnvData.psd1` gibi:
 

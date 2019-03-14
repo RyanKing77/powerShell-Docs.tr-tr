@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 31ee7222c35e82ee58d6d56f710792dbc5cb24d7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848653"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795632"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell Sağlayıcısına Genel Bakış
 
-Bir Windows PowerShell sağlayıcısı herhangi bir veri deposu bağlı sürücü gibi bir dosya sistemi gibi gösterilmesine izin verir. Örneğin, yerleşik kayıt defteri sağlayıcısı kayıt defterine gidin gibi gitmenizi sağlar `c` bilgisayarınızın sürücü. Sağlayıcı geçersiz de kılabilirsiniz `Item` cmdlet'leri (örneğin, `Get-Item`, `Set-Item`, vs.), veri deposundaki dosyaları gibi ele alınabilir ve bir dosya sistemi gezinirken dizinleri kabul edilir. Sağlayıcılar ve sürücüleri ve Windows PowerShell'de yerleşik sağlayıcılar hakkında daha fazla bilgi için bkz. [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 Bir Windows PowerShell sağlayıcısı herhangi bir veri deposu bağlı sürücü gibi bir dosya sistemi gibi gösterilmesine izin verir. Örneğin, yerleşik kayıt defteri sağlayıcısı kayıt defterine gidin gibi gitmenizi sağlar `c` bilgisayarınızın sürücü. Sağlayıcı geçersiz de kılabilirsiniz `Item` cmdlet'leri (örneğin, `Get-Item`, `Set-Item`, vs.), veri deposundaki dosyaları gibi ele alınabilir ve bir dosya sistemi gezinirken dizinleri kabul edilir. Sağlayıcılar ve sürücüleri ve Windows PowerShell'de yerleşik sağlayıcılar hakkında daha fazla bilgi için bkz. [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 
 ## <a name="providers-and-drives"></a>Sağlayıcılar ve sürücüler

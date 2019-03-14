@@ -4,16 +4,17 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: jianyunt, quoctruong
 title: WMF 5.1, paket yönetimi geliştirmeleri
-ms.openlocfilehash: adcddcc94022f4961f3dd23c2cd56f2a8720049b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 30ef59ed9dc0d56636d85cc6e53523a9a73963a4
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688241"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794289"
 ---
-# <a name="improvements-to-package-management-in-wmf-51"></a>WMF 5.1# içinde paket yönetimi geliştirmeleri
+# <a name="improvements-to-package-management-in-wmf-51"></a>WMF 5.1, paket yönetimi geliştirmeleri
 
-## <a name="improvements-in-packagemanagement"></a>Paket Yönetimi iyileştirmeleri ##
+## <a name="improvements-in-packagemanagement"></a>Paket Yönetimi iyileştirmeleri
+
 WMF 5.1 yapılan düzeltmeler aşağıda verilmiştir:
 
 ### <a name="version-alias"></a>Sürüm diğer adı
@@ -61,6 +62,7 @@ WMF 5.1, bulma ve temel kimlik doğrulaması gerektiren bir depodaki paketlerini
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
+
 ### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>Bir proxy'nin arkasındayken PackageManagement kullanma desteği
 
 WMF 5.1, PackageManagement artık yeni proxy parametre almayan `-ProxyCredential` ve `-Proxy`. Bu parametreleri kullanarak, PackageManagement cmdlet'leri için kimlik bilgilerini ve proxy URL'si belirtebilirsiniz. Varsayılan olarak, sistem proxy ayarlarını kullanılır. Örneğin:

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: dcab755f565cd176c85ef6b9c719bceae10301b4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845783"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795445"
 ---
 # <a name="extending-properties-for-objects"></a>Nesnelerin Özelliklerini Genişletme
 
@@ -101,7 +101,6 @@ Aşağıdaki örnekte, `VersionInfo` özelliği eklenir [System.IO.FileInfo? Dis
 
 ## <a name="property-sets"></a>Özellik kümeleri
 
-Bir özellik kümesi, bir küme adı tarafından başvurulan genişletilmiş özellikler grubunu tanımlar. Örneğin, `Property` parametresinin [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet'i, belirli bir özellik görüntülenecek kümesi belirtebilirsiniz. Bir özellik kümesi belirtildiğinde, kümeye ait özellikleri görüntülenir.
 Bir özellik kümesi, bir küme adı tarafından başvurulan genişletilmiş özellikler grubunu tanımlar. Örneğin, `Property` parametresinin [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet'i, belirli bir özellik görüntülenecek kümesi belirtebilirsiniz. Bir özellik kümesi belirtildiğinde, kümeye ait özellikleri görüntülenir.
 
 Bir nesne için tanımlanmış bir özellik kümeleri sayısına bir sınırlama yoktur. Ancak, bir nesnenin varsayılan görüntü özelliklerini tanımlamak için kullanılan özellik kümeleri PSStandardMembers üye kümesi içinde belirtilmelidir. Types.ps1xml türleri dosyasında DefaultDisplayProperty DefaultDisplayPropertySet ve DefaultKeyPropertySet varsayılan özellik kümesinin adlarını içerir. PSStandardMembers üye kümesine eklediğiniz herhangi bir ek özellik kümeleri göz ardı edilir.

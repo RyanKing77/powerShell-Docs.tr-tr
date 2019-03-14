@@ -2,12 +2,12 @@
 title: VSCode ve PowerShell’de dosya kodlamayı anlama
 description: VSCode ve PowerShell dosya kodlamasını yapılandırma
 ms.date: 02/28/2019
-ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 73e766832d56a08bd5ef16df11899a0aab0badae
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429814"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795131"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>VSCode ve PowerShell’de dosya kodlamayı anlama
 
@@ -55,11 +55,13 @@ Bu bayt Windows-1252 çözülür, karakter olarak yorumlanır `â€“`.
 
 Görebileceğiniz bazı ilginç karakter sıraları içerir:
 
+<!-- markdownlint-disable MD038 -->
 - `â€“` Onun yerine `–`
 - `â€”` Onun yerine `—`
 - `Ã„2` Onun yerine `Ä`
 - `Â` yerine ` ` (bölünemez boşluk)
 - `Ã©` Onun yerine `é`
+<!-- markdownlint-enable MD038 -->
 
 Bu kullanışlı [başvuru](https://www.i18nqa.com/debug/utf8-debug.html) UTF-8/Windows-1252 kodlama bir sorunu işaret eden ortak desenler listeler.
 
