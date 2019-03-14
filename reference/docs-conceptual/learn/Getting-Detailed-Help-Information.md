@@ -3,180 +3,180 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet'i
 title: Ayrıntılı Yardım Bilgisi Alma
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 8b56f003fdef38b0f126cfe82eefcc145cc54783
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e58814f512aa2c5914f92f942cf2a4a76956ee20
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684090"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794578"
 ---
-# <a name="getting-detailed-help-information"></a><span data-ttu-id="f0999-103">Ayrıntılı yardım bilgisi alma</span><span class="sxs-lookup"><span data-stu-id="f0999-103">Getting detailed help information</span></span>
+# <a name="getting-detailed-help-information"></a><span data-ttu-id="42970-103">Ayrıntılı yardım bilgisi alma</span><span class="sxs-lookup"><span data-stu-id="42970-103">Getting detailed help information</span></span>
 
-<span data-ttu-id="f0999-104">PowerShell, PowerShell kavramlarını ve PowerShell dil açıklayan ayrıntılı yardım makaleleri içerir.</span><span class="sxs-lookup"><span data-stu-id="f0999-104">PowerShell includes detailed Help articles that explain PowerShell concepts and the PowerShell language.</span></span> <span data-ttu-id="f0999-105">Pek çok işlev ve betik ve her cmdlet sağlayıcısı için Yardım makaleleri de vardır.</span><span class="sxs-lookup"><span data-stu-id="f0999-105">There are also Help articles for each cmdlet and provider and for many functions and scripts.</span></span>
+<span data-ttu-id="42970-104">PowerShell, PowerShell kavramlarını ve PowerShell dil açıklayan ayrıntılı yardım makaleleri içerir.</span><span class="sxs-lookup"><span data-stu-id="42970-104">PowerShell includes detailed Help articles that explain PowerShell concepts and the PowerShell language.</span></span> <span data-ttu-id="42970-105">Pek çok işlev ve betik ve her cmdlet sağlayıcısı için Yardım makaleleri de vardır.</span><span class="sxs-lookup"><span data-stu-id="42970-105">There are also Help articles for each cmdlet and provider and for many functions and scripts.</span></span>
 
-<span data-ttu-id="f0999-106">Komut isteminde bu Yardım makaleleri görüntüleyebilir veya görünümü en son güncelleştirilmiş aşağıdaki makalelerde sürümlerini [PowerShell](/powershell/scripting/overview) belgelerine bakın.</span><span class="sxs-lookup"><span data-stu-id="f0999-106">You can display these Help articles at the command prompt or view the most recently updated versions of these articles in the [PowerShell](/powershell/scripting/overview) documentation online.</span></span>
+<span data-ttu-id="42970-106">Komut isteminde bu Yardım makaleleri görüntüleyebilir veya görünümü en son güncelleştirilmiş aşağıdaki makalelerde sürümlerini [PowerShell](/powershell/scripting/overview) belgelerine bakın.</span><span class="sxs-lookup"><span data-stu-id="42970-106">You can display these Help articles at the command prompt or view the most recently updated versions of these articles in the [PowerShell](/powershell/scripting/overview) documentation online.</span></span>
 
-## <a name="getting-help-for-cmdlets"></a><span data-ttu-id="f0999-107">Cmdlet'leri için Yardım alma</span><span class="sxs-lookup"><span data-stu-id="f0999-107">Getting help for cmdlets</span></span>
+## <a name="getting-help-for-cmdlets"></a><span data-ttu-id="42970-107">Cmdlet'leri için Yardım alma</span><span class="sxs-lookup"><span data-stu-id="42970-107">Getting help for cmdlets</span></span>
 
-<span data-ttu-id="f0999-108">PowerShell cmdlet'leri hakkında Yardım almak için kullanın [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="f0999-108">To get Help about PowerShell cmdlets, use the [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet.</span></span> <span data-ttu-id="f0999-109">Örneğin, Yardım almak için `Get-ChildItem` cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="f0999-109">For example, to get Help for the `Get-ChildItem` cmdlet, type:</span></span>
+<span data-ttu-id="42970-108">PowerShell cmdlet'leri hakkında Yardım almak için kullanın [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="42970-108">To get Help about PowerShell cmdlets, use the [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet.</span></span> <span data-ttu-id="42970-109">Örneğin, Yardım almak için `Get-ChildItem` cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="42970-109">For example, to get Help for the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem
 ```
 
-<span data-ttu-id="f0999-110">veya</span><span class="sxs-lookup"><span data-stu-id="f0999-110">or</span></span>
+<span data-ttu-id="42970-110">veya</span><span class="sxs-lookup"><span data-stu-id="42970-110">or</span></span>
 
 ```powershell
 Get-ChildItem -?
 ```
 
-<span data-ttu-id="f0999-111">Hatta, Get-Help cmdlet'i hakkında Yardım alabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f0999-111">You can even get Help about the Get-Help cmdlet.</span></span> <span data-ttu-id="f0999-112">Örneğin:</span><span class="sxs-lookup"><span data-stu-id="f0999-112">For example:</span></span>
+<span data-ttu-id="42970-111">Hatta, Get-Help cmdlet'i hakkında Yardım alabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="42970-111">You can even get Help about the Get-Help cmdlet.</span></span> <span data-ttu-id="42970-112">Örneğin:</span><span class="sxs-lookup"><span data-stu-id="42970-112">For example:</span></span>
 
 ```powershell
 Get-Help Get-Help
 ```
 
-<span data-ttu-id="f0999-113">Tüm cmdlet listesi Yardım makaleleri oturumunuzda almak için şunu yazın:</span><span class="sxs-lookup"><span data-stu-id="f0999-113">To get a list of all the cmdlet Help articles in your session, type:</span></span>
+<span data-ttu-id="42970-113">Tüm cmdlet listesi Yardım makaleleri oturumunuzda almak için şunu yazın:</span><span class="sxs-lookup"><span data-stu-id="42970-113">To get a list of all the cmdlet Help articles in your session, type:</span></span>
 
 ```powershell
 Get-Help -Category Cmdlet
 ```
 
-<span data-ttu-id="f0999-114">Bir kerede bir sayfa her Yardım makalesinin görüntülemek için kullanın `help` işlevi veya diğer adıyla `man`.</span><span class="sxs-lookup"><span data-stu-id="f0999-114">To display one page of each Help article at a time, use the `help` function or its alias `man`.</span></span>
-<span data-ttu-id="f0999-115">Örneğin, Yardım için görüntülenecek `Get-ChildItem` cmdlet'i, türü</span><span class="sxs-lookup"><span data-stu-id="f0999-115">For example, to display Help for the `Get-ChildItem` cmdlet, type</span></span>
+<span data-ttu-id="42970-114">Bir kerede bir sayfa her Yardım makalesinin görüntülemek için kullanın `help` işlevi veya diğer adıyla `man`.</span><span class="sxs-lookup"><span data-stu-id="42970-114">To display one page of each Help article at a time, use the `help` function or its alias `man`.</span></span>
+<span data-ttu-id="42970-115">Örneğin, Yardım için görüntülenecek `Get-ChildItem` cmdlet'i, türü</span><span class="sxs-lookup"><span data-stu-id="42970-115">For example, to display Help for the `Get-ChildItem` cmdlet, type</span></span>
 
 ```powershell
 man Get-ChildItem
 ```
 
-<span data-ttu-id="f0999-116">veya</span><span class="sxs-lookup"><span data-stu-id="f0999-116">or</span></span>
+<span data-ttu-id="42970-116">veya</span><span class="sxs-lookup"><span data-stu-id="42970-116">or</span></span>
 
 ```powershell
 help Get-ChildItem
 ```
 
-<span data-ttu-id="f0999-117">Ayrıntılı bilgi görüntülemek için kullanın **ayrıntılı** parametresinin `Get-Help` cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="f0999-117">To display detailed information, use the **Detailed** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="f0999-118">Örneğin, hakkında ayrıntılı bilgi almak için `Get-ChildItem` cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="f0999-118">For example, to get detailed information about the `Get-ChildItem` cmdlet, type:</span></span>
+<span data-ttu-id="42970-117">Ayrıntılı bilgi görüntülemek için kullanın **ayrıntılı** parametresinin `Get-Help` cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="42970-117">To display detailed information, use the **Detailed** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="42970-118">Örneğin, hakkında ayrıntılı bilgi almak için `Get-ChildItem` cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="42970-118">For example, to get detailed information about the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem -Detailed
 ```
 
-<span data-ttu-id="f0999-119">Yardım makalesi tüm içeriği görüntülemek için kullanın **tam** parametresinin `Get-Help` cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="f0999-119">To display all content in the Help article, use the **Full** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="f0999-120">Örneğin, Yardım makalesi için tüm içeriği görüntülemek için `Get-ChildItem` cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="f0999-120">For example, to display all content in the Help article for the `Get-ChildItem` cmdlet, type:</span></span>
+<span data-ttu-id="42970-119">Yardım makalesi tüm içeriği görüntülemek için kullanın **tam** parametresinin `Get-Help` cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="42970-119">To display all content in the Help article, use the **Full** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="42970-120">Örneğin, Yardım makalesi için tüm içeriği görüntülemek için `Get-ChildItem` cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="42970-120">For example, to display all content in the Help article for the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem -Full
 ```
 
-<span data-ttu-id="f0999-121">Almak için Yardım kullanımı bir cmdlet parametreleri hakkında ayrıntılı **parametre** parametresinin `Get-Help` cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="f0999-121">To get detailed Help about the parameters of a cmdlet, use the **Parameter** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="f0999-122">Örneğin, almak için ayrıntılı yardım almak için tüm parametreleri `Get-ChildItem` cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="f0999-122">For example, to get detailed Help for all of the parameters of the `Get-ChildItem` cmdlet, type:</span></span>
+<span data-ttu-id="42970-121">Almak için Yardım kullanımı bir cmdlet parametreleri hakkında ayrıntılı **parametre** parametresinin `Get-Help` cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="42970-121">To get detailed Help about the parameters of a cmdlet, use the **Parameter** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="42970-122">Örneğin, almak için ayrıntılı yardım almak için tüm parametreleri `Get-ChildItem` cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="42970-122">For example, to get detailed Help for all of the parameters of the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem -Parameter *
 ```
 
-<span data-ttu-id="f0999-123">Bir Yardım makalesinde yalnızca örnekleri görüntülemek için kullanın **örnekler** parametresinin `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="f0999-123">To display only the examples in a Help article, use the **Examples** parameter of the `Get-Help`.</span></span>
-<span data-ttu-id="f0999-124">Örneğin, Yardım makalesi için yalnızca örnekleri görüntülemek için `Get-ChildItem `cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="f0999-124">For example, to display only the examples in the Help article for the `Get-ChildItem `cmdlet, type:</span></span>
+<span data-ttu-id="42970-123">Bir Yardım makalesinde yalnızca örnekleri görüntülemek için kullanın **örnekler** parametresinin `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="42970-123">To display only the examples in a Help article, use the **Examples** parameter of the `Get-Help`.</span></span>
+<span data-ttu-id="42970-124">Örneğin, Yardım makalesi için yalnızca örnekleri görüntülemek için `Get-ChildItem` cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="42970-124">For example, to display only the examples in the Help article for the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem -Examples
 ```
 
-<span data-ttu-id="f0999-125">Yazdığınız cmdlet'leri için Yardım makaleleri yazma hakkında daha fazla bilgi için bkz: [yazma Cmdlet Yardım nasıl](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).</span><span class="sxs-lookup"><span data-stu-id="f0999-125">For information about how to write Help articles for the cmdlets that you write, see [How to Write Cmdlet Help](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).</span></span>
+<span data-ttu-id="42970-125">Yazdığınız cmdlet'leri için Yardım makaleleri yazma hakkında daha fazla bilgi için bkz: [yazma Cmdlet Yardım nasıl](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).</span><span class="sxs-lookup"><span data-stu-id="42970-125">For information about how to write Help articles for the cmdlets that you write, see [How to Write Cmdlet Help](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).</span></span>
 
-## <a name="getting-conceptual-help"></a><span data-ttu-id="f0999-126">Kavramsal Yardım alma</span><span class="sxs-lookup"><span data-stu-id="f0999-126">Getting conceptual help</span></span>
+## <a name="getting-conceptual-help"></a><span data-ttu-id="42970-126">Kavramsal Yardım alma</span><span class="sxs-lookup"><span data-stu-id="42970-126">Getting conceptual help</span></span>
 
-<span data-ttu-id="f0999-127">`Get-Help` Cmdlet ayrıca görüntüler kavramsal makaleleri hakkında bilgi PowerShell, PowerShell dilinin hakkında makaleler de dahil olmak üzere.</span><span class="sxs-lookup"><span data-stu-id="f0999-127">The `Get-Help` cmdlet also displays information about conceptual articles in PowerShell, including articles about the PowerShell language.</span></span> <span data-ttu-id="f0999-128">Kavramsal Yardım makaleleri başlamak about_line_editing gibi "about_" ön ekine sahip.</span><span class="sxs-lookup"><span data-stu-id="f0999-128">Conceptual Help articles begin with the "about_" prefix, such as about_line_editing.</span></span> <span data-ttu-id="f0999-129">(Makale adı İngilizce PowerShell bile İngilizce olmayan sürümleri üzerinde girilmesi gerekir.)</span><span class="sxs-lookup"><span data-stu-id="f0999-129">(The name of the conceptual article must be entered in English even on non-English versions of PowerShell.)</span></span>
+<span data-ttu-id="42970-127">`Get-Help` Cmdlet ayrıca görüntüler kavramsal makaleleri hakkında bilgi PowerShell, PowerShell dilinin hakkında makaleler de dahil olmak üzere.</span><span class="sxs-lookup"><span data-stu-id="42970-127">The `Get-Help` cmdlet also displays information about conceptual articles in PowerShell, including articles about the PowerShell language.</span></span> <span data-ttu-id="42970-128">Kavramsal Yardım makaleleri başlamak about_line_editing gibi "about_" ön ekine sahip.</span><span class="sxs-lookup"><span data-stu-id="42970-128">Conceptual Help articles begin with the "about_" prefix, such as about_line_editing.</span></span> <span data-ttu-id="42970-129">(Makale adı İngilizce PowerShell bile İngilizce olmayan sürümleri üzerinde girilmesi gerekir.)</span><span class="sxs-lookup"><span data-stu-id="42970-129">(The name of the conceptual article must be entered in English even on non-English versions of PowerShell.)</span></span>
 
-<span data-ttu-id="f0999-130">Kavramsal makaleleri listesini görüntülemek için şunu yazın:</span><span class="sxs-lookup"><span data-stu-id="f0999-130">To display a list of conceptual articles, type:</span></span>
+<span data-ttu-id="42970-130">Kavramsal makaleleri listesini görüntülemek için şunu yazın:</span><span class="sxs-lookup"><span data-stu-id="42970-130">To display a list of conceptual articles, type:</span></span>
 
 ```powershell
 Get-Help about_*
 ```
 
-<span data-ttu-id="f0999-131">Belirli bir Yardım makalesi görüntülemek için örneğin makale adı yazın:</span><span class="sxs-lookup"><span data-stu-id="f0999-131">To display a particular Help article, type the article name, for example:</span></span>
+<span data-ttu-id="42970-131">Belirli bir Yardım makalesi görüntülemek için örneğin makale adı yazın:</span><span class="sxs-lookup"><span data-stu-id="42970-131">To display a particular Help article, type the article name, for example:</span></span>
 
 ```powershell
 Get-Help about_command_syntax
 ```
 
-<span data-ttu-id="f0999-132">Parametreleri `Get-Help`, gibi **ayrıntılı**, **parametre**, ve **örnekler**, kavramsal Yardım makaleleri görüntülenmesini üzerinde hiçbir etkisi yoktur.</span><span class="sxs-lookup"><span data-stu-id="f0999-132">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of conceptual Help articles.</span></span>
+<span data-ttu-id="42970-132">Parametreleri `Get-Help`, gibi **ayrıntılı**, **parametre**, ve **örnekler**, kavramsal Yardım makaleleri görüntülenmesini üzerinde hiçbir etkisi yoktur.</span><span class="sxs-lookup"><span data-stu-id="42970-132">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of conceptual Help articles.</span></span>
 
-## <a name="getting-help-about-providers"></a><span data-ttu-id="f0999-133">Sağlayıcılar hakkında Yardım alma</span><span class="sxs-lookup"><span data-stu-id="f0999-133">Getting help about providers</span></span>
+## <a name="getting-help-about-providers"></a><span data-ttu-id="42970-133">Sağlayıcılar hakkında Yardım alma</span><span class="sxs-lookup"><span data-stu-id="42970-133">Getting help about providers</span></span>
 
-<span data-ttu-id="f0999-134">`Get-Help` Cmdlet'i, PowerShell sağlayıcıları hakkında daha fazla bilgi görüntüler.</span><span class="sxs-lookup"><span data-stu-id="f0999-134">The `Get-Help` cmdlet displays information about PowerShell providers.</span></span> <span data-ttu-id="f0999-135">Sağlayıcı için Yardım almak için şunu yazın `Get-Help` ardından sağlayıcı adı.</span><span class="sxs-lookup"><span data-stu-id="f0999-135">To get Help for a provider, type `Get-Help` followed by the provider name.</span></span> <span data-ttu-id="f0999-136">Örneğin, kayıt defteri sağlayıcısı için Yardım almak için şunu yazın:</span><span class="sxs-lookup"><span data-stu-id="f0999-136">For example, to get Help for the Registry provider, type:</span></span>
+<span data-ttu-id="42970-134">`Get-Help` Cmdlet'i, PowerShell sağlayıcıları hakkında daha fazla bilgi görüntüler.</span><span class="sxs-lookup"><span data-stu-id="42970-134">The `Get-Help` cmdlet displays information about PowerShell providers.</span></span> <span data-ttu-id="42970-135">Sağlayıcı için Yardım almak için şunu yazın `Get-Help` ardından sağlayıcı adı.</span><span class="sxs-lookup"><span data-stu-id="42970-135">To get Help for a provider, type `Get-Help` followed by the provider name.</span></span> <span data-ttu-id="42970-136">Örneğin, kayıt defteri sağlayıcısı için Yardım almak için şunu yazın:</span><span class="sxs-lookup"><span data-stu-id="42970-136">For example, to get Help for the Registry provider, type:</span></span>
 
 ```powershell
 Get-Help registry
 ```
 
-<span data-ttu-id="f0999-137">Sağlayıcı listesi Yardım makaleleri oturumunuzda almak için yazın</span><span class="sxs-lookup"><span data-stu-id="f0999-137">To get a list of all the provider Help articles in your session, type</span></span>
+<span data-ttu-id="42970-137">Sağlayıcı listesi Yardım makaleleri oturumunuzda almak için yazın</span><span class="sxs-lookup"><span data-stu-id="42970-137">To get a list of all the provider Help articles in your session, type</span></span>
 
 ```powershell
 Get-Help -Category provider
 ```
 
-<span data-ttu-id="f0999-138">Parametreleri `Get-Help`, gibi **ayrıntılı**, **parametre**, ve **örnekler**, sağlayıcı Yardım makaleleri görüntülenmesini üzerinde hiçbir etkisi yoktur.</span><span class="sxs-lookup"><span data-stu-id="f0999-138">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of provider Help articles.</span></span>
+<span data-ttu-id="42970-138">Parametreleri `Get-Help`, gibi **ayrıntılı**, **parametre**, ve **örnekler**, sağlayıcı Yardım makaleleri görüntülenmesini üzerinde hiçbir etkisi yoktur.</span><span class="sxs-lookup"><span data-stu-id="42970-138">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of provider Help articles.</span></span>
 
-## <a name="getting-help-about-scripts-and-functions"></a><span data-ttu-id="f0999-139">Betik ve işlevlerde hakkında Yardım alma</span><span class="sxs-lookup"><span data-stu-id="f0999-139">Getting help about scripts and functions</span></span>
+## <a name="getting-help-about-scripts-and-functions"></a><span data-ttu-id="42970-139">Betik ve işlevlerde hakkında Yardım alma</span><span class="sxs-lookup"><span data-stu-id="42970-139">Getting help about scripts and functions</span></span>
 
-<span data-ttu-id="f0999-140">Birçok betik ve işlevlerde PowerShell'de Yardım makaleleri sahip.</span><span class="sxs-lookup"><span data-stu-id="f0999-140">Many scripts and functions in PowerShell have Help articles.</span></span> <span data-ttu-id="f0999-141">Kullanım `Get-Help` betik ve işlevlerde kullanılan Yardım makaleleri görüntülemek için cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="f0999-141">Use the `Get-Help` cmdlet to display the Help articles for scripts and functions.</span></span>
+<span data-ttu-id="42970-140">Birçok betik ve işlevlerde PowerShell'de Yardım makaleleri sahip.</span><span class="sxs-lookup"><span data-stu-id="42970-140">Many scripts and functions in PowerShell have Help articles.</span></span> <span data-ttu-id="42970-141">Kullanım `Get-Help` betik ve işlevlerde kullanılan Yardım makaleleri görüntülemek için cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="42970-141">Use the `Get-Help` cmdlet to display the Help articles for scripts and functions.</span></span>
 
-<span data-ttu-id="f0999-142">Bir işlev için Yardım görüntülemek üzere şunu yazın `Get-Help` ardından işlevi adı.</span><span class="sxs-lookup"><span data-stu-id="f0999-142">To display the Help for a function, type `Get-Help` followed by the function name.</span></span> <span data-ttu-id="f0999-143">Örneğin, Yardım almak için `Disable-PSRemoting` işlev, yazın:</span><span class="sxs-lookup"><span data-stu-id="f0999-143">For example, to get Help for the `Disable-PSRemoting` function, type:</span></span>
+<span data-ttu-id="42970-142">Bir işlev için Yardım görüntülemek üzere şunu yazın `Get-Help` ardından işlevi adı.</span><span class="sxs-lookup"><span data-stu-id="42970-142">To display the Help for a function, type `Get-Help` followed by the function name.</span></span> <span data-ttu-id="42970-143">Örneğin, Yardım almak için `Disable-PSRemoting` işlev, yazın:</span><span class="sxs-lookup"><span data-stu-id="42970-143">For example, to get Help for the `Disable-PSRemoting` function, type:</span></span>
 
 ```powershell
 Get-Help Disable-PSRemoting
 ```
 
-<span data-ttu-id="f0999-144">Bir komut için Yardım görüntülemek için betik dosyasının yolunu yazın.</span><span class="sxs-lookup"><span data-stu-id="f0999-144">To display the Help for a script, type the path to the script file.</span></span> <span data-ttu-id="f0999-145">Betiği, Path ortam değişkeninde listelenen bir yol değil, tam yolu kullanmanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="f0999-145">If the script is not in a path listed in the Path environment variable, you must use the fully qualified path.</span></span>
+<span data-ttu-id="42970-144">Bir komut için Yardım görüntülemek için betik dosyasının yolunu yazın.</span><span class="sxs-lookup"><span data-stu-id="42970-144">To display the Help for a script, type the path to the script file.</span></span> <span data-ttu-id="42970-145">Betiği, Path ortam değişkeninde listelenen bir yol değil, tam yolu kullanmanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="42970-145">If the script is not in a path listed in the Path environment variable, you must use the fully qualified path.</span></span>
 
-<span data-ttu-id="f0999-146">Örneğin, C: "TestScript.ps1" adlı bir komut dosyası varsa\\Yardım makalesi betik, tür için görüntülenecek PS Test dizini:</span><span class="sxs-lookup"><span data-stu-id="f0999-146">For example, if you have a script called "TestScript.ps1" in your C:\\PS-Test directory, to display the Help article for the script, type:</span></span>
+<span data-ttu-id="42970-146">Örneğin, C: "TestScript.ps1" adlı bir komut dosyası varsa\\Yardım makalesi betik, tür için görüntülenecek PS Test dizini:</span><span class="sxs-lookup"><span data-stu-id="42970-146">For example, if you have a script called "TestScript.ps1" in your C:\\PS-Test directory, to display the Help article for the script, type:</span></span>
 
 ```powershell
 Get-Help c:\ps-test\TestScript.ps1
 ```
 
-<span data-ttu-id="f0999-147">Betik ve işlevi için cmdlet Yardım iş görüntülemek için tasarlanmış parametreleri, çok yardımcı olur.</span><span class="sxs-lookup"><span data-stu-id="f0999-147">The parameters that are designed for displaying cmdlet Help work for script and function Help, too.</span></span> <span data-ttu-id="f0999-148">Programını çalıştırdığınızda işlev ve betik Yardımı ancak gösterilmez `Get-Help *`.</span><span class="sxs-lookup"><span data-stu-id="f0999-148">However, help for functions and scripts is not shown when you run `Get-Help *`.</span></span>
+<span data-ttu-id="42970-147">Betik ve işlevi için cmdlet Yardım iş görüntülemek için tasarlanmış parametreleri, çok yardımcı olur.</span><span class="sxs-lookup"><span data-stu-id="42970-147">The parameters that are designed for displaying cmdlet Help work for script and function Help, too.</span></span> <span data-ttu-id="42970-148">Programını çalıştırdığınızda işlev ve betik Yardımı ancak gösterilmez `Get-Help *`.</span><span class="sxs-lookup"><span data-stu-id="42970-148">However, help for functions and scripts is not shown when you run `Get-Help *`.</span></span>
 
-<span data-ttu-id="f0999-149">Yardım makaleleri işlev ve betik yazma hakkında daha fazla bilgi için aşağıdaki makalelere bakın:</span><span class="sxs-lookup"><span data-stu-id="f0999-149">For information about writing Help articles for your functions and scripts, see the following articles:</span></span>
+<span data-ttu-id="42970-149">Yardım makaleleri işlev ve betik yazma hakkında daha fazla bilgi için aşağıdaki makalelere bakın:</span><span class="sxs-lookup"><span data-stu-id="42970-149">For information about writing Help articles for your functions and scripts, see the following articles:</span></span>
 
-- [<span data-ttu-id="f0999-150">about_Functions</span><span class="sxs-lookup"><span data-stu-id="f0999-150">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
-- [<span data-ttu-id="f0999-151">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="f0999-151">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
-- [<span data-ttu-id="f0999-152">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="f0999-152">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [<span data-ttu-id="42970-150">about_Functions</span><span class="sxs-lookup"><span data-stu-id="42970-150">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [<span data-ttu-id="42970-151">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="42970-151">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [<span data-ttu-id="42970-152">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="42970-152">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
 
-## <a name="getting-help-online"></a><span data-ttu-id="f0999-153">Çevrimiçi Yardım alma</span><span class="sxs-lookup"><span data-stu-id="f0999-153">Getting help online</span></span>
+## <a name="getting-help-online"></a><span data-ttu-id="42970-153">Çevrimiçi Yardım alma</span><span class="sxs-lookup"><span data-stu-id="42970-153">Getting help online</span></span>
 
-<span data-ttu-id="f0999-154">Çevrimiçi Yardım makaleleri görüntüleme konusunda yardım almak için en iyi yollarından biridir.</span><span class="sxs-lookup"><span data-stu-id="f0999-154">Viewing the Help articles online is one of the best ways to get help.</span></span> <span data-ttu-id="f0999-155">Çevrimiçi makaleler, güncelleştirmek ve en güncel içeriği sağlamak daha kolay.</span><span class="sxs-lookup"><span data-stu-id="f0999-155">Online articles are easier to update and provide the most current content.</span></span>
+<span data-ttu-id="42970-154">Çevrimiçi Yardım makaleleri görüntüleme konusunda yardım almak için en iyi yollarından biridir.</span><span class="sxs-lookup"><span data-stu-id="42970-154">Viewing the Help articles online is one of the best ways to get help.</span></span> <span data-ttu-id="42970-155">Çevrimiçi makaleler, güncelleştirmek ve en güncel içeriği sağlamak daha kolay.</span><span class="sxs-lookup"><span data-stu-id="42970-155">Online articles are easier to update and provide the most current content.</span></span>
 
-<span data-ttu-id="f0999-156">Çevrimiçi Yardım almak için kullanın **çevrimiçi** parametresinin `Get-Help` cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="f0999-156">To get Help online, use the **Online** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="f0999-157">Sağlayıcı Yardım dahil olmak üzere PowerShell ile gelen tüm Yardım makaleleri ve kavramsal (hakkında) Yardım makaleleri çevrimiçi kullanılabilir [PowerShell](/powershell/scripting/powershell-scripting) belgeleri.</span><span class="sxs-lookup"><span data-stu-id="f0999-157">All the Help articles that come with PowerShell, including provider Help and conceptual (About) Help articles, are available online in the [PowerShell](/powershell/scripting/powershell-scripting) documentation.</span></span>
+<span data-ttu-id="42970-156">Çevrimiçi Yardım almak için kullanın **çevrimiçi** parametresinin `Get-Help` cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="42970-156">To get Help online, use the **Online** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="42970-157">Sağlayıcı Yardım dahil olmak üzere PowerShell ile gelen tüm Yardım makaleleri ve kavramsal (hakkında) Yardım makaleleri çevrimiçi kullanılabilir [PowerShell](/powershell/scripting/powershell-scripting) belgeleri.</span><span class="sxs-lookup"><span data-stu-id="42970-157">All the Help articles that come with PowerShell, including provider Help and conceptual (About) Help articles, are available online in the [PowerShell](/powershell/scripting/powershell-scripting) documentation.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f0999-158">Kullanamazsınız **çevrimiçi** kavramsal parametresiyle (about_\*) ya da sağlayıcı Yardım makaleleri.</span><span class="sxs-lookup"><span data-stu-id="f0999-158">You can't use the **Online** parameter with conceptual (about_\*) or provider Help articles.</span></span>
-> <span data-ttu-id="f0999-159">Çevrimiçi Yardım, isteğe bağlı olduğundan her cmdlet, işlev veya betiği için çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="f0999-159">Online help is optional, so it does not work for every cmdlet, function, or script.</span></span>
+> <span data-ttu-id="42970-158">Kullanamazsınız **çevrimiçi** kavramsal parametresiyle (about_\*) ya da sağlayıcı Yardım makaleleri.</span><span class="sxs-lookup"><span data-stu-id="42970-158">You can't use the **Online** parameter with conceptual (about_\*) or provider Help articles.</span></span>
+> <span data-ttu-id="42970-159">Çevrimiçi Yardım, isteğe bağlı olduğundan her cmdlet, işlev veya betiği için çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="42970-159">Online help is optional, so it does not work for every cmdlet, function, or script.</span></span>
 
-<span data-ttu-id="f0999-160">Örneğin, hakkında Yardım makalesi'nın çevrimiçi sürümünü almak için `Get-ChildItem` cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="f0999-160">For example, to get the online version of the Help article about the `Get-ChildItem` cmdlet, type:</span></span>
+<span data-ttu-id="42970-160">Örneğin, hakkında Yardım makalesi'nın çevrimiçi sürümünü almak için `Get-ChildItem` cmdlet'i, türü:</span><span class="sxs-lookup"><span data-stu-id="42970-160">For example, to get the online version of the Help article about the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem -Online
 ```
 
-<span data-ttu-id="f0999-161">Makalede, PowerShell varsayılan tarayıcınızda açılır.</span><span class="sxs-lookup"><span data-stu-id="f0999-161">PowerShell opens the article in your default browser.</span></span> <span data-ttu-id="f0999-162">Çevrimiçi Yardım için Yardım makalesine destekleniyorsa, Yardım makalesi URL'sini de görüntüleyebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f0999-162">If online Help is supported for a Help article, you can also view the URL of the Help article.</span></span> <span data-ttu-id="f0999-163">URL, bir Yardım makalesinin ilgili bağlantılar bölümünde görüntülenir.</span><span class="sxs-lookup"><span data-stu-id="f0999-163">The URL appears in the Related Links section of a Help article.</span></span>
+<span data-ttu-id="42970-161">Makalede, PowerShell varsayılan tarayıcınızda açılır.</span><span class="sxs-lookup"><span data-stu-id="42970-161">PowerShell opens the article in your default browser.</span></span> <span data-ttu-id="42970-162">Çevrimiçi Yardım için Yardım makalesine destekleniyorsa, Yardım makalesi URL'sini de görüntüleyebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="42970-162">If online Help is supported for a Help article, you can also view the URL of the Help article.</span></span> <span data-ttu-id="42970-163">URL, bir Yardım makalesinin ilgili bağlantılar bölümünde görüntülenir.</span><span class="sxs-lookup"><span data-stu-id="42970-163">The URL appears in the Related Links section of a Help article.</span></span>
 
-<span data-ttu-id="f0999-164">Örneğin, Add-Computer cmdlet'ın çevrimiçi sürümünü URL'sini görmek için aşağıdakileri yazın:</span><span class="sxs-lookup"><span data-stu-id="f0999-164">For example, to see the URL for the online version of the Add-Computer cmdlet, type:</span></span>
+<span data-ttu-id="42970-164">Örneğin, Add-Computer cmdlet'ın çevrimiçi sürümünü URL'sini görmek için aşağıdakileri yazın:</span><span class="sxs-lookup"><span data-stu-id="42970-164">For example, to see the URL for the online version of the Add-Computer cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Add-Computer
 ```
 
-<span data-ttu-id="f0999-165">Makalenin ilgili bağlantılar bölümüne ilk satırı aşağıda gösterilmiştir.</span><span class="sxs-lookup"><span data-stu-id="f0999-165">The first line in the Related Links section of the article is shown below.</span></span>
+<span data-ttu-id="42970-165">Makalenin ilgili bağlantılar bölümüne ilk satırı aşağıda gösterilmiştir.</span><span class="sxs-lookup"><span data-stu-id="42970-165">The first line in the Related Links section of the article is shown below.</span></span>
 
 ```Output
 Online version: http://go.microsoft.com/fwlink/?LinkId=821564
 ```
 
-<span data-ttu-id="f0999-166">Çevrimiçi destek için Yardım makaleleriniz sağlama hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="f0999-166">For information about how to provide online support for your Help articles, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
+<span data-ttu-id="42970-166">Çevrimiçi destek için Yardım makaleleriniz sağlama hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="42970-166">For information about how to provide online support for your Help articles, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="f0999-167">Ayrıca bkz.</span><span class="sxs-lookup"><span data-stu-id="f0999-167">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="42970-167">Ayrıca bkz.</span><span class="sxs-lookup"><span data-stu-id="42970-167">See also</span></span>
 
-- [<span data-ttu-id="f0999-168">about_Functions</span><span class="sxs-lookup"><span data-stu-id="f0999-168">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
-- [<span data-ttu-id="f0999-169">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="f0999-169">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
-- [<span data-ttu-id="f0999-170">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="f0999-170">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
-- [<span data-ttu-id="f0999-171">Get-Help</span><span class="sxs-lookup"><span data-stu-id="f0999-171">Get-Help</span></span>](/powershell/module/microsoft.powershell.core/get-help)
+- [<span data-ttu-id="42970-168">about_Functions</span><span class="sxs-lookup"><span data-stu-id="42970-168">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [<span data-ttu-id="42970-169">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="42970-169">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [<span data-ttu-id="42970-170">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="42970-170">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [<span data-ttu-id="42970-171">Get-Help</span><span class="sxs-lookup"><span data-stu-id="42970-171">Get-Help</span></span>](/powershell/module/microsoft.powershell.core/get-help)
