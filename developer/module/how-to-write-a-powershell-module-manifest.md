@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: 67e041756974dcd84e15cdb4edaf91be45122e28
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849059"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059499"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>PowerShell Modül Bildirimi Yazma
 
@@ -77,7 +77,7 @@ Aşağıdaki tabloda, modül bildiriminde olabilir öğeleri açıklar.
 |PowerShellVersion<br /><br /> Türü: dize|' '|Bu modülü tarafından gerekli Windows PowerShell altyapısının en düşük sürüm. Geçerli geçerli değerler 1.0, 2.0, 3.0, 4.0 ve 5.0:.<br /><br /> Örnek: `PowerShellVersion = '5.0'`|
 |PowerShellHostName<br /><br /> Türü: dize|' '|Modül tarafından gerekli Windows PowerShell ana bilgisayar adını belirtir. Bu ad, Windows PowerShell tarafından sağlanır. Programda bir ana bilgisayar programı adını bulmak için şunu yazın: `$host.name` .<br /><br /> Örnek: `PowerShellHostName = 'Windows PowerShell ISE Host'`|
 |PowerShellHostVersion<br /><br /> Türü: dize|' '|Bu modülü tarafından gerekli Windows PowerShell ana bilgisayar en düşük sürümü.<br /><br /> Örnek: `PowerShellHostVersion = '2.0'`|
-|DotNetFrameworkVersion<br /><br /> Türü: dize|' '|Microsoft .NET Framework'ün bu modülün gerekli en düşük sürümü.<br /><br /> Örnek: `DotNetFrameorkVersion = '3.5'`|
+|DotNetFrameworkVersion<br /><br /> Türü: dize|' '|Microsoft .NET Framework'ün bu modülün gerekli en düşük sürümü.<br /><br /> Örnek: `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> Türü: dize|' '|Bu modülü tarafından gereken ortak dil çalışma zamanı (CLR) minimum sürümü.<br /><br /> Örnek: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> Türü: dize|' '|Bu modülü tarafından gerekli İşlemci mimarisi (hiçbiri, X86, Amd64). Geçerli değerler x86, AMD64, IA64 işlemeyen (Bilinmeyen ya da belirtilmemiş).<br /><br /> Örnek: `ProcessorArchitecture = 'x86'`|
 |RequiredModules<br /><br /> Türü: [string []]|@()|Bu modül içeri aktarmadan önce genel ortam aktarılmalıdır modüller. Bu, bunlar zaten yüklü sürece listelenen tüm modülleri yükler. (Örneğin, bazı modüller zaten farklı bir modül tarafından yüklenmemiş olabilir.). Kullanarak yüklemek için belirli bir sürümünü belirtmek mümkündür `RequiredVersion` yerine `ModuleVersion`. Kullanırken `ModuleVersion` en az belirtilen sürümü ile kullanılabilir en yeni sürümü yükler.<br /><br /> Örnek: `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Örnek: `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|

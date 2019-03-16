@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
-ms.openlocfilehash: 15f47c97ac5d55cb76e153af86672b3ffaf176c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848632"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057884"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader Öğesi (Biçim)
 
@@ -45,7 +45,7 @@ Yok.
 |-------------|-----------------|
 |[TableControl (biçimi) için TableColumnHeader için etiket öğesi](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Sütun üst kısmında görüntülenen etiketi tanımlar. Hiçbir etiket belirtilirse, değeri satırlarda gösterilen özelliğin adı kullanılır.|
 |[TableControl (biçimi) için TableColumnHeader için genişliği öğesi](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Gerekli öğe.<br /><br /> Sütun genişliğini (karakter cinsinden) belirtir.|
-|[TableControl (biçimi) için TableColumbnHeader için hizalama öğesi](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Sütunun etiketi nasıl görüntüleneceğini belirtir. Hizalama yok belirtilirse, etiket sol tarafta hizalanır.|
+|[TableControl (biçimi) için TableColumnHeader için hizalama öğesi](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Sütunun etiketi nasıl görüntüleneceğini belirtir. Hizalama yok belirtilirse, etiket sol tarafta hizalanır.|
 
 ### <a name="parent-elements"></a>Üst Öğeler
 
@@ -82,7 +82,7 @@ Aşağıdaki örnek iki gösterir `TableColumnHeader` öğeleri. İlk öğe etik
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[Hizalama öğesi için TableColumnHeader TableContrl (biçimi) için](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[TableControl (biçimi) için TableColumnHeader için hizalama öğesi](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [Bir tablo görünümü oluşturma](./creating-a-table-view.md)
 

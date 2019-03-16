@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30abae8f-c7f7-479d-ad85-19e07ddef204
 caps.latest.revision: 10
-ms.openlocfilehash: e930e4422afd203feda6a389655ff8a355e3bec0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 81eca4f66f0057074612f2d60482b45adc36357b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848681"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059227"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>Yapılandırma Denetimleri için CustomEntry EntrySelectedBy Öğesi (Biçim)
 
@@ -65,6 +65,6 @@ En azından her tanımı en az bir .NET türü, seçim kümesi veya belirtilen s
 
 [Yapılandırma (biçimi) için denetimler için özel denetim için CustomEntry öğesi](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
 
-[TypeName öğesi EntrySelectdBy yapılandırması (biçimi) için denetimleri için](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
+[TypeName öğesi EntrySelectedBy yapılandırması (biçimi) için denetimleri için](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
 [Dosya biçimlendirme bir PowerShell yazma](./writing-a-powershell-formatting-file.md)

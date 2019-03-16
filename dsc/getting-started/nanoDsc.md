@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Nano Server’da DSC Kullanma
-ms.openlocfilehash: fd81fe56d16100f45d9ee2dfd8fdc303c2a6c17a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686589"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054671"
 ---
 # <a name="using-dsc-on-nano-server"></a>Nano Server’da DSC Kullanma
 
@@ -38,7 +38,7 @@ Hem İtme hem de çekme modu
 - [Stop-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration)
 - [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration)
 - [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
-- [Yayımlama DscConfiguraiton](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
+- [Yayımlama-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
 - [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration)
 - [Geri yükleme-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Restore-DscConfiguration)
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
@@ -85,8 +85,8 @@ Hem İtme hem de çekme modu
 - **Dosya**
 - **Günlük**
 - **ProcessSet**
-- **kayıt defteri**
-- **Komut dosyası**
+- **Kayıt defteri**
+- **Komut Dosyası**
 - **WindowsPackageCab**
 - **WindowsProcess**
 - **WaitForAll** (bkz [çapraz düğüm bağımlılıklarını belirtme](../configurations/crossNodeDependencies.md))

@@ -11,19 +11,19 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 3e410087438ac99526049f99e5c768c017a29848
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3168275423dc65fcb2e41dedd9bea275ede58397
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845727"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055096"
 ---
 # <a name="cmdlet-class-declaration"></a>Cmdlet Sınıf Bildirimi
 
 Microsoft .NET Framework sınıf belirterek bir cmdlet bildirilen **cmdlet'i** öznitelik olarak meta veri sınıfı. ( **Cmdlet'i** tüm cmdlet'ler için tek gereken özniteliği bir özniteliktir). Belirttiğinizde **cmdlet'i** özniteliği, kullanıcı cmdlet'e tanımlayan fiil-isim çift belirtmeniz gerekir. Ayrıca, cmdlet destekleyen Windows PowerShell işlevler açıklamanız gerekir. Belirtmek için kullanılan bildirim sözdizimi hakkında daha fazla bilgi için **cmdlet'i** özniteliği için bkz: [cmdlet'i özniteliği bildirimi](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
-> **Cmdlet'i** özniteliği tarafından tanımlanan [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) sınıfı. Bu sınıf özelliklerini öznitelik bildirdiğinizde, kullanılan bildirim parametrelere karşılık gelir.
+> **Cmdlet'i** özniteliği tarafından tanımlanan [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) sınıfı. Bu sınıf özelliklerini öznitelik bildirdiğinizde, kullanılan bildirim parametrelere karşılık gelir.
 
 ## <a name="nouns"></a>Adlar
 
@@ -57,7 +57,7 @@ Cmdlet adı Pascal kullanarak büyük/küçük harf. Örneğin, `Get-Item` ve `G
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
+[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
 
 [CmdletAttribute bildirimi](./cmdlet-attribute-declaration.md)
 

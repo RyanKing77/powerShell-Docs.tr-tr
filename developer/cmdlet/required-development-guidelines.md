@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: a4b228be91bba27670b26fe21e765ae942afe968
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850116"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056524"
 ---
 # <a name="required-development-guidelines"></a>Gerekli Geliştirme Yönergeleri
 
@@ -107,7 +107,7 @@ Cmdlet adı, şu özel karakterlerden hiçbirini kullanmayın.
 |%|Yüzde işareti|
 |+|Artı işareti|
 |=|Eşittir işareti|
-|~|tilda|
+|~|Tilde|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>Kullanılamaz parametre adları (RD03)
 
@@ -122,9 +122,9 @@ Cmdlet'i ayarlayarak doğrulama isteklerini desteklediğini belirtmeniz gerekir,
 > [!NOTE]
 > Cmdlet'i sınıf cmdlet'i öznitelik cmdlet çağrıları desteklediğini gösteriyorsa [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi ve cmdlet başarısız çağrı yapmak [ System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi, kullanıcının sistem beklenmedik bir şekilde değiştirebilir.
 
-Kullanım [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) tüm sistem değiştirilmesi için yöntemi. Kullanıcı tercihi ve `Whatif` parametre denetimi [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi. Buna karşılık, [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) çağrısı için potansiyel olarak tehlikeli olabilecek değişiklikleri ek bir denetim gerçekleştirir. Bu yöntem herhangi bir kullanıcı tercihi tarafından denetlenen veya `Whatif` parametresi. Cmdlet'inize çağırırsa [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi içermelidir bir `Force` parametresi, bu iki yöntem çağrıları atlar ve işleme devam eder. Etkileşimli olmayan betikleri ve konaklar kullanılacak cmdlet'inize izin verdiğinden, bu önemlidir.
+Kullanım [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) tüm sistem değiştirilmesi için yöntemi. Kullanıcı tercihi ve `WhatIf` parametre denetimi [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi. Buna karşılık, [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) çağrısı için potansiyel olarak tehlikeli olabilecek değişiklikleri ek bir denetim gerçekleştirir. Bu yöntem herhangi bir kullanıcı tercihi tarafından denetlenen veya `WhatIf` parametresi. Cmdlet'inize çağırırsa [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi içermelidir bir `Force` parametresi, bu iki yöntem çağrıları atlar ve işleme devam eder. Etkileşimli olmayan betikleri ve konaklar kullanılacak cmdlet'inize izin verdiğinden, bu önemlidir.
 
-Bu çağrılar cmdlet'lerinizi destekliyorsa, kullanıcı eylemi gerçekten gerçekleştirilmesi gerekip gerekmediğini belirleyebilirsiniz. Örneğin, [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) cmdlet'i çağrıları [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Winlogon, sistemi dahil olmak üzere kritik işlemler kümesini durdurulmadan önce yöntemi ve Spoolsrv işlemleri.
+Bu çağrılar cmdlet'lerinizi destekliyorsa, kullanıcı eylemi gerçekten gerçekleştirilmesi gerekip gerekmediğini belirleyebilirsiniz. Örneğin, [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) cmdlet'i çağrıları [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Winlogon, sistemi dahil olmak üzere kritik işlemler kümesini durdurulmadan önce yöntemi ve Spoolsv işlemleri.
 
 Bu yöntemler destekleme hakkında daha fazla bilgi için bkz. [onay isteme](./requesting-confirmation-from-cmdlets.md).
 

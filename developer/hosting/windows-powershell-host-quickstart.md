@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
-ms.openlocfilehash: 2c6a4bca03ee7f62371cbc296f854464167e5a62
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cc014487a680747ad59437052f79d4576154a1cb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847792"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059686"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Windows PowerShell Konağı Hızlı Başlangıç
 
@@ -112,7 +112,7 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 
 ### <a name="creating-an-initialsessionstate-object"></a>InitialSessionState nesne oluşturma
 
-Özel bir çalışma alanı oluşturmak için önce oluşturmanız gerekir bir [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne. Aşağıdaki örnekte [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) varsayılan oluşturduktan sonra bir ruspace oluşturmak için [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne.
+Özel bir çalışma alanı oluşturmak için önce oluşturmanız gerekir bir [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne. Aşağıdaki örnekte [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) varsayılan oluşturduktan sonra bir çalışma alanı oluşturmak için [System.Management.Automation.Runspaces.InitialSessionState ](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne.
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
@@ -126,7 +126,7 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>Çalışma alanı sınırlama
 
-Önceki örnekte, oluşturduğumuz bir varsayılan [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) tüm yerleşik Windows PowerShell çekirdek yükleyen bir nesne. Biz de aradınız [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) yöntemi yalnızca Mirosoft.PowerShell.Core komutlar yüklenir InitialSessionState nesneyi oluşturmak için ek bileşeni. Daha kısıtlı bir çalışma alanı oluşturmak için boş bir oluşturma [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) çağırarak [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) yöntemi ve komutları için InitialSessionState ekleyin.
+Önceki örnekte, oluşturduğumuz bir varsayılan [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) tüm yerleşik Windows PowerShell çekirdek yükleyen bir nesne. Biz de aradınız [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) yöntemi yalnızca Microsoft.PowerShell.Core komutlar yüklenir InitialSessionState nesneyi oluşturmak için ek bileşeni. Daha kısıtlı bir çalışma alanı oluşturmak için boş bir oluşturma [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) çağırarak [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) yöntemi ve komutları için InitialSessionState ekleyin.
 
 Belirttiğiniz komutları yükleyen bir çalışma alanı kullanarak önemli ölçüde iyileştirilmiş performans sağlar.
 

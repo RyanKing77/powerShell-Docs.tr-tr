@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
 title: windows powershell web erişimi yükleme ve kullanma
-ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683831"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056728"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi Yükleme ve Kullanma
 
@@ -97,7 +97,7 @@ Ya da Windows PowerShell cmdlet'lerini kullanarak veya Ekle roller ve Özellikle
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
    > [!NOTE]
-   > Windows PowerShell cmdlet'lerini kullanarak Windows PowerShell Web erişimi yükleme, Web sunucusu (IIS) yönetim araçları varsayılan olarak eklemez. Yönetim Araçları Windows PowerShell Web erişimi ağ geçidiyle aynı sunucuya yüklemek istiyorsanız, ekleme `-IncludeManagementTools` (Bu adımda anlatıldığı gibi) yükleme komutuna parametre. Windows PowerShell Web Erişimi Web sitesini uzak bir bilgisayardan yönetiyorsanız, IIS Yöneticisi ek bileşenini yükleyerek yüklemenizi [uzak sunucu yönetim Toolsfor Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) veya [uzak sunucu yönetim Windows 8 için Araçlar](https://www.microsoft.com/en-us/download/details.aspx?id=28972) tarafından geçidini yönetmek istediğiniz bilgisayarda.
+   > Windows PowerShell cmdlet'lerini kullanarak Windows PowerShell Web erişimi yükleme, Web sunucusu (IIS) yönetim araçları varsayılan olarak eklemez. Yönetim Araçları Windows PowerShell Web erişimi ağ geçidiyle aynı sunucuya yüklemek istiyorsanız, ekleme `-IncludeManagementTools` (Bu adımda anlatıldığı gibi) yükleme komutuna parametre. Windows PowerShell Web Erişimi Web sitesini uzak bir bilgisayardan yönetiyorsanız, IIS Yöneticisi ek bileşenini yükleyerek yüklemenizi [uzak sunucu yönetim araçları için Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) veya [uzak sunucu yönetim Windows 8 için Araçlar](https://www.microsoft.com/en-us/download/details.aspx?id=28972) tarafından geçidini yönetmek istediğiniz bilgisayarda.
 
    Çevrimdışı bir VHD’ye rol ve özellikler yüklemek için hem `-ComputerName` parametresini hem de `-VHD` parametresini eklemeniz gerekir. `-ComputerName` parametresi, VHD’nin bağlanacağı sunucunun adını içerir ve `-VHD` parametresi de belirtilen sunucuda VHD dosyasının yolunu içerir.
 
@@ -178,7 +178,7 @@ Varsayılan olarak, cmdlet web uygulaması yükler **pswa** (ve ona ait bir uygu
 7. İçinde **Site bağlaması Ekle** iletişim kutusundaki **türü** alanın, Seç **https**.
 
 8. İçinde **SSL sertifikası** alanında, aşağı açılan menüden imzalı sertifikanızı seçin.
-   **Tamam**’a tıklayın. Bkz: [IIS Yöneticisi'nde bir SSL sertifikası yapılandırma](#to-configure-an-ssl-certificate-in-iis-Manager) bir sertifikanın nasıl alınacağı hakkında daha fazla bilgi için bu konuda.
+   **Tamam**’a tıklayın. Bkz: [IIS Yöneticisi'nde bir SSL sertifikası yapılandırma](#to-configure-an-ssl-certificate-in-iis-manager) bir sertifikanın nasıl alınacağı hakkında daha fazla bilgi için bu konuda.
 
    Windows PowerShell Web erişimi web uygulaması, imzalanmış bir SSL sertifikası kullanmak üzere yapılandırılmıştır.
 
@@ -232,7 +232,7 @@ Windows PowerShell Web erişimi yüklendikten sonra IIS Yöneticisi'nde ağ geç
 
 2. Üzerinde **Yönet** menüsünü tıklatın **rol ve Özellik Ekle**.
 
-3. Üzerinde **yükleme türünü seçin** sayfasında **rol tabanlı veya özellik tabanlı yükleme**.
+3. **Yükleme türünü seçin** sayfasında **Rol tabanlı veya özellik tabanlı yükleme**’yi seçin.
    **İleri**’ye tıklayın.
 
 4. Üzerinde **hedef sunucuyu seçin** sayfasında, sunucu havuzundan bir sunucu seçin ya da çevrimdışı bir VHD seçin. Çevrimdışı bir VHD’yi hedef sunucunuz olarak seçmek için önce VHD’nin bağlanacağı sunucuyu ve sonra VHD dosyasını seçin. Sunucuları sunucu havuzunuza ekleme hakkında daha fazla bilgi için Sunucu Yöneticisi Yardım'a bakın. Hedef sunucuyu seçtikten sonra tıklayın **sonraki**.
@@ -273,7 +273,7 @@ Bu bölümdeki yönergeler, Windows PowerShell Web erişimi web uygulamasını y
 
 8. İçinde **fiziksel yolu** alan, için uygulamanın konumuna göz atın. Varsayılan konumu kullanabileceğiniz `$env:windir/Web/PowerShellWebAccess/wwwroot`. **Tamam**’a tıklayın.
 
-9. Yordamdaki adımları [IIS Yöneticisi'nde bir SSL sertifikası yapılandırma](#to-configure-an-ssl-certificate-in-iis-Manager) bu konuda.
+9. Yordamdaki adımları [IIS Yöneticisi'nde bir SSL sertifikası yapılandırma](#to-configure-an-ssl-certificate-in-iis-manager) bu konuda.
 
 10. ![](images/SecurityNote.jpeg) İsteğe bağlı güvenlik adımı:
 
@@ -329,7 +329,7 @@ Bu bölümdeki yönergeler, Windows PowerShell Web erişimi web uygulamasını y
 
 1. İsteğe bağlı olarak, kuruluşunuz için gerekirse, kuruluş ve kullanıcılar gibi anlamlı bir konak adı belirtin **`www.contoso.com`**. **Tamam**’a tıklayın.
 
-1. Daha güvenli bir üretim ortamı için CA tarafından imzalanmış geçerli bir sertifikanın belirtilmesi önerilir. Kullanıcılar yalnızca Windows PowerShell Web erişimi için bir HTTPS Web sitesi kurabildiğinden bir SSL sertifikası sağlamanız gerekir. Bkz: [IIS Yöneticisi'nde bir SSL sertifikası yapılandırma](#to-configure-an-ssl-certificate-in-iis-Manager) bir sertifikanın nasıl alınacağı hakkında daha fazla bilgi için bu konuda.
+1. Daha güvenli bir üretim ortamı için CA tarafından imzalanmış geçerli bir sertifikanın belirtilmesi önerilir. Kullanıcılar yalnızca Windows PowerShell Web erişimi için bir HTTPS Web sitesi kurabildiğinden bir SSL sertifikası sağlamanız gerekir. Bkz: [IIS Yöneticisi'nde bir SSL sertifikası yapılandırma](#to-configure-an-ssl-certificate-in-iis-manager) bir sertifikanın nasıl alınacağı hakkında daha fazla bilgi için bu konuda.
 
 1. Tıklayın **Tamam** kapatmak için **Web sitesi Ekle** iletişim kutusu.
 

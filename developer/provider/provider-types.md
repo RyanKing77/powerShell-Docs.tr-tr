@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
-ms.openlocfilehash: 25b604621c90f1aa88bc1eea365e47db66e98c3d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 37689571eb1650e5991af2e7002cd037ae99dd68
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848499"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057969"
 ---
 # <a name="provider-types"></a>Sağlayıcı türleri
 
@@ -65,7 +65,7 @@ Kapsayıcı etkin sağlayıcılar kapsayıcılardır öğelerini yönetmek verin
 
 [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) sınıfı belirli sağlayıcısı cmdlet'leri uygulamak için aşağıdaki yöntemleri tanımlar. Çoğu durumda, bir sağlayıcı cmdlet desteklemek için cmdlet'i gibi çağırmak için Windows PowerShell altyapısı çağıran yöntemin üzerine gerekir `CopyItem` yöntemi `Copy-Item` cmdlet'i ve isteğe bağlı olarak gibiikincibiryöntemüzerineyazabilirsiniz`CopyItemDynamicParameters`, cmdlet'e dinamik parametreler ekleme.
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) ve [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) definovat metody sağlayıcınız nasıl desteklediğini `Copy-Item` sağlayıcısı cmdlet'i. Bu cmdlet, öğeyi bir konumdan diğerine kopyalamak kullanıcının sağlar.
+- [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) ve [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) definovat metody sağlayıcınız nasıl desteklediğini `Copy-Item` sağlayıcısı cmdlet'i. Bu cmdlet, öğeyi bir konumdan diğerine kopyalamak kullanıcının sağlar.
 
 - [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) ve [System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) definovat metody sağlayıcınız nasıl desteklediğini `Get-ChildItem` sağlayıcısı cmdlet'i. Bu cmdlet, üst öğenin alt öğeleri almak kullanıcının sağlar.
 

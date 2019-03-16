@@ -2,19 +2,21 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell 5.0 yenilikler
-ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
-ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
+ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978904"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055113"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 yenilikler
+
 Windows PowerShell 5.0 kullanımını genişleten, kullanılabilirliğini iyileştiren ve şekilde denetlemenizi ve Windows tabanlı ortamları daha kolay ve kapsamlı bir şekilde yönetmenizi, önemli yeni özellikler içerir.
 
 Windows PowerShell 5.0 geriye dönük olarak uyumludur. Cmdlet'leri, sağlayıcıları, modüller, ek bileşenler, betikleri, işlevleri ve Windows PowerShell 4.0, Windows PowerShell 3.0 ve Windows PowerShell 2.0 için genel olarak tasarlanmış profilleri Windows PowerShell 5. 0'değişikliğe gerek kalmadan çalışır.
 
 ## <a name="installing-windows-powershell"></a>Windows PowerShell Yükleme
+
 Windows PowerShell 5.0, Windows Server 2016 Technical Preview ve Windows 10 üzerinde varsayılan olarak yüklenir.
 
 Windows Server 2012 R2, Windows 8.1 Enterprise veya Windows 8.1 Pro Windows PowerShell 5.0 yüklemek için indirme ve yükleme [Windows Management Framework 5.0](https://aka.ms/wmf5download). İndirme ayrıntıları okuyun ve Windows Management Framework 5.0 yüklemeden önce tüm sistem gereksinimlerini karşılamak emin olun.
@@ -27,6 +29,7 @@ Windows Server 2012 R2, Windows 8.1 Enterprise veya Windows 8.1 Pro Windows Powe
 - [Windows PowerShell 3. 0'ı yeni özellikler](#new-features-in-windows-powershell-30)
 
 ## <a name="windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a>Windows PowerShell 4.0 güncelleştirmeleri Kasım 2014 güncelleştirme paketi (KB 3000850)
+
 Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell Desired State Configuration (DSC) Windows PowerShell 4. 0'ı kullanılabilir [Windows RT 8.1, Windows 8.1 ve Windows Server 2012 R2 için Kasım 2014 güncelleştirme paketi](https://support.microsoft.com/kb/3000850/) (KB 3000850 ). BB 3000850 sisteminizde çalıştırarak yüklü olup olmadığını belirlemek `Get-Hotfix -Id KB3000850` Windows PowerShell'de.
 
 - Mevcut cmdlet'ler için güncelleştirmeler [da PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) Modülü
@@ -38,9 +41,9 @@ Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell Desired Sta
   - [Yeni DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) artık UNC yollarını desteklemektedir.
 
 - Yeni cmdlet'ler [da PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) Modülü
-  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx): bir isteğe bağlı çekme sunucusu denetimi gerçekleştirir.
-  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx): zaten çalışan bir yapılandırma durdurur.
-  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx): yapılandırma belgelerini (Bekleyen, önceki veya geçerli) çeşitli aşamalarda kaldırmanıza olanak sağlar.
+  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx):  Bir isteğe bağlı çekme sunucusu denetimi gerçekleştirir.
+  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx):  Zaten çalışan bir yapılandırma durdurur.
+  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx):  Yapılandırma belgelerini (Bekleyen, önceki veya geçerli) çeşitli aşamalarda kaldırmanıza olanak sağlar.
 
 - Dil iyileştirmeleri
   - DependsOn bileşik kaynakları artık desteklemektedir.
@@ -64,10 +67,10 @@ Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell Desired Sta
 
 - Esneklik geliştirmeleri
   - Yeni bir özellik LocalConfigurationManager kaynakta yok **ActionAfterReboot**.
-    - ContinueConfiguration (varsayılan değer): hedef düğümü yeniden başlatıldıktan sonra yapılandırma otomatik olarak sürdürür.
-    - StopConfiguration: bir düğümü yeniden başlatıldıktan sonra otomatik olarak bir yapılandırma devam.
+    - ContinueConfiguration (varsayılan değer): Bir hedef düğümü yeniden başlatıldıktan sonra yapılandırma otomatik olarak sürdürür.
+    - StopConfiguration: Otomatik olarak bir yapılandırma, bir düğümü yeniden başlatıldıktan sonra devam.
   - Tutarlılık çalıştırma artık bir ÇEKME işlemi ya da tam tersi çok sık gerçekleşebilir.
-  - Sürüm oluşturma desteği: DSC daha yeni bir istemci üzerinde oluşturulmuş bir belge artık algılayabilir (birlikte [WMF 5.0](https://aka.ms/wmf5download)).
+  - Sürüm oluşturma desteği:  DSC daha yeni bir istemci üzerinde oluşturulmuş bir belge artık algılayabilir (birlikte [WMF 5.0](https://aka.ms/wmf5download)).
 
 - Hata önleme geliştirmeleri
   - Bir yapılandırma uygulanmadan önce Modül sürümü artık uygulanmaz.
@@ -117,7 +120,7 @@ Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell Desired Sta
 - Konsol konağı yanı sıra tüm barındırma uygulamalarının (örneğin, Windows PowerShell ISE) uygulamak için Windows PowerShell transkripsiyonu geliştirildi (**powershell.exe**). (Bir sistem genelinde döküm etkinleştirme dahil) transkripsiyon seçenekleri sağlayarak yapılandırılabilir **PowerShell Transkripsiyonu kapatma** Grup İlkesi ayarı, Yönetim Şablonları/Windows bileşenleri/Windows içinde bulunamadı PowerShell.
 - Yeni bir betik ayrıntılı izleme özelliği, ayrıntılı izleme ve çözümleme sisteminde Windows PowerShell komut dosyası kullanımı etkinleştirmenize olanak tanır. Ayrıntılı betik izlemeyi etkinleştirdikten sonra Windows PowerShell tüm betik bloklarını olay izleme için Windows (ETW) olayı günlüğe kaydeder. **Microsoft-Windows-PowerShell/Operational**.
 - Windows PowerShell 5.0 ile başlayarak, yeni şifreli ileti söz dizimi cmdlet'leri şifreleme ve şifre çözme içeriğin şifreli olarak iletileri tarafından belirtildiği gibi korumak için IETF standart biçimi kullanarak desteklemek [RFC5652](https://tools.ietf.org/html/rfc5652). Get-CmsMessage ve Koru-CmsMessage Unprotect-CmsMessage cmdlet'leri eklenmiş [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh849807.aspx) modülü.
-- Yeni cmdlet'ler [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modülü, Get-çalışma, hata ayıklama çalışma, Get-RunspaceDebug, RunspaceDebug etkinleştirme ve devre dışı bırak-RunspaceDebug, bir çalışma alanı ve başlatılması ve durdurulması hata ayıklama seçeneklerini ayarlamanızı sağlar bir çalışma alanı üzerinde hata ayıklama. İsteğe bağlı çalışma alanları hata ayıklama için "diğer bir deyişle, bir Windows PowerShell konsolu veya Windows PowerShell ISE oturumu için varsayılan çalışma olmayan çalışma alanları '"Windows PowerShell sayesinde bir betikte kesme noktaları ayarlayın ve kesme noktaları durdurun betikten eklendi Çalışma alanı hataları ayıklamak için bir debugger iliştirebilmek için kadar çalışıyor. Çalışma alanları için Windows PowerShell komut dosyası hata ayıklayıcı rastgele çalışma alanları için iç içe geçmiş hata ayıklama desteği eklendi.
+- Yeni cmdlet'ler [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modülü, Get-çalışma, hata ayıklama çalışma, Get-RunspaceDebug, RunspaceDebug etkinleştirme ve devre dışı bırak-RunspaceDebug, bir çalışma alanı ve başlatılması ve durdurulması hata ayıklama seçeneklerini ayarlamanızı sağlar bir çalışma alanı üzerinde hata ayıklama. İsteğe bağlı çalışma alanları (bir Windows PowerShell konsolu veya Windows PowerShell ISE oturumu için varsayılan çalışma olmayan diğer bir deyişle, çalışma alanları) hata ayıklama için Windows PowerShell bir betikte kesme noktaları ayarlayın ve kesme noktaları durdurun betikten eklediğiniz olanak sağlar Çalışma alanı hataları ayıklamak için bir debugger iliştirebilmek için kadar çalışıyor. Çalışma alanları için Windows PowerShell komut dosyası hata ayıklayıcı rastgele çalışma alanları için iç içe geçmiş hata ayıklama desteği eklendi.
 - Yeni biçimi onaltılık cmdlet eklendi [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modülü. Onaltılık biçiminde metin veya ikili veri onaltılık biçimde görüntülemenize olanak tanır.
 - Pano get ve Set-Pano cmdlet'leri eklenmiştir [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modülü; bunlar için ve bir Windows PowerShell oturumundan içerik aktarımını kolaylaştırır. Pano cmdlet'leri görüntüleri, ses dosyaları, dosya listeler ve metin destekler.
 - Clear-geridönüşüm kutusu, yeni bir cmdlet eklendi [Microsoft.PowerShell.Management](https://technet.microsoft.com/library/hh849827(v=wps.640).aspx) modülü; Geri Dönüşüm Kutusu'nu dış sürücüleri içeren bir sabit sürücü için bu boşaltır cmdlet'i. Cmdlet Confirmımpact özelliği için ConfirmImpact.High olarak ayarlandığından varsayılan olarak, bir düz geridönüşüm kutusu komutu onaylamanız istenir.
@@ -134,16 +137,17 @@ Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell Desired Sta
 - Artık Test ModuleManifest cmdlet'ini çalıştırarak modülü sürüm doğrulama gerçekleştirebilirsiniz.
 - Get-Command cmdlet'inin sonuçlarını, sürüm sütununda artık görüntüler; Yeni bir sürüm özelliği CommandInfo sınıfı eklendi. Get-Command birden çok sürümünü aynı modülde komutları gösterir. Version özelliği ayrıca CmdletInfo türetilmiş sınıfları parçasıdır: CmdletInfo ve ApplicationInfo.
 - Get-Command - PSObjects ShowCommand bilgileri döndürür ShowCommandInfo, yeni bir parametre vardır. Bu Windows PowerShell uzaktan iletişimi kullanarak, Show komutunu Windows PowerShell ISE'de çalıştırdığınızda için kullanışlı bir işlevdir. -ShowCommandInfo parametre Microsoft.PowerShell.Utility modülünde mevcut Get-SerializedCommand işlevi değiştirir ancak Get-SerializedCommand betik alt düzey komut dosyasını destekleyen hala kullanılabilir.
-- Yeni cmdlet Get-ItemPropertyValue noktalı gösterim kullanmadan bir özelliğin değerini almanıza olanak tanır. Örneğin, Windows PowerShell daha eski sürümleri, uygulama tabanı özelliği PowerShellEngine kayıt defteri anahtarının değerini almak için aşağıdaki komutu çalıştırabilirsiniz: **(Get-Itemproperty-yolu HKLM:\\yazılım\\ Microsoft\\PowerShell\\3\\PowerShellEngine-ad ApplicationBase). ApplicationBase**. Çalıştırabileceğiniz Windows PowerShell 5.0 ile başlayarak, **ItemPropertyValue Get-yolu HKLM:\\yazılım\\Microsoft\\PowerShell\\3\\PowerShellEngine-adı ApplicationBase öğesi** .
+- Yeni cmdlet Get-ItemPropertyValue noktalı gösterim kullanmadan bir özelliğin değerini almanıza olanak tanır. Örneğin, Windows PowerShell daha eski sürümleri, uygulama tabanı özelliği PowerShellEngine kayıt defteri anahtarının değerini almak için aşağıdaki komutu çalıştırabilirsiniz: **(Get-Itemproperty-yolu HKLM:\\yazılım\\Microsoft\\PowerShell\\3\\PowerShellEngine-ad ApplicationBase). ApplicationBase**. Çalıştırabileceğiniz Windows PowerShell 5.0 ile başlayarak, **ItemPropertyValue Get-yolu HKLM:\\yazılım\\Microsoft\\PowerShell\\3\\PowerShellEngine-adı ApplicationBase öğesi** .
 - Windows PowerShell konsolu, artık söz dizimi renklendirme, yalnızca Windows PowerShell ISE olduğu gibi kullanır.
 - Yeni bir NetworkSwitch modülü, Windows Server 2012 R2 logo sertifikalı ağ anahtarları için anahtar ve sanal LAN (VLAN) temel Katman 2 ağ anahtarı bağlantı noktası yapılandırması uygulamanıza imkan sağlayan cmdlet'ler içerir.
 - Karşılık gelen fullyqualifiedname öğesi parametresi, tek bir modülün birden çok sürümünü saklama desteklemek için Import-Module ve Remove-Module cmdlet'leri eklendi.
 - Save-Help, Update-Help, Import-PSSession, Export-PSSession ve Get-Command FullyQualifiedModule, ModuleSpecification türünde yeni bir parametre vardır. Bir modül tarafından tam olarak nitelenmiş adını belirtmek için bu parametreyi ekleyin.
 - Değerini **$PSVersionTable.PSVersion** 5.0 güncelleştirildi.
+- WMF 5.0 (PowerShell 5.0) içeren **Pester** modülü.  Pester olan bir birim testi çerçevesi için PowerShell. Bu komut dosyalarınız için testler oluşturmanıza olanak tanıyan birkaç basit kullanımı anahtar sözcükleri sağlar.
 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration ' deki yeni özellikler
 
-- Windows PowerShell dil iyileştirmeleri sınıflarını kullanarak Windows PowerShell Desired State Configuration (DSC) kaynakları tanımlamanıza olanak sağlar. Import-DscResource true dinamik bir anahtar sözcüğü sunulmuştur; Windows PowerShell, belirtilen modül ayrıştırır '™ s kök modül DscResource özniteliği içeren sınıfları aranıyor. Artık, hangi ne bir MOF dosyası ya da modül klasöründe bir DSCResource alt gerekli değil, DSC kaynakları tanımlamak için sınıflar da kullanabilirsiniz. Bir Windows PowerShell modülü dosyası birden çok DSC kaynak sınıfları içerebilir.
+- Windows PowerShell dil iyileştirmeleri sınıflarını kullanarak Windows PowerShell Desired State Configuration (DSC) kaynakları tanımlamanıza olanak sağlar. Import-DscResource true dinamik bir anahtar sözcüğü sunulmuştur; Windows PowerShell DscResource özniteliği içeren sınıflar için arama belirtilen modülün kök modül ayrıştırır. Artık, hangi ne bir MOF dosyası ya da modül klasöründe bir DSCResource alt gerekli değil, DSC kaynakları tanımlamak için sınıflar da kullanabilirsiniz. Bir Windows PowerShell modülü dosyası birden çok DSC kaynak sınıfları içerebilir.
 - Şu cmdlet'lere da PSDesiredStateConfiguration modülünde ThrottleLimit, yeni bir parametre eklendi. Hedef bilgisayarları veya cihazları komutu aynı anda çalışmak istediğiniz sayısını belirtmek için ThrottleLimit parametresini ekleyin.
   - Get-DscConfiguration
   - Get-DscConfigurationStatus
@@ -165,8 +169,8 @@ Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell Desired Sta
 - 32-bit (x86 tabanlı) desteği için eklenmiştir **yapılandırma** anahtar sözcüğü.
 - Windows PowerShell artık ekleyerek tanımlanan DSC yapılandırmaları için özel bir Yardım için destek içerir \[CmdletBinding()] oluşturulan yapılandırmayı işlevi.
 - Yeni bir **DscLocalConfigurationManager** özniteliği bir meta-DSC Local Configuration Manager'ı yapılandırmak için kullanılan yapılandırma, bir yapılandırma bloğu belirler. Bu öznitelik, DSC Local Configuration Manager yapılandırma öğelerini içeren bir yapılandırma kısıtlar. İşlem sırasında yapılandırmanın oluşturduğu bir \*. uygun hedef düğümler için Set-DscLocalConfigurationManager cmdlet'i çalıştırarak gönderilir oluşturduğunuzdan dosya.
-- Kısmi yapılandırmalar artık Windows PowerShell 5. 0 ' izin verilir. Yapılandırma belgelerini parçaları bir düğüme sunabilir. Düğüm yapılandırması belgenin birden çok parçaya almak bir düğüm için '™ s yerel Configuration Manager önce ayarlanmalıdır beklenen parçaları belirtin
-- Bilgisayarlar arası eşitleme, Windows PowerShell 5.0 DSC yenidir. Yerleşik WAITFOR kullanarak\* kaynakları (**WaitForAll**, **WaitForAny**, ve **WaitForSome**), bilgisayarlar arasında bağımlılıklar artık belirtebilirsiniz yapılandırma işlemleri sırasında dış düzenlemeler olmadan. Bu kaynaklar, WS-Man protokolü üzerinden CIM bağlantıları kullanarak düğümden düğüme eşitleme sağlar. Başka bir bilgisayar için bir yapılandırma bekleyebilir '™ s belirli kaynak durumunu değiştirmek için.
+- Kısmi yapılandırmalar artık Windows PowerShell 5. 0 ' izin verilir. Yapılandırma belgelerini parçaları bir düğüme sunabilir. Bir düğüm yapılandırmasını belgenin birden çok parçaya almak düğümün yerel Configuration Manager beklenen parçaları belirtmek için önce ayarlanmalıdır
+- Bilgisayarlar arası eşitleme, Windows PowerShell 5.0 DSC yenidir. Yerleşik WAITFOR kullanarak\* kaynakları (**WaitForAll**, **WaitForAny**, ve **WaitForSome**), bilgisayarlar arasında bağımlılıklar artık belirtebilirsiniz yapılandırma işlemleri sırasında dış düzenlemeler olmadan. Bu kaynaklar, WS-Man protokolü üzerinden CIM bağlantıları kullanarak düğümden düğüme eşitleme sağlar. Bir yapılandırma için başka bir bilgisayarın belirli kaynak durumunu değiştirmek bekleyebilirsiniz.
 - Yalnızca yeterli yönetim (JEA), yeni bir temsilci güvenlik özelliği, DSC yararlanır ve Windows PowerShell kısıtlı çalışma alanları kasıtlı veya yanlışlıkla veri kaybı veya güvenlik ihlali çalışanlar tarafından güvenli kullanmasına yardımcı olacak. JEA xJEA DSC kaynak indirebileceğiniz dahil olmak üzere hakkında daha fazla bilgi için bkz. [yeterli yönetim, adım adım](https://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx).
 - Da PSDesiredStateConfiguration Modülü aşağıdaki yeni cmdlet eklendi.
   - Yeni cmdlet Get-DscConfigurationStatus hedef düğüm yapılandırma durumu hakkında üst düzey bilgileri alır. Durum edinebilirsiniz son veya tüm yapılandırmalar.
@@ -177,7 +181,7 @@ Birçok güncelleştirme ve geliştirmeleri için Windows PowerShell Desired Sta
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Windows PowerShell ıse'de yeni özellikler
 
-- Bilgisayarda bir uzak oturumu başlatmak için Enter-PSSession çalıştırarak uzak Windows PowerShell betikleri ve dosyaları yerel bir Windows PowerShell ISE'yi kopyasını artık düzenleyebilirsiniz, '™ s düzenlemek istediğiniz dosyaların depolanması ve çalıştırmayı **PSEdit <path and file name on the remote computer>**. Bu özellik, Windows PowerShell ISE çalıştırdığı olamaz, Windows Server'ın Sunucu Çekirdeği yükleme seçeneğini üzerinde depolanan düzenleme Windows PowerShell dosyaları kolaylaştırır.
+- Artık uzak Windows PowerShell betikleri ve dosyaları bu Windows PowerShell ISE'yi yerel bir kopyasını düzenlemek istediğiniz dosyaları depolamak bilgisayarda Uzak oturumu başlatmak için Enter-PSSession çalıştıran ve ardından çalıştırarak düzenleyebilirsiniz **PSEdit \<uzak bilgisayardaki yolunu ve dosya adı\>**. Bu özellik, Windows PowerShell ISE çalıştırdığı olamaz, Windows Server'ın Sunucu Çekirdeği yükleme seçeneğini üzerinde depolanan düzenleme Windows PowerShell dosyaları kolaylaştırır.
 - Başlangıç döküm cmdlet, Windows PowerShell ISE'de artık desteklenmektedir.
 - Şimdi uzak Windows PowerShell ISE'de betiklerde hata ayıklaması yapabilirsiniz.
 - Yeni bir menü komutu **tümünü Kes** hem yerel hem de uzaktan çalışan betikler için hata ayıklayıcısına (Ctrl + B) keser.
@@ -221,7 +225,7 @@ Windows PowerShell 4.0, aşağıdaki yeni özellikler içerir.
 - A **Passthru** parametresi eklendi **Enable-JobTrigger** ve **devre dışı bırak-JobTrigger** cmdlet'leri. Passthru parametresini oluşturulan veya değiştirilen komutunuz tarafından tüm nesneleri görüntüler.
 - Bir çalışma grubu belirtmek için parametre adları **Add-Computer** ve **Remove-Computer** cmdlet'leri tutarlı şimdi. Her iki cmdlet de artık ilgili parametreyi kullanın **ÇalışmaGrubuAdı**.
 - Yeni bir ortak parametre **PipelineVariable**, eklendi. İşlem hattı geri kalanı ile geçirilebilir bir değişken olarak PipelineVariable, yöneltilen komutu (veya piped komutun bir parçası) sonuçlarını kaydetmek sağlar.
-- Bir yöntem sözdizimi kullanarak filtreleme koleksiyonu artık desteklenmez. Bu, artık nesnelerinin bir koleksiyonunu Basitleştirilmiş söz dizimi, benzer Where() veya Where-Object, bir yöntem çağrısının biçimlendirilmiş kullanarak filtreleyebilirsiniz, anlamına gelir. Bir örnek şudur: (Get-Process) .where ({$_. Adı - eşleşen 'powershell'})
+- Bir yöntem sözdizimi kullanarak filtreleme koleksiyonu artık desteklenmez. Bu, artık nesnelerinin bir koleksiyonunu Basitleştirilmiş söz dizimi, benzer Where() veya Where-Object, bir yöntem çağrısının biçimlendirilmiş kullanarak filtreleyebilirsiniz, anlamına gelir. Bir örnek verilmiştir: (Get-işlem) .where ({$_. Adı - eşleşen 'powershell'})
 - **Get-Process** cmdlet'i yeni bir anahtar parametresi olan **IncludeUserName**.
 - Yeni bir cmdlet **Get-FileHash**, dosyayı belirtilen dosya için çeşitli biçimlerden birinde döndürür, eklendi.
 - Windows PowerShell 4.0 modülü kullanıyorsa, **DefaultCommandPrefix** kendi bildirimindeki anahtar veya kullanıcı ile bir modülü içeri aktarırsa **önek** parametresi **ExportedCommands**modülünün özelliği önekiyle modüldeki komutlar gösterir. Modül adı Modül tam sözdizimini kullanarak komutlar çalıştırıldığında\\CommandName, komut adlarını ön ekini içermelidir.
@@ -237,7 +241,7 @@ Windows PowerShell 4.0, aşağıdaki yeni özellikler içerir.
 
 - Destek eklendi. yeni bir **PipelineVariable** olanlar gibi yinelemeli işlem hatları bağlamında ortak parametresi System Center Orchestrator tarafından kullanılan; diğer bir deyişle, yalnızca soldan sağa, başlangıcı yerine sonundan komutları çalıştıran işlem hatları Akış'ı kullanarak çalışan karışık olarak kullanıldı.
 - Parametre bağlaması, geçerli çalışma alanında var olmayan komutları gibi sekme tamamlama senaryoları dışında çalışacak şekilde önemli ölçüde geliştirilmiştir.
-- Windows PowerShell iş akışına özel kapsayıcı etkinlikleri için destek eklendi. Bir etkinlik parametre türleri ise **etkinlik**, **etkinlik\[]**' "veya etkinliklerin genel koleksiyonu" ve kullanıcı bir betik bloğu bağımsız değişken olarak, daha sonra Windows sağlanan PowerShell iş akışı komut dosyası bloğu normal olarak Windows PowerShell komut dosyası iş akışı derleme ile XAML için dönüştürür.
+- Windows PowerShell iş akışına özel kapsayıcı etkinlikleri için destek eklendi. Bir etkinlik parametre türleri ise **etkinlik**, **etkinlik\[]** (veya genel bir etkinlikler koleksiyonudur) ve kullanıcı bağımsız değişken olarak, ardından Windows PowerShell komut dosyası bloğu yayımlamış İş akışı komut dosyası bloğu normal olarak Windows PowerShell komut dosyası iş akışı derleme ile XAML için dönüştürür.
 - Kilitlenme sonrasında, Windows PowerShell iş akışı yönetilen düğümlere otomatik olarak yeniden bağlanır.
 - Artık kısıtlama **Foreach-paralel** kullanarak etkinlik deyimleri **ThrottleLimit** özelliği.
 - **ErrorAction** ortak parametrenin yeni geçerli bir değer **askıya alma**, yani yalnızca iş akışları için.
@@ -315,7 +319,7 @@ Windows PowerShell 3.0, aşağıdaki yeni özellikler içerir.
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell iş akışı
 
-Windows PowerShell iş akışı Windows Workflow Foundation'ın gücünü, Windows PowerShell'e getirir. İş akışları XAML veya Windows PowerShell dilde yazabilir ve bir cmdlet çalıştırırken çalıştırabilirsiniz. [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet'i workflw komutlar alır ve [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet'i iş akışları için Yardım alır.
+Windows PowerShell iş akışı Windows Workflow Foundation'ın gücünü, Windows PowerShell'e getirir. İş akışları XAML veya Windows PowerShell dilde yazabilir ve bir cmdlet çalıştırırken çalıştırabilirsiniz. [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet'i iş akışı komutlar alır ve [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet'i iş akışları için Yardım alır.
 
 Uzun süre çalışan, yinelenebilir, sık sık, paralelleştirilebilir, kesilebilir, suspendable ve yeniden başlatılabilir multicomputer Yönetimi etkinlik iş akışlarıdır. İş akışları, ağ kesintisi, Windows yeniden başlatma veya güç kesintisi gibi bir kasıtlı olarak veya yanlışlıkla kesinti gelen sürdürülebilir.
 
@@ -481,7 +485,9 @@ Zamanlanmış işler, oturumlara, CIM tümleştirme ve güncelleştirilebilir Ya
 |Yeni CimSessionOption|Update-Help|
 |Yeni IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Mevcut çekirdek cmdlet'leri ve PowerShell 3.0 ProvidersWindows geliştirmeleri basitleştirilmiş bir sözdizimi ve aşağıdaki cmdlet'leri için yeni parametreler dahil olmak üzere mevcut cmdlet'ler için yeni özellikler içerir: bilgisayar cmdlet'leri, CSV cmdlet'leri, Get-Childıtem, Get-Command Get-içerik alma geçmişi, ölçü nesnesi, güvenliği cmdlet'leri, Select-Object, String seçin, bölünmüş yolu, işlemini başlat Tee nesne, Test-Connection Üye Ekle ve WMI cmdlet'leri.
+### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Var olan çekirdek cmdlet'leri ve sağlayıcıları geliştirmeleri
+
+Windows PowerShell 3.0 Basitleştirilmiş bir sözdizimi ve aşağıdaki cmdlet'leri için yeni parametreler dahil olmak üzere mevcut cmdlet'ler için yeni özellikler içerir: Bilgisayar cmdlet'leri, CSV cmdlet'leri, Get-Childıtem, Get-Command, Get-içerik alma geçmişi, ölçü nesnesi, güvenliği cmdlet'leri, Select-Object, String seçin, bölünmüş yolu, işlemini başlat Tee nesne, Test-Connection Üye Ekle ve WMI cmdlet'leri.
 
 Windows PowerShell sağlayıcıları Ayrıca önemli ölçüde, web barındırma için Güvenli Yuva Katmanı (SSL) sertifikalarını yönetmek için sertifika sağlayıcı desteği dahil olmak üzere geliştirildi, kimlik bilgisi, kalıcı bir ağ sürücülerini ve alternatif veri akışlarını desteği dosya sistemi sürücü.
 

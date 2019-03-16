@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 6171f96d66d0b2aa0fd9cb2a939768287c4bcb87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849185"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059533"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Bir Veri Deposuna Erişmek İçin Cmdlet Oluşturma
 
-Bu bölümde, bir Windows PowerShell sağlayıcısı yoluyla depolanan verilere erişen bir cmdlet oluşturmayı açıklar. Bu tür bir cmdlet Windows PowerShell çalışma zamanı Windows PowerShell sağlayıcısı altyapısını kullanır ve bu nedenle, cmdlet sınıfı öğesinden türetilmelidir [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) temel sınıfı.
+Bu bölümde, bir Windows PowerShell sağlayıcısı yoluyla depolanan verilere erişen bir cmdlet oluşturmayı açıklar. Bu tür bir cmdlet Windows PowerShell çalışma zamanı Windows PowerShell sağlayıcısı altyapısını kullanır ve bu nedenle, cmdlet sınıfı öğesinden türetilmelidir [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) temel sınıfı.
 
 Burada açıklanan seçin Str cmdlet'i, bulun ve dizeleri bir dosya veya nesne seçin. Dizeyi tanımlamak için kullanılan desenleri ile açıkça belirtilmesi `Path` parametre cmdlet veya örtük olarak aracılığıyla `Script` parametresi.
 
@@ -45,7 +45,7 @@ Bu bölümdeki konular şunlardır:
 
 İlk adımda cmdlet'i oluşturma her zaman cmdlet adlandırma ve cmdlet uygulayan .NET sınıf bildirme. Bu cmdlet, burada seçilen fiil adı "Seçin", bu nedenle belirli dizeleri tanımlanan algılar [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) sınıfı. Cmdlet dizeleri karıncaların isim adı "Dizesi" kullanılır. Cmdlet fiil ve isim adı cmdlet'i sınıfının adını yansıtılır bildiriminde unutmayın. Onaylanan cmdlet fiilleri hakkında daha fazla bilgi için bkz: [Cmdlet fiili adları](./approved-verbs-for-windows-powershell-commands.md).
 
-Bu cmdlet için .NET sınıf öğesinden türetilmelidir [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) temel sınıfı, çünkü Windows PowerShell sağlayıcısını kullanıma sunmak için Windows PowerShell çalışma zamanı tarafından gereken desteği sağlar Altyapı. Bu cmdlet ayrıca yapar Not gibi .NET Framework normal ifade sınıfları, kullanın [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+Bu cmdlet için .NET sınıf öğesinden türetilmelidir [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) temel sınıfı, çünkü Windows PowerShell sağlayıcısını kullanıma sunmak için Windows PowerShell çalışma zamanı tarafından gereken desteği sağlar Altyapı. Bu cmdlet ayrıca yapar Not gibi .NET Framework normal ifade sınıfları, kullanın [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
 
 Bu seçim Str cmdlet için sınıf tanımının kodudur.
 
@@ -117,7 +117,7 @@ Bu parametre belirtildiğinde cmdlet varsayılan parametre kümesi kullanır. `P
 
 Bu cmdlet, cmdlet arama özellikleri değiştirmek için kullanılan aşağıdaki Destek parametreleri tanımlar.
 
-`Script` Parametresi bir alternatif arama mekanizması cmdlet'i için sağlamak için kullanılan bir betik bloğu belirtir. Betik eşleştirmek için kullanılan desenleri içerir ve dönüş bir [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) nesne. Bu parametre tanımlayan benzersiz bir parametre olduğunu unutmayın `ScriptParameterSet` parametre kümesi. Windows PowerShell çalışma zamanı bu parametreyi gördüğünde ait parametreleri kullanır. `ScriptParameterSet` parametre kümesi.
+`Script` Parametresi bir alternatif arama mekanizması cmdlet'i için sağlamak için kullanılan bir betik bloğu belirtir. Betik eşleştirmek için kullanılan desenleri içerir ve dönüş bir [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) nesne. Bu parametre tanımlayan benzersiz bir parametre olduğunu unutmayın `ScriptParameterSet` parametre kümesi. Windows PowerShell çalışma zamanı bu parametreyi gördüğünde ait parametreleri kullanır. `ScriptParameterSet` parametre kümesi.
 
 ```csharp
 [Parameter(
@@ -195,13 +195,13 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>Parametre kümeleri bildirme
 
-Bu cmdlet, iki parametre kümeleri kullanır (`ScriptParameterSet` ve `PatternParameterSet`, varsayılan olan) olarak kullanılan veri erişimi, iki parametre kümesi adları. `PatternParameterSet` Varsayılan parametre kümesi ve kullanıldığında `Pattern` parametre belirtildi. `ScriptParameterSet` Alternatif arama bir mekanizma aracılığıyla kullanıcının belirttiği kullanıldığında `Script` parametresi. Parametre kümeleri hakkında daha fazla bilgi için bkz. [bir cmdlet'e parametre ayarlar ekleme](./adding-parameter-sets-to-a-cmdlet.md).
+Bu cmdlet, iki parametre kümesi kullanır (`ScriptParameterSet` ve `PatternParameterSet`, varsayılan değerdir) olarak kullanılan veri erişimi, iki parametre kümesi adları. `PatternParameterSet` Varsayılan parametre kümesi ve kullanıldığında `Pattern` parametre belirtildi. `ScriptParameterSet` Alternatif arama bir mekanizma aracılığıyla kullanıcının belirttiği kullanıldığında `Script` parametresi. Parametre kümeleri hakkında daha fazla bilgi için bkz. [bir cmdlet'e parametre ayarlar ekleme](./adding-parameter-sets-to-a-cmdlet.md).
 
 ## <a name="overriding-input-processing-methods"></a>Geçersiz kılma yöntemleri işleme giriş
 
-Cmdlet'leri geçersiz kılması gerekir bir veya daha fazla işleme için yöntemleri giriş [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) sınıfı. Giriş işleme yöntemleri hakkında daha fazla bilgi için bkz. [oluşturma bilgisayarınızı ilk Cmdlet](./creating-a-cmdlet-without-parameters.md).
+Cmdlet'leri geçersiz kılması gerekir bir veya daha fazla işleme için yöntemleri giriş [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) sınıfı. Giriş işleme yöntemleri hakkında daha fazla bilgi için bkz. [oluşturma bilgisayarınızı ilk Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Bu cmdlet geçersiz kılmalar [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) derlenmiş normal ifadeler başlatma sırasında bir dizi oluşturmak için yöntemi. Bu basit eşleştirme kullanmayan arama sırasında performansı artırır.
+Bu cmdlet geçersiz kılmalar [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) derlenmiş normal ifadeler başlatma sırasında bir dizi oluşturmak için yöntemi. Bu basit eşleştirme kullanmayan arama sırasında performansı artırır.
 
 ```csharp
 protected override void BeginProcessing()
@@ -280,7 +280,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-Bu cmdlet ayrıca geçersiz kılar [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) komut satırında kullanıcının yaptığı dize seçimleri işlemek için yöntemi. Özel bir nesne biçiminde dize seçim sonuçlarının, özel bir çağırarak Yazar **MatchString** yöntemi.
+Bu cmdlet ayrıca geçersiz kılar [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) komut satırında kullanıcının yaptığı dize seçimleri işlemek için yöntemi. Özel bir nesne biçiminde dize seçim sonuçlarının, özel bir çağırarak Yazar **MatchString** yöntemi.
 
 ```csharp
 protected override void ProcessRecord()
@@ -301,7 +301,7 @@ protected override void ProcessRecord()
     {
       WriteVerbose("Processing path " + path.Path);
 
-      // Check if the path represens one of the items to be
+      // Check if the path represents one of the items to be
       // excluded. If so, continue to next path.
       if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
          continue;
@@ -357,7 +357,7 @@ protected override void ProcessRecord()
           }
           else
           {
-            // Add the block(line) that did notmatch to the
+            // Add the block(line) that did not match to the
             // collection of non matches , which will be stored
             // in the SessionState variable $NonMatches
             nonMatches.Add(items[0]);
@@ -391,7 +391,7 @@ protected override void ProcessRecord()
 
 ## <a name="accessing-content"></a>İçerik erişme
 
-Cmdlet'inize verilere erişebilmesi için Windows PowerShell yoluyla belirtilen sağlayıcı açmanız gerekir. [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) nesne sağlayıcıya erişim için kullanılan çalışma için while [System.Management.Automation.Pscmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) özelliği cmdlet, sağlayıcı açmak için kullanılır. İçeriğe erişimi alınmasını tarafından sağlanan [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) sağlayıcısı nesne açılır.
+Cmdlet'inize verilere erişebilmesi için Windows PowerShell yoluyla belirtilen sağlayıcı açmanız gerekir. [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) nesne sağlayıcıya erişim için kullanılan çalışma için while [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) özelliği cmdlet, sağlayıcı açmak için kullanılır. İçeriğe erişimi alınmasını tarafından sağlanan [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) sağlayıcısı nesne açılır.
 
 Bu örnek seçin Str cmdlet'ini kullanır [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) tarama için içerik kullanıma sunmak için özellik. Ardından çağırabilirsiniz [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) yöntemini gerekli Windows PowerShell yolu.
 
@@ -436,7 +436,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// This parameter must specify a PowerShell that indicates the
     /// PowerShell provider that is used to access the objects to be
     /// searched for matching patterns. This parameter should also have
-    /// a PSPath alias to provide consistancy with other cmdlets that use
+    /// a PSPath alias to provide consistency with other cmdlets that use
     /// PowerShell providers.
     /// </summary>
     /// <value>Path of the object(s) to search.</value>
@@ -517,7 +517,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Declare a switch parameter that specifies if a case-sensitive
     /// search is performed.  If not (default), a case-insensitive search
-    /// is perfored.
+    /// is performed.
     /// </summary>
     /// <value>If True, a case-sensitive search is made.</value>
     [Parameter]
@@ -689,7 +689,7 @@ namespace Microsoft.Samples.PowerShell.Commands
         {
           WriteVerbose("Processing path " + path.Path);
 
-          // Check if the path represens one of the items to be
+          // Check if the path represents one of the items to be
           // excluded. If so, continue to next path.
           if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
              continue;
@@ -745,7 +745,7 @@ namespace Microsoft.Samples.PowerShell.Commands
               }
               else
               {
-                // Add the block(line) that did notmatch to the
+                // Add the block(line) that did not match to the
                 // collection of non matches , which will be stored
                 // in the SessionState variable $NonMatches
                 nonMatches.Add(items[0]);
@@ -874,7 +874,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Check whether the supplied name meets the include/exclude criteria.
     /// That is - it's on the include list if the include list was
-    /// specified, and not on the exclude list if the explude list was specified.
+    /// specified, and not on the exclude list if the exclude list was specified.
     /// </summary>
     /// <param name="path">path to validate</param>
     /// <returns>True if the path is acceptable.</returns>
@@ -1078,7 +1078,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     }
 
     /// <summary>
-    /// Specifiy the description of the PowerShell snap-in.
+    /// Specify the description of the PowerShell snap-in.
     /// </summary>
     public override string Description
     {

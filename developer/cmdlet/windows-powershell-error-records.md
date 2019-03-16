@@ -13,22 +13,22 @@ helpviewer_keywords:
 - error category string [PowerShell SDK]
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
-ms.openlocfilehash: bbe04a8fb556f0f6807bc0eae6634e3cf505759e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f6f5e50c55b477cbbeeaaf4f3ea665d5dc07758c
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850998"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059771"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell Hata Kayıtları
 
-Cmdlet'leri geçmesi gerekir bir [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) sonlandıran ve sonlandırmayan hatalar için hata koşulu tanımlayan nesne.
+Cmdlet'leri geçmesi gerekir bir [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) sonlandıran ve sonlandırmayan hatalar için hata koşulu tanımlayan nesne.
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesne, aşağıdaki bilgileri içerir:
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesne, aşağıdaki bilgileri içerir:
 
 - Hatayı açıklayan özel durum. Genellikle, bu cmdlet yakalandı ve bir hata kayıtta bir özel durumdur. Her hata kaydı, bir özel durum içermelidir.
 
-Cmdlet'i bir özel durum yakalamak değil, bu yeni bir özel durum oluşturmak ve en iyi hata durumunu açıklayan özel durum sınıfı seçin. Ancak, üzerinden erişilebildiğinden, özel durum gerekmez [System.Management.Automation.Errorrecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) özelliği [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesne.
+Cmdlet'i bir özel durum yakalamak değil, bu yeni bir özel durum oluşturmak ve en iyi hata durumunu açıklayan özel durum sınıfı seçin. Ancak, üzerinden erişilebildiğinden, özel durum gerekmez [System.Management.Automation.ErrorRecord.Exception](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) özelliği [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)nesne.
 
 - Tanılama amacıyla ve Windows PowerShell komut dosyaları tarafından belirli hata işleyicilerini ile belirli hata durumlarını işlemek için kullanılabilir hedeflenen bir gösterge sağlar hata tanımlayıcı. Her hata kaydı hata tanımlayıcı içermelidir (hata tanımlayıcısı bakın).
 
@@ -42,13 +42,13 @@ Cmdlet'i bir özel durum yakalamak değil, bu yeni bir özel durum oluşturmak v
 
 ## <a name="error-identifier"></a>Hata tanımlayıcı
 
-Bir hata kaydı oluşturduğunuzda, cmdlet'inize içinde hata koşulu belirten bir tanımlayıcı belirtin. Windows PowerShell hedeflenen tanımlayıcı tam hata tanımlayıcısını oluşturmak için cmdlet adı ile birleştirir. Tam hata tanımlayıcı erişilebilir [System.Management.Automation.Errorrecord.Fullyqualifiederrorid*](/dotnet/api/System.Management.Automation.ErrorRecord.FullyQualifiedErrorId) özelliği [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)nesne. Hata tanımlayıcı tek başına kullanılabilir değil. Kullanılabilir yalnızca tam hata tanımlayıcısının parçası olarak.
+Bir hata kaydı oluşturduğunuzda, cmdlet'inize içinde hata koşulu belirten bir tanımlayıcı belirtin. Windows PowerShell hedeflenen tanımlayıcı tam hata tanımlayıcısını oluşturmak için cmdlet adı ile birleştirir. Tam hata tanımlayıcı erişilebilir [System.Management.Automation.ErrorRecord.FullyQualifiedErrorId](/dotnet/api/System.Management.Automation.ErrorRecord.FullyQualifiedErrorId) özelliği [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)nesne. Hata tanımlayıcı tek başına kullanılabilir değil. Kullanılabilir yalnızca tam hata tanımlayıcısının parçası olarak.
 
 Hata kaydı oluştururken hata tanımlayıcıları oluşturmak için aşağıdaki yönergeleri kullanın:
 
 - Hata tanımlayıcı, bir hata koşulunu belirgin hale getirin. Tanılama amacıyla ve belirli hata koşulları belirli hata işleyicilerini ile işleyen bir komut dosyası için hata tanımlayıcıları hedefleyin. Bir kullanıcı hata ve kaynağı tanımlamak için hata tanımlayıcı kullanmanız mümkün olması gerekir. Yeni özel durum alt sınıflar, gerekli değildir. böylece, mevcut özel belirli hata koşulları için Raporlama hata tanımlayıcıları da etkinleştirin.
 
-- Genel olarak, farklı hata tanımlayıcıları farklı kod yollarını atayın. Son kullanıcı, belirli tanımlayıcılardan fayda sağlar. Genellikle, çağrıları her kod yolu [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) veya [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) kendi tanımlayıcısı. Hata iletisi ve tersi için yeni bir şablon dize tanımlarken bir kural olarak, yeni bir tanımlayıcı tanımlayın. Hata iletisi, tanımlayıcı olarak kullanmayın.
+- Genel olarak, farklı hata tanımlayıcıları farklı kod yollarını atayın. Son kullanıcı, belirli tanımlayıcılardan fayda sağlar. Genellikle, çağrıları her kod yolu [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) veya [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) kendi tanımlayıcısı. Hata iletisi ve tersi için yeni bir şablon dize tanımlarken bir kural olarak, yeni bir tanımlayıcı tanımlayın. Hata iletisi, tanımlayıcı olarak kullanmayın.
 
 - Belirli hata tanımlayıcısını kullanarak kod yayımladığınızda, bu tanımlayıcı, eksiksiz bir ürün için hatalarla semantiği yaşam döngüsü destek kurun. Bu orijinal içerikten anlamsal olarak farklı bir bağlamda yeniden kullanmayın. Bu hata semantiği değiştirirseniz, oluşturun ve yeni bir kimlik kullanın.
 
@@ -64,7 +64,7 @@ Bir hata kaydı oluşturduğunuzda, tarafından tanımlanan sabitlerinden birini
 
 Kullanmaktan kaçının [System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified) sabit. Hataya neden olan işlem veya hata hakkında hiçbir bilgi varsa kategori kusursuz olsa bile hata ya da işlemi en iyi açıklayan kategoriyi seçin.
 
-Windows PowerShell tarafından görüntülenen bilgiler kategori görünümünde dizesi olarak adlandırılır ve özelliklerinden oluşturulmuştur [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) sınıfı. (Bu sınıf, hata erişilir [System.Management.Automation.Errorrecord.Categoryinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) özellik.)
+Windows PowerShell tarafından görüntülenen bilgiler kategori görünümünde dizesi olarak adlandırılır ve özelliklerinden oluşturulmuştur [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) sınıfı. (Bu sınıf, hata erişilir [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) özellik.)
 
 ```
 {Category}: ({TargetName}:{TargetType}):[{Activity}], {Reason}
@@ -86,27 +86,27 @@ Aşağıdaki listede görüntülenen bilgileri açıklanmaktadır:
 
 Bir cmdlet için bir hata kaydı geliştirdiğinizde, varsayılan ileti metni varsayılan hata iletisi hatayı geldiği [System.Exception.Message](/dotnet/api/System.Exception.Message) özelliği. İleti metni yalnızca hata ayıklama amacıyla (.NET Framework yönergeleriyle göre) hazırlanmıştır salt okunur bir özellik budur. Değiştirir veya varsayılan ileti metni çoğaltan bir hata iletisi oluşturmanızı öneririz. İleti cmdlet'e daha kolay ve daha belirli olun.
 
-Değiştirme yapılacak tarafından sağlanan bir [System.Management.Automation.Errordetails](/dotnet/api/System.Management.Automation.ErrorDetails) nesne. Windows PowerShell tarafından kullanılabilen ek yerelleştirme bilgisi sağladıkları için bu nesnenin şu oluşturuculardan birini kullanın.
+Değiştirme yapılacak tarafından sağlanan bir [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) nesne. Windows PowerShell tarafından kullanılabilen ek yerelleştirme bilgisi sağladıkları için bu nesnenin şu oluşturuculardan birini kullanın.
 
-- [ErrorDetails.ErrorDetails (cmdlet'i, dize, dize, nesne\[System.Management.Automation.Errordetails.%23Ctor%28System.Management.Automation.Cmdlet%2Csystem.String%2Csystem.String%2Csystem.Object%5B%5D%29? Displayproperty Fullname =](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Şablon dizenizi cmdlet gerçekleştirilir aynı bütünleştirilmiş kodun kaynak dizesi ise veya şablon dizesini geçersiz kılma yoluyla yüklemek istiyorsanız bu bu oluşturucuyu kullanarak [System.Management.Automation.Cmdlet.Getresourcestring* ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) yöntemi.
+- [ErrorDetails.ErrorDetails (cmdlet'i, dize, dize, nesne\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty Fullname =](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Şablon dizenizi cmdlet gerçekleştirilir aynı bütünleştirilmiş kodun kaynak dizesi ise veya şablon dizesini geçersiz kılma yoluyla yüklemek istiyorsanız bu bu oluşturucuyu kullanarak [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) yöntemi.
 
-- [ErrorDetails.ErrorDetails (derleme, dize, dize, nesne\[System.Management.Automation.Errordetails.%23Ctor%28System.Reflection.Assembly%2Csystem.String%2Csystem.String%2Csystem.Object%5B%5D%29? Displayproperty Fullname =](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Bu oluşturucu kullanın şablon dizesini başka bir derlemede ve bu geçersiz kılma yüklenmiyor [System.Management.Automation.Cmdlet.Getresourcestring*](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
+- [ErrorDetails.ErrorDetails (derleme, dize, dize, nesne\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty Fullname =](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Bu oluşturucu kullanın şablon dizesini başka bir derlemede ve bu geçersiz kılma yüklenmiyor [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
 Değiştirme yapılacak küçük bir fark dışında özel durum iletileri yazmak için .NET Framework tasarım ilkelerine uymalıdır. Geliştiriciler için özel durum iletileri yazılması yönergeleri durumu. Bu değişikliği iletileri için cmdlet'i kullanıcı yazılması gerekir.
 
-Değiştirme hata iletisi önce eklenmelidir [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) veya [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) yöntemleri çağrıldığında . Bir değiştirme iletisi eklemek için [System.Management.Automation.Errorrecord.Errordetails*](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails) hata kaydı özelliği. Bu özelliği ayarlandığında, Windows PowerShell görüntüler [System.Management.Automation.Errordetails.Message*](/dotnet/api/System.Management.Automation.ErrorDetails.Message) özelliği yerine varsayılan ileti metni.
+Değiştirme hata iletisi önce eklenmelidir [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) veya [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) yöntemi çağrılır. Bir değiştirme iletisi eklemek için [System.Management.Automation.ErrorRecord.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails) hata kaydı özelliği. Bu özelliği ayarlandığında, Windows PowerShell görüntüler [System.Management.Automation.ErrorDetails.Message*](/dotnet/api/System.Management.Automation.ErrorDetails.Message) özelliği yerine varsayılan ileti metni.
 
 ## <a name="recommended-action-information"></a>Önerilen eylem bilgileri
 
-[System.Management.Automation.Errordetails](/dotnet/api/System.Management.Automation.ErrorDetails) nesne de hata oluştuğunda, hangi eylemlerin önerilen hakkında bilgi sağlar.
+[System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) nesne de hata oluştuğunda, hangi eylemlerin önerilen hakkında bilgi sağlar.
 
 ## <a name="invocation-information"></a>Çağrı bilgileri
 
-Bir cmdlet kullandığında [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) veya [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) bir hata kaydı, Windows PowerShell bildirmek için hata oluştuğunda çağrıldı komutu açıklayan bilgileri otomatik olarak ekler. Bu bilgileri tarafından sağlanan bir [System.Management.Automation.Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo) komutu, kendisini komutu tarafından çağrıldı cmdlet adı içeren nesneyi ve ardışık düzen veya komut dosyası hakkında bilgi. Bu özellik salt okunurdur.
+Bir cmdlet kullandığında [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) veya [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) bir hata kaydı, Windows PowerShell bildirmek için hata oluştuğunda çağrıldı komutu açıklayan bilgileri otomatik olarak ekler. Bu bilgileri tarafından sağlanan bir [System.Management.Automation.Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo) komutu, kendisini komutu tarafından çağrıldı cmdlet adı içeren nesneyi ve ardışık düzen veya komut dosyası hakkında bilgi. Bu özellik salt okunurdur.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
@@ -114,9 +114,9 @@ Bir cmdlet kullandığında [System.Management.Automation.Cmdlet.Writeerror*](/d
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
 
-[System.Management.Automation.Errordetails](/dotnet/api/System.Management.Automation.ErrorDetails)
+[System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails)
 
 [System.Management.Automation.Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)
 

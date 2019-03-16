@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC kaynaklarında hata ayıklama
-ms.openlocfilehash: 9b2e7dd9b42332b869c4d7fabb21bd4b5a6b8800
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683957"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055589"
 ---
 # <a name="debugging-dsc-resources"></a>DSC kaynaklarında hata ayıklama
 
 > Şunun için geçerlidir: Windows PowerShell 5.0
 
-PowerShell 5. 0'da, istenen durum yapılandırma (DSC kaynağı bir yapılandırma uygulanmakta olduğu gibi hata ayıklama olanak tanıyan DSC içinde) yeni bir özellik sunulmuştur.
+PowerShell 5. 0'da, yeni bir özellik Desired State Configuration (bir DSC kaynağı bir yapılandırma uygulanmakta olduğu gibi hata ayıklama olanak tanıyan DSC içinde) kullanıma sunulmuştur.
 
 ## <a name="enabling-dsc-debugging"></a>DSC hata ayıklamayı etkinleştirme
 Bir kaynak ayıklayabilirsiniz önce çağrı yaparak hata ayıklamayı etkinleştirmek sahip [etkinleştir DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) cmdlet'i.

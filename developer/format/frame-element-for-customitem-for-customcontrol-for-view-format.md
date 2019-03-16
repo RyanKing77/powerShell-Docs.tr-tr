@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e1a13100-41a4-4847-9f07-458c85783505
 caps.latest.revision: 6
-ms.openlocfilehash: a7ee550527ec1cb00b4ed83478992c7ab54dbdb6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 925ef86e61801f5a66f89dd25e0756f00dd35155
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850809"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054790"
 ---
 # <a name="frame-element-for-customitem-for-customcontrol-for-view-format"></a>Görünüm CustomControl için CustomItem Çerçeve Öğesi (Biçim)
 
 Verinin, veri sola veya sağa kaydırma gibi görüntülenme şeklini tanımlar. Bu öğe, bir özel denetim görünüm tanımlarken kullanılır.
 
-Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm öğesi (biçimi) özel denetim öğesi (biçimi) CustomEntries öğesi görünümü (biçimi) CustomItem öğesinin CustomEntries görünümü (biçimi) CustomEntry öğesinin özel denetim için CustomEntry CustomItem Görünüm (biçimi) için özel denetim için çerçeve öğesinin CutomControlView (biçimi)
+Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm öğesi (biçimi) özel denetim öğesi (biçimi) CustomEntries öğesi görünümü (biçimi) CustomItem öğesinin CustomEntries görünümü (biçimi) CustomEntry öğesinin özel denetim için CustomEntry CustomItem Görünüm (biçimi) için özel denetim için çerçeve öğesinin CustomControlView (biçimi)
 
 ## <a name="syntax"></a>Sözdizimi
 

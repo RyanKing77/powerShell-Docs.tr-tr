@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
 caps.latest.revision: 12
-ms.openlocfilehash: d4564b51b74422cdaec3878b227ffc6be7c97949
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846735"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055912"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Cmdlet İçerisinde Cmdlet Çağırma
 
@@ -24,7 +24,7 @@ Get-Process -name [a-t]
 ```
 
 > [!IMPORTANT]
-> Doğrudan öğesinden türetilen cmdlet'leri çağırabilirsiniz [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) sınıfı. Türetilen bir cmdlet çağrılamıyor [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) sınıfı.
+> Doğrudan öğesinden türetilen cmdlet'leri çağırabilirsiniz [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) sınıfı. Türetilen bir cmdlet çağrılamıyor [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) sınıfı.
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Bir cmdlet'ten bir cmdlet içinde çağırmak için
 
@@ -36,7 +36,7 @@ Get-Process -name [a-t]
     using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
     ```
 
-2. İşleme yöntemi cmdlet'inin girişinde çağrılacak cmdlet'i yeni bir örneğini oluşturun. Bu örnekte, bir nesne türü [Microsoft.Powershell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) cmdlet çalıştırıldığında kullanılan bağımsız değişkenler içeren bir dize ile birlikte oluşturulur.
+2. İşleme yöntemi cmdlet'inin girişinde çağrılacak cmdlet'i yeni bir örneğini oluşturun. Bu örnekte, bir nesne türü [Microsoft.PowerShell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) cmdlet çalıştırıldığında kullanılan bağımsız değişkenler içeren bir dize ile birlikte oluşturulur.
 
     ```csharp
     GetProcessCommand gp = new GetProcessCommand();
@@ -55,7 +55,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>Örnek
 
-Bu örnekte, `Get-Process` cmdlet'i içinden çağrıldığında [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) bir cmdlet'in yöntemi.
+Bu örnekte, `Get-Process` cmdlet'i içinden çağrıldığında [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) bir cmdlet'in yöntemi.
 
 ```csharp
 using System;

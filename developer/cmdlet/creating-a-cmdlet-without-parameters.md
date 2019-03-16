@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 75a45e539b45b50714951f2b992d9ecf69de4664
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850067"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054705"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Parametresiz Cmdlet Oluşturma
 
@@ -70,7 +70,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-Sınıf tanımı önce dikkat [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) özniteliğiyle sözdizimi `[Cmdlet(verb, noun, ...)]`, bu sınıfı bir cmdlet olarak tanımlamak için kullanılır. Bu tüm cmdlet'ler için yalnızca gerekli öznitelik ve doğru bir şekilde çağırmak Windows PowerShell çalışma zamanı sağlar. Daha fazla gerekirse sınıf tanımlamak için öznitelik anahtar sözcükleri ayarlayabilirsiniz. Bizim örnek GetProcCommand sınıfı özniteliği bildirimi yalnızca Get-Proc cmdlet isim ve fiili adlarını bildirir dikkat edin.
+Sınıf tanımı önce dikkat [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) özniteliğiyle sözdizimi `[Cmdlet(verb, noun, ...)]`, bu sınıfı bir cmdlet olarak tanımlamak için kullanılır. Bu tüm cmdlet'ler için yalnızca gerekli öznitelik ve doğru bir şekilde çağırmak Windows PowerShell çalışma zamanı sağlar. Daha fazla gerekirse sınıf tanımlamak için öznitelik anahtar sözcükleri ayarlayabilirsiniz. Bizim örnek GetProcCommand sınıfı özniteliği bildirimi yalnızca Get-Proc cmdlet isim ve fiili adlarını bildirir dikkat edin.
 
 > [!NOTE]
 > Tüm Windows PowerShell öznitelik sınıfları için ayarlayabileceğiniz bir anahtar öznitelik sınıfının özelliklerine karşılık gelir.
@@ -78,27 +78,27 @@ Sınıf tanımı önce dikkat [System.Management.Automation.Cmdletattribute](/do
 Cmdlet'inin sınıfı adlandırırken sınıf adında cmdlet adı yansıtacak şekilde iyi bir uygulamadır. Bunu yapmak için "Eylem" ve "Ad" fiil ve isim kullanılan cmdlet adı ile değiştirin ve formu "VerbNounCommand" kullanın. Önceki sınıf tanımında gösterildiği örnek Get-Proc cmdlet türetilen GetProcCommand adlı bir sınıf tanımlar [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) temel sınıfı.
 
 > [!IMPORTANT]
-> Windows PowerShell çalışma zamanı doğrudan erişen bir cmdlet tanımlamak istiyorsanız, .NET sınıfınıza öğesinden türetilmelidir [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) temel sınıfı. Bu sınıf hakkında daha fazla bilgi için bkz: [bir Cmdlet tanımlar, parametre kümeleri oluşturma](./adding-parameter-sets-to-a-cmdlet.md).
+> Windows PowerShell çalışma zamanı doğrudan erişen bir cmdlet tanımlamak istiyorsanız, .NET sınıfınıza öğesinden türetilmelidir [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) temel sınıfı. Bu sınıf hakkında daha fazla bilgi için bkz: [bir Cmdlet tanımlar, parametre kümeleri oluşturma](./adding-parameter-sets-to-a-cmdlet.md).
 
 > [!NOTE]
 > Sınıf bir cmdlet için genel olarak açıkça işaretlenmelidir. Genel olarak işaretlenmemiş sınıflar için iç varsayılan ve Windows PowerShell çalışma zamanı tarafından bulunmaz.
 
-Windows PowerShell kullanan [Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) cmdlet'i sınıflarına için ad alanı. Bir API ad alanınız, örneğin, xxx.PS.Commands komutları ad alanında cmdlet'i sınıflarınızı yerleştirmek için önerilir.
+Windows PowerShell kullanan [Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) cmdlet'i sınıflarına için ad alanı. Bir API ad alanınız, örneğin, xxx.PS.Commands komutları ad alanında cmdlet'i sınıflarınızı yerleştirmek için önerilir.
 
 ## <a name="overriding-an-input-processing-method"></a>Bir giriş işleme yöntemi geçersiz kılma
 
 [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) sınıfı en az biri cmdlet'inize geçersiz kılması gerekir, üç ana giriş işleme yöntemler sağlar. Windows PowerShell kayıtları nasıl işlediği hakkında daha fazla bilgi için bkz. [nasıl Windows PowerShell çalışır](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
-Tüm giriş türleri için Windows PowerShell çalışma zamanı çağırır [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) işlemeyi etkinleştirmek için. Bazı ön işleme veya Kurulum cmdlet'inize gerçekleştirmesi gerekiyorsa, bu yöntemi geçersiz kılarak, bunu yapabilirsiniz.
+Tüm giriş türleri için Windows PowerShell çalışma zamanı çağırır [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) işlemeyi etkinleştirmek için. Bazı ön işleme veya Kurulum cmdlet'inize gerçekleştirmesi gerekiyorsa, bu yöntemi geçersiz kılarak, bunu yapabilirsiniz.
 
 > [!NOTE]
 > Windows PowerShell cmdlet çağrıldığında sağlanan parametre değerleri kümesi tanımlamak için "kayıt" terimini kullanır.
 
-Ardışık giriş cmdlet'inize kabul ederse kılmalı [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi ve isteğe bağlı olarak [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)yöntemi. Örneğin, tüm giriş kullanarak toplar, bir cmdlet'i her iki yöntem de kılabilir [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ve ardından Giriş bir öğe yerine bir bütün olarak teker teker olarak çalışır `Sort-Object` cmdlet yapıyorsa.
+Ardışık giriş cmdlet'inize kabul ederse kılmalı [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi ve isteğe bağlı olarak [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)yöntemi. Örneğin, tüm giriş kullanarak toplar, bir cmdlet'i her iki yöntem de kılabilir [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ve ardından Giriş bir öğe yerine bir bütün olarak teker teker olarak çalışır `Sort-Object` cmdlet yapıyorsa.
 
-Ardışık giriş cmdlet'inize almaz, geçersiz kılmalıdır [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemi. Bu yöntem yerine sık kullanıldığını unutmayın [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) zaman cmdlet çalışamaz bir öğede bir kerede bir sıralama cmdlet için olduğu gibi.
+Ardışık giriş cmdlet'inize almaz, geçersiz kılmalıdır [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemi. Bu yöntem yerine sık kullanıldığını unutmayın [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) zaman cmdlet çalışamaz bir öğede bir kerede bir sıralama cmdlet için olduğu gibi.
 
-Bu örnek Get-Proc cmdlet ardışık giriş alması gerektiğinden, onu geçersiz kılar [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi ve varsayılan uygulamaları için kullandığı [ System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) ve [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) geçersiz kılma işlemlerini alır ve komut satırını kullanarak Yazar [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) yöntem.
+Bu örnek Get-Proc cmdlet ardışık giriş alması gerektiğinden, onu geçersiz kılar [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi ve varsayılan uygulamaları için kullandığı [ System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) ve [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) geçersiz kılma işlemlerini alır ve komut satırını kullanarak Yazar [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) yöntemi.
 
 ```csharp
 protected override void ProcessRecord()
@@ -136,14 +136,14 @@ End Sub 'ProcessRecord
 
 - İşleme yöntemi giriş giriş işlem hattında bir Yukarı Akış cmdlet'i çıkış nesnesinin de alabilir. Daha fazla bilgi için [işlem ardışık Giriş bir cmdlet'e oluşturma](./adding-parameters-that-process-pipeline-input.md). Unutmayın, cmdlet komut satırı bir bileşiminden girişi almak ve işlem hattı kaynakları.
 
-- Aşağı Akış cmdlet'i, uzun süre veya hiç döndürmeyebilir. Bu nedenle, işleme yöntemi, cmdlet'inde giriş kilitleri çağrı sırasında tutmak zorunda değil [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), özellikle kilit kapsamı cmdlet'i örneği genişletir.
+- Aşağı Akış cmdlet'i, uzun süre veya hiç döndürmeyebilir. Bu nedenle, işleme yöntemi, cmdlet'inde giriş kilitleri çağrı sırasında tutmak zorunda değil [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), özellikle kilit kapsamı cmdlet'i örneği genişletir.
 
 > [!IMPORTANT]
 > Cmdlet hiçbir zaman çağırmalıdır [System.Console.Writeline*](/dotnet/api/System.Console.WriteLine) ya da eşdeğerine.
 
-- Cmdlet'inize sona erdiğinde temizlemek için nesne değişkenleri olabilir. işleme (örneğin, bir dosya tanıtıcısı olarak açarsa [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) yöntemi ve tanıtıcı tarafındankullanılmaküzereaçıktutar[ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Windows PowerShell çalışma zamanı her zaman arama olduğunu unutmamak önemlidir [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) nesne temizlemesi gerçekleştirmesi gereken yöntemini.
+- Cmdlet'inize sona erdiğinde temizlemek için nesne değişkenleri olabilir. işleme (örneğin, bir dosya tanıtıcısı olarak açarsa [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) yöntemi ve tanıtıcı tarafındankullanılmaküzereaçıktutar[ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Windows PowerShell çalışma zamanı her zaman arama olduğunu unutmamak önemlidir [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) nesne temizlemesi gerçekleştirmesi gereken yöntemini.
 
-Örneğin, [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) cmdlet midway iptal edilir ya da bir sonlandırma, herhangi bir bölümünü cmdlet'i hata meydana gelir, çağrılabilir değil. Bu nedenle, nesne temizleme gerektiren bir cmdlet tam uygulamalıdır [System.IDisposable](/dotnet/api/System.IDisposable) deseni, çalışma zamanı, her ikisi de çağırabilirsiniz Sonlandırıcı dahil olmak üzere [ System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) ve [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) işleme sonunda.
+Örneğin, [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) cmdlet midway iptal edilir ya da bir sonlandırma, herhangi bir bölümünü cmdlet'i hata meydana gelir, çağrılabilir değil. Bu nedenle, nesne temizleme gerektiren bir cmdlet tam uygulamalıdır [System.IDisposable](/dotnet/api/System.IDisposable) deseni, çalışma zamanı, her ikisi de çağırabilirsiniz Sonlandırıcı dahil olmak üzere [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) ve [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) işleme sonunda.
 
 ## <a name="code-sample"></a>Kod örneği
 

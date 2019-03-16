@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
-ms.openlocfilehash: d919d4ad8554e762230c1448d81b50e27c38ba99
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851971"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058054"
 ---
 # <a name="cmdlet-samples"></a>Cmdlet Örnekleri
 
@@ -39,7 +39,7 @@ Bu bölümde Windows PowerShell 2.0 SDK'sını sağlanan örnek kod açıklanmak
 
 [StopProcessSample04 örnek](./stopprocesssample04-sample.md) Bu örnek, bir cmdlet parametre kümeleri bildirir, varsayılan parametre ayarlama ve Giriş bir nesneyi kabul edebildiğini belirtir yazma işlemi gösterilmektedir.
 
-[Events01 örnek](./events01-sample.md) Bu örnek, kaydetmek kullanıcı tarafından harekete geçirilen olayları sağlayan bir cmdlet oluşturma işlemi gösterilmektedir [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Bu cmdlet ile kullanıcıları Örneğin, belirli bir dizini altında bir dosya oluşturulduğunda yürütülecek bir eylem kaydedebilir. Bu örnek türetildiği [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) temel sınıfı.
+[Events01 örnek](./events01-sample.md) Bu örnek, kaydetmek kullanıcı tarafından harekete geçirilen olayları sağlayan bir cmdlet oluşturma işlemi gösterilmektedir [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Bu cmdlet ile kullanıcıları Örneğin, belirli bir dizini altında bir dosya oluşturulduğunda yürütülecek bir eylem kaydedebilir. Bu örnek türetildiği [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) temel sınıfı.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 

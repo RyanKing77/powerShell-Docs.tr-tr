@@ -2,12 +2,12 @@
 title: SSH üzerinden PowerShell Uzaktan İletişimi
 description: SSH kullanarak PowerShell core'da uzaktan iletişim
 ms.date: 08/14/2018
-ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687135"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056541"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH üzerinden PowerShell Uzaktan İletişimi
 
@@ -62,7 +62,7 @@ SSH tüm makinelerde yüklü olması gerekir. SSH istemcisi yükleme (`ssh.exe`)
      > [!NOTE]
      > OpenSSH için alanları alt sistemi yürütülebilir yollarında çalışmasını engelleyen Windows hata yoktur. Daha fazla bilgi için [bu GitHub sorunu](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     Tek bir çözüm Powershell yükleme dizinine boşluk olmayan bir sembolik bağlantısını oluşturmaktır:
+     Tek bir çözüm PowerShell yükleme dizinine boşluk olmayan bir sembolik bağlantısını oluşturmaktır:
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
@@ -129,7 +129,7 @@ SSH tüm makinelerde yüklü olması gerekir. SSH istemcisi yükleme (`ssh.exe`)
 1. Son yükleme [MacOS için PowerShell Core](../../install/installing-powershell-core-on-macos.md) oluşturun
 
    - SSH uzaktan iletişim, aşağıdaki adımları izleyerek etkin olduğundan emin olun:
-     - Açık `System Preferences`
+     - açın `System Preferences`
      - Tıklayın `Sharing`
      - Denetleme `Remote Login` -şeklinde olmalıdır `Remote Login: On`
      - Uygun kullanıcılar erişime izin ver

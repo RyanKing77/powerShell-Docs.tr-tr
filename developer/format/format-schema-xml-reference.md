@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
-ms.openlocfilehash: 4dfe27a5105d82fa18e35f965f92fad16d390a2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848065"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056660"
 ---
 # <a name="format-schema-xml-reference"></a>Biçim Şeması XML Başvurusu
 
@@ -81,7 +81,7 @@ Bu bölümdeki konular (Format.ps1xml dosyaları) biçimlendirme tarafından kul
 
 [DefaultSettings öğesi (biçimi)](./defaultsettings-element-format.md) biçimlendirme dosyanın tüm görünümleri için geçerli genel ayarlarını tanımlar. Ortak ayarları hataları görüntüleme koleksiyonları nasıl genişletilir, tanımlama, tabloları ve diğer metin kaydırma içerir.
 
-[DisplayError öğesi (Frmat)](./displayerror-element-format.md) bir hata oluştuğunda bir veri parçasını görüntüleme dizesi #ERR görüntüleneceğini belirtir.
+[DisplayError öğesi (biçimi)](./displayerror-element-format.md) bir hata oluştuğunda bir veri parçasını görüntüleme dizesi #ERR görüntüleneceğini belirtir.
 
 [İçin yapılandırma (biçimi) için denetimleri için CustomEntry EntrySelectedBy öğesi](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md) ortak denetimi veya bu denetim için kullanılacak bulunmalıdır koşul tanımı kullanan .NET türlerini tanımlar. Bu öğe, biçimlendirme dosyası içindeki tüm görünümler tarafından kullanılan bir ortak denetimi tanımlarken kullanılır.
 
@@ -235,7 +235,7 @@ Bu bölümdeki konular (Format.ps1xml dosyaları) biçimlendirme tarafından kul
 
 [GroupBy (biçimi) için SelectionCondition için PropertyName öğesi](./propertyname-element-for-selectioncondition-for-groupby-format.md) koşul tetikleyen .NET alan özelliği belirtir. Bu özellik mevcut olduğunda veya için değerlendirirken `true`, koşul karşılanır ve tanımı kullanılır. Bu öğe, yeni bir grup nesnelerin nasıl görüntüleneceğini tanımlarken kullanılır.
 
-[PropertyName öğesi SelectionCondition ListEntry (biçimi) için EmtrySelectedBy için için](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) koşul tetikleyen .NET alan özelliği belirtir. Bu özellik mevcut olduğunda veya için değerlendirirken `true`, koşul karşılanır ve liste girdisini kullanılır.
+[PropertyName öğesi SelectionCondition ListEntry (biçimi) için EntrySelectedBy için için](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) koşul tetikleyen .NET alan özelliği belirtir. Bu özellik mevcut olduğunda veya için değerlendirirken `true`, koşul karşılanır ve liste girdisini kullanılır.
 
 [PropertyName öğesi SelectionCondition TableRowEntry (biçimi) için EntrySelectedBy için için](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) koşul tetikleyen .NET alan özelliği belirtir. Bu özellik mevcut olduğunda veya için değerlendirirken `true`, koşul karşılanır ve tablo girişi kullanılır.
 
@@ -363,7 +363,7 @@ Bu bölümdeki konular (Format.ps1xml dosyaları) biçimlendirme tarafından kul
 
 [TableRowEntries öğesi (biçimi)](./tablerowentries-element-for-tablecontrol-format.md) tablonun satırlarını tanımlar.
 
-[TableRowEntry öğesi (biçimi)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) bir tablonun satırında görüntülenen verileri tanımlar.
+[TableRowEntry öğesi (biçimi)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) bir tablonun satırında görüntülenen verileri tanımlar.
 
 [Metin öğesi için yapılandırma (biçimi) için denetimleri için CustomItem](./text-element-for-customitem-for-controls-for-configuration-format.md) gibi bir etiket denetimi tarafından görüntülenen verilere eklenir belirtir metin, köşeli ayraçlar veri ve veri girintilemek için alanları içine almak için. Bu öğe, biçimlendirme dosyası içindeki tüm görünümler tarafından kullanılan bir ortak denetimi tanımlarken kullanılır.
 
@@ -427,7 +427,7 @@ Bu bölümdeki konular (Format.ps1xml dosyaları) biçimlendirme tarafından kul
 
 [Genişlik öğesi (biçimi)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md) (karakter cinsinden) bir sütunun genişliğini tanımlar.
 
-[Öğesi (biçimi) sarmalamak](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) sütun genişliğini aşıyor metin ve sonraki satırda görüntüleneceğini belirtir.
+[Öğesi (biçimi) sarmalamak](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) sütun genişliğini aşıyor metin ve sonraki satırda görüntüleneceğini belirtir.
 
 [WrapTables öğesi (biçimi)](./wraptables-element-format.md) veri sütunun genişliği uzunsa veri tablo hücresi içinde sonraki satıra taşınır belirtir.
 

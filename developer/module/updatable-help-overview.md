@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
-ms.openlocfilehash: 4e962890fa1d5c282a02a89f0ae2e263844c635e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847491"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057612"
 ---
 # <a name="updatable-help-overview"></a>Güncelleştirilebilir Yardıma Genel Bakış
 
@@ -31,7 +31,9 @@ Güncelleştirilebilir Yardımı tam olarak tüm Windows PowerShell modülleri W
 
 Güncelleştirilebilir Yardımı aşağıdaki özellikleri içerir.
 
-- [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) kullanıcıların en yeni Yardım sahip olup olmadığını belirleyen cmdlet, dosyaları bir modül için ve, aksi takdirde, Internet'ten en yeni Yardım dosyalarını indirir, bunları ayıklar ve bunları doğru modül dizinlerde yükler kullanıcının bilgisayarına. Kullanıcılar [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet'i yeni yüklediğiniz Yardım konuları hemen görüntüleyin. Windows PowerShell yeniden başlatmanız gerekmez.
+- [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) kullanıcıların en yeni Yardım sahip olup olmadığını belirleyen cmdlet, dosyaları bir modül için ve, aksi takdirde, Internet'ten en yeni Yardım dosyalarını indirir, bunları ayıklar ve bunları doğru modül dizinlerde yükler kullanıcının bilgisayarına.
+  Kullanıcılar [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet'i yeni yüklediğiniz Yardım konuları hemen görüntüleyin.
+  PowerShell yeniden başlatmanız gerekmez.
 
 - [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) en yeni Yardım indirir cmdlet'i, dosyaları Internet'ten ve bunları bir dosya sistemi dizine kaydeder. Kullanıcılar `Update-Help` cmdlet Yardım dosyalarını dosya sistemi dizinden almak ve paketini açın ve kullanıcının bilgisayarında modülü dizinlerdeki yükleyin. `Save-Help` Cmdlet'i, sınırlı kullanıcılar ya da Internet erişimi yok ve Internet erişimi sınırlamak için tercih ettiğiniz kuruluşlar için tasarlanmıştır.
 

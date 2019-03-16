@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794986"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057731"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Özellikle Önerilen Geliştirme Yönergeleri
 
@@ -101,7 +101,7 @@ Her zaman aynı parametrenin birden çok cmdlet tarafından kullanıldığında,
 
 #### <a name="parameters-that-take-true-and-false"></a>Alan doğru parametreleri ve False
 
-Parametreniz yalnızca sürerse `true` ve `false`, parametre türü olarak tanımlamanız [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter). Bir anahtar parametresi olarak işlenir `true` ne zaman, belirtilen bir komutu. Bir komut parametresi dahil edilmemişse, Windows PowerShell parametre değerini düşünür `false`. Boole parametreleri tanımlamaz.
+Parametreniz yalnızca sürerse `true` ve `false`, parametre türü olarak tanımlamanız [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). Bir anahtar parametresi olarak işlenir `true` ne zaman, belirtilen bir komutu. Bir komut parametresi dahil edilmemişse, Windows PowerShell parametre değerini düşünür `false`. Boole parametreleri tanımlamaz.
 
 Parametreniz 3 değerleri arasında ayırt etmek gerekiyorsa: $true, $false ve "belirsiz", ardından boş değer türünde bir parametre tanımlayın\<bool >.  Cmdlet'i bir nesnenin bir Boolean özelliği değiştirebilirsiniz 3 gereksinimi, "belirsiz" değeri genellikle meydana gelir. Bu durumda "belirsiz" özelliğinin geçerli değeri değiştirilmemesi anlamına gelir.
 
@@ -111,7 +111,7 @@ Genellikle, kullanıcıların birden çok bağımsız değişkeni aynı işlemi 
 
 #### <a name="support-the-passthru-parameter"></a>PassThru parametresini destekler
 
-Varsayılan olarak, birçok cmdlet değiştiren sistem gibi [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet'i, nesneler için "havuzlarını" görür ve bir sonuç yok. Bu cmdlet uygulamalıdır `PassThru` nesneyi döndürmek için cmdlet'i zorlamak için parametre. Zaman `PassThru` parametresi belirtildiğinde, cmdlet çağrısı kullanarak bir nesne döndürür. [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) yöntemi. Örneğin, aşağıdaki komut, hesaplama işlemi durdurur ve sonuçta elde edilen işlem ardışık düzene geçirir.
+Varsayılan olarak, birçok cmdlet değiştiren sistem gibi [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet'i, nesneler için "havuzlarını" görür ve bir sonuç yok. Bu cmdlet uygulamalıdır `PassThru` nesneyi döndürmek için cmdlet'i zorlamak için parametre. Zaman `PassThru` parametresi belirtildiğinde, cmdlet çağrısı kullanarak bir nesne döndürür. [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) yöntemi. Örneğin, aşağıdaki komut, hesaplama işlemi durdurur ve sonuçta elde edilen işlem ardışık düzene geçirir.
 
 ```powershell
 Stop-Process calc -passthru
@@ -135,21 +135,21 @@ Kılavuzları, bu bölümde kullanıcıya geri bildirim sağlamak için kullanı
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>WriteWarning WriteVerbose ve WriteDebug yöntemleri destekler
 
-Bir cmdlet çağırmalıdır [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) cmdlet istenmeyen bir sonuç olabilir bir işlem gerçekleştirmek üzere olduğunda yöntemi. Örneğin, bir cmdlet cmdlet hakkında bir salt okunur dosyanın üzerine ise bu yöntemi çağırmanız gerekir.
+Bir cmdlet çağırmalıdır [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) cmdlet istenmeyen bir sonuç olabilir bir işlem gerçekleştirmek üzere olduğunda yöntemi. Örneğin, bir cmdlet cmdlet hakkında bir salt okunur dosyanın üzerine ise bu yöntemi çağırmanız gerekir.
 
-Bir cmdlet çağırmalıdır [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) kullanıcı bazı ayrıntılı cmdlet yaptığı gerektirdiğinde yöntemi. Örneğin, cmdlet yazar, cmdlet yaptığı hakkında daha fazla bilgi gerektiren senaryolar vardır görünüyorsa bir cmdlet bu bilgileri çağırmanız gerekir.
+Bir cmdlet çağırmalıdır [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) kullanıcı bazı ayrıntılı cmdlet yaptığı gerektirdiğinde yöntemi. Örneğin, cmdlet yazar, cmdlet yaptığı hakkında daha fazla bilgi gerektiren senaryolar vardır görünüyorsa bir cmdlet bu bilgileri çağırmanız gerekir.
 
-Cmdlet çağırmalıdır [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) yöntemi bir geliştirici ya da ürün destek mühendisi ne cmdlet'i işlemi bozdu anlamanız gerekir. Çağrılacak cmdlet'i için ise gerekli değildir [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) yöntemi çağıran koddaki [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) yöntemi olduğundan `Debug` parametre iki bilgi sunar.
+Cmdlet çağırmalıdır [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) yöntemi bir geliştirici ya da ürün destek mühendisi ne cmdlet'i işlemi bozdu anlamanız gerekir. Çağrılacak cmdlet'i için ise gerekli değildir [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) yöntemi çağıran koddaki [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) yöntemi çünkü `Debug` parametre iki bilgi sunar.
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>WriteProgress uzun süren işlemler için destek
 
-Cmdlet'i işlemlerini tamamlamak için uzun bir zaman ve arka planda çalıştırılamaz Süren düzenli çağrılar aracılığıyla raporlama ilerleme desteklemelidir [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) yöntemi.
+Cmdlet'i işlemlerini tamamlamak için uzun bir zaman ve arka planda çalıştırılamaz Süren düzenli çağrılar aracılığıyla raporlama ilerleme desteklemelidir [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) yöntemi.
 
 #### <a name="use-the-host-interfaces"></a>Konak arabirimleri kullanır.
 
-Bazen, bir cmdlet yerine bir kullanıcıyla doğrudan kullanarak çeşitli yazma veya yöntemler tarafından desteklenen gerektiğini iletişim kurması [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) sınıfı. Bu durumda, cmdlet türetilmesi [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) kullanın ve sınıf [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) özelliği. Bu özellik, farklı düzeylerde PromptForChoice istemi ve WriteLine/ReadLine türleri dahil olmak üzere, iletişim türünü destekler. En fazla belirli bir düzeye okuma ve yazma bireysel anahtarları ve arabelleklerinin dağıtılacak şekilde de sağlar.
+Bazen, bir cmdlet yerine bir kullanıcıyla doğrudan kullanarak çeşitli yazma veya yöntemler tarafından desteklenen gerektiğini iletişim kurması [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) sınıfı. Bu durumda, cmdlet türetilmesi [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) kullanın ve sınıf [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) özelliği. Bu özellik, farklı düzeylerde PromptForChoice istemi ve WriteLine/ReadLine türleri dahil olmak üzere, iletişim türünü destekler. En fazla belirli bir düzeye okuma ve yazma bireysel anahtarları ve arabelleklerinin dağıtılacak şekilde de sağlar.
 
-Bir cmdlet bir grafik kullanıcı arabirimi (GUI) oluşturmak için özel olarak tasarlanmıştır, bu konak kullanarak atlamanızı değil [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) özelliği. GUI oluşturmak için tasarlanmış bir cmdlet örneğidir [çıkış GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet'i.
+Bir cmdlet bir grafik kullanıcı arabirimi (GUI) oluşturmak için özel olarak tasarlanmıştır, bu konak kullanarak atlamanızı değil [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) özelliği. GUI oluşturmak için tasarlanmış bir cmdlet örneğidir [çıkış GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet'i.
 
 > [!NOTE]
 > Cmdlet'leri kullanmamanız [System.Console](/dotnet/api/System.Console) API.
@@ -174,15 +174,15 @@ Bir dosya veya bir veri kaynağını belirtmek için kullanıcıyı cmdlet'inize
 
 Bir dosya cmdlet okur veya yazar verileri varsa, cmdlet, Windows PowerShell yolu giriş kabul etmelidir ve cmdlet'ini kullanmanız gerekir [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) Windows çevrilecek özelliği Dosya sistemi tanıdığı yolları uygulamasına PowerShell yolları. Belirli mekanizmaları, aşağıdaki yöntemler şunlardır:
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Cmdlet okuyan veya yazan verilerin yalnızca olup olmadığını sağlayıcı içerik bilgileri dosyası, cmdlet dizeler kümesi kullanmanız gerekir (`Content` üye) okuma ve yazma için. Bu bilgiler elde edilir [System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) özelliği. Bu mekanizmalar, diğer veri depolarına okuma ve yazma veri katılacak şekilde izin verir.
+Cmdlet okuyan veya yazan verilerin yalnızca olup olmadığını sağlayıcı içerik bilgileri dosyası, cmdlet dizeler kümesi kullanmanız gerekir (`Content` üye) okuma ve yazma için. Bu bilgiler elde edilir [System.Management.Automation.Provider.CmdletProvider.InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) özelliği. Bu mekanizmalar, diğer veri depolarına okuma ve yazma veri katılacak şekilde izin verir.
 
 #### <a name="support-wildcard-characters"></a>Joker karakter desteği
 
@@ -230,11 +230,11 @@ Bir parametreyi, ardışık düzendeki girişi kabul eden **parametre** öznitel
 
 #### <a name="support-the-processrecord-method"></a>ProcessRecord yöntemi
 
-Yukarıdaki cmdlet işlem hattındaki tüm kayıtların kabul etmek için cmdlet uygulamalıdır [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi. Windows PowerShell Bu yöntem, birden çok kez kez cmdlet'inize için gönderilen her kayıt için çağırır.
+Yukarıdaki cmdlet işlem hattındaki tüm kayıtların kabul etmek için cmdlet uygulamalıdır [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi. Windows PowerShell Bu yöntem, birden çok kez kez cmdlet'inize için gönderilen her kayıt için çağırır.
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>Tek kayıtları (SC03) işlem hattı yazma
 
-Bir cmdlet nesneleri geri döndüğünde, cmdlet nesneleri yazmalısınız böylece, oluşturulan hemen. Cmdlet bunları bunları birleşik bir diziye arabellek için tutmak zorunda değildir. Cmdlet'ler nesneler giriş olarak alır, ardından işlemek, görüntüleme veya işleme ve gecikme olmadan çıkış nesneleri görüntülemek mümkün olacaktır. Çıktı üretir bir cmdlet'i nesneleri teker teker çağırmalıdır [System.Management.Automation.Cmdlet.Writeobject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) yöntemi. (Örneğin, temel alınan API çıkış nesnelerinin bir dizisi döndürüldüğünden) toplu olarak çıkış nesnelerini oluşturan bir cmdlet çağırmalıdır [System.Managemet.Automation.Cmdlet.Writeobject](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject) , ikinci parametresinin bir yöntemle için `true`.
+Bir cmdlet nesneleri geri döndüğünde, cmdlet nesneleri yazmalısınız böylece, oluşturulan hemen. Cmdlet bunları bunları birleşik bir diziye arabellek için tutmak zorunda değildir. Cmdlet'ler nesneler giriş olarak alır, ardından işlemek, görüntüleme veya işleme ve gecikme olmadan çıkış nesneleri görüntülemek mümkün olacaktır. Çıktı üretir bir cmdlet'i nesneleri teker teker çağırmalıdır [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) yöntemi. (Örneğin, temel alınan API çıkış nesnelerinin bir dizisi döndürüldüğünden) toplu olarak çıkış nesnelerini oluşturan bir cmdlet çağırmalıdır [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) , ikinci parametresinin bir yöntemle için `true`.
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Cmdlet'leri büyük küçük harf duyarsız olun ve harf korumalıdır (SC04)
 

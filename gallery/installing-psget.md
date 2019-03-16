@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
 title: PowerShellGet yükleme
-ms.openlocfilehash: 5c51cb1c7ea2538cc5f8503ce6c5d80edda70e15
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683880"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054841"
 ---
 # <a name="installing-powershellget"></a>PowerShellGet yükleme
 
@@ -57,7 +57,7 @@ ms.locfileid: "55683880"
   Exit
   ```
 
-- Tüm diğer işlemler PowerShellGet ve PackageManagment modülleri yüklü değil emin olun.
+- PowerShellGet ve PackageManagement modüllerini tüm diğer işlemler yüklenmeyen emin olun.
 - İçeriğini silin `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` ve `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` klasörleri.
 - PS konsolunda yükseltilmiş izinlerle yeniden açın, ardından aşağıdaki komutları çalıştırın.
 

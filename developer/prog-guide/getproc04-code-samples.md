@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c00afd46-758a-4aec-b865-2c9d8f6a17ad
 caps.latest.revision: 5
-ms.openlocfilehash: b9b42c818981090496f7b14a1cb8bdec14a5d5bb
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 67081528ebe14fbb082091c1b9500de82069b48f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429729"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054654"
 ---
 # <a name="getproc04-code-samples"></a>GetProc04 Kod Örnekleri
 
-GetProc04 örnek cmdlet için kod örnekleri aşağıda verilmiştir. Bu `Get-Process` cmdlet örnek açıklanan [bilgisayarınızı cmdlet'e olmak üzere Sonlandırmasız hata raporlama ekleme](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md). Bu `Get-Process` cmdlet'i çağrıları [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) işlem bilgileri alınırken bir geçersiz işlem özel durum olduğunda yöntemi.
+GetProc04 örnek cmdlet için kod örnekleri aşağıda verilmiştir. Bu `Get-Process` cmdlet örnek açıklanan [bilgisayarınızı cmdlet'e olmak üzere Sonlandırmasız hata raporlama ekleme](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md). Bu `Get-Process` cmdlet'i çağrıları [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) işlem bilgileri alınırken bir geçersiz işlem özel durum olduğunda yöntemi.
 
 > [!NOTE]
 > İndirebileceğiniz C# .NET Framework 3.0 çalışma zamanı bileşenleri ve Microsoft Windows Yazılım Geliştirme Seti için Windows Vista'yı kullanarak bu Get-Proc cmdlet için kaynak dosyası (getprov04.cs). Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).

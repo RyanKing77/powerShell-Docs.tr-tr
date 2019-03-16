@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3d74217621d00dfd68cad1c45d187a9c2ffb9980
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687030"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054383"
 ---
 # <a name="known-issues-and-limitations"></a>Bilinen Sorunlar ve Sınırlamalar
 
@@ -77,7 +77,7 @@ Bir dizin adı bir geçersiz joker karakter içeriyorsa `Get-ChildItem` - Litera
 
 - Çalışan sistemler için **Windows Server 2012**
   1. WMF 5.0 olması için sunucuda yükledikten sonra Sysprep'd, yönetici olarak oturum açın.
-  2. Generize.XML dizin \Windows\System32\Sysprep\ActionFiles\ C:\ Windows dizini dışındaki bir konuma örneğin kopyalayın.
+  2. Generize.XML dizin \Windows\System32\Sysprep\ActionFiles\ C:\ Windows dizini dışındaki bir konuma kopyalayın. Örneğin.
   3. Generalize.xml kopyanızı notepad ile açın.
   4. Bulma ve aşağıdaki metni, silinmesi gerekiyor her bir örneğini kaldırma (belgenin sonuna olacaktır).
 

@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
 caps.latest.revision: 11
-ms.openlocfilehash: 59dfd40b95d5088a711eb89cf101eb31a4b159f5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846875"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054518"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl TableColumnHeader için Etiket Öğesi (Biçim)
 
 Bir sütunun en üstünde gösterilen etiketi tanımlar. Bu öğe, bir tablo görünümü tanımlarken kullanılır.
 
-Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm öğesi (biçimi) TableControl öğesi (biçimi) TableHeaders öğesi TableControl (biçimi) etiketi öğesinin TableHeaders TableColumnHeader öğesinin TableControl (biçimi) TableColumnHeader TablControl (biçimi) için
+Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm öğesi (biçimi) TableControl öğesi (biçimi) TableHeaders öğesi TableControl (biçimi) etiketi öğesinin TableHeaders TableColumnHeader öğesinin TableControl (biçimi) TableControl (biçimi) için TableColumnHeader
 
 ## <a name="syntax"></a>Sözdizimi
 

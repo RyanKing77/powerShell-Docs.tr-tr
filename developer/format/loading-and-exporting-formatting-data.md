@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
-ms.openlocfilehash: 86a0e8b7e8967280daa57faf5c323efcd3b1368b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794204"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054195"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Biçimlendirme Verilerini Yükleme ve Dışarı Aktarma
 
@@ -27,7 +27,7 @@ Biçimlendirme dosyaları geçerli oturuma aşağıdaki yöntemler kullanılarak
 
 - Biçimlendirme dosyanızı başvuran bir modül bildirimi oluşturabilirsiniz. Modülleri, dağıtım dosyaları biçimlendirme paketlemenize olanak sağlar. Kullanım [yeni ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) bildirimi oluşturmak için cmdlet'i ve [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet modülü geçerli oturuma yüklenemedi. Modüller hakkında daha fazla bilgi için bkz: [bir Windows PowerShell modülü yazma](../module/writing-a-windows-powershell-module.md).
 
-- Biçimlendirme dosyanızı başvuran bir ek bileşenini oluşturabilirsiniz. Kullanım [System.Management.Automation.Pssnapin.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) biçimlendirme dosyalarınızı başvurmak için. Dağıtım için paket Cmdlet'lerine, modüller ve ilişkili bir biçimlendirme ve türleri dosyaları kullanmak için özellikle önerilir. Modüller hakkında daha fazla bilgi için bkz: [bir Windows PowerShell modülü yazma](../module/writing-a-windows-powershell-module.md).
+- Biçimlendirme dosyanızı başvuran bir ek bileşenini oluşturabilirsiniz. Kullanım [System.Management.Automation.PSSnapIn.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) biçimlendirme dosyalarınızı başvurmak için. Dağıtım için paket Cmdlet'lerine, modüller ve ilişkili bir biçimlendirme ve türleri dosyaları kullanmak için özellikle önerilir. Modüller hakkında daha fazla bilgi için bkz: [bir Windows PowerShell modülü yazma](../module/writing-a-windows-powershell-module.md).
 
 - Komutları bir program aracılığıyla çağırdığınız, komutları çalıştırdığı ilk oturum durumunu çalışma alanı için bir biçimlendirme dosya giriş ekleyebilirsiniz. Biçimlendirme dosyası eklemek için kullanılan .NET türü hakkında daha fazla bilgi için bkz: [System.Management.Automation.Runspaces.Sessionstateformatentry? Displayproperty Fullname =](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry) sınıfı.
 

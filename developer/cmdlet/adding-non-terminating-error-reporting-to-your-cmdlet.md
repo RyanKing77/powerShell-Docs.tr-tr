@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 2f3bb481722363557c93ebbc5e6df62baeff2555
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0550dacc33f45f45ba105ca5cb4d2e5b5d675fb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851019"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056065"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Cmdlet’inize Sonlandırıcı Olmayan Hata Raporlama Ekleme
 
-Cmdlet'leri rapor olmak üzere sonlandırmasız hatalar çağırarak [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) yöntemi ve geçerli giriş nesnesi ya da daha fazla gelen çalışmaya devam işlem hattı nesneleri. Bu bölümde, giriş işleme yöntemlerinden olmak üzere sonlandırmasız hatalar raporları bir cmdlet oluşturma açıklanmaktadır.
+Cmdlet'leri rapor olmak üzere sonlandırmasız hatalar çağırarak [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) yöntemi ve geçerli giriş nesnesi ya da daha fazla gelen çalışmaya devam işlem hattı nesneleri. Bu bölümde, giriş işleme yöntemlerinden olmak üzere sonlandırmasız hatalar raporları bir cmdlet oluşturma açıklanmaktadır.
 
-Olmak üzere sonlandırmasız hatalar (aynı zamanda için Sonlandırıcı hataları), cmdlet geçmesi gereken bir [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) hatayı tanımlayan nesne. Her hata kaydı "hata tanımlayıcı." adı verilen benzersiz bir dize tanımlanır. Tanımlayıcı yanı sıra her bir hata kategorisi tarafından tanımlanan sabitleri tarafından belirtilen bir [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) sabit listesi. Kullanıcı ayarlayarak kategorilerine göre hataları görüntüleyebilirsiniz `$ErrorView` "CategoryView" değişkenini.
+Olmak üzere sonlandırmasız hatalar (aynı zamanda için Sonlandırıcı hataları), cmdlet geçmesi gereken bir [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) hatayı tanımlayan nesne. Her hata kaydı "hata tanımlayıcı." adı verilen benzersiz bir dize tanımlanır. Tanımlayıcı yanı sıra her bir hata kategorisi tarafından tanımlanan sabitleri tarafından belirtilen bir [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) sabit listesi. Kullanıcı ayarlayarak kategorilerine göre hataları görüntüleyebilirsiniz `$ErrorView` "CategoryView" değişkenini.
 
 Hata kaydı hakkında daha fazla bilgi için bkz: [Windows PowerShell hata kaydı](./windows-powershell-error-records.md).
 
@@ -101,11 +101,11 @@ Tüm cmdlet'ler tarafından sağlanan yöntemleri işleme giriş en az biri geç
 > [!NOTE]
 > Cmdlet'inize her bir kayıt olarak bağımsız olarak işlemelidir.
 
-Bu Get-Proc cmdlet geçersiz kılmalar [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) işlemek için gereken yöntemini `Name` kullanıcı veya bir betik tarafından sağlanan giriş parametresi. Adsız sağlanırsa, bu yöntem işlemleri her istenen işlem adı veya tüm işlemler için alırsınız. Bu geçersiz kılma ayrıntıları verilir [oluşturma bilgisayarınızı ilk Cmdlet](./creating-a-cmdlet-without-parameters.md).
+Bu Get-Proc cmdlet geçersiz kılmalar [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) işlemek için gereken yöntemini `Name` kullanıcı veya bir betik tarafından sağlanan giriş parametresi. Adsız sağlanırsa, bu yöntem işlemleri her istenen işlem adı veya tüm işlemler için alırsınız. Bu geçersiz kılma ayrıntıları verilir [oluşturma bilgisayarınızı ilk Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
 #### <a name="things-to-remember-when-reporting-errors"></a>Hata raporlama, bunları unutmayın
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesne yazılırken bir hata özel durum özellikleri temel alınarak gerektirdiğinde cmdlet geçirir. Kullanılacak özel durum belirlerken .NET yönergeleri izleyin. Temel olarak, hata anlamsal olarak var olan bir özel durum ile aynı ise, cmdlet kullanın veya bu özel durumdan türetilen. Aksi takdirde, yeni özel durum ya da doğrudan özel durum hiyerarşisi türetilmelidir [System.Exception](/dotnet/api/System.Exception) sınıfı.
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesne yazılırken bir hata özel durum özellikleri temel alınarak gerektirdiğinde cmdlet geçirir. Kullanılacak özel durum belirlerken .NET yönergeleri izleyin. Temel olarak, hata anlamsal olarak var olan bir özel durum ile aynı ise, cmdlet kullanın veya bu özel durumdan türetilen. Aksi takdirde, yeni özel durum ya da doğrudan özel durum hiyerarşisi türetilmelidir [System.Exception](/dotnet/api/System.Exception) sınıfı.
 
 Hata tanımlayıcıları (ErrorRecord sınıfın FullyQualifiedErrorId özelliği erişilir) oluştururken aşağıdakileri göz önünde bulundurun.
 
@@ -135,7 +135,7 @@ Cmdlet'i belirli hata tanımlayıcıları farklı kod yolları atamanız gerekir
 
 ## <a name="reporting-nonterminating-errors"></a>Raporlama olmak üzere Sonlandırmasız hatalar
 
-Çıkış akışı kullanarak, yöntemleri işleme giriş herhangi biri olmak üzere sonlandırmasız bir hata rapor edebilirsiniz [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) yöntemi. İşte bir kod örneği bu Get-Proc cmdlet'inden yapılan çağrıyı gösterir [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) gelen geçersiz kılmasını içinde [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi. Cmdlet'i bir işlem için belirtilen işlem tanımlayıcısı bulamazsa, bu durumda, bir çağrı yapılır.
+Çıkış akışı kullanarak, yöntemleri işleme giriş herhangi biri olmak üzere sonlandırmasız bir hata rapor edebilirsiniz [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) yöntemi. İşte bir kod örneği bu Get-Proc cmdlet'inden yapılan çağrıyı gösterir [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) gelen geçersiz kılmasını içinde [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi. Cmdlet'i bir işlem için belirtilen işlem tanımlayıcısı bulamazsa, bu durumda, bir çağrı yapılır.
 
 ```csharp
 protected override void ProcessRecord()

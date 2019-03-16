@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: d93cc4a05a6625d073791c067d1e9b6662c3a565
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847050"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055147"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Sistemi Değiştiren bir Cmdlet Oluşturma
 
@@ -26,15 +26,15 @@ Bazı durumlarda bir cmdlet, yalnızca Windows PowerShell çalışma zamanı dur
 
 Onay desteklemek için bir cmdlet'in iki işlem yapmalısınız.
 
-- Belirttiğinizde cmdlet onay desteklediğini bildirmek [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) SupportsShouldProcess anahtar sözcüğü ayarlayarak özniteliği `true`.
+- Belirttiğinizde cmdlet onay desteklediğini bildirmek [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) SupportsShouldProcess anahtar sözcüğü ayarlayarak özniteliği `true`.
 
-- Çağrı [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) (aşağıdaki örnekte gösterildiği gibi) cmdlet'inin yürütülmesi sırasında.
+- Çağrı [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) (aşağıdaki örnekte gösterildiği gibi) cmdlet'inin yürütülmesi sırasında.
 
 Onay destekleyerek, bir cmdlet kullanıma sunan `Confirm` ve `WhatIf` Windows PowerShell tarafından sağlanan ve ayrıca geliştirme yönergelere cmdlet'leri için uygun parametreleri ( cmdlet'igeliştirmekılavuzlarıhakkındadahafazlabilgiiçinbkz.[ Cmdlet geliştirme yönergeleri](./cmdlet-development-guidelines.md).).
 
 ## <a name="changing-the-system"></a>Sistem değiştirme
 
-"Sistem değiştirme" işlemi, potansiyel olarak Windows PowerShell dışında sistem durumunu değiştiren herhangi bir cmdlet'i ifade eder. Örneğin, bir veritabanı tablosunda bir satıra onaylanması sistemde yapılan tüm değişiklikleri Koleksiyonlar'a etkinleştirme veya bir kullanıcı hesabı devre dışı bırakma işlemi durduruluyor. Buna karşılık, veri okuma veya geçici bağlantı işlemleri sistem değiştirmeyin ve genellikle onay gerektirmez. Onay ayrıca gerekli değildir, etkili sınırlıdır ve Windows PowerShell çalışma zamanı içinde olduğu gibi eylemler için `set-variable`. Kalıcı bir değişiklik yapmamanız veya cmdlet'leri bildirmelidir `SupportsShouldProcess` ve çağrı [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yalnızca kalıcı bir değişiklik yapmak üzere olmaları durumunda.
+"Sistem değiştirme" işlemi, potansiyel olarak Windows PowerShell dışında sistem durumunu değiştiren herhangi bir cmdlet'i ifade eder. Örneğin, bir veritabanı tablosunda bir satıra onaylanması sistemde yapılan tüm değişiklikleri Koleksiyonlar'a etkinleştirme veya bir kullanıcı hesabı devre dışı bırakma işlemi durduruluyor. Buna karşılık, veri okuma veya geçici bağlantı işlemleri sistem değiştirmeyin ve genellikle onay gerektirmez. Onay ayrıca gerekli değildir, etkili sınırlıdır ve Windows PowerShell çalışma zamanı içinde olduğu gibi eylemler için `set-variable`. Kalıcı bir değişiklik yapmamanız veya cmdlet'leri bildirmelidir `SupportsShouldProcess` ve çağrı [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yalnızca kalıcı bir değişiklik yapmak üzere olmaları durumunda.
 
 > [!NOTE]
 > ShouldProcess onay yalnızca cmdlet'ler için geçerli olur. Bir komut veya betik .NET yöntemleri veya özellikleri doğrudan çağırma veya Windows PowerShell dışında çağıran uygulamalardan bir sistemin çalışır duruma değiştirir, bu formu onayının kullanılabilir olmaz.
@@ -77,11 +77,11 @@ Bu Stop-Proc cmdlet için sınıf tanımının verilmiştir.
 public class StopProcCommand : Cmdlet
 ```
 
-Unutmayın, [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) bildirimi `SupportsShouldProcess` özniteliği anahtar sözcüğü ayarlandığında `true` çağrı yapmak cmdlet etkinleştirmek için [ System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Bu anahtar sözcük kümesi olmadan `Confirm` ve `WhatIf` parametreleri kullanılabilir olmayacak.
+Unutmayın, [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) bildirimi `SupportsShouldProcess` özniteliği anahtar sözcüğü ayarlandığında `true` çağrı yapmak cmdlet etkinleştirmek için [ System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Bu anahtar sözcük kümesi olmadan `Confirm` ve `WhatIf` parametreleri kullanılabilir olmayacak.
 
 ### <a name="extremely-destructive-actions"></a>Son derece bozucu Eylemler
 
-Bazı işlemler, bir etkin sabit disk bölümü yeniden biçimlendirme gibi son derece yıkıcı. Bu gibi durumlarda cmdlet ayarlamalısınız `ConfirmImpact`  =  `ConfirmImpact.High` bildirirken [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) özniteliği. Bu ayar bile kullanıcı belirtilmemişse cmdlet isteği kullanıcı onayı zorlar. `Confirm` parametresi. Aşırı kullanımı cmdlet'i geliştiriciler ancak kaçınmalısınız `ConfirmImpact` bir kullanıcı hesabı silme gibi yalnızca potansiyel olarak zararlı işlemler için. Unutmayın `ConfirmImpact` ayarlanır [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
+Bazı işlemler, bir etkin sabit disk bölümü yeniden biçimlendirme gibi son derece yıkıcı. Bu gibi durumlarda cmdlet ayarlamalısınız `ConfirmImpact`  =  `ConfirmImpact.High` bildirirken [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) özniteliği. Bu ayar bile kullanıcı belirtilmemişse cmdlet isteği kullanıcı onayı zorlar. `Confirm` parametresi. Aşırı kullanımı cmdlet'i geliştiriciler ancak kaçınmalısınız `ConfirmImpact` bir kullanıcı hesabı silme gibi yalnızca potansiyel olarak zararlı işlemler için. Unutmayın `ConfirmImpact` ayarlanır [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
 
 Benzer şekilde, bazı işlemler teorik olarak çalışan Windows PowerShell dışında bir sistem durumunu değiştirebilir ancak yıkıcı, olması olası değildir. Bu cmdlet'leri ayarlayabilirsiniz `ConfirmImpact` için [System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Bu kullanıcının yalnızca orta etkisi ve yüksek etkili işlemlerini doğrulamak için burada istedi onay istekleri atlayacaktır.
 
@@ -93,7 +93,7 @@ Stop-Proc cmdlet, üç parametre tanımlar: `Name`, `Force`, ve `PassThru`.
 
 `Name` Karşılık gelen parametre `Name` özelliği işlem giriş nesnesi. Unutmayın, `Name` durdurmak için adlandırılmış bir işlem yoksa cmdlet başarısız olacağından bu parametre zorunludur.
 
-`Force` Parametresi çağrısına geçersiz kılmasına izin verir [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Aslında, herhangi bir cmdlet'i çağırır [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) olmalıdır bir `Force` parametre için zaman `Force` belirtilirse, cmdlet çağrısı atlar [ System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ve işleme devam eder. Bu çağrılar etkilemez unutmayın [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess).
+`Force` Parametresi çağrısına geçersiz kılmasına izin verir [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Aslında, herhangi bir cmdlet'i çağırır [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) olmalıdır bir `Force` parametre için zaman `Force` belirtilirse, cmdlet çağrısı atlar [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ve işleme devam eder. Bu çağrılar etkilemez unutmayın [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess).
 
 `PassThru` Parametresi bir işlemi durdurulduktan sonra cmdlet'i bir çıkış nesnesi aracılığıyla işlem hattı, bu durumda, geçirmediğini belirtmek için kullanıcı olanak sağlar. Bu parametre cmdlet'e giriş nesnenin kendisi yerine bir özelliğe bağlı olduğunu unutmayın.
 
@@ -142,7 +142,7 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>Bir giriş işleme yöntemi geçersiz kılma
 
-Cmdlet'i, girdi işleme yöntemi geçersiz kılmanız gerekir. Aşağıdaki kod gösterir [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) kullanılan örnek Stop-Proc cmdlet'te geçersiz kılma. Bu yöntem her istenen işlem adı için işlem özel bir işlem değil, işlemi durdurmak çalışır ve bir çıkış nesnesi daha sonra gönderir sağlar `PassThru` parametre belirtildi.
+Cmdlet'i, girdi işleme yöntemi geçersiz kılmanız gerekir. Aşağıdaki kod gösterir [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) kullanılan örnek Stop-Proc cmdlet'te geçersiz kılma. Bu yöntem her istenen işlem adı için işlem özel bir işlem değil, işlemi durdurmak çalışır ve bir çıkış nesnesi daha sonra gönderir sağlar `PassThru` parametre belirtildi.
 
 ```csharp
 protected override void ProcessRecord()
@@ -200,9 +200,9 @@ protected override void ProcessRecord()
                 processName);
 
           // It is possible that ProcessRecord is called multiple times
-          // when the Name parameter reveives objects as input from the
+          // when the Name parameter receives objects as input from the
           // pipeline. So to retain YesToAll and NoToAll input that the
-          // user may enter across mutilple calls to ProcessRecord, this
+          // user may enter across multiple calls to ProcessRecord, this
           // information is stored as private members of the cmdlet.
           if (!ShouldContinue(message, "Warning!",
                               ref yesToAll,
@@ -210,7 +210,7 @@ protected override void ProcessRecord()
           {
             continue;
           }
-        } // if (cricicalProcess...
+        } // if (criticalProcess...
         // Stop the named process.
         try
         {
@@ -246,14 +246,14 @@ protected override void ProcessRecord()
 
 ## <a name="calling-the-shouldprocess-method"></a>ShouldProcess yöntemi çağırma
 
-Yöntemi, cmdlet'in işleme giriş çağırmalıdır [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çalışıyor (örneğin, silme dosyaları) bir değişiklik yapılmadan önce bir işlemin yürütülmesi onaylamak için yöntemi Sistem durumu. Bu, kabuktan doğru "WhatIf" ve "Onayla" davranışı sağlamak Windows PowerShell çalışma zamanı sağlar.
+Yöntemi, cmdlet'in işleme giriş çağırmalıdır [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çalışma durumuna (örneğin, silme dosyaları) bir değişiklik yapılmadan önce bir işlemin yürütülmesi onaylamak için yöntemi sistemi. Bu, kabuktan doğru "WhatIf" ve "Onayla" davranışı sağlamak Windows PowerShell çalışma zamanı sağlar.
 
 > [!NOTE]
-> Bir cmdlet onu desteklediğini belirten işlemelisiniz ve yapma başarısız [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağrısı, kullanıcı Sistem beklenmedik bir şekilde değiştirebilirsiniz.
+> Bir cmdlet onu desteklediğini belirten işlemelisiniz ve yapma başarısız [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağrısı, kullanıcı Sistem beklenmedik bir şekilde değiştirebilirsiniz.
 
-Çağrı [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) kullanıcı için herhangi bir komut satırı ayarlarını veya tercih değişkenleri dikkate alarak Windows PowerShell çalışma zamanı ile değiştirilmesi kaynağın adını gönderir kullanıcıya görüntülenen belirlemede.
+Çağrı [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) kullanıcı için herhangi bir komut satırı ayarlarını veya tercih değişkenleri dikkate alarak Windows PowerShell çalışma zamanı ile değiştirilmesi kaynağın adını gönderir kullanıcıya görüntülenen belirlemede.
 
-Aşağıdaki örnek, çağrısını gösterir [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) geçersiz kılmasını gelen [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi Stop-Proc cmdlet örnek.
+Aşağıdaki örnek, çağrısını gösterir [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) geçersiz kılmasını gelen [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi Stop-Proc cmdlet'i.
 
 ```csharp
 if (!ShouldProcess(string.Format("{0} ({1})", processName,
@@ -265,9 +265,9 @@ if (!ShouldProcess(string.Format("{0} ({1})", processName,
 
 ## <a name="calling-the-shouldcontinue-method"></a>ShouldContinue yöntemi çağırma
 
-Çağrı [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntem, kullanıcı için ikincil bir ileti gönderir. Bu çağrı çağrısından sonra yapılan [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) döndürür `true` ve `Force` parametresi ayarlanmamış `true`. Kullanıcı, sonra işlemi devam olmadığını düşünelim için geri bildirim sunabilir. Cmdlet çağrılarınızı [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) olarak tehlikeli olabilecek bir sistem değişiklikleri veya kullanıcı için tüm için Evet ve Hayır tüm seçenekleri sağlamak istediğinizde için ek bir denetim.
+Çağrı [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntem, kullanıcı için ikincil bir ileti gönderir. Bu çağrı çağrısından sonra yapılan [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) döndürür `true` ve `Force` parametresi ayarlanmamış `true`. Kullanıcı, sonra işlemi devam olmadığını düşünelim için geri bildirim sunabilir. Cmdlet çağrılarınızı [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) olarak tehlikeli olabilecek bir sistem değişiklikleri veya kullanıcı için tüm için Evet ve Hayır tüm seçenekleri sağlamak istediğinizde için ek bir denetim.
 
-Aşağıdaki örnek, çağrısını gösterir [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) geçersiz kılmasını gelen [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi Stop-Proc cmdlet örnek.
+Aşağıdaki örnek, çağrısını gösterir [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) geçersiz kılmasını gelen [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi Stop-Proc cmdlet'i.
 
 ```csharp
 if (criticalProcess &&!force)
@@ -277,9 +277,9 @@ if (criticalProcess &&!force)
         processName);
 
   // It is possible that ProcessRecord is called multiple times
-  // when the Name parameter reveives objects as input from the
+  // when the Name parameter receives objects as input from the
   // pipeline. So to retain YesToAll and NoToAll input that the
-  // user may enter across mutilple calls to ProcessRecord, this
+  // user may enter across multiple calls to ProcessRecord, this
   // information is stored as private members of the cmdlet.
   if (!ShouldContinue(message, "Warning!",
                       ref yesToAll,
@@ -287,12 +287,12 @@ if (criticalProcess &&!force)
   {
     continue;
   }
-} // if (cricicalProcess...
+} // if (criticalProcess...
 ```
 
 ## <a name="stopping-input-processing"></a>Durdurma giriş işleme
 
-Sistem değişiklikleri yapan bir cmdlet'in yöntemi işleme giriş, giriş işleme durdurma bir yol sağlamanız gerekir. Bu Stop-Proc cmdlet söz konusu olduğunda, gelen bir çağrı yapılır [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yönteme [System.Diagnostics.Process.Kill*](/dotnet/api/System.Diagnostics.Process.Kill) yöntemi. Çünkü `PassThru` parametrenin ayarlanmış `true`, [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) de çağırır [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) için işlem nesnesi işlem hattının gönderin.
+Sistem değişiklikleri yapan bir cmdlet'in yöntemi işleme giriş, giriş işleme durdurma bir yol sağlamanız gerekir. Bu Stop-Proc cmdlet söz konusu olduğunda, gelen bir çağrı yapılır [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yönteme [System.Diagnostics.Process.Kill*](/dotnet/api/System.Diagnostics.Process.Kill) yöntemi. Çünkü `PassThru` parametrenin ayarlanmış `true`, [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) de çağırır [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) göndermek için işlem hattı için işlem nesnesi.
 
 ## <a name="code-sample"></a>Kod örneği
 

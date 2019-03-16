@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Sosyal medya veya yorumlar geri bildirim sağlama
-ms.openlocfilehash: a7cdcc2ff2c18fb606d077adf0bdecf57c90703f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684356"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055011"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Sosyal medya veya yorumlar geri bildirim sağlama
 
-Powershell Galerisi kullanıcılar üzerindeki bir paket genel geri bildirim sağlamak için iki yaklaşım destekler:
+PowerShell Galerisi kullanıcılar üzerindeki bir paket genel geri bildirim sağlamak için iki yaklaşım destekler:
 
 - "Facebook, LinkedIn ve Twitter sosyal medya siteleri paketinde paylaşmak için" sol kenarda bağlantıları kullanın
 - Açıklama özelliği üzerindeki bir paket açıklamaları gönderin ve bunlar yayımlama paketleri için yorum izlemek yazarlar izin vermek için kullanın.
@@ -26,8 +26,7 @@ Kullanıcıların siteye PowerShell Galerisi paket paylaşımı için seçtiğin
 
 Kullanıcılar, bir paketi bir şey başkalarına önerme olasılığınız olduğunu fark ederseniz, bunu yapmak için önerilir.
 PowerShell Galerisi "paylaşımlar" paketi için her bir sosyal medya sitesini denetler ve her sosyal medya siteleri bir görüntü paketini kaç kez paylaşıldı.
-Bu yalnızca bir şey paylaşılan bir kez sayısını gösteren olduğundan, diğer kullanıcılar olarak ait olacak "Paket özelleştirebilir".
-
+Bu yalnızca bir şey paylaşılan bir kez sayısını gösteren bu yana olacak diğer kullanıcılar olarak yorumlanan "Paket özelleştirebilir".
 
 ## <a name="comments"></a>Açıklamalar
 

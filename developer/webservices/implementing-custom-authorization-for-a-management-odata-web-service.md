@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
-ms.openlocfilehash: 5d6ad7f62c451a0013f6c52b294fac9abd0b4bf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851425"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057901"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Yönetim OData Web Hizmetinde Özel Yetkilendirme Uygulama
 
-Windows PowerShell Web hizmetini kullanarak, uygulamak bir üçüncü taraf gerektirir [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Windows PowerShell cmdlet'leri kullanıma sunmak için arabirim. Bu arabirim, web hizmeti için kullanıcı kimlik doğrulaması gerçekleştirir. Arabirimini uygulayan bir kod yazıldıktan sonra web uygulamasında kullanılmak üzere bir DLL içinde derlemeniz gerekir.
+Windows PowerShell Web hizmetini kullanarak, uygulamak bir üçüncü taraf gerektirir [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Windows PowerShell cmdlet'leri kullanıma sunmak için arabirim. Bu arabirim, web hizmeti için kullanıcı kimlik doğrulaması gerçekleştirir. Arabirimini uygulayan bir kod yazıldıktan sonra web uygulamasında kullanılmak üzere bir DLL içinde derlemeniz gerekir.
 
 ## <a name="pass-through-authorization"></a>Geçiş yetkilendirme
 
-Uygulamak için en basit yolu [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) tüm yetkilendiren doğrudan bir uygulama bir arabirimdir. Bu örnekte, hiçbir güvenlik ve yalnızca arabirim uygulamak nasıl bir llustration sağlanan s sağlar. Uygulanışı [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) arabirimi iki yöntemleri geçersiz kılması gerekir: [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) ve [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). Bu örnekte, [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) her zaman döndürür **System.Security.Principal.WindowsIdentity** geçerli kullanıcı ile ilişkili nesne .
+Uygulamak için en basit yolu [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) tüm yetkilendiren doğrudan bir uygulama bir arabirimdir. Bu örnekte, hiçbir güvenlik ve yalnızca arabirim uygulamak nasıl bir çizim sağlanan s sağlar. Uygulanışı [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) arabirimi iki yöntemleri geçersiz kılması gerekir: [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) ve [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). Bu örnekte, [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) her zaman döndürür **System.Security.Principal.WindowsIdentity** geçerli kullanıcı ile ilişkili nesne.
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -68,7 +68,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
         /// <summary>
 
-        /// Default managemnet system state key
+        /// Default management system state key
 
         /// </summary>
 
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>Rol tabanlı yetkilendirme
 
-Aşağıdaki örnek, bir rol tabanlı yetkilendirme ilkesi uygular. İlke web.config ile ana uygulama dizininde bulunan bir XML dosyası ve MOF ve XML eşleme şeması dosyalarında tanımlanır. Yetkilendirme şema dosyası yapılandırma hakkında daha fazla bilgi için bkz: [yapılandırma rol tabanlı yetkilendirme](./configuring-role-based-authorization.md). Örnek ilk bölümünü uygulayan [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) ve [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) yöntemleri. Bu durumda, arabirim yöntemleri çağırma yöntemleri `RbacSystem` kullanıcının izinlerini denetleme asıl işi yapan (aşağıda tanımlanmıştır) sınıfı.
+Aşağıdaki örnek, bir rol tabanlı yetkilendirme ilkesi uygular. İlke web.config ile ana uygulama dizininde bulunan bir XML dosyası ve MOF ve XML eşleme şeması dosyalarında tanımlanır. Yetkilendirme şema dosyası yapılandırma hakkında daha fazla bilgi için bkz: [yapılandırma rol tabanlı yetkilendirme](./configuring-role-based-authorization.md). Örnek ilk bölümünü uygulayan [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) ve [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) yöntemleri. Bu durumda, arabirim yöntemleri çağırma yöntemleri `RbacSystem` kullanıcının izinlerini denetleme asıl işi yapan (aşağıda tanımlanmıştır) sınıfı.
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -209,7 +209,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
     /// <summary>
     /// Keeps Configuration for the RbacSystem
-    /// It reads the RacSystem configuration for configuratin file and creates RbacConfiguration
+    /// It reads the RacSystem configuration for configuration file and creates RbacConfiguration
     /// </summary>
     [Serializable]
     [XmlRoot("RbacConfiguration")]
@@ -719,7 +719,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
             /// Indicates whether the current object is equal to another object of the object type.
             /// </summary>
             /// <param name="other">Other object instance</param>
-            /// <returns>true, if both instace are same else false</returns>
+            /// <returns>true, if both instance are same else false</returns>
             public override bool Equals(object other)
             {
                 return this.Equals(other as RbacUserInfo);
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-Son olarak, kullanıcının izinlerini denetleme çalışmayı uygulamada tanımlanan yöntemler için dönüş yetkilendirme durumu yöntemi RbacSystem sınıfın uyguladığı [Microsoft.Management.Odata.Customauthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) arabirimi.
+Son olarak, kullanıcının izinlerini denetleme çalışmayı uygulamada tanımlanan yöntemler için dönüş yetkilendirme durumu yöntemi RbacSystem sınıfın uyguladığı [Microsoft.Management.Odata.CustomAuthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) arabirimi.

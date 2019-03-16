@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
 caps.latest.revision: 11
-ms.openlocfilehash: 59cc0514087cc52438e0d1271b8b77a7799eb32c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846581"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059074"
 ---
 # <a name="defaultsettings-element-format"></a>DefaultSettings Öğesi (Biçim)
 
@@ -45,7 +45,7 @@ Yok.
 
 |Öğe|Açıklama|
 |-------------|-----------------|
-|[DisplayError öğesi (Frmat)](./displayerror-element-format.md)|İsteğe bağlı öğe.<br /><br /> Bir veri parçasını görüntülenirken bir hata oluştuğunda #ERR dize görüntüleneceğini belirtir.|
+|[DisplayError öğesi (biçimi)](./displayerror-element-format.md)|İsteğe bağlı öğe.<br /><br /> Bir veri parçasını görüntülenirken bir hata oluştuğunda #ERR dize görüntüleneceğini belirtir.|
 |[EnumerableExpansions öğesi (biçimi)](./enumerableexpansions-element-format.md)|İsteğe bağlı öğe.<br /><br /> Bir görünümü'nde görüntülendiğinde genişletilmiş .NET nesneleri farklı yollarını tanımlar.|
 |[PropertyCountForTable (biçimi)](./propertycountfortable-element-format.md)|İsteğe bağlı öğe.<br /><br /> Bir nesne, nesne Tablo görünümünde görüntülemek için gereken özellikleri en az sayısını belirtir.|
 |[ShowError öğesi (biçimi)](./showerror-element-format.md)|İsteğe bağlı öğe.<br /><br /> Bir veri parçasını görüntülenirken bir hata oluştuğunda tam hata kaydı görüntüleneceğini belirtir.|
@@ -63,7 +63,7 @@ Yok.
 
 [Yapılandırma öğesi](./configuration-element-format.md)
 
-[DisplayError öğesi (Frmat)](./displayerror-element-format.md)
+[DisplayError öğesi (biçimi)](./displayerror-element-format.md)
 
 [EnumerableExpansions öğesi (biçimi)](./enumerableexpansions-element-format.md)
 

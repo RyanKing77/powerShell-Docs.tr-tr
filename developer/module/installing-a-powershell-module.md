@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: f7899713dd273b793017adfa0a20b3ff3352b62a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851131"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059788"
 ---
 # <a name="installing-a-powershell-module"></a>PowerShell Modülü Yükleme
 
@@ -160,7 +160,7 @@ Fabrikam Modülü Yükleyicisi Fabrikam modülü bulmak Windows PowerShell modü
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technolgies\Fabrikam Manager\Modules\"
+$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -228,7 +228,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-Bu adımlar tamamlandığında **ListAvailable** parametresinin [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet'i Fabrikam modüllerin her ikisi de alır. Belirli bir modülü içeri aktarmak için kullanın `MiminumVersion` veya `RequiredVersion` parametrelerinin [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet'i.
+Bu adımlar tamamlandığında **ListAvailable** parametresinin [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet'i Fabrikam modüllerin her ikisi de alır. Belirli bir modülü içeri aktarmak için kullanın `MinimumVersion` veya `RequiredVersion` parametrelerinin [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet'i.
 
 Aynı oturuma iki modülü de içeri aktarılır ve modüller aynı ada sahip cmdlet'leri içerir, en son alınan cmdlet'lerin oturumunda etkili olur.
 

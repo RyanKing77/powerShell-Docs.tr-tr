@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 65d04c526ef7aa112da82adb924c0789731f3850
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845041"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055436"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Windows PowerShell Etkinlikleri ile İş Akışı Oluşturma
 
@@ -33,9 +33,9 @@ Aşağıdaki yordamlar, kullanıcı tarafından belirtilen bilgisayarlar etki al
 
 2. Adlandırılmış bağımsız değişken oluşturma `ComputerName` türünde bir bağımsız değişken ile `String[]`. Bu bağımsız değişken denetleyip katılmak için bilgisayarların adlarını temsil eder.
 
-3. Adlandırılmış bağımsız değişken oluşturma `DomainCred` türü [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Bu bağımsız değişken, bir bilgisayarın etki alanına katılmasını sağlamak için yetkili bir etki alanı hesabı etki alanı kimlik bilgilerini temsil eder.
+3. Adlandırılmış bağımsız değişken oluşturma `DomainCred` türü [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Bu bağımsız değişken, bir bilgisayarın etki alanına katılmasını sağlamak için yetkili bir etki alanı hesabı etki alanı kimlik bilgilerini temsil eder.
 
-4. Adlandırılmış bağımsız değişken oluşturma `MachineCred` türü [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Bu bağımsız değişken denetleyip katılmak için bilgisayarlarda yönetici kimlik bilgilerini temsil eder.
+4. Adlandırılmış bağımsız değişken oluşturma `MachineCred` türü [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Bu bağımsız değişken denetleyip katılmak için bilgisayarlarda yönetici kimlik bilgilerini temsil eder.
 
 5. Ekleme bir **ParallelForEach** etkinliği içinde **dizisi** etkinlik. Girin `comp` ve `ComputerName` içinde döngü öğeleri yinelenir. böylece, metin kutuları `ComputerName` dizisi.
 

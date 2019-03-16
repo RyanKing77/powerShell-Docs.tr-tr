@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Bir çekme yapılandırma kimliklerinin PowerShell 5.0 ve üzeri kullanılarak istemcisi ayarlama
-ms.openlocfilehash: 8d8cf478f9127e1b7005d1b9e832e84b11612c9c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405828"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055725"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Bir çekme yapılandırma kimliklerinin PowerShell 5.0 ve üzeri kullanılarak istemcisi ayarlama
 
@@ -23,7 +23,8 @@ ms.locfileid: "53405828"
 
 Her hedef düğüm yapılandırmaları, kaynaklar, indirin ve bile durumunu raporlamak için yapılandırılabilir. Aşağıdaki bölümlerde bir SMB paylaşımı ya da HTTP DSC çekme sunucusuna çekme istemcisi yapılandırma işlemini göstermektedir. Düğümün LCM yenilendiğinde atanan tüm yapılandırmaları indirmek için yapılandırılan konuma ulaşır. Tüm gerekli kaynakları düğüm üzerinde mevcut değilse, bunu otomatik olarak bunları yapılandırılan konumdan indirir. Düğüm ile yapılandırılmışsa, bir [rapor sunucusu](reportServer.md), sonra işlemin durumunu bildirir.
 
-> **Not**: Bu konu, PowerShell 5.0 için geçerlidir. PowerShell 4.0 çekme istemcisi ayarlama hakkında daha fazla bilgi için bkz: [PowerShell 4. 0'yapılandırma Kimliğini kullanarak çekme istemcisi ayarlama](pullClientConfigID4.md)
+> [!NOTE]
+> Bu konu, PowerShell 5.0 için geçerlidir. PowerShell 4.0 çekme istemcisi ayarlama hakkında daha fazla bilgi için bkz: [PowerShell 4. 0'yapılandırma Kimliğini kullanarak çekme istemcisi ayarlama](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>Çekme istemcisi LCM yapılandırma
 

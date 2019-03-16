@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b0ef4483-74b2-409c-9d00-014d1ed64cb8
 caps.latest.revision: 6
-ms.openlocfilehash: b5696c3ca1988c9a6cd9179229697b6233d8d993
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ec6154c69c3c2de9675780922d907fbf3edb6a95
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847827"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058751"
 ---
 # <a name="leftindent-element-for-frame-for-customcontrol-for-view-format"></a>Görünüm CustomControl için Çerçeve LeftIndent Öğesi (Biçim)
 
 Sol kenar boşluğu uzağa veri kaydırılacağı uzaklık karakterlerinin kaçının tutulacağını belirtir. Bu öğe, bir özel denetim görünüm tanımlarken kullanılır.
 
-Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm öğesi (biçimi) özel denetim öğesi (biçimi) CustomEntries öğesi görünümü (biçimi) CustomItem öğesinin CustomEntries görünümü (biçimi) CustomEntry öğesinin özel denetim için CustomEntry CustomItem LeftIndent öğesi görünümü (biçimi) için özel denetim için çerçeve öğesinin CutomControlView (biçimi)
+Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm öğesi (biçimi) özel denetim öğesi (biçimi) CustomEntries öğesi görünümü (biçimi) CustomItem öğesinin CustomEntries görünümü (biçimi) CustomEntry öğesinin özel denetim için CustomEntry CustomItem LeftIndent öğesi görünümü (biçimi) için özel denetim için çerçeve öğesinin CustomControlView (biçimi)
 
 ## <a name="syntax"></a>Sözdizimi
 

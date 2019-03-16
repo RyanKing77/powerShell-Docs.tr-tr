@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Script kaynağı
-ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684846"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054765"
 ---
 # <a name="dsc-script-resource"></a>DSC Script kaynağı
 
@@ -39,7 +39,7 @@ Script [string] #ResourceName
 |SetScript|DSC düğümü istenen durumda olmadığında uyumluluğu zorlamak için kullanan bir betik bloğu.|
 |TestScript|Düğüm istenen durumda olup olmadığını belirten bir betik bloğu.|
 |Kimlik bilgisi| Kimlik bilgileri gerekiyorsa bu betiği çalıştırmak için kullanılacak kimlik bilgilerini belirtir.|
-|DependsOn| Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.
+|dependsOn| Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.
 
 ### <a name="getscript"></a>GetScript
 
@@ -57,7 +57,7 @@ DSC çıktısı kullanmayan `GetScript`. [Get-DscConfiguration](/powershell/modu
 
 ### <a name="setscript"></a>SetScript
 
-`SetScript` Enfore istenen durum düğüme değiştirir. Bu DSC tarafından çağrılır `TestScript` betik bloğu döndürür `$false`. `SetScript` Dönüş değeri olması gerekir.
+`SetScript` Belirttiğiniz istenen duruma uygulamak düğümü değiştirir. Bu DSC tarafından çağrılır `TestScript` betik bloğu döndürür `$false`. `SetScript` Dönüş değeri olması gerekir.
 
 ## <a name="examples"></a>Örnekler
 

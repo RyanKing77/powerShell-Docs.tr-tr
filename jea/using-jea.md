@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA’yı kullanma
-ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fa3d3a3c8bc0090ec9ad788585ec5df933134173
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686862"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054688"
 ---
 # <a name="using-jea"></a>JEA’yı kullanma
 
@@ -108,7 +108,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 Örtük uzak iletişim kullanarak proxy cmdlet'leri de kalıcı yapılabilir [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
 Örtük uzak iletişim hakkında daha fazla bilgi için Yardım belgelerine göz atın [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) ve [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module).
 
-## <a name="using-jea-programatically"></a>Jea'yı programlı şekilde kullanma
+## <a name="using-jea-programmatically"></a>JEA programlı olarak kullanma
 
 JEA Otomasyon sistemleri ve şirket içi Yardım Masası uygulamaları ve web siteleri gibi kullanıcı uygulamaları içinde de kullanılabilir.
 Uygulamaları oluşturma için program JEA uzak oturumu çalıştırma komutları sınırlayan olduğunu bilmeniz gerekir, uyarı ile sınırlandırılmamış PowerShell uç konuşma yaklaşımı aynıdır.
@@ -126,10 +126,9 @@ $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'J
 $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
 ```
 
-Bir C# uygulaması oluşturuyorsanız yapılandırma adı belirterek bir JEA oturumuna bağlandığında bir PowerShell çalışma oluşturabileceğiniz bir [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) nesne.
+Oluşturuyorsanız bir C# uygulama, yapılandırma adı belirterek bir JEA oturumuna bağlandığında bir PowerShell çalışma alanı oluşturabilirsiniz bir [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) nesne.
 
 ```csharp
-
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";

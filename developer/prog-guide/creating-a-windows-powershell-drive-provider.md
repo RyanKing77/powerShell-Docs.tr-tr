@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: d1546ab0b0e6b5502f35c92c01ce148211c53db2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846672"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055659"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Windows PowerShell Sürücü Sağlayıcısı Oluşturma
 
@@ -61,7 +61,7 @@ Bölümünde anlatıldığı gibi [tasarım bilgisayarınızı Windows PowerShel
 
 Tüm Windows PowerShell sağlayıcıları sürücü sağlayıcınız sağlayıcınız çağırdığında, Windows PowerShell çalışma zamanı tarafından gereken herhangi bir durum bilgisini oluşturmak için gerek duyduğu anlamına gelir durum bilgisi olarak kabul edilir.
 
-Bu sürücü sağlayıcısı için kitaplığın sürücü bilgilerinin bir parçası olarak tutulur veritabanına bağlantı durumu bilgilerini içerir. Bu bilgileri nasıl depolandığını gösteren kod işte [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) sürücü açıklayan nesnesi:
+Bu sürücü sağlayıcısı için kitaplığın sürücü bilgilerinin bir parçası olarak tutulur veritabanına bağlantı durumu bilgilerini içerir. Bu bilgileri nasıl depolandığını gösteren kod işte [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) sürücü açıklayan nesnesi:
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
@@ -73,15 +73,15 @@ Bir sürücü oluşturmak Windows PowerShell çalışma zamanı izin vermek içi
 
 Bu yöntemi geçersiz kılma aşağıdakileri yapmanız gerekir:
 
-- Doğrulayın [System.Management.Automation.Psdriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) üyesi var ve veri deposuna bağlantı yapılabilir.
+- Doğrulayın [System.Management.Automation.PSDriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) üyesi var ve veri deposuna bağlantı yapılabilir.
 
 - Bir sürücü oluşturmak ve support, bağlantı üye doldurmak `New-PSDrive` cmdlet'i.
 
-- Doğrulama [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) önerilen sürücü için nesne.
+- Doğrulama [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) önerilen sürücü için nesne.
 
-- Değiştirme [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) sürücü gerekli performans veya güvenilirlik bilgileri açıklayan nesne ya da bu sürücüyü kullanıp arayanlar için ek verileri sağlar.
+- Değiştirme [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) sürücü gerekli performans veya güvenilirlik bilgileri açıklayan nesne ya da bu sürücüyü kullanıp arayanlar için ek verileri sağlar.
 
-- Kullanarak hatalarını [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) yöntemi ve ardından return `null`.
+- Kullanarak hatalarını [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) yöntemi ve ardından return `null`.
 
   Bu yöntem, yöntem veya bir sağlayıcıya özgü sürümü geçilen ya da sürücü bilgileri döndürür.
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 496e363b041194563d46c09eee67a12055bb54b0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795445"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057306"
 ---
 # <a name="extending-properties-for-objects"></a>Nesnelerin Özelliklerini Genişletme
 

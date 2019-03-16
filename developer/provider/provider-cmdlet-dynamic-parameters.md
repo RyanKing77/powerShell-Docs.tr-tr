@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
 caps.latest.revision: 6
-ms.openlocfilehash: 803fe4ae24a4f8022639c5b6d6298100859177ce
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a50de014988336c473c565b506a73de1c864d7e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848464"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058241"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>Sağlayıcı cmdlet dinamik parametreleri
 
@@ -73,7 +73,7 @@ Dinamik parametreleri eklemek için kullanılabilir statik parametreler listesi 
 
 `Copy-Item` cmdlet'i tarafından tetiklenen dinamik parametreleri tanımlayabilirsiniz `Path`, `Destination`, ve `Recurse` parametrelerinin `Copy-Item` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) yöntemi.
 
-Get-ChildItems cmdlet'i tarafından tetiklenen dinamik parametreleri tanımlayabilirsiniz `Path` ve `Recures` parametrelerinin `Get-ChildItem` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) ve [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) yöntemleri.
+Get-ChildItems cmdlet'i tarafından tetiklenen dinamik parametreleri tanımlayabilirsiniz `Path` ve `Recurse` parametrelerinin `Get-ChildItem` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) ve [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) yöntemleri.
 
 `Get-Content` cmdlet'i tarafından tetiklenen dinamik parametreleri tanımlayabilirsiniz `Path` parametresinin `Get-Content` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) yöntemi.
 
@@ -89,7 +89,7 @@ Get-ChildItems cmdlet'i tarafından tetiklenen dinamik parametreleri tanımlayab
 
 `New-ItemProperty` cmdlet'i tarafından tetiklenen dinamik parametreleri tanımlayabilirsiniz `Path`, `Name`, `PropertyType`, ve `Value` parametrelerinin `New-ItemProperty` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) yöntemi.
 
-`New-PSDrive` cmdlet'i tarafından tetiklenen dinamik parametreleri tanımlayabilirsiniz [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) tarafından döndürülen nesne `New-PSDrive` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) yöntemi.
+`New-PSDrive` cmdlet'i tarafından tetiklenen dinamik parametreleri tanımlayabilirsiniz [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) tarafından döndürülen nesne `New-PSDrive` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) yöntemi.
 
 `Remove-Item` Tarafından tetiklenen dinamik parametreleri tanımlayabilirsiniz `Path` ve `Recurse` parametrelerinin `Remove-Item` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) yöntemi.
 

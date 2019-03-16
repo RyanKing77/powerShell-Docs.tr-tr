@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: keithb
 title: Yükleme ve WMF 5.1 yapılandırma
-ms.openlocfilehash: e5590d48d467506270ccef4089513e1afade07be
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: c439d0851189a89a81fa38194632dc54475a001d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795581"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055996"
 ---
 # <a name="install-and-configure-wmf-51"></a>Yükleme ve WMF 5.1 yapılandırma
 
@@ -34,7 +34,8 @@ WMF 5.1 paket yüklemek istediğiniz işletim sistemi ve mimarisi için indirme:
 
 ## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>WMF 5.1, Windows Server 2008 R2 ve Windows 7 için yükleyin
 
-> **Not:** Yükleme yönergeleri için Windows Server 2008 R2 ve Windows 7, değiştirildi ve diğer paketleri yönergelerini farklıdır. Windows Server 2012 R2, Windows Server 2012 ve Windows 8.1 için yükleme yönergeleri aşağıda verilmiştir.
+> [!NOTE]
+> Yükleme yönergeleri için Windows Server 2008 R2 ve Windows 7, değiştirildi ve diğer paketleri yönergelerini farklıdır. Windows Server 2012 R2, Windows Server 2012 ve Windows 8.1 için yükleme yönergeleri aşağıda verilmiştir.
 
 **WMF 5.1, Windows Server 2008 R2 ve Windows 7 yükleme**
 

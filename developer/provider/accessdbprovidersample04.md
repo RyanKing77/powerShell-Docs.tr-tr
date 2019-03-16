@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
-ms.openlocfilehash: fd013384a4b588bcdb397d7771425fe5c031c48f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d9109e8d5b69a25ad52b90bcaff9628b01067211
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847302"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057629"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
@@ -30,7 +30,7 @@ Bu örnek aşağıdaki gösterir:
 
 - Türetilen bir sağlayıcı sınıfı tanımlayarak [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) sınıfı.
 
-- Üzerine [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) davranışını değiştirmek için yöntem `Copy-Item` öğeleri tek bir konumdan diğerine kopyalamak kullanıcı izin veren cmdlet. (Bu örnekte dinamik parametreleri eklemek nasıl algılanacağını göstermez `Copy-Item` cmdlet'ini.)
+- Üzerine [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) davranışını değiştirmek için yöntem `Copy-Item` öğeleri tek bir konumdan diğerine kopyalamak kullanıcı izin veren cmdlet. (Bu örnekte dinamik parametreleri eklemek nasıl algılanacağını göstermez `Copy-Item` cmdlet'ini.)
 
 - Üzerine [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) kullanıcının üst öğenin alt öğeleri almak Get-ChildItems cmdlet davranışını değiştirmek için yöntemi . (Bu örnekte Get-ChildItems cmdlet'e dinamik parametreler ekleme göstermez.)
 

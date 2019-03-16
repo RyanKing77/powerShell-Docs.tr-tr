@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: ffc08d2713c4bfc0938b2e07146102af8b5467d2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846805"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055045"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Cmdlet’inize Kullanıcı İletileri Ekleme
 
@@ -82,7 +82,7 @@ Bu bölümdeki konular şunlardır:
 
 İlk adımda cmdlet'i oluşturma her zaman cmdlet adlandırma ve cmdlet uygulayan .NET sınıf bildirme. Cmdlet'ini her türlü kullanıcı bildirimleri yöntemleri işleme kendi girişten yazabilirsiniz; Bu nedenle, genel olarak, cmdlet gerçekleştirir hangi sistem değişiklikleri belirten herhangi bir fiil kullanarak bu cmdlet adı verebilirsiniz. Onaylanan cmdlet fiilleri hakkında daha fazla bilgi için bkz: [Cmdlet fiili adları](./approved-verbs-for-windows-powershell-commands.md).
 
-Stop-Proc cmdlet sistem değiştirmek için tasarlanmıştır; Bu nedenle, [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .NET sınıfı için bildirimi içermelidir `SupportsShouldProcess` özniteliği anahtar sözcüğü ve ayarlanması `true`.
+Stop-Proc cmdlet sistem değiştirmek için tasarlanmıştır; Bu nedenle, [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .NET sınıfı için bildirimi içermelidir `SupportsShouldProcess` özniteliği anahtar sözcüğü ve ayarlanması `true`.
 
 Aşağıdaki kod bu Stop-Proc cmdlet'i sınıf için tanımıdır. Bu tanımı hakkında daha fazla bilgi için bkz. [bir Cmdlet oluşturma sistemi değiştirir](./creating-a-cmdlet-that-modifies-the-system.md).
 
@@ -141,16 +141,16 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>Bir giriş işleme yöntemi geçersiz kılma
 
-Cmdlet'inize işleme yöntemi giriş geçersiz kılmanız gerekir, en sık olacaktır [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Bu Stop-Proc cmdlet geçersiz kılmalar [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) giriş işleme yöntemi. Stop-Proc cmdlet bu uygulamada ayrıntılı iletileri, hata ayıklama iletileri ve uyarı iletileri yazmak için çağrı yapılır.
+Cmdlet'inize işleme yöntemi giriş geçersiz kılmanız gerekir, en sık olacaktır [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Bu Stop-Proc cmdlet geçersiz kılmalar [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) giriş işleme yöntemi. Stop-Proc cmdlet bu uygulamada ayrıntılı iletileri, hata ayıklama iletileri ve uyarı iletileri yazmak için çağrı yapılır.
 
 > [!NOTE]
-> Bu yöntem çağırması hakkında daha fazla bilgi için [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemleri bkz [Bir Cmdlet oluşturma sistemi değiştirir](./creating-a-cmdlet-that-modifies-the-system.md).
+> Bu yöntem çağırması hakkında daha fazla bilgi için [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemleri bkz [Bir Cmdlet oluşturma sistemi değiştirir](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ## <a name="writing-a-verbose-message"></a>Ayrıntılı bir ileti yazma
 
-[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) yöntemi belirli hata koşulları için ilişkisiz genel kullanıcı düzeyi bilgileri yazmak için kullanılır. Sistem Yöneticisi, sonra diğer komutların işleme devam etmek için bu bilgileri kullanabilirsiniz. Ayrıca, bu yöntem kullanılarak yazılmış herhangi bir bilgi gerektiğinde yerelleştirilmiş olmalıdır.
+[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) yöntemi belirli hata koşulları için ilişkisiz genel kullanıcı düzeyi bilgileri yazmak için kullanılır. Sistem Yöneticisi, sonra diğer komutların işleme devam etmek için bu bilgileri kullanabilirsiniz. Ayrıca, bu yöntem kullanılarak yazılmış herhangi bir bilgi gerektiğinde yerelleştirilmiş olmalıdır.
 
-Aşağıdaki kod bu Proc Stop cmdlet'inden iki çağrıları gösterir [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) geçersiz kılmasını yönteminden [System.Management.Automation.Cmdlet.Processrecord* ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi.
+Aşağıdaki kod bu Proc Stop cmdlet'inden iki çağrıları gösterir [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) geçersiz kılmasını yönteminden [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi.
 
 ```csharp
 message = String.Format("Attempting to stop process \"{0}\".", name);
@@ -166,14 +166,14 @@ WriteVerbose(message);
 
 ## <a name="writing-a-debug-message"></a>Hata ayıklama iletisi yazma
 
-[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) yöntemi cmdlet'inin işlemi sorun giderme için kullanılan hata ayıklama ileti yazmak için kullanılır. İşleme yöntemi girdi çağrı yapılır.
+[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) yöntemi cmdlet'inin işlemi sorun giderme için kullanılan hata ayıklama ileti yazmak için kullanılır. İşleme yöntemi girdi çağrı yapılır.
 
 > [!NOTE]
-> Windows PowerShell de tanımlayan bir `Debug` ayrıntılı hem de sunar ve hata ayıklama bilgilerini bir parametre. Cmdlet'inize bu parametreyi destekliyorsa, bu çağrı gerekmez [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) çağıran koddaki [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+> Windows PowerShell de tanımlayan bir `Debug` ayrıntılı hem de sunar ve hata ayıklama bilgilerini bir parametre. Cmdlet'inize bu parametreyi destekliyorsa, bu çağrı gerekmez [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) çağıran koddaki [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) .
 
-Kod örnek Proc Stop cmdlet'inden aşağıdaki iki bölümü çağrıları Göster [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) geçersiz kılmasını yönteminden [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi.
+Kod örnek Proc Stop cmdlet'inden aşağıdaki iki bölümü çağrıları Göster [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) geçersiz kılmasını yönteminden [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi.
 
-Bu hata ayıklama iletisi hemen önce yazılmış [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağrılır.
+Bu hata ayıklama iletisi hemen önce yazılmış [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağrılır.
 
 ```csharp
 message =
@@ -182,7 +182,7 @@ message =
 WriteDebug(message);
 ```
 
-Bu hata ayıklama iletisi hemen önce yazılmış [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) çağrılır.
+Bu hata ayıklama iletisi hemen önce yazılmış [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) çağrılır.
 
 ```csharp
 message =
@@ -192,15 +192,15 @@ WriteDebug(message);
 WriteObject(process);
 ```
 
-Windows PowerShell otomatik olarak yönlendirir herhangi [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) cmdlet'leri ve altyapı izleme çağrıları. Bu, barındırma uygulaması, bir dosya veya bir hata ayıklayıcı cmdlet'inin içinde herhangi bir ek geliştirme iş yapmak zorunda kalmadan izlenecek yöntem çağrılarını sağlar. Aşağıdaki komut satırı girişi izleme işlemi uygular.
+Windows PowerShell otomatik olarak yönlendirir herhangi [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) cmdlet'leri ve altyapı izleme çağrıları. Bu, barındırma uygulaması, bir dosya veya bir hata ayıklayıcı cmdlet'inin içinde herhangi bir ek geliştirme iş yapmak zorunda kalmadan izlenecek yöntem çağrılarını sağlar. Aşağıdaki komut satırı girişi izleme işlemi uygular.
 
 **PS > İzleme ifadesi stop-proc-proc.log dosya-komut stop-proc not defteri**
 
 ## <a name="writing-a-warning-message"></a>Bir uyarı iletisi yazma
 
-[System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) yöntemi cmdlet'i bir salt okunur dosyanın üzerine beklenmeyen bir sonuç, örneğin, olabilecek bir işlem gerçekleştirmek üzere olduğunda bir uyarı yazmak için kullanılır.
+[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) yöntemi cmdlet'i bir salt okunur dosyanın üzerine beklenmeyen bir sonuç, örneğin, olabilecek bir işlem gerçekleştirmek üzere olduğunda bir uyarı yazmak için kullanılır.
 
-Aşağıdaki kod örnek Proc Stop cmdlet'inden çağrısını gösterir [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) geçersiz kılmasını yönteminden [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi.
+Aşağıdaki kod örnek Proc Stop cmdlet'inden çağrısını gösterir [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) geçersiz kılmasını yönteminden [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi.
 
 ```csharp
  if (criticalProcess)
@@ -214,10 +214,10 @@ Aşağıdaki kod örnek Proc Stop cmdlet'inden çağrısını gösterir [System.
 
 ## <a name="writing-a-progress-message"></a>Bir ilerleme iletisi yazma
 
-[System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) işleminin tamamlanma süresi cmdlet'i işlemlerini alırken ilerleme iletilerini yazmak için kullanılır. Bir çağrı [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) geçirmeden bir [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) nesnesini işlemek için kullanıcı barındırma uygulamaya gönderilir.
+[System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) işleminin tamamlanma süresi cmdlet'i işlemlerini alırken ilerleme iletilerini yazmak için kullanılır. Bir çağrı [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) geçirmeden bir [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) nesnesini işlemek için kullanıcı barındırma uygulamaya gönderilir.
 
 > [!NOTE]
-> Bu Stop-Proc cmdlet çağrısı içermez [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) yöntemi.
+> Bu Stop-Proc cmdlet çağrısı içermez [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) yöntemi.
 
 Aşağıdaki kod, bir öğeyi kopyalamaya çalışırken bir cmdlet tarafından yazılmış bir ilerleme iletisi örneğidir.
 

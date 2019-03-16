@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bb4e1564-3fd3-4be3-b93e-ac90480e05c0
 caps.latest.revision: 6
-ms.openlocfilehash: 9ec6caedcb7cf20d4aab2216cd8a9707269d9452
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3130ecc69f7d1568bcbd392dd24e8cdcc3382905
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846084"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054858"
 ---
 # <a name="firstlineindent-element-for-frame-for-customcontrol-for-view-format"></a>Görünüm CustomControl için Çerçeve FirstLineIndent Öğesi (Biçim)
 
 İlk veri satırını sağa kaydırılacağı uzaklık karakterlerinin kaçının tutulacağını belirtir. Bu öğe, bir özel denetim görünüm tanımlarken kullanılır.
 
-Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm öğesi (biçimi) özel denetim öğesi (biçimi) CustomEntries öğesi görünümü (biçimi) CustomItem öğesinin CustomEntries görünümü (biçimi) CustomEntry öğesinin özel denetim için CustomEntry CustomItem FirstLineIndent öğesi görünümü (biçimi) için özel denetim için çerçeve öğesinin CutomControlView (biçimi)
+Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm öğesi (biçimi) özel denetim öğesi (biçimi) CustomEntries öğesi görünümü (biçimi) CustomItem öğesinin CustomEntries görünümü (biçimi) CustomEntry öğesinin özel denetim için CustomEntry CustomItem FirstLineIndent öğesi görünümü (biçimi) için özel denetim için çerçeve öğesinin CustomControlView (biçimi)
 
 ## <a name="syntax"></a>Sözdizimi
 

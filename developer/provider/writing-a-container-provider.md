@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: 2d2d6a32ac910ecc0fc3b6f1e78cdde54c21b427
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848429"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056473"
 ---
 # <a name="writing-a-container-provider"></a>Bir kapsayıcı sağlayıcısı yazma
 
@@ -44,7 +44,7 @@ Türetmek için sağlayıcı bildirmek [System.Management.Automation.Provider.Co
 
 ### <a name="implementing-getchilditems"></a>GetChildItems uygulama
 
-PowerShell altyapısı çağrıları [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) kullanıcı çağırdığında yöntemi [Microsoft.Powershell.Commands.Get-Childıtem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) cmdlet'i. Bu yöntem, belirtilen yolda öğenin alt öğelerini alır.
+PowerShell altyapısı çağrıları [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) kullanıcı çağırdığında yöntemi [Microsoft.PowerShell.Commands.Get-Childıtem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) cmdlet'i. Bu yöntem, belirtilen yolda öğenin alt öğelerini alır.
 
 Access veritabanı örneğinde, davranışını [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) yöntemi belirtilen öğe türüne bağlıdır. Sürücü öğesi ise alt çok noktaya yayını sonra tablolarıdır ve yöntem veritabanından tablo kümesini döndürür. Belirtilen öğeyi bir tablodur alt bu tablonun satırlarını vardır. Bir satır öğesi ise ardından alt öğesi yok ve yalnızca satır yöntemi döndürür. Tüm alt öğeleri geri PowerShell altyapısı tarafından gönderilen [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) yöntemi.
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>NewItem uygulama
 
-[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) yöntemi, belirtilen yolda belirtilen türe ait yeni bir öğe oluşturur. Bir kullanıcı çağırdığında PowerShell altyapısı bu yöntemi çağırır [Microsoft.Powershell.Commands.New öğesi](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) cmdlet'i.
+[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) yöntemi, belirtilen yolda belirtilen türe ait yeni bir öğe oluşturur. Bir kullanıcı çağırdığında PowerShell altyapısı bu yöntemi çağırır [Microsoft.PowerShell.Commands.New öğesi](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) cmdlet'i.
 
 Bu örnekte, yöntem türü ve yolunu eşleştiğini belirlemek için mantığı uygular. Diğer bir deyişle, yalnızca bir tablo doğrudan sürücü altında (veritabanı) oluşturulabilir ve yalnızca bir satır altında bir tabloda oluşturulabilir. Öğe türü ve belirtilen yol bu şekilde eşleşmiyorsa, yöntem bir özel durum oluşturur.
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>CopyItem uygulama
 
-[System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) belirtilen öğe belirtilen yola kopyalar. Bir kullanıcı çağırdığında PowerShell altyapısı bu yöntemi çağırır [Microsoft.Powershell.Commands.Copy öğesi](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) cmdlet'i. Bu yöntem, tüm öğeleri alt öğesi yanı sıra kopyalamayı, özyinelemeli de olabilir.
+[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) belirtilen öğe belirtilen yola kopyalar. Bir kullanıcı çağırdığında PowerShell altyapısı bu yöntemi çağırır [Microsoft.PowerShell.Commands.Copy öğesi](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) cmdlet'i. Bu yöntem, tüm öğeleri alt öğesi yanı sıra kopyalamayı, özyinelemeli de olabilir.
 
 Benzer şekilde [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) yöntemi, bu yöntem, belirtilen öğe yolu bu kopyalandığı için doğru türde olduğundan emin olmak için logic gerçekleştirir. Örneğin, bir tablo hedef yolu ise kopyalanacak öğe bir satır olması gerekir.
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>RemoveItem uygulama
 
-[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) yöntemi, belirtilen yolda öğeyi kaldırır. Bir kullanıcı çağırdığında PowerShell altyapısı bu yöntemi çağırır [Microsoft.Powershell.Commands.Remove öğesi](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) cmdlet'i.
+[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) yöntemi, belirtilen yolda öğeyi kaldırır. Bir kullanıcı çağırdığında PowerShell altyapısı bu yöntemi çağırır [Microsoft.PowerShell.Commands.Remove öğesi](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) cmdlet'i.
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)

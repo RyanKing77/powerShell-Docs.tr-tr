@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d5891467-8e13-484d-b7af-32e6bffab35d
 caps.latest.revision: 4
-ms.openlocfilehash: 2aca4483e500432ef9f52804e85678d2268aa4cd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2e8f272a82ee03de306fd8eac45e109142f6284
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846910"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054807"
 ---
 # <a name="common-workflow-parameters"></a>Ortak İş Akışı Parametreleri
 
@@ -26,7 +26,7 @@ Genel iş akışı parametreleri gibi çeşitli kategorilerde gruplanır.
 |Adı|Tür|Açıklama|Yürütme zaman son kullanıcı tarafından belirtilen?|Yazma sırasında iş akışı yazar tarafından belirtilen?|Örnek oluşturma iş akışı yazar tarafından belirtilen?|
 |----------|----------|-----------------|-----------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------|
 |PSComputerName|String[]|İşleri başlatmak istediğiniz bilgisayar adlarının listesi.|Evet|Evet|Evet|
-|PSCredential|[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Kullanılacak kimlik doğrulaması kimlik bilgisini PSComputerName parametresi tarafından belirtilen bilgisayara oturum açmak için. Bu parametre yalnızca PSComputerName belirtilmezse geçerli değil.|Evet|Evet|Evet|
+|PSCredential|[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Kullanılacak kimlik doğrulaması kimlik bilgisini PSComputerName parametresi tarafından belirtilen bilgisayara oturum açmak için. Bu parametre yalnızca PSComputerName belirtilmezse geçerli değil.|Evet|Evet|Evet|
 |PSPort|UInt32|İş akışını çalıştırmak için kullanılacak bağlantı noktası.|Evet|Evet|Evet|
 |PSUseSSL|Boolean|İş akışını çalıştırmak için uzak bilgisayara güvenli bir bağlantı kurmak için Güvenli Yuva Katmanı (SSL) protokolünü kullanır.|Evet|Evet|Evet|
 |PSConfigurationName|Dize|İş akışı çalıştırmak için kullanılan oturum yapılandırması.|Evet|Evet|Evet|

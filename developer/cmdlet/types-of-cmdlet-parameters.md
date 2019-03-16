@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
-ms.openlocfilehash: 59921a92661482b8d518b82f490c9879643543bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849521"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059585"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Cmdlet Parametresi Türleri
 
@@ -91,13 +91,13 @@ private string userName;
 
 ## <a name="switch-parameters"></a>Anahtar parametreleri
 
-Windows PowerShell sağlayan bir [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) değerini bir parametre tanımlamanıza olanak tanıyan türü otomatik olarak ayarlandığından `false` cmdlet parametresi belirtilmezse çağrılır. Mümkün olduğunda yerine Boole parametreleri anahtar parametreleri kullanın.
+Windows PowerShell sağlayan bir [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) değerini bir parametre tanımlamanıza olanak tanıyan türü otomatik olarak ayarlandığından `false` cmdlet parametresi belirtilmezse çağrılır. Mümkün olduğunda yerine Boole parametreleri anahtar parametreleri kullanın.
 
 Aşağıdaki örneği göz önünde bulundurun. Varsayılan olarak, birçok Windows PowerShell cmdlet'leri bir çıkış nesnesi işlem hattı aşağı geçirmeyin. Ancak, bu cmdlet'ler sahip bir `PassThru` varsayılan davranışı geçersiz kılan parametre geçin. Varsa `PassThru` bu cmdlet'ler çağrıldığında parametre belirtilirse, cmdlet ardışık düzene bir çıkış nesnesi döndürür.
 
-Parametre bir varsayılan değerine sahip olacak şekilde ihtiyacınız varsa `true` arama parametresi belirtilmediğinde, parametre algılama ters göz önünde bulundurun. Parametre özniteliği için bir Boole değeri ayarlamak yerine örnek, `true`, özellik olarak bildirin [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) yazın ve ardından parametreninvarsayılandeğeriniayarlayın`false`.
+Parametre bir varsayılan değerine sahip olacak şekilde ihtiyacınız varsa `true` arama parametresi belirtilmediğinde, parametre algılama ters göz önünde bulundurun. Parametre özniteliği için bir Boole değeri ayarlamak yerine örnek, `true`, özellik olarak bildirin [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) yazın ve ardından parametreninvarsayılandeğeriniayarlayın`false`.
 
-Bir anahtar parametresi tanımlamak için özellik olarak bildirin [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) , aşağıdaki örnekte gösterildiği gibi yazın.
+Bir anahtar parametresi tanımlamak için özellik olarak bildirin [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) , aşağıdaki örnekte gösterildiği gibi yazın.
 
 ```csharp
 [Parameter(Position = 1)]

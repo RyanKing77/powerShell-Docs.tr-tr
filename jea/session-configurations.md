@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA oturum yapılandırmaları
-ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689130"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056609"
 ---
 # <a name="jea-session-configurations"></a>JEA oturum yapılandırmaları
 
@@ -60,7 +60,7 @@ JEA oturum yapılandırma dosyasında kullanacağınız kimliği karar sizin.
 
 #### <a name="local-virtual-account"></a>Yerel sanal hesap
 
-Rolleri bu JEA uç noktası tarafından desteklenen tüm yerel makine yönetmek için kullanılır ve yerel yönetici hesabı komutlar başarıyla çalıştırmak için yeterli ise JEA sanal yerel hesap kullanmak için yapılandırmanız gerekir.
+Rolleri bu JEA uç noktası tarafından desteklenen tüm yerel makine yönetmek için kullanılır ve bir yerel yönetici hesabı başarıyla komutları çalıştırmak yeterli olduğundan, sanal yerel hesap kullanmak için JEA yapılandırmanız gerekir.
 Belirli bir kullanıcı için benzersiz ve kendi PowerShell oturumu süresi için yalnızca son geçici hesaplarının sanal hesaplarıdır.
 Üye sunucu veya iş istasyonunun Sanal hesaplar yerel bilgisayarın ait **Yöneticiler** grup ve çoğu sistem kaynaklarına erişimi vardır.
 Bir Active Directory etki alanı denetleyicisinde etki alanı için sanal hesaplar ait **Domain Admins** grubu.
@@ -80,6 +80,7 @@ Belirtilen bir veya daha fazla güvenlik grubu, sanal hesap yerel veya etki alan
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
 > Sanal hesaplar, yerel sunucu güvenlik ilkesini içinde bir hizmet olarak oturum açma geçici olarak verilir.  Belirtilen VirtualAccountGroups birini zaten ilkesinde bu hak verilmemişse, tek tek sanal hesap artık eklendi ve ilkeden kaldırılır.  Bu, burada etki alanı denetleyicisi güvenlik ilkesi uyarlamaları yakından denetlendiği etki alanı denetleyicileri gibi senaryolarda yararlı olabilir.  Bu seçenek yalnızca Kasım 2018'den Windows Server 2016 veya sonraki toplama ve Windows Server 2019 Ocak 2019 ile'veya sonraki toplama kullanılabilir.
 
@@ -104,7 +105,6 @@ gMSA hesabı yalnızca kullanılmalıdır ağ kaynaklarına erişimi olduğunda 
 
 > [!NOTE]
 > Grup yönetilen hizmet hesapları, yalnızca Windows PowerShell 5.1 kullanılabilir veya daha yeni ve etki alanına katılmış makinelerde.
-
 
 #### <a name="more-information-about-run-as-users"></a>Hakkında daha fazla bilgi kullanıcı olarak çalıştırın
 
@@ -179,6 +179,7 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>Rol özellik arama sırası
+
 Yukarıdaki örnekte gösterildiği gibi rol işlevleri rol özellik dosyası düz adıyla (dosya adı uzantısı olmadan) olarak başvurulur.
 Sistem düz aynı ada sahip birden çok rol özellikleri mevcuttur, etkin bir rol özelliği dosyayı seçmek için örtük arama sırası PowerShell kullanacaksınız.
 Götürür **değil** aynı ada sahip tüm rol özellik dosyaları için erişim verin.
@@ -217,6 +218,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > Koşullu erişim kuralları yalnızca, Windows PowerShell 5.1 veya yeni kullanılabilir.
 
 ### <a name="other-properties"></a>Diğer özellikler
+
 Oturum yapılandırma dosyalarını da rol özellik dosyası için farklı komutlar bağlantı kullanıcı erişimi vermek için yalnızca özelliği olmadan yapabileceği her şeyi yapabilirsiniz.
 Erişimi belirli cmdlet'ler, İşlevler veya sağlayıcıları tüm kullanıcılara izin vermek istiyorsanız, bunu yapabilirsiniz oturum yapılandırma dosyasında sağ.
 Oturum yapılandırma dosyasında desteklenen özellikler tam listesi için çalıştırma `Get-Help New-PSSessionConfigurationFile -Full`.

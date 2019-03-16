@@ -3,19 +3,20 @@ ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Paketler uyumlu PowerShell sürümleri veya işletim sistemi
-ms.openlocfilehash: 8230866561d3021379a48cc2c83fb4104a4058c1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 14038aa9b0453e1d06e6587e97da391b56297c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685959"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057187"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>PowerShell sürümleri veya işletim sistemleriyle uyumlu paketleri
 
 5.1 sürümünden itibaren PowerShell çeşitli özellik kümelerini ve platform uyumluluğunu belirten farklı sürümler halinde kullanılabilir.
 
-## <a name="searching-by-powershell-edition"></a>PowerShell sürümüne göre arama 
-Powershell'ın iki sürümü vardır:
+## <a name="searching-by-powershell-edition"></a>PowerShell sürümüne göre arama
+
+PowerShell'ın iki sürümü vardır:
 - **Masaüstü sürümü:** .NET Framework üzerine inşa edilmiş ve Windows Masaüstü ve Windows Server Core gibi tam boyutlu sürümlerinde çalışan PowerShell sürümlerinin hedeflendiği betikler ve modüllerle uyumluluk sağlar.
 - **Çekirdek sürümü:** .NET Core üzerine yapılandırılan ve Nano Server gibi Windows ve Windows IOT azaltılmış boyutlu sürümlerinde çalışan PowerShell sürümlerinin hedeflendiği betikler ve modüllerle uyumluluk sağlar.
 
@@ -39,7 +40,8 @@ Etiketleri kullanma: "PSEdition_Desktop" ve etiketler: "PSEdition_Core" filtrele
 ![Masaüstü PSEdition ile uyumlu olan öğeleri için arama sonuçları](../../Images/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>PowerShell kullanarak uyumlu sürümlerini bulmak paketleri Ara
-PowerShell sürümü ve işletim sistemi için filtrelemek için etiketler belirtebilirsiniz. Kullandığınız `Find-Package` cmdlet'i belirtme `-Tag` sürümü (ve işletim sistemi) belirtmek için parametre hedeflediğiniz.
+PowerShell sürümü ve işletim sistemi için filtrelemek için etiketler belirtebilirsiniz.
+Kullandığınız `Find-Package` cmdlet'i belirtme `-Tag` sürümü (ve işletim sistemi) belirtmek için parametre hedeflediğiniz.
 Böyle:
 
 ```powershell
@@ -50,13 +52,13 @@ Find-Module -Tag PSEdition_Core
 Find-Module -Tag PSEdition_Core, Linux
 ```
 
-## <a name="searching-by-operating-system"></a>İşletim sistemi tarafından arama 
+## <a name="searching-by-operating-system"></a>İşletim sistemi tarafından arama
 
 PowerShell Core Windows, Linux ve MacOS için kullanılabilir olduğundan, paketleri galerisinde bu işletim sistemlerinden herhangi bir birleşimini için tasarlanmış olabilir. UI galeride, işletim sistemi tarafından etiketlenmiş paketler bulmak için aşağıdaki depolamaya etiketleri kullanın:
 
-- etiketler: "Windows"
-- etiketler: "Linux"
-- etiketler: "MacOS" 
+- Etiketler: "Windows"
+- Etiketler: "Linux"
+- Etiketler: "MacOS"
 
 Bu etiketler belirtebileceğiniz `Find-Module` (ve diğer cmdlet'ler PowerShellGet Modülü) şöyle:
 
@@ -67,17 +69,17 @@ Find-Module -Tag Linux
 
 ## <a name="searching-for-multiple-compatibilities"></a>Birden çok uyumluluğunu için arama
 
-Söz dizimi kullanılarak birden çok uyumluluğunu olan bir paketi arayabilirsiniz: 
+Söz dizimi kullanılarak birden çok uyumluluğunu olan bir paketi arayabilirsiniz:
 
-etiketler: "Compatibility1" "Compatibility2" 
+Etiketler: "Compatibility1" "Compatibility2"
 
 Örneğin, bir paket my Windows ve Linux makinelerinde çalışır, PowerShell Core uyumluluğu için arıyorsanız, arama etiketleri kullanın:
 
-etiketler: "PSEdition_Core", "Windows" "Linux" 
+Etiketler: "PSEdition_Core", "Windows" "Linux"
 
 PowerShell kullanarak arama yapmak için kullanabileceğiniz `Find-Module` (ve diğer PowerShellGet modülündeki cmdlet'ler) şöyle:
 
-```powewrshell
+```powershell
 # Find scripts compatible with PowerShell Core, Windows, and Linux
 Find-Script -Tag PSEdition_Core,Linux,Windows
 

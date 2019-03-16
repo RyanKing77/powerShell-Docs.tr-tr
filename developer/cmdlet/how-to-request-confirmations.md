@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
-ms.openlocfilehash: 8cfbcacf93733667ffba63a252c86518c0919b57
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851999"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058836"
 ---
 # <a name="how-to-request-confirmations"></a>Onay İsteme
 
-Bu örnek nasıl çağrılacağını gösterir [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) onaylarını gelen istek için yöntem Kullanıcı önce bir eylem yapılmaz.
+Bu örnek nasıl çağrılacağını gösterir [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) onaylarını gelen istek için yöntem Kullanıcı önce bir eylem yapılmaz.
 
 > [!IMPORTANT]
 > Windows PowerShell bu isteklerin nasıl işlediği hakkında daha fazla bilgi için bkz. [onay isteme](./requesting-confirmation-from-cmdlets.md).
@@ -43,13 +43,13 @@ Bu örnek nasıl çağrılacağını gösterir [System.Management.Automation.Cmd
     private bool force;
     ```
 
-3. Ekleme bir `if` dönüş değerini kullanan deyimi [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) belirlemek için yöntemi [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi çağrılır.
+3. Ekleme bir `if` dönüş değerini kullanan deyimi [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) belirlemek için yöntemi [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi çağrılır.
 
-4. İkinci bir ekleme `if` dönüş değerini kullanan deyimi [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi ve değerini `Force` işlemi gerekip gerekmediğini belirlemek için parametre gerçekleştirdi.
+4. İkinci bir ekleme `if` dönüş değerini kullanan deyimi [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi ve değerini `Force` işlemi gerekip gerekmediğini belirlemek için parametre gerçekleştirdi.
 
 ## <a name="example"></a>Örnek
 
-Aşağıdaki kod örneğinde, [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemleri içinden çağrıldığında geçersiz kılma [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi. Ancak, bu yöntemler diğer girişini işleme yöntemlerini de çağırabilirsiniz.
+Aşağıdaki kod örneğinde, [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemleri geçersiz kılma içinde adlandırılır ' ın [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi. Ancak, bu yöntemler diğer girişini işleme yöntemlerini de çağırabilirsiniz.
 
 ```csharp
 protected override void ProcessRecord()

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
 caps.latest.revision: 8
-ms.openlocfilehash: d0fb81ee1ca1f80e216c021e1bd64771b8de4dc3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ad7f9737c646dd5cea5abb14b828236e40feac5a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849696"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057051"
 ---
 # <a name="provider-cmdlet-parameters"></a>Sağlayıcı cmdlet parametreleri
 
@@ -29,9 +29,9 @@ Statik parametreler, Windows PowerShell tarafından tanımlanır. Çok sayıda b
 
 `Clear-ItemProperty` sağlayıcınız geçirilen değerlerin nasıl kullanacağını tanımlayabilirsiniz cmdlet'i `Path` ve `Name` parametrelerinin `Clear-ItemProperty` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) yöntemi.
 
-`Copy-Item` sağlayıcınız geçirilen değerlerin nasıl kullanacağını tanımlayabilirsiniz cmdlet'i `Path`, `Destination`, ve `Recurse` parametrelerinin `Copy-Item` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) yöntemi.
+`Copy-Item` sağlayıcınız geçirilen değerlerin nasıl kullanacağını tanımlayabilirsiniz cmdlet'i `Path`, `Destination`, ve `Recurse` parametrelerinin `Copy-Item` cmdlet'i uygulayarak [ System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) yöntemi.
 
-Get-ChildItems cmdlet'i sağlayıcınız geçirilen değerlerin nasıl kullanacağını tanımlayabilirsiniz `Path` ve `Recures` parametrelerinin `Get-ChildItem` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) ve [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) yöntemleri.
+Get-ChildItems cmdlet'i sağlayıcınız geçirilen değerlerin nasıl kullanacağını tanımlayabilirsiniz `Path` ve `Recurse` parametrelerinin `Get-ChildItem` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) ve [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) yöntemleri.
 
 `Get-Content` sağlayıcınız geçirilen değerlerin nasıl kullanacağını tanımlayabilirsiniz cmdlet'i `Path` parametresinin `Get-Content` cmdlet'i uygulayarak [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) yöntemi.
 
@@ -45,7 +45,7 @@ Get-ChildItems cmdlet'i sağlayıcınız geçirilen değerlerin nasıl kullanaca
 
 `New-Item` sağlayıcınız geçirilen değerlerin nasıl kullanacağını tanımlayabilirsiniz cmdlet'i `Path`, `ItemType`, ve `Value` parametrelerinin `New-Item` cmdlet'i uygulayarak [ System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) yöntemi.
 
-`New-ItemProperty` sağlayıcınız geçirilen değerlerin nasıl kullanacağını tanımlayabilirsiniz cmdlet'i `Path`, `Name`, `PropertyType`, ve `Value` parametrelerinin `New-ItemProperty` cmdlet'i uygulayarak [ Microsoft.Powershell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty) yöntemi.
+`New-ItemProperty` sağlayıcınız geçirilen değerlerin nasıl kullanacağını tanımlayabilirsiniz cmdlet'i `Path`, `Name`, `PropertyType`, ve `Value` parametrelerinin `New-ItemProperty` cmdlet'i uygulayarak [ Microsoft.PowerShell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty) yöntemi.
 
 `Remove-Item` Sağlayıcınız geçirilen değerlerin nasıl kullanacağını tanımlayabilirsiniz `Path` ve `Recurse` parametrelerinin `Remove-Item` cmdlet'i uygulayarak [System.Management.Automation.Provider.Containercmdletprovider.Removeitem* ](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) yöntemi.
 
