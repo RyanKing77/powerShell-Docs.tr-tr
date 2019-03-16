@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Oluşturma ve bir öğe yayımlama
-ms.openlocfilehash: 70696535a3bf540ff75a2dc43bca80cb1adf8f45
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684363"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055487"
 ---
 # <a name="creating-and-publishing-an-item"></a>Oluşturma ve bir öğe yayımlama
 
@@ -75,7 +75,7 @@ PowerShell Galerisi'nde öğeniz yayımlamadan önce kodunuzu çalıştırmak i�
 PowerShell Galerisi altyapısı tarafından öğeniz bildirim bilgileri okunamadığında yayımlamak mümkün olmayacaktır.
 [Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) Modülü yüklü olduğunda kullanılabilir olmaması neden olan yaygın sorunlar yakalar. Her modülü PowerShell Galerisi'nden yayımlamadan önce çalıştırılması gerekir.
 
-Benzer şekilde, [Test ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) betikteki meta verileri doğrular ve Powershell galeride yayımlamadan önce her komut (yayımlanan ayrı bir modülden) çalıştırmanız gerekir.
+Benzer şekilde, [Test ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) betikteki meta verileri doğrular ve PowerShell galeride yayımlamadan önce her komut (yayımlanan ayrı bir modülden) çalıştırmanız gerekir.
 
 
 ## <a name="publishing-items"></a>Yayımlama öğeleri
@@ -87,14 +87,14 @@ Kullanmalısınız [Publish-Script](/powershell/module/PowerShellGet/publish-scr
 
 Böylece bunları komutta belirtmeniz gerekmez komut satırında diğer seçeneklerin çoğu yayımlamakta olduğunuz öğesi için bildirim veri olması gerekir.
 
-Hataları önlemek için - Whatif kullanarak komutları deneyin önerilir-Verbose, yayımlamadan önce. PowerShell galerisinde yayımlamak her zaman bu yana önemli ölçüde zaman kazandırır, öğe bildirimi bölümündeki sürüm numarasını güncelleştirmeniz gerekir.
+Hataları önlemek için - WhatIf kullanarak komutları deneyin önerilir-Verbose, yayımlamadan önce. PowerShell galerisinde yayımlamak her zaman bu yana önemli ölçüde zaman kazandırır, öğe bildirimi bölümündeki sürüm numarasını güncelleştirmeniz gerekir.
 
 Örnek şöyle olacaktır:
 
-* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
-* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
+* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`
 
-Çıkış dikkatle gözden geçirin ve bir hata veya uyarı görürseniz, - Whatif olmadan komutu yineleyin.
+Çıkış dikkatle gözden geçirin ve bir hata veya uyarı görürseniz, - WhatIf olmadan komutu yineleyin.
 
 PowerShell Galerisi'nde yayımlanmış öğeler virüs taraması ve PowerShell betik Çözümleyicisi'ni kullanarak analiz edilir. O anda ortaya çıkan sorunları yayımcıya çözümlemesi için gönderilir.
 

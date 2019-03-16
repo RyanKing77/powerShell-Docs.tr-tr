@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
 caps.latest.revision: 6
-ms.openlocfilehash: c8b3f907a80d1f6125a5ac04236245503db76ed0
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251311"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057138"
 ---
 # <a name="security-parameters"></a>Güvenlik Parametreleri
 
@@ -29,7 +29,7 @@ Aşağıdaki tabloda, sertifika anahtarı ve ayrıcalık bilgilerini belirtmek p
 |**CertStoreLocation**<br>Veri türü: Dize|Kullanıcı sertifika depolama konumunu belirtmek için bu parametreyi uygulayın. Genellikle bir dosya yolu konumdur.|
 |**CertSubjectName**<br>Veri türü: Dize|Bu parametre, kullanıcı bir sertifikayı veren belirtebilir veya kullanıcı bir alt dizesi belirtebilirsiniz böylece uygulayın.|
 |**CertUsage**<br>Veri türü: Dize|Anahtar kullanımı veya Gelişmiş anahtar kullanımı belirtmek için bu parametreyi uygulayın. Anahtar biraz, biraz, bir nesne tanımlayıcı (OID) maske olarak veya bir dizeyi temsil edilebilir.|
-|**Kimlik bilgisi**<br>Veri türü: [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Bu parametre, böylece cmdlet'i otomatik olarak bir kullanıcı adı veya parola girmesini ister uygulayın. Tam bir kimlik bilgisi doğrudan sağlanmazsa, her ikisi için de bir istem görüntülenir.|
+|**Kimlik bilgisi**<br>Veri türü: [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Bu parametre, böylece cmdlet'i otomatik olarak bir kullanıcı adı veya parola girmesini ister uygulayın. Tam bir kimlik bilgisi doğrudan sağlanmazsa, her ikisi için de bir istem görüntülenir.|
 |**CSPAdı**<br>Veri türü: Dize|Kullanıcı sertifika hizmeti sağlayıcısı (CSP) adını belirtmek için bu parametreyi uygulayın.|
 |**CSPType**<br>Veri türü: Tamsayı|Kullanıcı, CSP türünü belirtmek için bu parametreyi uygulayın.|
 |**Grup**<br>Veri türü: Dize|Bu parametre, kullanıcı için erişim ilkeleri koleksiyonunu belirtebilirsiniz böylece uygulayın. Daha fazla bilgi için açıklamasına bakın **asıl** parametresi.|

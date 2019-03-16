@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: PowerShell Galerisi UI etkileyen paket bildirim değerleri
-ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655354"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058224"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell Galerisi UI etkileyen paket bildirim değerleri
 
@@ -32,7 +32,7 @@ Aşağıdaki tabloda, yayımcı tarafından denetlenen PowerShell Galerisi paket
 | **Yazar** | Bu, yazarı olarak modül bildirimindeki ve bir betik bildirim dahil edilir. YAZAR. Yazar alanı, genellikle bir şirket veya bir paket ile ilişkili kuruluş belirtmek için kullanılır. | Evet | Evet |
 | **Telif Hakkı** | Bu modül bildirimindeki telif hakkı alanıdır ve. Bir betik bildiriminde telif hakkı. | Evet | Evet |
 | **FileList** | PowerShell Galerisi'nde yayımlandığında, dosya listesi paketten çizilir. Bildirim bilgileri tarafından denetlenebilir değil. Not: her pakette bir sistemde paket yüklendikten sonra mevcut değilse PowerShell galerisinde listelenmiş bir ek .nuspec dosyası yoktur. Bu paket için Nuget paket bildirim ve yok sayılabilir. | Hayır | Hayır |
-| **Etiketleri** | Modüller için etiketleri PSData\PrivateData altında bulunur. Betikler için bölüm etiketlendiğini. ETİKETLER. Tırnak işaretleri olduklarında bile etiketleri Not boşluk içeremez. Etiketler, ek gereksinimler ve etiket Ayrıntıları bölümünde bu konunun ilerleyen bölümlerinde açıklanan bir anlamı vardır. | Evet | Evet |
+| **Etiketler** | Modüller için etiketleri PSData\PrivateData altında bulunur. Betikler için bölüm etiketlendiğini. ETİKETLER. Tırnak işaretleri olduklarında bile etiketleri Not boşluk içeremez. Etiketler, ek gereksinimler ve etiket Ayrıntıları bölümünde bu konunun ilerleyen bölümlerinde açıklanan bir anlamı vardır. | Evet | Evet |
 | **Cmdlet’ler** | Bu modül bildiriminde CmdletsToExport kullanılarak sağlanır. Joker karakter kullanılması yerine açıkça öğelerini listelemek için en iyi olduğuna dikkat edin "*", kullanıcılar için yükleme-module performansını artıracak şekilde. | Evet | Hayır |
 | **İşlevleri** | Bu modül bildiriminde FunctionsToExport kullanılarak sağlanır. Joker karakter kullanılması yerine açıkça öğelerini listelemek için en iyi olduğuna dikkat edin "*", kullanıcılar için yükleme-module performansını artıracak şekilde. | Evet | Hayır |
 | **DSC kaynakları** | PowerShell sürüm 5.0 ve üzeri için kullanılacak olan modüller için bu DscResourcesToExport kullanılarak bildirimde sağlanır. Modülü, PowerShell 4'te kullanılacak ise, desteklenen bir bildirim anahtar olmadığından DSCResourcesToExport kullanılmamalıdır. (DSC, PowerShell 4 önce yoktu.) | Evet | Hayır |
@@ -40,7 +40,7 @@ Aşağıdaki tabloda, yayımcı tarafından denetlenen PowerShell Galerisi paket
 | **Rol işlevleri** | JEA tarafından kullanılan bir veya daha fazla rol (.psrc) dosyaları, modülün PowerShell Galerisi'nde yayımlanmış içerdiğinde, bu listede görüntülenir. İlgili daha fazla ayrıntı için JEA belgelere bakın [rol işlevleri](/powershell/jea/role-capabilities). | Evet | Hayır |
 | **PowerShell sürümleri** | Bu, bir komut veya modül bildiriminde belirtilir. Aşağıda, bu PowerShell 5.0 ile kullanılmak üzere tasarlanmış modüller için etiketleri kullanılarak denetlenir. Masaüstü için PSEdition_Desktop etiketini kullanın ve PSEdition_Core etiket core için kullanın. Yalnızca PowerShell 5.1 ve üzeri için kullanılacak olan modüller için ana bildiriminde CompatiblePSEditions anahtar yoktur. Ek ayrıntılar için PS Edition özelliği gözden [PowerShell Get belgeleri](module-psedition-support.md). | Evet | Evet |
 | **Bağımlılıkları** | Bağımlılıkları olan ya da modül RequiredModules olarak ya da komut bildirim bildirilen PowerShell Galerisi modülleri #Requires – Modülü (ad). | Evet | Evet |
-| **En düşük Powershell sürümü** | Bu modül bildiriminde PowerShellVersion belirtilebilir. | Evet | Hayır |
+| **En düşük PowerShell sürümü** | Bu modül bildiriminde PowerShellVersion belirtilebilir. | Evet | Hayır |
 | **Sürüm Geçmişi** | Sürüm Geçmişi bir modülün PowerShell Galerisi'nde yapılan güncelleştirmeleri yansıtır. Bir paketin bir sürümü silme özelliği kullanarak gizli ise, bu sürüm geçmişine dışında paket sahiplerine görüntülenmez. | Hayır | Hayır |
 | **Proje sitesi** | Proje sitesi bir ProjectURI belirterek modüllerin modül bildirimini Privatedata\PSData bölümünde sağlanır. Betik bildiriminde belirterek denetlenir. PROJECTURI. | Evet | Evet |
 | **Lisans** | Bir lisans bağlantı bir LicenseURI belirterek modül bildirimini Privatedata\PSData bölümünde modüller için sağlanır. Betik bildiriminde belirterek denetlenir. LICENSEURI. Bir lisansı LicenseURI sağlanmamışsa veya içinde bir modül, paket için kullanım koşullarını sonra PowerShell Galerisi için kullanım koşullarını belirtin, dikkat etmeniz önemlidir. Kullanım koşullarını ayrıntılı bilgi için bkz. | Evet | Evet |
@@ -56,7 +56,7 @@ PowerShell Galerisi paket sayfasını Düzenle birkaç bir paket için özel ola
 - Özet
 - Simge URL'si
 - Proje giriş sayfası URL'si
-- Yazarları
+- Yazarlar
 - Telif Hakkı
 - Etiketler
 - Sürüm notları
@@ -93,7 +93,7 @@ Başvuru için en yaygın kullanılan bazı etiketler 14/12/2017 itibarıyla aş
 | Veritabanı | Daha az tercih veritabanları (çoğul) |
 | DevOps |  |
 | Windows |  |
-| Derleme |  |
+| Oluşturma |  |
 | Dağıtım | Dağıtma biraz daha az sıklıkta kullanılan |
 | Bulut |  |
 | GIT |  |
@@ -101,14 +101,14 @@ Başvuru için en yaygın kullanılan bazı etiketler 14/12/2017 itibarıyla aş
 | VersionControl | Sürüm daha sık kullanılan olsa da daha az kesin  |
 | Günlük | Tercih edilen bir eylem olarak günlük kullanımı |
 | Günlük | Bir şey olarak tercih edilen kullanım günlüğü |
-| Yedek |  |
-| Iaas |  |
+| Yedekleme |  |
+| IaaS |  |
 | Linux |  |
 | IIS |  |
 | AzureAutomation |  |
 | Depolama |  |
 | GitHub |  |
-| JSON |  |
+| Json |  |
 | Exchange |  |
 | Ağ | Daha az sıklıkta kullanılan ağ benzer, |
 | SharePoint |  |
@@ -137,5 +137,5 @@ Başvuru için en yaygın kullanılan bazı etiketler 14/12/2017 itibarıyla aş
 | AzureRm | Öncelikle AzureRM modülleri için kullanılan |
 | Zip |  |
 | MSI |  |
-| macOS |  |
+| MacOS |  |
 | PoshBot |  |

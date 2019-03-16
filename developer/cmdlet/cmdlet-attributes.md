@@ -11,12 +11,12 @@ helpviewer_keywords:
 - attributes [PowerShell SDK], described
 ms.assetid: d3f4f652-d929-4c27-9358-9baa390a094c
 caps.latest.revision: 14
-ms.openlocfilehash: b06faf7204213b383b25685837941ad63dcb225b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 326cd408e86402974569fc76d5e473be5a56f0b6
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845356"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055181"
 ---
 # <a name="cmdlet-attributes"></a>Cmdlet Öznitelikleri
 
@@ -32,7 +32,7 @@ Windows PowerShell içinde kendi kodunuzu işlevselliği uygulamadan cmdlet'leri
 
 [Cmdlet özniteliği bildirimi](./cmdlet-attribute-declaration.md) bir .NET Framework sınıfı bir cmdlet tanımlamayı açıklar.
 
-[Kimlik bilgisi özniteliği bildirimi](./credential-attribute-declaration.md) giriş dize dönüştürme için destek eklemeyi açıklar bir [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) nesne.
+[Kimlik bilgisi özniteliği bildirimi](./credential-attribute-declaration.md) giriş dize dönüştürme için destek eklemeyi açıklar bir [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) nesne.
 
 [OutputType özniteliğini bildirimi](./outputtype-attribute-declaration.md) cmdlet'i tarafından döndürülen .NET Framework türlerini belirtmek açıklar.
 

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Windows PowerShell önceki sürümlerinde yerel Configuration Manager'ı yapılandırma
-ms.openlocfilehash: 31ba2ecdaa5a2ff7fcfddb1791c4d00343f4b5d5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: cea32c9aa8144bc52f3d44f2ad852f577f6a5e6d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405783"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055317"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>Windows PowerShell önceki sürümlerinde yerel Configuration Manager'ı yapılandırma
 
@@ -34,9 +34,20 @@ Ayarlama veya alma yerel Configuration Manager özellikleri listeler.
 - **Kimlik bilgisi**: (Get-Credential gibi ile) kimlik bilgilerini belirten yapılandırma hizmetiyle iletişim kurma gibi uzak kaynaklara erişmek için gerekli.
 - **DownloadManagerCustomData**: İndirme Yöneticisi için belirli özel veri içeren bir dizi temsil eder.
 - **DownloadManagerName**: Modül yükleme yöneticisi ve yapılandırmayı adını gösterir.
-- **RebootNodeIfNeeded**: Belirli bir hedef düğüm yapılandırma değişiklikleri, değişikliklerin uygulanması için yeniden başlatılmasını gerektirebilir. Değerine sahip **True**, yapılandırma olmuştur hemen sonra bu özelliği düğümü yeniden başlatır tamamen uygular, daha fazla uyarı olmadan. Varsa **False** (varsayılan değer) yapılandırma tamamlandı, ancak düğümün değişikliklerin etkili olabilmesi için el ile yeniden başlatılması gerekir.
+- **RebootNodeIfNeeded**: Bu ayar `$true` kaynakları kullanarak düğümü yeniden başlatmak izin vermek için `$global:DSCMachineStatus` bayrağı. Aksi takdirde, düğüm gerektiren herhangi bir yapılandırma için el ile yeniden başlatmanız gerekir. Varsayılan değer: `$false`. Bir yeniden başlatma koşulu DSC (örneğin, Windows Yükleyici) dışında bir şey tarafından geçirilmeden olduğunda bu ayarı kullanmak için bu ayarı ile birleştirerek [xPendingReboot](https://github.com/powershell/xpendingreboot) modülü.
 - **RefreshFrequencyMins**: Bir çekme hizmetini ayarlama olduğunda kullanılır. Geçerli yapılandırmayı indirmek için bir çekme hizmetini, yerel Configuration Manager kişiler sıklığı (dakika cinsinden) temsil eder. Bu değer ConfigurationModeFrequencyMins birlikte ayarlayabilirsiniz. RefreshMode ÇEKME olarak ayarlandığında, hedef düğüm çekme hizmetini RefreshFrequencyMins tarafından ayarlanmış aralıklarla iletişim kurar ve yapılandırmasına yüklemeleri. ConfigurationModeFrequencyMins tarafından ayarlanmış aralıklarla tutarlılık altyapısı ardından hedef düğüme indirilen en yeni yapılandırmayı uygular. RefreshFrequencyMins tamsayıya ayarlanmazsa ConfigurationModeFrequencyMins, sistemin katı, Yukarı YUVARLA. Varsayılan değer 30’dur.
 - **RefreshMode**: Olası değerler **anında iletme** (varsayılan) ve **çekme**. "Gönderme temelli" yapılandırmanın herhangi bir istemci bilgisayar kullanan bir yapılandırma dosyası, her hedef düğümde yerleştirmeniz gerekir. "Pull" modunda, bir çekme hizmetini yerel başvurun ve yapılandırma dosyalarına erişmek için Configuration için ayarlamanız gerekir.
+
+> [!NOTE]
+> LCM başlatır **ConfigurationModeFrequencyMins** döngüsü temel alan:
+>
+> - Yeni bir metaconfig kullanılarak uygulanır. `Set-DscLocalConfigurationManager`
+> - Makine yeniden başlatma
+>
+> Zamanlayıcı işlemi burada karşılaştığında herhangi bir koşul için 30 saniye ve döngü içinde algılanan bir kilitlenme yeniden başlatılır.
+> Eşzamanlı işlem döngüsü geciktirebilir Başlatılmakta olan bu işlemin süresi yapılandırılan döngüsü sıklığı aşarsa sonraki Zamanlayıcı başlatılmaz.
+>
+> Örneğin, metaconfig 15 dakikalık çekme sıklıkla yapılandırılır ve bir çekme T1 oluşur.  Düğüm için 16 dakika iş sonlanmaz.  İlk 15 dakikalık bir döngüde göz ardı edilir ve sonraki çekme olacağını T1 + 15 + 15.
 
 ### <a name="example-of-updating-local-configuration-manager-settings"></a>Örneği yerel Configuration Manager ayarları güncelleştiriliyor
 
@@ -76,7 +87,8 @@ Ayarları uygulamak için kullanabileceğiniz **Set-DscLocalConfigurationManager
 Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 ```
 
-> **Not**: İçin **yolu** parametresi için belirttiğiniz aynı yol belirtmelisiniz **OutputPath** yapılandırmanın önceki örnekte çağrıldığında parametre.
+> [!NOTE]
+> İçin **yolu** parametresi için belirttiğiniz aynı yol belirtmelisiniz **OutputPath** yapılandırmanın önceki örnekte çağrıldığında parametre.
 
 Geçerli yerel Configuration Manager ayarlarını görmek için kullanabileceğiniz **Get-DscLocalConfigurationManager** cmdlet'i.
 Bu cmdlet'i parametresiz çağırmak, varsayılan olarak, düğüm üzerinde çalıştırdığınız yerel Configuration Manager ayarlarını alın.

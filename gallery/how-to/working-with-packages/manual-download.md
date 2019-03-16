@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: Galeri, powershell, psgallery
 title: Elle Paket İndirme
-ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: af628f99befe50c16c2c0c60f1a352647af34ff4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687702"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054893"
 ---
 # <a name="manual-package-download"></a>Elle Paket İndirme
 
-Powershell Galerisi PowerShellGet cmdlet'leri kullanmadan, doğrudan Web sitesinden bir paket indiriliyor destekler. Herhangi bir paket, ardından bir iç deposuna kopyalayabilirsiniz NuGet paketini (.nupkg) dosyası olarak indirebilirsiniz.
+PowerShell Galerisi PowerShellGet cmdlet'leri kullanmadan, doğrudan Web sitesinden bir paket indiriliyor destekler. Herhangi bir paket, ardından bir iç deposuna kopyalayabilirsiniz NuGet paketini (.nupkg) dosyası olarak indirebilirsiniz.
 
 > [!NOTE]
 > El ile paket **değil** Install-Module cmdlet'i bir ardılı olarak yöneliktir.

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Tümleşik komut dosyası ortamı ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3002c2cb7213b1c2d7201dddf5ff3c0651fad767
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683838"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054722"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Tümleşik Komut Dosyası Ortamı (ISE)
 
@@ -34,7 +34,7 @@ Bu araçlar, sekmeli bir bölmeye denetimlerini görüntülemek veya arka planda
 
 **En son kullanılan liste** Dosya Aç menüsünde en sık kullandığınız dosyaları almak daha kolay hale getirmek için artık parçasıdır.
 
-**Birleştirilmiş bir konsol bölmesinde**. ISE önceki sürümlerinde ayrı komut ve çıkış bölmeleri vardı. Bunlar tek bir bölmesine daha doğrudan taklit eder, Windows Powershell konsolunda gördüğünüz birleştirildi.
+**Birleştirilmiş bir konsol bölmesinde**. ISE önceki sürümlerinde ayrı komut ve çıkış bölmeleri vardı. Bunlar tek bir bölmesine daha doğrudan taklit eder, Windows PowerShell konsolunda gördüğünüz birleştirildi.
 
 **Komut satırı anahtarları**. Birkaç yeni komut satırı anahtarları ISE çalıştığı yolu üzerinde daha fazla denetim verir. -NoProfile profili betiği çalıştırmadan işe başlar. -Help ISE ile bir Yardım penceresini açar. -mta "çok iş parçacıklı bölme modunda" işe başlar. Tek iş parçacıklı varsayılandır.
 

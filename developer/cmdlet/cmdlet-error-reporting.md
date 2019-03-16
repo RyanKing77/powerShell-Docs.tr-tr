@@ -14,12 +14,12 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 7b54fc220a66a47c25b3e8cba644882d31713cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847995"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057952"
 ---
 # <a name="cmdlet-error-reporting"></a>Cmdlet Hata Raporlama
 
@@ -43,7 +43,7 @@ Aşağıdaki yönergeler, bir hata durumu hatası veya olmak üzere sonlandırma
 
 ## <a name="reporting-nonterminating-errors"></a>Raporlama olmak üzere Sonlandırmasız hatalar
 
-Raporlama olmak üzere sonlandırmasız bir hata her zaman içinde cmdlet'in uygulaması yapılmalıdır [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) yöntemi [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi veya [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemi. Bu tür hataları çağırarak raporlanır [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) sırayla hata akışına bir hata kaydı gönderen yöntemi.
+Raporlama olmak üzere sonlandırmasız bir hata her zaman içinde cmdlet'in uygulaması yapılmalıdır [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) yöntemi [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi veya [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemi. Bu tür hataları çağırarak raporlanır [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) sırayla hata akışına bir hata kaydı gönderen yöntemi.
 
 ## <a name="reporting-terminating-errors"></a>Sonlandıran hata raporlama
 
@@ -53,7 +53,7 @@ Ayrıca, belirli sorunlar için kendi özel durumlarınızı durumunuza tanımla
 
 ## <a name="error-records"></a>Hata kaydı
 
-Windows PowerShell kullanarak bir olmak üzere sonlandırmasız bir hata koşulu tanımlar [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesneleri. Her [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesne, hata kategorisi bilgileri, isteğe bağlı bir hedef nesneyi ve hata durumu hakkında ayrıntılar sağlar.
+Windows PowerShell kullanarak bir olmak üzere sonlandırmasız bir hata koşulu tanımlar [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesneleri. Her [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesne, hata kategorisi bilgileri, isteğe bağlı bir hedef nesneyi ve hata durumu hakkında ayrıntılar sağlar.
 
 ### <a name="error-identifiers"></a>Hata tanımlayıcıları
 
@@ -61,7 +61,7 @@ Hata tanımlayıcı cmdlet içinde hata koşulu tanımlayan basit bir dizedir. W
 
 Aşağıdaki yönergeler, hata tanımlayıcıları belirtirken gelmelidir.
 
-- Farklı, yüksek oranda ayrıntılı hata tanımlayıcıları farklı kod yollarını atayın. Çağıran her kod yolu [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) veya [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) kendi hata tanımlayıcısı olmalıdır.
+- Farklı, yüksek oranda ayrıntılı hata tanımlayıcıları farklı kod yollarını atayın. Çağıran her kod yolu [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) veya [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) kendi hata tanımlayıcısı olmalıdır.
 
 - Hata tanımlayıcıları hem sonlandıran hem de olmak üzere sonlandırmasız hatalar için CLR özel durum türleri için benzersiz olmalıdır.
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC kullanarak bir sanal makineler ilk önyüklemede yapılandırma
-ms.openlocfilehash: 2ae6f7a85af3d08bad9e97b90efaefb2ff8410ca
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f9634c330832e23fb2c6f08c5b299b55a5505ac9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686911"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059431"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>DSC kullanarak bir sanal makineler ilk önyüklemede yapılandırma
 
@@ -98,7 +98,7 @@ Configuration SampleIISInstall
 
 7. DSC MOF belgesi yüklediğiniz VHD kullanarak bir VM oluşturun.
 
-İlk önyükleme yukarı ve işletim sistemi yüklemesi sonra IIS yüklenir.
+İlk önyükleme yukarı ve işletim sistemi yüklemesinden sonra IIS yüklenir.
 Bunu çağırarak doğrulamak [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) cmdlet'i.
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>Bir VHD'ye DSC metaconfiguration ekleme
@@ -140,7 +140,7 @@ configuration PullClientBootstrap
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. [Bir DSC web çekme sunucusu ayarlama](../pull-server/pullServer.md), kaydedip **SampleIISInistall** uygun klasöre yapılandırma.
+2. [Bir DSC web çekme sunucusu ayarlama](../pull-server/pullServer.md), kaydedip **SampleIISInstall** uygun klasöre yapılandırma.
 
 3. Bir bilgisayarda çalışan PowerShell 5.0 veya daha sonra yukarıdaki metaconfiguration kaydetmek (**PullClientBootstrap**) bir PowerShell Betiği (.ps1) dosyası olarak.
 

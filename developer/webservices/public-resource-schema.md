@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: a9204ca7b28fc5792ef9bd18f6b0b24964de7386
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849297"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057255"
 ---
 # <a name="public-resource-schema"></a>Genel Kaynak Şema
 
@@ -21,7 +21,7 @@ Management OData MOF kaynakları ve bunların özelliklerini tanımlamak için k
 
 ## <a name="defining-a-resource"></a>Bir kaynağı tanımlama
 
-Her kaynak bir Windows PowerShell cmdlet'i tarafından döndürülen bir nesneye karşılık gelir. Publc kaynak MOF dosyasında bir sınıf bildirme tarafından bir kaynağı tanımlayın. Sınıfı nesne özelliklerine karşılık gelen özelliklerle oluşur. Örneğin, aşağıdaki örnekte, [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) sınıfı aşağıdaki MOF tarafından temsil edilir.
+Her kaynak bir Windows PowerShell cmdlet'i tarafından döndürülen bir nesneye karşılık gelir. Genel kaynak MOF dosyası, bir sınıf bildirme tarafından bir kaynağı tanımlayın. Sınıfı nesne özelliklerine karşılık gelen özelliklerle oluşur. Örneğin, aşağıdaki örnekte, [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) sınıfı aşağıdaki MOF tarafından temsil edilir.
 
 ```csharp
 class PswsTest_Process
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Olarak bildirdiğiniz bir varlık özelliği karmaşık bir tür olarak bildirmek için bir `string` tür `EmbeddedInstance` adını içeren bir karmaşık tür niteleyicisi. Aşağıdaki örnek hshows özellik bildirimini, `PswsTest_ProcessModule` türü, önceki örnekte bildirilen.
+Olarak bildirdiğiniz bir varlık özelliği karmaşık bir tür olarak bildirmek için bir `string` tür `EmbeddedInstance` adını içeren bir karmaşık tür niteleyicisi. Aşağıdaki örnek bir özellik bildirimi gösterir `PswsTest_ProcessModule` türü, önceki örnekte bildirilen.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];
@@ -63,7 +63,7 @@ Olarak bildirdiğiniz bir varlık özelliği karmaşık bir tür olarak bildirme
 
 ### <a name="associating-entities"></a>Varlıkları ilişkilendirme
 
-İki varlık ilişkisi ve AssocationClass niteleyicileri kullanarak ilişkilendirebilirsiniz. Daha fazla bilgi için [Yönetimi OData varlıkları ilişkilendirme](./associating-management-odata-entities.md).
+İki varlık ilişkisi ve ilişki sınıfı niteleyicileri kullanarak ilişkilendirebilirsiniz. Daha fazla bilgi için [Yönetimi OData varlıkları ilişkilendirme](./associating-management-odata-entities.md).
 
 ### <a name="derived-types"></a>Türetilmiş türler
 
@@ -72,17 +72,16 @@ Bir tür, başka türden türetebilirsiniz. Türetilmiş tür açıkça türetil
 ```csharp
 Class Product {
 
-[Key] String ProductName;
+    [Key] String ProductName;
 
 };
 
 Class DairyProduct : Product {
 
-Uint16 PercentFat;
+    Uint16 PercentFat;
 };
 Class POPProduct : Product {
 
-Boolean IsCarbonated;
+    Boolean IsCarbonated;
 };
-
 ```

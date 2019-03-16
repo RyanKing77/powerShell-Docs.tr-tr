@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DependsOn kullanan kaynak bağımlılıkları
-ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688066"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055708"
 ---
 # <a name="resource-dependencies-using-dependson"></a>DependsOn kullanan kaynak bağımlılıkları
 
@@ -16,7 +16,7 @@ Yazdığınızda [yapılandırmaları](configurations.md), eklediğiniz [kaynak 
 `DependsOn` Anahtarı herhangi bir kaynak bloğu içinde kullanılabilir. Diğer kaynak anahtarı olarak aynı anahtar/değer mekanizması ile tanımlanır. `DependsOn` Anahtarı, aşağıdaki sözdizimini kullanarak bir dize dizisi bekliyor.
 
 ```
-DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
 ```
 
 Aşağıdaki örnek, etkinleştirme ve genel profil yapılandırdıktan sonra bir güvenlik duvarı kuralı yapılandırır.

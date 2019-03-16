@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: MOF ile özel bir DSC kaynağı yazma
-ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687569"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059737"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>MOF ile özel bir DSC kaynağı yazma
 
@@ -69,7 +69,8 @@ class Demo_IISWebsite : OMI_BaseResource
 
 Kaynak betiği kaynak mantığını uygular. Bu modülde adlı üç işlev içermelidir **Get-TargetResource**, **kümesi TargetResource**, ve **Test TargetResource**. Kaynağınız için oluşturduğunuz MOF şemada tanımlanan özellikler kümesini aynı olan bir parametre kümesi üç işlev uygulamanız gerekir. Bu belgede, bu özellikler kümesi "kaynak özellikleri." başvuruda bulunulur Adlı bir dosyada bu üç işlev Store <ResourceName>.psm1. Aşağıdaki örnekte, işlevlerin Demo_IISWebsite.psm1 adlı bir dosyada depolanır.
 
-> **Not**: Kaynağınız üzerinde birden çok kez aynı yapılandırma betiğini çalıştırdığınızda hatasız almanız gerekir ve kaynak betiği bir kez çalışıyor olarak aynı durumda kalmalıdır. Bunu gerçekleştirmek için emin olun, **Get-TargetResource** ve **Test TargetResource** kaynak değiştirmeden işlevleri bırakın ve söz konusu çağırma **Set-TargetResource**birden çok kez aynı parametre ile bir dizideki değerleri her zaman bir kez çağırmak için eşdeğer işlev.
+> [!NOTE]
+> Kaynağınız üzerinde birden çok kez aynı yapılandırma betiğini çalıştırdığınızda hatasız almanız gerekir ve kaynak betiği bir kez çalışıyor olarak aynı durumda kalmalıdır. Bunu gerçekleştirmek için emin olun, **Get-TargetResource** ve **Test TargetResource** kaynak değiştirmeden işlevleri bırakın ve söz konusu çağırma **Set-TargetResource**birden çok kez aynı parametre ile bir dizideki değerleri her zaman bir kez çağırmak için eşdeğer işlev.
 
 İçinde **Get-TargetResource** uygulama işlev, belirtilen kaynak örneğinin durumunu denetlemek için parametre olarak sağlanan anahtar kaynak özellik değerlerini kullanın. Bu işlev, anahtarları ve gerçek değerler karşılık gelen değer olarak, bu özelliklerin tüm kaynak özellikleri listeleyen bir karma tablo döndürmesi gerekir. Aşağıdaki kod örneği sağlar.
 

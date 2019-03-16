@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
 caps.latest.revision: 8
-ms.openlocfilehash: 75214a3fe4bc019836f75db19fb873bd081f200f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850606"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059482"
 ---
 # <a name="confirmation-messages"></a>Onay İletileri
 
-Bağlı türevleri görüntülenebilen farklı onay mesajları işte [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [ System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) çağrılan yöntemlere.
+Bağlı türevleri görüntülenebilen farklı onay mesajları işte [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.ShouldContinue ](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) çağrılan yöntemlere.
 
 > [!IMPORTANT]
 > İstek onayları gösteren örnek kod için bkz [okundu nasıl](./how-to-request-confirmations.md).
@@ -33,7 +33,7 @@ Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-Kullanıcı seçerse **Evet** veya **Tümüne Evet** onayı (gösterildiği gibi aşağıdaki örnekte), bir çağrı isteği [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi yapıldığında, görüntülenecek bir ikinci onay iletisi neden olur.
+Kullanıcı seçerse **Evet** veya **Tümüne Evet** onayı (gösterildiği gibi aşağıdaki örnekte), bir çağrı isteği [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)yöntemi yapıldığında, görüntülenecek bir ikinci onay iletisi neden olur.
 
 ```output
 Confirm
@@ -57,7 +57,7 @@ Performing operation "MyAction" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-Kullanıcı seçerse **Evet** veya **Tümüne Evet** çağrısı önceki iletiye [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi yapıldığında, hangi neden bir Görüntülenecek ikinci onay iletisi.
+Kullanıcı seçerse **Evet** veya **Tümüne Evet** çağrısı önceki iletiye [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi yapıldığında, hangi neden bir Görüntülenecek ikinci onay iletisi.
 
 ```output
 Confirm

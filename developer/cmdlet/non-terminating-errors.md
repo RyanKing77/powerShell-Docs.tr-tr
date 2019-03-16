@@ -8,30 +8,30 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 468dabd6-bfeb-448d-8e09-0996db516edd
 caps.latest.revision: 8
-ms.openlocfilehash: 9d5c9b16fc5daf3d2f753eeeeedb0db925551a67
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5f804756e0e3e867832f15f50967fd6987f160a5
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845258"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054366"
 ---
 # <a name="non-terminating-errors"></a>Sonlandırıcı Olmayan Hatalar
 
 Bu konuda, sonlandırıcı olmayan hatalara bildirmek için kullanılan yöntem anlatılmaktadır. Ayrıca, cmdlet yöntemi çağırmak nasıl açıklar.
 
-Sonlandırıcı olmayan bir hata oluştuğunda, cmdlet bu hatayı çağırarak bildirmelidir [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) yöntemi. Cmdlet'i bir sonlandırıcı olmayan hata bildirdiğinde, cmdlet daha fazla gelen ve bu giriş nesnesi üzerinde çalışmaya devam edebilir işlem hattı nesneleri. Cmdlet çağırırsa [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) yöntemi, cmdlet sonlandırmayan hataya neden olan koşul açıklayan bir hata kaydı yazabilirsiniz. Hata kaydı hakkında daha fazla bilgi için bkz: [Windows PowerShell hata kaydı](./windows-powershell-error-records.md).
+Sonlandırıcı olmayan bir hata oluştuğunda, cmdlet bu hatayı çağırarak bildirmelidir [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) yöntemi. Cmdlet'i bir sonlandırıcı olmayan hata bildirdiğinde, cmdlet daha fazla gelen ve bu giriş nesnesi üzerinde çalışmaya devam edebilir işlem hattı nesneleri. Cmdlet çağırırsa [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) yöntemi, cmdlet sonlandırmayan hataya neden olan koşul açıklayan bir hata kaydı yazabilirsiniz. Hata kaydı hakkında daha fazla bilgi için bkz: [Windows PowerShell hata kaydı](./windows-powershell-error-records.md).
 
-Cmdlet'leri çağırabilir [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) gerektiğinde gelen yöntemleri işleme kendi girdideki. Ancak, cmdlet'leri çağırabilirsiniz [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) çağrılan iş parçacığından [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), veya [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) giriş işleme yöntemi. Çağırmayın [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) başka bir iş parçacığından. Bunun yerine, hataları tekrar ana iş parçacığı iletişim kurar.
+Cmdlet'leri çağırabilir [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) gerektiğinde gelen yöntemleri işleme kendi girdideki. Ancak, cmdlet'leri çağırabilirsiniz [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) çağrılan iş parçacığından [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), veya [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) giriş işleme yöntemi. Çağırmayın [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) başka bir iş parçacığından. Bunun yerine, hataları tekrar ana iş parçacığı iletişim kurar.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
-[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
+[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 
-[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
+[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 
-[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
+[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
 
 [Windows PowerShell hata kaydı](./windows-powershell-error-records.md)
 

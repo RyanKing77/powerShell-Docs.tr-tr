@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
-ms.openlocfilehash: 832527ea4b042812c39934cd7e124201c6dc2ea4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850662"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057374"
 ---
 # <a name="creating-a-table-view"></a>Tablo Görünümü Oluşturma
 
@@ -95,7 +95,7 @@ Aşağıdaki XML öğeleri, bir liste görünümü tanımlamak için kullanılı
 
 2. [TableColumnHeader](./tablecolumnheader-element-format.md) öğesi, bir tablo sütununun en üstünde gösterilen tanımlar. Bu öğeleri görüntülenen üstbilgileri istediğiniz sırayla belirtin.
 
-   Kullanabileceğiniz bu öğe sayısı, ancak sayısı için herhangi bir sınır yoktur [TableColumnHeader](./tablecolumnheader-element-format.md) , Tablo görünümünde öğelerin sayısına eşit [TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) kullandığınız öğeleri.
+   Kullanabileceğiniz bu öğe sayısı, ancak sayısı için herhangi bir sınır yoktur [TableColumnHeader](./tablecolumnheader-element-format.md) , Tablo görünümünde öğelerin sayısına eşit [TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) kullandığınız öğeleri.
 
 3. [Etiket](./label-element-for-tablecolumnheader-for-tablecontrol-format.md) öğesi görüntülenen metni belirtir. Bu öğe isteğe bağlıdır.
 
@@ -136,7 +136,7 @@ Aşağıdaki XML öğeleri, bir satır için tanımları sağlamak için kullan�
 
 - [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) öğesi, belirli bir tanımı tarafından görüntülenen nesneleri belirtir. Bu öğe isteğe bağlıdır ve yalnızca birden çok tanımlarken gerekli [TableRowEntry](./listentry-element-for-listcontrol-format.md) görüntüleme farklı nesneleri öğeleri.
 
-- [Kaydırma](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) öğesi ve sonraki satırda sütun genişliğini aşıyor metin görüntülendiğini belirtir. Varsayılan olarak, sütun genişliğini aşıyor metin kesilir.
+- [Kaydırma](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) öğesi ve sonraki satırda sütun genişliğini aşıyor metin görüntülendiğini belirtir. Varsayılan olarak, sütun genişliğini aşıyor metin kesilir.
 
 - [TableColumnItems](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md) özelliklerini veya betikleri değerleri satır içinde görüntülenen öğe tanımlar.
 

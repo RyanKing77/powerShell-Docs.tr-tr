@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Cmdlet attribute
 ms.assetid: 1d323332-f773-4c0e-8a69-2aada765afb2
 caps.latest.revision: 12
-ms.openlocfilehash: 2bc03aaade1f18d48f65ecf5f9ee437ffaf07f92
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6887467ad5ccafe6edf8f03f531b4750133aa9e9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56852013"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058037"
 ---
 # <a name="cmdlet-attribute-declaration"></a>Cmdlet Özniteliği Bildirimi
 
@@ -36,9 +36,9 @@ Cmdlet öznitelik, bir cmdlet olarak bir Microsoft .NET Framework sınıf tanım
 
 `NounName` ([System.String](/dotnet/api/System.String)) gereklidir. Cmdlet isim belirtir. Bu isim cmdlet temel aldığı kaynak belirtir. Cmdlet isimleri hakkında daha fazla bilgi için bkz: [cmdlet'i bildirimi](./cmdlet-class-declaration.md) ve [geliştirme yönergeleri kesinlikle teşvik](./strongly-encouraged-development-guidelines.md).
 
-`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) isteğe bağlı parametre adı. `True` cmdlet çağrıları desteklediğini gösterir [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi cmdlet sistem değişiklikleri bir eylem gerçekleştirilmeden önce kullanıcıdan istemek için bir yol sağlar. `False`, varsayılan değeri belirten cmdlet çağrılarını desteklemiyor [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi. Onay istekleri hakkında daha fazla bilgi için bkz. [onay isteme](./requesting-confirmation-from-cmdlets.md).
+`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) isteğe bağlı parametre adı. `True` cmdlet çağrıları desteklediğini gösterir [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi cmdlet sistem değişiklikleri bir eylem gerçekleştirilmeden önce kullanıcıdan istemek için bir yol sağlar. `False`, varsayılan değeri belirten cmdlet çağrılarını desteklemiyor [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi. Onay istekleri hakkında daha fazla bilgi için bkz. [onay isteme](./requesting-confirmation-from-cmdlets.md).
 
-`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) isteğe bağlı parametre adı. Ne zaman cmdlet'inin eylemi için yapılan bir çağrı tarafından onaylanması belirtir [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi. [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Confirmımpact değeri (varsayılan olarak, Orta) cmdlet'inin değerinden büyük veya eşit olduğunda çağrılacak `$ConfirmPreference` değişkeni. Bu parametre belirtilmelidir yalnızca `SupportsShouldProcess` parametre belirtildi.
+`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) isteğe bağlı parametre adı. Ne zaman cmdlet'inin eylemi için yapılan bir çağrı tarafından onaylanması belirtir [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi. [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Confirmımpact değeri (varsayılan olarak, Orta) cmdlet'inin değerinden büyük veya eşit olduğunda çağrılacak `$ConfirmPreference` değişkeni. Bu parametre belirtilmelidir yalnızca `SupportsShouldProcess` parametre belirtildi.
 
 `DefaultParameterSetName` ([System.String](/dotnet/api/System.String)) isteğe bağlı parametre adı. Windows PowerShell çalışma zamanı kullanmak için hangi parametre kümesi belirleyemediğinde kullanmayı denerse, varsayılan parametre belirtir. Bu durumda her bir parametre zorunlu bir parametre parametresi benzersiz hale getirerek kaldırılabilir dikkat edin.
 
@@ -54,9 +54,9 @@ Windows PowerShell varsayılan parametre kümesi adı belirtilmiş olsa bile var
 
 **VerbName NounName**
 
-- Windows PowerShell dışında kaynakları değiştirmek tüm cmdlet'ler içermelidir `SupportsShouldProcess` çağırmak cmdlet sağlayan Cmdlet öznitelik bildirildiğinde anahtar sözcüğü [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) cmdlet eylemi gerçekleştirmeden önce yöntemi. Varsa [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağrısı döndürür `false`, eylem yok edilmelidir. Tarafından oluşturulan onay istekleri hakkında daha fazla bilgi için [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağırmak için bkz: [onay isteme](./requesting-confirmation-from-cmdlets.md).
+- Windows PowerShell dışında kaynakları değiştirmek tüm cmdlet'ler içermelidir `SupportsShouldProcess` çağırmak cmdlet sağlayan Cmdlet öznitelik bildirildiğinde anahtar sözcüğü [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) cmdlet eylemi gerçekleştirmeden önce yöntemi. Varsa [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağrısı döndürür `false`, eylem yok edilmelidir. Tarafından oluşturulan onay istekleri hakkında daha fazla bilgi için [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağırmak için bkz: [onay isteme](./requesting-confirmation-from-cmdlets.md).
 
-`Confirm` Ve `WhatIf` cmdlet parametreleri destekleyen cmdlet'ler kullanılabilir [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağırır.
+`Confirm` Ve `WhatIf` cmdlet parametreleri destekleyen cmdlet'ler kullanılabilir [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağırır.
 
 ## <a name="example"></a>Örnek
 

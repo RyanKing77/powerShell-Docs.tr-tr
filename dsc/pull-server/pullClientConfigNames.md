@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Bir çekme PowerShell 5.0 ve üzeri yapılandırma adlarını kullanarak istemcisi ayarlama
-ms.openlocfilehash: fd038a105da7a83ecad9b571e611b65c8ec847b3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688080"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058206"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>Bir çekme PowerShell 5.0 ve üzeri yapılandırma adlarını kullanarak istemcisi ayarlama
 
@@ -23,8 +23,9 @@ ms.locfileid: "55688080"
 
 Her hedef düğüm yapılandırmaları, kaynaklar, indirin ve bile durumunu raporlamak için yapılandırılabilir. Aşağıdaki bölümlerde bir SMB paylaşımı ya da HTTP DSC çekme sunucusuna çekme istemcisi yapılandırma işlemini göstermektedir. Düğümün LCM yenilendiğinde atanan tüm yapılandırmaları indirmek için yapılandırılan konuma ulaşır. Tüm gerekli kaynakları düğüm üzerinde mevcut değilse, bunu otomatik olarak bunları yapılandırılan konumdan indirir. Düğüm ile yapılandırılmışsa, bir [rapor sunucusu](reportServer.md), sonra işlemin durumunu bildirir.
 
-> **Not**: Bu konu, PowerShell 5.0 için geçerlidir.
-PowerShell 4.0 çekme istemcisi ayarlama hakkında daha fazla bilgi için bkz: [PowerShell 4. 0'yapılandırma Kimliğini kullanarak çekme istemcisi ayarlama](pullClientConfigID4.md)
+> [!NOTE]
+> Bu konu, PowerShell 5.0 için geçerlidir.
+> PowerShell 4.0 çekme istemcisi ayarlama hakkında daha fazla bilgi için bkz: [PowerShell 4. 0'yapılandırma Kimliğini kullanarak çekme istemcisi ayarlama](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>Çekme istemcisi LCM yapılandırma
 
@@ -49,7 +50,8 @@ Aşağıdaki betik, "CONTOSO-PullSrv" adlı bir sunucudan çekme yapılandırmal
 - Betikteki **ConfigurationRepositoryWeb** blok çekme sunucusu tanımlar. **ServerURL** özelliği, çekme sunucusu için uç nokta belirtir.
 
 - **RegistrationKey** bir çekme sunucusu için tüm istemci düğümleri bu çekme sunucusu arasında paylaşılan bir anahtar özelliğidir. Bir dosyayı çekme sunucusunda aynı değeri depolanır.
-  > **Not**: Kayıt anahtarları yalnızca çalışın **web** çekme sunucuları. Yine de kullanmalısınız **ConfigurationID** ile bir **SMB** çekme sunucusu.
+  > [!NOTE]
+  > Kayıt anahtarları yalnızca çalışın **web** çekme sunucuları. Yine de kullanmalısınız **ConfigurationID** ile bir **SMB** çekme sunucusu.
   > Bir çekme sunucusu kullanarak yapılandırma hakkında bilgi için **ConfigurationID**, bkz: [yapılandırma Kimliğini kullanarak çekme istemcisi ayarlama](pullClientConfigId.md)
 
 - **ConfigurationNames** istemci düğümü için hedeflenen yapılandırmaları adlarını belirten bir dizi bir özelliktir.

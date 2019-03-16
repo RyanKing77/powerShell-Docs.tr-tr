@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC çekme istemcisi ayarlama
-ms.openlocfilehash: b7cd6dc0087eb8368c5467df4c3c7266ed704451
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 54c68ac26e5388260e252ce01418170e26ddecde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405685"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054263"
 ---
 # <a name="setting-up-a-dsc-pull-client"></a>DSC çekme istemcisi ayarlama
 
@@ -23,4 +23,5 @@ Aşağıdaki konular, çekme istemcilerini ayarlama açıklanmaktadır:
 * [Yapılandırma adlarını kullanarak çekme istemcisi ayarlama](pullClientConfigNames.md)
 * [Yapılandırma kimliğini kullanarak çekme istemcisi ayarlama](pullClientConfigID.md)
 
-> **Not**: Bu konular, PowerShell 5.0 için geçerlidir. PowerShell 4.0 çekme istemcisi ayarlama hakkında bilgi için bkz: [PowerShell 4. 0'yapılandırma Kimliğini kullanarak çekme istemcisi ayarlama](pullClientConfigID4.md).
+> [!NOTE]
+> Bu konular, PowerShell 5.0 için geçerlidir. PowerShell 4.0 çekme istemcisi ayarlama hakkında bilgi için bkz: [PowerShell 4. 0'yapılandırma Kimliğini kullanarak çekme istemcisi ayarlama](pullClientConfigID4.md).

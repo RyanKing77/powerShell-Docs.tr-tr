@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Çekme Hizmeti
-ms.openlocfilehash: 27effe0cd3b9d90dcfaaf1bd4e38edf3c04c9cfb
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794731"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056779"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration çekme hizmeti
 
@@ -72,7 +72,8 @@ Bir örnek betiği aşağıda verilmiştir.
 
 İtibariyle, 17090 yayın [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server, çekme hizmeti için desteklenen bir seçenektir (Windows özelliği *DSC hizmet*). Bunun için geçmemiş büyük DSC ortamlarda ölçeklendirmeye yönelik yeni bir seçenek sağlar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
-> **Not**: SQL Server desteği, önceki sürümler için WMF 5.1 (veya öncesi) eklenmez ve yalnızca Windows Server sürümlerinde büyüktür veya eşittir 17090 için kullanılabilir olacak.
+> [!NOTE]
+> SQL Server desteği, önceki sürümler için WMF 5.1 (veya öncesi) eklenmez ve yalnızca Windows Server sürümlerinde büyüktür veya eşittir 17090 için kullanılabilir olacak.
 
 Çekme sunucusunu SQL Server'ı kullanacak şekilde yapılandırmak için **SqlProvider** için `$true` ve **SqlConnectionString** için geçerli bir SQL Server bağlantı dizesi. Daha fazla bilgi için [SqlClient bağlantı dizeleri](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
 Bir örnek ile SQL Server yapılandırmasının **xDscWebService**, öncelikle [xDscWebService kaynak kullanarak](#using-the-xdscwebservice-resource) ve daha sonra gözden [Sample_xDscWebServiceRegistration_ GitHub üzerinde UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).

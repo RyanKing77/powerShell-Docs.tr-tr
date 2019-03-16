@@ -8,15 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], pipeline input
-- parameters [PowerShell Programer's Guide], pipeline input
+- parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: c790d20a792bcdb4a34485e53375560e129433a8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845790"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054773"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Komut Zinciri Girişini İşleyen Parametreler Ekleme
 
@@ -93,7 +93,7 @@ End Property
 
 İşlem hattı girdi işlemek üzere cmdlet'inize ise, yöntem işleme uygun giriş geçersiz kılmak gerekir. Temel giriş işleme yöntemleri de sunulan [oluşturma bilgisayarınızı ilk Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Bu Get-Proc cmdlet geçersiz kılmalar [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) işlemek için gereken yöntemini `Name` kullanıcı veya bir betik tarafından sağlanan parametre girişi. Adsız sağlanırsa, bu yöntem işlemleri her istenen işlem adı veya tüm işlemler için alırsınız. İçinde dikkat [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), çağrı [System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) olduğu Çıkış nesnelerini ardışık düzenine gönderme için çıkış mekanizması. Bu çağrı, ikinci parametresinin `enumerateCollection`, ayarlanır `true` işlem nesneleri dizisi numaralandırabilir ve bir işlem aynı anda komut satırına yazma Windows PowerShell çalışma zamanı söylemek için.
+Bu Get-Proc cmdlet geçersiz kılmalar [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) işlemek için gereken yöntemini `Name` kullanıcı veya bir betik tarafından sağlanan parametre girişi. Adsız sağlanırsa, bu yöntem işlemleri her istenen işlem adı veya tüm işlemler için alırsınız. İçinde dikkat [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), çağrı [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) çıktı mekanizması, çıkış göndermek için işlem hattına nesneleri. Bu çağrı, ikinci parametresinin `enumerateCollection`, ayarlanır `true` işlem nesneleri dizisi numaralandırabilir ve bir işlem aynı anda komut satırına yazma Windows PowerShell çalışma zamanı söylemek için.
 
 ```csharp
 protected override void ProcessRecord()

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: dfda6cb68b089a30a156760345420ee80d1d3ae9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851089"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055504"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell Başvurusu
 
@@ -47,10 +47,10 @@ Windows PowerShell SDK ek olarak, aşağıdaki kaynakları daha fazla bilgi sağ
 
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider) bu ad alanı, sınıflar, numaralandırmalar ve bir Windows PowerShell sağlayıcısını uygulamak için gereken arabirimler içerir. Özellikle, [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) hangi tüm Windows Powershell'den sağlayıcısı gerekir türetilmiş sınıflar temel sınıfı.
 
-[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) bu ad alanı cmdlet'lerini ve Windows PowerShell tarafından uygulanan sağlayıcıları için sınıflar içerir. Benzer şekilde, oluşturmanız önerilir bir *adınız*. Uygulamanız bu cmdlet'leri için ad alanı komutları.
+[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) bu ad alanı cmdlet'lerini ve Windows PowerShell tarafından uygulanan sağlayıcıları için sınıflar içerir. Benzer şekilde, oluşturmanız önerilir bir *adınız*. Uygulamanız bu cmdlet'leri için ad alanı komutları.
 
 [System.Management.Automation.Host](/dotnet/api/System.Management.Automation.Host) bu ad alanı, sınıflar, numaralandırmalar ve Windows PowerShell ve kullanıcı arasındaki etkileşimi tanımlamak için cmdlet'i kullanan arabirimleri içerir.
 
-[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) bu ad alanı diğer ad alanı sınıfları tarafından kullanılan temel sınıflar içerir. Örneğin, [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) için temel sınıfı [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) sınıfı.
+[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) bu ad alanı diğer ad alanı sınıfları tarafından kullanılan temel sınıflar içerir. Örneğin, [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) için temel sınıfı [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) sınıfı.
 
 [System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) bu ad alanı, sınıflar, numaralandırmalar ve bir Windows PowerShell çalışma alanı oluşturmak için kullandığınız arabirimlerini içerir. Bu bağlamda, bir Windows PowerShell çalışma, bir veya daha fazla işlem hattı Windows PowerShell cmdlet'leri çağırma bağlamdır. Diğer bir deyişle, cmdlet'ler, bir Windows PowerShell çalışma bağlamında çalışır. Daha fazla bilgi aboutWindows için PowerShell çalışma alanları, bkz: [Windows PowerShell çalışma alanları](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

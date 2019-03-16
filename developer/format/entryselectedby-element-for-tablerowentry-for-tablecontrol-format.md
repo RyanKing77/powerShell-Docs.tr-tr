@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49623fcf-1238-4d20-a7ce-238d47d9d565
 caps.latest.revision: 15
-ms.openlocfilehash: e18564c10898c73128e0a4bc7d077e7c7ffb1c22
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9302bfed0324773cb98d698acdcf608f34ee19c1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851243"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058768"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>TableControl TableRowEntry için EntrySelectedBy Öğesi (Biçim)
 
@@ -51,7 +51,7 @@ Yok.
 
 |Öğe|Açıklama|
 |-------------|-----------------|
-|[TableControl (biçimi) için TableRowEntry öğesi](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Bir tablonun satırında görüntülenen verileri tanımlar.|
+|[TableControl (biçimi) için TableRowEntry öğesi](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Bir tablonun satırında görüntülenen verileri tanımlar.|
 
 ## <a name="remarks"></a>Açıklamalar
 
@@ -89,7 +89,7 @@ Aşağıdaki örnekte gösterildiği bir `TableRowEntry` özelliklerini görünt
 
 [TableControl (biçimi) için EntrySelectedBy için SelectionSetName öğesi](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
-[TableControl (biçimi) için TableRowEntry öğesi](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableControl (biçimi) için TableRowEntry öğesi](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [TableControl (biçimi) için EntrySelectedBy için TypeName öğesi](./typename-element-for-entryselectedby-for-tablecontrol-format.md)
 

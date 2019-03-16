@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
-ms.openlocfilehash: dd48e82452e83f93e2e005c9db53bbc51d8b2eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848856"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054586"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl Öğesi (Biçim)
 
@@ -48,7 +48,7 @@ Yok.
 |[TableControl (biçimi) için AutoSize öğesi](./autosize-element-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Sütun boyutu ve sütun sayısı verilerin boyutuna bağlı olarak ayarlanır olup olmadığını belirtir.|
 |[TableControl (biçimi) için HideTableHeaders öğesi](./hidetableheaders-element-format.md)|İsteğe bağlı öğe.<br /><br /> Tablo üstbilgisinin değil görüntülenip görüntülenmeyeceğini belirtir.|
 |[TableControl (biçimi) için TableHeaders öğesi](./tableheaders-element-format.md)|Gerekli öğe.<br /><br /> Etiketler, genişliğini ve Tablo görünümünde sütunları için veri hizalaması tanımlar.|
-|[TableRowEntries öğesi TableCotrol (biçimi) için](./tablerowentries-element-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Tablo görünümü tanımını sağlar.|
+|[TableControl (biçimi) için TableRowEntries öğesi](./tablerowentries-element-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Tablo görünümü tanımını sağlar.|
 
 ### <a name="parent-elements"></a>Üst Öğeler
 

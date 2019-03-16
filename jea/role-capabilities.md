@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA rol özellikleri
-ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685497"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055062"
 ---
 # <a name="jea-role-capabilities"></a>JEA rol özellikleri
 
@@ -58,7 +58,7 @@ PowerShell Yardım belgeleri dosyanın nasıl yapılandırabileceğiniz çeşitl
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>PowerShell cmdlet'leri ve işlevleri izin verme
 
-PowerShell cmdlet'lerini veya işlevleri çalıştırmak için Kullanıcıları yetkilendirmek için cmdlet veya işlev adı VisbibleCmdlets veya VisibleFunctions alanları ekleyin.
+PowerShell cmdlet'lerini veya işlevleri çalıştırmak için Kullanıcıları yetkilendirmek için cmdlet veya işlev adı VisibleCmdlets veya VisibleFunctions alanları ekleyin.
 Bir cmdlet veya işlevi bir komut olup emin değilseniz, çalıştırabileceğiniz `Get-Command <name>` ve çıktıda "CommandType" özelliğini denetleyin.
 
 ```powershell
@@ -101,7 +101,6 @@ Karışık ve hiçbiriyle aşağıda VisibleCmdlets alan.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Çalıştırılacak verir `My-Func` ile `Param1` parametresi. Yalnızca "Value1" ve "Value2" parametresi sağlanabilir.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Çalıştırılacak verir `My-Func` ile `Param1` parametresi. "Contoso" ile başlayan herhangi bir değer parametresi sağlanabilir.
 
-
 > [!WARNING]
 > En iyi güvenlik uygulamaları bu joker karakterler görünür cmdlet'leri veya işlevlerini tanımlarken kullanmak için önerilmez.
 > Bunun yerine, aynı adlandırma şeması paylaşan başka hiçbir komut istemeden yetkinizin olduğundan emin olmak için güvenilen her komut açıkça listelemelidir.
@@ -129,7 +128,7 @@ Denetlenecek tek bir yolu `net share`.
 Ancak, yönetici, yönetici ayrıcalıklarıyla elde etmek için komut kolayca kullanabilir olduğundan net.exe çok tehlikeli izin vererek `net group Administrators unprivilegedjeauser /add`.
 İzin vermek için daha iyi bir yaklaşım olan [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) aynı sonucu veren, ancak çok daha sınırlı kapsamı vardır.
 
-Dış komutları kullanılabilir kullanıcılara bir JEA oturumda yaparken, her zaman başka bir sistem üzerinde yerleştirilen benzer ada (ve büyük olasılıkla malicous) programı yerine Yürütülmeyen emin olmak için yürütülebilir dosyanın tam yolunu belirtin.
+Dış komutları kullanılabilir kullanıcılara bir JEA oturumda yaparken, her zaman başka bir sistem üzerinde yerleştirilen benzer ada (ve kötü amaçlı olabilecek) bir program yerine Yürütülmeyen emin olmak için yürütülebilir dosyanın tam yolunu belirtin.
 
 ### <a name="allowing-access-to-powershell-providers"></a>PowerShell sağlayıcıları için erişime izin verme
 
@@ -171,7 +170,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > Özel işlevlerinizi adını eklemek unutmayın **VisibleFunctions** JEA kullanıcılar tarafından çalışma alanı.
 
-
 Özel işlev gövdesi (betik bloğu) sistemi için varsayılan dil modda çalışır ve JEA'ın dil kısıtlamalarına tabi değildir.
 Bu işlevler dosya sistemi ve kayıt defteri erişebilir ve rol özelliği dosyasında görünür oluşturulmayan komutları çalıştırın, anlamına gelir.
 Rastgele kod parametrelerini kullanırken çalıştırılmasına izin vererek kaçınmak için dikkatli ve cmdlet'ler gibi doğrudan yöneltme kullanıcı girişini engellemek `Invoke-Expression`.
@@ -211,14 +209,12 @@ Bkz: [bir PowerShell modülü anlama](https://msdn.microsoft.com/library/dd87832
 
 ## <a name="updating-role-capabilities"></a>Rol özellikleri güncelleştiriliyor
 
-
 Değişiklikleri yalnızca Rol özelliği dosyasına kaydederek, bir rol özelliği dosyası herhangi bir zamanda güncelleştirebilirsiniz.
 Rol özelliği güncelleştirildikten sonra kullanmaya yeni herhangi JEA oturumları düzeltilmiş özellikleri yansıtır.
 
 Rol özellikleri klasörüne erişimi denetleme bu kadar önemlidir nedeni budur.
 Yalnızca yüksek oranda güvenilir Yöneticiler rolü dosyaları değiştirmek mümkün olması gerekir.
 Güvenilmeyen bir kullanıcının rol özellik dosyaları değiştirebilirsiniz, bunlar kolayca kendilerini erişim cmdlet'leri için bunları ayrıcalıklarını yükseltmek izin verebilirsiniz.
-
 
 Rol işlevleri erişimi kilitleme isteyen yöneticiler için yerel sistem içeren modüller ve rol özellik dosyaları okuma erişimi olduğundan emin olun.
 
@@ -256,16 +252,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 

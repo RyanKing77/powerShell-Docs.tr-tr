@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: b02a2e0d4b0a27c261b0bc05febda7826ad5276e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849101"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054994"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Cmdlet’e Parametre Kümeleri Ekleme
 
@@ -179,7 +179,7 @@ Her parametre kümesi için benzersiz bir parametresi olmalıdır ancak parametr
 
 ## <a name="overriding-an-input-processing-method"></a>Bir giriş işleme yöntemi geçersiz kılma
 
-Her cmdlet'i, girdi işleme yöntemi geçersiz kılmanız gerekir, bu genellikle olacaktır [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi. Bu cmdlet, [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) cmdlet'i işlemlerini herhangi bir sayıda işleyebilmesi yöntemi geçersiz. Bu, farklı bir yöntem, kullanıcı üzerinde hangi parametre kümesi tabanlı aramalar belirttiği bir Select deyimi içerir.
+Her cmdlet'i, girdi işleme yöntemi geçersiz kılmanız gerekir, bu genellikle olacaktır [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi. Bu cmdlet, [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) cmdlet'i işlemlerini herhangi bir sayıda işleyebilmesi yöntemi geçersiz. Bu, farklı bir yöntem, kullanıcı üzerinde hangi parametre kümesi tabanlı aramalar belirttiği bir Select deyimi içerir.
 
 ```csharp
 protected override void ProcessRecord()

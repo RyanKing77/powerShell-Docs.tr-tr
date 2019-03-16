@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
 caps.latest.revision: 12
-ms.openlocfilehash: 723619e67612b859d0acbab37eecd82141adf923
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846077"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054952"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>ListControl ListEntry için EntrySelectedBy Öğesi (Biçim)
 
@@ -44,7 +44,7 @@ Yok.
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[EntrySelectedBy ListControl (biçimi) için için SelectionCondition öğesi](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Bu liste görünümü tanımını kullanılacak bulunmalıdır koşulu tanımlar.|
-|[EnrtySelectedBy ListControl (biçimi) için için SelectionSetName öğesi](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Bu liste görünüm tanımını kullanma .NET türleri kümesini belirtir.|
+|[EntrySelectedBy ListControl (biçimi) için için SelectionSetName öğesi](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Bu liste görünüm tanımını kullanma .NET türleri kümesini belirtir.|
 |[TypeName öğesi için EntrySelectedBy ListControl (biçimi) için](./typename-element-for-entryselectedby-for-listcontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Bu liste görünüm tanımı kullanan bir .NET türü belirtir.|
 
 ### <a name="parent-elements"></a>Üst Öğeler
@@ -79,7 +79,7 @@ Aşağıdaki örnek, kendi .NET türü adını kullanarak bir liste görünümü
 
 [EntrySelectedBy ListControl (biçimi) için için SelectionCondition öğesi](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[EnrtySelectedBy ListControl (biçimi) için için SelectionSetName öğesi](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[EntrySelectedBy ListControl (biçimi) için için SelectionSetName öğesi](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [TypeName öğesi için EntrySelectedBy ListControl (biçimi) için](./typename-element-for-entryselectedby-for-listcontrol-format.md)
 

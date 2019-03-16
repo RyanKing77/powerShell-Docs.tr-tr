@@ -1,15 +1,15 @@
 ---
 ms.date: 1/17/2019
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: Bir düğümü yeniden başlatma
-ms.openlocfilehash: 33ecd98aa62c3dc94a8ff2213fd3e68bf0c05cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+title: Düğümü yeniden başlatma
+ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685693"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054739"
 ---
-# <a name="reboot-a-node"></a>Bir düğümü yeniden başlatma
+# <a name="reboot-a-node"></a>Düğümü yeniden başlatma
 
 > [!NOTE]
 > Bu konuda, bir düğümü yeniden başlatma hakkında konuşuyor. Başarılı olması için yeniden başlatma için sırayla **ActionAfterReboot** ve **RebootNodeIfNeeded** LCM ayarları doğru şekilde yapılandırılması gerekir.
@@ -54,9 +54,9 @@ xPendingReboot [String] #ResourceName
 | SkipWindowsUpdate | Skip yeniden başlatmalar Windows Update tarafından tetiklendi.|
 | SkipPendingFileRename | Bekleyen dosya yeniden adlandırma yeniden başlatmalar atlayın. |
 | SkipCcmClientSDK | Skip yeniden başlatmalar ConfigMgr istemci tarafından tetiklendi. |
-| SkipComputerRename | Atla, bilgisayarı yeniden adlandırır tarafından tetiklenen yeniden başlatır. |
+| SkipComputerRename | Bilgisayar tarafından tetiklenen Atla yeniden adlandırır. |
 | PSDSCRunAsCredential | V5 desteklenir. Kaynak, belirtilen kullanıcı olarak yürütür. |
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`. Daha fazla bilgi için [DependsOn kullanma](resource-depends-on.md)|
+| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`. Daha fazla bilgi için [DependsOn kullanma](resource-depends-on.md)|
 
 ## <a name="example"></a>Örnek
 

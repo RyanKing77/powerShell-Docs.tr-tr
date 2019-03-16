@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6f337498-c534-40ed-968a-09d4d9ca3849
 caps.latest.revision: 8
-ms.openlocfilehash: e4abbb14b31406b845d9b6af6b6372338fb0d926
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ed9ff9fc1668a89e1ac0ceac8f0800a15b349226
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846980"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059567"
 ---
 # <a name="users-requesting-confirmation"></a>Onay İsteyen Kullanıcılar
 
 Değerini belirttiğinizde `true` için `SupportsShouldProcess` cmdlet'i özniteliği bildirimi parametresi, kullanıcıların belirtebilirsiniz `Confirm` parametresi komut isteminde.
 
-Varsayılan ortamda kullanıcılar belirtebilir `Confirm` parametresi veya `"-Confirm:$true` onay istenmeden, zaman [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi çağrılır. Bu atlar [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) bile yüksek etkili işlemleri için onay istekleri.
+Varsayılan ortamda kullanıcılar belirtebilir `Confirm` parametresi veya `"-Confirm:$true` onay istenmeden, zaman [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) yöntemi çağrılır. Bu atlar [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) bile yüksek etkili işlemleri için onay istekleri.
 
-Varsa `Confirm` belirtilmezse, [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağrı varsa onay istekleri `$ConfirmPreference` tercih değişkeni eşit veya ondan `ConfirmImpact` ayarıyla cmdlet'ini veya sağlayıcısı. Varsayılan ayar `$ConfirmPreference` yüksek. Bu nedenle, varsayılan ortamda yalnızca cmdlet'leri ve etkili bir eylemi belirtin sağlayıcıları onay isteyin.
+Varsa `Confirm` belirtilmezse, [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağrı varsa onay istekleri `$ConfirmPreference` tercih değişkeni eşit veya ondan `ConfirmImpact` ayarıyla cmdlet'ini veya sağlayıcısı. Varsayılan ayar `$ConfirmPreference` yüksek. Bu nedenle, varsayılan ortamda yalnızca cmdlet'leri ve etkili bir eylemi belirtin sağlayıcıları onay isteyin.
 
-Varsa `Confirm` yanlış veya `"-Confirm:$false` belirtilen [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağrı, kullanıcıdan onayı ister ve `$ConfirmPreference` Kabuk değişkeni yoksayılır.
+Varsa `Confirm` yanlış veya `"-Confirm:$false` belirtilen [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) çağrı, kullanıcıdan onayı ister ve `$ConfirmPreference` Kabuk değişkeni yoksayılır.
 
 ## <a name="remarks"></a>Açıklamalar
 

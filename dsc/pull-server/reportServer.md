@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC rapor sunucusu kullanma
-ms.openlocfilehash: 8647f80c311ee49a5cc4d57360472386e01b044e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686582"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059278"
 ---
 # <a name="using-a-dsc-report-server"></a>DSC rapor sunucusu kullanma
 
@@ -16,7 +16,8 @@ ms.locfileid: "55686582"
 > [!IMPORTANT]
 > Çekme sunucusu (Windows özelliği *DSC hizmet*) ancak desteklenen bir bileşen Windows Server'ın yeni özellikler veya yetenekler sunmak için herhangi bir plan vardır. Geçişi başlıyor önerilir yönetilen istemcilere [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (Windows Server çekme sunucusunda dışında özellikler dahildir) veya topluluk çözümlerden birini listelenen [burada](pullserver.md#community-solutions-for-pull-service).
 >
-> **Not** rapor sunucusu bu konuda açıklanan PowerShell 4. 0'kullanılabilir değil.
+> [!NOTE]
+> PowerShell 4. 0 ', bu konuda açıklanan rapor sunucusu kullanılamıyor.
 
 Bir düğümün yerel Configuration Manager (LCM) yapılandırma durumu hakkında raporlar daha sonra bu verileri almak için sorgulanabilir bir çekme sunucusuna göndermek için yapılandırılabilir. Düğüm denetler ve bir yapılandırma uygulanabilir her zaman bir raporu rapor sunucusuna gönderir. Bu raporlar, sunucu üzerindeki bir veritabanında depolanır ve raporlama web hizmeti çağrılarak alınabilir. Her rapor bunların başarılı olup olmadığını ve hangi yapılandırmaları uygulanan gibi bilgiler içerir, kullanılan kaynaklar, oluşturulan, başlangıç ve bitiş zamanlarını hataları.
 

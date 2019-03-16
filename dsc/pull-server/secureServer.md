@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Çekme sunucusu en iyi uygulamaları
-ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686680"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057714"
 ---
 # <a name="pull-server-best-practices"></a>Çekme sunucusu en iyi uygulamaları
 
@@ -22,7 +22,7 @@ ms.locfileid: "55686680"
 |:---|:---|
 Yazar | Michael Greene
 Gözden Geçirenler | Ben Gelens, Ravikanth Chaganti Aleksandar Nikolic
-Yayımlanan | Nisan 2015
+Yayımlanmış | Nisan 2015
 
 ## <a name="abstract"></a>Özet
 
@@ -260,7 +260,7 @@ Komut modülünü yüklemeden önce onay ister.
 
 DSC çekme sunucusunu dağıtmak için en iyi yöntem, bir DSC yapılandırma betiği kullanmaktır. Bu belge her iki temel ayarları yalnızca DSC web hizmeti yapılandırırsınız ve gelişmiş bir Windows Server uçtan uca dahil olmak üzere DSC web hizmeti yapılandırdığınız ayarlar dahil olmak üzere komut dosyaları sunar.
 
-Not:  Şu anda `xPSDesiredStateConfiguation` DSC modülü, sunucunun EN-US yerel ayarını olmasını gerektirir.
+Not:  Şu anda `xPSDesiredStateConfiguration` DSC modülü, sunucunun EN-US yerel ayarını olmasını gerektirir.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Windows Server 2012 için temel yapılandırma
 
