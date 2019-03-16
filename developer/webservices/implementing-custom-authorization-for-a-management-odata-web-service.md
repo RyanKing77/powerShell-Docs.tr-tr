@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
-ms.openlocfilehash: 5d6ad7f62c451a0013f6c52b294fac9abd0b4bf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851425"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057901"
 ---
-# <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a><span data-ttu-id="e21d1-102">Yönetim OData Web Hizmetinde Özel Yetkilendirme Uygulama</span><span class="sxs-lookup"><span data-stu-id="e21d1-102">Implementing Custom Authorization for a Management OData web service</span></span>
+# <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a><span data-ttu-id="b9047-102">Yönetim OData Web Hizmetinde Özel Yetkilendirme Uygulama</span><span class="sxs-lookup"><span data-stu-id="b9047-102">Implementing Custom Authorization for a Management OData web service</span></span>
 
-<span data-ttu-id="e21d1-103">Windows PowerShell Web hizmetini kullanarak, uygulamak bir üçüncü taraf gerektirir [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Windows PowerShell cmdlet'leri kullanıma sunmak için arabirim.</span><span class="sxs-lookup"><span data-stu-id="e21d1-103">Using the Windows PowerShell Web Service requires a third party to implement the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="e21d1-104">Bu arabirim, web hizmeti için kullanıcı kimlik doğrulaması gerçekleştirir.</span><span class="sxs-lookup"><span data-stu-id="e21d1-104">This interface performs user authorization to the web service.</span></span> <span data-ttu-id="e21d1-105">Arabirimini uygulayan bir kod yazıldıktan sonra web uygulamasında kullanılmak üzere bir DLL içinde derlemeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="e21d1-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
+<span data-ttu-id="b9047-103">Windows PowerShell Web hizmetini kullanarak, uygulamak bir üçüncü taraf gerektirir [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Windows PowerShell cmdlet'leri kullanıma sunmak için arabirim.</span><span class="sxs-lookup"><span data-stu-id="b9047-103">Using the Windows PowerShell Web Service requires a third party to implement the [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="b9047-104">Bu arabirim, web hizmeti için kullanıcı kimlik doğrulaması gerçekleştirir.</span><span class="sxs-lookup"><span data-stu-id="b9047-104">This interface performs user authorization to the web service.</span></span> <span data-ttu-id="b9047-105">Arabirimini uygulayan bir kod yazıldıktan sonra web uygulamasında kullanılmak üzere bir DLL içinde derlemeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="b9047-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
 
-## <a name="pass-through-authorization"></a><span data-ttu-id="e21d1-106">Geçiş yetkilendirme</span><span class="sxs-lookup"><span data-stu-id="e21d1-106">Pass-through authorization</span></span>
+## <a name="pass-through-authorization"></a><span data-ttu-id="b9047-106">Geçiş yetkilendirme</span><span class="sxs-lookup"><span data-stu-id="b9047-106">Pass-through authorization</span></span>
 
-<span data-ttu-id="e21d1-107">Uygulamak için en basit yolu [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) tüm yetkilendiren doğrudan bir uygulama bir arabirimdir.</span><span class="sxs-lookup"><span data-stu-id="e21d1-107">The simplest way to implement the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface is a pass-through implementation that authorizes all users.</span></span> <span data-ttu-id="e21d1-108">Bu örnekte, hiçbir güvenlik ve yalnızca arabirim uygulamak nasıl bir llustration sağlanan s sağlar.</span><span class="sxs-lookup"><span data-stu-id="e21d1-108">This example provides no security, and s provided only as an llustration of how to implement the interface.</span></span> <span data-ttu-id="e21d1-109">Uygulanışı [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) arabirimi iki yöntemleri geçersiz kılması gerekir: [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) ve [Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId).</span><span class="sxs-lookup"><span data-stu-id="e21d1-109">An implementation of the  [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface must override two methods: [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId).</span></span> <span data-ttu-id="e21d1-110">Bu örnekte, [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) her zaman döndürür **System.Security.Principal.WindowsIdentity** geçerli kullanıcı ile ilişkili nesne .</span><span class="sxs-lookup"><span data-stu-id="e21d1-110">In this example, the [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) always returns the **System.Security.Principal.WindowsIdentity** object associated with the current user.</span></span>
+<span data-ttu-id="b9047-107">Uygulamak için en basit yolu [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) tüm yetkilendiren doğrudan bir uygulama bir arabirimdir.</span><span class="sxs-lookup"><span data-stu-id="b9047-107">The simplest way to implement the [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface is a pass-through implementation that authorizes all users.</span></span> <span data-ttu-id="b9047-108">Bu örnekte, hiçbir güvenlik ve yalnızca arabirim uygulamak nasıl bir çizim sağlanan s sağlar.</span><span class="sxs-lookup"><span data-stu-id="b9047-108">This example provides no security, and s provided only as an illustration of how to implement the interface.</span></span> <span data-ttu-id="b9047-109">Uygulanışı [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) arabirimi iki yöntemleri geçersiz kılması gerekir: [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) ve [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId).</span><span class="sxs-lookup"><span data-stu-id="b9047-109">An implementation of the  [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface must override two methods: [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId).</span></span> <span data-ttu-id="b9047-110">Bu örnekte, [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) her zaman döndürür **System.Security.Principal.WindowsIdentity** geçerli kullanıcı ile ilişkili nesne.</span><span class="sxs-lookup"><span data-stu-id="b9047-110">In this example, the [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) always returns the **System.Security.Principal.WindowsIdentity** object associated with the current user.</span></span>
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -68,7 +68,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
         /// <summary>
 
-        /// Default managemnet system state key
+        /// Default management system state key
 
         /// </summary>
 
@@ -132,9 +132,9 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ```
 
-### <a name="role-based-authorization"></a><span data-ttu-id="e21d1-111">Rol tabanlı yetkilendirme</span><span class="sxs-lookup"><span data-stu-id="e21d1-111">Role-based authorization</span></span>
+### <a name="role-based-authorization"></a><span data-ttu-id="b9047-111">Rol tabanlı yetkilendirme</span><span class="sxs-lookup"><span data-stu-id="b9047-111">Role-based authorization</span></span>
 
-<span data-ttu-id="e21d1-112">Aşağıdaki örnek, bir rol tabanlı yetkilendirme ilkesi uygular.</span><span class="sxs-lookup"><span data-stu-id="e21d1-112">The following example implements a role-based authorization policy.</span></span> <span data-ttu-id="e21d1-113">İlke web.config ile ana uygulama dizininde bulunan bir XML dosyası ve MOF ve XML eşleme şeması dosyalarında tanımlanır.</span><span class="sxs-lookup"><span data-stu-id="e21d1-113">The policy is defined in an XML file that resides in the main application directory with the web.config and MOF and XML mapping schema files.</span></span> <span data-ttu-id="e21d1-114">Yetkilendirme şema dosyası yapılandırma hakkında daha fazla bilgi için bkz: [yapılandırma rol tabanlı yetkilendirme](./configuring-role-based-authorization.md).</span><span class="sxs-lookup"><span data-stu-id="e21d1-114">For information about how to configure the authorization schema file, see [Configuring Role-based Authorization](./configuring-role-based-authorization.md).</span></span> <span data-ttu-id="e21d1-115">Örnek ilk bölümünü uygulayan [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) ve [Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) yöntemleri.</span><span class="sxs-lookup"><span data-stu-id="e21d1-115">The first part of the sample implements the [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) methods.</span></span> <span data-ttu-id="e21d1-116">Bu durumda, arabirim yöntemleri çağırma yöntemleri `RbacSystem` kullanıcının izinlerini denetleme asıl işi yapan (aşağıda tanımlanmıştır) sınıfı.</span><span class="sxs-lookup"><span data-stu-id="e21d1-116">In this case, the interface methods call methods in the `RbacSystem` class (defined below) that do the actual work of checking the permissions for the user.</span></span>
+<span data-ttu-id="b9047-112">Aşağıdaki örnek, bir rol tabanlı yetkilendirme ilkesi uygular.</span><span class="sxs-lookup"><span data-stu-id="b9047-112">The following example implements a role-based authorization policy.</span></span> <span data-ttu-id="b9047-113">İlke web.config ile ana uygulama dizininde bulunan bir XML dosyası ve MOF ve XML eşleme şeması dosyalarında tanımlanır.</span><span class="sxs-lookup"><span data-stu-id="b9047-113">The policy is defined in an XML file that resides in the main application directory with the web.config and MOF and XML mapping schema files.</span></span> <span data-ttu-id="b9047-114">Yetkilendirme şema dosyası yapılandırma hakkında daha fazla bilgi için bkz: [yapılandırma rol tabanlı yetkilendirme](./configuring-role-based-authorization.md).</span><span class="sxs-lookup"><span data-stu-id="b9047-114">For information about how to configure the authorization schema file, see [Configuring Role-based Authorization](./configuring-role-based-authorization.md).</span></span> <span data-ttu-id="b9047-115">Örnek ilk bölümünü uygulayan [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) ve [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) yöntemleri.</span><span class="sxs-lookup"><span data-stu-id="b9047-115">The first part of the sample implements the [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) methods.</span></span> <span data-ttu-id="b9047-116">Bu durumda, arabirim yöntemleri çağırma yöntemleri `RbacSystem` kullanıcının izinlerini denetleme asıl işi yapan (aşağıda tanımlanmıştır) sınıfı.</span><span class="sxs-lookup"><span data-stu-id="b9047-116">In this case, the interface methods call methods in the `RbacSystem` class (defined below) that do the actual work of checking the permissions for the user.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -189,7 +189,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-<span data-ttu-id="e21d1-117">Aşağıdaki örnek XML dosyasında yetkilendirme ilkesi ayrıştıran bir sınıf oluşturur.</span><span class="sxs-lookup"><span data-stu-id="e21d1-117">The following example creates a class that parses authorization policy in the XML file.</span></span>
+<span data-ttu-id="b9047-117">Aşağıdaki örnek XML dosyasında yetkilendirme ilkesi ayrıştıran bir sınıf oluşturur.</span><span class="sxs-lookup"><span data-stu-id="b9047-117">The following example creates a class that parses authorization policy in the XML file.</span></span>
 
 ```csharp
 //-----------------------------------------------------------------------
@@ -209,7 +209,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
     /// <summary>
     /// Keeps Configuration for the RbacSystem
-    /// It reads the RacSystem configuration for configuratin file and creates RbacConfiguration
+    /// It reads the RacSystem configuration for configuration file and creates RbacConfiguration
     /// </summary>
     [Serializable]
     [XmlRoot("RbacConfiguration")]
@@ -374,7 +374,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
- <span data-ttu-id="e21d1-118">Aşağıdaki sınıflar, gruplar ve kullanıcılar, sırasıyla temsil eder.</span><span class="sxs-lookup"><span data-stu-id="e21d1-118">The following classes represent groups and users, respectively.</span></span>
+ <span data-ttu-id="b9047-118">Aşağıdaki sınıflar, gruplar ve kullanıcılar, sırasıyla temsil eder.</span><span class="sxs-lookup"><span data-stu-id="b9047-118">The following classes represent groups and users, respectively.</span></span>
 
 ```csharp
 //-----------------------------------------------------------------------
@@ -719,7 +719,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
             /// Indicates whether the current object is equal to another object of the object type.
             /// </summary>
             /// <param name="other">Other object instance</param>
-            /// <returns>true, if both instace are same else false</returns>
+            /// <returns>true, if both instance are same else false</returns>
             public override bool Equals(object other)
             {
                 return this.Equals(other as RbacUserInfo);
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-<span data-ttu-id="e21d1-119">Son olarak, kullanıcının izinlerini denetleme çalışmayı uygulamada tanımlanan yöntemler için dönüş yetkilendirme durumu yöntemi RbacSystem sınıfın uyguladığı [Microsoft.Management.Odata.Customauthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) arabirimi.</span><span class="sxs-lookup"><span data-stu-id="e21d1-119">Finally, the RbacSystem class implements methods that do the work of checking the permissions for the user and return the authorization status to the methods defined in the implementation of the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface.</span></span>
+<span data-ttu-id="b9047-119">Son olarak, kullanıcının izinlerini denetleme çalışmayı uygulamada tanımlanan yöntemler için dönüş yetkilendirme durumu yöntemi RbacSystem sınıfın uyguladığı [Microsoft.Management.Odata.CustomAuthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) arabirimi.</span><span class="sxs-lookup"><span data-stu-id="b9047-119">Finally, the RbacSystem class implements methods that do the work of checking the permissions for the user and return the authorization status to the methods defined in the implementation of the [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface.</span></span>

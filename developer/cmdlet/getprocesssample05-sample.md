@@ -8,72 +8,72 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
 caps.latest.revision: 6
-ms.openlocfilehash: c3546301cfd77ca40dd4683a3d2fe2d040b7c4a7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850949"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056007"
 ---
-# <a name="getprocesssample05-sample"></a><span data-ttu-id="e4f92-102">GetProcessSample05 Örneği</span><span class="sxs-lookup"><span data-stu-id="e4f92-102">GetProcessSample05 Sample</span></span>
+# <a name="getprocesssample05-sample"></a><span data-ttu-id="c295f-102">GetProcessSample05 Örneği</span><span class="sxs-lookup"><span data-stu-id="c295f-102">GetProcessSample05 Sample</span></span>
 
-<span data-ttu-id="e4f92-103">Bu örnek, Get-Proc cmdlet tam bir sürümünü gösterir.</span><span class="sxs-lookup"><span data-stu-id="e4f92-103">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
+<span data-ttu-id="c295f-103">Bu örnek, Get-Proc cmdlet tam bir sürümünü gösterir.</span><span class="sxs-lookup"><span data-stu-id="c295f-103">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
 
-## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="e4f92-104">Visual Studio kullanarak örneği oluşturmak nasıl.</span><span class="sxs-lookup"><span data-stu-id="e4f92-104">How to build the sample using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="c295f-104">Visual Studio kullanarak örneği oluşturmak nasıl.</span><span class="sxs-lookup"><span data-stu-id="c295f-104">How to build the sample using Visual Studio.</span></span>
 
-1. <span data-ttu-id="e4f92-105">Windows Gezgini'ni açın ve örnekler dizini altında GetProcessSample05 dizinine gidin.</span><span class="sxs-lookup"><span data-stu-id="e4f92-105">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="c295f-105">Windows Gezgini'ni açın ve örnekler dizini altında GetProcessSample05 dizinine gidin.</span><span class="sxs-lookup"><span data-stu-id="c295f-105">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
 
-   <span data-ttu-id="e4f92-106">Windows PowerShell 2.0 yüklü SDK ile GetProcessSample05 klasöre gidin.</span><span class="sxs-lookup"><span data-stu-id="e4f92-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="e4f92-107">C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05 varsayılan konumdur.</span><span class="sxs-lookup"><span data-stu-id="e4f92-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
+   <span data-ttu-id="c295f-106">Windows PowerShell 2.0 yüklü SDK ile GetProcessSample05 klasöre gidin.</span><span class="sxs-lookup"><span data-stu-id="c295f-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="c295f-107">C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05 varsayılan konumdur.</span><span class="sxs-lookup"><span data-stu-id="c295f-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
 
-2. <span data-ttu-id="e4f92-108">Çözüm (.sln) dosyasını simgesini çift tıklatın.</span><span class="sxs-lookup"><span data-stu-id="e4f92-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="e4f92-109">Bu örnek projeyi Visual Studio'da açılır.</span><span class="sxs-lookup"><span data-stu-id="e4f92-109">This opens the sample project in Visual Studio.</span></span>
+2. <span data-ttu-id="c295f-108">Çözüm (.sln) dosyasını simgesini çift tıklatın.</span><span class="sxs-lookup"><span data-stu-id="c295f-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="c295f-109">Bu örnek projeyi Visual Studio'da açılır.</span><span class="sxs-lookup"><span data-stu-id="c295f-109">This opens the sample project in Visual Studio.</span></span>
 
-3. <span data-ttu-id="e4f92-110">İçinde **derleme** menüsünde **Çözümü Derle**.</span><span class="sxs-lookup"><span data-stu-id="e4f92-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="c295f-110">İçinde **derleme** menüsünde **Çözümü Derle**.</span><span class="sxs-lookup"><span data-stu-id="c295f-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-   <span data-ttu-id="e4f92-111">Kitaplık için örneği varsayılan \bin veya \bin\debug'dır dizinlerde oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="e4f92-111">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
+   <span data-ttu-id="c295f-111">Kitaplık için örneği varsayılan \bin veya \bin\debug'dır dizinlerde oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="c295f-111">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="e4f92-112">Örneği çalıştırma</span><span class="sxs-lookup"><span data-stu-id="e4f92-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="c295f-112">Örneği çalıştırma</span><span class="sxs-lookup"><span data-stu-id="c295f-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="e4f92-113">Aşağıdaki modül klasörü oluşturun:</span><span class="sxs-lookup"><span data-stu-id="e4f92-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="c295f-113">Aşağıdaki modül klasörü oluşturun:</span><span class="sxs-lookup"><span data-stu-id="c295f-113">Create the following module folder:</span></span>
 
    `[user]/documents/windowspowershell/modules/GetProcessSample05`
 
-2. <span data-ttu-id="e4f92-114">Örnek derleme modülü klasöre kopyalayın.</span><span class="sxs-lookup"><span data-stu-id="e4f92-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="c295f-114">Örnek derleme modülü klasöre kopyalayın.</span><span class="sxs-lookup"><span data-stu-id="c295f-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="e4f92-115">Windows PowerShell’i başlatın.</span><span class="sxs-lookup"><span data-stu-id="e4f92-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="c295f-115">Windows PowerShell’i başlatın.</span><span class="sxs-lookup"><span data-stu-id="c295f-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="e4f92-116">Windows PowerShell içinde derlemesini yüklemek için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="e4f92-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="c295f-116">Windows PowerShell içinde derlemesini yüklemek için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="c295f-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
    `Import-module getprossessample05`
 
-5. <span data-ttu-id="e4f92-117">Cmdlet'i çalıştırmak için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="e4f92-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="c295f-117">Cmdlet'i çalıştırmak için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="c295f-117">Run the following command to run the cmdlet:</span></span>
 
    `get-proc`
 
-## <a name="requirements"></a><span data-ttu-id="e4f92-118">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="e4f92-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="c295f-118">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="c295f-118">Requirements</span></span>
 
-<span data-ttu-id="e4f92-119">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="e4f92-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="c295f-119">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="c295f-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="e4f92-120">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="e4f92-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="c295f-120">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="c295f-120">Demonstrates</span></span>
 
-<span data-ttu-id="e4f92-121">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="e4f92-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="c295f-121">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="c295f-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="e4f92-122">Cmdlet özniteliğini kullanarak cmdlet'i sınıf bildirme.</span><span class="sxs-lookup"><span data-stu-id="e4f92-122">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="c295f-122">Cmdlet özniteliğini kullanarak cmdlet'i sınıf bildirme.</span><span class="sxs-lookup"><span data-stu-id="c295f-122">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="e4f92-123">Parametre özniteliği kullanarak bir cmdlet parametresi bildirme.</span><span class="sxs-lookup"><span data-stu-id="e4f92-123">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
+- <span data-ttu-id="c295f-123">Parametre özniteliği kullanarak bir cmdlet parametresi bildirme.</span><span class="sxs-lookup"><span data-stu-id="c295f-123">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="e4f92-124">Parametreler için konumları belirtme.</span><span class="sxs-lookup"><span data-stu-id="e4f92-124">Specifying positions for parameters.</span></span>
+- <span data-ttu-id="c295f-124">Parametreler için konumları belirtme.</span><span class="sxs-lookup"><span data-stu-id="c295f-124">Specifying positions for parameters.</span></span>
 
-- <span data-ttu-id="e4f92-125">Parametre ardışık düzen tarafından giriş alabilir belirtme.</span><span class="sxs-lookup"><span data-stu-id="e4f92-125">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="e4f92-126">Giriş bir nesne veya bir parametre adı ile aynı özellik adı olan bir nesnenin bir özellik değerinden alınabilir.</span><span class="sxs-lookup"><span data-stu-id="e4f92-126">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
+- <span data-ttu-id="c295f-125">Parametre ardışık düzen tarafından giriş alabilir belirtme.</span><span class="sxs-lookup"><span data-stu-id="c295f-125">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="c295f-126">Giriş bir nesne veya bir parametre adı ile aynı özellik adı olan bir nesnenin bir özellik değerinden alınabilir.</span><span class="sxs-lookup"><span data-stu-id="c295f-126">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
 
-- <span data-ttu-id="e4f92-127">Giriş parametresi için bir doğrulama özniteliği bildirme.</span><span class="sxs-lookup"><span data-stu-id="e4f92-127">Declaring a validation attribute for the parameter input.</span></span>
+- <span data-ttu-id="c295f-127">Giriş parametresi için bir doğrulama özniteliği bildirme.</span><span class="sxs-lookup"><span data-stu-id="c295f-127">Declaring a validation attribute for the parameter input.</span></span>
 
-- <span data-ttu-id="e4f92-128">Hataları ve özel durumları işleme.</span><span class="sxs-lookup"><span data-stu-id="e4f92-128">Handling errors and exceptions.</span></span>
+- <span data-ttu-id="c295f-128">Hataları ve özel durumları işleme.</span><span class="sxs-lookup"><span data-stu-id="c295f-128">Handling errors and exceptions.</span></span>
 
-- <span data-ttu-id="e4f92-129">Hata ayıklama iletiler.</span><span class="sxs-lookup"><span data-stu-id="e4f92-129">Writing debug messages.</span></span>
+- <span data-ttu-id="c295f-129">Hata ayıklama iletiler.</span><span class="sxs-lookup"><span data-stu-id="c295f-129">Writing debug messages.</span></span>
 
-## <a name="example"></a><span data-ttu-id="e4f92-130">Örnek</span><span class="sxs-lookup"><span data-stu-id="e4f92-130">Example</span></span>
+## <a name="example"></a><span data-ttu-id="c295f-130">Örnek</span><span class="sxs-lookup"><span data-stu-id="c295f-130">Example</span></span>
 
-<span data-ttu-id="e4f92-131">Bu örnek, belirli işlemlerin bir listesini görüntüleyen bir cmdlet oluşturma işlemi gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="e4f92-131">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
+<span data-ttu-id="c295f-131">Bu örnek, belirli işlemlerin bir listesini görüntüleyen bir cmdlet oluşturma işlemi gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="c295f-131">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands
@@ -248,7 +248,7 @@ namespace Microsoft.Samples.PowerShell.Commands
                  WriteVerbose("Finding matches for process name \""
                     + pattern + "\".");
 
-                 // WildCard serach on the available processes
+                 // WildCard search on the available processes
                  WildcardPattern wildcard =
                     new WildcardPattern(
                         pattern,
@@ -373,7 +373,7 @@ namespace Microsoft.Samples.PowerShell.Commands
       /// <summary>
       /// Retrieves the list of all processes matching the Id
       /// parameter and generates a nonterminating error for
-      /// each specified process identofier which is not found.
+      /// each specified process identifier which is not found.
       /// </summary>
       /// <returns>
       /// An array of processes that match the given identifier.
@@ -479,6 +479,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e4f92-132">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="e4f92-132">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c295f-132">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="c295f-132">See Also</span></span>
 
-[<span data-ttu-id="e4f92-133">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="e4f92-133">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="c295f-133">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="c295f-133">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
