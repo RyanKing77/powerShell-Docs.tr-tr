@@ -8,42 +8,42 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1685cfc4-b32c-4bed-b221-e0c4482db955
 caps.latest.revision: 9
-ms.openlocfilehash: f74ff24f114ecd872ffb443c27a57b1fbe42fa23
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eb227b5fa5e91f59b6fc99981ff5affca1cf63fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850137"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056456"
 ---
-# <a name="runspace05-sample"></a><span data-ttu-id="0dcc8-102">Runspace05 Örneği</span><span class="sxs-lookup"><span data-stu-id="0dcc8-102">Runspace05 Sample</span></span>
+# <a name="runspace05-sample"></a><span data-ttu-id="a6a28-102">Runspace05 Örneği</span><span class="sxs-lookup"><span data-stu-id="a6a28-102">Runspace05 Sample</span></span>
 
-<span data-ttu-id="0dcc8-103">Bu örnek, bir ek bileşenine ekleme işlemi açıklanır bir [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) böylece çalışma açıldığında, ek cmdlet kullanılabilir nesne.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="0dcc8-104">Ek bir Get-Proc cmdlet sağlar (tarafından tanımlanan [GetProcessSample01 örnek](../cmdlet/getprocesssample01-sample.md)) çalıştırılan zaman uyumlu olarak kullanarak bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesne.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="a6a28-103">Bu örnek, bir ek bileşenine ekleme işlemi açıklanır bir [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) böylece çalışma açıldığında, ek cmdlet kullanılabilir nesne.</span><span class="sxs-lookup"><span data-stu-id="a6a28-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="a6a28-104">Ek bir Get-Proc cmdlet sağlar (tarafından tanımlanan [GetProcessSample01 örnek](../cmdlet/getprocesssample01-sample.md)) çalıştırılan zaman uyumlu olarak kullanarak bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesne.</span><span class="sxs-lookup"><span data-stu-id="a6a28-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="0dcc8-105">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="0dcc8-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="a6a28-105">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="a6a28-105">Requirements</span></span>
 
-<span data-ttu-id="0dcc8-106">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-106">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="a6a28-106">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="a6a28-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="0dcc8-107">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="0dcc8-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="a6a28-107">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="a6a28-107">Demonstrates</span></span>
 
-<span data-ttu-id="0dcc8-108">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-108">This sample demonstrates the following.</span></span>
+<span data-ttu-id="a6a28-108">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="a6a28-108">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="0dcc8-109">Oluşturma bir [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="a6a28-109">Oluşturma bir [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne.</span><span class="sxs-lookup"><span data-stu-id="a6a28-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="0dcc8-110">Ek bileşenini ekleme [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="a6a28-110">Ek bileşenini ekleme [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne.</span><span class="sxs-lookup"><span data-stu-id="a6a28-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="0dcc8-111">Oluşturma bir [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) kullanan nesne [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="a6a28-111">Oluşturma bir [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) kullanan nesne [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne.</span><span class="sxs-lookup"><span data-stu-id="a6a28-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="0dcc8-112">Oluşturma bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesnesini çalışma alanı kullanır.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="a6a28-112">Oluşturma bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesnesini çalışma alanı kullanır.</span><span class="sxs-lookup"><span data-stu-id="a6a28-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="0dcc8-113">İşlem hattı için ek bileşenini 's cmdlet get-proc ekleme [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesne.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="a6a28-113">İşlem hattı için ek bileşenini 's cmdlet get-proc ekleme [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesne.</span><span class="sxs-lookup"><span data-stu-id="a6a28-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="0dcc8-114">Komutu eşzamanlı çalışıyor.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-114">Running the command synchronously.</span></span>
+- <span data-ttu-id="a6a28-114">Komutu eşzamanlı çalışıyor.</span><span class="sxs-lookup"><span data-stu-id="a6a28-114">Running the command synchronously.</span></span>
 
-- <span data-ttu-id="0dcc8-115">Özellikleri ayıklama [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) komutu tarafından döndürülen nesne.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-115">Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="a6a28-115">Özellikleri ayıklama [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) komutu tarafından döndürülen nesne.</span><span class="sxs-lookup"><span data-stu-id="a6a28-115">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="0dcc8-116">Örnek</span><span class="sxs-lookup"><span data-stu-id="0dcc8-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a6a28-116">Örnek</span><span class="sxs-lookup"><span data-stu-id="a6a28-116">Example</span></span>
 
-<span data-ttu-id="0dcc8-117">Bu örnek, kullanan bir çalışma alanı oluşturur. bir [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) çalışma açıldığında, kullanılabilir olan öğeleri tanımlamak için nesne.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="0dcc8-118">Bu örnekte, varsayılan olarak, ilk oturum durumu için Get-Proc cmdlet'i tanımlayan bir ek bileşenini eklenir.</span><span class="sxs-lookup"><span data-stu-id="0dcc8-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
+<span data-ttu-id="a6a28-117">Bu örnek, kullanan bir çalışma alanı oluşturur. bir [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) çalışma açıldığında, kullanılabilir olan öğeleri tanımlamak için nesne.</span><span class="sxs-lookup"><span data-stu-id="a6a28-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="a6a28-118">Bu örnekte, varsayılan olarak, ilk oturum durumu için Get-Proc cmdlet'i tanımlayan bir ek bileşenini eklenir.</span><span class="sxs-lookup"><span data-stu-id="a6a28-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -127,6 +127,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="0dcc8-119">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="0dcc8-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a6a28-119">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="a6a28-119">See Also</span></span>
 
-[<span data-ttu-id="0dcc8-120">Bir Windows PowerShell ana bilgisayar uygulaması yazma</span><span class="sxs-lookup"><span data-stu-id="0dcc8-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="a6a28-120">Bir Windows PowerShell ana bilgisayar uygulaması yazma</span><span class="sxs-lookup"><span data-stu-id="a6a28-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

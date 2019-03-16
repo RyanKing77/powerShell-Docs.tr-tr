@@ -8,34 +8,34 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9ab83bcb-2d31-4744-a8bc-2ee22e48fc1b
 caps.latest.revision: 17
-ms.openlocfilehash: 8ce6cf1fcabf306b412b6f97915f34ab15436202
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 34918f32a86718ce82987c029cb4dfa09b4359bd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795190"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058853"
 ---
-# <a name="host02-sample"></a><span data-ttu-id="db094-102">Host02 Örneği</span><span class="sxs-lookup"><span data-stu-id="db094-102">Host02 Sample</span></span>
+# <a name="host02-sample"></a><span data-ttu-id="46f98-102">Host02 Örneği</span><span class="sxs-lookup"><span data-stu-id="46f98-102">Host02 Sample</span></span>
 
-<span data-ttu-id="db094-103">Bu örnek, bir özel ana bilgisayar uygulaması ile birlikte Windows PowerShell'i çalışma zamanı kullanan bir ana bilgisayar uygulaması yazma işlemi gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="db094-103">This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation.</span></span> <span data-ttu-id="db094-104">Ana bilgisayar uygulaması çalışır Almanca için konak kültürü ayarlar [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet ve aynı sonuçları görüntüler bkz bunları pwrsh.exe ve geçerli veri ve saat sonra yazdırır Almanca kullanarak.</span><span class="sxs-lookup"><span data-stu-id="db094-104">The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.</span></span>
+<span data-ttu-id="46f98-103">Bu örnek, bir özel ana bilgisayar uygulaması ile birlikte Windows PowerShell'i çalışma zamanı kullanan bir ana bilgisayar uygulaması yazma işlemi gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="46f98-103">This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation.</span></span> <span data-ttu-id="46f98-104">Ana bilgisayar uygulaması çalışır Almanca için konak kültürü ayarlar [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet ve aynı sonuçları görüntüler bkz bunları pwrsh.exe ve geçerli veri ve saat sonra yazdırır Almanca kullanarak.</span><span class="sxs-lookup"><span data-stu-id="46f98-104">The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="db094-105">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="db094-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="46f98-105">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="46f98-105">Requirements</span></span>
 
- <span data-ttu-id="db094-106">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="db094-106">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="46f98-106">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="46f98-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="db094-107">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="db094-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="46f98-107">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="46f98-107">Demonstrates</span></span>
 
-- <span data-ttu-id="db094-108">Bu sınıflar türetilen özel bir ana bilgisayar oluşturma [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) sınıfı [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) sınıfı ve [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) sınıfı.</span><span class="sxs-lookup"><span data-stu-id="db094-108">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="46f98-108">Bu sınıflar türetilen özel bir ana bilgisayar oluşturma [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) sınıfı [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) sınıfı ve [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) sınıfı.</span><span class="sxs-lookup"><span data-stu-id="46f98-108">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="db094-109">Özel ana bilgisayarı kullanan bir çalışma alanı oluşturma.</span><span class="sxs-lookup"><span data-stu-id="db094-109">Creating a runspace that uses the custom host.</span></span>
+- <span data-ttu-id="46f98-109">Özel ana bilgisayarı kullanan bir çalışma alanı oluşturma.</span><span class="sxs-lookup"><span data-stu-id="46f98-109">Creating a runspace that uses the custom host.</span></span>
 
-- <span data-ttu-id="db094-110">Konak kültürü Almanca olarak ayarlama.</span><span class="sxs-lookup"><span data-stu-id="db094-110">Setting the host culture to German.</span></span>
+- <span data-ttu-id="46f98-110">Konak kültürü Almanca olarak ayarlama.</span><span class="sxs-lookup"><span data-stu-id="46f98-110">Setting the host culture to German.</span></span>
 
-- <span data-ttu-id="db094-111">Oluşturma bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesnesini almak ve sıralama işlemleri için bir komut dosyasını çalıştırır, sonra Almanca görüntülenen geçerli tarihi alır.</span><span class="sxs-lookup"><span data-stu-id="db094-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.</span></span>
+- <span data-ttu-id="46f98-111">Oluşturma bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesnesini almak ve sıralama işlemleri için bir komut dosyasını çalıştırır, sonra Almanca görüntülenen geçerli tarihi alır.</span><span class="sxs-lookup"><span data-stu-id="46f98-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.</span></span>
 
-## <a name="example"></a><span data-ttu-id="db094-112">Örnek</span><span class="sxs-lookup"><span data-stu-id="db094-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="46f98-112">Örnek</span><span class="sxs-lookup"><span data-stu-id="46f98-112">Example</span></span>
 
- <span data-ttu-id="db094-113">Aşağıdaki kod, özel ana bilgisayarı kullanan ana bilgisayar uygulamasına uygulanışı gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="db094-113">The following code shows an implementation of a host application that uses the custom host.</span></span>
+ <span data-ttu-id="46f98-113">Aşağıdaki kod, özel ana bilgisayarı kullanan ana bilgisayar uygulamasına uygulanışı gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="46f98-113">The following code shows an implementation of a host application that uses the custom host.</span></span>
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -132,9 +132,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="db094-114">Örnek</span><span class="sxs-lookup"><span data-stu-id="db094-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="46f98-114">Örnek</span><span class="sxs-lookup"><span data-stu-id="46f98-114">Example</span></span>
 
- <span data-ttu-id="db094-115">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="db094-115">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="db094-116">Uygulanmaz bu öğeleri bir özel durum veya hiçbir şey döndürmeyen.</span><span class="sxs-lookup"><span data-stu-id="db094-116">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="46f98-115">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="46f98-115">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="46f98-116">Uygulanmaz bu öğeleri bir özel durum veya hiçbir şey döndürmeyen.</span><span class="sxs-lookup"><span data-stu-id="46f98-116">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -314,9 +314,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="db094-117">Örnek</span><span class="sxs-lookup"><span data-stu-id="db094-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="46f98-117">Örnek</span><span class="sxs-lookup"><span data-stu-id="46f98-117">Example</span></span>
 
- <span data-ttu-id="db094-118">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="db094-118">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="46f98-118">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="46f98-118">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -468,7 +468,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// ignores the colors.
     /// </summary>
     /// <param name="foregroundColor">The color of the characters.</param>
-    /// <param name="backgroundColor">The backgound color to use.</param>
+    /// <param name="backgroundColor">The background color to use.</param>
     /// <param name="value">The characters to be written.</param>
     public override void Write(
                                ConsoleColor foregroundColor,
@@ -526,7 +526,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// Writes a line of characters to the output display of the host
     /// with foreground and background colors and appends a newline (carriage return).
     /// </summary>
-    /// <param name="foregroundColor">The forground color of the display. </param>
+    /// <param name="foregroundColor">The foreground color of the display. </param>
     /// <param name="backgroundColor">The background color of the display. </param>
     /// <param name="value">The line to be written.</param>
     public override void WriteLine(ConsoleColor foregroundColor, ConsoleColor backgroundColor, string value)
@@ -565,9 +565,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="db094-119">Örnek</span><span class="sxs-lookup"><span data-stu-id="db094-119">Example</span></span>
+## <a name="example"></a><span data-ttu-id="46f98-119">Örnek</span><span class="sxs-lookup"><span data-stu-id="46f98-119">Example</span></span>
 
- <span data-ttu-id="db094-120">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="db094-120">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="db094-121">Uygulanmaz bu öğeleri bir özel durum veya hiçbir şey döndürmeyen.</span><span class="sxs-lookup"><span data-stu-id="db094-121">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="46f98-120">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="46f98-120">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="46f98-121">Uygulanmaz bu öğeleri bir özel durum veya hiçbir şey döndürmeyen.</span><span class="sxs-lookup"><span data-stu-id="46f98-121">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -629,7 +629,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
     /// <summary>
     /// Gets or sets the foreground color of the displayed text.
-    /// This maps to the corresponding Console.ForgroundColor property.
+    /// This maps to the corresponding Console.ForegroundColor property.
     /// </summary>
     public override ConsoleColor ForegroundColor
     {
@@ -784,12 +784,12 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="db094-122">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="db094-122">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="46f98-122">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="46f98-122">See Also</span></span>
 
- [<span data-ttu-id="db094-123">System.Management.Automation.Powershell</span><span class="sxs-lookup"><span data-stu-id="db094-123">System.Management.Automation.Powershell</span></span>](/dotnet/api/system.management.automation.powershell)
+ [<span data-ttu-id="46f98-123">System.Management.Automation.Powershell</span><span class="sxs-lookup"><span data-stu-id="46f98-123">System.Management.Automation.Powershell</span></span>](/dotnet/api/system.management.automation.powershell)
 
- [<span data-ttu-id="db094-124">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="db094-124">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="46f98-124">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="46f98-124">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="db094-125">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="db094-125">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="46f98-125">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="46f98-125">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="db094-126">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="db094-126">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="46f98-126">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="46f98-126">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
