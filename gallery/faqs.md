@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: PowerShell Galerisi hakkında SSS
-ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002881"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057697"
 ---
 # <a name="frequently-asked-questions"></a>Sık Sorulan Sorular
 
@@ -31,11 +31,12 @@ Modüller paylaşmak için genellikle daha iyi, ancak komut dosyası iş akışl
 
 Paketleri galeride yayımlamadan önce bir hesap PowerShell Galerisi'nde kaydetmeniz gerekir. Paketleri yayımlama kayıt sırasında sağlanan bir NuGetApiKey gerektirdiğinden budur. Kaydetmek için kişisel, iş veya Okul hesabınızda oturum açmak için PowerShell Galerisi için. İlk kez oturum açtığınızda, tek seferlik kayıt işlemi gereklidir. Daha sonra NuGetApiKey profil sayfanızdan kullanılabilir.
 
-Galeride kaydedildikten sonra kullanın [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) veya [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) paketinizi galerisinde yayımlamak için cmdlet'ler. Bu cmdlet'lerinin nasıl çalıştırılacağı hakkında daha fazla ayrıntı için yayımlama sekmesindeki adresini ziyaret edin veya okuma [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) ve [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) belgeleri.
+Galeride kaydedildikten sonra kullanın [Yayımlama Modülü][] veya [Yayımlama-komut dosyası][] paketinizi galerisinde yayımlamak için cmdlet'ler.
+Bu cmdlet'lerinin nasıl çalıştırılacağı hakkında daha fazla ayrıntı için yayımlama sekmesindeki adresini ziyaret edin veya okuma [Yayımlama Modülü][] ve [Yayımlama-komut dosyası][] belgeleri.
 
 **Galeri'ye yükleyin veya paketleri kaydetmek için oturum açın veya kaydolun gerekmez.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>"İsteği işleyemedi. aldım 'Belirtilen API anahtarı geçersiz veya belirtilen paket erişim iznine sahip değil.'. Uzak sunucu bir hata döndürdü: (403) Yasak. " PowerShell Galerisi'nde bir paketi yayımlamaya çalışırken hata oluştu. Bu ne demek?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>"İsteği işleyemedi. aldım 'Belirtilen API anahtarı geçersiz veya belirtilen paket erişim iznine sahip değil.'. Uzak sunucu bir hata döndürdü: (403) Yasak." PowerShell Galerisi'nde bir paketi yayımlamaya çalışırken hata oluştu. Bu ne demek?
 
 Bu hata aşağıdaki nedenlerle oluşabilir:
 
@@ -56,29 +57,37 @@ Bir kategori onay kutusunu seçerek, "Bu kategorideki tüm paketleri görmek ist
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Bir modülü PowerShell galerisinde yayımlamak için gereksinimler nelerdir?
 
-PowerShell Modülü (betik modülleri, ikili modülleri veya bildirim modüllerini) herhangi bir türden Galerisi'ne yayımlanabilir. Bir modül yayımlamak için PowerShellGet birkaç IT - sürüm hakkında bilmesi gereken açıklama, yazar ve nasıl lisanslanır. Yayımlama işleminden bir parçası olarak bu bilgileri okuyun *modül bildirimini* (.psd1) dosya veya değerini [ **Publish-Module** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet'in **LicenseUri** parametresi. Galeride yayımlanmış olan tüm modülleri, modül bildirimleri olması gerekir. Kendi bildiriminde aşağıdaki bilgileri içeren herhangi bir modülü Galerisi'ne yayımlanabilir:
+PowerShell Modülü (betik modülleri, ikili modülleri veya bildirim modüllerini) herhangi bir türden Galerisi'ne yayımlanabilir.
+Bir modül yayımlamak için PowerShellGet birkaç IT - sürüm hakkında bilmesi gereken açıklama, yazar ve nasıl lisanslanır.
+Yayımlama işleminden bir parçası olarak bu bilgileri okuyun *modül bildirimini* (.psd1) dosya veya değerini [Yayımlama Modülü][] cmdlet'in **LicenseUri** parametre.
+Galeride yayımlanmış olan tüm modülleri, modül bildirimleri olması gerekir.
+Kendi bildiriminde aşağıdaki bilgileri içeren herhangi bir modülü Galerisi'ne yayımlanabilir:
 
 - Sürüm
 - Açıklama
 - Yazar
-- Bir URI modülünün bir parçası olarak ya da lisans koşullarını **PrivateData** bildiriminin ya da bölüm **LicenseUri** parametresinin [ **Publish-Module** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet'i.
+- Bir URI modülünün bir parçası olarak ya da lisans koşullarını **PrivateData** bildiriminin ya da bölüm **LicenseUri** parametresinin [Yayımlama Modülü][] cmdlet'i.
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Doğru biçimlendirilmiş modül bildirimi nasıl oluşturulur?
 
-Bir modül bildirimi oluşturmak için en kolay yolu çalıştırmaktır [ **yeni ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet'i. PowerShell 5.0 veya daha yeni bir hatalı biçimlendirilmiş modül bildirimi gibi kullanışlı meta veriler için boş alanları ile yeni ModuleManifest oluşturur **ProjectUri**, **LicenseUri**, ve **etiketleri**. Yalnızca boşlukları doldurmak veya oluşturulan bildirim doğru biçimlendirilmiş bir örnek olarak kullanın.
+Bir modül bildirimi oluşturmak için en kolay yolu çalıştırmaktır [yeni ModuleManifest][] cmdlet'i. PowerShell 5.0 veya daha yeni bir hatalı biçimlendirilmiş modül bildirimi gibi kullanışlı meta veriler için boş alanları ile yeni ModuleManifest oluşturur **ProjectUri**, **LicenseUri**, ve **etiketleri**. Yalnızca boşlukları doldurmak veya oluşturulan bildirim doğru biçimlendirilmiş bir örnek olarak kullanın.
 
-Gerekli tüm meta veri alanları düzgün doldurulur doğrulamak için [ **Test ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet'i.
+Gerekli tüm meta veri alanları düzgün doldurulur doğrulamak için [Test-ModuleManifest][] cmdlet'i.
 
-Modül bildirim dosyası alanları güncelleştirmek için [ **güncelleştirme ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet'i.
+Modül bildirim dosyası alanları güncelleştirmek için [güncelleştirme ModuleManifest][] cmdlet'i.
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Bir betik galerisinde yayımlamak için gereksinimler nelerdir?
 
-PowerShell Betiği (betikleri veya iş akışları) herhangi bir türden Galerisi'ne yayımlanabilir. Bir betik yayımlamak için PowerShellGet birkaç IT - sürüm hakkında bilmesi gereken açıklama, yazar ve nasıl lisanslanır. Betik dosyasının yayımlama işleminden bir parçası olarak bu bilgileri okuyun *PSScriptInfo* bölümünde veya değerini [ **Publish-Script** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet'in  **LicenseUri** parametresi. Galeride yayımlanmış tüm betikler, meta veri bilgilerini olması gerekir. Kendi PSScriptInfo bölümünde aşağıdaki bilgileri içeren bir betik Galerisi'ne yayımlanabilir:
+PowerShell Betiği (betikleri veya iş akışları) herhangi bir türden Galerisi'ne yayımlanabilir.
+Bir betik yayımlamak için PowerShellGet birkaç IT - sürüm hakkında bilmesi gereken açıklama, yazar ve nasıl lisanslanır.
+Betik dosyasının yayımlama işleminden bir parçası olarak bu bilgileri okuyun *PSScriptInfo* bölümünde veya değerini [Yayımlama-komut dosyası][] cmdlet'in **LicenseUri**parametresi.
+Galeride yayımlanmış tüm betikler, meta veri bilgilerini olması gerekir.
+Kendi PSScriptInfo bölümünde aşağıdaki bilgileri içeren bir betik Galerisi'ne yayımlanabilir:
 
 - Sürüm
 - Açıklama
 - Yazar
-- Bir URI betiğinin bir parçası olarak ya da lisans koşullarını **PSScriptInfo** bölüm veya betiğin **LicenseUri** parametresinin [ **Publish-Script** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet'i.
+- Bir URI betiğinin bir parçası olarak ya da lisans koşullarını **PSScriptInfo** bölüm veya betiğin **LicenseUri** parametresinin [Yayımlama-komut dosyası][] cmdlet'i.
 
 ## <a name="how-do-i-search"></a>Nasıl arayabilirim?
 
@@ -94,11 +103,11 @@ Böylece, örneğin PowerShellVersion için arama yaparken: PowerShellVersion (k
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Doğru biçimlendirilmiş bir betiğin nasıl oluşturulur?
 
-Doğru biçimlendirilmiş komut dosyası oluşturmak için en kolay yolu çalıştırmaktır [ **yeni ScriptFileInfo** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet'i. PowerShell 5. 0'da, yeni ScriptFileInfo gibi kullanışlı meta veriler için boş alanları ile doğru biçimlendirilmiş bir betik dosyası oluşturur. **ProjectUri**, **LicenseUri**, ve **etiketleri** . Yalnızca boşlukları doldurmak veya doğru biçimlendirilmiş bir örnek olarak oluşturulan komut dosyasını kullanın.
+Doğru biçimlendirilmiş komut dosyası oluşturmak için en kolay yolu çalıştırmaktır [yeni ScriptFileInfo][] cmdlet'i. PowerShell 5. 0'da, yeni ScriptFileInfo gibi kullanışlı meta veriler için boş alanları ile doğru biçimlendirilmiş bir betik dosyası oluşturur. **ProjectUri**, **LicenseUri**, ve **etiketleri** . Yalnızca boşlukları doldurmak veya doğru biçimlendirilmiş bir örnek olarak oluşturulan komut dosyasını kullanın.
 
-Gerekli tüm meta veri alanları düzgün doldurulur doğrulamak için [ **Test ScriptFileInfo** ](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet'i.
+Gerekli tüm meta veri alanları düzgün doldurulur doğrulamak için [Test-ScriptFileInfo][] cmdlet'i.
 
-Komut dosyası meta veri alanları güncelleştirmek için [ **güncelleştirme ScriptFileInfo** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet'i.
+Komut dosyası meta veri alanları güncelleştirmek için [Update-ScriptFileInfo][] cmdlet'i.
 
 ## <a name="what-other-types-of-powershell-modules-exist"></a>Ne diğer PowerShell modüllerini türleri var?
 
@@ -112,7 +121,10 @@ Tüm Galerisi modülleri, modül bildirimleri içeren ve bu modüllerin çoğu b
 
 PackageManagement, herhangi bir paket Yöneticisi ile çalışmak için bir ortak arabirimdir. Sonuç olarak, PowerShell modülleri, Msı'ler, Ruby toprağa değerli taşlar, NuGet paketlerini veya Perl modülleri ile ilgilenen olsun, PackageManagement'ın komutları (Bul-Package ve Install-Package) bulmak ve onları yüklemek için kullanabilmek için olmalıdır. PackageManagement PackageManagement takılan her Paket Yöneticisi için bir paket sağlayıcı sağlayarak bunu yapar. Sağlayıcıları tüm asıl işi gerçekleştirmek; Bunlar depolarından içeriği getirmek ve içeriği yerel olarak yükleyin. Genellikle, paket sağlayıcıları yalnızca belirli bir paket türü için var olan paketi Yöneticisi Araçları sarma.
 
-PowerShellGet, PowerShell paketler için paket yöneticisidir. PackageManagement ile PowerShellGet işlevsellik sunduğu bir PSModule paket sağlayıcısı yok. Bu nedenle, her iki çalışma yapabilecekleriniz [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) veya Install-Package-modülü PowerShell Galerisi'nden yüklemek için sağlayıcı PSModule. Bazı PowerShellGet işlevleri dahil olmak üzere [güncelleştirme-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) ve [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), PackageManagement komutları erişilemez.
+PowerShellGet, PowerShell paketler için paket yöneticisidir.
+PackageManagement ile PowerShellGet işlevsellik sunduğu bir PSModule paket sağlayıcısı yok.
+Bu nedenle, her iki çalışma yapabilecekleriniz [Install-Module][] veya Install-Package-modülü PowerShell Galerisi'nden yüklemek için sağlayıcı PSModule.
+Bazı PowerShellGet işlevleri dahil olmak üzere [Güncelleştirme Modülü][] ve [Yayımlama Modülü][], PackageManagement komutları erişilemez.
 
 Özet olarak, PowerShellGet yalnızca PowerShell içeriği için bir premium paket yönetimi deneyimi olan odaklanır. PackageManagement genel bir araç seti tüm paket yönetim deneyimleriyle gösterme üzerinde odaklanır. Bu yanıt unsatisfying fark ederseniz, bu belgenin sonundaki bir uzun yanıt alanında var. **nasıl PackageManagement gerçekten ilişkilendirmek için PowerShellGet?** bölümü.
 
@@ -122,7 +134,7 @@ Daha fazla bilgi için lütfen [PackageManagement proje sayfası](https://oneget
 
 PowerShell Galerisi değiştirilmiş bir sürümüdür [NuGet galerisinde](https://www.nuget.org/). PowerShellGet, PowerShell Galerisi gibi temel NuGet depoları ile çalışmak için NuGet sağlayıcısı kullanır.
 
-PowerShellGet geçerli NuGet depo veya dosya paylaşım karşı kullanabilirsiniz. Çalıştırarak depoya eklemeniz yeterlidir [ **Register-PSRepository** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet'i.
+PowerShellGet geçerli NuGet depo veya dosya paylaşım karşı kullanabilirsiniz. Çalıştırarak depoya eklemeniz yeterlidir [Register-PSRepository][] cmdlet'i.
 
 ## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>NuGet.exe Galerisi ile çalışmak için kullanabileceğim anlama geliyor?
 
@@ -132,7 +144,7 @@ Evet.
 
 PowerShellGet, altyapı öğeleri, PackageManagement altyapı yoğun bir şekilde yararlanır.
 
-PowerShell cmdlet katmanında [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Install-Package çevresinde aslında basit bir sarmalayıcı olan-sağlayıcısı PSModule.
+PowerShell cmdlet katmanında [Install-Module][] Install-Package çevresinde aslında basit bir sarmalayıcı olan-sağlayıcısı PSModule.
 
 PackageManagement paket sağlayıcısı katmanında PSModule paket sağlayıcısı gerçekten diğer PackageManagement paket sağlayıcıları çağırır. Örneğin, NuGet tabanlı galeriler (örneğin, PowerShell Galerisi) ile çalışırken, PSModule paket sağlayıcısı deposu ile çalışacak şekilde NuGet paketi sağlayıcısı kullanır.
 
@@ -169,3 +181,16 @@ Kullanıma [PowerShellGallery.com üzerinde paket sahiplerini yönetme](./how-to
 ## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>Paket Lisansımı ihlal bir paket sahibi ile nasıl dağıtılsın mı?
 
 Paket sahipleri ve diğer paketleri sahipleri arasında kaynaklanabilecek herhangi Anlaşmazlıkların çözüm yeri birlikte çalışmak üzere PowerShell topluluğu öneririz.  Biz hazırlanmış bir [itiraz çözümleme işlemi](./how-to/getting-support/dispute-resolution.md) , PowerShellGallery.com Yöneticiler intercede önce izleyin isteriz.
+
+[Yeni ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest
+[Test-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest
+[Güncelleştirme ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Update-ModuleManifest
+
+[Install-Module]: /powershell/module/PowershellGet/Install-Module
+[Yeni ScriptFileInfo]: /powershell/module/PowershellGet/New-ScriptFileInfo
+[Yayımlama Modülü]: /powershell/module/PowershellGet/Publish-Module
+[Yayımlama-komut dosyası]: /powershell/module/PowershellGet/Publish-Script
+[Register-PSRepository]: /powershell/module/PowershellGet/Register-PSRepository
+[Test-ScriptFileInfo]: /powershell/module/PowershellGet/Test-ScriptFileInfo
+[Güncelleştirme Modülü]: /powershell/module/PowershellGet/Update-Module
+[Update-ScriptFileInfo]: /powershell/module/PowershellGet/Update-ScriptFileInfo
