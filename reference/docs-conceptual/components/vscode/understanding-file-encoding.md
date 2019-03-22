@@ -2,12 +2,12 @@
 title: VSCode ve PowerShell’de dosya kodlamayı anlama
 description: VSCode ve PowerShell dosya kodlamasını yapılandırma
 ms.date: 02/28/2019
-ms.openlocfilehash: 73e766832d56a08bd5ef16df11899a0aab0badae
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795131"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320413"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>VSCode ve PowerShell’de dosya kodlamayı anlama
 
@@ -102,7 +102,7 @@ Ağaçları isteğe bağlıdır ve güvenilir bir kuralı UTF-8'in her yerde kul
 
 VSCode'nın varsayılan kodlama: UTF-8 içermeyen ürün reçetesi.
 
-Ayarlanacak [VSCode'nın kodlama][]VSCode Ayarları'na gidin (<kbd>Ctrl<kbd>+</kbd>,</kbd>) ayarlayıp `"files.encoding"` ayarı:
+Ayarlanacak [VSCode kodlamasını][]VSCode Ayarları'na gidin (<kbd>Ctrl<kbd>+</kbd>,</kbd>) ayarlayıp `"files.encoding"` ayarı:
 
 ```json
 "files.encoding": "utf8bom"
@@ -194,7 +194,7 @@ Belirli bir giriş kodlama kullanmak için PowerShell kullanmaya zorlamak mümk�
 
 ### <a name="existing-scripts"></a>Var olan betikler
 
-Zaten dosya sisteminde betikleri, yeni seçilen kodlama için yeniden kodlanmış gerekebilir. Alt çubuğu, VSCode içinde UTF-8 etiket görürsünüz. Eylem çubuğunu açın ve seçmek için tıklatın **kodlamayla kaydetme**. Şimdi, bu dosya için yeni bir kodlama seçebilirsiniz. Bkz: [VSCode'nın kodlama][] tam yönergeler için.
+Zaten dosya sisteminde betikleri, yeni seçilen kodlama için yeniden kodlanmış gerekebilir. Alt çubuğu, VSCode içinde UTF-8 etiket görürsünüz. Eylem çubuğunu açın ve seçmek için tıklatın **kodlamayla kaydetme**. Şimdi, bu dosya için yeni bir kodlama seçebilirsiniz. Bkz: [VSCode kodlamasını][] tam yönergeler için.
 
 Birden çok dosyayı yeniden kodlamanız gerekirse, aşağıdaki betiği kullanabilirsiniz:
 
@@ -215,7 +215,7 @@ Bu yeni işletmeler arasında kalıcı olmasını mıydı unutmayın.
 ### <a name="source-control-software"></a>Kaynak Denetim yazılımı
 
 Bazı, git gibi kaynak denetimi araçları Kodlamalar yoksayın; Git, yalnızca bayt izler.
-Diğer TFS veya Mercurial, gibi olmayabilir. Hatta bazı git tabanlı araçlar, metin, kod çözme hakkında kullanır.
+Diğer Azure DevOps veya Mercurial, gibi olmayabilir. Hatta bazı git tabanlı araçlar, metin, kod çözme hakkında kullanır.
 
 Bu durum söz konusu olduğunda emin olun:
 
@@ -274,4 +274,4 @@ Okuma olan kodlama ve kodlama PowerShell'de yapılandırma birkaç diğer iyi g�
 [bayt sırası işareti]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [Dil sunucusu Protokolü]: https://microsoft.github.io/language-server-protocol/
-[VSCode'nın kodlama]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[VSCode kodlamasını]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
