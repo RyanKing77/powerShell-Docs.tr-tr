@@ -1,47 +1,30 @@
 ---
-ms.date: 06/12/2017
+ms.date: 03/28/2019
 contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
 title: Modülleri ile uyumlu PowerShell sürümleri
-ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685000"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623849"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modülleri ile uyumlu PowerShell sürümleri
 
 Sürüm 5.1’den başlayarak, PowerShell çeşitli özellik kümelerini ve platform uyumluluğunu belirten farklı sürümler halinde sağlanır.
 
-- **Masaüstü sürümü:** .NET Framework üzerine inşa edilmiş ve Windows Masaüstü ve Windows Server Core gibi tam boyutlu sürümlerinde çalışan PowerShell sürümlerinin hedeflendiği betikler ve modüllerle uyumluluk sağlar.
-- **Çekirdek sürümü:** .NET Core üzerine yapılandırılan ve Nano Server gibi Windows ve Windows IOT azaltılmış boyutlu sürümlerinde çalışan PowerShell sürümlerinin hedeflendiği betikler ve modüllerle uyumluluk sağlar.
+- **Masaüstü sürümü:** .NET Framework üzerine inşa edilmiş, hem Windows Masaüstü, Windows Server, Windows Sunucu Çekirdeği ve çoğu Windows sürümleri üzerinde Windows PowerShell 5.1, Windows PowerShell v4.0 ve aşağıda geçerlidir.
+- **Çekirdek sürümü:** .NET Core üzerine yapılandırılan, PowerShell Core 6.0 ve üzeri, Windows PowerShell 5.1 yanı sıra kapladığı alanın azaltılmış olması Windows IOT ve Windows Nanoserver gibi Windows sürümleri üzerinde geçerlidir.
 
-PowerShell'in çalışan sürümü PSEdition özelliğinde gösterilir `$PSVersionTable`.
-
-```powershell
-$PSVersionTable
-```
-
-```output
-Name                           Value
-----                           -----
-PSVersion                      5.1.14300.1000
-PSEdition                      Desktop
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
-CLRVersion                     4.0.30319.42000
-BuildVersion                   10.0.14300.1000
-WSManStackVersion              3.0
-PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1
-```
+PowerShell sürümleri hakkında daha fazla bilgi için bkz. [about_PowerShell_Editions][].
 
 ## <a name="declaring-compatible-editions"></a>Uyumlu sürümleri bildirme
 
 Modül yazarları CompatiblePSEditions modül bildirim anahtarını kullanarak kendi modüllerinin bir veya birden çok PowerShell sürümüyle uyumlu olduğunu bildirebilir. Bu anahtar yalnızca PowerShell 5.1 veya üstünde desteklenir.
 
 > [!NOTE]
-> Bir modül bildirimi CompatiblePSEditions anahtarla belirlendikten sonra alt PowerShell sürümlerinde alınamıyor.
+> Bir modül bildirimi CompatiblePSEditions anahtarla belirlendikten sonra PowerShell sürüm 4 ve aşağıdaki içeri aktarılamıyor.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -49,7 +32,7 @@ $ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
 $ModuleInfo.CompatiblePSEditions
 ```
 
-```output
+```Output
 Desktop
 Core
 ```
@@ -58,7 +41,7 @@ Core
 $ModuleInfo | Get-Member CompatiblePSEditions
 ```
 
-```output
+```Output
    TypeName: System.Management.Automation.PSModuleInfo
 
 Name                 MemberType Definition
@@ -72,7 +55,7 @@ Kullanılabilir modüllerin listesini alırken, listeyi PowerShell sürümüne g
 Get-Module -ListAvailable -PSEdition Desktop
 ```
 
-```output
+```Output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 
@@ -85,7 +68,7 @@ Manifest   1.0        ModuleWithPSEditions
 Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
 ```
 
-```output
+```Output
 Desktop
 Core
 ```
@@ -218,7 +201,7 @@ PS 5.1 veya yeni, $PSEdition genel değişkeni modül bildirim dosyasında izin 
 dir -Recurse
 ```
 
-```output
+```Output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
 Mode           LastWriteTime   Length Name
@@ -263,3 +246,7 @@ Find-Module -Tag PSEdition_Core
 [PowerShellGallery pseditions'ı desteği](../how-to/finding-packages/searching-by-compatibility.md)
 
 [Modül bildirimini güncelleştir](/powershell/module/powershellget/update-modulemanifest)
+
+[about_PowerShell_Editions][]
+
+[about_PowerShell_Editions]: /powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_Editions

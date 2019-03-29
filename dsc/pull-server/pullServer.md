@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Çekme Hizmeti
-ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056779"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623951"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration çekme hizmeti
 
@@ -47,7 +47,7 @@ Yalnızca yayımlanan Azure IP aralığına giden trafiği sınırlamak burada s
 
 ## <a name="dsc-pull-service-in-windows-server"></a>Windows Server'da DSC çekme hizmeti
 
-Windows Server üzerinde çalıştırmak için bir çekme hizmetini yapılandırmak için mümkündür.
+Windows Server üzerinde çalıştırmak için bir çekme hizmetini yapılandırmak mümkündür.
 Windows Server'a dahil çekme hizmet çözümü yapılandırmaları/modules indirmek için depolama ve veritabanı için rapor verilerini yakalama yalnızca özellikleri içerdiğinden emin olun.
 Çoğu Azure hizmeti tarafından sunulan içermez ve bu nedenle nasıl hizmet kullanılan değerlendirmek için iyi bir aracı değildir.
 

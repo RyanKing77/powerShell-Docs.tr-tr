@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, çekirdek
 title: PowerShell 6.0 için bozucu değişiklikler
-ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795700"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623934"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 için bozucu değişiklikler
 
@@ -61,6 +61,15 @@ Bunun yerine, öneririz, yeni işlevsellik ve yeniden tasarlanan bir söz dizimi
 ### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
 
 Desteklenmeyen API kullanımı nedeniyle `Microsoft.PowerShell.LocalAccounts` PowerShell çekirdek, daha iyi bir çözüm bulunana kadar kaldırıldı.
+
+### <a name="-computer-cmdlets"></a>`*-Computer` cmdlet'leri
+
+Daha iyi bir çözüm bulunana kadar desteklenmeyen API kullanımı nedeniyle, aşağıdaki cmdlet'leri PowerShell çekirdek kaldırıldı.
+
+- Add-Computer
+- Checkpoint-Computer
+- Remove-Computer
+- Geri yükleme-bilgisayar
 
 ### <a name="-counter-cmdlets"></a>`*-Counter` cmdlet'leri
 

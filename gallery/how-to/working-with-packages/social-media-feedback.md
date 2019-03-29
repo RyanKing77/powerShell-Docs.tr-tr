@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Sosyal medya veya yorumlar geri bildirim sağlama
-ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055011"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623900"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Sosyal medya veya yorumlar geri bildirim sağlama
 
@@ -29,6 +29,10 @@ PowerShell Galerisi "paylaşımlar" paketi için her bir sosyal medya sitesini d
 Bu yalnızca bir şey paylaşılan bir kez sayısını gösteren bu yana olacak diğer kullanıcılar olarak yorumlanan "Paket özelleştirebilir".
 
 ## <a name="comments"></a>Açıklamalar
+
+> [!IMPORTANT]
+> Livefyre yorum, bir üçüncü taraf satıcı tarafından sağlanan ve artık desteklenmiyor.
+> Livefyre yorum artık başlangıç PowerShell galerisinde kullanılabilir olacak 01/05/2019. 
 
 PowerShell Galerisi LiveFyre hizmet paketleri açıklama eklemek kullanıcıların kullanır.
 Öneriler veya geri bildirim sahip kullanıcılar, paket sayfasını ziyaret herkes tarafından görülebilir geri bildirim sağlamak için bu özelliği kullanabilirsiniz.

@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: PowerShell cmdlet'i
 title: PowerShell komut adlarını öğrenme
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012475"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623730"
 ---
 # <a name="learning-powershell-command-names"></a>PowerShell komut adlarını öğrenme
 
@@ -25,7 +25,7 @@ Ayrıca, bu komutlar, düzensiz parametresi belirtimlerine sahip. Kullanamazsın
 Listeye DC01 üzerinde çalışan görevler, kullandığınız **/S** parametresi ve ters eğik çizgi olmadan bilgisayar adı. Örneğin, `tasklist /S DC01`.
 
 > [!NOTE]
-> PowerShell v6 önce `sc` için bir diğer ad olduğu `Set-Content` cmdlet'i. Çalıştırılacak **sc.exe** komut, dosya uzantısını içermesi gerekir.
+> PowerShell v6 önce `sc` için bir diğer ad olduğu `Set-Content` cmdlet'i. Bu nedenle, çalıştırılacak **sc.exe** komutu v6 önce bir PowerShell sürümünde tam dosya adı içermelidir **sc.exe** dosya uzantısı dahil **exe**.
 
 Hizmetler ve işlemler iyi tanımlanmış yaşam döngülerine sahiptir yönetilebilir bir bilgisayar öğelerde örnekleridir. Başlangıç veya hizmetleri ve işlemleri durdurun veya tüm hizmetler ve işlemlerin şu anda çalışan bir listesini alın. Bunlar arasında önemli teknik farklılıklar olsa da, hizmetler ve işlemler üzerinde gerçekleştirdiğiniz eylemleri kavramsal olarak aynı değildir. Ayrıca, biz parametreleri belirterek bir eylemin özelleştirmek için yaptığınız seçimlere de kavramsal olarak benzer olabilir.
 
