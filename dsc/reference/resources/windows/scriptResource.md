@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Script kaynağı
-ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 4eee5625add4d96ade7ababf7f534f597a26712d
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054765"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920365"
 ---
 # <a name="dsc-script-resource"></a>DSC Script kaynağı
 
@@ -68,7 +68,7 @@ Bu örnekte varlığını test `C:\TempFolder\TestFile.txt` her düğümde. Yoks
 ```powershell
 Configuration ScriptTest
 {
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     Node localhost
     {
@@ -95,7 +95,7 @@ $version = Get-Content 'version.txt'
 
 Configuration ScriptTest
 {
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     Node localhost
     {

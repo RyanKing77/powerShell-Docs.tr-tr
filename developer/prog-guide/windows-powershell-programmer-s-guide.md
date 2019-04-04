@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 1f7b5b60b202f4de0cf3d44b65057f5edd41f2b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849647"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920399"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell Programcı&#39;s Kılavuzu
 
@@ -57,7 +57,7 @@ Kullanıcının erişmesi gereken bir veri deposu, kullanıma, kendi Windows Pow
 
 Windows PowerShell kullanıcıyla etkileşim kurar ve bir konsol penceresi kullanarak Windows PowerShell çalışma zamanı uygulamasını barındıran bir konsol uygulamasıdır varsayılan konak uygulama powershell.exe içerir.
 
-Nadiren özelleştirme karşın, kendi ana bilgisayar uygulaması Windows PowerShell için yazma gerekecektir. Varsayılan konak uygulama tarafından sağlanan arabirimi daha zengin bir GUI arabirimi için bir gereksinimi varsa, kendi uygulamanızın ihtiyaç duyabileceğiniz bir durumdur. Komut satırında, GUI dayandırırken özel bir uygulama da isteyebilirsiniz. Daha fazla bilgi için[bir Windows PowerShell ana bilgisayar uygulaması oluşturma işlemini](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Nadiren özelleştirme karşın, kendi ana bilgisayar uygulaması Windows PowerShell için yazma gerekecektir. Varsayılan konak uygulama tarafından sağlanan arabirimi daha zengin bir GUI arabirimi için bir gereksinimi varsa, kendi uygulamanızın ihtiyaç duyabileceğiniz bir durumdur. Komut satırında, GUI dayandırırken özel bir uygulama da isteyebilirsiniz. Daha fazla bilgi için [bir Windows PowerShell ana bilgisayar uygulaması oluşturma işlemini](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
 
 ### <a name="windows-powershell-runtime"></a>Windows PowerShell çalışma zamanı
 
@@ -99,12 +99,12 @@ Windows PowerShell Kabuk kullanmaya başlamak hakkında daha fazla bilgi için b
 
 |Konu|Açıklama|
 |-----------|----------------|
-|[Bir Windows PowerShell sağlayıcısı oluşturma](./how-to-create-a-windows-powershell-provider.md)|Bu bölümde, bir Windows PowerShell için Windows PowerShell sağlayıcısını nasıl oluşturulduğu açıklanır.|
+|[Windows PowerShell Sağlayıcısı Oluşturma](./how-to-create-a-windows-powershell-provider.md)|Bu bölümde, bir Windows PowerShell için Windows PowerShell sağlayıcısını nasıl oluşturulduğu açıklanır.|
 |[Bir Windows PowerShell ana bilgisayar uygulaması oluşturma](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Bu bölümde, bir çalışma alanı işleyen bir ana bilgisayar uygulaması yazma ve kendi özel ana bilgisayar uygulayan bir ana bilgisayar uygulaması yazma açıklanmaktadır.|
-|[Bir Windows PowerShell ek bileşeni oluşturma](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Bu bölümde, bir derlemede tüm cmdlet'leri ve sağlayıcıları kaydetmek için kullanılan bir ek bileşeni oluşturma ve bir özel ek bileşenini oluşturma açıklanmaktadır.|
-|[Bir konsol Kabuk oluşturma](./how-to-create-a-console-shell.md)|Bu bölümde, Genişletilebilir değil bir konsol Kabuk oluşturmayı açıklar.|
-|[Windows PowerShell kavramlarını](./windows-powershell-concepts.md)|Bu bölüm, Windows PowerShell bir geliştiricinin bakış açısından anlamanıza yardımcı olacak kavramsal bilgiler içerir.|
+|[Windows PowerShell Ek Bileşeni Oluşturma](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Bu bölümde, bir derlemede tüm cmdlet'leri ve sağlayıcıları kaydetmek için kullanılan bir ek bileşeni oluşturma ve bir özel ek bileşenini oluşturma açıklanmaktadır.|
+|[Konsol Kabuğu Oluşturma](./how-to-create-a-console-shell.md)|Bu bölümde, Genişletilebilir değil bir konsol Kabuk oluşturmayı açıklar.|
+|[Windows PowerShell Kavramları](./windows-powershell-concepts.md)|Bu bölüm, Windows PowerShell bir geliştiricinin bakış açısından anlamanıza yardımcı olacak kavramsal bilgiler içerir.|
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[Windows PowerShell SDK'sı](../windows-powershell-reference.md)
+[Windows PowerShell SDK’sı](../windows-powershell-reference.md)
