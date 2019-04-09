@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], verb names
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
-ms.openlocfilehash: d8a0561d6fbb4447a691c434e0518e3e16ce41e7
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56852181"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293359"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell komutları için onaylanmış fiiller
 
@@ -94,7 +94,7 @@ Aşağıdaki tabloda tanımlanan fiilleri çoğunu listeler.
 |[Çıkış](/dotnet/api/System.Management.Automation.VerbsCommon.Exit) (ör.)|En son kullanılan bağlamı için geçerli bir ortam veya bağlam ayarlar. Örneğin, `Exit-PSSession` cmdlet'i etkileşimli oturumu başlatmak için kullanılan oturumu kullanıcı yerleştirir. Bu fiili ile eşleştirilmiş `Enter`.|Bu eylem için fiilleri Pop gibi veya çıkış kullanmayın.|
 |[Bulma](/dotnet/api/System.Management.Automation.VerbsCommon.Find) (fd)|Bilinmiyor, örtük, isteğe bağlı veya belirtilen bir kapsayıcıdaki bir nesne için görünür.||
 |[Biçim](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f)|Belirtilen form veya Düzen nesneler düzenler.||
-|[Alma](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Bir kaynağı alır bir eylem belirtir. Bu fiili ile eşleştirilmiş `Set`.|Bu eylem için okuma, açık, kat, türü, Dir, elde edilir, döküm, alma, inceleyin, bulma veya bu eylem için arama gibi fiiller kullanmayın.|
+|[Alma](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Bir kaynağı alır bir eylem belirtir. Bu fiili ile eşleştirilmiş `Set`.|Bu eylem için okuma, açık, kat, türü, dizini, elde edilir, döküm, alma, inceleyin, bulma veya arama gibi fiiller kullanmayın.|
 |[Gizleme](/dotnet/api/System.Management.Automation.VerbsCommon.Hide) (h)|Bir kaynak algılanamayan yapar. Örneğin, Gizle fiili adını içeren bir cmdlet bir kullanıcı tarafından bir hizmet gizlemek. Bu fiili ile eşleştirilmiş `Show`.|Bu eylem için blok gibi fiil kullanmayın.|
 |[Birleştirme](/dotnet/api/System.Management.Automation.VerbsCommon.Join) (j)|Kaynakları bir kaynak birleştirir. Örneğin, `Join-Path` cmdlet'i tek bir yol oluşturmak için kendi alt yollardan birine sahip bir yol birleştirir. Bu fiili ile eşleştirilmiş `Split`.|Bu eylem için gibi birleştirme, Unite, bağlanma veya ilişkilendirin fiilleri kullanmayın.|
 |[Kilit](/dotnet/api/System.Management.Automation.VerbsCommon.Lock) (lk)|Bir kaynak güvenliğini sağlar. Bu fiili ile eşleştirilmiş `Unlock`.|Bu eylem için kısıtlama veya güvenli gibi fiiller kullanmayın.|
@@ -149,7 +149,7 @@ Aşağıdaki tabloda tanımlanan fiilleri çoğunu listeler.
 |[ConvertFrom](/dotnet/api/System.Management.Automation.VerbsData.ConvertFrom) (cf)|Bir birincil (cmdlet'i isim giriş gösterir) giriş türü için bir veya daha fazla desteklenen çıktı türleri dönüştürür.|Bu eylem için dışarı aktarma, çıkış veya çıkış gibi fiiller kullanmayın.|
 |[ConvertTo](/dotnet/api/System.Management.Automation.VerbsData.ConvertTo) (u)|Bir veya daha fazla tür giriş (çıktı türü cmdlet'in isim gösterir) birincil çıkış türüne dönüştürür.|Bu eylem için içeri aktarma,'gibi fiiller kullanmayın giriş, veya.|
 |[Çıkarma](/dotnet/api/System.Management.Automation.VerbsData.Dismount) (dm)|Adlandırılmış varlık bir konumdan ayırır. Bu fiili ile eşleştirilmiş `Mount`.|Bu eylem için çıkarma veya bağlantıyı Kaldır'gibi fiiller kullanmayın.|
-|[Düzen](/dotnet/api/System.Management.Automation.VerbsData.Edit) (ed)|Mevcut verileri ekleyerek veya kaldırarak içerik değiştirir.|Bu eylem için bu eylem için değişiklik, güncelleştirme ve değiştirme gibi fiiller kullanmayın.|
+|[Düzen](/dotnet/api/System.Management.Automation.VerbsData.Edit) (ed)|Mevcut verileri ekleyerek veya kaldırarak içerik değiştirir.|Bu eylem için değişiklik, güncelleştirme ve değiştirme gibi fiiller kullanmayın.|
 |[Genişletin](/dotnet/api/System.Management.Automation.VerbsData.Expand) (TR)|Sıkıştırılmış bir kaynağın verileri özgün durumuna geri yükler. Bu fiili ile eşleştirilmiş `Compress`.|Bu eylem için Aç ya da Sıkıştırılmışı Aç'gibi fiiller kullanmayın.|
 |[Dışarı aktarma](/dotnet/api/System.Management.Automation.VerbsData.Export) (ep)|Bir dosya gibi kalıcı bir veri deposuna veya bir değişim biçimi birincil giriş kapsüller. Bu fiili ile eşleştirilmiş `Import`.|Bu eylem için ayıklama veya yedekleme gibi fiiller kullanmayın.|
 |[Grup](/dotnet/api/System.Management.Automation.VerbsData.Group) (gp)|Yerleştirir veya bir veya daha fazla kaynak ilişkilendirir.|Bu eylem için değil gibi toplama, Düzenle, ilişkilendirin fiilleri kullanın veya ilişkilendirin.|

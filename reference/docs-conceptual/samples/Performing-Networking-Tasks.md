@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Ağ Görevleri Gerçekleştirme
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 64c57c95a70bc4cad4b695a59d96673ed18afdf4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 250ae6e5f6431ce659b3600188d7e30e501c3247
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688248"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293138"
 ---
 # <a name="performing-networking-tasks"></a>Ağ Görevleri Gerçekleştirme
 
 TCP/IP'yi en sık kullanılan ağ protokolü olduğundan, en alt düzey ağ protokolü yönetim görevlerini TCP/IP'yi içerir. Bu bölümde, Windows PowerShell ve WMI bu görevleri gerçekleştirmek için kullanıyoruz.
 
-### <a name="listing-ip-addresses-for-a-computer"></a>Bir bilgisayar için IP adresleri listesi
+## <a name="listing-ip-addresses-for-a-computer"></a>Bir bilgisayar için IP adresleri listesi
 
 Yerel bilgisayarda tüm IP adreslerini almak için aşağıdaki komutu kullanın:
 
@@ -48,7 +48,7 @@ IPAddress Property   System.String[] IPAddress {get;}
 
 Her ağ bağdaştırıcısı için IP adresi gerçekte bir dizi özelliğidir. Küme ayraçları tanımındaki belirtmek **IPADDRESS** değil bir **System.String** değeri, ancak bir dizi **System.String** değerleri.
 
-### <a name="listing-ip-configuration-data"></a>IP yapılandırma verilerini listeleme
+## <a name="listing-ip-configuration-data"></a>IP yapılandırma verilerini listeleme
 
 Her ağ bağdaştırıcısı için ayrıntılı IP yapılandırma verilerini görüntülemek için aşağıdaki komutu kullanın:
 
@@ -66,7 +66,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 Bu komut, DHCP, DNS, yönlendirme hakkında ayrıntılı bilgi ve diğer ikincil IP yapılandırma özellikleri döndürür.
 
-### <a name="pinging-computers"></a>Ping bilgisayarlar
+## <a name="pinging-computers"></a>Ping bilgisayarlar
 
 Bir bilgisayar kullanarak karşı basit bir ping gerçekleştirebileceğiniz **Win32_PingStatus**. Aşağıdaki komutu ping işlemi yapar, ancak uzun bir çıktı döndürür:
 
@@ -106,7 +106,7 @@ Adres aralığı oluşturmak için bu tekniği de başka bir yerde kullanılabil
 $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 ```
 
-### <a name="retrieving-network-adapter-properties"></a>Ağ bağdaştırıcısı özellikleri alınıyor
+## <a name="retrieving-network-adapter-properties"></a>Ağ bağdaştırıcısı özellikleri alınıyor
 
 Daha önce bu Kullanım Kılavuzu'nda genel yapılandırma özellikleri kullanarak alabilir olan belirttiğimiz **Win32_NetworkAdapterConfiguration**. TCP/IP'yi bilgi gerektirmesidir rağmen ağ bağdaştırıcısı bilgileri gibi MAC adresleri ve bağdaştırıcısı türlerini içeren bir bilgisayar neler olduğunu anlamak için yararlı olabilir. Bu bilgilerin özetini almak için aşağıdaki komutu kullanın:
 
@@ -114,7 +114,7 @@ Daha önce bu Kullanım Kılavuzu'nda genel yapılandırma özellikleri kullanar
 Get-WmiObject -Class Win32_NetworkAdapter -ComputerName .
 ```
 
-### <a name="assigning-the-dns-domain-for-a-network-adapter"></a>Bir ağ bağdaştırıcısı için DNS etki alanı atama
+## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>Bir ağ bağdaştırıcısı için DNS etki alanı atama
 
 Otomatik ad çözümlemesi için DNS etki alanı atama **Win32_NetworkAdapterConfiguration SetDNSDomain** yöntemi. Her ağ bağdaştırıcısı yapılandırması için DNS etki alanı bağımsız olarak atamak için kullanmanız gereken bir **ForEach-Object** her bağdaştırıcı için etki alanı atama bildirimi:
 
@@ -130,11 +130,11 @@ Komutunu kullanarak filtreleyebilirsiniz **Where-Object** cmdlet'ini kullanmak y
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -ComputerName . | Where-Object -FilterScript {$_.IPEnabled} | ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
 ```
 
-### <a name="performing-dhcp-configuration-tasks"></a>DHCP yapılandırma görevlerini gerçekleştirme
+## <a name="performing-dhcp-configuration-tasks"></a>DHCP yapılandırma görevlerini gerçekleştirme
 
 DNS yapılandırması gibi DHCP ayrıntıları değiştirme ağ bağdaştırıcıları, bir dizi çalışma içerir. WMI kullanarak gerçekleştirebileceğiniz çeşitli farklı eylemler vardır ve biz sık kullanılanlardan birkaç adım adım anlatır.
 
-#### <a name="determining-dhcp-enabled-adapters"></a>DHCP'nin etkin bağdaştırıcıları belirleme
+### <a name="determining-dhcp-enabled-adapters"></a>DHCP'nin etkin bağdaştırıcıları belirleme
 
 Bir bilgisayarda DHCP özellikli bağdaştırıcıları bulmak için aşağıdaki komutu kullanın:
 
@@ -148,7 +148,7 @@ IP yapılandırma sorunlarını Adaptörünün tutmak için yalnızca IP özelli
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName .
 ```
 
-#### <a name="retrieving-dhcp-properties"></a>DHCP özellikleri alınıyor
+### <a name="retrieving-dhcp-properties"></a>DHCP özellikleri alınıyor
 
 DHCP ile ilgili özellikler için bir bağdaştırıcı "DHCP ile" genellikle başladığı için yalnızca bu özellikleri görüntülemek için Format-Table özellik parametresinin kullanabilirsiniz:
 
@@ -156,7 +156,7 @@ DHCP ile ilgili özellikler için bir bağdaştırıcı "DHCP ile" genellikle ba
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName . | Format-Table -Property DHCP*
 ```
 
-#### <a name="enabling-dhcp-on-each-adapter"></a>Her bağdaştırıcı DHCP etkinleştirme
+### <a name="enabling-dhcp-on-each-adapter"></a>Her bağdaştırıcı DHCP etkinleştirme
 
 Tüm bağdaştırıcılarında DHCP'yi etkinleştirmek için aşağıdaki komutu kullanın:
 
@@ -166,7 +166,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 Kullanabileceğiniz **filtre** deyimi "IPEnabled $true ve DHCPEnabled = $false =" nerede zaten etkinleştirilmiş, ancak bu adımı atlayarak değil neden hataları DHCP etkinleştirme önlemek için.
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Serbest bırakarak ve belirli bağdaştırıcılarında DHCP kiralarını yenileme
+### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Serbest bırakarak ve belirli bağdaştırıcılarında DHCP kiralarını yenileme
 
 **Win32_NetworkAdapterConfiguration** sınıfında **ReleaseDHCPLease()** ve **RenewDHCPLease** yöntemleri. Her ikisi de aynı şekilde kullanılır. Genel olarak, bırakmak veya belirli bir alt ağdaki bir bağdaştırıcı için adresleri yenilemek yalnızca ihtiyacınız varsa bu yöntemleri kullanın. Bir alt ağ bağdaştırıcılarında filtre için en kolay yolu, ağ geçidini kullanmak için bu alt ağ bağdaştırıcısı yapılandırmalarının seçmektir. Örneğin, aşağıdaki komutu 192.168.1.254 DHCP kiraları elde etme bağdaştırıcılarında yerel bilgisayardaki tüm DHCP kirası serbest bırakır:
 
@@ -183,7 +183,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true 
 > [!NOTE]
 > Uzak bir bilgisayarda bu yöntemleri kullanırken, kendisine yayımlanmış veya yenilenen kira bağdaştırıcıyla aracılığıyla birbirine bağlandıysa uzak sisteme erişimi kaybedebilir miyim dikkat edin.
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Serbest bırakarak ve tüm bağdaştırıcılarında DHCP kiralarını yenileme
+### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Serbest bırakarak ve tüm bağdaştırıcılarında DHCP kiralarını yenileme
 
 Kullanarak tüm bağdaştırıcılarında genel DHCP adresi sürümleri veya yenileme gerçekleştirebilirsiniz **Win32_NetworkAdapterConfiguration** yöntemleri **ReleaseDHCPLeaseAll** ve **RenewDHCPLeaseAll** . Bununla birlikte, komut belirli bir bağdaştırıcı yerine WMI sınıfını serbest olduğundan uygulamanız gerekir ve genel olarak kira yenileme değil, belirli bir bağdaştırıcı sınıfı gerçekleştirilir.
 
@@ -205,7 +205,7 @@ Aynı komut biçimi çağırmak için kullanabileceğiniz **RenewDHCPLeaseAll** 
 ( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).RenewDHCPLeaseAll()
 ```
 
-### <a name="creating-a-network-share"></a>Bir ağ paylaşımı oluşturma
+## <a name="creating-a-network-share"></a>Bir ağ paylaşımı oluşturma
 
 Bir ağ paylaşımı oluşturmak için kullanın **Win32_Share oluşturma** yöntemi:
 
@@ -219,7 +219,7 @@ Kullanarak bir paylaşım oluşturabilirsiniz **ağ paylaşımı** Windows Power
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 ```
 
-### <a name="removing-a-network-share"></a>Bir ağ paylaşımı kaldırma
+## <a name="removing-a-network-share"></a>Bir ağ paylaşımı kaldırma
 
 Bir ağ paylaşımı ile kaldırabilirsiniz **Win32_Share**, ancak belirli bir paylaşım kaldırılacak, alınacak gerektiğinden bir paylaşımı oluşturmaktan biraz farklı işlemidir yerine **Win32_Share** sınıf. Aşağıdaki deyim, paylaşım "TempShare" siler:
 
@@ -235,7 +235,7 @@ PS> net share tempshare /delete
 tempshare was deleted successfully.
 ```
 
-### <a name="connecting-a-windows-accessible-network-drive"></a>Bir Windows erişilebilir bir ağ sürücüsü bağlanma
+## <a name="connecting-a-windows-accessible-network-drive"></a>Bir Windows erişilebilir bir ağ sürücüsü bağlanma
 
 **Yeni PSDrive** cmdlet'lerini Windows PowerShell sürücüsünü oluşturur, ancak bu şekilde oluşturulan sürücüleri yalnızca Windows PowerShell için kullanılabilir. Yeni bir ağ sürücüsü oluşturmak için kullanabileceğiniz **WScript.Network** COM nesnesi. Aşağıdaki komutu paylaşım eşler \\ \\FPS01\\kullanıcılar yerel sürücüye B:
 

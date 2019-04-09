@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 yenilikler nelerdir?
 description: Yeni özellikler ve PowerShell Core 6.1 yayımlanan değişiklikleri
 ms.date: 09/13/2018
-ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851316"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293325"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 yenilikler nelerdir?
 
@@ -37,7 +37,7 @@ Windows Uyumluluk Paketi kullanmak PowerShell Core sağlayan **ile Windows 10 Ek
 
 ## <a name="support-for-application-whitelisting"></a>Uygulama beyaz listeye ekleme desteği
 
-PowerShell Core 6.1, Windows PowerShell 5.1 destekleme ile eşlik sahip [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) ve [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) uygulama beyaz listeye ekleme.
+PowerShell Core 6.1, Windows PowerShell 5.1 destekleme ile eşlik sahip [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) ve [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) uygulama beyaz listeye ekleme.
 Uygulama beyaz listesini hangi ikili dosyalarını yürütülmek üzere PowerShell ile kullanılan izin ayrıntılı denetim sağlar [kısıtlı dil modu](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Performans iyileştirmeleri
@@ -54,7 +54,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-O
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | Süre (sn)   | 25.178                 | 19.653              | 6.641               |
-| Hız yükselmesi (%) | YOK                    | %21,9               | %66.2               |
+| Hız yükselmesi (%) | YOK                    | 21.9%               | 66.2%               |
 
 Benzer şekilde, bunun gibi sıralama senaryoları % 15'den fazla geliştirildi:
 
@@ -65,7 +65,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | Süre (sn)   | 12.170                 | 8.493               | 7.08                |
-| Hız yükselmesi (%) | YOK                    | %30.2               | %16.6               |
+| Hız yükselmesi (%) | YOK                    | 30.2%               | 16.6%               |
 
 `Import-Csv` Ayrıca önemli ölçüde sonra bir gerileme Windows Powershell'den hatalarının çözümünü hızlandırdı.
 Aşağıdaki örnek, bir test CSV 26,616 satırlar ve sütunlarla altı kullanır:
@@ -76,8 +76,8 @@ Measure-Command {$a = Import-Csv foo.csv}
 
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
-| Süre (sn)   | 0.441                  | 1.069               | 0,268                  |
-| Hız yükselmesi (%) | YOK                    | -%142.4             | %74.9 (WPS %39.2) |
+| Süre (sn)   | 0.441                  | 1.069               | 0.268                  |
+| Hız yükselmesi (%) | YOK                    | -142.4%             | %74.9 (WPS %39.2) |
 
 Son olarak, JSON'a dönüştürme `PSObject` % 50'den itibaren Windows PowerShell hatalarının çözümünü hızlandırdı.
 Aşağıdaki örnek, yaklaşık 2 MB test JSON dosyasını kullanır:
@@ -88,8 +88,8 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
-| Süre (sn)   | 0.259                  | 0.577               | 0,125                  |
-| Hız yükselmesi (%) | YOK                    | -%122.8             | %78.3 (WPS %51.7) |
+| Süre (sn)   | 0.259                  | 0.577               | 0.125                  |
+| Hız yükselmesi (%) | YOK                    | -122.8%             | %78.3 (WPS %51.7) |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Denetleme `system32` uyumlu yerleşik modülleri Windows üzerinde
 
@@ -209,7 +209,7 @@ Varsa `pwsh.exe` değilse kullanılabilir, PowerShell Direct geri kullanmaya dö
 
 `Enable-PSRemoting` Şimdi iki uzaktan oturum yapılandırmaları oluşturur:
 
-- Bir PowerShell ana sürümü. Örneğin,`PowerShell.6`. Bağlı "Sistem genelinde" PowerShell 6 oturum yapılandırması alt sürüm güncelleştirmeleri arasında yararlandı bu endpoint
+- Bir PowerShell ana sürümü. Örneğin, `PowerShell.6`. Bağlı "Sistem genelinde" PowerShell 6 oturum yapılandırması alt sürüm güncelleştirmeleri arasında yararlandı bu endpoint
 - Örneğin bir sürüme özgü oturum yapılandırması: `PowerShell.6.1.0`
 
 Bu davranış, aynı makinede birden çok PowerShell 6 sürümlerinin yüklendiğini ve erişilebilir olmasını istiyorsanız kullanışlıdır.
@@ -422,7 +422,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 Geçmişte, bir işlev üzerinde adlı Windows PowerShell sevk `more` kaydırılan `more.com`.
 Bu işlev artık kaldırılmıştır.
 
-Ayrıca `help` işlevi değiştirilen kullanılacak `more.com` Windows ya da sistemin varsayılan çağrı tarafından belirtilen `$env:PAGER` Windows dışı platformlarda.
+Ayrıca, `help` işlevi değiştirilen kullanılacak `more.com` Windows ya da sistemin varsayılan çağrı tarafından belirtilen `$env:PAGER` Windows dışı platformlarda.
 
 ### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a>`cd DriveName:` artık bu sürücüye geçerli çalışma dizininde kullanıcıları döndürür
 
@@ -483,7 +483,7 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 Performanstan [ @kvprasoon ](https://github.com/kvprasoon), artık bir parametre diğer adını sahibiz `-lp` sahip tüm yerleşik PowerShell cmdlet'lerinin bir `-LiteralPath` parametresi.
 
-## <a name="breaking-changes"></a>Bozucu değişiklikler
+## <a name="breaking-changes"></a>Hataya Neden Olan Değişiklikler
 
 ### <a name="msi-based-installation-paths-on-windows"></a>Windows MSI tabanlı yükleme yollarında
 
@@ -516,3 +516,10 @@ Visual Basic ile kullanılan nadiren `Add-Type`. PowerShell boyutunu azaltmak i�
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Kullanımları temizlendi `CommandTypes.Workflow` ve `WorkflowInfoCleaned`
 
 Bu değişiklikler hakkında daha fazla bilgi için kullanıma [çekme isteği #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+
+### <a name="group-object-now-sorts-the-groups"></a>Grup nesnesi, artık grupları sıralar
+
+Performans iyileştirmesi bir parçası olarak `Group-Object` hemen gruplar sıralanmış bir listesini döndürür.
+Siparişteki doğrulamamalısınız olsa da, ilk grup istediyseniz, bu değişiklikten bozuk durumda. Önceki davranışı bağımlı olan etkisini düşük olduğundan bu performans iyileştirmesi değişiklik olduğunu verdik.
+
+Bu değişiklik hakkında daha fazla bilgi için bkz. [sorun #7409](https://github.com/PowerShell/PowerShell/issues/7409).

@@ -2,12 +2,12 @@
 title: MacOS’ta PowerShell Core yükleme
 description: Macos'ta PowerShell Core yükleme hakkında bilgi
 ms.date: 12/12/2018
-ms.openlocfilehash: 91e64cace7d4ed988da56109dde9bf2a80528eb4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405772"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293410"
 ---
 # <a name="installing-powershell-core-on-macos"></a>MacOS’ta PowerShell Core yükleme
 
@@ -84,13 +84,14 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Doğrudan indirme ile yükleme
 
-PKG paketini indirme `powershell-6.1.0-osx-x64.pkg`
+PKG paketini indirme
+`powershell-6.2.0-osx-x64.pkg`
 gelen [sürümleri][] macOS makinenizde sayfaya.
 
 Dosyaya çift tıklayın ve yönergeleri izleyin veya terminalden yükleyin:
 
 ```sh
-sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 
 Yükleme [OpenSSL](#install-openssl). OpenSSL PowerShell uzaktan iletişim ve CIM işlemleri için gereklidir.
@@ -103,19 +104,19 @@ PowerShell ikili `tar.gz` arşivleri gelişmiş dağıtım senaryoları etkinle�
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.1.0
+sudo mkdir -p /usr/local/microsoft/powershell/6.2.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.1.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.2.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.2.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/6.2.0/pwsh /usr/local/bin/pwsh
 ```
 
 Yükleme [OpenSSL](#install-openssl). OpenSSL PowerShell uzaktan iletişim ve CIM işlemleri için gereklidir.
@@ -174,7 +175,7 @@ Ek PowerShell yolları kaldırmak için başvurmak [yolları](#paths) bölümü 
 
 ## <a name="paths"></a>Yollar
 
-* `$PSHOME` olduğu `/usr/local/microsoft/powershell/6.1.0/`
+* `$PSHOME` olduğu `/usr/local/microsoft/powershell/6.2.0/`
 * Kullanıcı profillerini okuyabilir `~/.config/powershell/profile.ps1`
 * Varsayılan profiller okuyabilir `$PSHOME/profile.ps1`
 * Kullanıcı modülleri okuyabilir `~/.local/share/powershell/Modules`
@@ -188,7 +189,7 @@ Varsayılan konak özel profil var. Bu nedenle `Microsoft.PowerShell_profile.ps1
 PowerShell uyar [XDG temel dizin belirtimi] [ xdg-bds] macOS üzerinde.
 
 MacOS bir türevi BSD, ön ek olduğundan `/usr/local` yerine kullanılan `/opt`.
-Bu nedenle, `$PSHOME` olduğu `/usr/local/microsoft/powershell/6.1.0/`, ve sembolik bağlantısını yerleştirilmiş olması `/usr/local/bin/pwsh`.
+Bu nedenle, `$PSHOME` olduğu `/usr/local/microsoft/powershell/6.2.0/`, ve sembolik bağlantısını yerleştirilmiş olması `/usr/local/bin/pwsh`.
 
 ## <a name="additional-resources"></a>Ek Kaynaklar
 
@@ -200,5 +201,5 @@ Bu nedenle, `$PSHOME` olduğu `/usr/local/microsoft/powershell/6.1.0/`, ve sembo
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[sürümleri]: https://github.com/PowerShell/PowerShell/releases/latest
+[Yayınları]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Dosya ve Klasörlerle Çalışma
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: a8d57a1c269d95e692db6c3f1ae10df49e305e4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 393e886a4945222198d9b81019250c5d5b905ad3
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405720"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293229"
 ---
 # <a name="working-with-files-and-folders"></a>Dosya ve Klasörlerle Çalışma
 
 Windows PowerShell sürücülerini gezinme ve bunları öğelerde düzenleme Windows fiziksel disk sürücüsü üzerindeki dosya ve klasörleri yönetmek için benzerdir. Bu bölümde, PowerShell kullanarak belirli dosya ve klasör düzenleme görevlerle başa çıkma açıklanmaktadır.
 
-### <a name="listing-all-the-files-and-folders-within-a-folder"></a>Tüm dosya ve klasörlerin bir klasördeki listeleme
+## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Tüm dosya ve klasörlerin bir klasördeki listeleme
 
 Kullanarak, doğrudan bir klasördeki tüm öğeleri alabilirsiniz **Get-Childıtem**. İsteğe bağlı ekleme **zorla** gizli görüntülemek ya da sistem öğeleri için parametre. Örneğin, bu komut (olan Windows fiziksel sürücü C ile aynı) Windows PowerShell sürücüsü C doğrudan içeriğini görüntüler:
 
@@ -36,7 +36,7 @@ Aşağıdaki komutu, son 1 Ekim 2005'ten sonra değiştirilmiş olan ve 1 megaba
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt '2005-10-01') -and ($_.Length -ge 1mb) -and ($_.Length -le 10mb)}
 ```
 
-### <a name="copying-files-and-folders"></a>Dosya ve klasörleri kopyalama
+## <a name="copying-files-and-folders"></a>Dosya ve klasörleri kopyalama
 
 Kopyalama ile yapılır **Copy-Item**. C: aşağıdaki komutu yedekler\\c: boot.ini\\boot.bak:
 
@@ -70,7 +70,7 @@ Dosya sistemi kopyalarını gerçekleştirmek için diğer araçları kullanmaya
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
-### <a name="creating-files-and-folders"></a>Dosya ve klasör oluşturma
+## <a name="creating-files-and-folders"></a>Dosya ve klasör oluşturma
 
 Yeni öğeler oluşturma, aynı tüm Windows PowerShell sağlayıcılarının çalışır. Bir Windows PowerShell sağlayıcısı öğesi birden fazla türü olup olmadığını — Örneğin, dosya sistemi Windows PowerShell sağlayıcısını dizinler ve dosyalar arasında ayıran — öğesi türünü belirtmeniz gerekir.
 
@@ -86,7 +86,7 @@ Bu komut yeni bir boş dosya C: oluşturur\\temp\\yeni klasör\\dosya.txt
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 ```
 
-### <a name="removing-all-files-and-folders-within-a-folder"></a>Tüm dosya ve klasörleri bir klasördeki kaldırma
+## <a name="removing-all-files-and-folders-within-a-folder"></a>Tüm dosya ve klasörleri bir klasördeki kaldırma
 
 İçerilen öğelerin kullanarak kaldırabilirsiniz **Kaldır öğesini**, ancak başka bir öğe içeriyorsa, kaldırma işlemini onaylamanız istenir. Örneğin, C: klasör silmeye çalışıyorsanız\\temp\\diğer öğeleri içeren DeleteMe Windows PowerShell sizden onay klasörü silmeden önce:
 
@@ -107,7 +107,7 @@ sure you want to continue?
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Bir Windows erişilebilir sürücü gibi yerel bir klasöre eşleme
+## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Bir Windows erişilebilir sürücü gibi yerel bir klasöre eşleme
 
 Yerel bir klasöre de eşleyebilirsiniz kullanarak **subst** komutu. Aşağıdaki komut, yerel Program Files dizininde P: kök erişim izni verilmiş bir yerel sürücüye oluşturur:
 
@@ -117,7 +117,7 @@ subst p: $env:programfiles
 
 İle olduğu gibi ağ sürücülerini, eşlenen sürücülerini Windows PowerShell kullanarak içinde **subst** için Windows PowerShell Kabuk tarafından anında görülemez.
 
-### <a name="reading-a-text-file-into-an-array"></a>Bir diziye bir metin dosyası okuma
+## <a name="reading-a-text-file-into-an-array"></a>Bir diziye bir metin dosyası okuma
 
 Metin veriler için daha yaygın depolama biçimleri bir dosyada ayrı veri öğeleri olarak kabul ayrı satırlara ile biridir. **Get-Content** cmdlet'i kullanılabilir tek bir adımda tüm dosyayı okumak için burada gösterildiği gibi:
 

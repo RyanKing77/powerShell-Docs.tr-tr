@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: .NET ve COM nesneleri yeni nesne oluşturma
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-ms.openlocfilehash: 1ffd8d4afa419ec0c24321e44aa4a2f41a9bee44
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ef8215303aacd90536d3c2ae57bc3629e202f318
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684132"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293376"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>.NET ve COM nesneleri (New-Object) oluşturma
 
 Birçok sistem yönetim görevlerini gerçekleştirmenize olanak tanıyan .NET Framework ve COM arabirimleri ile yazılım bileşenleri vardır. Windows PowerShell cmdlet'lerini kullanarak gerçekleştirilen görevler için sınırlı olmadıklarından bu bileşenlerin kullanmanıza olanak sağlar. İlk sürümde Windows PowerShell cmdlet'lerinin birçoğunu uzak bilgisayarlarda çalışmaz. Biz bu sınırlamayı olay günlükleri, .NET Framework kullanarak yönetirken almak nasıl sürdürebileceğiniz gösterilecek **System.Diagnostics.EventLog** Windows powershell'den doğrudan sınıfı.
 
-### <a name="using-new-object-for-event-log-access"></a>Yeni nesne için olay günlüğüne erişimi kullanma
+## <a name="using-new-object-for-event-log-access"></a>Yeni nesne için olay günlüğüne erişimi kullanma
 
 .NET Framework sınıf kitaplığı adlı bir sınıf içeren **System.Diagnostics.EventLog** olay günlüklerini yönetmek için kullanılabilir. Kullanarak bir .NET Framework sınıfının yeni bir örneğini oluşturabilirsiniz **New-Object** cmdlet'iyle **TypeName** parametresi. Örneğin, aşağıdaki komut, bir olay günlüğü başvuru oluşturur:
 
@@ -27,7 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 Komutu EventLog sınıfının bir örneği oluşturdu ancak örneği hiçbir veri içermez. Belirli bir olay günlüğü belirtmedi olmasıdır. Gerçek bir olay günlüğü nasıl alır?
 
-#### <a name="using-constructors-with-new-object"></a>Nesne ile yeni oluşturucular kullanma
+### <a name="using-constructors-with-new-object"></a>Nesne ile yeni oluşturucular kullanma
 
 Belirli bir olay günlüğüne başvurmak için günlüğün adını belirtmenize gerek. **Yeni nesne** sahip bir **ArgumentList** parametresi. Bu parametre için değer olarak geçirdiğiniz bağımsız değişkenleri, bir nesnenin özel başlangıç yöntemi tarafından kullanılır. Çağrılan yöntemi bir *Oluşturucusu* nesneyi oluşturmak için kullanıldığından. Örneğin, uygulama günlüğüne bir başvuru almak için 'Uygulama' dize bağımsız değişken olarak belirtin:
 
@@ -42,7 +42,7 @@ Max(K) Retain OverflowAction        Entries Name
 > [!NOTE]
 > .NET Framework temel sınıf çoğunu System ad alanında bulunan olduğundan, Windows PowerShell otomatik olarak belirttiğiniz tür adı için bir eşleşme bulamazsa System ad alanında, belirttiğiniz sınıfları bulmayı dener. Bu, Diagnostics.EventLog System.Diagnostics.EventLog yerine belirtebileceğiniz anlamına gelir.
 
-#### <a name="storing-objects-in-variables"></a>Değişkenleri nesneler depolanıyor
+### <a name="storing-objects-in-variables"></a>Değişkenleri nesneler depolanıyor
 
 Geçerli shell'de kullanabilmesi için bir nesneye bir başvuru depolamak isteyebilirsiniz. Windows PowerShell birçok iş işlem hatları ile yapmanıza gerek değişkenleri lessening sağlar. ancak, bazen nesnelere başvuru değişkenleri depolamak bu nesneleri işlemek daha kullanışlı kolaylaştırır.
 
@@ -62,7 +62,7 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-#### <a name="accessing-a-remote-event-log-with-new-object"></a>Yeni nesne ile bir uzak olay günlüğü erişme
+### <a name="accessing-a-remote-event-log-with-new-object"></a>Yeni nesne ile bir uzak olay günlüğü erişme
 
 Önceki bölümde kullanılan komutlar yerel bilgisayarı hedef; **Get-EventLog** cmdlet'i, yapabilir. Uzak bir bilgisayarda uygulama günlüğüne erişmek için hem günlük adını ve bir bilgisayar adı (veya IP adresi) bağımsız sağlamanız gerekir.
 
@@ -77,7 +77,7 @@ PS> $RemoteAppLog
 
 Biz $RemoteAppLog değişkeninde depolanan bir olay günlüğüne bir başvurusu sahip olduğunuza göre hangi görevleri üzerinde gerçekleştirebiliriz?
 
-#### <a name="clearing-an-event-log-with-object-methods"></a>Nesnesi yöntemleri ile bir olay günlüğü temizleme
+### <a name="clearing-an-event-log-with-object-methods"></a>Nesnesi yöntemleri ile bir olay günlüğü temizleme
 
 Nesneler genellikle görevleri gerçekleştirmek için çağrılan yöntemler vardır. Kullanabileceğiniz **Get-Member** bir nesneyle ilişkili yöntemler görüntülenecek. Aşağıdaki komut ve seçili çıkış bazı EventLog sınıfının yöntemlerini göster:
 
@@ -118,7 +118,7 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-### <a name="creating-com-objects-with-new-object"></a>Nesnesi yeni ile COM nesneleri oluşturma
+## <a name="creating-com-objects-with-new-object"></a>Nesnesi yeni ile COM nesneleri oluşturma
 Kullanabileceğiniz **New-Object** Bileşen Nesne Modeli (COM) bileşenleri ile çalışmak için. Çoğu sistemde yüklü ActiveX uygulamalar Internet Explorer gibi Windows betik sistemi (WSH) dahil çeşitli kitaplıklara bileşenleri çeşitler barındırır.
 
 **Yeni nesne** COM nesneleri çağırırken .NET Framework yapan onunla aynı sınırlamalara sahiptir, COM nesneleri oluşturmak için .NET Framework çalışma zamanı aranabilir sarmalayıcıları kullanır. Bir COM nesnesi oluşturmak için belirtmeniz gerekir **ComObject** programlı tanımlayıcı parametresi veya *ProgID* kullanmak istediğiniz COM sınıfı. COM kullanımı ve ProgIDs bir sistemde kullanılabilir nelerdir belirleyen sınırlamaları hakkında kapsamlı bir açıklama, bu kullanıcının kılavuzun kapsamı dışındadır olmakla birlikte en iyi bilinen nesneleri ortamlarından WSH gibi Windows PowerShell içinde kullanılabilir.
@@ -134,7 +134,7 @@ New-Object -ComObject Scripting.FileSystemObject
 
 Bu sınıfların işlevselliğinin büyük kısmını yapılan olsa da başka şekillerde kullanılabilir Windows PowerShell'de, kısayol oluşturma gibi birkaç görev WSH sınıflarını kullanarak yapmak yine de kolaydır.
 
-### <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Bir masaüstü kısayolu wscript.Shell nesnesinin ile oluşturma
+## <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Bir masaüstü kısayolu wscript.Shell nesnesinin ile oluşturma
 
 Bir COM nesnesi ile kolayca gerçekleştirilebilir bir görev bir kısayol oluşturur. Bir kısayol masaüstünüzde giriş klasörü için bağlantılar için Windows PowerShell oluşturmak istediğinizi varsayalım. Önce bir başvuru oluşturmak gereken **wscript.Shell nesnesinin**, hangi adlı bir değişkende depolarız **$WshShell**:
 
@@ -203,7 +203,7 @@ $lnk.TargetPath = $PSHome
 $lnk.Save()
 ```
 
-### <a name="using-internet-explorer-from-windows-powershell"></a>Windows powershell'den Internet Explorer'ı kullanma
+## <a name="using-internet-explorer-from-windows-powershell"></a>Windows powershell'den Internet Explorer'ı kullanma
 
 Birçok uygulama (Microsoft Office uygulamaları ve Internet Explorer ailesinin dahil) COM kullanılarak otomatikleştirilebilir. Internet Explorer, bazı tipik teknikleri ve içinde COM tabanlı uygulamalar ile çalışma konuları gösterilmiştir.
 
@@ -262,7 +262,7 @@ Remove-Variable ie
 > [!NOTE]
 > ActiveX yürütülebilir dosyaları çıkmayın veya bir başvuru kaldırdığınızda çalışmaya devam hiçbir ortak standart yoktur. Uygulamanın görünür olup düzenlenmiş bir belge içinde kullanılıp kullanılmadığını ve hatta olup Windows PowerShell hala çalışıyor gibi durumlarda, bağlı olarak uygulama olabilir veya olmayan sonlandırılabilir. Bu nedenle, her ActiveX Windows PowerShell'de kullanmak istediğiniz yürütülebilir için sonlandırma davranışı test etmeniz gerekir.
 
-### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>.NET Framework sarılı bir COM nesneleri hakkında uyarılar alma
+## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>.NET Framework sarılı bir COM nesneleri hakkında uyarılar alma
 
 Bazı durumlarda, bir COM nesnesi ilişkili bir .NET Framework olabilir *çalışma zamanı çağrılabilir sarmalayıcı* veya RCW ve bu işlem tarafından kullanılan **New-Object**. RCW davranışı, davranış normal COM nesnesinin farklı olabileceğinden **New-Object** sahip bir **katı** parametresi RCW erişimi hakkında sizi uyarır. Belirtirseniz **katı** parametresi ve ardından bir RCW kullanan bir COM nesnesi oluşturur, bir uyarı iletisi alın:
 

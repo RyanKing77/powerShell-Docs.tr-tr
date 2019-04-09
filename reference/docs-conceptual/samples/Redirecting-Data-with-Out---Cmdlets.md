@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Out Cmdlet’leri ile Verileri Yeniden Yönlendirme
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687142"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293308"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Out - ile verileri yeniden yönlendirme * cmdlet'leri
 
@@ -68,7 +68,7 @@ Bu tümüne uygulanır **kullanıma** cmdlet'leri. Bir **kullanıma** cmdlet'i h
 > [!NOTE]
 > Tüm **kullanıma** cmdlet'leri işleme çıkış metin olarak geçerli satırı uzunluk sınırları dahil olmak üzere, konsol penceresi için biçimlendirme kullanma.
 
-#### <a name="paging-console-output-out-host"></a>Konsol çıktısı sayfalama (dışarı barındırma)
+## <a name="paging-console-output-out-host"></a>Konsol çıktısı sayfalama (dışarı barındırma)
 
 Varsayılan olarak, Windows PowerShell verileri tam olarak ne olduğunu ana penceresine gönderir cmdlet dışarı konak yapar. Birincil kullanım dışarı konak cmdlet'tir verilerini sayfalama daha önce bahsedildiği gibi. Örneğin, aşağıdaki komutu kullanır Get-Command cmdlet'in çıktısı, sayfa için dışarı barındırın:
 
@@ -93,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### <a name="discarding-output-out-null"></a>Çıkış atma (dışarı Null)
+## <a name="discarding-output-out-null"></a>Çıkış atma (dışarı Null)
 
 **Dışarı Null** cmdlet'i hemen aldığı herhangi bir giriş atmak için tasarlanmıştır. Bu, yan komutu çalıştırmanın etkisi size gereksiz verileri atılıyor için kullanışlıdır. Aşağıdaki komutu yazın, hiçbir şey komuttan ulaşırsınız değil:
 
@@ -111,7 +111,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### <a name="printing-data-out-printer"></a>Yazdırma veri (Out-yazıcı)
+## <a name="printing-data-out-printer"></a>Yazdırma veri (Out-yazıcı)
 
 Kullanarak verileri yazdırabilirsiniz **Out-yazıcı** cmdlet'i. **Out-yazıcı** cmdlet'i bir yazıcının adı belirtmezseniz varsayılan yazıcıyı kullanır. Görüntü adı belirterek herhangi bir Windows tabanlı yazıcı kullanabilirsiniz. Her türden yazıcı bağlantı noktası eşlemesi ya da gerçek fiziksel bir yazıcı için gerek yoktur. Yüklü Microsoft Office belge görüntüleme araçları varsa, örneğin, verileri bir görüntü dosyasına yazarak gönderebilirsiniz:
 
@@ -119,7 +119,7 @@ Kullanarak verileri yazdırabilirsiniz **Out-yazıcı** cmdlet'i. **Out-yazıcı
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### <a name="saving-data-out-file"></a>Verileri kaydetme (dışarı dosya)
+## <a name="saving-data-out-file"></a>Verileri kaydetme (dışarı dosya)
 
 Kullanarak bir dosyaya konsol penceresinde yerine çıkış gönderebilirsiniz **dışarı dosya** cmdlet'i. Aşağıdaki komut satırını işlemlerin bir listesi için dosya gönderir. **C:\\temp\\processlist.txt**:
 

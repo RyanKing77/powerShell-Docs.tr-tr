@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Bilgisayar Durumunu Değiştirme
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687394"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293070"
 ---
 # <a name="changing-computer-state"></a>Bilgisayar Durumunu Değiştirme
 
 Bir bilgisayar Windows PowerShell'de sıfırlamak için standart bir komut satırı aracını veya WMI sınıfını kullanın. Yalnızca aracı çalıştırmak için Windows PowerShell kullanarak karşın, Windows PowerShell'de bir bilgisayarın güç durumu değiştirmek öğrenme Windows PowerShell'de dış araçları ile çalışma hakkında önemli ayrıntıları bazıları gösterilmektedir.
 
-### <a name="locking-a-computer"></a>Bilgisayarı kilitleme
+## <a name="locking-a-computer"></a>Bilgisayarı kilitleme
 
 Standart kullanılabilir araçları ile doğrudan bir bilgisayarı kilitlemek için tek yolu çağırmaktır **LockWorkstation() işlevini** işlevi **user32.dll**:
 
@@ -28,7 +28,7 @@ Ne zaman hızlı kullanıcı değiştirme etkinken Windows XP'de geçerli kullan
 
 Belirli bir Terminal sunucusu oturumları kapatmak için kullanın **tsshutdn.exe** komut satırı aracı.
 
-### <a name="logging-off-the-current-session"></a>Geçerli oturumu oturumunu kapatma
+## <a name="logging-off-the-current-session"></a>Geçerli oturumu oturumunu kapatma
 
 Yerel sistem hakkındaki oturumu oturumunu için birkaç farklı teknikleri kullanabilirsiniz. En basit yolu Uzak Masaüstü/Terminal Hizmetleri komut satırı aracını kullanmaktır **logoff.exe** (Ayrıntılar için Windows PowerShell komut isteminde yazın **kapatma /?**). Geçerli etkin oturumu için şunu yazın **kapatma** bağımsız değişken olmadan.
 
@@ -46,7 +46,7 @@ shutdown.exe -l
 
 Daha fazla bilgi almak ve diğer özellikleri Win32Shutdown yöntemin bulmak için "Win32Shutdown yöntemi, Win32_OperatingSystem sınıfını" MSDN'de bakın.
 
-### <a name="shutting-down-or-restarting-a-computer"></a>Kapatma veya bir bilgisayar yeniden başlatma
+## <a name="shutting-down-or-restarting-a-computer"></a>Kapatma veya bir bilgisayar yeniden başlatma
 
 Bilgisayarları yeniden başlatma ve kapatma genellikle aynı görevi türleridir. Bir bilgisayarı Araçlar genellikle yeniden başlatılacak, de- ve bunun tersi de geçerlidir. Windows powershell'den bilgisayarı yeniden başlatmak için iki basit seçenek vardır. Tsshutdn.exe ya da Shutdown.exe uygun bağımsız değişkenlerle birlikte kullanın. Ayrıntılı kullanım bilgilerini alabileceğiniz **tsshutdn.exe /?** veya **shutdown.exe /?**.
 

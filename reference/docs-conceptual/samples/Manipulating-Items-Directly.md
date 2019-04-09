@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Öğeleri Doğrudan İşleme
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685196"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293274"
 ---
 # <a name="manipulating-items-directly"></a>Öğeleri Doğrudan İşleme
 
@@ -32,7 +32,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### <a name="creating-new-items-new-item"></a>Yeni öğeler (yeni öğe) oluşturma
+## <a name="creating-new-items-new-item"></a>Yeni öğeler (yeni öğe) oluşturma
 
 Dosya sisteminde yeni bir öğe oluşturmak için kullanın **yeni öğe** cmdlet'i. Dahil **yolu** öğesi yolu bir parametreyle ve **Itemtype** parametresi "dosya" veya "dizin" değerine sahip.
 
@@ -75,7 +75,7 @@ SKC  VC Name                           Property
 
 Bir kayıt defteri yolu yazarken, iki nokta üst üste eklediğinizden emin olun (**:**) Windows PowerShell sürücüsü adları, HKLM: ve HKCU:. İki nokta üst üste, Windows PowerShell yolunda sürücü adı algılamaz.
 
-### <a name="why-registry-values-are-not-items"></a>Neden kayıt defteri değerlerini öğeler değil
+## <a name="why-registry-values-are-not-items"></a>Neden kayıt defteri değerlerini öğeler değil
 
 Kullanırken **Get-Childıtem** cmdlet'i bir kayıt defteri anahtarında öğeleri bulmak için hiçbir zaman gerçek kayıt defteri girdileri veya değerlerine görürsünüz.
 
@@ -95,7 +95,7 @@ SKC  VC Name                           Property
 
 Kayıt defteri girdileri öğeleri olarak ele almanız kullanışlı olsa da, bir kayıt defteri girişi için bir yol benzersiz olmasını sağlar, şekilde belirtemezsiniz. Yol gösterimi adlı kayıt defteri alt anahtarı arasında ayrım yapmaz **çalıştırma** ve **(varsayılan)** kayıt defteri girişini **çalıştırma** alt. Ayrıca, kayıt defteri girişi adları ters eğik çizgi karakteri içerdiğinden (**\\**), kayıt defteri girdileri adlı bir kayıt defteri girişi ayırmak için bir yol gösterimi kullanılamadı sonra öğeleri olsaydı  **Windows\\CurrentVersion\\çalıştırma** yolda bulunan alt.
 
-### <a name="renaming-existing-items-rename-item"></a>Var olan öğeleri (öğeyi yeniden adlandır) yeniden adlandırma
+## <a name="renaming-existing-items-rename-item"></a>Var olan öğeleri (öğeyi yeniden adlandır) yeniden adlandırma
 
 Bir dosya veya klasör adını değiştirmek için kullanın **öğeyi yeniden adlandır** cmdlet'i. Aşağıdaki komut adını değiştirir **Dosya1.ref** dosyasını **fileOne.txt**.
 
@@ -112,7 +112,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### <a name="moving-items-move-item"></a>(Öğe taşıma) öğeleri taşıma
+## <a name="moving-items-move-item"></a>(Öğe taşıma) öğeleri taşıma
 
 Bir dosyayı veya klasörü taşı için kullanın **taşıma öğesi** cmdlet'i.
 
@@ -128,7 +128,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### <a name="copying-items-copy-item"></a>Öğe (Copy-Item) kopyalama
+## <a name="copying-items-copy-item"></a>Öğe (Copy-Item) kopyalama
 
 Diğer Kabuk kopyalama işlemlerine biliyorsanız, davranışını bulabileceğiniz **Copy-Item** olağan dışı olması için Windows PowerShell cmdlet'i. Bir öğeyi bir konumdan diğerine kopyaladığınızda Copy-Item varsayılan olarak, içeriğinin kopyalamaz.
 
@@ -167,7 +167,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### <a name="deleting-items-remove-item"></a>Öğeleri silme (öğe Kaldır)
+## <a name="deleting-items-remove-item"></a>Öğeleri silme (öğe Kaldır)
 
 Dosya ve klasörleri silmek için kullanın **Kaldır öğesini** cmdlet'i. Windows PowerShell cmdlet'leri gibi **Kaldır öğesini**önemli olun, geri alınamaz değişiklikleri genellikle ister onay kendi komutları girdiğinizde. Örneğin kaldırmayı denerseniz, **New.Directory** klasör, dosya klasör içerdiği için komutu onaylamanız istenir:
 
@@ -188,7 +188,7 @@ specified. If you continue, all children will be removed with the item. Are you
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### <a name="executing-items-invoke-item"></a>Yürütülen öğeleri (Invoke-öğe)
+## <a name="executing-items-invoke-item"></a>Yürütülen öğeleri (Invoke-öğe)
 
 Windows PowerShell kullanan **Invoke-Item** bir dosya veya klasör için bir varsayılan eylem gerçekleştirmek için cmdlet. Bu varsayılan eylem, kayıt defterindeki varsayılan uygulama işleyicisi tarafından belirlenir; öğenin dosya Gezgini'nde çift tıklayın, etkisi aynıdır.
 

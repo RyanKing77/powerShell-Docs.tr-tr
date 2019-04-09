@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Sürücülerini Yönetme
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685189"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293257"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell Sürücülerini Yönetme
 
@@ -82,7 +82,7 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Yeni Windows PowerShell ekleme (PSDrive yeni) sürücüleri
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Yeni Windows PowerShell ekleme (PSDrive yeni) sürücüleri
 
 Kullanarak kendi Windows PowerShell sürücülerini ekleyebilirsiniz **yeni PSDrive** komutu. Sözdizimi almak için **yeni PSDrive** komutu, girin **Get-Command** komutunu **söz dizimi** parametresi:
 
@@ -146,7 +146,7 @@ cvkey:\
 
 New-PsDrive cmdlet'i yeni bir sürücüye yalnızca geçerli Windows PowerShell oturumuna ekler. Windows PowerShell penceresini kapatırsanız yeni sürücü kaybolur. Bir Windows PowerShell sürücüsü kaydetmek için geçerli Windows PowerShell oturumunda dışarı aktarmak için konsol içi dışarı aktarma cmdlet'ini kullanın ve ardından PowerShell.exe **PSConsoleFile** parametresini kullanarak içe aktarın. Veya Windows PowerShell profiliniz için yeni bir sürücüye ekleyin.
 
-### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Windows PowerShell siliniyor (Remove-PSDrive) sürücüleri
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Windows PowerShell siliniyor (Remove-PSDrive) sürücüleri
 
 Kullanarak Windows Powershell'den sürücüleri silebilirsiniz **Remove-PSDrive** cmdlet'i. **Remove-PSDrive** cmdlet'i kullanımı kolay; belirli bir Windows PowerShell sürücüsü silmek için yalnızca Windows PowerShell sürücüsü ad sağlayın.
 
@@ -172,6 +172,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-### <a name="adding-and-removing-drives-outside-windows-powershell"></a>Ekleme ve kaldırma dışında Windows PowerShell sürücüsü
+## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Ekleme ve kaldırma dışında Windows PowerShell sürücüsü
 
 Windows PowerShell algılar eklendiğinde veya kaldırıldığında, eşlenen ağ sürücülerini, bağlı USB sürücülerin ve kullanarak silinen sürücüler dahil olmak üzere, Windows dosya sistemi sürücüleri **net kullanım** komut veya  **WScript.NetworkMapNetworkDrive** ve **RemoveNetworkDrive** bir Windows komut dosyası sistemi (WSH) komut dosyasındaki yöntemleri.

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Bilgisayarlar Hakkında Bilgi Toplama
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: 99125ef701705c20d4e955c79eaa3469ce4d58fb
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405722"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293172"
 ---
 # <a name="collecting-information-about-computers"></a>Bilgisayarlar Hakkında Bilgi Toplama
 
@@ -22,7 +22,7 @@ Belirttiğimiz **ComputerName** nokta parametresi (**.**), yerel bilgisayarı te
 Adı veya WMI aracılığıyla ulaşabileceği herhangi bir bilgisayar ile ilişkili IP adresi belirtebilirsiniz.
 Yerel bilgisayar hakkında bilgi almak için atmanız **ComputerName** parametresi.
 
-### <a name="listing-desktop-settings"></a>Masaüstü ayarlarını listeleme
+## <a name="listing-desktop-settings"></a>Masaüstü ayarlarını listeleme
 
 Masaüstleri hakkında bilgi toplar yerel bilgisayarda bir komutla başlarsınız.
 
@@ -44,7 +44,7 @@ Get-CimInstance -ClassName Win32_Desktop -ComputerName . | Select-Object -Exclud
 
 Meta verileri filtrelemek için sonuçları göndermek için ardışık düzen işleci (|) kullanın `Get-CimInstance` komutunu `Select-Object -ExcludeProperty "CIM*"`.
 
-### <a name="listing-bios-information"></a>BIOS bilgilerini listeleme
+## <a name="listing-bios-information"></a>BIOS bilgilerini listeleme
 
 WMI **Win32_BIOS** sınıfı yerel bilgisayarda sistem BIOS'unun ilgili oldukça compact ve eksiksiz bilgileri döndürür:
 
@@ -52,7 +52,7 @@ WMI **Win32_BIOS** sınıfı yerel bilgisayarda sistem BIOS'unun ilgili oldukça
 Get-CimInstance -ClassName Win32_BIOS -ComputerName .
 ```
 
-### <a name="listing-processor-information"></a>İşlemci bilgilerini listeleme
+## <a name="listing-processor-information"></a>İşlemci bilgilerini listeleme
 
 WMI'ın kullanarak genel işlemci bilgilerini alabilir **Win32_Processor** sınıf, büyük olasılıkla bilgileri filtrelemek istersiniz ancak:
 
@@ -70,7 +70,7 @@ SystemType
 X86-based PC
 ```
 
-### <a name="listing-computer-manufacturer-and-model"></a>Bilgisayar üreticisi ve modeli listeleme
+## <a name="listing-computer-manufacturer-and-model"></a>Bilgisayar üreticisi ve modeli listeleme
 
 Bilgisayar modeli bilgileri bulunan ayrıca **Win32_ComputerSystem**.
 Standart görüntülenen çıktının filtreleme OEM verilerini sağlamak için gerekli değildir:
@@ -88,7 +88,7 @@ MyPC Jane Doe         WORKGROUP 804765696           DA243A-ABA 6415cl NA910 Comp
 Bunun gibi bazı donanım doğrudan döndürmesini, komutları, çıkışı yalnızca sahip olduğunuz verilerin kadar iyidir.
 Bazı bilgiler donanım üreticileri tarafından düzgün yapılandırılmamış olabilir ve bu nedenle kullanılamıyor olabilir.
 
-### <a name="listing-installed-hotfixes"></a>Liste düzeltmelerin yüklü
+## <a name="listing-installed-hotfixes"></a>Liste düzeltmelerin yüklü
 
 Kullanarak yüklü tüm düzeltmeleri listeleyebilirsiniz **Win32_QuickFixEngineering**:
 
@@ -143,7 +143,7 @@ HotFixId
 KB4048951
 ```
 
-### <a name="listing-operating-system-version-information"></a>İşletim sistemi sürüm bilgilerini listeleme
+## <a name="listing-operating-system-version-information"></a>İşletim sistemi sürüm bilgilerini listeleme
 
 **Win32_OperatingSystem** sınıfı özellikleri, sürüm ve hizmet paketi bilgileri içerir.
 Gelen Özet sürüm bilgisi almak için bu özellikler yalnızca açıkça seçebilirsiniz **Win32_OperatingSystem**:
@@ -167,7 +167,7 @@ ServicePackMajorVersion : 0
 ServicePackMinorVersion : 0
 ```
 
-### <a name="listing-local-users-and-owner"></a>Yerel Kullanıcılar ve sahibi listeleme
+## <a name="listing-local-users-and-owner"></a>Yerel Kullanıcılar ve sahibi listeleme
 
 Yerel genel kullanıcı bilgilerini — lisanslı kullanıcı sayısı, kullanıcılar ve sahibi adı geçerli sayısı — bir seçimle bulunabilir **Win32_OperatingSystem** sınıfının özellikleri.
 Şu şekilde görüntülenecek özellikleri açıkça seçebilirsiniz:
@@ -182,7 +182,7 @@ Joker karakterler kullanarak daha birleştiren bir sürümdür:
 Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
 ```
 
-### <a name="getting-available-disk-space"></a>Kullanılabilir Disk alanı alma
+## <a name="getting-available-disk-space"></a>Kullanılabilir Disk alanı alma
 
 Yerel sürücüler için boş alan ve disk alanı görmek için Win32_LogicalDisk WMI sınıfını kullanabilirsiniz.
 Yalnızca 3 ile bir DriveType örneklerini görmek için ihtiyacınız — sabit diskler için WMI kullanır değer.
@@ -203,7 +203,7 @@ FreeSpace 109839607808
 Size      326846914560
 ```
 
-### <a name="getting-logon-session-information"></a>Oturum açma oturum bilgilerini alma
+## <a name="getting-logon-session-information"></a>Oturum açma oturum bilgilerini alma
 
 Kullanıcılara ilişkili oturum açma oturumu hakkında genel bilgi alabilirsiniz **Win32_LogonSession** WMI sınıf:
 
@@ -211,7 +211,7 @@ Kullanıcılara ilişkili oturum açma oturumu hakkında genel bilgi alabilirsin
 Get-CimInstance -ClassName Win32_LogonSession -ComputerName .
 ```
 
-### <a name="getting-the-user-logged-on-to-a-computer"></a>Bir bilgisayarda oturum açmış kullanıcı alınıyor
+## <a name="getting-the-user-logged-on-to-a-computer"></a>Bir bilgisayarda oturum açmış kullanıcı alınıyor
 
 Win32_ComputerSystem kullanarak belirli bir bilgisayar sistemi için oturum açan kullanıcının görüntüleyebilirsiniz.
 Bu komut, yalnızca sistem masaüstüne oturum açan kullanıcının döndürür:
@@ -220,7 +220,7 @@ Bu komut, yalnızca sistem masaüstüne oturum açan kullanıcının döndürür
 Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName -ComputerName .
 ```
 
-### <a name="getting-local-time-from-a-computer"></a>Bir bilgisayardan yerel saati alma
+## <a name="getting-local-time-from-a-computer"></a>Bir bilgisayardan yerel saati alma
 
 Belirli bir bilgisayardaki geçerli yerel saat kullanarak alabilirsiniz **Win32_LocalTime** WMI sınıf.
 
@@ -240,7 +240,7 @@ Year         : 2017
 PSComputerName : .
 ```
 
-### <a name="displaying-service-status"></a>Hizmet durumunu görüntüleme
+## <a name="displaying-service-status"></a>Hizmet durumunu görüntüleme
 
 Belirli bir bilgisayardaki tüm hizmetlerin durumunu görüntülemek için yerel olarak kullanabileceğiniz `Get-Service` cmdlet'i.
 Uzak sistemleri için kullanabileceğiniz **Win32_Service** WMI sınıf.

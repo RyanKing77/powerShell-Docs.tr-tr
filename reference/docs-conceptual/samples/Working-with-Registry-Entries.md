@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Kayıt Defteri Girdileri ile Çalışma
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 8483b6f98739697b24a13055dfffbc7b5bacc2cc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686813"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293087"
 ---
 # <a name="working-with-registry-entries"></a>Kayıt Defteri Girdileri ile Çalışma
 
 Kayıt defteri girdileri tuşunun özelliklerini ve bu nedenle, doğrudan gözatılamaz olduğundan bunlarla çalışırken biraz farklı bir yaklaşım olması gerekir.
 
-### <a name="listing-registry-entries"></a>Kayıt defteri girdileri listeleme
+## <a name="listing-registry-entries"></a>Kayıt defteri girdileri listeleme
 
 Kayıt defteri girdilerini incelemek için birçok farklı yolu vardır. En basit yolu, bir anahtar ile ilişkili özellik adlarını almaktır. Örneğin, kayıt defteri anahtarı girişleri adlarını görmek için `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, kullanın `Get-Item`. Kayıt defteri anahtarlarını bir özelliğe sahip genel "Özelliği" adı ile kayıt defteri girdileri anahtarında bir listesidir.
 Aşağıdaki komut, özellik özelliğini seçer ve böylece bunlar bir listede görüntülenen öğelerin genişletir:
@@ -88,7 +88,7 @@ ProgramFilesDir     : C:\Program Files
 
 Yolu genişletme çalışır, aynı, bu konumdan, yani, dosya sisteminde çalıştığı gibi **Itemproperty** için listeleme `HKLM:\SOFTWARE\Microsoft\Windows\Help` kullanarak `Get-ItemProperty -Path ..\Help`.
 
-### <a name="getting-a-single-registry-entry"></a>Tek bir kayıt defteri girişi alınırken
+## <a name="getting-a-single-registry-entry"></a>Tek bir kayıt defteri girişi alınırken
 
 Bir kayıt defteri anahtarı içinde belirli bir girdi almak istiyorsanız, birkaç olası yaklaşımlardan birini kullanabilirsiniz. Bu örnekte değerini bulur **DevicePath** içinde `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.
 
@@ -137,7 +137,7 @@ Ayrıca **WshShell** bu yöntem, büyük ikili veri gibi karakterler kayıt deft
 %SystemRoot%\inf
 ```
 
-### <a name="setting-a-single-registry-entry"></a>Tek bir kayıt defteri girdisi ayarlama
+## <a name="setting-a-single-registry-entry"></a>Tek bir kayıt defteri girdisi ayarlama
 
 Belirli bir girdi kayıt defteri anahtarında değiştirmek istiyorsanız, birkaç olası yaklaşımlardan birini kullanabilirsiniz. Bu örnek **yolu** altında girdisi `HKEY_CURRENT_USER\Environment`. **Yolu** giriş yürütülebilir dosyaları nerede bulacağını belirler.
 
@@ -170,7 +170,7 @@ reg add HKCU\Environment /v Path /d $newpath /f
 The operation completed successfully.
 ```
 
-### <a name="creating-new-registry-entries"></a>Yeni kayıt defteri girdileri oluşturuluyor
+## <a name="creating-new-registry-entries"></a>Yeni kayıt defteri girdileri oluşturuluyor
 
 "PowerShellPath" adlı yeni bir giriş eklemek için **CurrentVersion** anahtar, kullanım `New-ItemProperty` yoluyla anahtar, giriş adı ve giriş değeri. Bu örnekte, biz Windows PowerShell değişkeninin değeri sürer `$PSHome`, Windows PowerShell için yükleme dizini yolunu depolar.
 
@@ -197,7 +197,7 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 |DWord|Geçerli bir UInt32 bir sayı|
 |Dizeyi Genişlet|Dinamik olarak genişletilen ortam değişkenleri içerebilir bir dize|
 |MultiString|Çok satırlı string|
-|Dize|Herhangi bir dize değeri|
+|Dize|herhangi bir dize değeri|
 |QWord|8 bayt ikili veri|
 
 > [!NOTE]
@@ -210,7 +210,7 @@ New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
 
 Önceden var olan bir kayıt defteri girdisinin değeri ekleyerek de kılabilirsiniz **zorla** herhangi bir parametre `New-ItemProperty` komutu.
 
-### <a name="renaming-registry-entries"></a>Kayıt defteri girdileri yeniden adlandırma
+## <a name="renaming-registry-entries"></a>Kayıt defteri girdileri yeniden adlandırma
 
 Yeniden adlandırmak için **PowerShellPath** "PSHome," kullanım girişe `Rename-ItemProperty`:
 
@@ -224,7 +224,7 @@ Yeniden adlandırılan değerini görüntülemek için Ekle **PassThru** komut p
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-### <a name="deleting-registry-entries"></a>Kayıt defteri girdileri silme
+## <a name="deleting-registry-entries"></a>Kayıt defteri girdileri silme
 
 PSHome ve PowerShellPath kayıt defteri girdileri silmek için kullanın `Remove-ItemProperty`:
 

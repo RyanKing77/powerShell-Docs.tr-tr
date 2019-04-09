@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Geçerli Konumu Yönetme
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: d1ebc9507a45841e6d4d8219e45c002990e1328c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405884"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293195"
 ---
 # <a name="managing-current-location"></a>Geçerli Konumu Yönetme
 
@@ -16,7 +16,7 @@ Dosya Gezgini'nde klasörü sistemleri gittiğinizde, genellikle belirli bir ça
 
 Windows PowerShell kullanan isim **konumu** çalışma dizini belirtmek için ve bir ailesi cmdlet'lerini incelemek ve işlemek, konumunuz için uygular.
 
-### <a name="getting-your-current-location-get-location"></a>Geçerli konumunuz (Get-konumu)
+## <a name="getting-your-current-location-get-location"></a>Geçerli konumunuz (Get-konumu)
 
 Geçerli dizin konumunuzun yolunu belirlemek için girin **Get-Location** komutu:
 
@@ -30,7 +30,7 @@ C:\Documents and Settings\PowerUser
 > [!NOTE]
 > Get-Location cmdlet benzer **pwd** BASH kabuğunda komutu. Set-Location cmdlet benzer **cd** Cmd.exe içinde komutu.
 
-### <a name="setting-your-current-location-set-location"></a>Geçerli konumunuzu (konum ayarlama) ayarlama
+## <a name="setting-your-current-location-set-location"></a>Geçerli konumunuzu (konum ayarlama) ayarlama
 
 **Get-Location** komutu ile kullanıldığında **Set-Location** komutu. **Set-Location** komutu, geçerli dizin konumunu belirtmenize olanak verir.
 
@@ -96,7 +96,7 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-### <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Kaydetme ve en son konumlar (anında iletme konumu ve bulunma noktası konumuna) geri çağırma
+## <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Kaydetme ve en son konumlar (anında iletme konumu ve bulunma noktası konumuna) geri çağırma
 
 Konumları değiştirirken, burada size verilmiş olması, izlenmesi ve, önceki konumuna geri döndürmek için yararlıdır. **Anında iletme konumu** Windows PowerShell cmdlet'i, burada size verilmiş olması ve Tamamlayıcı kullanarak geri dizin yolları geçmişinde geçebilirsiniz dizin yolları sıralı geçmişini ("yığın") oluşturur  **Bulunma noktası konumuna** cmdlet'i.
 

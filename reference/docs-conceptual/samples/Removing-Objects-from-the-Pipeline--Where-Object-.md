@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Komut zincirinden nesne kaldırma nesne
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1f7d064c7bf2dd551ea96b29762fbccad8174084
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685728"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293155"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Nesneler (Where-Object) komut zincirinden nesne kaldırma
 
@@ -16,7 +16,7 @@ Windows PowerShell'de, genellikle oluşturmak ve istediğinizden daha daha fazla
 
 Windows PowerShell içeren bir `Where-Object` her nesne işlem hattında test etmek ve yalnızca bu başarılı işlem hattı belirli test koşulunu karşılıyorsa olanak tanıyan cmdlet'i. Test geçmeyin nesneleri ardışık düzen tarafından kaldırılır. Test koşulu değeri olarak sağladığınız `Where-Object` **FilterScript** parametresi.
 
-### <a name="performing-simple-tests-with-where-object"></a>Where-Object içeren basit testler gerçekleştirme
+## <a name="performing-simple-tests-with-where-object"></a>Where-Object içeren basit testler gerçekleştirme
 
 Değerini **FilterScript** olduğu bir *betik bloğu* -ayraçları içine alınmış bir veya daha fazla Windows PowerShell komutlarını {} -true veya false değerlendiren. Bu komut dosyası blokları çok basit olabilir ancak bunları oluşturmak için Karşılaştırma işleçleri başka bir Windows PowerShell kavramı hakkında bilmek gerekir. Karşılaştırma işleci, içerdiği her bir tarafta görüntülenen öğe karşılaştırır. Karşılaştırma işleçleri ile başlayan bir '-' karakteri ve ardından bir adı. Temel Karşılaştırma işleçleri, neredeyse her türlü nesnesi üzerinde çalışır. Daha gelişmiş Karşılaştırma işleçleri yalnızca metin veya diziler üzerinde çalışabilir.
 
@@ -29,14 +29,14 @@ Dikkat edilecek noktalar ayrıştırma nedeniyle <> gibi simgeler ve = Karşıla
 |-----------------------|-----------|--------------------------|
 |-eq|eşittir|1 - eq 1|
 |-ne|Eşit değildir|1 - ne 2|
-|-lt|olan küçüktür|1 - lt 2|
-|-le|Küçüktür veya eşittir|1 - le 2|
+|-lt|Olan küçüktür|1 - lt 2|
+|-le|küçüktür veya eşittir|1 - le 2|
 |-gt|büyüktür|2 - gt 1|
-|-ge|Büyüktür veya eşittir|2 -ge 1|
+|-ge|büyüktür veya eşittir|2 -ge 1|
 |-gibi|(Metni için joker karakter karşılaştırma) gibidir|"dosyam.doc"-gibi "f\*.yoğun?"|
 |-notlike|(Metni için joker karakter karşılaştırma) gibi değil|"dosyam.doc"-notlike "p\*.doc"|
-|-içerir|içerir|1,2,3 - 1 içerir|
-|-notcontains|içermiyor|1,2,3 - notcontains 4|
+|-içerir|İçerir|1,2,3 - 1 içerir|
+|-notcontains|İçermez|1,2,3 - notcontains 4|
 
 WHERE-Object komut dosyası blokları kullanmak özel değişkeni `$_` işlem hattındaki geçerli nesneye başvurmak için. Nasıl çalıştığına ilişkin bir örnek aşağıda verilmiştir. Sayıdan oluşan bir liste olması ve yalnızca 3'ten az olan ayarlara dönmek istiyorsanız, Where-Object yazarak sayıları filtrelemek için kullanabilirsiniz:
 
@@ -46,7 +46,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-### <a name="filtering-based-on-object-properties"></a>Nesne özellikleri tabanlı filtreleme
+## <a name="filtering-based-on-object-properties"></a>Nesne özellikleri tabanlı filtreleme
 
 Bu yana `$_` başvurur geçerli işlem hattı nesnesine biz özelliklerini testlerimiz için erişebilirsiniz.
 

@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Dosya, Klasör ve Kayıt Defteri Anahtarları ile Çalışma
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685735"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293104"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Dosya, klasör ve kayıt defteri anahtarları ile çalışma
 
 Windows PowerShell kullanan isim **öğesi** bir Windows PowerShell sürücüsünde bulunan öğeleri başvurmak için. Windows PowerShell dosya sistemi sağlayıcısı ile ilgilenirken bir **öğesi** bir dosya, klasör ya da Windows PowerShell sürücüsünü olabilir. Bu görevleri ayrıntılı tartışmak istediğimiz şekilde listeleme ve bu öğeleri ile çalışma bir kritik temel çoğu yönetim ayarları'nda görevdir.
 
-### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Dosyaları, klasörleri ve kayıt defteri anahtarlarını (Get-Childıtem) numaralandırma
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Dosyaları, klasörleri ve kayıt defteri anahtarlarını (Get-Childıtem) numaralandırma
 
 Belirli bir konumdan bir öğe koleksiyonu alma gibi genel bir görev, olduğundan **Get-Childıtem** cmdlet'i, özellikle bir klasörü gibi bir kapsayıcı içinde bulunan tüm öğeleri döndürmek için tasarlanmıştır.
 
@@ -42,7 +42,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 Bu parametre, karma ve üst düzeyde özelleştirilmiş çıktısını almak için eşleşen.
 
-#### <a name="listing-all-contained-items--recurse"></a>Tüm bulunan öğeleri listeleme (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>Tüm bulunan öğeleri listeleme (-Recurse)
 
 Windows klasörünün içindeki öğeleri hem de alt klasörleri içinde yer alan tüm öğeleri görmek için **Recurse** parametresinin **Get-Childıtem**. Listenin her şeyi Windows klasörü ve alt öğelerinde içinde görüntüler. Örneğin:
 
@@ -57,7 +57,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### <a name="filtering-items-by-name--name"></a>Öğeleri ada göre filtreleme (-adı)
+### <a name="filtering-items-by-name--name"></a>Öğeleri ada göre filtreleme (-adı)
 
 Yalnızca öğelerin adlarını görüntülemek için kullanın **adı** parametresinin **Get-Childıtem**:
 
@@ -69,7 +69,7 @@ assembly
 ...
 ```
 
-#### <a name="forcibly-listing-hidden-items--force"></a>Gizli öğeleri zorla listeleme (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>Gizli öğeleri zorla listeleme (-Force)
 
 Dosya Gezgini veya Cmd.exe normalde görünmeyen öğeleri çıktısında görüntülenmez bir **Get-Childıtem** komutu. Gizli öğeleri görüntülemek için kullanın **zorla** parametresinin **Get-Childıtem**. Örneğin:
 
@@ -79,7 +79,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 Zorla normal davranışı geçersiz kılabilirsiniz olduğundan bu parametreyi zorla adlı **Get-Childıtem** komutu. Zorla sistemin güvenliği tehlikeye atar herhangi bir eylem gerçekleştiremeyecek olsa da, bir cmdlet normalde gerçekleştirecek değil, bir eylem zorlar yaygın olarak kullanılan bir parametredir.
 
-#### <a name="matching-item-names-with-wildcards"></a>Joker karakterlerle eşleşen öğe adları
+### <a name="matching-item-names-with-wildcards"></a>Joker karakterlerle eşleşen öğe adları
 
 **Get-Childıtem** komut listeye öğe yolunda joker karakterler kabul eder.
 
@@ -122,7 +122,7 @@ Adları ile başlayan tüm dosyaları bulmak için **x** veya **z**, türü:
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### <a name="excluding-items--exclude"></a>Öğeleri hariç (-hariç)
+### <a name="excluding-items--exclude"></a>Öğeleri hariç (-hariç)
 
 Kullanarak belirli öğeleri hariç tutabilirsiniz **hariç** Get-childıtem komutunun parametre. Bu, tek bir deyimde filtreleme karmaşık gerçekleştirmenize olanak sağlar.
 
@@ -147,7 +147,7 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-#### <a name="mixing-get-childitem-parameters"></a>Get-Childıtem parametreleri karıştırma
+### <a name="mixing-get-childitem-parameters"></a>Get-Childıtem parametreleri karıştırma
 
 Birkaç parametrelerinden biri kullanabileceğiniz **Get-Childıtem** aynı komutta cmdlet'i. Parametreleri karıştırmak önce joker karakterlerle eşleşen anladığınızdan emin olun. Örneğin, aşağıdaki komut, sonuç döndürür:
 

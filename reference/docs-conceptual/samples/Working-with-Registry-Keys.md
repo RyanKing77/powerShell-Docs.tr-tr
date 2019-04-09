@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Kayıt Defteri Anahtarları ile Çalışma
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: a9d08f2f6b5803980dec45a4e266ad66879c8c8d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686953"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293206"
 ---
 # <a name="working-with-registry-keys"></a>Kayıt Defteri Anahtarları ile Çalışma
 
 Kayıt defteri anahtarlarını Windows PowerShell sürücülerini öğelerde olduğundan, bunlarla çalışmaya dosya ve klasörlerle çalışma çok benzer. Kritik farklardan biri bir kayıt defteri tabanlı Windows PowerShell sürücüsü her öğeyi bir klasöre bir dosya sistemi sürücüsünde olduğu gibi bir kapsayıcı olmasıdır. Ancak, kayıt defteri girdilerini ve ilişkili değerleri değil ayrı öğeleri öğelerin özelliklerini uygulanır.
 
-### <a name="listing-all-subkeys-of-a-registry-key"></a>Kayıt defteri anahtarını tüm alt anahtarlarını listeleme
+## <a name="listing-all-subkeys-of-a-registry-key"></a>Kayıt defteri anahtarını tüm alt anahtarlarını listeleme
 
 Kullanarak, doğrudan bir kayıt defteri anahtarı içinde tüm öğeleri göstermek **Get-Childıtem**. İsteğe bağlı ekleme **zorla** gizli görüntülemek ya da sistem öğeleri için parametre. Örneğin, bu komut Windows PowerShell sürücüsünü HKCU doğrudan öğeleri görüntüler:, HKEY_CURRENT_USER defteri kovanına karşılık gelir:
 
@@ -58,7 +58,7 @@ Get-ChildItem -Path hkcu:\ -Recurse
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### <a name="copying-keys"></a>Anahtarları kopyalanıyor
+## <a name="copying-keys"></a>Anahtarları kopyalanıyor
 
 Kopyalama ile yapılır **Copy-Item**. Aşağıdaki komut kopyalar HKLM:\\yazılım\\Microsoft\\Windows\\CurrentVersion ve tüm özelliklerini kullanarak HKCU için:\\, "CurrentVersion" adlı yeni bir anahtar oluşturuluyor:
 
@@ -74,7 +74,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 Zaten dosya sistemi kopyaları oluşturmak kullanılabilir olan diğer araçları kullanmaya devam edebilirsiniz. Herhangi bir kayıt defteri düzenleme araçlarına — reg.exe regini.exe ve regedit.exe—and COM nesneleri (wscript.Shell nesnesinin ve WMI'ın StdRegProv sınıfı gibi) kayıt defteri düzenleme desteği dahil olmak üzere kullanılabilir gelen Windows PowerShell içinde.
 
-### <a name="creating-keys"></a>Anahtarları oluşturma
+## <a name="creating-keys"></a>Anahtarları oluşturma
 
 Kayıt defterinde yeni anahtarları oluşturma, bir dosya sisteminde yeni bir öğe oluşturmaktan daha basittir. Tüm kayıt defteri anahtarlarını kapsayıcılar olduğundan, öğe türünü belirtmeniz gerekmez; yalnızca açık bir yol gibi sağlayın:
 
@@ -88,7 +88,7 @@ Sağlayıcı tabanlı bir yolu, bir anahtar belirtmek için de kullanabilirsiniz
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### <a name="deleting-keys"></a>Anahtarları silme
+## <a name="deleting-keys"></a>Anahtarları silme
 
 Öğeleri silme temelde tüm sağlayıcılar için aynıdır. Aşağıdaki komutları sessizce öğeler kaldırılır:
 
@@ -97,7 +97,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### <a name="removing-all-keys-under-a-specific-key"></a>Belirli bir anahtarın altında tüm anahtarları kaldırılıyor
+## <a name="removing-all-keys-under-a-specific-key"></a>Belirli bir anahtarın altında tüm anahtarları kaldırılıyor
 
 İçerilen öğelerin kullanarak kaldırabilirsiniz **Kaldır öğesini**, ancak başka bir öğe içeriyorsa, kaldırma işlemini onaylamanız istenir. Örneğin, HKCU silmeye çalışırsanız:\\CurrentVersion alt oluşturduk, bu görürüz:
 

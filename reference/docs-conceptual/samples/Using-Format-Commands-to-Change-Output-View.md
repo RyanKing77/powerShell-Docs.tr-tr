@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Çıkış Görünümünü Değiştirmek İçin Biçimlendirme Komutları Kullanma
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 35ccd2525d40ffd5e3f25a1abfa38904a109bde5
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: fba37b1d0479bf605d8f2171da27cd1bceb9976e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320430"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293053"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Çıkış Görünümünü Değiştirmek İçin Biçimlendirme Komutları Kullanma
 
@@ -29,25 +29,34 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 Bu bölümün kalanında, biz nasıl kullanılacağı inceleyeceksiniz **biçimi** bu komutun çıktısı görüntülenir şeklini değiştirmek için cmdlet'ler.
 
-### <a name="using-format-wide-for-single-item-output"></a>Biçim genelinde tek öğeli çıkış için kullanma
+## <a name="using-format-wide-for-single-item-output"></a>Biçim genelinde tek öğeli çıkış için kullanma
 
-**Biçimi genelinde** cmdlet'i, varsayılan olarak, yalnızca bir nesne için varsayılan özelliği görüntülenir. Her nesneyle ilişkili bilgileri tek bir sütunda görüntülenir:
+`Format-Wide` Cmdlet'i, varsayılan olarak, yalnızca bir nesne için varsayılan özelliği görüntülenir.
+Her nesneyle ilişkili bilgileri tek bir sütunda görüntülenir:
 
+```powershell
+Get-Command -Verb Format | Format-Wide
 ```
-PS> Get-Process -Name powershell | Format-Wide
 
-powershell                              powershell
+```output
+Format-Custom                          Format-Hex
+Format-List                            Format-Table
+Format-Wide
 ```
 
 Varsayılan olmayan bir özellik de belirtebilirsiniz:
 
-```
-PS> Get-Process -Name powershell | Format-Wide -Property Id
-
-2760                                    3448
+```powershell
+Get-Command -Verb Format | Format-Wide -Property Noun
 ```
 
-#### <a name="controlling-format-wide-display-with-column"></a>Biçim genelinde görüntü sütunu denetleme
+```output
+Custom                                 Hex
+List                                   Table
+Wide
+```
+
+### <a name="controlling-format-wide-display-with-column"></a>Biçim genelinde görüntü sütunu denetleme
 
 İle `Format-Wide` cmdlet'i, aynı anda yalnızca tek bir özellik görüntüleyebilirsiniz.
 Bu, her satırda yalnızca bir öğeyi gösteren basit listelerini görüntülemek için kullanışlıdır.
@@ -65,7 +74,7 @@ Table
 Wide
 ```
 
-### <a name="using-format-list-for-a-list-view"></a>Bir liste görünümü için biçim listesi kullanma
+## <a name="using-format-list-for-a-list-view"></a>Bir liste görünümü için biçim listesi kullanma
 
 **Format-List** cmdlet etiketlenmiş ve ayrı bir satıra görüntülenen her bir özellik içeren bir liste biçiminde bir nesne görüntüler:
 
@@ -100,7 +109,7 @@ StartTime   : 2006-05-24 13:54:28
 Id          : 3448
 ```
 
-#### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Biçim listesinde joker karakterlerini kullanarak ayrıntılı bilgilerini alma
+### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Biçim listesinde joker karakterlerini kullanarak ayrıntılı bilgilerini alma
 
 **Format-List** cmdlet'i değeri olarak bir joker karakter kullanmanıza imkan tanır, **özelliği** parametresi. Bu, ayrıntılı bilgileri görüntülemenize olanak sağlar. Genellikle, nesneleri, Windows PowerShell, varsayılan olarak tüm özellik değerlerini göstermiyor neden olan ihtiyacınız olandan daha fazla bilgi içerir. Tüm bir nesnenin özelliklerini göstermek için kullanma **Format-List-özellik \&#42;** komutu. Aşağıdaki komut, çıktı tek bir işlem için 60'tan fazla satırları oluşturur:
 
@@ -110,7 +119,7 @@ Get-Process -Name powershell | Format-List -Property *
 
 Ancak **Format-List** komutu, birçok öğeyi içeren çıkış genel bir bakış istediğiniz, daha basit bir tablo görünümüne ise genellikle daha fazla ayrıntı göstermek için kullanışlıdır yararlıdır.
 
-### <a name="using-format-table-for-tabular-output"></a>Biçim tablosu için tablo çıktısı kullanma
+## <a name="using-format-table-for-tabular-output"></a>Biçim tablosu için tablo çıktısı kullanma
 
 Kullanırsanız **Format-Table** cmdlet hiçbir özellik adı ile belirtilen çıkışını biçimlendirmek için **Get-Process** komutunu tam olarak aynı biçimlendirmeleri yapmadan yaptığınız gibi çıktısını alın. Çoğu Windows PowerShell nesneleri gibi işlemler genellikle bir tablo biçiminde görüntülenir nedenidir.
 
@@ -123,7 +132,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     332       9    23140        632   141     1.06   3448 powershell
 ```
 
-#### <a name="improving-format-table-output-autosize"></a>Tablo biçiminde çıktı (AutoSize) geliştirme
+### <a name="improving-format-table-output-autosize"></a>Tablo biçiminde çıktı (AutoSize) geliştirme
 
 Tablolu bir görünümü birçok karşılaştırılabilir bilgi görüntülemek için kullanışlı olsa da, görüntü verilerini çok darsa yorumlamak zor olabilir. İşlem yolu, kimlik, ad ve şirket görüntülenecek çalışırsanız, örneğin, kısaltılmış çıktı işlem yolu ve şirket sütun için olursunuz:
 
@@ -173,7 +182,7 @@ Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
 
 Yukarıdaki çıktıda kimlik sütunu listenin içine sığması için kesilmiş ve sütun başlıklarından yığılır. Otomatik olarak sütunları yeniden boyutlandırma her zaman, istediğiniz yapmaz.
 
-#### <a name="wrapping-format-table-output-in-columns-wrap"></a>Format-Table çıkış sütunları (kaydırma) sarmalama
+### <a name="wrapping-format-table-output-in-columns-wrap"></a>Format-Table çıkış sütunları (kaydırma) sarmalama
 
 Uzun zorlayabilirsiniz **Format-Table** kullanarak kendi görüntü sütunu içinde sarmalamak için veri **kaydırma** parametresi. Kullanarak **kaydırma** parametre tek başına değil gerekmeyen yeterlidir de belirtmezseniz varsayılan ayarları kullandığından, beklediğiniz **AutoSize**:
 
@@ -216,7 +225,7 @@ C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
                                                              ion
 ```
 
-#### <a name="organizing-table-output--groupby"></a>Tablo çıkışına düzenleme (-gruplandırma ölçütü)
+### <a name="organizing-table-output--groupby"></a>Tablo çıkışına düzenleme (-gruplandırma ölçütü)
 
 Tablo çıktısı denetimi için başka bir kullanışlı parametresi **GroupBy**. Tablo listeleri artık özellikle Karşılaştırılacak zor olabilir. **GroupBy** parametresi çıkışı bir özellik değerine göre gruplandırır. Örneğin, şu işlemler için daha kolay denetleme özelliği listenin şirket değerini atlayarak şirket tarafından gruplandırabilirsiniz:
 

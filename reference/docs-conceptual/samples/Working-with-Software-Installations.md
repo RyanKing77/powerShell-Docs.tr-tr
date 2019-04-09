@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Yazılım Yüklemeleri ile Çalışma
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686729"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293240"
 ---
 # <a name="working-with-software-installations"></a>Yazılım Yüklemeleri ile Çalışma
 
@@ -17,7 +17,7 @@ Windows Installer'ı kullanmak üzere tasarlanmış uygulamalar WMI'nin erişile
 > [!NOTE]
 > Uygulama dosyaları genellikle bilgisayara kopyalayarak yüklü uygulamaları burada ele alınan teknikleri kullanarak tarafından yönetilemez. Bu uygulamalar olarak dosyalar ve klasörler "Çalışma ile dosyalar ve klasörler" bölümünde ele alınan teknikleri kullanarak yönetebilirsiniz.
 
-### <a name="listing-windows-installer-applications"></a>Windows Installer uygulamaları listeleme
+## <a name="listing-windows-installer-applications"></a>Windows Installer uygulamaları listeleme
 
 Windows Installer bir yerel veya uzak sistemde yüklü uygulamalar listelemek için aşağıdaki basit WMI sorgusunu kullanın:
 
@@ -85,7 +85,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 Şimdi Windows Installer yükleme için kullanılan uygulamaların bakmak için çeşitli yollar vardır ancak diğer uygulamaları dikkate değil. Çoğu standart uygulamaları Windows ile kendi uninstaller kaydetmek için biz bunları Windows kayıt defterinde bulma tarafından yerel olarak çalışabilirsiniz.
 
-### <a name="listing-all-uninstallable-applications"></a>Tüm Uninstallable uygulamaları listeleme
+## <a name="listing-all-uninstallable-applications"></a>Tüm Uninstallable uygulamaları listeleme
 
 Bir sistemde her uygulamayı bulmak için garantili yolu olsa da, Program Ekle veya Kaldır iletişim kutusunda görüntülenen listeleri içeren tüm programları bulmak mümkündür. Ekle veya Kaldır bu uygulamalar aşağıdaki kayıt defteri anahtarında bulur:
 
@@ -142,7 +142,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### <a name="installing-applications"></a>Uygulamaları yükleme
+## <a name="installing-applications"></a>Uygulamaları yükleme
 
 Kullanabileceğiniz **Win32_Product** Windows Installer paketleri uzaktan veya yerel olarak yüklemek için sınıf.
 
@@ -157,7 +157,7 @@ WMI alt sistemi, Windows PowerShell yolları anlamıyor çünkü .msi paketin yo
 
 Windows Yükleyici teknolojisi kullanmayan uygulamalar, otomatik dağıtım için uygulamaya özgü yöntemleri olabilir. Bir dağıtım otomasyonunu yöntemi olup olmadığını belirlemek için uygulama için belgelere bakın veya uygulama satıcısının destek sistemi başvurun. Bazı durumlarda bile uygulamanın satıcısına özellikle uygulama için yükleme Otomasyon tasarlamak değil yükleyici yazılımın Otomasyon için bazı teknikleri olabilir.
 
-### <a name="removing-applications"></a>Uygulamaları kaldırma
+## <a name="removing-applications"></a>Uygulamaları kaldırma
 
 Windows PowerShell kullanarak bir Windows Installer paketi kaldırma paket yükleme yaklaşık aynı şekilde çalışır. Kaldırmak için paket adına göre seçen bir örneği aşağıda verilmiştir; Bazı durumlarda ile filtrelemek daha kolay olabilir **Identifyingnumber**:
 
@@ -179,7 +179,7 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('Displ
 
 Ancak, bu dizeler Windows PowerShell isteminden bazı değişiklik yapmadan doğrudan kullanılabilir olmayabilir.
 
-### <a name="upgrading-windows-installer-applications"></a>Windows Installer uygulamalarını yükseltme
+## <a name="upgrading-windows-installer-applications"></a>Windows Installer uygulamalarını yükseltme
 
 Bir uygulamayı yükseltmek için uygulama yükseltme paketini uygulama ve yolun adını bilmeniz gerekir. Bu bilgileri kullanarak bir Windows PowerShell komutu ile bir uygulama yükseltebilirsiniz:
 
