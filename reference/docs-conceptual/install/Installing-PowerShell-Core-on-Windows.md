@@ -2,43 +2,57 @@
 title: Windows’da PowerShell Core yükleme
 description: Üzerinde Windows PowerShell Core yükleme hakkında bilgi
 ms.date: 08/06/2018
-ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
-ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
+ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58748950"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293019"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows’da PowerShell Core yükleme
 
-## <a name="msi"></a>MSI
+İçinde Windows PowerShell Core yüklemek için birden çok yolu vardır.
 
-Bir Windows istemci veya sunucuda Windows PowerShell'i yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve daha sonra), bizim Github'dan MSI paketini indirme [Yayınları][] sayfası.  Ekranı aşağı kaydırarak **varlıklar** bölümü, yüklemek istediğiniz sürümü.  Genişletmek için tıklaymanız gerekebilir. Bu nedenle, varlıklar bölüm daraltılmış.
+## <a name="prerequisites"></a>Önkoşullar
+
+WSMan PowerShell uzaktan iletişimini etkinleştirmek için aşağıdaki önkoşulların karşılanması gerekir:
+
+- Yükleme [Evrensel C çalışma zamanı](https://www.microsoft.com/download/details.aspx?id=50410) önce Windows 10 Windows sürümleri üzerinde. Doğrudan indirme veya Windows Update kullanılabilir. Tam olarak düzeltme eki (isteğe bağlı paketleri dahil), desteklenen sistemleri zaten bu yüklü olacaktır.
+- Windows Management Framework (WMF) 4.0 veya daha yeni Windows 7 ve Windows Server 2008 R2 yükleyin.
+
+## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />MSI paketini yükleme
+
+Bir Windows istemci veya sunucuda Windows PowerShell'i yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve sonraki sürümler), GitHub [sürümleri] [] sayfamızı MSI paketini indirin. Ekranı aşağı kaydırarak **varlıklar** bölümü, yüklemek istediğiniz sürümü. Genişletmek için tıklaymanız gerekebilir. Bu nedenle, varlıklar bölüm daraltılmış.
 
 MSI dosyası şu şekilde görünür- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 İndirildikten sonra yükleyiciye çift tıklayın ve yönergeleri izleyin.
 
-Bir kısayol Başlat menüsünde yükleme sonrasında yerleştirilen yoktur.
+Yükleyici Windows Başlat menüsünde bir kısayol oluşturur.
 
 - Varsayılan olarak, paket için yüklenir `$env:ProgramFiles\PowerShell\<version>`
 - Başlat menüsü aracılığıyla PowerShell başlatabilir veya `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
-### <a name="prerequisites"></a>Önkoşullar
+### <a name="administrative-install-from-the-command-line"></a>Komut satırından yönetici yükleme
 
-WSMan PowerShell uzaktan iletişimini etkinleştirmek için aşağıdaki önkoşulların karşılanması gerekir:
+MSI paketleri, komut satırından yüklenebilir. Bu, kullanıcı etkileşimi olmadan paketlerini dağıtma olanağı sağlar. PowerShell için MSI paketi yükleme seçeneklerini denetlemek için aşağıdaki özellikleri içerir:
 
-- Yükleme [Evrensel C çalışma zamanı](https://www.microsoft.com/download/details.aspx?id=50410) önce Windows 10 Windows sürümleri üzerinde.
-  Doğrudan indirme veya Windows Update kullanılabilir.
-  Tam olarak düzeltme eki (isteğe bağlı paketleri dahil), desteklenen sistemleri zaten bu yüklü olacaktır.
-- Windows Management Framework (WMF) 4.0 veya daha yeni Windows 7 ve Windows Server 2008 R2 yükleyin.
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** -bu özellik ekleme seçeneği denetler **açık PowerShell** Windows Gezgini bağlam menüsü öğesi.
+- **ENABLE_PSREMOTING** -bu özellik, yükleme sırasında PowerShell uzaktan iletişimini etkinleştirme seçeneği denetler.
+- **REGISTER_MANIFEST** -bu özellik, Windows olay günlüğü bildirimi kaydetme seçeneği denetler.
 
-## <a name="zip"></a>ZIP
+Aşağıdaki örneklerde, PowerShell Core etkin tüm yükleme seçenekleri ile sessizce yüklemek nasıl gösterir.
 
-Gelişmiş dağıtım senaryoları etkinleştirmek için PowerShell ikili ZIP arşivlerini sağlanır.
-ZIP arşivini kullanırken, önkoşul denetimi MSI paketini olduğu gibi vermeyecektir kaydedilmelidir.
-Windows 10 önceki Windows sürümlerinde düzgün çalışması için sırasıyla WSMan üzerinden uzaktan iletişim için emin olmamız gerekiyor. Bu nedenle [önkoşulları](#prerequisites) karşılanır.
+```powershell
+msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+```
+
+Msiexec.exe komut satırı seçeneklerinin tam listesi için bkz. [komut satırı seçenekleri](/windows/desktop/Msi/command-line-options).
+
+## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />ZIP paketini yükleme
+
+Gelişmiş dağıtım senaryoları etkinleştirmek için PowerShell ikili ZIP arşivlerini sağlanır. ZIP arşivini kullanırken, önkoşul denetimi MSI paketini olduğu gibi vermeyecektir kaydedilmelidir. WSMan düzgün çalışması için üzerinden uzaktan iletişim için,, karşıladığınızdan emin olun [önkoşulları](#prerequisites).
 
 ## <a name="deploying-on-windows-iot"></a>Windows IOT dağıtma
 
@@ -132,28 +146,12 @@ Aşağıdaki adımlar PowerShell Core dağıtımı çalışan bir Nano sunucu ve
 
 - WSMan tabanlı uzak istiyorsanız, uzaktan iletişimi kullanarak uç nokta oluşturmak için yönergeleri izleyin ["başka bir örnek yöntem"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-## <a name="instructions-to-create-a-remoting-endpoint"></a>Bir uzak uç noktası oluşturmaya ilişkin yönergeler
+## <a name="how-to-create-a-remoting-endpoint"></a>Uzaktan iletişim uç noktası oluşturma
 
-PowerShell Core WSMan ve SSH üzerinden PowerShell uzaktan iletişim protokolü (PSRP) destekler.
-Daha fazla bilgi için bkz.:
+PowerShell Core WSMan ve SSH üzerinden PowerShell uzaktan iletişim protokolü (PSRP) destekler. Daha fazla bilgi için bkz.:
 
-- [SSH PowerShell core'da uzaktan iletişim][ssh-remoting]
-- [PowerShell core'da WSMan uzaktan iletişim][wsman-remoting]
-
-## <a name="artifact-installation-instructions"></a>Yapıt yükleme yönergeleri
-
-Biz bir arşiv CoreCLR bitleri ile her bir CI yapısı ile yayımlama [AppVeyor][].
-
-PowerShell Core CoreCLR yapıdan yüklemek için:
-
-1. ZIP paketini indirin **yapıtları** belirli yapı sekmesi.
-2. Engellemeyi kaldırma ZIP dosyası: dosya Gezgini'nde sağ -> Özellikler -> 'engellemeyi kaldırma kutusu ->' uygulama denetimi
-3. Zip dosyasını ayıklayın `bin` dizini
-4. `./bin/pwsh.exe`
+- [SSH PowerShell core'da uzaktan iletişim] [ssh-uzaktan iletişim]
+- [WSMan uzak PowerShell core'da] [wsman uzaktan iletişim]
 
 <!-- [download-center]: TODO -->
-
-[Yayınları]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[sürümleri]: https://github.com/PowerShell/PowerShell/releases [ssh-uzaktan iletişim]:... /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.MD [wsman uzaktan iletişim]:... /Core-PowerShell/wsman-Remoting-in-PowerShell-Core.MD [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell

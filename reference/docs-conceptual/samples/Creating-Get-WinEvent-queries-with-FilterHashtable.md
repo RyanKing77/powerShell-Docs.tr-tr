@@ -1,14 +1,14 @@
 ---
 ms.date: 3/18/2019
-title: Get-WinEvent sorgular FilterHashtable ile oluşturma
-ms.openlocfilehash: fae01cc8be5c1805e2aae008e1f21ed387efa325
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+title: FilterHashtable ile Get-WinEvent sorguları oluşturma
+ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320491"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293291"
 ---
-# <a name="creating-get-winevent-queries-with-filterhashtable"></a>Get-WinEvent sorgular FilterHashtable ile oluşturma
+# <a name="creating-get-winevent-queries-with-filterhashtable"></a>FilterHashtable ile Get-WinEvent sorguları oluşturma
 
 Özgün Haziran 3 2014 okunacak **Scripting Guy** post, blog gönderimize [kullanım FilterHashTable PowerShell ile filtre olay günlüğü için](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).
 
@@ -29,12 +29,12 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="blog-posts-about-enumeration"></a>Blog gönderileri numaralandırması
+## <a name="blog-posts-about-enumeration"></a>Blog gönderileri numaralandırması
 
 Bu makalede, numaralandırılmış değerlerin bir karma tablosunda kullanma hakkında bilgi gösterir. Bu sabit listesi hakkında daha fazla bilgi için okuma **Scripting Guy** blog gönderilerimize göz atın. Numaralandırılmış değerler döndüren bir işlev oluşturmak için bkz [sabit listeleri ve değerleri](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values).
 Daha fazla bilgi için [Scripting Guy dizi blog yazılarını numaralandırma hakkında](https://devblogs.microsoft.com/scripting/?s=about+enumeration).
 
-### <a name="hash-table-keyvalue-pairs"></a>Karma tablo anahtar/değer çiftleri
+## <a name="hash-table-keyvalue-pairs"></a>Karma tablo anahtar/değer çiftleri
 
 Verimli sorgular derlemek için kullanma `Get-WinEvent` cmdlet'iyle **FilterHashtable** parametresi.
 **FilterHashtable** karma tablo belirli bilgileri Windows olay günlüklerini almak için bir filtre olarak kabul eder. Bir karma tablo kullandığı **anahtar/değer** çiftleri. Karma tabloları hakkında daha fazla bilgi için bkz. [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
@@ -62,7 +62,7 @@ Aşağıdaki tabloda, anahtar adları, veri türleri görüntüler ve joker kara
 | Veriler         | `<String[]>`       | Hayır  |
 | *            | `<String[]>`       | Hayır  |
 
-### <a name="building-a-query-with-a-hash-table"></a>Bir karma tablo içeren bir sorgu oluşturma
+## <a name="building-a-query-with-a-hash-table"></a>Bir karma tablo içeren bir sorgu oluşturma
 
 Sonuçları doğrulamak ve sorunları gidermek için karma tablosu oluşturmak için Yardım ettiği **anahtar/değer** birer birer çifti. Verilerden sorguyu alır **uygulama** günlük. Karma tablo eşdeğerdir `Get-WinEvent –LogName Application`.
 
@@ -89,7 +89,7 @@ Get-WinEvent -FilterHashtable @{
 
 Sorgunuzu arşivlenen olay günlüklerinden veri almak gerekiyorsa kullanın **yolu** anahtarı. **Yolu** değeri günlük dosyasının tam yolunu belirtir. Daha fazla bilgi için **Scripting Guy** blog gönderisi [PowerShell kullanarak için ayrıştırma kaydedilen hataları için olay günlüklerini](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors).
 
-### <a name="using-enumerated-values-in-a-hash-table"></a>Bir karma tabloda listelenmiş değerler kullanarak
+## <a name="using-enumerated-values-in-a-hash-table"></a>Bir karma tabloda listelenmiş değerler kullanarak
 
 **Anahtar sözcükler** karma tablosundaki sonraki anahtardır. **Anahtar sözcükleri** veri türü olan bir dizi `[long]` değeri tutan çok sayıda türüdür. En büyük değerini bulmak için aşağıdaki komutu kullanın `[long]`:
 
@@ -156,7 +156,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="keywords-static-property-value-optional"></a>Anahtar sözcükler statik özellik değeri (isteğe bağlı)
+### <a name="keywords-static-property-value-optional"></a>Anahtar sözcükler statik özellik değeri (isteğe bağlı)
 
 **Anahtar sözcükleri** anahtar listelenmiş, ancak statik özellik adı karma tablo sorgusu kullanabilirsiniz.
 Döndürülen dize kullanmak yerine, özellik adı ile bir değere dönüştürülmelidir **Value__** özelliği.
@@ -172,9 +172,9 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-event-id"></a>Olay kimliğine göre filtreleme
+## <a name="filtering-by-event-id"></a>Olay kimliğine göre filtreleme
 
-Daha belirli verileri almak için sorgu sonuçlarına göre filtrelenir **öğesini belirten Olay No**. **Öğesini belirten Olay No.** karma tablo anahtarı olarak anılan **kimliği** ve belirli bir değerdir **öğesini belirten Olay No.** **Windows Olay Görüntüleyicisi'ni** görüntüler **öğesini belirten Olay No.** Bu örnekte **olay kimliği 1023**.
+Daha belirli verileri almak için sorgu sonuçlarına göre filtrelenir **öğesini belirten Olay No.**. **Öğesini belirten Olay No.** karma tablo anahtarı olarak anılan **kimliği** ve belirli bir değerdir **öğesini belirten Olay No.**. **Windows Olay Görüntüleyicisi'ni** görüntüler **öğesini belirten Olay No.**. Bu örnekte **olay kimliği 1023**.
 
 Karma tablo güncelleştirin ve dahil **anahtar/değer** pair anahtarla **kimliği** değeri **1023**.
 
@@ -187,7 +187,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-level"></a>Düzeye göre filtreleme
+## <a name="filtering-by-level"></a>Düzeye göre filtreleme
 
 Daha ayrıntılı sonuçları daraltmak ve hataları olan olayları dahil için kullandığınız **düzeyi** anahtarı.
 **Windows Olay Görüntüleyicisi'ni** görüntüler **düzeyi** gibi dize değerleri, ancak bunlar numaralandırılmış değerlerdir. Kullanırsanız karma tablosundaki **düzeyi** anahtar bir dize değeri ile bir hata iletisi görüntülenir.
@@ -236,7 +236,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="level-static-property-in-enumeration-optional"></a>Sabit listesi (isteğe bağlı) statik özellik düzeyi
+### <a name="level-static-property-in-enumeration-optional"></a>Sabit listesi (isteğe bağlı) statik özellik düzeyi
 
 **Düzeyi** anahtar listelenmiş, ancak statik özellik adı karma tablo sorgusu kullanabilirsiniz.
 Döndürülen dize kullanmak yerine, özellik adı ile bir değere dönüştürülmelidir **Value__** özelliği.
