@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Linux için Desired State Configuration (DSC) ile çalışmaya başlama
-ms.openlocfilehash: 69f087434455aae8e97ea07c79c52e493412d134
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a18b226d4b2d8b8e1ba8b4168ec6ad8f73c73c42
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686603"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506844"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux için Desired State Configuration (DSC) ile çalışmaya başlama
 
@@ -28,7 +28,7 @@ Aşağıdaki tabloda, Linux için DSC için gerekli Paket bağımlılıklarını
 
 |  Gerekli paket |  Açıklama |  En düşük sürüm |
 |---|---|---|
-| glibc| GNU Kitaplığı| 2…4 – 31.30|
+| Glibc| GNU Kitaplığı| 2…4 – 31.30|
 | Python| Python| 2.4 – 3.4|
 | omiserver| Açık Yönetim Altyapısı| 1.0.8.1|
 | openssl| OpenSSL kitaplıkları| 0.9.8 veya 1.0|
@@ -115,25 +115,25 @@ Aşağıdaki kod bir CIMSession DSC için Linux için oluşturulacağını göst
 
 ```powershell
 $Node = "ostc-dsc-01"
-$Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
+$Credential = Get-Credential -UserName "root" -Message "Enter Password:"
 
 #Ignore SSL certificate validation
-#$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
+#$opt = New-CimSessionOption -UseSsl $true -SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
+$opt = New-CimSessionOption -UseSsl $true
+$Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Authentication basic -SessionOption $opt -OperationTimeoutSec 90
 ```
 
 > [!NOTE]
 > "Gönderme" modu için kullanıcı kimlik bilgilerini Linux bilgisayarında kök kullanıcı olması gerekir.
 > Yalnızca SSL/TLS bağlantılarını DSC için Linux için desteklenen `New-CimSession` $true olarak ayarlayın: UseSSL parametresi ile birlikte kullanılmalıdır.
 > (DSC için) OMI tarafından kullanılan SSL sertifikasını dosyasında belirtilen: `/opt/omi/etc/omiserver.conf` özelliklere sahip: pemfile ve keyfile.
-> Bu sertifika, çalıştırmakta olduğunuz Windows bilgisayar tarafından güvenilir değilse [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet'i üzerinde tercih edebilirsiniz sertifika doğrulama CIMSession seçeneklerle yoksay: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+> Bu sertifika, çalıştırmakta olduğunuz Windows bilgisayar tarafından güvenilir değilse [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet'i üzerinde tercih edebilirsiniz sertifika doğrulama CIMSession seçeneklerle yoksay: `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
 
 DSC yapılandırması Linux düğüme göndermek için aşağıdaki komutu çalıştırın.
 
-`Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
+`Start-DscConfiguration -Path:"C:\temp" -CimSession $Sess -Wait -Verbose`
 
 ### <a name="distribute-the-configuration-with-a-pull-server"></a>Bir çekme sunucusu yapılandırmasıyla dağıtın
 
