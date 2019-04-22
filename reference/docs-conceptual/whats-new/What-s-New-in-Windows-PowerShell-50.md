@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell 5.0 yenilikler
 ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363539"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 yenilikler
@@ -290,7 +290,7 @@ Windows PowerShell 4.0, aşağıdaki yeni özellikler içerir.
 Windows PowerShell 3.0, aşağıdaki yeni özellikler içerir.
 
 - [Windows PowerShell iş akışı](#windows-powershell-workflow)
-- [Windows PowerShell Web Erişimi](#windows-powershell-web-access)
+- [Windows PowerShell Web erişimi](#windows-powershell-web-access)
 - [Yeni Windows PowerShell ISE Özellikleri](#new-windows-powershell-ise-features)
 - [Microsoft .NET Framework 4.0 desteği](#support-for-microsoft-net-framework-4)
 - [Windows önyükleme ortamı için destek](#support-for-windows-preinstallation-environment)
@@ -332,7 +332,7 @@ Windows PowerShell iş akışı avantajları şunlardır:
 - **Multicomputer yönetimi.** Aynı anda görevlerini yüzlerce yönetilen düğüme iş akışları olarak çalıştırın. Windows PowerShell iş akışı içeren yerleşik bir kitaplık ortak yönetim parametrelerinin gibi **PSComputerName**, çoklu bilgisayar yönetimi senaryoları etkinleştirin.
 - **Karmaşık işlemleri tek bir görev yürütme.** Tek bir iş akışı tüm uçtan uca senaryo uygulayan ilgili betikleri birleştirebilirsiniz.
 - **Kalıcılık.** : bir iş akışı kaydedildi (onay işaret iş akışını baştan yeniden başlatmak yerine son kalıcı görevden (veya Denetim) akışından devam edebilmek için yazar tarafından tanımlanan belirli noktalarda veya).
-- **Robustness.** Otomatik hatadan kurtarma. İş akışları, planlı ve plansız başlatmalarda. İş akışı yürütmeyi askıya almak ve sonra iş akışı son Kalıcılık noktadan devam. İş akışı yazarları, hata durumunda bir veya daha fazla yönetilen düğümde yeniden çalıştırılması için belirli etkinlikleri belirleyebilirsiniz.
+- **Sağlamlık.** Otomatik hatadan kurtarma. İş akışları, planlı ve plansız başlatmalarda. İş akışı yürütmeyi askıya almak ve sonra iş akışı son Kalıcılık noktadan devam. İş akışı yazarları, hata durumunda bir veya daha fazla yönetilen düğümde yeniden çalıştırılması için belirli etkinlikleri belirleyebilirsiniz.
 - **Bağlantıyı kesmek için özelliği yeniden bağlayın ve bağlantısı kesilmiş oturumlarında çalışan.** Kullanıcılar bağlanır ve iş akışı sunucu bağlantısını kesin, ancak iş akışı sürekli olarak çalışır. İstemci bilgisayar oturumunu veya istemci bilgisayarı yeniden başlatın ve iş akışını kesintiye uğratmadan iş akışı yürütme başka bir bilgisayardan izleyin.
 - **Zamanlama.** Herhangi bir Windows PowerShell cmdlet veya betik gibi iş akışı görevleri zamanlanabilir.
 - **İş akışı ve bağlantı daraltma.** İş akışı yürütme ve bağlantıları düğümlere böylece ölçeklenebilirlik ve yüksek kullanılabilirlik senaryolarını etkinleştirme kısıtlanabilir.

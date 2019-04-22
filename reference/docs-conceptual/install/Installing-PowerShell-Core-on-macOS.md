@@ -3,16 +3,16 @@ title: MacOS’ta PowerShell Core yükleme
 description: Macos'ta PowerShell Core yükleme hakkında bilgi
 ms.date: 12/12/2018
 ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59293410"
 ---
 # <a name="installing-powershell-core-on-macos"></a>MacOS’ta PowerShell Core yükleme
 
 PowerShell Core macOS 10.12 ve üstünü destekler.
-Tüm paketleri bizim Github'da kullanılabilir [sürümleri][] sayfası.
+Tüm paketleri bizim Github'da kullanılabilir [Yayınları][] sayfası.
 Paket yüklendikten sonra çalıştırın `pwsh` bir terminalden.
 
 ## <a name="about-brew"></a>Brew hakkında
@@ -84,9 +84,8 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Doğrudan indirme ile yükleme
 
-PKG paketini indirme
-`powershell-6.2.0-osx-x64.pkg`
-gelen [sürümleri][] macOS makinenizde sayfaya.
+PKG paketini indirme `powershell-6.2.0-osx-x64.pkg`
+gelen [Yayınları][] macOS makinenizde sayfaya.
 
 Dosyaya çift tıklayın ve yönergeleri izleyin veya terminalden yükleyin:
 

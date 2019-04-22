@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Linux için Desired State Configuration (DSC) ile çalışmaya başlama
 ms.openlocfilehash: a18b226d4b2d8b8e1ba8b4168ec6ad8f73c73c42
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59506844"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux için Desired State Configuration (DSC) ile çalışmaya başlama

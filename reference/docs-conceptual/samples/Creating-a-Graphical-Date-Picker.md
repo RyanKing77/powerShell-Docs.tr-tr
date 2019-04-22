@@ -4,10 +4,10 @@ keywords: PowerShell cmdlet'i
 title: Grafik Tarih Seçici Oluşturma
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
 ms.openlocfilehash: d3b24af935e781a8a36fc346a6108baaed37b6db
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59506810"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Grafik Tarih Seçici Oluşturma
@@ -148,4 +148,4 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 - [Hey betik yazarı:  Bu PowerShell GUI örnekler neden çalışmıyor?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt'ın WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Haftanın Windows PowerShell İpucu:  Grafik Tarih Seçici Oluşturma](https://technet.microsoft.com/library/ff730942.aspx)
+- [Haftanın Windows PowerShell İpucu:  Grafik Tarih Seçici oluşturma](https://technet.microsoft.com/library/ff730942.aspx)

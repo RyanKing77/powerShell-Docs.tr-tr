@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58920399"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell Programcı&#39;s Kılavuzu
@@ -99,12 +99,12 @@ Windows PowerShell Kabuk kullanmaya başlamak hakkında daha fazla bilgi için b
 
 |Konu|Açıklama|
 |-----------|----------------|
-|[Windows PowerShell Sağlayıcısı Oluşturma](./how-to-create-a-windows-powershell-provider.md)|Bu bölümde, bir Windows PowerShell için Windows PowerShell sağlayıcısını nasıl oluşturulduğu açıklanır.|
+|[Bir Windows PowerShell sağlayıcısı oluşturma](./how-to-create-a-windows-powershell-provider.md)|Bu bölümde, bir Windows PowerShell için Windows PowerShell sağlayıcısını nasıl oluşturulduğu açıklanır.|
 |[Bir Windows PowerShell ana bilgisayar uygulaması oluşturma](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Bu bölümde, bir çalışma alanı işleyen bir ana bilgisayar uygulaması yazma ve kendi özel ana bilgisayar uygulayan bir ana bilgisayar uygulaması yazma açıklanmaktadır.|
-|[Windows PowerShell Ek Bileşeni Oluşturma](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Bu bölümde, bir derlemede tüm cmdlet'leri ve sağlayıcıları kaydetmek için kullanılan bir ek bileşeni oluşturma ve bir özel ek bileşenini oluşturma açıklanmaktadır.|
-|[Konsol Kabuğu Oluşturma](./how-to-create-a-console-shell.md)|Bu bölümde, Genişletilebilir değil bir konsol Kabuk oluşturmayı açıklar.|
-|[Windows PowerShell Kavramları](./windows-powershell-concepts.md)|Bu bölüm, Windows PowerShell bir geliştiricinin bakış açısından anlamanıza yardımcı olacak kavramsal bilgiler içerir.|
+|[Bir Windows PowerShell ek bileşeni oluşturma](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Bu bölümde, bir derlemede tüm cmdlet'leri ve sağlayıcıları kaydetmek için kullanılan bir ek bileşeni oluşturma ve bir özel ek bileşenini oluşturma açıklanmaktadır.|
+|[Bir konsol Kabuk oluşturma](./how-to-create-a-console-shell.md)|Bu bölümde, Genişletilebilir değil bir konsol Kabuk oluşturmayı açıklar.|
+|[Windows PowerShell kavramlarını](./windows-powershell-concepts.md)|Bu bölüm, Windows PowerShell bir geliştiricinin bakış açısından anlamanıza yardımcı olacak kavramsal bilgiler içerir.|
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[Windows PowerShell SDK’sı](../windows-powershell-reference.md)
+[Windows PowerShell SDK'sı](../windows-powershell-reference.md)
