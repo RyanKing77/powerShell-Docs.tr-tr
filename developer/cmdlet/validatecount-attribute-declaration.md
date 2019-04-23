@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateCount attribute
 ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
 caps.latest.revision: 11
-ms.openlocfilehash: 4e0be34b6f7a56dcf02a4381de4d2a5d08db14df
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
-ms.translationtype: MT
+ms.openlocfilehash: ffc45f6b80a2b7ed22f27d083d042b1de7f353f6
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794458"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59983907"
 ---
 # <a name="validatecount-attribute-declaration"></a>ValidateCount Özniteliği Bildirimi
 
@@ -31,28 +31,34 @@ ValidateCount öznitelik bağımsız değişkenleri bir cmdlet parametresi için
 
 #### <a name="parameters"></a>Parametreler
 
-`MinLength` ([System.Int32](/dotnet/api/System.Int32)) gereklidir. En az sayıda bağımsız değişken belirtir.
+`MinLength` ([System.Int32][]) gereklidir. En az sayıda bağımsız değişken belirtir.
 
-`MaxLength`([System.Int32](/dotnet/api/System.Int32)) gereklidir. En fazla sayıda bağımsız değişken belirtir.
+`MaxLength`([System.Int32][]) gereklidir. En fazla sayıda bağımsız değişken belirtir.
 
 ## <a name="remarks"></a>Açıklamalar
 
-- Bu öznitelik bildirmek hakkında daha fazla bilgi için bkz. [bildirmek giriş doğrulama kuralları nasıl](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b).
+- Bu öznitelik bildirmek hakkında daha fazla bilgi için bkz. [bir bağımsız değişken sayısı doğrulama][].
 
 - Bu öznitelik değil çağrıldığında karşılık gelen bir cmdlet parametresi herhangi bir sayıda bağımsız değişken olabilir.
 
 - Windows PowerShell çalışma zamanı, aşağıdaki koşullarda bir hata oluşturur:
 
-    - `MinLength` Ve `MaxLength` öznitelik parametreleri türünde olmayan [System.Int32](/dotnet/api/System.Int32).
+    - `MinLength` Ve `MaxLength` öznitelik parametreleri türünde olmayan [System.Int32][].
 
     - Değerini `MaxLength` öznitelik parametresi değerini azdır `MinLength` parametre özniteliği.
 
-- ValidateCount özniteliği tarafından tanımlanan [System.Management.Automation.Validatecount](/dotnet/api/System.Management.Automation.ValidateCount) sınıfı.
+- ValidateCount özniteliği tarafından tanımlanan [System.Management.Automation.ValidateCountAttribute][] sınıfı.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[System.Management.Automation.Validatecount](/dotnet/api/System.Management.Automation.ValidateCount)
+[System.Management.Automation.ValidateCountAttribute][]
 
-[Nasıl giriş doğrulama kuralları](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b)
+[Bir bağımsız değişken sayısı doğrulama][]
 
-[Bir Windows PowerShell cmdlet'i yazma](./writing-a-windows-powershell-cmdlet.md)
+[Bir Windows PowerShell cmdlet'i yazma][]
+
+[Bir bağımsız değişken sayısı doğrulama]: how-to-validate-an-argument-count.md
+[Bir Windows PowerShell cmdlet'i yazma]: writing-a-windows-powershell-cmdlet.md
+
+[System.Int32]: /dotnet/api/System.Int32
+[System.Management.Automation.ValidateCountAttribute]: /dotnet/api/System.Management.Automation.ValidateCountAttribute

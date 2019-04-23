@@ -3,15 +3,15 @@ ms.date: 08/24/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Script kaynağı
 ms.openlocfilehash: 4eee5625add4d96ade7ababf7f534f597a26712d
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920365"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984298"
 ---
 # <a name="dsc-script-resource"></a>DSC Script kaynağı
 
-> Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.x
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.x
 
 **Betik** kaynak olarak Windows PowerShell Desired State Configuration (DSC), Windows PowerShell komut dosyası blokları hedef düğümleri üzerinde çalışmak için bir mekanizma sağlar. **Betik** kaynak kullanan `GetScript`, `SetScript`, ve `TestScript` tanımladığınız karşılık gelen DSC gerçekleştirmek için komut dosyası blokları içeren özelliğe işlem durumu.
 

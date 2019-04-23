@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: .NET ve COM nesneleri yeni nesne oluşturma
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
 ms.openlocfilehash: ef8215303aacd90536d3c2ae57bc3629e202f318
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293376"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984332"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>.NET ve COM nesneleri (New-Object) oluşturma
 

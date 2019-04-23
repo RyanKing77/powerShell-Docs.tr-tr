@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 yenilikler nelerdir?
 description: Yeni özellikler ve PowerShell Core 6.1 yayımlanan değişiklikleri
 ms.date: 09/13/2018
-ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
-ms.translationtype: MT
+ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293325"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984519"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 yenilikler nelerdir?
 
@@ -179,8 +179,9 @@ Bu cmdlet'ler nasıl çalıştığı hakkında daha fazla bilgi için kullanıma
 
 ## <a name="experimental-feature-flags"></a>Deneysel özellik bayrakları
 
-Deneysel özellik bayraklarını sonlandırılan henüz özelliklerini etkinleştirme olanağı verir.
-Bu Deneysel özelliklerin desteklenmez ve hatalar içerebilir.
+İçin desteği etkinleştirdik [Deneysel Özellikler][]. Bu yeni özellikler sunmak ve tasarım tamamlanmadan önce geri bildirim almak PowerShell geliştiriciler sağlar. Bu şekilde tasarım geliştikçe bozucu değişiklik kaçının.
+
+Kullanım `Get-ExperimentalFeature` kullanılabilir Deneysel özellikler listesini almak için. Etkinleştirin veya bu özellikleri devre dışı `Enable-ExperimentalFeature` ve `Disable-ExperimentalFeature`.
 
 ' Deki bu özellik hakkında daha fazla bilgi [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
@@ -523,3 +524,6 @@ Performans iyileştirmesi bir parçası olarak `Group-Object` hemen gruplar sır
 Siparişteki doğrulamamalısınız olsa da, ilk grup istediyseniz, bu değişiklikten bozuk durumda. Önceki davranışı bağımlı olan etkisini düşük olduğundan bu performans iyileştirmesi değişiklik olduğunu verdik.
 
 Bu değişiklik hakkında daha fazla bilgi için bkz. [sorun #7409](https://github.com/PowerShell/PowerShell/issues/7409).
+
+<!-- URL references -->
+[Deneysel Özellikler]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
