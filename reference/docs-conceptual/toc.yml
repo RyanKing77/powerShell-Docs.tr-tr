@@ -1,259 +1,254 @@
-items:
 - name: Genel bakış
   href: overview.md
 - name: Yükle
   items:
-  - name: PowerShell’in çeşitli sürümlerini yükleme
-    href: install/installing-powershell.md
-  - name: PowerShell Core
-    items:
-    - name: Windows’da PowerShell Core yükleme
-      href: install/installing-powershell-core-on-windows.md
-    - name: Linux’ta PowerShell Core yükleme
-      href: install/installing-powershell-core-on-linux.md
-    - name: MacOS’ta PowerShell Core yükleme
-      href: install/installing-powershell-core-on-macos.md
-    - name: ARM’ta PowerShell Core yükleme
-      href: install/powershell-core-on-arm.md
-  - name: Windows PowerShell
-    items:
-    - name: Windows PowerShell Yükleme
-      href: install/installing-windows-powershell.md
-    - name: Windows PowerShell 2.0 Altyapısını Yükleme
-      href: install/installing-the-windows-powershell-2.0-engine.md
-    - name: Windows PowerShell Sistem Gereksinimleri
-      href: install/windows-powershell-system-requirements.md
+    - name: PowerShell’in çeşitli sürümlerini yükleme
+      href: install/installing-powershell.md
+    - name: PowerShell Core
+      items:
+        - name: Windows’da PowerShell Core yükleme
+          href: install/installing-powershell-core-on-windows.md
+        - name: Linux’ta PowerShell Core yükleme
+          href: install/installing-powershell-core-on-linux.md
+        - name: MacOS’ta PowerShell Core yükleme
+          href: install/installing-powershell-core-on-macos.md
+        - name: ARM’ta PowerShell Core yükleme
+          href: install/powershell-core-on-arm.md
+    - name: Windows PowerShell
+      items:
+        - name: Windows PowerShell Yükleme
+          href: install/installing-windows-powershell.md
+        - name: Windows PowerShell 2.0 Altyapısını Yükleme
+          href: install/installing-the-windows-powershell-2.0-engine.md
+        - name: Windows PowerShell Sistem Gereksinimleri
+          href: install/windows-powershell-system-requirements.md
 - name: Kullanmaya başlama
   items:
-  - name: PowerShell ile çalışmaya başlayın
-    href: getting-started/getting-started-with-windows-powershell.md
-  - name: Windows Powershell Başlatma
-    href: getting-started/starting-windows-powershell.md
-  - name: Windows PowerShell 2.0 Altyapısını Başlatma
-    href: getting-started/starting-the-windows-powershell-2.0-engine.md
+    - name: PowerShell ile çalışmaya başlayın
+      href: getting-started/getting-started-with-windows-powershell.md
+    - name: Windows Powershell Başlatma
+      href: getting-started/starting-windows-powershell.md
+    - name: Windows PowerShell 2.0 Altyapısını Başlatma
+      href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: PowerShell’i öğrenme
   items:
-  - name: Önemli PowerShell kavramlarını anlama
-    href: learn/understanding-important-powershell-concepts.md
-  - name: PowerShell adlarını öğrenme
-    href: learn/learning-powershell-names.md
-  - name: Tanıdık komut adlarını kullanma
-    href: learn/using-familiar-command-names.md
-  - name: Ayrıntılı yardım bilgisi alma
-    href: learn/getting-detailed-help-information.md
-  - name: Komutlar hakkında bilgi alma
-    href: learn/getting-information-about-commands.md
-  - name: Nesne depolamak için değişkenleri kullanma
-    href: learn/using-variables-to-store-objects.md
-  - name: PowerShell ardışık düzenini anlama
-    href: learn/understanding-the-powershell-pipeline.md
-  - name: PowerShell hakkında daha fazla şey
-    href: learn/more-powershell-learning.md
-  - name: Taşınabilir modüller yazma
-    href: learn/writing-portable-modules.md
-  - name: PowerShell uzaktan iletişim
-    items:
-    - name: Uzak komut çalıştırma
-      href: learn/remoting/running-remote-commands.md
-    - name: SSH üzerinden PowerShell uzaktan iletişimi
-      href: learn/remoting/ssh-remoting-in-powershell-core.md
-    - name: PowerShell Core’da WS-Management (WSMan) uzaktan iletişimi
-      href: learn/remoting/wsman-remoting-in-powershell-core.md
-    - name: WinRM Güvenliği
-      href: learn/remoting/winrmsecurity.md
-    - name: PowerShell Uzaktan İletişim’de ikinci atlamayı yapma
-      href: learn/remoting/ps-remoting-second-hop.md
-  - name: Sözlük
-    href: learn/windows-powershell-glossary.md
+    - name: Önemli PowerShell kavramlarını anlama
+      href: learn/understanding-important-powershell-concepts.md
+    - name: PowerShell adlarını öğrenme
+      href: learn/learning-powershell-names.md
+    - name: Tanıdık komut adlarını kullanma
+      href: learn/using-familiar-command-names.md
+    - name: Ayrıntılı yardım bilgisi alma
+      href: learn/getting-detailed-help-information.md
+    - name: Komutlar hakkında bilgi alma
+      href: learn/getting-information-about-commands.md
+    - name: Nesne depolamak için değişkenleri kullanma
+      href: learn/using-variables-to-store-objects.md
+    - name: PowerShell ardışık düzenini anlama
+      href: learn/understanding-the-powershell-pipeline.md
+    - name: PowerShell hakkında daha fazla şey
+      href: learn/more-powershell-learning.md
+    - name: Taşınabilir modüller yazma
+      href: learn/writing-portable-modules.md
+    - name: PowerShell uzaktan iletişim
+      items:
+        - name: Uzak komut çalıştırma
+          href: learn/remoting/running-remote-commands.md
+        - name: SSH üzerinden PowerShell uzaktan iletişimi
+          href: learn/remoting/ssh-remoting-in-powershell-core.md
+        - name: PowerShell Core’da WS-Management (WSMan) uzaktan iletişimi
+          href: learn/remoting/wsman-remoting-in-powershell-core.md
+        - name: WinRM Güvenliği
+          href: learn/remoting/winrmsecurity.md
+        - name: PowerShell Uzaktan İletişim’de ikinci atlamayı yapma
+          href: learn/remoting/ps-remoting-second-hop.md
+    - name: Sözlük
+      href: learn/windows-powershell-glossary.md
 - name: Bileşenler
   items:
-  - name: Konsol
-    items:
-    - name: PowerShell.exe komut satırı yardımı
-      href: components/console/powershell.exe-command-line-help.md
-    - name: Sekme genişletmeyi kullanma
-      href: components/console/using-tab-expansion.md
-  - name: ISE
-    items:
-    - name: Windows PowerShell ISE tanıtımı
-      href: components/ise/introducing-the-windows-powershell-ise.md
-    - name: Windows PowerShell Tümleşik Komut Dosyası Ortamı (ISE)
-      href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
-    - name: Windows PowerShell ISE’yi Kullanma
+    - name: Konsol
       items:
-      - name: Windows PowerShell ISE’yi Keşfetme
-        href: components/ise/exploring-the-windows-powershell-ise.md
-      - name: Windows PowerShell ISE’de bir PowerShell Sekmesi Oluşturma
-        href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
-      - name: Windows PowerShell ISE’de betiklerde hata ayıklama
-        href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
-      - name: Windows PowerShell ISE’de profilleri kullanma
-        href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
-      - name: Betik ve konsol bölmesinde sekme tamamlamayı kullanma
-        href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
-      - name: Windows PowerShell ISE’de konsol bölmesini kullanma
-        href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
-      - name: Windows PowerShell ISE’de betik yazma ve çalıştırma
-        href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
-      - name: Windows PowerShell ISE için klavye kısayolları
-        href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
-      - name: Windows PowerShell ISE’de erişilebilirlik
-        href: components/ise/accessibility-in-windows-powershell-ise.md
-    - name: ISE betik oluşturma nesne modeli
+        - name: PowerShell.exe komut satırı yardımı
+          href: components/console/powershell.exe-command-line-help.md
+        - name: Sekme genişletmeyi kullanma
+          href: components/console/using-tab-expansion.md
+    - name: ISE
       items:
-      - name: Windows PowerShell ISE Betik Oluşturma Nesne Modelinin Amacı
-        href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
-      - name: ISE nesne modeli hiyerarşisi
-        href: components/ise/object-model/the-ise-object-model-hierarchy.md
-      - name: ObjectModelRoot nesnesi
-        href: components/ise/object-model/the-objectmodelroot-object.md
-      - name: ISEAddOnToolCollection nesnesi
-        href: components/ise/object-model/the-iseaddontoolcollection-object.md
-      - name: ISEAddOnTool nesnesi
-        href: components/ise/object-model/the-iseaddontool-object.md
-      - name: ISEEditor nesnesi
-        href: components/ise/object-model/the-iseeditor-object.md
-      - name: ISEFileCollection nesnesi
-        href: components/ise/object-model/the-isefilecollection-object.md
-      - name: ISEFile nesnesi
-        href: components/ise/object-model/the-isefile-object.md
-      - name: ISEMenuItemCollection Nesnesi
-        href: components/ise/object-model/the-isemenuitemcollection-object.md
-      - name: ISEMenuItem nesnesi
-        href: components/ise/object-model/the-isemenuitem-object.md
-      - name: ISEOptions nesnesi
-        href: components/ise/object-model/the-iseoptions-object.md
-      - name: ISESnippetCollection nesnesi
-        href: components/ise/object-model/the-isesnippetcollection-object.md
-      - name: ISESnippet Nesnesi
-        href: components/ise/object-model/the-isesnippetobject.md
-      - name: PowerShellTabCollection nesnesi
-        href: components/ise/object-model/the-powershelltabcollection-object.md
-      - name: PowerShellTab nesnesi
-        href: components/ise/object-model/the-powershelltab-object.md
-  - name: Visual Studio Code
-    items:
-    - name: Visual Studio Code’u kullanma
-      href: components/vscode/using-vscode.md
-    - name: Visual Studio Code’da ISE deneyimi çoğaltma
-      href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-    - name: Uzaktan düzenleme ve hata ayıklama için Visual Studio Code’u kullanma
-      href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-    - name: VSCode ve PowerShell’de dosya kodlamayı anlama
-      href: components/vscode/understanding-file-encoding.md
-  - name: Web Erişimi
-    items:
-    - name: Yetkilendirme kuralları ve güvenlik özellikleri
-      href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-    - name: Yükleme
-      href: components/web-access/install-and-use-windows-powershell-web-access.md
-    - name: Erişim sorunlarını giderme
-      href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
-    - name: Windows PowerShell web erişimini kaldırma
-      href: components/web-access/uninstall-windows-powershell-web-access.md
-    - name: Web tabanlı PowerShell konsolunu kullanma
-      href: components/web-access/use-the-web-based-windows-powershell-console.md
-  - name: İş Akışları Kılavuzu
-    href: components/workflows-guide.md
+        - name: Windows PowerShell ISE tanıtımı
+          href: components/ise/introducing-the-windows-powershell-ise.md
+        - name: Windows PowerShell Tümleşik Komut Dosyası Ortamı ISE
+          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
+        - name: Windows PowerShell ISE’yi Kullanma
+          items:
+            - name: Windows PowerShell ISE’yi Keşfetme
+              href: components/ise/exploring-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE’de bir PowerShell Sekmesi Oluşturma
+              href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+            - name: Windows PowerShell ISE’de betiklerde hata ayıklama
+              href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+            - name: Windows PowerShell ISE’de profilleri kullanma
+              href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
+            - name: Betik ve konsol bölmesinde sekme tamamlamayı kullanma
+              href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+            - name: Windows PowerShell ISE’de konsol bölmesini kullanma
+              href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE’de betik yazma ve çalıştırma
+              href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE için klavye kısayolları
+              href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE’de erişilebilirlik
+              href: components/ise/accessibility-in-windows-powershell-ise.md
+        - name: ISE betik oluşturma nesne modeli
+          items:
+            - name: Windows PowerShell ISE Betik Oluşturma Nesne Modelinin Amacı
+              href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+            - name: ISE nesne modeli hiyerarşisi
+              href: components/ise/object-model/the-ise-object-model-hierarchy.md
+            - name: ObjectModelRoot nesnesi
+              href: components/ise/object-model/the-objectmodelroot-object.md
+            - name: ISEAddOnToolCollection nesnesi
+              href: components/ise/object-model/the-iseaddontoolcollection-object.md
+            - name: ISEAddOnTool nesnesi
+              href: components/ise/object-model/the-iseaddontool-object.md
+            - name: ISEEditor nesnesi
+              href: components/ise/object-model/the-iseeditor-object.md
+            - name: ISEFileCollection nesnesi
+              href: components/ise/object-model/the-isefilecollection-object.md
+            - name: ISEFile nesnesi
+              href: components/ise/object-model/the-isefile-object.md
+            - name: ISEMenuItemCollection Nesnesi
+              href: components/ise/object-model/the-isemenuitemcollection-object.md
+            - name: ISEMenuItem nesnesi
+              href: components/ise/object-model/the-isemenuitem-object.md
+            - name: ISEOptions nesnesi
+              href: components/ise/object-model/the-iseoptions-object.md
+            - name: ISESnippetCollection nesnesi
+              href: components/ise/object-model/the-isesnippetcollection-object.md
+            - name: ISESnippet Nesnesi
+              href: components/ise/object-model/the-isesnippetobject.md
+            - name: PowerShellTabCollection nesnesi
+              href: components/ise/object-model/the-powershelltabcollection-object.md
+            - name: PowerShellTab nesnesi
+              href: components/ise/object-model/the-powershelltab-object.md
+    - name: Visual Studio Code
+      items:
+        - name: Visual Studio Code’u kullanma
+          href: components/vscode/using-vscode.md
+        - name: Visual Studio Code’da ISE deneyimi çoğaltma
+          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+        - name: Uzaktan düzenleme ve hata ayıklama için Visual Studio Code’u kullanma
+          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+        - name: VSCode ve PowerShell’de dosya kodlamayı anlama
+          href: components/vscode/understanding-file-encoding.md
+    - name: Web Erişimi
+      items:
+        - name: Yetkilendirme kuralları ve güvenlik özellikleri
+          href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
+        - name: Yükleme
+          href: components/web-access/install-and-use-windows-powershell-web-access.md
+        - name: Erişim sorunlarını giderme
+          href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
+        - name: Windows PowerShell web erişimini kaldırma
+          href: components/web-access/uninstall-windows-powershell-web-access.md
+        - name: Web tabanlı PowerShell konsolunu kullanma
+          href: components/web-access/use-the-web-based-windows-powershell-console.md
+    - name: İş Akışları Kılavuzu
+      href: components/workflows-guide.md
 - name: Yenilikler
   items:
-  - name: PowerShell Core 6.x sürümündeki yenilikler
-    items:
-    - name: PowerShell Core 6.1'deki yenilikler
-      href: whats-new/what-s-new-in-powershell-core-61.md
-    - name: PowerShell Core 6.0’daki yenilikler
-      href: whats-new/what-s-new-in-powershell-core-60.md
-    - name: PowerShell Core 6.0’daki önemli değişiklikler
-      href: whats-new/breaking-changes-ps6.md
-    - name: PowerShell Core 6.0’daki bilinen sorunlar
-      href: whats-new/known-issues-ps6.md
-  - name: PowerShell 5.x sürümündeki yenilikler
-    items:
-    - name: PowerShell 5.0’daki yenilikler
-      href: whats-new/what-s-new-with-powershell.md
-    - name: Windows PowerShell 5.0’daki yenilikler
-      href: whats-new/what-s-new-in-windows-powershell-50.md
-    - name: PowerShell 5.0 ISE’deki yenilikler
-      href: whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: PowerShell Core 6.x sürümündeki yenilikler
+      items:
+        - name: PowerShell Core 6.2'deki yenilikler
+          href: whats-new/what-s-new-in-powershell-core-62.md
+        - name: PowerShell Core 6.1'deki yenilikler
+          href: whats-new/what-s-new-in-powershell-core-61.md
+        - name: PowerShell Core 6.0’daki yenilikler
+          href: whats-new/what-s-new-in-powershell-core-60.md
+        - name: PowerShell Core 6.0’daki önemli değişiklikler
+          href: whats-new/breaking-changes-ps6.md
+        - name: PowerShell Core 6.0’daki bilinen sorunlar
+          href: whats-new/known-issues-ps6.md
+    - name: PowerShell 5.x sürümündeki yenilikler
+      items:
+        - name: PowerShell 5.0’daki yenilikler
+          href: whats-new/what-s-new-with-powershell.md
+        - name: Windows PowerShell 5.0’daki yenilikler
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: PowerShell 5.0 ISE’deki yenilikler
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
 - name: PowerShell Core destek yaşam döngüsü
   href: powershell-support-lifecycle.md
 - name: Örnek betikler
   items:
-  - name: Yönetim için örnek betikler
-    href: samples/sample-scripts-for-administration.md
-  - name: Bilgisayar durumunu değiştirme
-    href: samples/changing-computer-state.md
-  - name: Bilgisayarlar hakkında bilgi toplama
-    href: samples/collecting-information-about-computers.md
-  - name: FilterHashtable ile Get-WinEvent sorguları oluşturma
-    href: samples/creating-get-winEvent-queries-with-filterhashtable.md
-  - name: Kullanıcı arabirimi öğeleri oluşturma
-    items:
-    - name: Özel bir giriş kutusu oluşturma
-      href: samples/creating-a-custom-input-box.md
-    - name: Grafik tarih seçici oluşturma
-      href: samples/creating-a-graphical-date-picker.md
-    - name: Birden çok seçim liste kutusu
-      href: samples/multiple-selection-list-boxes.md
-    - name: Bir liste kutusundan öğe seçme
-      href: samples/selecting-items-from-a-list-box.md
-  - name: PowerShell komutunun kodunu çalışan bir işlemden çözme
-    href: samples/decode-powershell-command-from-a-running-process.md
-  - name: Geçerli konumu yönetme
-    href: samples/managing-current-location.md
-  - name: İşlem cmdlet’leri ile işlemleri yönetme
-    href: samples/managing-processes-with-process-cmdlets.md
-  - name: Hizmetleri yönetme
-    href: samples/managing-services.md
-  - name: Windows PowerShell sürücülerini yönetme
-    href: samples/managing-windows-powershell-drives.md
-  - name: Öğeleri doğrudan işleme
-    href: samples/manipulating-items-directly.md
-  - name: Ağ görevleri gerçekleştirme
-    href: samples/performing-networking-tasks.md
-  - name: Out-* cmdlet’leri ile verileri yeniden yönlendirme
-    href: samples/redirecting-data-with-out---cmdlets.md
-  - name: Çıkış görünümünü değiştirmek için biçimlendirme komutları kullanma
-    href: samples/using-format-commands-to-change-output-view.md
-  - name: Dosya ve klasörlerle çalışma
-    href: samples/working-with-files-and-folders.md
-  - name: Dosya, klasör ve kayıt defteri anahtarları ile çalışma
-    href: samples/working-with-files-folders-and-registry-keys.md
-  - name: Nesneler ile çalışma
-    items:
-    - name: WMI nesnelerini alma - Get-WmiObject
-      href: samples/getting-wmi-objects--get-wmiobject-.md
-    - name: .NET ve COM nesneleri oluşturma - New-Object
-      href: samples/creating-.net-and-com-objects--new-object-.md
-    - name: Komut zincirinden nesne kaldırma - Where-Object
-      href: samples/removing-objects-from-the-pipeline--where-object-.md
-    - name: Nesne bölümleri seçme - Select-Object
-      href: samples/selecting-parts-of-objects--select-object-.md
-    - name: Nesne sıralama
-      href: samples/sorting-objects.md
-    - name: Birden çok nesne için bir görevi tekrarlama - ForEach-Object
-      href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-    - name: Statik sınıflar ve yöntemler kullanma
-      href: samples/using-static-classes-and-methods.md
-    - name: Nesne yapısını görüntüleme - Get-Member
-      href: samples/viewing-object-structure--get-member-.md
-  - name: Yazıcılar ile çalışma
-    href: samples/working-with-printers.md
-  - name: Kayıt defteri girdileri ile çalışma
-    href: samples/working-with-registry-entries.md
-  - name: Kayıt defteri anahtarları ile çalışma
-    href: samples/working-with-registry-keys.md
-  - name: Yazılım yüklemeleri ile çalışma
-    href: samples/working-with-software-installations.md
-  - name: Diğer kullanışlı betik oluşturma nesneleri
-    href: samples/other-useful-scripting-objects.md
-  - name: Ek 1 Uyumluluk diğer adları
-    href: samples/appendix-1---compatibility-aliases.md
-  - name: Ek 2 Özel bir PowerShell kısayolu oluşturma
-    href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: 3894ca88d01d4f84742321445b0b1e962631c10d
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
-ms.translationtype: HT
-ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920467"
+    - name: Yönetim için örnek betikler
+      href: samples/sample-scripts-for-administration.md
+    - name: Bilgisayar durumunu değiştirme
+      href: samples/changing-computer-state.md
+    - name: Bilgisayarlar hakkında bilgi toplama
+      href: samples/collecting-information-about-computers.md
+    - name: FilterHashtable ile Get-WinEvent sorguları oluşturma
+      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Kullanıcı arabirimi öğeleri oluşturma
+      items:
+        - name: Özel bir giriş kutusu oluşturma
+          href: samples/creating-a-custom-input-box.md
+        - name: Grafik tarih seçici oluşturma
+          href: samples/creating-a-graphical-date-picker.md
+        - name: Birden çok seçim liste kutusu
+          href: samples/multiple-selection-list-boxes.md
+        - name: Bir liste kutusundan öğe seçme
+          href: samples/selecting-items-from-a-list-box.md
+    - name: PowerShell komutunun kodunu çalışan bir işlemden çözme
+      href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Geçerli konumu yönetme
+      href: samples/managing-current-location.md
+    - name: İşlem cmdlet’leri ile işlemleri yönetme
+      href: samples/managing-processes-with-process-cmdlets.md
+    - name: Hizmetleri yönetme
+      href: samples/managing-services.md
+    - name: Windows PowerShell sürücülerini yönetme
+      href: samples/managing-windows-powershell-drives.md
+    - name: Öğeleri doğrudan işleme
+      href: samples/manipulating-items-directly.md
+    - name: Ağ görevleri gerçekleştirme
+      href: samples/performing-networking-tasks.md
+    - name: Out-* cmdlet’leri ile verileri yeniden yönlendirme
+      href: samples/redirecting-data-with-out---cmdlets.md
+    - name: Çıkış görünümünü değiştirmek için biçimlendirme komutları kullanma
+      href: samples/using-format-commands-to-change-output-view.md
+    - name: Dosya ve klasörlerle çalışma
+      href: samples/working-with-files-and-folders.md
+    - name: 'Dosya, klasör ve kayıt defteri anahtarları ile çalışma'
+      href: samples/working-with-files-folders-and-registry-keys.md
+    - name: Nesneler ile çalışma
+      items:
+        - name: WMI nesnelerini alma - Get-WmiObject
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: .NET ve COM nesneleri oluşturma - New-Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: Komut zincirinden nesne kaldırma - Where-Object
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: Nesne bölümleri seçme - Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: Nesne sıralama
+          href: samples/sorting-objects.md
+        - name: Birden çok nesne için bir görevi tekrarlama - ForEach-Object
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: Statik sınıflar ve yöntemler kullanma
+          href: samples/using-static-classes-and-methods.md
+        - name: Nesne yapısını görüntüleme - Get-Member
+          href: samples/viewing-object-structure--get-member-.md
+    - name: Yazıcılar ile çalışma
+      href: samples/working-with-printers.md
+    - name: Kayıt defteri girdileri ile çalışma
+      href: samples/working-with-registry-entries.md
+    - name: Kayıt defteri anahtarları ile çalışma
+      href: samples/working-with-registry-keys.md
+    - name: Yazılım yüklemeleri ile çalışma
+      href: samples/working-with-software-installations.md
+    - name: Diğer kullanışlı betik oluşturma nesneleri
+      href: samples/other-useful-scripting-objects.md
+    - name: Ek 1 Uyumluluk diğer adları
+      href: samples/appendix-1---compatibility-aliases.md
+    - name: Ek 2 Özel bir PowerShell kısayolu oluşturma
+      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md

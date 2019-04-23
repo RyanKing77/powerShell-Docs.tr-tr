@@ -4,21 +4,21 @@ keywords: PowerShell cmdlet'i
 title: Dosya, Klasör ve Kayıt Defteri Anahtarları ile Çalışma
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
 ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293104"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984196"
 ---
-# <a name="working-with-files-folders-and-registry-keys"></a><span data-ttu-id="74785-103">Dosya, klasör ve kayıt defteri anahtarları ile çalışma</span><span class="sxs-lookup"><span data-stu-id="74785-103">Working With Files, Folders and Registry Keys</span></span>
+# <a name="working-with-files-folders-and-registry-keys"></a><span data-ttu-id="8194d-103">Dosya, klasör ve kayıt defteri anahtarları ile çalışma</span><span class="sxs-lookup"><span data-stu-id="8194d-103">Working With Files, Folders and Registry Keys</span></span>
 
-<span data-ttu-id="74785-104">Windows PowerShell kullanan isim **öğesi** bir Windows PowerShell sürücüsünde bulunan öğeleri başvurmak için.</span><span class="sxs-lookup"><span data-stu-id="74785-104">Windows PowerShell uses the noun **Item** to refer to items found on a Windows PowerShell drive.</span></span> <span data-ttu-id="74785-105">Windows PowerShell dosya sistemi sağlayıcısı ile ilgilenirken bir **öğesi** bir dosya, klasör ya da Windows PowerShell sürücüsünü olabilir.</span><span class="sxs-lookup"><span data-stu-id="74785-105">When dealing with the Windows PowerShell FileSystem provider, an **Item** might be a file, a folder, or the Windows PowerShell drive.</span></span> <span data-ttu-id="74785-106">Bu görevleri ayrıntılı tartışmak istediğimiz şekilde listeleme ve bu öğeleri ile çalışma bir kritik temel çoğu yönetim ayarları'nda görevdir.</span><span class="sxs-lookup"><span data-stu-id="74785-106">Listing and working with these items is a critical basic task in most administrative settings, so we want to discuss these tasks in detail.</span></span>
+<span data-ttu-id="8194d-104">Windows PowerShell kullanan isim **öğesi** bir Windows PowerShell sürücüsünde bulunan öğeleri başvurmak için.</span><span class="sxs-lookup"><span data-stu-id="8194d-104">Windows PowerShell uses the noun **Item** to refer to items found on a Windows PowerShell drive.</span></span> <span data-ttu-id="8194d-105">Windows PowerShell dosya sistemi sağlayıcısı ile ilgilenirken bir **öğesi** bir dosya, klasör ya da Windows PowerShell sürücüsünü olabilir.</span><span class="sxs-lookup"><span data-stu-id="8194d-105">When dealing with the Windows PowerShell FileSystem provider, an **Item** might be a file, a folder, or the Windows PowerShell drive.</span></span> <span data-ttu-id="8194d-106">Bu görevleri ayrıntılı tartışmak istediğimiz şekilde listeleme ve bu öğeleri ile çalışma bir kritik temel çoğu yönetim ayarları'nda görevdir.</span><span class="sxs-lookup"><span data-stu-id="8194d-106">Listing and working with these items is a critical basic task in most administrative settings, so we want to discuss these tasks in detail.</span></span>
 
-## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a><span data-ttu-id="74785-107">Dosyaları, klasörleri ve kayıt defteri anahtarlarını (Get-Childıtem) numaralandırma</span><span class="sxs-lookup"><span data-stu-id="74785-107">Enumerating Files, Folders, and Registry Keys (Get-ChildItem)</span></span>
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a><span data-ttu-id="8194d-107">Dosyaları, klasörleri ve kayıt defteri anahtarlarını (Get-Childıtem) numaralandırma</span><span class="sxs-lookup"><span data-stu-id="8194d-107">Enumerating Files, Folders, and Registry Keys (Get-ChildItem)</span></span>
 
-<span data-ttu-id="74785-108">Belirli bir konumdan bir öğe koleksiyonu alma gibi genel bir görev, olduğundan **Get-Childıtem** cmdlet'i, özellikle bir klasörü gibi bir kapsayıcı içinde bulunan tüm öğeleri döndürmek için tasarlanmıştır.</span><span class="sxs-lookup"><span data-stu-id="74785-108">Since getting a collection of items from a particular location is such a common task, the **Get-ChildItem** cmdlet is designed specifically to return all items found within a container such as a folder.</span></span>
+<span data-ttu-id="8194d-108">Belirli bir konumdan bir öğe koleksiyonu alma gibi genel bir görev, olduğundan **Get-Childıtem** cmdlet'i, özellikle bir klasörü gibi bir kapsayıcı içinde bulunan tüm öğeleri döndürmek için tasarlanmıştır.</span><span class="sxs-lookup"><span data-stu-id="8194d-108">Since getting a collection of items from a particular location is such a common task, the **Get-ChildItem** cmdlet is designed specifically to return all items found within a container such as a folder.</span></span>
 
-<span data-ttu-id="74785-109">Tüm dosyaları ve klasörleri doğrudan klasördeki C: bulunan dönmek istiyorsanız\\Windows, türü:</span><span class="sxs-lookup"><span data-stu-id="74785-109">If you want to return all files and folders that are contained directly within the folder C:\\Windows, type:</span></span>
+<span data-ttu-id="8194d-109">Tüm dosyaları ve klasörleri doğrudan klasördeki C: bulunan dönmek istiyorsanız\\Windows, türü:</span><span class="sxs-lookup"><span data-stu-id="8194d-109">If you want to return all files and folders that are contained directly within the folder C:\\Windows, type:</span></span>
 
 ```
 PS> Get-ChildItem -Path C:\Windows
@@ -32,19 +32,19 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-<span data-ttu-id="74785-110">Listenin, girdiğinizde gördüğünüz için benzer **dir** komutunu **Cmd.exe**, veya **ls** UNIX komut kabuğu'nda komutu.</span><span class="sxs-lookup"><span data-stu-id="74785-110">The listing looks similar to what you would see when you enter the **dir** command in **Cmd.exe**, or the **ls** command in a UNIX command shell.</span></span>
+<span data-ttu-id="8194d-110">Listenin, girdiğinizde gördüğünüz için benzer **dir** komutunu **Cmd.exe**, veya **ls** UNIX komut kabuğu'nda komutu.</span><span class="sxs-lookup"><span data-stu-id="8194d-110">The listing looks similar to what you would see when you enter the **dir** command in **Cmd.exe**, or the **ls** command in a UNIX command shell.</span></span>
 
-<span data-ttu-id="74785-111">Çok karmaşık listelerini parametrelerini kullanarak gerçekleştirebileceğiniz **Get-Childıtem** cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="74785-111">You can perform very complex listings by using parameters of the **Get-ChildItem** cmdlet.</span></span> <span data-ttu-id="74785-112">Biz birkaç senaryolarında sonraki görünecektir.</span><span class="sxs-lookup"><span data-stu-id="74785-112">We will look at a few scenarios next.</span></span> <span data-ttu-id="74785-113">Söz dizimi gördüğünüz **Get-Childıtem** yazarak cmdlet:</span><span class="sxs-lookup"><span data-stu-id="74785-113">You can see the syntax the **Get-ChildItem** cmdlet by typing:</span></span>
+<span data-ttu-id="8194d-111">Çok karmaşık listelerini parametrelerini kullanarak gerçekleştirebileceğiniz **Get-Childıtem** cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="8194d-111">You can perform very complex listings by using parameters of the **Get-ChildItem** cmdlet.</span></span> <span data-ttu-id="8194d-112">Biz birkaç senaryolarında sonraki görünecektir.</span><span class="sxs-lookup"><span data-stu-id="8194d-112">We will look at a few scenarios next.</span></span> <span data-ttu-id="8194d-113">Söz dizimi gördüğünüz **Get-Childıtem** yazarak cmdlet:</span><span class="sxs-lookup"><span data-stu-id="8194d-113">You can see the syntax the **Get-ChildItem** cmdlet by typing:</span></span>
 
 ```powershell
 Get-Command -Name Get-ChildItem -Syntax
 ```
 
-<span data-ttu-id="74785-114">Bu parametre, karma ve üst düzeyde özelleştirilmiş çıktısını almak için eşleşen.</span><span class="sxs-lookup"><span data-stu-id="74785-114">These parameters can be mixed and matched to get highly customized output.</span></span>
+<span data-ttu-id="8194d-114">Bu parametre, karma ve üst düzeyde özelleştirilmiş çıktısını almak için eşleşen.</span><span class="sxs-lookup"><span data-stu-id="8194d-114">These parameters can be mixed and matched to get highly customized output.</span></span>
 
-### <a name="listing-all-contained-items--recurse"></a><span data-ttu-id="74785-115">Tüm bulunan öğeleri listeleme (-Recurse)</span><span class="sxs-lookup"><span data-stu-id="74785-115">Listing all Contained Items (-Recurse)</span></span>
+### <a name="listing-all-contained-items--recurse"></a><span data-ttu-id="8194d-115">Tüm bulunan öğeleri listeleme (-Recurse)</span><span class="sxs-lookup"><span data-stu-id="8194d-115">Listing all Contained Items (-Recurse)</span></span>
 
-<span data-ttu-id="74785-116">Windows klasörünün içindeki öğeleri hem de alt klasörleri içinde yer alan tüm öğeleri görmek için **Recurse** parametresinin **Get-Childıtem**.</span><span class="sxs-lookup"><span data-stu-id="74785-116">To see both the items inside a Windows folder and any items that are contained within the subfolders, use the **Recurse** parameter of **Get-ChildItem**.</span></span> <span data-ttu-id="74785-117">Listenin her şeyi Windows klasörü ve alt öğelerinde içinde görüntüler.</span><span class="sxs-lookup"><span data-stu-id="74785-117">The listing displays everything within the Windows folder and the items in its subfolders.</span></span> <span data-ttu-id="74785-118">Örneğin:</span><span class="sxs-lookup"><span data-stu-id="74785-118">For example:</span></span>
+<span data-ttu-id="8194d-116">Windows klasörünün içindeki öğeleri hem de alt klasörleri içinde yer alan tüm öğeleri görmek için **Recurse** parametresinin **Get-Childıtem**.</span><span class="sxs-lookup"><span data-stu-id="8194d-116">To see both the items inside a Windows folder and any items that are contained within the subfolders, use the **Recurse** parameter of **Get-ChildItem**.</span></span> <span data-ttu-id="8194d-117">Listenin her şeyi Windows klasörü ve alt öğelerinde içinde görüntüler.</span><span class="sxs-lookup"><span data-stu-id="8194d-117">The listing displays everything within the Windows folder and the items in its subfolders.</span></span> <span data-ttu-id="8194d-118">Örneğin:</span><span class="sxs-lookup"><span data-stu-id="8194d-118">For example:</span></span>
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS -Recurse
@@ -57,9 +57,9 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-### <a name="filtering-items-by-name--name"></a><span data-ttu-id="74785-119">Öğeleri ada göre filtreleme (-adı)</span><span class="sxs-lookup"><span data-stu-id="74785-119">Filtering Items by Name (-Name)</span></span>
+### <a name="filtering-items-by-name--name"></a><span data-ttu-id="8194d-119">Öğeleri ada göre filtreleme (-adı)</span><span class="sxs-lookup"><span data-stu-id="8194d-119">Filtering Items by Name (-Name)</span></span>
 
-<span data-ttu-id="74785-120">Yalnızca öğelerin adlarını görüntülemek için kullanın **adı** parametresinin **Get-Childıtem**:</span><span class="sxs-lookup"><span data-stu-id="74785-120">To display only the names of items, use the **Name** parameter of **Get-Childitem**:</span></span>
+<span data-ttu-id="8194d-120">Yalnızca öğelerin adlarını görüntülemek için kullanın **adı** parametresinin **Get-Childıtem**:</span><span class="sxs-lookup"><span data-stu-id="8194d-120">To display only the names of items, use the **Name** parameter of **Get-Childitem**:</span></span>
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS -Name
@@ -69,31 +69,31 @@ assembly
 ...
 ```
 
-### <a name="forcibly-listing-hidden-items--force"></a><span data-ttu-id="74785-121">Gizli öğeleri zorla listeleme (-Force)</span><span class="sxs-lookup"><span data-stu-id="74785-121">Forcibly Listing Hidden Items (-Force)</span></span>
+### <a name="forcibly-listing-hidden-items--force"></a><span data-ttu-id="8194d-121">Gizli öğeleri zorla listeleme (-Force)</span><span class="sxs-lookup"><span data-stu-id="8194d-121">Forcibly Listing Hidden Items (-Force)</span></span>
 
-<span data-ttu-id="74785-122">Dosya Gezgini veya Cmd.exe normalde görünmeyen öğeleri çıktısında görüntülenmez bir **Get-Childıtem** komutu.</span><span class="sxs-lookup"><span data-stu-id="74785-122">Items that are normally invisible in File Explorer or Cmd.exe are not displayed in the output of a **Get-ChildItem** command.</span></span> <span data-ttu-id="74785-123">Gizli öğeleri görüntülemek için kullanın **zorla** parametresinin **Get-Childıtem**.</span><span class="sxs-lookup"><span data-stu-id="74785-123">To display hidden items, use the **Force** parameter of **Get-ChildItem**.</span></span> <span data-ttu-id="74785-124">Örneğin:</span><span class="sxs-lookup"><span data-stu-id="74785-124">For example:</span></span>
+<span data-ttu-id="8194d-122">Dosya Gezgini veya Cmd.exe normalde görünmeyen öğeleri çıktısında görüntülenmez bir **Get-Childıtem** komutu.</span><span class="sxs-lookup"><span data-stu-id="8194d-122">Items that are normally invisible in File Explorer or Cmd.exe are not displayed in the output of a **Get-ChildItem** command.</span></span> <span data-ttu-id="8194d-123">Gizli öğeleri görüntülemek için kullanın **zorla** parametresinin **Get-Childıtem**.</span><span class="sxs-lookup"><span data-stu-id="8194d-123">To display hidden items, use the **Force** parameter of **Get-ChildItem**.</span></span> <span data-ttu-id="8194d-124">Örneğin:</span><span class="sxs-lookup"><span data-stu-id="8194d-124">For example:</span></span>
 
 ```powershell
 Get-ChildItem -Path C:\Windows -Force
 ```
 
-<span data-ttu-id="74785-125">Zorla normal davranışı geçersiz kılabilirsiniz olduğundan bu parametreyi zorla adlı **Get-Childıtem** komutu.</span><span class="sxs-lookup"><span data-stu-id="74785-125">This parameter is named Force because you can forcibly override the normal behavior of the **Get-ChildItem** command.</span></span> <span data-ttu-id="74785-126">Zorla sistemin güvenliği tehlikeye atar herhangi bir eylem gerçekleştiremeyecek olsa da, bir cmdlet normalde gerçekleştirecek değil, bir eylem zorlar yaygın olarak kullanılan bir parametredir.</span><span class="sxs-lookup"><span data-stu-id="74785-126">Force is a widely used parameter that forces an action that a cmdlet would not normally perform, although it will not perform any action that compromises the security of the system.</span></span>
+<span data-ttu-id="8194d-125">Zorla normal davranışı geçersiz kılabilirsiniz olduğundan bu parametreyi zorla adlı **Get-Childıtem** komutu.</span><span class="sxs-lookup"><span data-stu-id="8194d-125">This parameter is named Force because you can forcibly override the normal behavior of the **Get-ChildItem** command.</span></span> <span data-ttu-id="8194d-126">Zorla sistemin güvenliği tehlikeye atar herhangi bir eylem gerçekleştiremeyecek olsa da, bir cmdlet normalde gerçekleştirecek değil, bir eylem zorlar yaygın olarak kullanılan bir parametredir.</span><span class="sxs-lookup"><span data-stu-id="8194d-126">Force is a widely used parameter that forces an action that a cmdlet would not normally perform, although it will not perform any action that compromises the security of the system.</span></span>
 
-### <a name="matching-item-names-with-wildcards"></a><span data-ttu-id="74785-127">Joker karakterlerle eşleşen öğe adları</span><span class="sxs-lookup"><span data-stu-id="74785-127">Matching Item Names with Wildcards</span></span>
+### <a name="matching-item-names-with-wildcards"></a><span data-ttu-id="8194d-127">Joker karakterlerle eşleşen öğe adları</span><span class="sxs-lookup"><span data-stu-id="8194d-127">Matching Item Names with Wildcards</span></span>
 
-<span data-ttu-id="74785-128">**Get-Childıtem** komut listeye öğe yolunda joker karakterler kabul eder.</span><span class="sxs-lookup"><span data-stu-id="74785-128">**The Get-ChildItem** command accepts wildcards in the path of the items to list.</span></span>
+<span data-ttu-id="8194d-128">**Get-Childıtem** komut listeye öğe yolunda joker karakterler kabul eder.</span><span class="sxs-lookup"><span data-stu-id="8194d-128">**The Get-ChildItem** command accepts wildcards in the path of the items to list.</span></span>
 
-<span data-ttu-id="74785-129">Joker karakter eşlemesi Windows PowerShell altyapısı tarafından işlendiğinden, joker karakterleri kabul eden tüm cmdlet'ler aynı gösterimini kullanın ve eşleşen aynı davranışa sahip.</span><span class="sxs-lookup"><span data-stu-id="74785-129">Because wildcard matching is handled by the Windows PowerShell engine, all cmdlets that accepts wildcards use the same notation and have the same matching behavior.</span></span> <span data-ttu-id="74785-130">Windows PowerShell joker karakter gösterimi içerir:</span><span class="sxs-lookup"><span data-stu-id="74785-130">The Windows PowerShell wildcard notation includes:</span></span>
+<span data-ttu-id="8194d-129">Joker karakter eşlemesi Windows PowerShell altyapısı tarafından işlendiğinden, joker karakterleri kabul eden tüm cmdlet'ler aynı gösterimini kullanın ve eşleşen aynı davranışa sahip.</span><span class="sxs-lookup"><span data-stu-id="8194d-129">Because wildcard matching is handled by the Windows PowerShell engine, all cmdlets that accepts wildcards use the same notation and have the same matching behavior.</span></span> <span data-ttu-id="8194d-130">Windows PowerShell joker karakter gösterimi içerir:</span><span class="sxs-lookup"><span data-stu-id="8194d-130">The Windows PowerShell wildcard notation includes:</span></span>
 
-- <span data-ttu-id="74785-131">Yıldız işareti (\*) sıfır veya daha çok tekrarı herhangi bir karakterle eşleşir.</span><span class="sxs-lookup"><span data-stu-id="74785-131">Asterisk (\*)matches zero or more occurrences of any character.</span></span>
+- <span data-ttu-id="8194d-131">Yıldız işareti (\*) sıfır veya daha çok tekrarı herhangi bir karakterle eşleşir.</span><span class="sxs-lookup"><span data-stu-id="8194d-131">Asterisk (\*)matches zero or more occurrences of any character.</span></span>
 
-- <span data-ttu-id="74785-132">Soru işareti (?) tam olarak bir karakterle eşleşir.</span><span class="sxs-lookup"><span data-stu-id="74785-132">Question mark (?) matches exactly one character.</span></span>
+- <span data-ttu-id="8194d-132">Soru işareti (?) tam olarak bir karakterle eşleşir.</span><span class="sxs-lookup"><span data-stu-id="8194d-132">Question mark (?) matches exactly one character.</span></span>
 
-- <span data-ttu-id="74785-133">Sol köşeli ayraç (\[) karakteri ve sağ köşeli ayraç (]) karakteri kapsamak eşleşmesi gereken karakter kümesi.</span><span class="sxs-lookup"><span data-stu-id="74785-133">Left bracket (\[) character and right bracket (]) character surround a set of characters to be matched.</span></span>
+- <span data-ttu-id="8194d-133">Sol köşeli ayraç (\[) karakteri ve sağ köşeli ayraç (]) karakteri kapsamak eşleşmesi gereken karakter kümesi.</span><span class="sxs-lookup"><span data-stu-id="8194d-133">Left bracket (\[) character and right bracket (]) character surround a set of characters to be matched.</span></span>
 
-<span data-ttu-id="74785-134">Joker karakter belirtimi nasıl çalıştığına ilişkin bazı örnekleri aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="74785-134">Here are some examples of how wildcard specification works.</span></span>
+<span data-ttu-id="8194d-134">Joker karakter belirtimi nasıl çalıştığına ilişkin bazı örnekleri aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="8194d-134">Here are some examples of how wildcard specification works.</span></span>
 
-<span data-ttu-id="74785-135">Sonekine sahip Windows dizinindeki tüm dosyaları bulmak için **.log** ve tam olarak beş temel adı karakter aşağıdaki komutu girin:</span><span class="sxs-lookup"><span data-stu-id="74785-135">To find all files in the Windows directory with the suffix **.log** and exactly five characters in the base name, enter the following command:</span></span>
+<span data-ttu-id="8194d-135">Sonekine sahip Windows dizinindeki tüm dosyaları bulmak için **.log** ve tam olarak beş temel adı karakter aşağıdaki komutu girin:</span><span class="sxs-lookup"><span data-stu-id="8194d-135">To find all files in the Windows directory with the suffix **.log** and exactly five characters in the base name, enter the following command:</span></span>
 
 ```
 PS> Get-ChildItem -Path C:\Windows\?????.log
@@ -110,25 +110,25 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-<span data-ttu-id="74785-136">Harfi ile başlayan tüm dosyaları bulmak için **x** Windows dizini yazın:</span><span class="sxs-lookup"><span data-stu-id="74785-136">To find all files that begin with the letter **x** in the Windows directory, type:</span></span>
+<span data-ttu-id="8194d-136">Harfi ile başlayan tüm dosyaları bulmak için **x** Windows dizini yazın:</span><span class="sxs-lookup"><span data-stu-id="8194d-136">To find all files that begin with the letter **x** in the Windows directory, type:</span></span>
 
 ```powershell
 Get-ChildItem -Path C:\Windows\x*
 ```
 
-<span data-ttu-id="74785-137">Adları ile başlayan tüm dosyaları bulmak için **x** veya **z**, türü:</span><span class="sxs-lookup"><span data-stu-id="74785-137">To find all files whose names begin with **x** or **z**, type:</span></span>
+<span data-ttu-id="8194d-137">Adları ile başlayan tüm dosyaları bulmak için **x** veya **z**, türü:</span><span class="sxs-lookup"><span data-stu-id="8194d-137">To find all files whose names begin with **x** or **z**, type:</span></span>
 
 ```powershell
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-### <a name="excluding-items--exclude"></a><span data-ttu-id="74785-138">Öğeleri hariç (-hariç)</span><span class="sxs-lookup"><span data-stu-id="74785-138">Excluding Items (-Exclude)</span></span>
+### <a name="excluding-items--exclude"></a><span data-ttu-id="8194d-138">Öğeleri hariç (-hariç)</span><span class="sxs-lookup"><span data-stu-id="8194d-138">Excluding Items (-Exclude)</span></span>
 
-<span data-ttu-id="74785-139">Kullanarak belirli öğeleri hariç tutabilirsiniz **hariç** Get-childıtem komutunun parametre.</span><span class="sxs-lookup"><span data-stu-id="74785-139">You can exclude specific items by using the **Exclude** parameter of Get-ChildItem.</span></span> <span data-ttu-id="74785-140">Bu, tek bir deyimde filtreleme karmaşık gerçekleştirmenize olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="74785-140">This lets you perform complex filtering in a single statement.</span></span>
+<span data-ttu-id="8194d-139">Kullanarak belirli öğeleri hariç tutabilirsiniz **hariç** Get-childıtem komutunun parametre.</span><span class="sxs-lookup"><span data-stu-id="8194d-139">You can exclude specific items by using the **Exclude** parameter of Get-ChildItem.</span></span> <span data-ttu-id="8194d-140">Bu, tek bir deyimde filtreleme karmaşık gerçekleştirmenize olanak sağlar.</span><span class="sxs-lookup"><span data-stu-id="8194d-140">This lets you perform complex filtering in a single statement.</span></span>
 
-<span data-ttu-id="74785-141">Örneğin, Windows Saat hizmeti DLL System32 klasöründe bulmaya çalıştığınız ve tüm DLL adı hatırlayabileceğiniz "W" ile başlayan ve "32" içerdiğinden varsayalım.</span><span class="sxs-lookup"><span data-stu-id="74785-141">For example, suppose you are trying to find the Windows Time Service DLL in the System32 folder, and all you can remember about the DLL name is that it begins with "W" and has "32" in it.</span></span>
+<span data-ttu-id="8194d-141">Örneğin, Windows Saat hizmeti DLL System32 klasöründe bulmaya çalıştığınız ve tüm DLL adı hatırlayabileceğiniz "W" ile başlayan ve "32" içerdiğinden varsayalım.</span><span class="sxs-lookup"><span data-stu-id="8194d-141">For example, suppose you are trying to find the Windows Time Service DLL in the System32 folder, and all you can remember about the DLL name is that it begins with "W" and has "32" in it.</span></span>
 
-<span data-ttu-id="74785-142">Bir ifade ister **w\&#42; 32\&#42;. dll** koşulları karşılayan tüm DLL'leri bulur ancak onu Windows 95 ve 16-bit Windows Uyumluluk "95" içeren bir dll veya "16" adlarında döndürebilir.</span><span class="sxs-lookup"><span data-stu-id="74785-142">An expression like **w\&#42;32\&#42;.dll** will find all DLLs that satisfy the conditions, but it may also return the Windows 95 and 16-bit Windows compatibility DLLs that include "95" or "16" in their names.</span></span> <span data-ttu-id="74785-143">Adlarını kullanarak bu sayılardan birine sahip dosyaları atlayabilirsiniz **hariç** deseni parametresi  **\&#42;\[ 9516]\&#42;**:</span><span class="sxs-lookup"><span data-stu-id="74785-143">You can omit files that have any of these numbers in their names by using the **Exclude** parameter with the pattern **\&#42;\[9516]\&#42;**:</span></span>
+<span data-ttu-id="8194d-142">Bir ifade ister **w\&#42; 32\&#42;. dll** koşulları karşılayan tüm DLL'leri bulur ancak onu Windows 95 ve 16-bit Windows Uyumluluk "95" içeren bir dll veya "16" adlarında döndürebilir.</span><span class="sxs-lookup"><span data-stu-id="8194d-142">An expression like **w\&#42;32\&#42;.dll** will find all DLLs that satisfy the conditions, but it may also return the Windows 95 and 16-bit Windows compatibility DLLs that include "95" or "16" in their names.</span></span> <span data-ttu-id="8194d-143">Adlarını kullanarak bu sayılardan birine sahip dosyaları atlayabilirsiniz **hariç** deseni parametresi  **\&#42;\[ 9516]\&#42;**:</span><span class="sxs-lookup"><span data-stu-id="8194d-143">You can omit files that have any of these numbers in their names by using the **Exclude** parameter with the pattern **\&#42;\[9516]\&#42;**:</span></span>
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
@@ -147,19 +147,19 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-### <a name="mixing-get-childitem-parameters"></a><span data-ttu-id="74785-144">Get-Childıtem parametreleri karıştırma</span><span class="sxs-lookup"><span data-stu-id="74785-144">Mixing Get-ChildItem Parameters</span></span>
+### <a name="mixing-get-childitem-parameters"></a><span data-ttu-id="8194d-144">Get-Childıtem parametreleri karıştırma</span><span class="sxs-lookup"><span data-stu-id="8194d-144">Mixing Get-ChildItem Parameters</span></span>
 
-<span data-ttu-id="74785-145">Birkaç parametrelerinden biri kullanabileceğiniz **Get-Childıtem** aynı komutta cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="74785-145">You can use several of the parameters of the **Get-ChildItem** cmdlet in the same command.</span></span> <span data-ttu-id="74785-146">Parametreleri karıştırmak önce joker karakterlerle eşleşen anladığınızdan emin olun.</span><span class="sxs-lookup"><span data-stu-id="74785-146">Before you mix parameters, be sure that you understand wildcard matching.</span></span> <span data-ttu-id="74785-147">Örneğin, aşağıdaki komut, sonuç döndürür:</span><span class="sxs-lookup"><span data-stu-id="74785-147">For example, the following command returns no results:</span></span>
+<span data-ttu-id="8194d-145">Birkaç parametrelerinden biri kullanabileceğiniz **Get-Childıtem** aynı komutta cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="8194d-145">You can use several of the parameters of the **Get-ChildItem** cmdlet in the same command.</span></span> <span data-ttu-id="8194d-146">Parametreleri karıştırmak önce joker karakterlerle eşleşen anladığınızdan emin olun.</span><span class="sxs-lookup"><span data-stu-id="8194d-146">Before you mix parameters, be sure that you understand wildcard matching.</span></span> <span data-ttu-id="8194d-147">Örneğin, aşağıdaki komut, sonuç döndürür:</span><span class="sxs-lookup"><span data-stu-id="8194d-147">For example, the following command returns no results:</span></span>
 
 ```powershell
 Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
 ```
 
-<span data-ttu-id="74785-148">Windows klasöründeki "z" harfiyle başlayan iki DLL bulunsa bile hiçbir sonuç yok.</span><span class="sxs-lookup"><span data-stu-id="74785-148">There are no results, even though there are two DLLs that begin with the letter "z" in the Windows folder.</span></span>
+<span data-ttu-id="8194d-148">Windows klasöründeki "z" harfiyle başlayan iki DLL bulunsa bile hiçbir sonuç yok.</span><span class="sxs-lookup"><span data-stu-id="8194d-148">There are no results, even though there are two DLLs that begin with the letter "z" in the Windows folder.</span></span>
 
-<span data-ttu-id="74785-149">Biz joker karakter yolun bir parçası olarak belirtilen çünkü hiçbir sonuç döndürülmedi.</span><span class="sxs-lookup"><span data-stu-id="74785-149">No results were returned because we specified the wildcard as part of the path.</span></span> <span data-ttu-id="74785-150">Komut özyinelemeli olmasına rağmen **Get-Childıtem** cmdlet öğeleri Windows klasöründe ".dll" ile sonlanan adlara sahip olanlar için kısıtlanmış.</span><span class="sxs-lookup"><span data-stu-id="74785-150">Even though the command was recursive, the **Get-ChildItem** cmdlet restricted the items to those that are in the Windows folder with names ending with ".dll".</span></span>
+<span data-ttu-id="8194d-149">Biz joker karakter yolun bir parçası olarak belirtilen çünkü hiçbir sonuç döndürülmedi.</span><span class="sxs-lookup"><span data-stu-id="8194d-149">No results were returned because we specified the wildcard as part of the path.</span></span> <span data-ttu-id="8194d-150">Komut özyinelemeli olmasına rağmen **Get-Childıtem** cmdlet öğeleri Windows klasöründe ".dll" ile sonlanan adlara sahip olanlar için kısıtlanmış.</span><span class="sxs-lookup"><span data-stu-id="8194d-150">Even though the command was recursive, the **Get-ChildItem** cmdlet restricted the items to those that are in the Windows folder with names ending with ".dll".</span></span>
 
-<span data-ttu-id="74785-151">Adları, özel bir desenle eşleşen dosyaları için yinelemeli arama belirtmek için kullanın **-dahil** parametresi.</span><span class="sxs-lookup"><span data-stu-id="74785-151">To specify a recursive search for files whose names match a special pattern, use the **-Include** parameter.</span></span>
+<span data-ttu-id="8194d-151">Adları, özel bir desenle eşleşen dosyaları için yinelemeli arama belirtmek için kullanın **-dahil** parametresi.</span><span class="sxs-lookup"><span data-stu-id="8194d-151">To specify a recursive search for files whose names match a special pattern, use the **-Include** parameter.</span></span>
 
 ```
 PS> Get-ChildItem -Path C:\Windows -Include *.dll -Recurse -Exclude [a-y]*.dll
