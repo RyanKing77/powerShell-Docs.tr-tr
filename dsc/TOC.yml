@@ -1,293 +1,286 @@
-items:
 - name: Genel bakış
   items:
-  - name: Geliştiriciler için İstenen Durum Yapılandırmasına Genel Bakış
-    href: overview/overview.md
-  - name: Karar Verenler için İstenen Durum Yapılandırmasına Genel Bakış
-    href: overview/decisionMaker.md
-  - name: Mühendisler için İstenen Durum Yapılandırmasına Genel Bakış
-    href: overview/DscForEngineers.md
-  - name: CI/CD Komut Zincirinde DSC’nin rolünü anlama
-    href: overview/authoringAdvanced.md
+    - name: Geliştiriciler için İstenen Durum Yapılandırmasına Genel Bakış
+      href: overview/overview.md
+    - name: Karar Verenler için İstenen Durum Yapılandırmasına Genel Bakış
+      href: overview/decisionMaker.md
+    - name: Mühendisler için İstenen Durum Yapılandırmasına Genel Bakış
+      href: overview/DscForEngineers.md
+    - name: CI/CD Komut Zincirinde DSC’nin rolünü anlama
+      href: overview/authoringAdvanced.md
 - name: Başlarken
   items:
-  - name: Linux için DSC’yi kullanmaya başlama
-    href: getting-started/lnxGettingStarted.md
-  - name: Nano’da DSC’yi kullanmaya başlama
-    href: getting-started/nanoDSC.md
-  - name: Azure Otomasyonu’nda DSC’yi kullanmaya başlama
-    href: getting-started/azureDSC.md
-  - name: Azure Sanal Makineleri’nde DSC’yi kullanmaya başlama
-    href: getting-started/azureDSCexthistory.md
+    - name: Linux için DSC’yi kullanmaya başlama
+      href: getting-started/lnxGettingStarted.md
+    - name: Nano’da DSC’yi kullanmaya başlama
+      href: getting-started/nanoDSC.md
+    - name: Azure Otomasyonu’nda DSC’yi kullanmaya başlama
+      href: getting-started/azureDSC.md
+    - name: Azure Sanal Makineleri’nde DSC’yi kullanmaya başlama
+      href: getting-started/azureDSCexthistory.md
 - name: Hızlı Başlangıçlar
   items:
-  - name: DSC ile bir Web sitesi oluşturma
-    href: quickstarts/website-quickStart.md
+    - name: DSC ile bir Web sitesi oluşturma
+      href: quickstarts/website-quickStart.md
 - name: Yapılandırmalar
   items:
-  - name: Kavramlar
-    items:
-    - name: Yapılandırma nedir?
-      href: configurations/configurations.md
-  - name: Nasıl yapılır kılavuzları
-    items:
-    - name: Yapılandırma Yazma, Derleme ve Uygulama
-      href: configurations/write-compile-apply-configuration.md
-    - name: Yapılandırmalarda Kaynaklarla Çalışma
+    - name: Kavramlar
       items:
-      - name: Import-DSCResource kullanma
-        href: configurations/import-dscresource.md
-      - name: Ek DSC kaynakları yükleme
-        href: configurations/install-additional-dsc-resources.md
-      - name: Yüklü bir kaynağın belirli bir sürümünü içeri aktarma
-        href: configurations/sxsResource.md
-      - name: DSC Kaynaklarıyla Kimlik Bilgilerini Kullanma
-        href: configurations/runAsUser.md
-    - name: Dinamik Yapılandırmalar Yazma
+        - name: Yapılandırma nedir?
+          href: configurations/configurations.md
+    - name: Nasıl yapılır kılavuzları
       items:
-      - name: Yapılandırmalara Parametre Ekleme
-        href: configurations/add-parameters-to-a-configuration.md
-      - name: Yapılandırmalarda koşullu deyimler ve döngüler
-        href: configurations/flow-control-in-configurations.md
-      - name: DCS yapılandırmaları için yardım yazma
-        href: configurations/configHelp.md
-      - name: Yapılandırmaları iç içe yerleştirme
-        href: configurations/compositeconfigs.md
-    - name: Yapılandırma verileri
-      items:
-      - name: Yapılandırma verilerini Yapılandırmalardan ayırma
-        href: configurations/configData.md
-      - name: Yapılandırma ve ortam verilerini ayırma (psd1)
-        href: configurations/separatingEnvData.md
-      - name: Yapılandırma verilerinde kimlik bilgisi seçenekleri
-        href: configurations/configDataCredentials.md
-    - name: Yapılandırmalarda bağımlılıklar
-      items:
-      - name: DependsOn kullanan kaynak bağımlılıkları
-        href: configurations/resource-depends-on.md
-      - name: Çapraz düğüm bağımlılıkları
-        href: configurations/crossNodeDependencies.md
-      - name: Düğümü yeniden başlatma
-        href: configurations/reboot-a-node.md
+        - name: 'Yapılandırma Yazma, Derleme ve Uygulama'
+          href: configurations/write-compile-apply-configuration.md
+        - name: Yapılandırmalarda Kaynaklarla Çalışma
+          items:
+            - name: Import-DSCResource kullanma
+              href: configurations/import-dscresource.md
+            - name: Ek DSC kaynakları yükleme
+              href: configurations/install-additional-dsc-resources.md
+            - name: Yüklü bir kaynağın belirli bir sürümünü içeri aktarma
+              href: configurations/sxsResource.md
+            - name: DSC Kaynaklarıyla Kimlik Bilgilerini Kullanma
+              href: configurations/runAsUser.md
+        - name: Dinamik Yapılandırmalar Yazma
+          items:
+            - name: Yapılandırmalara Parametre Ekleme
+              href: configurations/add-parameters-to-a-configuration.md
+            - name: Yapılandırmalarda koşullu deyimler ve döngüler
+              href: configurations/flow-control-in-configurations.md
+            - name: DCS yapılandırmaları için yardım yazma
+              href: configurations/configHelp.md
+            - name: Yapılandırmaları iç içe yerleştirme
+              href: configurations/compositeconfigs.md
+        - name: Yapılandırma verileri
+          items:
+            - name: Yapılandırma verilerini Yapılandırmalardan ayırma
+              href: configurations/configData.md
+            - name: Yapılandırma ve ortam verilerini ayırma (psd1)
+              href: configurations/separatingEnvData.md
+            - name: Yapılandırma verilerinde kimlik bilgisi seçenekleri
+              href: configurations/configDataCredentials.md
+        - name: Yapılandırmalarda bağımlılıklar
+          items:
+            - name: DependsOn kullanan kaynak bağımlılıkları
+              href: configurations/resource-depends-on.md
+            - name: Çapraz düğüm bağımlılıkları
+              href: configurations/crossNodeDependencies.md
+            - name: Düğümü yeniden başlatma
+              href: configurations/reboot-a-node.md
 - name: Kaynaklar
   items:
-  - name: Kavramlar
-    items:
-    - name: Kaynaklar nedir?
-      href: resources/resources.md
-    - name: Kaynak Edinme, Sınama ve Ayarlama
-      href: resources/get-test-set.md
-    - name: Özel Kaynaklar
-      href: resources/authoringresource.md
-    - name: Tek örnekli DSC kaynağı yazma (en iyi uygulama)
-      href: resources/singleInstance.md
-    - name: Kaynak yazma denetim listesi
-      href: resources/resourceAuthoringChecklist.md
-  - name: Nasıl yapılır kılavuzları
-    items:
-    - name: PowerShell’de MOF temelli kaynak yazma
-      href: resources/authoringResourceMOF.md
-    - name: PowerShell’de Sınıf temelli kaynak yazma
-      href: resources/authoringResourceClass.md
-    - name: PowerShell’de Bileşik kaynak yazma
-      href: resources/authoringResourceComposite.md
-    - name: C#’de MOF temelli kaynak yazma
-      href: resources/authoringResourceMofCS.md
-    - name: Kaynak Tasarımcısı Aracını kullanma
-      href: resources/authoringResourceMofDesigner.md
+    - name: Kavramlar
+      items:
+        - name: Kaynaklar nedir?
+          href: resources/resources.md
+        - name: 'Kaynak Edinme, Sınama ve Ayarlama'
+          href: resources/get-test-set.md
+        - name: Özel Kaynaklar
+          href: resources/authoringresource.md
+        - name: Tek örnekli DSC kaynağı yazma (en iyi uygulama)
+          href: resources/singleInstance.md
+        - name: Kaynak yazma denetim listesi
+          href: resources/resourceAuthoringChecklist.md
+    - name: Nasıl yapılır kılavuzları
+      items:
+        - name: PowerShell’de MOF temelli kaynak yazma
+          href: resources/authoringResourceMOF.md
+        - name: PowerShell’de Sınıf temelli kaynak yazma
+          href: resources/authoringResourceClass.md
+        - name: PowerShell’de Bileşik kaynak yazma
+          href: resources/authoringResourceComposite.md
+        - name: 'C#’de MOF temelli kaynak yazma'
+          href: resources/authoringResourceMofCS.md
+        - name: Kaynak Tasarımcısı Aracını kullanma
+          href: resources/authoringResourceMofDesigner.md
 - name: Düğümlerini yönetme
   items:
-  - name: Nasıl yapılır kılavuzları
-    items:
-    - name: Düğümlerde Test Yapılandırmaları Uygulama, Edinme ve Sınama
-      href: managing-nodes/apply-get-test.md
-    - name: Yerel Configuration Manager’ı Yapılandırma (v5)
-      href: managing-nodes/metaConfig.md
-    - name: Yerel Configuration Manager’ı Yapılandırma (v4)
-      href: managing-nodes/metaConfig4.md
-    - name: DSC kaynağı yöntemlerini doğrudan çağırma
-      href: managing-nodes/directCallResource.md
+    - name: Nasıl yapılır kılavuzları
+      items:
+        - name: 'Düğümlerde Test Yapılandırmaları Uygulama, Edinme ve Sınama'
+          href: managing-nodes/apply-get-test.md
+        - name: Yerel Configuration Manager’ı Yapılandırma (v5)
+          href: managing-nodes/metaConfig.md
+        - name: Yerel Configuration Manager’ı Yapılandırma (v4)
+          href: managing-nodes/metaConfig4.md
+        - name: DSC kaynağı yöntemlerini doğrudan çağırma
+          href: managing-nodes/directCallResource.md
 - name: Çekme Sunucusu
   items:
-  - name: Kavramlar
-    items:
-    - name: Gönderme/Çekme Modeli
-      href: pull-server/enactingConfigurations.md
-  - name: Nasıl yapılır kılavuzları
-    items:
-    - name: Çekme Sunucusu Ayarlama
+    - name: Kavramlar
       items:
-      - name: DSC SMB Çekme Sunucusu Ayarlama
-        href: pull-server/pullServerSMB.md
-      - name: DSC HTTP Çekme Sunucusu Ayarlama
-        href: pull-server/pullServer.md
-    - name: Düğümleri Çekme Sunucusuna Kaydetme
+        - name: Gönderme/Çekme Modeli
+          href: pull-server/enactingConfigurations.md
+    - name: Nasıl yapılır kılavuzları
       items:
-      - name: DSC çekme istemcisi ayarlama
-        href: pull-server/pullClient.md
-      - name: Yapılandırma Adlarını kullanarak Çekme İstemcisi ayarlama (v5)
-        href: pull-server/pullClientConfigNames.md
-      - name: Yapılandırma Kimliklerini kullanarak Çekme İstemcisi ayarlama (v5)
-        href: pull-server/pullClientConfigID.md
-      - name: Yapılandırma Kimliklerini kullanarak Çekme İstemcisi ayarlama (v4)
-        href: pull-server/pullClientConfigID4.md
-      - name: Kısmi Yapılandırmalar
-        href: pull-server/partialconfigs.md
-    - name: Yapılandırmaları bir Çekme Sunucusuyla dağıtma
-      items:
-      - name: Yapılandırmaları bir Çekme Sunucusunda yayımlama (v4/v5)
-        href: pull-server/publishConfigs.md
-      - name: Kaynakları paketleme ve bir Çekme Sunucusuna yükleme (v4)
-        href: pull-server/package-upload-resources.md
-      - name: Çekme Sunucusundan Düğüm Güncelleştirme
-        href: pull-server/update-nodes-manually.md
-      - name: DSC rapor sunucusu kullanma
-        href: pull-server/reportServer.md
-    - name: Çekme Sunucusunun güvenliğini sağlama
-      items:
-      - name: Çekme Sunucusu Güvenliği
-        href: pull-server/secureServer.md
-      - name: MOF dosyalarını Sertifikalarla güvenli hale getirme
-        href: pull-server/secureMOF.md
+        - name: Çekme Sunucusu Ayarlama
+          items:
+            - name: DSC SMB Çekme Sunucusu Ayarlama
+              href: pull-server/pullServerSMB.md
+            - name: DSC HTTP Çekme Sunucusu Ayarlama
+              href: pull-server/pullServer.md
+        - name: Düğümleri Çekme Sunucusuna Kaydetme
+          items:
+            - name: DSC çekme istemcisi ayarlama
+              href: pull-server/pullClient.md
+            - name: Yapılandırma Adlarını kullanarak Çekme İstemcisi ayarlama (v5)
+              href: pull-server/pullClientConfigNames.md
+            - name: Yapılandırma Kimliklerini kullanarak Çekme İstemcisi ayarlama (v5)
+              href: pull-server/pullClientConfigID.md
+            - name: Yapılandırma Kimliklerini kullanarak Çekme İstemcisi ayarlama (v4)
+              href: pull-server/pullClientConfigID4.md
+            - name: Kısmi Yapılandırmalar
+              href: pull-server/partialconfigs.md
+        - name: Yapılandırmaları bir Çekme Sunucusuyla dağıtma
+          items:
+            - name: Yapılandırmaları bir Çekme Sunucusunda yayımlama (v4/v5)
+              href: pull-server/publishConfigs.md
+            - name: Kaynakları paketleme ve bir Çekme Sunucusuna yükleme (v4)
+              href: pull-server/package-upload-resources.md
+            - name: Çekme Sunucusundan Düğüm Güncelleştirme
+              href: pull-server/update-nodes-manually.md
+            - name: DSC rapor sunucusu kullanma
+              href: pull-server/reportServer.md
+        - name: Çekme Sunucusunun güvenliğini sağlama
+          items:
+            - name: Çekme Sunucusu Güvenliği
+              href: pull-server/secureServer.md
+            - name: MOF dosyalarını Sertifikalarla güvenli hale getirme
+              href: pull-server/secureMOF.md
 - name: Öğreticiler
   items:
-  - name: DSC, Pester ve Visual Studio Team Services ile CI/CD komut zinciri derleme
-    href: tutorials/dscCiCd.md
-  - name: DSC kullanarak bir sanal makineyi ilk önyüklemede yapılandırma
-    href: tutorials/bootstrapDsc.md
-  - name: DSCAutomationHostEnabled kayıt defteri anahtarını yapılandırma
-    href: tutorials/DSCAutomationHostEnabled.md
+    - name: 'DSC, Pester ve Visual Studio Team Services ile CI/CD komut zinciri derleme'
+      href: tutorials/dscCiCd.md
+    - name: DSC kullanarak bir sanal makineyi ilk önyüklemede yapılandırma
+      href: tutorials/bootstrapDsc.md
+    - name: DSCAutomationHostEnabled kayıt defteri anahtarını yapılandırma
+      href: tutorials/DSCAutomationHostEnabled.md
 - name: Sorun giderme
   items:
-  - name: Bilinen Sorunlar
-    href: troubleshooting/troubleshooting.md
-  - name: DSC kaynaklarında hata ayıklama
-    href: troubleshooting/debugResource.md
+    - name: Bilinen Sorunlar
+      href: troubleshooting/troubleshooting.md
+    - name: DSC kaynaklarında hata ayıklama
+      href: troubleshooting/debugResource.md
 - name: Başvuru
   items:
-  - name: Windows yerleşik kaynakları
-    items:
-    - name: Archive Kaynağı
-      href: reference/resources/windows/archiveResource.md
-    - name: Environment Kaynağı
-      href: reference/resources/windows/environmentResource.md
-    - name: File Kaynağı
-      href: reference/resources/windows/fileResource.md
-    - name: Group Kaynağı
-      href: reference/resources/windows/groupResource.md
-    - name: GroupSet Kaynağı
-      href: reference/resources/windows/groupSetResource.md
-    - name: Log Kaynağı
-      href: reference/resources/windows/logResource.md
-    - name: Package Kaynağı
-      href: reference/resources/windows/packageResource.md
-    - name: ProcessSet Kaynağı
-      href: reference/resources/windows/processSetResource.md
-    - name: Registry Kaynağı
-      href: reference/resources/windows/registryResource.md
-    - name: Script Kaynağı
-      href: reference/resources/windows/scriptResource.md
-    - name: Service Kaynağı
-      href: reference/resources/windows/serviceResource.md
-    - name: ServiceSet Kaynağı
-      href: reference/resources/windows/serviceSetResource.md
-    - name: User Kaynağı
-      href: reference/resources/windows/userResource.md
-    - name: WaitForAll Kaynağı
-      href: reference/resources/windows/waitForAllResource.md
-    - name: WaitForAny Kaynağı
-      href: reference/resources/windows/waitForAnyResource.md
-    - name: WaitForSome Kaynağı
-      href: reference/resources/windows/waitForSomeResource.md
-    - name: WindowsFeature Kaynağı
-      href: reference/resources/windows/windowsfeatureResource.md
-    - name: WindowsFeatureSet Kaynağı
-      href: reference/resources/windows/windowsFeatureSetResource.md
-    - name: WindowsOptionalFeature Kaynağı
-      href: reference/resources/windows/windowsOptionalFeatureResource.md
-    - name: WindowsOptionalFeatureSet Kaynağı
-      href: reference/resources/windows/windowsOptionalFeatureSetResource.md
-    - name: WindowsPackageCab Kaynağı
-      href: reference/resources/windows/windowsPackageCabResource.md
-    - name: WindowsProcess Kaynağı
-      href: reference/resources/windows/windowsProcessResource.md
-  - name: Linux yerleşik kaynakları
-    items:
-    - name: nxArchive Kaynağı
-      href: reference/resources/linux/lnxArchiveResource.md
-    - name: nxEnvironment Kaynağı
-      href: reference/resources/linux/lnxEnvironmentResource.md
-    - name: nxFile Kaynağı
-      href: reference/resources/linux/lnxFileResource.md
-    - name: nxFileLine Kaynağı
-      href: reference/resources/linux/lnxFileLineResource.md
-    - name: nxGroup Kaynağı
-      href: reference/resources/linux/lnxGroupResource.md
-    - name: nxPackage Kaynağı
-      href: reference/resources/linux/lnxPackageResource.md
-    - name: nxScript Kaynağı
-      href: reference/resources/linux/lnxScriptResource.md
-    - name: nxService Kaynağı
-      href: reference/resources/linux/lnxServiceResource.md
-    - name: nxSshAuthorizedKeys Kaynağı
-      href: reference/resources/linux/lnxSshAuthorizedKeysResource.md
-    - name: nxUser Kaynağı
-      href: reference/resources/linux/lnxUserResource.md
-  - name: PackageManagement yerleşik kaynakları
-    items:
-    - name: PackageManagementDsc Kaynağı
-      href: reference/resources/packagemanagement/PackageManagementDscResource.md
-    - name: PackageManagementSourceDsc Kaynağı
-      href: reference/resources/packagemanagement/PackageManagementSourceDscResource.md
-  - name: MSFT_DSCLocalConfigurationManager sınıfı
-    items:
-    - name: Genel bakış
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının ApplyConfiguration yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının DisableDebugConfiguration yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının EnableDebugConfiguration yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının GetConfiguration yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının GetConfigurationResultOutput yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının GetConfigurationStatus yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının GetMetaConfiguration yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının PerformRequiredConfigurationChecks yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının RemoveConfiguration yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının ResourceGet yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının ResourceSet yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının ResourceTest yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının RollBack yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının SendConfiguration yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının SendConfigurationApply yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının SendConfigurationApplyAsync yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının SendMetaConfigurationApply yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının StopConfiguration yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
-    - name: MSFT_DSCLocalConfigurationManager sınıfının TestConfiguration yöntemi
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
+    - name: Windows yerleşik kaynakları
+      items:
+        - name: Archive Kaynağı
+          href: reference/resources/windows/archiveResource.md
+        - name: Environment Kaynağı
+          href: reference/resources/windows/environmentResource.md
+        - name: File Kaynağı
+          href: reference/resources/windows/fileResource.md
+        - name: Group Kaynağı
+          href: reference/resources/windows/groupResource.md
+        - name: GroupSet Kaynağı
+          href: reference/resources/windows/groupSetResource.md
+        - name: Log Kaynağı
+          href: reference/resources/windows/logResource.md
+        - name: Package Kaynağı
+          href: reference/resources/windows/packageResource.md
+        - name: ProcessSet Kaynağı
+          href: reference/resources/windows/processSetResource.md
+        - name: Registry Kaynağı
+          href: reference/resources/windows/registryResource.md
+        - name: Script Kaynağı
+          href: reference/resources/windows/scriptResource.md
+        - name: Service Kaynağı
+          href: reference/resources/windows/serviceResource.md
+        - name: ServiceSet Kaynağı
+          href: reference/resources/windows/serviceSetResource.md
+        - name: User Kaynağı
+          href: reference/resources/windows/userResource.md
+        - name: WaitForAll Kaynağı
+          href: reference/resources/windows/waitForAllResource.md
+        - name: WaitForAny Kaynağı
+          href: reference/resources/windows/waitForAnyResource.md
+        - name: WaitForSome Kaynağı
+          href: reference/resources/windows/waitForSomeResource.md
+        - name: WindowsFeature Kaynağı
+          href: reference/resources/windows/windowsfeatureResource.md
+        - name: WindowsFeatureSet Kaynağı
+          href: reference/resources/windows/windowsFeatureSetResource.md
+        - name: WindowsOptionalFeature Kaynağı
+          href: reference/resources/windows/windowsOptionalFeatureResource.md
+        - name: WindowsOptionalFeatureSet Kaynağı
+          href: reference/resources/windows/windowsOptionalFeatureSetResource.md
+        - name: WindowsPackageCab Kaynağı
+          href: reference/resources/windows/windowsPackageCabResource.md
+        - name: WindowsProcess Kaynağı
+          href: reference/resources/windows/windowsProcessResource.md
+    - name: Linux yerleşik kaynakları
+      items:
+        - name: nxArchive Kaynağı
+          href: reference/resources/linux/lnxArchiveResource.md
+        - name: nxEnvironment Kaynağı
+          href: reference/resources/linux/lnxEnvironmentResource.md
+        - name: nxFile Kaynağı
+          href: reference/resources/linux/lnxFileResource.md
+        - name: nxFileLine Kaynağı
+          href: reference/resources/linux/lnxFileLineResource.md
+        - name: nxGroup Kaynağı
+          href: reference/resources/linux/lnxGroupResource.md
+        - name: nxPackage Kaynağı
+          href: reference/resources/linux/lnxPackageResource.md
+        - name: nxScript Kaynağı
+          href: reference/resources/linux/lnxScriptResource.md
+        - name: nxService Kaynağı
+          href: reference/resources/linux/lnxServiceResource.md
+        - name: nxSshAuthorizedKeys Kaynağı
+          href: reference/resources/linux/lnxSshAuthorizedKeysResource.md
+        - name: nxUser Kaynağı
+          href: reference/resources/linux/lnxUserResource.md
+    - name: PackageManagement yerleşik kaynakları
+      items:
+        - name: PackageManagementDsc Kaynağı
+          href: reference/resources/packagemanagement/PackageManagementDscResource.md
+        - name: PackageManagementSourceDsc Kaynağı
+          href: reference/resources/packagemanagement/PackageManagementSourceDscResource.md
+    - name: MSFT_DSCLocalConfigurationManager sınıfı
+      items:
+        - name: Genel bakış
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının ApplyConfiguration yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının DisableDebugConfiguration yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının EnableDebugConfiguration yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının GetConfiguration yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının GetConfigurationResultOutput yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının GetConfigurationStatus yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının GetMetaConfiguration yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının PerformRequiredConfigurationChecks yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının RemoveConfiguration yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının ResourceGet yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının ResourceSet yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının ResourceTest yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının RollBack yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının SendConfiguration yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının SendConfigurationApply yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının SendConfigurationApplyAsync yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının SendMetaConfigurationApply yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının StopConfiguration yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
+        - name: MSFT_DSCLocalConfigurationManager sınıfının TestConfiguration yöntemi
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: Daha fazla bilgi
   items:
-  - name: Teknik İncelemeler
-    href: further-reading/whitepapers.md
-ms.openlocfilehash: 68096f26178d4c33fd78e6051a3cc071bd749210
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
-ms.translationtype: HT
-ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920348"
+    - name: Teknik İncelemeler
+      href: further-reading/whitepapers.md

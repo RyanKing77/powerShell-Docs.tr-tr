@@ -1,218 +1,211 @@
-items:
 - name: Windows Management Framework (WMF) Genel Bakış
   href: overview.md
 - name: WMF 5.1
   items:
-  - name: WMF 5.1 Sürüm Notları
-    href: 5.1/release-notes.md
-  - name: Yeni Senaryolar ve Özellikler
-    items:
+    - name: WMF 5.1 Sürüm Notları
+      href: 5.1/release-notes.md
     - name: Yeni Senaryolar ve Özellikler
-      href: 5.1/scenarios-features.md
-    - name: İstenen Durum Yapılandırması (DSC) İyileştirmeleri
-      href: 5.1/DSC-improvements.md
-    - name: PowerShell Konsolu İyileştirmeleri
-      href: 5.1/console-improvements.md
-    - name: PowerShell Altyapısı İyileştirmeleri
-      href: 5.1/engine-improvements.md
-    - name: Paket Yönetimi İyileştirmeleri
-      href: 5.1/package-management-improvements.md
-    - name: JEA İyileştirmeleri
-      href: 5.1/jea-improvements.md
-    - name: Katalog cmdlet’leri
-      href: 5.1/catalog-cmdlets.md
-    - name: WMF 5.1’de Düzeltilen Hatalar
-      href: 5.1/bugfixes.md
-  - name: Yükleme ve Yapılandırma
-    href: 5.1/install-configure.md
-  - name: Bilinen Sorunlar
-    href: 5.1/known-issues.md
-  - name: Uyumluluk
-    href: 5.1/Compatibility.md
-  - name: Ürün Uyumluluğu
-    href: 5.1/productincompat.md
+      items:
+        - name: Yeni Senaryolar ve Özellikler
+          href: 5.1/scenarios-features.md
+        - name: İstenen Durum Yapılandırması (DSC) İyileştirmeleri
+          href: 5.1/DSC-improvements.md
+        - name: PowerShell Konsolu İyileştirmeleri
+          href: 5.1/console-improvements.md
+        - name: PowerShell Altyapısı İyileştirmeleri
+          href: 5.1/engine-improvements.md
+        - name: Paket Yönetimi İyileştirmeleri
+          href: 5.1/package-management-improvements.md
+        - name: JEA İyileştirmeleri
+          href: 5.1/jea-improvements.md
+        - name: Katalog cmdlet’leri
+          href: 5.1/catalog-cmdlets.md
+        - name: WMF 5.1’de Düzeltilen Hatalar
+          href: 5.1/bugfixes.md
+    - name: Yükleme ve Yapılandırma
+      href: 5.1/install-configure.md
+    - name: Bilinen Sorunlar
+      href: 5.1/known-issues.md
+    - name: Uyumluluk
+      href: 5.1/Compatibility.md
+    - name: Ürün Uyumluluğu
+      href: 5.1/productincompat.md
 - name: WMF 5.0
   items:
-  - name: WMF 5.0 Sürüm Notları
-    href: 5.0/releasenotes.md
-  - name: Yükleme Ayrıntıları
-    href: 5.0/requirements.md
-  - name: Bilinen Sorunlar ve Sınırlamalar
-    href: 5.0/limitation_overview.md
-  - name: İstenen Durum Yapılandırması (DSC) Bilinen Sorunlar
-    href: 5.0/limitation_dsc.md
-  - name: Ürün Uyumluluğu Durumu
-    href: 5.0/productincompat.md
-  - name: WMF 5.0 Tarafından Etkinleştirilen Senaryolar
-    items:
-    - name: Yeterli Yönetim (JEA)
+    - name: WMF 5.0 Sürüm Notları
+      href: 5.0/releasenotes.md
+    - name: Yükleme Ayrıntıları
+      href: 5.0/requirements.md
+    - name: Bilinen Sorunlar ve Sınırlamalar
+      href: 5.0/limitation_overview.md
+    - name: İstenen Durum Yapılandırması (DSC) Bilinen Sorunlar
+      href: 5.0/limitation_dsc.md
+    - name: Ürün Uyumluluğu Durumu
+      href: 5.0/productincompat.md
+    - name: WMF 5.0 Tarafından Etkinleştirilen Senaryolar
       items:
-      - name: JEA’ya Genel Bakış
-        href: 5.0/jea_overview.md
-      - name: Bir JEA Uç Noktası Oluşturma ve Buna Bağlanma
-        href: 5.0/jea_endpoint.md
-      - name: JEA’da Raporlama
-        href: 5.0/jea_report.md
-    - name: PowerShell Sınıfları Kullanarak Özel Türler Oluşturma
-      items:
-      - name: Genel bakış
-        href: 5.0/class_overview.md
-      - name: Özel Türleri Tanımlama
-        href: 5.0/class_newtype.md
-      - name: Temel Sınıf Bildirme
-        href: 5.0/class_base.md
-      - name: Uygulanan Arabirimi Bildirme
-        href: 5.0/class_interface.md
-      - name: Temel Sınıf Oluşturucusunu Çağırma
-        href: 5.0/class_baseconstructor.md
-      - name: Temel Sınıf Yöntemini Çağırma
-        href: 5.0/class_basemethod.md
-    - name: PowerShell Betik Hata Ayıklama İyileştirmeleri
-      href: 5.0/debug_overview.md
-    - name: İstenen Durum Yapılandırması (DSC) İyileştirmeleri
-      items:
-      - name: DSC İyileştirmelerine Genel Bakış
-        href: 5.0/dsc_improvements.md
-      - name: Yapılandırmalar
-        items:
-        - name: Çapraz Düğüm Bağımlılıklarını Belirtme
-          href: 5.0/dsc_waitfor.md
-        - name: Şifreli MOF’lar
-          href: 5.0/dsc_encryptedmof.md
-        - name: DSC Yapılandırması için Yardım ve Destek
-          href: 5.0/dsc_confighelp.md
-        - name: PowerShell ISE kullanarak yazma iyileştirmeleri
-          href: 5.0/dsc_authoring.md
-        - name: Bir Yapılandırmada Aynı İki Kaynağa İzin Verme
-          href: 5.0/dsc_identicalduplicate.md
-        - name: Import-DscResource Anahtar Sözcüğü, -ModuleVersion Parametresini Destekler
-          href: 5.0/dsc_importdscresource.md
-        - name: Yapılandırma Anahtar Sözcüğü için WOW64 Desteği
-          href: 5.0/dsc_wow64.md
-      - name: Kaynaklar
-        items:
-        - name: Sınıf tabanlı DSC Kaynakları
-          href: 5.0/dsc_classbasedresource.md
-        - name: DSC Kaynak Betiği Hata Ayıklama
-          href: 5.0/dsc_resourcedebugging.md
-        - name: DSC Kaynakları için Otomatik RunAs Desteği
-          href: 5.0/dsc_runas.md
-        - name: DSC Kaynakları için Yan Yana Sürüm Oluşturma Desteği
-          href: 5.0/dsc_sxsresource.md
-        - name: Yeni Yerleşik Kaynaklar
-          href: 5.0/dsc_newresources.md
-      - name: Yerel Configuration Manager
-        items:
-        - name: Birden Çok Yapılandırma Parçası ile Düğüm Yapılandırma
-          href: 5.0/dsc_partialconfig.md
-        - name: Karışık RefreshModes için Destek
-          href: 5.0/dsc_partialconfig_mixedmode.md
-        - name: DSC Altyapısını Yeni Öznitelikle Yapılandırma
-          href: 5.0/dsc_metaconfiguration.md
-        - name: LCM Durumu hakkında Ayrıntılı Bilgi
-          href: 5.0/dsc_lcmstate.md
-        - name: RefreshMode ve ConfigurationMode Frekansları Birbirinin Aynısı olmak zorunda değil
-          href: 5.0/dsc_freqnomultiple.md
-        - name: RefreshMode Özelliği için Ek Değer
-          href: 5.0/dsc_refreshmode.md
-      - name: Cmdlet’ler
-        items:
-        - name: Yapılandırma Durumu Hakkında Ayrıntılar
-          href: 5.0/dsc_getconfigurationstatus.md
-        - name: Test-DscConfiguration Cmdlet’i Başvuru Yapılandırmalarını Destekler
-          href: 5.0/dsc_testconfiguration.md
-        - name: DSC Kaynak Yöntemlerine Doğrudan Erişim
-          href: 5.0/dsc_directaccess.md
-        - name: Yapılandırma Belgelerini Başvurmadan Sun
-          href: 5.0/dsc_publishconfig.md
-        - name: DSC Belgelerini Kaldır
-          href: 5.0/dsc_removeconfigdoc.md
-        - name: Birleşmiş ve Tutarlı Durum ve Durum Gösterimi
-          href: 5.0/dsc_statestatus.md
-        - name: Set-DscLocalConfigurationManager Cmdlet’i -Force Parametresini Destekler
-          href: 5.0/dsc_setdsclcm.md
-      - name: Çekme Modu
-        items:
-        - name: DSC Yapılandırmalarının isteğe bağlı ÇEKME işlemi
-          href: 5.0/dsc_updateconfig.md
-        - name: Düğüm ve Yapılandırma kimliklerinin ayrımı
-          href: 5.0/dsc_nodeid.md
-        - name: Yapılandırma, Kaynak ve Rapor Depolarının ayrımı
-          href: 5.0/dsc_repository.md
-        - name: Yapılandırma Durumunu Merkez Konuma Raporlama
-          href: 5.0/dsc_reporting.md
-    - name: Döküm ve Günlüğe Kaydetme kullanarak PowerShell Kullanımını Denetleme
-      items:
-      - name: Denetime genel bakış
-        href: 5.0/audit_overview.md
-      - name: Gelişmiş Transkripsiyon Seçenekleri
-        href: 5.0/audit_transcript.md
-      - name: Betik İzleme ve Günlüğe Kaydetme
-        href: 5.0/audit_script.md
-      - name: Şifreli İleti Söz Dizimi (CMS) Cmdlet’leri
-        href: 5.0/audit_cms.md
-    - name: PackageManagement ile Yazılım Bulma, Yükleme ve Stoklama
-      items:
-      - name: PackageManagement’a genel bakış
-        href: 5.0/oneget_overview.md
-      - name: PackageManagement Cmdlet’leri
-        href: 5.0/oneget_cmdlets.md
-    - name: PowerShellGet ile PowerShell Modülü Bulma, Yükleme ve Stoklama
-      items:
-      - name: PowerShellGet modülüne genel bakış
-        href: 5.0/psget_module_overview.md
-      - name: Bir PowerShell Deposu Kaydetme
-        href: 5.0/psget_psrepository.md
-      - name: PowerShell 5.0 ve Üzeri Sürümlerde Yan Yana Sürüm Desteği
-        href: 5.0/psget_modulesxsinstall.md
-      - name: Modül Bağımlılıklarının Yüklenmesi
-        href: 5.0/psget_moduledependency.md
-      - name: Modül Yönetimi için PowerShellGet Cmdlet’leri
-        href: 5.0/psget_modulecmdlets.md
-    - name: PowerShellGet ile PowerShell Betiği Bulma, Yükleme ve Yönetme
-      items:
-      - name: PowerShellGet betiğine genel bakış
-        href: 5.0/psget_script_overview.md
-      - name: Betik Yönetimi için PowerShellGet Cmdlet’leri
-        href: 5.0/psget_scriptcmdlets.md
-    - name: Topluluk Geri Bildirimlerine göre Yeni ve Güncelleştirilmiş Cmdlet’ler
-      items:
-      - name: Topluluk Geri Bildirimlerine göre Yeni ve Güncelleştirilmiş Cmdlet’ler
-      - name: Öğe Cmdlet’leri kullanarak Simgesel Bağlantılar
-        href: 5.0/feedback_symbolic.md
-      - name: Arşiv Cmdlet’leri
-        href: 5.0/feedback_archive.md
-      - name: Pano Cmdlet’leri
-        href: 5.0/feedback_clipboard.md
-      - name: Convert-String
-        href: 5.0/feedback_convertstring.md
-      - name: Yapılandırılmış Nesneleri Dizeden Çıkarma ve Ayıklama
-        href: 5.0/feedback_convertfromString.md
-      - name: Format-Hex
-        href: 5.0/feedback_formathex.md
-      - name: NoNewLine Parametresi
-        href: 5.0/feedback_nonewline.md
-      - name: New-TemporaryFile
-        href: 5.0/feedback_tempfile.md
-      - name: New-Guid
-        href: 5.0/feedback_newguid.md
-      - name: Get-ChildItem öğesinin -Depth parametresi var
-        href: 5.0/feedback_getchilditem.md
-      - name: FileInfo nesnesi güncelleştirmeleri
-        href: 5.0/feedback_fileinfo.md
-      - name: Sürüm Aralıklarını (1.* vb.) Bildirme için Modüller Desteği
-        href: 5.0/feedback_moduleversionranges.md
-    - name: Bilgi Akışı
-      href: 5.0/informationstream_overview.md
-    - name: OData Uç Noktasına göre PowerShell Cmdlet’leri Oluşturma
-      href: 5.0/odata_overview.md
-    - name: PowerShell ile Ağ Anahtarı Yönetimi
-      href: 5.0/networkswitch_overview.md
-    - name: Yazılım Envanter Günlüğü (SIL)
-      href: 5.0/sil_overview.md
-ms.openlocfilehash: dba0eb2986dc4e14c59c78e3273d08dd6b7f1779
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
-ms.translationtype: HT
-ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920433"
+        - name: Yeterli Yönetim (JEA)
+          items:
+            - name: JEA’ya Genel Bakış
+              href: 5.0/jea_overview.md
+            - name: Bir JEA Uç Noktası Oluşturma ve Buna Bağlanma
+              href: 5.0/jea_endpoint.md
+            - name: JEA’da Raporlama
+              href: 5.0/jea_report.md
+        - name: PowerShell Sınıfları Kullanarak Özel Türler Oluşturma
+          items:
+            - name: Genel bakış
+              href: 5.0/class_overview.md
+            - name: Özel Türleri Tanımlama
+              href: 5.0/class_newtype.md
+            - name: Temel Sınıf Bildirme
+              href: 5.0/class_base.md
+            - name: Uygulanan Arabirimi Bildirme
+              href: 5.0/class_interface.md
+            - name: Temel Sınıf Oluşturucusunu Çağırma
+              href: 5.0/class_baseconstructor.md
+            - name: Temel Sınıf Yöntemini Çağırma
+              href: 5.0/class_basemethod.md
+        - name: PowerShell Betik Hata Ayıklama İyileştirmeleri
+          href: 5.0/debug_overview.md
+        - name: İstenen Durum Yapılandırması (DSC) İyileştirmeleri
+          items:
+            - name: DSC İyileştirmelerine Genel Bakış
+              href: 5.0/dsc_improvements.md
+            - name: Yapılandırmalar
+              items:
+                - name: Çapraz Düğüm Bağımlılıklarını Belirtme
+                  href: 5.0/dsc_waitfor.md
+                - name: Şifreli MOF’lar
+                  href: 5.0/dsc_encryptedmof.md
+                - name: DSC Yapılandırması için Yardım ve Destek
+                  href: 5.0/dsc_confighelp.md
+                - name: PowerShell ISE kullanarak yazma iyileştirmeleri
+                  href: 5.0/dsc_authoring.md
+                - name: Bir Yapılandırmada Aynı İki Kaynağa İzin Verme
+                  href: 5.0/dsc_identicalduplicate.md
+                - name: 'Import-DscResource Anahtar Sözcüğü, -ModuleVersion Parametresini Destekler'
+                  href: 5.0/dsc_importdscresource.md
+                - name: Yapılandırma Anahtar Sözcüğü için WOW64 Desteği
+                  href: 5.0/dsc_wow64.md
+            - name: Kaynaklar
+              items:
+                - name: Sınıf tabanlı DSC Kaynakları
+                  href: 5.0/dsc_classbasedresource.md
+                - name: DSC Kaynak Betiği Hata Ayıklama
+                  href: 5.0/dsc_resourcedebugging.md
+                - name: DSC Kaynakları için Otomatik RunAs Desteği
+                  href: 5.0/dsc_runas.md
+                - name: DSC Kaynakları için Yan Yana Sürüm Oluşturma Desteği
+                  href: 5.0/dsc_sxsresource.md
+                - name: Yeni Yerleşik Kaynaklar
+                  href: 5.0/dsc_newresources.md
+            - name: Yerel Configuration Manager
+              items:
+                - name: Birden Çok Yapılandırma Parçası ile Düğüm Yapılandırma
+                  href: 5.0/dsc_partialconfig.md
+                - name: Karışık RefreshModes için Destek
+                  href: 5.0/dsc_partialconfig_mixedmode.md
+                - name: DSC Altyapısını Yeni Öznitelikle Yapılandırma
+                  href: 5.0/dsc_metaconfiguration.md
+                - name: LCM Durumu hakkında Ayrıntılı Bilgi
+                  href: 5.0/dsc_lcmstate.md
+                - name: RefreshMode ve ConfigurationMode Frekansları Birbirinin Aynısı olmak zorunda değil
+                  href: 5.0/dsc_freqnomultiple.md
+                - name: RefreshMode Özelliği için Ek Değer
+                  href: 5.0/dsc_refreshmode.md
+            - name: Cmdlet’ler
+              items:
+                - name: Yapılandırma Durumu Hakkında Ayrıntılar
+                  href: 5.0/dsc_getconfigurationstatus.md
+                - name: Test-DscConfiguration Cmdlet’i Başvuru Yapılandırmalarını Destekler
+                  href: 5.0/dsc_testconfiguration.md
+                - name: DSC Kaynak Yöntemlerine Doğrudan Erişim
+                  href: 5.0/dsc_directaccess.md
+                - name: Yapılandırma Belgelerini Başvurmadan Sun
+                  href: 5.0/dsc_publishconfig.md
+                - name: DSC Belgelerini Kaldır
+                  href: 5.0/dsc_removeconfigdoc.md
+                - name: Birleşmiş ve Tutarlı Durum ve Durum Gösterimi
+                  href: 5.0/dsc_statestatus.md
+                - name: Set-DscLocalConfigurationManager Cmdlet’i -Force Parametresini Destekler
+                  href: 5.0/dsc_setdsclcm.md
+            - name: Çekme Modu
+              items:
+                - name: DSC Yapılandırmalarının isteğe bağlı ÇEKME işlemi
+                  href: 5.0/dsc_updateconfig.md
+                - name: Düğüm ve Yapılandırma kimliklerinin ayrımı
+                  href: 5.0/dsc_nodeid.md
+                - name: 'Yapılandırma, Kaynak ve Rapor Depolarının ayrımı'
+                  href: 5.0/dsc_repository.md
+                - name: Yapılandırma Durumunu Merkez Konuma Raporlama
+                  href: 5.0/dsc_reporting.md
+        - name: Döküm ve Günlüğe Kaydetme kullanarak PowerShell Kullanımını Denetleme
+          items:
+            - name: Denetime genel bakış
+              href: 5.0/audit_overview.md
+            - name: Gelişmiş Transkripsiyon Seçenekleri
+              href: 5.0/audit_transcript.md
+            - name: Betik İzleme ve Günlüğe Kaydetme
+              href: 5.0/audit_script.md
+            - name: Şifreli İleti Söz Dizimi (CMS) Cmdlet’leri
+              href: 5.0/audit_cms.md
+        - name: 'PackageManagement ile Yazılım Bulma, Yükleme ve Stoklama'
+          items:
+            - name: PackageManagement’a genel bakış
+              href: 5.0/oneget_overview.md
+            - name: PackageManagement Cmdlet’leri
+              href: 5.0/oneget_cmdlets.md
+        - name: 'PowerShellGet ile PowerShell Modülü Bulma, Yükleme ve Stoklama'
+          items:
+            - name: PowerShellGet modülüne genel bakış
+              href: 5.0/psget_module_overview.md
+            - name: Bir PowerShell Deposu Kaydetme
+              href: 5.0/psget_psrepository.md
+            - name: PowerShell 5.0 ve Üzeri Sürümlerde Yan Yana Sürüm Desteği
+              href: 5.0/psget_modulesxsinstall.md
+            - name: Modül Bağımlılıklarının Yüklenmesi
+              href: 5.0/psget_moduledependency.md
+            - name: Modül Yönetimi için PowerShellGet Cmdlet’leri
+              href: 5.0/psget_modulecmdlets.md
+        - name: 'PowerShellGet ile PowerShell Betiği Bulma, Yükleme ve Yönetme'
+          items:
+            - name: PowerShellGet betiğine genel bakış
+              href: 5.0/psget_script_overview.md
+            - name: Betik Yönetimi için PowerShellGet Cmdlet’leri
+              href: 5.0/psget_scriptcmdlets.md
+        - name: Topluluk Geri Bildirimlerine göre Yeni ve Güncelleştirilmiş Cmdlet’ler
+          items:
+            - name: Topluluk Geri Bildirimlerine göre Yeni ve Güncelleştirilmiş Cmdlet’ler
+            - name: Öğe Cmdlet’leri kullanarak Simgesel Bağlantılar
+              href: 5.0/feedback_symbolic.md
+            - name: Arşiv Cmdlet’leri
+              href: 5.0/feedback_archive.md
+            - name: Pano Cmdlet’leri
+              href: 5.0/feedback_clipboard.md
+            - name: Convert-String
+              href: 5.0/feedback_convertstring.md
+            - name: Yapılandırılmış Nesneleri Dizeden Çıkarma ve Ayıklama
+              href: 5.0/feedback_convertfromString.md
+            - name: Format-Hex
+              href: 5.0/feedback_formathex.md
+            - name: NoNewLine Parametresi
+              href: 5.0/feedback_nonewline.md
+            - name: New-TemporaryFile
+              href: 5.0/feedback_tempfile.md
+            - name: New-Guid
+              href: 5.0/feedback_newguid.md
+            - name: Get-ChildItem öğesinin -Depth parametresi var
+              href: 5.0/feedback_getchilditem.md
+            - name: FileInfo nesnesi güncelleştirmeleri
+              href: 5.0/feedback_fileinfo.md
+            - name: Sürüm Aralıklarını (1.* vb.) Bildirme için Modüller Desteği
+              href: 5.0/feedback_moduleversionranges.md
+        - name: Bilgi Akışı
+          href: 5.0/informationstream_overview.md
+        - name: OData Uç Noktasına göre PowerShell Cmdlet’leri Oluşturma
+          href: 5.0/odata_overview.md
+        - name: PowerShell ile Ağ Anahtarı Yönetimi
+          href: 5.0/networkswitch_overview.md
+        - name: Yazılım Envanter Günlüğü (SIL)
+          href: 5.0/sil_overview.md
