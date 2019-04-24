@@ -2,12 +2,12 @@
 title: VSCode ve PowerShell’de dosya kodlamayı anlama
 description: VSCode ve PowerShell dosya kodlamasını yapılandırma
 ms.date: 02/28/2019
-ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
-ms.translationtype: MT
+ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320413"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984128"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>VSCode ve PowerShell’de dosya kodlamayı anlama
 
@@ -102,7 +102,7 @@ Ağaçları isteğe bağlıdır ve güvenilir bir kuralı UTF-8'in her yerde kul
 
 VSCode'nın varsayılan kodlama: UTF-8 içermeyen ürün reçetesi.
 
-Ayarlanacak [VSCode kodlamasını][]VSCode Ayarları'na gidin (<kbd>Ctrl<kbd>+</kbd>,</kbd>) ayarlayıp `"files.encoding"` ayarı:
+Ayarlanacak [VSCode'nın kodlama][]VSCode Ayarları'na gidin (<kbd>Ctrl</kbd>+<kbd>,</kbd>) ayarlayıp `"files.encoding"` ayarı:
 
 ```json
 "files.encoding": "utf8bom"
@@ -194,7 +194,7 @@ Belirli bir giriş kodlama kullanmak için PowerShell kullanmaya zorlamak mümk�
 
 ### <a name="existing-scripts"></a>Var olan betikler
 
-Zaten dosya sisteminde betikleri, yeni seçilen kodlama için yeniden kodlanmış gerekebilir. Alt çubuğu, VSCode içinde UTF-8 etiket görürsünüz. Eylem çubuğunu açın ve seçmek için tıklatın **kodlamayla kaydetme**. Şimdi, bu dosya için yeni bir kodlama seçebilirsiniz. Bkz: [VSCode kodlamasını][] tam yönergeler için.
+Zaten dosya sisteminde betikleri, yeni seçilen kodlama için yeniden kodlanmış gerekebilir. Alt çubuğu, VSCode içinde UTF-8 etiket görürsünüz. Eylem çubuğunu açın ve seçmek için tıklatın **kodlamayla kaydetme**. Şimdi, bu dosya için yeni bir kodlama seçebilirsiniz. Bkz: [VSCode'nın kodlama][] tam yönergeler için.
 
 Birden çok dosyayı yeniden kodlamanız gerekirse, aşağıdaki betiği kullanabilirsiniz:
 
@@ -274,4 +274,4 @@ Okuma olan kodlama ve kodlama PowerShell'de yapılandırma birkaç diğer iyi g�
 [bayt sırası işareti]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [Dil sunucusu Protokolü]: https://microsoft.github.io/language-server-protocol/
-[VSCode kodlamasını]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[VSCode'nın kodlama]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support

@@ -1,32 +1,32 @@
 ---
-ms.date: 06/12/2018
+ms.date: 04/19/2019
 keywords: wmf,powershell,setup
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: 17011f88c364cb56a0c87f092873ccd99db450bc
-ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
-ms.translationtype: MT
+ms.openlocfilehash: 6d25b4025bbc86f6be0e5c74db9f1fbe6705d816
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36940397"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984330"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
-Windows Management Framework (WMF), Windows için bir tutarlı yönetim arabirimini sağlar. WMF çeşitli Windows istemcisi ve Windows Server sürümlerini yönetmek için sorunsuz bir yol sağlar. WMF Installer paketleri yönetim işlevselliği için güncelleştirmeleri içerir ve daha eski Windows sürümleri için kullanılabilir.
+Windows Management Framework (WMF) Windows için bir tutarlı yönetim arabirimidir. WMF sorunsuz Windows istemcisi ve Windows Server çeşitli sürümlerini yönetmenize olanak sağlar. WMF yükleyici paket Yönetimi işlevselliği için güncelleştirmeleri içerir ve eski Windows sürümleri için kullanılabilir.
 
-WMF yüklemesi ekler ve/veya aşağıdaki özellikleri güncelleştirir:
+WMF yükleme ekler ve/veya aşağıdaki özellikleri güncelleştirir:
 
 - Windows PowerShell
 - Windows PowerShell Desired State Configuration (DSC)
 - Windows PowerShell Tümleşik komut dosyası ortamı (ISE)
 - Windows Uzaktan Yönetim (WinRM)
 - Windows Yönetim Araçları (WMI)
-- Windows PowerShell Web Hizmetleri (Yönetim OData IIS uzantısı)
+- Windows PowerShell Web Hizmetleri (Management OData IIS uzantısı)
 - Yazılım Envanter Günlüğü (SIL)
 - Sunucu Yöneticisi'ni CIM sağlayıcısı
 
 ## <a name="wmf-release-notes"></a>WMF sürüm notları
 
-PowerShell ve diğer bileşenleri verilen WMF çeşitli iyileştirmeleri hakkında bilgi edinmek için aşağıdaki bağlantılardan sürüm notlarını gözden geçirmek için lütfen:
+PowerShell ve diğer bileşenleri verilen WMF çeşitli iyileştirmeler hakkında bilgi edinmek için aşağıdaki bağlantıları sürüm notlarını gözden geçirmek için bkz:
 
 - [WMF 5.1](5.1/release-notes.md)
 - [WMF 5.0](5.0/releasenotes.md)
@@ -35,25 +35,30 @@ PowerShell ve diğer bileşenleri verilen WMF çeşitli iyileştirmeleri hakkın
 
 ## <a name="wmf-availability-across-windows-operating-systems"></a>Windows işletim sistemleri içinde WMF kullanılabilirliği
 
-|İşletim sistemi sürümü  |[WMF 5.1][] |[WMF 5.0][] |[WMF 4.0][] |[WMF 3.0][]  |[WMF 2.0][] |
-|--------------------------|------------|------------|------------|-------------|------------|
-|Windows Server 2016       |Yerleşik gelir|            |            |             |            |
-|Windows 10                |Yerleşik gelir|Yerleşik gelir|            |             |            |
-|Windows Server 2012 R2    |Evet         |Evet         |Yerleşik gelir|             |            |
-|Windows 8.1               |Evet         |Evet         |Yerleşik gelir|             |            |
-|Windows Server 2012       |Evet         |Evet         |Evet         |Yerleşik gelir |            |
-|Windows 8                 |            |            |            |Yerleşik gelir |            |
-|Windows Server 2008 R2 SP1|Evet         |Evet         |Evet         |Evet          |Yerleşik gelir|
-|Windows 7 SP1             |Evet         |Evet         |Evet         |Evet          |Yerleşik gelir|
-|Windows Server 2008 SP2   |            |            |            |Evet          |Evet         |
-|Windows Vista             |            |            |            |             |Evet         |
-|Windows Server 2003       |            |            |            |             |Evet         |
-|Windows XP                |            |            |            |Evet          |            |
+|        İşletim Sistemi Sürümü         | [WMF 5.1][]  | WMF 5.0<br>*Destek kapsamı dışında* | [WMF 4.0][]  | [WMF 3.0][]  | [WMF 2.0][]  |
+| --------------------------------------- | ------------ | --------------------------- | ------------ | ------------ | ------------ |
+| Windows Server 2019                     | Yerleşik verilir |                             |              |              |              |
+| Windows Server 2016                     | Yerleşik verilir |                             |              |              |              |
+| Windows 10                              | Yerleşik verilir | Yerleşik verilir                |              |              |              |
+| Windows Server 2012 R2                  | Evet          | Evet                         | Yerleşik verilir |              |              |
+| Windows 8.1                             | Evet          | Evet                         | Yerleşik verilir |              |              |
+| Windows Server 2012                     | Evet          | Evet                         | Evet          | Yerleşik verilir |              |
+| Windows 8<br>*Destek kapsamı dışında*           |              |                             |              | Yerleşik verilir |              |
+| Windows Server 2008 R2 SP1              | Evet          | Evet                         | Evet          | Evet          | Yerleşik verilir |
+| Windows 7 SP1                           | Evet          | Evet                         | Evet          | Evet          | Yerleşik verilir |
+| Windows Server 2008 SP2                 |              |                             |              | Evet          | Evet          |
+| Windows Vista<br>*Destek kapsamı dışında*       |              |                             |              |              | Evet          |
+| Windows Server 2003<br>*Destek kapsamı dışında* |              |                             |              |              | Evet          |
+| Windows XP<br>*Destek kapsamı dışında*          |              |                             |              | Evet          | Evet          |
 
-**Gelen Kutusu**: WMF belirtilen sürümünü özelliklerini belirtilen Windows istemci veya Windows Server sürümünde geldiği.
+- **Gelen Kutusu**: Belirtilen WMF sürümünü özelliklerinin belirtilen Windows istemci veya Windows Server sürümünde geldiği.
+- **Destek dışında**: Bu ürünler artık Microsoft tarafından desteklenir. Desteklenen yeni bir sürüme yükseltmeniz gerekir. Daha fazla bilgi için [Microsoft Destek Ömrü İlkesi][] sayfası.
 
+> [!NOTE]
+> WMF 5.0 yükleyici artık desteklenen veya kullanılabilir değil. WMF 5.1 tarafından değiştirilmiştir.
+
+[Microsoft Destek Ömrü İlkesi]: https://support.microsoft.com/lifecycle
 [WMF 5.1]: https://aka.ms/wmf51download
-[WMF 5.0]: https://aka.ms/wmf5download
 [WMF 4.0]: https://aka.ms/wmf4download
 [WMF 3.0]: https://aka.ms/wmf3download
 [WMF 2.0]: https://aka.ms/wmf2download
