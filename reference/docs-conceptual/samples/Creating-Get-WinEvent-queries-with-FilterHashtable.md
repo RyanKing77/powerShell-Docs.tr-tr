@@ -2,11 +2,11 @@
 ms.date: 3/18/2019
 title: FilterHashtable ile Get-WinEvent sorguları oluşturma
 ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293291"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984230"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>FilterHashtable ile Get-WinEvent sorguları oluşturma
 
@@ -53,7 +53,7 @@ Aşağıdaki tabloda, anahtar adları, veri türleri görüntüler ve joker kara
 | Günlükadı      | `<String[]>`       | Evet |
 | ProviderName | `<String[]>`       | Evet |
 | Yol         | `<String[]>`       | Hayır  |
-| Anahtar Sözcükler     | `<Long[]>`         | Hayır  |
+| anahtar sözcükler     | `<Long[]>`         | Hayır  |
 | ID           | `<Int32[]>`        | Hayır  |
 | Düzey        | `<Int32[]>`        | Hayır  |
 | startTime    | `<DateTime>`       | Hayır  |
@@ -217,7 +217,7 @@ Numaralandırılmış değerler bölümünde belgelendirilen **.NET Framework**.
 
 | Adı           | Değer |
 | -------------- | ----- |
-| Verbose        |   5   |
+| Ayrıntılı        |   5   |
 | Bilgi  |   4   |
 | Uyarı        |   3   |
 | Hata          |   2   |
