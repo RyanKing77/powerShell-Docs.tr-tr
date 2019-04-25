@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: PowerShell sınıfları ile özel bir DSC kaynağı yazma
 ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076727"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell sınıfları ile özel bir DSC kaynağı yazma
 
-> Şunun için geçerlidir: Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 5.0
 
 Windows PowerShell 5.0 PowerShell sınıflarını sunulmasıyla birlikte, bir sınıf oluşturarak artık bir DSC kaynağı tanımlayabilirsiniz. Ayrı bir MOF dosyası oluşturmanız gerekmez. Bu nedenle sınıf hem şema hem de kaynak uygulamasını tanımlar. Sınıf tabanlı bir kaynak klasör yapısını de daha basit, çünkü bir **DSCResources** klasörü gerekli değildir.
 
@@ -483,7 +483,7 @@ Daha fazla bilgi için [DSC çalıştıran kullanıcı kimlik bilgileriyle](../c
 **DscResource()** özniteliği isteğe bağlı bir parametre alır **RunAsCredential**.
 Bu parametre üç değerden birini alır:
 
-- `Optional` **PsDscRunAsCredential** bu kaynak çağrısı yapılandırmalar için isteğe bağlıdır. Bu varsayılan değerdir.
+- `Optional` **PsDscRunAsCredential** bu kaynak çağrısı yapılandırmalar için isteğe bağlıdır. Varsayılan değer budur.
 - `Mandatory` **PsDscRunAsCredential** bu kaynak çağıran herhangi bir yapılandırma için kullanılmalıdır.
 - `NotSupported` Bu kaynak çağrısı yapılandırmaları kullanamaz **PsDscRunAsCredential**.
 - `Default` Aynı `Optional`.
