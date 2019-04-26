@@ -9,43 +9,43 @@ ms.topic: article
 ms.assetid: 9c90d268-730b-4e73-9dfd-5f288c27aed0
 caps.latest.revision: 8
 ms.openlocfilehash: 74d7c9e9cb0d7ce829635e6aff994473e09e7479
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082575"
 ---
-# <a name="runspace11-sample"></a><span data-ttu-id="78f72-102">Runspace11 Örneği</span><span class="sxs-lookup"><span data-stu-id="78f72-102">Runspace11 Sample</span></span>
+# <a name="runspace11-sample"></a><span data-ttu-id="bace4-102">Runspace11 Örneği</span><span class="sxs-lookup"><span data-stu-id="bace4-102">Runspace11 Sample</span></span>
 
-<span data-ttu-id="78f72-103">Bu örnek nasıl kullanılacağını gösterir [System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) var olan bir cmdlet'i çağırır, ancak kullanılabilir parametreleri kümesini sınırlayan bir ara sunucu komutu oluşturmak için sınıf.</span><span class="sxs-lookup"><span data-stu-id="78f72-103">This sample shows how to use the [System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters.</span></span> <span data-ttu-id="78f72-104">Ara sunucu komutunu kısıtlı bir çalışma alanı oluşturmak için kullanılan bir ilk oturum durumunu daha sonra eklenir.</span><span class="sxs-lookup"><span data-stu-id="78f72-104">The proxy command is then added to an initial session state that is used to create a constrained runspace.</span></span> <span data-ttu-id="78f72-105">Bu, kullanıcının yalnızca ara sunucu komutu cmdlet işlevselliğini erişebileceği anlamına gelir.</span><span class="sxs-lookup"><span data-stu-id="78f72-105">This means that the user can access the functionality of the cmdlet only through the proxy command.</span></span>
+<span data-ttu-id="bace4-103">Bu örnek nasıl kullanılacağını gösterir [System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) var olan bir cmdlet'i çağırır, ancak kullanılabilir parametreleri kümesini sınırlayan bir ara sunucu komutu oluşturmak için sınıf.</span><span class="sxs-lookup"><span data-stu-id="bace4-103">This sample shows how to use the [System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters.</span></span> <span data-ttu-id="bace4-104">Ara sunucu komutunu kısıtlı bir çalışma alanı oluşturmak için kullanılan bir ilk oturum durumunu daha sonra eklenir.</span><span class="sxs-lookup"><span data-stu-id="bace4-104">The proxy command is then added to an initial session state that is used to create a constrained runspace.</span></span> <span data-ttu-id="bace4-105">Bu, kullanıcının yalnızca ara sunucu komutu cmdlet işlevselliğini erişebileceği anlamına gelir.</span><span class="sxs-lookup"><span data-stu-id="bace4-105">This means that the user can access the functionality of the cmdlet only through the proxy command.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="78f72-106">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="78f72-106">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="bace4-106">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="bace4-106">Requirements</span></span>
 
-<span data-ttu-id="78f72-107">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="78f72-107">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="bace4-107">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="bace4-107">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="78f72-108">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="78f72-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="bace4-108">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="bace4-108">Demonstrates</span></span>
 
-<span data-ttu-id="78f72-109">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="78f72-109">This sample demonstrates the following.</span></span>
+<span data-ttu-id="bace4-109">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="bace4-109">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="78f72-110">Oluşturma bir [System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) var olan bir cmdlet'i meta verileri tanımlayan nesne.</span><span class="sxs-lookup"><span data-stu-id="78f72-110">Creating a [System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) object that describes the metadata of an existing cmdlet.</span></span>
+- <span data-ttu-id="bace4-110">Oluşturma bir [System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) var olan bir cmdlet'i meta verileri tanımlayan nesne.</span><span class="sxs-lookup"><span data-stu-id="bace4-110">Creating a [System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) object that describes the metadata of an existing cmdlet.</span></span>
 
-- <span data-ttu-id="78f72-111">Oluşturma bir [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne.</span><span class="sxs-lookup"><span data-stu-id="78f72-111">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="bace4-111">Oluşturma bir [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne.</span><span class="sxs-lookup"><span data-stu-id="bace4-111">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="78f72-112">Bir cmdlet parametresi kaldırmak için cmdlet meta verileri değiştirme.</span><span class="sxs-lookup"><span data-stu-id="78f72-112">Modifying the cmdlet metadata to remove a parameter of the cmdlet.</span></span>
+- <span data-ttu-id="bace4-112">Bir cmdlet parametresi kaldırmak için cmdlet meta verileri değiştirme.</span><span class="sxs-lookup"><span data-stu-id="bace4-112">Modifying the cmdlet metadata to remove a parameter of the cmdlet.</span></span>
 
-- <span data-ttu-id="78f72-113">Cmdlet'e ekleme [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne ve cmdlet özel yapılıyor.</span><span class="sxs-lookup"><span data-stu-id="78f72-113">Adding the cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object and making the cmdlet private.</span></span>
+- <span data-ttu-id="bace4-113">Cmdlet'e ekleme [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesne ve cmdlet özel yapılıyor.</span><span class="sxs-lookup"><span data-stu-id="bace4-113">Adding the cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object and making the cmdlet private.</span></span>
 
-- <span data-ttu-id="78f72-114">Bir proxy işlevi oluşturma mevcut cmdlet'i çağırır, ancak yalnızca sınırlı bir dizi parametrenin kullanıma sunar.</span><span class="sxs-lookup"><span data-stu-id="78f72-114">Creating a proxy function that calls the existing cmdlet, but exposes only a restricted set of parameters.</span></span>
+- <span data-ttu-id="bace4-114">Bir proxy işlevi oluşturma mevcut cmdlet'i çağırır, ancak yalnızca sınırlı bir dizi parametrenin kullanıma sunar.</span><span class="sxs-lookup"><span data-stu-id="bace4-114">Creating a proxy function that calls the existing cmdlet, but exposes only a restricted set of parameters.</span></span>
 
-- <span data-ttu-id="78f72-115">Proxy işlevi için ilk oturum durumu ekleniyor.</span><span class="sxs-lookup"><span data-stu-id="78f72-115">Adding the proxy function to the initial session state.</span></span>
+- <span data-ttu-id="bace4-115">Proxy işlevi için ilk oturum durumu ekleniyor.</span><span class="sxs-lookup"><span data-stu-id="bace4-115">Adding the proxy function to the initial session state.</span></span>
 
-- <span data-ttu-id="78f72-116">Oluşturma bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) kullanan nesne [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) nesne.</span><span class="sxs-lookup"><span data-stu-id="78f72-116">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
+- <span data-ttu-id="bace4-116">Oluşturma bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) kullanan nesne [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) nesne.</span><span class="sxs-lookup"><span data-stu-id="bace4-116">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
 
-- <span data-ttu-id="78f72-117">Özel cmdlet'ini ve proxy işlevini kullanarak bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) kısıtlanmış çalışma göstermek için nesne.</span><span class="sxs-lookup"><span data-stu-id="78f72-117">Calling the private cmdlet and the proxy function using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to demonstrate the constrained runspace.</span></span>
+- <span data-ttu-id="bace4-117">Özel cmdlet'ini ve proxy işlevini kullanarak bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) kısıtlanmış çalışma göstermek için nesne.</span><span class="sxs-lookup"><span data-stu-id="bace4-117">Calling the private cmdlet and the proxy function using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to demonstrate the constrained runspace.</span></span>
 
-## <a name="example"></a><span data-ttu-id="78f72-118">Örnek</span><span class="sxs-lookup"><span data-stu-id="78f72-118">Example</span></span>
+## <a name="example"></a><span data-ttu-id="bace4-118">Örnek</span><span class="sxs-lookup"><span data-stu-id="bace4-118">Example</span></span>
 
-<span data-ttu-id="78f72-119">Bu kısıtlı bir çalışma alanı göstermek özel bir cmdlet için bir ara sunucu komutu oluşturur.</span><span class="sxs-lookup"><span data-stu-id="78f72-119">This creates a proxy command for a private cmdlet to demonstrate a constrained runspace.</span></span>
+<span data-ttu-id="bace4-119">Bu kısıtlı bir çalışma alanı göstermek özel bir cmdlet için bir ara sunucu komutu oluşturur.</span><span class="sxs-lookup"><span data-stu-id="bace4-119">This creates a proxy command for a private cmdlet to demonstrate a constrained runspace.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -244,6 +244,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="78f72-120">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="78f72-120">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bace4-120">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="bace4-120">See Also</span></span>
 
-[<span data-ttu-id="78f72-121">Bir Windows PowerShell ana bilgisayar uygulaması yazma</span><span class="sxs-lookup"><span data-stu-id="78f72-121">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="bace4-121">Bir Windows PowerShell ana bilgisayar uygulaması yazma</span><span class="sxs-lookup"><span data-stu-id="bace4-121">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

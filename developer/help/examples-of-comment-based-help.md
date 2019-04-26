@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: dbccaf5b8e48a1c4d924bc0ec4ea09b25e10adf0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083510"
 ---
-# <a name="examples-of-comment-based-help"></a><span data-ttu-id="5667f-102">Yorum Tabanlı Yardım Örnekleri</span><span class="sxs-lookup"><span data-stu-id="5667f-102">Examples of Comment-Based Help</span></span>
+# <a name="examples-of-comment-based-help"></a><span data-ttu-id="64750-102">Yorum Tabanlı Yardım Örnekleri</span><span class="sxs-lookup"><span data-stu-id="64750-102">Examples of Comment-Based Help</span></span>
 
-<span data-ttu-id="5667f-103">Bu konuda, açıklama tabanlı Yardım betikleri ve İşlevler için nasıl kullanılacağını gösteren bir örnek içerir.</span><span class="sxs-lookup"><span data-stu-id="5667f-103">This topic includes example that demonstrate how to use comment-based help for scripts and functions.</span></span>
+<span data-ttu-id="64750-103">Bu konuda, açıklama tabanlı Yardım betikleri ve İşlevler için nasıl kullanılacağını gösteren bir örnek içerir.</span><span class="sxs-lookup"><span data-stu-id="64750-103">This topic includes example that demonstrate how to use comment-based help for scripts and functions.</span></span>
 
-## <a name="example-1-comment-based-help-for-a-function"></a><span data-ttu-id="5667f-104">Örnek 1: Bir işlev için açıklama tabanlı Yardım</span><span class="sxs-lookup"><span data-stu-id="5667f-104">Example 1: Comment-Based Help for a Function</span></span>
+## <a name="example-1-comment-based-help-for-a-function"></a><span data-ttu-id="64750-104">Örnek 1: Bir işlev için açıklama tabanlı Yardım</span><span class="sxs-lookup"><span data-stu-id="64750-104">Example 1: Comment-Based Help for a Function</span></span>
 
- <span data-ttu-id="5667f-105">Aşağıdaki örnek işlev açıklama tabanlı Yardım içerir.</span><span class="sxs-lookup"><span data-stu-id="5667f-105">The following sample function includes comment-based Help.</span></span>
+ <span data-ttu-id="64750-105">Aşağıdaki örnek işlev açıklama tabanlı Yardım içerir.</span><span class="sxs-lookup"><span data-stu-id="64750-105">The following sample function includes comment-based Help.</span></span>
 
 ```powershell
 function Add-Extension
@@ -71,7 +71,7 @@ function Add-Extension
 }
 ```
 
-<span data-ttu-id="5667f-106">Aşağıdaki çıktı, Add-uzantı işlevi için Yardım görüntüleyen bir Get-Help komutunu sonuçları gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="5667f-106">The following output shows the results of a Get-Help command that displays the help for the Add-Extension function.</span></span>
+<span data-ttu-id="64750-106">Aşağıdaki çıktı, Add-uzantı işlevi için Yardım görüntüleyen bir Get-Help komutunu sonuçları gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="64750-106">The following output shows the results of a Get-Help command that displays the help for the Add-Extension function.</span></span>
 
 ```powershell
 C:\PS> get-help add-extension -full
@@ -141,11 +141,11 @@ C:\PS> get-help add-extension -full
             Set-Item
 ```
 
-## <a name="example-2-comment-based-help-for-a-script"></a><span data-ttu-id="5667f-107">Örnek 2: Bir komut dosyası için açıklama tabanlı Yardım</span><span class="sxs-lookup"><span data-stu-id="5667f-107">Example 2: Comment-Based Help for a Script</span></span>
+## <a name="example-2-comment-based-help-for-a-script"></a><span data-ttu-id="64750-107">Örnek 2: Bir komut dosyası için açıklama tabanlı Yardım</span><span class="sxs-lookup"><span data-stu-id="64750-107">Example 2: Comment-Based Help for a Script</span></span>
 
-<span data-ttu-id="5667f-108">Aşağıdaki örnek işlev açıklama tabanlı Yardım içerir.</span><span class="sxs-lookup"><span data-stu-id="5667f-108">The following sample function includes comment-based Help.</span></span>
+<span data-ttu-id="64750-108">Aşağıdaki örnek işlev açıklama tabanlı Yardım içerir.</span><span class="sxs-lookup"><span data-stu-id="64750-108">The following sample function includes comment-based Help.</span></span>
 
-<span data-ttu-id="5667f-109">Boş satırlar kapatma arasındaki fark **#>** ve `Param` deyimi.</span><span class="sxs-lookup"><span data-stu-id="5667f-109">Notice the blank lines between the closing **#>** and the `Param` statement.</span></span> <span data-ttu-id="5667f-110">Sahip olmayan bir betikte bir `Param` deyimi, Yardım konusundaki son açıklama ve ilk işlev bildirimi arasında en az iki boş satırlar olmalıdır.</span><span class="sxs-lookup"><span data-stu-id="5667f-110">In a script that does not have a `Param` statement, there must be at least two blank lines between the final comment in the Help topic and the first function declaration.</span></span> <span data-ttu-id="5667f-111">Bu boş satırlar, Get-Help komut dosyası yerine işlevi Yardım konusuna ilişkilendirir.</span><span class="sxs-lookup"><span data-stu-id="5667f-111">Without these blank lines, Get-Help associates the Help topic with the function, instead of the script.</span></span>
+<span data-ttu-id="64750-109">Boş satırlar kapatma arasındaki fark **#>** ve `Param` deyimi.</span><span class="sxs-lookup"><span data-stu-id="64750-109">Notice the blank lines between the closing **#>** and the `Param` statement.</span></span> <span data-ttu-id="64750-110">Sahip olmayan bir betikte bir `Param` deyimi, Yardım konusundaki son açıklama ve ilk işlev bildirimi arasında en az iki boş satırlar olmalıdır.</span><span class="sxs-lookup"><span data-stu-id="64750-110">In a script that does not have a `Param` statement, there must be at least two blank lines between the final comment in the Help topic and the first function declaration.</span></span> <span data-ttu-id="64750-111">Bu boş satırlar, Get-Help komut dosyası yerine işlevi Yardım konusuna ilişkilendirir.</span><span class="sxs-lookup"><span data-stu-id="64750-111">Without these blank lines, Get-Help associates the Help topic with the function, instead of the script.</span></span>
 
 ```powershell
 <#
@@ -185,7 +185,7 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-<span data-ttu-id="5667f-112">Aşağıdaki komut, komut dosyasını Yardım alır.</span><span class="sxs-lookup"><span data-stu-id="5667f-112">The following command gets the script Help.</span></span> <span data-ttu-id="5667f-113">Betik n olmadığı için yol ortam değişkeninde Yardım komut dosyasını alır Get-Help komutunu listelenen bir dizin betik yolu belirtmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="5667f-113">Because the script is not n a directory that is listed in the Path environment variable, the Get-Help command that gets the script Help must specify the script path.</span></span>
+<span data-ttu-id="64750-112">Aşağıdaki komut, komut dosyasını Yardım alır.</span><span class="sxs-lookup"><span data-stu-id="64750-112">The following command gets the script Help.</span></span> <span data-ttu-id="64750-113">Betik n olmadığı için yol ortam değişkeninde Yardım komut dosyasını alır Get-Help komutunu listelenen bir dizin betik yolu belirtmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="64750-113">Because the script is not n a directory that is listed in the Path environment variable, the Get-Help command that gets the script Help must specify the script path.</span></span>
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
@@ -255,9 +255,9 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
             RELATED LINKS
 ```
 
-## <a name="example-3-parameter-descriptions-in-a-param-statement"></a><span data-ttu-id="5667f-114">Örnek 3: Param deyimi içinde parametre açıklamaları</span><span class="sxs-lookup"><span data-stu-id="5667f-114">Example 3: Parameter Descriptions in a Param Statement</span></span>
+## <a name="example-3-parameter-descriptions-in-a-param-statement"></a><span data-ttu-id="64750-114">Örnek 3: Param deyimi içinde parametre açıklamaları</span><span class="sxs-lookup"><span data-stu-id="64750-114">Example 3: Parameter Descriptions in a Param Statement</span></span>
 
-<span data-ttu-id="5667f-115">Bu örnek içinde parameterdescriptions nasıl ekleneceğini gösterir `Param` bir işlev veya komut dosyası ifadesi.</span><span class="sxs-lookup"><span data-stu-id="5667f-115">This example show how to insert parameterdescriptions in the `Param` statement of a function or script.</span></span> <span data-ttu-id="5667f-116">Bu biçim parametre açıklamaları kısa en yararlı olur.</span><span class="sxs-lookup"><span data-stu-id="5667f-116">This format is most useful when the parameter descriptions are brief.</span></span>
+<span data-ttu-id="64750-115">Bu örnek içinde parameterdescriptions nasıl ekleneceğini gösterir `Param` bir işlev veya komut dosyası ifadesi.</span><span class="sxs-lookup"><span data-stu-id="64750-115">This example show how to insert parameterdescriptions in the `Param` statement of a function or script.</span></span> <span data-ttu-id="64750-116">Bu biçim parametre açıklamaları kısa en yararlı olur.</span><span class="sxs-lookup"><span data-stu-id="64750-116">This format is most useful when the parameter descriptions are brief.</span></span>
 
 ```powershell
 function Add-Extension
@@ -282,11 +282,11 @@ function Add-Extension
     #>
 ```
 
-<span data-ttu-id="5667f-117">Sonuçları örneğin 1 sonuç aynıdır.</span><span class="sxs-lookup"><span data-stu-id="5667f-117">The results are the same as the results for Example 1.</span></span> <span data-ttu-id="5667f-118">Get-Help yorumlar parametre açıklamaları olabilmek gibi sorgulamanıza `.Parameter` anahtar sözcüğü.</span><span class="sxs-lookup"><span data-stu-id="5667f-118">Get-Help interprets the parameter descriptions as though they were accompanied by the `.Parameter` keyword.</span></span>
+<span data-ttu-id="64750-117">Sonuçları örneğin 1 sonuç aynıdır.</span><span class="sxs-lookup"><span data-stu-id="64750-117">The results are the same as the results for Example 1.</span></span> <span data-ttu-id="64750-118">Get-Help yorumlar parametre açıklamaları olabilmek gibi sorgulamanıza `.Parameter` anahtar sözcüğü.</span><span class="sxs-lookup"><span data-stu-id="64750-118">Get-Help interprets the parameter descriptions as though they were accompanied by the `.Parameter` keyword.</span></span>
 
-## <a name="example-4--redirecting-to-an-xml-file"></a><span data-ttu-id="5667f-119">Örnek 4:  Bir XML dosyasına yeniden yönlendirme</span><span class="sxs-lookup"><span data-stu-id="5667f-119">Example 4:  Redirecting to an XML File</span></span>
+## <a name="example-4--redirecting-to-an-xml-file"></a><span data-ttu-id="64750-119">Örnek 4:  Bir XML dosyasına yeniden yönlendirme</span><span class="sxs-lookup"><span data-stu-id="64750-119">Example 4:  Redirecting to an XML File</span></span>
 
-<span data-ttu-id="5667f-120">XML-tabanlı Yardım konuları için işlev ve betik yazabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="5667f-120">You can write XML-based Help topics for functions and scripts.</span></span> <span data-ttu-id="5667f-121">Açıklama tabanlı Yardım uygulamak daha kolay olsa da, XML tabanlı Yardım Yardım içeriğini veya birden fazla dilde çevireceğiniz Yardım konuları üzerinde daha kesin denetim istiyorsanız gereklidir. Aşağıdaki örnek, güncelleştirme Month.ps1 betiğin ilk birkaç satırı gösterir.</span><span class="sxs-lookup"><span data-stu-id="5667f-121">Although comment-based Help is easier to implement, XML-based Help is required if you want more precise control over Help content or if you are translating Help topics into multiple languages.The following example shows the first few lines of the Update-Month.ps1 script.</span></span> <span data-ttu-id="5667f-122">Betik kullanır `.ExternalHelp` anahtar sözcüğünü XML tabanlı bir Yardım konusu betik için yolu belirtin.</span><span class="sxs-lookup"><span data-stu-id="5667f-122">The script uses the `.ExternalHelp` keyword to specify the path to an XML-based Help topic for the script.</span></span>
+<span data-ttu-id="64750-120">XML-tabanlı Yardım konuları için işlev ve betik yazabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="64750-120">You can write XML-based Help topics for functions and scripts.</span></span> <span data-ttu-id="64750-121">Açıklama tabanlı Yardım uygulamak daha kolay olsa da, XML tabanlı Yardım Yardım içeriğini veya birden fazla dilde çevireceğiniz Yardım konuları üzerinde daha kesin denetim istiyorsanız gereklidir. Aşağıdaki örnek, güncelleştirme Month.ps1 betiğin ilk birkaç satırı gösterir.</span><span class="sxs-lookup"><span data-stu-id="64750-121">Although comment-based Help is easier to implement, XML-based Help is required if you want more precise control over Help content or if you are translating Help topics into multiple languages.The following example shows the first few lines of the Update-Month.ps1 script.</span></span> <span data-ttu-id="64750-122">Betik kullanır `.ExternalHelp` anahtar sözcüğünü XML tabanlı bir Yardım konusu betik için yolu belirtin.</span><span class="sxs-lookup"><span data-stu-id="64750-122">The script uses the `.ExternalHelp` keyword to specify the path to an XML-based Help topic for the script.</span></span>
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
@@ -296,7 +296,7 @@ function Add-Extension
     function Get-Data { }
 ```
 
-<span data-ttu-id="5667f-123">Aşağıdaki örnek kullanımını gösterir `.ExternalHelp` anahtar sözcüğü bir işlev.</span><span class="sxs-lookup"><span data-stu-id="5667f-123">The following example shows the use of the `.ExternalHelp` keyword in a function.</span></span>
+<span data-ttu-id="64750-123">Aşağıdaki örnek kullanımını gösterir `.ExternalHelp` anahtar sözcüğü bir işlev.</span><span class="sxs-lookup"><span data-stu-id="64750-123">The following example shows the use of the `.ExternalHelp` keyword in a function.</span></span>
 
 ```powershell
 function Add-Extension
@@ -309,9 +309,9 @@ function Add-Extension
 }
 ```
 
-## <a name="example-5--redirecting-to-a-different-help-topic"></a><span data-ttu-id="5667f-124">Örnek 5:  Farklı bir Yardım konusu için'yeniden yönlendirme</span><span class="sxs-lookup"><span data-stu-id="5667f-124">Example 5:  Redirecting to a Different Help Topic</span></span>
+## <a name="example-5--redirecting-to-a-different-help-topic"></a><span data-ttu-id="64750-124">Örnek 5:  Farklı bir Yardım konusu için'yeniden yönlendirme</span><span class="sxs-lookup"><span data-stu-id="64750-124">Example 5:  Redirecting to a Different Help Topic</span></span>
 
-<span data-ttu-id="5667f-125">Aşağıdaki kod bir alıntı yerleşik başından itibaren olan `Help` her seferinde Yardım metni, bir ekran görüntüler Windows PowerShell'de işlevi.</span><span class="sxs-lookup"><span data-stu-id="5667f-125">The following code is an excerpt from the beginning of the built-in `Help` function in Windows PowerShell, which displays one screen of Help text at a time.</span></span> <span data-ttu-id="5667f-126">Yardım işlevi kullanır, Get-Help cmdlet için Yardım konusuna Yardım işlevi açıklar çünkü `.ForwardHelpTargetName` ve `.ForwardHelpCategory` kullanıcı için Get-Help cmdlet Yardım konusunun yönlendirmek için anahtar sözcükler.</span><span class="sxs-lookup"><span data-stu-id="5667f-126">Because the Help topic for the Get-Help cmdlet describes the Help function, the Help function uses the `.ForwardHelpTargetName` and `.ForwardHelpCategory` keywords to redirect the user to the Get-Help cmdlet Help topic.</span></span>
+<span data-ttu-id="64750-125">Aşağıdaki kod bir alıntı yerleşik başından itibaren olan `Help` her seferinde Yardım metni, bir ekran görüntüler Windows PowerShell'de işlevi.</span><span class="sxs-lookup"><span data-stu-id="64750-125">The following code is an excerpt from the beginning of the built-in `Help` function in Windows PowerShell, which displays one screen of Help text at a time.</span></span> <span data-ttu-id="64750-126">Yardım işlevi kullanır, Get-Help cmdlet için Yardım konusuna Yardım işlevi açıklar çünkü `.ForwardHelpTargetName` ve `.ForwardHelpCategory` kullanıcı için Get-Help cmdlet Yardım konusunun yönlendirmek için anahtar sözcükler.</span><span class="sxs-lookup"><span data-stu-id="64750-126">Because the Help topic for the Get-Help cmdlet describes the Help function, the Help function uses the `.ForwardHelpTargetName` and `.ForwardHelpCategory` keywords to redirect the user to the Get-Help cmdlet Help topic.</span></span>
 
 ```powershell
 function help
@@ -329,7 +329,7 @@ function help
     ...
 ```
 
-<span data-ttu-id="5667f-127">Bu özellik aşağıdaki komutu kullanır.</span><span class="sxs-lookup"><span data-stu-id="5667f-127">The following command uses this feature.</span></span> <span data-ttu-id="5667f-128">Bir kullanıcı bir Get-Help komut için Yardım işlevi yazdığında, Get-Help Get-Help cmdlet için Yardım konusunu görüntüler.</span><span class="sxs-lookup"><span data-stu-id="5667f-128">When a user types a Get-Help command for the Help function, Get-Help displays the Help topic for the Get-Help cmdlet.</span></span>
+<span data-ttu-id="64750-127">Bu özellik aşağıdaki komutu kullanır.</span><span class="sxs-lookup"><span data-stu-id="64750-127">The following command uses this feature.</span></span> <span data-ttu-id="64750-128">Bir kullanıcı bir Get-Help komut için Yardım işlevi yazdığında, Get-Help Get-Help cmdlet için Yardım konusunu görüntüler.</span><span class="sxs-lookup"><span data-stu-id="64750-128">When a user types a Get-Help command for the Help function, Get-Help displays the Help topic for the Get-Help cmdlet.</span></span>
 
 ```powershell
 C:\PS> get-help help

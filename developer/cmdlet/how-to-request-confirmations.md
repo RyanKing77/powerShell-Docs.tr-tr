@@ -9,29 +9,29 @@ ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
 ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067850"
 ---
-# <a name="how-to-request-confirmations"></a><span data-ttu-id="efe85-102">Onay İsteme</span><span class="sxs-lookup"><span data-stu-id="efe85-102">How to Request Confirmations</span></span>
+# <a name="how-to-request-confirmations"></a><span data-ttu-id="e4046-102">Onay İsteme</span><span class="sxs-lookup"><span data-stu-id="e4046-102">How to Request Confirmations</span></span>
 
-<span data-ttu-id="efe85-103">Bu örnek nasıl çağrılacağını gösterir [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) onaylarını gelen istek için yöntem Kullanıcı önce bir eylem yapılmaz.</span><span class="sxs-lookup"><span data-stu-id="efe85-103">This example shows how to call the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods to request confirmations from the user before an action is taken.</span></span>
+<span data-ttu-id="e4046-103">Bu örnek nasıl çağrılacağını gösterir [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) onaylarını gelen istek için yöntem Kullanıcı önce bir eylem yapılmaz.</span><span class="sxs-lookup"><span data-stu-id="e4046-103">This example shows how to call the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods to request confirmations from the user before an action is taken.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="efe85-104">Windows PowerShell bu isteklerin nasıl işlediği hakkında daha fazla bilgi için bkz. [onay isteme](./requesting-confirmation-from-cmdlets.md).</span><span class="sxs-lookup"><span data-stu-id="efe85-104">For more information about how Windows PowerShell handles these requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).</span></span>
+> <span data-ttu-id="e4046-104">Windows PowerShell bu isteklerin nasıl işlediği hakkında daha fazla bilgi için bkz. [onay isteme](./requesting-confirmation-from-cmdlets.md).</span><span class="sxs-lookup"><span data-stu-id="e4046-104">For more information about how Windows PowerShell handles these requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).</span></span>
 
-## <a name="to-request-confirmation"></a><span data-ttu-id="efe85-105">Onay isteme</span><span class="sxs-lookup"><span data-stu-id="efe85-105">To request confirmation</span></span>
+## <a name="to-request-confirmation"></a><span data-ttu-id="e4046-105">Onay isteme</span><span class="sxs-lookup"><span data-stu-id="e4046-105">To request confirmation</span></span>
 
-1. <span data-ttu-id="efe85-106">Emin `SupportsShouldProcess` cmdlet'i öznitelik parametresinin ayarlandığında `true`.</span><span class="sxs-lookup"><span data-stu-id="efe85-106">Ensure that the `SupportsShouldProcess` parameter of the Cmdlet attribute is set to `true`.</span></span> <span data-ttu-id="efe85-107">(İşlevler için bir parametre CmdletBinding özniteliği budur.)</span><span class="sxs-lookup"><span data-stu-id="efe85-107">(For functions this is a parameter of the CmdletBinding attribute.)</span></span>
+1. <span data-ttu-id="e4046-106">Emin `SupportsShouldProcess` cmdlet'i öznitelik parametresinin ayarlandığında `true`.</span><span class="sxs-lookup"><span data-stu-id="e4046-106">Ensure that the `SupportsShouldProcess` parameter of the Cmdlet attribute is set to `true`.</span></span> <span data-ttu-id="e4046-107">(İşlevler için bir parametre CmdletBinding özniteliği budur.)</span><span class="sxs-lookup"><span data-stu-id="e4046-107">(For functions this is a parameter of the CmdletBinding attribute.)</span></span>
 
     ```csharp
     [Cmdlet(VerbsDiagnostic.Test, "RequestConfirmationTemplate1",
             SupportsShouldProcess = true)]
     ```
 
-2. <span data-ttu-id="efe85-108">Ekleme bir `Force` cmdlet'inize parametresi, böylece kullanıcı onayı isteğini geçersiz kılabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="efe85-108">Add a `Force` parameter to your cmdlet so that the user can override a confirmation request.</span></span>
+2. <span data-ttu-id="e4046-108">Ekleme bir `Force` cmdlet'inize parametresi, böylece kullanıcı onayı isteğini geçersiz kılabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="e4046-108">Add a `Force` parameter to your cmdlet so that the user can override a confirmation request.</span></span>
 
     ```csharp
     [Parameter()]
@@ -43,13 +43,13 @@ ms.locfileid: "58058836"
     private bool force;
     ```
 
-3. <span data-ttu-id="efe85-109">Ekleme bir `if` dönüş değerini kullanan deyimi [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) belirlemek için yöntemi [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi çağrılır.</span><span class="sxs-lookup"><span data-stu-id="efe85-109">Add an `if` statement that uses the return value of the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method to determine if the [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method is called.</span></span>
+3. <span data-ttu-id="e4046-109">Ekleme bir `if` dönüş değerini kullanan deyimi [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) belirlemek için yöntemi [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi çağrılır.</span><span class="sxs-lookup"><span data-stu-id="e4046-109">Add an `if` statement that uses the return value of the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method to determine if the [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method is called.</span></span>
 
-4. <span data-ttu-id="efe85-110">İkinci bir ekleme `if` dönüş değerini kullanan deyimi [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi ve değerini `Force` işlemi gerekip gerekmediğini belirlemek için parametre gerçekleştirdi.</span><span class="sxs-lookup"><span data-stu-id="efe85-110">Add a second `if` statement that uses the return value of the [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method and the value of the `Force` parameter to determine whether the operation should be performed.</span></span>
+4. <span data-ttu-id="e4046-110">İkinci bir ekleme `if` dönüş değerini kullanan deyimi [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemi ve değerini `Force` işlemi gerekip gerekmediğini belirlemek için parametre gerçekleştirdi.</span><span class="sxs-lookup"><span data-stu-id="e4046-110">Add a second `if` statement that uses the return value of the [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method and the value of the `Force` parameter to determine whether the operation should be performed.</span></span>
 
-## <a name="example"></a><span data-ttu-id="efe85-111">Örnek</span><span class="sxs-lookup"><span data-stu-id="efe85-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="e4046-111">Örnek</span><span class="sxs-lookup"><span data-stu-id="e4046-111">Example</span></span>
 
-<span data-ttu-id="efe85-112">Aşağıdaki kod örneğinde, [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemleri geçersiz kılma içinde adlandırılır ' ın [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi.</span><span class="sxs-lookup"><span data-stu-id="efe85-112">In the following code example, the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods are called from within the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span> <span data-ttu-id="efe85-113">Ancak, bu yöntemler diğer girişini işleme yöntemlerini de çağırabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="efe85-113">However, you can also call these methods from the other input processing methods.</span></span>
+<span data-ttu-id="e4046-112">Aşağıdaki kod örneğinde, [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) yöntemleri geçersiz kılma içinde adlandırılır ' ın [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi.</span><span class="sxs-lookup"><span data-stu-id="e4046-112">In the following code example, the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods are called from within the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span> <span data-ttu-id="e4046-113">Ancak, bu yöntemler diğer girişini işleme yöntemlerini de çağırabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="e4046-113">However, you can also call these methods from the other input processing methods.</span></span>
 
 ```csharp
 protected override void ProcessRecord()
@@ -64,6 +64,6 @@ protected override void ProcessRecord()
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="efe85-114">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="efe85-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e4046-114">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="e4046-114">See Also</span></span>
 
-[<span data-ttu-id="efe85-115">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="efe85-115">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="e4046-115">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="e4046-115">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

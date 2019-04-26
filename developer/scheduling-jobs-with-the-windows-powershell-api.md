@@ -3,19 +3,19 @@ title: Windows PowerShell API’si ile İşleri Zamanlama
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 4e1d4ed6bffd858b92bf29b1dc6d8503454fafda
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080807"
 ---
-# <a name="scheduling-jobs-with-the-windows-powershell-api"></a><span data-ttu-id="216ad-102">Windows PowerShell API’si ile İşleri Zamanlama</span><span class="sxs-lookup"><span data-stu-id="216ad-102">Scheduling Jobs with the Windows PowerShell API</span></span>
+# <a name="scheduling-jobs-with-the-windows-powershell-api"></a><span data-ttu-id="ddc9c-102">Windows PowerShell API’si ile İşleri Zamanlama</span><span class="sxs-lookup"><span data-stu-id="ddc9c-102">Scheduling Jobs with the Windows PowerShell API</span></span>
 
-<span data-ttu-id="216ad-103">N:Microsoft.PowerShell.ScheduledJob ad alanı tarafından kullanıma sunulan nesneleri, zamanlanmış bir iş oluşturma, çalışırken tanımlayın ve çalıştıktan sonra tamamlanan işle ilgili sonuçları almak için kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="216ad-103">You can use the objects exposed by the N:Microsoft.PowerShell.ScheduledJob namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.</span></span>
+<span data-ttu-id="ddc9c-103">N:Microsoft.PowerShell.ScheduledJob ad alanı tarafından kullanıma sunulan nesneleri, zamanlanmış bir iş oluşturma, çalışırken tanımlayın ve çalıştıktan sonra tamamlanan işle ilgili sonuçları almak için kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-103">You can use the objects exposed by the N:Microsoft.PowerShell.ScheduledJob namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.</span></span>
 
-## <a name="triggering-the-job"></a><span data-ttu-id="216ad-104">İş tetikleme</span><span class="sxs-lookup"><span data-stu-id="216ad-104">Triggering the Job</span></span>
+## <a name="triggering-the-job"></a><span data-ttu-id="ddc9c-104">İş tetikleme</span><span class="sxs-lookup"><span data-stu-id="ddc9c-104">Triggering the Job</span></span>
 
-<span data-ttu-id="216ad-105">Zamanlanmış bir iş oluşturmanın ilk adımı, işin çalışması gereken zamanla belirtilmesidir.</span><span class="sxs-lookup"><span data-stu-id="216ad-105">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="216ad-106">Bunu yapmak, oluşturma ve yapılandırma T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger nesne.</span><span class="sxs-lookup"><span data-stu-id="216ad-106">Do this by creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger object.</span></span> <span data-ttu-id="216ad-107">Aşağıdaki kod, tek bir kez 20 saniye sonra çalıştırılacak bir iş zamanlamaları bir tetikleyici oluşturur.</span><span class="sxs-lookup"><span data-stu-id="216ad-107">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
+<span data-ttu-id="ddc9c-105">Zamanlanmış bir iş oluşturmanın ilk adımı, işin çalışması gereken zamanla belirtilmesidir.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-105">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="ddc9c-106">Bunu yapmak, oluşturma ve yapılandırma T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger nesne.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-106">Do this by creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger object.</span></span> <span data-ttu-id="ddc9c-107">Aşağıdaki kod, tek bir kez 20 saniye sonra çalıştırılacak bir iş zamanlamaları bir tetikleyici oluşturur.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-107">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -27,20 +27,20 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
     true);                              // Create trigger enabled
 ```
 
-## <a name="defining-the-job"></a><span data-ttu-id="216ad-108">İş tanımlama</span><span class="sxs-lookup"><span data-stu-id="216ad-108">Defining the Job</span></span>
+## <a name="defining-the-job"></a><span data-ttu-id="ddc9c-108">İş tanımlama</span><span class="sxs-lookup"><span data-stu-id="ddc9c-108">Defining the Job</span></span>
 
-<span data-ttu-id="216ad-109">Bir Windows PowerShell iş, bir parametre sözlüğünü oluşturarak tanımlayın.</span><span class="sxs-lookup"><span data-stu-id="216ad-109">You define a Windows PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="216ad-110">Şu parametreler desteklenir.</span><span class="sxs-lookup"><span data-stu-id="216ad-110">The following parameters are supported.</span></span>
+<span data-ttu-id="ddc9c-109">Bir Windows PowerShell iş, bir parametre sözlüğünü oluşturarak tanımlayın.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-109">You define a Windows PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="ddc9c-110">Şu parametreler desteklenir.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-110">The following parameters are supported.</span></span>
 
-|<span data-ttu-id="216ad-111">Parametre adı</span><span class="sxs-lookup"><span data-stu-id="216ad-111">Parameter Name</span></span>|<span data-ttu-id="216ad-112">Açıklama</span><span class="sxs-lookup"><span data-stu-id="216ad-112">Description</span></span>|
+|<span data-ttu-id="ddc9c-111">Parametre adı</span><span class="sxs-lookup"><span data-stu-id="ddc9c-111">Parameter Name</span></span>|<span data-ttu-id="ddc9c-112">Açıklama</span><span class="sxs-lookup"><span data-stu-id="ddc9c-112">Description</span></span>|
 |---|---|
-|<span data-ttu-id="216ad-113">Adı</span><span class="sxs-lookup"><span data-stu-id="216ad-113">Name</span></span>|<span data-ttu-id="216ad-114">İş adı.</span><span class="sxs-lookup"><span data-stu-id="216ad-114">The name of the job.</span></span>|
-|<span data-ttu-id="216ad-115">ScriptBock</span><span class="sxs-lookup"><span data-stu-id="216ad-115">ScriptBock</span></span>|<span data-ttu-id="216ad-116">İşin ne yaptığını belirten bir Windows PowerShell komut dosyası bloğu.</span><span class="sxs-lookup"><span data-stu-id="216ad-116">A Windows PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="216ad-117">FilePath</span><span class="sxs-lookup"><span data-stu-id="216ad-117">FilePath</span></span>|<span data-ttu-id="216ad-118">Bir işin ne yaptığını belirten bir Windows PowerShell komut dosyası bloğu içeren dosyanın yolu.</span><span class="sxs-lookup"><span data-stu-id="216ad-118">A path to a file that contains Windows PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="216ad-119">InitializationScript</span><span class="sxs-lookup"><span data-stu-id="216ad-119">InitializationScript</span></span>|<span data-ttu-id="216ad-120">İşi başlatan bir Windows PowerShell komut dosyası bloğu.</span><span class="sxs-lookup"><span data-stu-id="216ad-120">A Windows PowerShell script block that initializes the job.</span></span>|
-|<span data-ttu-id="216ad-121">ArgumentList</span><span class="sxs-lookup"><span data-stu-id="216ad-121">ArgumentList</span></span>|<span data-ttu-id="216ad-122">Proje alan bağımsız değişkenlerini belirtin nesneleri dizisi.</span><span class="sxs-lookup"><span data-stu-id="216ad-122">An array of objects that specify arguments that the job takes.</span></span>|
-|<span data-ttu-id="216ad-123">RunAs32</span><span class="sxs-lookup"><span data-stu-id="216ad-123">RunAs32</span></span>|<span data-ttu-id="216ad-124">İş bir 32 bit işlemde çalıştırılıp çalıştırılmayacağını belirleyen bir Boole değeri.</span><span class="sxs-lookup"><span data-stu-id="216ad-124">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
+|<span data-ttu-id="ddc9c-113">Adı</span><span class="sxs-lookup"><span data-stu-id="ddc9c-113">Name</span></span>|<span data-ttu-id="ddc9c-114">İş adı.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-114">The name of the job.</span></span>|
+|<span data-ttu-id="ddc9c-115">ScriptBock</span><span class="sxs-lookup"><span data-stu-id="ddc9c-115">ScriptBock</span></span>|<span data-ttu-id="ddc9c-116">İşin ne yaptığını belirten bir Windows PowerShell komut dosyası bloğu.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-116">A Windows PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="ddc9c-117">FilePath</span><span class="sxs-lookup"><span data-stu-id="ddc9c-117">FilePath</span></span>|<span data-ttu-id="ddc9c-118">Bir işin ne yaptığını belirten bir Windows PowerShell komut dosyası bloğu içeren dosyanın yolu.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-118">A path to a file that contains Windows PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="ddc9c-119">InitializationScript</span><span class="sxs-lookup"><span data-stu-id="ddc9c-119">InitializationScript</span></span>|<span data-ttu-id="ddc9c-120">İşi başlatan bir Windows PowerShell komut dosyası bloğu.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-120">A Windows PowerShell script block that initializes the job.</span></span>|
+|<span data-ttu-id="ddc9c-121">ArgumentList</span><span class="sxs-lookup"><span data-stu-id="ddc9c-121">ArgumentList</span></span>|<span data-ttu-id="ddc9c-122">Proje alan bağımsız değişkenlerini belirtin nesneleri dizisi.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-122">An array of objects that specify arguments that the job takes.</span></span>|
+|<span data-ttu-id="ddc9c-123">RunAs32</span><span class="sxs-lookup"><span data-stu-id="ddc9c-123">RunAs32</span></span>|<span data-ttu-id="ddc9c-124">İş bir 32 bit işlemde çalıştırılıp çalıştırılmayacağını belirleyen bir Boole değeri.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-124">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
 
-<span data-ttu-id="216ad-125">Aşağıdaki kod, bir parametre sözlük nesnesi oluşturur ve ad hem de ScriptBlock parametreleri ayarlar.</span><span class="sxs-lookup"><span data-stu-id="216ad-125">The following code creates a parameter dictionary object and sets the Name and ScriptBlock parameters.</span></span>
+<span data-ttu-id="ddc9c-125">Aşağıdaki kod, bir parametre sözlük nesnesi oluşturur ve ad hem de ScriptBlock parametreleri ayarlar.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-125">The following code creates a parameter dictionary object and sets the Name and ScriptBlock parameters.</span></span>
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -52,9 +52,9 @@ jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script Fi
                                                    // is required.
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="216ad-126">Çağırma ve iş tanımı nesneleri oluşturma</span><span class="sxs-lookup"><span data-stu-id="216ad-126">Creating the Invocation and Job Definition Objects</span></span>
+## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="ddc9c-126">Çağırma ve iş tanımı nesneleri oluşturma</span><span class="sxs-lookup"><span data-stu-id="ddc9c-126">Creating the Invocation and Job Definition Objects</span></span>
 
-<span data-ttu-id="216ad-127">Ardından işi çalıştırmak için ScheduledJobInvocationInfo ve ScheduledJobDefinition nesneleri oluşturursunuz.</span><span class="sxs-lookup"><span data-stu-id="216ad-127">You then create ScheduledJobInvocationInfo and ScheduledJobDefinition objects to run the job.</span></span> <span data-ttu-id="216ad-128">Aşağıdaki kod bunu gösterir.</span><span class="sxs-lookup"><span data-stu-id="216ad-128">The following code demonstrates this.</span></span>
+<span data-ttu-id="ddc9c-127">Ardından işi çalıştırmak için ScheduledJobInvocationInfo ve ScheduledJobDefinition nesneleri oluşturursunuz.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-127">You then create ScheduledJobInvocationInfo and ScheduledJobDefinition objects to run the job.</span></span> <span data-ttu-id="ddc9c-128">Aşağıdaki kod bunu gösterir.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-128">The following code demonstrates this.</span></span>
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -69,9 +69,9 @@ schedJobDefinition = new ScheduledJobDefinition(
                                                 // in default Task Scheduler process, account.
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="216ad-129">İş ile Görev Zamanlayıcısı'nı kaydetme</span><span class="sxs-lookup"><span data-stu-id="216ad-129">Registering the Job with the Task Scheduler</span></span>
+## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="ddc9c-129">İş ile Görev Zamanlayıcısı'nı kaydetme</span><span class="sxs-lookup"><span data-stu-id="ddc9c-129">Registering the Job with the Task Scheduler</span></span>
 
-<span data-ttu-id="216ad-130">Aşağıdaki kod, Windows Görev Zamanlayıcısı ile iş kaydeder.</span><span class="sxs-lookup"><span data-stu-id="216ad-130">The following code registers the job with the Windows Task Scheduler.</span></span>
+<span data-ttu-id="ddc9c-130">Aşağıdaki kod, Windows Görev Zamanlayıcısı ile iş kaydeder.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-130">The following code registers the job with the Windows Task Scheduler.</span></span>
 
 ```csharp
 schedJobDefinition.Register();
@@ -79,9 +79,9 @@ registrationSucceeded = true;
 Console.WriteLine("Scheduled job has been registered.  Waiting 30 seconds for it to be started and run.");
 ```
 
-## <a name="complete-code-example"></a><span data-ttu-id="216ad-131">Tam kod örneği</span><span class="sxs-lookup"><span data-stu-id="216ad-131">Complete Code Example</span></span>
+## <a name="complete-code-example"></a><span data-ttu-id="ddc9c-131">Tam kod örneği</span><span class="sxs-lookup"><span data-stu-id="ddc9c-131">Complete Code Example</span></span>
 
-<span data-ttu-id="216ad-132">Kendisinden önceki kod parçacıkları alınan tam kod örneği verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="216ad-132">The following is the complete code example from which the previous snippets were taken.</span></span>
+<span data-ttu-id="ddc9c-132">Kendisinden önceki kod parçacıkları alınan tam kod örneği verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="ddc9c-132">The following is the complete code example from which the previous snippets were taken.</span></span>
 
 ```csharp
 using System;

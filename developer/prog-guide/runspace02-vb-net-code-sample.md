@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 9bd9d599-faa7-4154-ac36-1f35ccf8e320
 caps.latest.revision: 7
 ms.openlocfilehash: 5ad28cfbc73628ba818e42b87128d8f4ad273bda
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081450"
 ---
-# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="e359f-102">Runspace02 (VB.NET) Kod Örneği</span><span class="sxs-lookup"><span data-stu-id="e359f-102">Runspace02 (VB.NET) Code Sample</span></span>
+# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="da26e-102">Runspace02 (VB.NET) Kod Örneği</span><span class="sxs-lookup"><span data-stu-id="da26e-102">Runspace02 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="e359f-103">VB.NET kaynak kodu Runspace02 örneği aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="e359f-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="e359f-104">Bu örnekte [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) yürütmek için sınıf `Get-Process` cmdlet'i zaman uyumlu olarak.</span><span class="sxs-lookup"><span data-stu-id="e359f-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="e359f-105">Ardından Windows Forms ve veri bağlama DataGridView denetiminde sonuçları görüntülemek için kullanılır.</span><span class="sxs-lookup"><span data-stu-id="e359f-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
+<span data-ttu-id="da26e-103">VB.NET kaynak kodu Runspace02 örneği aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="da26e-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="da26e-104">Bu örnekte [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) yürütmek için sınıf `Get-Process` cmdlet'i zaman uyumlu olarak.</span><span class="sxs-lookup"><span data-stu-id="da26e-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="da26e-105">Ardından Windows Forms ve veri bağlama DataGridView denetiminde sonuçları görüntülemek için kullanılır.</span><span class="sxs-lookup"><span data-stu-id="da26e-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="e359f-106">Kod örneği</span><span class="sxs-lookup"><span data-stu-id="e359f-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="da26e-106">Kod örneği</span><span class="sxs-lookup"><span data-stu-id="da26e-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -86,6 +86,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace02.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace02/Runspace02.vb#L09-L68 "Runspace02.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="e359f-107">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="e359f-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="da26e-107">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="da26e-107">See Also</span></span>
 
-[<span data-ttu-id="e359f-108">Windows PowerShell SDK'sı</span><span class="sxs-lookup"><span data-stu-id="e359f-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="da26e-108">Windows PowerShell SDK'sı</span><span class="sxs-lookup"><span data-stu-id="da26e-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

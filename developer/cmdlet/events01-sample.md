@@ -9,51 +9,51 @@ ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
 ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068139"
 ---
-# <a name="events01-sample"></a><span data-ttu-id="a63ad-102">Events01 Örneği</span><span class="sxs-lookup"><span data-stu-id="a63ad-102">Events01 Sample</span></span>
+# <a name="events01-sample"></a><span data-ttu-id="e1da7-102">Events01 Örneği</span><span class="sxs-lookup"><span data-stu-id="e1da7-102">Events01 Sample</span></span>
 
-<span data-ttu-id="a63ad-103">Bu örnek, kaydetmek kullanıcı tarafından başlatılan olaylara izin veren bir cmdlet oluşturma işlemi gösterilmektedir [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span><span class="sxs-lookup"><span data-stu-id="a63ad-103">This sample shows how to create a cmdlet that allows the user to register for events that are raised by [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span></span> <span data-ttu-id="a63ad-104">Bu cmdlet ile kullanıcıların altındaki belirli bir dizine bir dosya oluşturulduğunda yürütülecek bir eylem kaydedebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="a63ad-104">With this cmdlet, users can register an action to execute when a file is created under a specific directory.</span></span> <span data-ttu-id="a63ad-105">Bu örnek türetildiği [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) temel sınıfı.</span><span class="sxs-lookup"><span data-stu-id="a63ad-105">This sample derives from the [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) base class.</span></span>
+<span data-ttu-id="e1da7-103">Bu örnek, kaydetmek kullanıcı tarafından başlatılan olaylara izin veren bir cmdlet oluşturma işlemi gösterilmektedir [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span><span class="sxs-lookup"><span data-stu-id="e1da7-103">This sample shows how to create a cmdlet that allows the user to register for events that are raised by [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span></span> <span data-ttu-id="e1da7-104">Bu cmdlet ile kullanıcıların altındaki belirli bir dizine bir dosya oluşturulduğunda yürütülecek bir eylem kaydedebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="e1da7-104">With this cmdlet, users can register an action to execute when a file is created under a specific directory.</span></span> <span data-ttu-id="e1da7-105">Bu örnek türetildiği [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) temel sınıfı.</span><span class="sxs-lookup"><span data-stu-id="e1da7-105">This sample derives from the [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) base class.</span></span>
 
-## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="a63ad-106">Visual Studio kullanarak örneği oluşturmak nasıl.</span><span class="sxs-lookup"><span data-stu-id="a63ad-106">How to build the sample by using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="e1da7-106">Visual Studio kullanarak örneği oluşturmak nasıl.</span><span class="sxs-lookup"><span data-stu-id="e1da7-106">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="a63ad-107">Windows PowerShell 2.0 yüklü SDK ile Events01 klasöre gidin.</span><span class="sxs-lookup"><span data-stu-id="a63ad-107">With the Windows PowerShell 2.0 SDK installed, navigate to the Events01 folder.</span></span> <span data-ttu-id="a63ad-108">C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01 varsayılan konumdur.</span><span class="sxs-lookup"><span data-stu-id="a63ad-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.</span></span>
+1. <span data-ttu-id="e1da7-107">Windows PowerShell 2.0 yüklü SDK ile Events01 klasöre gidin.</span><span class="sxs-lookup"><span data-stu-id="e1da7-107">With the Windows PowerShell 2.0 SDK installed, navigate to the Events01 folder.</span></span> <span data-ttu-id="e1da7-108">C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01 varsayılan konumdur.</span><span class="sxs-lookup"><span data-stu-id="e1da7-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.</span></span>
 
-2. <span data-ttu-id="a63ad-109">Çözüm (.sln) dosyasını simgesini çift tıklatın.</span><span class="sxs-lookup"><span data-stu-id="a63ad-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="a63ad-110">Bu örnek projeyi Microsoft Visual Studio'da açılır.</span><span class="sxs-lookup"><span data-stu-id="a63ad-110">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="e1da7-109">Çözüm (.sln) dosyasını simgesini çift tıklatın.</span><span class="sxs-lookup"><span data-stu-id="e1da7-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="e1da7-110">Bu örnek projeyi Microsoft Visual Studio'da açılır.</span><span class="sxs-lookup"><span data-stu-id="e1da7-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="a63ad-111">İçinde **derleme** menüsünde **Çözümü Derle**.</span><span class="sxs-lookup"><span data-stu-id="a63ad-111">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="e1da7-111">İçinde **derleme** menüsünde **Çözümü Derle**.</span><span class="sxs-lookup"><span data-stu-id="e1da7-111">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="a63ad-112">Kitaplık için örneği varsayılan \bin veya \bin\debug'dır klasörleri oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="a63ad-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="e1da7-112">Kitaplık için örneği varsayılan \bin veya \bin\debug'dır klasörleri oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="e1da7-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="a63ad-113">Örneği çalıştırma</span><span class="sxs-lookup"><span data-stu-id="a63ad-113">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="e1da7-113">Örneği çalıştırma</span><span class="sxs-lookup"><span data-stu-id="e1da7-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="a63ad-114">Aşağıdaki modül klasörü oluşturun:</span><span class="sxs-lookup"><span data-stu-id="a63ad-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="e1da7-114">Aşağıdaki modül klasörü oluşturun:</span><span class="sxs-lookup"><span data-stu-id="e1da7-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/events01`
 
-2. <span data-ttu-id="a63ad-115">Kitaplık dosyası örneği için modül klasöre kopyalayın.</span><span class="sxs-lookup"><span data-stu-id="a63ad-115">Copy the library file for the sample to the module folder.</span></span>
+2. <span data-ttu-id="e1da7-115">Kitaplık dosyası örneği için modül klasöre kopyalayın.</span><span class="sxs-lookup"><span data-stu-id="e1da7-115">Copy the library file for the sample to the module folder.</span></span>
 
-3. <span data-ttu-id="a63ad-116">Windows PowerShell’i başlatın.</span><span class="sxs-lookup"><span data-stu-id="a63ad-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="e1da7-116">Windows PowerShell’i başlatın.</span><span class="sxs-lookup"><span data-stu-id="e1da7-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="a63ad-117">Windows PowerShell'de cmdlet yüklemek için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="a63ad-117">Run the following command to load the cmdlet into Windows PowerShell:</span></span>
+4. <span data-ttu-id="e1da7-117">Windows PowerShell'de cmdlet yüklemek için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="e1da7-117">Run the following command to load the cmdlet into Windows PowerShell:</span></span>
 
     ```powershell
     import-module events01
     ```
 
-5. <span data-ttu-id="a63ad-118">TEMP dizininde bir dosya oluşturulduğunda bir ileti yazar bir eylem kaydetmek için kayıt FileSystemEvent cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="a63ad-118">Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a file is created under the TEMP directory.</span></span>
+5. <span data-ttu-id="e1da7-118">TEMP dizininde bir dosya oluşturulduğunda bir ileti yazar bir eylem kaydetmek için kayıt FileSystemEvent cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="e1da7-118">Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a file is created under the TEMP directory.</span></span>
 
     ```powershell
     Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }
     ```
 
-6. <span data-ttu-id="a63ad-119">TEMP dizini altında bir dosya oluşturun ve eylem yürütülmeden unutmayın (ileti görüntülenir).</span><span class="sxs-lookup"><span data-stu-id="a63ad-119">Create a file under the TEMP directory and note that the action is executed (the message is displayed).</span></span>
+6. <span data-ttu-id="e1da7-119">TEMP dizini altında bir dosya oluşturun ve eylem yürütülmeden unutmayın (ileti görüntülenir).</span><span class="sxs-lookup"><span data-stu-id="e1da7-119">Create a file under the TEMP directory and note that the action is executed (the message is displayed).</span></span>
 
-<span data-ttu-id="a63ad-120">Aşağıdaki adımları izleyerek sonuçları bir örnek çıktı budur.</span><span class="sxs-lookup"><span data-stu-id="a63ad-120">This is a sample output that results by following these steps.</span></span>
+<span data-ttu-id="e1da7-120">Aşağıdaki adımları izleyerek sonuçları bir örnek çıktı budur.</span><span class="sxs-lookup"><span data-stu-id="e1da7-120">This is a sample output that results by following these steps.</span></span>
 
 ```output
 Id              Name            State      HasMoreData     Location             Command
@@ -70,19 +70,19 @@ Set-Content $env:temp\test.txt "This is a test file"
 A file was created in the TEMP directory
 ```
 
-## <a name="requirements"></a><span data-ttu-id="a63ad-121">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="a63ad-121">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="e1da7-121">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="e1da7-121">Requirements</span></span>
 
-<span data-ttu-id="a63ad-122">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="a63ad-122">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="e1da7-122">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="e1da7-122">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="a63ad-123">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="a63ad-123">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="e1da7-123">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="e1da7-123">Demonstrates</span></span>
 
-<span data-ttu-id="a63ad-124">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="a63ad-124">This sample demonstrates the following.</span></span>
+<span data-ttu-id="e1da7-124">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="e1da7-124">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="a63ad-125">Nasıl bir cmdlet için etkinlik kaydı yazılamıyor.</span><span class="sxs-lookup"><span data-stu-id="a63ad-125">How to write a cmdlet for event registration.</span></span> <span data-ttu-id="a63ad-126">Cmdlet türetildiği [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) destek ortak parametrelerini Register - sağlar sınıfını \* olay cmdlet'leri.</span><span class="sxs-lookup"><span data-stu-id="a63ad-126">The cmdlet derives from the [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) class, which provides support for parameters common to the Register-\*Event cmdlets.</span></span> <span data-ttu-id="a63ad-127">Öğesinden türetilen cmdlet'leri [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) yalnızca belirli parametrelerini tanımlayın ve yok saymak gereken `GetSourceObject` ve `GetSourceObjectEventName` soyut yöntemler.</span><span class="sxs-lookup"><span data-stu-id="a63ad-127">Cmdlets that are derived from [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) need only to define their particular parameters and override the `GetSourceObject` and `GetSourceObjectEventName` abstract methods.</span></span>
+- <span data-ttu-id="e1da7-125">Nasıl bir cmdlet için etkinlik kaydı yazılamıyor.</span><span class="sxs-lookup"><span data-stu-id="e1da7-125">How to write a cmdlet for event registration.</span></span> <span data-ttu-id="e1da7-126">Cmdlet türetildiği [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) destek ortak parametrelerini Register - sağlar sınıfını \* olay cmdlet'leri.</span><span class="sxs-lookup"><span data-stu-id="e1da7-126">The cmdlet derives from the [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) class, which provides support for parameters common to the Register-\*Event cmdlets.</span></span> <span data-ttu-id="e1da7-127">Öğesinden türetilen cmdlet'leri [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) yalnızca belirli parametrelerini tanımlayın ve yok saymak gereken `GetSourceObject` ve `GetSourceObjectEventName` soyut yöntemler.</span><span class="sxs-lookup"><span data-stu-id="e1da7-127">Cmdlets that are derived from [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) need only to define their particular parameters and override the `GetSourceObject` and `GetSourceObjectEventName` abstract methods.</span></span>
 
-## <a name="example"></a><span data-ttu-id="a63ad-128">Örnek</span><span class="sxs-lookup"><span data-stu-id="a63ad-128">Example</span></span>
+## <a name="example"></a><span data-ttu-id="e1da7-128">Örnek</span><span class="sxs-lookup"><span data-stu-id="e1da7-128">Example</span></span>
 
-<span data-ttu-id="a63ad-129">Bu örnek tarafından oluşturulan olaylar için kaydettirmek gösterilmektedir [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span><span class="sxs-lookup"><span data-stu-id="a63ad-129">This sample shows how to register for events raised by [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span></span>
+<span data-ttu-id="e1da7-129">Bu örnek tarafından oluşturulan olaylar için kaydettirmek gösterilmektedir [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span><span class="sxs-lookup"><span data-stu-id="e1da7-129">This sample shows how to register for events raised by [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span></span>
 
 ```csharp
 namespace Sample
@@ -181,6 +181,6 @@ namespace Sample
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="a63ad-130">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="a63ad-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e1da7-130">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="e1da7-130">See Also</span></span>
 
-[<span data-ttu-id="a63ad-131">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="a63ad-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="e1da7-131">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="e1da7-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
