@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7828b45b-eabf-4432-b127-131b4ef0c800
 caps.latest.revision: 8
 ms.openlocfilehash: e7176f9f6ef67116ea7c07a46797fb0ba84f915d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066286"
 ---
 # <a name="entryselectedby-element-for-customentry-for-customcontrol-for-view-format"></a>Görünüm CustomControl için CustomEntry EntrySelectedBy Öğesi (Biçim)
 
@@ -31,7 +31,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `EntrySelectedBy` öğesi.
 
@@ -39,7 +39,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `EntrySelectedBy`
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -47,7 +47,7 @@ Yok.
 |[EntrySelectedBy CustomEntry (biçimi) için için SelectionSetName öğesi](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Denetim görünüm bu tanımı kullanan .NET türleri kümesini belirtir.|
 |[TypeName öğesi için EntrySelectedBy CustomEntry (biçimi) için](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Denetim görünüm bu tanımı kullanan bir .NET türü belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

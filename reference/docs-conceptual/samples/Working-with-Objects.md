@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Nesneler ile Çalışma
 ms.assetid: 7ecc94a4-015c-4459-ae58-85289ea09030
 ms.openlocfilehash: 5d86e1658286055f8a7dc57d488a6adcef577a10
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085992"
 ---
 # <a name="working-with-objects"></a>Nesneler ile Çalışma
 

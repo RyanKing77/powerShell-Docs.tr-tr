@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC yapılandırmaları için yardım sayfasını yazma
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080195"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>DSC yapılandırmaları için yardım sayfasını yazma
 
->Şunun için geçerlidir: Windows PowerShell 5.0
+>Uygulama hedefi: Windows PowerShell 5.0
 
 DSC yapılandırmalarında, açıklama tabanlı Yardım kullanabilirsiniz. Kullanıcıların, Yardım çağırarak erişebileceği **yapılandırma** ile `-?`, kullanarak veya [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet'i. Açıklama tabanlı Yardım doğrudan yukarıdaki yerleştirin `Configuration` anahtar sözcüğü.
 Parametre Yardım satır içi ile parametre bildirimi veya her ikisini de aşağıdaki örnekte olduğu gibi doğrudan yukarıda, açıklama bloğu yerleştirebilirsiniz.

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 33cb5350-73ef-4b79-a879-0edf051869e4
 caps.latest.revision: 7
 ms.openlocfilehash: 174ba6a14819f823ec39f72e49a626e781221d8c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066391"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-view-format"></a>Görünüm için Denetimler için CustomEntry için CustomItem Öğesi (Biçim)
 
@@ -32,7 +32,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </CustomItem>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomItem` öğesi. Daha fazla bilgi için açıklamalara bakın.
 
@@ -40,7 +40,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomItem` öğ
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -49,7 +49,7 @@ Yok.
 |[Yeni satır öğesi görünümü (biçimi) için denetimleri için CustomItem için](./newline-element-for-customitem-for-controls-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Boş bir satır denetimi görüntüye ekler.|
 |[Metin öğesi görünümü (biçimi) için denetimleri için CustomItem için](./text-element-for-customitem-for-controls-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Parantez veya parantez gibi bir metin denetimi görüntüye ekler.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

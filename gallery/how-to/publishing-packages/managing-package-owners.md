@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Paket sahiplerini yönetme
 ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084156"
 ---
 # <a name="managing-package-owners"></a>Paket sahiplerini yönetme
 
@@ -34,7 +34,7 @@ Bir paket için PowerShell Galerisi yayımlandıktan sonra ek kullanıcılar sah
 5. E-posta, daha sonra yeni ikincil sahip için bir paket sahibi olmaya davetiye gönderilir.
 6. Kullanıcı bağlantıyı tıklattığında, sahipleri olarak diğer kullanıcıları kaldırma olanağı dahil olmak üzere, bir paketi üzerinde tam denetimle tam bir ortak sahip değildirler.
 
-**Not**: yeni sahip, sahiplik doğrulayana kadar bunlar *yapmamayı* paketinin sahibi listelenir.
+**NOT**: Yeni sahip, sahiplik doğrulayana kadar bunlar *yapmamayı* paketinin sahibi listelenir.
 Görüntülerken **sahiplerini yönetme** sayfasında, geçerli sahipleri bir "onay" bekleyen giriş görürsünüz.
 Bu davet Kaldırılabilir; diğer sahipleri olarak kaldırılabilir.
 Bu işlem davet, kullanıcılar diğer kullanıcılar paketlerini sahipleri olarak hatalı bir şekilde eklemesini önler.

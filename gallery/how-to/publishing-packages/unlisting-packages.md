@@ -4,13 +4,13 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Paket listeden kaldırma
 ms.openlocfilehash: fb66fd23dae1d4640056a764c31426f61f56d910
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084122"
 ---
-# <a name="unlisting-packages"></a>Unlisting paketleri
+# <a name="unlisting-packages"></a>Paketleri listeden kaldırma
 
 **Bir seçenek olarak gösterilmeyen PowerShell Galerisi'nden bir paketi kaldırma neden?**
 

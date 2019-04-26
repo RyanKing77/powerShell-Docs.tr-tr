@@ -9,13 +9,13 @@ ms.topic: article
 ms.assetid: 64087c6c-2abd-446d-b837-7d3ee03a6874
 caps.latest.revision: 11
 ms.openlocfilehash: 102fe1b9c3bd04562aa296f390ec549d5f8f35e9
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58059851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083612"
 ---
-# <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>Öğe için TableRowEntry TableControl (biçimi) için kaydır.
+# <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>TableControl TableRowEntry için Sarmalama Öğesi (Biçim)
 
 Sütun genişliğini aşıyor metin ve sonraki satırda görüntüleneceğini belirtir. Varsayılan olarak, sütun genişliğini aşıyor metin kesilir.
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 <Wrap/>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki bölümlerde, öznitelikler, alt ve üst öğeleri açıklayan `Wrap` öğesi.
 
@@ -35,11 +35,11 @@ Aşağıdaki bölümlerde, öznitelikler, alt ve üst öğeleri açıklayan `Wra
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

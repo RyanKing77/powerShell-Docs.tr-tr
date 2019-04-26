@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE’de Betiklerde Hata Ayıklama
 ms.openlocfilehash: b7af2de83a3f796a2057514e36ad8b74367e8ce2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086876"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Windows PowerShell ISE’de Betiklerde Hata Ayıklama
 
@@ -143,7 +143,7 @@ Adımlama aynı anda çalıştırılan bir deyim işlemidir. Bir kod satırını
 | **Adımla** | Geçerli deyimi yürütür ve ardından sonraki deyimi durdurur. Geçerli deyimi bir işlev veya komut dosyası çağrısı, sonra da, işlev veya komut dosyası hata ayıklayıcı adımlamayla ise, aksi halde sonraki deyimi durdurur. | Basın **F11** veya **hata ayıklama** menüsünde, tıklayın **içine adımla**, veya Konsol bölmesinde, **S** basın **ENTER**. |
 | **Üzerinden adımla** | Geçerli deyimi yürütür ve ardından sonraki deyimi durdurur. Geçerli deyimi ise bir işlev veya betiği çağrı ve hata ayıklayıcı tüm işlev veya betiği çalıştırır ve sonraki deyim işlev çağrısından sonra durakları. | Basın **F10** veya **hata ayıklama** menüsünde, tıklayın **Step Over**, veya Konsol bölmesinde, **V** basın **ENTER**. |
 | **Dışına adımla** | Geçerli işlev ve işlev iç içe bir düzey adımlar. Ana gövdesinde, komut sonuna ya da sonraki kesme noktasına yürütülürse. Atlanan deyimleri yürütülür, ancak aracılığıyla basamaklı değil. | Basın **SHIFT + F11**, veya **hata ayıklama** menüsünde tıklatın **Step Out**, veya Konsol bölmesinde, **O** tuşuna basın **ENTER**. |
-| **Devam et** | Sonuna ya da sonraki kesme noktasına yürütme devam eder. Atlanan işlevleri ve çağrılarını yürütülür, ancak aracılığıyla basamaklı değil. | Basın **F5** veya **hata ayıklama** menüsünde, tıklayın **Çalıştır/devam**, veya Konsol bölmesinde, **C** basın **ENTER**. |
+| **Continue** | Sonuna ya da sonraki kesme noktasına yürütme devam eder. Atlanan işlevleri ve çağrılarını yürütülür, ancak aracılığıyla basamaklı değil. | Basın **F5** veya **hata ayıklama** menüsünde, tıklayın **Çalıştır/devam**, veya Konsol bölmesinde, **C** basın **ENTER**. |
 
 ## <a name="how-to-display-the-values-of-variables-while-debugging"></a>Hata ayıklama sırasında değişkenlerin değerlerini görüntüleme
 

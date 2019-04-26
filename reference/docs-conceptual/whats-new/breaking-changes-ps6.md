@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell, çekirdek
 title: PowerShell 6.0 için bozucu değişiklikler
 ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085941"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 için bozucu değişiklikler
 
@@ -62,7 +62,7 @@ Bunun yerine, öneririz, yeni işlevsellik ve yeniden tasarlanan bir söz dizimi
 
 Desteklenmeyen API kullanımı nedeniyle `Microsoft.PowerShell.LocalAccounts` PowerShell çekirdek, daha iyi bir çözüm bulunana kadar kaldırıldı.
 
-### <a name="-computer-cmdlets"></a>`*-Computer` cmdlet'leri
+### <a name="-computer-cmdlets"></a>`*-Computer` Cmdlet'leri
 
 Daha iyi bir çözüm bulunana kadar desteklenmeyen API kullanımı nedeniyle, aşağıdaki cmdlet'leri PowerShell çekirdek kaldırıldı.
 
@@ -71,11 +71,11 @@ Daha iyi bir çözüm bulunana kadar desteklenmeyen API kullanımı nedeniyle, a
 - Remove-Computer
 - Geri yükleme-bilgisayar
 
-### <a name="-counter-cmdlets"></a>`*-Counter` cmdlet'leri
+### <a name="-counter-cmdlets"></a>`*-Counter` Cmdlet'leri
 
 Desteklenmeyen API kullanımı nedeniyle `*-Counter` PowerShell çekirdek, daha iyi bir çözüm bulunana kadar kaldırıldı.
 
-### <a name="-eventlog-cmdlets"></a>`*-EventLog` cmdlet'leri
+### <a name="-eventlog-cmdlets"></a>`*-EventLog` Cmdlet'leri
 
 Desteklenmeyen API kullanımı nedeniyle `*-EventLog` PowerShell çekirdek kaldırıldı. daha iyi bir çözüm bulunana kadar. `Get-WinEvent` ve `Create-WinEvent` almak ve Windows üzerinde olayları oluşturmak kullanılabilir.
 

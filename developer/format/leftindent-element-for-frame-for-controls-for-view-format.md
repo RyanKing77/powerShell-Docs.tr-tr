@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 85a53ff2-92f0-4d9b-8e13-d06d82299435
 caps.latest.revision: 6
 ms.openlocfilehash: 06ed340e3db237d4090961fef98333bd67a2a755
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065368"
 ---
 # <a name="leftindent-element-for-frame-for-controls-for-view-format"></a>Görünüm Denetimleri için Çerçeve LeftIndent Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 <LeftIndent>CharactersToShift</LeftIndent>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `LeftIndent` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `LeftIndent` öğe
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[Çerçeve öğesi görünümü (biçimi) için denetimleri için CustomItem için](./frame-element-for-customitem-for-controls-for-view-format.md)|Verinin, veri sola veya sağa kaydırma gibi görüntülenme şeklini tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Veri sola kaydırmak için istediğiniz karakter sayısını belirtin.
 

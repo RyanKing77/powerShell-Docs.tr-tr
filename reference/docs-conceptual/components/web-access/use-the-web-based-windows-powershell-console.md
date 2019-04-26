@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
 title: web tabanlı windows powershell konsolunu kullanma
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086654"
 ---
-# <a name="use-the-web-based-windows-powershell-console"></a>Web tabanlı Windows PowerShell Konsolunu kullanma
+# <a name="use-the-web-based-windows-powershell-console"></a>Web tabanlı Windows PowerShell konsolunu kullanma
 
-Güncelleştirme tarihi: 24 Haziran 2013
+Güncelleme tarihi: 24 Haziran 2013
 
-Şunun için geçerlidir: Windows Server 2012 R2, Windows Server 2012
+Uygulama hedefi: Windows Server 2012 R2, Windows Server 2012
 
 Windows PowerShell Web erişimi güvenli bir Web sitesine oturum açmasına olanak tanır; bir uzak bilgisayarı yönetmek için Windows PowerShell oturumları, cmdlet'leri ve komut dosyaları'nı kullanmak için.
 
@@ -30,7 +30,7 @@ Windows PowerShell ve komut dosyası oluşturma kaynakları kullanma hakkında d
 
 Windows PowerShell Web erişimi, aşağıdaki Internet tarayıcılarını destekler.
 Mobil tarayıcılar resmi olarak desteklemiyor olsa da, birçok web tabanlı Windows PowerShell konsolunu çalıştırmak mümkün olabilir.
-Yalnızca tanımlama bilgilerini kabul eden, JavaScript çalıştıran ve HTTPS web sitelerini çalıştıran diğer tarayıcıların çalışması beklenir, ancak bunlar resmi olarak test edilmemiştir.
+Diğer tarayıcılarda tanımlama bilgileri, JavaScript çalıştıran ve HTTPS Web sitelerini çalıştıran iş, ancak bunlar resmi olarak beklenen kabul test.
 
 ### <a name="supported-desktop-computer-browsers"></a>Desteklenen masaüstü bilgisayar tarayıcıları
 
@@ -44,7 +44,7 @@ Yalnızca tanımlama bilgilerini kabul eden, JavaScript çalıştıran ve HTTPS 
 
 - Windows Phone 7 ve 7.5
 - Google Android WebKit 3.1 tarayıcısı Android 2.2.1 (Kernel 2.6)
-- iPhone işletim sistemi 5.0.1 için Apple Safari
+- İPhone işletim sistemi 5.0.1 için Apple Safari
 - İPad 2 işletim sistemi 5.0.1 için Apple Safari
 
 ### <a name="browser-requirements"></a>Tarayıcı gereksinimleri
@@ -52,21 +52,21 @@ Yalnızca tanımlama bilgilerini kabul eden, JavaScript çalıştıran ve HTTPS 
 Windows PowerShell Web erişimi web tabanlı konsolunu kullanmak için tarayıcılar aşağıdakileri yapmanız gerekir.
 
 - Windows PowerShell Web erişimi ağ geçidi Web sitesinden tanımlama bilgilerine izin verin.
-- HTTPS sayfalarını açabilir ve okuyabilir hale gelin.
-- JavaScript kullanan web sitelerini açın ve çalıştırın.
+- Açın ve HTTPS sayfaları oku mümkün olmayacaktır.
+- Açın ve JavaScript kullanan Web siteleri çalıştırın.
 
-## <a name="signing-in-to-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi’nde Oturum Açma
+## <a name="signing-in-to-windows-powershell-web-access"></a>Windows PowerShell Web erişimi için oturum açma
 
 Windows PowerShell Web erişimi yöneticinize kuruluşlar Windows PowerShell Web erişimi ağ geçidini sitenizin adresi bir URL sağlamanız gerekir.
 Varsayılan olarak, bu Web sitesi adresidir *https://\<sunucu_adı\>/pswa*.
 
 Windows PowerShell Web erişimi için oturum açmadan önce adı veya IP adresi, yönetmek istediğiniz uzak bilgisayarın sahip olduğunuzdan emin olun.
-Uzak bilgisayarda yetkili bir kullanıcı olmalısınız ve uzak bilgisayar, uzaktan yönetimine izin verecek şekilde yapılandırılmalıdır.
+Uzak bilgisayarda yetkili bir kullanıcı olmalıdır ve Uzaktan yönetime izin verecek şekilde yapılandırılmalıdır.
 Bilgisayarınızı uzaktan yönetime izin verecek şekilde yapılandırma hakkında daha fazla bilgi için bkz. [kullanım Windows PowerShell'de uzak komutları etkinleştirme ve](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting).
 
 Bilgisayarınızı uzaktan yönetime izin verecek şekilde yapılandırmanın en basit yöntem çalıştırmaktır **Enable-PSRemoting - force** cmdlet'i ile açılmış bir Windows PowerShell oturumunda bilgisayarda yükseltilmiş kullanıcı haklarıyla (**Yönetici olarak çalıştır**).
 
-### <a name="to-sign-in-to-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi’nde oturum açmak için
+### <a name="to-sign-in-to-windows-powershell-web-access"></a>Windows PowerShell Web erişimi için oturum açmak için
 
 1. Windows PowerShell Web Erişimi Web sitesi, bir Internet tarayıcısı penceresi veya sekmesi açın.
 
@@ -80,7 +80,7 @@ Bilgisayarınızı uzaktan yönetime izin verecek şekilde yapılandırmanın en
 
 1. **İsteğe bağlı bağlantı ayarları** bölümü için yönetmek istediğiniz uzak bilgisayarın yetkilendirme gereksinimleriyle ilgilidir. İsteğe bağlı bağlantı ayarlarına eşdeğer parametreler hakkında daha fazla bilgi için bkz: [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet Yardım.
 
-    Genellikle, Windows PowerShell Web erişimi ağ geçidi üzerinden geçmek için kullandığınız kimlik bilgileri, yönetmek istediğiniz uzak bilgisayar tarafından tanınan aynıdır. Ancak, uzak bilgisayarı yönetmek için farklı kimlik bilgileri kullanmak istiyorsanız, 2. adımda belirttiğiniz, genişletme **isteğe bağlı bağlantı ayarları** bölümünde ve alternatif kimlik bilgilerini sağlayın. Aksi takdirde, adım 6’ya geçin.
+    Genellikle, Windows PowerShell Web erişimi ağ geçidi üzerinden geçmek için kullandığınız kimlik bilgileri, yönetmek istediğiniz uzak bilgisayar tarafından tanınan aynıdır. Ancak, uzak bilgisayarı yönetmek için farklı kimlik bilgileri kullanmak istiyorsanız, 2. adımda belirttiğiniz, genişletme **isteğe bağlı bağlantı ayarları** bölümünde ve alternatif kimlik bilgilerini sağlayın. Aksi takdirde, 6. adıma atlayın.
 
 1. Windows PowerShell Web erişimi yönetici Windows PowerShell Web erişimi kullanıcılar için bir özel oturum yapılandırması oluşturduysa, adını, oturum yapılandırma adı **yapılandırma adı** alan. Oturum yapılandırmaları hakkında daha fazla bilgi için bkz: [about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
@@ -88,27 +88,27 @@ Bilgisayarınızı uzaktan yönetime izin verecek şekilde yapılandırmanın en
 
 1. Tıklayın **oturum**.
 
-## <a name="signing-out-and-timing-out"></a>Oturumu kapatma ve zaman aşımına uğrama
+## <a name="signing-out-and-timing-out"></a>Oturum kapatma ve zaman aşımına uğruyor
 
 Aşağıdakilerden herhangi birini imzalar, web tabanlı Windows PowerShell oturumu dışında.
 
 - Tıklayarak **oturumunuzu** konsolunun sağ alt köşedeki. (Yalnızca Windows Server 2012)
 
-- Tıklayarak **Kaydet** veya **çıkış** alt sağ köşesindeki konsolunun (yalnızca Windows Server 2012 R2). Tıklayarak **Kaydet** kaydeder ve kapatır; Windows PowerShell Web erişimi oturumunuzu daha sonra oturuma bağlanabilirsiniz. Windows PowerShell Web erişimi için yeniden oturum açtığınızda, Windows PowerShell Web erişimi, kaydedilen oturumlarınızın bir listesini görüntüler; seçin kaydedilmiş bir oturuma yeniden bağlanmak veya yeni bir oturum başlatın. Kullanıcılara izin verilen, kaydedilmiş ve etkin, en fazla açık oturum sayısı, ağ geçidi yöneticisi tarafından yapılandırılır.
+- Tıklayarak **Kaydet** veya **çıkış** alt sağ köşesindeki konsolunun (yalnızca Windows Server 2012 R2). Tıklayarak **Kaydet** kaydeder ve kapatır; Windows PowerShell Web erişimi oturumunuzu daha sonra oturuma bağlanabilirsiniz. Windows PowerShell Web erişimi için yeniden oturum açtığınızda, Windows PowerShell Web erişimi, kaydedilen oturumlarınızın bir listesini görüntüler; seçin kaydedilmiş bir oturuma yeniden bağlanmak veya yeni bir oturum başlatın. Kayıtlı ve etkin kullanıcıların verilen açık oturum sayısı, Ağ Geçidi Yöneticisi tarafından yapılandırılır.
 
     Tıklayarak **çıkış** kaydetmeden dışında Windows PowerShell Web erişimi oturum açar.
 
-- Aynı tarayıcı oturumunda veya aynı tarayıcı oturumunun yeni bir sekmesinde, farklı bir uzak bilgisayarı yönetmek üzere oturum açmaya çalışmak. (Ağ geçidi sunucusu Windows Server 2012 R2 çalıştırıyorsa Bu geçerli değildir; Windows Server 2012 R2 üzerinde çalışan Windows PowerShell Web erişimi birden çok kullanıcı oturumuna yeni sekmelerde aynı tarayıcı oturumunda izin vermiyor.) Aynı bilgisayara birden fazla etkin oturum kullanma hakkında daha fazla bilgi için bkz: birden çok hedef bilgisayara aynı anda içinde bağlanma [web tabanlı konsol sınırlamaları](#limitations-of-the-web-based-console) bu konudaki.
+- Aynı tarayıcı oturumunda veya aynı tarayıcı oturumunun yeni bir sekmede farklı bir uzak bilgisayarı yönetmek oturum açmaya çalışmak. (Ağ geçidi sunucusu Windows Server 2012 R2 çalıştırıyorsa Bu geçerli değildir; Windows Server 2012 R2 üzerinde çalışan Windows PowerShell Web erişimi birden çok kullanıcı oturumuna yeni sekmelerde aynı tarayıcı oturumunda izin vermiyor.) Aynı bilgisayara birden fazla etkin oturum kullanma hakkında daha fazla bilgi için bkz: birden çok hedef bilgisayara aynı anda içinde bağlanma [web tabanlı konsol sınırlamaları](#limitations-of-the-web-based-console) bu konudaki.
 
-- Oturumda 20 dakika etkin olmama Ağ Geçidi Yöneticisi, etkin olmama zaman aşımı süresini özelleştirebilir; Daha fazla bilgi için [oturum yönetimi](authorization-rules-and-security-features-of-windows-powershell-web-access.md#session-management).
+- oturumda 20 dakika etkin olmama. Ağ Geçidi Yöneticisi, etkin olmama zaman aşımı süresini özelleştirebilir; Daha fazla bilgi için [oturum yönetimi](authorization-rules-and-security-features-of-windows-powershell-web-access.md#session-management).
 
-    - Bir ağ hatası veya diğer planlanmamış kapatma veya hata nedeniyle bir oturumdan web tabanlı konsolda kesilir ve oturum kapatmadıkları kendiniz, Windows PowerShell Web Erişimi'ni çalıştırmak için oturumu devam hedefe bağlı istemci tarafı kesildiyse zaman aşımı süresi kadar bilgisayar. Varsayılan olarak, bu zaman aşımı süresi 20 dakikadır ve ağ geçidi yöneticisi tarafından yapılandırılır. Oturum bağlantısı, hangisi daha kısaysa, varsayılan 20 dakikadan sonra veya ağ geçidi yöneticisi tarafından belirtilen zaman aşımı süresi sonrasında kesilir.
+    - Bir ağ hatası veya diğer planlanmamış kapatma veya hata nedeniyle bir oturumdan web tabanlı konsolda kesilir ve oturum kapatmadıkları kendiniz, Windows PowerShell Web Erişimi'ni çalıştırmak için oturumu devam hedefe bağlı istemci tarafı kesildiyse zaman aşımı süresi kadar bilgisayar. Varsayılan olarak, bu zaman aşımı süresi 20 dakikadır ve Ağ Geçidi Yöneticisi tarafından yapılandırılır. Oturumu sonra ya da varsayılan 20 dakika kesildiğinde veya Ağ Geçidi Yöneticisi tarafından belirtilen zaman aşımı süresi sonrasında, hangisi daha kısaysa.
 
         Ağ Geçidi sunucusu Windows Server 2012 R2 çalıştırıyorsa, Windows PowerShell Web erişimi kullanıcıların kaydedilmiş oturumlara daha sonra yeniden izin verir, ancak bakın veya ağ geçidi tarafından belirtilen zaman aşımı süresinden sonra yönetici sahip kadar kaydedilmiş oturumları yeniden onlara.
 
 - Tarayıcı penceresini veya sekmesini kapatma.
 
-- Tarayıcının çalıştığı istemci cihazını kapatmak veya onun ağ bağlantısını kesmek.
+- İstemci cihaz üzerinde tarayıcıda çalışan veya ağ bağlantısının kesilmesi kapatma.
 
 - Çalışan **çıkış** web konsolunda komutu. Kendisine bağlı olduğunuz oturum yapılandırması desteklemek üzere yapılandırılmışsa, bu komut işe yaramazsa [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx) modunda veya kısıtlanmış çalışma.
 
@@ -128,7 +128,7 @@ Windows PowerShell ana bilgisayar işlevi çoğu Windows PowerShell Web erişimi
 
 - Giriş rengi değiştirme.
 
-  Giriş rengi (ön ve arka plan) değiştirilemez. Çıkış, uyarı, ayrıntı ve hata iletilerinin tümü, bir komut dosyası çalıştırılarak değiştirilebilir.
+  Giriş rengi (ön ve arka plan) değiştirilemez. Çıkış, uyarı, ayrıntı ve hata iletileri stilini tüm komut dosyası çalıştırılarak değiştirilebilir.
 
 - Pshostrawuserınterface.
 
@@ -144,21 +144,21 @@ Windows PowerShell ana bilgisayar işlevi çoğu Windows PowerShell Web erişimi
 -- | --
 Ctrl+C | Windows PowerShell Web erişiminde, **Ctrl + C** tarayıcı tarafından içerik kopyalamak için kullanılır. Konsol sunan bir **iptal** düğmesi ve kullanıcılar da kullanabilirsiniz **Ctrl + Q** komutları iptal etmek için.
 Alt-boşluk, e, l | Ekran arabelleğinde kaydırma
-Alt+Boşluk, e, f | Ekran arabelleğinde metin ara
-Alt+Boşluk, e, k | Ekran arabelleğinden kopyalanacak metni seç
-Alt+Boşluk, e, p | Windows PowerShell konsolunda Pano içeriğini yapıştırın
-Alt+Boşluk, c | Windows PowerShell konsolunu kapatın
-Ctrl+Break | Windows PowerShell penceresini kapanmaya zorla
+Alt + boşluk, e, f | Ekran arabelleğinde metin ara
+Alt + boşluk, e, k | Ekran arabelleğinden kopyalanacak metni Seç
+Alt + boşluk, e, p | Windows PowerShell konsolunda Pano içeriğini yapıştırın
+Alt + boşluk, c | Windows PowerShell konsolunu kapatın
+Ctrl+Break tuşu | Windows PowerShell penceresini kapanmaya zorla
 Ctrl+Home | Geçerli komut satırını başından itibaren siler
 Ctrl+End | Komut satırının sonuna kadar siler
-F1 | İmleci, komut satırınızda bir karakter sağa taşıyın
-F2 | Son komutunuzu, yazdığınız karaktere kadar kopyalayarak yeni bir komut oluşturur
-F3 | Komut satırını, son komut satırınızdan içerikle tamamlayın
+F1 | İmleci bir karakter, komut satırında Sağa Taşı
+F2 | Son komutunuzu, yazdığınız karaktere kadar kopyalayarak yeni bir komut oluşturur.
+F3 | Komut satırı son komut satırınızdan içerikle tamamlayın
 F4 | İmleç konumundan karakterleri siler
 F5 | Komut geçmişinizde geriye doğru tarayın. Windows PowerShell Web erişimi içinde komut geçmişindeki komutlara erişmek için tıklayın **geçmişi** kaydırma düğmelerine web tabanlı konsolda.
-F7 | Komut geçmişinizden, etkileşimli olarak bir komut seçin.
+F7 | Etkileşimli olarak komut geçmişinizden bir komut seçin
 F8 | Geçerli metinle eşleşen komutları görüntüleyen tarama geçmişi
-F9 | Geçmişten, belirli bir numaralı komut çalıştırın
+F9 | Geçmişten belirli bir numaralı komut çalıştırın
 Page Up | Geçmişteki ilk komutu çalıştırın
 Page Down | Geçmişteki son komutu çalıştırın
 Alt+F7 | Komut geçmişi listesi temizleyin
@@ -169,15 +169,15 @@ Alt+F7 | Komut geçmişi listesi temizleyin
 
     Çift atlama (veya ilk bağlantıdan ikinci bir bilgisayara bağlanma) sınırlamasıyla oluşturmayı veya Windows PowerShell Web Erişimi'ni kullanarak yeni bir oturumda çalışmayı denerseniz. Windows PowerShell Web erişimi, bir uzak çalışma alanı kullanır ve şu anda, **PowerShell.exe** uzak bir bağlantı uzak bir çalışma alanından ikinci bir bilgisayara kurmayı desteklememektedir. Kullanarak mevcut bir bağlantıdan ikinci bir uzak bilgisayara bağlanmaya çalışırsanız **Enter-PSSession** cmdlet'i, örneğin, alabilirsiniz çeşitli hatalar ağ kaynakları gibi €œCannot alın.
 
-    Çift atlama hatalarını önlemek için yöneticinize, kuruluşların ağ ortamında CredSSP kimlik doğrulaması yapılandırmanız gerekir. CredSSP kimlik doğrulaması yapılandırma hakkında daha fazla bilgi için bkz. [ikinci atlama uzaktan iletişimi için CredSSP](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) Microsoft Web sitesinde. Ayrıca, ikinci bir uzak bilgisayar yönetmek istediğiniz zaman açık kimlik bilgileri de sağlayabilirsiniz; örtük kimlik bilgilerinin ikinci atlama atlamaya izin vermesi olası değildir.
+    Çift atlama hatalarını önlemek için yöneticinize, kuruluşların ağ ortamında CredSSP kimlik doğrulaması yapılandırmanız gerekir. CredSSP kimlik doğrulaması yapılandırma hakkında daha fazla bilgi için bkz. [ikinci atlama uzaktan iletişimi için CredSSP](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) Microsoft Web sitesinde. İkinci bir uzak bilgisayarı yönetmek istediğiniz zaman açık kimlik bilgileri de sağlayabilirsiniz; örtük kimlik bilgilerinin ikinci atlama atlamaya izin vermesi olası değildir.
 
 - Uzaktan iletişim
 
-    Windows PowerShell Web erişimi kullanır ve uzak Windows PowerShell oturumu onunla aynı sınırlamalara sahiptir. Konsol tabanlı düzenleyiciler veya metin tabanı menü programları için olanlar gibi, Windows konsolu API’lerini doğrudan çağıran komutlar, standart giriş, çıkış ve hata kanallarını okumadıklarından veya onlara yazmadıklarından çalışmaz. Bu nedenle, bir yürütülebilir dosyayı başlatmak komutları, gibi dosya **notepad.exe**, veya bir GUI görüntüleyen `OpenGridView` veya `ogv`, çalışmıyor. Deneyiminiz Bu davranıştan etkilenir; için Windows PowerShell Web erişimi, komutunuza yanıt vermediğini görünür.
+    Windows PowerShell Web erişimi kullanır ve uzak Windows PowerShell oturumu onunla aynı sınırlamalara sahiptir. Komutlar veya onlara yazmadıklarından standart giriş, çıkış ve hata kanallarını okumadıklarından konsol tabanlı düzenleyiciler veya metin tabanlı menü programları için olanlar gibi Windows Konsolu API'lerini doğrudan çağıran komutlar çalışmaz. Bu nedenle, bir yürütülebilir dosyayı başlatmak komutları, gibi dosya **notepad.exe**, veya bir GUI görüntüleyen `OpenGridView` veya `ogv`, çalışmıyor. Deneyiminiz Bu davranıştan etkilenir; için Windows PowerShell Web erişimi, komutunuza yanıt vermediğini görünür.
 
 - Sekme tamamlama
 
-    Sekme tamamlama olan bir oturum yapılandırmasında sınırlı bir çalışma veya çalışmıyor **NoLanguage** modu. Yöneticiler, sekme tamamlanmasını desteklemek için bir oturum yapılandırabilse de, , yetkisiz kullanıcılar için aşağıdaki bilgileri kullanıma sunabileceğinden güvenlik nedenleriyle önerilmez.
+    Sekme tamamlama olan bir oturum yapılandırmasında sınırlı bir çalışma veya çalışmıyor **NoLanguage** modu. Yöneticiler, sekme tamamlanmasını desteklemek için bir oturum yapılandırabilse de, aşağıdaki bilgileri yetkisiz kullanıcılara sunabileceğinden güvenlik nedenleriyle önerilmez.
 
     - İç dosya sistemi yolları
 
@@ -185,7 +185,7 @@ Alt+F7 | Komut geçmişi listesi temizleyin
 
     - Çalışma alanındaki değişkenler
 
-    - Yüklenen türler veya .NET Framework ad alanları
+    - Yüklenen türler veya.NET Framework ad alanları
 
     - Ortam değişkenleri
 
@@ -201,17 +201,17 @@ Alt+F7 | Komut geçmişi listesi temizleyin
 
 - Kalıcı Windows PowerShell oturumları (yeniden bağlanma).
 
-    Zaman aşımını sonra Windows PowerShell Web erişimi ağ geçidini, ağ geçidi ve hedef bilgisayar arasındaki uzak bağlantı kapatılır. Bu, mevcut durumda işlemde olan herhangi bir cmdlet'i ya da komut dosyasını durdurur. Windows PowerShell kullanmanız teşvik **-iş** işleri başlatmak, bilgisayar bağlantısını kesebilmeniz, daha sonra yeniden bağlanabilmeniz ve işlerin kalıcı böylece, uzun süre çalışan görevler gerçekleştirirken altyapı. Kullanmanın başka bir faydası **-iş** cmdlet'lerini Windows PowerShell Web Erişimi'ni kullanarak başlangıç oturumu kapatın ve ardından daha sonra çalışan Windows PowerShell Web erişimi veya başka bir ana bilgisayara (örneğin, Windows PowerShell yeniden olduğu Komut dosyası ortamı (ISE) tümleşik).
+    Zaman aşımını sonra Windows PowerShell Web erişimi ağ geçidini, ağ geçidi ve hedef bilgisayar arasındaki uzak bağlantı kapatılır. Bu, herhangi bir cmdlet'i ya da mevcut durumda işlemde olan betikler durdurur. Windows PowerShell kullanmanız teşvik **-iş** işleri başlatmak, bilgisayar bağlantısını kesebilmeniz, daha sonra yeniden bağlanabilmeniz ve işlerin kalıcı böylece, uzun süre çalışan görevler gerçekleştirirken altyapı. Kullanmanın başka bir faydası **-iş** cmdlet'lerini Windows PowerShell Web Erişimi'ni kullanarak başlangıç oturumu kapatın ve ardından daha sonra çalışan Windows PowerShell Web erişimi veya başka bir ana bilgisayara (örneğin, Windows PowerShell yeniden olduğu Komut dosyası ortamı (ISE) tümleşik).
 
 - Konsol yeniden boyutlandırma.
 
     **PowerShell.exe** konsol penceresi yeniden boyutlandırılabilir aşağıdaki üç yolla.
 
-    - Konsol penceresi boyutunu fareyle sürükleyin ve ayarlayın
+    - Sürükleme ve konsol penceresi boyutunu fareyle Ayarla
 
-    - Konsol özellikleri için bir GUI kullanarak yükseklik ve genişlik özelliklerini değiştirin
+    - Konsol özellikleri için bir GUI kullanarak yükseklik ve genişlik özelliklerini değiştir
 
-    - Konsol pencerelerinin yüksekliğini ve genişliğini bir cmdlet ile değiştirme
+    - Yüksekliğini ve genişliğini bir cmdlet ile konsol pencerelerinin değiştirme
 
         Windows PowerShell Web erişimi için konsol penceresi, aşağıdaki gibi cmdlet'ler kullanarak yapılandırılabilir. Aşağıdaki örnekte, bir kullanıcı için Windows PowerShell Web erişimi konsolunun genişliğini değişiklikleri **20**.
 

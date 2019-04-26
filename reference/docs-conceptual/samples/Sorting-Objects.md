@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Nesne Sıralama
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
 ms.openlocfilehash: 06aa15d89888f1ecbe60b8e1dfb4efebb1d73673
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086060"
 ---
 # <a name="sorting-objects"></a>Nesne Sıralama
 

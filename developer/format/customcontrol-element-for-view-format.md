@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 2edac16c-0b30-4985-ac84-0821aa9a9f6d
 caps.latest.revision: 12
 ms.openlocfilehash: bd0f7ca4de8dede97d1553cd62884ea45876e0c7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066677"
 ---
 # <a name="customcontrol-element-for-view-format"></a>Görünüm için CustomControl Öğesi (Biçim)
 
@@ -29,7 +29,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </CustomControl>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomControl` öğesi. Bir alt öğe belirtmeniz gerekir.
 
@@ -37,13 +37,13 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomControl` �
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[CustomEntries öğesi görünümü (biçimi) için özel denetim için](./customentries-element-for-customcontrol-for-view-format.md)|Gerekli öğe.<br /><br /> Özel denetim görünüm tanımını sağlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

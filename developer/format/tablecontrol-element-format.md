@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
 ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063841"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl Öğesi (Biçim)
 
@@ -33,7 +33,7 @@ ViewDefinitions öğesi (biçimi) görünüm öğesi (biçimi) TableControl öğ
 
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `TableControl` öğesi. Tablonun satırlarını belirtmeniz gerekir. Diğer tüm alt öğeler isteğe bağlıdır.
 
@@ -41,7 +41,7 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `TableControl` ö�
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -50,7 +50,7 @@ Yok.
 |[TableControl (biçimi) için TableHeaders öğesi](./tableheaders-element-format.md)|Gerekli öğe.<br /><br /> Etiketler, genişliğini ve Tablo görünümünde sütunları için veri hizalaması tanımlar.|
 |[TableControl (biçimi) için TableRowEntries öğesi](./tablerowentries-element-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Tablo görünümü tanımını sağlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

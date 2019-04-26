@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Kayıt Defteri Girdileri ile Çalışma
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
 ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086043"
 ---
 # <a name="working-with-registry-entries"></a>Kayıt Defteri Girdileri ile Çalışma
 

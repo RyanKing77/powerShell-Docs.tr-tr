@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1fd53f55-698d-4df5-bb9a-fe28dc3193e1
 caps.latest.revision: 11
 ms.openlocfilehash: df568ccb36a2646b983622cdf95718dd5cac62c3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066779"
 ---
 # <a name="control-element-for-controls-for-view--format"></a>Görünüm Denetimleri için Denetim Öğesi (Biçim)
 
@@ -30,7 +30,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </Control>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Öznitelikler, alt ve üst öğesini aşağıdaki bölümlerde açıklanmaktadır `Control` öğesi.
 
@@ -38,14 +38,14 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[Name öğesi denetimi için Görünüm (biçimi)](./name-element-for-control-for-controls-for-view-format.md)|Gerekli öğe.<br /><br /> Denetimin adını belirtir.|
 |[Özel denetim öğesi denetimi için Görünüm (biçimi) için denetimleri](./customcontrol-element-for-control-for-controls-for-view-format.md)|Gerekli öğe.<br /><br /> Bu görünüm tarafından kullanılan denetimini tanımlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

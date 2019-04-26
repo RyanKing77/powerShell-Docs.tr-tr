@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: ISEFileCollection Nesnesi
 ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
 ms.openlocfilehash: eb4b2784820cbe51f662fd2fd945d8760ef9dbff
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086757"
 ---
 # <a name="the-isefilecollection-object"></a>ISEFileCollection Nesnesi
 

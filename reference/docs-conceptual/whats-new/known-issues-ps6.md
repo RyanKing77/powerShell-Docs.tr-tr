@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell, çekirdek
 title: PowerShell 6.0 için bilinen sorunlar
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085975"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 için bilinen sorunlar
 
@@ -21,7 +21,7 @@ Not: Aynı hem özellikleri hem de hataları olgunluk düzeyini paylaşmak için
 
 Tarihsel olarak, PowerShell, birkaç özel durum dışında aynı şekilde duyarlı olmuştur. UNIX benzeri işletim sistemlerinde dosya sistemi ağırlıklı duyarlıdır ve PowerShell standart dosya sisteminin uyar; Bu, çeşitli yollarla, açık ve daha belirgin olmayan kullanıma sunulur.
 
-#### <a name="directly"></a>Doğrudan
+#### <a name="directly"></a>doğrudan
 
 - Bir dosya PowerShell'de belirtirken, büyük/küçük kullanılması gerekir.
 

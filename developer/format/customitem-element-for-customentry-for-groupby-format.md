@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f7c517aa-24f5-41ae-b82d-cb0fac81a245
 caps.latest.revision: 7
 ms.openlocfilehash: 2d821f5e3bc8d0f81ef8a8a040c6f9bcb1658bee
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066408"
 ---
 # <a name="customitem-element-for-customentry-for-groupby-format"></a>GroupBy CustomEntry için CustomItem Öğesi (Biçim)
 
@@ -32,7 +32,7 @@ GroupBy (biçimi) CustomEntries öğesinin GroupBy (biçimi) CustomItem öğesin
 </CustomItem>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomItem` öğesi.
 
@@ -40,7 +40,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomItem` öğ
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -49,7 +49,7 @@ Yok.
 |[GroupBy (biçimi) için CustomItem için yeni satır öğesi](./newline-element-for-customitem-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> Boş bir satır denetimi görüntüye ekler.|
 |[GroupBy (biçimi) için CustomItem için metin öğesi](./text-element-for-customitem-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> Ek metin denetimi tarafından görüntülenen verilere belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

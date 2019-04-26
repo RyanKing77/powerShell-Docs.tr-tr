@@ -10,83 +10,81 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: 065214647dfa6d376b727930fe75140911095faf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068496"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Cmdlet Giriş İşleme Yöntemleri
 
-Cmdlet'leri bir veya daha fazla işleme işlerini yapmak için bu konuda açıklanan yöntemlerden giriş geçersiz kılması gerekir. Bu yöntemler, ön işleme işlemleri, giriş işleme ve sonrası işleme gerçekleştirmek cmdlet sağlar. Bu yöntemleri Ayrıca, cmdlet işlemeyi durdur olanak tanır.
+Cmdlet'leri bir veya daha fazla işleme işlerini yapmak için bu konuda açıklanan yöntemlerden giriş geçersiz kılması gerekir.
+Bu yöntemler, ön işleme, giriş işleme ve sonrası işleme işlemlerini gerçekleştirmek cmdlet sağlar.
+Bu yöntemleri Ayrıca, cmdlet işlemeyi durdur olanak tanır.
+Bu yöntemleri kullanma hakkında daha ayrıntılı örnek için bkz [SelectStr öğretici](selectstr-tutorial.md).
 
-## <a name="pre-processing-tasks"></a>Ön işleme görevleri
+## <a name="pre-processing-operations"></a>Ön işleme işlemleri
 
-Cmdlet'leri geçersiz kılmalıdır [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) cmdlet tarafından işlenen daha sonra tüm kayıtlar için geçerli olan herhangi bir ön işleme işlemi eklemek için yöntemi. Windows PowerShell komut işlem hattı işlediğinde, Windows PowerShell Bu yöntem işlem hattındaki cmdlet'inin her örneği için bir kez çağırır. Nasıl Windows PowerShell komut işlem hattını çağıran hakkında daha fazla bilgi için bkz. [cmdlet'i işleme yaşam döngüsü](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
+Cmdlet'leri geçersiz kılmalıdır [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) cmdlet tarafından işlenen daha sonra tüm kayıtlar için geçerli olan herhangi bir ön işleme işlemi eklemek için yöntemi.
+PowerShell komut işlem hattı işlediğinde, PowerShell Bu yöntem işlem hattındaki cmdlet'inin her örneği için bir kez çağırır.
+PowerShell komut ardışık düzeni nasıl çağırır hakkında daha fazla bilgi için bkz. [cmdlet'i işleme yaşam döngüsü](/previous-versions/ms714429(v=vs.85)).
 
-Aşağıdaki kod uygulanışı gösterilmektedir [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) yöntemi.
+Aşağıdaki kod, BeginProcessing yöntemi uygulanışı gösterilmektedir.
 
 ```csharp
 protected override void BeginProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the BeginProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the BeginProcessing template.");
 }
 ```
 
-Nasıl kullanılacağı hakkında daha ayrıntılı bir örnek için [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) yöntemi bkz [SelectStr öğretici](./selectstr-tutorial.md). Bu öğreticide **seçin Str** cmdlet'ini kullanır [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) kayıtları işleme giriş aramak için kullanılan normal ifade oluşturmak için yöntemi.
+## <a name="input-processing-operations"></a>İşleme giriş
 
-## <a name="input-processing-tasks"></a>Giriş işleme görevleri
+Cmdlet'leri geçersiz kılma [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) cmdlet'e gönderilen girişi işlemek için yöntemi.
+PowerShell komut işlem hattı işlediğinde, PowerShell cmdlet tarafından işlenen her giriş kaydı için bu yöntemi çağırır.
+PowerShell komut ardışık düzeni nasıl çağırır hakkında daha fazla bilgi için bkz. [cmdlet'i işleme yaşam döngüsü](/previous-versions/ms714429(v=vs.85)).
 
-Cmdlet'leri geçersiz kılma [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) cmdlet'e gönderilen girişi işlemek için yöntemi. Windows PowerShell komut işlem hattı işlediğinde, Windows PowerShell cmdlet tarafından işlenen her giriş kaydı için bu yöntemi çağırır. Nasıl Windows PowerShell komut işlem hattını çağıran hakkında daha fazla bilgi için bkz. [cmdlet'i işleme yaşam döngüsü](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
-
-Aşağıdaki kod uygulanışı gösterilmektedir [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) yöntemi.
+Aşağıdaki kod, ProcessRecord yöntemi uygulanışı gösterilmektedir.
 
 ```csharp
 protected override void ProcessRecord()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the ProcessRecord template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the ProcessRecord template.");
 }
 ```
 
-Nasıl kullanılacağı hakkında daha ayrıntılı bir örnek için [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) yöntemi bkz [SelectStr öğretici](./selectstr-tutorial.md).
+## <a name="post-processing-operations"></a>İşlem Sonrası işlemleri
 
-## <a name="post-processing-tasks"></a>İşlem Sonrası görevler
+Cmdlet'leri geçersiz kılmalıdır [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) cmdlet tarafından işlenen tüm kayıtlar için geçerli olan herhangi bir işlem sonrası işlemi eklemek için yöntemi.
+Örneğin, nesne değişkenleri bittikten sonra temizleme cmdlet'inize olabilir işleme.
 
-Cmdlet'leri geçersiz kılmalıdır [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) cmdlet tarafından işlenen tüm kayıtlar için geçerli olan herhangi bir işlem sonrası işlemi eklemek için yöntemi. Örneğin, nesne değişkenleri bittikten sonra temizleme cmdlet'inize olabilir işleme.
+PowerShell komut işlem hattı işlediğinde, PowerShell Bu yöntem işlem hattındaki cmdlet'inin her örneği için bir kez çağırır.
+Bununla birlikte, PowerShell çalışma zamanı EndProcessing yöntemi cmdlet midway kendi giriş işlemeden iptal edilirse veya herhangi bir bölümünü cmdlet'i bir sonlandırmalı hata oluşması durumunda çağırmayacaktır olduğunu unutmamak önemlidir.
+Bu nedenle, nesne temizleme gerektiren bir cmdlet tam uygulamalıdır [System.IDisposable](/dotnet/api/System.IDisposable) desen, bir sonlandırıcı dahil olmak üzere çalışma zamanı, her iki EndProcessing çağırabilirsiniz ve [ System.IDisposable.Dispose](/dotnet/api/System.IDisposable.Dispose) işleme sonunda yöntemleri.
+PowerShell komut ardışık düzeni nasıl çağırır hakkında daha fazla bilgi için bkz. [cmdlet'i işleme yaşam döngüsü](/previous-versions/ms714429(v=vs.85)).
 
-Windows PowerShell komut işlem hattı işlediğinde, Windows PowerShell Bu yöntem işlem hattındaki cmdlet'inin her örneği için bir kez çağırır. Ancak, Windows PowerShell çalışma zamanı olmayan çağrı unutmamak gerekir [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) yöntemi cmdlet midway, giriş işleme üzerinden iptal edilir ya da bir sonlandırma, herhangi bir bölümünü cmdlet'i hata meydana gelir. Bu nedenle, nesne temizleme gerektiren bir cmdlet tam uygulamalıdır [System.IDisposable](/dotnet/api/System.IDisposable) desen, bir sonlandırıcı dahil olmak üzere çalışma zamanı, her ikisi de çağırabilirsiniz [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) ve [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) işleme sonunda yöntemleri. Nasıl Windows PowerShell komut işlem hattını çağıran hakkında daha fazla bilgi için bkz. [cmdlet'i işleme yaşam döngüsü](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
-
-Aşağıdaki kod uygulanışı gösterilmektedir [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) yöntemi.
+Aşağıdaki kod, EndProcessing yöntemi uygulanışı gösterilmektedir.
 
 ```csharp
 protected override void EndProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the EndProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the EndProcessing template.");
 }
 ```
 
-Nasıl kullanılacağı hakkında daha ayrıntılı bir örnek için [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty Fullname =](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) yöntemi bkz [SelectStr öğretici](./selectstr-tutorial.md).
-
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty tam adı =](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 
-[System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty tam adı =](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 
-[System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty tam adı =](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
+
+[SelectStr Öğreticisi](selectstr-tutorial.md)
 
 [System.IDisposable](/dotnet/api/System.IDisposable)
 

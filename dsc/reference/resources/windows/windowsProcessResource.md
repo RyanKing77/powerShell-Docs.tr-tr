@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC WindowsProcess kaynağı
 ms.openlocfilehash: cee93ab283ded407d6e032161125aa6d6ac98827
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076778"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess kaynağı
 
@@ -40,8 +40,8 @@ WindowsProcess [string] #ResourceName
 | Yol| İşlem yürütülebilir dosyası yolu. Bu ortamı yürütülebilir dosya (tam olarak nitelenmiş yolu değil) DSC kaynak dosya adını arayacaktır **yolu** değişkeni (`$env:Path`) yürütülebilir dosyası bulunamadı. Bu özelliğin değeri tam bir yolu ise, DSC kullanmaz **yolu** dosyayı bulmak için ortam değişkeni ve yol mevcut değilse bir hata oluşturur. Göreli yollar izin verilmez.|
 | Kimlik bilgisi| İşlemi başlatmak için kimlik bilgilerini belirtir.|
 | Emin olun| Bir işlem olup olmadığını gösterir. Bu işlem var olduğundan emin olmak için "var" özelliğini ayarlayın. Aksi takdirde, "Yok" ayarlayın. "Var" varsayılandır.|
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"` .|
+| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"` .|
 | StandardErrorPath| Standart hatayı yazmak için dizin yolu gösterir. Var. Varolan dosyanın üzerine yazılır.|
 | StandardInputPath| Standart giriş konumu gösterir.|
 | StandardOutputPath| Standart çıkışını yazmak için konumu belirtir. Var. Varolan dosyanın üzerine yazılır.|
-| WorkingDirectory| İşlem için geçerli çalışma dizini kullanılacak konumu belirtir.|
+| Başlangıç| İşlem için geçerli çalışma dizini kullanılacak konumu belirtir.|

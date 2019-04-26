@@ -2,91 +2,91 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA güvenlik konuları
-ms.openlocfilehash: 46ea5cc3e9bc7b6759524aa466e900950a6dee26
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084785"
 ---
 # <a name="jea-security-considerations"></a>JEA güvenlik konuları
 
-> Uygulandığı öğe: Windows PowerShell 5.0
+> Şunun için geçerlidir: Windows PowerShell 5.0
 
-JEA, güvenlikle ilgili tutumunuzu makinelerinizi kalıcı Yöneticiler sayısını azaltarak artırılmasına yardımcı olur.
-Bunu kullanıcıların sıkı bir şekilde kötüye kullanımı önlemek için varsayılan olarak kilitlenmiştir (bir PowerShell oturum yapılandırması) sistemini yönetmek yeni bir giriş noktası oluşturarak yapar.
-Bazı, gereken ancak kullanıcılar sınırsız, yönetim görevlerini gerçekleştirmek için makine erişim JEA uç noktasına erişim izni.
-JEA bunları yönetici erişimi zorunda kalmadan doğrudan yönetim komutları çalıştırmak izin verdiğinden, sonra (standart kullanıcılar olmalarını) yüksek ayrıcalıklı güvenlik gruplarındaki kullanıcılar kaldırabilirsiniz.
+JEA makinelerinizde kalıcı yönetici sayısını azaltarak güvenliğini geliştirmenize yardımcı olur.
+Bunu sıkı bir şekilde kötüye kullanımı önlemek için varsayılan olarak kilitlenmiştir (bir PowerShell oturumu yapılandırması) sistemi yönetmek kullanıcılar için yeni bir giriş noktası oluşturarak yapar.
+Ancak, bazı ihtiyaç duyan kullanıcılar sınırsız erişim yönetim görevlerini gerçekleştirmek için makineye JEA uç noktasına erişim verilebilir.
+JEA bunları doğrudan yönetici erişimine gerek kalmadan yönetici komutlarını çalıştırmak izin verdiğinden, söz konusu kullanıcıların yüksek ayrıcalıklı güvenlik gruplarındaki (standart kullanıcılar olacak) sonra kaldırabilirsiniz.
 
-Bu konuda daha ayrıntılı en iyi yöntemler ve JEA güvenlik modeli açıklanır.
+Bu konu başlığı altında daha ayrıntılı bir şekilde en iyi yöntemler ve JEA güvenlik modeli açıklanır.
 
 ## <a name="run-as-account"></a>Farklı Çalıştır hesabı
 
-Her JEA bitiş altında bağlanan kullanıcının Eylemler gerçekleştirileceği hesabı olan bir belirlenen "Farklı Çalıştır" hesabı vardır.
-Bu hesap olarak yapılandırılabilir, [oturum yapılandırma dosyası](session-configurations.md), ve seçtiğiniz hesap uç noktanızı güvenlik üzerinde önemli bir şifrelemeyle sahiptir.
+Bağlanan kullanıcının eylemleri gerçekleştirildiği hesabı olan bir atanmış "run as" hesabını, her JEA uç noktası vardır.
+Bu hesap yapılandırılabilirdir [oturum yapılandırma dosyası](session-configurations.md), ve seçtiğiniz hesabın bir önemli güvenlik uç noktanızın ilgisi.
 
-**Sanal hesaplar** run hesabıyla yapılandırma için önerilen yoldur.
-JEA oturumuna süresi sırasında kullanılacak bağlanan kullanıcı için oluşturulan tek seferlik, geçici yerel hesaplar sanal hesaplarıdır.
-Kullanıcıların oturumlarını sona hemen sanal hesap yok edilmesi ve artık kullanılamaz.
-Bağlanan kullanıcı hesabının kimlik bilgilerini sanal bilmez ve sanal hesap Uzak Masaüstü veya bir Kısıtlanmamış PowerShell uç nokta gibi diğer yollarla üzerinden erişmek için kullanılamaz.
+**Sanal hesaplar** farklı çalıştır hesabı olarak yapılandırılması için önerilen yoldur.
+JEA oturumun süresi sırasında kullanılacak bağlanan kullanıcı için oluşturulan tek seferlik, geçici yerel hesaplar sanal hesaplarıdır.
+Oturumun sona hemen sonra sanal hesap yok edileceği ve artık kullanılamaz.
+Bağlanan kullanıcının sanal hesabının kimlik bilgilerini kullanmayı bilmeyen ve sanal hesap üzerinden uzak masaüstü veya bir sınırlandırılmamış PowerShell uç nokta gibi başka bir yolla sisteme erişmek için kullanamazsınız.
 
 Varsayılan olarak, sanal hesaplar makinede yerel Yöneticiler grubuna ait.
-Bu bunları sistemde herhangi bir şey yönetmek için tüm haklara, ancak ağ kaynaklarını yönetme hakkı verir.
+Bu bunları sistemdeki her şeyi yönetme hakkı tam, ancak ağ kaynaklarını yönetme hakkı verir.
 Diğer makinelerle kimlik doğrulamasını yaparken, kullanıcı bağlamı, yerel bilgisayar hesabının, sanal hesap olacaktır.
 
-Yerel Yöneticiler grubunun kavramına olduğundan etki alanı denetleyicileri bir özel durum etkilenir.
-Bunun yerine, sanal hesaplar etki alanı yöneticileri için bunun yerine ait ve etki alanı denetleyicisindeki Dizin Hizmetleri yönetebilir.
-Etki alanı kimliği burada JEA oturum örneğinin başlatılmasından ve herhangi bir ağ erişim etki alanı denetleyicisi bilgisayar nesnesinden yerine gelen görünür etki alanı denetleyicisinde kullanmak için hala sınırlıdır.
+Etki alanı denetleyicileri, yerel Yöneticiler grubuna kavramı olmadığından bir özel durum olan.
+Bunun yerine, sanal hesaplar için etki alanı yöneticileri yerine ait ve Dizin Hizmetleri etki alanı denetleyicisinde yönetebilirsiniz.
+Etki alanı kimliği burada JEA oturumu örneği oluşturulduktan ve bunun yerine etki alanı denetleyicisi bilgisayar nesnesinden gelen herhangi bir ağ erişim görünür etki alanı denetleyicisinde kullanmak için hala sınırlıdır.
 
-Her iki durumda da, açıkça sanal ait olması hangi güvenlik gruplarının tanımlayabilirsiniz.
-Gerçekleştirmekte olduğunuz görev yerel/etki alanı yönetici ayrıcalıklarına yapılabilir olduğunda iyi bir uygulamadır.
-Yöneticiler için tanımlanmış bir güvenlik grubu zaten varsa, yalnızca gerekli izinleri vermek için bu gruba sanal hesap için üyelik verebilirsiniz.
-Sanal Hesap Grup üyeliği iş istasyonu ve üye sunuculara yerel güvenlik grupları sınırlıdır, ancak bir etki alanı denetleyicisinde bunlar yalnızca etki alanı güvenlik gruplarının üyesi olabilir.
-Ait bir veya daha fazla güvenlik grupları için sanal hesap belirttiğinizde, artık (yerel yönetici veya etki alanı yöneticisi) varsayılan gruplara ait.
+Her iki durumda da açıkça sanal hesap ait olması gereken güvenlik grupları tanımlayabilirsiniz.
+Gerçekleştirdiğiniz göreve yerel/etki alanı yönetici ayrıcalıklarına gerek kalmadan yapılabilir, iyi bir uygulamadır.
+Yöneticilerinizin için tanımlı bir güvenlik grubu zaten varsa, yalnızca gerekli izinleri vermek için bu gruba sanal hesap için üyelik verebilirsiniz.
+Sanal Hesap Grup üyeliği, iş istasyonu ve üye sunucu üzerinde yerel güvenlik gruplarına sınırlıdır, ancak bir etki alanı denetleyicisinde bunlar yalnızca etki alanı güvenlik gruplarının üyesi olabilir.
+Ait bir veya daha fazla güvenlik grupları için sanal hesap belirttiğinizde, artık varsayılan gruplara (yerel yönetici veya etki alanı yöneticisi) ait olur.
 
-Sonuçta elde edilen sanal hesapların izinlerini ve olası yapılandırma seçenekleri aşağıdaki tabloda özetlenmiştir
+Aşağıdaki tabloda olası yapılandırma seçeneklerini ve sonuçta elde edilen sanal hesaplar izinleri özetler.
 
 Bilgisayar türü                | Sanal hesap grubu yapılandırması | Yerel kullanıcı bağlamı                                      | Ağ kullanıcı bağlamı
 -----------------------------|-------------------------------------|---------------------------------------------------------|--------------------------------------------------
-Etki alanı denetleyicisi            | Varsayılan                             | Etki alanı kullanıcısı, üyesi '*etki alanı*\Domain Admins'         | Bilgisayar hesabı
-Etki alanı denetleyicisi            | Etki alanı gruplarını A ve B               | Etki alanı kullanıcısı, üyesi '*etki alanı*\A ','*etki alanı*\B'       | Bilgisayar hesabı
-Üye sunucusu veya iş istasyonu | Varsayılan                             | Yerel bir kullanıcı, üyesi '*YERLEŞİK*\Administrators'        | Bilgisayar hesabı
-Üye sunucusu veya iş istasyonu | C ve D yerel gruplar                | Yerel bir kullanıcı, üyesi '*bilgisayar*\C' ve '*bilgisayar*\D' | Bilgisayar hesabı
+Etki alanı denetleyicisi            | Varsayılan                             | Etki alanı kullanıcısı, üyesi '*etki alanı*\Domain yöneticileri         | Bilgisayar hesabı
+Etki alanı denetleyicisi            | A ve B etki alanı grupları               | Etki alanı kullanıcısı, üyesi '*etki alanı*\A ','*etki alanı*\B'       | Bilgisayar hesabı
+Üye sunucu veya iş istasyonu | Varsayılan                             | Yerel bir kullanıcı, üyesi '*YERLEŞİK*\Administrators'        | Bilgisayar hesabı
+Üye sunucu veya iş istasyonu | Yerel gruplar C ve D                | Yerel bir kullanıcı, üyesi '*bilgisayar*\C' ve '*bilgisayar*\D' | Bilgisayar hesabı
 
-Güvenlik denetim olaylarını ve uygulama olay günlüklerini baktığınızda, her JEA kullanıcı oturumunu benzersiz bir sanal hesabı olduğunu görürsünüz.
-Bu kullanıcı eylemlerini JEA uç noktada komutu çalıştıran özgün kullanıcıya geri izlemenize yardımcı olur.
-Sanal hesap adlarını izleyin biçimi "WinRM sanal kullanıcıların\\WinRM\_VA\_*ACCOUNTNUMBER*\_*etki alanı* \_ *sAMAccountName*"Örneğin, kullanıcı etki alanında"Contoso"" Alice"bir JEA uç hizmet yeniden başlarsa, tüm hizmet denetimi yöneticisi olaylarını ile ilişkili kullanıcı adını olması" WinRM sanal kullanıcıların\\WinRM\_ VA\_1\_contoso\_alice ".
+Güvenlik denetim olaylarını ve uygulama olay günlüklerini baktığınızda, her JEA kullanıcı oturumunu benzersiz sanal hesap olduğunu görürsünüz.
+Bu komutun çalıştığını geri özgün kullanıcıya bir JEA uç noktası kullanıcı eylemleri izlemenize yardımcı olur.
+Sanal hesap adları izleyen biçimi "WinRM sanal kullanıcıların\\WinRM\_VA\_*ACCOUNTNUMBER*\_*etki alanı* \_ *sAMAccountName*"Örneğin, etki alanı"Contoso"," Gamze "adlı kullanıcı, bir hizmet bir JEA uç noktası yeniden başlatılırsa, tüm hizmet denetimi yöneticisi olaylarını ile ilişkili kullanıcı adını olması" WinRM sanal kullanıcıların\\WinRM\_ VA\_1\_contoso\_alice ".
 
 
-**Grup yönetilen hizmet hesapları (gmsa'ları)** bir üye sunucuya ağ kaynaklarına erişim JEA oturumunuz gerektiğinde kullanışlıdır.
+**Grup yönetilen hizmet hesapları (gmsa'ları)** üye sunucu JEA oturumda ağ kaynaklarına erişim sağlamak gerektiğinde yararlıdır.
 Bu bir örnek kullanım örneği farklı bir makinede barındırılan bir REST API erişimi denetlemek için kullanılan bir JEA uç noktadır.
-Bir ağ kimliğini işlevleri REST API istenen çağrılarını yapmak için ancak API ile kimlik doğrulamak için gereken yazma kolaydır.
-Grup yönetilen hizmet hesabı kullanarak "ikinci atlama" hala üzerinde bilgisayar hesabı kullanabilirsiniz denetim yaparken mümkün kılar.
-GMSA etkili izinleri gMSA hesabının ait olduğu güvenlik grupları (yerel veya etki alanı) tarafından tanımlanır.
+Ağ kimliği işlevleri REST API ile ilgili istenen çağrıları yapmak için ancak API ile kimliğinizi doğrulamak için gereken yazmak kolaydır.
+Bir grup yönetilen hizmet hesabı kullanarak "ikinci atlama" denetim üzerinde bilgisayar hesabı kullanabilir yaparken hala mümkün kılar.
+GMSA etkin izinleri gMSA hesabını ait olduğu güvenlik grupları (yerel veya etki alanı) tarafından tanımlanır.
 
-JEA uç noktası bir gMSA hesabı kullanmak üzere yapılandırıldığında, yönetilen hizmet hesabı aynı grubundan gelen tüm JEA kullanıcılar eylemler görüntülenir.
-Belirli bir kullanıcıya geri eylemleri izleyebilirsiniz tek bir PowerShell oturumu dökümü çalıştırma komutları kümesini tanımlamak için yoludur.
+Bir JEA uç noktası, bir gMSA hesabı kullanmak üzere yapılandırıldığında, yönetilen hizmet hesabı aynı grubundan gelen tüm JEA kullanıcıların eylemlerini görünür.
+Belirli bir kullanıcıya geri eylemleri izleyebilirsiniz tek yolu, bir PowerShell oturumu transkripti çalıştırma komutları kümesini belirlemektir.
 
-**Geçişi aracılığı kimlik bilgilerini** , olmayan bir farklı çalıştır hesabı olarak belirttiğiniz ve uzak sunucuda komutları çalıştırmak için bağlanan kullanıcının kimlik bilgilerini kullanmak için PowerShell istediğinizde kullanılır.
-Bu yapılandırma *değil* ayrıcalıklı yönetim gruplarına bağlanma kullanıcı doğrudan erişim vermek için gerektirecek şekilde JEA için önerilir.
-Bağlanan kullanıcının yönetici ayrıcalıkları varsa, bunlar JEA tamamen önlemek ve diğer, Kısıtlanmamış yollar üzerinden yönetebilirsiniz.
-Aşağıdaki bölüme bakın [JEA admins karşı korumaz](#jea-does-not-protect-against-admins) daha fazla bilgi için.
+**Kimlik bilgileri, geçişi izlenecek** etmez bir farklı çalıştır hesabı olarak belirtin ve istediğiniz bağlanan kullanıcının kimlik bilgileri uzak sunucuda komutları çalıştırmak için PowerShell kullanılır.
+Bu yapılandırma *değil* ayrıcalıklı yönetim gruplarına bağlantı kullanıcı doğrudan erişim vermek için gerektirecek şekilde JEA için önerilir.
+Bağlanan kullanıcının yönetici ayrıcalıkları varsa, bunlar JEA tamamen önlemek ve diğer, sınırlandırılmamış yollar üzerinden sisteme yönetme.
+Aşağıdaki bölüme bakın [JEA yöneticileri karşı korumaz](#jea-does-not-protect-against-admins) daha fazla bilgi için.
 
 **Standart farklı çalıştır hesapları** tüm PowerShell oturumu altında çalışacağı herhangi bir kullanıcı hesabı belirtmenizi sağlar.
-Bir oturum yapılandırması sabit farklı çalıştır hesabı olarak kullanmak üzere ayarlamak için önemli bir fark budur (ile `-RunAsCredential` parametresi) JEA uyumlu değil.
-Rol Tanımları artık beklendiği gibi çalışmaz ve uç noktasına erişmek için yetkili her kullanıcı aynı role atanması anlamına gelir.
+Sabit bir farklı çalıştır hesabı olarak kullanılacak bir oturum yapılandırması ayarlama önemli bir ayrımdır olmasıdır (ile `-RunAsCredential` parametresi) JEA uyumlu değil.
+Bu rol tanımları artık beklendiği gibi çalışmaz ve her kullanıcı uç noktasına erişmek için yetkili aynı role atanması anlamına gelir.
 
-Bir RunAsCredential JEA noktadaki geri belirli kullanıcılar ve eylemleri Kullanıcıları rollerine eşlemek için destek eksikliği izleme zorluk nedeniyle kullanmamanız gerekir.
+Bir RunAsCredential bir JEA uç noktasında zorluk izleme eylemleri geri belirli kullanıcılara ve rollere kullanıcılar eşleme desteği eksikliği nedeniyle kullanmamanız gerekir.
 
-## <a name="winrm-endpoint-acl"></a>WinRM uç nokta ACL
+## <a name="winrm-endpoint-acl"></a>WinRM uç noktası ACL'sini
 
-Normal PowerShell uzaktan iletişim uç ile denetimleri WinRM yapılandırmasında bir ayrı bir erişim denetim listesi (ACL) her JEA bitiş taşıdığından kimin JEA bitiş noktası ile doğrulanabilir.
-Hatalı biçimde yapılandırdıysanız, güvenilen kullanıcıların JEA uç noktasına erişmek mümkün olmayabilir ve/veya güvenilmeyen kullanıcıların erişim elde.
-WinRM ACL ancak JEA roller kullanıcılara eşleme etkilemez.
-Tarafından denetlenen *RoleDefinitions* sistemde kaydedildiği oturum yapılandırma dosyasında alan.
+Normal PowerShell uzaktan iletişim uç noktaları ile her bir JEA uç noktasının denetleyen WinRM yapılandırmasında bir ayrı bir erişim denetim listesi (ACL) sahip olduğundan kimin JEA uç noktası ile kimlik doğrulaması yapabilir.
+Yanlış yapılandırılırsa, güvenilen kullanıcıların JEA uç noktasına erişmek mümkün olmayabilir ve/veya güvenilmeyen kullanıcıların erişim elde edebilirsiniz.
+WinRM ACL ancak JEA rollerine kullanıcı eşleme etkilemez.
+Tarafından denetlenen *RoleDefinitions* sistemde kaydedilen oturum yapılandırma dosyasında alan.
 
-Bir oturum yapılandırma dosyası ve bir veya daha fazla rol özellikleri, kullanarak bir JEA uç noktasını kaydetme, varsayılan olarak, bir veya daha fazla rol erişim uç noktasına eşleme tüm kullanıcılara izin vermek için WinRM ACL yapılandırılır.
-Örneğin, aşağıdaki komutları kullanarak yapılandırılmış bir JEA oturumu tam erişim izni verecek *CONTOSO\JEA\_Lev1* ve *CONTOSO\JEA\_Lev2*.
+Bir oturum yapılandırma dosyası ve bir veya daha fazla rol işlevleri kullanarak bir JEA uç noktasını kaydetme, varsayılan olarak, tüm kullanıcıların bir veya daha fazla rol erişim uç noktasına eşleme WinRM ACL yapılandırılır.
+Örneğin, aşağıdaki komutlar kullanılarak yapılandırılmış bir JEA oturumu tam erişim izni verir *CONTOSO\JEA\_Lev1* ve *CONTOSO\JEA\_Lev2*.
 
 ```powershell
 $roles = @{ 'CONTOSO\JEA_Lev1' = 'Lev1Role'; 'CONTOSO\JEA_Lev2' = 'Lev2Role' }
@@ -94,7 +94,7 @@ New-PSSessionConfigurationFile -Path '.\jea.pssc' -SessionType RestrictedRemoteS
 Register-PSSessionConfiguration -Path '.\jea.pssc' -Name 'MyJEAEndpoint'
 ```
 
-Kullanıcı izinleri olan denetim [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'i.
+Kullanıcı izinleriyle denetleyebilirsiniz [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'i.
 
 ```powershell
 PS C:\> Get-PSSessionConfiguration -Name 'MyJEAEndpoint' | Select-Object Permission
@@ -105,20 +105,20 @@ CONTOSO\JEA_Lev1 AccessAllowed
 CONTOSO\JEA_Lev2 AccessAllowed
 ```
 
-Hangi kullanıcıların erişimi değiştirmek için ya da çalıştırmak `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -ShowSecurityDescriptorUI` etkileşimli bir istem için veya `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -SecurityDescriptorSddl <SDDL string>` izinlerini güncelleştirmek için.
-Kullanıcıların gereken en az *Invoke* JEA uç noktasına erişmek için hakları.
+Hangi kullanıcıların erişimi değiştirmek için ya da çalıştırın `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -ShowSecurityDescriptorUI` için etkileşimli bir istemi veya `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -SecurityDescriptorSddl <SDDL string>` izinlerini güncelleştirmek için.
+Kullanıcıların gereken en az *Invoke* JEA uç nokta erişim hakları.
 
-Ek kullanıcılar JEA uç noktasına erişimi verilir, ancak oturum yapılandırma dosyasında tanımlanan rolleri hiçbirine kalan değil, JEA oturumu başlatmak, ancak yalnızca varsayılan cmdlet'leri erişimi mümkün olacaktır.
-Kullanıcı izinleri JEA uç noktada çalıştırarak denetleyebilirsiniz `Get-PSSessionCapability`.
-Kullanıma [denetim ve JEA üzerinde raporlama](audit-and-report.md) denetimi hakkında daha fazla bilgi için bir kullanıcı komutları makalesine bir JEA uç erişimi vardır.
+Ek kullanıcılar JEA uç noktası için erişim verilir, ancak oturum yapılandırma dosyasında tanımlanmış rollere hiçbirine denk olmayan bir JEA oturumu başlatın, ancak yalnızca varsayılan cmdlet'leri erişiminiz olacaktır.
+Bir JEA uç noktası kullanıcı izinlerini çalıştırarak denetleyebilirsiniz `Get-PSSessionCapability`.
+Kullanıma [denetim ve JEA'da raporlama](audit-and-report.md) denetimi hakkında daha fazla bilgi için bir kullanıcı komutları makale bir JEA uç noktası için erişimine sahiptir.
 
-## <a name="least-privilege-roles"></a>En az ayrıcalık rolleri
+## <a name="least-privilege-roles"></a>En az ayrıcalıklı rolleri
 
-JEA rolleri tasarlarken, sanal veya grup yönetilen hizmet hesabı çalıştırılması arka planda genellikle yerel makine yönetmek için sınırsız erişimi olduğunu unutmamak önemlidir.
-JEA rol özellikleri yardımcı olması için bu hesabı ne kullanılabilir kısıtlamak, ayrıcalıklı bağlamını kullanarak çalışan uygulamaları ve komutları sınırlandırırsınız.
-Yanlış bir şekilde tasarlanmış roller JEA sınırları dışında bölün veya hassas bilgilere erişim elde etmek bir kullanıcı izin verebilir çalıştırmak tehlikeli komutları izin verebilirsiniz.
+JEA rolleri tasarlarken, sanal veya grup yönetilen hizmet hesabı çalışan arka planda genellikle yerel makine yönetmek için erişim varmazlar unutmamak önemlidir.
+JEA rol işlevleri yardımcı kısıtlamak için bu hesabı ne kullanılabilir komutları ve ayrıcalıklı bu bağlamı kullanarak çalışan uygulamaları sınırlandırırsınız.
+Hatalı şekilde tasarlanmış roller JEA sınırları dışında sonu veya hassas bilgilere erişim elde etmek bir kullanıcı izin verebilecek için tehlikeli komutları izin verebilirsiniz.
 
-Örneğin, aşağıdaki Rol Yetenek giriş göz önünde bulundurun:
+Örneğin, aşağıdaki rol özelliği girişi göz önünde bulundurun:
 
 ```powershell
 @{
@@ -126,12 +126,12 @@ Yanlış bir şekilde tasarlanmış roller JEA sınırları dışında bölün v
 }
 ```
 
-Bu rol özelliği kullanıcıların herhangi bir PowerShell cmdlet'i Microsoft.PowerShell.Management modülünden "İşlem" isim ile çalıştırmasını sağlar.
-Kullanıcıların cmdlet'leri gibi erişim gerekebilir `Get-Process` ne uygulamaları sistem üzerinde çalışan anlamak için ve `Stop-Process` herhangi sonlandırmak için uygulamaları askıda kaldı.
-Ancak, bu girdi ayrıca tanır `Start-Process`, tam yönetici izinlerine sahip bir rastgele programını başlatmak için kullanılabilir.
-Program bir saldırganın yalnızca bağlanan kullanıcı yerel yönetici ayrıcalıkları, çalışır kötü amaçlı yazılım ve daha fazlasını sunan bir dosya paylaşımında bir programı başlatabileceği şekilde sistem üzerinde yerel olarak yüklü olması gerekmez.'
+Bu rolü özelliği kullanıcıların herhangi bir PowerShell cmdlet'i Microsoft.PowerShell.Management modülünden "İşlem" isim ile çalıştırmasına izin verir.
+Kullanıcılar cmdlet'leri gibi erişim gerekebilir `Get-Process` hangi uygulamaları sistemde çalışan anlamak için ve `Stop-Process` , yanıt vermeyen tüm uygulamaları sonlandırılır.
+Ancak bu girdi de tanır `Start-Process`, tam yönetici izinlerine sahip rastgele bir programı başlatmak için kullanılabilir.
+Program, saldırganın yalnızca bir program bağlanan kullanıcı yerel yönetici ayrıcalıkları, çalıştırmalar kötü amaçlı yazılım ve diğer sağlayan bir dosya paylaşımında başlayabilmesi sistemde yerel olarak yüklü olması gerekmez.'
 
-Bu aynı rol özellik daha güvenli bir sürümü gibi görünür:
+Bu rol aynısını daha güvenli bir sürümü gibi görünür:
 
 ```powershell
 @{
@@ -139,16 +139,16 @@ Bu aynı rol özellik daha güvenli bir sürümü gibi görünür:
 }
 ```
 
-Rol özellikleri joker karakterleri kullanmaktan kaçının ve emin olun [denetim etkin kullanıcı izinlerini](audit-and-report.md#check-effective-rights-for-a-specific-user) düzenli olarak, bir kullanıcı komutları anlamak için erişimi vardır.
+Rolü özelliklerinde joker karakterleri kullanmaktan kaçının ve mutlaka [denetim etkin kullanıcı izinleri](audit-and-report.md#check-effective-rights-for-a-specific-user) düzenli olarak, bir kullanıcı komutları anlamak için erişebilir.
 
-## <a name="jea-does-not-protect-against-admins"></a>JEA admins karşı koruma sağlamaz
+## <a name="jea-does-not-protect-against-admins"></a>JEA yöneticileri karşı korumaz
 
-JEA çekirdek ilkeleri biri gerçekleştirmek yönetici olmayanlar izin verdiğini *bazı* yönetim görevleri.
+JEA çekirdek prensipleri biri yönetici olmayanlar gerçekleştirmeyi sağlayan *bazı* yönetim görevleri.
 JEA zaten yönetici ayrıcalıklarına sahip olanlar karşı koruma sağlamaz.
-Kullanıcılar "domain admins", "Yerel yöneticileri," ait veya diğer üst düzey Ayrıcalıklı Grup ortamınızda başka bir yöntem aracılığıyla makinede imzalayarak JEA'ın korumaları alabilir olmaya devam edecektir.
-Bunlar Örneğin, oturum RDP oturumu, uzak konsolları veya Kısıtlanmamış PowerShell Uç noktalara bağlanmak.
-Sistemde yerel yöneticiler de JEA yapılandırmaları sistem yönetmek veya bir kullanıcı kendi JEA oturumunda neler yapabileceğinizi kapsamını genişletmek için bir rol özelliği değiştirmek ek kullanıcılara izin verecek şekilde değiştirebilirsiniz.
-Bu nedenle, sistem ayrıcalıklı erişim elde edebilir diğer yolları olup olmadığını görmek için genişletilmiş izinleri JEA kullanıcılarınızın değerlendirmek önemlidir.
+Kullanıcılar "domain admins", "yerel Yöneticiler," ait ya da yüksek ayrıcalıklı diğer grupları, ortamınızdaki makine başka bir yöntem aracılığıyla oturum açarak JEA'ın korumaları almaya devam edebilir.
+Bunlar Örneğin, oturum RDP oturumu, uzak konsolları veya sınırlandırılmamış PowerShell Uç noktalara bağlanmak.
+Yerel yöneticiler sistem üzerindeki sistem yönetin veya bir kullanıcı kendi JEA oturumunda neler yapabileceğinizi kapsamını genişletmek için bir rol özelliği değiştirmek ek kullanıcıların JEA yapılandırmaları de değiştirebilirsiniz.
+Bu nedenle, JEA kullanıcılarınızın genişletilmiş izinleri sisteme ayrıcalıklı erişim elde edebilir diğer yolları olup olmadığını değerlendirmek önemlidir.
 
-JEA düzenli günlük bakım kullanıyorsanız ve bir "biraz zaman" ayrıcalıklı için ortak bir uygulama olan erişim yönetimi çözümü kullanıcıların geçici olarak yerel Yöneticiler acil durumlarda duruma olanak tanır.
-Bu, kullanıcıların sistemde kalıcı yönetici değildir, ancak bu hakları varsa ve yalnızca bunlar bu izinleri kullanımını belgeleri bir iş akışı tamamlandığında, alabilirsiniz sağlamaya yardımcı olur.
+Bir sık kullanılan normal günlük bakım için JEA kullanın ve bir "tam zamanında" ayrıcalıklı bir yöntemdir erişim yönetimi çözümü, kullanıcıların geçici olarak yerel Yöneticiler acil durumlarda duruma olanak tanır.
+Bu, kullanıcıların sistemde kalıcı yönetici değildir, ancak bu hakları varsa ve yalnızca bunlar bu izinleri kullanımları belgeleri bir iş akışı tamamlandıktan sonra alabilirsiniz olun yardımcı olur.

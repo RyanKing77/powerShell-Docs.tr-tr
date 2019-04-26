@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a5729091-78a9-4bc1-abac-210bc20c6dbe
 caps.latest.revision: 7
 ms.openlocfilehash: f93dc20a9c5f87c14605578062b1e60f5a3d25cf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065725"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-view-format"></a>Görünüm Denetimleri için CustomItem Çerçeve Öğesi (Biçim)
 
@@ -33,7 +33,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </Frame>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `Frame` öğesi.
 
@@ -41,7 +41,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `Frame` öğesi.
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -51,7 +51,7 @@ Yok.
 |[LeftIndent öğesi çerçevesinin denetimlerinin görünümün (biçimi)](./leftindent-element-for-frame-for-controls-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Sol kenar boşluğu uzağa veri kaydırılacağı uzaklık karakterlerinin kaçının tutulacağını belirtir.|
 |[RightIndent öğesi çerçevesinin denetimlerinin görünümün (biçimi)](./rightindent-element-for-frame-for-controls-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Sağ kenar boşluğu uzağa veri kaydırılacağı uzaklık karakterlerinin kaçının tutulacağını belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

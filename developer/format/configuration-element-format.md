@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d46df0cb-50b7-4b81-82ba-37186a7b7a7f
 caps.latest.revision: 28
 ms.openlocfilehash: 296c63d0c774a0bf56e90dbaa32f2c221d4c3dbd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066830"
 ---
 # <a name="configuration-element-format"></a>Yapılandırma Öğesi (Biçim)
 
@@ -33,7 +33,7 @@ Yapılandırma öğesi
 
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Öznitelikler, alt ve üst öğesini aşağıdaki bölümlerde açıklanmaktadır `Configuration` öğesi. Bu öğe biçimlendirme her dosya için kök öğesi olmalıdır ve bu öğe en az bir alt öğe içermelidir.
 
@@ -41,7 +41,7 @@ Yapılandırma öğesi
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -50,7 +50,7 @@ Yok.
 |[SelectionSets öğesi biçimi](./selectionsets-element-format.md)|İsteğe bağlı öğe.<br /><br /> Biçimlendirme dosyanın tüm görünümler tarafından kullanılan .NET nesneleri ortak kümesini tanımlar.|
 |[ViewDefinitions öğesi (biçimi)](./viewdefinitions-element-format.md)|İsteğe bağlı öğe.<br /><br /> Nesneleri görüntülemek için kullanılan görünümleri tanımlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 Yok.
 

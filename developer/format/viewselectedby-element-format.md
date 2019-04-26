@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
 caps.latest.revision: 19
 ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083833"
 ---
 # <a name="viewselectedby-element-format"></a>ViewSelectedBy Öğesi (Biçim)
 
@@ -30,7 +30,7 @@ ViewDefinitions öğesi (biçimi) görünüm öğesi (biçimi) ViewSelectedBy ö
 </ViewSelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `ViewSelectedBy` öğesi. Bu öğe en az birini içermelidir `TypeName` veya `SelectionSetName` alt öğesi. Belirtilebilecek alt öğe sayısına bir sınır yoktur ve bunların sırası önemlidir.
 
@@ -38,14 +38,14 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `ViewSelectedBy` �
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[TypeName öğesi ViewSelectedBy (biçimi) için](./typename-element-for-viewselectedby-format.md)|İsteğe bağlı öğe.<br /><br /> Görünüm tarafından görüntülenen bir .NET nesnesini belirtir.|
 |[SelectionSetName öğesi ViewSelectedBy (biçimi) için](./selectionsetname-element-for-viewselectedby-format.md)|İsteğe bağlı öğe.<br /><br /> Görünüm tarafından görüntülenen .NET nesneleri kümesini belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

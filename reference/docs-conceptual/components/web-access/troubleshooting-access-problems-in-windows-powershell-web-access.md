@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
 title: windows powershell web erişiminde erişim sorunlarını giderme
 ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086604"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Erişimi’nde Erişim Sorunlarını Giderme
 
-Güncelleştirme tarihi: Haziran 24 (23 Ağustos 2017 düzenlendi) 2013
+Güncelleme tarihi: Haziran 24 (23 Ağustos 2017 düzenlendi) 2013
 
-Şunun için geçerlidir: Windows Server 2012 R2, Windows Server 2012
+Uygulama hedefi: Windows Server 2012 R2, Windows Server 2012
 
 Aşağıdaki bölümlerde, Windows PowerShell Web Erişimi'ni kullanarak bir uzak bilgisayara bağlanmaya çalışırken bazı yaygın sorunlar belirlemek ve sorunları çözmek için öneriler içerir.
 
@@ -47,7 +47,7 @@ Bu sorun, Internet Explorer’a özeldir.
 
 Bu, Çince karakterler içeren bir etki alanı adı ile oturum açmış kullanıcılar için veya bir veya daha fazla Çince karakter ağ geçidi sunucusunun parçası ise oluşabilir.
 
-#### <a name="workaround"></a>Geçici çözüm
+#### <a name="workaround"></a>Geçici Çözüm
 
 1. [Yükleme ve Internet Explorer 10 çalıştırma](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
 1. Internet Explorer değiştirme **belge modu** ayarını *ıe10* standartları.

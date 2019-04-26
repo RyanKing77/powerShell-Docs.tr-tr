@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d2c1da6d-acc7-4fe8-9e7d-6dcddc2787cd
 caps.latest.revision: 9
 ms.openlocfilehash: c25f18489d9c7abd8889758499dbbacd6ee29304
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065249"
 ---
 # <a name="listitems-element-for-listentry-for-listcontrol-format"></a>ListControl ListEntry için ListItems Öğesi (Biçim)
 
@@ -29,7 +29,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </ListItems>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `ListItems` öğesi. İçin belirtilebilir alt öğe sayısı sınırı yoktur. Alt öğelerin sırasını değerleri listesi görünümü'nde görüntülenme sırasını tanımlar.
 
@@ -37,13 +37,13 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `ListItems` öğes
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[LISTITEM öğesinin ListControl (biçimi) için](./listitem-element-for-listitems-for-listcontrol-format.md)|Gerekli öğe.<br /><br /> Betik değeri tarafından liste görünümü görüntülenir ve özelliği tanımlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

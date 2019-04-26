@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
 caps.latest.revision: 15
 ms.openlocfilehash: bd44fcf4878c858afe81fb071ce72f627ac465dc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075418"
 ---
 # <a name="tableheaders-element-format"></a>TableHeaders Öğesi (Biçim)
 
@@ -30,7 +30,7 @@ TableControl (biçimi) için ViewDefinitions öğesi (biçimi) görünüm öğes
 
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki bölümlerde, öznitelikler, alt ve üst öğeleri açıklayan `TableHeaders` öğesi. Görüntülenecek olan nesnenin her bir özellik için bir alt öğesi olmalıdır. Sütun üst bilgisini, alt öğeler belirttiğiniz sırada görüntülenir.
 
@@ -38,13 +38,13 @@ Aşağıdaki bölümlerde, öznitelikler, alt ve üst öğeleri açıklayan `Tab
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[TableColumnHeader öğesi (biçimi)](./tablecolumnheader-element-format.md)|İsteğe bağlı öğe.<br /><br /> Etiket, genişliğini ve Tablo görünümüne içeren bir sütun için verilerin hizalama tanımlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

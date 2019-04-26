@@ -3,17 +3,17 @@ title: Windows PowerShell SDK’sı
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080467"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
-Güncelleştirme tarihi: 8 Temmuz 2013
+Güncelleme tarihi: 8 Temmuz 2013
 
-Windows PowerShell ®, özellikle sistem yönetimi için tasarlanmış bir görev tabanlı komut satırı kabuğu ve betik dilidir. .NET Framework üzerine oluşturulan Windows PowerShell®, BT uzmanları ve güç kullanıcı denetimi yardımcı olur ve Windows işletim sistemi ve Windows üzerinde çalışan uygulamaları otomatikleştirmesini.
+Windows PowerShell® bir görev tabanlı komut satırı kabuğu ve betik dilidir özellikle sistem yönetimi için tasarlanmış olan. .NET Framework üzerine oluşturulan Windows PowerShell®, BT uzmanları ve güç kullanıcı denetimi yardımcı olur ve Windows işletim sistemi ve Windows üzerinde çalışan uygulamaları otomatikleştirmesini.
 
 Burada yayımlanan belgeler, cmdlet, sağlayıcı ve ana bilgisayar Windows PowerShell tarafından sağlanan API'ler ile ilgili başvuru bilgileri isteyen uygulama geliştiricileri için öncelikli olarak yazılır.
 Ancak, sistem yöneticileri bu belgeleri yararlı sağlanan bilgileri bulabilirsiniz.

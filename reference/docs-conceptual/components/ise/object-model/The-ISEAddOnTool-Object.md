@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: ISEAddOnTool Nesnesi
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 ms.openlocfilehash: e091f37601c7a4fdaf5deff8c668b18ee7369e74
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086808"
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool Nesnesi
 
@@ -153,7 +153,7 @@ $psISE.CurrentVisibleVerticalTool.IsVisible = $false
 $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 ```
 
-### <a name="name"></a>Ad
+### <a name="name"></a>Adı
 
 Desteklenen Windows PowerShell ISE 3.0 ve sonraki ve önceki sürümlerde mevcut değil.
 

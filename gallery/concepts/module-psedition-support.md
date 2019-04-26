@@ -4,11 +4,11 @@ contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
 title: Modülleri ile uyumlu PowerShell sürümleri
 ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084734"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modülleri ile uyumlu PowerShell sürümleri
 
@@ -79,7 +79,7 @@ Modül yazarları, tek bir modül hedefleme veya her ikisi de PowerShell sürüm
 
 Tek bir modül, hem Masaüstü hem de çekirdek sürümleri üzerinde çalışabilir, ya da RootModule veya $PSEdition değişkenini kullanarak modül bildirimindeki gerekli mantığı eklemek, yazarın Bu modülde olur. Modüller, CoreCLR hem FullCLR hedefleyen derlenen DLL'leri iki kümesi olabilir. Birkaç seçeneğiniz modülünüzde uygun DLL'leri yükleme için mantığı paketlemek için aşağıda verilmiştir.
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Seçenek 1: Bir modülün birden çok sürümü ve birden çok PowerShell sürümü hedeflemek için paketleme
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>1. seçenek: Bir modülün birden çok sürümü ve birden çok PowerShell sürümü hedeflemek için paketleme
 
 Modül klasör içeriği
 
@@ -157,7 +157,7 @@ $PSModule.OnRemove = {
 }
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>2. Seçenek: $PSEdition değişkeni PSD1 dosyası içinde uygun DLL'ler ve iç içe geçmiş ve gerekli modülleri yüklemek için kullanın.
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>2. seçenek: $PSEdition değişkeni PSD1 dosyası içinde uygun DLL'ler ve iç içe geçmiş ve gerekli modülleri yüklemek için kullanın.
 
 PS 5.1 veya yeni, $PSEdition genel değişkeni modül bildirim dosyasında izin verilir. Bu değişkeni kullanarak, modül yazarına modül bildirim dosyasında koşullu değerleri belirtebilirsiniz. Kısıtlı dil modu veya veri bölümündeki $PSEdition değişkeni başvurulabilir.
 

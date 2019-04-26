@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 6af3be7d-921e-4cf7-bd5a-d87aa0b4efbd
 caps.latest.revision: 7
 ms.openlocfilehash: b2b0a0d1996392614807e08b820a72978e38a0cb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56844810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065470"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-groupby-format"></a>GroupBy ExpressionBinding için ItemSelectionCondition Öğesi (Biçim)
 
@@ -30,7 +30,7 @@ GroupBy (biçimi) CustomEntries öğesinin GroupBy (biçimi) CustomEntry öğesi
 </ItemSelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ItemSelectionCondition` öğesi.
 
@@ -38,14 +38,14 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ItemSelectionCon
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[GroupBy (biçimi) için ItemSelectionCondition için PropertyName öğesi](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen .NET alan özelliği belirtir.|
 |[GroupBy (biçimi) için ItemSelectionCondition için ScriptBlock öğesi](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen betiği belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

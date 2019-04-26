@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: bddf7ffa-04d3-4354-90b9-5e714e096260
 caps.latest.revision: 13
 ms.openlocfilehash: 26fe417c9ca60dda22bdc23d9d339d40135a0c9b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066809"
 ---
 # <a name="control-element-for-controls-for-configuration-format"></a>Yapılandırma Denetimleri için Denetim Öğesi (Biçim)
 
@@ -30,7 +30,7 @@ Yapılandırma öğesi (biçimi) denetimleri öğesi denetimleri yapılandırma 
 </Control>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Öznitelikler, alt ve üst öğe için aşağıdaki bölümlerde açıklanmaktadır `Control` öğesi. Her alt öğenin yalnızca bir tane belirtmeniz gerekir.
 
@@ -38,14 +38,14 @@ Yapılandırma öğesi (biçimi) denetimleri öğesi denetimleri yapılandırma 
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[Özel denetim öğesi denetimi için yapılandırma (biçimi) için denetimler](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|Gerekli öğe.<br /><br /> Denetimini tanımlar.|
 |[Name öğesi denetimi için yapılandırma (biçimi)](./name-element-for-control-for-controls-for-configuration-format.md)|Gerekli öğe.<br /><br /> Denetime başvurmak için kullanılan adı belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

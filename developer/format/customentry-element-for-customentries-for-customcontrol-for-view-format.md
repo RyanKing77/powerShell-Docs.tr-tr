@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ac3c0a25-f2ca-4e28-b3dc-9cb06a76d92a
 caps.latest.revision: 11
 ms.openlocfilehash: 7804155bffeb1f0df8339f797bf59f8def56a3fc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066456"
 ---
 # <a name="customentry-element-for-customentries-for-customcontrol-for-view-format"></a>Görünüm CustomControl için CustomEntries CustomEntry Öğesi (Biçim)
 
@@ -30,7 +30,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </CustomEntry>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomEntry` öğesi. Tanımına göre görüntülenen öğeler belirtmeniz gerekir.
 
@@ -38,14 +38,14 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomEntry` ö�
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[İçin görünümün (biçimi) CustomEntry EntrySelectedBy öğesi](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Özel denetim görünümü veya bu tanım için kullanılacak bulunmalıdır koşul tanımı kullanan .NET türlerini tanımlar.|
 |[İçin görünümün (biçimi) CustomEntry CustomItem öğesi](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|Özel denetim tanımı için bir denetimi tanımlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058378"
 ---
 # <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 yeni dil özellikleri
 
@@ -162,7 +162,7 @@ Tüm özellikleri ortaktır. Noktalı virgül veya yeni satır özellikleri gere
 
 Doğrulama öznitelikleri veya bağımsız değişken dönüşümü kullanan özellikler (örneğin `[ValidateSet("aaa")]`) beklendiği gibi çalışmayabilir.
 
-## <a name="hidden"></a>Gizli
+## <a name="hidden"></a>Hidden
 
 Yeni bir anahtar sözcük **gizli**, eklendi. **Gizli** özelliklere ve yöntemlere (oluşturucular dahil) için uygulanabilir.
 
@@ -170,7 +170,7 @@ Gizli üyeleri ortaktır, ancak Get-Member çıktısında sürece görünmez For
 
 Gizli üyeleri ne zaman dahil edilmez tamamlayarak veya gizli üye tanımlama sınıfında tamamlama gerçekleşmediği sürece IntelliSense kullanarak sekmesi.
 
-Yeni bir öznitelik **System.Management.Automation.HiddenAttribute** C# kod içinde Windows PowerShell ile aynı semantiğe sahip olabilir, böylece eklendi.
+Yeni bir öznitelik **System.Management.Automation.HiddenAttribute** eklenmiştir böylece C# kod içinde Windows PowerShell ile aynı semantiğe sahip olabilir.
 
 ## <a name="return-types"></a>Dönüş türleri
 

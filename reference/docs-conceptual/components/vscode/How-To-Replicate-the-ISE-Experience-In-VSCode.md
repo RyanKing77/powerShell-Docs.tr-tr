@@ -1,15 +1,15 @@
 ---
-title: Visual Studio code'da ISE deneyimi çoğaltma
-description: Visual Studio code'da ISE deneyimi çoğaltma
+title: Visual Studio Code’da ISE deneyimi çoğaltma
+description: Visual Studio Code’da ISE deneyimi çoğaltma
 ms.date: 08/06/2018
 ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058531"
 ---
-# <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Visual Studio code'da ISE deneyimi çoğaltma
+# <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Visual Studio Code’da ISE deneyimi çoğaltma
 
 VSCode için PowerShell uzantısı tam özellik eşliği PowerShell ISE ile arama değildir, ancak özellikler mevcuttur VSCode deneyimi ISE kullanıcılar için daha doğal hale getirmek için bir yerde.
 
@@ -21,7 +21,7 @@ Bu belge, kullanıcı deneyimini ISE'ye kıyasla biraz daha tanıdık yapmak iç
 | ----------------                      | -----------                  | --------------                              |
 | Kesme ve hata ayıklayıcı kesme          | <kbd>CTRL</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
 | Geçerli satır ve vurgulanan metin yürütün | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
-| Kullanılabilir kod parçacıkları listesi               | <kbd>CTRL</kbd>+<kbd>J</kbd> | <kbd>CTRL</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
+| Kullanılabilir kod parçacıkları listesi               | <kbd>CTRL</kbd>+<kbd>J</kbd> | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
 
 ### <a name="custom-key-bindings"></a>Özel anahtar bağlamaları
 

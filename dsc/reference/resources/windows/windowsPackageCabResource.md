@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC WindowsPackageCab kaynağı
 ms.openlocfilehash: 035944e7ca5c7469250c48a19b79f2f2d5d38e9a
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076948"
 ---
 # <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab kaynağı
 
-> Şunun için geçerlidir: Windows PowerShell 5.1 ve üzeri
+> Uygulama hedefi: Windows PowerShell 5.1 ve üzeri
 
 **WindowsPackageCab** kaynak olarak Windows PowerShell Desired State Configuration (DSC) yüklemek veya bir hedef düğümde Windows dolap (.cab) paketleri kaldırmak için bir mekanizma sağlar.
 
@@ -34,11 +34,11 @@ Hedef düğüm DISM PowerShell Modülü yüklü olmalıdır. Bilgi için [Window
 
 |  Özellik  |  Açıklama   |
 |---|---|
-| Ad| Belirli bir durumu sağlamak istediğiniz için paket adını belirtir.|
+| Adı| Belirli bir durumu sağlamak istediğiniz için paket adını belirtir.|
 | Emin olun| Paketin yüklü olup olmadığını gösterir. Bu özelliği "Yok" paketi yüklü emin olun (veya paket yüklüyse kaldırmak için) olarak ayarlayın. "Paket yüklü emin olmak için (varsayılan değer) sunmak için" olarak ayarlayın.|
 | Yol| Paketin bulunduğu yol gösterir.|
 | LogPath| Sağlayıcı yüklemek veya paket kaldırmak için bir günlük dosyasını kaydetmek istediğiniz tam yolunu belirtir.|
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için söz dizimi ' DependsOn "[= ResourceType] ResourceName"''.|
+| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için söz dizimi ' DependsOn "[= ResourceType] ResourceName"''.|
 
 ## <a name="example"></a>Örnek
 
