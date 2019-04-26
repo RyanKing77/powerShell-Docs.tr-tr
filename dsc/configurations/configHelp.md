@@ -3,25 +3,25 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC yapılandırmaları için yardım sayfasını yazma
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080195"
 ---
-# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="6b6d4-103">DSC yapılandırmaları için yardım sayfasını yazma</span><span class="sxs-lookup"><span data-stu-id="6b6d4-103">Writing help for DSC configurations</span></span>
+# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="145fd-103">DSC yapılandırmaları için yardım sayfasını yazma</span><span class="sxs-lookup"><span data-stu-id="145fd-103">Writing help for DSC configurations</span></span>
 
-><span data-ttu-id="6b6d4-104">Şunun için geçerlidir: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="6b6d4-104">Applies To: Windows PowerShell 5.0</span></span>
+><span data-ttu-id="145fd-104">Uygulama hedefi: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="145fd-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="6b6d4-105">DSC yapılandırmalarında, açıklama tabanlı Yardım kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="6b6d4-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="6b6d4-106">Kullanıcıların, Yardım çağırarak erişebileceği **yapılandırma** ile `-?`, kullanarak veya [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="6b6d4-106">Users can access the help by calling the **Configuration** with `-?`, or by using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.</span></span> <span data-ttu-id="6b6d4-107">Açıklama tabanlı Yardım doğrudan yukarıdaki yerleştirin `Configuration` anahtar sözcüğü.</span><span class="sxs-lookup"><span data-stu-id="6b6d4-107">Place your Comment-based help directly above the `Configuration` keyword.</span></span>
-<span data-ttu-id="6b6d4-108">Parametre Yardım satır içi ile parametre bildirimi veya her ikisini de aşağıdaki örnekte olduğu gibi doğrudan yukarıda, açıklama bloğu yerleştirebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="6b6d4-108">You can place parameter help in-line with your comment block, directly above the parameter declaration, or both as in the example below.</span></span>
+<span data-ttu-id="145fd-105">DSC yapılandırmalarında, açıklama tabanlı Yardım kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="145fd-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="145fd-106">Kullanıcıların, Yardım çağırarak erişebileceği **yapılandırma** ile `-?`, kullanarak veya [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="145fd-106">Users can access the help by calling the **Configuration** with `-?`, or by using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.</span></span> <span data-ttu-id="145fd-107">Açıklama tabanlı Yardım doğrudan yukarıdaki yerleştirin `Configuration` anahtar sözcüğü.</span><span class="sxs-lookup"><span data-stu-id="145fd-107">Place your Comment-based help directly above the `Configuration` keyword.</span></span>
+<span data-ttu-id="145fd-108">Parametre Yardım satır içi ile parametre bildirimi veya her ikisini de aşağıdaki örnekte olduğu gibi doğrudan yukarıda, açıklama bloğu yerleştirebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="145fd-108">You can place parameter help in-line with your comment block, directly above the parameter declaration, or both as in the example below.</span></span>
 
-<span data-ttu-id="6b6d4-109">PowerShell açıklama tabanlı Yardım hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="6b6d4-109">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
+<span data-ttu-id="145fd-109">PowerShell açıklama tabanlı Yardım hakkında daha fazla bilgi için bkz: [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="145fd-109">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="6b6d4-110">Açıklama bloğu şablonları otomatik olarak eklemenize izin vermek için kod parçacıkları VSCode ve ISE gibi PowerShell geliştirme ortamları de var.</span><span class="sxs-lookup"><span data-stu-id="6b6d4-110">PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.</span></span>
+> <span data-ttu-id="145fd-110">Açıklama bloğu şablonları otomatik olarak eklemenize izin vermek için kod parçacıkları VSCode ve ISE gibi PowerShell geliştirme ortamları de var.</span><span class="sxs-lookup"><span data-stu-id="145fd-110">PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.</span></span>
 
-<span data-ttu-id="6b6d4-111">Aşağıdaki örnek, bir yapılandırma ve bunun için açıklama tabanlı Yardım içeren bir komut dosyası gösterir.</span><span class="sxs-lookup"><span data-stu-id="6b6d4-111">The following example shows a script that contains a configuration and comment-based help for it.</span></span> <span data-ttu-id="6b6d4-112">Bu örnekte, parametreler içeren bir yapılandırma gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="6b6d4-112">This example shows a Configuration with parameters.</span></span> <span data-ttu-id="6b6d4-113">Parametreleri yapılandırmalarınızı içinde kullanma hakkında daha fazla bilgi için bkz [yapılandırmalarınızı parametreler ekleme](add-parameters-to-a-configuration.md).</span><span class="sxs-lookup"><span data-stu-id="6b6d4-113">To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-a-configuration.md).</span></span>
+<span data-ttu-id="145fd-111">Aşağıdaki örnek, bir yapılandırma ve bunun için açıklama tabanlı Yardım içeren bir komut dosyası gösterir.</span><span class="sxs-lookup"><span data-stu-id="145fd-111">The following example shows a script that contains a configuration and comment-based help for it.</span></span> <span data-ttu-id="145fd-112">Bu örnekte, parametreler içeren bir yapılandırma gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="145fd-112">This example shows a Configuration with parameters.</span></span> <span data-ttu-id="145fd-113">Parametreleri yapılandırmalarınızı içinde kullanma hakkında daha fazla bilgi için bkz [yapılandırmalarınızı parametreler ekleme](add-parameters-to-a-configuration.md).</span><span class="sxs-lookup"><span data-stu-id="145fd-113">To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-a-configuration.md).</span></span>
 
 ```powershell
 <#
@@ -75,9 +75,9 @@ configuration HelpSample1
 }
 ```
 
-## <a name="viewing-configuration-help"></a><span data-ttu-id="6b6d4-114">Yapılandırma Yardımı görüntüleme</span><span class="sxs-lookup"><span data-stu-id="6b6d4-114">Viewing configuration help</span></span>
+## <a name="viewing-configuration-help"></a><span data-ttu-id="145fd-114">Yapılandırma Yardımı görüntüleme</span><span class="sxs-lookup"><span data-stu-id="145fd-114">Viewing configuration help</span></span>
 
-<span data-ttu-id="6b6d4-115">Bir yapılandırma için Yardım görüntülemek için kullanın `Get-Help` cmdlet'i işlev veya tür adıyla işlevin adını ve ardından `-?`.</span><span class="sxs-lookup"><span data-stu-id="6b6d4-115">To view the help for a configuration, use the `Get-Help` cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="6b6d4-116">Geçirilen önceki yapılandırmayı çıktısı aşağıdaki gibidir `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="6b6d4-116">The following is the output of the previous Configuration passed to `Get-Help`.</span></span>
+<span data-ttu-id="145fd-115">Bir yapılandırma için Yardım görüntülemek için kullanın `Get-Help` cmdlet'i işlev veya tür adıyla işlevin adını ve ardından `-?`.</span><span class="sxs-lookup"><span data-stu-id="145fd-115">To view the help for a configuration, use the `Get-Help` cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="145fd-116">Geçirilen önceki yapılandırmayı çıktısı aşağıdaki gibidir `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="145fd-116">The following is the output of the previous Configuration passed to `Get-Help`.</span></span>
 
 ```powershell
 Get-Help HelpSample1 -Detailed
@@ -157,10 +157,10 @@ REMARKS
 ```
 
 > [!NOTE]
-> <span data-ttu-id="6b6d4-117">Otomatik olarak sizin için söz dizimi alanları ve parametre öznitelikleri PowerShell tarafından oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="6b6d4-117">Syntax fields and parameter attributes are automatically generated for you by PowerShell.</span></span>
+> <span data-ttu-id="145fd-117">Otomatik olarak sizin için söz dizimi alanları ve parametre öznitelikleri PowerShell tarafından oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="145fd-117">Syntax fields and parameter attributes are automatically generated for you by PowerShell.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="6b6d4-118">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="6b6d4-118">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="145fd-118">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="145fd-118">See Also</span></span>
 
-- [<span data-ttu-id="6b6d4-119">DSC yapılandırmaları</span><span class="sxs-lookup"><span data-stu-id="6b6d4-119">DSC Configurations</span></span>](configurations.md)
-- [<span data-ttu-id="6b6d4-120">Yazma, derlemek ve bir yapılandırmasını Uygula</span><span class="sxs-lookup"><span data-stu-id="6b6d4-120">Write, Compile, and Apply a Configuration</span></span>](write-compile-apply-configuration.md)
-- [<span data-ttu-id="6b6d4-121">İçin yapılandırma parametreleri Ekle</span><span class="sxs-lookup"><span data-stu-id="6b6d4-121">Add Parameters to a Configuration</span></span>](add-parameters-to-a-configuration.md)
+- [<span data-ttu-id="145fd-119">DSC yapılandırmaları</span><span class="sxs-lookup"><span data-stu-id="145fd-119">DSC Configurations</span></span>](configurations.md)
+- [<span data-ttu-id="145fd-120">Yazma, derlemek ve bir yapılandırmasını Uygula</span><span class="sxs-lookup"><span data-stu-id="145fd-120">Write, Compile, and Apply a Configuration</span></span>](write-compile-apply-configuration.md)
+- [<span data-ttu-id="145fd-121">İçin yapılandırma parametreleri Ekle</span><span class="sxs-lookup"><span data-stu-id="145fd-121">Add Parameters to a Configuration</span></span>](add-parameters-to-a-configuration.md)

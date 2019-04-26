@@ -9,35 +9,35 @@ ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
 ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080671"
 ---
-# <a name="deploying-a-management-odata-web-service"></a><span data-ttu-id="cb699-102">Yönetim OData web hizmeti dağıtma</span><span class="sxs-lookup"><span data-stu-id="cb699-102">Deploying a Management OData web service</span></span>
+# <a name="deploying-a-management-odata-web-service"></a><span data-ttu-id="faf70-102">Yönetim OData web hizmeti dağıtma</span><span class="sxs-lookup"><span data-stu-id="faf70-102">Deploying a Management OData web service</span></span>
 
-<span data-ttu-id="cb699-103">Management OData web hizmeti oluşturmak gerekli tüm adımları tamamladıktan sonra IIS içinde bir web uygulaması olarak dağıtmanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="cb699-103">After you have completed all of the steps necessary to create a Management OData web service, you must deploy it as a web application in IIS.</span></span>
+<span data-ttu-id="faf70-103">Management OData web hizmeti oluşturmak gerekli tüm adımları tamamladıktan sonra IIS içinde bir web uygulaması olarak dağıtmanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="faf70-103">After you have completed all of the steps necessary to create a Management OData web service, you must deploy it as a web application in IIS.</span></span>
 
-## <a name="deploying-the-web-service"></a><span data-ttu-id="cb699-104">Web Hizmeti'ni dağıtma</span><span class="sxs-lookup"><span data-stu-id="cb699-104">Deploying the web service</span></span>
+## <a name="deploying-the-web-service"></a><span data-ttu-id="faf70-104">Web Hizmeti'ni dağıtma</span><span class="sxs-lookup"><span data-stu-id="faf70-104">Deploying the web service</span></span>
 
-<span data-ttu-id="cb699-105">Management OData web hizmetini dağıtmak için aşağıdaki adımları tamamlayın.</span><span class="sxs-lookup"><span data-stu-id="cb699-105">Complete the following steps to deploy the Management OData web service.</span></span>
+<span data-ttu-id="faf70-105">Management OData web hizmetini dağıtmak için aşağıdaki adımları tamamlayın.</span><span class="sxs-lookup"><span data-stu-id="faf70-105">Complete the following steps to deploy the Management OData web service.</span></span>
 
-1. <span data-ttu-id="cb699-106">IIS altında web uygulaması için bir dizin oluşturma `WWWRoot` dizin.</span><span class="sxs-lookup"><span data-stu-id="cb699-106">Create a directory for you web application under your IIS `WWWRoot` directory.</span></span>
+1. <span data-ttu-id="faf70-106">IIS altında web uygulaması için bir dizin oluşturma `WWWRoot` dizin.</span><span class="sxs-lookup"><span data-stu-id="faf70-106">Create a directory for you web application under your IIS `WWWRoot` directory.</span></span>
 
-2. <span data-ttu-id="cb699-107">Şema, MOF dosyasını XML şema dosyası dışarı DLL'leri kopyalama [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) ve [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) arabirimleri ve uygulama dizininde web.config dosyasına.</span><span class="sxs-lookup"><span data-stu-id="cb699-107">Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.</span></span>
+2. <span data-ttu-id="faf70-107">Şema, MOF dosyasını XML şema dosyası dışarı DLL'leri kopyalama [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) ve [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) arabirimleri ve uygulama dizininde web.config dosyasına.</span><span class="sxs-lookup"><span data-stu-id="faf70-107">Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.</span></span>
 
-3. <span data-ttu-id="cb699-108">Bir site kodu oluşturun.</span><span class="sxs-lookup"><span data-stu-id="cb699-108">Create a site ID.</span></span>
+3. <span data-ttu-id="faf70-108">Bir site kodu oluşturun.</span><span class="sxs-lookup"><span data-stu-id="faf70-108">Create a site ID.</span></span>
 
-4. <span data-ttu-id="cb699-109">Oluşturun ve bir uygulama havuzunu yapılandırın.</span><span class="sxs-lookup"><span data-stu-id="cb699-109">Create and configure an app pool.</span></span>
+4. <span data-ttu-id="faf70-109">Oluşturun ve bir uygulama havuzunu yapılandırın.</span><span class="sxs-lookup"><span data-stu-id="faf70-109">Create and configure an app pool.</span></span>
 
-5. <span data-ttu-id="cb699-110">Sitesi için kimlik doğrulamasını yapılandırın.</span><span class="sxs-lookup"><span data-stu-id="cb699-110">Configure authentication for the site.</span></span>
+5. <span data-ttu-id="faf70-110">Sitesi için kimlik doğrulamasını yapılandırın.</span><span class="sxs-lookup"><span data-stu-id="faf70-110">Configure authentication for the site.</span></span>
 
-6. <span data-ttu-id="cb699-111">Güvenlik duvarını yapılandırın.</span><span class="sxs-lookup"><span data-stu-id="cb699-111">Configure the firewall.</span></span>
+6. <span data-ttu-id="faf70-111">Güvenlik duvarını yapılandırın.</span><span class="sxs-lookup"><span data-stu-id="faf70-111">Configure the firewall.</span></span>
 
-7. <span data-ttu-id="cb699-112">Siteyi başlatamaz.</span><span class="sxs-lookup"><span data-stu-id="cb699-112">Start the site.</span></span>
+7. <span data-ttu-id="faf70-112">Siteyi başlatamaz.</span><span class="sxs-lookup"><span data-stu-id="faf70-112">Start the site.</span></span>
 
-<span data-ttu-id="cb699-113">Aşağıdaki Windows PowerShell betikleri, bir yönetim OData web hizmetini dağıtmak nasıl ekleyebileceğiniz gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="cb699-113">The following Windows PowerShell scripts demonstrate how to deploy a Management OData web service.</span></span>
+<span data-ttu-id="faf70-113">Aşağıdaki Windows PowerShell betikleri, bir yönetim OData web hizmetini dağıtmak nasıl ekleyebileceğiniz gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="faf70-113">The following Windows PowerShell scripts demonstrate how to deploy a Management OData web service.</span></span>
 
 ```powershell
 # Test for presence of Microsoft.Samples.Management.OData.RoleBasedPlugins.dll
@@ -425,16 +425,16 @@ ActionAllSites start
 Start-Sleep 10
 ```
 
-## <a name="see-also"></a><span data-ttu-id="cb699-114">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="cb699-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="faf70-114">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="faf70-114">See Also</span></span>
 
-[<span data-ttu-id="cb699-115">Management OData web hizmeti için özel yetkilendirme uygulama</span><span class="sxs-lookup"><span data-stu-id="cb699-115">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[<span data-ttu-id="faf70-115">Management OData web hizmeti için özel yetkilendirme uygulama</span><span class="sxs-lookup"><span data-stu-id="faf70-115">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="cb699-116">Management OData web hizmeti uzantısı SessionConfiguration uygulama</span><span class="sxs-lookup"><span data-stu-id="cb699-116">Implementing SessionConfiguration for a Management OData web service</span></span>](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+[<span data-ttu-id="faf70-116">Management OData web hizmeti uzantısı SessionConfiguration uygulama</span><span class="sxs-lookup"><span data-stu-id="faf70-116">Implementing SessionConfiguration for a Management OData web service</span></span>](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="cb699-117">Management OData web hizmeti için MOF şema dosyası yazma</span><span class="sxs-lookup"><span data-stu-id="cb699-117">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="faf70-117">Management OData web hizmeti için MOF şema dosyası yazma</span><span class="sxs-lookup"><span data-stu-id="faf70-117">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="cb699-118">Management OData web hizmeti için XML şema dosyası yazma</span><span class="sxs-lookup"><span data-stu-id="cb699-118">Authoring the XML schema file for a Management OData web service</span></span>](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="faf70-118">Management OData web hizmeti için XML şema dosyası yazma</span><span class="sxs-lookup"><span data-stu-id="faf70-118">Authoring the XML schema file for a Management OData web service</span></span>](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="cb699-119">Management OData web hizmeti için Web.config dosyası yazma</span><span class="sxs-lookup"><span data-stu-id="cb699-119">Authoring the Web.config file for a Management OData web service</span></span>](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="faf70-119">Management OData web hizmeti için Web.config dosyası yazma</span><span class="sxs-lookup"><span data-stu-id="faf70-119">Authoring the Web.config file for a Management OData web service</span></span>](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="cb699-120">Management OData Web hizmeti oluşturma</span><span class="sxs-lookup"><span data-stu-id="cb699-120">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="faf70-120">Management OData Web hizmeti oluşturma</span><span class="sxs-lookup"><span data-stu-id="faf70-120">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)

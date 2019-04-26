@@ -9,29 +9,29 @@ ms.topic: article
 ms.assetid: c9864f46-200d-422e-86ed-2fddcb5b7503
 caps.latest.revision: 12
 ms.openlocfilehash: 202f6ea0521c7c053d5a01314fb44bd1806abab3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058326"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082864"
 ---
-# <a name="host03-sample"></a><span data-ttu-id="1b7ee-102">Host03 Örneği</span><span class="sxs-lookup"><span data-stu-id="1b7ee-102">Host03 Sample</span></span>
+# <a name="host03-sample"></a><span data-ttu-id="1301e-102">Host03 Örneği</span><span class="sxs-lookup"><span data-stu-id="1301e-102">Host03 Sample</span></span>
 
-<span data-ttu-id="1b7ee-103">Bu örnek, komut satırından komutları okur, komutları yürütür ve sonuçları konsola görüntüler etkileşimli konsol tabanlı konak uygulamanın nasıl oluşturulacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="1b7ee-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span>
+<span data-ttu-id="1301e-103">Bu örnek, komut satırından komutları okur, komutları yürütür ve sonuçları konsola görüntüler etkileşimli konsol tabanlı konak uygulamanın nasıl oluşturulacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="1301e-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="1b7ee-104">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="1b7ee-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="1301e-104">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="1301e-104">Requirements</span></span>
 
- <span data-ttu-id="1b7ee-105">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="1b7ee-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="1301e-105">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="1301e-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="1b7ee-106">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="1b7ee-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="1301e-106">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="1301e-106">Demonstrates</span></span>
 
-- <span data-ttu-id="1b7ee-107">Bu sınıflar türetilen özel bir ana bilgisayar oluşturma [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) sınıfı [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) sınıfı ve [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) sınıfı.</span><span class="sxs-lookup"><span data-stu-id="1b7ee-107">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="1301e-107">Bu sınıflar türetilen özel bir ana bilgisayar oluşturma [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) sınıfı [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) sınıfı ve [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) sınıfı.</span><span class="sxs-lookup"><span data-stu-id="1301e-107">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="1b7ee-108">Bir konsol uygulaması oluşturma, etkileşimli bir Windows PowerShell Kabuk oluşturmak için bu konak sınıfları kullanır.</span><span class="sxs-lookup"><span data-stu-id="1b7ee-108">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
+- <span data-ttu-id="1301e-108">Bir konsol uygulaması oluşturma, etkileşimli bir Windows PowerShell Kabuk oluşturmak için bu konak sınıfları kullanır.</span><span class="sxs-lookup"><span data-stu-id="1301e-108">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
 
-## <a name="example"></a><span data-ttu-id="1b7ee-109">Örnek</span><span class="sxs-lookup"><span data-stu-id="1b7ee-109">Example</span></span>
+## <a name="example"></a><span data-ttu-id="1301e-109">Örnek</span><span class="sxs-lookup"><span data-stu-id="1301e-109">Example</span></span>
 
- <span data-ttu-id="1b7ee-110">Bu örnek komutlar bir komut satırında girmesini sağlar, bu komutları işleyen ve ardından sonuçları yazdırır.</span><span class="sxs-lookup"><span data-stu-id="1b7ee-110">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
+ <span data-ttu-id="1301e-110">Bu örnek komutlar bir komut satırında girmesini sağlar, bu komutları işleyen ve ardından sonuçları yazdırır.</span><span class="sxs-lookup"><span data-stu-id="1301e-110">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -317,9 +317,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="1b7ee-111">Örnek</span><span class="sxs-lookup"><span data-stu-id="1b7ee-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="1301e-111">Örnek</span><span class="sxs-lookup"><span data-stu-id="1301e-111">Example</span></span>
 
- <span data-ttu-id="1b7ee-112">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="1b7ee-112">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="1b7ee-113">Uygulanmaz bu öğeleri bir özel durum veya hiçbir şey döndürmeyen.</span><span class="sxs-lookup"><span data-stu-id="1b7ee-113">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="1301e-112">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="1301e-112">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="1301e-113">Uygulanmaz bu öğeleri bir özel durum veya hiçbir şey döndürmeyen.</span><span class="sxs-lookup"><span data-stu-id="1301e-113">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -558,9 +558,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="1b7ee-114">Örnek</span><span class="sxs-lookup"><span data-stu-id="1b7ee-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="1301e-114">Örnek</span><span class="sxs-lookup"><span data-stu-id="1301e-114">Example</span></span>
 
- <span data-ttu-id="1b7ee-115">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="1b7ee-115">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="1301e-115">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="1301e-115">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -963,9 +963,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="1b7ee-116">Örnek</span><span class="sxs-lookup"><span data-stu-id="1b7ee-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="1301e-116">Örnek</span><span class="sxs-lookup"><span data-stu-id="1301e-116">Example</span></span>
 
- <span data-ttu-id="1b7ee-117">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="1b7ee-117">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="1b7ee-118">Uygulanmaz bu öğeleri bir özel durum veya hiçbir şey döndürmeyen.</span><span class="sxs-lookup"><span data-stu-id="1b7ee-118">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="1301e-117">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="1301e-117">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="1301e-118">Uygulanmaz bu öğeleri bir özel durum veya hiçbir şey döndürmeyen.</span><span class="sxs-lookup"><span data-stu-id="1301e-118">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1175,10 +1175,10 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="1b7ee-119">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="1b7ee-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1301e-119">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="1301e-119">See Also</span></span>
 
- [<span data-ttu-id="1b7ee-120">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="1b7ee-120">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="1301e-120">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="1301e-120">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="1b7ee-121">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="1b7ee-121">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="1301e-121">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="1301e-121">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="1b7ee-122">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="1b7ee-122">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="1301e-122">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="1301e-122">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

@@ -9,67 +9,67 @@ ms.topic: article
 ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
 caps.latest.revision: 10
 ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067317"
 ---
-# <a name="stopprocesssample02-sample"></a><span data-ttu-id="9e470-102">StopProcessSample02 Örneği</span><span class="sxs-lookup"><span data-stu-id="9e470-102">StopProcessSample02 Sample</span></span>
+# <a name="stopprocesssample02-sample"></a><span data-ttu-id="80ef6-102">StopProcessSample02 Örneği</span><span class="sxs-lookup"><span data-stu-id="80ef6-102">StopProcessSample02 Sample</span></span>
 
-<span data-ttu-id="9e470-103">Bu örnek, yerel bilgisayarda işlem durdurulurken hata ayıklama (WriteDebug), ayrıntılı (WriteVerbose) ve (WriteWarning) uyarı iletilerini yazan bir cmdlet yazma işlemi gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="9e470-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="9e470-104">Bu cmdlet benzer `Stop-Process` Windows PowerShell 2.0 tarafından sağlanan cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="9e470-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="80ef6-103">Bu örnek, yerel bilgisayarda işlem durdurulurken hata ayıklama (WriteDebug), ayrıntılı (WriteVerbose) ve (WriteWarning) uyarı iletilerini yazan bir cmdlet yazma işlemi gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="80ef6-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="80ef6-104">Bu cmdlet benzer `Stop-Process` Windows PowerShell 2.0 tarafından sağlanan cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="80ef6-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="9e470-105">Visual Studio kullanarak örneği oluşturmak nasıl.</span><span class="sxs-lookup"><span data-stu-id="9e470-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="80ef6-105">Visual Studio kullanarak örneği oluşturmak nasıl.</span><span class="sxs-lookup"><span data-stu-id="80ef6-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="9e470-106">Windows Internet Explorer'ı açın ve örnekler dizini altında StopProcessSample02 dizinine gidin.</span><span class="sxs-lookup"><span data-stu-id="9e470-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="80ef6-106">Windows Internet Explorer'ı açın ve örnekler dizini altında StopProcessSample02 dizinine gidin.</span><span class="sxs-lookup"><span data-stu-id="80ef6-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
 
-    <span data-ttu-id="9e470-107">Windows PowerShell 2.0 yüklü SDK ile StopProcessSample02 klasöre gidin.</span><span class="sxs-lookup"><span data-stu-id="9e470-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="9e470-108">C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02 varsayılan konumdur.</span><span class="sxs-lookup"><span data-stu-id="9e470-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
+    <span data-ttu-id="80ef6-107">Windows PowerShell 2.0 yüklü SDK ile StopProcessSample02 klasöre gidin.</span><span class="sxs-lookup"><span data-stu-id="80ef6-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="80ef6-108">C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02 varsayılan konumdur.</span><span class="sxs-lookup"><span data-stu-id="80ef6-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
 
-2. <span data-ttu-id="9e470-109">Çözüm (.sln) dosyasını simgesini çift tıklatın.</span><span class="sxs-lookup"><span data-stu-id="9e470-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="9e470-110">Bu örnek projeyi Microsoft Visual Studio'da açılır.</span><span class="sxs-lookup"><span data-stu-id="9e470-110">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="80ef6-109">Çözüm (.sln) dosyasını simgesini çift tıklatın.</span><span class="sxs-lookup"><span data-stu-id="80ef6-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="80ef6-110">Bu örnek projeyi Microsoft Visual Studio'da açılır.</span><span class="sxs-lookup"><span data-stu-id="80ef6-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="9e470-111">İçinde **derleme** menüsünde **Çözümü Derle**.</span><span class="sxs-lookup"><span data-stu-id="9e470-111">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="80ef6-111">İçinde **derleme** menüsünde **Çözümü Derle**.</span><span class="sxs-lookup"><span data-stu-id="80ef6-111">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="9e470-112">Kitaplık için örneği varsayılan \bin veya \bin\debug'dır klasörleri oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="9e470-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="80ef6-112">Kitaplık için örneği varsayılan \bin veya \bin\debug'dır klasörleri oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="80ef6-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="9e470-113">Örneği çalıştırma</span><span class="sxs-lookup"><span data-stu-id="9e470-113">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="80ef6-113">Örneği çalıştırma</span><span class="sxs-lookup"><span data-stu-id="80ef6-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="9e470-114">Aşağıdaki modül klasörü oluşturun:</span><span class="sxs-lookup"><span data-stu-id="9e470-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="80ef6-114">Aşağıdaki modül klasörü oluşturun:</span><span class="sxs-lookup"><span data-stu-id="80ef6-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample02`
 
-2. <span data-ttu-id="9e470-115">Örnek derleme modülü klasöre kopyalayın.</span><span class="sxs-lookup"><span data-stu-id="9e470-115">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="80ef6-115">Örnek derleme modülü klasöre kopyalayın.</span><span class="sxs-lookup"><span data-stu-id="80ef6-115">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="9e470-116">Windows PowerShell’i başlatın.</span><span class="sxs-lookup"><span data-stu-id="9e470-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="80ef6-116">Windows PowerShell’i başlatın.</span><span class="sxs-lookup"><span data-stu-id="80ef6-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="9e470-117">Windows PowerShell içinde derlemesini yüklemek için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="9e470-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="80ef6-117">Windows PowerShell içinde derlemesini yüklemek için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="80ef6-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample02`
 
-5. <span data-ttu-id="9e470-118">Cmdlet'i çalıştırmak için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="9e470-118">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="80ef6-118">Cmdlet'i çalıştırmak için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="80ef6-118">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="9e470-119">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="9e470-119">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="80ef6-119">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="80ef6-119">Requirements</span></span>
 
-<span data-ttu-id="9e470-120">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="9e470-120">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="80ef6-120">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="80ef6-120">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="9e470-121">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="9e470-121">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="80ef6-121">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="80ef6-121">Demonstrates</span></span>
 
-<span data-ttu-id="9e470-122">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="9e470-122">This sample demonstrates the following.</span></span>
+<span data-ttu-id="80ef6-122">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="80ef6-122">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="9e470-123">Cmdlet özniteliğini kullanarak bir cmdlet'i sınıf bildirme.</span><span class="sxs-lookup"><span data-stu-id="9e470-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="80ef6-123">Cmdlet özniteliğini kullanarak bir cmdlet'i sınıf bildirme.</span><span class="sxs-lookup"><span data-stu-id="80ef6-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="9e470-124">Bir cmdlet parametreleri parametre özniteliği kullanılarak bildirme.</span><span class="sxs-lookup"><span data-stu-id="9e470-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="80ef6-124">Bir cmdlet parametreleri parametre özniteliği kullanılarak bildirme.</span><span class="sxs-lookup"><span data-stu-id="80ef6-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="9e470-125">Ayrıntılı iletileri yazma.</span><span class="sxs-lookup"><span data-stu-id="9e470-125">Writing verbose messages.</span></span> <span data-ttu-id="9e470-126">Ayrıntılı iletileri yazmak için kullanılan yöntemi hakkında daha fazla bilgi için bkz. [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span><span class="sxs-lookup"><span data-stu-id="9e470-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
+- <span data-ttu-id="80ef6-125">Ayrıntılı iletileri yazma.</span><span class="sxs-lookup"><span data-stu-id="80ef6-125">Writing verbose messages.</span></span> <span data-ttu-id="80ef6-126">Ayrıntılı iletileri yazmak için kullanılan yöntemi hakkında daha fazla bilgi için bkz. [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span><span class="sxs-lookup"><span data-stu-id="80ef6-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
 
-- <span data-ttu-id="9e470-127">Hata iletileri yazma.</span><span class="sxs-lookup"><span data-stu-id="9e470-127">Writing error messages.</span></span> <span data-ttu-id="9e470-128">Hata iletisi yazmak için kullanılan yöntemi hakkında daha fazla bilgi için bkz. [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span><span class="sxs-lookup"><span data-stu-id="9e470-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
+- <span data-ttu-id="80ef6-127">Hata iletileri yazma.</span><span class="sxs-lookup"><span data-stu-id="80ef6-127">Writing error messages.</span></span> <span data-ttu-id="80ef6-128">Hata iletisi yazmak için kullanılan yöntemi hakkında daha fazla bilgi için bkz. [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span><span class="sxs-lookup"><span data-stu-id="80ef6-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
 
-- <span data-ttu-id="9e470-129">Yazma uyarı iletileri.</span><span class="sxs-lookup"><span data-stu-id="9e470-129">Writing warning messages.</span></span> <span data-ttu-id="9e470-130">Uyarı iletisi yazmak için kullanılan yöntemi hakkında daha fazla bilgi için bkz. [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span><span class="sxs-lookup"><span data-stu-id="9e470-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
+- <span data-ttu-id="80ef6-129">Yazma uyarı iletileri.</span><span class="sxs-lookup"><span data-stu-id="80ef6-129">Writing warning messages.</span></span> <span data-ttu-id="80ef6-130">Uyarı iletisi yazmak için kullanılan yöntemi hakkında daha fazla bilgi için bkz. [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span><span class="sxs-lookup"><span data-stu-id="80ef6-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
 
-## <a name="example"></a><span data-ttu-id="9e470-131">Örnek</span><span class="sxs-lookup"><span data-stu-id="9e470-131">Example</span></span>
+## <a name="example"></a><span data-ttu-id="80ef6-131">Örnek</span><span class="sxs-lookup"><span data-stu-id="80ef6-131">Example</span></span>
 
-<span data-ttu-id="9e470-132">Bu örnek, hata ayıklama, ayrıntılı ve uyarı iletileri kullanarak yazma işlemi gösterilmektedir `WriteDebug`, `WriteVerbose`, ve `WriteWarning` yöntemleri.</span><span class="sxs-lookup"><span data-stu-id="9e470-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
+<span data-ttu-id="80ef6-132">Bu örnek, hata ayıklama, ayrıntılı ve uyarı iletileri kullanarak yazma işlemi gösterilmektedir `WriteDebug`, `WriteVerbose`, ve `WriteWarning` yöntemleri.</span><span class="sxs-lookup"><span data-stu-id="80ef6-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
 
 ```csharp
 using System;
@@ -310,6 +310,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="9e470-133">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="9e470-133">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="80ef6-133">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="80ef6-133">See Also</span></span>
 
-[<span data-ttu-id="9e470-134">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="9e470-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="80ef6-134">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="80ef6-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

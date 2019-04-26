@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 42c40c7f-1ee7-4021-950c-2e013c8f2a4a
 caps.latest.revision: 4
 ms.openlocfilehash: 606a2ee4e70d303bf1b1d69b7523eb8649f9be0c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082966"
 ---
-# <a name="creating-multiple-runspaces"></a><span data-ttu-id="65b9f-102">Birden çok çalışma alanı oluşturma</span><span class="sxs-lookup"><span data-stu-id="65b9f-102">Creating multiple runspaces</span></span>
+# <a name="creating-multiple-runspaces"></a><span data-ttu-id="67da3-102">Birden çok çalışma alanı oluşturma</span><span class="sxs-lookup"><span data-stu-id="67da3-102">Creating multiple runspaces</span></span>
 
-<span data-ttu-id="65b9f-103">Çok sayıda çalışma alanları oluşturursanız, bir çalışma alanı havuzu oluşturmayı düşünebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="65b9f-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="65b9f-104">Kullanarak bir [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) aynı özelliklere sahip, çok sayıda bireysel çalışma alanlarını oluşturmak yerine nesne performansı geliştirebilir.</span><span class="sxs-lookup"><span data-stu-id="65b9f-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
+<span data-ttu-id="67da3-103">Çok sayıda çalışma alanları oluşturursanız, bir çalışma alanı havuzu oluşturmayı düşünebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="67da3-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="67da3-104">Kullanarak bir [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) aynı özelliklere sahip, çok sayıda bireysel çalışma alanlarını oluşturmak yerine nesne performansı geliştirebilir.</span><span class="sxs-lookup"><span data-stu-id="67da3-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
 
-## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="65b9f-105">Oluşturma ve bir çalışma alanı havuzu kullanma.</span><span class="sxs-lookup"><span data-stu-id="65b9f-105">Creating and using a runspace pool.</span></span>
+## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="67da3-105">Oluşturma ve bir çalışma alanı havuzu kullanma.</span><span class="sxs-lookup"><span data-stu-id="67da3-105">Creating and using a runspace pool.</span></span>
 
- <span data-ttu-id="65b9f-106">Aşağıdaki örnek, bir çalışma alanı havuzu nasıl oluşturulur ve bir komut havuzun bir çalışma alanında zaman uyumsuz olarak çalıştırmak nasıl gösterir.</span><span class="sxs-lookup"><span data-stu-id="65b9f-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
+ <span data-ttu-id="67da3-106">Aşağıdaki örnek, bir çalışma alanı havuzu nasıl oluşturulur ve bir komut havuzun bir çalışma alanında zaman uyumsuz olarak çalıştırmak nasıl gösterir.</span><span class="sxs-lookup"><span data-stu-id="67da3-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
 
 ```csharp
 namespace HostRunspacePool
@@ -79,6 +79,6 @@ namespace HostRunspacePool
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="65b9f-107">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="65b9f-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="67da3-107">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="67da3-107">See Also</span></span>
 
- [<span data-ttu-id="65b9f-108">Bir InitialSessionState oluşturma</span><span class="sxs-lookup"><span data-stu-id="65b9f-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="67da3-108">Bir InitialSessionState oluşturma</span><span class="sxs-lookup"><span data-stu-id="67da3-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)

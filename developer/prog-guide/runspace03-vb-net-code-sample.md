@@ -9,22 +9,22 @@ ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
 ms.openlocfilehash: 432105db021bd19f467f6a275b3ea9038fa82d5b
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081402"
 ---
-# <a name="runspace03-vbnet-code-sample"></a><span data-ttu-id="81ece-102">RunSpace03 (VB.NET) Kod Örneği</span><span class="sxs-lookup"><span data-stu-id="81ece-102">RunSpace03 (VB.NET) Code Sample</span></span>
+# <a name="runspace03-vbnet-code-sample"></a><span data-ttu-id="9393d-102">RunSpace03 (VB.NET) Kod Örneği</span><span class="sxs-lookup"><span data-stu-id="9393d-102">RunSpace03 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="81ece-103">İşte VB.NET kaynak kodu için konsol uygulamasını açıklanan [konsol uygulaması, çalıştırmalar belirtilen kod oluşturma](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68).</span><span class="sxs-lookup"><span data-stu-id="81ece-103">Here is the VB.NET source code for the console application described in [Creating a Console Application That Runs a Specified Script](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68).</span></span> <span data-ttu-id="81ece-104">Bu örnekte [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) alır betiğe geçirilen işlem adlarının listesi için bilgi işlem bir betik yürütmek için sınıf.</span><span class="sxs-lookup"><span data-stu-id="81ece-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information for the list of process names passed into the script.</span></span> <span data-ttu-id="81ece-105">Bu giriş nesneleri bir betiğe geçirmek nasıl ve çıkış nesnelerini yanı sıra hata nesneleri almayı gösterir.</span><span class="sxs-lookup"><span data-stu-id="81ece-105">It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.</span></span>
+<span data-ttu-id="9393d-103">İşte VB.NET kaynak kodu için konsol uygulamasını açıklanan [konsol uygulaması, çalıştırmalar belirtilen kod oluşturma](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68).</span><span class="sxs-lookup"><span data-stu-id="9393d-103">Here is the VB.NET source code for the console application described in [Creating a Console Application That Runs a Specified Script](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68).</span></span> <span data-ttu-id="9393d-104">Bu örnekte [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) alır betiğe geçirilen işlem adlarının listesi için bilgi işlem bir betik yürütmek için sınıf.</span><span class="sxs-lookup"><span data-stu-id="9393d-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information for the list of process names passed into the script.</span></span> <span data-ttu-id="9393d-105">Bu giriş nesneleri bir betiğe geçirmek nasıl ve çıkış nesnelerini yanı sıra hata nesneleri almayı gösterir.</span><span class="sxs-lookup"><span data-stu-id="9393d-105">It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="81ece-106">Bu örnek için Microsoft .NET Framework 3.0 çalışma zamanı bileşenleri ve Windows Vista için Windows yazılım geliştirme Seti'ni kullanarak VB.NET kaynak dosyası (runspace03.vb) indirebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="81ece-106">You can download the VB.NET source file (runspace03.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="81ece-107">Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="81ece-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="9393d-106">Bu örnek için Microsoft .NET Framework 3.0 çalışma zamanı bileşenleri ve Windows Vista için Windows yazılım geliştirme Seti'ni kullanarak VB.NET kaynak dosyası (runspace03.vb) indirebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="9393d-106">You can download the VB.NET source file (runspace03.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="9393d-107">Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="9393d-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="81ece-108">İndirilen kaynak dosyaları kullanılabilir  **\<PowerShell örnekleri >** dizin.</span><span class="sxs-lookup"><span data-stu-id="81ece-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="9393d-108">İndirilen kaynak dosyaları kullanılabilir  **\<PowerShell örnekleri >** dizin.</span><span class="sxs-lookup"><span data-stu-id="9393d-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="81ece-109">Kod örneği</span><span class="sxs-lookup"><span data-stu-id="81ece-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="9393d-109">Kod örneği</span><span class="sxs-lookup"><span data-stu-id="9393d-109">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -106,8 +106,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace03.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace03.vb#L09-L83 "Runspace03.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="81ece-110">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="81ece-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9393d-110">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="9393d-110">See Also</span></span>
 
-[<span data-ttu-id="81ece-111">Windows PowerShell Programcı Kılavuzu</span><span class="sxs-lookup"><span data-stu-id="81ece-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="9393d-111">Windows PowerShell Programcı Kılavuzu</span><span class="sxs-lookup"><span data-stu-id="9393d-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="81ece-112">Windows PowerShell SDK'sı</span><span class="sxs-lookup"><span data-stu-id="81ece-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="9393d-112">Windows PowerShell SDK'sı</span><span class="sxs-lookup"><span data-stu-id="9393d-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

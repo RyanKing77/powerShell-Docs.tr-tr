@@ -2,15 +2,15 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: e61f59f8f7634853c9f6e0d3923939543ff04f20
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085669"
 ---
-# <a name="information-stream"></a><span data-ttu-id="1fc4e-102">Bilgi Akışı</span><span class="sxs-lookup"><span data-stu-id="1fc4e-102">Information Stream</span></span>
+# <a name="information-stream"></a><span data-ttu-id="6d2a0-102">Bilgi Akışı</span><span class="sxs-lookup"><span data-stu-id="6d2a0-102">Information Stream</span></span>
 
-<span data-ttu-id="1fc4e-103">Yeni yapılandırılmış bir bilgi akışı artık bir betik ile bunun konağı arasında yapılandırılmış veri iletmek için de kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="1fc4e-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="1fc4e-104">**Write-Host** çıktısını artık yakalamak veya reddedebileceğiniz, sessiz bilgi akışına yaymak için de güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="1fc4e-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="1fc4e-105">Yeni **yazma bilgi** cmdlet'i ile birlikte kullanılır (birlikte karşılık gelen bir WriteInformation API) **- Informationvariable** ve **- Informationaction** ortak parametreleri Daha fazla esneklik ve özellik sağlar.</span><span class="sxs-lookup"><span data-stu-id="1fc4e-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
+<span data-ttu-id="6d2a0-103">Yeni yapılandırılmış bir bilgi akışı artık bir betik ile bunun konağı arasında yapılandırılmış veri iletmek için de kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="6d2a0-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="6d2a0-104">**Write-Host** çıktısını artık yakalamak veya reddedebileceğiniz, sessiz bilgi akışına yaymak için de güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="6d2a0-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="6d2a0-105">Yeni **yazma bilgi** cmdlet'i ile birlikte kullanılır (birlikte karşılık gelen bir WriteInformation API) **- Informationvariable** ve **- Informationaction** ortak parametreleri Daha fazla esneklik ve özellik sağlar.</span><span class="sxs-lookup"><span data-stu-id="6d2a0-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script

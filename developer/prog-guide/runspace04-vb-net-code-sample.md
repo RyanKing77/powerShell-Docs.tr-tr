@@ -9,22 +9,22 @@ ms.topic: article
 ms.assetid: 8f0dea3c-4354-4d7d-9823-5e6234c9a89e
 caps.latest.revision: 6
 ms.openlocfilehash: c1d38c23ea20d7e5ccbc8e475b0c2246f9670ec3
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081334"
 ---
-# <a name="runspace04--vbnet-code-sample"></a><span data-ttu-id="a9c8f-102">RunSpace04 (VB.NET) Kod Örneği</span><span class="sxs-lookup"><span data-stu-id="a9c8f-102">RunSpace04  (VB.NET) Code Sample</span></span>
+# <a name="runspace04--vbnet-code-sample"></a><span data-ttu-id="c9bf7-102">RunSpace04 (VB.NET) Kod Örneği</span><span class="sxs-lookup"><span data-stu-id="c9bf7-102">RunSpace04  (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="a9c8f-103">VB.NET kaynak kodu Runspace04 örneği aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="a9c8f-103">Here is the VB.NET source code for the Runspace04 sample.</span></span> <span data-ttu-id="a9c8f-104">Bu örnekte [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) bir sonlandırma hatası oluşturur bir betik yürütmek için sınıf.</span><span class="sxs-lookup"><span data-stu-id="a9c8f-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="a9c8f-105">Hata yakalama ve hata kaydı yorumlama konak uygulama sorumludur.</span><span class="sxs-lookup"><span data-stu-id="a9c8f-105">The host application is responsible for catching the error and interpreting the error record.</span></span>
+<span data-ttu-id="c9bf7-103">VB.NET kaynak kodu Runspace04 örneği aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="c9bf7-103">Here is the VB.NET source code for the Runspace04 sample.</span></span> <span data-ttu-id="c9bf7-104">Bu örnekte [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) bir sonlandırma hatası oluşturur bir betik yürütmek için sınıf.</span><span class="sxs-lookup"><span data-stu-id="c9bf7-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="c9bf7-105">Hata yakalama ve hata kaydı yorumlama konak uygulama sorumludur.</span><span class="sxs-lookup"><span data-stu-id="c9bf7-105">The host application is responsible for catching the error and interpreting the error record.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a9c8f-106">Bu örnek için Microsoft .NET Framework 3.0 çalışma zamanı bileşenleri ve Windows Vista için Windows yazılım geliştirme Seti'ni kullanarak VB.NET kaynak dosyası (runspace02.vb) indirebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="a9c8f-106">You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="a9c8f-107">Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="a9c8f-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="c9bf7-106">Bu örnek için Microsoft .NET Framework 3.0 çalışma zamanı bileşenleri ve Windows Vista için Windows yazılım geliştirme Seti'ni kullanarak VB.NET kaynak dosyası (runspace02.vb) indirebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="c9bf7-106">You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="c9bf7-107">Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="c9bf7-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="a9c8f-108">İndirilen kaynak dosyaları kullanılabilir  **\<PowerShell örnekleri >** dizin.</span><span class="sxs-lookup"><span data-stu-id="a9c8f-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="c9bf7-108">İndirilen kaynak dosyaları kullanılabilir  **\<PowerShell örnekleri >** dizin.</span><span class="sxs-lookup"><span data-stu-id="c9bf7-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="a9c8f-109">Kod örneği</span><span class="sxs-lookup"><span data-stu-id="a9c8f-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="c9bf7-109">Kod örneği</span><span class="sxs-lookup"><span data-stu-id="c9bf7-109">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -115,8 +115,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace04.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace04.vb#L09-L92 "Runspace04.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="a9c8f-110">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="a9c8f-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c9bf7-110">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="c9bf7-110">See Also</span></span>
 
-[<span data-ttu-id="a9c8f-111">Windows PowerShell Programcı Kılavuzu</span><span class="sxs-lookup"><span data-stu-id="a9c8f-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="c9bf7-111">Windows PowerShell Programcı Kılavuzu</span><span class="sxs-lookup"><span data-stu-id="c9bf7-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="a9c8f-112">Windows PowerShell SDK'sı</span><span class="sxs-lookup"><span data-stu-id="a9c8f-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="c9bf7-112">Windows PowerShell SDK'sı</span><span class="sxs-lookup"><span data-stu-id="c9bf7-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

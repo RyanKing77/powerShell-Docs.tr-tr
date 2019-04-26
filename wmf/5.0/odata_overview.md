@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 1153738fdf6f926d5d819bbf91450408dcb17f71
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057817"
 ---
-# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a><span data-ttu-id="d04d0-102">OData Uç Noktasına göre PowerShell Cmdlet’leri Oluşturma</span><span class="sxs-lookup"><span data-stu-id="d04d0-102">Generate PowerShell Cmdlets based on OData Endpoint</span></span>
+# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a><span data-ttu-id="846ce-102">OData Uç Noktasına göre PowerShell Cmdlet’leri Oluşturma</span><span class="sxs-lookup"><span data-stu-id="846ce-102">Generate PowerShell Cmdlets based on OData Endpoint</span></span>
 
-## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a><span data-ttu-id="d04d0-103">Bir OData uç noktasına göre Windows PowerShell cmdlet'leri oluşturma</span><span class="sxs-lookup"><span data-stu-id="d04d0-103">Generate Windows PowerShell cmdlets based on an OData endpoint</span></span>
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a><span data-ttu-id="846ce-103">Bir OData uç noktasına göre Windows PowerShell cmdlet'leri oluşturma</span><span class="sxs-lookup"><span data-stu-id="846ce-103">Generate Windows PowerShell cmdlets based on an OData endpoint</span></span>
 
-<span data-ttu-id="d04d0-104">**Dışarı aktarma ODataEndpointProxy** bir cmdlet'i belirtilen bir OData uç noktası tarafından sunulan işlevselliği temel Windows PowerShell cmdlet'leri bir dizi oluşturur.</span><span class="sxs-lookup"><span data-stu-id="d04d0-104">**Export-ODataEndpointProxy** is a cmdlet that generates a set of Windows PowerShell cmdlets based on the functionality exposed by a given OData endpoint.</span></span>
+<span data-ttu-id="846ce-104">**Dışarı aktarma ODataEndpointProxy** bir cmdlet'i belirtilen bir OData uç noktası tarafından sunulan işlevselliği temel Windows PowerShell cmdlet'leri bir dizi oluşturur.</span><span class="sxs-lookup"><span data-stu-id="846ce-104">**Export-ODataEndpointProxy** is a cmdlet that generates a set of Windows PowerShell cmdlets based on the functionality exposed by a given OData endpoint.</span></span>
 
-<span data-ttu-id="d04d0-105">Aşağıdaki örnek, yeni bu cmdlet'in nasıl kullanılacağı gösterilmektedir:</span><span class="sxs-lookup"><span data-stu-id="d04d0-105">The following example shows how to use this new cmdlet:</span></span>
+<span data-ttu-id="846ce-105">Aşağıdaki örnek, yeni bu cmdlet'in nasıl kullanılacağı gösterilmektedir:</span><span class="sxs-lookup"><span data-stu-id="846ce-105">The following example shows how to use this new cmdlet:</span></span>
 
 ```powershell
 Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -OutputModule C:\Users\user\Generated.psd1
@@ -44,19 +44,19 @@ ipmo 'C:\Users\user\Generated.psd1'
 #
 ```
 
-<span data-ttu-id="d04d0-106">Hala geliştirme dahil ancak bunlarla sınırlı olmamak üzere, bu işlev için anahtar kullanım durumlarında bölümleri şunlardır:</span><span class="sxs-lookup"><span data-stu-id="d04d0-106">There are still parts of key use cases in development for this functionality, including, but not limited to:</span></span>
--   <span data-ttu-id="d04d0-107">İlişkilendirmeleri</span><span class="sxs-lookup"><span data-stu-id="d04d0-107">Associations</span></span>
--   <span data-ttu-id="d04d0-108">Akışları geçirme</span><span class="sxs-lookup"><span data-stu-id="d04d0-108">Passing streams</span></span>
+<span data-ttu-id="846ce-106">Hala geliştirme dahil ancak bunlarla sınırlı olmamak üzere, bu işlev için anahtar kullanım durumlarında bölümleri şunlardır:</span><span class="sxs-lookup"><span data-stu-id="846ce-106">There are still parts of key use cases in development for this functionality, including, but not limited to:</span></span>
+-   <span data-ttu-id="846ce-107">İlişkilendirmeleri</span><span class="sxs-lookup"><span data-stu-id="846ce-107">Associations</span></span>
+-   <span data-ttu-id="846ce-108">Akışları geçirme</span><span class="sxs-lookup"><span data-stu-id="846ce-108">Passing streams</span></span>
 
-## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a><span data-ttu-id="d04d0-109">OData uç noktası ile ODataUtils temel Windows PowerShell cmdlet'leri oluşturma</span><span class="sxs-lookup"><span data-stu-id="d04d0-109">Generate Windows PowerShell cmdlets based on an OData endpoint with ODataUtils</span></span>
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a><span data-ttu-id="846ce-109">OData uç noktası ile ODataUtils temel Windows PowerShell cmdlet'leri oluşturma</span><span class="sxs-lookup"><span data-stu-id="846ce-109">Generate Windows PowerShell cmdlets based on an OData endpoint with ODataUtils</span></span>
 
-<span data-ttu-id="d04d0-110">ODataUtils modül OData desteği REST uç noktalarını Windows PowerShell cmdlet'lerinden oluşturulmasını sağlar.</span><span class="sxs-lookup"><span data-stu-id="d04d0-110">The ODataUtils module allows generation of Windows PowerShell cmdlets from REST endpoints that support OData.</span></span> <span data-ttu-id="d04d0-111">Aşağıdaki artımlı iyileştirmeleri Microsoft.PowerShell.ODataUtils Windows PowerShell modülünde olan.</span><span class="sxs-lookup"><span data-stu-id="d04d0-111">The following incremental enhancements are in the Microsoft.PowerShell.ODataUtils Windows PowerShell module.</span></span>
--   <span data-ttu-id="d04d0-112">Sunucu tarafı uç noktasından ek bilgi için istemci tarafı kanal.</span><span class="sxs-lookup"><span data-stu-id="d04d0-112">Channel additional information from server-side endpoint to client side.</span></span>
--   <span data-ttu-id="d04d0-113">İstemci tarafı sayfalama desteği</span><span class="sxs-lookup"><span data-stu-id="d04d0-113">Client-side paging support</span></span>
--   <span data-ttu-id="d04d0-114">Kullanarak sunucu tarafı filtreleme Select parametresi</span><span class="sxs-lookup"><span data-stu-id="d04d0-114">Server-side filtering by using the -Select parameter</span></span>
--   <span data-ttu-id="d04d0-115">Web isteği üst bilgileri için destek</span><span class="sxs-lookup"><span data-stu-id="d04d0-115">Support for web request headers</span></span>
+<span data-ttu-id="846ce-110">ODataUtils modül OData desteği REST uç noktalarını Windows PowerShell cmdlet'lerinden oluşturulmasını sağlar.</span><span class="sxs-lookup"><span data-stu-id="846ce-110">The ODataUtils module allows generation of Windows PowerShell cmdlets from REST endpoints that support OData.</span></span> <span data-ttu-id="846ce-111">Aşağıdaki artımlı iyileştirmeleri Microsoft.PowerShell.ODataUtils Windows PowerShell modülünde olan.</span><span class="sxs-lookup"><span data-stu-id="846ce-111">The following incremental enhancements are in the Microsoft.PowerShell.ODataUtils Windows PowerShell module.</span></span>
+-   <span data-ttu-id="846ce-112">Sunucu tarafı uç noktasından ek bilgi için istemci tarafı kanal.</span><span class="sxs-lookup"><span data-stu-id="846ce-112">Channel additional information from server-side endpoint to client side.</span></span>
+-   <span data-ttu-id="846ce-113">İstemci tarafı sayfalama desteği</span><span class="sxs-lookup"><span data-stu-id="846ce-113">Client-side paging support</span></span>
+-   <span data-ttu-id="846ce-114">Kullanarak sunucu tarafı filtreleme Select parametresi</span><span class="sxs-lookup"><span data-stu-id="846ce-114">Server-side filtering by using the -Select parameter</span></span>
+-   <span data-ttu-id="846ce-115">Web isteği üst bilgileri için destek</span><span class="sxs-lookup"><span data-stu-id="846ce-115">Support for web request headers</span></span>
 
-<span data-ttu-id="d04d0-116">Dışarı aktarma ODataEndPointProxy cmdlet tarafından oluşturulan proxy cmdlet'leri ek bilgileri (istemci-tarafı proxy oluşturma sırasında kullanılan $metadata belirtilen değil) sunucudan yan OData uç noktası bilgi akışını (bir yeni Windows sağlar PowerShell 5.0 özelliği).</span><span class="sxs-lookup"><span data-stu-id="d04d0-116">The proxy cmdlets generated by the Export-ODataEndPointProxy cmdlet provide additional information (not mentioned in the $metadata used during the client-side proxy generation) from the server side OData endpoint on the Information stream (a new Windows PowerShell 5.0 feature).</span></span> <span data-ttu-id="d04d0-117">Bu bilgileri almak nasıl bir örnek aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="d04d0-117">Here is an example of how to get that information.</span></span>
+<span data-ttu-id="846ce-116">Dışarı aktarma ODataEndPointProxy cmdlet tarafından oluşturulan proxy cmdlet'leri ek bilgileri (istemci-tarafı proxy oluşturma sırasında kullanılan $metadata belirtilen değil) sunucudan yan OData uç noktası bilgi akışını (bir yeni Windows sağlar PowerShell 5.0 özelliği).</span><span class="sxs-lookup"><span data-stu-id="846ce-116">The proxy cmdlets generated by the Export-ODataEndPointProxy cmdlet provide additional information (not mentioned in the $metadata used during the client-side proxy generation) from the server side OData endpoint on the Information stream (a new Windows PowerShell 5.0 feature).</span></span> <span data-ttu-id="846ce-117">Bu bilgileri almak nasıl bir örnek aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="846ce-117">Here is an example of how to get that information.</span></span>
 
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
@@ -79,7 +79,7 @@ $additionalInfo = $infoStream.GetEnumerator() | % MessageData
 $additionalInfo['odata.count']
 ```
 
-<span data-ttu-id="d04d0-118">Kayıtları, istemci tarafı sayfalama desteğini kullanarak sunucu tarafı toplu sayfasından edinebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="d04d0-118">You can get the records from the server side in batches by using client-side paging support.</span></span> <span data-ttu-id="d04d0-119">Sunucudan ağ üzerinden büyük miktarda veri almalısınız istediğinizde yararlıdır.</span><span class="sxs-lookup"><span data-stu-id="d04d0-119">This is useful when you must get a large amount of data from the server over the network.</span></span>
+<span data-ttu-id="846ce-118">Kayıtları, istemci tarafı sayfalama desteğini kullanarak sunucu tarafı toplu sayfasından edinebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="846ce-118">You can get the records from the server side in batches by using client-side paging support.</span></span> <span data-ttu-id="846ce-119">Sunucudan ağ üzerinden büyük miktarda veri almalısınız istediğinizde yararlıdır.</span><span class="sxs-lookup"><span data-stu-id="846ce-119">This is useful when you must get a large amount of data from the server over the network.</span></span>
 
 ```powershell
 $skipCount = 0
@@ -93,7 +93,7 @@ $skipCount += $batchSize
 }
 ```
 
-<span data-ttu-id="d04d0-120">Oluşturulan proxy cmdlet'leri desteği yalnızca istemci kayıt özelliklerini almak için filtre kullanabilir Select parametresini.</span><span class="sxs-lookup"><span data-stu-id="d04d0-120">The generated proxy cmdlets support the –Select parameter which you can use as a filter to receive only the record properties that the client needs.</span></span> <span data-ttu-id="d04d0-121">Filtreleme sunucu tarafında oluştuğu için bu ağ üzerinden aktarılan veri miktarını azaltır.</span><span class="sxs-lookup"><span data-stu-id="d04d0-121">This reduces the amount of data that is transferred over the network, because the filtering occurs on the server side.</span></span>
+<span data-ttu-id="846ce-120">Oluşturulan proxy cmdlet'leri desteği yalnızca istemci kayıt özelliklerini almak için filtre kullanabilir Select parametresini.</span><span class="sxs-lookup"><span data-stu-id="846ce-120">The generated proxy cmdlets support the –Select parameter which you can use as a filter to receive only the record properties that the client needs.</span></span> <span data-ttu-id="846ce-121">Filtreleme sunucu tarafında oluştuğu için bu ağ üzerinden aktarılan veri miktarını azaltır.</span><span class="sxs-lookup"><span data-stu-id="846ce-121">This reduces the amount of data that is transferred over the network, because the filtering occurs on the server side.</span></span>
 
 ```powershell
 # In the below example only the Name property of the
@@ -101,7 +101,7 @@ $skipCount += $batchSize
 Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
-<span data-ttu-id="d04d0-122">Dışarı aktarma ODataEndpointProxy cmdlet ve işlem tarafından oluşturulan proxy cmdlet'leri artık sunucu tarafı OData uç noktası tarafından beklenen herhangi bir ek bilgi kanal için kullanabileceğiniz üst bilgiler parametre (tedarik değerler) bir karma tablosu olarak destekler.</span><span class="sxs-lookup"><span data-stu-id="d04d0-122">The Export-ODataEndpointProxy cmdlet, and the proxy cmdlets generated by it, now support the Headers parameter (supply values as a hash table), which you can use to channel any additional information that is expected by the server-side OData endpoint.</span></span> <span data-ttu-id="d04d0-123">Aşağıdaki örnekte, üst bilgileri ile kimlik doğrulaması için bir abonelik anahtarı görmeyi Hizmetleri için bir abonelik anahtarı yönlendirebilir.</span><span class="sxs-lookup"><span data-stu-id="d04d0-123">In the following example, you can channel a Subscription key through Headers for services that are expecting a Subscription key for authentication.</span></span>
+<span data-ttu-id="846ce-122">Dışarı aktarma ODataEndpointProxy cmdlet ve işlem tarafından oluşturulan proxy cmdlet'leri artık sunucu tarafı OData uç noktası tarafından beklenen herhangi bir ek bilgi kanal için kullanabileceğiniz üst bilgiler parametre (tedarik değerler) bir karma tablosu olarak destekler.</span><span class="sxs-lookup"><span data-stu-id="846ce-122">The Export-ODataEndpointProxy cmdlet, and the proxy cmdlets generated by it, now support the Headers parameter (supply values as a hash table), which you can use to channel any additional information that is expected by the server-side OData endpoint.</span></span> <span data-ttu-id="846ce-123">Aşağıdaki örnekte, üst bilgileri ile kimlik doğrulaması için bir abonelik anahtarı görmeyi Hizmetleri için bir abonelik anahtarı yönlendirebilir.</span><span class="sxs-lookup"><span data-stu-id="846ce-123">In the following example, you can channel a Subscription key through Headers for services that are expecting a Subscription key for authentication.</span></span>
 
 ```powershell
 # As an example, in the below command 'XXXX' is the authentication used by the

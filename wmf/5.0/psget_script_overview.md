@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 3c1fcf94174b99490b19963662ef1ccdf6cebfec
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085077"
 ---
-# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="b67fb-102">PowerShell Betiği bulma, yükleme ve Yönetimi ile PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="b67fb-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="5f1a1-102">PowerShell Betiği bulma, yükleme ve Yönetimi ile PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="5f1a1-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
 
-<span data-ttu-id="b67fb-103">PowerShell Betiği paylaşımı özelliğini PowerShellGet WMF 5.0 RTM sürümünde eklenen.</span><span class="sxs-lookup"><span data-stu-id="b67fb-103">PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.</span></span>
-<span data-ttu-id="b67fb-104">PowerShellGet modülü, PowerShell betikleri desteklemek için aşağıdaki yeni cmdlet eklendi.</span><span class="sxs-lookup"><span data-stu-id="b67fb-104">The following new cmdlets are added to the PowerShellGet module for supporting the PowerShell Scripts.</span></span>
+<span data-ttu-id="5f1a1-103">PowerShell Betiği paylaşımı özelliğini PowerShellGet WMF 5.0 RTM sürümünde eklenen.</span><span class="sxs-lookup"><span data-stu-id="5f1a1-103">PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.</span></span>
+<span data-ttu-id="5f1a1-104">PowerShellGet modülü, PowerShell betikleri desteklemek için aşağıdaki yeni cmdlet eklendi.</span><span class="sxs-lookup"><span data-stu-id="5f1a1-104">The following new cmdlets are added to the PowerShellGet module for supporting the PowerShell Scripts.</span></span>
 ```powershell
 PS C:\\windows\\system32&gt; Get-Command \*script\* -Module PowerShellGet | Sort-Object -Property Noun, Verb
 CommandType Name Version Source
@@ -38,7 +38,7 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 -   **Test-ScriptFileInfo** cmdlet lets you to validate and get the script file metadata.
 ```
 
-<span data-ttu-id="b67fb-105">Betik cmdlet'lerini paylaşımı sözdizimi:</span><span class="sxs-lookup"><span data-stu-id="b67fb-105">Syntax of script sharing Cmdlets:</span></span>
+<span data-ttu-id="5f1a1-105">Betik cmdlet'lerini paylaşımı sözdizimi:</span><span class="sxs-lookup"><span data-stu-id="5f1a1-105">Syntax of script sharing Cmdlets:</span></span>
 ```powershell
 **New-ScriptFileInfo** \[-Path\] &lt;string&gt; -Description &lt;string&gt; \[-Version &lt;version&gt;\] \[-Author &lt;string&gt;\] \[-Guid &lt;guid&gt;\] \[-CompanyName &lt;string&gt;\] \[-Copyright &lt;string&gt;\] \[-RequiredModules &lt;Object\[\]&gt;\] \[-ExternalModuleDependencies &lt;string\[\]&gt;\] \[-RequiredScripts &lt;string\[\]&gt;\] \[-ExternalScriptDependencies &lt;string\[\]&gt;\] \[-Tags &lt;string\[\]&gt;\] \[-ProjectUri &lt;uri&gt;\] \[-LicenseUri &lt;uri&gt;\] \[-IconUri &lt;uri&gt;\] \[-ReleaseNotes &lt;string\[\]&gt;\] \[-PassThru\] \[-Force\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 

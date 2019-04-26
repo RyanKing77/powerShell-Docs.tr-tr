@@ -4,20 +4,20 @@ keywords: PowerShell cmdlet'i
 title: Kayıt Defteri Girdileri ile Çalışma
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
 ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086043"
 ---
-# <a name="working-with-registry-entries"></a><span data-ttu-id="4af4e-103">Kayıt Defteri Girdileri ile Çalışma</span><span class="sxs-lookup"><span data-stu-id="4af4e-103">Working with Registry Entries</span></span>
+# <a name="working-with-registry-entries"></a><span data-ttu-id="f6b66-103">Kayıt Defteri Girdileri ile Çalışma</span><span class="sxs-lookup"><span data-stu-id="f6b66-103">Working with Registry Entries</span></span>
 
-<span data-ttu-id="4af4e-104">Kayıt defteri girdileri tuşunun özelliklerini ve bu nedenle, doğrudan gözatılamaz olduğundan bunlarla çalışırken biraz farklı bir yaklaşım olması gerekir.</span><span class="sxs-lookup"><span data-stu-id="4af4e-104">Because registry entries are properties of keys and, as such, cannot be directly browsed, we need to take a slightly different approach when working with them.</span></span>
+<span data-ttu-id="f6b66-104">Kayıt defteri girdileri tuşunun özelliklerini ve bu nedenle, doğrudan gözatılamaz olduğundan bunlarla çalışırken biraz farklı bir yaklaşım olması gerekir.</span><span class="sxs-lookup"><span data-stu-id="f6b66-104">Because registry entries are properties of keys and, as such, cannot be directly browsed, we need to take a slightly different approach when working with them.</span></span>
 
-## <a name="listing-registry-entries"></a><span data-ttu-id="4af4e-105">Kayıt defteri girdileri listeleme</span><span class="sxs-lookup"><span data-stu-id="4af4e-105">Listing Registry Entries</span></span>
+## <a name="listing-registry-entries"></a><span data-ttu-id="f6b66-105">Kayıt defteri girdileri listeleme</span><span class="sxs-lookup"><span data-stu-id="f6b66-105">Listing Registry Entries</span></span>
 
-<span data-ttu-id="4af4e-106">Kayıt defteri girdilerini incelemek için birçok farklı yolu vardır.</span><span class="sxs-lookup"><span data-stu-id="4af4e-106">There are many different ways to examine registry entries.</span></span> <span data-ttu-id="4af4e-107">En basit yolu, bir anahtar ile ilişkili özellik adlarını almaktır.</span><span class="sxs-lookup"><span data-stu-id="4af4e-107">The simplest way is to get the property names associated with a key.</span></span> <span data-ttu-id="4af4e-108">Örneğin, kayıt defteri anahtarı girişleri adlarını görmek için `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, kullanın `Get-Item`.</span><span class="sxs-lookup"><span data-stu-id="4af4e-108">For example, to see the names of the entries in the registry key `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, use `Get-Item`.</span></span> <span data-ttu-id="4af4e-109">Kayıt defteri anahtarlarını bir özelliğe sahip genel "Özelliği" adı ile kayıt defteri girdileri anahtarında bir listesidir.</span><span class="sxs-lookup"><span data-stu-id="4af4e-109">Registry keys have a property with the generic name of "Property" that is a list of registry entries in the key.</span></span>
-<span data-ttu-id="4af4e-110">Aşağıdaki komut, özellik özelliğini seçer ve böylece bunlar bir listede görüntülenen öğelerin genişletir:</span><span class="sxs-lookup"><span data-stu-id="4af4e-110">The following command selects the Property property and expands the items so that they are displayed in a list:</span></span>
+<span data-ttu-id="f6b66-106">Kayıt defteri girdilerini incelemek için birçok farklı yolu vardır.</span><span class="sxs-lookup"><span data-stu-id="f6b66-106">There are many different ways to examine registry entries.</span></span> <span data-ttu-id="f6b66-107">En basit yolu, bir anahtar ile ilişkili özellik adlarını almaktır.</span><span class="sxs-lookup"><span data-stu-id="f6b66-107">The simplest way is to get the property names associated with a key.</span></span> <span data-ttu-id="f6b66-108">Örneğin, kayıt defteri anahtarı girişleri adlarını görmek için `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, kullanın `Get-Item`.</span><span class="sxs-lookup"><span data-stu-id="f6b66-108">For example, to see the names of the entries in the registry key `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, use `Get-Item`.</span></span> <span data-ttu-id="f6b66-109">Kayıt defteri anahtarlarını bir özelliğe sahip genel "Özelliği" adı ile kayıt defteri girdileri anahtarında bir listesidir.</span><span class="sxs-lookup"><span data-stu-id="f6b66-109">Registry keys have a property with the generic name of "Property" that is a list of registry entries in the key.</span></span>
+<span data-ttu-id="f6b66-110">Aşağıdaki komut, özellik özelliğini seçer ve böylece bunlar bir listede görüntülenen öğelerin genişletir:</span><span class="sxs-lookup"><span data-stu-id="f6b66-110">The following command selects the Property property and expands the items so that they are displayed in a list:</span></span>
 
 ```powershell
 Get-Item -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion |
@@ -32,7 +32,7 @@ CommonFilesDir
 ProductId
 ```
 
-<span data-ttu-id="4af4e-111">Kayıt defteri girdilerini daha okunabilir bir formda görüntülemek için kullanın `Get-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="4af4e-111">To view the registry entries in a more readable form, use `Get-ItemProperty`:</span></span>
+<span data-ttu-id="f6b66-111">Kayıt defteri girdilerini daha okunabilir bir formda görüntülemek için kullanın `Get-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="f6b66-111">To view the registry entries in a more readable form, use `Get-ItemProperty`:</span></span>
 
 ```powershell
 Get-ItemProperty -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
@@ -58,21 +58,21 @@ PF_AccessoriesName  : Accessories
 (default)           :
 ```
 
-<span data-ttu-id="4af4e-112">Anahtar için Windows PowerShell ile ilgili özelliklerin tümünü "PS ile" gibi ön ekli **pspath değeri**, **PSParentPath**, **PSChildName**, ve **PSProvider** .</span><span class="sxs-lookup"><span data-stu-id="4af4e-112">The Windows PowerShell-related properties for the key are all prefixed with "PS", such as **PSPath**, **PSParentPath**, **PSChildName**, and **PSProvider**.</span></span>
+<span data-ttu-id="f6b66-112">Anahtar için Windows PowerShell ile ilgili özelliklerin tümünü "PS ile" gibi ön ekli **pspath değeri**, **PSParentPath**, **PSChildName**, ve **PSProvider** .</span><span class="sxs-lookup"><span data-stu-id="f6b66-112">The Windows PowerShell-related properties for the key are all prefixed with "PS", such as **PSPath**, **PSParentPath**, **PSChildName**, and **PSProvider**.</span></span>
 
-<span data-ttu-id="4af4e-113">Kullanabileceğiniz `*.*` geçerli konuma başvuran için gösterimi.</span><span class="sxs-lookup"><span data-stu-id="4af4e-113">You can use the `*.*` notation for referring to the current location.</span></span> <span data-ttu-id="4af4e-114">Kullanabileceğiniz `Set-Location` değiştirmek için **CurrentVersion** kapsayıcı kayıt defteri ilk:</span><span class="sxs-lookup"><span data-stu-id="4af4e-114">You can use `Set-Location` to change to the **CurrentVersion** registry container first:</span></span>
+<span data-ttu-id="f6b66-113">Kullanabileceğiniz `*.*` geçerli konuma başvuran için gösterimi.</span><span class="sxs-lookup"><span data-stu-id="f6b66-113">You can use the `*.*` notation for referring to the current location.</span></span> <span data-ttu-id="f6b66-114">Kullanabileceğiniz `Set-Location` değiştirmek için **CurrentVersion** kapsayıcı kayıt defteri ilk:</span><span class="sxs-lookup"><span data-stu-id="f6b66-114">You can use `Set-Location` to change to the **CurrentVersion** registry container first:</span></span>
 
 ```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-<span data-ttu-id="4af4e-115">Alternatif olarak, yerleşik HKLM PSDrive ile kullanabileceğiniz `Set-Location`:</span><span class="sxs-lookup"><span data-stu-id="4af4e-115">Alternatively, you can use the built-in HKLM PSDrive with `Set-Location`:</span></span>
+<span data-ttu-id="f6b66-115">Alternatif olarak, yerleşik HKLM PSDrive ile kullanabileceğiniz `Set-Location`:</span><span class="sxs-lookup"><span data-stu-id="f6b66-115">Alternatively, you can use the built-in HKLM PSDrive with `Set-Location`:</span></span>
 
 ```powershell
 Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-<span data-ttu-id="4af4e-116">Ardından `*.*` gösterimi tam bir yol belirtmeden özellikleri listelemek şu anki konum için:</span><span class="sxs-lookup"><span data-stu-id="4af4e-116">You can then use the `*.*` notation for the current location to list the properties without specifying a full path:</span></span>
+<span data-ttu-id="f6b66-116">Ardından `*.*` gösterimi tam bir yol belirtmeden özellikleri listelemek şu anki konum için:</span><span class="sxs-lookup"><span data-stu-id="f6b66-116">You can then use the `*.*` notation for the current location to list the properties without specifying a full path:</span></span>
 
 ```powershell
 Get-ItemProperty -Path .
@@ -86,13 +86,13 @@ ProgramFilesDir     : C:\Program Files
 ...
 ```
 
-<span data-ttu-id="4af4e-117">Yolu genişletme çalışır, aynı, bu konumdan, yani, dosya sisteminde çalıştığı gibi **Itemproperty** için listeleme `HKLM:\SOFTWARE\Microsoft\Windows\Help` kullanarak `Get-ItemProperty -Path ..\Help`.</span><span class="sxs-lookup"><span data-stu-id="4af4e-117">Path expansion works the same as it does within the file system, so from this location you can get the **ItemProperty** listing for `HKLM:\SOFTWARE\Microsoft\Windows\Help` by using `Get-ItemProperty -Path ..\Help`.</span></span>
+<span data-ttu-id="f6b66-117">Yolu genişletme çalışır, aynı, bu konumdan, yani, dosya sisteminde çalıştığı gibi **Itemproperty** için listeleme `HKLM:\SOFTWARE\Microsoft\Windows\Help` kullanarak `Get-ItemProperty -Path ..\Help`.</span><span class="sxs-lookup"><span data-stu-id="f6b66-117">Path expansion works the same as it does within the file system, so from this location you can get the **ItemProperty** listing for `HKLM:\SOFTWARE\Microsoft\Windows\Help` by using `Get-ItemProperty -Path ..\Help`.</span></span>
 
-## <a name="getting-a-single-registry-entry"></a><span data-ttu-id="4af4e-118">Tek bir kayıt defteri girişi alınırken</span><span class="sxs-lookup"><span data-stu-id="4af4e-118">Getting a Single Registry Entry</span></span>
+## <a name="getting-a-single-registry-entry"></a><span data-ttu-id="f6b66-118">Tek bir kayıt defteri girişi alınırken</span><span class="sxs-lookup"><span data-stu-id="f6b66-118">Getting a Single Registry Entry</span></span>
 
-<span data-ttu-id="4af4e-119">Bir kayıt defteri anahtarı içinde belirli bir girdi almak istiyorsanız, birkaç olası yaklaşımlardan birini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="4af4e-119">If you want to retrieve a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="4af4e-120">Bu örnekte değerini bulur **DevicePath** içinde `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span><span class="sxs-lookup"><span data-stu-id="4af4e-120">This example finds the value of **DevicePath** in `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span></span>
+<span data-ttu-id="f6b66-119">Bir kayıt defteri anahtarı içinde belirli bir girdi almak istiyorsanız, birkaç olası yaklaşımlardan birini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f6b66-119">If you want to retrieve a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="f6b66-120">Bu örnekte değerini bulur **DevicePath** içinde `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span><span class="sxs-lookup"><span data-stu-id="f6b66-120">This example finds the value of **DevicePath** in `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span></span>
 
-<span data-ttu-id="4af4e-121">Kullanarak `Get-ItemProperty`, kullanın **yolu** anahtarın adını belirtmek için parametre ve **adı** adını belirtmek için parametre **DevicePath** girişi.</span><span class="sxs-lookup"><span data-stu-id="4af4e-121">Using `Get-ItemProperty`, use the **Path** parameter to specify the name of the key, and the **Name** parameter to specify the name of the **DevicePath** entry.</span></span>
+<span data-ttu-id="f6b66-121">Kullanarak `Get-ItemProperty`, kullanın **yolu** anahtarın adını belirtmek için parametre ve **adı** adını belirtmek için parametre **DevicePath** girişi.</span><span class="sxs-lookup"><span data-stu-id="f6b66-121">Using `Get-ItemProperty`, use the **Path** parameter to specify the name of the key, and the **Name** parameter to specify the name of the **DevicePath** entry.</span></span>
 
 ```powershell
 Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion -Name DevicePath
@@ -109,12 +109,12 @@ PSProvider   : Microsoft.PowerShell.Core\Registry
 DevicePath   : C:\WINDOWS\inf
 ```
 
-<span data-ttu-id="4af4e-122">Bu komut, standart Windows PowerShell özellikleri döndürür. yanı sıra **DevicePath** özelliği.</span><span class="sxs-lookup"><span data-stu-id="4af4e-122">This command returns the standard Windows PowerShell properties as well as the **DevicePath** property.</span></span>
+<span data-ttu-id="f6b66-122">Bu komut, standart Windows PowerShell özellikleri döndürür. yanı sıra **DevicePath** özelliği.</span><span class="sxs-lookup"><span data-stu-id="f6b66-122">This command returns the standard Windows PowerShell properties as well as the **DevicePath** property.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="4af4e-123">Ancak `Get-ItemProperty` sahip **filtre**, **Ekle**, ve **hariç** parametreleri, özellik adına göre filtre uygulamak için kullanılamaz.</span><span class="sxs-lookup"><span data-stu-id="4af4e-123">Although `Get-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="4af4e-124">Bu parametreleri öğe yolları ve kayıt defteri girişleri kayıt defteri anahtarları için bakın.</span><span class="sxs-lookup"><span data-stu-id="4af4e-124">These parameters refer to registry keys, which are item paths and not registry entries.</span></span> <span data-ttu-id="4af4e-125">Öğe özellikleri olan kayıt defteri girdileri.</span><span class="sxs-lookup"><span data-stu-id="4af4e-125">Registry entries which are item properties.</span></span>
+> <span data-ttu-id="f6b66-123">Ancak `Get-ItemProperty` sahip **filtre**, **Ekle**, ve **hariç** parametreleri, özellik adına göre filtre uygulamak için kullanılamaz.</span><span class="sxs-lookup"><span data-stu-id="f6b66-123">Although `Get-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="f6b66-124">Bu parametreleri öğe yolları ve kayıt defteri girişleri kayıt defteri anahtarları için bakın.</span><span class="sxs-lookup"><span data-stu-id="f6b66-124">These parameters refer to registry keys, which are item paths and not registry entries.</span></span> <span data-ttu-id="f6b66-125">Öğe özellikleri olan kayıt defteri girdileri.</span><span class="sxs-lookup"><span data-stu-id="f6b66-125">Registry entries which are item properties.</span></span>
 
-<span data-ttu-id="4af4e-126">Başka bir seçenek Reg.exe komut satırı aracını kullanmaktır.</span><span class="sxs-lookup"><span data-stu-id="4af4e-126">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="4af4e-127">Reg.exe ile daha fazla yardım için şunu yazın `reg.exe /?` bir komut isteminde.</span><span class="sxs-lookup"><span data-stu-id="4af4e-127">For help with reg.exe, type `reg.exe /?` at a command prompt.</span></span> <span data-ttu-id="4af4e-128">Reg.exe DevicePath giriş bulmak için aşağıdaki komutta gösterildiği gibi kullanın:</span><span class="sxs-lookup"><span data-stu-id="4af4e-128">To find the DevicePath entry, use reg.exe as shown in the following command:</span></span>
+<span data-ttu-id="f6b66-126">Başka bir seçenek Reg.exe komut satırı aracını kullanmaktır.</span><span class="sxs-lookup"><span data-stu-id="f6b66-126">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="f6b66-127">Reg.exe ile daha fazla yardım için şunu yazın `reg.exe /?` bir komut isteminde.</span><span class="sxs-lookup"><span data-stu-id="f6b66-127">For help with reg.exe, type `reg.exe /?` at a command prompt.</span></span> <span data-ttu-id="f6b66-128">Reg.exe DevicePath giriş bulmak için aşağıdaki komutta gösterildiği gibi kullanın:</span><span class="sxs-lookup"><span data-stu-id="f6b66-128">To find the DevicePath entry, use reg.exe as shown in the following command:</span></span>
 
 ```powershell
 reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion /v DevicePath
@@ -127,7 +127,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
     DevicePath  REG_EXPAND_SZ   %SystemRoot%\inf
 ```
 
-<span data-ttu-id="4af4e-129">Ayrıca **WshShell** bu yöntem, büyük ikili veri gibi karakterler kayıt defteri girişi adları ile veya çalışmıyor olsa da, bazı kayıt defteri girdilerini bulmak için de COM nesnesi "\\").</span><span class="sxs-lookup"><span data-stu-id="4af4e-129">You can also use the **WshShell** COM object as well to find some registry entries, although this method does not work with large binary data or with registry entry names that include characters such as "\\").</span></span> <span data-ttu-id="4af4e-130">Öğe yolu ile özellik adının sonuna bir \\ ayırıcı:</span><span class="sxs-lookup"><span data-stu-id="4af4e-130">Append the property name to the item path with a \\ separator:</span></span>
+<span data-ttu-id="f6b66-129">Ayrıca **WshShell** bu yöntem, büyük ikili veri gibi karakterler kayıt defteri girişi adları ile veya çalışmıyor olsa da, bazı kayıt defteri girdilerini bulmak için de COM nesnesi "\\").</span><span class="sxs-lookup"><span data-stu-id="f6b66-129">You can also use the **WshShell** COM object as well to find some registry entries, although this method does not work with large binary data or with registry entry names that include characters such as "\\").</span></span> <span data-ttu-id="f6b66-130">Öğe yolu ile özellik adının sonuna bir \\ ayırıcı:</span><span class="sxs-lookup"><span data-stu-id="f6b66-130">Append the property name to the item path with a \\ separator:</span></span>
 
 ```powershell
 (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DevicePath")
@@ -137,13 +137,13 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 %SystemRoot%\inf
 ```
 
-## <a name="setting-a-single-registry-entry"></a><span data-ttu-id="4af4e-131">Tek bir kayıt defteri girdisi ayarlama</span><span class="sxs-lookup"><span data-stu-id="4af4e-131">Setting a Single Registry Entry</span></span>
+## <a name="setting-a-single-registry-entry"></a><span data-ttu-id="f6b66-131">Tek bir kayıt defteri girdisi ayarlama</span><span class="sxs-lookup"><span data-stu-id="f6b66-131">Setting a Single Registry Entry</span></span>
 
-<span data-ttu-id="4af4e-132">Belirli bir girdi kayıt defteri anahtarında değiştirmek istiyorsanız, birkaç olası yaklaşımlardan birini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="4af4e-132">If you want to change a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="4af4e-133">Bu örnek **yolu** altında girdisi `HKEY_CURRENT_USER\Environment`.</span><span class="sxs-lookup"><span data-stu-id="4af4e-133">This example modifies the **Path** entry under `HKEY_CURRENT_USER\Environment`.</span></span> <span data-ttu-id="4af4e-134">**Yolu** giriş yürütülebilir dosyaları nerede bulacağını belirler.</span><span class="sxs-lookup"><span data-stu-id="4af4e-134">The **Path** entry specifies where to find executable files.</span></span>
+<span data-ttu-id="f6b66-132">Belirli bir girdi kayıt defteri anahtarında değiştirmek istiyorsanız, birkaç olası yaklaşımlardan birini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f6b66-132">If you want to change a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="f6b66-133">Bu örnek **yolu** altında girdisi `HKEY_CURRENT_USER\Environment`.</span><span class="sxs-lookup"><span data-stu-id="f6b66-133">This example modifies the **Path** entry under `HKEY_CURRENT_USER\Environment`.</span></span> <span data-ttu-id="f6b66-134">**Yolu** giriş yürütülebilir dosyaları nerede bulacağını belirler.</span><span class="sxs-lookup"><span data-stu-id="f6b66-134">The **Path** entry specifies where to find executable files.</span></span>
 
-1. <span data-ttu-id="4af4e-135">Geçerli değerini almak **yolu** girişini kullanarak `Get-ItemProperty`.</span><span class="sxs-lookup"><span data-stu-id="4af4e-135">Retrieve the current value of the **Path** entry using `Get-ItemProperty`.</span></span>
-2. <span data-ttu-id="4af4e-136">İle ayırarak, yeni değer eklemek bir `;`.</span><span class="sxs-lookup"><span data-stu-id="4af4e-136">Add the new value, separating it with a `;`.</span></span>
-3. <span data-ttu-id="4af4e-137">Kullanım `Set-ItemProperty` belirtilen anahtar, giriş adı ve kayıt defteri girişini değiştirmek için değer.</span><span class="sxs-lookup"><span data-stu-id="4af4e-137">Use `Set-ItemProperty` with the specified key, entry name, and value to modify the registry entry.</span></span>
+1. <span data-ttu-id="f6b66-135">Geçerli değerini almak **yolu** girişini kullanarak `Get-ItemProperty`.</span><span class="sxs-lookup"><span data-stu-id="f6b66-135">Retrieve the current value of the **Path** entry using `Get-ItemProperty`.</span></span>
+2. <span data-ttu-id="f6b66-136">İle ayırarak, yeni değer eklemek bir `;`.</span><span class="sxs-lookup"><span data-stu-id="f6b66-136">Add the new value, separating it with a `;`.</span></span>
+3. <span data-ttu-id="f6b66-137">Kullanım `Set-ItemProperty` belirtilen anahtar, giriş adı ve kayıt defteri girişini değiştirmek için değer.</span><span class="sxs-lookup"><span data-stu-id="f6b66-137">Use `Set-ItemProperty` with the specified key, entry name, and value to modify the registry entry.</span></span>
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -152,13 +152,13 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 ```
 
 > [!NOTE]
-> <span data-ttu-id="4af4e-138">Ancak `Set-ItemProperty` sahip **filtre**, **Ekle**, ve **hariç** parametreleri, özellik adına göre filtre uygulamak için kullanılamaz.</span><span class="sxs-lookup"><span data-stu-id="4af4e-138">Although `Set-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="4af4e-139">Bu parametreler kayıt defteri anahtarlarını başvuran — öğe yolları olduğu — ve kayıt defteri girdilerini — öğesi özellikleri olan.</span><span class="sxs-lookup"><span data-stu-id="4af4e-139">These parameters refer to registry keys—which are item paths—and not registry entries—which are item properties.</span></span>
+> <span data-ttu-id="f6b66-138">Ancak `Set-ItemProperty` sahip **filtre**, **Ekle**, ve **hariç** parametreleri, özellik adına göre filtre uygulamak için kullanılamaz.</span><span class="sxs-lookup"><span data-stu-id="f6b66-138">Although `Set-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="f6b66-139">Bu parametreler kayıt defteri anahtarlarını başvuran — öğe yolları olduğu — ve kayıt defteri girdilerini — öğesi özellikleri olan.</span><span class="sxs-lookup"><span data-stu-id="f6b66-139">These parameters refer to registry keys—which are item paths—and not registry entries—which are item properties.</span></span>
 
-<span data-ttu-id="4af4e-140">Başka bir seçenek Reg.exe komut satırı aracını kullanmaktır.</span><span class="sxs-lookup"><span data-stu-id="4af4e-140">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="4af4e-141">Reg.exe ile daha fazla yardım için şunu yazın **reg.exe /?**</span><span class="sxs-lookup"><span data-stu-id="4af4e-141">For help with reg.exe, type **reg.exe /?**</span></span>
-<span data-ttu-id="4af4e-142">bir komut isteminde.</span><span class="sxs-lookup"><span data-stu-id="4af4e-142">at a command prompt.</span></span>
+<span data-ttu-id="f6b66-140">Başka bir seçenek Reg.exe komut satırı aracını kullanmaktır.</span><span class="sxs-lookup"><span data-stu-id="f6b66-140">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="f6b66-141">Reg.exe ile daha fazla yardım için şunu yazın **reg.exe /?**</span><span class="sxs-lookup"><span data-stu-id="f6b66-141">For help with reg.exe, type **reg.exe /?**</span></span>
+<span data-ttu-id="f6b66-142">bir komut isteminde.</span><span class="sxs-lookup"><span data-stu-id="f6b66-142">at a command prompt.</span></span>
 
-<span data-ttu-id="4af4e-143">Aşağıdaki örnek değişiklikleri **yolu** yukarıdaki örnekte eklenen yolun kaldırarak girişi.</span><span class="sxs-lookup"><span data-stu-id="4af4e-143">The following example changes the **Path** entry by removing the path added in the example above.</span></span>
-<span data-ttu-id="4af4e-144">`Get-ItemProperty` öğesinden döndürülen dizeyi ayrıştırmak zorunda kalmamak için geçerli değerini almak için kullanılır `reg query`.</span><span class="sxs-lookup"><span data-stu-id="4af4e-144">`Get-ItemProperty` is still used to retrieve the current value to avoid having to parse the string returned from `reg query`.</span></span> <span data-ttu-id="4af4e-145">**SubString** ve **lastIndexOf** eklenen son yolunu almak için kullanılan yöntemleri **yolu** girişi.</span><span class="sxs-lookup"><span data-stu-id="4af4e-145">The **SubString** and **LastIndexOf** methods are used to retrieve the last path added to the **Path** entry.</span></span>
+<span data-ttu-id="f6b66-143">Aşağıdaki örnek değişiklikleri **yolu** yukarıdaki örnekte eklenen yolun kaldırarak girişi.</span><span class="sxs-lookup"><span data-stu-id="f6b66-143">The following example changes the **Path** entry by removing the path added in the example above.</span></span>
+<span data-ttu-id="f6b66-144">`Get-ItemProperty` öğesinden döndürülen dizeyi ayrıştırmak zorunda kalmamak için geçerli değerini almak için kullanılır `reg query`.</span><span class="sxs-lookup"><span data-stu-id="f6b66-144">`Get-ItemProperty` is still used to retrieve the current value to avoid having to parse the string returned from `reg query`.</span></span> <span data-ttu-id="f6b66-145">**SubString** ve **lastIndexOf** eklenen son yolunu almak için kullanılan yöntemleri **yolu** girişi.</span><span class="sxs-lookup"><span data-stu-id="f6b66-145">The **SubString** and **LastIndexOf** methods are used to retrieve the last path added to the **Path** entry.</span></span>
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -170,11 +170,11 @@ reg add HKCU\Environment /v Path /d $newpath /f
 The operation completed successfully.
 ```
 
-## <a name="creating-new-registry-entries"></a><span data-ttu-id="4af4e-146">Yeni kayıt defteri girdileri oluşturuluyor</span><span class="sxs-lookup"><span data-stu-id="4af4e-146">Creating New Registry Entries</span></span>
+## <a name="creating-new-registry-entries"></a><span data-ttu-id="f6b66-146">Yeni kayıt defteri girdileri oluşturuluyor</span><span class="sxs-lookup"><span data-stu-id="f6b66-146">Creating New Registry Entries</span></span>
 
-<span data-ttu-id="4af4e-147">"PowerShellPath" adlı yeni bir giriş eklemek için **CurrentVersion** anahtar, kullanım `New-ItemProperty` yoluyla anahtar, giriş adı ve giriş değeri.</span><span class="sxs-lookup"><span data-stu-id="4af4e-147">To add a new entry named "PowerShellPath" to the **CurrentVersion** key, use `New-ItemProperty` with the path to the key, the entry name, and the value of the entry.</span></span> <span data-ttu-id="4af4e-148">Bu örnekte, biz Windows PowerShell değişkeninin değeri sürer `$PSHome`, Windows PowerShell için yükleme dizini yolunu depolar.</span><span class="sxs-lookup"><span data-stu-id="4af4e-148">For this example, we will take the value of the Windows PowerShell variable `$PSHome`, which stores the path to the installation directory for Windows PowerShell.</span></span>
+<span data-ttu-id="f6b66-147">"PowerShellPath" adlı yeni bir giriş eklemek için **CurrentVersion** anahtar, kullanım `New-ItemProperty` yoluyla anahtar, giriş adı ve giriş değeri.</span><span class="sxs-lookup"><span data-stu-id="f6b66-147">To add a new entry named "PowerShellPath" to the **CurrentVersion** key, use `New-ItemProperty` with the path to the key, the entry name, and the value of the entry.</span></span> <span data-ttu-id="f6b66-148">Bu örnekte, biz Windows PowerShell değişkeninin değeri sürer `$PSHome`, Windows PowerShell için yükleme dizini yolunu depolar.</span><span class="sxs-lookup"><span data-stu-id="f6b66-148">For this example, we will take the value of the Windows PowerShell variable `$PSHome`, which stores the path to the installation directory for Windows PowerShell.</span></span>
 
-<span data-ttu-id="4af4e-149">Aşağıdaki komutu kullanarak yeni giriş anahtarı ekleyebilirsiniz ve komut ayrıca yeni giriş hakkındaki bilgileri döndürür:</span><span class="sxs-lookup"><span data-stu-id="4af4e-149">You can add the new entry to the key by using the following command, and the command also returns information about the new entry:</span></span>
+<span data-ttu-id="f6b66-149">Aşağıdaki komutu kullanarak yeni giriş anahtarı ekleyebilirsiniz ve komut ayrıca yeni giriş hakkındaki bilgileri döndürür:</span><span class="sxs-lookup"><span data-stu-id="f6b66-149">You can add the new entry to the key by using the following command, and the command also returns information about the new entry:</span></span>
 
 ```powershell
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -PropertyType String -Value $PSHome
@@ -189,44 +189,44 @@ PSProvider     : Microsoft.PowerShell.Core\Registry
 PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 ```
 
-<span data-ttu-id="4af4e-150">**PropertyType** adı olmalıdır bir **Microsoft.Win32.RegistryValueKind** numaralandırma üyesi aşağıdaki tabloda:</span><span class="sxs-lookup"><span data-stu-id="4af4e-150">The **PropertyType** must be the name of a **Microsoft.Win32.RegistryValueKind** enumeration member from the following table:</span></span>
+<span data-ttu-id="f6b66-150">**PropertyType** adı olmalıdır bir **Microsoft.Win32.RegistryValueKind** numaralandırma üyesi aşağıdaki tabloda:</span><span class="sxs-lookup"><span data-stu-id="f6b66-150">The **PropertyType** must be the name of a **Microsoft.Win32.RegistryValueKind** enumeration member from the following table:</span></span>
 
-|<span data-ttu-id="4af4e-151">PropertyType değeri</span><span class="sxs-lookup"><span data-stu-id="4af4e-151">PropertyType Value</span></span>|<span data-ttu-id="4af4e-152">Anlamı</span><span class="sxs-lookup"><span data-stu-id="4af4e-152">Meaning</span></span>|
+|<span data-ttu-id="f6b66-151">PropertyType değeri</span><span class="sxs-lookup"><span data-stu-id="f6b66-151">PropertyType Value</span></span>|<span data-ttu-id="f6b66-152">Anlamı</span><span class="sxs-lookup"><span data-stu-id="f6b66-152">Meaning</span></span>|
 |----------------------|-----------|
-|<span data-ttu-id="4af4e-153">İkili</span><span class="sxs-lookup"><span data-stu-id="4af4e-153">Binary</span></span>|<span data-ttu-id="4af4e-154">İkili veriler</span><span class="sxs-lookup"><span data-stu-id="4af4e-154">Binary data</span></span>|
-|<span data-ttu-id="4af4e-155">DWord</span><span class="sxs-lookup"><span data-stu-id="4af4e-155">DWord</span></span>|<span data-ttu-id="4af4e-156">Geçerli bir UInt32 bir sayı</span><span class="sxs-lookup"><span data-stu-id="4af4e-156">A number that is a valid UInt32</span></span>|
-|<span data-ttu-id="4af4e-157">Dizeyi Genişlet</span><span class="sxs-lookup"><span data-stu-id="4af4e-157">ExpandString</span></span>|<span data-ttu-id="4af4e-158">Dinamik olarak genişletilen ortam değişkenleri içerebilir bir dize</span><span class="sxs-lookup"><span data-stu-id="4af4e-158">A string that can contain environment variables that are dynamically expanded</span></span>|
-|<span data-ttu-id="4af4e-159">MultiString</span><span class="sxs-lookup"><span data-stu-id="4af4e-159">MultiString</span></span>|<span data-ttu-id="4af4e-160">Çok satırlı string</span><span class="sxs-lookup"><span data-stu-id="4af4e-160">A multiline string</span></span>|
-|<span data-ttu-id="4af4e-161">Dize</span><span class="sxs-lookup"><span data-stu-id="4af4e-161">String</span></span>|<span data-ttu-id="4af4e-162">herhangi bir dize değeri</span><span class="sxs-lookup"><span data-stu-id="4af4e-162">Any string value</span></span>|
-|<span data-ttu-id="4af4e-163">QWord</span><span class="sxs-lookup"><span data-stu-id="4af4e-163">QWord</span></span>|<span data-ttu-id="4af4e-164">8 bayt ikili veri</span><span class="sxs-lookup"><span data-stu-id="4af4e-164">8 bytes of binary data</span></span>|
+|<span data-ttu-id="f6b66-153">İkili</span><span class="sxs-lookup"><span data-stu-id="f6b66-153">Binary</span></span>|<span data-ttu-id="f6b66-154">İkili veriler</span><span class="sxs-lookup"><span data-stu-id="f6b66-154">Binary data</span></span>|
+|<span data-ttu-id="f6b66-155">DWord</span><span class="sxs-lookup"><span data-stu-id="f6b66-155">DWord</span></span>|<span data-ttu-id="f6b66-156">Geçerli bir UInt32 bir sayı</span><span class="sxs-lookup"><span data-stu-id="f6b66-156">A number that is a valid UInt32</span></span>|
+|<span data-ttu-id="f6b66-157">Dizeyi Genişlet</span><span class="sxs-lookup"><span data-stu-id="f6b66-157">ExpandString</span></span>|<span data-ttu-id="f6b66-158">Dinamik olarak genişletilen ortam değişkenleri içerebilir bir dize</span><span class="sxs-lookup"><span data-stu-id="f6b66-158">A string that can contain environment variables that are dynamically expanded</span></span>|
+|<span data-ttu-id="f6b66-159">MultiString</span><span class="sxs-lookup"><span data-stu-id="f6b66-159">MultiString</span></span>|<span data-ttu-id="f6b66-160">Çok satırlı string</span><span class="sxs-lookup"><span data-stu-id="f6b66-160">A multiline string</span></span>|
+|<span data-ttu-id="f6b66-161">Dize</span><span class="sxs-lookup"><span data-stu-id="f6b66-161">String</span></span>|<span data-ttu-id="f6b66-162">herhangi bir dize değeri</span><span class="sxs-lookup"><span data-stu-id="f6b66-162">Any string value</span></span>|
+|<span data-ttu-id="f6b66-163">QWord</span><span class="sxs-lookup"><span data-stu-id="f6b66-163">QWord</span></span>|<span data-ttu-id="f6b66-164">8 bayt ikili veri</span><span class="sxs-lookup"><span data-stu-id="f6b66-164">8 bytes of binary data</span></span>|
 
 > [!NOTE]
-> <span data-ttu-id="4af4e-165">Bir dizi değerlerini belirterek, birden fazla konuma bir kayıt defteri girişi ekleyebilirsiniz **yolu** parametresi:</span><span class="sxs-lookup"><span data-stu-id="4af4e-165">You can add a registry entry to multiple locations by specifying an array of values for the **Path** parameter:</span></span>
+> <span data-ttu-id="f6b66-165">Bir dizi değerlerini belirterek, birden fazla konuma bir kayıt defteri girişi ekleyebilirsiniz **yolu** parametresi:</span><span class="sxs-lookup"><span data-stu-id="f6b66-165">You can add a registry entry to multiple locations by specifying an array of values for the **Path** parameter:</span></span>
 
 ```powershell
 New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
   -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-<span data-ttu-id="4af4e-166">Önceden var olan bir kayıt defteri girdisinin değeri ekleyerek de kılabilirsiniz **zorla** herhangi bir parametre `New-ItemProperty` komutu.</span><span class="sxs-lookup"><span data-stu-id="4af4e-166">You can also overwrite a pre-existing registry entry value by adding the **Force** parameter to any `New-ItemProperty` command.</span></span>
+<span data-ttu-id="f6b66-166">Önceden var olan bir kayıt defteri girdisinin değeri ekleyerek de kılabilirsiniz **zorla** herhangi bir parametre `New-ItemProperty` komutu.</span><span class="sxs-lookup"><span data-stu-id="f6b66-166">You can also overwrite a pre-existing registry entry value by adding the **Force** parameter to any `New-ItemProperty` command.</span></span>
 
-## <a name="renaming-registry-entries"></a><span data-ttu-id="4af4e-167">Kayıt defteri girdileri yeniden adlandırma</span><span class="sxs-lookup"><span data-stu-id="4af4e-167">Renaming Registry Entries</span></span>
+## <a name="renaming-registry-entries"></a><span data-ttu-id="f6b66-167">Kayıt defteri girdileri yeniden adlandırma</span><span class="sxs-lookup"><span data-stu-id="f6b66-167">Renaming Registry Entries</span></span>
 
-<span data-ttu-id="4af4e-168">Yeniden adlandırmak için **PowerShellPath** "PSHome," kullanım girişe `Rename-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="4af4e-168">To rename the **PowerShellPath** entry to "PSHome," use `Rename-ItemProperty`:</span></span>
+<span data-ttu-id="f6b66-168">Yeniden adlandırmak için **PowerShellPath** "PSHome," kullanım girişe `Rename-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="f6b66-168">To rename the **PowerShellPath** entry to "PSHome," use `Rename-ItemProperty`:</span></span>
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome
 ```
 
-<span data-ttu-id="4af4e-169">Yeniden adlandırılan değerini görüntülemek için Ekle **PassThru** komut parametresi.</span><span class="sxs-lookup"><span data-stu-id="4af4e-169">To display the renamed value, add the **PassThru** parameter to the command.</span></span>
+<span data-ttu-id="f6b66-169">Yeniden adlandırılan değerini görüntülemek için Ekle **PassThru** komut parametresi.</span><span class="sxs-lookup"><span data-stu-id="f6b66-169">To display the renamed value, add the **PassThru** parameter to the command.</span></span>
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-## <a name="deleting-registry-entries"></a><span data-ttu-id="4af4e-170">Kayıt defteri girdileri silme</span><span class="sxs-lookup"><span data-stu-id="4af4e-170">Deleting Registry Entries</span></span>
+## <a name="deleting-registry-entries"></a><span data-ttu-id="f6b66-170">Kayıt defteri girdileri silme</span><span class="sxs-lookup"><span data-stu-id="f6b66-170">Deleting Registry Entries</span></span>
 
-<span data-ttu-id="4af4e-171">PSHome ve PowerShellPath kayıt defteri girdileri silmek için kullanın `Remove-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="4af4e-171">To delete both the PSHome and PowerShellPath registry entries, use `Remove-ItemProperty`:</span></span>
+<span data-ttu-id="f6b66-171">PSHome ve PowerShellPath kayıt defteri girdileri silmek için kullanın `Remove-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="f6b66-171">To delete both the PSHome and PowerShellPath registry entries, use `Remove-ItemProperty`:</span></span>
 
 ```powershell
 Remove-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PSHome

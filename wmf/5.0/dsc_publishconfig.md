@@ -1,14 +1,14 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: f929ce4684bb53c3039238ecd465f1c0e432f741
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: db4543b788ad0a5c7aa32706246446533b901d09
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085822"
 ---
-# <a name="deliver-a-configuration-document-without-applying"></a><span data-ttu-id="d8905-102">Bir yapılandırma belgesini uygulamadan teslim</span><span class="sxs-lookup"><span data-stu-id="d8905-102">Deliver a configuration document without applying</span></span>
+# <a name="deliver-a-configuration-document-without-applying"></a><span data-ttu-id="fc293-102">Yapılandırma belgelerini başvurmadan Sun</span><span class="sxs-lookup"><span data-stu-id="fc293-102">Deliver a configuration document without applying</span></span>
 
-<span data-ttu-id="d8905-103">[Yayımla DscConfiguration](https://technet.microsoft.com/library/mt517875.aspx) cmdlet'i bir yapılandırma MOF dosyası hedef düğüme kopyalar, ancak yapılandırma uygulanmaz.</span><span class="sxs-lookup"><span data-stu-id="d8905-103">The [Publish-DscConfiguration](https://technet.microsoft.com/library/mt517875.aspx) cmdlet copies a configuration MOF file to a target node, but does not apply the configuration.</span></span>
-<span data-ttu-id="d8905-104">Bu yapılandırma sonraki tutarlılık geçişi sırasında veya çalıştırdığınızda uygulanan [güncelleştirme DscConfiguration](https://technet.microsoft.com/library/mt143541.aspx) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="d8905-104">This configuration is applied during the next consistency pass, or when you run the [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541.aspx) cmdlet.</span></span>
+<span data-ttu-id="fc293-103">[Yayımla-DscConfiguration](https://technet.microsoft.com/library/mt517875.aspx) cmdlet'i bir yapılandırma MOF dosyasının hedef düğüme kopyalar, ancak yapılandırma geçerli değildir.</span><span class="sxs-lookup"><span data-stu-id="fc293-103">The [Publish-DscConfiguration](https://technet.microsoft.com/library/mt517875.aspx) cmdlet copies a configuration MOF file to a target node, but does not apply the configuration.</span></span>
+<span data-ttu-id="fc293-104">Sonraki tutarlılık geçişi sırasında veya çalıştırdığınızda bu yapılandırma uygulandıktan [güncelleştirme-DscConfiguration](https://technet.microsoft.com/library/mt143541.aspx) cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="fc293-104">This configuration is applied during the next consistency pass, or when you run the [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541.aspx) cmdlet.</span></span>
