@@ -1,4 +1,3 @@
-items:
 - name: Genel bakış
   href: overview.md
 - name: PowerShellGet yükleme
@@ -7,95 +6,89 @@ items:
   href: getting-started.md
 - name: Nasıl Yapılır
   items:
-  - name: Galeride Paketleri Bulma
-    items:
-    - name: Paketleri Arama
-      href: how-to/finding-packages/search-syntax.md
-    - name: Uyumluluğa göre arama
-      href: how-to/finding-packages/searching-by-compatibility.md
-    - name: Arama Sonuçlarını Filtreleme
-      href: how-to/finding-packages/filtering-packages.md
-  - name: Galeride Yayımlama
-    items:
-    - name: Paketleri oluşturma ve yayımlama
-      href: how-to/publishing-packages/publishing-a-package.md
-    - name: PowerShellGallery Hesabı Oluşturma
-      href: how-to/publishing-packages/creating-an-account.md
-    - name: Paketleri listeden kaldırma
-      href: how-to/publishing-packages/unlisting-packages.md
-    - name: Paketleri silme
-      href: how-to/publishing-packages/deleting-packages.md
-    - name: Paket sahiplerini yönetme
-      href: how-to/publishing-packages/managing-package-owners.md
-  - name: Paketler ile çalışma
-    items:
-    - name: FileList görünümü
-      href: how-to/working-with-packages/filelist-view.md
-    - name: Azure Otomasyonuna Dağıtma
-      href: how-to/working-with-packages/deploy-to-azure-automation.md
-    - name: Elle Paket İndirme
-      href: how-to/working-with-packages/manual-download.md
-    - name: Lisans Kabulü Gerektiren Paketler
-      href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-    - name: Paket sahipleriyle iletişime geçme
-      href: how-to/working-with-packages/contacting-package-owners.md
-    - name: Sosyal Medya veya Yorumlar Aracılığıyla Geri Bildirim Sağlama
-      href: how-to/working-with-packages/social-media-feedback.md
-  - name: Hesap Profili Yönetme
-    items:
-    - name: PowerShell Galerisi Hesap Ayarları
-      href: how-to/managing-profile/managing-account.md
-    - name: API Anahtarlarını Yönetme
-      href: how-to/managing-profile/creating-apikeys.md
-  - name: Yerel PowerShellGet Depoları ile çalışma
-    href: how-to/working-with-local-psrepositories.md
+    - name: Galeride Paketleri Bulma
+      items:
+        - name: Paketleri Arama
+          href: how-to/finding-packages/search-syntax.md
+        - name: Uyumluluğa göre arama
+          href: how-to/finding-packages/searching-by-compatibility.md
+        - name: Arama Sonuçlarını Filtreleme
+          href: how-to/finding-packages/filtering-packages.md
+    - name: Galeride Yayımlama
+      items:
+        - name: Paketleri oluşturma ve yayımlama
+          href: how-to/publishing-packages/publishing-a-package.md
+        - name: PowerShellGallery Hesabı Oluşturma
+          href: how-to/publishing-packages/creating-an-account.md
+        - name: Paketleri listeden kaldırma
+          href: how-to/publishing-packages/unlisting-packages.md
+        - name: Paketleri silme
+          href: how-to/publishing-packages/deleting-packages.md
+        - name: Paket sahiplerini yönetme
+          href: how-to/publishing-packages/managing-package-owners.md
+    - name: Paketler ile çalışma
+      items:
+        - name: FileList görünümü
+          href: how-to/working-with-packages/filelist-view.md
+        - name: Azure Otomasyonuna Dağıtma
+          href: how-to/working-with-packages/deploy-to-azure-automation.md
+        - name: Elle Paket İndirme
+          href: how-to/working-with-packages/manual-download.md
+        - name: Lisans Kabulü Gerektiren Paketler
+          href: how-to/working-with-packages/packages-that-require-license-acceptance.md
+        - name: Paket sahipleriyle iletişime geçme
+          href: how-to/working-with-packages/contacting-package-owners.md
+        - name: Sosyal Medya veya Yorumlar Aracılığıyla Geri Bildirim Sağlama
+          href: how-to/working-with-packages/social-media-feedback.md
+    - name: Hesap Profili Yönetme
+      items:
+        - name: PowerShell Galerisi Hesap Ayarları
+          href: how-to/managing-profile/managing-account.md
+        - name: API Anahtarlarını Yönetme
+          href: how-to/managing-profile/creating-apikeys.md
+    - name: Yerel PowerShellGet Depoları ile çalışma
+      href: how-to/working-with-local-psrepositories.md
 - name: Kavramlar
   items:
-  - name: Yayımlama kılavuzları ve en iyi yöntemler
-    href: concepts/publishing-guidelines.md
-  - name: Paket bildirimleri ve Galeri Kullanıcı Arabirimi
-    href: concepts/package-manifest-affecting-ui.md
-  - name: Belirli PSEdition’ları Gerektirme
-    items:
-    - name: PSEdition Desteği ile Betik Yazma
-      href: concepts/script-psedition-support.md
-    - name: PSEdition Desteği ile Modül Yazma
-      href: concepts/module-psedition-support.md
-  - name: Lisans Kabulü Gerektirme
-    items:
-    - name: Betikler için Lisans Kabulü Gerektirme
-      href: concepts/script-license-acceptance.md
-    - name: Modüller için Lisans Kabulü Gerektirme
-      href: concepts/module-license-acceptance.md
-  - name: Paketleri Yayım Öncesi Olarak tanımlama
-    items:
-    - name: Bir Modülü Ön Sürüm Olarak Tanımlama
-      href: concepts/module-prerelease-support.md
-    - name: Bir Betiği Ön Sürüm Olarak Tanımlama
-      href: concepts/script-prerelease-support.md
-  - name: PSScriptAnalyzer Kural Profili
-    href: concepts/scriptanalyzer-rule-profile.md
+    - name: Yayımlama kılavuzları ve en iyi yöntemler
+      href: concepts/publishing-guidelines.md
+    - name: Paket bildirimleri ve Galeri Kullanıcı Arabirimi
+      href: concepts/package-manifest-affecting-ui.md
+    - name: Belirli PSEdition’ları Gerektirme
+      items:
+        - name: PSEdition Desteği ile Betik Yazma
+          href: concepts/script-psedition-support.md
+        - name: PSEdition Desteği ile Modül Yazma
+          href: concepts/module-psedition-support.md
+    - name: Lisans Kabulü Gerektirme
+      items:
+        - name: Betikler için Lisans Kabulü Gerektirme
+          href: concepts/script-license-acceptance.md
+        - name: Modüller için Lisans Kabulü Gerektirme
+          href: concepts/module-license-acceptance.md
+    - name: Paketleri Yayım Öncesi Olarak tanımlama
+      items:
+        - name: Bir Modülü Ön Sürüm Olarak Tanımlama
+          href: concepts/module-prerelease-support.md
+        - name: Bir Betiği Ön Sürüm Olarak Tanımlama
+          href: concepts/script-prerelease-support.md
+    - name: PSScriptAnalyzer Kural Profili
+      href: concepts/scriptanalyzer-rule-profile.md
 - name: Destek Alma
   items:
-  - name: Uygunsuz Kullanımı Bildirme
-    href: how-to/getting-support/report-abuse.md
-  - name: Uyuşmazlık çözümü
-    href: how-to/getting-support/dispute-resolution.md
-  - name: Yöneticilerle iletişime geçme
-    href: how-to/getting-support/contacting-administrators.md
-  - name: Sorun giderme
-    href: how-to/getting-support/troubleshooting-cmdlets.md
-  - name: NuGet sağlayıcısı ve NuGet.exe önyüklemesi
-    href: how-to/getting-support/bootstrapping-nuget.md
-  - name: GDPR Uyumluluğu
-    href: how-to/getting-support/gdpr-dsr-policy.md
+    - name: Uygunsuz Kullanımı Bildirme
+      href: how-to/getting-support/report-abuse.md
+    - name: Uyuşmazlık çözümü
+      href: how-to/getting-support/dispute-resolution.md
+    - name: Yöneticilerle iletişime geçme
+      href: how-to/getting-support/contacting-administrators.md
+    - name: Sorun giderme
+      href: how-to/getting-support/troubleshooting-cmdlets.md
+    - name: NuGet sağlayıcısı ve NuGet.exe önyüklemesi
+      href: how-to/getting-support/bootstrapping-nuget.md
+    - name: GDPR Uyumluluğu
+      href: how-to/getting-support/gdpr-dsr-policy.md
 - name: Galeri SSS
   href: faqs.md
 - name: PowerShellGet cmdlet’leri
-  href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 8b3d2d121c167f3677d3691c8bc481644b95b204
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: HT
-ms.contentlocale: tr-TR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655319"
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
