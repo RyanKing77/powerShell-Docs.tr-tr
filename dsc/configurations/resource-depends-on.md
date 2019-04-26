@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DependsOn kullanan kaynak bağımlılıkları
 ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080090"
 ---
 # <a name="resource-dependencies-using-dependson"></a>DependsOn kullanan kaynak bağımlılıkları
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
 caps.latest.revision: 15
 ms.openlocfilehash: bd5baa03c2050b2c3bbe1d7697c253d923175d39
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083799"
 ---
 # <a name="typename-element-for-types-format"></a>Türler için TypeName Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) SelectionSets öğesi (biçimi) SelectionSet ö
 <TypeName>Nameof.NetType</Name>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Öznitelikler, alt ve üst öğesini aşağıdaki bölümlerde açıklanmaktadır `TypeName` öğesi. En az bir `TypeName` öğe seçimi kümesinde eklenmesi gerekir.
 
@@ -35,17 +35,17 @@ Yapılandırma öğesi (biçimi) SelectionSets öğesi (biçimi) SelectionSet ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[Türleri öğesi (biçimi)](./types-element-for-selectionset-format.md)|Seçimdeki ayarlanan .NET nesneleri tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 .NET türünün tam adını belirtin.
 

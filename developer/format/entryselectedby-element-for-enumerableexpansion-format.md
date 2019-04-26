@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3af6aff8-4c2d-4f08-9bb1-e1f3ed3e583e
 caps.latest.revision: 11
 ms.openlocfilehash: 6a371bdbb85d07730c32931a4a79ee40856ce298
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066218"
 ---
 # <a name="entryselectedby-element-for-enumerableexpansion-format"></a>EnumerableExpansion için EntrySelectedBy Öğesi (Biçim)
 
@@ -31,7 +31,7 @@ Yapılandırma öğesi (biçimi) DefaultSettings öğesi (biçimi) EnumerableExp
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `EntrySelectedBy` öğesi.
 
@@ -39,7 +39,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `EntrySelectedBy`
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -47,7 +47,7 @@ Yok.
 |[EntrySelectedBy EnumerableExpansion (biçimi) için için SelectionSetName öğesi](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)|İsteğe bağlı öğe.<br /><br /> Koleksiyon nesnelerini nasıl genişletilir bu tanımı kullanan .NET türleri kümesini belirtir.|
 |[TypeName öğesi için EntrySelectedBy EnumerableExpansion (biçimi) için](./typename-element-for-entryselectedby-for-enumerableexpansion-format.md)|İsteğe bağlı öğe.<br /><br /> Koleksiyon nesnelerini nasıl genişletilir bu tanımı kullanan bir .NET türü belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

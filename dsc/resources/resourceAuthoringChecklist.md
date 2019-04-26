@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Kaynak yazma denetim listesi
 ms.openlocfilehash: 7b1a096bba1b729c096b6689178ee022e12e4634
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076591"
 ---
 # <a name="resource-authoring-checklist"></a>Kaynak yazma denetim listesi
 
@@ -253,7 +253,7 @@ $tempPath = "C:\Users\kkaczma\AppData\Local\Temp\MyResource"
 $programFilesPath = "C:\Program Files (x86)"
 ```
 
-Şunu yazabilirsiniz:
+şunu yazabilirsiniz:
 
 ```powershell
 $tempPath = Join-Path $env:temp "MyResource"
