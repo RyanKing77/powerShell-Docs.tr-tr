@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows Powershell Başlatma
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
 ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058361"
 ---
 # <a name="starting-windows-powershell"></a>Windows Powershell Başlatma
 Birden çok konaklarına katıştırılmış bir komut dosyası altyapısı dll powershell'dir.  En yaygın konak, başlar, etkileşimli komut satırı PowerShell.exe ve etkileşimli betik ortamı PowerShell_ISE.exe verilmiştir.

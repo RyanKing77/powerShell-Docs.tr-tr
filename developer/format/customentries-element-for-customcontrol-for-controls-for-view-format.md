@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3485958a-ba87-4932-907c-a8f140c4abdb
 caps.latest.revision: 8
 ms.openlocfilehash: 4856aee930285781a101868bd6cb67824585bce1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066592"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-view-format"></a>Görünüm Denetimleri için CustomControl CustomEntries Öğesi (Biçim)
 
@@ -29,7 +29,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </CustomEntries>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki bölümlerde, öznitelikler, alt ve üst öğeleri açıklayan `CustomEntries` öğesi. Hiçbir belirtilebilir alt öğe sayısı üst sınırı yoktur.
 
@@ -37,13 +37,13 @@ Aşağıdaki bölümlerde, öznitelikler, alt ve üst öğeleri açıklayan `Cus
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[CustomEntry öğesi görünümü (biçimi) için denetimleri için CustomEntries için](./customentry-element-for-customentries-for-controls-for-view-format.md)|Gerekli öğe.<br /><br /> Denetim tanımını sağlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC için Linux nxUser kaynağı
 ms.openlocfilehash: 1b02be1559957585a2a1733630cb93440e8182f9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077662"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC için Linux nxUser kaynağı
 
@@ -38,14 +38,14 @@ nxUser <string> #ResourceName
 |---|---|
 | UserName| Bir dosya veya dizin durumu sağlamak istediğiniz konumu belirtir.|
 | Emin olun| Hesap mevcut olup olmadığını belirtir. Bu hesabı var olduğundan emin olmak için "var" özelliğini ayarlayın ve "Eksik için" hesabı yok emin olmak için ayarlayın.|
-| Tam adı| Kullanıcı hesabı için kullanılacak tam adını içeren bir dize.|
+| FullName| Kullanıcı hesabı için kullanılacak tam adını içeren bir dize.|
 | Açıklama| Kullanıcı hesabı için açıklama.|
 | Parola| Linux bilgisayar için uygun biçimde kullanıcılar parola karması. Genellikle, bir salted SHA-256 veya SHA-512 karma budur. Bu değer, Debian ve Ubuntu Linux üzerinde mkpasswd komutu ile oluşturulabilir. Diğer Linux dağıtımları için crypt yöntemi Python'un Crypt Kitaplığı'nın karmasını oluşturmak için kullanılabilir.|
 | Devre dışı| Hesabın etkin olup olmadığını gösterir. Bu özellik kümesine **$true** bu hesabı devre dışı ayarlamanız gerektiğini ve emin olmak için **$false** etkinleştirildiğinden emin olmak için.|
 | PasswordChangeRequired| Kullanıcının parola değiştirip değiştiremeyeceğini belirtir. Bu özellik kümesine **$true** kullanıcı olamaz parolasını değiştirmek, ayarlayın sağlamak ve **$false** parolayı değiştirmek izin vermek için. Varsayılan değer **$false**. Bu özellik yalnızca kullanıcı hesabını daha önce yok ve oluşturulan değerlendirilir.|
 | GirişDizini| Kullanıcı için giriş dizini.|
 | GroupID| Kullanıcının birincil grup kimliği.|
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, çalıştırmak istediğiniz kaynak yapılandırma komut dosyası bloğu Kimliğini ilk "ResourceName" ve "ResourceType" kendi türü ise, bu özelliği kullanmaya ilişkin sözdizimini ise `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, çalıştırmak istediğiniz kaynak yapılandırma komut dosyası bloğu Kimliğini ilk "ResourceName" ve "ResourceType" kendi türü ise, bu özelliği kullanmaya ilişkin sözdizimini ise `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Örnek
 

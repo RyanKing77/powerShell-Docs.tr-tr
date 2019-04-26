@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b62e81cc-4175-40fa-829f-634245b09f86
 caps.latest.revision: 12
 ms.openlocfilehash: aaf16702e485135b5299ccb43a2b62db2d9f5762
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065402"
 ---
 # <a name="listentries-element-for-listcontrol-format"></a>ListControl için ListEntries Öğesi (Biçim)
 
@@ -29,7 +29,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </ListEntries>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Öznitelikler, alt ve üst öğesini aşağıdaki bölümlerde açıklanmaktadır `ListEntries` öğesi. En az bir alt öğesi belirtilmesi gerekir.
 
@@ -37,13 +37,13 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[ListEntry öğesi (biçimi)](./listentry-element-for-listcontrol-format.md)|Liste Görünümü tanımını sağlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

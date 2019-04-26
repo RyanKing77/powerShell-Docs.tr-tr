@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Birden Çok Seçim Liste Kutusu
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ms.openlocfilehash: a762145dc197ec7e1424b2fbdcef5e7380d13803
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057970"
 ---
 # <a name="multiple-selection-list-boxes"></a>Birden çok seçim liste kutuları
 

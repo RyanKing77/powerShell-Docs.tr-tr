@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: WMF 5.1 PowerShell altyapısı iyileştirmeleri
 ms.openlocfilehash: 738f72b910de7d44f48309013237d523d0dd40a4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055573"
 ---
 # <a name="powershell-engine-improvements"></a>PowerShell altyapısı iyileştirmeleri
 
@@ -32,7 +32,7 @@ Bazı örnek iyileştirmeleri (sonuçlarınızı donanımınıza bağlı olarak 
 
 > [!Note]
 > Desteklenmeyen bazı senaryolar için başlatma ilgili bir değişiklik etkileyebilir.
-> PowerShell artık, dosyaları okur `$pshome\*.ps1xml` --bu dosyaları bazı dosya önlemek için C# için olarak dönüştürüldü ve XML işlem yükünü CPU dosyaları.
+> PowerShell artık, dosyaları okur `$pshome\*.ps1xml` --bu dosyaları dönüştürülmüştür C# bazı dosya ve XML dosyalarını işleme CPU ek yükünü önlemek için.
 > Dosya içeriğini değiştirirseniz V5, yalnızca V2 için herhangi bir etkisi olmaz şekilde dosyaları yan yana V2 desteklemek için hala mevcut.
 > Bu dosyaların içeriğini değiştirme, desteklenen bir senaryo asla olup olmadığını unutmayın.
 

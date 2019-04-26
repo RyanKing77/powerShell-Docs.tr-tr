@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 0bc085588190f134c4a687c952509aa256b5f840
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085210"
 ---
 # <a name="just-enough-administration-jea"></a>Yeterli Yönetim (JEA)
 Yeterli yönetim, WMF 5.0, rol tabanlı yönetim üzerinden PowerShell uzaktan iletişimini sağlayan yeni bir özelliktir.  Altyapınız kısıtlanmış uç noktası, yönetici olmayanların belirli komutları, betikleri ve yürütülebilir dosyalar, bir yönetici olarak çalıştırmak sağlayarak genişletir.  Bu, ortamınızda tam yönetici sayısını azaltmak ve güvenliğinizi artırmak sağlar.  JEA, her şeyi, PowerShell aracılığıyla yönetmek için çalışır; PowerShell ile bir şey yönetebilir, JEA daha güvenli bir şekilde yapmanıza yardımcı olabilir.  Yeterli yönetim ayrıntılı bilgi için kullanıma [Kılavuzu deneyimi](http://aka.ms/JEA).

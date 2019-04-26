@@ -1,26 +1,26 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 9ca12ad3f0729a2e9595d7ca5ccf9041e47658a3
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: db9c630bcb8e9e0da423c779976739f1ae76f13e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057443"
 ---
 # <a name="archive-cmdlets"></a>Arşiv cmdlet'leri
 
-İki yeni cmdlet'leri **sıkıştırma arşiv** ve **genişletme arşiv**, let Sıkıştır ve ZIP dosyaları genişletin.
+İki yeni cmdlet **arşiv sıkıştırma** ve **genişletme arşiv**, let sıkıştırma ve ZIP dosyaları genişletin.
 
 ## <a name="compress-archive"></a>Arşiv sıkıştırma
-**Sıkıştırma arşiv** cmdlet'i, belirtilen dosyalardan yeni bir arşiv dosyası oluşturur. Bir arşiv dosyasına birden çok dosyaların paketlenir ve isteğe bağlı olarak daha kolay işleme ve depolama için tek bir dosyaya sıkıştırılmış olanak sağlar. Belirtilen bir sıkıştırma algoritması kullanılarak bir arşiv dosyasına sıkıştırılabilir **- CompressionLevel** parametresi.
+**Arşiv sıkıştırma** cmdlet'i, belirtilen dosyalardan yeni arşiv dosyası oluşturur. Bir arşiv dosyasını, birden çok, dosyaların paketlenmeli ve isteğe bağlı olarak daha kolay işleme ve depolama için tek bir dosya halinde sıkıştırılmış olanak sağlar. Belirtilen bir sıkıştırma algoritması kullanarak bir arşiv dosyasını sıkıştırılabilir **- CompressionLevel** parametresi.
 ```powershell
 Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>]
 Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>]
 ```
 
-## <a name="expand-archive"></a>Genişletme arşiv
-**Genişletme arşiv** cmdlet'i, belirtilen Arşiv dosyasından dosyaları ayıklar. Bir arşiv dosyasına birden çok dosyaların paketlenir ve isteğe bağlı olarak daha kolay işleme ve depolama için tek bir dosyaya sıkıştırılmış olanak sağlar.
+## <a name="expand-archive"></a>Arşiv genişletin
+**Genişletme arşiv** cmdlet'i, belirtilen Arşiv dosyasından dosyalarını ayıklar. Bir arşiv dosyasını, birden çok, dosyaların paketlenmeli ve isteğe bağlı olarak daha kolay işleme ve depolama için tek bir dosya halinde sıkıştırılmış olanak sağlar.
 ```powershell
 Expand-Archive -LiteralPath <String> [-DestinationPath] <String>
 Expand-Archive [-Path] <String> [-DestinationPath] <String>

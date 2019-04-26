@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ab2a5379-299d-4c97-86a2-b639ea890fae
 caps.latest.revision: 6
 ms.openlocfilehash: 7f9066c0fe0954fadff9dc8f0c35a62c6710f516
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065606"
 ---
 # <a name="frame-element-for-customitem-for-groupby-format"></a>GroupBy CustomItem için Çerçeve Öğesi (Biçim)
 
@@ -33,7 +33,7 @@ GroupBy (biçimi) CustomEntries öğesinin GroupBy (biçimi) CustomEntry öğesi
 </Frame>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `Frame` öğesi.
 
@@ -41,7 +41,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `Frame` öğesi.
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -51,7 +51,7 @@ Yok.
 |[GroupBy (biçimi) için bir çerçeve için LeftIndent öğesi](./leftindent-element-for-frame-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> Sol kenar boşluğu uzağa veri kaydırılacağı uzaklık karakterlerinin kaçının tutulacağını belirtir.|
 |[GroupBy (biçimi) için bir çerçeve için RightIndent öğesi](./rightindent-element-for-frame-for-groupby-format.md)RightIndent öğesi|İsteğe bağlı öğe.<br /><br /> Sağ kenar boşluğu uzağa veri kaydırılacağı uzaklık karakterlerinin kaçının tutulacağını belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

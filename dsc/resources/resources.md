@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC kaynakları
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076641"
 ---
 # <a name="dsc-resources"></a>DSC kaynakları
 
->Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Desired State Configuration ' nı (DSC) kaynakları bir DSC yapılandırması için yapı taşlarını sağlar. Bir kaynak (şema) yapılandırılmış olabilir ve yerel Configuration Manager (LCM) ", bunu yapmak için" çağıran PowerShell Betiği işlevlerini içeren özellikleri sunar.
 

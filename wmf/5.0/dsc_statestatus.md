@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: ff2c2bd7369893d72db001ecabf63991ded0bfd5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058990"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Birleşmiş ve Tutarlı Durum ve Durum Gösterimi
 
@@ -38,7 +38,7 @@ Sonuç aşağıdaki tabloda gösterilmiştir durum ilgili bazı tipik senaryolar
 
 - S<sub>miyim</sub>: Bir dizi başarıyla uygulandı kaynakları
 - F<sub>miyim</sub>: Bir dizi başarısız uygulanan kaynakları
-- r: Yeniden başlatma gerektiren bir kaynak
+- R: Yeniden başlatma gerektiren bir kaynak
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState

@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Sistem Yönetimi için örnek betikler
 ms.assetid: db6334ec-ace6-436d-ab88-77aefc817511
 ms.openlocfilehash: 3c771c9568f40ec3a4bb7061c122f33bba7d0382
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058225"
 ---
 # <a name="sample-scripts-for-system-administration"></a>Sistem Yönetimi için örnek betikler
 

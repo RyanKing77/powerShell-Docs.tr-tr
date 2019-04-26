@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: ISEOptions Nesnesi
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ms.openlocfilehash: e756da21aaa5465f7fa6a90563b4180f0c89e87b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057783"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions Nesnesi
 
@@ -548,11 +548,11 @@ $psISE.Options.XmlTokenColors["ElementName"] = 'green'
 $psISE.Options.XmlTokenColors["Comment"] = 'magenta'
 ```
 
-### <a name="zoom"></a>Yakınlaştırma
+### <a name="zoom"></a>Yakınlaştır
 
 Desteklenen Windows PowerShell ISE 3.0 ve sonraki ve önceki sürümlerde mevcut değil.
 
-Hem konsol hem de betik bölmelerinde metin boyutunu belirtir. Varsayılan değer 100'dür. Daha küçük değerler metni büyük görüntülenecek metin daha büyük sayılar neden olurken daha küçük görünür için Windows PowerShell ISE'de neden olur. 20'den 400 arasında bir tamsayı değerdir.
+Hem konsol hem de betik bölmelerinde metin boyutunu belirtir. Varsayılan değer 100’dür. Daha küçük değerler metni büyük görüntülenecek metin daha büyük sayılar neden olurken daha küçük görünür için Windows PowerShell ISE'de neden olur. 20'den 400 arasında bir tamsayı değerdir.
 
 ```powershell
 # Changes the text in the Windows PowerShell ISE to be double its normal size.

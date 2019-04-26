@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: PowerShell.exe Komut Satırı Yardımı
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
 ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058522"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe komut satırı Yardımı
 
@@ -137,7 +137,7 @@ Bir dize içinde tanımlanan bir satır içi betik bloğu yürütülecek [çağr
 Powershell.exe söz dizimi görülmektedir. PowerShell.exe komut PowerShell'de yazıyorsanız, kısa çizgi (-) değil ters eğik çizgi (/) komutunu parametrelerle önüne ekleyin. Bir tire veya eğik Cmd.exe içinde kullanabilirsiniz.
 
 > [!NOTE]
-> Sorun Giderme Notu: PowerShell 2. 0'da, bazı Windows PowerShell konsol programlarda 0xc0000142'bir LastExitCode ile başlatılıyor.
+> Sorun giderme notu: PowerShell 2. 0'da, bazı Windows PowerShell konsol programlarda 0xc0000142'bir LastExitCode ile başlatılıyor.
 
 ## <a name="examples"></a>ÖRNEKLERİ
 

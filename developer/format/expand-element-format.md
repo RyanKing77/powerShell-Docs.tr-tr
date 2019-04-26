@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: faa0314b-f6f1-44fd-ad2b-b00cbe38923f
 caps.latest.revision: 9
 ms.openlocfilehash: 8b924c989133b47e4d95d8429778003c76595d58
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066014"
 ---
 # <a name="expand-element-format"></a>Genişletme Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) DefaultSettings öğesi (biçimi) EnumerableExp
 <Expand>EnumOnly, CoreOnly, Both</Expand>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `Expand` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `Expand` öğesi.
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[EnumerableExpansion öğesi (biçimi)](./enumerableexpansion-element-format.md)|Bir görünümü'nde görüntülendiğinde nesneleri genişletilir belirli .NET koleksiyonu tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Aşağıdaki değerlerden birini belirtin:
 

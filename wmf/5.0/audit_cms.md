@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 14208e3b5d5c2fef80fa42a87cc00aeee81bd042
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b8940ded189d822a5a2cd40773ef5146353611cc
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059007"
 ---
-# <a name="cryptographic-message-syntax-cms-cmdlets"></a>Şifreleme iletisi söz dizimi (CMS) cmdlet'leri
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a>Şifreli ileti söz dizimi (CMS) cmdlet'leri
 
-Şifreleme iletisi söz dizimi cmdlet'leri şifreleme ve şifre çözme içeriğin şifreli olarak iletileri tarafından belgelenen şekilde korumak için IETF standart biçimi kullanarak destek [RFC5652](https://tools.ietf.org/html/rfc5652).
+Şifreleme ve şifre çözme şifreli olarak iletileri tarafından belirtildiği gibi korumak için IETF standart biçimi kullanarak içeriğin şifreli ileti söz dizimi cmdlet'leri Destek [RFC5652](https://tools.ietf.org/html/rfc5652).
 
 ```powershell
 Get-CmsMessage [-Content] <string>
@@ -25,13 +25,13 @@ Unprotect-CmsMessage [-Path] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeC
 Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeContext]
 ```
 
-Standart CMS şifreleme anahtarları kullanıldığı içerik şifrelemek için ortak anahtar şifrelemesi uygulayan ( *ortak anahtar*) ve içeriğin şifresini çözmek için kullanılan anahtarları ( *özel anahtarı*) ayrıdır.
+Standart CMS şifreleme anahtarları kullanıldığı içeriği şifrelemek için ortak anahtar şifrelemesi uygular ( *ortak anahtar*) ve içeriğin şifresini çözmek için kullanılan anahtarları ( *özel anahtarı*) ayrıdır.
 
-Ortak anahtarınız yaygın paylaşılabilir ve hassas verileri değil. Yalnızca özel anahtarınızı herhangi bir içerik bu ortak anahtarla şifrelenmiş çözebilir. Daha fazla bilgi için bkz: [ortak anahtar şifrelemesini](https://en.wikipedia.org/wiki/Public-key_cryptography).
+Ortak anahtarınızı yaygın olarak paylaşılabilir ve hassas veriler değil. Herhangi bir içerik bu ortak anahtarıyla şifrelenir, yalnızca özel anahtarınızı çözebilir. Daha fazla bilgi için [ortak anahtar şifrelemesi](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
-PowerShell'de tanınması için veri şifreleme sertifikaları (ör. 'Kod imzalama için', 'Şifrelenmiş posta' tanımlayıcılar) olarak tanımak için bir benzersiz anahtar kullanımı tanımlayıcısı (EKU) şifreleme sertifikaları gerektirir.
+PowerShell'de tanınması için veri şifreleme sertifikaları (gibi tanımlayıcıları 'Kod imzalama için', 'Şifrelenmiş posta') olarak belirlenebilmesi için benzersiz anahtar kullanımı tanımlayıcı (EKU) şifreleme sertifikaları gerektirir.
 
-Belge şifreleme için iyi bir sertifika oluşturma örnek aşağıda verilmiştir:
+Belge şifreleme için iyi bir sertifika oluşturma örneği aşağıda verilmiştir:
 
 ```powershell
 (Change the text in **Subject** to your name, email, or other identifier), and put in a file (i.e.: DocumentEncryption.inf):
@@ -60,7 +60,7 @@ Ardından şunu çalıştırın:
 certreq -new DocumentEncryption.inf DocumentEncryption.cer
 ```
 
-Ve şimdi şifrelemek ve içeriğin şifresini:
+Ve şimdi şifreleme ve şifre çözme içeriği:
 
 ```powershell
 $protected = "Hello World" | Protect-CmsMessage -To "\*me@somewhere.com\*[](mailto:*leeholm@microsoft.com*)"
@@ -81,13 +81,13 @@ Hello World
 ```
 
 Herhangi bir parametre türü **CMSMessageRecipient** tanımlayıcıları aşağıdaki biçimlerde destekler:
-- Gerçek bir sertifika (olarak sertifika Sağlayıcısı'ndan alınan)
-- Yol için bir sertifikayı içeren dosyayı
+- Gerçek bir sertifika (olarak sertifika sağlayıcısından alınan)
+- Yolu için sertifikayı içeren bir dosya
 - Sertifikayı içeren bir dizin yolu
 - (Sertifika deposunda aramak için kullanılan) sertifikanın parmak izi
 - (Sertifika deposunda aramak için kullanılan) sertifikanın konu adı
 
-Belge Şifreleme sertifikaları sertifika sağlayıcısında görüntülemek için kullanabileceğiniz **- DocumentEncryptionCert** dinamik parametre:
+Sertifika Sağlayıcısı belge şifreleme sertifikaları görüntülemek için kullanabileceğiniz **- DocumentEncryptionCert** dinamik parametre:
 
 ```powershell
 dir -DocumentEncryptionCert

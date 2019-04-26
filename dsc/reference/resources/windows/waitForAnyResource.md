@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC WaitForAny kaynak
 ms.openlocfilehash: 55869f665837b422c006f4cfb3e91366fac60362
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076842"
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny kaynak
 
-> Şunun için geçerlidir: Windows PowerShell 5.1 ve üzeri
+> Uygulama hedefi: Windows PowerShell 5.1 ve üzeri
 
 **WaitForAny** Desired State Configuration ' nı (DSC) kaynak, bir düğüm bloğunda içinde kullanılabilir bir [DSC Yapılandırması](../../../configurations/configurations.md) diğer düğümlerde yapılandırmalarında bağımlılıklarını belirtmek için.
 

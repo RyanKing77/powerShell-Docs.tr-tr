@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Yapılandırmalarda koşullu deyimler ve döngüler
 ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080144"
 ---
 # <a name="conditional-statements-and-loops-in-configurations"></a>Yapılandırmalarda koşullu deyimler ve döngüler
 

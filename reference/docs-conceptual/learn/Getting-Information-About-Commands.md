@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Komutlar hakkında bilgi alma
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057715"
 ---
 # <a name="getting-information-about-commands"></a>Komutlar hakkında bilgi alma
 
@@ -74,7 +74,7 @@ Sınırlı bir komut kümesini aramak daha yararlı olacaktır.
 > Yıldız işareti (\*) joker karakter eşleme PowerShell komut satırı bağımsız değişkenlerini için kullanılır. \* Eşleşme anlamına gelir"bir veya daha fazla herhangi bir karakter". Yazabilirsiniz `Get-Command a*` harfi ile başlayan tüm komutları bulmak için "a". İçinde joker karakterlerle eşleşen aksine **cmd.exe**, PowerShell'in joker karakter, bir süre de eşleşir.
 
 Kullanım **CommandType** parametresinin `Get-Command` diğer tür yerel komutları almak için.
-cmdlet'ini çalıştırdığınızda döndürülen çekirdek kaynakları bilgilerini gözden geçirebilirsiniz.
+cmdlet'i.
 
 Komutların atanan takma adları olan komut diğer adları almak için aşağıdakileri yazın:
 

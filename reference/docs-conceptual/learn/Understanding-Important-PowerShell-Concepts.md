@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Önemli PowerShell kavramlarını anlama
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
 ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058599"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Önemli PowerShell kavramlarını anlama
 
@@ -38,6 +38,6 @@ PowerShell otomatik olarak ayrıştırır ve komut satırı işlemleri **-?** pa
 > PowerShell'de bir grafik uygulaması çalıştırırsanız, uygulama için bir pencere açılır.
 > PowerShell, yalnızca zaman komut satırı işleme, tedarik veya konsol penceresine döndürülen uygulama çıktısı giriş müdahalesi. Uygulama dahili olarak şeklini etkilemez.
 
-## <a name="powershell-uses-some-c-syntax"></a>PowerShell kullanan bazı C# sözdizimi
+## <a name="powershell-uses-some-c-syntax"></a>PowerShell kullanan bazı C# söz dizimi
 
-PowerShell, .NET Framework üzerinde oluşturulur. Bu bazı özellikleri söz dizimi ve anahtar sözcükler C# programlama dilinin paylaşır. PowerShell öğrenmek, C# öğrenmek çok daha kolay zorlaştırabilir. Zaten C# ile biliyorsanız, bu benzerlikler PowerShell daha kolay öğrenme yapabilirsiniz.
+PowerShell, .NET Framework üzerinde oluşturulur. Bazı sözdizimi özellikleri ve anahtar sözcükleri ile paylaşır C# programlama dilidir. PowerShell öğrenme yapabilir, öğrenmek çok daha kolay C#. Zaten alışkın değilseniz C#, bu benzerlikler PowerShell daha kolay öğrenme yapabilirsiniz.

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 43f940db-62e9-4c4d-945c-6f6f48880868
 caps.latest.revision: 6
 ms.openlocfilehash: 395798bd39f18af01a7da6b88916ed82cd514003
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064610"
 ---
 # <a name="rightindent-element-for-frame-for-groupby-format"></a>GroupBy Çerçevesi için RightIndent Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ GroupBy (biçimi) CustomEntries öğesinin GroupBy (biçimi) CustomEntry öğesi
 <RightIndent>CharactersToShift</RightIndent>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `RightIndent` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `RightIndent` öğ
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[GroupBy (biçimi) için CustomItem için çerçeve öğesi](./frame-element-for-customitem-for-groupby-format.md)|Verinin, veri sola veya sağa kaydırma gibi görüntülenme şeklini tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Veri sağa kaydırmak için istediğiniz karakter sayısını belirtin.
 

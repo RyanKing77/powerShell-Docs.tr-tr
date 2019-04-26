@@ -2,12 +2,12 @@
 title: PowerShell Core’da WS-Management (WSMan) Uzaktan İletişimi
 description: PowerShell core'da WSMan kullanarak uzaktan iletişim
 ms.date: 08/06/2018
-ms.openlocfilehash: ce58ed88f59f32b0f83951e55de36e829f7fa3f4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058888"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core’da WS-Management (WSMan) Uzaktan İletişimi
 
@@ -28,7 +28,7 @@ Daha fazla ayrıntı için lütfen sorun bakın [#1193](https://github.com/Power
 
 Komut dosyası
 
-1. Eklenti %windir%\System32\PowerShell içinde bir dizin oluşturur.
+1. İçinde eklenti için bir dizin oluşturur. `$env:windir\System32\PowerShell`
 1. Pwrshplugin.dll o konuma kopyalar.
 1. Bir yapılandırma dosyası oluşturur
 1. WinRM ile bu eklenti kayıtları

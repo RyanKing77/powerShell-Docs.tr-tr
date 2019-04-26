@@ -3,11 +3,11 @@ title: PowerShell Core 6.0 yenilikler nelerdir?
 description: Yeni özellikler ve PowerShell Core 6. 0'yayımlanan değişiklikleri
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059024"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 yenilikler nelerdir?
 
@@ -70,7 +70,7 @@ Diğerleri yalnızca yok veya geçerli olmayan Windows yüklemelerinde PowerShel
 MacOS, yerel PowerShell kullanan `os_log` Apple oturum API'leri [birleştirilmiş günlük sistemi][os_log].
 Linux üzerinde PowerShell kullanan [Syslog][], bulunabilen günlüğü çözüm.
 
-### <a name="filesystem"></a>Dosya sistemi
+### <a name="filesystem"></a>dosya sistemi
 
 Bir dizi değişiklik, macOS ve Linux'ta Windows üzerinde değil, geleneksel olarak desteklenen dosya adı karakterleri desteklemek için yapılmıştır:
 
@@ -118,7 +118,7 @@ Ek değişiklikler `pwsh(.exe)` gelen `powershell.exe`:
   Ancak, bu değişiklik açıkça belirttiğiniz gerektirir `-c` veya `-Command` gibi komutları çalıştırmak çalışırken `pwsh.exe -Command Get-Command`. (#4019)
 - PowerShell Core kabul `-i` (veya `-Interactive`) etkileşimli bir kabuk göstermek için anahtar. (#3558) Bu, bir Unix platformlarında üzerindeki varsayılan kabuk olarak kullanılmak üzere PowerShell sağlar.
 - Parametreleri kaldırıldı `-importsystemmodules` ve `-psconsoleFile` gelen `pwsh.exe`. (#4995)
-- Değiştirilen `pwsh -version` ve yerleşik Yardım `pwsh.exe` yerel diğer araçlar ile hizalamak için. (#4958 & #4931) (Teşekkürler [ @iSazonov ](https://github.com/iSazonov))
+- Değiştirilen `pwsh -version` ve yerleşik Yardım `pwsh.exe` yerel diğer araçlar ile hizalamak için. (#4958 & #4931) (Thanks [@iSazonov](https://github.com/iSazonov))
 - Geçersiz bağımsız değişken için hata iletileri `-File` ve `-Command` ve çıkış kodları UNIX standartları ile tutarlı (#4573)
 - Eklenen `-WindowStyle` Windows parametresi. (#4573) Benzer şekilde, paket tabanlı yüklemeler güncelleştirmeleri Windows dışı platformlarda yerinde güncelleştirmelerdir.
 
@@ -214,8 +214,8 @@ PowerShell işleri hakkında daha fazla bilgi için bkz. [about_Jobs](https://ms
 
 ## <a name="semantic-versioning"></a>Semantic versioning
 
-- Yapılan `SemanticVersion` uyumlu `SemVer 2.0`. (#5037) (Teşekkürler [ @iSazonov ](https://github.com/iSazonov)!)
-- Değiştirilen varsayılan `ModuleVersion` içinde `New-ModuleManifest` için `0.0.1` SemVer ile hizalamak için. (#4842) (Teşekkürler [ @LDSpits ](https://github.com/LDSpits))
+- Yapılan `SemanticVersion` uyumlu `SemVer 2.0`. (#5037) (Thanks [@iSazonov](https://github.com/iSazonov)!)
+- Değiştirilen varsayılan `ModuleVersion` içinde `New-ModuleManifest` için `0.0.1` SemVer ile hizalamak için. (#4842) (Thanks [@LDSpits](https://github.com/LDSpits))
 - Eklenen `semver` için tür Hızlandırıcı olarak `System.Management.Automation.SemanticVersion`. (#4142) (Performanstan [ @oising ](https://github.com/oising)!)
 - Karşılaştırma arasında etkin bir `SemanticVersion` örneği ve bir `Version` yalnızca ile oluşturulan örnek `Major` ve `Minor` sürüm değerleri.
 
@@ -225,7 +225,7 @@ PowerShell işleri hakkında daha fazla bilgi için bkz. [about_Jobs](https://ms
 - Eklenen yeni kaçış karakteri ESC için: `` `e``
 - Numaralandırmalar (#4318) dize dönüştürme için destek eklendi (teşekkürler [ @KirkMunro ](https://github.com/KirkMunro))
 - Sabit atama tek öğeli bir dizi için bir genel koleksiyon. (#3170)
-- Eklenen karakter aralığı aşırı `..` işleci, bu nedenle `'a'..'z'` 'bir kaynak'-'z' karakterleri döndürür. (#5026) (Teşekkürler [ @IISResetMe ](https://github.com/IISResetMe)!)
+- Eklenen karakter aralığı aşırı `..` işleci, bu nedenle `'a'..'z'` 'bir kaynak'-'z' karakterleri döndürür. (#5026) (Thanks [@IISResetMe](https://github.com/IISResetMe)!)
 - Salt okunur değişkenler üzerine değil, sabit değişken ataması
 - Otomatik değişkenlerin Yereller 'DottedScopes' için betik cmdlet'lerini dotting push (#4709)
 - Bölme işleci 'Singleline, çok satırlı' seçeneğinin kullanımını etkinleştir (#4721) (teşekkürler [ @iSazonov ](https://github.com/iSazonov))
@@ -234,9 +234,9 @@ PowerShell işleri hakkında daha fazla bilgi için bkz. [about_Jobs](https://ms
 
 - `$PSVersionTable` dört yeni özelliklere sahiptir:
   - `PSEdition`: Bu ayar `Core` PowerShell core'da ve `Desktop` Windows PowerShell
-  - `GitCommitId`: Bu Git commit Git dalı veya da etiketi burada PowerShell oluşturulmuş kimliğidir.
+  - `GitCommitId`: Burada PowerShell oluşturulmuş Git dalı veya da etiketi Git işleme kimliği budur.
     Yayımlanan sürümlerde, büyük olasılıkla aynı olacaktır `PSVersion`.
-  - `OS`: Bu tarafından döndürülen bir işletim sistemi sürümü dizedir `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
+  - `OS`: Tarafından döndürülen bir işletim sistemi sürümü dize budur. `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: Tarafından döndürülen bu `[System.Environment]::OSVersion.Platform` ayarlanır `Win32NT` , Windows üzerinde `Unix` , MacOS ve `Unix` Linux üzerinde.
 - Kaldırılan `BuildVersion` özelliğinden `$PSVersionTable`.
   Bu özellik, Windows yapı sürümüne bağlı.
@@ -254,32 +254,32 @@ PowerShell işleri hakkında daha fazla bilgi için bkz. [about_Jobs](https://ms
 
 ### <a name="new-cmdlets"></a>Yeni cmdlet'ler
 
-- Ekleme `Get-Uptime` için `Microsoft.PowerShell.Utility`.
+- Add `Get-Uptime` to `Microsoft.PowerShell.Utility`.
 - Ekleme `Remove-Alias` komutu. (#5143) (Teşekkürler [ @PowershellNinja ](https://github.com/PowershellNinja)!)
-- Ekleme `Remove-Service` yönetim modülü. (#4858) (Teşekkürler [ @joandrsn ](https://github.com/joandrsn)!)
+- Ekleme `Remove-Service` yönetim modülü. (#4858) (Thanks [@joandrsn](https://github.com/joandrsn)!)
 
 ### <a name="web-cmdlets"></a>Web cmdlet'leri
 
-- Web cmdlet'leri için sertifika kimlik doğrulaması desteği eklendi. (#4646) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
-- İçerik üstbilgileri için destek web cmdlet'leri eklendi. (#4494 & #4640) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
-- Web Cmdlet'lerine birden çok bağlantı üstbilgi desteği eklendi. (#5265) (Teşekkürler [ @markekraus ](https://github.com/markekraus)!)
+- Web cmdlet'leri için sertifika kimlik doğrulaması desteği eklendi. (#4646) (Thanks [@markekraus](https://github.com/markekraus))
+- İçerik üstbilgileri için destek web cmdlet'leri eklendi. (#4494 & #4640) (Thanks [@markekraus](https://github.com/markekraus))
+- Web Cmdlet'lerine birden çok bağlantı üstbilgi desteği eklendi. (#5265) (Thanks [@markekraus](https://github.com/markekraus)!)
 - Bağlantı üstbilgi sayfalandırma web cmdlet'lerinde destek (#3828)
   - İçin `Invoke-WebRequest`, oluşturduğumuz RelationLink özelliği URL'leri temsil eden bir sözlük olarak bir bağlantı üstbilgisi yanıt içerir ve `rel` öznitelikleri ve geliştirici kullanmayı kolaylaştırmak için mutlak URL'ler olduğundan emin olun.
   - İçin `Invoke-RestMethod`, yanıt kullanıma sunuyoruz bağlantı üstbilgi içerdiğinde bir `-FollowRelLink` otomatik olarak izlemek için anahtar `next` `rel` artık mevcut kadar bağlantılar veya bir kez biz isabet isteğe bağlı `-MaximumFollowRelLink` parametre değeri.
 - Ekleme `-CustomMethod` web cmdlet'leri için standart yöntemi fiillere izin vermek için parametre. (#3142) (Performanstan [ @Lee303 ](https://github.com/Lee303)!)
-- Ekleme `SslProtocol` Web cmdlet'leri için destek. (#5329) (Teşekkürler [ @markekraus ](https://github.com/markekraus)!)
-- Çok bölümlü ekleme web cmdlet'leri için destek. (#4782) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
+- Ekleme `SslProtocol` Web cmdlet'leri için destek. (#5329) (Thanks [@markekraus](https://github.com/markekraus)!)
+- Çok bölümlü ekleme web cmdlet'leri için destek. (#4782) (Thanks [@markekraus](https://github.com/markekraus))
 - Ekleme `-NoProxy` web Cmdlet'lerine böylece bunlar sistem genelinde proxy ayarı yoksayar. (#3447) (Performanstan [ @TheFlyingCorpse ](https://github.com/TheFlyingCorpse)!)
 - Kullanıcı Aracısı, Web cmdlet'leri, işletim sistemi platformu artık raporları (#4937) (teşekkürler [ @LDSpits ](https://github.com/LDSpits))
 - Ekleme `-SkipHeaderValidation` üstbilgi değeri doğrulamadan ekleme üstbilgileri destekleyen web cmdlet'ler geçin. (#4085)
 - Sunucusunun HTTPS sertifikası gerekli değil doğrulanacak web cmdlet'leri etkinleştirin.
-- Kimlik doğrulama parametreleriyle web Cmdlet'lerine eklendi. (#5052) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
-  - Ekleme `-Authentication` bu seçeneklerin üçünü de sunar: temel, OAuth ve taşıyıcı.
+- Kimlik doğrulama parametreleriyle web Cmdlet'lerine eklendi. (#5052) (Thanks [@markekraus](https://github.com/markekraus))
+  - Ekleme `-Authentication` bu seçeneklerin üçünü de sunar: Temel, OAuth ve taşıyıcı.
   - Ekleme `-Token` OAuth ve taşıyıcı seçeneklerini taşıyıcı belirteci alma işlemi.
   - Ekleme `-AllowUnencryptedAuthentication` HTTPS dışında herhangi bir taşıma şeması için sağlanan kimlik doğrulamasını atlamak için.
-- Ekleme `-ResponseHeadersVariable` için `Invoke-RestMethod` yanıt üst bilgilerini yakalama olanağı. (#4888) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
+- Ekleme `-ResponseHeadersVariable` için `Invoke-RestMethod` yanıt üst bilgilerini yakalama olanağı. (#4888) (Thanks [@markekraus](https://github.com/markekraus))
 - HTTP yanıtı yanıt durum kodu başarılı olmadığında özel duruma dahil etmek için web cmdlet'leri düzeltildi. (#3201)
-- Değiştirme web cmdlet'leri `UserAgent` gelen `WindowsPowerShell` için `PowerShell`. (#4914) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
+- Değiştirme web cmdlet'leri `UserAgent` gelen `WindowsPowerShell` için `PowerShell`. (#4914) (Thanks [@markekraus](https://github.com/markekraus))
 - Açık ekleme `ContentType` algılamayı `Invoke-RestMethod` (#4692)
 - Web cmdlet'leri düzeltme `-SkipHeaderValidation` standart kullanıcı aracısını üst bilgileri ile çalışmak için. (#4479 & #4512) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
 
@@ -295,14 +295,14 @@ PowerShell işleri hakkında daha fazla bilgi için bkz. [about_Jobs](https://ms
 
 ### <a name="csv-cmdlets"></a>CSV cmdlet'leri
 
-- Ekleme `PSTypeName` desteği `Import-Csv` ve `ConvertFrom-Csv`. (#5389) (Teşekkürler [ @markekraus ](https://github.com/markekraus)!)
-- Olun `Import-Csv` Destek `CR`, `LF`, ve `CRLF` ayırıcıları hat. (#5363) (Teşekkürler [ @iSazonov ](https://github.com/iSazonov)!)
-- Olun `-NoTypeInformation` varsayılan `Export-Csv` ve `ConvertTo-Csv`. (#5164) (Teşekkürler [ @markekraus ](https://github.com/markekraus))
+- Ekleme `PSTypeName` desteği `Import-Csv` ve `ConvertFrom-Csv`. (#5389) (Thanks [@markekraus](https://github.com/markekraus)!)
+- Olun `Import-Csv` Destek `CR`, `LF`, ve `CRLF` ayırıcıları hat. (#5363) (Thanks [@iSazonov](https://github.com/iSazonov)!)
+- Olun `-NoTypeInformation` varsayılan `Export-Csv` ve `ConvertTo-Csv`. (#5164) (Thanks [@markekraus](https://github.com/markekraus))
 
 ### <a name="service-cmdlets"></a>Hizmeti cmdlet'leri
 
-- Özellikler ekleme `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, ve `StartupType` için `ServiceController` tarafından döndürülen nesne `Get-Service`. (#4907) (Teşekkürler [ @joandrsn ](https://github.com/joandrsn))
-- Kimlik bilgilerini ayarlamak için işlevsellik ekleyen `Set-Service` komutu. (#4844) (Teşekkürler [ @joandrsn ](https://github.com/joandrsn))
+- Özellikler ekleme `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, ve `StartupType` için `ServiceController` tarafından döndürülen nesne `Get-Service`. (#4907) (Thanks [@joandrsn](https://github.com/joandrsn))
+- Kimlik bilgilerini ayarlamak için işlevsellik ekleyen `Set-Service` komutu. (#4844) (Thanks [@joandrsn](https://github.com/joandrsn))
 
 ### <a name="other-cmdlets"></a>Diğer cmdlet'ler
 
@@ -315,7 +315,7 @@ PowerShell işleri hakkında daha fazla bilgi için bkz. [about_Jobs](https://ms
 - Parametre ekleme `-Top` ve `-Bottom` için `Sort-Object` için üst/alt N sıralama
 - Bir işlem üst işlemi ekleyerek kullanıma `CodeProperty "Parent"` için `System.Diagnostics.Process`. (#2850) (Performanstan [ @powercode ](https://github.com/powercode)!)
 - MB bellek sütunlar için KB yerine kullanın. `Get-Process`
-- Ekleme `-NoNewLine` için geçiş `Out-String`. (#5056) (Teşekkürler [ @raghav710 ](https://github.com/raghav710))
+- Ekleme `-NoNewLine` için geçiş `Out-String`. (#5056) (Thanks [@raghav710](https://github.com/raghav710))
 - `Move-Item` cmdlet geliştirir `-Include`, `-Exclude`, ve `-Filter` parametreleri. (#3878)
 - İzin `*` kayıt defteri yolu için kullanılacak `Remove-Item`. (#4866)
 - Ekleme `-Title` için `Get-Credential` ve platformlar arasında istemi deneyimi birleştirin.
@@ -343,7 +343,7 @@ PowerShell işleri hakkında daha fazla bilgi için bkz. [about_Jobs](https://ms
 - Bağımsız değişkeni için otomatik tamamlanmasını etkinleştirin `-ExcludeProperty` ve `-ExpandProperty` , `Select-Object`. (#3443) (Performanstan [ @iSazonov ](https://github.com/iSazonov)!)
 - Bir hatayı düzeltme yapmak için sekme tamamlamayı `native.exe --<tab>` olanak sağlayacak tamamlayıcısı yerel çağrı. (#3633) (Performanstan [ @powercode ](https://github.com/powercode)!)
 
-## <a name="breaking-changes"></a>Bozucu değişiklikler
+## <a name="breaking-changes"></a>Yeni değişiklikler
 
 Bir dizi PowerShell Core 6. 0'ı bozucu değişiklik tanıttık.
 Daha fazla bilgi için bunları hakkında ayrıntılı görmek [bozucu değişiklikleri PowerShell Core 6. 0'ı][breaking-changes].
@@ -380,15 +380,15 @@ Biz bu verileri bu kullanma hakkında daha fazla bilgi bulabilirsiniz [blog gön
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [breaking-changes]: breaking-changes-ps6.md
-[changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
+[Changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
-[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET blogu]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [SSS]: https://github.com/dotnet/standard/blob/master/docs/faq.md

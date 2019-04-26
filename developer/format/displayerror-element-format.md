@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 45c45800-a87d-456e-b07c-12d4d8c27c67
 caps.latest.revision: 8
 ms.openlocfilehash: 2c6a3d678ca68dc0d189f6ab981fdea5fef894cb
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066269"
 ---
 # <a name="displayerror-element-format"></a>DisplayError Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) DefaultSettings öğesi (biçimi) DisplayError 
 <DisplayError/>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `DisplayError` öğesi.
 
@@ -35,11 +35,11 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `DisplayError` ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

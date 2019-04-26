@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 912f3e63-e4d5-41ce-8710-6dfd8c885dc2
 caps.latest.revision: 12
 ms.openlocfilehash: 2faca6021dc26878869bdd2d35bc4ffc64d0fe7b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075673"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-tablecontrol-format"></a>TableControl EntrySelectedBy için SelectionCondition Öğesi (Biçim)
 
@@ -32,7 +32,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki bölümlerde, öznitelikleri ve alt öğeleri SelectionCondition öğesinin üst öğesi açıklanmaktadır.
 
@@ -40,7 +40,7 @@ Aşağıdaki bölümlerde, öznitelikleri ve alt öğeleri SelectionCondition ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -49,7 +49,7 @@ Yok.
 |[SelectionCondition TableRowEntry (biçimi) için EntrySelectedBy için için SelectionSetName öğesi](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Tetikleme koşulu .NET türleri kümesini belirtir.|
 |[TypeName öğesi SelectionCondition TableRowEntry (biçimi) için EntrySelectedBy için için](./typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen bir .NET türünü belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

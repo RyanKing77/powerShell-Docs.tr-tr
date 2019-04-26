@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 6d16bca8-d025-432d-aa84-8b607b8af3ae
 caps.latest.revision: 12
 ms.openlocfilehash: 1a3bafd4ca94aee70e869c699f7a4ef8befc5511
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065232"
 ---
 # <a name="listentry-element-for-listcontrol-format"></a>ListControl için ListEntry Öğesi (Biçim)
 
@@ -30,7 +30,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </ListEntry>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Öznitelikler, alt ve üst öğesini aşağıdaki bölümlerde açıklanmaktadır `ListEntry` öğesi.
 
@@ -38,14 +38,14 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[EntrySelectedBy öğesi ListEntry (biçimi) için](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Bu liste görünümü tanımını veya kullanılmak üzere bu tanım için bulunması gereken bir koşulu kullanan .NET nesneleri tanımlar.|
 |[ListItems öğesi (biçimi)](./listitems-element-for-listentry-for-listcontrol-format.md)|Gerekli öğe.<br /><br /> Betikleri değerleri tarafından liste görünümü görüntülenir ve özellikleri tanımlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

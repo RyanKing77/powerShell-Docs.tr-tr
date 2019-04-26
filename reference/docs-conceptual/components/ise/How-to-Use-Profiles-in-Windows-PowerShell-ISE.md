@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE’de Profilleri Kullanma
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
 ms.openlocfilehash: b319aa089c2a4a7008acd9850f15342dac70aee2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057545"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Windows PowerShell ISE’de Profilleri Kullanma
 

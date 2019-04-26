@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC için Linux nxSshAuthorizedKeys kaynağı
 ms.openlocfilehash: d4cdb727a94a5e89e8401769f24977d49bcf4929
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077713"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC için Linux nxSshAuthorizedKeys kaynağı
 
@@ -35,7 +35,7 @@ nxAuthorizedKeys <string> #ResourceName
 | Emin olun| Anahtar tanımlı olup olmadığını belirtir. "Yok" anahtar kullanıcının yetkili anahtarlar dosyasına yok sağlamak için bu özelliği ayarlayın. Anahtar kullanıcının yetkili anahtar dosyasında tanımlanan emin olmak için "var" ayarlayın.|
 | Kullanıcı Adı| Anahtarlar için SSH yönetmek için kullanıcı adı yetkili. Tanımlı değilse, varsayılan "Kök" kullanıcıdır.|
 | üzerine gelin| Anahtar içeriğini. Bu gereklidir **olun** "Var" için ayarlanır.|
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, varsa **kimliği** kaynağın çalıştırmak istediğiniz yapılandırma komut dosyası bloğu ilk. **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, varsa **kimliği** kaynağın çalıştırmak istediğiniz yapılandırma komut dosyası bloğu ilk. **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Örnek
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: "' Teki yenilikler 50 PowerShell ISE"
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058191"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Hangi&#39;yeni Windows PowerShell ıse'de s
 Bu konuda, Windows PowerShell Tümleşik komut dosyası ortamı (ISE) sürümlerinde sunulan yeni ve güncelleştirilmiş özellikler açıklanmaktadır.
@@ -128,7 +128,7 @@ Tek bir konsol bölmesine ayrı komut ve Windows PowerShell ISE ilk sürümde ku
 
 - Yazı tipi desteği
 
-- Yakınlaştırma
+- Yakınlaştır
 
 - Satırı seçin ve blok seçim modları
 
@@ -147,7 +147,7 @@ Windows PowerShell ISE 2.0 ayrı komut ve çıkış bölmeleri vardır.
 
 Komut satırından Windows PowerShell ISE başlatırsanız (yazarak **powershell_ise.exe**), aşağıdaki yeni komut satırı anahtarları ekleyebilirsiniz.
 
-- *-NoProfile*: Windows PowerShell ISE çalıştırılmadan başlar **$profile**
+- *-NoProfile*: Windows PowerShell ISE verilmeden çalıştırılmasını başlatır **$profile**
 
 - *-Help*: Yardım penceresini görüntüler
 
@@ -176,7 +176,7 @@ Diğer Windows PowerShell ISE düzenleme özellikleri şunlardır:
 
 - **Hata ekranı ayrıştırma** ayrıştırma hataları kırmızı alt çizgi ile gösterilir. Belirtilen bir hata geldiğinizde, araç ipucu metni, kod içinde bulunan sorun görüntüler.
 
-- **Yakınlaştırma** konsol yakınlaştırma yüzdesi '™ s içerik yakınlaştırma kaydırıcısı (alt sağ köşesinde Windows PowerShell ISE penceresi) kullanarak veya komutu girerek ayarlanabilir **$psise.options.Zoom** Konsol bölmesinde.
+- **Yakınlaştırma** konsolun içeriği yakınlaştırma yüzdesi yakınlaştırma kaydırıcısı (alt sağ köşesinde Windows PowerShell ISE penceresi) kullanarak veya komutu girerek ayarlanabilir **$psise.options.Zoom** Konsol bölmesinde.
 
 - **Zengin Metin Kopyala ve Yapıştır** yazı tipi, boyut ve renk bilgilerini özgün seçimin içinde Windows PowerShell ISE korur Panoya kopyalama.
 
@@ -220,7 +220,7 @@ Kullanarak **Show komutunu** , Windows PowerShell betiklerini, kullanıcıların
 
 Show-yeni Windows PowerShell ISE 3.0 komutudur.
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 Windows PowerShell'de Windows PowerShell ISE'yi kullanma hakkında daha fazla bilgi için aşağıdaki bağlantılara bakın.
 
 - [Windows PowerShell Tümleşik komut dosyası ortamı keşfetme](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

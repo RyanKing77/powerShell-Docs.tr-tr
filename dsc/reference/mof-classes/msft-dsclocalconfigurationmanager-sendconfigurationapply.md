@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: MSFT_DSCLocalConfigurationManager sınıfının SendConfigurationApply yöntemi
 ms.openlocfilehash: da3a08307122ab38ee4a6fd5d4a9b97579a988f7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078269"
 ---
 # <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının SendConfigurationApply yöntemi
 

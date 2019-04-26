@@ -1,71 +1,71 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: b8f175cee0a1de501b64890fdc2798f4f6421a14
-ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
+ms.openlocfilehash: 28cd186ab3a08a0da4ff81f5a21514f239770d13
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/09/2018
-ms.locfileid: "35251492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058089"
 ---
 # <a name="script-tracing-and-logging"></a>Betik İzleme ve Günlüğe Kaydetme
 
-Windows PowerShell zaten varken **LogPipelineExecutionDetails** Grup İlkesi cmdlet'leri çağırma oturum ayarlama, PowerShell'in komut dosyası dili oturum ve/veya denetim isteyebilirsiniz özellikleri Eskinin sahiptir. Yeni betik ayrıntılı izleme özelliği, ayrıntılı izleme ve çözümleme sisteminde Windows PowerShell komut dosyası kullanımı olanak tanır. Ayrıntılı betik izleme etkinleştirdikten sonra Windows PowerShell tüm komut dosyası blokları ETW olay günlüğüne kaydeder. **Microsoft-Windows-PowerShell/Operational**. Bir betik bloğu başka bir betik bloğu (örneğin, bir dizesine Invoke-Expression cmdlet'ini çağıran bir betik) oluşturursa, sonuçta elde edilen bu betik bloğu da günlüğe kaydedilir.
+Windows PowerShell zaten varken **LogPipelineExecutionDetails** Grup İlkesi cmdlet'leri çağırmayı oturum ayarlama, PowerShell'in betik oluşturma dili, oturum ve/veya denetim isteyebilirsiniz özelliklerinin yeterince sahiptir. Yeni betik ayrıntılı izleme özelliği, ayrıntılı izleme ve çözümleme sisteminde Windows PowerShell komut dosyası kullanımı etkinleştirmenize olanak tanır. Ayrıntılı betik izlemeyi etkinleştirdikten sonra Windows PowerShell tüm betik bloklarını ETW olay günlüğüne kaydeder. **Microsoft-Windows-PowerShell/Operational**. Bir betik bloğu başka bir betik bloğu (örneğin, bir dizesine Invokeinline-Expression cmdlet'ini çağıran bir betik) oluşturuyorsa, ortaya çıkan bu betik bloğu de günlüğe kaydedilir.
 
-Bu olayların günlüğe kaydedilmesi, aracılığıyla etkinleştirilebilir **PowerShell betik bloğu günlük özelliğini açın** Grup İlkesi ayarı (Yönetim Şablonları -> Windows bileşenlerini Windows PowerShell ->).
+Bu olayların günlüğe kaydedilmesi aracılığıyla etkinleştirilebilir **PowerShell komut dosyası bloğu günlük** Grup İlkesi ayarı (Yönetici Şablonları -> Windows bileşenleri Windows PowerShell ->).
 
 Olaylar şunlardır:
 
 | Kanal | İşletimsel                                 |
 |---------|---------------------------------------------|
-| Düzey   | Verbose                                     |
-| İşlem kodu  | Oluşturma                                      |
+| Düzey   | Ayrıntılı                                     |
+| Opcode  | Oluşturma                                      |
 | Görev    | CommandStart                                |
 | Anahtar sözcüğü | Çalışma alanı                                    |
-| Olay Kimliği | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
-| İleti | Scriptblock metin (%1% 2) oluşturma: </br> %3 </br> ScriptBlock kimliği: %4 |
+| EventID | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
+| İleti | Scriptblock metin (%2'in %1) oluşturma: </br> %3 </br> ScriptBlock kimliği: %4 |
 
 
-İletiye ekli derlenmiş betik bloğu kapsamını metindir. Betik bloğu yaşam süreleri boyunca tutulur bir GUID kimliğidir.
+İletide katıştırılmış derlenmiş betik bloğu kapsamını metindir. Betik bloğundaki süresince korunur bir GUID kimliğidir.
 
-Ayrıntılı günlük kaydını etkinleştirdiğinizde, özellik yazma başlamak ve işaretçileri bitiş:
+Ayrıntılı günlüğe yazmayı etkinleştirdiğinizde, özellik yazma başlar ve işaretçileri bitiş:
 
 | Kanal | İşletimsel                                            |
 |---------|--------------------------------------------------------|
-| Düzey   | Verbose                                                |
-| İşlem kodu  | Açın (/ Kapat)                                         |
+| Düzey   | Ayrıntılı                                                |
+| Opcode  | Açık (/ Kapat)                                         |
 | Görev    | CommandStart (/ CommandStop)                           |
 | Anahtar sözcüğü | Çalışma alanı                                               |
-| Olay Kimliği | ScriptBlock\_çağırma\_Başlat\_ayrıntı (0x1009 = 4105) / </br> ScriptBlock\_çağırma\_tam\_ayrıntı (0x100A Sınır = 4106) |
-| İleti | Başlarken (/ tamamlanmış) çağırma ScriptBlock kimliği: %1 </br> Çalışma alanı kimliği: %2 |
+| EventID | ScriptBlock\_çağırma\_Başlat\_ayrıntısı (0x1009 = 4105) / </br> ScriptBlock\_çağırma\_tam\_ayrıntısı (0x100A Sınır = 4106) |
+| İleti | Kullanmaya başlama (/ tamamlanmış) çağırma ScriptBlock kimliği: %1 </br> Çalışma alanı kimliği: %2 |
 
-Kimliği (olay kimliği 0x1008 ile ilişkili olabilir) betik bloğu temsil eden GUID'dir ve çalışma alanı kimliği bu betik bloğu çalıştırıldı çalışma alanı temsil eder.
+Kimliği (yani 0x1008 olay kimliği ile ilişkili olabilir) komut dosyası bloğu temsil eden GUID'dir ve çalışma alanı kimliği bu betik bloğu çalıştırıldığı çalışma temsil eder.
 
-Çağırma iletisinin yüzde işaretleri yapılandırılmış ETW özelliklerini temsil eder. İleti metni gerçek değerler ile değiştirilir, bunlara erişmek için daha sağlam bir şekilde Get-WinEvent cmdlet'ini iletisiyle almak ve daha sonra kullanmak için açıkken **özellikleri** ileti dizisi.
+Çağırma iletisinin yüzde işaretleri yapılandırılmış ETW özellikleri temsil eder. İleti metni gerçek değerleri yerine, bunlara erişmek için daha sağlam bir şekilde Get-WinEvent cmdlet'ini ileti alıp ardından açıkken **özellikleri** ileti dizisi.
 
-Bu işlev bir komut dosyası belirsizleştirirseniz ve şifrelemek için bir kötü amaçlı girişimi kaydırma nasıl yardımcı olabileceğini örneği şöyledir:
+Bu işlev şifrelemek ve bir betik karartmak için kötü amaçlı bir girişim sarmalamadan çıkarma nasıl yardımcı olabileceğini bir örnek aşağıda verilmiştir:
 
 ```powershell
 ## Malware
 function SuperDecrypt
 {
-    param($script)
-    $bytes = [Convert]::FromBase64String($script)
+    param($script)
+    $bytes = [Convert]::FromBase64String($script)
 
-    ## XOR “encryption”
-    $xorKey = 0x42
-    for($counter = 0; $counter -lt $bytes.Length; $counter++)
-    {
-        $bytes[$counter] = $bytes[$counter] -bxor $xorKey
-    }
-    [System.Text.Encoding]::Unicode.GetString($bytes)
+    ## XOR “encryption”
+    $xorKey = 0x42
+    for($counter = 0; $counter -lt $bytes.Length; $counter++)
+    {
+        $bytes[$counter] = $bytes[$counter] -bxor $xorKey
+    }
+    [System.Text.Encoding]::Unicode.GetString($bytes)
 }
 
 $decrypted = SuperDecrypt "FUIwQitCNkInQm9CCkItQjFCNkJiQmVCEkI1QixCJkJlQg=="
 Invoke-Expression $decrypted
 ```
 
-Bu çalıştığını aşağıdaki günlük girişlerini oluşturur:
+Bu çalışan aşağıdaki günlük girişlerini oluşturur:
 
 ```
 Compiling Scriptblock text (1 of 1):
@@ -97,7 +97,7 @@ Write-Host 'Pwnd'
 ScriptBlock ID: 5e618414-4e77-48e3-8f65-9a863f54b4c8
 ```
 
-Betik bloğu uzunluğu ETW tek bir olay tutan yeteneğine nedir aşarsa, Windows PowerShell komut dosyası birden çok bölüme ayırır. Kendi günlük iletilerini betikten rahatça için örnek kod aşağıda verilmiştir:
+ETW tutan tek bir olay yeteneğine nedir betik bloğu uzunluğu aşıyor, Windows PowerShell komut dosyası birden çok parçaya keser. Günlük iletilerini betikten yeniden birleştirmek için örnek kod aşağıda verilmiştir:
 
 ```powershell
 $created = Get-WinEvent -FilterHashtable @{ ProviderName="Microsoft-Windows-PowerShell"; Id = 4104 } | Where-Object { $_.<...> }
@@ -105,4 +105,4 @@ $sortedScripts = $created | sort { $_.Properties[0].Value }
 $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
-Sistemleriyle sınırlı bekletme arabellek (yani ETW günlükleri) sahip tüm günlük olarak, önceki kanıt gizlemek için alacaklardır olaylarla günlük bölgesini doldurmak için bu altyapı karşı bir saldırı olduğunu. Bu saldırıya karşı korunmak için ayarlanan olay günlüğü koleksiyonunu çeşit olduğundan emin olun (yani, Windows Olay iletme'yi [Windows olay günlüğünü izleme ile birlikte etkilemeyi belirleme](https://www.iad.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm)) olay günlükleri bilgisayarı olarak dışına taşımak için mümkün olduğunca çabuk.
+Sistemlerle sınırlı saklama arabellek (yani, ETW günlükleri) olan tüm günlük olarak, önceki kanıt gizlemek için sahte olayları günlükle doldurmak için bu altyapı karşı bir saldırı olduğunu. Bu saldırıya karşı korunmak için ayarlanmış olay günlüğü koleksiyon çeşit olduğundan emin olun (yani, Windows Olay iletme'yi [saldırganın Windows olay günlüğü izleme ile kapsamlı](https://www.iad.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm)) olay günlükleri bilgisayarı olarak dışına taşımak için mümkün olduğunca çabuk.

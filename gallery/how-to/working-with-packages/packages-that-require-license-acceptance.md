@@ -4,11 +4,11 @@ contributor: Farehar
 keywords: Galeri, powershell, psgallery
 title: Lisans kabulü gerektir
 ms.openlocfilehash: eaed248895d14bd455d2d8d3c2222d8848eeccae
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076217"
 ---
 # <a name="require-license-acceptance"></a>Lisans kabulü gerektir
 

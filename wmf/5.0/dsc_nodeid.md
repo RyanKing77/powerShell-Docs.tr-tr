@@ -1,24 +1,24 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 6c036c2d8f97e559d20dd3ac40133fa06f5dab08
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7a1725e3858c59a6d31699add22b042359c48463
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058208"
 ---
 # <a name="separation-of-node-and-configuration-ids"></a>Düğüm ve Yapılandırma kimliklerinin ayrımı
 
 ## <a name="overview"></a>Genel bakış
 
-DSC çekme modunda kullanılırken daha esnek ve kolaylaştırılmış bir deneyim sunmak için çok sayıda özelliği bu sürümde ekledik. Bu özellikler kolayca Kurulum yapılandırmalarını ve birden çok düğüm arasında hala durumu izleme ve raporlama bilgileri her düğüm için ayrı ayrı sırasında dağıtın esnekliğine sahip olanak tanımak için tasarlanmıştır.
+DSC çekme modunda kullanılırken daha esnek ve kolaylaştırılmış bir deneyim sağlamak amacıyla bir dizi özelliği bu sürümde ekledik. Bu özellikler, kolay kurulum ve yine de durum izleme ve raporlama bilgileri her düğüm için ayrı ayrı sırasında birden fazla düğümde yapılandırmaları dağıtma esnekliğine sahip olmasını sağlamak için tasarlanmıştır.
 Bu özellikler aşağıdaki gibidir:
 
-* Bir bilgisayar yapılandırmasını tanımlayan bir yapılandırma adı. Bu adı birden çok hedef düğümleri tarafından paylaşılabilir
-* Tek bir düğüm benzersiz olarak tanımlayan bir aracı kimliği
-* Bir çekme sunucusuna yalnızca bir hedef düğümü ilk kez oluşan bir kayıt adımından bağlanır
+* Bir bilgisayar yapılandırmasını tanımlayan bir yapılandırma adı. Bu ad, birden çok hedef düğümler tarafından paylaşılabilir
+* Tek bir düğüme benzersiz olarak tanımlayan bir Aracısı kimliği
+* Kayıt adımı yalnızca bir hedef düğümü ilk kez oluşan bir çekme sunucusuna bağlanır.
 
-**Not:** bu özellikler ve işlevsellik eklenmiştir ve varolan çekme özelliklerinin ve kavramlarının değiştirmeyin. Bu yeni özellikleri veya eskiler bu sürümde sevkiyat yeni çekme sunucusuyla kullanabilirsiniz.
+**Not:** Bu özellikler ve İşlevler eklendi ve mevcut çekme özellikler ve kavramlar değiştirmeyin. Bu yeni özelliklerin veya eskiler bu sürümünde yeni çekme sunucusu ile kullanabilirsiniz.
 
-Daha fazla bilgi için bkz: [yapılandırma adları kullanarak bir çekme istemci ayarlama](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)
+Daha fazla bilgi için [yapılandırma adlarını kullanarak çekme istemcisi ayarlama](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)

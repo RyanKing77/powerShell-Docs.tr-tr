@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: Bir çekme sunucusundan düğüm güncelleştirme
+title: Çekme Sunucusundan Düğüm Güncelleştirme
 ms.openlocfilehash: 4333a5bf82ef45f22a062942ebe93409433623f5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079107"
 ---
-# <a name="update-nodes-from-a-pull-server"></a>Bir çekme sunucusundan düğüm güncelleştirme
+# <a name="update-nodes-from-a-pull-server"></a>Çekme Sunucusundan Düğüm Güncelleştirme
 
 Aşağıdaki bölümler, zaten bir çekme sunucusu ayarladığınızı varsayalım. Çekme sunucunuzu ayarlamadıysanız, aşağıdaki kılavuzları kullanabilirsiniz:
 

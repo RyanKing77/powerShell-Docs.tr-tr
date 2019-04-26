@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE’de Konsol Bölmesini Kullanma
 ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
 ms.openlocfilehash: 5bbbdd3b1f0324ff1a4f2298459f58640c4dc9a6
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057417"
 ---
 # <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>Windows PowerShell ISE’de Konsol Bölmesini Kullanma
 

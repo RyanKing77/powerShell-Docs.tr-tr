@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Hizmet kaynağı
 ms.openlocfilehash: 09571bd0eaa428e7d0bb7a533d6ad1c0c936e2cf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076911"
 ---
 # <a name="dsc-service-resource"></a>DSC Hizmet kaynağı
 
-> Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 
 **Hizmet** kaynak olarak Windows PowerShell Desired State Configuration (DSC), hedef düğümdeki hizmetleri yönetmek için bir mekanizma sağlar.
@@ -41,7 +41,7 @@ Service [string] #ResourceName
 | Adı| Hizmet adını belirtir. Bazen bu görünen addan farklı olduğunu unutmayın. Hizmetler ve Get-Service cmdlet'i ile bunların geçerli durumunu listesini alabilirsiniz.|
 | BuiltInAccount| Hizmet için kullanılacak oturum açma hesabı gösterir. Bu özellik için izin verilen değerler şunlardır: **Yerelhizmet**, **LocalSystem**, ve **NetworkService**.|
 | Kimlik bilgisi| Hizmet, altında çalışacağı hesabın kimlik bilgilerini belirtir. Bu özellik ve __BuiltinAccount__ özelliği birlikte kullanılamaz.|
-| DependsOn| Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise __ResourceName__ ve kendi türünün __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn| Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise __ResourceName__ ve kendi türünün __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
 | Başlangıç türü| Hizmet başlangıç türünü gösterir. Bu özellik için izin verilen değerler şunlardır: **Otomatik**, **devre dışı bırakılmış**, ve **el ile**|
 | Durum| Hizmet için sağlamak istediğiniz durumu gösterir.|
 | Açıklama | Hedef hizmet açıklamasını gösterir.|

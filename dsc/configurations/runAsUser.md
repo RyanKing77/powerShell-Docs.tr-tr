@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Kaynaklarıyla Kimlik Bilgilerini Kullanma
 ms.openlocfilehash: af54c286ce744cd7db0b0e2d05087f60cdf1a33c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080059"
 ---
 # <a name="use-credentials-with-dsc-resources"></a>DSC Kaynaklarıyla Kimlik Bilgilerini Kullanma
 
-> Şunun için geçerlidir: Windows PowerShell 5.0, 5.1 Windows PowerShell
+> Uygulama hedefi: Windows PowerShell 5.0, 5.1 Windows PowerShell
 
 Belirtilen kimlik bilgileri kümesi altında bir DSC kaynak otomatik kullanarak çalıştırabileceğiniz **PsDscRunAsCredential** yapılandırma özellik.
 Varsayılan olarak, DSC, her kaynak sistem hesabı olarak çalışır.

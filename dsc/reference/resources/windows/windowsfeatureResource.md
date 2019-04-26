@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC WindowsFeature kaynağı
 ms.openlocfilehash: 7a57f4b2797ab3bb202aea8b2543d1e3f14074e9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076710"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature kaynağı
 
-> Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 **WindowsFeature** kaynak olarak Windows PowerShell Desired State Configuration (DSC), roller ve Özellikler eklenen veya kaldırılan bir hedef düğümde emin olmak için bir mekanizma sağlar.
 
@@ -39,7 +39,7 @@ WindowsFeature [string] #ResourceName
 | Emin olun| Rol veya özelliğin eklenip eklenmediğini belirtir. Rol veya özellik olduğundan emin olmak için ek olarak ayarlayın "Var" rol veya özellik kaldırıldığını, emin olmak için bu özelliği ayarlayın "Yok" özelliği.|
 | IncludeAllSubFeature| Bu özellik kümesine __$true__ belirttiğiniz ile gerekli tüm alt özellik durumuyla durumunu emin olmak için __adı__ özelliği.|
 | LogPath| Kaynak sağlayıcısı işlemi oturum istediğiniz bir günlük dosyası yolunu gösterir.|
-| DependsOn| Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise __ResourceName__ ve kendi türünün __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn| Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise __ResourceName__ ve kendi türünün __ResourceType__, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
 | Kaynak| Gerekirse yüklenmesi için kullanılacak kaynak dosyasının konumunu gösterir.|
 
 ## <a name="example"></a>Örnek

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 231e9c6d-09ec-4e68-80ee-0c8f7fe1b9f5
 caps.latest.revision: 7
 ms.openlocfilehash: 49e2c0cf09dfa55b535effcd431e980daf12fac3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075758"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-customcontrol-format"></a>CustomControl EntrySelectedBy için SelectionCondition Öğesi (Biçim)
 
@@ -32,7 +32,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionCondition` öğesi.
 
@@ -40,7 +40,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionConditi
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -49,7 +49,7 @@ Yok.
 |[SelectionSetName öğesi görünümü (biçimi) için özel denetim için SelectionCondition için](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen .NET türleri kümesini belirtir.|
 |[TypeName öğesi görünümü (biçimi) için özel denetim için SelectionCondition için](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen bir .NET türünü belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

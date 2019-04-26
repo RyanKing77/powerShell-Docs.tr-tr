@@ -3,23 +3,23 @@ ms.date: 08/23/2017
 keywords: PowerShell cmdlet'i
 title: Windows powershell web erişimini kaldırma
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058156"
 ---
-# <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web Erişimini Kaldırma
+# <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web erişimini kaldırma
 
-Güncelleştirme tarihi: 24 Haziran 2013
+Güncelleme tarihi: 24 Haziran 2013
 
-Şunun için geçerlidir: Windows Server 2012 R2, Windows Server 2012
+Uygulama hedefi: Windows Server 2012 R2, Windows Server 2012
 
 Bu konu başlığındaki adımları karşılık gelen uygulama ve Windows PowerShell Web Erişimi Web sitesinin yüklü olduğu ağ geçidi sunucusundan kaldırın.
 
 ## <a name="notify-users"></a>Kullanıcılara bildirme
 
-Başlamadan önce, web tabanlı konsolun kullanıcılarına web sitesini kaldırdığınızı bildirin.
+Başlamadan önce web tabanlı konsolun kullanıcılarına Web sitesini kaldırdığınızı bildirin.
 
 Windows PowerShell Web erişimini kaldırma, IIS veya çalıştırmak için Windows PowerShell Web erişimi için gerekli olduğundan, otomatik olarak yüklenen diğer özellikler kaldırılmaz.
 Kaldırma işlemi, Windows PowerShell Web erişimi bağımlı özellikleri yüklü bırakır; Bu özellikleri gerekirse ayrı ayrı kaldırabilirsiniz.
@@ -33,7 +33,7 @@ Bu bölümdeki yordamlar hem kaldırmanıza yardımcı:
 
 Windows PowerShell cmdlet'lerini kullanarak.
 
-### <a name="step-1-delete-the-web-application-using-cmdlets"></a>Adım 1: Cmdlet'lerini kullanarak web uygulamasını silme
+### <a name="step-1-delete-the-web-application-using-cmdlets"></a>1. Adım: Cmdlet'lerini kullanarak web uygulamasını silme
 
 1. Bir Windows PowerShell oturumu açmak için aşağıdakilerden birini yapın.
 
@@ -42,17 +42,17 @@ Windows PowerShell cmdlet'lerini kullanarak.
     -   Windows üzerinde **Başlat** ekranında **Windows PowerShell**.
 
 2. Tür `Uninstall-PswaWebApplication`ve tuşuna **Enter**.
-   1. Kendi, özel web sitesi adınızı belirttiyseniz, komutunuza `-WebsiteName` parametresini ekleyin ve web sitesi adını belirtin.
+   1. Kendi, özel Web sitesi adınızı belirttiyseniz, ekleme `-WebsiteName` parametresini komutunuza ve Web sitesi adını belirtin.
 
         `Uninstall-PswaWebApplication -WebsiteName <web-site-name>`
    1. Özel bir web uygulaması kullandıysanız (varsayılan uygulama **pswa**, ekleme `-WebApplicationName` parametresini komutunuza, web uygulamasının adını belirtin.
 
         `Uninstall-PswaWebApplication -WebApplicationName <web-application-name>`
-   1. Bir test sertifikası kullanıyorsanız, aşağıdaki örnekte gösterildiği gibi `DeleteTestCertificate` parametresini cmdlet’e ekleyin.
+   1. Bir test sertifikası kullanıyorsanız, ekleyin `DeleteTestCertificate` aşağıdaki örnekte gösterildiği gibi cmdlet'e parametre.
 
         `Uninstall-PswaWebApplication -DeleteTestCertificate`
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>Adım 2: Cmdlet'lerini kullanarak Windows PowerShell Web erişimini kaldırma
+### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>2. Adım: Cmdlet'lerini kullanarak Windows PowerShell Web erişimini kaldırma
 
 1. Bir Windows PowerShell oturumu yükseltilmiş kullanıcı haklarıyla açmak için aşağıdakilerden birini yapın. Bir oturum zaten açıksa sonraki adıma geçin.
 
@@ -60,11 +60,11 @@ Windows PowerShell cmdlet'lerini kullanarak.
 
     -   Windows üzerinde **Başlat** ekranında, sağ **Windows PowerShell**ve ardından **yönetici olarak çalıştır**.
 
-1. Aşağıdaki komutu yazın ve ardından basın **Enter**burada *bilgisayar_adı* Windows PowerShell Web erişimini kaldırmak istediğiniz uzak bir sunucuyu temsil eder. Kaldırma işlemi gerektiriyorsa `-Restart` parametresi otomatik olarak hedef sunucuları yeniden başlatır.
+1. Aşağıdaki komutu yazın ve ardından basın **Enter**burada *bilgisayar_adı* Windows PowerShell Web erişimini kaldırmak istediğiniz uzak bir sunucuyu temsil eder. `-Restart` Parametre kaldırma işlemi gerektiriyorsa hedef sunucu otomatik olarak yeniden.
 
         Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
 
-    Çevrimdışı bir VHD’den rolleri ve özellikleri kaldırmak için hem `-ComputerName` parametresini hem de `-VHD` parametresini eklemelisiniz. `-ComputerName` parametresi, VHD’nin bağlanacağı sunucunun adını içerir ve `-VHD` parametresi de belirtilen sunucuda VHD dosyasının yolunu içerir.
+    Çevrimdışı bir VHD'den rolleri ve özellikleri kaldırmak için her ikisi de eklemelisiniz `-ComputerName` parametresi ve `-VHD` parametresi. `-ComputerName` Parametresi VHD'nin bağlanacağı sunucunun adını içerir ve `-VHD` parametresi de belirtilen sunucuda VHD dosyasının yolunu içerir.
 
         Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -Restart
 
@@ -76,10 +76,10 @@ Windows PowerShell cmdlet'lerini kullanarak.
 
 Bu bölümdeki yordamlar hem Windows PowerShell Web erişimi web uygulamasını hem de Kaldır rolleri ve özellikleri Sihirbazı'nı Sunucu Yöneticisi'nde ve IIS Yöneticisi konsolunu kullanarak Windows PowerShell Web erişimi özelliğini kaldırmanıza yardımcı olur.
 
-### <a name="step-1-delete-the-web-application-using-iis-manager"></a>Adım 1: IIS Yöneticisi'ni kullanarak web uygulamasını silme
+### <a name="step-1-delete-the-web-application-using-iis-manager"></a>1. Adım: IIS Yöneticisi'ni kullanarak web uygulamasını silme
 
 
-1. Aşağıdakilerden birini yaparak IIS Yöneticisi konsolunu açın. Zaten açıksa sonraki adıma geçin.
+1. Aşağıdakilerden birini yaparak IIS Yöneticisi konsolunu açın. Zaten açık değilse, sonraki adıma geçin.
 
     -   Tıklayarak Windows masaüstünde, Sunucu Yöneticisi'ni başlatın **Sunucu Yöneticisi'ni** Windows görev çubuğunda. Üzerinde **Araçları** Sunucu Yöneticisi ' nde menüsünü **Internet Information Services (IIS) Yöneticisi'ni**.
 
@@ -93,15 +93,15 @@ Bu bölümdeki yordamlar hem Windows PowerShell Web erişimi web uygulamasını 
 
 1. Ağaç bölmesinde seçin **uygulama havuzları**, Windows PowerShell Web erişimi uygulama havuzu klasörünü seçin, **Durdur** içinde **eylemleri** bölmesinde ve 'yetıklayın **Kaldırma** içerik bölmesinde.
 
-1. IIS Yöneticisi’ni kapatın.
+1. IIS Yöneticisi'ni kapatın.
 
 > ![Uyarı Not](images/SecurityNote.jpeg)**Not**:
 >
 > Sertifika kaldırma sırasında silinmez.
 >
-> Kendinden imzalı bir sertifika oluşturduysanız veya bir test sertifikası kullanıyor ve bunu kaldırmak istiyorsanız, IIS Yöneticisi'nde sertifikayı silin.
+> Oluşturulan kendinden imzalı bir sertifika veya bir test sertifikası kullanıyor ve bunu kaldırmak istiyorsanız, IIS Yöneticisi'nde sertifikayı silin.
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>Adım 2: Kaldır rolleri ve özellikleri Sihirbazı'nı kullanarak Windows PowerShell Web erişimini kaldırma
+### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>2. Adım: Kaldır rolleri ve özellikleri Sihirbazı'nı kullanarak Windows PowerShell Web erişimini kaldırma
 
 1. Sunucu Yöneticisi zaten açıksa sonraki adıma geçin. Sunucu Yöneticisi'ni zaten açık değilse aşağıdakilerden birini yaparak açın.
 
@@ -111,7 +111,7 @@ Bu bölümdeki yordamlar hem Windows PowerShell Web erişimi web uygulamasını 
 
 1. Üzerinde **Yönet** menüsünü tıklatın **Kaldır rolleri ve özellikleri**.
 
-1. Üzerinde **hedef sunucuyu seçin** sayfasında, özelliği kaldırmak istediğiniz sunucuyu veya çevrimdışı VHD'yi seçin. Çevrimdışı bir VHD’yi seçmek için önce VHD’nin bağlanacağı sunucuyu ve sonra VHD dosyasını seçin. Hedef sunucuyu seçtikten sonra tıklayın **sonraki**.
+1. Üzerinde **hedef sunucuyu seçin** sayfasında, özelliği kaldırmak istediğiniz sunucuyu veya çevrimdışı VHD'yi seçin. Çevrimdışı bir VHD'yi seçmek için önce VHD'nin bağlanacağı sunucuyu seçin ve ardından VHD dosyasını seçin. Hedef sunucuyu seçtikten sonra tıklayın **sonraki**.
 
 1. Tıklayın **sonraki** atlamak için yeniden **Özellik Kaldır** sayfası.
 

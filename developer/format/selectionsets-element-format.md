@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ebbac73a-1c99-4388-9f47-703cd024dc6d
 caps.latest.revision: 18
 ms.openlocfilehash: a9356635d60d5f8c5d4dec4ec8b7d0aea2b037dd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063790"
 ---
 # <a name="selectionsets-element-format"></a>SelectionSets Öğesi (Biçim)
 
@@ -29,7 +29,7 @@ Yapılandırma öğesi SelectionSets öğesi biçimi
 </SelectionSets>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `SelectionSets` öğesi. Her alt öğe kümesi adı tarafından başvurulan bir nesne tanımlar. Alt öğelerin sırası önemli değildir.
 
@@ -37,13 +37,13 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `SelectionSets` ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[SelectionSet öğesi (biçimi)](./selectionset-element-format.md)|Gerekli öğe.<br /><br /> Tek bir küme adı tarafından başvurulan .NET nesneleri kümesini tanımlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

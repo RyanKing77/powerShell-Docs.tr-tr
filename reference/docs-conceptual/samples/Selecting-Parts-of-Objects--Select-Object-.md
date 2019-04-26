@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Nesne bölümleri seçme nesneyi seçin
 ms.assetid: 72e64b1a-d351-4500-9da3-24d8a71d7a92
 ms.openlocfilehash: 323c57ba4462e20d9713fb74732989584f5a993f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057911"
 ---
 # <a name="selecting-parts-of-objects-select-object"></a>(Select-Object) nesne bölümleri seçme
 

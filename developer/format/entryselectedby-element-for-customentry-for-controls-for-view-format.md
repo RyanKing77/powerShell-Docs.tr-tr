@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b3d80a7d-3797-4c46-ae74-ae5cda79b24f
 caps.latest.revision: 8
 ms.openlocfilehash: efb20c3f2077547e6eb3cb28240512b444f9c481
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849290"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066252"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-view-format"></a>Görünüm Denetimleri için CustomEntry EntrySelectedBy Öğesi (Biçim)
 
@@ -31,7 +31,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `EntrySelectedBy` öğesi. En az bir türü, seçim kümesi veya tanımı için seçim koşulu belirtmeniz gerekir. Kullanabileceğiniz bir alt öğe sayısı maksimum sınırı yoktur.
 
@@ -39,7 +39,7 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `EntrySelectedBy` 
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -47,7 +47,7 @@ Yok.
 |[SelectionSetName öğesi görünümü (biçimi) için denetimleri için EntrySelectedBy için](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Denetimin bu tanımı kullanan .NET türleri kümesini belirtir.|
 |[TypeName öğesi görünümü (biçimi) için denetimleri için EntrySelectedBy için](./typename-element-for-entryselectedby-for-controls-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Denetimin bu tanımı kullanan bir .NET türü belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

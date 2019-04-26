@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Çapraz düğüm bağımlılıklarını belirtme
 ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080212"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Çapraz düğüm bağımlılıklarını belirtme
 
-> Şunun için geçerlidir: Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 5.0
 
 DSC özel kaynaklar sağlayan **WaitForAll**, **WaitForAny**, ve **WaitForSome** kullanılabilecek yapılandırmalarında diğer yapılandırmaları bağımlılıklarını belirtmek için düğümleri. Bu kaynakların davranış aşağıdaki gibidir:
 

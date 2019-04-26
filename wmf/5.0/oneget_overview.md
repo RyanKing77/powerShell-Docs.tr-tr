@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: f1742aa901deacf2ff9eae14ce5814ee12682a2f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: dfc8ea4aba6cfe79f58d58d81e6abb3bcfa0ca3e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057344"
 ---
-# <a name="software-discovery-install-and-inventory-with-packagemanagement"></a>Yazılım bulma, yükleme ve PackageManagement ile stok
+# <a name="software-discovery-install-and-inventory-with-packagemanagement"></a>Yazılım bulma, yükleme ve envanteri PackageManagement ile
 
-PackageManagement (diğer adıyla OneGet) bulmak ve web geçici yazılım paketleri yüklemek için yeni bir yoludur. Bir yönetici veya tek bir Windows PowerShell arabirimi ile Windows paket Yönetimi birleştiren multiplexor (paket sağlayıcıları olarak da bilinir) var olan paketi yöneticileri olduğundan. PackageManagement ile bunu yapabilirsiniz.
+PackageManagement (OneGet olarak da bilinir), bulmak ve web geçici yazılım paketleri yüklemek için yepyeni bir yoludur. Bu, bir Yöneticisi veya Windows paket Yönetimi tek bir Windows PowerShell arabirimi ile birleştiren multiplexor (paket sağlayıcıları olarak da bilinir) mevcut paket yöneticileri olur. PackageManagement ile bunu yapabilirsiniz.
 
--   Hangi paketlerin aranır, edinilen, yüklü ve yazılım depoları listesini yönetin
--   Bul ve farklı paket yöneticileri yükleyin
--   Gereksinim duyduğunuz yazılım paketleri Bul
--   Sorunsuz bir şekilde yüklemek, kaldırmak ve bir veya daha fazla yazılım depoları paketlerinden stok
+-   Hangi paketler Aranan, alınan, yüklü ve yazılım depoları listesini yönetin
+-   Bulma ve yükleme farklı bir paket yöneticileri
+-   Gereksinim duyduğunuz yazılım paketleri keşfedin
+-   Sorunsuz bir şekilde yüklemek, kaldırmak ve bir veya daha fazla yazılım depoları paketlerden stok
 
-Daha fazla ayrıntı için bkz: http://oneget.org/.
+Daha fazla ayrıntı için http://oneget.org/.

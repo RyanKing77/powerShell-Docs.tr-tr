@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1ca84152-c2b7-492c-8a2e-d0587ab9d7b9
 caps.latest.revision: 9
 ms.openlocfilehash: 48ef14b2a70eecb6ae885739dd3c58ef6e9adb1f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065062"
 ---
 # <a name="newline-element-for-customitem-for-customcontrol-for-view-format"></a>Görünüm CustomControl için CustomItem NewLine Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 <NewLine/>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `NewLine` öğesi.
 
@@ -35,11 +35,11 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `NewLine` öğesi
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

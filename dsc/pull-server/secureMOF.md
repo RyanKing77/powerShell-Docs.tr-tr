@@ -3,15 +3,15 @@ ms.date: 10/31/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: MOF dosyasının güvenliğini sağlama
 ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079344"
 ---
 # <a name="securing-the-mof-file"></a>MOF dosyasının güvenliğini sağlama
 
-> Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 DSC, yerel Configuration Manager (LCM) istenen son durum burada uygulayan bir MOF dosyasında depolanan bilgileri uygulayarak sunucu düğümleri yapılandırılmasını yönetir.
 Bu dosya yapılandırma ayrıntılarını içerdiği için güvenli kalmasını sağlamak önemlidir.

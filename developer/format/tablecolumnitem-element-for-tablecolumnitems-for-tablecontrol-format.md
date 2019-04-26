@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ef8395aa-4b31-48c0-a0b8-b481fd0b3738
 caps.latest.revision: 15
 ms.openlocfilehash: 159f943f6bfb33c5403b5714380631351523789f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063947"
 ---
 # <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a>TableControl TableColumnItems için TableColumnItem Öğesi (Biçim)
 
@@ -31,7 +31,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </TableColumnItem>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `TableColumnItem` öğesi.
 
@@ -39,7 +39,7 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `TableColumnItem` 
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -48,7 +48,7 @@ Yok.
 |[TableControl (biçimi) için TableColumnItem için PropertyName öğesi](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Özellik değeri görüntülenen adını belirtir.|
 |[TableControl (biçimi) için TableColumnItem için ScriptBlock öğesi](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Değeri bir satır sütununda görüntülenen komut dosyasını belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

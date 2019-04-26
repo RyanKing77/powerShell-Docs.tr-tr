@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d5027c99-9f88-4c59-87ce-8793ef1d2fe3
 caps.latest.revision: 6
 ms.openlocfilehash: 09c893500d1a340c01c0c5254f5f4fbbed7264bf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066116"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format"></a>Yapılandırma Denetimleri için ExpressionBinding EnumerateCollection Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) denetimleri öğesinin (biçimi) yapılandırma
 <EnumerateCollection/>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `EnumerateCollection` öğesi.
 
@@ -35,11 +35,11 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `EnumerateCollect
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

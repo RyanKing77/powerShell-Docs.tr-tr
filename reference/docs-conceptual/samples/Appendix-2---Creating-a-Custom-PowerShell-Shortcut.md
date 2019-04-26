@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Ek 2 Özel bir PowerShell Kısayolu Oluşturma
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
 ms.openlocfilehash: e8081b7a64d313c8ef4bbccf95f250445dd68ad9
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057869"
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>Ek 2 - özel bir PowerShell kısayolu oluşturma
 

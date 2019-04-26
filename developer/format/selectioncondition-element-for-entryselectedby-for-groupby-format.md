@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 6dc2093a-dc54-42c4-ada3-c8d089ba1e8e
 caps.latest.revision: 6
 ms.openlocfilehash: a6738a7c4c934b2d6a16695a711f7c6c80afdd2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075724"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-groupby-format"></a>GroupBy EntrySelectedBy için SelectionCondition Öğesi (Biçim)
 
@@ -32,7 +32,7 @@ GroupBy (biçimi) CustomEntries öğesinin GroupBy (biçimi) CustomEntry öğesi
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionCondition` öğesi.
 
@@ -40,7 +40,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionConditi
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -49,7 +49,7 @@ Yok.
 |[GroupBy (biçimi) için SelectionCondition için SelectionSetName öğesi](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen .NET türleri kümesini belirtir.|
 |[GroupBy (biçimi) için SelectionCondition için TypeName öğesi](./typename-element-for-selectioncondition-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen bir .NET türünü belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

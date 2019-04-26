@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: d7aec1a2ba8964e877ddd7406609fe135b1eb462
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 0e79127faf3f9bf6fe7d525db5bb946daf3b93e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058633"
 ---
 # <a name="call-base-class-method"></a>Temel Sınıf Yöntemini Çağırma
 
-Alt sınıfların varolan yöntemleri geçersiz kılabilirsiniz. Bunu yapmak için aynı ad ve imza kullanarak yöntemleri bildirin:
+Alt sınıfların mevcut yöntemleri geçersiz kılabilirsiniz. Bunu yapmak için aynı ada ve imzaya kullanarak yöntemleri bildirin:
 
 ```powershell
 class baseClass
@@ -26,7 +26,7 @@ class childClass1 : baseClass
 [childClass1]::new().foo() # return 200600
 ```
 
-Taban sınıf yöntemlerini geçersiz kılınan uygulamaları çağırmak için temel sınıf cast ([baseClass] $Bu) çağırma üzerinde:
+Geçersiz kılınan uygulamaları taban sınıf yöntemlerini çağırmak için temel sınıf için atama ([baseClass] $Bu) çağırma üzerinde:
 
 ```powershell
 class childClass2 : baseClass
@@ -40,7 +40,7 @@ class childClass2 : baseClass
 [childClass2]::new().foo() # return 301500
 ```
 
-Tüm PowerShell sanal yöntemleridir. Bir geçersiz kılma için yaptığınız gibi aynı sözdizimini kullanarak bir alt kümesi sanal olmayan .NET yöntemlerinde gizleyebilirsiniz: yalnızca aynı ad ve imza yöntemleriyle bildirin.
+Tüm PowerShell yöntemler sanaldır. Sanal olmayan .NET yöntemleri öğesinin alt sınıfı için bir geçersiz kılma olarak aynı sözdizimini kullanarak gizleyebilirsiniz: yalnızca aynı ada ve imzaya sahip bir yöntem bildirin.
 
 ```powershell
 class MyIntList : system.collections.generic.list[int]
