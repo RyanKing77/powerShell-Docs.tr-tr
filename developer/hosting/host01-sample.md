@@ -9,35 +9,35 @@ ms.topic: article
 ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
 caps.latest.revision: 14
 ms.openlocfilehash: 9a4b7c842c6222fa2e9f1c14f37f45d7a5158107
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56852202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082853"
 ---
-# <a name="host01-sample"></a><span data-ttu-id="be745-102">Host01 Örneği</span><span class="sxs-lookup"><span data-stu-id="be745-102">Host01 Sample</span></span>
+# <a name="host01-sample"></a><span data-ttu-id="39026-102">Host01 Örneği</span><span class="sxs-lookup"><span data-stu-id="39026-102">Host01 Sample</span></span>
 
-<span data-ttu-id="be745-103">Bu örnek, özel bir ana bilgisayar kullanan bir konak uygulamanın nasıl uygulanacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="be745-103">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="be745-104">Özel ana bilgisayarı kullanan bu örnekte bir çalışma alanı oluşturulur ve ardından [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API "çıkış" çağıran bir betik çalıştırmak için kullanılır</span><span class="sxs-lookup"><span data-stu-id="be745-104">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="be745-105">Konak uygulama betiği çıktısına arar ve sonuçları yazdırır.</span><span class="sxs-lookup"><span data-stu-id="be745-105">The host application then looks at the output of the script and prints out the results.</span></span>
+<span data-ttu-id="39026-103">Bu örnek, özel bir ana bilgisayar kullanan bir konak uygulamanın nasıl uygulanacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="39026-103">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="39026-104">Özel ana bilgisayarı kullanan bu örnekte bir çalışma alanı oluşturulur ve ardından [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API "çıkış" çağıran bir betik çalıştırmak için kullanılır</span><span class="sxs-lookup"><span data-stu-id="39026-104">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="39026-105">Konak uygulama betiği çıktısına arar ve sonuçları yazdırır.</span><span class="sxs-lookup"><span data-stu-id="39026-105">The host application then looks at the output of the script and prints out the results.</span></span>
 
- <span data-ttu-id="be745-106">Bu örnek, Windows PowerShell tarafından sağlanan varsayılan kullanıcı Arabirimi özellikleri kullanır.</span><span class="sxs-lookup"><span data-stu-id="be745-106">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="be745-107">Özel bir ana bilgisayar, kullanıcı Arabirimi özelliklerini uygulama hakkında daha fazla bilgi için bkz. [Host02 örnek](./host02-sample.md).</span><span class="sxs-lookup"><span data-stu-id="be745-107">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
+ <span data-ttu-id="39026-106">Bu örnek, Windows PowerShell tarafından sağlanan varsayılan kullanıcı Arabirimi özellikleri kullanır.</span><span class="sxs-lookup"><span data-stu-id="39026-106">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="39026-107">Özel bir ana bilgisayar, kullanıcı Arabirimi özelliklerini uygulama hakkında daha fazla bilgi için bkz. [Host02 örnek](./host02-sample.md).</span><span class="sxs-lookup"><span data-stu-id="39026-107">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="be745-108">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="be745-108">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="39026-108">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="39026-108">Requirements</span></span>
 
- <span data-ttu-id="be745-109">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="be745-109">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="39026-109">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="39026-109">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="be745-110">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="be745-110">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="39026-110">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="39026-110">Demonstrates</span></span>
 
-- <span data-ttu-id="be745-111">Oluşturduğunuz özel konak sınıf türetilir [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) sınıfı.</span><span class="sxs-lookup"><span data-stu-id="be745-111">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
+- <span data-ttu-id="39026-111">Oluşturduğunuz özel konak sınıf türetilir [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) sınıfı.</span><span class="sxs-lookup"><span data-stu-id="39026-111">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
 
-- <span data-ttu-id="be745-112">Bir çalışma alanı oluşturma, özel ana bilgisayar sınıfını kullanır.</span><span class="sxs-lookup"><span data-stu-id="be745-112">Creating a runspace that uses the custom host class.</span></span>
+- <span data-ttu-id="39026-112">Bir çalışma alanı oluşturma, özel ana bilgisayar sınıfını kullanır.</span><span class="sxs-lookup"><span data-stu-id="39026-112">Creating a runspace that uses the custom host class.</span></span>
 
-- <span data-ttu-id="be745-113">Oluşturma bir [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) çıkış çağıran bir betik çalıştıran bir nesne.</span><span class="sxs-lookup"><span data-stu-id="be745-113">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
+- <span data-ttu-id="39026-113">Oluşturma bir [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) çıkış çağıran bir betik çalıştıran bir nesne.</span><span class="sxs-lookup"><span data-stu-id="39026-113">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
 
-- <span data-ttu-id="be745-114">Doğru çıkış kodu çıkış işleminde kullanılan doğrulanıyor.</span><span class="sxs-lookup"><span data-stu-id="be745-114">Verifying that the correct exit code was used in the exit process.</span></span>
+- <span data-ttu-id="39026-114">Doğru çıkış kodu çıkış işleminde kullanılan doğrulanıyor.</span><span class="sxs-lookup"><span data-stu-id="39026-114">Verifying that the correct exit code was used in the exit process.</span></span>
 
-## <a name="example"></a><span data-ttu-id="be745-115">Örnek</span><span class="sxs-lookup"><span data-stu-id="be745-115">Example</span></span>
+## <a name="example"></a><span data-ttu-id="39026-115">Örnek</span><span class="sxs-lookup"><span data-stu-id="39026-115">Example</span></span>
 
- <span data-ttu-id="be745-116">Aşağıdaki kod, basit bir özel konak arabirimini kullanan ana bilgisayar uygulamasına uygulanışı gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="be745-116">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
+ <span data-ttu-id="39026-116">Aşağıdaki kod, basit bir özel konak arabirimini kullanan ana bilgisayar uygulamasına uygulanışı gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="39026-116">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -137,9 +137,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="be745-117">Örnek</span><span class="sxs-lookup"><span data-stu-id="be745-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="39026-117">Örnek</span><span class="sxs-lookup"><span data-stu-id="39026-117">Example</span></span>
 
- <span data-ttu-id="be745-118">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="be745-118">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="be745-119">Uygulanmaz bu öğeleri bir özel durum veya hiçbir şey döndürmeyen.</span><span class="sxs-lookup"><span data-stu-id="be745-119">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="39026-118">Aşağıdaki kod uygulamasıdır [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) bu konak uygulama tarafından kullanılan sınıf.</span><span class="sxs-lookup"><span data-stu-id="39026-118">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="39026-119">Uygulanmaz bu öğeleri bir özel durum veya hiçbir şey döndürmeyen.</span><span class="sxs-lookup"><span data-stu-id="39026-119">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -308,4 +308,4 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="be745-120">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="be745-120">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="39026-120">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="39026-120">See Also</span></span>

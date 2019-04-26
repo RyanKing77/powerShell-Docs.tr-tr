@@ -9,37 +9,37 @@ ms.topic: article
 ms.assetid: 4f7bf81e-4f95-4150-afc3-c0872b24d026
 caps.latest.revision: 7
 ms.openlocfilehash: 3205286fbbc823d21e29a328b3ba9c4c1459d9ff
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082694"
 ---
-# <a name="runspace07-sample"></a><span data-ttu-id="39925-102">Runspace07 Örneği</span><span class="sxs-lookup"><span data-stu-id="39925-102">Runspace07 Sample</span></span>
+# <a name="runspace07-sample"></a><span data-ttu-id="b18e5-102">Runspace07 Örneği</span><span class="sxs-lookup"><span data-stu-id="b18e5-102">Runspace07 Sample</span></span>
 
-<span data-ttu-id="39925-103">Bu örnek, bir çalışma alanı oluşturun ve ardından bu çalışma alanı iki cmdlet kullanarak zaman uyumlu olarak çalışacak şekilde nasıl gösterir. bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesne.</span><span class="sxs-lookup"><span data-stu-id="39925-103">This sample shows how to create a runspace, and then use that runspace to run two cmdlets synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="b18e5-103">Bu örnek, bir çalışma alanı oluşturun ve ardından bu çalışma alanı iki cmdlet kullanarak zaman uyumlu olarak çalışacak şekilde nasıl gösterir. bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesne.</span><span class="sxs-lookup"><span data-stu-id="b18e5-103">This sample shows how to create a runspace, and then use that runspace to run two cmdlets synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="39925-104">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="39925-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="b18e5-104">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="b18e5-104">Requirements</span></span>
 
-<span data-ttu-id="39925-105">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="39925-105">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="b18e5-105">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="b18e5-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="39925-106">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="39925-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="b18e5-106">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="b18e5-106">Demonstrates</span></span>
 
-<span data-ttu-id="39925-107">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="39925-107">This sample demonstrates the following.</span></span>
+<span data-ttu-id="b18e5-107">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="b18e5-107">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="39925-108">Oluşturma bir [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) kullanarak nesne [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) sınıfı.</span><span class="sxs-lookup"><span data-stu-id="39925-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
+- <span data-ttu-id="b18e5-108">Oluşturma bir [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) kullanarak nesne [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) sınıfı.</span><span class="sxs-lookup"><span data-stu-id="b18e5-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
 
-- <span data-ttu-id="39925-109">Oluşturma bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesnesini çalışma alanı kullanır.</span><span class="sxs-lookup"><span data-stu-id="39925-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="b18e5-109">Oluşturma bir [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesnesini çalışma alanı kullanır.</span><span class="sxs-lookup"><span data-stu-id="b18e5-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="39925-110">Cmdlet'leri için işlem hattı ekleme [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesne.</span><span class="sxs-lookup"><span data-stu-id="39925-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="b18e5-110">Cmdlet'leri için işlem hattı ekleme [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) nesne.</span><span class="sxs-lookup"><span data-stu-id="b18e5-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="39925-111">Cmdlet'ler zaman uyumlu olarak çalışır.</span><span class="sxs-lookup"><span data-stu-id="39925-111">Running the cmdlets synchronously.</span></span>
+- <span data-ttu-id="b18e5-111">Cmdlet'ler zaman uyumlu olarak çalışır.</span><span class="sxs-lookup"><span data-stu-id="b18e5-111">Running the cmdlets synchronously.</span></span>
 
-- <span data-ttu-id="39925-112">Özellikleri ayıklama [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) komutu tarafından döndürülen nesne.</span><span class="sxs-lookup"><span data-stu-id="39925-112">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="b18e5-112">Özellikleri ayıklama [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) komutu tarafından döndürülen nesne.</span><span class="sxs-lookup"><span data-stu-id="b18e5-112">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="39925-113">Örnek</span><span class="sxs-lookup"><span data-stu-id="39925-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="b18e5-113">Örnek</span><span class="sxs-lookup"><span data-stu-id="b18e5-113">Example</span></span>
 
-<span data-ttu-id="39925-114">Bu örnek bir çalışma alanı oluşturan ve tarafından kullanılan bir [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) çalıştırmak için nesne [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) ve [ölçü nesnesi](/powershell/module/microsoft.powershell.utility/measure-object) cmdlet'leri.</span><span class="sxs-lookup"><span data-stu-id="39925-114">This sample creates a runspace that used by a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Measure-Object](/powershell/module/microsoft.powershell.utility/measure-object) cmdlets.</span></span>
+<span data-ttu-id="b18e5-114">Bu örnek bir çalışma alanı oluşturan ve tarafından kullanılan bir [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) çalıştırmak için nesne [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) ve [ölçü nesnesi](/powershell/module/microsoft.powershell.utility/measure-object) cmdlet'leri.</span><span class="sxs-lookup"><span data-stu-id="b18e5-114">This sample creates a runspace that used by a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Measure-Object](/powershell/module/microsoft.powershell.utility/measure-object) cmdlets.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -142,6 +142,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="39925-115">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="39925-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b18e5-115">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="b18e5-115">See Also</span></span>
 
-[<span data-ttu-id="39925-116">Bir Windows PowerShell ana bilgisayar uygulaması yazma</span><span class="sxs-lookup"><span data-stu-id="39925-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="b18e5-116">Bir Windows PowerShell ana bilgisayar uygulaması yazma</span><span class="sxs-lookup"><span data-stu-id="b18e5-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
