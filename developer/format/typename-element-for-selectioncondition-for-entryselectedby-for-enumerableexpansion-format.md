@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d9100ab7-fbdc-4c0d-bb56-57669ef42b95
 caps.latest.revision: 9
 ms.openlocfilehash: 316e54d11647aedc1552a0bb74b943de7e4e3588
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083910"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion EntrySelectedBy için SelectionCondition TypeName Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi DefaultSettings öğesi (biçimi) EnumerableExpansions ö
 <TypeName>Nameof.NetType</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `TypeName` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `TypeName` öğes
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[EntrySelectedBy EnumerableExpansion (biçimi) için için SelectionCondition öğesi](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|Bu tanımın koleksiyon nesnelerini genişletmek için bulunması gereken koşulu tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 .NET türünün tam adını belirttiğinizden `System.IO.DirectoryInfo`.
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC ProcessSet kaynağı
 ms.openlocfilehash: 91a2d5b562864addcb8e11062916d291448bbf57
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077118"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess kaynağı
 
@@ -43,5 +43,5 @@ WindowsProcess [string] #ResourceName
 | StandardErrorPath| Standart hata yazma işlemleri için yolu. Var. Varolan dosyanın üzerine yazılır.|
 | StandardInputPath| İşlem standart giriş aldığı akış.|
 | StandardOutputPath| Standart çıkış yazma işlemleri için dosyanın yolu. Var. Varolan dosyanın üzerine yazılır.|
-| WorkingDirectory| Geçerli çalışma dizini işlemleri için kullanılan konum.|
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **_ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"` .|
+| Başlangıç| Geçerli çalışma dizini işlemleri için kullanılan konum.|
+| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **_ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"` .|

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Registry kaynağı
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076965"
 ---
 # <a name="dsc-registry-resource"></a>DSC Registry kaynağı
 
@@ -40,7 +40,7 @@ Registry [string] #ResourceName
 | Emin olun| Anahtar ve değer olup olmadığını gösterir. "Var" Bu özelliği ayarlamak emin olmak için. Nesneler yok emin olmak için "Yok" özelliğini ayarlayın. "Var" varsayılan değerdir.|
 | Force| Belirtilen kayıt defteri anahtarı varsa **zorla** yeni değeri ile değiştirir. Alt anahtarlar içeren bir kayıt defteri anahtarının silinmesi, bu olması gereken **$true** |
 | Onaltılık| Onaltılık biçimde belirtilecektir verileri gösterir. Belirtilmişse DWORD/QWORD değer verisini onaltılık biçimde sunulur. Diğer türleri için geçerli değil. Varsayılan değer **$false**.|
-| DependsOn| Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn| Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
 | ValueData| Kayıt defteri değeri için veriler.|
 | ValueType| Değer türünü belirtir. Desteklenen türler şunlardır: Dize (REG_SZ), ikili dosya (ikili REG), Dword 32-bit (REG_DWORD), Qword 64-bit (REG_QWORD), çok dizeli (REG_MULTI_SZ), Genişletilebilir dize (REG_EXPAND_SZ) |
 

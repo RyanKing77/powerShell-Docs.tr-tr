@@ -11,13 +11,13 @@ applies_to:
 ms.assetid: 832ea622-25a9-4760-904d-e15d6105bb27
 caps.latest.revision: 7
 ms.openlocfilehash: 363c40c3eacf406bb29662c89a6b30eeb715d513
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082167"
 ---
-# <a name="supporting-updatable-help"></a>Güncelleştirilebilir Yardımı Destekleme
+# <a name="supporting-updatable-help"></a>Güncelleştirilebilir Yardımı destekleme
 
 *Windows PowerShell güncelleştirilebilir Yardım sistemi*, Windows® 8 ve Windows Server® 2012'de kullanıma sunulan, kullanıcıların her zaman en yeni Yardım konuları, yerel bilgisayarda komut isteminde olmasını sağlamak için tasarlanmıştır. Windows PowerShell ile birlikte çevrimiçi Yardım, güncelleştirilebilir Yardımı tam Yardım çözümü kullanıcılar için sağlar. Bu bölümde güncelleştirilebilir Yardım sistemi ve nasıl modül yazarları güncelleştirilebilir Yardımı için kendi modüllerinin destekleyebileceğini açıklar.
 

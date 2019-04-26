@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
 caps.latest.revision: 14
 ms.openlocfilehash: 477b8b54c8edd2fa0e6939041d04322d861197c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066813"
 ---
 # <a name="controls-element-for-view-format"></a>Görünüm için Denetimler Öğesi (Biçim)
 
@@ -29,7 +29,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </Controls>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki bölümlerde, öznitelikler, alt ve üst öğeleri açıklayan `Controls` öğesi. Bu öğe en az bir alt öğesi olmalıdır. Burada hiçbir alt öğelerinin üst limiti veya bunların sırası önemli değil.
 
@@ -37,13 +37,13 @@ Aşağıdaki bölümlerde, öznitelikler, alt ve üst öğeleri açıklayan `Con
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[Denetim öğesi görünümü (biçimi) için denetimleri için](./control-element-for-controls-for-view-format.md)|Görünüm tarafından kullanılabilecek bir denetimi tanımlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Derleme özel Windows PowerShell Desired State Configuration kaynakları
 ms.openlocfilehash: 882b6efed4564d2354183d7472b301e1e1758335
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076880"
 ---
 # <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>Derleme özel Windows PowerShell Desired State Configuration kaynakları
 
-> Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC), ortamınızı yapılandırmak için kullanabileceğiniz yerleşik kaynaklara sahip. Bu konuda, kaynakları ve bağlantıları konulara özel bilgiler ve örnekler ile geliştirmeye genel bakış sağlar.
 

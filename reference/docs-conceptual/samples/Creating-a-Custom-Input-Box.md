@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Özel bir Giriş Kutusu Oluşturma
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
 ms.openlocfilehash: 2d04ad6df65cdb4ff13d136dea47bbba6a01f3a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086298"
 ---
 # <a name="creating-a-custom-input-box"></a>Özel bir Giriş Kutusu Oluşturma
 

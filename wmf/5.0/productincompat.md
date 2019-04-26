@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 271f26cf97035e50165e3e6777c00867c7f3ac31
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: f411bfde063615d6ba7c01b8ed50e0b5b9ae6d70
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085173"
 ---
 # <a name="product-compatibility-status"></a>Ürün Uyumluluğu Durumu
 
@@ -17,13 +17,13 @@ ms.locfileid: "34186764"
 - System Center 2012 Configuration Manager
 
 ## <a name="not-tested"></a>Test değil:
-> Aşağıdaki sunucu uygulamaları çalıştıran sistemler **değil sınanmıştır** Windows Management Framework 5.0 karşı:
+> Aşağıdaki sunucu uygulamaları çalıştıran sistemler **test** Windows Management Framework 5.0 karşı:
 
 - Microsoft SharePoint Server 2010
 - System Center 2012 Virtual Machine Manager
 
 ## <a name="incompatible"></a>Uyumsuz:
-> Aşağıdaki sunucu uygulamaları çalıştıran sistemler **değil çalıştırmalısınız** Windows Management Framework 5.0:
+> Aşağıdaki sunucu uygulamaları çalıştıran sistemler **çalıştırma** Windows Management Framework 5.0:
 
 - Microsoft Exchange Server 2013
 - Microsoft Exchange Server 2010 SP3

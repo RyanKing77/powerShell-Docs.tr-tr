@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Paket DSC kaynağı
 ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077203"
 ---
 # <a name="dsc-package-resource"></a>Paket DSC kaynağı
 
@@ -43,7 +43,7 @@ Package [string] #ResourceName
 | Kimlik bilgisi| Uzak bir kaynak üzerinde paket erişimi sağlar. Bu özellik, paketi yüklemek için kullanılmaz. Paket her zaman yerel sistemde yüklenir.|
 | Emin olun| Paketin yüklü olup olmadığını gösterir. Bu özelliği "Yok" paketi yüklü emin olun (veya paket yüklüyse kaldırmak için) olarak ayarlayın. "Paket yüklü emin olmak için (varsayılan değer) sunmak için" olarak ayarlayın.|
 | LogPath| Sağlayıcı yüklemek veya paket kaldırmak için bir günlük dosyasını kaydetmek istediğiniz tam yolunu belirtir.|
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, kaynak yapılandırmasının Kimliğini çalıştırmak istediğiniz bir blok betik ilk ise **ResourceName** ve kendi türünün **ResourceType**, bu özelliği kullanmak için sözdizimi `DependsOn = "[ResourceType]ResourceName"`.|
 | ReturnCode| Beklenen dönüş kodu gösterir. Gerçek kodu döndürmesi durumunda beklenen değer, burada, yapılandırma, bir hata döndürür sağlanan eşleşmiyor.|
 
 ## <a name="example"></a>Örnek

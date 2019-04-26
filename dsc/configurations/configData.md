@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Yapılandırma verilerini kullanma
 ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080229"
 ---
 # <a name="using-configuration-data-in-dsc"></a>DSC yapılandırma verilerini kullanma
 
-> Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Yerleşik DSC kullanarak **ConfigurationData** parametresi bir yapılandırması içinde kullanılabilir verileri tanımlayabilirsiniz.
 Bu farklı ortamlar için veya birden çok düğüm için kullanılabilecek tek bir yapılandırma oluşturmanızı sağlar.

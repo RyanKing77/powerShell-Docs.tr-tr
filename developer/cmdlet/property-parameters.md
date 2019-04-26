@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d17e0d66-42ea-4e4c-a85b-3ca09b146492
 caps.latest.revision: 6
 ms.openlocfilehash: cc0742b86a7a36e5712707c077fd1952691f3f4b
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067578"
 ---
 # <a name="property-parameters"></a>Özellik Parametreleri
 
@@ -36,7 +36,7 @@ Aşağıdaki tabloda, özellik parametreleri için işlevselliği ve önerilen a
 |**Regex**<br>Veri türü: SwitchParameter|Bu parametre, böylece parametresi belirtildiğinde normal ifadeler kullanılan uygulayın. Bu parametre belirtildiğinde, joker karakterler çözümlenmiyor.|
 |**hızı**<br>Veri türü: Int32|Bu parametre, kullanıcının baud hızı belirtebilirsiniz böylece uygulayın. Bu parametre, kullanıcı kaynak hızını ayarlar.|
 |**State**<br>Veri türü: Anahtar sözcük dizisi|Bu parametre, kullanıcı adlarını KEYDOWN gibi bir durum belirtebilirsiniz böylece uygulayın.|
-|**Değer**<br>Veri türü: Nesne|Bu parametre, kullanıcının cmdlet'e sağlamak için bir değer belirtebilirsiniz, böylece uygulayın.|
+|**Değer**<br>Veri türü: Object|Bu parametre, kullanıcının cmdlet'e sağlamak için bir değer belirtebilirsiniz, böylece uygulayın.|
 |**Sürüm**<br>Veri türü: Dize|Bu parametre, kullanıcı özelliği sürümünü belirtebilirsiniz böylece uygulayın.|
 
 ## <a name="see-also"></a>Ayrıca bkz:

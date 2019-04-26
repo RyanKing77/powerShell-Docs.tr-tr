@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 936d09f2-2c48-49e8-ab2d-0c8729199a2e
 caps.latest.revision: 8
 ms.openlocfilehash: 8ba8931ea5e34f610878351396cad42023393ad6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076268"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion EntrySelectedBy için SelectionSetName Öğesi (Biçim)
 
@@ -28,7 +28,7 @@ Yapılandırma öğesi (biçimi) DefaultSettings öğesi (biçimi) EnumerableExp
 
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionSetName` öğesi.
 
@@ -36,17 +36,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionSetName
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[EntrySelectedBy öğesi EnumerableExpansion (biçimi) için](./entryselectedby-element-for-enumerableexpansion-format.md)|Bu tanımı tarafından genişletilen .NET koleksiyon nesnelerini tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Seçimi kümesinin adını belirtin.
 

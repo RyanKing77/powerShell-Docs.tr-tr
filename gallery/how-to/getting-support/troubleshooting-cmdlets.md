@@ -4,15 +4,15 @@ contributor: manikb
 keywords: Galeri, powershell, cmdlet, psget
 title: Sorun giderme cmdlet'leri
 ms.openlocfilehash: f5cd9c0cc23fef5891bf02c10b6541ab0f9d418a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084190"
 ---
 # <a name="troubleshooting-cmdlets"></a>Sorun giderme cmdlet'leri
 
-## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Nasıl çözümleneceğini "Uyarı: ', paket adı' paket başarısız indirmek" sorun
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Nasıl çözümleneceğini "Uyarı: Paket 'paket adı' karşıdan yüklenemedi"sorun
 
 Bu rapor, `Install-Module` veya `Update-Module` bazen bazı makinelerde başarısız olur.
 Araştırmamıza göre bunu ağ bağlantısı ile yapmak için bir şeydir.

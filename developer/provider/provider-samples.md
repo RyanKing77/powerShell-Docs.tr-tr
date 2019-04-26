@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c4933dad-fec9-4337-a1a9-9dc16ee87cc3
 caps.latest.revision: 9
 ms.openlocfilehash: 1e7aeb5bcb6bd5a2845648c3327e2245e6c428ba
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56844803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080943"
 ---
 # <a name="provider-samples"></a>Sağlayıcı Örnekleri
 
@@ -21,7 +21,7 @@ Bu bölüm, bir Microsoft Access veritabanına erişim sağlayıcıları örnekl
 
 ## <a name="in-this-section"></a>Bu Bölümde
 
-Bu bölüm aşağıdaki konuları içerir:
+Bu bölüm şu konuları içerir:
 
 [AccessDBProviderSample01 örnek](./accessdbprovidersample01.md) nasıl doğrudan türetilen sağlayıcı sınıfı bildirmek Bu örnek gösterir [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) sınıfı. Burada yalnızca bütünlük açısından dahil edilmiştir.
 

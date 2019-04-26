@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC için Linux nxEnvironment kaynağı
 ms.openlocfilehash: 763ec560faa6adaf42aef3c21c9045be95f780bc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078019"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC için Linux nxEnvironment kaynağı
 
@@ -35,7 +35,7 @@ nxEnvironment <string> #ResourceName
 | Değer| Ortam değişkenine atanacak değer.|
 | Emin olun| Değişkeni mevcut olup olmadığını denetleyin belirler. Bu özelliği değişkeni var. olmak için "var" olarak ayarlayın. Kümesi "Yok" değişken sağlamak için mevcut değil. "Var" varsayılan değerdir.|
 | Yol| Yapılandırılan ortam değişkenini tanımlar. Bu özellik kümesine **$true** değişken ise **yolu** değişken; Aksi takdirde ayarlayın **$false**. Varsayılan değer **$false**. Yapılandırılan değişken ise **yolu** değişkeni aracılığıyla belirtilen değer **değer** özelliği için mevcut değeri eklenir.|
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, varsa **kimliği** kaynağın çalıştırmak istediğiniz yapılandırma komut dosyası bloğu ilk. **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, varsa **kimliği** kaynağın çalıştırmak istediğiniz yapılandırma komut dosyası bloğu ilk. **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Ek Bilgi
 

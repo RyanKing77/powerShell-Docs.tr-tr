@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Çekme sunucusu en iyi uygulamaları
 ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079209"
 ---
 # <a name="pull-server-best-practices"></a>Çekme sunucusu en iyi uygulamaları
 
-Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Çekme sunucusu (Windows özelliği *DSC hizmet*) ancak desteklenen bir bileşen Windows Server'ın yeni özellikler veya yetenekler sunmak için herhangi bir plan vardır. Geçişi başlıyor önerilir yönetilen istemcilere [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (Windows Server çekme sunucusunda dışında özellikler dahildir) veya topluluk çözümlerden birini listelenen [burada](pullserver.md#community-solutions-for-pull-service).
@@ -134,7 +134,7 @@ Kullanarak Yük Dengelemesi, trafik HTTPS üzerinden güvenli hale getirmek içi
 
 Senaryo |En iyi uygulama
 :---|:---
-Sınama Ortamı |Planlı bir üretim ortamına mümkünse yeniden oluşturun. Bir sunucu ana bilgisayar adı, basit yapılandırmaları için uygundur. DNS kullanılamıyorsa, bir IP adresi yerine ana bilgisayar adı kullanılabilir.|
+Test ortamı |Planlı bir üretim ortamına mümkünse yeniden oluşturun. Bir sunucu ana bilgisayar adı, basit yapılandırmaları için uygundur. DNS kullanılamıyorsa, bir IP adresi yerine ana bilgisayar adı kullanılabilir.|
 Tek düğümlü dağıtım |Sunucu ana bilgisayar adı için bir DNS CNAME kaydı oluşturun.|
 
 Daha fazla bilgi için [yapılandırma DNS hepsini bir kez deneme Windows Server'da](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
@@ -169,7 +169,7 @@ Bir çekme sunucusu, IIS veya bir SMB dosya paylaşımında barındırılan ya d
 SMB, bir web sunucusu rolü istenmeyen olun diğer ortam gereksinimleri yanı sıra, burada bir web sunucusu kullanılmadı ilke belirleyen ortamları için bir seçenek sunar.
 İmzalama ve trafiği şifreleme gereksinimlerini değerlendirmek her iki durumda da unutmayın. HTTPS, SMB imzalama ve IPSec ilkelerini dikkate değer tüm seçenekler değildir.
 
-#### <a name="load-balancing"></a>Yük dengeleme
+#### <a name="load-balancing"></a>Yük Dengeleme
 
 Web hizmetiyle etkileşim kurmanın istemciler, tek bir yanıtta döndürülen bilgileri için bir istek olması. Yük Dengeleme oturumları zaman içinde herhangi bir noktada tek bir sunucuda tutulur emin olmak için platform için gerekli olmadığından sıralı istek gereklidir.
 

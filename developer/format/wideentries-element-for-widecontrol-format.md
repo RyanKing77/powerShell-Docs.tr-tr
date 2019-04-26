@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0c4bff45-0960-4b3a-95e7-47f2cee03ac5
 caps.latest.revision: 12
 ms.openlocfilehash: 083f3c8df8136858e32778ed231943ef983e47aa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56844908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083697"
 ---
 # <a name="wideentries-element-for-widecontrol-format"></a>WideControl için WideEntries Öğesi (Biçim)
 
@@ -30,7 +30,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `WideEntries` öğesi. En az bir alt öğesi belirtilmesi gerekir.
 
@@ -38,13 +38,13 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `WideEntries` öğ
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[WideEntry öğesi (biçimi)](./wideentry-element-for-widecontrol-format.md)|Geniş bir görünüm tanımını sağlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

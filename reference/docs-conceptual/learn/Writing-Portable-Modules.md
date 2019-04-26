@@ -3,11 +3,11 @@ ms.date: 12/14/2018
 keywords: PowerShell cmdlet'i
 title: Taşınabilir modülleri yazma
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086417"
 ---
 # <a name="portable-modules"></a>Taşınabilir modülleri
 
@@ -25,7 +25,7 @@ Kullanım [yeni ModuleManifest][] PSSnapIn kayıt kodu gereksinimini yerini alan
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>.NET Portability Analyzer (diğer adıyla APIPort)
 
-Bağlantı noktası modüllerine başlayın PowerShell Core ile iş Windows PowerShell için yazılan [.NET Portability Analyzer][]. .NET modülde kullanılan API'ler, .NET Framework, .NET Core ve diğer .NET çalışma zamanları ile uyumlu olup olmadığını belirlemek için derlenmiş bütünleştirilmiş kodunuzda bu aracı çalıştırın. Varsa, araç diğer API'ler önerir. Aksi takdirde, eklemeniz gerekebilir [çalışma zamanı denetimleri][] ve kısıtlama özellikleri özel çalışma zamanları içinde kullanılabilir değil.
+Bağlantı noktası modüllerine başlayın PowerShell Core ile iş Windows PowerShell için yazılan [.NET taşınabilirlik Çözümleyicisi][]. .NET modülde kullanılan API'ler, .NET Framework, .NET Core ve diğer .NET çalışma zamanları ile uyumlu olup olmadığını belirlemek için derlenmiş bütünleştirilmiş kodunuzda bu aracı çalıştırın. Varsa, araç diğer API'ler önerir. Aksi takdirde, eklemeniz gerekebilir [çalışma zamanı denetimleri][] ve kısıtlama özellikleri özel çalışma zamanları içinde kullanılabilir değil.
 
 ## <a name="creating-a-new-module"></a>Yeni modül oluşturuluyor
 
@@ -178,7 +178,7 @@ Bununla birlikte, uyumlu API'leri kullandığınız sürece hedeflenecek .NET Wi
 
 [PowerShell standart][] kitaplıktır PowerShell API'lerini tüm sürümlerde kullanılabilir PowerShell, standart sürümüne eşit veya daha büyük bir resmi belirtimi.
 
-Örneğin, [PowerShell Standard 5.1][] uyumlu Windows PowerShell 5.1 hem PowerShell Core 6.0 veya daha yeni.
+Örneğin, [PowerShell standart 5.1][] uyumlu Windows PowerShell 5.1 hem PowerShell Core 6.0 veya daha yeni.
 
 PowerShell standart kitaplığı kullanarak modülünüzde derleme öneririz. Kitaplık kullanılabilir ve uygulanan hem Windows PowerShell hem de PowerShell Core 6 API'ler sağlar.
 PowerShell standart her zaman ileten uyumlu olacak şekilde tasarlanmıştır. Standart kitaplık 5.1 PowerShell kullanılarak oluşturulan bir modül, her zaman gelecekteki PowerShell sürümleriyle uyumlu olur.
@@ -199,13 +199,13 @@ Modülünüzün Windows PowerShell ve PowerShell Core ile çalıştığını do�
 
 Modül bildirimini içinde `PrivateData` özelliğine sahip bir `PSData` alt özellik. İsteğe bağlı `Tags` özelliği `PSData` PowerShell galerisinde görünen değerlerin dizisini alır. PowerShell Galerisi aşağıdaki uyumluluk değerlerini destekler:
 
-| Tag               | Açıklama                                |
+| Etiket               | Açıklama                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | PowerShell Core 6 ile uyumlu          |
 | PSEdition_Desktop | Windows PowerShell ile uyumlu         |
 | Windows           | Windows ile uyumlu                    |
 | Linux             | Linux (belirli distro yok) ile uyumlu |
-| macOS             | MacOS ile uyumlu                      |
+| Mac OS             | MacOS ile uyumlu                      |
 
 Örnek:
 
@@ -255,14 +255,14 @@ Modül bildirimini içinde `PrivateData` özelliğine sahip bir `PSData` alt öz
 
 <!-- reference links -->
 [.NET framework]: /dotnet/framework/
-[.NET core]: /dotnet/core/
+[.NET Core]: /dotnet/core/
 [PSSnapIn]: /dotnet/api/system.management.automation.pssnapin
 [Yeni ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
-[çalışma zamanı denetimleri]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
+[Çalışma zamanı denetimleri]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
-[.NET standard]: /dotnet/standard/net-standard
+[.NET Standard]: /dotnet/standard/net-standard
 [PowerShell standart]: https://github.com/PowerShell/PowerShellStandard
-[PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
+[PowerShell standart 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell Galerisi]: https://www.powershellgallery.com
-[.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
+[.NET taşınabilirlik Çözümleyicisi]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support

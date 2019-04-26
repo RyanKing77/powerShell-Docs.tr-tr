@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Bileşik kaynaklar bir kaynak olarak bir DSC Yapılandırması kullanılarak--
 ms.openlocfilehash: 2823d05e0c8feb2933ca691f9ab5149ace2f7ee3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076693"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Bileşik kaynaklar: DSC yapılandırma kaynağı olarak kullanma
 
-> Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Uzun ve karmaşık, birçok farklı kaynaktan çağırma ve özelliklerin geniş bir sayı ayarlandığında, gerçek durumlarda yapılandırmaları olabilir. Bu karmaşıklığı çözümüne yardımcı olmak için diğer yapılandırmalar için bir kaynak olarak bir Windows PowerShell Desired State Configuration (DSC) yapılandırması kullanabilirsiniz. Bu bir bileşik kaynak diyoruz. Parametre almayan bir DSC yapılandırması bir bileşik kaynaktır. Yapılandırma parametreleri kaynak özellikleri olarak davranır. Yapılandırma ile bir dosya olarak kaydedilmiş bir **. schema.psm1** uzantısı ve MOF şemayı hem kaynak yerini tipik DSC kaynak betiği alır (DSC kaynakları hakkında daha fazla bilgi için bkz. [Windows PowerShell Desired State Configuration kaynakları](resources.md).
 

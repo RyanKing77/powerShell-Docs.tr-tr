@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f4bea9d8-27ad-410e-ad48-287f807d3e4e
 caps.latest.revision: 7
 ms.openlocfilehash: 18b0113c9b7b0895a1093cb0b56cd2d02c74a6c1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065842"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-customcontrol-format"></a>CustomControl ExpressionBinding için ItemSelectionCondition Öğesi (Biçim)
 
@@ -30,7 +30,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </ItemSelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ItemSelectionCondition` öğesi.
 
@@ -38,14 +38,14 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ItemSelectionCon
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[PropertyName öğesi görünümü (biçimi için özel denetim için ItemSelectionCondition için](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen .NET alan özelliği belirtir.|
 |[ScriptBlock öğesi görünümü (biçimi) için özel denetim için ItemSelectionCondition için](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen betiği belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

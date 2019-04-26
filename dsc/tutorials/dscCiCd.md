@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC ile sürekli tümleştirme ve sürekli dağıtım işlem hattı oluşturma
-ms.openlocfilehash: c305d9bc7e0f8c659129b5a20d0b7e8b34d09ba8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076494"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC ile sürekli tümleştirme ve sürekli dağıtım işlem hattı oluşturma
 
@@ -370,7 +370,7 @@ Bu adımı yapı kopyalar ve test betikleri hazırlama dizine kadar sonraki adı
 1. Ayarlama **Yapıt türü** için `Server`
 1. Seçin `Enabled` içinde **Denetim seçenekleri**
 
-## <a name="enable-continuous-integration"></a>Sürekli tümleştirmeyi etkinleştir
+## <a name="enable-continuous-integration"></a>sürekli tümleştirmeyi etkinleştir
 
 Biz, dilediğiniz zaman oluşturmak proje neden olan bir tetikleyici ayarlarsınız artık bir değişiklik için iade `ci-cd-example` git deponun dalı.
 
@@ -388,7 +388,7 @@ Böylece proje her kodu iade ile geliştirme ortamına dağıtılan bir yayın t
 
 Bunu yapmak için ile ilişkili yeni bir yayın tanımı Ekle `InfraDNS` daha önce oluşturduğunuz tanımı oluşturun.
 Seçtiğinizden emin olun **sürekli dağıtım** böylece dilediğiniz zaman yeni bir derleme tamamlandığında yeni bir yayın tetiklenir.
-([Nasıl yapılır: Yayın tanımına iş](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions)) ve şu şekilde yapılandırın:
+([Yayın işlem hatları nelerdir? ](/azure/devops/pipelines/release/what-is-release-management)) ve şu şekilde yapılandırın:
 
 Aşağıdaki adımlar, yayın tanımına ekleyin:
 

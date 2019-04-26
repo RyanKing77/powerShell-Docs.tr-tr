@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a317d482-73cc-4c98-a002-1357fa879cd7
 caps.latest.revision: 7
 ms.openlocfilehash: cf1a80e845c38d97d71f26eba63c38a550958b79
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066235"
 ---
 # <a name="entryselectedby-element-for-customentry-for-groupby-format"></a>GroupBy CustomEntry için EntrySelectedBy Öğesi (Biçim)
 
@@ -31,7 +31,7 @@ GroupBy (biçimi) CustomEntries öğesinin GroupBy (biçimi) CustomEntry öğesi
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `EntrySelectedBy` öğesi. En az bir türü, seçim kümesi veya tanımı için seçim koşulu belirtmeniz gerekir. Kullanabileceğiniz bir alt öğe sayısı maksimum sınırı yoktur.
 
@@ -39,7 +39,7 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `EntrySelectedBy` 
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -47,7 +47,7 @@ Yok.
 |[GroupBy (biçimi) için EntrySelectedBy için SelectionSetName öğesi](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> Denetimin bu tanımı kullanan .NET türleri kümesini belirtir.|
 |[GroupBy (biçimi) için EntrySelectedBy için TypeName öğesi](./typename-element-for-entryselectedby-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> Denetimin bu tanımı kullanan bir .NET türü belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

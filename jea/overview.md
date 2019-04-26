@@ -1,54 +1,54 @@
 ---
 ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
-title: Tam yetecek kadar yönetim genel bakış
-ms.openlocfilehash: 3dae8b31d4d13ff9033803035c870c02fc7c38ca
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Yeterli yönetim genel bakış
+ms.openlocfilehash: c097838fb25a63d42502eebf751c64c537bdd077
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084921"
 ---
 # <a name="just-enough-administration"></a>Yeterli Yönetim
 
-Yalnızca yetecek kadar Yönetim (JEA) sağlayan bir güvenlik teknoloji PowerShell ile yönetilen her şey için yönetiminin ' dir.
-JEA ile şunları yapabilirsiniz:
+Yeterli yönetim (JEA) etkinleştiren bir güvenlik teknolojisidir PowerShell ile yönetilebilen her şey için temsilci ' dir.
+Jea'yı ile şunları yapabilirsiniz:
 
-- **Yöneticiler, makinelerde sayısını azaltın** yararlanmayı sanal hesaplar veya grup tarafından yönetilen normal kullanıcılar adına ayrıcalıklı eylemler gerçekleştirmek hizmet hesapları.
-- **Kullanıcıların ne sınırlamak** belirterek hangi cmdlet'ler, İşlevler ve dış komutları çalıştırabilirsiniz.
-- **Kullanıcıların ne yaptıklarını daha iyi anlamak** dökümleri ve günlükleri gösterin, tam olarak hangi kullanıcıların oturumu sırasında yürütülen bir kullanıcı komutları.
+- **Makinelerinizde yönetici sayısını azaltmak** normal kullanıcılar adına ayrıcalıklı eylemler gerçekleştirmek ve hizmet hesapları yararlanarak sanal hesaplar veya grup tarafından yönetilen.
+- **Kullanıcıların ne yaptığını sınırlamak** belirterek hangi cmdlet'ler, İşlevler ve dış komutları çalıştırabilirsiniz.
+- **Kullanıcılarınızın neler yaptığını daha iyi anlamak** dökümleri ve günlüklerle gösteren, tam olarak hangi kullanıcıların oturumu sırasında yürütülen bir kullanıcı komutları.
 
 **Bu neden önemlidir?**
 
-Üst düzey ayrıcalıklı hesapları sunucularınızı yönetmek için kullanılan bir ciddi bir güvenlik riski.
-Bir saldırganın tehlikeye Bu hesaplardan birini, bunlar başlatabilir [yanal saldırıları](http://aka.ms/pth) kuruluşunuzdaki.
-Bunlar tehlikeye her hesap bunları ve bir hizmet reddi saldırısı başlatmasını şirket gizli çalmak için bir adım daha yaklaşarak artık daha fazla hesapları ve kaynakları, bunları koyma bile erişim verebilirsiniz.
+Üst düzeyde ayrıcalıklı hesapların sunucularınızı yönetmek için kullanılan bir ciddi bir güvenlik riski.
+Bir saldırganın tehlikeye Bu hesaplardan birini, bunlar başlatabilir [yana saldırıları](http://aka.ms/pth) kuruluşunuzdaki.
+Her hesap, tehlikeye bunları daha fazla hesap ve bunları geçirmeden kaynak çalarak şirket gizli öğeleri ve bir hizmet reddi saldırısı başlatmak için bir adım daha yaklaştınız bile için erişim verebilirsiniz.
 
-Her zaman yönetici ayrıcalıkları ya da kaldırmak kolay değildir.
-DNS rolü, Active Directory etki alanı denetleyicisi ile aynı makinede yüklendiği yaygın bir senaryo düşünün.
-DNS yöneticileri DNS sunucusu ile ilgili sorunları giderme ancak üst düzey ayrıcalıklı "Etki alanı yöneticileri" güvenlik grubunun üyesi yapmak zorunda Bunu yapmak için yerel yönetici ayrıcalıkları gerektirir.
-Bu yaklaşım bu makinedeki tüm kaynaklarını verimli DNS yöneticileri denetime tam etki alanı ve erişim sağlar.
+Her zaman yönetim ayrıcalıkları ya da kaldırmak kolay değildir.
+DNS rolü, Active Directory etki alanı denetleyicisi ile aynı makinede yüklendiği bir ortak senaryoyu ele alalım.
+DNS Yöneticiler, DNS sunucusu ile sorunları gidermek için ancak bunları yüksek ayrıcalıklı "Domain Admins" güvenlik grubunun üyesi yapmak zorunda Bunu yapmak için yerel yönetici ayrıcalıkları gerektirir.
+Bu yaklaşım, o makinedeki tüm kaynaklara erişim ve tam etki alanı DNS yöneticileri denetime etkili bir şekilde sağlar.
 
-JEA yardımcı ilkesini benimsemeyi yardımcı olarak bu sorunu gidermek *en az ayrıcalık*.
-JEA ile bunları kendi işin yapılması için ihtiyaç duydukları tüm PowerShell komutları için erişmenizi DNS yöneticileri, ancak hiçbir şey için daha fazla yönetim uç noktası yapılandırabilirsiniz.
-Bu zarar görmüş bir DNS önbelleği onarmak veya kasıtsız olarak bunları Active Directory hakkı vermeden DNS sunucusunu yeniden başlatın veya dosya sistemi göz atmak için uygun erişim sağlamak veya potansiyel olarak tehlikeli olabilecek komut dosyalarını çalıştır anlamına gelir.
-JEA oturum geçici ayrıcalıklı sanal hesaplarını kullanacak şekilde yapılandırıldığında, daha iyi bir yöntem, DNS sunucusu kullanarak yöneticiler için bağlanabilir *yönetici olmayan* kimlik bilgileri ve yine genellikle gerektiren komutları çalıştırmak Yönetici ayrıcalıkları.
-Bu özellik, kullanıcıların yaygın ayrıcalıklı yerel/etki alanı yönetici rollerini kaldırın ve bunun yerine dikkatle her makinede yapabileceklerinizi nedir denetlemenizi sağlar.
+JEA yardımcı ilkesini benimseyin yardımcı olarak bu sorunu gidermek *en az ayrıcalık*.
+Jea'yı ile bunları erişim işin yapılması için ihtiyaç duydukları tüm PowerShell komutlarına DNS yöneticileri, ancak hiçbir şey için daha fazla yönetim uç noktası yapılandırabilirsiniz.
+Başka bir deyişle, zarar görmüş bir DNS önbelleği onarmak veya DNS sunucusu Active Directory'ye yönelik haklara vermeden olmadan yanlışlıkla yeniden başlatmanız ya da dosya sistemine gözatmak için uygun erişim sağlamak veya potansiyel olarak tehlikeli olabilecek bir komut çalıştırın.
+JEA oturumu geçici ayrıcalıklı sanal hesaplarını kullanmak için yapılandırıldığında, daha da iyisi, DNS yöneticilerinize kullanarak sunucuya bağlanabilirsiniz *yönetici olmayan* hala genellikle gerektiren komutlar çalıştırabilir ve kimlik bilgileri Yönetici ayrıcalıkları.
+Bu özellik kullanıcıların yaygın olarak ayrıcalıklı yerel/etki alanı yönetici rollerini kaldırın ve bunun yerine dikkatli bir şekilde her makinede yapmanız mümkün nedir denetlemenizi sağlar.
 
 ## <a name="get-started-with-jea"></a>JEA ile çalışmaya başlama
 
-JEA bugün Windows Server 2016 veya Windows 10 çalıştıran herhangi bir makinede kullanmaya başlayabilirsiniz.
-JEA, bir Windows Management Framework güncelleştirmesi ile daha eski işletim sistemlerinde de çalıştırabilirsiniz.
-JEA kullanılacağını ve nasıl oluşturulacağını öğrenmek için gereksinimleri hakkında daha fazla bilgi için kullanma ve bir JEA uç noktası denetim, aşağıdaki konulara bakın:
+Jea'yı Windows Server 2016 veya Windows 10 çalıştıran herhangi bir makinede bugün kullanmaya başlayabilirsiniz.
+Jea'yı, Windows Management Framework'ün güncelleştirme ile eski işletim sistemlerinde da çalıştırabilirsiniz.
+JEA kullanılacağını ve nasıl oluşturulacağını öğrenmek için gereksinimleri hakkında daha fazla bilgi edinmek için kullanın ve bir JEA uç noktası denetim, aşağıdaki konu başlıklarına göz atın:
 
-- [Önkoşullar](prerequisites.md) -JEA kullanmak için ortamınızı ayarlayın açıklanmaktadır.
-- [Rol özellikleri](role-capabilities.md) -bir kullanıcı bir JEA oturumda yapmak izin veriliyor belirleyen roller oluşturma açıklanmaktadır.
-- [Oturum yapılandırmaları](session-configurations.md) -Kullanıcıları rollerine eşlemek ve JEA kimliği JEA uç noktalarını yapılandırma açıklanmaktadır
-- [JEA kaydetme](register-jea.md) - JEA uç noktası oluşturun ve bağlanmak kullanıcılar için kullanılabilir yapın.
-- [JEA kullanarak](using-jea.md) -JEA kullanabileceğiniz çeşitli yollarını öğrenin.
+- [Önkoşullar](prerequisites.md) -JEA kullanmak için ortamınızı ayarlama açıklanmaktadır.
+- [Rol işlevleri](role-capabilities.md) -oluşturma, bir kullanıcı bir JEA oturumda yapmak için izin verilenden belirleyen rolleri açıklanır.
+- [Oturum yapılandırmaları](session-configurations.md) -Kullanıcıları rollerine eşlemek ve JEA kimlik JEA uç noktalarını yapılandırma açıklanmaktadır
+- [Jea'yı kaydetme](register-jea.md) - bir JEA uç noktası oluşturun ve bağlanmak kullanıcılar için kullanılabilir hale getirmek.
+- [Jea'yı kullanarak](using-jea.md) -JEA kullanabileceğiniz çeşitli yöntemler öğrenirsiniz.
 - [Güvenlik konuları](security-considerations.md) -en iyi güvenlik uygulamaları ve JEA yapılandırma seçenekleri etkilerini gözden geçirin.
-- [Denetim ve rapor üzerinde JEA](audit-and-report.md) -denetim ve JEA uç noktalarda rapor hakkında bilgi edinin.
+- [Denetim ve rapor JEA'da](audit-and-report.md) -denetim ve rapor üzerinde JEA uç noktaları hakkında bilgi edinin.
 
 ## <a name="samples-and-dsc-resource"></a>Örnekler ve DSC kaynağı
 
-Örnek JEA yapılandırmaları ve JEA DSC kaynağı bulunabilir [JEA GitHub deposunu](https://github.com/PowerShell/JEA).
+Örnek JEA yapılandırmaları ve JEA DSC kaynağı bulunabilir [JEA GitHub deposu](https://github.com/PowerShell/JEA).

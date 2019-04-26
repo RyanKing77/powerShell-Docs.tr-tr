@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: bb4e1564-3fd3-4be3-b93e-ac90480e05c0
 caps.latest.revision: 6
 ms.openlocfilehash: 3130ecc69f7d1568bcbd392dd24e8cdcc3382905
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065878"
 ---
 # <a name="firstlineindent-element-for-frame-for-customcontrol-for-view-format"></a>Görünüm CustomControl için Çerçeve FirstLineIndent Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 <FirstLineIndent>NumberOfCharactersToShift</FirstLineIndent>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `FirstLineIndent` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `FirstLineIndent` 
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[Çerçeve öğesi görünümü (biçimi) için özel denetim için CustomItem için](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|Verinin, veri sola veya sağa kaydırma gibi görüntülenme şeklini tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Verilerin ilk satırı geçirmek istediğiniz karakter sayısını belirtin.
 

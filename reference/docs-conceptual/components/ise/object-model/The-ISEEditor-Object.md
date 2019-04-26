@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: ISEEditor Nesnesi
 ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086774"
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor Nesnesi
 

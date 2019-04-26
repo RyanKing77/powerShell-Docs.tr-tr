@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC dosya kaynağı
 ms.openlocfilehash: b5bc2c305b8cfccbd044274811df631264a24279
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077339"
 ---
 # <a name="dsc-file-resource"></a>DSC dosya kaynağı
 
-> Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Dosya kaynağı, Windows PowerShell Desired State Configuration (DSC) hedef düğüm üzerindeki dosya ve klasörleri yönetmek için bir mekanizma sağlar. **HedefYolu** ve **SourcePath** hem de hedef düğüm tarafından erişilebilir olması gerekir.
 
@@ -41,13 +41,13 @@ File [string] #ResourceName
 |---------------|------------------------------------------------------------------------------|--------|-------|
 |DestinationPath|Sağlamak istediğiniz hedef düğümde konumu olan `Present` veya `Absent`.|Evet|Hayır|
 |Öznitelikler     |Hedef dosya veya dizin özniteliklerini istenen durum. Geçerli değerler **arşiv**, **gizli**, **salt okunur**, ve **sistem**.|Hayır|Yok|
-|Sağlama      |İki dosya aynı olup olmadığını belirlerken kullanılacak sağlama türü. Geçerli değerler şunlardır: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate.|Hayır|Yalnızca dosya veya dizin adı karşılaştırılır.|
+|Sağlama toplamı      |İki dosya aynı olup olmadığını belirlerken kullanılacak sağlama türü. Geçerli değerler şunlardır: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate.|Hayır|Yalnızca dosya veya dizin adı karşılaştırılır.|
 |İçerikler       |İle kullanıldığında geçerli `File` türü. Olun içeriğini gösterir `Present` veya `Absent` hedeflenen dosyasından. |Hayır|Yok|
 |Kimlik bilgisi     |Kaynak dosyaları gibi kaynaklarına erişmek için gerekli olan kimlik bilgileri.|Hayır|Hedef düğümün bilgisayar hesabı. (*bkz. Not*)|
 |Emin olun         |Hedef dosya veya dizin istenen durumu. |Hayır|**Mevcut**|
 |Force          |(Örneğin, bir dosyanın üzerine veya boş olmayan bir dizini silme) bir hata ile sonuçlandı erişim işlemleri geçersiz kılar.|Hayır|`$false`|
 |Recurse        |İle kullanıldığında geçerli `Directory` türü. Durum işlem yinelemeli olarak tüm alt dizinler için gerçekleştirir.|Hayır|`$false`|
-|DependsOn      |Belirtilen kaynaklar üzerinde bir bağımlılık ayarlar. Bu kaynak, yalnızca tüm bağımlı kaynakları başarılı yürütme sonrasında yürütülür. Bağımlı kaynaklar söz dizimini kullanarak belirttiğiniz `"[ResourceType]ResourceName"`. Bkz: [about_DependsOn](../../../configurations/resource-depends-on.md)|Hayır|Yok|
+|dependsOn      |Belirtilen kaynaklar üzerinde bir bağımlılık ayarlar. Bu kaynak, yalnızca tüm bağımlı kaynakları başarılı yürütme sonrasında yürütülür. Bağımlı kaynaklar söz dizimini kullanarak belirttiğiniz `"[ResourceType]ResourceName"`. Bkz: [about_DependsOn](../../../configurations/resource-depends-on.md)|Hayır|Yok|
 |Kaynak yolu     |Dosya veya klasör kaynak kopyalama kaynağı yolu.|Hayır|Yok|
 |Tür           |Yapılandırılan kaynak türü. Geçerli değerler `Directory` ve `File`.|Hayır|`File`|
 |MatchSource    |Kaynak ilk kopyayı sonra kaynak dizine eklenen yeni dosyalar için izlemeniz gerekir, belirler. Değerini `$true` ilk kopyalamadan sonra yeni kaynak dosyalarını hedefe kopyalanması gereken olduğunu belirtir. Varsa kümesine `$False`, kaynağın kaynak dizinin içeriğini önbelleğe alır ve ilk kopyalamadan sonra eklenen tüm dosyaları yok sayar.|Hayır|`$false`|

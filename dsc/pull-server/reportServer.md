@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC rapor sunucusu kullanma
 ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079243"
 ---
 # <a name="using-a-dsc-report-server"></a>DSC rapor sunucusu kullanma
 
-Şunun için geçerlidir: Windows PowerShell 5.0
+Uygulama hedefi: Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Çekme sunucusu (Windows özelliği *DSC hizmet*) ancak desteklenen bir bileşen Windows Server'ın yeni özellikler veya yetenekler sunmak için herhangi bir plan vardır. Geçişi başlıyor önerilir yönetilen istemcilere [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (Windows Server çekme sunucusunda dışında özellikler dahildir) veya topluluk çözümlerden birini listelenen [burada](pullserver.md#community-solutions-for-pull-service).

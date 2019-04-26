@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 9e11da8f-1e75-4d3d-b4c8-b500dec3028e
 caps.latest.revision: 6
 ms.openlocfilehash: 32f8a71e9818c8c1a052f3b96f442f169c1bda4a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066581"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-groupby-format"></a>GroupBy ExpressionBinding için CustomControlName Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ GroupBy (biçimi) CustomEntries öğesinin GroupBy (biçimi) CustomEntry öğesi
 <CustomControlName>NameofCustomControl</CustomControlName>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomControlName` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomControlNam
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[GroupBy (biçimi) için CustomItem için ExpressionBinding öğesi](./expressionbinding-element-for-customitem-for-groupby-format.md)|Denetimi tarafından görüntülenen verileri tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Denetimin adını belirtin.
 

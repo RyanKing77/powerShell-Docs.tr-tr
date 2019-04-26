@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery
 title: Arama sonuçlarını filtreleme
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084411"
 ---
 # <a name="filtering-search-results"></a>Arama sonuçlarını filtreleme
 
@@ -29,7 +29,7 @@ Aşağı açılan altındaki onay kutularını sonuçlarına göre filtre uygula
 - Paket türleri
   - Modül
   - Betik
-- Kategorileri
+- Categories
   - Cmdlet
   - DSC kaynak
   - İşlev
@@ -41,7 +41,7 @@ Benzer şekilde, yalnızca betikler PowerShell galerisinde görmek için paket t
 
 > [!NOTE]
 > Filtreler dahildir.
-> Örnek: hem cmdlet'ler ve işlevler içeren bir paket cmdlet'ini veya işlevinde (veya her ikisi de) işaretlediyseniz görünür.
+> Örnek: Cmdlet'ini veya işlevinde (veya her ikisi de) işaretlediyseniz hem cmdlet'ler ve işlevler içeren bir paket görünür.
 > Ne seçili değilse, paket görünmez.
 > Benzer şekilde, tüm kategorileri seçilirse yalnızca bu kategorilerden birindeyse içeren paketler görüntülenir.
 > **Bu kategorilerin hiçbirine ait olmayan paketleri görünmez.**

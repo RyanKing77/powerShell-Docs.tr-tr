@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7141aefc-6656-4c52-8a9c-c2bfc9c87be9
 caps.latest.revision: 6
 ms.openlocfilehash: 7a697c286ec9efe750930739cdfa2580003365dd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083918"
 ---
 # <a name="typename-element-for-selectioncondition-for-controls-for-view-format"></a>Görünüm Denetimleri için SelectionCondition TypeName Öğesi (Biçim)
 
@@ -28,7 +28,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `TypeName` öğesi.
 
@@ -36,17 +36,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `TypeName` öğes
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[SelectionCondition öğesi görünümü (biçimi) için denetimleri için EntrySelectedBy için](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)|Kullanılacak denetimi tanımı bulunması gereken bir koşulu tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 .NET türünün tam adını belirttiğinizden `System.IO.DirectoryInfo`.
 
