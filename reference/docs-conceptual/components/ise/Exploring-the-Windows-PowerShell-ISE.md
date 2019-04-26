@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE’yi Keşfetme
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ms.openlocfilehash: 059651f159fb2636a93167709134788e90d062b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086910"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Windows PowerShell ISE’yi Keşfetme
 
@@ -28,17 +28,17 @@ Menü çubuğu içerir **dosya**, **Düzenle**, **görünümü**, **Araçları**
 
 Bir Windows PowerShell sekmesi, bir Windows PowerShell Betiği çalıştığı ortamıdır. Yeni Windows PowerShell sekmeler, yerel bilgisayarda veya uzak bilgisayarlarda ayrı ortamlar oluşturmak için Windows PowerShell ıse'de açabilirsiniz. En fazla sekiz PowerShell sekmeleri aynı anda açık olabilir.
 
-## <a name="toolbar"></a>Araç çubuğu
+## <a name="toolbar"></a>Araç Çubuğu
 
 Aşağıdaki düğmeler, araç çubuğunda yer alır.
 
 |Düğme|İşlev|
 |----------|------------|
 |**Yeni**|Yeni bir komut dosyası açılır.|
-|**Açık**|Bir varolan komut dosyası veya dosya açar.|
+|**açın**|Bir varolan komut dosyası veya dosya açar.|
 |**Kaydet**|Bir komut dosyası veya dosya kaydeder.|
 |**Kes**|Seçili metni keser ve panoya kopyalar.|
-|**Kopyalama**|Seçili metni panoya kopyalar.|
+|**Kopyala**|Seçili metni panoya kopyalar.|
 |**Yapıştır**|İmleç konumuna Pano içeriğini yapıştırır.|
 |**Çıkış bölmesini temizle**|Çıkış bölmesinde tüm içeriği temizler.|
 |**Geri alma**|Az önce gerçekleştirdiğiniz eylemin tersine çevirir.|

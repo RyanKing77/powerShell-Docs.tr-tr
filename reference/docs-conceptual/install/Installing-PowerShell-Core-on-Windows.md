@@ -3,11 +3,11 @@ title: Windows’da PowerShell Core yükleme
 description: Üzerinde Windows PowerShell Core yükleme hakkında bilgi
 ms.date: 08/06/2018
 ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058038"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows’da PowerShell Core yükleme
 
