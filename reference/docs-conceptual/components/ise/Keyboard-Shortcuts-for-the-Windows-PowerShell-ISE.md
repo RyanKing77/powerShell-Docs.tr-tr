@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE için Klavye Kısayolları
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086842"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE için Klavye Kısayolları
 
@@ -18,10 +18,10 @@ Windows PowerShell® Tümleşik komut dosyası ortamı (ISE içinde) eylemleri g
 
 Metin düzenlerken aşağıdaki klavye kısayollarını kullanabilirsiniz.
 
-|Eylem|Klavye kısayolları|Kullanın|
+|Eylem|Klavye Kısayolları|Kullanın|
 |----------|----------------------|----------|
 |**Yardım**|F1|Betik bölmesinde **önemli:** F1 Yardım Web'de TechNet Kitaplığı'ndan gelen veya indirilen Yardım (bkz: Update-Help) belirtebilirsiniz. Seçmek için tıklatın **Araçları**, **seçenekleri**, sonra da **genel ayarlar**sekmesinde, ayarlama veya kaldırma **yerel Yardım içeriği yerine çevrimiçi içerik kullanın.**|
-|**Kopyalama**|CTRL+C|Betik bölmesi, komut bölmesi, çıkış bölmesi|
+|**Kopyala**|CTRL+C|Betik bölmesi, komut bölmesi, çıkış bölmesi|
 |**Kes**|CTRL+X|Betik bölmesi, komut bölmesi|
 |**Genişlet veya daralt anahat oluşturma**|CTRL+M|Betik bölmesi|
 |**Betikte Bul**|CTRL+F|Betik bölmesi|
@@ -40,10 +40,10 @@ Metin düzenlerken aşağıdaki klavye kısayollarını kullanabilirsiniz.
 
 Betik bölmesinde komut dosyalarını çalıştırdığınızda, aşağıdaki klavye kısayollarını kullanabilirsiniz.
 
-|Eylem|Klavye kısayolu|
+|Eylem|Klavye Kısayolu|
 |----------|---------------------|
 |**Yeni**|CTRL+N|
-|**Açık**|CTRL+O|
+|**açın**|CTRL+O|
 |**Çalıştırma**|F5|
 |**Seçimi Çalıştır**|F8|
 |**Yürütmeyi durdur**|CTRL + BREAK. CTRL + C (hiçbir metin seçili olduğunda) bağlam belirsiz olduğunda kullanılabilir.|
@@ -54,7 +54,7 @@ Betik bölmesinde komut dosyalarını çalıştırdığınızda, aşağıdaki kl
 
 Windows PowerShell ıse'de görünümünü özelleştirmek için aşağıdaki klavye kısayollarını kullanabilirsiniz. Uygulamanın tüm bölmelerde bunlara erişilebilir.
 
-|Eylem|Klavye kısayolu|
+|Eylem|Klavye Kısayolu|
 |----------|---------------------|
 |**Git komut (v2) veya konsol (v3 ve üzeri) bölmesi**|CTRL+D|
 |**Çıkış Bölmesi'ne (yalnızca v2) gidin**|CTRL+SHIFT+O|
@@ -71,7 +71,7 @@ Windows PowerShell ıse'de görünümünü özelleştirmek için aşağıdaki kl
 
 Betik hata ayıklaması yaparken, aşağıdaki klavye kısayollarını kullanabilirsiniz.
 
-|Eylem|Klavye kısayolu|Kullanın|
+|Eylem|Klavye Kısayolu|Kullanın|
 |----------|---------------------|----------|
 |**Çalıştırma ve devam**|F5|Betik bölmesinde, bir komut dosyası hata ayıklaması|
 |**Adımla**|F11|Betik bölmesinde, bir komut dosyası hata ayıklaması|
@@ -86,9 +86,9 @@ Betik hata ayıklaması yaparken, aşağıdaki klavye kısayollarını kullanabi
 > [!NOTE]
 > Ayrıca, Windows PowerShell ISE'de betiklerde hata ayıklaması yaparken Windows PowerShell Konsolu için tasarlanan klavye kısayollarını kullanabilirsiniz. Bu kısayollar kullanmak için komut bölmesinde kısayolunu yazın ve ENTER'a basın.
 
-|Eylem|Klavye kısayolu|Kullanın|
+|Eylem|Klavye Kısayolu|Kullanın|
 |----------|---------------------|----------|
-|**Devam et**|C|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
+|**Continue**|C|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
 |**Adımla**|S|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
 |**Üzerinden adımla**|V|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
 |**Dışına adımla**|O|Konsol bölmesinde, bir komut dosyası hata ayıklaması|
@@ -102,7 +102,7 @@ Betik hata ayıklaması yaparken, aşağıdaki klavye kısayollarını kullanabi
 
 Windows PowerShell sekmeleri kullandığınızda aşağıdaki klavye kısayollarını kullanabilirsiniz.
 
-|Eylem|Klavye kısayolu|
+|Eylem|Klavye Kısayolu|
 |----------|---------------------|
 |**PowerShell sekmesini kapatın**|CTRL+W|
 |**Yeni bir PowerShell sekmesi**|CTRL+T|
@@ -113,7 +113,7 @@ Windows PowerShell sekmeleri kullandığınızda aşağıdaki klavye kısayollar
 
 (PowerShell.exe) Windows PowerShell Konsolu başlatın veya Windows PowerShell ISE çıkmak için aşağıdaki klavye kısayollarını kullanabilirsiniz.
 
-|Eylem|Klavye kısayolu|
+|Eylem|Klavye Kısayolu|
 |----------|---------------------|
 |**Çıkış**|ALT+F4|
 |**PowerShell.exe Başlat** (Windows PowerShell Konsolu)|CTRL+SHIFT+P|

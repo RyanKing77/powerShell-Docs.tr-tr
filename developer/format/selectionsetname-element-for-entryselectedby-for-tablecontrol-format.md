@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 5dd0bd5d-f206-4cc6-a0f8-70700ee2c4b7
 caps.latest.revision: 8
 ms.openlocfilehash: 819906127e81355c45103ede85ef3608e1c1cfeb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063930"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-tablecontrol-format"></a>TableControl EntrySelectedBy için SelectionSetName Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.
 
@@ -35,17 +35,17 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[EntrySelectedBy öğesi (biçimi)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Bu girdi veya kullanılmak üzere bu giriş için bulunması gereken bir koşulu kullanan .NET türlerini tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Seçimi kümesinin adını belirtin.
 

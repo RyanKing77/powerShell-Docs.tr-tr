@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Lisans Kabulü Gerektiren Modüller
 ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075231"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Lisans Kabulü Gerektiren Modüller
 
@@ -28,7 +28,7 @@ Kullanıcıların lisans kabul etmesini gerektirmek için istediğiniz modüller
 ## <a name="impact-on-installsaveupdate-module"></a>Yükleme/kaydetme/Update-Module etkisi
 
 - Yükleme/kaydetme/güncelleştirme cmdlet'leri yeni bir parametre destekleyeceği – kullanıcı lisansı saw olarak gibi davranır AcceptLicense.
-- RequiredLicenseAcceptance True ise ve – AcceptLicense belirtilmezse, kullanıcı license.txt gösterilen ve ile istenir: &quot;bu lisans koşullarını (Evet/Hayır/YesToAll/NoToAll) kabul etmezseniz&quot;.
+- RequiredLicenseAcceptance true'dur ve – AcceptLicense belirtilmezse, kullanıcı license.txt gösterilen ve ile istenir: &quot;Bu lisans koşullarını (Evet/Hayır/YesToAll/NoToAll) kabul etmezseniz&quot;.
   - Lisans kabul edilirse
     - **Save-Module:** modülü kullanıcıya kopyalanacak&#39;s sistem
     - **Install-Module:** modülü kullanıcıya kopyalanacak&#39;s sistem uygun klasöre (kapsamınıza bağlı olarak)
@@ -51,7 +51,7 @@ Belirtme `–Force` değil bir lisansı kabul etmek yeterli. `–AcceptLicense` 
 
 ## <a name="examples"></a>ÖRNEKLERİ
 
-### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>Örnek 1: Güncelleştirme lisans kabulü gerektir için modül bildirimi
+### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>Örnek 1: Güncelleştirme modül lisans kabulü gerektir için bildirim.
 
 ```powershell
 Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -PrivateData @{
@@ -65,7 +65,7 @@ Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -Pr
 
 Bu komut, bildirim dosyasını güncelleştirir ve RequireLicenseAcceptance bayrağı true olarak ayarlanır.
 
-### <a name="example-2-install-module-requiring-license-acceptance"></a>Örnek 2: Install Module gerektiren lisans kabulü
+### <a name="example-2-install-module-requiring-license-acceptance"></a>Örnek 2: Lisans kabulü gerektiren bir modülünü yükleme
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance
@@ -88,7 +88,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 Bu komut, lisans license.txt dosyasından gösterir ve bu lisansı kabul etmesi ister.
 
-### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>Örnek 3: Install Module - AcceptLicense ile gerektiren lisans kabulü
+### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>Örnek 3: -AcceptLicense ile lisans kabulü gerektiren bir modülünü yükleme
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
@@ -96,7 +96,7 @@ Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 
 Modül lisansını kabul etmek için herhangi bir istem olmadan yüklenir.
 
-### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>Örnek 4: Install Module ile - Force gerektiren lisans kabulü
+### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>Örnek 4: -Force ile lisans kabulü gerektiren bir modülünü yükleme
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance -Force
@@ -113,7 +113,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
    .InstallPackage
 ```
 
-### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>Örnek 5: Yükleme modül lisans kabulü gerektiren bağımlılıklar
+### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>Örnek 5: Lisans kabulü gerektiren bağımlılıklarla modülünü yükleme
 
 Modül 'ModuleWithDependency' modülünde 'ModuleRequireLicenseAcceptance' bağlıdır. Kullanıcı lisansı kabul istenir.
 
@@ -135,7 +135,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Örnek 6: Yükleme modül lisans kabulü ve - AcceptLicense gerektiren bağımlılıklar
+### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Örnek 6: Lisans kabulü ve - AcceptLicense gerektiren bağımlılıklarla modülünü yükleme
 
 Modül 'ModuleWithDependency' modülünde 'ModuleRequireLicenseAcceptance' bağlıdır. -AcceptLicense olarak lisansını kabul etmek için kullanıcıya sorulmaz.
 
@@ -143,7 +143,7 @@ Modül 'ModuleWithDependency' modülünde 'ModuleRequireLicenseAcceptance' bağl
 Install-Module -Name ModuleWithDependency -AcceptLicense
 ```
 
-### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>Örnek 7: PSGetFormatVersion 2.0 eski bir istemcide lisans kabulü gerektiren modülünü yükleme
+### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>Örnek 7: PSGetFormatVersion 2.0 eski bir istemcide lisans kabulü gerektiren bir modülünü yükleme
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance
@@ -153,7 +153,7 @@ Install-Module -Name ModuleRequireLicenseAcceptance
 WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGetFormatVersion '2.0' is not supported by the current version of PowerShellGet. Get the latest version of the PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
 ```
 
-### <a name="example-8-save-module-requiring-license-acceptance"></a>8. örnek: modül lisans kabulü gerektiren Kaydet
+### <a name="example-8-save-module-requiring-license-acceptance"></a>8. örnek: Modül lisans kabulü gerektiren Kaydet
 
 ```powershell
 Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
@@ -176,7 +176,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 Bu komut, lisans license.txt dosyasından gösterir ve bu lisansı kabul etmesi ister.
 
-### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>9. örnek: - AcceptLicense ile lisans kabulü gerektiren modülü Kaydet
+### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>9. örnek: -AcceptLicense ile lisans kabulü gerektiren modülü Kaydet
 
 ```powershell
 Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
@@ -184,7 +184,7 @@ Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
 
 Modül lisansını kabul etmek için herhangi bir istem olmadan kaydedilir.
 
-### <a name="example-10-update-module-requiring-license-acceptance"></a>Örnek 10: Lisans kabulü gerektiren güncelleştirme Modülü
+### <a name="example-10-update-module-requiring-license-acceptance"></a>10. örnek: Lisans kabulü gerektiren modülü güncelleştirme
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance
@@ -207,7 +207,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 Bu komut, lisans license.txt dosyasından gösterir ve bu lisansı kabul etmesi ister.
 
-### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>11. örnek: Güncelleştirme modülü ile - AcceptLicense gerektiren lisans kabulü
+### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>11. örnek: -AcceptLicense ile lisans kabulü gerektiren modülü güncelleştirme
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense

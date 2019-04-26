@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: MOF ile özel bir DSC kaynağı yazma
 ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076744"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>MOF ile özel bir DSC kaynağı yazma
 
-> Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Bu konu başlığında, biz Windows PowerShell Desired State Configuration (DSC) özel bir kaynak için şema MOF dosyasında tanımlayın ve bir Windows PowerShell komut dosyası kaynak uygulayın. Bu özel kaynak oluşturma ve web sitenizi bulundurma içindir.
 

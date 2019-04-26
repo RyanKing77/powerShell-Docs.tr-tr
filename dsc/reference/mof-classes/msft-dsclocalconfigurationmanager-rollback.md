@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: MSFT_DSCLocalConfigurationManager sınıfının RollBack yöntemi
 ms.openlocfilehash: 4956900ecd2c9cb7f2e2b5bcab94616f9f5d5565
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078376"
 ---
 # <a name="rollback-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının RollBack yöntemi
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 5eae5088-7605-4ef2-a703-faf3e5a5fc94
 caps.latest.revision: 8
 ms.openlocfilehash: 4714bfd1530585aa80aabc010b86d25bf0c7f9c4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065912"
 ---
 # <a name="expressionbinding-element-for-customitem-for-groupby-format"></a>GroupBy CustomItem için ExpressionBinding Öğesi (Biçim)
 
@@ -34,7 +34,7 @@ GroupBy (biçimi) CustomEntries öğesinin GroupBy (biçimi) CustomEntry öğesi
 </ExpressionBinding>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ExpressionBinding` öğesi.
 
@@ -42,7 +42,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ExpressionBindin
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -53,7 +53,7 @@ Yok.
 |[GroupBy (biçimi) için ExpressionBinding için PropertyName öğesi](./propertyname-element-for-expressionbinding-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> .NET özelliğinin denetimi tarafından görüntülenen değeri belirtir.|
 |[GroupBy (biçimi) için ExpressionBinding için ScriptBlock öğesi](./scriptblock-element-for-expressionbinding-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> Denetimi tarafından görüntülenen değeri betiğini belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

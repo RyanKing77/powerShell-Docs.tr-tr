@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7dcaeadb-4e79-47a0-96e2-8952af26abbe
 caps.latest.revision: 7
 ms.openlocfilehash: 5db35a8094ea2bb966c8d6a96802c72f64c05c17
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064039"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format"></a>Yapılandırma Denetimleri için SelectionCondition SelectionSetName Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) denetimleri öğesinin yapılandırma (biçimi)
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionSetName` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionSetName
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[İçin yapılandırma (biçimi) için denetimleri için EntrySelectedBy SelectionCondition öğesi](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|Kullanılacak denetimi tanımı bulunması gereken bir koşulu tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Seçimi kümesinin adını belirtin.
 

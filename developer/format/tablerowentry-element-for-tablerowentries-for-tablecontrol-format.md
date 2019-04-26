@@ -9,13 +9,13 @@ ms.topic: article
 ms.assetid: 18d86af7-7ff9-4968-81be-2caa61937d49
 caps.latest.revision: 10
 ms.openlocfilehash: 946ffb3fe857503c02b9000238a86775969abbd6
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58059857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075333"
 ---
-# <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>TableControl (biçimi) için TableRowEntries için TableRowEntry öğesi
+# <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>TableControl TableRowEntries için TableRowEntry Öğesi (Biçim)
 
 Bir tablonun satırında görüntülenen verileri tanımlar.
 
@@ -31,7 +31,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </TableRowEntry>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `TableRowEntry` öğesi.
 
@@ -39,7 +39,7 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `TableRowEntry` ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -47,7 +47,7 @@ Yok.
 |[TableControl (biçimi) için TableRowEntry için TableColumnItems öğesi](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|Gerekli öğe.<br /><br /> Betikleri değerleri görüntülenir ve özellikleri tanımlar.|
 |[Öğe için TableRowEntry TableControl (biçimi) için kaydır.](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Sütun genişliğini aşıyor metin ve sonraki satırda görüntüleneceğini belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

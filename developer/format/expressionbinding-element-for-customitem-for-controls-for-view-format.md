@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 2b9da6c5-548b-480f-86ae-6de6fecabaca
 caps.latest.revision: 8
 ms.openlocfilehash: 06089730008839f18c471711a4b4411722f99c38
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065963"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-view-format"></a>Görünüm Denetimleri için CustomItem ExpressionBinding Öğesi (Biçim)
 
@@ -34,7 +34,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </ExpressionBinding>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ExpressionBinding` öğesi.
 
@@ -42,7 +42,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ExpressionBindin
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -53,7 +53,7 @@ Yok.
 |[PropertyName öğesi görünümü (biçimi) için denetimleri için ExpressionBinding için](./propertyname-element-for-expressionbinding-for-controls-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> .NET özelliğinin denetimi tarafından görüntülenen değeri belirtir.|
 |[ScriptBlock öğesi görünümü (biçimi) için denetimleri için ExpressionBinding için](./scriptblock-element-for-expressionbinding-for-controls-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Denetimi tarafından görüntülenen değeri betiğini belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

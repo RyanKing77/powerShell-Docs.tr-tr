@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ff85e83a-c9c2-4c37-accc-e6a27c182f3c
 caps.latest.revision: 19
 ms.openlocfilehash: 16b41535109ca503e679a135f5ba30054e33de5b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067017"
 ---
 # <a name="alignment-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl TableColumnHeader için Hizalama Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 <Alignment>AlignmentType</Alignment>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `Alignment` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `Alignment` öğes
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[TableColumnHeader öğesi (biçimi)](./tablecolumnheader-element-format.md)|Bir etiket, genişliğini ve hizalamasını tablosunun bir sütunu için veri tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Aşağıdaki değerlerden birini belirtin. Bu değerler büyük küçük harfe duyarlı değildir.
 

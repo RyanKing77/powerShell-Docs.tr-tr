@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC WaitForSome kaynak
 ms.openlocfilehash: 888da1810f0a9233579bad5eef8d5dd556947c61
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076863"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome kaynak
 
-> Şunun için geçerlidir: Windows PowerShell 5.0 ve üzeri
+> Uygulama hedefi: Windows PowerShell 5.0 ve üzeri
 
 **WaitForSome** Desired State Configuration ' nı (DSC) kaynak, bir düğüm bloğunda içinde kullanılabilir bir [DSC Yapılandırması](../../../configurations/configurations.md) diğer düğümlerde yapılandırmalarında bağımlılıklarını belirtmek için.
 

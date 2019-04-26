@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeri, powershell, cmdlet, psgallery, psget
 title: Yerel PSRepositories ile çalışma
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084105"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>Yerel PowerShellGet depoları ile çalışma
 

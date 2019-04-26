@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 5ec68309-7826-4643-a521-e29c996663fb
 caps.latest.revision: 11
 ms.openlocfilehash: 649a978e21e9421a3f3e953261e1d309e23c3f9c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064331"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format"></a>WideControl EntrySelectedBy için SelectionCondition ScriptBlock Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünümü 
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ScriptBlock` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ScriptBlock` ö�
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[EntrySelectedBy WideEntry (biçimi) için için SelectionCondition öğesi](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|Bu tanım için kullanılacak bulunmalıdır koşulu tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Yürütülecek betiği belirtin.
 

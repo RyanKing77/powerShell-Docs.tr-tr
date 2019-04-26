@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 52003450-07ca-41e5-b075-8b6b03fc6e88
 caps.latest.revision: 6
 ms.openlocfilehash: 30215734ef832d778b08d3d7be224ff8d88b0579
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56844859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084020"
 ---
 # <a name="typename-element-for-entryselectedby-for-controls-for-view-format"></a>Görünüm Denetimleri için EntrySelectedBy TypeName Öğesi (Biçim)
 
@@ -28,7 +28,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `TypeName` öğesi.
 
@@ -36,17 +36,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `TypeName` öğes
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[EntrySelectedBy öğesi görünümü (biçimi) için denetimleri için CustomEntry için](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Bu denetim tanımı veya kullanılmak üzere bu tanım için bulunması gereken bir koşulu kullanan .NET türlerini tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 .NET türünün tam adını belirttiğinizden `System.IO.DirectoryInfo`.
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 98708c1d-6f39-4a76-b454-31153a6ade8c
 caps.latest.revision: 12
 ms.openlocfilehash: 3c110bd5fe3ef2f790ef136556afa7c29d0b5b29
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066422"
 ---
 # <a name="customitem-element-for-customentry-for-customcontrol-for-view-format"></a>Görünüm CustomControl için CustomEntry CustomItem Öğesi (Biçim)
 
@@ -32,7 +32,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </CustomItem>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomItem` öğesi.
 
@@ -40,7 +40,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomItem` öğ
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -49,7 +49,7 @@ Yok.
 |[Yeni satır öğesi görünümü (biçimi) için özel denetim için CustomItem için](./newline-element-for-customitem-for-customcontrol-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Boş bir satır denetimi görüntüye ekler.|
 |[Metin öğesi görünümü (biçimi) için özel denetim için CustomItem için](./text-element-for-customitem-for-customview-for-view-format.md)|İsteğe bağlı öğe.<br /><br /> Ek metin denetimi tarafından görüntülenen verilere belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

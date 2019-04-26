@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 67a2b061-2a4a-4ad1-84f9-cdbefb64aaab
 caps.latest.revision: 8
 ms.openlocfilehash: abb8b91626128b3deaa2db24a9fd8b34a6563410
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065557"
 ---
 # <a name="groupby-element-for-view-format"></a>Görünüm için GroupBy Öğesi (Biçim)
 
@@ -33,7 +33,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </GroupBy>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.
 
@@ -41,7 +41,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -51,7 +51,7 @@ Yok.
 |[GroupBy (biçimi) için PropertyName öğesi](./propertyname-element-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> .NET özelliğini başlatır belirtir, değeri değiştiğinde yeni bir grup.|
 |[GroupBy (biçimi) için ScriptBlock öğesi](./scriptblock-element-for-groupby-format.md)|İsteğe bağlı öğe.<br /><br /> Yeni bir grup değeri değiştiğinde başlatan betiği belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

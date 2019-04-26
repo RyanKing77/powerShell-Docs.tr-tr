@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f2b58fa5-01bc-426c-a043-5c700d6578e9
 caps.latest.revision: 16
 ms.openlocfilehash: 443bf5f693d2ab161668de25a1097347826cb5c2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082048"
 ---
 # <a name="writing-help-for-windows-powershell-modules"></a>Windows PowerShell Modülleri için Yardım Dosyaları Yazma
 
@@ -89,7 +89,7 @@ Farklı dillerde modülü Yardım konuları sağlayabilirsiniz. `Get-Help` Cmdle
 
 Modül, Yardım konuları içermiyor ve hiçbir kullanıcının bilgisayarında modüldeki komutlar için Yardım konularını varsa `Get-Help` otomatik olarak oluşturulan Yardımı görüntüler. Otomatik olarak oluşturulmuş Yardım komut söz dizimi, parametreleri ve girdi ve çıktı türleri içerir, ancak herhangi bir açıklamasını içermez. Otomatik olarak oluşturulmuş Yardım kullanmaya çalıştığınızda kullanıcının yönlendiren metin içeren `Update-Help` cmdlet'ini Internet veya Dosya Paylaşımı'ndan komut için Yardım'ı yükle. Ayrıca kullanmanızı önerir **çevrimiçi** parametresinin `Get-Help` Yardım konusunun çevrimiçi sürümünü almak için cmdlet.
 
-## <a name="supporting-updatable-help"></a>Güncelleştirilebilir Yardımı Destekleme
+## <a name="supporting-updatable-help"></a>Güncelleştirilebilir Yardımı destekleme
 
 Kullanıcılar, Windows PowerShell 3.0 ve sonraki sürümlerinde Windows PowerShell, indirin ve Internet'ten veya bir yerel dosya paylaşımından bir modül için güncelleştirilmiş Yardım dosyalarını yükleyin. `Update-Help` Ve `Save-Help` cmdlet'leri kullanıcı yönetimi ayrıntıları gizle. Kullanıcıların çalıştırmasını `Update-Help` cmdlet'ini ve ardından `Get-Help` cmdlet Windows PowerShell komut isteminde modülü için en yeni Yardım dosyaları okumak için. Kullanıcılar, Windows veya Windows PowerShell yeniden başlatmanız gerekmez.
 
@@ -99,7 +99,7 @@ Modül yazarları, modüldeki Yardım dosyaları içerir ve Yardım dosyaları g
 
 Güncelleştirilebilir Yardımı hakkında daha fazla bilgi için bkz: [güncelleştirilebilir Yardımı destekleme](./supporting-updatable-help.md).
 
-## <a name="supporting-online-help"></a>Çevrimiçi Yardımı Destekleme
+## <a name="supporting-online-help"></a>Çevrimiçi Yardımı destekleme
 
 Olamaz veya yükleme kullanıcıları Yardım dosyalarını bilgisayarlarında genellikle modülü Yardım konuları online sürümüne dayanan güncelleştirildi. **Çevrimiçi** parametresinin `Get-Help` cmdlet'i, bir cmdlet veya Gelişmiş işlevi kullanıcının Yardım konusunun çevrimiçi sürümünü kendi varsayılan Internet tarayıcısında açar.
 

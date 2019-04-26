@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC kaynağı yöntemlerini doğrudan çağırma
 ms.openlocfilehash: cf237f638593706e5959e2bcc0d851b0e55baf0e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079634"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>DSC kaynağı yöntemlerini doğrudan çağırma
 
->Şunun için geçerlidir: Windows PowerShell 5.0
+>Uygulama hedefi: Windows PowerShell 5.0
 
 Kullanabileceğiniz [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) işlevleri veya DSC kaynak yöntemlerine doğrudan çağırmak için cmdlet ( **Get-TargetResource**, **kümesi TargetResource**ve  **Test-TargetResource** MOF temelli kaynak işlevleri veya **alma**, **ayarlayın**, ve **Test** sınıf tabanlı bir kaynak yöntemleri).
 Bu DSC kaynakları kullanmak istediğiniz Üçüncü taraflardan ya da faydalı bir araç kaynakları geliştirirken kullanılabilir.

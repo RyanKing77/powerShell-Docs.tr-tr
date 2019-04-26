@@ -9,13 +9,13 @@ ms.topic: article
 ms.assetid: 6e4e0cf6-19e0-44b8-8b40-d6f6075276cf
 caps.latest.revision: 5
 ms.openlocfilehash: 489d8bcdabe904d6a3d2bc6cdb9d7e23d09cbef2
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075197"
 ---
-# <a name="activity-parameters"></a>Etkinlik Parametreleri
+# <a name="activity-parameters"></a>Etkinlik parametreleri
 
 Aşağıdaki tabloda, etkinlik parametreleri için işlevselliği ve önerilen adlarını listeler.
 
@@ -39,7 +39,7 @@ Aşağıdaki tabloda, etkinlik parametreleri için işlevselliği ve önerilen a
 |**Zorla**<br>Veri türü: SwitchParameter|Parametresi belirtildiğinde kısıtlamaları karşılaşılan olsa bile bir eylem kullanıcının gerçekleştirebileceği belirtmek için bu parametreyi uygulayın. Parametresi, güvenliği tehlikeye izin vermez. Örneğin, bu parametre, salt okunur dosyanın üzerine bir kullanıcı olanak sağlar.|
 |**İçerir**<br>Veri türü: String[]|Bu parametre, böylece kullanıcı bir şey bir etkinlik içerebilir uygulayın. Giriş filtrelerini kullanma hakkında daha fazla bilgi için bkz. [filtre parametrelerini](input-filter-parameters.md).|
 |**Artımlı**<br>Veri türü: SwitchParameter|Parametresi belirtildiğinde işleme artımlı olarak gerçekleştirildiğini belirtmek için bu parametreyi uygulayın. Örneğin, bu parametre yalnızca son yedeklemeden bu yana dosyaları yedekleme artımlı yedeklemeler sağlar.|
-|**Inputobject**<br>Veri türü: Nesne|Bu parametre, cmdlet diğer cmdlet'lerinden giriş aldığı durumlarda uygulayın. Tanımladığınızda bir **Inputobject** parametresi her zaman belirtin **ValueFromPipeline** bildirdiğinizde, anahtar sözcüğü **parametre** özniteliği. Giriş filtrelerini kullanma hakkında daha fazla bilgi için bkz. [filtre parametrelerini](./input-filter-parameters.md).|
+|**Inputobject**<br>Veri türü: Object|Bu parametre, cmdlet diğer cmdlet'lerinden giriş aldığı durumlarda uygulayın. Tanımladığınızda bir **Inputobject** parametresi her zaman belirtin **ValueFromPipeline** bildirdiğinizde, anahtar sözcüğü **parametre** özniteliği. Giriş filtrelerini kullanma hakkında daha fazla bilgi için bkz. [filtre parametrelerini](./input-filter-parameters.md).|
 |**Ekle**<br>Veri türü: SwitchParameter|Parametresi belirtildiğinde cmdlet, bir öğe ekler. Bu parametre uygulayın.|
 |**Etkileşimli**<br>Veri türü: SwitchParameter|Parametresi belirtildiğinde kullanıcıyla cmdlet'i etkileşimli olarak çalışır. böylece, bu parametre uygulayın.|
 |**aralığı**<br>Veri türü: HashTable|Bu parametre değerleri içeren bir karma tablo anahtar sözcüklerin kullanıcı belirtebilirsiniz böylece uygulayın. Örnek değerler için aşağıdaki örnekte **aralığı** parametresi: `-interval @{ResumeScan=15; Retry=3}`.|

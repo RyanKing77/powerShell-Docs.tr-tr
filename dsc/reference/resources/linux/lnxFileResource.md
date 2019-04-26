@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC için Linux nxFile kaynağı
 ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078036"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC için Linux nxFile kaynağı
 
@@ -44,20 +44,20 @@ nxFile <string> #ResourceName
 | Emin olun| Dosyanın mevcut olup olmadığını denetleyin belirler. "Var" dosyası var. olmak için bu özelliği ayarlayın. Kümesi "Yok" dosya sağlamak için mevcut değil. "Var" varsayılan değerdir.|
 | Tür| Yapılandırılan kaynak bir dizin veya bir dosya olup olmadığını belirtir. Bu özelliği kaynak dizin olduğunu belirtmek için "dizin" olarak ayarlayın. "Kaynak bir dosya olduğunu belirtmek için dosya için" olarak ayarlayın. "Dosya" varsayılan değer:|
 | İçerikler| Belirli bir dize gibi bir dosyanın içeriğini belirtir.|
-| Sağlama| İki dosya aynı olup olmadığını belirlerken kullanılacak türünü tanımlar. Varsa **sağlama toplamı** belirtilmezse, yalnızca dosya veya dizin adı, karşılaştırma için kullanılır. Değerler: "ctime", "mtime" veya "md5".|
+| Sağlama toplamı| İki dosya aynı olup olmadığını belirlerken kullanılacak türünü tanımlar. Varsa **sağlama toplamı** belirtilmezse, yalnızca dosya veya dizin adı, karşılaştırma için kullanılır. Değerler: "ctime", "mtime" veya "md5".|
 | Recurse| Alt dizinleri dahil olup olmadığını gösterir. Bu özellik kümesine **$true** dahil edilmesi için alt dizinler istediğinizi belirtmek için. Varsayılan değer **$false**. **Not:** Bu özellik yalnızca geçerlidir **türü** özelliği dizinine ayarlanır.|
 | Force| Belirli dosya işlemleri (örneğin, bir dosyanın üzerine veya boş olmayan bir dizini silme) bir hataya neden olur. Kullanarak **zorla** özelliği, bu tür hatalar'ı geçersiz kılar. Varsayılan değer **$false**.|
 | Bağlantılar| Sembolik bağlantılar için istenen davranışı belirtir. "Sembolik bağlantıları izleyin ve bağlantı hedef (örn. işlem yapma izlemek için" Bu özelliği ayarlayın bağlantı yerine dosya kopyalama). "Bağlantıya (ör. davranacak şekilde yönetmek için" Bu özelliği ayarlayın bağlantıya Kopyala). "Simgesel bağlantılar yoksaymak için yoksay'a için" Bu özelliği ayarlayın.|
 | Grup| Adını **grubu** dosya veya dizin sahibi.|
 | Mod| Sekizlik veya sembolik gösterimde, kaynak için izinleri belirtir. (örneğin, 777 veya rwxrwxrwx). Sembolik gösterimini kullanarak, dizin veya dosya gösteren ilk karakteri sağlamaz.|
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, varsa **kimliği** kaynağın çalıştırmak istediğiniz yapılandırma komut dosyası bloğu ilk. **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, varsa **kimliği** kaynağın çalıştırmak istediğiniz yapılandırma komut dosyası bloğu ilk. **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Ek Bilgi
 
 
 Linux ve Windows farklı satır sonu karakterleri metin dosyalarında varsayılan olarak ve bunun bazı dosyaları bir Linux bilgisayarda yapılandırılırken beklenmeyen sonuçlara neden olabilir __nxFile__. Beklenmeyen satır sonu karakterleri tarafından neden olduğu sorunları kaçınarak Linux dosyası içeriğini yönetmek için birden çok yolu vardır:
 
-Adım 1: Bir uzak kaynaktan (http, https veya ftp) dosyasını kopyalayın: İstenen içeriği ile Linux üzerinde bir dosya oluşturun ve yapılandıracağınız düğümde bir web veya ftp sunucusunda erişilebilir hazırlayın. Tanımlama __SourcePath__ özelliğinde __nxFile__ kaynak dosyanın web veya ftp URL'si ile.
+1. Adım: Bir uzak kaynaktan (http, https veya ftp) dosyasını kopyalayın: İstenen içeriği ile Linux üzerinde bir dosya oluşturun ve yapılandıracağınız düğümde bir web veya ftp sunucusunda erişilebilir hazırlayın. Tanımlama __SourcePath__ özelliğinde __nxFile__ kaynak dosyanın web veya ftp URL'si ile.
 
 ```
 Import-DSCResource -Module nx
@@ -76,7 +76,7 @@ nxFile resolvConf
 ```
 
 
-Adım 2: PowerShell betiğiyle dosyanın içeriğini okumak [Get-Content](https://technet.microsoft.com/library/hh849787.aspx) ayarlanmasından sonra __$OFS__ Linux satır sonu karakteri kullanmak için özelliği.
+2. Adım: PowerShell betiğiyle dosyanın içeriğini okumak [Get-Content](https://technet.microsoft.com/library/hh849787.aspx) ayarlanmasından sonra __$OFS__ Linux satır sonu karakteri kullanmak için özelliği.
 
 
 ```
@@ -98,7 +98,7 @@ nxFile resolvConf
 ```
 
 
-Adım 3: Windows ile Linux satır sonu karakterleri satır sonlarını değiştirmek için bir PowerShell işlevi kullanın.
+3. Adım: Windows ile Linux satır sonu karakterleri satır sonlarını değiştirmek için bir PowerShell işlevi kullanın.
 
 ```
 Function LinuxString($inputStr){

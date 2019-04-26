@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
 caps.latest.revision: 11
 ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059074"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066354"
 ---
 # <a name="defaultsettings-element-format"></a>DefaultSettings Öğesi (Biçim)
 
@@ -33,7 +33,7 @@ Yapılandırma öğesi (biçimi) DefaultSettings öğesi (biçimi)
 </DefaultSettings>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `DefaultSettings` öğesi.
 
@@ -41,7 +41,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `DefaultSettings`
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -51,7 +51,7 @@ Yok.
 |[ShowError öğesi (biçimi)](./showerror-element-format.md)|İsteğe bağlı öğe.<br /><br /> Bir veri parçasını görüntülenirken bir hata oluştuğunda tam hata kaydı görüntüleneceğini belirtir.|
 |[WrapTables öğesi (biçimi)](./wraptables-element-format.md)|İsteğe bağlı öğe.<br /><br /> Sütun genişliğini uygun değilse, bir tablodaki verileri sonraki satıra taşınır belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

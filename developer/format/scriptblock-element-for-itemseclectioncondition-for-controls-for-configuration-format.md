@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 51f7aec9-7b01-4370-84f4-1e58508a851f
 caps.latest.revision: 6
 ms.openlocfilehash: e92b2dfff07358132c480c47c34279e5365fe400
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064450"
 ---
 # <a name="scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format"></a>Yapılandırma Denetimleri için ItemSelectionCondition ScriptBlock Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) denetimleri öğesinin (biçimi) yapılandırma
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ScriptBlock` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ScriptBlock` ö�
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[İçin yapılandırma (biçimi) için denetimleri için ExpressionBinding ItemSelectionCondition öğesi](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)|Bu denetim için kullanılacak bulunmalıdır koşulu tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Yürütülecek betiği belirtin.
 

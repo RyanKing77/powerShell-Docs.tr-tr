@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows PowerShell ISE Betik Oluşturma Nesne Modelinin Amacı
 ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
 ms.openlocfilehash: fd5ac2c34b173d4eba7636bb5760b1ac9abb4277
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086825"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE Betik Oluşturma Nesne Modelinin Amacı
 
@@ -50,6 +50,6 @@ Windows PowerShell ISE işlevselliğini geliştirmek için nesne modeli kullanab
 
 Betik oluşturma nesne modeli, sık kullanılan işlemler için klavye kısayolları oluşturmak için kullanabilirsiniz.
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [ISE Nesne Modeli Hiyerarşisi](The-ISE-Object-Model-Hierarchy.md)

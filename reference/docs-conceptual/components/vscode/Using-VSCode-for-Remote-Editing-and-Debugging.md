@@ -1,15 +1,15 @@
 ---
-title: Uzaktan düzenleme ve hata ayıklama için Visual Studio Code kullanarak
-description: Uzaktan düzenleme ve hata ayıklama için Visual Studio Code kullanarak
+title: Uzaktan düzenleme ve hata ayıklama için Visual Studio Code’u kullanma
+description: Uzaktan düzenleme ve hata ayıklama için Visual Studio Code’u kullanma
 ms.date: 08/06/2018
-ms.openlocfilehash: bab1a629a7e9dafd5957cf93025abb18b8a4f326
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: fbc1ee3556e822b4afb2b37111d0688dc89fdab3
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655545"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086688"
 ---
-# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Uzaktan düzenleme ve hata ayıklama için Visual Studio Code kullanarak
+# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Uzaktan düzenleme ve hata ayıklama için Visual Studio Code’u kullanma
 
 Bu işe ile ilgili bilgi sahibi olduğunuz, çalıştırabilir, hatırlayabilirsiniz `psedit file.ps1` dosyaları - yerel veya uzak - açmak için tümleşik konsoldan ISE'de sağ.
 
@@ -61,7 +61,7 @@ Cmdlet'ini aşağı watered açıklaması verilmiştir:
 - `Enter-PSSession -ContainerId foo` ve `Enter-PSSession -VmId foo` PowerShell Direct aracılığıyla bir oturumu başlatın
 - `Enter-PSSession -HostName foo` SSH aracılığıyla bir oturumu başlatır
 
-Daha fazla bilgi için `Enter-PSSession`, belgelere göz atın [burada](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
+Daha fazla bilgi için `Enter-PSSession`, belgelere göz atın [burada](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
 
 Azure'da bir Ubuntu sanal makinesi için macOS göstereceğim bu yana miyim uzaktan iletişim için SSH kullanacaklardır.
 

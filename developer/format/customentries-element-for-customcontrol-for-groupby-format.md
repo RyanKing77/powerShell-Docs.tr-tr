@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: af83c0f6-7fdd-4aa0-af12-efc62f632974
 caps.latest.revision: 7
 ms.openlocfilehash: f073142bf836ae892f161cf8c36ed16c35e311f5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066556"
 ---
 # <a name="customentries-element-for-customcontrol-for-groupby-format"></a>GroupBy CustomControl için CustomEntries Öğesi (Biçim)
 
@@ -29,7 +29,7 @@ GroupBy (biçimi) CustomEntries öğesinin GroupBy (biçimi) için özel denetim
 </CustomEntries>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki bölümlerde, öznitelikler, alt ve üst öğeleri açıklayan `CustomEntries` öğesi. Hiçbir belirtilebilir alt öğe sayısı üst sınırı yoktur.
 
@@ -37,13 +37,13 @@ Aşağıdaki bölümlerde, öznitelikler, alt ve üst öğeleri açıklayan `Cus
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[GroupBy (biçimi) için özel denetim için CustomEntry öğesi](./customentry-element-for-customcontrol-for-groupby-format.md)|Gerekli öğe.<br /><br /> Denetim tanımını sağlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Topluluk Kaynakları
 ms.openlocfilehash: a26f6eefeb3beb41575675b3dd4077f056606a70
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085040"
 ---
 # <a name="community-resources"></a>Topluluk Kaynakları
 > Not: Bu bilgiler geçicidir ve değiştirilebilir.

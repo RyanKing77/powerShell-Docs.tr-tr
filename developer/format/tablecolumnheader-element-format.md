@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
 ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063818"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader Öğesi (Biçim)
 
@@ -31,7 +31,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 </TableColumnHeader>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `TableColumnHeader` öğesi.
 
@@ -39,7 +39,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `TableColumnHeade
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -47,7 +47,7 @@ Yok.
 |[TableControl (biçimi) için TableColumnHeader için genişliği öğesi](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Gerekli öğe.<br /><br /> Sütun genişliğini (karakter cinsinden) belirtir.|
 |[TableControl (biçimi) için TableColumnHeader için hizalama öğesi](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Sütunun etiketi nasıl görüntüleneceğini belirtir. Hizalama yok belirtilirse, etiket sol tarafta hizalanır.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

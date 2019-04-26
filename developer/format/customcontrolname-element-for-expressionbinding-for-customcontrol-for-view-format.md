@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ea821e8b-4d65-4263-b7e4-6aeca9f534c2
 caps.latest.revision: 9
 ms.openlocfilehash: b44ced75bbaac7c0744f347bdc97f87365b8fe39
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066626"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format"></a>Görünüm CustomControl için ExpressionBinding CustomControlName Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünümü 
 <CustomControlName>NameofCustomControl</CustomControlName>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomControlName` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `CustomControlNam
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[ExpressionBinding öğesi CustomItem (biçimi) için](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Denetimi tarafından görüntülenen verileri tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Denetimin adını belirtin.
 

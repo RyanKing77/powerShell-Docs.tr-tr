@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
 ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067646"
 ---
 # <a name="interpreting-errorrecord-objects"></a>ErrorRecord Nesnelerini Yorumlama
 
@@ -68,7 +68,7 @@ Tek bir dize olarak denetlenecek FQID tasarlanmıştır. Konak uygulama tarafın
 
 Önceki örnekte, ilk belirteç, ardından cmdlet'i sınıf adı hata tanımlayıcısıdır. Hata tanımlayıcı, tek bir belirteç veya tanımlayıcısının denetimi dallara ayırmaya izin veren bir noktayla ayrılmış tanımlayıcı olabilir. Boşluk veya noktalama hatası tanımlayıcıda kullanmayın. Virgül kullanmamak özellikle önemlidir; virgül tarafından Windows PowerShell tanımlayıcısı ve cmdlet sınıf adını ayırmak için kullanılır.
 
-### <a name="other-information"></a>Diğer Bilgiler
+### <a name="other-information"></a>Diğer bilgiler
 
 [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesne hatanın gerçekleştiği ortamı tanımlayan bilgileri de sağlayabilirsiniz. Bu bilgiler hata ayrıntıları, çağrı bilgileri ve hatanın oluştuğu sırada işlenmekte olan hedef nesne gibi öğeleri içerir. Bu bilgiler ana bilgisayar uygulamasına yararlı olabilir, ancak genellikle hata tanımlamak için kullanılmaz. Bu bilgiler aşağıdaki özellikleri aracılığıyla kullanılabilir:
 

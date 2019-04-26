@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 93a8c11099a9883127bca87422e1acaebfd2c093
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082309"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>PowerShell Modül Bildirimi Yazma
 
@@ -80,7 +80,7 @@ Aşağıdaki tabloda, modül bildiriminde olabilir öğeleri açıklar.
 |DotNetFrameworkVersion<br /><br /> Türü: dize|' '|Microsoft .NET Framework'ün bu modülün gerekli en düşük sürümü.<br /><br /> Örnek: `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> Türü: dize|' '|Bu modülü tarafından gereken ortak dil çalışma zamanı (CLR) minimum sürümü.<br /><br /> Örnek: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> Türü: dize|' '|Bu modülü tarafından gerekli İşlemci mimarisi (hiçbiri, X86, Amd64). Geçerli değerler x86, AMD64, IA64 işlemeyen (Bilinmeyen ya da belirtilmemiş).<br /><br /> Örnek: `ProcessorArchitecture = 'x86'`|
-|RequiredModules<br /><br /> Türü: [string []]|@()|Bu modül içeri aktarmadan önce genel ortam aktarılmalıdır modüller. Bu, bunlar zaten yüklü sürece listelenen tüm modülleri yükler. (Örneğin, bazı modüller zaten farklı bir modül tarafından yüklenmemiş olabilir.). Kullanarak yüklemek için belirli bir sürümünü belirtmek mümkündür `RequiredVersion` yerine `ModuleVersion`. Kullanırken `ModuleVersion` en az belirtilen sürümü ile kullanılabilir en yeni sürümü yükler.<br /><br /> Örnek: `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Örnek: `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
+|RequiredModules<br /><br /> Türü: [string []]|@()|Bu modül içeri aktarmadan önce genel ortam aktarılmalıdır modüller. Bu, bunlar zaten yüklü sürece listelenen tüm modülleri yükler. (Örneğin, bazı modüller zaten farklı bir modül tarafından yüklenmemiş olabilir.). Kullanarak yüklemek için belirli bir sürümünü belirtmek mümkündür `RequiredVersion` yerine `ModuleVersion`. Kullanırken `ModuleVersion` en az belirtilen sürümü ile kullanılabilir en yeni sürümü yükler.<br /><br /> Örnek: `RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Örnek: `RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
 |RequiredAssemblies<br /><br /> Türü: [string []]|@()|Bu modülün içeri aktarılması önce yüklenmesi gereken bütünleştirilmiş kodları.<br /><br /> RequiredModules, zaten yüklü değilse RequiredAssemblies PowerShell yükleyecek unutmayın.|
 |ScriptsToProcess<br /><br /> Türü: [string []]|@()|Modül içeri aktarıldığında, arayanın kavramak çalışan betik (.ps1) dosyaları. Bu durum veya iç içe geçmiş modülleri, başka bir modül oturum durumu için genel oturum olabilir. Yalnızca bir oturum açma betiği kullanması gerektiği gibi bir ortamı hazırlamak için bu betikleri kullanabilirsiniz.<br /><br /> Bu betikler bildiriminde listelenen modüllerinden birini yüklenmeden önce çalıştırılır.|
 |TypesToProcess<br /><br /> Türü: [nesne []]|@()|Bu modülü içeri aktarılırken yüklenecek dosyaları (.ps1xml) yazın.|

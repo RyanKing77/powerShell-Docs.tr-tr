@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, kaynak, Galeri, Kurulum
 title: Ek DSC kaynakları yükleme
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080093"
 ---
 # <a name="install-additional-dsc-resources"></a>Ek DSC kaynakları yükleme
 
@@ -26,8 +26,8 @@ Bu kaynağın özellikleri açıklaması ve PowerShell 4.0 sürümünü de dahil
 |**Grup**|Yerel gruplar yönetir ve grup üyeliği denetler.|
 |**Günlük**|İleti yazar `Microsoft-Windows-Desired State Configuration/Analytic` olay günlüğü.|
 |**Paket**|Yükler veya kaldırır kullanarak paketleri **bağımsız değişkenleri**, **LogPath**, **ReturnCode**, diğer ayarları.|
-|**kayıt defteri**|Kayıt defteri anahtarları ve değerleri yönetir.|
-|**Komut dosyası**|Tasarlamak, kendi sağlar [get sınama kümesi](../resources/get-test-set.md) betik bloğu.|
+|**Kayıt defteri**|Kayıt defteri anahtarları ve değerleri yönetir.|
+|**Komut Dosyası**|Tasarlamak, kendi sağlar [get sınama kümesi](../resources/get-test-set.md) betik bloğu.|
 |**Hizmet**|Windows Hizmetleri yapılandırır.|
 |**Kullanıcı** |Yerel Kullanıcılar ve öznitelikleri yönetir.|
 |**WindowsFeature**|Rol ve özellik yönetir.|

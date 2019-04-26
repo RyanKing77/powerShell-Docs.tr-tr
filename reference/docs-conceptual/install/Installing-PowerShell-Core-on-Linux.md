@@ -3,11 +3,11 @@ title: Linux’ta PowerShell Core yükleme
 description: PowerShell Core yükleme üzerinde çeşitli Linux dağıtımları hakkında bilgi
 ms.date: 08/06/2018
 ms.openlocfilehash: 06194550f4e73f9dd38f8cdc25f6c7f698cafce2
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086570"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Linux’ta PowerShell Core yükleme
 

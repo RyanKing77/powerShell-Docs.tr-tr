@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a456e5df-fbf9-42b6-a6d8-4b2adafb86b1
 caps.latest.revision: 9
 ms.openlocfilehash: ff320619b7f768718ace7d482332a60a73c625b7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063852"
 ---
 # <a name="showerror-element-format"></a>ShowError Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) DefaultSettings öğesi (biçimi) ShowError ö�
 <ShowError/>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ShowError` öğesi. Bu öğe için varsayılan değerdir `false`.
 
@@ -35,11 +35,11 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ShowError` öğe
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

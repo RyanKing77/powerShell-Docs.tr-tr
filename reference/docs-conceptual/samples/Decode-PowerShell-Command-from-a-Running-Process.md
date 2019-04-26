@@ -4,16 +4,16 @@ keywords: PowerShell cmdlet'i
 title: PowerShell komutunun kodunu çalışan bir işlemden çözme
 author: randomnote1
 ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086247"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>PowerShell komutunun kodunu çalışan bir işlemden çözme
 
 Bazen, bir PowerShell kaynaklarının büyük bir miktarını, çalışan işlem sürüyor olabilir.
-Bu işlem bağlamında çalışıyor olabilir bir [Görev Zamanlayıcı][] işi veya [SQL Server Agent][] işi. Çalışan birden çok PowerShell işlemleri olduğu, hangi işlem sorunu temsil ettiği anlamak zor olabilir. Bu makalede, PowerShell işlem şu anda çalışan bir betik bloğu çözülecek gösterilmektedir.
+Bu işlem bağlamında çalışıyor olabilir bir [Görev Zamanlayıcısı][] işi veya [SQL Server Aracısı][] işi. Çalışan birden çok PowerShell işlemleri olduğu, hangi işlem sorunu temsil ettiği anlamak zor olabilir. Bu makalede, PowerShell işlem şu anda çalışan bir betik bloğu çözülecek gösterilmektedir.
 
 ## <a name="create-a-long-running-process"></a>Uzun süre çalışan işlem oluştur
 
@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>İşlem görünümü
 
-PowerShell yürütme komutu gövdesi içinde depolanan **CommandLine** özelliği [Win32_Process][] sınıfı. Komut ise bir [kodlanmış komut][], **CommandLine** özelliği "EncodedCommand" dizesini içerir. Bu bilgileri kullanarak, kodlanmış komutu aşağıdaki işlem XML'deki karıştırılmış olabilir.
+PowerShell yürütme komutu gövdesi içinde depolanan **CommandLine** özelliği [Win32_Process][] sınıfı. Komut ise bir [Kodlanmış komutu][], **CommandLine** özelliği "EncodedCommand" dizesini içerir. Bu bilgileri kullanarak, kodlanmış komutu aşağıdaki işlem XML'deki karıştırılmış olabilir.
 
 PowerShell'i yönetici olarak başlatın. PowerShell'i yönetici olarak çalıştığından önemlidir, aksi takdirde sonuç çalışan işlemler sorgulanırken döndürülür.
 
@@ -104,7 +104,7 @@ DecodedCommand :
                      }
 ```
 
-[Görev Zamanlayıcı]: /windows/desktop/TaskSchd/task-scheduler-start-page
-[SQL Server Agent]: /sql/ssms/agent/sql-server-agent
+[Görev Zamanlayıcısı]: /windows/desktop/TaskSchd/task-scheduler-start-page
+[SQL Server Aracısı]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[kodlanmış komut]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-
+[Kodlanmış komutu]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

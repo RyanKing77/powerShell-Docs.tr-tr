@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 8a150731-d4b4-4d63-8db5-f14d463c8c37
 caps.latest.revision: 13
 ms.openlocfilehash: b7e1d0adc43254141056a729e1c1cc9699b6ac9b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065646"
 ---
 # <a name="formatstring-element-for-tablecolumnitem-for-tablecontrol-format"></a>TableControl TableColumnItem için FormatString Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 <FormatString>FormatPattern</FormatString>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `FormatString` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `FormatString` ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[TableColumnItem öğesi (biçimi)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Özellik veya betik değeri satırın sütunda görüntülenen tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Verilerin biçimlendirilmesi için kullanılan desen belirtin. Örneğin, bu düzen türü herhangi bir özelliği değerini biçimlendirmek için kullanılabilir [System.Timespan](/dotnet/api/System.TimeSpan): {0: aaa} {0} {0:HH}: {0:mm}.
 

@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: d4168640f67cb1dd44e91d1867e87fd7a6b7f549
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 0a481fb9d4f2aab89bc448c71b01f1d541cf24bc
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085091"
 ---
-# <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Yan yana sürüm desteği PowerShell 5.0 veya daha yeni
+# <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>PowerShell 5.0 veya daha yeni yan yana sürüm desteği
 
-Şimdi Yükle-Module, yan yana (SxS) modülü sürüm desteği olan güncelleştirme modülü ve Windows PowerShell 5.0 veya daha yeni çalışması Yayımla-Module cmdlet'leri.
-Yayımlanacak sürüm belirtmek için yayımlama modülü cmdlet - RequiredVersion parametresi de ekledik. Path parametresi artık sürüm klasör modülü temel yolu destekler.
+Install-Module, yan yana (SxS) modülü sürüm desteği sunuldu güncelleştirme modülü ve Windows PowerShell 5.0 veya daha yeni çalışması Publish-Module cmdlet'leri.
+Yayımlanacak sürümü belirtmek için Publish-Module cmdlet'e - RequiredVersion parametresi de ekledik. Path parametresi artık sürüm klasörle modül temel yolu destekler.
 
 **Install-Module örnekler:**
 ```powershell

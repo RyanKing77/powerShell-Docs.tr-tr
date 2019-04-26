@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
 caps.latest.revision: 18
 ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083714"
 ---
 # <a name="viewdefinitions-element-format"></a>ViewDefinitions Öğesi (Biçim)
 
@@ -30,7 +30,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions (XML biçimi) öğesi
 </ViewDefinitions>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `ViewDefinitions` öğesi. Bir biçimlendirme dosyasında tanımlanan görünümleri sayısına bir sınır yoktur ve herhangi bir sırada eklenebilir.
 
@@ -38,13 +38,13 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `ViewDefinitions` 
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[Görünüm öğesi (biçimi)](./view-element-format.md)|Bir veya daha fazla .NET nesneleri görüntülemek için kullanılan bir görünüm tanımlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

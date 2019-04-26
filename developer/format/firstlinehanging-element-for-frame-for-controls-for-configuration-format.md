@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 679c8bcb-b49d-4bb4-91f5-ea1af6c217e3
 caps.latest.revision: 8
 ms.openlocfilehash: 4553f95e48a2b1440c00b4951bea56376b00628a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065895"
 ---
 # <a name="firstlinehanging-element-for-frame-for-controls-for-configuration-format"></a>Yapılandırma Denetimleri için Çerçeve FirstLineHanging Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) denetimleri öğesinin (biçimi) yapılandırma
 <FirstLineHanging>NumberOfCharactersToShift</FirstLineHanging>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `FirstLineHanging` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğenin bölümlerde `FirstLineHanging`
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[Çerçeve öğesi CustomItem yapılandırması (biçimi) için denetimleri için](./frame-element-for-customitem-for-controls-for-configuration-format.md)|Verinin, veri sola veya sağa kaydırma gibi görüntülenme şeklini tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Verilerin ilk satırı geçirmek istediğiniz karakter sayısını belirtin.
 

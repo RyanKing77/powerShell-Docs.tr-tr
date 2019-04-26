@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 50c33892-2ade-44c2-906c-81e5f5ca21f2
 caps.latest.revision: 9
 ms.openlocfilehash: 1ecbda8a3b623757517019105e3b1ee46ccbb55c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066099"
 ---
 # <a name="enumerableexpansions-element-format"></a>EnumerableExpansions Öğesi (Biçim)
 
@@ -29,7 +29,7 @@ Yapılandırma öğesi (biçimi) DefaultSettings öğesi (biçimi) EnumerableExp
 </EnumerableExpansions>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `EnumerableExpansions` öğesi. Kullanabileceğiniz bir alt öğe sayısı sınırı yoktur.
 
@@ -37,13 +37,13 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `EnumerableExpans
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[EnumerableExpansion öğesi (biçimi)](./enumerableexpansion-element-format.md)|İsteğe bağlı öğe.<br /><br /> Bir görünümü'nde görüntülendiğinde, genişletilmiş belirli .NET koleksiyon nesnelerini tanımlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

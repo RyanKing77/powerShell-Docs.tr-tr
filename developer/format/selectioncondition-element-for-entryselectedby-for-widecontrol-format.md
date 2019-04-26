@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b7a9f086-b1ca-4400-9be7-9ec1ec8880f3
 caps.latest.revision: 11
 ms.openlocfilehash: f20679e3392b99a049c075f24c7712262bab08e1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064015"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-widecontrol-format"></a>WideControl EntrySelectedBy için SelectionCondition Öğesi (Biçim)
 
@@ -32,7 +32,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünümü 
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionCondition` öğesi. Tek bir belirtmelisiniz `PropertyName` veya `ScriptBlock` öğesi. `SelectionSetName` Ve `TypeName` öğeler isteğe bağlıdır. Her iki öğe birini belirtebilirsiniz.
 
@@ -40,7 +40,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionConditi
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -49,7 +49,7 @@ Yok.
 |[SelectionCondition WideEntry (biçimi) için EntrySelectedBy için için SelectionSetName öğesi](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen .NET türleri kümesini belirtir.|
 |[TypeName öğesi SelectionCondition WideEntry (biçimi) için EntrySelectedBy için için](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen bir .NET türünü belirtir.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

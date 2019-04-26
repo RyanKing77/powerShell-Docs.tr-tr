@@ -3,11 +3,11 @@ ms.date: 08/24/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC Script kaynağı
 ms.openlocfilehash: 4eee5625add4d96ade7ababf7f534f597a26712d
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076999"
 ---
 # <a name="dsc-script-resource"></a>DSC Script kaynağı
 

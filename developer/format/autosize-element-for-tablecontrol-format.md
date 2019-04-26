@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1df5de23-9ffc-427e-bb34-f5efe073f3fe
 caps.latest.revision: 11
 ms.openlocfilehash: f50ba257ee57c36aedc6b37c680a0130842b69b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066898"
 ---
 # <a name="autosize-element-for-tablecontrol-format"></a>TableControl için AutoSize Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ TableControl (biçimi) için ViewDefinitions öğesi (biçimi) görünüm öğes
 <AutoSize/>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `AutoSize` öğesi.
 
@@ -35,11 +35,11 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `AutoSize` öğes
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|

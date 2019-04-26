@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c4d7cad3-4740-468f-9ef8-fae51ab1d581
 caps.latest.revision: 6
 ms.openlocfilehash: 3ec82778d840b235a0a536a6def37c62ce171bc5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064994"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-groupby-format"></a>GroupBy ExpressionBinding için PropertyName Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ GroupBy (biçimi) CustomEntries öğesinin GroupBy (biçimi) CustomEntry öğesi
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `PropertyName` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `PropertyName` ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[GroupBy (biçimi) için CustomItem için ExpressionBinding öğesi](./expressionbinding-element-for-customitem-for-groupby-format.md)|Denetimi tarafından görüntülenen verileri tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Denetimi tarafından görüntülenen değeri .NET özelliğinin adını belirtin.
 

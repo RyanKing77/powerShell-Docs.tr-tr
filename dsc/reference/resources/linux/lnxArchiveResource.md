@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC için Linux nxArchive kaynağı
 ms.openlocfilehash: 800954478f149e29c22d1a88304c3be9950f109a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078053"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC için Linux nxArchive kaynağı
 
@@ -33,9 +33,9 @@ nxArchive <string> #ResourceName
 |---|---|
 | Kaynak yolu| Arşiv dosyasının kaynak yolunu belirtir. Bu bir .tar olmalıdır, .zip veya. tar.gz dosyasını. |
 | DestinationPath| Arşiv içeriğini ayıklanan sağlamak istediğiniz konumu belirtir.|
-| Sağlama| Kaynak arşiv güncelleştirilip güncelleştirilmediğini belirlenirken kullanılacak türünü tanımlar. Değerler: "ctime", "mtime" veya "md5". Varsayılan değer "md5"'tir.|
+| Sağlama toplamı| Kaynak arşiv güncelleştirilip güncelleştirilmediğini belirlenirken kullanılacak türünü tanımlar. Değerler: "ctime", "mtime" veya "md5". Varsayılan değer "md5"'tir.|
 | Force| Belirli dosya işlemleri (örneğin, bir dosyanın üzerine veya boş olmayan bir dizini silme) bir hataya neden olur. Kullanarak **zorla** özelliği, bu tür hatalar'ı geçersiz kılar. Varsayılan değer **$false**.|
-| DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, varsa **kimliği** kaynağın çalıştırmak istediğiniz yapılandırma komut dosyası bloğu ilk. **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, varsa **kimliği** kaynağın çalıştırmak istediğiniz yapılandırma komut dosyası bloğu ilk. **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
 | Emin olun| Arşiv içeriğini, mevcut olup olmadığını denetleyin belirler **hedef**. Bu özelliği içeriği mevcut emin olmak için "var" olarak ayarlayın. "Eksik için" mevcut emin olmak için ayarlayın. "Var" varsayılan değerdir.|
 
 ## <a name="example"></a>Örnek

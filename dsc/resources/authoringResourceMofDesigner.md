@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Kaynak Tasarımcısı aracını kullanma
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076676"
 ---
 # <a name="using-the-resource-designer-tool"></a>Kaynak Tasarımcısı aracını kullanma
 
-> Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Kaynak Tasarımcısı araç tarafından kullanıma sunulan cmdlet'leri kümesidir **xDscResourceDesigner** Windows PowerShell Desired State Configuration (DSC) kaynak oluşturmaya kolaylaştırmak modülü. Bu kaynakta yer alan cmdlet'ler MOF şema ve betik modülündeki yeni kaynağınızın dizin yapısı oluşturma yardımcı olur. DSC kaynakları hakkında daha fazla bilgi için bkz. [yapı özel Windows PowerShell Desired State Configuration kaynaklarını](authoringResource.md).
 Bu konuda, Active Directory Kullanıcıları yöneten bir DSC kaynağı oluşturacağız.

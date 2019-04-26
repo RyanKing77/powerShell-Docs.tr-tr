@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 42143d1e-7cda-4c4a-b568-fa1951bb9417
 caps.latest.revision: 6
 ms.openlocfilehash: 9060ee54d6f88c7f910b16cf5c9b87f37844b736
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064020"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format"></a>Yapılandırma Denetimleri için EntrySelectedBy SelectionSetName Öğesi (Biçim)
 
@@ -28,7 +28,7 @@ Yapılandırma öğesi (biçimi) denetimleri öğesinin (biçimi) yapılandırma
 
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionSetName` öğesi.
 
@@ -36,17 +36,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionSetName
 
 Yok
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[İçin yapılandırma (biçimi) için denetimleri için CustomEntry EntrySelectedBy öğesi](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|Bu denetim tanımı veya kullanılmak üzere bu tanım için bulunması gereken bir koşulu kullanan .NET türlerini tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Seçimi kümesinin adını belirtin.
 

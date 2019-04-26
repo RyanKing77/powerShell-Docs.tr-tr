@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Nano Server’da DSC Kullanma
 ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079736"
 ---
 # <a name="using-dsc-on-nano-server"></a>Nano Server’da DSC Kullanma
 
-> Şunun için geçerlidir: Windows PowerShell 5.0
+> Uygulama hedefi: Windows PowerShell 5.0
 
 **Nano Sunucu'da DSC** isteğe bağlı bir pakette `NanoServer\Packages` Windows Server 2016 medya klasörü. Belirterek bir Nano sunucu için bir VHD oluşturduğunuzda, paketin yüklenebilir **Microsoft-NanoServer-DSC-Package** değeri olarak **paketleri** parametresinin **New-Nanoserverımage**  işlevi. Örneğin, bir VHD için bir sanal makine oluşturuyorsanız, komut aşağıdaki gibi görünür:
 

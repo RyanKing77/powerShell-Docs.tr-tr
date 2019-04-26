@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Yapılandırma ve ortam verilerini ayırma
 ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080042"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Yapılandırma ve ortam verilerini ayırma
 
->Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Yapılandırma verilerini kullanarak yapılandırma DSC yapılandırmasından kullanılan verileri ayırmak için yararlı olabilir.
 Bunu yaparak, tek bir yapılandırma için birden çok ortamda kullanabilirsiniz.

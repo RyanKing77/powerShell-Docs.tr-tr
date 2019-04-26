@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0ad807a9-d7d8-4e96-b799-9c6a7677cc2d
 caps.latest.revision: 12
 ms.openlocfilehash: e2028c479103cc414295dc24a0f9bb69190bfc66
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083765"
 ---
 # <a name="typename-element-for-viewselectedby-format"></a>ViewSelectedBy için TypeName Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 <TypeName>FullyQualifiedTypeName</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğelerinin bölümlerde `TypeName` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğelerinin bölümlerde `TypeName` ö�
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[ViewSelectedBy öğesi (biçimi)](./viewselectedby-element-format.md)|Görünüm tarafından görüntülenen .NET nesneleri tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 .NET türünün tam adını belirttiğinizden `System.IO.DirectoryInfo`.
 

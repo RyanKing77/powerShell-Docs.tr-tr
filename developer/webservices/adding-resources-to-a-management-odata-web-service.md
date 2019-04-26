@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080790"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>Yönetim OData Web Hizmetine Kaynaklar Ekleme
 
@@ -51,7 +51,7 @@ Bu konu, indirdiğinizi ve yüklediğinizi olduğunu varsayar [PswsRoleBasedPlug
 
 3. Yüklü olan Windows PowerShell modülleri'nin seçili olduğundan emin olun ve Hyper-V aşağı açılan listeden seçin. Tıklayın **sonraki**. **İleri**’ye tıklayın.
 
-4. İçinde **cmdlet'i isim** listesinden **VM**. **İleri**’ye tıklayın.
+4. İçinde **cmdlet'i isim** listesinden **VM**. **İleri**'ye tıklayın.
 
 5. Bu örnekte, biz yalnızca Get ve Delete komutlarını cmdlet'leri ile bağlayın. Temizle **Oluştur** ve **güncelleştirme** onay kutusunu ve emin olun **alma** ve **Sil** onay kutularını denetlenir. Emin olun `Get-VM` cmdlet'i için seçilen **alma**ve `Remove-VM` cmdlet'i için seçilen **Sil**.
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f2b12006-8d52-486b-91a3-e6224ca80e56
 caps.latest.revision: 6
 ms.openlocfilehash: 52d0b0816eaef6752220e0c3b1249e5a0e44a3ee
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064875"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format"></a>Görünüm CustomControl için ItemSelectionCondition PropertyName Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `PropertyName` öğesi.
 
@@ -35,17 +35,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `PropertyName` ö
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[ItemSelectionCondition öğesi görünümü (biçimi) için özel denetim için ifade bağlama](./itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md)|Bu denetim için kullanılacak bulunmalıdır koşulu tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 Koşul tetikleyen .NET özelliğinin adını belirtin.
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 290d38e3-b9bd-4382-9671-2e28b32b7260
 caps.latest.revision: 6
 ms.openlocfilehash: a4036b1e9de85da7e0029e02cca9e0eaed462f70
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083782"
 ---
 # <a name="typename-element-for-selectioncondition-for-groupby-format"></a>GroupBy SelectionCondition için TypeName Öğesi (Biçim)
 
@@ -28,7 +28,7 @@ GroupBy (biçimi) CustomEntries öğesinin GroupBy (biçimi) CustomEntry öğesi
 
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `TypeName` öğesi.
 
@@ -36,17 +36,17 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `TypeName` öğes
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 Yok.
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[GroupBy (biçimi) için EntrySelectedBy için SelectionCondition öğesi](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|Kullanılacak denetimi tanımı bulunması gereken bir koşulu tanımlar.|
 
-## <a name="text-value"></a>Metin Değeri
+## <a name="text-value"></a>Metin değeri
 
 .NET türünün tam adını belirttiğinizden `System.IO.DirectoryInfo`.
 

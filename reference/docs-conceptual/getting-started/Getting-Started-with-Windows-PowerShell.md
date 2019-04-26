@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet'i
 title: Windows PowerShell Kullanmaya Başlama
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
 ms.openlocfilehash: 8a158427d319e43ec011898fe4e1826d48d5b951
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086587"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Windows PowerShell Kullanmaya Başlama
 Sistem yöneticileri için özellikle tasarlanmış bir Windows komut satırı kabuğu Windows powershell'dir. Windows PowerShell, etkileşimli bir istemi ve bağımsız olarak veya birlikte kullanılabilecek bir komut dosyası ortamı içerir.

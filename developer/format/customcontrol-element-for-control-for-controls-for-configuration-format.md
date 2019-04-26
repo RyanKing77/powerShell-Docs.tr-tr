@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d9d92a9e-c680-46ca-962e-e82452726953
 caps.latest.revision: 10
 ms.openlocfilehash: 1d72ce5b18e89bd81c7f81b27f4b8c60bed99764
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066745"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-configuration-format"></a>Yapılandırma Denetimleri için Denetim CustomControl Öğesi (Biçim)
 
@@ -29,7 +29,7 @@ Yapılandırma öğesi (biçimi) denetimleri öğesi denetimler için yapıland�
 </CustomControl>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
 
 Öznitelikler, alt ve üst öğesini aşağıdaki bölümlerde açıklanmaktadır `CustomControl` öğesi. Bu öğe en az bir alt öğesi olmalıdır. Hiçbir belirtilebilir alt öğe sayısı üst sınırı yoktur.
 
@@ -37,13 +37,13 @@ Yapılandırma öğesi (biçimi) denetimleri öğesi denetimler için yapıland�
 
 Yok.
 
-### <a name="child-elements"></a>Alt Öğeler
+### <a name="child-elements"></a>Alt öğeleri
 
 |Öğe|Açıklama|
 |-------------|-----------------|
 |[Yapılandırma (biçimi) için özel denetim için CustomEntries öğesi](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)|Gerekli öğe.<br /><br /> Bir denetim tanımlarını sağlar.|
 
-### <a name="parent-elements"></a>Üst Öğeler
+### <a name="parent-elements"></a>Üst öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
