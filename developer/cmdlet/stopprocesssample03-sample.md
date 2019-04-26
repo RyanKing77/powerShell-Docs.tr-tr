@@ -9,63 +9,63 @@ ms.topic: article
 ms.assetid: 31298f1b-8b76-4637-8406-863f5ad27e53
 caps.latest.revision: 8
 ms.openlocfilehash: 91b56a78f878e0d9c0fc11e4b882399bdfb108ac
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067297"
 ---
-# <a name="stopprocesssample03-sample"></a><span data-ttu-id="8ab6e-102">StopProcessSample03 Örneği</span><span class="sxs-lookup"><span data-stu-id="8ab6e-102">StopProcessSample03 Sample</span></span>
+# <a name="stopprocesssample03-sample"></a><span data-ttu-id="89412-102">StopProcessSample03 Örneği</span><span class="sxs-lookup"><span data-stu-id="89412-102">StopProcessSample03 Sample</span></span>
 
-<span data-ttu-id="8ab6e-103">Bu örnek, bir cmdlet parametreleri, diğer adlarına sahip ve joker karakterler parametreleri destek yazma işlemi gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-103">This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters.</span></span> <span data-ttu-id="8ab6e-104">Bu cmdlet benzer `Stop-Process` Windows PowerShell 2.0 tarafından sağlanan cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="89412-103">Bu örnek, bir cmdlet parametreleri, diğer adlarına sahip ve joker karakterler parametreleri destek yazma işlemi gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="89412-103">This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters.</span></span> <span data-ttu-id="89412-104">Bu cmdlet benzer `Stop-Process` Windows PowerShell 2.0 tarafından sağlanan cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="89412-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="8ab6e-105">Visual Studio kullanarak örneği oluşturmak nasıl.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="89412-105">Visual Studio kullanarak örneği oluşturmak nasıl.</span><span class="sxs-lookup"><span data-stu-id="89412-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="8ab6e-106">Windows PowerShell 2.0 yüklü SDK ile StopProcessSample03 klasöre gidin.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder.</span></span> <span data-ttu-id="8ab6e-107">C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03 varsayılan konumdur.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span></span>
+1. <span data-ttu-id="89412-106">Windows PowerShell 2.0 yüklü SDK ile StopProcessSample03 klasöre gidin.</span><span class="sxs-lookup"><span data-stu-id="89412-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder.</span></span> <span data-ttu-id="89412-107">C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03 varsayılan konumdur.</span><span class="sxs-lookup"><span data-stu-id="89412-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span></span>
 
-2. <span data-ttu-id="8ab6e-108">Çözüm (.sln) dosyasını simgesini çift tıklatın.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="8ab6e-109">Bu örnek projeyi Microsoft Visual Studio'da açılır.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="89412-108">Çözüm (.sln) dosyasını simgesini çift tıklatın.</span><span class="sxs-lookup"><span data-stu-id="89412-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="89412-109">Bu örnek projeyi Microsoft Visual Studio'da açılır.</span><span class="sxs-lookup"><span data-stu-id="89412-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="8ab6e-110">İçinde **derleme** menüsünde **Çözümü Derle**.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="89412-110">İçinde **derleme** menüsünde **Çözümü Derle**.</span><span class="sxs-lookup"><span data-stu-id="89412-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="8ab6e-111">Kitaplık için örneği varsayılan \bin veya \bin\debug'dır klasörleri oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="89412-111">Kitaplık için örneği varsayılan \bin veya \bin\debug'dır klasörleri oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="89412-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="8ab6e-112">Örneği çalıştırma</span><span class="sxs-lookup"><span data-stu-id="8ab6e-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="89412-112">Örneği çalıştırma</span><span class="sxs-lookup"><span data-stu-id="89412-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="8ab6e-113">Aşağıdaki modül klasörü oluşturun:</span><span class="sxs-lookup"><span data-stu-id="8ab6e-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="89412-113">Aşağıdaki modül klasörü oluşturun:</span><span class="sxs-lookup"><span data-stu-id="89412-113">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample03`
 
-2. <span data-ttu-id="8ab6e-114">Örnek derleme modülü klasöre kopyalayın.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="89412-114">Örnek derleme modülü klasöre kopyalayın.</span><span class="sxs-lookup"><span data-stu-id="89412-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="8ab6e-115">Windows PowerShell’i başlatın.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="89412-115">Windows PowerShell’i başlatın.</span><span class="sxs-lookup"><span data-stu-id="89412-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="8ab6e-116">Windows PowerShell içinde derlemesini yüklemek için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="8ab6e-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="89412-116">Windows PowerShell içinde derlemesini yüklemek için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="89412-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample03`
 
-5. <span data-ttu-id="8ab6e-117">Cmdlet'i çalıştırmak için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="8ab6e-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="89412-117">Cmdlet'i çalıştırmak için aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="89412-117">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="8ab6e-118">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="8ab6e-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="89412-118">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="89412-118">Requirements</span></span>
 
-<span data-ttu-id="8ab6e-119">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="89412-119">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="89412-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="8ab6e-120">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="8ab6e-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="89412-120">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="89412-120">Demonstrates</span></span>
 
-<span data-ttu-id="8ab6e-121">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="89412-121">Bu örnek aşağıdaki gösterir.</span><span class="sxs-lookup"><span data-stu-id="89412-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="8ab6e-122">Cmdlet özniteliğini kullanarak bir cmdlet'i sınıf bildirme.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="89412-122">Cmdlet özniteliğini kullanarak bir cmdlet'i sınıf bildirme.</span><span class="sxs-lookup"><span data-stu-id="89412-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="8ab6e-123">Bir cmdlet parametreleri parametre özniteliği kullanılarak bildirme.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="89412-123">Bir cmdlet parametreleri parametre özniteliği kullanılarak bildirme.</span><span class="sxs-lookup"><span data-stu-id="89412-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="8ab6e-124">Diğer adlar için parametre bildirimleri ekleniyor...</span><span class="sxs-lookup"><span data-stu-id="8ab6e-124">Adding aliases to parameter declarations..</span></span>
+- <span data-ttu-id="89412-124">Diğer adlar için parametre bildirimleri ekleniyor...</span><span class="sxs-lookup"><span data-stu-id="89412-124">Adding aliases to parameter declarations..</span></span>
 
-- <span data-ttu-id="8ab6e-125">Parametreleri için joker karakter desteği ekleme.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-125">Adding wildcard support to parameters.</span></span>
+- <span data-ttu-id="89412-125">Parametreleri için joker karakter desteği ekleme.</span><span class="sxs-lookup"><span data-stu-id="89412-125">Adding wildcard support to parameters.</span></span>
 
-## <a name="example"></a><span data-ttu-id="8ab6e-126">Örnek</span><span class="sxs-lookup"><span data-stu-id="8ab6e-126">Example</span></span>
+## <a name="example"></a><span data-ttu-id="89412-126">Örnek</span><span class="sxs-lookup"><span data-stu-id="89412-126">Example</span></span>
 
-<span data-ttu-id="8ab6e-127">Bu örnek, parametre diğer adlarına bildirme ve joker karakterleri desteği gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="8ab6e-127">This sample shows how to declare parameter aliases and support wildcards.</span></span>
+<span data-ttu-id="89412-127">Bu örnek, parametre diğer adlarına bildirme ve joker karakterleri desteği gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="89412-127">This sample shows how to declare parameter aliases and support wildcards.</span></span>
 
 ```csharp
 using System;
@@ -350,6 +350,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 } // namespace Microsoft.Samples.PowerShell.Commands
 ```
 
-## <a name="see-also"></a><span data-ttu-id="8ab6e-128">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="8ab6e-128">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="89412-128">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="89412-128">See Also</span></span>
 
-[<span data-ttu-id="8ab6e-129">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="8ab6e-129">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="89412-129">Bir Windows PowerShell cmdlet'i yazma</span><span class="sxs-lookup"><span data-stu-id="89412-129">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

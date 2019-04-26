@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 14208e3b5d5c2fef80fa42a87cc00aeee81bd042
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b8940ded189d822a5a2cd40773ef5146353611cc
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059007"
 ---
-# <a name="cryptographic-message-syntax-cms-cmdlets"></a><span data-ttu-id="ee97f-102">Şifreleme iletisi söz dizimi (CMS) cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="ee97f-102">Cryptographic Message Syntax (CMS) cmdlets</span></span>
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a><span data-ttu-id="4fea7-102">Şifreli ileti söz dizimi (CMS) cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="4fea7-102">Cryptographic Message Syntax (CMS) cmdlets</span></span>
 
-<span data-ttu-id="ee97f-103">Şifreleme iletisi söz dizimi cmdlet'leri şifreleme ve şifre çözme içeriğin şifreli olarak iletileri tarafından belgelenen şekilde korumak için IETF standart biçimi kullanarak destek [RFC5652](https://tools.ietf.org/html/rfc5652).</span><span class="sxs-lookup"><span data-stu-id="ee97f-103">The Cryptographic Message Syntax cmdlets support encryption and decryption of content using the IETF standard format for cryptographically protecting messages as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).</span></span>
+<span data-ttu-id="4fea7-103">Şifreleme ve şifre çözme şifreli olarak iletileri tarafından belirtildiği gibi korumak için IETF standart biçimi kullanarak içeriğin şifreli ileti söz dizimi cmdlet'leri Destek [RFC5652](https://tools.ietf.org/html/rfc5652).</span><span class="sxs-lookup"><span data-stu-id="4fea7-103">The Cryptographic Message Syntax cmdlets support encryption and decryption of content using the IETF standard format for cryptographically protecting messages as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).</span></span>
 
 ```powershell
 Get-CmsMessage [-Content] <string>
@@ -25,13 +25,13 @@ Unprotect-CmsMessage [-Path] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeC
 Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeContext]
 ```
 
-<span data-ttu-id="ee97f-104">Standart CMS şifreleme anahtarları kullanıldığı içerik şifrelemek için ortak anahtar şifrelemesi uygulayan ( *ortak anahtar*) ve içeriğin şifresini çözmek için kullanılan anahtarları ( *özel anahtarı*) ayrıdır.</span><span class="sxs-lookup"><span data-stu-id="ee97f-104">The CMS encryption standard implements public key cryptography, where the keys used to encrypt content (the *public key*) and the keys used to decrypt content (the *private key*) are separate.</span></span>
+<span data-ttu-id="4fea7-104">Standart CMS şifreleme anahtarları kullanıldığı içeriği şifrelemek için ortak anahtar şifrelemesi uygular ( *ortak anahtar*) ve içeriğin şifresini çözmek için kullanılan anahtarları ( *özel anahtarı*) ayrıdır.</span><span class="sxs-lookup"><span data-stu-id="4fea7-104">The CMS encryption standard implements public key cryptography, where the keys used to encrypt content (the *public key*) and the keys used to decrypt content (the *private key*) are separate.</span></span>
 
-<span data-ttu-id="ee97f-105">Ortak anahtarınız yaygın paylaşılabilir ve hassas verileri değil.</span><span class="sxs-lookup"><span data-stu-id="ee97f-105">Your public key can be shared widely, and is not sensitive data.</span></span> <span data-ttu-id="ee97f-106">Yalnızca özel anahtarınızı herhangi bir içerik bu ortak anahtarla şifrelenmiş çözebilir.</span><span class="sxs-lookup"><span data-stu-id="ee97f-106">If any content is encrypted with this public key, only your private key can decrypt it.</span></span> <span data-ttu-id="ee97f-107">Daha fazla bilgi için bkz: [ortak anahtar şifrelemesini](https://en.wikipedia.org/wiki/Public-key_cryptography).</span><span class="sxs-lookup"><span data-stu-id="ee97f-107">For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).</span></span>
+<span data-ttu-id="4fea7-105">Ortak anahtarınızı yaygın olarak paylaşılabilir ve hassas veriler değil.</span><span class="sxs-lookup"><span data-stu-id="4fea7-105">Your public key can be shared widely, and is not sensitive data.</span></span> <span data-ttu-id="4fea7-106">Herhangi bir içerik bu ortak anahtarıyla şifrelenir, yalnızca özel anahtarınızı çözebilir.</span><span class="sxs-lookup"><span data-stu-id="4fea7-106">If any content is encrypted with this public key, only your private key can decrypt it.</span></span> <span data-ttu-id="4fea7-107">Daha fazla bilgi için [ortak anahtar şifrelemesi](https://en.wikipedia.org/wiki/Public-key_cryptography).</span><span class="sxs-lookup"><span data-stu-id="4fea7-107">For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).</span></span>
 
-<span data-ttu-id="ee97f-108">PowerShell'de tanınması için veri şifreleme sertifikaları (ör. 'Kod imzalama için', 'Şifrelenmiş posta' tanımlayıcılar) olarak tanımak için bir benzersiz anahtar kullanımı tanımlayıcısı (EKU) şifreleme sertifikaları gerektirir.</span><span class="sxs-lookup"><span data-stu-id="ee97f-108">To be recognized in PowerShell, encryption certificates require a unique key usage identifier (EKU) to identify them as data encryption certificates (like the identifiers for 'Code Signing', 'Encrypted Mail').</span></span>
+<span data-ttu-id="4fea7-108">PowerShell'de tanınması için veri şifreleme sertifikaları (gibi tanımlayıcıları 'Kod imzalama için', 'Şifrelenmiş posta') olarak belirlenebilmesi için benzersiz anahtar kullanımı tanımlayıcı (EKU) şifreleme sertifikaları gerektirir.</span><span class="sxs-lookup"><span data-stu-id="4fea7-108">To be recognized in PowerShell, encryption certificates require a unique key usage identifier (EKU) to identify them as data encryption certificates (like the identifiers for 'Code Signing', 'Encrypted Mail').</span></span>
 
-<span data-ttu-id="ee97f-109">Belge şifreleme için iyi bir sertifika oluşturma örnek aşağıda verilmiştir:</span><span class="sxs-lookup"><span data-stu-id="ee97f-109">Here is an example of creating a certificate that is good for Document Encryption:</span></span>
+<span data-ttu-id="4fea7-109">Belge şifreleme için iyi bir sertifika oluşturma örneği aşağıda verilmiştir:</span><span class="sxs-lookup"><span data-stu-id="4fea7-109">Here is an example of creating a certificate that is good for Document Encryption:</span></span>
 
 ```powershell
 (Change the text in **Subject** to your name, email, or other identifier), and put in a file (i.e.: DocumentEncryption.inf):
@@ -55,12 +55,12 @@ ValidityPeriodUnits = "1000"
 %szOID\_ENHANCED\_KEY\_USAGE% = "{text}%szOID\_DOCUMENT\_ENCRYPTION%"
 ```
 
-<span data-ttu-id="ee97f-110">Ardından şunu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="ee97f-110">Then run:</span></span>
+<span data-ttu-id="4fea7-110">Ardından şunu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="4fea7-110">Then run:</span></span>
 ```powershell
 certreq -new DocumentEncryption.inf DocumentEncryption.cer
 ```
 
-<span data-ttu-id="ee97f-111">Ve şimdi şifrelemek ve içeriğin şifresini:</span><span class="sxs-lookup"><span data-stu-id="ee97f-111">And you can now encrypt and decrypt content:</span></span>
+<span data-ttu-id="4fea7-111">Ve şimdi şifreleme ve şifre çözme içeriği:</span><span class="sxs-lookup"><span data-stu-id="4fea7-111">And you can now encrypt and decrypt content:</span></span>
 
 ```powershell
 $protected = "Hello World" | Protect-CmsMessage -To "\*me@somewhere.com\*[](mailto:*leeholm@microsoft.com*)"
@@ -80,14 +80,14 @@ $protected | Unprotect-CmsMessage
 Hello World
 ```
 
-<span data-ttu-id="ee97f-112">Herhangi bir parametre türü **CMSMessageRecipient** tanımlayıcıları aşağıdaki biçimlerde destekler:</span><span class="sxs-lookup"><span data-stu-id="ee97f-112">Any parameter of type **CMSMessageRecipient** supports identifiers in the following formats:</span></span>
-- <span data-ttu-id="ee97f-113">Gerçek bir sertifika (olarak sertifika Sağlayıcısı'ndan alınan)</span><span class="sxs-lookup"><span data-stu-id="ee97f-113">An actual certificate (as retrieved from the certificate provider)</span></span>
-- <span data-ttu-id="ee97f-114">Yol için bir sertifikayı içeren dosyayı</span><span class="sxs-lookup"><span data-stu-id="ee97f-114">Path to the a file containing the certificate</span></span>
-- <span data-ttu-id="ee97f-115">Sertifikayı içeren bir dizin yolu</span><span class="sxs-lookup"><span data-stu-id="ee97f-115">Path to a directory containing the certificate</span></span>
-- <span data-ttu-id="ee97f-116">(Sertifika deposunda aramak için kullanılan) sertifikanın parmak izi</span><span class="sxs-lookup"><span data-stu-id="ee97f-116">Thumbprint of the certificate (used to look in the certificate store)</span></span>
-- <span data-ttu-id="ee97f-117">(Sertifika deposunda aramak için kullanılan) sertifikanın konu adı</span><span class="sxs-lookup"><span data-stu-id="ee97f-117">Subject name of the certificate (used to look in the certificate store)</span></span>
+<span data-ttu-id="4fea7-112">Herhangi bir parametre türü **CMSMessageRecipient** tanımlayıcıları aşağıdaki biçimlerde destekler:</span><span class="sxs-lookup"><span data-stu-id="4fea7-112">Any parameter of type **CMSMessageRecipient** supports identifiers in the following formats:</span></span>
+- <span data-ttu-id="4fea7-113">Gerçek bir sertifika (olarak sertifika sağlayıcısından alınan)</span><span class="sxs-lookup"><span data-stu-id="4fea7-113">An actual certificate (as retrieved from the certificate provider)</span></span>
+- <span data-ttu-id="4fea7-114">Yolu için sertifikayı içeren bir dosya</span><span class="sxs-lookup"><span data-stu-id="4fea7-114">Path to the a file containing the certificate</span></span>
+- <span data-ttu-id="4fea7-115">Sertifikayı içeren bir dizin yolu</span><span class="sxs-lookup"><span data-stu-id="4fea7-115">Path to a directory containing the certificate</span></span>
+- <span data-ttu-id="4fea7-116">(Sertifika deposunda aramak için kullanılan) sertifikanın parmak izi</span><span class="sxs-lookup"><span data-stu-id="4fea7-116">Thumbprint of the certificate (used to look in the certificate store)</span></span>
+- <span data-ttu-id="4fea7-117">(Sertifika deposunda aramak için kullanılan) sertifikanın konu adı</span><span class="sxs-lookup"><span data-stu-id="4fea7-117">Subject name of the certificate (used to look in the certificate store)</span></span>
 
-<span data-ttu-id="ee97f-118">Belge Şifreleme sertifikaları sertifika sağlayıcısında görüntülemek için kullanabileceğiniz **- DocumentEncryptionCert** dinamik parametre:</span><span class="sxs-lookup"><span data-stu-id="ee97f-118">To view document encryption certificates in the certificate provider, you can use the **-DocumentEncryptionCert** dynamic parameter:</span></span>
+<span data-ttu-id="4fea7-118">Sertifika Sağlayıcısı belge şifreleme sertifikaları görüntülemek için kullanabileceğiniz **- DocumentEncryptionCert** dinamik parametre:</span><span class="sxs-lookup"><span data-stu-id="4fea7-118">To view document encryption certificates in the certificate provider, you can use the **-DocumentEncryptionCert** dynamic parameter:</span></span>
 
 ```powershell
 dir -DocumentEncryptionCert

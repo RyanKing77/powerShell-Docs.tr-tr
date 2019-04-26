@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
 ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080773"
 ---
-# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="11c7b-102">Yönetim OData web hizmeti için MOF şema dosyası yazma</span><span class="sxs-lookup"><span data-stu-id="11c7b-102">Authoring the MOF schema file for a Management OData web service</span></span>
+# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="bc5c9-102">Yönetim OData web hizmeti için MOF şema dosyası yazma</span><span class="sxs-lookup"><span data-stu-id="bc5c9-102">Authoring the MOF schema file for a Management OData web service</span></span>
 
-<span data-ttu-id="11c7b-103">Genel kaynak şema kullanılan bir MOF dosyası oluşturarak Yönetimi OData web hizmetini gösteren kaynakları tanımlarsınız.</span><span class="sxs-lookup"><span data-stu-id="11c7b-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="11c7b-104">Her kaynak dosyasındaki bir sınıf olarak tanımlanır ve özellikleri sınıfı üyeleri olarak tanımlanır.</span><span class="sxs-lookup"><span data-stu-id="11c7b-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="11c7b-105">MOF dosyasında kullanılan şema hakkında daha fazla bilgi için bkz: [genel kaynak şema](./public-resource-schema.md).</span><span class="sxs-lookup"><span data-stu-id="11c7b-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
+<span data-ttu-id="bc5c9-103">Genel kaynak şema kullanılan bir MOF dosyası oluşturarak Yönetimi OData web hizmetini gösteren kaynakları tanımlarsınız.</span><span class="sxs-lookup"><span data-stu-id="bc5c9-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="bc5c9-104">Her kaynak dosyasındaki bir sınıf olarak tanımlanır ve özellikleri sınıfı üyeleri olarak tanımlanır.</span><span class="sxs-lookup"><span data-stu-id="bc5c9-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="bc5c9-105">MOF dosyasında kullanılan şema hakkında daha fazla bilgi için bkz: [genel kaynak şema](./public-resource-schema.md).</span><span class="sxs-lookup"><span data-stu-id="bc5c9-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
 
-## <a name="example-mof-file"></a><span data-ttu-id="11c7b-106">MOF dosyası örneği</span><span class="sxs-lookup"><span data-stu-id="11c7b-106">Example MOF file</span></span>
+## <a name="example-mof-file"></a><span data-ttu-id="bc5c9-106">MOF dosyası örneği</span><span class="sxs-lookup"><span data-stu-id="bc5c9-106">Example MOF file</span></span>
 
-<span data-ttu-id="11c7b-107">Aşağıdaki dosya hizmeti ve işlem kaynaklarını tanımlar.</span><span class="sxs-lookup"><span data-stu-id="11c7b-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="11c7b-108">Bu kaynakların her biri, bir Windows PowerShell cmdlet kümesi tarafından yönetilen bir nesneye karşılık gelir.</span><span class="sxs-lookup"><span data-stu-id="11c7b-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="11c7b-109">Bu cmdlet'leri tarafından kullanılan parametreler özelliklerini karşılık gelir.</span><span class="sxs-lookup"><span data-stu-id="11c7b-109">The properties correspond to parameters used by those cmdlets.</span></span>
+<span data-ttu-id="bc5c9-107">Aşağıdaki dosya hizmeti ve işlem kaynaklarını tanımlar.</span><span class="sxs-lookup"><span data-stu-id="bc5c9-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="bc5c9-108">Bu kaynakların her biri, bir Windows PowerShell cmdlet kümesi tarafından yönetilen bir nesneye karşılık gelir.</span><span class="sxs-lookup"><span data-stu-id="bc5c9-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="bc5c9-109">Bu cmdlet'leri tarafından kullanılan parametreler özelliklerini karşılık gelir.</span><span class="sxs-lookup"><span data-stu-id="bc5c9-109">The properties correspond to parameters used by those cmdlets.</span></span>
 
-<span data-ttu-id="11c7b-110">Her iki kaynağın karmaşık tür özellikleri içerir.</span><span class="sxs-lookup"><span data-stu-id="11c7b-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="11c7b-111">Karmaşık türler sınıfları ile değiştirilmiş olarak tanımlanan `ComplexType` niteleyicisi.</span><span class="sxs-lookup"><span data-stu-id="11c7b-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
+<span data-ttu-id="bc5c9-110">Her iki kaynağın karmaşık tür özellikleri içerir.</span><span class="sxs-lookup"><span data-stu-id="bc5c9-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="bc5c9-111">Karmaşık türler sınıfları ile değiştirilmiş olarak tanımlanan `ComplexType` niteleyicisi.</span><span class="sxs-lookup"><span data-stu-id="bc5c9-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
 
 ```csharp
 
@@ -209,8 +209,8 @@ class PswsTest_Stream
 
 ```
 
-## <a name="see-also"></a><span data-ttu-id="11c7b-112">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="11c7b-112">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bc5c9-112">Ayrıca bkz:</span><span class="sxs-lookup"><span data-stu-id="bc5c9-112">See Also</span></span>
 
-[<span data-ttu-id="11c7b-113">Management OData Web hizmeti oluşturma</span><span class="sxs-lookup"><span data-stu-id="11c7b-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="bc5c9-113">Management OData Web hizmeti oluşturma</span><span class="sxs-lookup"><span data-stu-id="bc5c9-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
 
-[<span data-ttu-id="11c7b-114">Genel kaynak şema</span><span class="sxs-lookup"><span data-stu-id="11c7b-114">Public Resource Schema</span></span>](./public-resource-schema.md)
+[<span data-ttu-id="bc5c9-114">Genel kaynak şema</span><span class="sxs-lookup"><span data-stu-id="bc5c9-114">Public Resource Schema</span></span>](./public-resource-schema.md)
