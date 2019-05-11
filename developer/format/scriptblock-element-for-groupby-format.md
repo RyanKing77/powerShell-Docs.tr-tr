@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
 caps.latest.revision: 6
-ms.openlocfilehash: f2f6b9af7740b1231881294c2f32bf97b5a1568b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 37a297228eb33ff75daf94a12635d42b52c6cc9f
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064518"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229305"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>GroupBy için ScriptBlock Öğesi (Biçim)
 
@@ -27,7 +27,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünüm ö
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ScriptBlock` öğesi.
 
@@ -35,11 +35,11 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `ScriptBlock` ö�
 
 Yok.
 
-### <a name="child-elements"></a>Alt öğeleri
+### <a name="child-elements"></a>Alt Öğeler
 
 Yok.
 
-### <a name="parent-elements"></a>Üst öğeler
+### <a name="parent-elements"></a>Üst Öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -51,14 +51,14 @@ Yürütülecek betiği belirtin.
 
 ## <a name="remarks"></a>Açıklamalar
 
-Bu betiğin değeri değiştiğinde yeni bir grup Windows PowerShell başlatır.
+Bu betiğin değeri değiştiğinde yeni bir grup PowerShell başlatır.
 
-Bu öğe belirtildiğinde, belirtemezsiniz [PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676) yeni bir grup başlatmak için öğesi.
+Bu öğe belirtildiğinde, belirtemezsiniz [PropertyName](propertyname-element-for-groupby-format.md) yeni bir grup başlatmak için öğesi.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[GroupBy (biçimi) için PropertyName öğesi](./propertyname-element-for-groupby-format.md)
+[GroupBy (biçimi) için PropertyName öğesi](propertyname-element-for-groupby-format.md)
 
-[GroupBy öğesi görünümü (biçimi)](./groupby-element-for-view-format.md)
+[GroupBy öğesi görünümü (biçimi)](groupby-element-for-view-format.md)
 
-[Dosya biçimlendirme bir PowerShell yazma](./writing-a-powershell-formatting-file.md)
+[Dosya biçimlendirme bir PowerShell yazma](writing-a-powershell-formatting-file.md)

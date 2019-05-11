@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC’de sorun giderme
-ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076557"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229526"
 ---
 # <a name="troubleshooting-dsc"></a>DSC’de sorun giderme
 
@@ -627,6 +627,21 @@ onlyProperty                            PSComputerName
 ------------                            --------------
 14                                      localhost
 ```
+
+## <a name="dsc-returns-unexpected-response-code-internalservererror-when-registering-with-windows-pull-server"></a>Döndürür "beklenmeyen bir yanıt kodu dahili sunucu hatası" ne zaman DSC çekme Windows Server'a kaydettirirken
+
+Windows Server'ın Pull örneği ile kaydetmek için bir sunucuya bir metaconfiguration uygularken aşağıdaki hatayla karşılaşabilirsiniz.
+
+```PowerShell
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
+    + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
+    + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
+    + PSComputerName        : <computername>
+```
+
+Sunucu üzerinde trafiği şifrelemek için kullanılan sertifika URL çözümlemek için düğüm tarafından kullanılan DNS adından farklı olan ortak ad (CN) sahip olduğunda bu durum oluşabilir.
+Düzeltilmiş bir ada sahip bir sertifika kullanmak için Windows Server'ın çekme örneği güncelleştirin.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 

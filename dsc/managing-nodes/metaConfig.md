@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Yerel Configuration Manager'ı yapılandırma
-ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079687"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229503"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Yerel Configuration Manager'ı yapılandırma
 
-> Uygulama hedefi: Windows PowerShell 5.0
+> Şunun için geçerlidir: Windows PowerShell 5.0
 
 Yerel Configuration Manager (LCM) Desired State Configuration (DSC) altyapısıdır.
 LCM her hedef düğüm üzerinde çalışır ve ayrıştırma ve düğüme gönderilen yapılandırmaları kabul etme sorumludur.
@@ -77,11 +77,11 @@ Aşağıdaki özellikler kullanılabilir bir **ayarları** blok.
 | CertificateID| dize| Bir yapılandırmada geçirilen kimlik bilgileri korumak için kullanılan sertifika parmak izi. Daha fazla bilgi için [Windows PowerShell Desired State Configuration kimlik bilgilerini güvenli hale getirmek istediğiniz](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)? <br> __Not:__ bu Azure Automation DSC çekme hizmetini kullanarak, otomatik olarak yönetilir.|
 | ConfigurationDownloadManagers| Cimınstance]| Kullanımdan kalktı. Kullanım __ConfigurationRepositoryWeb__ ve __ConfigurationRepositoryShare__ blokları, yapılandırma çekme tanımlamak için hizmet uç noktalarını.|
 | ConfigurationID| dize| Geriye dönük uyumluluk eski çekme ile hizmet için sürümleri. Bir çekme hizmetinden almak için yapılandırma dosyasını tanımlayan bir GUID. Düğüm yapılandırmasının adı ConfigurationID.mof MOF adlandırılmışsa yapılandırmaları çekme hizmetini çeker.<br> __Not:__ Bu özelliği ayarlarsanız, düğüm ile bir çekme hizmetini kullanarak kaydetme __RegistrationKey__ çalışmıyor. Daha fazla bilgi için [yapılandırma adları ile çekme istemcisi ayarlama](../pull-server/pullClientConfigNames.md).|
-| ConfigurationMode| dize | LCM gerçekten yapılandırmasını hedef düğümlere uygulanması hakkında belirtir. Olası değerler __"ApplyOnly"__,__"ApplyAndMonitor"__, ve __"ApplyAndAutoCorrect"__. <ul><li>__ApplyOnly__: DSC yapılandırmasını uygular ve yeni bir yapılandırma, hedef düğüme veya bir hizmetten yeni yapılandırma çekildiğinde gönderildiğinde sürece başka hiçbir şey yapmaz. Yeni yapılandırma ilk uygulamadan sonra önceden yapılandırılmış bir durumdan kayması için DSC denetlemez. DSC yapılandırması önce başarılı oluncaya kadar uygulamayı deneyecek Not __ApplyOnly__ etkinleşir. </li><li> __ApplyAndMonitor__: Varsayılan değer budur. LCM herhangi bir yeni yapılandırmalar geçerlidir. Hedef düğüm istenen durumundan drifts sonra ilk uygulama yeni bir yapılandırma günlüklerini tutarsızlık DSC bildirir. DSC yapılandırması önce başarılı oluncaya kadar uygulamayı deneyecek Not __ApplyAndMonitor__ etkinleşir.</li><li>__ApplyAndAutoCorrect__: DSC, herhangi bir yeni yapılandırmalar geçerlidir. DSC hedef düğüm istenen durumundan drifts, ilk uygulama yeni bir yapılandırma sonrasında günlükleri tutarsızlık raporları ve sonra geçerli yapılandırmasını yeniden uygular.</li></ul>|
+| ConfigurationMode| dize | LCM gerçekten yapılandırmasını hedef düğümlere uygulanması hakkında belirtir. Olası değerler __"ApplyOnly"__,__"ApplyAndMonitor"__, ve __"ApplyAndAutoCorrect"__. <ul><li>__ApplyOnly__: DSC yapılandırmasını uygular ve yeni bir yapılandırma, hedef düğüme veya bir hizmetten yeni yapılandırma çekildiğinde gönderildiğinde sürece başka hiçbir şey yapmaz. Yeni yapılandırma ilk uygulamadan sonra önceden yapılandırılmış bir durumdan kayması için DSC denetlemez. DSC yapılandırması önce başarılı oluncaya kadar uygulamayı deneyecek Not __ApplyOnly__ etkinleşir. </li><li> __ApplyAndMonitor__: Bu varsayılan değerdir. LCM herhangi bir yeni yapılandırmalar geçerlidir. Hedef düğüm istenen durumundan drifts sonra ilk uygulama yeni bir yapılandırma günlüklerini tutarsızlık DSC bildirir. DSC yapılandırması önce başarılı oluncaya kadar uygulamayı deneyecek Not __ApplyAndMonitor__ etkinleşir.</li><li>__ApplyAndAutoCorrect__: DSC, herhangi bir yeni yapılandırmalar geçerlidir. DSC hedef düğüm istenen durumundan drifts, ilk uygulama yeni bir yapılandırma sonrasında günlükleri tutarsızlık raporları ve sonra geçerli yapılandırmasını yeniden uygular.</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| Sıklıkla, dakika cinsinden geçerli yapılandırmasını teslim uygulanan ve. İçin ApplyOnly ConfigurationMode özelliği ayarlanmışsa bu özellik yoksayılır. Varsayılan değer 15'tir.|
 | DebugMode| dize| Olası değerler __hiçbiri__, __ForceModuleImport__, ve __tüm__. <ul><li>Kümesine __hiçbiri__ önbelleğe alınan kaynakları kullanmak için. Bu varsayılandır ve üretim senaryolarında kullanılmalıdır.</li><li>Ayarını __ForceModuleImport__, daha önce yüklenen ve önbelleğe alınmış olsa bile DSC kaynak modüllerin yeniden yüklemek LCM neden olur. Her modülü kullanmak üzere yeniden gibi bu DSC işlemlerinin performansını etkiler. Genellikle bu değer bir kaynak hata ayıklama sırasında kullanacağınız</li><li>Bu sürümde, __tüm__ aynı __ForceModuleImport__</li></ul> |
 | RebootNodeIfNeeded| bool| Bu ayar `$true` kaynakları kullanarak düğümü yeniden başlatmak izin vermek için `$global:DSCMachineStatus` bayrağı. Aksi takdirde, düğüm gerektiren herhangi bir yapılandırma için el ile yeniden başlatmanız gerekir. Varsayılan değer: `$false`. Bir yeniden başlatma koşulu DSC (örneğin, Windows Yükleyici) dışında bir şey tarafından geçirilmeden olduğunda bu ayarı kullanmak için bu ayarı ile birleştirerek [xPendingReboot](https://github.com/powershell/xpendingreboot) modülü.|
-| RefreshMode| dize| LCM yapılandırmaları nasıl alacağına belirtir. Olası değerler şunlardır: __"Disabled"__, __"Gönderme"__, ve __"Pull"__. <ul><li>__Devre dışı bırakılmış__: DSC yapılandırmaları için bu düğümü devre dışı bırakıldı.</li><li> __Anında iletme__: Yapılandırmaları başlatılan çağırarak [Başlat-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet'i. Yapılandırma düğüme hemen uygulanır. Varsayılan değer budur.</li><li>__Çekme:__ Düğüm, yapılandırma çekme hizmetini veya SMB yolundan düzenli olarak denetlemek için yapılandırılır. Bu özellik ayarlanırsa __çekme__, HTTP (hizmet) veya SMB (paylaşım) yolu belirtmeniz gerekir bir __ConfigurationRepositoryWeb__ veya __ConfigurationRepositoryShare__ blok.</li></ul>|
+| RefreshMode| dize| LCM yapılandırmaları nasıl alacağına belirtir. Olası değerler şunlardır: __"Disabled"__, __"Gönderme"__, ve __"Pull"__. <ul><li>__Devre dışı bırakılmış__: DSC yapılandırmaları için bu düğümü devre dışı bırakıldı.</li><li> __Anında iletme__: Yapılandırmaları başlatılan çağırarak [Başlat-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet'i. Yapılandırma düğüme hemen uygulanır. Bu varsayılan değerdir.</li><li>__Çekme:__ Düğüm, yapılandırma çekme hizmetini veya SMB yolundan düzenli olarak denetlemek için yapılandırılır. Bu özellik ayarlanırsa __çekme__, HTTP (hizmet) veya SMB (paylaşım) yolu belirtmeniz gerekir bir __ConfigurationRepositoryWeb__ veya __ConfigurationRepositoryShare__ blok.</li></ul>|
 | RefreshFrequencyMins| uint32| LCM güncelleştirilmiş yapılandırmaları almak için bir çekme hizmetini denetleyen dakika cinsinden zaman aralığı. LCM çekme modunda yapılandırılmamışsa, bu değer yoksayılır. Varsayılan değer 30’dur.|
 | ReportManagers| Cimınstance]| Kullanımdan kalktı. Kullanım __ReportServerWeb__ blokları göndermek için bir uç nokta için bir çekme hizmetini veri raporlama.|
 | ResourceModuleManagers| Cimınstance]| Kullanımdan kalktı. Kullanım __ResourceRepositoryWeb__ ve __ResourceRepositoryShare__ blokları çekme tanımlamak için HTTP uç noktaları veya SMB yolları, sırasıyla hizmet.|
@@ -121,6 +121,10 @@ A **ConfigurationRepositoryWeb** aşağıdaki özellikleri tanımlar.
 |ConfigurationNames|String[]|Hedef düğüm tarafından çekilmesi yapılandırmaların adlarının dizisi. Yalnızca düğüm ile çekme hizmetini kullanarak kayıtlı değilse bu kullanılan bir **RegistrationKey**. Daha fazla bilgi için [yapılandırma adları ile çekme istemcisi ayarlama](../pull-server/pullClientConfigNames.md).|
 |RegistrationKey|dize|Düğüm çekme hizmetine kaydeder. bir GUID. Daha fazla bilgi için [yapılandırma adları ile çekme istemcisi ayarlama](../pull-server/pullClientConfigNames.md).|
 |ServerURL|dize|Yapılandırma hizmeti URL'si.|
+|ProxyURL*|dize|Yapılandırma hizmeti ile iletişim kurarken kullanılacak http Ara sunucusu URL'si.|
+|ProxyCredential *|pscredential|Http proxy için kullanılacak kimlik bilgileri.|
+
+>! Not \* Windows içinde 1809 ve sonraki sürümlerde desteklenir.
 
 Şirket içi düğümler için kullanılabilir - ConfigurationRepositoryWeb değeri yapılandırma basitleştirmek için bir örnek betiği bkz [oluşturma DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -143,6 +147,10 @@ A **ResourceRepositoryWeb** aşağıdaki özellikleri tanımlar.
 |CertificateID|dize|Sunucuya kimlik doğrulaması için kullanılan sertifika parmak izi.|
 |RegistrationKey|dize|Çekme hizmetini düğüme tanımlayan bir GUID.|
 |ServerURL|dize|Yapılandırma sunucusu URL'si.|
+|ProxyURL*|dize|Yapılandırma hizmeti ile iletişim kurarken kullanılacak http Ara sunucusu URL'si.|
+|ProxyCredential *|pscredential|Http proxy için kullanılacak kimlik bilgileri.|
+
+>! Not \* Windows içinde 1809 ve sonraki sürümlerde desteklenir.
 
 Şirket içi düğümler için kullanılabilir - ResourceRepositoryWeb değeri yapılandırma basitleştirmek için bir örnek betiği bkz [oluşturma DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -166,6 +174,10 @@ Rapor sunucusu rolü, SMB tabanlı çekme hizmeti ile uyumlu değil.
 |CertificateID|dize|Sunucuya kimlik doğrulaması için kullanılan sertifika parmak izi.|
 |RegistrationKey|dize|Çekme hizmetini düğüme tanımlayan bir GUID.|
 |ServerURL|dize|Yapılandırma sunucusu URL'si.|
+|ProxyURL*|dize|Yapılandırma hizmeti ile iletişim kurarken kullanılacak http Ara sunucusu URL'si.|
+|ProxyCredential *|pscredential|Http proxy için kullanılacak kimlik bilgileri.|
+
+>! Not \* Windows içinde 1809 ve sonraki sürümlerde desteklenir.
 
 Şirket içi düğümler için kullanılabilir - ReportServerWeb değeri yapılandırma basitleştirmek için bir örnek betiği bkz [oluşturma DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -181,7 +193,7 @@ Kısmi yapılandırmalar hakkında daha fazla bilgi için bkz: [DSC kısmi yapı
 |dependsOn|dize{}|Bu kısmi yapılandırma uygulanmadan önce tamamlanması gereken diğer yapılandırmaları adları listesi.|
 |Açıklama|dize|Kısmi yapılandırmasını tanımlamak için kullanılan metin.|
 |ExclusiveResources|string[]|Kaynaklar için kısmi bu yapılandırma özel bir dizi.|
-|RefreshMode|dize|LCM kısmi yapılandırmanın nasıl alacağına belirtir. Olası değerler şunlardır: __"Disabled"__, __"Gönderme"__, ve __"Pull"__. <ul><li>__Devre dışı bırakılmış__: Kısmi bu yapılandırmayı devre dışı bırakıldı.</li><li> __Anında iletme__: Kısmi yapılandırma düğüme çağırarak gönderildiğinde [Yayımla-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet'i. Düğüm için tüm kısmi yapılandırmalar gönderilen veya bir hizmetten oluşan bir derleme sonra yapılandırmayı çağırarak başlatılabilir `Start-DscConfiguration –UseExisting`. Varsayılan değer budur.</li><li>__Çekme:__ Düğüm, bir çekme hizmetini kısmi yapılandırmasından düzenli olarak denetlemek için yapılandırılır. Bu özellik ayarlanırsa __çekme__, çekme hizmetinde belirtmelisiniz bir __ConfigurationSource__ özelliği. Azure Otomasyonu çekme hizmeti hakkında daha fazla bilgi için bkz. [Azure Automation DSC genel bakış](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
+|RefreshMode|dize|LCM kısmi yapılandırmanın nasıl alacağına belirtir. Olası değerler şunlardır: __"Disabled"__, __"Gönderme"__, ve __"Pull"__. <ul><li>__Devre dışı bırakılmış__: Kısmi bu yapılandırmayı devre dışı bırakıldı.</li><li> __Anında iletme__: Kısmi yapılandırma düğüme çağırarak gönderildiğinde [Yayımla-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet'i. Düğüm için tüm kısmi yapılandırmalar gönderilen veya bir hizmetten oluşan bir derleme sonra yapılandırmayı çağırarak başlatılabilir `Start-DscConfiguration –UseExisting`. Bu varsayılan değerdir.</li><li>__Çekme:__ Düğüm, bir çekme hizmetini kısmi yapılandırmasından düzenli olarak denetlemek için yapılandırılır. Bu özellik ayarlanırsa __çekme__, çekme hizmetinde belirtmelisiniz bir __ConfigurationSource__ özelliği. Azure Otomasyonu çekme hizmeti hakkında daha fazla bilgi için bkz. [Azure Automation DSC genel bakış](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
 |ResourceModuleSource|string[]|Kaynak sunucuları kısmi bu yapılandırma için gerekli kaynakları indirileceği adları dizisi. Bu adlar, önceden tanımlı bir hizmet uç noktalarına başvurması gerekir **ResourceRepositoryWeb** ve **ResourceRepositoryShare** engeller.|
 
 __Not:__ kısmi yapılandırmaları Azure Automation DSC ile desteklenir, ancak yalnızca bir yapılandırma, düğüm başına her Otomasyon hesabından istenebilecek.

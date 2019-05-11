@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Get-Test-Set
-ms.openlocfilehash: 6d059518a49926bc5fb56e37e7d3d4d2c66bddec
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e4aa7770bb5fc8b916b0c0a6488b1ccc0ef0ade9
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076608"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229522"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
->Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 ![Kaynak Edinme, Sınama ve Ayarlama](/media/get-test-set.png)
 
@@ -121,7 +121,7 @@ ModuleVersion = "1.0";
 };
 ```
 
-Uygulandığında, [yerel Configuration Manager](../managing-nodes/metaConfig.md) "Biriktirici" değeri ".mof" dosyadan okunan ve geçirin `-Name` parametresinin **alma**, **Test**, ve **ayarlamak** "MyService" örneği için yöntemleri **hizmet** kaynak.
+Uygulandığında, [yerel Configuration Manager](../managing-nodes/metaConfig.md) (LCM) değer "Biriktirici" ".mof" dosyasından okuyun ve geçirin `-Name` parametresinin **alma**, **Test**, ve **ayarlamak** "MyService" örneği için yöntemleri **hizmet** kaynak.
 
 ## <a name="get"></a>Alma
 

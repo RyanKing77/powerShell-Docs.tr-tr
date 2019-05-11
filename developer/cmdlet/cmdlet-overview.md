@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], described
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
-ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068479"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229371"
 ---
 # <a name="cmdlet-overview"></a>Cmdlet’e Genel Bakış
 
@@ -38,19 +38,53 @@ Kullanarak doğrudan sınıfı içeren derlemeyi yükleyebilir [Import-Module](/
 
 Aşağıdaki terimler Windows PowerShell cmdlet'i belgelerinde sık kullanılır:
 
-- **Cmdlet özniteliği**: Bir cmdlet sınıfı bir cmdlet olarak bildirmek için kullanılan bir .NET Framework özniteliği. Windows PowerShell isteğe bağlı olarak birkaç öznitelik kullansa da, Cmdlet özniteliği gereklidir. Bu özniteliği hakkında daha fazla bilgi için bkz. [cmdlet'i özniteliği bildirimi](./cmdlet-attribute-declaration.md).
+### <a name="cmdlet-attribute"></a>Cmdlet özniteliği
 
-- **Cmdlet parametresi**: Kullanıcı veya uygulamaya cmdlet'ini çalıştırarak kullanılabilir parametreleri tanımlayan genel özellikleri. Cmdlet'leri gerekli, adlandırılmış, konumsal, ve *geçiş* parametreleri. Anahtar parametreleri yalnızca arama parametreleri belirtilmemişse değerlendirilir parametreleri tanımlamanızı sağlar. Farklı türde parametreler hakkında daha fazla bilgi için bkz: [Cmdlet parametreleri](./cmdlet-parameters.md).
+Bir cmdlet sınıfı bir cmdlet olarak bildirmek için kullanılan bir .NET Framework özniteliği.
+PowerShell isteğe bağlı olarak birkaç öznitelik kullansa da, Cmdlet özniteliği gereklidir.
+Bu özniteliği hakkında daha fazla bilgi için bkz. [cmdlet'i özniteliği bildirimi](cmdlet-attribute-declaration.md).
 
-- **Parametre kümesi**: Belirli bir eylemi gerçekleştirmek için aynı komutta kullanılan parametreler grubudur. Bir cmdlet birden fazla parametre kümesine sahip olabilir, ancak her parametre kümesi benzersiz olan en az bir parametreye sahip olmalıdır. İyi cmdlet'i tasarım kesin benzersiz parametresi gerekli bir parametre olmasını önerir. Parametre kümeleri hakkında daha fazla bilgi için bkz. [cmdlet'i parametre ayarlar](./cmdlet-parameter-sets.md).
+### <a name="cmdlet-parameter"></a>Cmdlet parametresi
 
-- **Dinamik parametre**: Çalışma zamanında cmdlet'ine eklendi parametresi. Genellikle, başka bir parametre belirli bir değere ayarlandığında dinamik parametreler cmdlet'e eklenir. Dinamik parametreler hakkında daha fazla bilgi için bkz. [Cmdlet dinamik parametreleri](./cmdlet-dynamic-parameters.md).
+Kullanıcı veya uygulamaya cmdlet'ini çalıştırarak kullanılabilir parametreleri tanımlayan genel özellikleri.
+Cmdlet'leri gerekli, adlandırılmış, konumsal, ve *geçiş* parametreleri.
+Anahtar parametreleri yalnızca arama parametreleri belirtilmemişse değerlendirilir parametreleri tanımlamanızı sağlar.
+Farklı türde parametreler hakkında daha fazla bilgi için bkz: [Cmdlet parametreleri](cmdlet-parameters.md).
 
-- **Giriş işleme yöntemi**: Bir cmdlet kayıtlarını işlemek için kullanabileceğiniz bir yöntem girdi olarak alır. Giriş işleme yöntemlerden [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) yöntemi [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemi ve [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) yöntemi. Bir cmdlet uygularken en az biri kılmalı [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)ve [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemleri. Genellikle, [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemidir cmdlet tarafından işlenen her kayıt için çağrıldığından, geçersiz kılma yöntemi. Buna karşılık, [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) yöntemi ve [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemi bir kez gerçekleştirmek için çağrılır ön işleme veya kayıtlarını son işlemi. Bu yöntemler hakkında daha fazla bilgi için bkz. [giriş işleme yöntemlerini](./cmdlet-input-processing-methods.md).
+### <a name="parameter-set"></a>Parametre kümesi
 
-- **ShouldProcess özellik**: Windows PowerShell cmdlet, sistemde bir değişiklik yaparsa önce geri bildirim kullanıcıdan cmdlet'leri oluşturmanıza olanak sağlar. Bu özelliği kullanmak için cmdlet, Cmdlet öznitelik bildirmek ve cmdlet çağırmalıdır ShouldProcess özelliği desteklediğini bildirmeniz gerekir [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) içinde işleme yöntemi giriş yöntemleri. ShouldProcess işlevselliği desteklemek nasıl hakkında daha fazla bilgi için bkz. [onay isteme](./requesting-confirmation-from-cmdlets.md).
+Belirli bir eylemi gerçekleştirmek için aynı komutta kullanılan parametreler grubudur.
+Bir cmdlet birden fazla parametre kümesine sahip olabilir, ancak her parametre kümesi benzersiz olan en az bir parametreye sahip olmalıdır.
+İyi cmdlet'i tasarım kesin benzersiz parametresi gerekli bir parametre olmasını önerir.
+Parametre kümeleri hakkında daha fazla bilgi için bkz. [cmdlet'i parametre ayarlar](cmdlet-parameter-sets.md).
 
-- **İşlem**: Tek bir görev kabul edilir komutları mantıksal grubudur. Görev grubundaki herhangi bir komut başarısız ve kullanıcının seçimi kabul etme veya reddetme işlem içinde gerçekleştirilen eylemler varsa otomatik olarak başarısız. Bir işlemde katılmak için cmdlet cmdlet'i öznitelik bildirildiğinde bu işlemleri destekler bildirmeniz gerekir. Katmanı, Windows PowerShell 2.0 sürümünde kullanıma sunulmuştur. İşlemler hakkında daha fazla bilgi için bkz. [Windows PowerShell işlemleri](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
+### <a name="dynamic-parameter"></a>dinamik parametre
+
+Çalışma zamanında cmdlet'ine eklendi parametresi.
+Genellikle, başka bir parametre belirli bir değere ayarlandığında dinamik parametreler cmdlet'e eklenir.
+Dinamik parametreler hakkında daha fazla bilgi için bkz. [Cmdlet dinamik parametreleri](cmdlet-dynamic-parameters.md).
+
+### <a name="input-processing-method"></a>Giriş işleme yöntemi
+
+Bir cmdlet kayıtlarını işlemek için kullanabileceğiniz bir yöntem girdi olarak alır.
+Giriş işleme yöntemlerden [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) yöntemi [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemi ve [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) yöntemi. Bir cmdlet uygularken en az biri kılmalı [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)ve [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemleri.
+Genellikle, [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemidir cmdlet tarafından işlenen her kayıt için çağrıldığından, geçersiz kılma yöntemi.
+Buna karşılık, [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) yöntemi ve [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemi bir kez gerçekleştirmek için çağrılır ön işleme veya kayıtlarını son işlemi.
+Bu yöntemler hakkında daha fazla bilgi için bkz. [giriş işleme yöntemlerini](cmdlet-input-processing-methods.md).
+
+### <a name="shouldprocess-feature"></a>ShouldProcess özelliği
+
+PowerShell cmdlet, sistemde bir değişiklik yaparsa önce geri bildirim kullanıcıdan cmdlet'leri oluşturmanıza olanak sağlar.
+Bu özelliği kullanmak için cmdlet, Cmdlet öznitelik bildirmek ve cmdlet çağırmalıdır ShouldProcess özelliği desteklediğini bildirmeniz gerekir [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ve [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) içinde işleme yöntemi giriş yöntemleri.
+ShouldProcess işlevselliği desteklemek nasıl hakkında daha fazla bilgi için bkz. [onay isteme](requesting-confirmation-from-cmdlets.md).
+
+### <a name="transaction"></a>İşlem
+
+Tek bir görev kabul edilir komutları mantıksal grubudur.
+Görev grubundaki herhangi bir komut başarısız ve kullanıcının seçimi kabul etme veya reddetme işlem içinde gerçekleştirilen eylemler varsa otomatik olarak başarısız.
+Bir işlemde katılmak için cmdlet cmdlet'i öznitelik bildirildiğinde bu işlemleri destekler bildirmeniz gerekir.
+Katmanı, Windows PowerShell 2.0 sürümünde kullanıma sunulmuştur.
+İşlemler hakkında daha fazla bilgi için bkz. [destek işlemleri nasıl](how-to-support-transactions.md).
 
 ## <a name="how-cmdlets-differ-from-commands"></a>Cmdlet'leri komutları farkı
 

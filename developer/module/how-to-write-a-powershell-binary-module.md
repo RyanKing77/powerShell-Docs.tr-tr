@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
-ms.openlocfilehash: 9ddb3bc172c66314603d2be4df5192a76c92e05d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082235"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229318"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>PowerShell İkili Modülü Yazma
 
@@ -29,7 +29,10 @@ Aşağıdaki yordam, oluşturma ve ikili bir PowerShell modülü yükleme açık
 
 2. Gerekirse, çözümünüzün rest oluşturun: (ek cmdlet'leri, XML dosyaları vb.) ve bunları bir modül bildirimi ile açıklar.
 
-   Çözümünüzü cmdlet'i derlemelerde açıklayan ek olarak, bir modül bildirimi dışarı ve içeri aktarılan modülünüzde istediğiniz, hangi cmdlet'leri sunulur ve ek dosyaları ne modüle geçer tanımlayabilirsiniz. Ancak daha önce belirtildiği gibi PowerShell gibi ek çaba sahip bir modül ikili bir cmdlet davranabilirsiniz. Bu nedenle, bir modül bildirimi çoğunlukla birden çok dosyayı tek bir paket birleştirmek için veya belirli bir derleme için yayın açıkça denetlemek için yararlıdır. Daha fazla bilgi için [bildirim PowerShell modülü yazma](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+   Çözümünüzü cmdlet'i derlemelerde açıklayan ek olarak, bir modül bildirimi dışarı ve içeri aktarılan modülünüzde istediğiniz, hangi cmdlet'leri sunulur ve ek dosyaları ne modüle geçer tanımlayabilirsiniz.
+   Ancak daha önce belirtildiği gibi PowerShell gibi ek çaba sahip bir modül ikili bir cmdlet davranabilirsiniz.
+   Bu nedenle, bir modül bildirimi çoğunlukla birden çok dosyayı tek bir paket birleştirmek için veya belirli bir derleme için yayın açıkça denetlemek için yararlıdır.
+   Daha fazla bilgi için [bildirim PowerShell modülü yazma](how-to-write-a-powershell-module-manifest.md).
 
    Aşağıdaki kod bir son derece basittir C# aynı dosyada bir modül olarak kullanılabilecek üç cmdlet'leri içeren bir kod bloğu.
 
@@ -82,7 +85,9 @@ Aşağıdaki yordam, oluşturma ve ikili bir PowerShell modülü yükleme açık
 
 Cmdlet'leri ve ek bileşenini derlemeleri yok sağlayıcıları, ikili modülleri olarak yüklenebilir. Ek derlemeler ikili modülleri yüklü olduğunda, cmdlet'leri ve sağlayıcıları ek bileşeninde kullanıcıya kullanılabilir ancak ek bileşenini derlemede sınıfı, göz ardı edilir ve ek bileşenini kayıtlı değil. Sonuç olarak, cmdlet'leri ve sağlayıcıları oturuma kullanılabilir olsa bile ek bileşenini Windows PowerShell tarafından sağlanan ek bileşenini cmdlet'leri algılayamaz.
 
-Ayrıca, eklenti tarafından başvurulan türleri biçimlendirme veya dosyaları ikili bir modülün bir parçası olarak içeri aktarılamaz. Biçimlendirme ve türleri dosyalarını içeri aktarmak için bir modül bildirimi oluşturmanız gerekir. Bkz, [nasıl yazılacağını bir PowerShell modülü bildirim](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+Ayrıca, eklenti tarafından başvurulan türleri biçimlendirme veya dosyaları ikili bir modülün bir parçası olarak içeri aktarılamaz.
+Biçimlendirme ve türleri dosyalarını içeri aktarmak için bir modül bildirimi oluşturmanız gerekir.
+Bkz, [nasıl yazılacağını bir PowerShell modülü bildirim](how-to-write-a-powershell-module-manifest.md).
 
 ## <a name="see-also"></a>Ayrıca bkz:
 

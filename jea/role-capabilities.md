@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, güvenlik
 title: JEA rol özellikleri
-ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 528b41c0e2ffdcfed3251fb0f714c649e7290761
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084802"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229557"
 ---
 # <a name="jea-role-capabilities"></a>JEA rol özellikleri
 
@@ -183,6 +183,8 @@ Bir JEA oturumda kısıtlanmış herhangi bir cmdlet'i PowerShell'in ayarlarına
 
 Birçok özel işlev yazıyorsanız, bunları yerleştirmek daha kolay olabilir bir [PowerShell betik modülündeki](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx).
 Daha sonra bu işlevleri yerleşik ve üçüncü taraf modülleriyle gibi VisibleFunctions alanını kullanarak JEA oturumdaki görünür yapabilirsiniz.
+
+İçin sekmesinde tamamlama JEA oturumlarında, düzgün çalışması için yerleşik işlev içermelidir `tabexpansion2` içinde **VisibleFunctions** listesi.
 
 ## <a name="place-role-capabilities-in-a-module"></a>Rol işlevleri bir modülde yerleştirin
 

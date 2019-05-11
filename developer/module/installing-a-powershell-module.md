@@ -8,26 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082201"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229444"
 ---
 # <a name="installing-a-powershell-module"></a>PowerShell Modülü Yükleme
 
-PowerShell modülü oluşturduktan sonra böylece sizin veya başkalarının kullanabilir, büyük olasılıkla bir sistemde modülünü yüklemek isteyebilirsiniz. Genel olarak bakıldığında, bu yalnızca modül (IE, .psm1 veya ikili bir birleştirme, modül bildirimi ve ilişkili diğer dosyalar) .iso dosyalarını bir dizin o bilgisayardaki kopyalama oluşur. Çok küçük bir proje için bu kopyalama ve yapıştırma Windows Gezgini'ni kullanarak dosyaları tek bir uzak bilgisayara olarak basit olabilir. Ancak, daha büyük çözümler için daha karmaşık bir yükleme işlemi kullanmak isteyebilirsiniz. Modülünüzün sisteme nereden bağımsız olarak PowerShell çeşitli bulabilir ve modüllerinizi bilgilendirir teknikler kullanabilirsiniz. (Daha fazla bilgi için [PowerShell modülünü içeri aktararak](./importing-a-powershell-module.md).) Bu nedenle, yükleme için ana sorunu PowerShell modülünüzde bulamadı olacağını sağlamaktır.
-
-Bu konu, aşağıdaki bölümleri içerir:
-
-- Modülleri yüklemek için kurallar
-
-- Where modüllerini yüklemek için
-
-- Bir modülün birden fazla sürümünü yükleme
-
-- İşleme komut adı çakışmaları
+PowerShell modülü oluşturduktan sonra böylece sizin veya başkalarının kullanabilir, büyük olasılıkla bir sistemde modülünü yüklemek isteyebilirsiniz. Genel olarak bakıldığında, bu Modülü (IE, .psm1 veya ikili bir birleştirme, modül bildirimi ve ilişkili diğer dosyalar) .iso dosyalarını bir dizin o bilgisayardaki kopyalama oluşur. Çok küçük bir proje için bu kopyalama ve yapıştırma Windows Gezgini'ni kullanarak dosyaları tek bir uzak bilgisayara olarak basit olabilir. Ancak, daha büyük çözümler için daha karmaşık bir yükleme işlemi kullanmak isteyebilirsiniz. Modülünüzün sisteme nereden bağımsız olarak PowerShell çeşitli bulabilir ve modüllerinizi bilgilendirir teknikler kullanabilirsiniz. Bu nedenle, yükleme için ana sorunu PowerShell modülünüzde bulamadı olacağını sağlamaktır. Daha fazla bilgi için [PowerShell modülünü içeri aktararak](./importing-a-powershell-module.md).
 
 ## <a name="rules-for-installing-modules"></a>Modülleri yüklemek için kurallar
 
@@ -41,14 +31,14 @@ Mümkün olduğunda, listelenen bir yolda tüm modülleri yükleme **PSModulePat
 
 Varsayılan olarak, **PSModulePath** ortam değişken değerini, aşağıdaki sistem ve kullanıcı modülü dizini içeriyor, ancak ekleyin ve değerini düzenleyin.
 
-- $PSHome\Modules (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
+- `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
 
   > [!WARNING]
   > Bu konum, Windows ile birlikte gelen modüller için ayrılmıştır. Modüller, bu konuma yüklemeyin.
 
-- $Home\Documents\WindowsPowerShell\Modules (%UserProfile%\Documents\WindowsPowerShell\Modules)
+- `$Home\Documents\WindowsPowerShell\Modules` (% UserProfile%\Documents\WindowsPowerShell\Modules)
 
-- $Env:ProgramFiles\WindowsPowerShell\Modules (%ProgramFiles%\WindowsPowerShell\Modules)
+- `$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)
 
   Değeri alınacak **PSModulePath** ortam değişkeni, aşağıdaki komutlardan birini kullanın.
 
@@ -60,7 +50,6 @@ Varsayılan olarak, **PSModulePath** ortam değişken değerini, aşağıdaki si
   Modül yolu değerine eklenecek **PSModulePath** ortam değişkeni değeri, komutu aşağıdaki biçimi kullanın. Bu biçimi kullanan **SetEnvironmentVariable** yöntemi **System.Environment** oturumu bağımsız değişiklik için sınıf **PSModulePath** ortamı değişken.
 
   ```powershell
-
   #Save the current value in the $p variable.
   $p = [Environment]::GetEnvironmentVariable("PSModulePath")
 
@@ -77,7 +66,7 @@ Varsayılan olarak, **PSModulePath** ortam değişken değerini, aşağıdaki si
 
 ### <a name="use-the-correct-module-directory-name"></a>Doğru modül dizin adı kullanın
 
-"İyi biçimlendirilmiş" modülü temel modül dizinde en az bir dosya adı ile aynı ada sahip bir dizini içinde depolanan bir modüldür. Bir modül doğru biçimlendirilmemiş, Windows PowerShell, bir modül olarak algılamaz.
+İyi biçimlendirilmiş bir modül temel modül dizinde en az bir dosya adı ile aynı ada sahip bir dizini içinde depolanan bir modüldür. Bir modül doğru biçimlendirilmemiş, Windows PowerShell, bir modül olarak algılamaz.
 
 "Temel"dosyasının adı, dosya adı uzantısı olmadan adıdır. İyi biçimlendirilmiş bir modülde modülü dosyalarını içeren dizin adını temel modülünde en az bir dosya adı eşleşmelidir.
 
@@ -122,9 +111,7 @@ Bu bölümde, Windows PowerShell modüllerini yüklemek için dosya sistemindeki
 
 Kendi modülünüzü oluşturmak veya bir Windows PowerShell topluluğu Web sitesi gibi başka bir tarafın bir modülü Al ve modül yalnızca, kullanıcı hesabınız için kullanılabilir olmasını istiyorsanız kullanıcıya özgü modüller dizininizde modülünü yükleyin.
 
-```
-$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 Kullanıcıya özgü modüller dizin değerine eklenir **PSModulePath** varsayılan ortam değişkeni.
 
@@ -132,9 +119,7 @@ Kullanıcıya özgü modüller dizin değerine eklenir **PSModulePath** varsayı
 
 Bir modül bilgisayardaki kullanıcı hesaplarının tümünü kullanılabilir olmasını istiyorsanız, modül Program Files konumunda yükleyin.
 
-```
-$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 > [!NOTE]
 > Program dosyalarının konumu PSModulePath ortam değişkeninin değeri için Windows PowerShell 4.0 ve sonraki sürümlerinde varsayılan olarak eklenir. Windows PowerShell'in önceki sürümleri için el ile Program dosyalarının konumu ((%ProgramFiles%\WindowsPowerShell\Modules) oluşturabilir ve yukarıda açıklandığı gibi bu yolu PSModulePath ortam değişkeninize ekleyin.
@@ -160,7 +145,7 @@ Fabrikam Modülü Yükleyicisi Fabrikam modülü bulmak Windows PowerShell modü
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
+$p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -168,7 +153,7 @@ $p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 Bir modülün birden fazla ürün sürümünü veya bir ürünün birden çok bileşen tarafından kullanılır, modül bir %ProgramFiles%\Common Files\Modules alt modülü özgü alt dizinde yükleyin.
 
-Aşağıdaki örnekte, Fabrikam modülü %ProgramFiles%\Common Files\Modules alt Fabrikam alt dizininde yüklenir. Her bir modülü kendi alt modülleri alt bulunduğu unutmayın.
+Aşağıdaki örnekte, Fabrikam alt dizininde Fabrikam Modülü yüklü `%ProgramFiles%\Common Files\Modules` alt. Her bir modülü kendi alt modülleri alt bulunduğu unutmayın.
 
 ```
 C:\Program Files
@@ -177,7 +162,6 @@ C:\Program Files
       Fabrikam
         Fabrikam.psd1 (module manifest)
         Fabrikam.dll (module assembly)
-
 ```
 
 Ardından, yükleyici değerini garantiler **PSModulePath** ortam değişkeni ortak dosyaları modülleri alt dizini yolunu içerir.
@@ -198,9 +182,7 @@ $p = $q -join ';'
 Birden çok sürümünü aynı modülü yüklemek için aşağıdaki yordamı kullanın.
 
 1. Her modülü sürümü için bir dizin oluşturun. Sürüm numarası, dizin adı içerir.
-
 2. Bir modül bildirimi her modülü sürümü için oluşturursunuz. Bulunan değerin **ModuleVersion** anahtar bildirimde, modülü sürüm numarası girin. Bildirim dosyası (.psd1) modülü için sürüme özgü dizine kaydedin.
-
 3. Modül kök klasör yolu değeri olarak Ekle **PSModulePath** ortam değişkeni, aşağıdaki örneklerde gösterildiği gibi.
 
 Son kullanıcı modülün belirli bir sürümünü almak için kullanabileceğiniz `MinimumVersion` veya `RequiredVersion` parametrelerinin [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet'i.
