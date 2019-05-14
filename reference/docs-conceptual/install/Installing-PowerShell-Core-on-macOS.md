@@ -2,12 +2,12 @@
 title: MacOS’ta PowerShell Core yükleme
 description: Macos'ta PowerShell Core yükleme hakkında bilgi
 ms.date: 12/12/2018
-ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 70f5d64aa8a697a9011d07fbcb2bb821463827e1
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086468"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229742"
 ---
 # <a name="installing-powershell-core-on-macos"></a>MacOS’ta PowerShell Core yükleme
 
@@ -19,6 +19,7 @@ Paket yüklendikten sonra çalıştırın `pwsh` bir terminalden.
 
 [Homebrew] [ brew] macOS için tercih edilen bir paket yöneticisidir.
 Varsa `brew` komutu bulunamazsa, Homebrew aşağıdakileri yüklemeniz gerekir [kendi yönergeleri][brew].
+Aksi takdirde PowerShell aracılığıyla yükleyebilirsiniz [doğrudan indirin](#installation-via-direct-download) veya [ikili arşivleri](#binary-archives).
 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Homebrew aracılığıyla en son kararlı sürüm MacOS 10.12 veya üzeri yüklemesi
 
