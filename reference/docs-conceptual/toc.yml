@@ -68,7 +68,7 @@
   items:
     - name: Konsol
       items:
-        - name: PowerShell.exe komut satırı yardımı
+        - name: PowerShell komut satırı seçenekleri
           href: components/console/powershell.exe-command-line-help.md
         - name: Sekme genişletmeyi kullanma
           href: components/console/using-tab-expansion.md
