@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: 19cc3817016d96e1412a5f3506e9d694ba55b48d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5ebc22067b20f0e1d35d31d5f33e599f50cb7564
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082082"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855077"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Temel bir Windows PowerShell Sağlayıcısı Oluşturma
 
@@ -26,22 +26,6 @@ Daha önce açıklanan temel sağlayıcısı belirtildiği gibi burada başlatma
 
 > [!NOTE]
 > Bu sağlayıcı örneği, Windows PowerShell tarafından sağlanan AccessDBSampleProvider01.cs dosyasında bulabilirsiniz.
-
-Bu konudaki bölümler şunları içerir:
-
-- [Windows PowerShell sağlayıcısındaki sınıfı tanımlama](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Sağlayıcıya özel durum bilgilerini tanımlama](#Defining-Provider-Specific-State-Information)
-
-- [Sağlayıcıyı başlatırken](#Initializing-the-Provider)
-
-- [Dinamik parametreleri Başlat](#Start-Dynamic-Parameters)
-
-- [Sağlayıcı başlatmayı kaldırma](#Uninitializing-the-Provider)
-
-- [Kod örneği](#Code-Sample)
-
-- [Windows PowerShell sağlayıcıyı test etme](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Windows PowerShell sağlayıcısındaki sınıfı tanımlama
 
@@ -77,7 +61,7 @@ Bu temel sağlayıcısı bu yöntemi geçersiz kılmaz. Ancak, aşağıdaki kod,
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-Sağlayıcı açıklandığı sağlayıcıya özgü bilgileri durumunu koruyabilir [tanımlama sağlayıcıya özgü veri durumu](#Defining-Provider-Specific-State-Information). Bu durumda, uygulamanızı kılmalı [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) türetilmiş sınıfın bir örneğine geri dönmek için yöntemi.
+Sağlayıcı açıklandığı sağlayıcıya özgü bilgileri durumunu koruyabilir [tanımlama sağlayıcıya özgü veri durumu](#defining-provider-specific-state-information). Bu durumda, uygulamanızı kılmalı [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) türetilmiş sınıfın bir örneğine geri dönmek için yöntemi.
 
 ## <a name="start-dynamic-parameters"></a>Dinamik parametreleri Başlat
 

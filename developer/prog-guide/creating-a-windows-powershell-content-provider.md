@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d7e237514b4db4bce3366836d3b6e0cd340bf107
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081929"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855016"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Windows PowerShell İçerik Sağlayıcısı Oluşturma
 
@@ -28,36 +28,6 @@ Bu konuda, kullanıcı bir veri deposundaki öğeleri içeriğini işlemek etkin
 > İndirilen kaynak dosyaları kullanılabilir  **\<PowerShell örnekleri >** dizin.
 >
 > Diğer Windows PowerShell sağlayıcısı uygulamaları hakkında daha fazla bilgi için bkz. [tasarlama bilgisayarınızı Windows PowerShell sağlayıcısındaki](./designing-your-windows-powershell-provider.md).
-
-Aşağıdaki liste, bu konudaki bölümler içerir. Bir Windows PowerShell içerik sağlayıcısı yazma ile alışkın değilseniz, göründükleri sırayla bu bölümleri okuyun. Ancak, bir Windows PowerShell içerik sağlayıcısı yazma ile ilgili bilgi sahibi olduğunuz, gereksinim duyduğunuz bilgileri doğrudan gidin.
-
-- [Windows PowerShell içerik sağlayıcı sınıfı tanımlama](#Define-the-Windows-PowerShell-Content-Provider-Class)
-
-- [Temel işlevlerini tanımlama](#Define-Functionality-of-Base-Class)
-
-- [Bir içerik okuyucu uygulama](#Implementing-a-Content-Reader)
-
-- [İçerik yazan uygulama](#Implementing-a-Content-Writer)
-
-- [İçerik okuyucu alınıyor](#Retrieving-the-Content-Reader)
-
-- [Dinamik parametreleri ekleme `Get-Content` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-Get-Content-Cmdlet)
-
-- [İçerik yazıcı alınıyor](#Retrieving-the-Content-Writer)
-
-- [Dinamik parametreler için Add_Content ekleme ve `Set-Content` cmdlet'leri](#Attaching-Dynamic-Parameters-to-the-Add-Content-and-Set-Content-Cmdlets)
-
-- [İçerik temizleme](#Clearing-Content)
-
-- [Dinamik parametreleri ekleme `Clear-Content` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-Clear-Content-Cmdlet)
-
-- [Kod örneği](#Code-Sample)
-
-- [Nesne türlerini tanımlama ve biçimlendirme](#defining-object-types-and-formatting)
-
-- [Windows PowerShell sağlayıcısı oluşturma](#Building-the-Windows-PowerShell-Provider)
-
-- [Windows PowerShell sağlayıcıyı test etme](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>Windows PowerShell içerik sağlayıcı sınıfı tanımlayın
 

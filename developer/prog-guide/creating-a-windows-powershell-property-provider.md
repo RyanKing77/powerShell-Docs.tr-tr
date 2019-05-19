@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c503b17a670a5d1f07aa48e714d8a0eb0aa78ae9
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081844"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854998"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Windows PowerShell Özellik Sağlayıcısı Oluşturma
 
@@ -31,26 +31,6 @@ Bu konuda, bir veri deposuna öğelerin özelliklerini değiştirmek kullanıcı
 
 > [!CAUTION]
 > Özellik sağlayıcınız yöntemlerini kullanarak herhangi bir nesne yazmalısınız [System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject) yöntemi.
-
-Aşağıdaki liste, bu konudaki bölümler içerir. Bir Windows PowerShell özelliği sağlayıcısı yazma ile alışkın değilseniz, bu bilgileri göründüğü sırayla okuyun. Ancak, bir Windows PowerShell özelliği sağlayıcısı yazma ile bilginiz varsa, lütfen gereksinim duyduğunuz bilgileri doğrudan gidin.
-
-- [Windows PowerShell sağlayıcısını tanımlama](#Defining-the-Windows-PowerShell-provider)
-
-- [Temel işlevlerini tanımlama](#Defining-Base-Functionality)
-
-- [Özellikleri alınıyor](#Retrieving-Properties)
-
-- [Dinamik parametreleri ekleme `Get-ItemProperty` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-Get-ItemProperty-Cmdlet)
-
-- [Özellikleri ayarlama](#Setting-Properties)
-
-- [Dinamik parametreleri ekleme `Set-ItemProperty` cmdlet'i](#Attaching-Dynamic-Parameters-for-the-Set-ItemProperty-Cmdlet)
-
-- [Bir özelliği temizleniyor](#Clearing-Properties)
-
-- [Dinamik parametreleri ekleme `Clear-ItemProperty` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-Clear-ItemProperty-Cmdlet)
-
-- [Windows PowerShell sağlayıcısı oluşturma](#Building-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-provider"></a>Windows PowerShell sağlayıcısını tanımlama
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081878"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855046"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Windows PowerShell Öğe Sağlayıcısı Oluşturma
 
@@ -30,44 +30,6 @@ Bu konuda, bir veri deposundaki verileri işlemek bir Windows PowerShell sağlay
 > Diğer Windows PowerShell sağlayıcısı uygulamaları hakkında daha fazla bilgi için bkz. [tasarlama bilgisayarınızı Windows PowerShell sağlayıcısındaki](./designing-your-windows-powershell-provider.md).
 
 Bu konuda açıklanan Windows PowerShell öğe sağlayıcısı, bir Access veritabanından veri öğelerini alır. Bu durumda, "öğe" Access veritabanındaki bir tablo ya da bir tablosunda bir satıra ' dir.
-
-Aşağıdaki liste, bu konudaki bölümler içerir. Bir Windows PowerShell öğe sağlayıcısı yazma ile alışkın değilseniz, göründükleri sırayla bu bölümleri okuyun. Ancak, bir Windows PowerShell öğe sağlayıcısı yazma ile bilginiz varsa, gereksinim duyduğunuz bilgileri doğrudan gidin:
-
-- [Windows PowerShell öğesi sağlayıcı sınıfı tanımlama](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [Temel işlevlerini tanımlama](#Defining-Base-Functionality)
-
-- [İçin yol geçerlilik denetimi](#Checking-for-Path-Validity)
-
-- [Bir öğe var olup olmadığını belirleme](#Determining-if-an-Item-Exists)
-
-- [Dinamik parametreleri ekleme `Test-Path` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [Bir öğe alma](#Retrieving-an-Item)
-
-- [Dinamik parametreleri ekleme `Get-Item` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [Bir öğe ayarlama](#Setting-an-Item)
-
-- [Dinamik parametreleri ekleme `Set-Item` cmdlet'i](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [Bir öğe temizleme](#Clearing-an-Item)
-
-- [Dinamik parametreler için Clear öğesi cmdlet'i ekleniyor](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [Bir öğe için bir varsayılan eylem gerçekleştirme](#Performing-a-Default-Action-for-an-Item)
-
-- [Dinamik parametreler için InvokeDefaultAction alınıyor](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [Yardımcı yöntemler ve sınıfları uygulama](#Implementing-Helper-Methods-and-Classes)
-
-- [Kod örneği](#Code-Sample)
-
-- [Nesne türlerini tanımlama ve biçimlendirme](#Defining-Object-Types-and-Formatting)
-
-- [Windows PowerShell sağlayıcısı oluşturma](#Building-the-Windows-PowerShell-provider)
-
-- [Windows PowerShell sağlayıcıyı test etme](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>Windows PowerShell öğesi sağlayıcı sınıfı tanımlama
 
@@ -223,7 +185,7 @@ Bu öğe sağlayıcısı, bu yöntem uygulamıyor. Ancak, aşağıdaki kod bu y�
 
 ## <a name="implementing-helper-methods-and-classes"></a>Yardımcı yöntemler ve sınıfları uygulama
 
-Bu öğe sağlayıcısı birkaç yardımcı yöntemin uygular ve genel tarafından kullanılan sınıflar, Windows PowerShell tarafından tanımlanan yöntemleri geçersiz kılın. Bu yardımcı yöntemler ve sınıflar için kod gösterilir [kod örneği](#Code-Sample) bölümü.
+Bu öğe sağlayıcısı birkaç yardımcı yöntemin uygular ve genel tarafından kullanılan sınıflar, Windows PowerShell tarafından tanımlanan yöntemleri geçersiz kılın. Bu yardımcı yöntemler ve sınıflar için kod gösterilir [kod örneği](#code-sample) bölümü.
 
 ### <a name="normalizepath-method"></a>NormalizePath yöntemi
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 33effed9a96cf1b9ee5f1a50b60a1937526db9d1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e7da13ff559e802d52df475f2a555baeeeef983
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081912"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855188"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Windows PowerShell Kapsayıcı Sağlayıcısı Oluşturma
 
@@ -35,44 +35,6 @@ Burada açıklanan Windows PowerShell kapsayıcısı sağlayıcısı veritabanı
 
 > [!CAUTION]
 > Bu tasarım bir alan adı Kimliğine sahip olan bir veritabanının varsayar ve alan türünü LongInteger olduğunu unutmayın.
-
-Bu konudaki bölümler listesi aşağıda verilmiştir. Bir Windows PowerShell kapsayıcı sağlayıcısı yazma ile bilginiz yoksa Lütfen göründüğü sırayı bu bilgileri okuyun. Ancak, bir Windows PowerShell kapsayıcı sağlayıcısı yazma ile bilginiz varsa, lütfen gereksinim duyduğunuz bilgileri doğrudan gidin.
-
-- [Bir Windows PowerShell kapsayıcı sağlayıcı sınıfı tanımlama](#Defining-a-Windows-PowerShell-Container-Provider-Class)
-
-- [Temel işlevlerini tanımlama](#defining-base-functionality)
-
-- [Alt öğeleri alınıyor](#Retrieving-Child-Items)
-
-- [Dinamik parametreleri ekleme `Get-ChildItem` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet)
-
-- [Alt öğe adları alınıyor](#Retrieving-Child-Item-Names)
-
-- [Dinamik parametreleri ekleme `Get-ChildItem` Cmdlet (Name)](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet-(Name))
-
-- [Öğeleri yeniden adlandırma](#Renaming-Items)
-
-- [Dinamik parametreleri ekleme `Rename-Item` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-Rename-Item-Cmdlet)
-
-- [Yeni öğeler oluşturma](#Creating-New-Items)
-
-- [Dinamik parametreleri ekleme `New-Item` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-New-Item-Cmdlet)
-
-- [Bir öğe kaldırma](#Removing-Items)
-
-- [Dinamik parametreleri ekleme `Remove-Item` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-Remove-Item-Cmdlet)
-
-- [Alt öğeleri için sorgulama](#Querying-for-Child-Items)
-
-- [Karşılanan öğeleri](#Copying-Items)
-
-- [Dinamik parametreleri ekleme `Copy-Item` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
-
-- [Kod örneği](#Code-Sample)
-
-- [Windows PowerShell sağlayıcısı oluşturma](#Building-the-Windows-PowerShell-Provider)
-
-- [Windows PowerShell sağlayıcıyı test etme](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-a-windows-powershell-container-provider-class"></a>Bir Windows PowerShell kapsayıcı sağlayıcı sınıfı tanımlama
 
@@ -398,7 +360,7 @@ Uygulamanız için aşağıdaki koşullar geçerli [System.Management.Automation
 
 - Uygulamanıza [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) döngüsel bağlantıları ve benzeri olduğunda sonsuz özyineleme durumuna yol önlemek için sorumludur. Bir koşul yansıtmak için uygun bir sonlandırma özel durumun oluşturulması gerekir.
 
-- Uygulamanıza [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) yöntemini çağırma [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ve veri deposuna herhangi bir değişiklik yapmadan önce dönüş değeri denetleyin. Çağrısından sonra [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) true döndürür [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) yöntemini çağırma [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) tehlikeli sistem değişiklikleri için ek bir denetim olarak yöntemi. Bu yöntemleri çağırma hakkında daha fazla bilgi için bkz. [öğeleri yeniden adlandırmak](#Renaming-Items).
+- Uygulamanıza [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) yöntemini çağırma [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ve veri deposuna herhangi bir değişiklik yapmadan önce dönüş değeri denetleyin. Çağrısından sonra [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) true döndürür [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) yöntemini çağırma [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) tehlikeli sistem değişiklikleri için ek bir denetim olarak yöntemi. Bu yöntemleri çağırma hakkında daha fazla bilgi için bkz. [öğeleri yeniden adlandırmak](#renaming-items).
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Copy-Item cmdlet'e dinamik parametreleri ekleme
 

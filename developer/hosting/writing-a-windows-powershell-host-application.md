@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082507"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855080"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Windows PowerShell Konak Uygulaması Yazma
 
 Windows PowerShell, uygulamanızda barındırabilirsiniz. Ana uygulama komutlarını çalıştırın, yerel veya uzak bir bilgisayarda oturum açın ve ya da zaman uyumlu veya zaman uyumsuz olarak uygulamanızın ihtiyaçlarına göre komutları çağırır olduğu çalışma tanımlayabilirsiniz.
 
-Aşağıdaki konular barındıran bir uygulama oluşturma işlemini açıklar.
+Aşağıdaki konular, bir uygulamayı barındıran Windows PowerShell oluşturma işlemleri açıklanmaktadır.
 
 ## <a name="in-this-section"></a>Bu Bölümde
 

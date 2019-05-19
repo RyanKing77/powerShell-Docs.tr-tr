@@ -10,34 +10,14 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6a3b592c5f85c1f065ad4b5b0290cf44dcef484e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068846"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854888"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Cmdlet’e Parametre Kümeleri Ekleme
-
-Bu bölümde, Stop-Proc cmdlet'e parametre ayarlar eklemeyi açıklar (açıklanan [bir Cmdlet oluşturma sistemi değiştirir](./creating-a-cmdlet-that-modifies-the-system.md)). Benzer şekilde bu Programcı Kılavuzu'nda açıklanan diğer Stop-Proc cmdlet'leri, bu cmdlet Get-Proc cmdlet'ini kullanarak alınan işlemler durdurmaya çalışır (açıklanan [oluşturma bilgisayarınızı ilk Cmdlet](./creating-a-cmdlet-without-parameters.md)).
-
-Bu bölümdeki konular şunlardır:
-
-- [Parametre kümeleri hakkında bilmeniz gerekenler](#Adding-Parameter-Sets-to-a-Cmdlet)
-
-- [Cmdlet'i sınıf bildirme](#Declaring-the-Cmdlet-Class)
-
-- [Cmdlet parametrelerini bildirme](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [Bir giriş işleme yöntemi geçersiz kılma](#Overriding-an-Input-Processing-Method)
-
-- [Kod örneği](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [Nesne türlerini tanımlama ve biçimlendirme](#Defining-Object-Types-and-Formatting)
-
-- [Cmdlet oluşturma](#Building-the-Cmdlet)
-
-- [Sınama cmdlet'i](#Testing-the-Cmdlet)
 
 ## <a name="things-to-know-about-parameter-sets"></a>Parametre kümeleri hakkında bilmeniz gerekenler
 

@@ -11,32 +11,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068343"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854961"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Parametresiz Cmdlet Oluşturma
 
 Bu bölümde, bir cmdlet'i parametreleri kullanımı ve yerel bilgisayardan bilgilerini alır ve ardından işlem hattının bilgi Yazar oluşturmayı açıklar. Burada açıklanan cmdlet'i yerel bilgisayar işlemleri hakkındaki bilgileri alır ve ardından bu bilgileri komut satırında görüntüleyen bir Get-Proc cmdlet'tir.
-
-Bu bölümdeki konular şunlardır:
-
-- [Cmdlet adlandırma](#Naming-the-Cmdlet)
-
-- [Cmdlet'i sınıf tanımlama](#Defining-the-Cmdlet-Class)
-
-- [Bir giriş işleme yöntemi geçersiz kılma](#Overriding-an-Input-Processing-Method)
-
-- [Kod örneği](#Code-Sample)
-
-- [Nesne türlerini tanımlama ve biçimlendirme](#Defining-Object-Types-and-Formatting)
-
-- [Cmdlet oluşturma](#Building-the-Cmdlet)
-
-- [Sınama cmdlet'i](#Testing-the-Cmdlet)
 
 > [!NOTE]
 > Cmdlet'leri yazarken Windows PowerShell® başvuru derlemeleri diske (varsayılan olarak C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0) yüklendiğini dikkat edin. Genel Derleme Önbelleği'ne (GAC) yüklü değil.

@@ -8,42 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068802"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854879"
 ---
 # <a name="advisory-development-guidelines"></a>Tavsiye Niteliğinde Geliştirme Yönergeleri
 
 Bu bölümde, iyi geliştirme ve kullanıcı deneyimleri sağlamak için dikkate almanız yönergeler açıklanmaktadır. Bazen uygulanabilir ve bazen olabilir değil.
-
-## <a name="design-guidelines"></a>Tasarım yönergeleri
-
-- [Bir Inputobject parametresi (AD01) desteği](./advisory-development-guidelines.md#AD01)
-
-- [Force parametresini (AD02) desteği](./advisory-development-guidelines.md#AD02)
-
-- [Windows PowerShell (AD03) üzerinden kimlik bilgilerini işleme](./advisory-development-guidelines.md#AD03)
-
-- [Kodlama parametreler (AD04) desteği](./advisory-development-guidelines.md#AD04)
-
-- [Sınama cmdlet'lerini bir Boole değeri (AD05) döndürmelidir](./advisory-development-guidelines.md#AD05)
-
-## <a name="code-guidelines"></a>Kod kuralları
-
-- [Cmdlet'i sınıf adlandırma kuralları (AC01) izleyin](./advisory-development-guidelines.md#AC01)
-
-- [Herhangi bir işlem hattı giriş (AC02) BeginProcessing yöntemi geçersiz kılarsanız](./advisory-development-guidelines.md#AC02)
-
-- [Durdurma istekleri işlemek için (AC03) StopProcessing yöntemi geçersiz kılın](./advisory-development-guidelines.md#AC03)
-
-- [(AC04) IDisposable arayüzünü uygular](./advisory-development-guidelines.md#AC04)
-
-- [Serileştirme uyumlu parametre türleri (AC05) kullanın](./advisory-development-guidelines.md#AC05)
-
-- [Hassas verileri (AC06) SecureString kullanın](./advisory-development-guidelines.md#AC06)
 
 ## <a name="design-guidelines"></a>Tasarım yönergeleri
 

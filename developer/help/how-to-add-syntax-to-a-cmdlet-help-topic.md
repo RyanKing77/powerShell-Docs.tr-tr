@@ -8,24 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083391"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855144"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Cmdlet Yardım Konusuna Söz Dizimi Ekleme
-
-- [Parametre öznitelikleri](#Parameter-Attributes)
-
-- [Parametre değeri öznitelikleri](#Parameter-Value-Attributes)
-
-- [Söz dizimi bilgileri toplanıyor](#Gathering-Syntax-Information)
-
-- [Söz dizim diyagramı görülmektedir XML kodlama](#Coding-the-Syntax-Diagram-XML)
-
-## <a name="things-to-know-about-the-syntax-diagram-in-cmdlet-help"></a>Söz dizim diyagramı görülmektedir Cmdlet Yardım hakkında bilmeniz gerekenler
 
 Veri türünü NET bir görüntüsünü almak için bu bölümü okuyun için söz dizim diyagramı görülmektedir cmdlet Yardım dosyasındaki XML kodunu başlamadan önce parametre öznitelikleri ve bu verileri söz dizim diyagramı görülmektedir içinde nasıl görüntüleneceğini gibi sağlamanız gerekir...
 
@@ -166,7 +156,7 @@ Genellikle, yer tutucuları olan parametre değerleri gereklidir ve parametresiy
 
 ## <a name="coding-the-syntax-diagram-xml"></a>Söz dizim diyagramı görülmektedir XML kodlama
 
-XML sözdizimi düğümü hemen ile biten açıklama düğümü sonra başlar \</maml:description > etiketi. Söz dizimi diyagramda kullanılan veri toplama hakkında daha fazla bilgi için bkz: [söz dizimi bilgi toplama](#Gathering-Syntax-Information).
+XML sözdizimi düğümü hemen ile biten açıklama düğümü sonra başlar \</maml:description > etiketi. Söz dizimi diyagramda kullanılan veri toplama hakkında daha fazla bilgi için bkz: [söz dizimi bilgi toplama](#gathering-syntax-information).
 
 ### <a name="adding-a-syntax-node"></a>Sözdizimi düğümü ekleme
 
@@ -210,7 +200,7 @@ Aşağıdaki örnek, iki parametre kümeleri için sözdizimi öğesi düğüme 
 
 Sözdizimi öğesi düğüme eklenen her bir parametre bir çift içinde belirtilen \<komut: parametresi > etiketleri. Bir çift ihtiyacınız \<komut: parametresi > etiketleri parametre kümesi, Windows PowerShell tarafından sağlanan ortak parametrelerin dışında bulunan her bir parametreye?
 
-Açılış özniteliklerini \<komut: parametresi > etiketi belirlemek nasıl parametresi söz dizimi diyagramda görünür. Parametre öznitelikleri hakkında daha fazla bilgi için bkz: [parametre öznitelikleri](#Parameter-Attributes).
+Açılış özniteliklerini \<komut: parametresi > etiketi belirlemek nasıl parametresi söz dizimi diyagramda görünür. Parametre öznitelikleri hakkında daha fazla bilgi için bkz: [parametre öznitelikleri](#parameter-attributes).
 
 > [!NOTE]
 > \<Komut: parametresi > etiketi, bir alt öğesi destekliyor \<maml:description > içeriğe sahip hiçbir zaman görüntülenir. Parametre açıklamaları parametre'XML düğümünde belirtilir. Söz dizimi öğesi bilgiler arasındaki tutarsızlıkları önlemek için bodes ve parametre düğümü çıkarın (\<maml:description > veya bu alanı boş bırakın.

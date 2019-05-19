@@ -15,34 +15,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: fb113086ce89e4becff9bcaf3232905fde2bf610
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c9ad84c5bcb6826fcf51db9a1f1a578a65a1f275
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068819"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854944"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Komut Satırı Girişini İşleyen Parametreler Ekleme
 
 Bir giriş bir cmdlet için komut satırı kaynağıdır. Bu konuda, bir parametre eklemeyi açıklar **Get-Proc** cmdlet (açıklanan [oluşturma bilgisayarınızı ilk Cmdlet](./creating-a-cmdlet-without-parameters.md)) cmdlet'ini ve yerel bilgisayardan üzerinde açık göre giriş işleyebilmesi nesneleri cmdlet'e geçirilen. **Get-Proc** açıklanan cmdlet'i burada adlarına göre işlemler alır ve ardından bir komut isteminde işlemleri hakkındaki bilgileri görüntüler.
-
-Bu konuda aşağıdaki bölümleri şunlardır:
-
-- [Cmdlet'i sınıf tanımlama](#Defining-the-Cmdlet-Class)
-
-- [Parametreleri bildirme](#Declaring-Parameters)
-
-- [Parametre doğrulaması destekleme](#Supporting-Parameter-Validation)
-
-- [Bir giriş işleme yöntemi geçersiz kılma](#Overriding-an-Input-Processing-Method)
-
-- [Kod örneği](#Code-Sample)
-
-- [Nesne türlerini tanımlama ve biçimlendirme](#Defining-Object-Types-and-Formatting)
-
-- [Cmdlet oluşturma](#Building-the-Cmdlet)
-
-- [Sınama cmdlet'i](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>Cmdlet'i sınıf tanımlama
 

@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell cmdlet'i
 title: PowerShell işlem hatları anlama
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 10e09fbe8de83eba2473f8f042657f7c80473fbd
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086451"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854341"
 ---
 # <a name="understanding-pipelines"></a>Anlama işlem hatları
 
@@ -61,7 +61,10 @@ d-----        8/23/2018   5:07 PM                catroot2
 
 Ayrıca disk belleği azaltır CPU kullanımı için işleme aktardığından `Out-Host` tam bir sayfa görüntüleme hazır olduğunda cmdlet'i. Çıktı, sonraki sayfaya kullanılabilir hale gelene kadar yürütme işlem hattında önünde cmdlet'ler duraklatın.
 
-CPU ve bellek PowerShell uygulamaları tarafından kullanılan izlemek için Windows Görev Yöneticisi'ne farkı görebilirsiniz. Aşağıdaki komutu çalıştırın: `Get-ChildItem C:\Windows -Recurse`. Bu komut için CPU ve bellek kullanımı karşılaştırın: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
+Aşağıdaki komutları karşılaştırarak yöneltme CPU ve bellek kullanımı Windows Görev Yöneticisi'nde nasıl etkilediğini görebilirsiniz:
+
+- `Get-ChildItem C:\Windows -Recurse`
+- `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
 > **Sayfalama** parametresi tüm PowerShell konaklar tarafından desteklenmez. Örneğin, çalıştığınızda kullanılacak **sayfalama** parametresi PowerShell ISE'de aşağıdaki hatayı görürsünüz:

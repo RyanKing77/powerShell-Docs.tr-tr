@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068360"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854843"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Bir Veri Deposuna Erişmek İçin Cmdlet Oluşturma
 
@@ -22,24 +22,6 @@ Bu bölümde, bir Windows PowerShell sağlayıcısı yoluyla depolanan verilere 
 Burada açıklanan seçin Str cmdlet'i, bulun ve dizeleri bir dosya veya nesne seçin. Dizeyi tanımlamak için kullanılan desenleri ile açıkça belirtilmesi `Path` parametre cmdlet veya örtük olarak aracılığıyla `Script` parametresi.
 
 Cmdlet, türetilen herhangi bir Windows PowerShell sağlayıcısı kullanmak üzere tasarlanmış [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Örneğin, cmdlet, dosya sistemi sağlayıcısı veya Windows PowerShell tarafından sağlanan değişken sağlayıcı belirtebilirsiniz. Daha fazla bilgi aboutWindows için PowerShell sağlayıcıları, bkz: [tasarlama bilgisayarınızı Windows PowerShell sağlayıcısındaki](../prog-guide/designing-your-windows-powershell-provider.md).
-
-Bu bölümdeki konular şunlardır:
-
-- [Cmdlet'i sınıf tanımlama](#Defining-the-Cmdlet-Class)
-
-- [Veri erişimi için parametreleri tanımlama](#Declaring-the-Path-Parameter)
-
-- [Geçersiz kılma yöntemleri işleme giriş](#Overriding-Input-Processing-Methods)
-
-- [İçerik erişme](#Accessing-Content)
-
-- [Kod örneği](#Code-Sample)
-
-- [Nesne türlerini tanımlama ve biçimlendirme](#Declaring-Search-Support-Parameters)
-
-- [Cmdlet oluşturma](#Building-the-Cmdlet)
-
-- [Sınama cmdlet'i](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>Cmdlet'i sınıf tanımlama
 
@@ -397,7 +379,7 @@ Bu örnek seçin Str cmdlet'ini kullanır [System.Management.Automation.Provider
 
 ## <a name="code-sample"></a>Kod örneği
 
-Aşağıdaki kod bu sürümü bu seçin Str cmdlet uygulamasını gösterir. Bu kod cmdlet'i sınıf, cmdlet tarafından kullanılan özel yöntemleri ve cmdlet kaydetmek için kullanılan Windows PowerShell ek bileşenini kod içerdiğini unutmayın. Cmdlet kaydetme hakkında daha fazla bilgi için bkz. [Cmdlet oluşturmaya](#Building-the-Cmdlet).
+Aşağıdaki kod bu sürümü bu seçin Str cmdlet uygulamasını gösterir. Bu kod cmdlet'i sınıf, cmdlet tarafından kullanılan özel yöntemleri ve cmdlet kaydetmek için kullanılan Windows PowerShell ek bileşenini kod içerdiğini unutmayın. Cmdlet kaydetme hakkında daha fazla bilgi için bkz. [Cmdlet oluşturmaya](#building-the-cmdlet).
 
 ```csharp
 //

@@ -2,12 +2,12 @@
 title: PowerShell geliştirme için Visual Studio Code'u kullanma
 description: PowerShell geliştirme için Visual Studio Code'u kullanma
 ms.date: 08/06/2018
-ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0d796460511b273771eacb03d0df4d90e1e9c322
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086739"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854387"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell geliştirme için Visual Studio Code'u kullanma
 
@@ -82,27 +82,72 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 "Yazılım bu güvenilmeyen yayımcıdan çalıştırmak istediğiniz yapmak ile?" istenir.
 Tür `R` dosyayı çalıştırın. Ardından, Visual Studio Code'u açın ve PowerShell uzantısı düzgün çalışıp çalışmadığını denetleyin. Başlarken konuları hala varsa, üzerinde bize [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a>Belirli yüklü PowerShell sürümü kullanıyor
+#### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Bir uzantıyla kullanılmak üzere PowerShell sürümü seçme
 
-Visual Studio Code ile belirli bir PowerShell yüklemesi kullanmak istiyorsanız, yeni bir değişken, kullanıcı ayarları dosyanıza ekleme gerekir.
+PowerShell Core Windows PowerShell ile yan yana yükleme, artık PowerShell uzantısı, belirli bir PowerShell sürümü için mümkündür. Aşağıdaki sürüm seçmek için aşağıdaki adımları kullanın:
 
-1. Tıklayın **dosya Tercihler -> Ayarlar ->**
-1. İki Düzenleyici bölme görünür.
-   En sağdaki bölmede (`settings.json`), aşağıdaki ayar Ekle iki süslü ayraçlar arasında bir yerde, işletim sistemi için uygun (`{` ve `}`) ve yerine **\<sürüm\>** yüklü PowerShell sürümü ile:
+1. Komut paleti açın (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> Windows ve Linux <kbd>Cmd</kbd> + <kbd>Shift</kbd>+<kbd>P</kbd> MacOS).
+1. "Oturumu" arayın.
+1. Tıklayın "PowerShell: Oturum menüsünü göster:".
+1. Listeden - Örneğin, "PowerShell Core" kullanmak istediğiniz PowerShell sürümünü seçin.
 
-   ```json
-    // On Windows:
-    "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
+>[!IMPORTANT]
+> Bu özellik, bazı iyi bilinen yollarında farklı işletim PowerShell yükleme konumlarını bulmak için sistemlerinde arar. PowerShell normal olmayan bir konuma yüklediyseniz, bu ilk oturum menüsünde gösterilmez. Oturum menüsü tarafından genişletebileceğiniz [kendi özel yollar ekleme](#adding-your-own-powershell-paths-to-the-session-menu) aşağıda açıklandığı gibi.
 
-    // On Linux:
-    "powershell.powerShellExePath": "/opt/microsoft/powershell/<version>/pwsh"
+>[!NOTE]
+> Oturum menüsüne ulaşmak için başka bir yolu yoktur. Bir PowerShell dosyasını, düzenleyicide açık olduğunda, sağ alt bir yeşil sürüm numarası bakın. Bu sürüm numarası tıklayarak oturum menüsüne çıkarır.
 
-    // On macOS:
-    "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-   ```
+##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>Kendi PowerShell yolları oturumu menü ekleme
 
-1. Yürütülebilir istenen PowerShell yoluyla ayarını değiştirin
-1. Ayarlar dosyasını kaydedin ve Visual Studio Code'u yeniden başlatın
+Bir VS Code ayarı ile oturum menüsüne diğer PowerShell yürütülebilir yollar ekleyebilirsiniz.
+
+Bir öğeyi listeye eklemek `powershell.powerShellAdditionalExePaths` veya içinde yoksa bir liste oluşturun, `settings.json`:
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    // other settings...
+}
+```
+
+Her bir öğe olması gerekir:
+
+* `exePath`: Yolu `pwsh` veya `powershell` yürütülebilir.
+* `versionName`: Oturum menüde görünür metin.
+
+Kullanarak kullanılacak varsayılan PowerShell sürümünü ayarlayabilirsiniz `powershell.powerShellDefaultVersion` ayarını, bu metinde görünür oturumu menüde (diğer adıyla `versionName` son ayarı):
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
+    
+    // other settings...
+}
+```
+
+Bu ayar ayarladıktan sonra Visual Studio Code'u yeniden başlatın veya kullanın "Geliştirici: Geçerli vscode pencereyi yeniden penceresi yeniden"komut paleti eylem.
+
+Oturum menüsünü açın, ek PowerShell sürümü artık görürsünüz!
+
+> [!NOTE]
+> Kaynak Powershell'den derleme yaparsanız, yerel PowerShell yapımı test etmek için harika bir yolu budur.
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Visual Studio Code için yapılandırma ayarları
 

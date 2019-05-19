@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f7a61e261399d3d2abe62fe4523e8c9895d5ad4
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081861"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855167"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Windows PowerShell Gezinti Sağlayıcısı Oluşturma
 
@@ -33,34 +33,6 @@ Kullanıcı veritabanında veri tablolarına gidebilmeniz burada açıklanan sa�
 
 > [!CAUTION]
 > Bu tasarım bir alan adı Kimliğine sahip olan bir veritabanının varsayar ve alan türünü LongInteger olduğunu unutmayın.
-
-Aşağıdaki listede, bu konudaki bölümler içerir. Bir Windows PowerShell Gezinti sağlayıcısı yazma ile alışkın değilseniz, bu bilgileri göründüğü sırayla okuyun. Ancak, bir Windows PowerShell Gezinti sağlayıcısı yazma ile bilginiz varsa, lütfen gereksinim duyduğunuz bilgileri doğrudan gidin.
-
-- [PS Gezinti sağlayıcı sınıfı tanımlama](#Define-the-Windows-PowerShell-provider)
-
-- [Temel işlevlerini tanımlama](#Defining-Base-Functionality)
-
-- [PS yol oluşturma](#Creating-a-Windows-PowerShell-Path)
-
-- [Üst yolu alınıyor](#Retrieving-the-Parent-Path)
-
-- [Alt yol adı alınıyor](#Retrieve-the-Child-Path-Name)
-
-- [Bir öğenin bir kapsayıcı olup olmadığını belirleme](#Determining-if-an-Item-is-a-Container)
-
-- [Bir öğe taşıma](#Moving-an-Item)
-
-- [Dinamik parametreleri ekleme `Move-Item` cmdlet'i](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [Göreli bir yol Normalleştiriliyor](#Normalizing-a-Relative-Path)
-
-- [Kod örneği](#Code-Sample)
-
-- [Nesne türlerini tanımlama ve biçimlendirme](#Defining-Object-Types-and-Formatting)
-
-- [Windows PowerShell sağlayıcısı oluşturma](#Building-the-Windows-PowerShell-provider)
-
-- [Windows PowerShell sağlayıcıyı test etme](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="define-the-windows-powershell-provider"></a>Windows PowerShell sağlayıcısını tanımlayın
 

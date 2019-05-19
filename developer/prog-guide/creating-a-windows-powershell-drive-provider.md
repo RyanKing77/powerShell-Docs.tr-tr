@@ -12,38 +12,18 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 2696d78cae7739310b7684161b597ce436dabe92
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055659"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855199"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Windows PowerShell Sürücü Sağlayıcısı Oluşturma
 
 Bu konuda, bir Windows PowerShell sürücüsü bir veri deposuna erişmek için bir yol sağlayan bir Windows PowerShell sürücüsü sağlayıcısı oluşturmayı açıklar. Bu tür sağlayıcısı, aynı zamanda Windows PowerShell sürücüsü sağlayıcıları olarak da adlandırılır. Sağlayıcı tarafından kullanılan Windows PowerShell sürücülerini veri deposuna bağlanmak için bir yöntem sağlar.
 
 Burada açıklanan Windows PowerShell sürücüsü sağlayıcısı, bir Microsoft Access veritabanına erişim sağlar. Bu sağlayıcı için Windows PowerShell sürücüsünü (mümkündür bir sürücü sağlayıcısı için herhangi bir sayıda sürücüler ekleme), veritabanı temsil eder. sürücünün en üst düzey kapsayıcıları veritabanındaki tabloları temsil eder ve satırlarda kapsayıcıları öğelerini temsil eder tablolar.
-
-Bu konudaki bölümler listesi aşağıda verilmiştir. Bir Windows PowerShell sürücüsü sağlayıcısı yazma ile alışkın değilseniz, göründükleri sırayla bu bölümleri okuyun. Ancak, bir sürücü sağlayıcısı yazma ile bilginiz varsa, lütfen gereksinim duyduğunuz bilgileri doğrudan gidin.
-
-- [Windows PowerShell sağlayıcısındaki sınıfı tanımlama](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Temel işlevlerini tanımlama](#Defining-Base-Functionality)
-
-- [Sürücü durumu bilgilerini oluşturma](#Creating-Drive-State-Information)
-
-- [Bir sürücü oluşturma](#Creating-a-Drive)
-
-- [Dinamik parametreler için NewDrive ekleme](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [Bir sürücü kaldırılıyor](#Removing-a-Drive)
-
-- [Varsayılan başlatma sürücüleri](#Initializing-Default-Drives)
-
-- [Kod örneği](#Code-Sample)
-
-- [Windows PowerShell sürücüsünü sağlayıcıyı test etme](#Testing-the-Windows-PowerShell-Drive-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Windows PowerShell sağlayıcısındaki sınıfı tanımlama
 

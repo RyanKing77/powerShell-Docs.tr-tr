@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068458"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854909"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Sistemi Değiştiren bir Cmdlet Oluşturma
 
@@ -42,28 +42,6 @@ Onay destekleyerek, bir cmdlet kullanıma sunan `Confirm` ve `WhatIf` Windows Po
 ## <a name="the-stopproc-cmdlet"></a>StopProc cmdlet'i
 
 Bu konu Get-Proc cmdlet'ini kullanarak alınan işlemler durdurmaya çalışır bir Stop-Proc cmdlet açıklar (açıklanan [oluşturma bilgisayarınızı ilk Cmdlet](./creating-a-cmdlet-without-parameters.md)).
-
-Bu bölümdeki konular şunlardır:
-
-- [Cmdlet tanımlama](#Defining-the-Cmdlet)
-
-- [Sistem değiştirilmesi için parametreleri tanımlama](#Defining-Parameters-for-System-Modification)
-
-- [Bir giriş işleme yöntemi geçersiz kılma](#Overriding-an-Input-Processing-Method)
-
-- [ShouldProcess yöntemi çağırma](#Calling-the-ShouldProcess-Method)
-
-- [ShouldContinue yöntemi çağırma](#Calling-the-ShouldContinue-Method)
-
-- [Durdurma giriş işleme](#Stopping-Input-Processing)
-
-- [Kod örneği](#Code-Sample)
-
-- [Nesne türlerini tanımlama ve biçimlendirme](#Defining-Object-Types-and-Formatting)
-
-- [Cmdlet oluşturma](#Building-the-Cmdlet)
-
-- [Sınama cmdlet'i](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Cmdlet tanımlama
 

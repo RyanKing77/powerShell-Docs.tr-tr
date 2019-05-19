@@ -8,40 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 946b71e4480a47ac6ccd6930be445d7efb4fb62d
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075265"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854904"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Cmdlet Parametrelerinize Diğer Adlar, Joker Karakter Genişletmesi ve Yardım Ekleme
 
 Bu bölümde, diğer adları, joker karakter genişletmesi eklemeyi açıklar ve Yardım iletileri Stop-Proc cmdlet parametreleri (açıklanan [bir Cmdlet oluşturma sistemi değiştirir](./creating-a-cmdlet-that-modifies-the-system.md)).
 
 Bu Stop-Proc cmdlet Get-Proc cmdlet'ini kullanarak alınan işlemler durdurmaya çalışır (açıklanan [oluşturma bilgisayarınızı ilk Cmdlet](./creating-a-cmdlet-without-parameters.md)).
-
-Bu bölümdeki konular şunlardır:
-
-- [Cmdlet tanımlama](#Defining-the-Cmdlet)
-
-- [Sistem değiştirilmesi için parametreleri tanımlama](#Defining-Parameters-for-System-Modification)
-
-- [Bir parametre diğer adını tanımlama](#Defining-a-Parameter-Alias)
-
-- [Parametreleri için Yardım'ı oluşturma](#Creating-Help-for-Parameters)
-
-- [Bir giriş işleme yöntemi geçersiz kılma](#Overriding-an-Input-Processing-Method)
-
-- [Joker karakter genişletmesi destekleme](#Supporting-Wildcard-Expansion)
-
-- [Kod örneği](#Defining-a-Parameter-Alias)
-
-- [Nesne türlerini tanımlama ve biçimlendirme](#Define-Object-Types-and-Formatting)
-
-- [Cmdlet oluşturma](#Building-the-Cmdlet)
-
-- [Sınama cmdlet'i](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Cmdlet tanımlama
 

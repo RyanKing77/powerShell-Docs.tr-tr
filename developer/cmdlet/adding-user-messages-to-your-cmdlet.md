@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068785"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854933"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Cmdlet’inize Kullanıcı İletileri Ekleme
 
@@ -51,32 +51,6 @@ Cmdlet'leri, kullanıcı için Windows PowerShell çalışma zamanı tarafından
 - Cmdlet hakkında ne kadar bilgi içeren iletileri iş ilerleme durumu raporunu, uzun süren bir işlem gerçekleştirirken tamamlandı.
 
 Cmdlet'inize yazabilirsiniz ileti sayısını veya cmdlet'inize Yazar iletilerin türünü sınırı yoktur. Her ileti, giriş işleme yöntemi, cmdlet'in içinde özel bir çağrı yaparak yazılır.
-
-## <a name="the-stopproc-cmdlet"></a>StopProc cmdlet'i
-
-Bu bölümdeki konular şunlardır:
-
-- [Cmdlet tanımlama](#Defining-the-Cmdlet)
-
-- [Sistem değiştirilmesi için parametreleri tanımlama](#Defining-Parameters-for-System-Modification)
-
-- [Bir giriş işleme yöntemi geçersiz kılma](#Overriding-an-Input-Processing-Method)
-
-- [Ayrıntılı bir ileti yazma](#Writing-a-Verbose-Message)
-
-- [Hata ayıklama iletisi yazma](#Writing-a-Debug-Message)
-
-- [Bir uyarı iletisi yazma](#Writing-a-Warning-Message)
-
-- [Bir ilerleme iletisi yazma](#Writing-a-Progress-Message)
-
-- [Kod örneği](#Code-Sample)
-
-- [Nesne türleri ve biçimlendirme tanımlayın](#Define-Object-Types-and-Formatting)
-
-- [Cmdlet oluşturma](#Building-the-Cmdlet)
-
-- [Sınama cmdlet'i](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Cmdlet tanımlama
 
