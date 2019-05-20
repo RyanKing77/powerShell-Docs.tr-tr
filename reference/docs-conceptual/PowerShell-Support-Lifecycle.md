@@ -2,12 +2,12 @@
 title: PowerShell Core Destek Yaşam Döngüsü
 description: PowerShell Core için ilkelerimizin desteği
 ms.date: 08/06/2018
-ms.openlocfilehash: 178e5c43520f9a392ca219b9f785eb18b1ec5436
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b8dd4891ecf245b87c3fe2fa61cd241a12209b57
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086977"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854372"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core Destek Yaşam Döngüsü
 
@@ -41,8 +41,6 @@ PowerShell Core sürüm 6.x dalını yaklaşık altı ayda güncelleştirilir (�
 
 Örneğin, PowerShell Core 6.1 çalıştırıyorsanız ve 6.1.3 19 Şubat 2019 üzerinde yayımlanan PowerShell desteğin sürmesi için yayımlanmasının ardından 30 gün ise çekirdek 6.1.3 21 Mart 2019 tarafından güncelleştirmek için beklediğiniz.
 Gerekli tüm düzeltmeleri bulunamazsa, düzeltmeler bizim sonraki toplu güncelleştirmede yayınlanacaktır.
-
-![PowerShell Core dal yaşam döngüsü][lifecycle-chart]
 
 Microsoft müşterilere 12 ay (diğer bir deyişle, PowerShell Core) ürün desteği kaldırmadan önce bildirimde, Modern yaşam döngüsü ilkesi de gerektirir.
 
@@ -88,7 +86,7 @@ Temel [PowerShell Core yaşam döngüsü](#lifecycle-of-powershell-core), aşağ
 |---------|-------------------------------|
 | 6.0     | 13 Şubat 2019             |
 | 6.1     | 28 Eylül 2019            |
-| 6.2     | 6.3 sonra 6 ay serbest bırakır   |
+| 6.2     | 7 yayınlar sonra 6 ay     |
 
 ## <a name="platforms-which-are-out-of-support"></a>Desteklenmeyen platformlar
 
