@@ -2,12 +2,12 @@
 title: PowerShell geliştirme için Visual Studio Code'u kullanma
 description: PowerShell geliştirme için Visual Studio Code'u kullanma
 ms.date: 08/06/2018
-ms.openlocfilehash: 0d796460511b273771eacb03d0df4d90e1e9c322
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
+ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854387"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882568"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell geliştirme için Visual Studio Code'u kullanma
 
@@ -84,7 +84,7 @@ Tür `R` dosyayı çalıştırın. Ardından, Visual Studio Code'u açın ve Pow
 
 #### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Bir uzantıyla kullanılmak üzere PowerShell sürümü seçme
 
-PowerShell Core Windows PowerShell ile yan yana yükleme, artık PowerShell uzantısı, belirli bir PowerShell sürümü için mümkündür. Aşağıdaki sürüm seçmek için aşağıdaki adımları kullanın:
+PowerShell Core Windows PowerShell ile yan yana yükleme, artık PowerShell uzantısıyla PowerShell belirli bir sürümünü kullanmak mümkündür. Aşağıdaki sürüm seçmek için aşağıdaki adımları kullanın:
 
 1. Komut paleti açın (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> Windows ve Linux <kbd>Cmd</kbd> + <kbd>Shift</kbd>+<kbd>P</kbd> MacOS).
 1. "Oturumu" arayın.

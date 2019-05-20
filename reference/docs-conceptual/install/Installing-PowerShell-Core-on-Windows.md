@@ -2,12 +2,12 @@
 title: Windows’da PowerShell Core yükleme
 description: Üzerinde Windows PowerShell Core yükleme hakkında bilgi
 ms.date: 08/06/2018
-ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058038"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854354"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows’da PowerShell Core yükleme
 
@@ -18,7 +18,7 @@ ms.locfileid: "62058038"
 WSMan PowerShell uzaktan iletişimini etkinleştirmek için aşağıdaki önkoşulların karşılanması gerekir:
 
 - Yükleme [Evrensel C çalışma zamanı](https://www.microsoft.com/download/details.aspx?id=50410) önce Windows 10 Windows sürümleri üzerinde. Doğrudan indirme veya Windows Update kullanılabilir. Tam olarak düzeltme eki (isteğe bağlı paketleri dahil), desteklenen sistemleri zaten bu yüklü olacaktır.
-- Windows Management Framework (WMF) 4.0 veya daha yeni Windows 7 ve Windows Server 2008 R2 yükleyin.
+- Windows Management Framework (WMF) 4.0 veya daha yeni Windows 7 ve Windows Server 2008 R2 yükleyin. WMF hakkında daha fazla bilgi için bkz: [WMF genel bakış](/powershell/wmf/overview).
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />MSI paketini yükleme
 
