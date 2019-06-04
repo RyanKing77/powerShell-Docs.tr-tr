@@ -2,12 +2,12 @@
 title: Windows’da PowerShell Core yükleme
 description: Üzerinde Windows PowerShell Core yükleme hakkında bilgi
 ms.date: 08/06/2018
-ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854354"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470995"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows’da PowerShell Core yükleme
 
@@ -52,7 +52,7 @@ Msiexec.exe komut satırı seçeneklerinin tam listesi için bkz. [komut satır�
 
 ## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />ZIP paketini yükleme
 
-Gelişmiş dağıtım senaryoları etkinleştirmek için PowerShell ikili ZIP arşivlerini sağlanır. ZIP arşivini kullanırken, önkoşul denetimi MSI paketini olduğu gibi vermeyecektir kaydedilmelidir. WSMan düzgün çalışması için üzerinden uzaktan iletişim için,, karşıladığınızdan emin olun [önkoşulları](#prerequisites).
+Gelişmiş dağıtım senaryoları etkinleştirmek için PowerShell ikili ZIP arşivlerini sağlanır. ZIP arşivini kullanırken, önkoşul denetimi MSI paketini olduğu gibi vermeyecektir kaydedilmelidir. WSMan düzgün çalışması için üzerinden uzaktan iletişim için karşıladığınızdan emin olun [önkoşulları](#prerequisites).
 
 ## <a name="deploying-on-windows-iot"></a>Windows IOT dağıtma
 
