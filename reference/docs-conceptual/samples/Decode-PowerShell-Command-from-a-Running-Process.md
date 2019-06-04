@@ -3,21 +3,21 @@ ms.date: 11/13/2018
 keywords: PowerShell cmdlet'i
 title: PowerShell komutunun kodunu çalışan bir işlemden çözme
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086247"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470973"
 ---
-# <a name="decode-a-powershell-command-from-a-running-process"></a><span data-ttu-id="b6d04-103">PowerShell komutunun kodunu çalışan bir işlemden çözme</span><span class="sxs-lookup"><span data-stu-id="b6d04-103">Decode a PowerShell command from a running process</span></span>
+# <a name="decode-a-powershell-command-from-a-running-process"></a><span data-ttu-id="3a959-103">PowerShell komutunun kodunu çalışan bir işlemden çözme</span><span class="sxs-lookup"><span data-stu-id="3a959-103">Decode a PowerShell command from a running process</span></span>
 
-<span data-ttu-id="b6d04-104">Bazen, bir PowerShell kaynaklarının büyük bir miktarını, çalışan işlem sürüyor olabilir.</span><span class="sxs-lookup"><span data-stu-id="b6d04-104">At times, you may have a PowerShell process running that is taking up a large amount of resources.</span></span>
-<span data-ttu-id="b6d04-105">Bu işlem bağlamında çalışıyor olabilir bir [Görev Zamanlayıcısı][] işi veya [SQL Server Aracısı][] işi.</span><span class="sxs-lookup"><span data-stu-id="b6d04-105">This process could be running in the context of a [Task Scheduler][] job or a [SQL Server Agent][] job.</span></span> <span data-ttu-id="b6d04-106">Çalışan birden çok PowerShell işlemleri olduğu, hangi işlem sorunu temsil ettiği anlamak zor olabilir.</span><span class="sxs-lookup"><span data-stu-id="b6d04-106">Where there are multiple PowerShell processes running, it can be difficult to know which process represents the problem.</span></span> <span data-ttu-id="b6d04-107">Bu makalede, PowerShell işlem şu anda çalışan bir betik bloğu çözülecek gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="b6d04-107">This article shows how to decode a script block that a PowerShell process is currently running.</span></span>
+<span data-ttu-id="3a959-104">Bazen, bir PowerShell kaynaklarının büyük bir miktarını, çalışan işlem sürüyor olabilir.</span><span class="sxs-lookup"><span data-stu-id="3a959-104">At times, you may have a PowerShell process running that is taking up a large amount of resources.</span></span>
+<span data-ttu-id="3a959-105">Bu işlem bağlamında çalışıyor olabilir bir [Görev Zamanlayıcısı][] işi veya [SQL Server Aracısı][] işi.</span><span class="sxs-lookup"><span data-stu-id="3a959-105">This process could be running in the context of a [Task Scheduler][] job or a [SQL Server Agent][] job.</span></span> <span data-ttu-id="3a959-106">Çalışan birden çok PowerShell işlemleri olduğu, hangi işlem sorunu temsil ettiği anlamak zor olabilir.</span><span class="sxs-lookup"><span data-stu-id="3a959-106">Where there are multiple PowerShell processes running, it can be difficult to know which process represents the problem.</span></span> <span data-ttu-id="3a959-107">Bu makalede, PowerShell işlem şu anda çalışan bir betik bloğu çözülecek gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="3a959-107">This article shows how to decode a script block that a PowerShell process is currently running.</span></span>
 
-## <a name="create-a-long-running-process"></a><span data-ttu-id="b6d04-108">Uzun süre çalışan işlem oluştur</span><span class="sxs-lookup"><span data-stu-id="b6d04-108">Create a long running process</span></span>
+## <a name="create-a-long-running-process"></a><span data-ttu-id="3a959-108">Uzun süre çalışan işlem oluştur</span><span class="sxs-lookup"><span data-stu-id="3a959-108">Create a long running process</span></span>
 
-<span data-ttu-id="b6d04-109">Bu senaryoyu göstermek için yeni bir PowerShell penceresi açın ve aşağıdaki kodu çalıştırın.</span><span class="sxs-lookup"><span data-stu-id="b6d04-109">To demonstrate this scenario, open a new PowerShell window and run the following code.</span></span> <span data-ttu-id="b6d04-110">Bu, birkaç dakikada 10 dakika çıkarır bir PowerShell komutu yürütür.</span><span class="sxs-lookup"><span data-stu-id="b6d04-110">It executes a PowerShell command that outputs a number every minute for 10 minutes.</span></span>
+<span data-ttu-id="3a959-109">Bu senaryoyu göstermek için yeni bir PowerShell penceresi açın ve aşağıdaki kodu çalıştırın.</span><span class="sxs-lookup"><span data-stu-id="3a959-109">To demonstrate this scenario, open a new PowerShell window and run the following code.</span></span> <span data-ttu-id="3a959-110">Bu, birkaç dakikada 10 dakika çıkarır bir PowerShell komutu yürütür.</span><span class="sxs-lookup"><span data-stu-id="3a959-110">It executes a PowerShell command that outputs a number every minute for 10 minutes.</span></span>
 
 ```powershell
 powershell.exe -Command {
@@ -31,19 +31,19 @@ powershell.exe -Command {
 }
 ```
 
-## <a name="view-the-process"></a><span data-ttu-id="b6d04-111">İşlem görünümü</span><span class="sxs-lookup"><span data-stu-id="b6d04-111">View the process</span></span>
+## <a name="view-the-process"></a><span data-ttu-id="3a959-111">İşlem görünümü</span><span class="sxs-lookup"><span data-stu-id="3a959-111">View the process</span></span>
 
-<span data-ttu-id="b6d04-112">PowerShell yürütme komutu gövdesi içinde depolanan **CommandLine** özelliği [Win32_Process][] sınıfı.</span><span class="sxs-lookup"><span data-stu-id="b6d04-112">The body of the command which PowerShell is executing is stored in the **CommandLine** property of the [Win32_Process][] class.</span></span> <span data-ttu-id="b6d04-113">Komut ise bir [Kodlanmış komutu][], **CommandLine** özelliği "EncodedCommand" dizesini içerir.</span><span class="sxs-lookup"><span data-stu-id="b6d04-113">If the command is an [encoded command][], the **CommandLine** property contains the string "EncodedCommand".</span></span> <span data-ttu-id="b6d04-114">Bu bilgileri kullanarak, kodlanmış komutu aşağıdaki işlem XML'deki karıştırılmış olabilir.</span><span class="sxs-lookup"><span data-stu-id="b6d04-114">Using this information, the encoded command can be de-obfuscated via the following process.</span></span>
+<span data-ttu-id="3a959-112">PowerShell yürütme komutu gövdesi içinde depolanan **CommandLine** özelliği [Win32_Process][] sınıfı.</span><span class="sxs-lookup"><span data-stu-id="3a959-112">The body of the command which PowerShell is executing is stored in the **CommandLine** property of the [Win32_Process][] class.</span></span> <span data-ttu-id="3a959-113">Kodlanmış bir komut komutsa **CommandLine** özelliği "EncodedCommand" dizesini içerir.</span><span class="sxs-lookup"><span data-stu-id="3a959-113">If the command is an encoded command, the **CommandLine** property contains the string "EncodedCommand".</span></span> <span data-ttu-id="3a959-114">Bu bilgileri kullanarak, kodlanmış komutu aşağıdaki işlem XML'deki karıştırılmış olabilir.</span><span class="sxs-lookup"><span data-stu-id="3a959-114">Using this information, the encoded command can be de-obfuscated via the following process.</span></span>
 
-<span data-ttu-id="b6d04-115">PowerShell'i yönetici olarak başlatın.</span><span class="sxs-lookup"><span data-stu-id="b6d04-115">Start PowerShell as Administrator.</span></span> <span data-ttu-id="b6d04-116">PowerShell'i yönetici olarak çalıştığından önemlidir, aksi takdirde sonuç çalışan işlemler sorgulanırken döndürülür.</span><span class="sxs-lookup"><span data-stu-id="b6d04-116">It is vital that PowerShell is running as administrator, otherwise no results are returned when querying the running processes.</span></span>
+<span data-ttu-id="3a959-115">PowerShell'i yönetici olarak başlatın.</span><span class="sxs-lookup"><span data-stu-id="3a959-115">Start PowerShell as Administrator.</span></span> <span data-ttu-id="3a959-116">PowerShell'i yönetici olarak çalıştığından önemlidir, aksi takdirde sonuç çalışan işlemler sorgulanırken döndürülür.</span><span class="sxs-lookup"><span data-stu-id="3a959-116">It is vital that PowerShell is running as administrator, otherwise no results are returned when querying the running processes.</span></span>
 
-<span data-ttu-id="b6d04-117">Tüm kodlanmış bir komut PowerShell işlemleri almak için aşağıdaki komutu yürütün:</span><span class="sxs-lookup"><span data-stu-id="b6d04-117">Execute the following command to get all of the PowerShell processes that have an encoded command:</span></span>
+<span data-ttu-id="3a959-117">Tüm kodlanmış bir komut PowerShell işlemleri almak için aşağıdaki komutu yürütün:</span><span class="sxs-lookup"><span data-stu-id="3a959-117">Execute the following command to get all of the PowerShell processes that have an encoded command:</span></span>
 
 ```powershell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
 ```
 
-<span data-ttu-id="b6d04-118">Aşağıdaki komut, işlem kimliği ve kodlanmış komut içeren özel bir PowerShell nesnesi oluşturur.</span><span class="sxs-lookup"><span data-stu-id="b6d04-118">The following command creates a custom PowerShell object that contains the process ID and the encoded command.</span></span>
+<span data-ttu-id="3a959-118">Aşağıdaki komut, işlem kimliği ve kodlanmış komut içeren özel bir PowerShell nesnesi oluşturur.</span><span class="sxs-lookup"><span data-stu-id="3a959-118">The following command creates a custom PowerShell object that contains the process ID and the encoded command.</span></span>
 
 ```powershell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
@@ -58,7 +58,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 }
 ```
 
-<span data-ttu-id="b6d04-119">Artık kodlanmış komut çözülebilir.</span><span class="sxs-lookup"><span data-stu-id="b6d04-119">Now the encoded command can be decoded.</span></span> <span data-ttu-id="b6d04-120">Aşağıdaki kod parçacığı komut ayrıntıları nesnesi üzerinde yinelenir, kodlanmış komutu kodunu çözer ve kodu çözülmüş komut araştırılması için nesneye ekler.</span><span class="sxs-lookup"><span data-stu-id="b6d04-120">The following snippet iterates over the command details object, decodes the encoded command, and adds the decoded command back to the object for further investigation.</span></span>
+<span data-ttu-id="3a959-119">Artık kodlanmış komut çözülebilir.</span><span class="sxs-lookup"><span data-stu-id="3a959-119">Now the encoded command can be decoded.</span></span> <span data-ttu-id="3a959-120">Aşağıdaki kod parçacığı komut ayrıntıları nesnesi üzerinde yinelenir, kodlanmış komutu kodunu çözer ve kodu çözülmüş komut araştırılması için nesneye ekler.</span><span class="sxs-lookup"><span data-stu-id="3a959-120">The following snippet iterates over the command details object, decodes the encoded command, and adds the decoded command back to the object for further investigation.</span></span>
 
 ```powershell
 $commandDetails | ForEach-Object -Process {
@@ -79,7 +79,7 @@ $commandDetails | ForEach-Object -Process {
 $commandDetails[0]
 ```
 
-<span data-ttu-id="b6d04-121">Kodu çözülen komutu artık kodu çözülmüş komut özelliğini seçerek incelenebilir.</span><span class="sxs-lookup"><span data-stu-id="b6d04-121">The decoded command can now be reviewed by selecting the decoded command property.</span></span>
+<span data-ttu-id="3a959-121">Kodu çözülen komutu artık kodu çözülmüş komut özelliğini seçerek incelenebilir.</span><span class="sxs-lookup"><span data-stu-id="3a959-121">The decoded command can now be reviewed by selecting the decoded command property.</span></span>
 
 ```output
 ProcessId      : 8752
@@ -109,5 +109,3 @@ DecodedCommand :
 [SQL Server Aracısı]: /sql/ssms/agent/sql-server-agent
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[Kodlanmış komutu]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-
-[encoded command]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-
