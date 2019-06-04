@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 title: PowerShell Sınıfları Kullanarak Özel Türler Oluşturma
-ms.openlocfilehash: 0dd5bbaca50abb746e15a7bb64a706c7eceee905
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856241"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470940"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>PowerShell Sınıfları Kullanarak Özel Türler Oluşturma
 
@@ -21,7 +21,7 @@ PowerShell 5.0, sınıflar ve resmi sözdizimi ve semantiği gibi diğer nesne y
 - PowerShell dilini kullanarak türlerinde hata ayıklama
 - Oluşturma ve resmi mekanizmalarını kullanarak ve doğru düzeyde özel durumları işleme
 
-# <a name="declare-base-class"></a>Temel Sınıf Bildirme
+## <a name="declare-base-class"></a>Temel Sınıf Bildirme
 
 Bir PowerShell sınıfı, başka bir PowerShell sınıfı için bir temel tür olarak bildirebilirsiniz.
 
@@ -54,7 +54,7 @@ $list.Add(100)
 $list[0] # return 100
 ```
 
-# <a name="call-base-class-constructor"></a>Temel Sınıf Oluşturucusunu Çağırma
+### <a name="call-base-class-constructor"></a>Temel Sınıf Oluşturucusunu Çağırma
 
 Bir temel sınıf oluşturucusunu bir alt sınıfı için anahtar sözcüğünü kullanın **temel**:
 
@@ -86,7 +86,7 @@ class C : B
 }
 ```
 
-# <a name="call-base-class-method"></a>Temel Sınıf Yöntemini Çağırma
+### <a name="call-base-class-method"></a>Temel Sınıf Yöntemini Çağırma
 
 Alt sınıfların mevcut yöntemleri geçersiz kılabilirsiniz. Bunu yapmak için aynı ada ve imzaya kullanarak yöntemleri bildirin:
 
@@ -135,7 +135,7 @@ $list.Add(100)
 $list[0] # return 200
 ```
 
-# <a name="declare-implemented-interface"></a>Uygulanan Arabirimi Bildirme
+### <a name="declare-implemented-interface"></a>Uygulanan Arabirimi Bildirme
 
 Belirtilen hiçbir temel türü varsa temel türleri bir iki nokta üst üste (:) hemen sonra veya uygulanan arabirimleri bildirebilirsiniz. Tüm tür adları virgül kullanarak ayırın. Benzer C# söz dizimi.
 
@@ -157,11 +157,11 @@ class MyComparableBar : bar, system.IComparable
 }
 ```
 
-# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 yeni dil özellikleri
+## <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 yeni dil özellikleri
 
 PowerShell 5.0, PowerShell aşağıdaki yeni dil öğelerini sunar:
 
-## <a name="class-keyword"></a>Class anahtar sözcüğü
+### <a name="class-keyword"></a>Class anahtar sözcüğü
 
 `class` Anahtar sözcüğü, yeni bir sınıf tanımlar. Gerçek bir .NET Framework türü budur. Sınıf üyelerine genel, ancak yalnızca ortak modülü kapsamında değildir. Tür adı bir dize olarak başvurulamaz (örneğin, `New-Object` çalışmıyor), ve bu sürümde, bir tür sabit değer kullanamazsınız (örneğin, `[MyClass]`) sınıfı tanımlanır komut veya modül dosyasının dışında.
 
@@ -172,7 +172,7 @@ class MyClass
 }
 ```
 
-## <a name="enum-keyword-and-enumerations"></a>Enum anahtar sözcüğü ve numaralandırmalar
+### <a name="enum-keyword-and-enumerations"></a>Enum anahtar sözcüğü ve numaralandırmalar
 
 Destek `enum` anahtar sözcüğü eklendi, yeni satır ayırıcı olarak kullanır. Şu anda bir numaralandırıcı kendisi açısından tanımlayamazsınız. Ancak, aşağıdaki örnekte gösterildiği gibi başka bir sabit listesi açısından enum başlatabilirsiniz. Ayrıca, temel türü belirtilemez; her zaman `[int]`.
 
@@ -202,11 +202,11 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Import-DscResource
+### <a name="import-dscresource"></a>Import-DscResource
 
 `Import-DscResource` true dinamik bir anahtar sözcüğü sunulmuştur. PowerShell içeren sınıflar için arama belirtilen modülün kök modül ayrıştırır **DscResource** özniteliği.
 
-## <a name="implementingassembly"></a>ImplementingAssembly
+### <a name="implementingassembly"></a>ImplementingAssembly
 
 Yeni bir alan **ImplementingAssembly**, eklenmiş **ModuleInfo**. Sınıflar komut dosyasını tanımlayan bir betik modülü için oluşturulan dinamik derlemenin veya ikili modülleri için yüklü bütünleştirilmiş kodu için ayarlanır. Ne zaman ayarlanmadı **ModuleType** olduğu **bildirim**.
 
@@ -232,11 +232,11 @@ $s = "hello"
 
 Tüm üyeleri ortaktır.
 
-## <a name="constructors-and-instantiation"></a>Oluşturucular ve örnek oluşturma
+### <a name="constructors-and-instantiation"></a>Oluşturucular ve örnek oluşturma
 
 PowerShell sınıflarını oluşturuculara sahip olabilir. Bunlar, sınıfı aynı ada sahip. Oluşturucu aşırı yüklenebilir. Statik oluşturucularda desteklenir. Başlatma ifadeleri özellikleriyle herhangi bir kod Oluşturucu çalıştırılmadan önce başlatılır. Statik özellikler statik Oluşturucu gövdesinde önce başlatılır ve örnek özelliklerini statik olmayan Oluşturucu gövdesinde önce başlatılır. Şu anda başka bir oluşturucudan bir oluşturucu çağırmak için hiçbir sözdizimi yoktur (ister C\# söz dizimi ": this()"). Geçici çözüm, ortak bir tanımlamaktır `Init()` yöntemi.
 
-### <a name="creating-instances"></a>Örnekler oluşturma
+#### <a name="creating-instances"></a>Örnekler oluşturma
 
 > [!NOTE]
 > PowerShell 5.0 `New-Object` PowerShell içinde tanımlanan sınıflar ile çalışmıyor. Ayrıca, tür adı yalnızca sözcüksel olarak, modül veya sınıf tanımlar betik dışında görünür olmadığı anlamına gelir görülebilir. İşlevler, PowerShell içinde tanımlanmış bir sınıfın örnekleri döndürebilir. Bu örnekler, modül veya betik dışında çalışır.
@@ -265,7 +265,7 @@ Sözde statik yöntem `new()` aşağıdaki örnekte gösterildiği gibi .NET tü
 [hashtable]::new()
 ```
 
-### <a name="discovering-constructors"></a>Oluşturucular keşfetme
+#### <a name="discovering-constructors"></a>Oluşturucular keşfetme
 
 Oluşturucu aşırı yüklemeleri ile artık gördüğünüz `Get-Member`, veya bu örnekte gösterildiği gibi:
 
@@ -280,7 +280,7 @@ hashtable new(int capacity, float loadFactor)
 
 `Get-Member -Static` gibi başka bir yöntem aşırı yüklemeleri görebilecek şekilde oluşturucuları listeler. Bu söz dizimi performansını da önemli ölçüde daha hızlı bir şekilde `New-Object`.
 
-## <a name="methods"></a>Yöntemler
+### <a name="methods"></a>Yöntemler
 
 Bir PowerShell sınıfı yöntemi olarak uygulanan bir **ScriptBlock** olan yalnızca bir sonlandırma bloğu. Tüm yöntemleri herkese açık. Aşağıdaki adlı bir yöntemi tanımlayan bir örnek gösterilmektedir **DoSomething**.
 
@@ -304,29 +304,29 @@ $b.DoSomething(42)
 
 Aşırı yüklenmiş yöntemler de desteklenir.
 
-## <a name="properties"></a>Özellikler
+### <a name="properties"></a>Özellikler
 
 Tüm özellikleri ortaktır. Noktalı virgül veya yeni satır özellikleri gerektirir. Hiçbir nesne türü belirtilirse, özellik türü nesnedir.
 
 Doğrulama veya bağımsız değişken dönüşümü öznitelikleri özellikleri (gibi `[ValidateSet("aaa")]`) beklendiği gibi çalışmayabilir.
 
-## <a name="hidden"></a>Hidden
+### <a name="hidden"></a>Hidden
 
 Yeni bir anahtar sözcük `Hidden`, eklendi. `Hidden` Özellikler ve yöntemler (oluşturucular dahil) için uygulanabilir.
 
-Gizli üyeleri ortaktır, ancak çıktısında görünmez `Get-Member` sürece Force parametresi eklendi. Gizli üyeleri ne zaman dahil edilmez tamamlayarak veya gizli üye tanımlama sınıfında tamamlama gerçekleşmediği sürece IntelliSense kullanarak sekmesi.
+Gizli üyeleri ortaktır, ancak çıktısında görünmez `Get-Member` sürece `-Force` parametresi eklendi. Gizli üyeleri ne zaman dahil edilmez tamamlayarak veya gizli üye tanımlama sınıfında tamamlama gerçekleşmediği sürece IntelliSense kullanarak sekmesi.
 
 Yeni bir öznitelik **System.Management.Automation.HiddenAttribute** bunu eklendi, C\# kod içinde PowerShell ile aynı semantiğe sahip olabilir.
 
-## <a name="return-types"></a>Dönüş türleri
+### <a name="return-types"></a>Dönüş türleri
 
-Dönüş türü bir sözleşmedir. Dönüş değeri beklenen türe dönüştürülür. Dönüş türü belirtilirse, dönüş türü olan **void**. Hiçbir akış nesneleri yoktur. Bbjects ardışık düzene yanlışlıkla veya kasıtlı olarak yazılamaz.
+Dönüş türü bir sözleşmedir. Dönüş değeri beklenen türe dönüştürülür. Dönüş türü belirtilirse, dönüş türü olan **void**. Hiçbir akış nesneleri yoktur. Nesneleri işlem hattının yanlışlıkla veya kasıtlı olarak yazılamaz.
 
-## <a name="attributes"></a>Öznitelikler
+### <a name="attributes"></a>Öznitelikler
 
 İki yeni öznitelikler **DscResource** ve **DscProperty** sürümüne eklenmiştir.
 
-## <a name="lexical-scoping-of-variables"></a>Sözcük değişkenlerinin kapsamı
+### <a name="lexical-scoping-of-variables"></a>Sözcük değişkenlerinin kapsamı
 
 Aşağıdaki örnek nasıl sözcük kapsam works'ün bu sürümde gösterir.
 

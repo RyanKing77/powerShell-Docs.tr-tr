@@ -2,12 +2,12 @@
 title: Windows PowerShell SDK’sı
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080467"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470817"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
@@ -22,7 +22,7 @@ Windows PowerShell kullanarak başlatmak için gereken temel bilgiler için bkz:
 
 ## <a name="windows-powershell-documents-on-msdn"></a>MSDN'deki Windows PowerShell belgeleri
 
-- [Windows PowerShell SDK'sını yükleme](https://msdn.microsoft.com/en-us/library/ff458115.aspx) Windows PowerShell SDK'sını yükleme hakkında bilgi sağlar.
+- [Windows PowerShell SDK'sını yükleme](./installing-the-windows-powershell-sdk.md) Windows PowerShell SDK'sını yükleme hakkında bilgi sağlar.
 
 - [Bir Windows PowerShell modülü yazma](./module/writing-a-windows-powershell-module.md) Yöneticiler, betik geliştiriciler ve paketini ve Windows PowerShell çözümlerini dağıtmak için gereken cmdlet'i geliştiriciler için bilgi sağlar.
 

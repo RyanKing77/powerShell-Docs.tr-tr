@@ -1,12 +1,12 @@
 ---
-ms.date: 3/18/2019
+ms.date: 03/18/2019
 title: FilterHashtable ile Get-WinEvent sorguları oluşturma
-ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058837"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66471021"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>FilterHashtable ile Get-WinEvent sorguları oluşturma
 
@@ -53,7 +53,7 @@ Aşağıdaki tabloda, anahtar adları, veri türleri görüntüler ve joker kara
 | Günlükadı      | `<String[]>`       | Evet |
 | ProviderName | `<String[]>`       | Evet |
 | Yol         | `<String[]>`       | Hayır  |
-| anahtar sözcükler     | `<Long[]>`         | Hayır  |
+| Anahtar Sözcükler     | `<Long[]>`         | Hayır  |
 | ID           | `<Int32[]>`        | Hayır  |
 | Düzey        | `<Int32[]>`        | Hayır  |
 | startTime    | `<DateTime>`       | Hayır  |
@@ -174,7 +174,7 @@ Get-WinEvent -FilterHashtable @{
 
 ## <a name="filtering-by-event-id"></a>Olay kimliğine göre filtreleme
 
-Daha belirli verileri almak için sorgu sonuçlarına göre filtrelenir **öğesini belirten Olay No.**. **Öğesini belirten Olay No.** karma tablo anahtarı olarak anılan **kimliği** ve belirli bir değerdir **öğesini belirten Olay No.**. **Windows Olay Görüntüleyicisi'ni** görüntüler **öğesini belirten Olay No.**. Bu örnekte **olay kimliği 1023**.
+Daha belirli verileri almak için sorgu sonuçlarına göre filtrelenir **öğesini belirten Olay No.** . **Öğesini belirten Olay No.** karma tablo anahtarı olarak anılan **kimliği** ve belirli bir değerdir **öğesini belirten Olay No.** . **Windows Olay Görüntüleyicisi'ni** görüntüler **öğesini belirten Olay No.** . Bu örnekte **olay kimliği 1023**.
 
 Karma tablo güncelleştirin ve dahil **anahtar/değer** pair anahtarla **kimliği** değeri **1023**.
 
@@ -217,7 +217,7 @@ Numaralandırılmış değerler bölümünde belgelendirilen **.NET Framework**.
 
 | Adı           | Değer |
 | -------------- | ----- |
-| Ayrıntılı        |   5   |
+| Verbose        |   5   |
 | Bilgi  |   4   |
 | Uyarı        |   3   |
 | Hata          |   2   |

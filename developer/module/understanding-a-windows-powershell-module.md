@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: 77d328bc1cb8cb42d5a10f107a149c05ab270ce3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082116"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470778"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Windows PowerShell Modülünü Anlama
 
@@ -55,7 +55,7 @@ A *bildirim Modülü* tüm bileşenlerini açıklamak için bir bildirim dosyas�
 
 ### <a name="dynamic-modules"></a>Dinamik modüller
 
-A *dinamik modül* bir modülün gelen yüklü değil veya bir dosyaya kaydedilebilir. Bunun yerine, bir komut dosyası tarafından dinamik olarak oluşturuldukları kullanarak [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet'i. Bu modül türü yüklenemedi veya kalıcı depolama alanına kaydedildi gerekmez isteğe bağlı bir modülü oluşturmak bir betik sağlar. Doğası, dinamik modül kısa süreli olması beklenir ve tarafından erişilemez `Get-Module` cmdlet'i. Benzer şekilde, genellikle modül bildirimleri gerekmez ya da bunların büyük olasılıkla kendi ilgili derlemeleri depolamak için kalıcı klasörleri gerekir.
+A *dinamik modül* olmayan öğesinden yüklenmiş veya bir dosyaya kaydedilebilir bir modüldür. Bunun yerine, bir komut dosyası tarafından dinamik olarak oluşturuldukları kullanarak [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet'i. Bu modül türü yüklenemedi veya kalıcı depolama alanına kaydedildi gerekmez isteğe bağlı bir modülü oluşturmak bir betik sağlar. Doğası, dinamik modül kısa süreli olması beklenir ve tarafından erişilemez `Get-Module` cmdlet'i. Benzer şekilde, genellikle modül bildirimleri gerekmez ya da bunların büyük olasılıkla kendi ilgili derlemeleri depolamak için kalıcı klasörleri gerekir.
 
 ## <a name="module-manifests"></a>Modül bildirimleri
 

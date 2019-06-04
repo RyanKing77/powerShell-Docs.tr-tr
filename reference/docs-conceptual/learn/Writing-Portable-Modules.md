@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: PowerShell cmdlet'i
 title: Taşınabilir modülleri yazma
-ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086417"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470986"
 ---
 # <a name="portable-modules"></a>Taşınabilir modülleri
 
@@ -17,11 +17,12 @@ Windows PowerShell için yazılmış [.NET Framework][] için PowerShell Core ya
 
 ### <a name="porting-a-pssnapin"></a>Bir PSSnapIn taşıma
 
-PowerShell Core PowerShell ek bileşenleri (PSSnapIn) desteklenmez. Ancak, bir PSSnapIn bir PowerShell modülüne Dönüştür Önemsiz değildir. Genellikle, bir sınıfın türetildiği tek kaynak dosyadaki PSSnapIn kayıt kodu [PSSnapIn][]. Bu kaynak dosyası derlemeden kaldırın; artık gerekli değildir.
+PowerShell [ek bileşen](/powershell/developer/cmdlet/modules-and-snap-ins) PowerShell Core desteklenmez. Ancak, bir PSSnapIn bir PowerShell modülüne Dönüştür Önemsiz değildir. Genellikle, bir sınıfın türetildiği tek kaynak dosyadaki PSSnapIn kayıt kodu [PSSnapIn][].
+Bu kaynak dosyası derlemeden kaldırın; artık gerekli değildir.
 
-Kullanım [yeni ModuleManifest][] PSSnapIn kayıt kodu gereksinimini yerini alan yeni bir modül bildirimi oluşturmak için. (Örneğin, açıklama) PSSnapIn değerlerinden bazılarını yeniden modül bildirimi içinde kullanılabilir.
+Kullanım [yeni ModuleManifest][] PSSnapIn kayıt kodu gereksinimini yerini alan yeni bir modül bildirimi oluşturmak için. Değerlerden bazıları **PSSnapIn** (gibi **açıklama**) içinde modül bildirimi yeniden kullanılabilir.
 
-`RootModule` Cmdlet'leri uygulayan derleme (dll) adına modül bildirimindeki özelliği ayarlanmalıdır.
+**RootModule** cmdlet'leri uygulayan derleme (dll) adına modül bildirimindeki özelliği ayarlanmalıdır.
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>.NET Portability Analyzer (diğer adıyla APIPort)
 

@@ -3,12 +3,12 @@ ms.date: 11/13/2018
 keywords: PowerShell cmdlet'i
 title: PowerShell komutunun kodunu çalışan bir işlemden çözme
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086247"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470973"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>PowerShell komutunun kodunu çalışan bir işlemden çözme
 
@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>İşlem görünümü
 
-PowerShell yürütme komutu gövdesi içinde depolanan **CommandLine** özelliği [Win32_Process][] sınıfı. Komut ise bir [Kodlanmış komutu][], **CommandLine** özelliği "EncodedCommand" dizesini içerir. Bu bilgileri kullanarak, kodlanmış komutu aşağıdaki işlem XML'deki karıştırılmış olabilir.
+PowerShell yürütme komutu gövdesi içinde depolanan **CommandLine** özelliği [Win32_Process][] sınıfı. Kodlanmış bir komut komutsa **CommandLine** özelliği "EncodedCommand" dizesini içerir. Bu bilgileri kullanarak, kodlanmış komutu aşağıdaki işlem XML'deki karıştırılmış olabilir.
 
 PowerShell'i yönetici olarak başlatın. PowerShell'i yönetici olarak çalıştığından önemlidir, aksi takdirde sonuç çalışan işlemler sorgulanırken döndürülür.
 
@@ -107,4 +107,3 @@ DecodedCommand :
 [Görev Zamanlayıcısı]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server Aracısı]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[Kodlanmış komutu]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

@@ -1,13 +1,13 @@
 ---
-ms.date: 1/17/2019
+ms.date: 01/17/2019
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Düğümü yeniden başlatma
-ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 106fa1e7b0e3aaf3070ec05548d51140fe9a7725
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080127"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470753"
 ---
 # <a name="reboot-a-node"></a>Düğümü yeniden başlatma
 
