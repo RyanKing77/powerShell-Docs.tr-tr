@@ -2,12 +2,12 @@
 title: Windows’da PowerShell Core yükleme
 description: Üzerinde Windows PowerShell Core yükleme hakkında bilgi
 ms.date: 08/06/2018
-ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 3f21761037311891162f1083234edb0aca80d28b
+ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66470995"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830221"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows’da PowerShell Core yükleme
 
@@ -22,7 +22,7 @@ WSMan PowerShell uzaktan iletişimini etkinleştirmek için aşağıdaki önkoş
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />MSI paketini yükleme
 
-Bir Windows istemci veya sunucuda Windows PowerShell'i yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve sonraki sürümler), GitHub [sürümleri] [] sayfamızı MSI paketini indirin. Ekranı aşağı kaydırarak **varlıklar** bölümü, yüklemek istediğiniz sürümü. Genişletmek için tıklaymanız gerekebilir. Bu nedenle, varlıklar bölüm daraltılmış.
+Bir Windows istemci veya sunucuda Windows PowerShell'i yüklemek için (Windows 7 SP1, Server 2008 R2 üzerinde çalışır ve daha sonra), bizim Github'dan MSI paketini indirme [serbest] [ releases] sayfası. Ekranı aşağı kaydırarak **varlıklar** bölümü, yüklemek istediğiniz sürümü. Genişletmek için tıklaymanız gerekebilir. Bu nedenle, varlıklar bölüm daraltılmış.
 
 MSI dosyası şu şekilde görünür- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -150,8 +150,12 @@ Aşağıdaki adımlar PowerShell Core dağıtımı çalışan bir Nano sunucu ve
 
 PowerShell Core WSMan ve SSH üzerinden PowerShell uzaktan iletişim protokolü (PSRP) destekler. Daha fazla bilgi için bkz.:
 
-- [SSH PowerShell core'da uzaktan iletişim] [ssh-uzaktan iletişim]
-- [WSMan uzak PowerShell core'da] [wsman uzaktan iletişim]
+- [SSH PowerShell core'da uzaktan iletişim][ssh-remoting]
+- [PowerShell core'da WSMan uzaktan iletişim][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[sürümleri]: https://github.com/PowerShell/PowerShell/releases [ssh-uzaktan iletişim]:... /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.MD [wsman uzaktan iletişim]:... /Core-PowerShell/wsman-Remoting-in-PowerShell-Core.MD [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+
+[releases]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
