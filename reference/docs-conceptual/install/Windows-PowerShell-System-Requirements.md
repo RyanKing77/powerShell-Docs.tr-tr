@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Sistem Gereksinimleri
-ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: a9a7dc434d26876d6747526ad3ef6fa598376ac1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 95625efdaea55014f6e6f27c1e8d4c196c89f99c
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058316"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028876"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell Sistem Gereksinimleri
 Bu konu, Windows PowerShell 3.0, Windows PowerShell 4.0 ve Windows PowerShell 5.0 ve Windows PowerShell 5.1 ve özel özellikler gibi Windows PowerShell Tümleşik komut dosyası ortamı (ISE), CIM komutları için sistem gereksinimleri listeler ve İş akışları.
@@ -135,7 +134,7 @@ Windows PowerShell 2.0 altyapısı en az Microsoft .NET Framework 2.0.50727 gere
 
 Ekleme veya Windows PowerShell 2.0 altyapısını yükleme ve ekleme veya Microsoft .NET Framework'ün gerekli sürümlerinin yüklenmesi hakkında daha fazla bilgi için bkz: [Windows PowerShell 2.0 altyapısını yükleme](Installing-the-Windows-PowerShell-2.0-Engine.md). Windows PowerShell 2.0 altyapısını başlatma hakkında daha fazla bilgi için bkz: [Windows PowerShell 2.0 altyapısını başlatma](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md).
 
-## <a name="windows-preinstallation-environment"></a>Windows önyükleme ortamı
+## <a name="windows-preinstallation-environment"></a>Windows Önyükleme Ortamı
 Windows PowerShell 2.0, Windows PowerShell 3.0 ve Windows PowerShell 4.0, Windows Önyükleme Ortamı (Windows PE) çalıştırın. Ancak, aşağıdaki cmdlet desteklenmez.
 
 - [Arka Plan Akıllı Aktarım Hizmeti (BITS) cmdlet'leri](https://go.microsoft.com/fwlink/?LinkId=257514)

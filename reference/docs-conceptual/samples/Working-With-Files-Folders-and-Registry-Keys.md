@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Dosya, Klasör ve Kayıt Defteri Anahtarları ile Çalışma
-ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0c8716c384827d0816e2847ff81232c14638681b
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086023"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030765"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Dosya, klasör ve kayıt defteri anahtarları ile çalışma
 
@@ -128,7 +127,7 @@ Kullanarak belirli öğeleri hariç tutabilirsiniz **hariç** Get-childıtem kom
 
 Örneğin, Windows Saat hizmeti DLL System32 klasöründe bulmaya çalıştığınız ve tüm DLL adı hatırlayabileceğiniz "W" ile başlayan ve "32" içerdiğinden varsayalım.
 
-Bir ifade ister **w\&#42; 32\&#42;. dll** koşulları karşılayan tüm DLL'leri bulur ancak onu Windows 95 ve 16-bit Windows Uyumluluk "95" içeren bir dll veya "16" adlarında döndürebilir. Adlarını kullanarak bu sayılardan birine sahip dosyaları atlayabilirsiniz **hariç** deseni parametresi  **\&#42;\[ 9516]\&#42;**:
+Bir ifade ister **w\&#42; 32\&#42;. dll** koşulları karşılayan tüm DLL'leri bulur ancak onu Windows 95 ve 16-bit Windows Uyumluluk "95" içeren bir dll veya "16" adlarında döndürebilir. Adlarını kullanarak bu sayılardan birine sahip dosyaları atlayabilirsiniz **hariç** deseni parametresi  **\&#42;\[ 9516]\&#42;** :
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*

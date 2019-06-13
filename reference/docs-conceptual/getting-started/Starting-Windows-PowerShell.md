@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows Powershell Başlatma
-ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d2cb77027f404c5b008a902c5147d018dd741a67
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058361"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030447"
 ---
 # <a name="starting-windows-powershell"></a>Windows Powershell Başlatma
 Birden çok konaklarına katıştırılmış bir komut dosyası altyapısı dll powershell'dir.  En yaygın konak, başlar, etkileşimli komut satırı PowerShell.exe ve etkileşimli betik ortamı PowerShell_ISE.exe verilmiştir.
@@ -83,37 +82,37 @@ Windows Server 2008 R2 veya Windows Server 2008'de Windows PowerShell 2.0 Window
 
 ## <a name="starting-the-32-bit-version-of-windows-powershell"></a>Windows PowerShell 32 Bit sürümünü başlatma
 
-Bir 64 bit bilgisayarda, Windows PowerShell yüklediğinizde **Windows PowerShell (x86)**, Windows PowerShell 32 bit sürümünü yanı sıra 64-bit sürümü yüklü. Windows PowerShell çalıştırdığınızda, 64-bit sürümünü çalıştırır.
+Bir 64 bit bilgisayarda, Windows PowerShell yüklediğinizde **Windows PowerShell (x86)** , Windows PowerShell 32 bit sürümünü yanı sıra 64-bit sürümü yüklü. Windows PowerShell çalıştırdığınızda, 64-bit sürümünü çalıştırır.
 
-Ancak, bazen çalıştırmak ihtiyacınız olabilecek **Windows PowerShell (x86)**, 32 bit sürümü gerektiren bir modülünü kullanıyorsanız, gibi veya bir 32 bit bilgisayar için uzaktan bağlantı kurduğunuzda.
+Ancak, bazen çalıştırmak ihtiyacınız olabilecek **Windows PowerShell (x86)** , 32 bit sürümü gerektiren bir modülünü kullanıyorsanız, gibi veya bir 32 bit bilgisayar için uzaktan bağlantı kurduğunuzda.
 
 Windows PowerShell 32 bit sürümünü başlatmak için aşağıdaki yordamlardan birini kullanın.
 
 #### <a name="in-windows-server-2012-r2"></a>In Windows Server® 2012 R2
 
-- Üzerinde **Başlat** ekranında, yazın **Windows PowerShell (x86)**. Tıklayın **Windows PowerShell x86** Döşe.
-- İçinde **Sunucu Yöneticisi'ni**, gelen **Araçları** menüsünde **Windows PowerShell (x86)**.
-- İmleç bölmenin sağ üst köşedeki için masaüstünde **arama**, türü **PowerShell x86** ve ardından **Windows PowerShell (x86)**.
+- Üzerinde **Başlat** ekranında, yazın **Windows PowerShell (x86)** . Tıklayın **Windows PowerShell x86** Döşe.
+- İçinde **Sunucu Yöneticisi'ni**, gelen **Araçları** menüsünde **Windows PowerShell (x86)** .
+- İmleç bölmenin sağ üst köşedeki için masaüstünde **arama**, türü **PowerShell x86** ve ardından **Windows PowerShell (x86)** .
 - Komut satırı girin: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-server-2012"></a>In Windows Server® 2012
 
-- Üzerinde **Başlat** ekranında, yazın **PowerShell** ve ardından **Windows PowerShell (x86)**.
-- İçinde **Sunucu Yöneticisi'ni**, gelen **Araçları** menüsünde **Windows PowerShell (x86)**.
-- İmleç bölmenin sağ üst köşedeki için masaüstünde **arama**, türü **PowerShell** ve ardından **Windows PowerShell (x86)**.
+- Üzerinde **Başlat** ekranında, yazın **PowerShell** ve ardından **Windows PowerShell (x86)** .
+- İçinde **Sunucu Yöneticisi'ni**, gelen **Araçları** menüsünde **Windows PowerShell (x86)** .
+- İmleç bölmenin sağ üst köşedeki için masaüstünde **arama**, türü **PowerShell** ve ardından **Windows PowerShell (x86)** .
 - Komut satırı girin: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-81"></a>8.1 Windows® içinde
 
-- Üzerinde **Başlat** ekranında, yazın **Windows PowerShell (x86)**. Tıklayın **Windows PowerShell x86** Döşe.
+- Üzerinde **Başlat** ekranında, yazın **Windows PowerShell (x86)** . Tıklayın **Windows PowerShell x86** Döşe.
 - Çalıştırıyorsanız [Uzak Sunucu Yönetim Araçları](https://go.microsoft.com/fwlink/?LinkID=304145) Windows 8.1 için Windows Powershell'den x86 da açabilirsiniz **sunucu ManagerTools** menüsü.
-  Seçin **Windows PowerShell (x86)**.
-- İmleç bölmenin sağ üst köşedeki için masaüstünde **arama**, türü **PowerShell x86** ve ardından **Windows PowerShell (x86)**.
+  Seçin **Windows PowerShell (x86)** .
+- İmleç bölmenin sağ üst köşedeki için masaüstünde **arama**, türü **PowerShell x86** ve ardından **Windows PowerShell (x86)** .
 - Komut satırı girin: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-8"></a>8 Windows® içinde
 
-- Üzerinde **Başlat** ekranında, sağ üst köşedeki imleç, tıklayın **ayarları**, tıklayın **kutucukları**ve ardından taşıma **Yönetimsel Araçları Göster** kaydırıcı Evet. Ardından yazın **PowerShell** tıklatıp **Windows PowerShell (x86)**.
-- Çalıştırıyorsanız [Uzak Sunucu Yönetim Araçları](https://www.microsoft.com/download/details.aspx?id=28972) Windows 8 için Windows Powershell'den x86 da açabilirsiniz **sunucu ManagerTools** menüsü. Seçin **Windows PowerShell (x86)**.
-- Üzerinde **Başlat** ekran veya yazın, Masaüstü **PowerShell (x86)** ve ardından **Windows PowerShell (x86)**.
+- Üzerinde **Başlat** ekranında, sağ üst köşedeki imleç, tıklayın **ayarları**, tıklayın **kutucukları**ve ardından taşıma **Yönetimsel Araçları Göster** kaydırıcı Evet. Ardından yazın **PowerShell** tıklatıp **Windows PowerShell (x86)** .
+- Çalıştırıyorsanız [Uzak Sunucu Yönetim Araçları](https://www.microsoft.com/download/details.aspx?id=28972) Windows 8 için Windows Powershell'den x86 da açabilirsiniz **sunucu ManagerTools** menüsü. Seçin **Windows PowerShell (x86)** .
+- Üzerinde **Başlat** ekran veya yazın, Masaüstü **PowerShell (x86)** ve ardından **Windows PowerShell (x86)** .
 - Komut satırı girin: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`

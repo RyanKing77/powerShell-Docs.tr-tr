@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell Sürücülerini Yönetme
-ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057834"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030149"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell Sürücülerini Yönetme
 
@@ -117,7 +116,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > Genel olarak, yolları büyük küçük harfe duyarlı değildir.
 
---Üste adına göre tüm Windows PowerShell sürücülerini yaptığınız gibi yeni Windows PowerShell sürücüsüne bakın (**:**).
+--Üste adına göre tüm Windows PowerShell sürücülerini yaptığınız gibi yeni Windows PowerShell sürücüsüne bakın ( **:** ).
 
 Bir Windows PowerShell sürücüsü, birçok görevi çok daha kolay hale getirebilirsiniz. Örneğin, en önemli Windows kayıt defteri anahtarları erişimi hantal ve hatırlamak zor hale son derece uzun yollar vardır. Önemli yapılandırma bilgileri bulunduğu altında **HKEY_LOCAL_MACHINE\\yazılım\\Microsoft\\Windows\\CurrentVersion**. Görüntüleyip CurrentVersion kayıt defteri anahtarında öğeleri değiştirmek için yazarak bu anahtar kökü belirtilmiş bir Windows PowerShell sürücüsü oluşturabilirsiniz:
 

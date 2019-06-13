@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Bilgisayarlar Hakkında Bilgi Toplama
-ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dc8fcc5f12fdf9e3fc8151d3e50b8b660262c62
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058344"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030842"
 ---
 # <a name="collecting-information-about-computers"></a>Bilgisayarlar Hakkında Bilgi Toplama
 
@@ -18,7 +17,7 @@ Ayrıca, WMI veri bir veya daha fazla öğe koleksiyonları olan nesneler olarak
 Windows PowerShell de nesneleri ile çalışır ve tek veya birden çok nesne aynı şekilde davranma olanak tanıyan bir işlem hattına sahip olduğundan, genel WMI erişim çok az iş ile Gelişmiş bazı görevleri gerçekleştirmenize olanak sağlar.
 
 Aşağıdaki örnekler kullanarak belirli bilgiler toplamak nasıl göstermektedir `Get-CimInstance` rastgele bir bilgisayara karşı.
-Belirttiğimiz **ComputerName** nokta parametresi (**.**), yerel bilgisayarı temsil eder.
+Belirttiğimiz **ComputerName** nokta parametresi ( **.** ), yerel bilgisayarı temsil eder.
 Adı veya WMI aracılığıyla ulaşabileceği herhangi bir bilgisayar ile ilişkili IP adresi belirtebilirsiniz.
 Yerel bilgisayar hakkında bilgi almak için atmanız **ComputerName** parametresi.
 

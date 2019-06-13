@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Öğeleri Doğrudan İşleme
-ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086230"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030135"
 ---
 # <a name="manipulating-items-directly"></a>Öğeleri Doğrudan İşleme
 
@@ -73,7 +72,7 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-Bir kayıt defteri yolu yazarken, iki nokta üst üste eklediğinizden emin olun (**:**) Windows PowerShell sürücüsü adları, HKLM: ve HKCU:. İki nokta üst üste, Windows PowerShell yolunda sürücü adı algılamaz.
+Bir kayıt defteri yolu yazarken, iki nokta üst üste eklediğinizden emin olun ( **:** ) Windows PowerShell sürücüsü adları, HKLM: ve HKCU:. İki nokta üst üste, Windows PowerShell yolunda sürücü adı algılamaz.
 
 ## <a name="why-registry-values-are-not-items"></a>Neden kayıt defteri değerlerini öğeler değil
 
@@ -93,7 +92,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Kayıt defteri girdileri öğeleri olarak ele almanız kullanışlı olsa da, bir kayıt defteri girişi için bir yol benzersiz olmasını sağlar, şekilde belirtemezsiniz. Yol gösterimi adlı kayıt defteri alt anahtarı arasında ayrım yapmaz **çalıştırma** ve **(varsayılan)** kayıt defteri girişini **çalıştırma** alt. Ayrıca, kayıt defteri girişi adları ters eğik çizgi karakteri içerdiğinden (**\\**), kayıt defteri girdileri adlı bir kayıt defteri girişi ayırmak için bir yol gösterimi kullanılamadı sonra öğeleri olsaydı  **Windows\\CurrentVersion\\çalıştırma** yolda bulunan alt.
+Kayıt defteri girdileri öğeleri olarak ele almanız kullanışlı olsa da, bir kayıt defteri girişi için bir yol benzersiz olmasını sağlar, şekilde belirtemezsiniz. Yol gösterimi adlı kayıt defteri alt anahtarı arasında ayrım yapmaz **çalıştırma** ve **(varsayılan)** kayıt defteri girişini **çalıştırma** alt. Ayrıca, kayıt defteri girişi adları ters eğik çizgi karakteri içerdiğinden ( **\\** ), kayıt defteri girdileri adlı bir kayıt defteri girişi ayırmak için bir yol gösterimi kullanılamadı sonra öğeleri olsaydı  **Windows\\CurrentVersion\\çalıştırma** yolda bulunan alt.
 
 ## <a name="renaming-existing-items-rename-item"></a>Var olan öğeleri (öğeyi yeniden adlandır) yeniden adlandırma
 

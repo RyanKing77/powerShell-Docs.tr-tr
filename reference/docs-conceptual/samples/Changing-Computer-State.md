@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Bilgisayar Durumunu Değiştirme
-ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086332"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030289"
 ---
 # <a name="changing-computer-state"></a>Bilgisayar Durumunu Değiştirme
 
@@ -30,7 +29,7 @@ Belirli bir Terminal sunucusu oturumları kapatmak için kullanın **tsshutdn.ex
 
 ## <a name="logging-off-the-current-session"></a>Geçerli oturumu oturumunu kapatma
 
-Yerel sistem hakkındaki oturumu oturumunu için birkaç farklı teknikleri kullanabilirsiniz. En basit yolu Uzak Masaüstü/Terminal Hizmetleri komut satırı aracını kullanmaktır **logoff.exe** (Ayrıntılar için Windows PowerShell komut isteminde yazın **kapatma /?**). Geçerli etkin oturumu için şunu yazın **kapatma** bağımsız değişken olmadan.
+Yerel sistem hakkındaki oturumu oturumunu için birkaç farklı teknikleri kullanabilirsiniz. En basit yolu Uzak Masaüstü/Terminal Hizmetleri komut satırı aracını kullanmaktır **logoff.exe** (Ayrıntılar için Windows PowerShell komut isteminde yazın **kapatma /?** ). Geçerli etkin oturumu için şunu yazın **kapatma** bağımsız değişken olmadan.
 
 Ayrıca **shutdown.exe** aracı ile oturum kapatma seçeneği:
 
@@ -48,7 +47,7 @@ Daha fazla bilgi almak ve diğer özellikleri Win32Shutdown yöntemin bulmak iç
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>Kapatma veya bir bilgisayar yeniden başlatma
 
-Bilgisayarları yeniden başlatma ve kapatma genellikle aynı görevi türleridir. Bir bilgisayarı Araçlar genellikle yeniden başlatılacak, de- ve bunun tersi de geçerlidir. Windows powershell'den bilgisayarı yeniden başlatmak için iki basit seçenek vardır. Tsshutdn.exe ya da Shutdown.exe uygun bağımsız değişkenlerle birlikte kullanın. Ayrıntılı kullanım bilgilerini alabileceğiniz **tsshutdn.exe /?** veya **shutdown.exe /?**.
+Bilgisayarları yeniden başlatma ve kapatma genellikle aynı görevi türleridir. Bir bilgisayarı Araçlar genellikle yeniden başlatılacak, de- ve bunun tersi de geçerlidir. Windows powershell'den bilgisayarı yeniden başlatmak için iki basit seçenek vardır. Tsshutdn.exe ya da Shutdown.exe uygun bağımsız değişkenlerle birlikte kullanın. Ayrıntılı kullanım bilgilerini alabileceğiniz **tsshutdn.exe /?** veya **shutdown.exe /?** .
 
 Kapatma gerçekleştirme ve işlemleri de Windows PowerShell üzerinden doğrudan yeniden başlatın.
 

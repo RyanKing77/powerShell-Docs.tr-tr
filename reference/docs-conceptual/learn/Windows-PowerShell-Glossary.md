@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Windows PowerShell sözlüğü
-ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057386"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030348"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell sözlüğü
 
@@ -22,7 +21,7 @@ ms.locfileid: "62057386"
 |dinamik parametre|Bir Windows PowerShell cmdlet'i, işlev veya betiği belirli koşullar altında eklenen bir parametre. Dinamik parametreler, cmdlet'ler, İşlevler, sağlayıcıları ve betikler ekleyebilirsiniz.|
 |Dosya biçimlendirme|Olan bir Windows PowerShell XML dosyası. format.ps1xml uzantısı ile Windows PowerShell, .NET Framework türüne bağlı olarak bir nesnenin biçimini tanımlar.|
 |Genel oturum durumu|Bir Windows PowerShell oturumu kullanıcıya erişilebilir verileri içeren oturum durumu.|
-|konak|Windows PowerShell altyapısı kullanıcıyla iletişim kurmak için kullandığı arabirim. Örneğin, ana bilgisayar Windows PowerShell ile kullanıcı arasında istemleri nasıl işleneceğini belirtir.|
+|host|Windows PowerShell altyapısı kullanıcıyla iletişim kurmak için kullandığı arabirim. Örneğin, ana bilgisayar Windows PowerShell ile kullanıcı arasında istemleri nasıl işleneceğini belirtir.|
 |Ana bilgisayar uygulaması|Windows PowerShell altyapısı kendi işlem içine yükler ve işlemleri gerçekleştirmek için kullandığı bir programdır.|
 |Giriş işleme yöntemi|Bir cmdlet kayıtlarını işlemek için kullanabileceğiniz bir yöntem girdi olarak alır. Giriş işleme yöntemleri BeginProcessing yöntemi, ProcessRecord yöntemi, EndProcessing yöntemi ve StopProcessing yöntemi içerir.|
 |Modül bildirimi|Bir bildirime sahip ve RootModule anahtarı boş bir Windows PowerShell modülü.|

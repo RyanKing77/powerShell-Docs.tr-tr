@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Geçerli Konumu Yönetme
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086264"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030192"
 ---
 # <a name="managing-current-location"></a>Geçerli Konumu Yönetme
 
@@ -50,9 +49,9 @@ C:\WINDOWS
 
 **- PassThru** parametre kümesi komutların çoğu Windows PowerShell ile varsayılan çıkış olduğu durumlarda sonuç hakkında bilgi döndürmek için kullanılabilir.
 
-Kabuklar çoğu Windows ve UNIX komutunu gibi aynı şekilde geçerli konumunuza göre yolu belirtebilirsiniz. Göreli yollar için standart gösteriminde bir süre (**.**) Geçerli klasörünüzü ve iki kat bir süre temsil eder (**..** ) geçerli konumunuzu üst dizinini temsil eder.
+Kabuklar çoğu Windows ve UNIX komutunu gibi aynı şekilde geçerli konumunuza göre yolu belirtebilirsiniz. Göreli yollar için standart gösteriminde bir süre ( **.** ) Geçerli klasörünüzü ve iki kat bir süre temsil eder ( **..** ) geçerli konumunuzu üst dizinini temsil eder.
 
-Örneğin, bulunduğunuz **C:\\Windows** klasörü, nokta (**.**) temsil eden **C:\\Windows** ve çift nokta (**..** ) temsil eden **C:**. Yazarak geçerli konumunuzdan C: sürücüsünün köküne değiştirebilirsiniz:
+Örneğin, bulunduğunuz **C:\\Windows** klasörü, nokta ( **.** ) temsil eden **C:\\Windows** ve çift nokta ( **..** ) temsil eden **C:** . Yazarak geçerli konumunuzdan C: sürücüsünün köküne değiştirebilirsiniz:
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -62,7 +61,7 @@ Path
 C:\
 ```
 
-Dosya sistemi sürücüleri gibi olmayan Windows PowerShell sürücülerini aynı tekniği çalışır **HKLM:**. Konumunuz için HKLM ayarlayabilirsiniz\\yazarak kayıt defteri anahtarında yazılım:
+Dosya sistemi sürücüleri gibi olmayan Windows PowerShell sürücülerini aynı tekniği çalışır **HKLM:** . Konumunuz için HKLM ayarlayabilirsiniz\\yazarak kayıt defteri anahtarında yazılım:
 
 ```
 PS> Set-Location -Path HKLM:\SOFTWARE -PassThru

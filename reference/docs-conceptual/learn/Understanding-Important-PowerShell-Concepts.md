@@ -2,13 +2,12 @@
 ms.date: 08/23/2018
 keywords: PowerShell cmdlet'i
 title: Önemli PowerShell kavramlarını anlama
-ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f9af370db46ea47dbccbabb7cc90fc27b8f2765
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058599"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030973"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Önemli PowerShell kavramlarını anlama
 
@@ -31,7 +30,7 @@ PowerShell komutları yerel olarak da bilinir *cmdlet'leri* (command-let olarak 
 
 Bir komut yazın, PowerShell'i her zaman komut satırı girişi doğrudan işler. PowerShell, ayrıca ekranda gördüğünüz çıkış biçimlendirir. İş her cmdlet azaltır çünkü bu önemli bir farktır. Herhangi bir cmdlet'i ile aynı şekilde her zaman şeyler yapabilirsiniz sağlar. Cmdlet geliştiriciler komut satırı bağımsız değişkenlerini ayrıştırma veya çıktıyı biçimlendirmek için kod yazmanız gerekmez.
 
-Geleneksel komut satırı araçları, isteme ve Yardım görüntüleme için kendi şemalara sahip. Bazı komut satırı araçlarını kullanmak **/?** Yardım görüntüleme tetiklemek için; diğerlerinde **-?**, **/H**, hatta **//**. Bir GUI penceresi yerine konsolunda görünen bazı Yardım görüntülenir. Yanlış parametre kullanırsanız, araç, yazılan ve otomatik olarak bir görevi çalıştırmaya başlar yoksay.
+Geleneksel komut satırı araçları, isteme ve Yardım görüntüleme için kendi şemalara sahip. Bazı komut satırı araçlarını kullanmak **/?** Yardım görüntüleme tetiklemek için; diğerlerinde **-?** , **/H**, hatta **//** . Bir GUI penceresi yerine konsolunda görünen bazı Yardım görüntülenir. Yanlış parametre kullanırsanız, araç, yazılan ve otomatik olarak bir görevi çalıştırmaya başlar yoksay.
 PowerShell otomatik olarak ayrıştırır ve komut satırı işlemleri **-?** parametresi her zaman "Yardım için bu komutu Göster" anlamına gelir.
 
 > [!NOTE]

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet'i
 title: Kayıt Defteri Anahtarları ile Çalışma
-ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 18daeaea2ee8917a709fef421d2b316f46bf7f4c
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058871"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030665"
 ---
 # <a name="working-with-registry-keys"></a>Kayıt Defteri Anahtarları ile Çalışma
 
@@ -36,7 +35,7 @@ SKC  VC Name                           Property
 
 Bunlar, üst düzey anahtarları HKEY_CURRENT_USER kayıt defteri Düzenleyicisi (Regedit.exe) altında görünür.
 
-Ardından kayıt defteri sağlayıcısının adını belirterek bu kayıt defteri yolu belirtebilirsiniz "**::**". Kayıt defteri sağlayıcının tam adı **Microsoft.PowerShell.Core\\kayıt defteri**, ancak bu yalnızca kısalttık **kayıt defteri**. Aşağıdaki komutlardan herhangi birine içeriği doğrudan HKCU altında listelenir:
+Ardından kayıt defteri sağlayıcısının adını belirterek bu kayıt defteri yolu belirtebilirsiniz " **::** ". Kayıt defteri sağlayıcının tam adı **Microsoft.PowerShell.Core\\kayıt defteri**, ancak bu yalnızca kısalttık **kayıt defteri**. Aşağıdaki komutlardan herhangi birine içeriği doğrudan HKCU altında listelenir:
 
 ```powershell
 Get-ChildItem -Path Registry::HKEY_CURRENT_USER
