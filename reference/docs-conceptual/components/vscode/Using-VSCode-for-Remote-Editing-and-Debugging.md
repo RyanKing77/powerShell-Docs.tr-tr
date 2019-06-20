@@ -1,82 +1,92 @@
 ---
 title: Uzaktan düzenleme ve hata ayıklama için Visual Studio Code’u kullanma
 description: Uzaktan düzenleme ve hata ayıklama için Visual Studio Code’u kullanma
-ms.date: 08/06/2018
-ms.openlocfilehash: fbc1ee3556e822b4afb2b37111d0688dc89fdab3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 06/13/2019
+ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086688"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263956"
 ---
-# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a><span data-ttu-id="0e4a9-103">Uzaktan düzenleme ve hata ayıklama için Visual Studio Code’u kullanma</span><span class="sxs-lookup"><span data-stu-id="0e4a9-103">Using Visual Studio Code for remote editing and debugging</span></span>
+# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a><span data-ttu-id="37b9b-103">Uzaktan düzenleme ve hata ayıklama için Visual Studio Code’u kullanma</span><span class="sxs-lookup"><span data-stu-id="37b9b-103">Using Visual Studio Code for remote editing and debugging</span></span>
 
-<span data-ttu-id="0e4a9-104">Bu işe ile ilgili bilgi sahibi olduğunuz, çalıştırabilir, hatırlayabilirsiniz `psedit file.ps1` dosyaları - yerel veya uzak - açmak için tümleşik konsoldan ISE'de sağ.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-104">For those of you that were familiar with the ISE, you may recall that you could run `psedit file.ps1` from the integrated console to open files - local or remote - right in the ISE.</span></span>
+<span data-ttu-id="37b9b-104">Bu, işe ile ilgili bilgi sahibi olduğunuz, çalıştırabilir, hatırlayabilirsiniz `psedit file.ps1` dosyaları - yerel veya uzak - açmak için tümleşik konsoldan ISE'de sağ.</span><span class="sxs-lookup"><span data-stu-id="37b9b-104">For those of you that are familiar with the ISE, you may recall that you could run `psedit file.ps1` from the integrated console to open files - local or remote - right in the ISE.</span></span>
 
-<span data-ttu-id="0e4a9-105">Bu özellik ayrıca ortaya çıkmıştır gibi PowerShell uzantısı VSCode için kullanıma sunulmuştur.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-105">As it turns out, this feature is also available in the PowerShell extension for VSCode.</span></span> <span data-ttu-id="0e4a9-106">Bu kılavuz, nasıl yapılacağı gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-106">This guide will show you how to do it.</span></span>
+<span data-ttu-id="37b9b-105">Bu özellik, VSCode için PowerShell uzantısı'nda da kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="37b9b-105">This feature is also available in the PowerShell extension for VSCode.</span></span> <span data-ttu-id="37b9b-106">Bu kılavuz nasıl yapılacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="37b9b-106">This guide shows you how to do it.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="0e4a9-107">Önkoşullar</span><span class="sxs-lookup"><span data-stu-id="0e4a9-107">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="37b9b-107">Önkoşullar</span><span class="sxs-lookup"><span data-stu-id="37b9b-107">Prerequisites</span></span>
 
-<span data-ttu-id="0e4a9-108">Bu kılavuz, olduğunu varsayar:</span><span class="sxs-lookup"><span data-stu-id="0e4a9-108">This guide assumes that you have:</span></span>
+<span data-ttu-id="37b9b-108">Bu kılavuz, olduğunu varsayar:</span><span class="sxs-lookup"><span data-stu-id="37b9b-108">This guide assumes that you have:</span></span>
 
-- <span data-ttu-id="0e4a9-109">Uzak Kaynak (örn: bir kapsayıcı bir VM) erişimi olmasını</span><span class="sxs-lookup"><span data-stu-id="0e4a9-109">a remote resource (ex: a VM, a container) that you have access to</span></span>
-- <span data-ttu-id="0e4a9-110">Bu ve ana makine üzerinde çalışan PowerShell</span><span class="sxs-lookup"><span data-stu-id="0e4a9-110">PowerShell running on it and the host machine</span></span>
-- <span data-ttu-id="0e4a9-111">VSCode ve VSCode için PowerShell uzantısı</span><span class="sxs-lookup"><span data-stu-id="0e4a9-111">VSCode and the PowerShell extension for VSCode</span></span>
+- <span data-ttu-id="37b9b-109">Uzak Kaynak (örn: bir kapsayıcı bir VM) erişimi olmasını</span><span class="sxs-lookup"><span data-stu-id="37b9b-109">A remote resource (ex: a VM, a container) that you have access to</span></span>
+- <span data-ttu-id="37b9b-110">Bu ve ana makine üzerinde çalışan PowerShell</span><span class="sxs-lookup"><span data-stu-id="37b9b-110">PowerShell running on it and the host machine</span></span>
+- <span data-ttu-id="37b9b-111">VSCode ve VSCode için PowerShell uzantısı</span><span class="sxs-lookup"><span data-stu-id="37b9b-111">VSCode and the PowerShell extension for VSCode</span></span>
 
-<span data-ttu-id="0e4a9-112">Bu özellik, Windows PowerShell ve PowerShell Core üzerinde çalışır.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-112">This feature works on Windows PowerShell and PowerShell Core.</span></span>
+<span data-ttu-id="37b9b-112">Bu özellik, Windows PowerShell ve PowerShell Core üzerinde çalışır.</span><span class="sxs-lookup"><span data-stu-id="37b9b-112">This feature works on Windows PowerShell and PowerShell Core.</span></span>
 
-<span data-ttu-id="0e4a9-113">Bu özellik, uzak bir makinede WinRM, PowerShell Direct veya SSH üzerinden bağlanırken de çalışır.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-113">This feature also works when connecting to a remote machine via WinRM, PowerShell Direct, or SSH.</span></span> <span data-ttu-id="0e4a9-114">SSH kullanmak istediğiniz, ancak Windows kullanıyorsanız, kullanıma [SSH Win32 sürümünü](https://github.com/PowerShell/Win32-OpenSSH)!</span><span class="sxs-lookup"><span data-stu-id="0e4a9-114">If you want to use SSH, but are using Windows, check out the [Win32 version of SSH](https://github.com/PowerShell/Win32-OpenSSH)!</span></span>
+<span data-ttu-id="37b9b-113">Bu özellik, uzak bir makinede WinRM, PowerShell Direct veya SSH üzerinden bağlanırken de çalışır.</span><span class="sxs-lookup"><span data-stu-id="37b9b-113">This feature also works when connecting to a remote machine via WinRM, PowerShell Direct, or SSH.</span></span> <span data-ttu-id="37b9b-114">SSH kullanmak istediğiniz, ancak Windows kullanıyorsanız, kullanıma [SSH Win32 sürümünü](https://github.com/PowerShell/Win32-OpenSSH)!</span><span class="sxs-lookup"><span data-stu-id="37b9b-114">If you want to use SSH, but are using Windows, check out the [Win32 version of SSH](https://github.com/PowerShell/Win32-OpenSSH)!</span></span>
 
-## <a name="lets-go"></a><span data-ttu-id="0e4a9-115">Gidelim</span><span class="sxs-lookup"><span data-stu-id="0e4a9-115">Let's go</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="37b9b-115">`Open-EditorFile` Ve `psedit` komutları yalnızca iş **PowerShell tümleştirilmiş bir konsol** VSCode için PowerShell uzantısı tarafından oluşturuldu.</span><span class="sxs-lookup"><span data-stu-id="37b9b-115">The `Open-EditorFile` and `psedit` commands only work in the **PowerShell Integrated Console** created by the PowerShell extension for VSCode.</span></span>
 
-<span data-ttu-id="0e4a9-116">Uzaktan düzenleme ve Azure'da çalışan bir Ubuntu VM my MacBook Pro, hata ayıklama aracılığıyla bu bölümde adım geçireceğiz.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-116">In this section, I'll walk through remote editing and debugging from my MacBook Pro, to an Ubuntu VM running in Azure.</span></span> <span data-ttu-id="0e4a9-117">Ben Windows, kullanmıyor olabilir ancak **işlemi benzerdir**.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-117">I might not be using Windows, but **the process is identical**.</span></span>
+## <a name="usage-examples"></a><span data-ttu-id="37b9b-116">Kullanım örnekleri</span><span class="sxs-lookup"><span data-stu-id="37b9b-116">Usage examples</span></span>
 
-### <a name="local-file-editing-with-open-editorfile"></a><span data-ttu-id="0e4a9-118">Yerel dosya açık EditorFile ile düzenleme</span><span class="sxs-lookup"><span data-stu-id="0e4a9-118">Local file editing with Open-EditorFile</span></span>
+<span data-ttu-id="37b9b-117">Bu örnekler, Azure'da çalışan düzenleme ve bir MacBook Pro Ubuntu sanal makinesi için hata ayıklama uzak gösterir.</span><span class="sxs-lookup"><span data-stu-id="37b9b-117">These examples show remote editing and debugging from a MacBook Pro to an Ubuntu VM running in Azure.</span></span> <span data-ttu-id="37b9b-118">Windows üzerinde işlem aynıdır.</span><span class="sxs-lookup"><span data-stu-id="37b9b-118">The process is identical on Windows.</span></span>
 
-<span data-ttu-id="0e4a9-119">PowerShell uzantısıyla VSCode çalışmaya ve PowerShell tümleştirilmiş bir konsol açıldı, biz yazabilirsiniz `Open-EditorFile foo.ps1` veya `psedit foo.ps1` yerel foo.ps1 dosyanızı doğrudan düzenleyicide açın.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-119">With the PowerShell extension for VSCode started and the PowerShell Integrated Console opened, we can type `Open-EditorFile foo.ps1` or `psedit foo.ps1` to open the local foo.ps1 file right in the editor.</span></span>
+### <a name="local-file-editing-with-open-editorfile"></a><span data-ttu-id="37b9b-119">Yerel dosya açık EditorFile ile düzenleme</span><span class="sxs-lookup"><span data-stu-id="37b9b-119">Local file editing with Open-EditorFile</span></span>
 
-![Açık EditorFile foo.ps1 yerel olarak çalışır](https://user-images.githubusercontent.com/2644648/34895897-7c2c46ac-f79c-11e7-9410-a252aff52f13.png)
+<span data-ttu-id="37b9b-120">PowerShell uzantısıyla VSCode çalışmaya ve PowerShell tümleştirilmiş bir konsol açıldı, biz yazabilirsiniz `Open-EditorFile foo.ps1` veya `psedit foo.ps1` yerel foo.ps1 dosyanızı doğrudan düzenleyicide açın.</span><span class="sxs-lookup"><span data-stu-id="37b9b-120">With the PowerShell extension for VSCode started and the PowerShell Integrated Console opened, we can type `Open-EditorFile foo.ps1` or `psedit foo.ps1` to open the local foo.ps1 file right in the editor.</span></span>
+
+![Açık EditorFile foo.ps1 yerel olarak çalışır](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
-> <span data-ttu-id="0e4a9-121">foo.ps1 önceden var olmalıdır.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-121">foo.ps1 must already exist.</span></span>
+> <span data-ttu-id="37b9b-122">Dosya `foo.ps1` zaten mevcut olmalıdır.</span><span class="sxs-lookup"><span data-stu-id="37b9b-122">The file `foo.ps1` must already exist.</span></span>
 
-<span data-ttu-id="0e4a9-122">Burada, şunları yapabiliriz:</span><span class="sxs-lookup"><span data-stu-id="0e4a9-122">From there, we can:</span></span>
+<span data-ttu-id="37b9b-123">Burada, şunları yapabiliriz:</span><span class="sxs-lookup"><span data-stu-id="37b9b-123">From there, we can:</span></span>
 
-<span data-ttu-id="0e4a9-123">cilt payını için kesme noktaları ekleyebilirsiniz ![kanalını için kesme noktası ekleme](https://user-images.githubusercontent.com/2644648/34895893-7bdc38e2-f79c-11e7-8026-8ad53f9a1bad.png)</span><span class="sxs-lookup"><span data-stu-id="0e4a9-123">add breakpoints to the gutter ![adding breakpoint to gutter](https://user-images.githubusercontent.com/2644648/34895893-7bdc38e2-f79c-11e7-8026-8ad53f9a1bad.png)</span></span>
+- <span data-ttu-id="37b9b-124">Kesme noktası cilt payını için ekleyin</span><span class="sxs-lookup"><span data-stu-id="37b9b-124">Add breakpoints to the gutter</span></span>
 
-<span data-ttu-id="0e4a9-124">ve PowerShell komut dosyası hata ayıklamak için F5'e basın.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-124">and hit F5 to debug the PowerShell script.</span></span>
-<span data-ttu-id="0e4a9-125">![Yerel PowerShell betik hata ayıklama](https://user-images.githubusercontent.com/2644648/34895894-7bedb874-f79c-11e7-9180-7e0dc2d02af8.png)</span><span class="sxs-lookup"><span data-stu-id="0e4a9-125">![debugging the PowerShell local script](https://user-images.githubusercontent.com/2644648/34895894-7bedb874-f79c-11e7-9180-7e0dc2d02af8.png)</span></span>
+  ![kanalını için kesme noktası ekleme](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
-<span data-ttu-id="0e4a9-126">Hata ayıklarken hata ayıklama konsol ile etkileşemeyebilirsiniz, sol tarafta, hata ayıklama araçları diğer standart kapsam içinde değişkenlere göz atın.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-126">While debugging, you can interact with the debug console, check out the variables in the scope on the left, and all the other standard debugging tools.</span></span>
+- <span data-ttu-id="37b9b-126">PowerShell komut dosyası hata ayıklamak için F5'e basın.</span><span class="sxs-lookup"><span data-stu-id="37b9b-126">Hit F5 to debug the PowerShell script.</span></span>
 
-### <a name="remote-file-editing-with-open-editorfile"></a><span data-ttu-id="0e4a9-127">Uzak dosya açık EditorFile ile düzenleme</span><span class="sxs-lookup"><span data-stu-id="0e4a9-127">Remote file editing with Open-EditorFile</span></span>
+  ![Yerel PowerShell betik hata ayıklama](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
-<span data-ttu-id="0e4a9-128">Şimdi düzenleme ve hata ayıklama uzak dosya geçelim.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-128">Now let's get into remote file editing and debugging.</span></span> <span data-ttu-id="0e4a9-129">Adımlar neredeyse aynıdır, tek şey ihtiyacımız öncelikle-uzak sunucuya bizim PowerShell oturumu girin.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-129">The steps are nearly the same, there's just one thing we need to do first - enter our PowerShell session to the remote server.</span></span>
+<span data-ttu-id="37b9b-128">Hata ayıklarken hata ayıklama konsol ile etkileşemeyebilirsiniz, sol tarafta, hata ayıklama araçları diğer standart kapsam içinde değişkenlere göz atın.</span><span class="sxs-lookup"><span data-stu-id="37b9b-128">While debugging, you can interact with the debug console, check out the variables in the scope on the left, and all the other standard debugging tools.</span></span>
 
-<span data-ttu-id="0e4a9-130">Bunu yapmak için bir cmdlet için yoktur.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-130">There's a cmdlet for to do so.</span></span> <span data-ttu-id="0e4a9-131">Çağrıldığı `Enter-PSSession`.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-131">It's called `Enter-PSSession`.</span></span>
+### <a name="remote-file-editing-with-open-editorfile"></a><span data-ttu-id="37b9b-129">Uzak dosya açık EditorFile ile düzenleme</span><span class="sxs-lookup"><span data-stu-id="37b9b-129">Remote file editing with Open-EditorFile</span></span>
 
-<span data-ttu-id="0e4a9-132">Cmdlet'ini aşağı watered açıklaması verilmiştir:</span><span class="sxs-lookup"><span data-stu-id="0e4a9-132">The watered down explanation of the cmdlet is:</span></span>
+<span data-ttu-id="37b9b-130">Şimdi düzenleme ve hata ayıklama uzak dosya geçelim.</span><span class="sxs-lookup"><span data-stu-id="37b9b-130">Now let's get into remote file editing and debugging.</span></span> <span data-ttu-id="37b9b-131">Adımlar neredeyse aynıdır, tek şey ihtiyacımız öncelikle-uzak sunucuya bizim PowerShell oturumu girin.</span><span class="sxs-lookup"><span data-stu-id="37b9b-131">The steps are nearly the same, there's just one thing we need to do first - enter our PowerShell session to the remote server.</span></span>
 
-- <span data-ttu-id="0e4a9-133">`Enter-PSSession -ComputerName foo` WinRM aracılığıyla bir oturumu başlatır</span><span class="sxs-lookup"><span data-stu-id="0e4a9-133">`Enter-PSSession -ComputerName foo` starts a session via WinRM</span></span>
-- <span data-ttu-id="0e4a9-134">`Enter-PSSession -ContainerId foo` ve `Enter-PSSession -VmId foo` PowerShell Direct aracılığıyla bir oturumu başlatın</span><span class="sxs-lookup"><span data-stu-id="0e4a9-134">`Enter-PSSession -ContainerId foo` and `Enter-PSSession -VmId foo` start a session via PowerShell Direct</span></span>
-- <span data-ttu-id="0e4a9-135">`Enter-PSSession -HostName foo` SSH aracılığıyla bir oturumu başlatır</span><span class="sxs-lookup"><span data-stu-id="0e4a9-135">`Enter-PSSession -HostName foo` starts a session via SSH</span></span>
+<span data-ttu-id="37b9b-132">Bunu yapmak için bir cmdlet için yoktur.</span><span class="sxs-lookup"><span data-stu-id="37b9b-132">There's a cmdlet for to do so.</span></span> <span data-ttu-id="37b9b-133">Çağrıldığı `Enter-PSSession`.</span><span class="sxs-lookup"><span data-stu-id="37b9b-133">It's called `Enter-PSSession`.</span></span>
 
-<span data-ttu-id="0e4a9-136">Daha fazla bilgi için `Enter-PSSession`, belgelere göz atın [burada](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).</span><span class="sxs-lookup"><span data-stu-id="0e4a9-136">For more info on `Enter-PSSession`, check out the docs [here](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).</span></span>
+<span data-ttu-id="37b9b-134">Cmdlet'ini aşağı watered açıklaması verilmiştir:</span><span class="sxs-lookup"><span data-stu-id="37b9b-134">The watered down explanation of the cmdlet is:</span></span>
 
-<span data-ttu-id="0e4a9-137">Azure'da bir Ubuntu sanal makinesi için macOS göstereceğim bu yana miyim uzaktan iletişim için SSH kullanacaklardır.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-137">I'll be using SSH for remoting since I'm going from macOS to an Ubuntu VM in Azure.</span></span>
+- <span data-ttu-id="37b9b-135">`Enter-PSSession -ComputerName foo` WinRM aracılığıyla bir oturumu başlatır</span><span class="sxs-lookup"><span data-stu-id="37b9b-135">`Enter-PSSession -ComputerName foo` starts a session via WinRM</span></span>
+- <span data-ttu-id="37b9b-136">`Enter-PSSession -ContainerId foo` ve `Enter-PSSession -VmId foo` PowerShell Direct aracılığıyla bir oturumu başlatın</span><span class="sxs-lookup"><span data-stu-id="37b9b-136">`Enter-PSSession -ContainerId foo` and `Enter-PSSession -VmId foo` start a session via PowerShell Direct</span></span>
+- <span data-ttu-id="37b9b-137">`Enter-PSSession -HostName foo` SSH aracılığıyla bir oturumu başlatır</span><span class="sxs-lookup"><span data-stu-id="37b9b-137">`Enter-PSSession -HostName foo` starts a session via SSH</span></span>
 
-<span data-ttu-id="0e4a9-138">İlk olarak, tümleşik konsolunda bizim Enter-PSSession çalıştıralım.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-138">First, in the Integrated Console, let's run our Enter-PSSession.</span></span> <span data-ttu-id="0e4a9-139">Oturumda çünkü olduğunuz anlarsınız `[something]` isteminiz solunda gösterilir.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-139">You'll know that you're in the session because `[something]` will show up to the left of your prompt.</span></span>
+<span data-ttu-id="37b9b-138">Daha fazla bilgi için belgelerine bakın [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession).</span><span class="sxs-lookup"><span data-stu-id="37b9b-138">For more information, see the documentation for [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession).</span></span>
 
-![Enter-PSSession çağrısı](https://user-images.githubusercontent.com/2644648/34895896-7c18e0bc-f79c-11e7-9b36-6f4bd0e9b0db.png)
+<span data-ttu-id="37b9b-139">MacOS azure'daki bir Ubuntu sanal kullanacağız olduğundan, uzaktan iletişim için SSH kullanıyoruz.</span><span class="sxs-lookup"><span data-stu-id="37b9b-139">Since we are going from macOS to an Ubuntu VM in Azure, we are using SSH for remoting.</span></span>
 
-<span data-ttu-id="0e4a9-141">Biz bir yerel komut dosyası düzenleme yaptığınız gibi Burada, uygulanacak adımlar yapabiliriz.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-141">From there, we can do the exact steps as if we were editing a local script.</span></span>
+<span data-ttu-id="37b9b-140">İlk olarak, tümleşik konsolda Çalıştır `Enter-PSSession`.</span><span class="sxs-lookup"><span data-stu-id="37b9b-140">First, in the Integrated Console, run `Enter-PSSession`.</span></span> <span data-ttu-id="37b9b-141">Uzak oturuma bağlı olduğunuz zaman `[<hostname>]` isteminiz soluna kadar gösterir.</span><span class="sxs-lookup"><span data-stu-id="37b9b-141">You're connected to the remote session when `[<hostname>]` shows up to the left of your prompt.</span></span>
 
-1. <span data-ttu-id="0e4a9-142">Çalıştırma `Open-EditorFile test.ps1` veya `psedit test.ps1` uzak açmak için `test.ps1` dosya ![açık-EditorFile test.ps1 dosyası](https://user-images.githubusercontent.com/2644648/34895898-7c3e6a12-f79c-11e7-8bdf-549b591ecbcb.png)</span><span class="sxs-lookup"><span data-stu-id="0e4a9-142">Run `Open-EditorFile test.ps1` or `psedit test.ps1` to open the remote `test.ps1` file ![Open-EditorFile the test.ps1 file](https://user-images.githubusercontent.com/2644648/34895898-7c3e6a12-f79c-11e7-8bdf-549b591ecbcb.png)</span></span>
-2. <span data-ttu-id="0e4a9-143">Dosya/set kesme noktaları Düzenle</span><span class="sxs-lookup"><span data-stu-id="0e4a9-143">Edit the file/set breakpoints</span></span> ![düzenleme, kesme noktaları ayarlama](https://user-images.githubusercontent.com/2644648/34895892-7bb68246-f79c-11e7-8c0a-c2121773afbb.png)
-3. <span data-ttu-id="0e4a9-145">Uzak dosyanın (F5) hata ayıklamayı Başlat</span><span class="sxs-lookup"><span data-stu-id="0e4a9-145">Start debugging (F5) the remote file</span></span>
+![Enter-PSSession çağrısı](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
-![Uzak dosyanın hata ayıklama](https://user-images.githubusercontent.com/2644648/34895895-7c040782-f79c-11e7-93ea-47724fa5c10d.png)
+<span data-ttu-id="37b9b-143">Şimdi, biz bir yerel komut dosyasını düzenliyorsanız gibi aynı adımları yapabiliriz.</span><span class="sxs-lookup"><span data-stu-id="37b9b-143">Now, we can do the same steps as if we are editing a local script.</span></span>
 
-<span data-ttu-id="0e4a9-147">Tüm İşte bu kadar kolay!</span><span class="sxs-lookup"><span data-stu-id="0e4a9-147">That's all there's to it!</span></span> <span data-ttu-id="0e4a9-148">Bu kılavuz uzak hata ayıklama ve düzenleme VSCode içinde PowerShell hakkında sorular Temizle'kurmak Yardım umuyoruz.</span><span class="sxs-lookup"><span data-stu-id="0e4a9-148">We hope that this guide helped clear up any questions about remote debugging and editing PowerShell in VSCode.</span></span>
+1. <span data-ttu-id="37b9b-144">Çalıştırma `Open-EditorFile test.ps1` veya `psedit test.ps1` uzak açmak için `test.ps1` dosyası</span><span class="sxs-lookup"><span data-stu-id="37b9b-144">Run `Open-EditorFile test.ps1` or `psedit test.ps1` to open the remote `test.ps1` file</span></span>
 
-<span data-ttu-id="0e4a9-149">Herhangi bir sorun varsa, sorunları açmak buraya dönebilirsiniz [GitHub deposunda](http://github.com/powershell/vscode-powershell).</span><span class="sxs-lookup"><span data-stu-id="0e4a9-149">If you have any problems, feel free to open issues [on the GitHub repo](http://github.com/powershell/vscode-powershell).</span></span>
+  ![Açık-EditorFile test.ps1 dosyası](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+
+1. <span data-ttu-id="37b9b-146">Dosya/set kesme noktaları Düzenle</span><span class="sxs-lookup"><span data-stu-id="37b9b-146">Edit the file/set breakpoints</span></span>
+
+   ![düzenleme, kesme noktaları ayarlama](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+
+1. <span data-ttu-id="37b9b-148">Uzak dosyanın (F5) hata ayıklamayı Başlat</span><span class="sxs-lookup"><span data-stu-id="37b9b-148">Start debugging (F5) the remote file</span></span>
+
+   ![Uzak dosyanın hata ayıklama](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+
+<span data-ttu-id="37b9b-150">Herhangi bir sorun varsa, sorunları açabileceğiniz [GitHub deposunu](https://github.com/powershell/vscode-powershell).</span><span class="sxs-lookup"><span data-stu-id="37b9b-150">If you have any problems, you can open issues in the [GitHub repo](https://github.com/powershell/vscode-powershell).</span></span>
