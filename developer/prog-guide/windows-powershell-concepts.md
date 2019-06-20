@@ -1,36 +1,48 @@
 ---
 title: Windows PowerShell kavramlarını | Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 6/12/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3dd5608e-50b6-4c6a-aee3-dde0e86032bc
 caps.latest.revision: 7
-ms.openlocfilehash: c4b13518ad6452a39ca49e897e1d3e353818d332
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4410b1f9c80afefd5479fa68154f9947b805edcf
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081045"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263851"
 ---
 # <a name="windows-powershell-concepts"></a>Windows PowerShell Kavramları
 
-Bu bölüm, Windows PowerShell bir geliştiricinin bakış açısından anlamanıza yardımcı olacak kavramsal bilgiler içerir.
+Bu bölümde, bir geliştiricinin bakış açısından PowerShell anlamanıza yardımcı olacak kavramsal bilgiler içerir.
 
 |Konu adı|Açıklama|
 |----------------|-----------------|
-|[Windows PowerShell sağlayıcıları](http://msdn.microsoft.com/en-us/a65c5c75-1131-4ade-90d3-a613dbe620e9)|Verilere erişmek için kullanılan Windows PowerShell sağlayıcıları hakkında bir tartışma depolar.|
-|[Windows PowerShell ek bileşenleri](http://msdn.microsoft.com/en-us/20e081a9-522c-48bf-9f21-faaf8cca2e82)|Cmdlet'lerini ve sağlayıcıları kaydetmek için bir mekanizma. (Ayrıca bkz [bir Windows PowerShell modülü yazma](../module/writing-a-windows-powershell-module.md).)|
-|[Windows PowerShell çalışma zamanı](http://msdn.microsoft.com/en-us/949f06e8-0224-4cd3-bbad-a0cebbb5dec8)|Bir Windows PowerShell çalışma geçerli örneği.|
-|[Windows PowerShell çalışma alanları](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9)|Burada komutlar işlenir işletim ortamlarının.|
-|[Windows PowerShell ad alanları](http://msdn.microsoft.com/en-us/04bd2841-e90c-47d2-8a1f-3aeb3df35176)|Windows PowerShell API ad alanlarına genel bakış.|
-|[Windows PowerShell Yardımı](http://msdn.microsoft.com/en-us/097b7c1c-a056-4b36-9c86-65b2ee702fc7)|Cmdlet Yardımı yazma hakkında bir tartışma.|
-|[Onay isteme](../cmdlet/requesting-confirmation-from-cmdlets.md)|Nasıl cmdlet'lerini ve sağlayıcıları geri bildirim eylemi önce kullanıcıdan isteme hakkında bir tartışma alınır.|
-|[Windows PowerShell nesnesi kavramları](http://msdn.microsoft.com/en-us/a1449178-b6fd-4ca8-a5e1-d747c2c54181)|Nasıl Windows PowerShell nesneleri işler.|
-|[Tür sistemi (ETS) genişletilmiş Windows PowerShell](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353)|Nesneleri program aracılığıyla genişletme.|
+|[about_Objects](/powershell/module/microsoft.powershell.core/about/about_objects)|PowerShell nesnelerini açıklaması. Daha fazla bilgi için [nesne oluşturma hakkında](/powershell/module/microsoft.powershell.core/about/about_object_creation)|
+|[Çalışma alanları oluşturma](../hosting/creating-runspaces.md)|Burada komutlar işlenir işletim ortamlarının. Daha fazla bilgi için [çalışma sınıfı](/dotnet/api/system.management.automation.runspaces.runspace).|
+|[Çıkış nesnelerini genişletme](../cmdlet/extending-output-objects.md)|PowerShell nesnelerini genişletmek nasıl. Daha fazla bilgi için [Types.ps1xml hakkında](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)|
+|[Cmdlet'leri kaydetme](../cmdlet/registering-cmdlets.md)|Modüller ve ek bileşenler PowerShell'de kullanılabilir hale getirme. Daha fazla bilgi için [modüllerini ve ek bileşenler](../cmdlet/modules-and-snap-ins.md).|
+|[Cmdlet'leri onay isteme](../cmdlet/requesting-confirmation-from-cmdlets.md)|Bir eylem önce nasıl cmdlet'lerini ve sağlayıcıları geri bildirim kullanıcıdan isteyin.|
+|[RuntimeDefinedParameter sınıfı](/dotnet/api/system.management.automation.runtimedefinedparameter)|Çalışma zamanı parametre bildirimleri.|
+|[System.Management.Automation Namespace](/dotnet/api/System.Management.Automation)|PowerShell API ad alanlarına genel bakış.|
+|[Windows PowerShell sağlayıcısındaki genel bakış](../provider/windows-powershell-provider-overview.md)|Verilere erişmek için kullanılan PowerShell sağlayıcıları hakkında genel bakış depolar.|
+|[PowerShell cmdlet'leri için Yardım yazma](../help/writing-help-for-windows-powershell-cmdlets.md)|PowerShell cmdlet Yardım yazma yapma.|
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
-[Windows PowerShell Programcı Kılavuzu](./windows-powershell-programmer-s-guide.md)
+[PowerShell sınıfı](/dotnet/api/system.management.automation.powershell)
+
+[PowerShell Core API Başvurusu](/dotnet/api/?view=pscore-6.2.0)
+
+[Windows PowerShell Programcı Kılavuzu](windows-powershell-programmer-s-guide.md)
+
+[Windows PowerShell modülleri için Yardım yazma](../module/writing-help-for-windows-powershell-modules.md)
+
+[Bir Windows Powershell sağlayıcısı yazma](../provider/writing-a-windows-powershell-provider.md)
+
+[Windows PowerShell API'si başvurusu](/dotnet/api/?view=powershellsdk-1.1.0)
+
+[Windows PowerShell başvurusu](../windows-powershell-reference.md)

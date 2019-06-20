@@ -8,27 +8,32 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
 caps.latest.revision: 5
-ms.openlocfilehash: 3a7c47487b632d00643fce0aa082e0dc9a9bb626
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083000"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263840"
 ---
 # <a name="creating-an-initialsessionstate"></a>InitialSessionState Oluşturma
 
-Bir çalışma alanında Windows PowerShell komutlarını çalıştırın. Windows PowerShell uygulamanızı barındırmak için oluşturmanız gerekir bir [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) nesne. Her çalışma alanı olan bir [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) ilişkili nesne. [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) gibi komutların, değişkenlerin ve modülleri olan bu çalışma alanı için kullanılabilir çalışma alanı özelliklerini belirtir.
+Bir çalışma alanında PowerShell komutlarını çalıştırın.
+PowerShell uygulamanızı barındırmak için oluşturmanız gerekir bir [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) nesne.
+Her çalışma alanı olan bir [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) ilişkili nesne.
+InitialSessionState gibi komutların, değişkenlerin ve modülleri o çalışma için kullanılabilir olan bir çalışma özelliklerini belirtir.
 
 ## <a name="create-a-default-initialsessionstate"></a>Varsayılan bir InitialSessionState oluşturur
 
- [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)ve [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) yöntemleri kullanılabilir Oluşturulacak [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) nesneleri. [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) bir InitialSessionState tüm yerleşik komutlar sırasında yüklenen oluşturur [ System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) yalnızca Windows PowerShell (Microsoft.PowerShell.Core modülündeki komutlar. ana bilgisayar için gerekli komutları yükler
+[CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) ve [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) yöntemlerinin **InitialSessionState** sınıfı oluşturmak için kullanılabilir bir **InitialSessionState**nesne.
+**CreateDefault** yöntemi oluşturur bir **InitialSessionState** tüm sırasında yüklenen yerleşik komutlardır **CreateDefault2** yöntemi yalnızca komutlar yükler PowerShell (Microsoft.PowerShell.Core modülündeki komutlar) barındırmak için gereklidir.
 
- Daha fazla ana bilgisayar uygulamanızda kullanılabilir komutları sınırlamak istiyorsanız, kısıtlı bir çalışma alanı oluşturmanız gerekir. Kısıtlı bir çalışma alanı oluşturma hakkında bilgi için bkz.
+Daha fazla ana bilgisayar uygulamanızda kullanılabilir komutları sınırlamak istiyorsanız, kısıtlı bir çalışma alanı oluşturmanız gerekir.
+Bilgi için [kısıtlı bir çalışma alanı oluşturma](creating-a-constrained-runspace.md).
 
- Aşağıdaki kod, bir InitialSessionState oluşturmak, bir çalışma alanı için atama, işlem hattı, bir çalışma, komutları eklemek ve komutları çağırır gösterilmektedir. Ekleme ve bunları çağırırken komutları ekleme ve bunları çağırırken komutları hakkında daha fazla bilgi için bkz.
+Aşağıdaki kod nasıl oluşturulacağını gösterir. bir **InitialSessionState**, bir çalışma alanı için atama, işlem hattı, bir çalışma, komutları eklemek ve komutları çağırır.
+Ekleme ve bunları çağırırken komutları hakkında daha fazla bilgi için bkz. [ekleme ve bunları çağırırken komutları](adding-and-invoking-commands.md).
 
 ```csharp
-
 namespace SampleHost
 {
   using System;
@@ -60,9 +65,9 @@ namespace SampleHost
       Runspace rs = RunspaceFactory.CreateRunspace(iss);
       rs.Open();
 
-      // Call the PowerShell.Create() method to create the PowerShell
-      // object,and then specify the runspace and commands to the pipeline.
-      // and  create the command pipeline.
+      // Call the PowerShell.Create() method to create the PowerShell object,
+      // and then specify the runspace and commands to the pipeline.
+      // and create the command pipeline.
       PowerShell ps = PowerShell.Create();
       ps.Runspace = rs;
       ps.AddCommand("Get-Variable");
@@ -73,15 +78,15 @@ namespace SampleHost
 
       // Call the PowerShell.Invoke() method to run
       // the pipeline synchronously.
-        foreach (PSObject result in ps.Invoke())
-        {
-          Console.WriteLine("{0,-20}{1}",
-                  result.Members["Name"].Value,
-                  result.Members["Value"].Value);
-        } // End foreach.
+      foreach (PSObject result in ps.Invoke())
+      {
+        Console.WriteLine("{0,-20}{1}",
+            result.Members["Name"].Value,
+            result.Members["Value"].Value);
+      } // End foreach.
 
-        // Close the runspace to free resources.
-        rs.Close();
+      // Close the runspace to free resources.
+      rs.Close();
 
     } // End Main.
   } // End SampleHost.
@@ -90,4 +95,6 @@ namespace SampleHost
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
- [Kısıtlı bir çalışma alanı oluşturma](./creating-a-constrained-runspace.md)
+[Kısıtlı bir çalışma alanı oluşturma](creating-a-constrained-runspace.md)
+
+[Ekleme ve bunları çağırırken komutları](adding-and-invoking-commands.md)
