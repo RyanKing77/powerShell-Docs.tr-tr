@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, kaynak, Galeri, Kurulum
 title: Yapılandırmalara Parametre Ekleme
-ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 514bb4cf82b7adbe4cd3d3e34d5464f574cb2206
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080269"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301506"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Yapılandırmalara Parametre Ekleme
 
@@ -187,7 +187,7 @@ $State="Running"
 > [!NOTE]
 > Belirtmenize gerek olmayan bir `parameter` özniteliği kullanırken bir `validation` özniteliği.
 
-Daha fazla bilgi edinebilirsiniz `parameter` ve doğrulama öznitelikleri [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md).
+Daha fazla bilgi edinebilirsiniz `parameter` ve doğrulama öznitelikleri [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
 
 ## <a name="fully-parameterized-configuration"></a>Tam olarak parametreli yapılandırma
 

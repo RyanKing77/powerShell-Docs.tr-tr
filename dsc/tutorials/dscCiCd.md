@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC ile sürekli tümleştirme ve sürekli dağıtım işlem hattı oluşturma
-ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076494"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301505"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC ile sürekli tümleştirme ve sürekli dağıtım işlem hattı oluşturma
 
@@ -22,10 +22,10 @@ Otomatik bir CI/CD işlem hattı yazılımları daha hızlı bir şekilde günce
 
 Bu örneği kullanmak için aşağıdaki bilgi sahibi olmanız:
 
-- CI-CD kavramları. İyi bir referans şu yolda bulunabilir: [yayın işlem hattı modelini](http://aka.ms/thereleasepipelinemodelpdf).
+- CI-CD kavramları. İyi bir referans şu yolda bulunabilir: [yayın işlem hattı modelini](https://aka.ms/thereleasepipelinemodelpdf).
 - [Git](https://git-scm.com/) kaynak denetimi
 - [Pester](https://github.com/pester/Pester) testi çerçevesi
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## <a name="what-you-will-need"></a>İhtiyacınız
 
@@ -44,7 +44,7 @@ Bu, burada tüm ayarlama ve örnek çalıştırma işlemleri gerçekleştirirsin
 ### <a name="tfssrv1"></a>TFSSrv1
 
 Tanımladığınız derleme TFS sunucusunu barındıran bilgisayarın ve serbest bırakın.
-Bu bilgisayarda yüklü olmalıdır [Team Foundation Server 2017](https://www.visualstudio.com/tfs/) yüklü.
+Bu bilgisayarda yüklü olmalıdır [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) yüklü.
 
 ### <a name="buildagent"></a>BuildAgent
 
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 Bu rolü sahip olarak tanımlanmış olan tüm düğümleri bulur `DNSServer` içinde [yapılandırma verilerini](../configurations/configData.md), tarafından oluşturulan `DevEnv.ps1` betiği.
 
-Daha fazla bilgi edinebilirsiniz `Where` yönteminde [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+Daha fazla bilgi edinebilirsiniz `Where` yönteminde [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 Düğüm tanımlamak için yapılandırma verilerini kullanarak CI düğüm bilgileri büyük olasılıkla ortamlar arasında değişir ve yapılandırma verilerini kullanarak yapılandırma kodunu değiştirmeden değişiklikleri düğüm bilgileri kolayca yapmanıza olanak verir çünkü yaparken önemlidir.
 
@@ -319,7 +319,7 @@ Tümleştirme test betiği bir karışımını kullanır [Pester](https://github
 
 TFS için Kodumuzun yükledikten ve ne işe yaradığını adresindeki, aranan derleme araçlarımızı tanımlayalım göre.
 
-Burada, biz yalnızca yapı ekleyeceksiniz derleme adımları ele alacağız. TFS'de bir yapı tanımı oluşturma hakkında yönergeler için bkz: [oluşturma ve derleme tanımını sıraya](/azure/devops/pipelines/get-started-designer).
+Burada, biz yalnızca yapı ekleyeceksiniz derleme adımları ele alacağız. TFS'de bir yapı tanımı oluşturma hakkında yönergeler için bkz: [oluşturma ve derleme tanımını sıraya](/azure/devops/pipelines/create-first-pipeline).
 
 Yeni bir derleme tanımı oluştur (seçin **boş** şablonu) "InfraDNS" adlı.
 Aşağıdaki adımlar, yapı tanımı ekleyin:
@@ -388,7 +388,7 @@ Böylece proje her kodu iade ile geliştirme ortamına dağıtılan bir yayın t
 
 Bunu yapmak için ile ilişkili yeni bir yayın tanımı Ekle `InfraDNS` daha önce oluşturduğunuz tanımı oluşturun.
 Seçtiğinizden emin olun **sürekli dağıtım** böylece dilediğiniz zaman yeni bir derleme tamamlandığında yeni bir yayın tetiklenir.
-([Yayın işlem hatları nelerdir? ](/azure/devops/pipelines/release/what-is-release-management)) ve şu şekilde yapılandırın:
+([Yayın işlem hatları nelerdir? ](/azure/devops/pipelines/release/)) ve şu şekilde yapılandırın:
 
 Aşağıdaki adımlar, yayın tanımına ekleyin:
 

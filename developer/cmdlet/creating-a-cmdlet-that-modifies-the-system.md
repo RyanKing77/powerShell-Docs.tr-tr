@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854909"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301398"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Sistemi Değiştiren bir Cmdlet Oluşturma
 
@@ -59,7 +59,7 @@ Unutmayın, [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Ma
 
 ### <a name="extremely-destructive-actions"></a>Son derece bozucu Eylemler
 
-Bazı işlemler, bir etkin sabit disk bölümü yeniden biçimlendirme gibi son derece yıkıcı. Bu gibi durumlarda cmdlet ayarlamalısınız `ConfirmImpact`  =  `ConfirmImpact.High` bildirirken [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) özniteliği. Bu ayar bile kullanıcı belirtilmemişse cmdlet isteği kullanıcı onayı zorlar. `Confirm` parametresi. Aşırı kullanımı cmdlet'i geliştiriciler ancak kaçınmalısınız `ConfirmImpact` bir kullanıcı hesabı silme gibi yalnızca potansiyel olarak zararlı işlemler için. Unutmayın `ConfirmImpact` ayarlanır [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
+Bazı işlemler, bir etkin sabit disk bölümü yeniden biçimlendirme gibi son derece yıkıcı. Bu gibi durumlarda cmdlet ayarlamalısınız `ConfirmImpact`  =  `ConfirmImpact.High` bildirirken [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) özniteliği. Bu ayar bile kullanıcı belirtilmemişse cmdlet isteği kullanıcı onayı zorlar. `Confirm` parametresi. Aşırı kullanımı cmdlet'i geliştiriciler ancak kaçınmalısınız `ConfirmImpact` bir kullanıcı hesabı silme gibi yalnızca potansiyel olarak zararlı işlemler için. Unutmayın `ConfirmImpact` ayarlanır [System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **yüksek**.
 
 Benzer şekilde, bazı işlemler teorik olarak çalışan Windows PowerShell dışında bir sistem durumunu değiştirebilir ancak yıkıcı, olması olası değildir. Bu cmdlet'leri ayarlayabilirsiniz `ConfirmImpact` için [System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Bu kullanıcının yalnızca orta etkisi ve yüksek etkili işlemlerini doğrulamak için burada istedi onay istekleri atlayacaktır.
 
@@ -278,11 +278,11 @@ Tamamlanmış C# örnek kod için bkz: [StopProcessSample01 örnek](./stopproces
 
 ## <a name="defining-object-types-and-formatting"></a>Nesne türlerini tanımlama ve biçimlendirme
 
-Windows PowerShell cmdlet arasında .net nesneleri kullanarak bilgileri geçirir. Sonuç olarak, bir cmdlet kendi türü tanımlamanız gerekebilir veya başka bir cmdlet tarafından sağlanan mevcut türü genişletmek cmdlet gerekebilir. Yeni türleri tanımlama veya varolan türleri genişletme hakkında daha fazla bilgi için bkz. [genişletme nesne türleri ve biçimlendirme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell cmdlet arasında .net nesneleri kullanarak bilgileri geçirir. Sonuç olarak, bir cmdlet kendi türü tanımlamanız gerekebilir veya başka bir cmdlet tarafından sağlanan mevcut türü genişletmek cmdlet gerekebilir. Yeni türleri tanımlama veya varolan türleri genişletme hakkında daha fazla bilgi için bkz. [genişletme nesne türleri ve biçimlendirme](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Cmdlet oluşturma
 
-Bir cmdlet uyguladıktan sonra bunu Windows PowerShell ile bir Windows PowerShell ek bileşeni kayıtlı olması gerekir. Cmdlet'leri kaydetme hakkında daha fazla bilgi için bkz. [kaydetme cmdlet'leri ve sağlayıcıları uygulamalarını barındırmak için nasıl](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Bir cmdlet uyguladıktan sonra bunu Windows PowerShell ile bir Windows PowerShell ek bileşeni kayıtlı olması gerekir. Cmdlet'leri kaydetme hakkında daha fazla bilgi için bkz. [kaydetme cmdlet'leri ve sağlayıcıları uygulamalarını barındırmak için nasıl](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Sınama cmdlet'i
 
@@ -354,9 +354,9 @@ Aşağıdaki çıktı görünür.
 
 [Komut satırı giriş parametreleri ekleme](./adding-parameters-that-process-command-line-input.md)
 
-[Nesne türlerini genişletme ve biçimlendirme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Nesne türlerini genişletme ve biçimlendirme](/previous-versions//ms714665(v=vs.85))
 
-[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK'sı](../windows-powershell-reference.md)
 

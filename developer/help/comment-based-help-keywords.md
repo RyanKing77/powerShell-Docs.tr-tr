@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
-ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 534a6c9a43326c8a01b2181c7a799286fa4d3997
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083544"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301525"
 ---
 # <a name="comment-based-help-keywords"></a>Yorum Tabanlı Yardım Anahtar Kelimeleri
 
@@ -23,7 +23,7 @@ Bu konu, listeler ve açıklama tabanlı Yardım anahtar kelimeleri açıklar.
 
 Geçerli açıklama tabanlı Yardım anahtar sözcükleri aşağıda verilmiştir. Bunlar, genellikle birlikte bunların kullanım amacını Yardım konusunun göründükleri sırayla listelenir. Bu anahtar sözcükler, açıklama tabanlı Yardım herhangi bir sırada görünebilir ve büyük küçük harfe duyarlı değildir.
 
-Unutmayın `.ExternalHelp` anahtar sözcüğü diğer tüm açıklama tabanlı Yardım anahtar göre önceliklidir. Zaman `.ExternalHelp` var, [Microsoft.PowerShell.Commands.Get Yardım](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet'i bile anahtar değeri ile eşleşen bir Yardım dosyası bulamadığında açıklama tabanlı Yardım görüntülemez.
+Unutmayın `.ExternalHelp` anahtar sözcüğü diğer tüm açıklama tabanlı Yardım anahtar göre önceliklidir. Zaman `.ExternalHelp` var, [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) cmdlet'i bile anahtar değeri ile eşleşen bir Yardım dosyası bulamadığında açıklama tabanlı Yardım görüntülemez.
 
 `.Synopsis` İşlev veya komut dosyasını kısa bir açıklaması. Bu anahtar sözcüğü her konuda yalnızca bir kez kullanılabilir.
 
@@ -61,9 +61,9 @@ Parametre açıklaması bir açıklama girerek belirtebilirsiniz `Param` deyimin
 
 `.ExternalHelp` `<XML Help File>` Yolunu ve/veya betik veya işlevdeki bir XML tabanlı Yardım dosyasının adını belirtir.
 
-`.ExternalHelp` Anahtar sözcüğü söyler [Microsoft.PowerShell.Commands.Get Yardım](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet'ini bir XML tabanlı dosyasında betik veya işlevi için Yardım alın. **. ExternalHelp** anahtar sözcüğü, bir XML tabanlı Yardım dosyası için bir betik veya işlevdeki kullanılırken gereklidir. Bu olmadan, `Get-Help` işlev veya komut dosyası için bir Yardım dosyası bulmaz.
+`.ExternalHelp` Anahtar sözcüğü söyler [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) cmdlet'ini bir XML tabanlı dosyasında betik veya işlevi için Yardım alın. **. ExternalHelp** anahtar sözcüğü, bir XML tabanlı Yardım dosyası için bir betik veya işlevdeki kullanılırken gereklidir. Bu olmadan, `Get-Help` işlev veya komut dosyası için bir Yardım dosyası bulmaz.
 
-`.ExternalHelp` Anahtar sözcüğü diğer tüm açıklama tabanlı Yardım anahtar göre önceliklidir. Zaman `.ExternalHelp` var, [Microsoft.PowerShell.Commands.Get Yardım](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet'i bile anahtar değeri ile eşleşen bir Yardım dosyası bulamadığında açıklama tabanlı Yardım görüntülemez.
+`.ExternalHelp` Anahtar sözcüğü diğer tüm açıklama tabanlı Yardım anahtar göre önceliklidir. Zaman `.ExternalHelp` var, [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) cmdlet'i bile anahtar değeri ile eşleşen bir Yardım dosyası bulamadığında açıklama tabanlı Yardım görüntülemez.
 
 İşlev değerini bir betik modülü tarafından aktarılan zaman `.ExternalHelp` bir yol belirtmeden dosya adı olmalıdır. `Get-Help` bir yerel ayara özgü alt modül dizinini dosyasını arar. Dosya adı için gereksinim yoktur, ancak aşağıdaki dosya adı biçimi kullanmak için en iyi uygulamadır: `<ScriptModule>.psm1-help.xml`.
 

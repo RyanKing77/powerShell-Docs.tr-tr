@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 title: Yeni ve güncelleştirilmiş cmdlet'ler
-ms.openlocfilehash: 9ec31c89c0bc4b111b40e2d4725fa0782a573204
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856248"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298646"
 ---
 # <a name="new-and-updated-cmdlets"></a>Yeni ve güncelleştirilmiş cmdlet'ler
 
@@ -39,7 +39,7 @@ Daha fazla bilgi için bkz.:
 
 ## <a name="cryptographic-message-syntax-cms-cmdlets"></a>Şifreli ileti söz dizimi (CMS) cmdlet'leri
 
-Şifreleme ve şifre çözme şifreli olarak iletileri tarafından belirtildiği gibi korumak için IETF standart biçimi kullanarak içeriğin şifreli ileti söz dizimi cmdlet'leri Destek [RFC5652](https://tools.ietf.org/html/rfc5652).
+Şifreleme ve şifre çözme şifreli olarak iletileri tarafından belirtildiği gibi korumak için IETF standart biçimi kullanarak içeriğin şifreli ileti söz dizimi cmdlet'leri Destek [RFC5652](https://tools.ietf.org/html/rfc5652.html).
 
 Burada içerik şifrelemek için kullanılan anahtarı, ortak anahtar şifrelemesi standart CMS şifreleme uygular ( *ortak anahtar*) ve içeriğin şifresini çözmek için kullanılan anahtarı ( *özel anahtarı*) ayrıdır.
 
@@ -47,9 +47,9 @@ Ortak anahtarınızı yaygın olarak paylaşılabilir ve hassas veriler değil. 
 
 Daha fazla bilgi için bkz:
 
-- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage.md)
-- [Koruma CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage.md)
-- [Korumasını CmsMessage](/powershell/module/Microsoft.PowerShell.Security/rotect-CmsMessage.md)
+- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
+- [Koruma CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
+- [Korumasını CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
 'Kod imzalama' veya 'Mail', şifreli veri şifreleme sertifikaları PowerShell olarak belirlenebilmesi için gibi bir benzersiz anahtar kullanımı (EKU) tanımlayıcı sertifikaları gerektirir. Sertifika Sağlayıcısı belge şifreleme sertifikaları görüntülemek için kullanabileceğiniz **DocumentEncryptionCert** dinamik parametresinin `Get-ChildItem`:
 
@@ -145,6 +145,7 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 "a single " | Add-Content -Path Example.txt -NoNewline
 "sentence." | Add-Content -Path Example.txt -NoNewline
 Get-Content .\Example.txt
+```
 
 ```Output
 This is a single sentence.
