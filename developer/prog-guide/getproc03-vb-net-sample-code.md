@@ -8,17 +8,17 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ff94c452-d4ec-4492-ac20-61ad52f8ae8c
 caps.latest.revision: 7
-ms.openlocfilehash: 0cfb5c203c97a4d20e7fadf8183e608e9e31b881
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a0a88ca517347a94fc81534caace6efa0f13fdd7
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081657"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301564"
 ---
-# <a name="getproc03-vbnet-sample-code"></a><span data-ttu-id="5334c-102">GetProc03 (VB.NET) Örnek Kod</span><span class="sxs-lookup"><span data-stu-id="5334c-102">GetProc03 (VB.NET) Sample Code</span></span>
+# <a name="getproc03-vbnet-sample-code"></a><span data-ttu-id="c0070-102">GetProc03 (VB.NET) Örnek Kod</span><span class="sxs-lookup"><span data-stu-id="c0070-102">GetProc03 (VB.NET) Sample Code</span></span>
 
-<span data-ttu-id="5334c-103">Aşağıdaki kod uygulamasını gösterir. bir `Get-Process` kabul edebilen cmdlet'inin ardışık düzendeki girişi.</span><span class="sxs-lookup"><span data-stu-id="5334c-103">The following code shows the implementation of a `Get-Process` cmdlet that can accept pipelined input.</span></span> <span data-ttu-id="5334c-104">Bu uygulama tanımlayan bir `Name` ardışık giriş kabul eden bir parametre ve yerel bilgisayardan sağlanan adlarına göre işlem bilgilerini alır ve ardından kullanır [System.Management.Automation.Cmdlet.WriteObject% 28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) nesneler gönderiliyor işlem hattının çıktı mekanizması olarak yöntemi.</span><span class="sxs-lookup"><span data-stu-id="5334c-104">This implementation defines a `Name` parameter that accepts pipeline input, retrieves process information from the local computer based on the supplied names, and then uses the [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) method as the output mechanism for sending objects to the pipeline.</span></span>
+<span data-ttu-id="c0070-103">Aşağıdaki kod uygulamasını gösterir. bir `Get-Process` kabul edebilen cmdlet'inin ardışık düzendeki girişi.</span><span class="sxs-lookup"><span data-stu-id="c0070-103">The following code shows the implementation of a `Get-Process` cmdlet that can accept pipelined input.</span></span> <span data-ttu-id="c0070-104">Bu uygulama tanımlayan bir `Name` ardışık giriş kabul eden bir parametre ve yerel bilgisayardan sağlanan adlarına göre işlem bilgilerini alır ve ardından kullanır [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)nesneler gönderiliyor işlem hattının çıktı mekanizması olarak yöntemi.</span><span class="sxs-lookup"><span data-stu-id="c0070-104">This implementation defines a `Name` parameter that accepts pipeline input, retrieves process information from the local computer based on the supplied names, and then uses the [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) method as the output mechanism for sending objects to the pipeline.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="5334c-105">Kod örneği</span><span class="sxs-lookup"><span data-stu-id="5334c-105">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="c0070-105">Kod örneği</span><span class="sxs-lookup"><span data-stu-id="c0070-105">Code Sample</span></span>
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc03#getproc03vbAll](Msh_samplesgetproc03#getproc03vbAll)]  -->
