@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a82aba91-71af-447d-b9ef-b6b6ac7d9de4
 caps.latest.revision: 19
-ms.openlocfilehash: 743efcf23174a9521925c5c19dd670979bc0c523
-ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
+ms.openlocfilehash: 1b8ff219e275279fdf603fc2336a8052e64f3a95
+ms.sourcegitcommit: b8427ec6fbacee08da1a580743c338524179d0cc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67263822"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67389093"
 ---
 # <a name="writing-a-windows-powershell-cmdlet"></a>Windows PowerShell Cmdlet’ini Yazma
 
@@ -26,8 +26,6 @@ ms.locfileid: "67263822"
 [Windows PowerShell cmdlet'i kavramları](./windows-powershell-cmdlet-concepts.md) Bu bölümde cmdlet'leri nedir ve nasıl çalıştıkları açıklanır.
 
 [Cmdlet kod örnekleri](./examples-of-cmdlet-code.md) Bu bölüm, kendi cmdlet'leri yazmaya başlamak için kullanabileceğiniz örnek kod içerir.
-
-[Cmdlet çıkışı için biçimlendirme dosyaları yazma](../format/writing-a-powershell-formatting-file.md) Bu bölümde biçimlendirme dosyalarının nasıl oluşturulacağını açıklar. Biçimlendirme dosyaları, PowerShell komut satırında nesneleri biçimini tanımlar.
 
 [Yazma cmdlet'leri için öğreticiler](./tutorials-for-writing-cmdlets.md) cmdlet kod arkasında temelleri hakkında bilgi edinmek için kullanabileceğiniz öğreticiler Bu bölüm içerir.
 
