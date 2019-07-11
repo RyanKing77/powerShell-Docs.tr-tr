@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: 4d3cdccc0fe3e24b1221e41beef4821b613aab93
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: a25fa2410fcc6803563573596af1bc99052c3ffa
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855154"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735097"
 ---
 # <a name="validatelength-attribute-declaration"></a>ValidateLength Özniteliği Bildirimi
 
@@ -31,9 +31,9 @@ ValidateLength öznitelik karakter cmdlet parametresi olan bir bağımsız deği
 
 #### <a name="parameters"></a>Parametreler
 
-`MinLength` ([System.Integer](/dotnet/api/System.Integer)) gereklidir. En az bir izin verilen karakter sayısını belirtir.
+`MinLength` ([System.Int32](/dotnet/api/System.Int32)) gereklidir. En az bir izin verilen karakter sayısını belirtir.
 
-`MaxLength` ([System.Integer](/dotnet/api/System.Integer)) gereklidir. En fazla izin verilen karakter sayısını belirtir.
+`MaxLength` ([System.Int32](/dotnet/api/System.Int32)) gereklidir. En fazla izin verilen karakter sayısını belirtir.
 
 ## <a name="remarks"></a>Açıklamalar
 

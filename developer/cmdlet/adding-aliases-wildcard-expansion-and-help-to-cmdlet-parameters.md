@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: 946b71e4480a47ac6ccd6930be445d7efb4fb62d
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: bc921537062e35aa203fa3ee95d3b7211c89cb28
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854904"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733838"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Cmdlet Parametrelerinize Diğer Adlar, Joker Karakter Genişletmesi ve Yardım Ekleme
 
@@ -134,11 +134,11 @@ Tamamlanmış C# örnek kod için bkz: [StopProcessSample03 örnek](./stopproces
 
 ## <a name="define-object-types-and-formatting"></a>Nesne türleri ve biçimlendirme tanımlayın
 
-Windows PowerShell cmdlet arasında .net nesneleri kullanarak bilgileri geçirir. Sonuç olarak, bir cmdlet kendi türü tanımlamanız gerekebilir veya başka bir cmdlet tarafından sağlanan mevcut türü genişletmek cmdlet gerekebilir. Yeni türleri tanımlama veya varolan türleri genişletme hakkında daha fazla bilgi için bkz. [genişletme nesne türleri ve biçimlendirme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell cmdlet arasında .net nesneleri kullanarak bilgileri geçirir. Sonuç olarak, bir cmdlet kendi türü tanımlamanız gerekebilir veya başka bir cmdlet tarafından sağlanan mevcut türü genişletmek cmdlet gerekebilir. Yeni türleri tanımlama veya varolan türleri genişletme hakkında daha fazla bilgi için bkz. [genişletme nesne türleri ve biçimlendirme](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Cmdlet oluşturma
 
-Bir cmdlet uyguladıktan sonra bunu Windows PowerShell ile bir Windows PowerShell ek bileşeni kayıtlı olması gerekir. Cmdlet'leri kaydetme hakkında daha fazla bilgi için bkz. [kaydetme cmdlet'leri ve sağlayıcıları uygulamalarını barındırmak için nasıl](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Bir cmdlet uyguladıktan sonra bunu Windows PowerShell ile bir Windows PowerShell ek bileşeni kayıtlı olması gerekir. Cmdlet'leri kaydetme hakkında daha fazla bilgi için bkz. [kaydetme cmdlet'leri ve sağlayıcıları uygulamalarını barındırmak için nasıl](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Sınama cmdlet'i
 
@@ -213,11 +213,11 @@ Aşağıdaki çıktı görünür.
 
 [Sistem değiştiren bir Cmdlet oluşturma](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Bir Windows PowerShell cmdlet'i oluşturma](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Bir Windows PowerShell cmdlet'i oluşturma](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Nesne türlerini genişletme ve biçimlendirme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Nesne türlerini genişletme ve biçimlendirme](/previous-versions//ms714665(v=vs.85))
 
-[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](/previous-versions//ms714644(v=vs.85))
 
 [Cmdlet parametreleri joker karakterleri destekleme](./supporting-wildcard-characters-in-cmdlet-parameters.md)
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f04a07c241268566eaedfe2b299c33d5be4dc19d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064110"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735092"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>ListControl EntrySelectedBy için SelectionCondition Öğesi (Biçim)
 
@@ -32,7 +32,7 @@ Yapılandırma öğesi (biçimi) ViewDefinitions öğesi (biçimi) görünümü 
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler
+## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler
 
 Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionCondition` öğesi.
 
@@ -40,7 +40,7 @@ Aşağıdaki öznitelikler, alt ve üst öğesini bölümlerde `SelectionConditi
 
 Yok.
 
-### <a name="child-elements"></a>Alt öğeleri
+### <a name="child-elements"></a>Alt Öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -49,7 +49,7 @@ Yok.
 |[SelectionCondition ListEntry (biçimi) için EntrySelectedBy için için SelectionSetName öğesi](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|İsteğe bağlı öğe.<br /><br /> Tetikleme koşulu .NET türleri kümesini belirtir.|
 |[TypeName öğesi SelectionCondition ListEntry (biçimi) için EntrySelectedBy için için](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|İsteğe bağlı öğe.<br /><br /> Koşul tetikleyen bir .NET türünü belirtir.|
 
-### <a name="parent-elements"></a>Üst öğeler
+### <a name="parent-elements"></a>Üst Öğeler
 
 |Öğe|Açıklama|
 |-------------|-----------------|
@@ -77,6 +77,6 @@ Bir liste görünümü diğer bileşenler hakkında daha fazla bilgi için bkz. 
 
 [EntrySelectedBy ListEntry (biçimi) için için SelectionSetName öğesi](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-[TypeName öğesi için EntrySelectedBy ListEntry (biçimi) için](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
+[TypeName öğesi için EntrySelectedBy ListEntry (biçimi) için](/powershell/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
 
 [Dosya biçimlendirme bir PowerShell yazma](./writing-a-powershell-formatting-file.md)

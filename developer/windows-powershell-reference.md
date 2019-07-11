@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080511"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733743"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell Başvurusu
 
@@ -53,4 +53,4 @@ Windows PowerShell SDK ek olarak, aşağıdaki kaynakları daha fazla bilgi sağ
 
 [System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) bu ad alanı diğer ad alanı sınıfları tarafından kullanılan temel sınıflar içerir. Örneğin, [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) için temel sınıfı [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) sınıfı.
 
-[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) bu ad alanı, sınıflar, numaralandırmalar ve bir Windows PowerShell çalışma alanı oluşturmak için kullandığınız arabirimlerini içerir. Bu bağlamda, bir Windows PowerShell çalışma, bir veya daha fazla işlem hattı Windows PowerShell cmdlet'leri çağırma bağlamdır. Diğer bir deyişle, cmdlet'ler, bir Windows PowerShell çalışma bağlamında çalışır. Daha fazla bilgi aboutWindows için PowerShell çalışma alanları, bkz: [Windows PowerShell çalışma alanları](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).
+[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) bu ad alanı, sınıflar, numaralandırmalar ve bir Windows PowerShell çalışma alanı oluşturmak için kullandığınız arabirimlerini içerir. Bu bağlamda, bir Windows PowerShell çalışma, bir veya daha fazla işlem hattı Windows PowerShell cmdlet'leri çağırma bağlamdır. Diğer bir deyişle, cmdlet'ler, bir Windows PowerShell çalışma bağlamında çalışır. Daha fazla bilgi aboutWindows için PowerShell çalışma alanları, bkz: [Windows PowerShell çalışma alanları](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

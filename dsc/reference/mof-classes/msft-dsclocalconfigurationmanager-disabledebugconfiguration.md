@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: MSFT_DSCLocalConfigurationManager sınıfının DisableDebugConfiguration yöntemi
-ms.openlocfilehash: ec5a401de4cb93f302f8572c0408e3f32d8876ad
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: DisableDebugConfiguration yöntemi
+ms.openlocfilehash: e3eab98c734b3fd1593ceb2b5d4b40fa69a3bf97
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078903"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727162"
 ---
-# <a name="disabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının DisableDebugConfiguration yöntemi
+# <a name="disabledebugconfiguration-method"></a>DisableDebugConfiguration yöntemi
 
 DSC kaynak hata ayıklama devre dışı bırakır.
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 2685215f41c96955fc662d5eee27fc0e7a31da83
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854961"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733956"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Parametresiz Cmdlet Oluşturma
 
@@ -71,7 +71,7 @@ Windows PowerShell kullanan [Microsoft.PowerShell.Commands](/dotnet/api/Microsof
 
 ## <a name="overriding-an-input-processing-method"></a>Bir giriş işleme yöntemi geçersiz kılma
 
-[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) sınıfı en az biri cmdlet'inize geçersiz kılması gerekir, üç ana giriş işleme yöntemler sağlar. Windows PowerShell kayıtları nasıl işlediği hakkında daha fazla bilgi için bkz. [nasıl Windows PowerShell çalışır](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) sınıfı en az biri cmdlet'inize geçersiz kılması gerekir, üç ana giriş işleme yöntemler sağlar. Windows PowerShell kayıtları nasıl işlediği hakkında daha fazla bilgi için bkz. [nasıl Windows PowerShell çalışır](/previous-versions//ms714658(v=vs.85)).
 
 Tüm giriş türleri için Windows PowerShell çalışma zamanı çağırır [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) işlemeyi etkinleştirmek için. Bazı ön işleme veya Kurulum cmdlet'inize gerçekleştirmesi gerekiyorsa, bu yöntemi geçersiz kılarak, bunu yapabilirsiniz.
 
@@ -135,11 +135,11 @@ Tamamlanmış C# örnek kod için bkz: [GetProcessSample01 örnek](./getprocesss
 
 ## <a name="defining-object-types-and-formatting"></a>Nesne türlerini tanımlama ve biçimlendirme
 
-Windows PowerShell cmdlet arasında .NET nesneleri kullanarak bilgileri geçirir. Sonuç olarak, bir cmdlet kendi türü tanımlamanız gerekebilir veya başka bir cmdlet tarafından sağlanan mevcut türü genişletmek cmdlet gerekebilir. Yeni türleri tanımlama veya varolan türleri genişletme hakkında daha fazla bilgi için bkz. [genişletme nesne türleri ve biçimlendirme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell cmdlet arasında .NET nesneleri kullanarak bilgileri geçirir. Sonuç olarak, bir cmdlet kendi türü tanımlamanız gerekebilir veya başka bir cmdlet tarafından sağlanan mevcut türü genişletmek cmdlet gerekebilir. Yeni türleri tanımlama veya varolan türleri genişletme hakkında daha fazla bilgi için bkz. [genişletme nesne türleri ve biçimlendirme](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Cmdlet oluşturma
 
-Bir cmdlet uyguladıktan sonra Windows PowerShell ile bir Windows PowerShell ek bileşeni kaydetmelisiniz. Cmdlet'leri kaydetme hakkında daha fazla bilgi için bkz. [kaydetme cmdlet'leri ve sağlayıcıları uygulamalarını barındırmak için nasıl](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Bir cmdlet uyguladıktan sonra Windows PowerShell ile bir Windows PowerShell ek bileşeni kaydetmelisiniz. Cmdlet'leri kaydetme hakkında daha fazla bilgi için bkz. [kaydetme cmdlet'leri ve sağlayıcıları uygulamalarını barındırmak için nasıl](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Sınama cmdlet'i
 
@@ -260,13 +260,13 @@ Windows PowerShell ile cmdlet'ini kaydedildi, komut satırında çalıştırarak
 
 [İşlem hattı girdiyi işlemek üzere bir Cmdlet oluşturma](./adding-parameters-that-process-pipeline-input.md)
 
-[Bir Windows PowerShell cmdlet'i oluşturma](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Bir Windows PowerShell cmdlet'i oluşturma](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Nesne türlerini genişletme ve biçimlendirme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Nesne türlerini genişletme ve biçimlendirme](/previous-versions//ms714665(v=vs.85))
 
-[Windows PowerShell nasıl çalışır?](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Windows PowerShell nasıl çalışır?](/previous-versions//ms714658(v=vs.85))
 
-[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell başvurusu](../windows-powershell-reference.md)
 

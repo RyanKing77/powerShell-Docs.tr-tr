@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 12d2cb8c40c9fd6278bb964a6259d03167536195
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080824"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734705"
 ---
 # <a name="writing-an-item-provider"></a>Bir öğe sağlayıcısı yazma
 
@@ -25,7 +25,7 @@ Windows PowerShell sağlayıcıları hakkında daha fazla bilgi için bkz. [Wind
 
 ## <a name="implementing-item-methods"></a>Uygulama öğesi yöntemleri
 
-[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) sınıfı erişmek ve bir veri deposundaki öğeleri işlemek için kullanılan çeşitli yöntemler sunar. Bu yöntemleri tam bir listesi için bkz. [ItemCmdletProvider yöntemleri](http://msdn.microsoft.com/library/system.management.automation.provider.itemcmdletprovider_methods\(v=vs.85\).aspx). Bu örnekte Biz bu yöntemlerin dört uygular. [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) belirtilen yolda bir öğeyi alır. [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) belirtilen öğenin değerini ayarlar. [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) öğeyi belirtilen yolda mevcut olup olmadığını denetler. [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) veri deposundaki bir konuma eşler, görmek için bir yol denetler.
+[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) sınıfı erişmek ve bir veri deposundaki öğeleri işlemek için kullanılan çeşitli yöntemler sunar. Bu yöntemleri tam bir listesi için bkz. [ItemCmdletProvider yöntemleri](/dotnet/api/system.management.automation.provider.itemcmdletprovider?view=pscore-6.2.0#methods). Bu örnekte Biz bu yöntemlerin dört uygular. [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) belirtilen yolda bir öğeyi alır. [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) belirtilen öğenin değerini ayarlar. [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) öğeyi belirtilen yolda mevcut olup olmadığını denetler. [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) veri deposundaki bir konuma eşler, görmek için bir yol denetler.
 
 > [!NOTE]
 > Bu konu başlığı altındaki bilgiler geliştirir [Windows PowerShell sağlayıcısı hızlı](./windows-powershell-provider-quickstart.md). Bu konuda bir sağlayıcı projeyi kurmak ilişkin temel bilgileri ele alınmamaktadır veya devralınan yöntemleri uygulamak nasıl [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) sınıfı oluşturun ve sürücülerini kaldırın.
@@ -46,7 +46,7 @@ Türetmek için sağlayıcı bildirmek [System.Management.Automation.Provider.It
 
 ### <a name="implementing-getitem"></a>GetItem uygulama
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) kullanıcı çağırdığında PowerShell altyapısı tarafından çağrılır [Microsoft.PowerShell.Commands.Get öğesi](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) cmdlet'ini, Sağlayıcı. Yöntemi, belirtilen yolda öğeyi döndürür. Access veritabanı örnekte yöntemi öğesi sürücünün veritabanı veya bir satır veritabanındaki bir tablo olup olmadığını denetler. Yöntemi çağrılarak öğesi PowerShell Altyapısı'na gönderir [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) yöntemi.
+[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) kullanıcı çağırdığında PowerShell altyapısı tarafından çağrılır [Microsoft.PowerShell.Commands.GetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.getitemcommand) cmdlet'ini sağlayıcınız. Yöntemi, belirtilen yolda öğeyi döndürür. Access veritabanı örnekte yöntemi öğesi sürücünün veritabanı veya bir satır veritabanındaki bir tablo olup olmadığını denetler. Yöntemi çağrılarak öğesi PowerShell Altyapısı'na gönderir [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) yöntemi.
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,9 +85,9 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>SetItem uygulama
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) yöntemi, PowerShell altyapısı çağrıları tarafından çağrıldığında, bir kullanıcı çağırdığında [Microsoft.PowerShell.Commands.Set öğesi](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) cmdlet'i . Belirtilen yolda öğenin değerini ayarlar.
+[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) yöntemi, PowerShell altyapısı çağrıları tarafından çağrıldığında, bir kullanıcı çağırdığında [Microsoft.PowerShell.Commands.SetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.setitemcommand) cmdlet'i. Belirtilen yolda öğenin değerini ayarlar.
 
-Access veritabanı örnekte, yalnızca çağırılıyorsa yöntem için bu öğeyi bir satır olması durumunda bir öğenin değerini ayarlamak için mantıklı [NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx) öğesi olmadığında bir satır.
+Access veritabanı örnekte, yalnızca çağırılıyorsa yöntem için bu öğeyi bir satır olması durumunda bir öğenin değerini ayarlamak için mantıklı [NotSupportedException](/dotnet/api/system.notsupportedexception?view=netframework-4.8) öğesi olmadığında bir satır.
 
 ```csharp
 protected override void SetItem(string path, object values)
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>ItemExists uygulama
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) yöntemi, PowerShell altyapısı tarafından çağrıldığında, bir kullanıcı çağırdığında [Microsoft.PowerShell.Commands.Test yolu](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) cmdlet'i. Yöntemi, belirtilen yolda bir öğe olup olmadığını belirler. Öğe mevcut olursa, yöntem PowerShell altyapısına çağırarak aktarır [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
+[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) yöntemi, PowerShell altyapısı tarafından çağrıldığında, bir kullanıcı çağırdığında [Microsoft.PowerShell.Commands.TestPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.Testpathcommand) cmdlet'i. Yöntemi, belirtilen yolda bir öğe olup olmadığını belirler. Öğe mevcut olursa, yöntem PowerShell altyapısına çağırarak aktarır [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
 
 ```csharp
 protected override bool ItemExists(string path)

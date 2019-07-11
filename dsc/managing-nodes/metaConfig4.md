@@ -1,17 +1,17 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: Windows PowerShell önceki sürümlerinde yerel Configuration Manager'ı yapılandırma
-ms.openlocfilehash: cea32c9aa8144bc52f3d44f2ad852f577f6a5e6d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: PowerShell 4.0’da LCM yapılandırma
+ms.openlocfilehash: a7d8a1d8dea5ca4c2cdf53b8c02e498be20dab60
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079617"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734632"
 ---
-# <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>Windows PowerShell önceki sürümlerinde yerel Configuration Manager'ı yapılandırma
+# <a name="configuring-the-lcm-in-powershell-40"></a>PowerShell 4.0’da LCM yapılandırma
 
->Uygulama hedefi: Windows PowerShell 4.0
+>Şunun için geçerlidir: Windows PowerShell 4.0
 
 **Windows PowerShell 5.0 ve üzeri ilgili daha fazla bilgi için bkz: [yerel Configuration Manager Yapılandırma](metaConfig.md).**
 
@@ -34,7 +34,7 @@ Ayarlama veya alma yerel Configuration Manager özellikleri listeler.
 - **Kimlik bilgisi**: (Get-Credential gibi ile) kimlik bilgilerini belirten yapılandırma hizmetiyle iletişim kurma gibi uzak kaynaklara erişmek için gerekli.
 - **DownloadManagerCustomData**: İndirme Yöneticisi için belirli özel veri içeren bir dizi temsil eder.
 - **DownloadManagerName**: Modül yükleme yöneticisi ve yapılandırmayı adını gösterir.
-- **RebootNodeIfNeeded**: Bu ayar `$true` kaynakları kullanarak düğümü yeniden başlatmak izin vermek için `$global:DSCMachineStatus` bayrağı. Aksi takdirde, düğüm gerektiren herhangi bir yapılandırma için el ile yeniden başlatmanız gerekir. Varsayılan değer: `$false`. Bir yeniden başlatma koşulu DSC (örneğin, Windows Yükleyici) dışında bir şey tarafından geçirilmeden olduğunda bu ayarı kullanmak için bu ayarı ile birleştirerek [xPendingReboot](https://github.com/powershell/xpendingreboot) modülü.
+- **RebootNodeIfNeeded**: Bu ayar `$true` kaynakları kullanarak düğümü yeniden başlatmak izin vermek için `$global:DSCMachineStatus` bayrağı. Aksi takdirde, düğüm gerektiren herhangi bir yapılandırma için el ile yeniden başlatmanız gerekir. Varsayılan değer `$false` şeklindedir. Bir yeniden başlatma koşulu DSC (örneğin, Windows Yükleyici) dışında bir şey tarafından geçirilmeden olduğunda bu ayarı kullanmak için bu ayarı ile birleştirerek [xPendingReboot](https://github.com/powershell/xpendingreboot) modülü.
 - **RefreshFrequencyMins**: Bir çekme hizmetini ayarlama olduğunda kullanılır. Geçerli yapılandırmayı indirmek için bir çekme hizmetini, yerel Configuration Manager kişiler sıklığı (dakika cinsinden) temsil eder. Bu değer ConfigurationModeFrequencyMins birlikte ayarlayabilirsiniz. RefreshMode ÇEKME olarak ayarlandığında, hedef düğüm çekme hizmetini RefreshFrequencyMins tarafından ayarlanmış aralıklarla iletişim kurar ve yapılandırmasına yüklemeleri. ConfigurationModeFrequencyMins tarafından ayarlanmış aralıklarla tutarlılık altyapısı ardından hedef düğüme indirilen en yeni yapılandırmayı uygular. RefreshFrequencyMins tamsayıya ayarlanmazsa ConfigurationModeFrequencyMins, sistemin katı, Yukarı YUVARLA. Varsayılan değer 30’dur.
 - **RefreshMode**: Olası değerler **anında iletme** (varsayılan) ve **çekme**. "Gönderme temelli" yapılandırmanın herhangi bir istemci bilgisayar kullanan bir yapılandırma dosyası, her hedef düğümde yerleştirmeniz gerekir. "Pull" modunda, bir çekme hizmetini yerel başvurun ve yapılandırma dosyalarına erişmek için Configuration için ayarlamanız gerekir.
 

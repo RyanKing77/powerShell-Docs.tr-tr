@@ -2,20 +2,24 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC WaitForAll kaynak
-ms.openlocfilehash: 1e891f1aecbdbe641973669f71f22664ad8ea16c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c1125b7c5b68b9b520ed052800b6a2abf4e53b85
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076932"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726870"
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll kaynak
 
-> Uygulama hedefi: Windows PowerShell 5.0 ve üzeri
+> Şunun için geçerlidir: Windows PowerShell 5.0 ve üzeri
 
 **WaitForAll** Desired State Configuration ' nı (DSC) kaynak, bir düğüm bloğunda içinde kullanılabilir bir [DSC Yapılandırması](../../../configurations/configurations.md) diğer düğümlerde yapılandırmalarında bağımlılıklarını belirtmek için.
 
 Bu kaynak tarafından belirtilen kaynağı, başarılı **ResourceName** özelliği içinde tanımlanan tüm hedef düğümler üzerinde istenen durumda **NodeName** özelliği.
+
+> [!NOTE]
+> **WaitForAll** kaynak diğer düğümlerinin durumunu denetlemek için Windows Uzaktan Yönetimi kullanır.
+> WinRM bağlantı noktası ve güvenlik gereksinimleri hakkında daha fazla bilgi için bkz. [PowerShell uzaktan iletişim güvenlik konuları](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="syntax"></a>Sözdizimi
 

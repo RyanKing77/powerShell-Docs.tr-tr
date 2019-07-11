@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, çekirdek
 title: PowerShell 6.0 için bilinen sorunlar
-ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 502143b660204edada6a9e62bdf6b260a384a078
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085975"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733834"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 için bilinen sorunlar
 
@@ -55,7 +55,7 @@ Bkz: [#954](https://github.com/PowerShell/PowerShell/issues/954) bize Linus/maco
 
 Linux/macos'ta PowerShell, Microsoft Windows üzerinde tam .NET Framework'ün bir alt kümesi olan bir .NET Core kullanır. PowerShell, doğrudan erişim sağlar. temel alınan framework türleri, yöntemleri, vb. önemli olmasıdır. Sonuç olarak, Windows üzerinde çalışan komut dosyaları Windows dışı platformlarda çerçeveleri farklılıkları nedeniyle çalışmayabilir. .NET Core Framework hakkında daha fazla bilgi için bkz. <https://dotnetfoundation.org/net-core>
 
-Geliştirilirken [.NET Standard2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/), .NET Core 2.0 duruma getirmek arka tam .NET Framework birçok geleneksel türleri ve yöntemleri sunar. Başka bir deyişle, PowerShell Core yapmadan çok sayıda geleneksel Windows PowerShell modülü yüklemek mümkün olacaktır. .NET Standard 2.0 ilgili işimizi izleyebilirsiniz [burada](https://github.com/PowerShell/PowerShell/projects/4).
+Geliştirilirken [.NET Standard2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/), .NET Core 2.0 duruma getirmek arka tam .NET Framework birçok geleneksel türleri ve yöntemleri sunar. Başka bir deyişle, PowerShell Core yapmadan çok sayıda geleneksel Windows PowerShell modülü yüklemek mümkün olacaktır. .NET Standard 2.0 ilgili işimizi izleyebilirsiniz [burada](https://github.com/PowerShell/PowerShell/projects/4).
 
 ### <a name="redirection-issues"></a>Yeniden yönlendirme sorunları
 
@@ -82,7 +82,7 @@ Linux/macos'ta PowerShell iş denetimi desteği yoktur.
 
 WSMan tabanlı uzaktan iletişim için iş yapıldığını [psl OMI sağlayıcısı](https://github.com/PowerShell/psl-omi-provider) depo.
 
-PowerShell Core, tüm platformlar (Windows, macOS ve Linux) SSH üzerinden PowerShell uzaktan iletişimini (PSRP) da destekler. Bu şu anda üretim ortamında desteklenmez, ancak bu ayarlama hakkında daha fazla bilgi edinebilirsiniz [burada](../core-powershell/ssh-remoting-in-powershell-core.md).
+PowerShell Core, tüm platformlar (Windows, macOS ve Linux) SSH üzerinden PowerShell uzaktan iletişimini (PSRP) da destekler. Bu şu anda üretim ortamında desteklenmez, ancak bu ayarlama hakkında daha fazla bilgi edinebilirsiniz [burada](../learn/remoting/SSH-Remoting-in-PowerShell-Core.md).
 
 ### <a name="just-enough-administration-jea-support"></a>Just-yeterli-yönetim (JEA) desteği
 

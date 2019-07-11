@@ -1,56 +1,52 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/10/2019
 keywords: jea, powershell, güvenlik
 title: JEA'da raporlama ve denetleme
-ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2afefe83acecc1fc3643d49766120ffecc25378f
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084088"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726746"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>JEA'da raporlama ve denetleme
 
-> Şunun için geçerlidir: Windows PowerShell 5.0
-
-JEA dağıttıktan sonra düzenli olarak JEA yapılandırmayı denetlemek isteyebilirsiniz.
-Bu, doğru kişilerin JEA uç noktasına erişebildiğinden ve atanan rollerinin hala uygun değerlendirmenize yardımcı olur.
-
-Bu konu, bir JEA uç noktası denetleyebilirsiniz çeşitli yolları açıklar.
+JEA dağıttıktan sonra düzenli olarak bir JEA yapılandırma denetim gerekir. Yardımcı denetim doğru kişilerin JEA uç noktasına erişebildiğinden ve atanan rollerinin hala uygun değerlendirin.
 
 ## <a name="find-registered-jea-sessions-on-a-machine"></a>Bir makinede kayıtlı JEA oturumu bulun
 
-Hangi JEA oturumlarının bir makinede kayıtlı denetlemek için kullanmak [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'i.
+Hangi JEA oturumlarının bir makinede kayıtlı denetlemek için kullanmak [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) cmdlet'i.
 
 ```powershell
 # Filter for sessions that are configured as 'RestrictedRemoteServer' to find JEA-like session configurations
-PS C:\> Get-PSSessionConfiguration | Where-Object { $_.SessionType -eq 'RestrictedRemoteServer' }
+Get-PSSessionConfiguration | Where-Object { $_.SessionType -eq 'RestrictedRemoteServer' }
+```
 
-
+```Output
 Name          : JEAMaintenance
 PSVersion     : 5.1
 StartupScript :
 RunAsUser     :
-Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS AccessAllowed, CONTOSO\JEA_DNS_AUDITORS AccessAllowed
+Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS AccessAllowed,
+                CONTOSO\JEA_DNS_AUDITORS AccessAllowed
 ```
 
-Uç noktası için etkin hakları "İzni" özelliğinde listelenir.
-Bu kullanıcılar JEA uç noktası, ancak hangi rollerin (ve uzantısıyla komutları) bağlanma izniniz "RoleDefinitions" alanı tarafından belirlenir için erişime sahip oldukları [oturum yapılandırma dosyası](session-configurations.md) kaydetmek için kullanılan uç nokta.
-
-Kayıtlı bir JEA uç noktası rolü eşlemelerin "RoleDefinitions" özelliğinde veri genişleterek değerlendirebilirsiniz.
+Uç noktası için etkin hakları listelenen **izni** özelliği. Bu kullanıcılar JEA uç noktasını bağlamak hakkına sahiptir. Ancak, roller ve erişim sahibi oldukları komutları tarafından belirlenir **RoleDefinitions** özelliğinde [oturum yapılandırma dosyası](session-configurations.md) uç noktasını kaydetmek için kullanıldı. Genişletin **RoleDefinitions** kayıtlı bir JEA uç noktası rolü eşlemelerin değerlendirmek için özellik.
 
 ```powershell
 # Get the desired session configuration
 $jea = Get-PSSessionConfiguration -Name 'JEAMaintenance'
 
 # Enumerate users/groups and which roles they have access to
-$jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{ Name = 'Role Capabilities'; Expression = { $_.Value.RoleCapabilities } }
+$jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{
+  Name = 'Role Capabilities'
+  Expression = { $_.Value.RoleCapabilities }
+}
 ```
 
 ## <a name="find-available-role-capabilities-on-the-machine"></a>Makinede kullanılabilir rol işlevleri Bul
 
-Geçerli bir PowerShell modülü içinde bir "RoleCapabilities" klasöründe depolanıyorsa rol özellik dosyaları yalnızca JEA tarafından kullanılır.
-Tüm rol özellikleri bir bilgisayarda kullanılabilir modüllerin listesini arayarak bulabilirsiniz.
+JEA alır rol özelliklerinden `.psrc` depolanan dosyaların **RoleCapabilities** klasörün içinde bir PowerShell modülü. Aşağıdaki işlev bir bilgisayar üzerinde kullanılabilen tüm rol özellikleri bulur.
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -65,7 +61,9 @@ function Find-LocalRoleCapability {
     }
 
     # Format the results nicely to make it easier to read
-    $results | Select-Object @{ Name = 'Name'; Expression = { $_.Name.TrimEnd('.psrc') }}, @{ Name = 'Path'; Expression = { $_.FullName }} | Sort-Object Name
+    $results | Select-Object @{ Name = 'Name'; Expression = { $_.Name.TrimEnd('.psrc') }}, @{
+        Name = 'Path'; Expression = { $_.FullName }
+    } | Sort-Object Name
 }
 ```
 
@@ -74,44 +72,40 @@ function Find-LocalRoleCapability {
 
 ## <a name="check-effective-rights-for-a-specific-user"></a>Belirli bir kullanıcı için etkin haklarını denetleyin
 
-Bir JEA uç noktası ayarladıktan sonra hangi komutları belirli bir kullanıcıya bir JEA oturumunda kullanılabilir denetlemek isteyebilirsiniz.
-Kullanabileceğiniz [Get-PSSessionCapability](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Get-PSSessionCapability) olsaydı ile geçerli grup üyeliklerini bir JEA oturumu başlatmak için bir kullanıcı için geçerli komutların tümü numaralandırılamadı.
+[Get-PSSessionCapability](/powershell/module/microsoft.powershell.core/Get-PSSessionCapability) cmdlet'i, bir kullanıcının grup üyeliklerini temel alan bir JEA uç noktası kullanılabilir tüm komutları numaralandırır.
 Çıkışı `Get-PSSessionCapability` çalıştıran belirtilen kullanıcı için aynı `Get-Command -CommandType All` bir JEA oturumda.
 
 ```powershell
 Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\Alice'
 ```
 
-Bu cmdlet, kullanıcılarınızın bunları JEA ek haklar verilir gruplarının kalıcı üyesi değilseniz, bu ek izinleri yansıtmayabilir.
-Bu genellikle kullanıcıların geçici olarak bir güvenlik grubuna ait izin vermek için tam zamanında ayrıcalıklı erişim yönetimi sistemleri kullanılırken geçerlidir.
-Rollere kullanıcı eşleme ve kullanıcılar yalnızca komutlar başarıyla işlerini yapmak için gereken en az miktarda erişim aldıklarından emin olmak için her rolün içeriğini her zaman dikkatli bir şekilde değerlendirin.
+Bu cmdlet, kullanıcılarınızın bunları ek JEA hakkı grupların kalıcı üyesi değilseniz, bu ek izinleri yansıtmayabilir. Bu kullanırken, just-ın-time ayrıcalıklı erişim yönetimi sistemleri, kullanıcıların geçici olarak bir güvenlik grubuna ait olur. Rolleri ve özellikleri, kullanıcıların yalnızca kullanıcıların işlerini başarıyla yapmak için gereken erişim düzeyini aldığından emin olmak için kullanıcı eşleme dikkatlice değerlendirin.
 
 ## <a name="powershell-event-logs"></a>PowerShell olay günlükleri
 
-Sistemde oturum modülü ve/veya betik bloğu etkinleştirilirse, bir kullanıcı JEA oturumlarını çalıştırdığınız her komut için Windows olay günlüklerindeki olaylarını bulmak mümkün olacaktır.
-Bu olayları bulmak için Windows Olay Görüntüleyicisi'ni açın, gitmek **Microsoft-Windows-PowerShell/Operational** olay günlüğü ve olay kimliği ile olayları arayın **4104**.
+Sistemde oturum modülü veya betik bloğu etkinleştirilirse, bir kullanıcı bir JEA oturumda çalışan her komut için Windows olay günlüğündeki olayları görebilirsiniz. Bu olayları bulmak için açın **Microsoft-Windows-PowerShell/Operational** olay günlüğü ve olay kimliği ile olayları arayın **4104**.
 
-Her olay günlüğü girişi komutun çalıştırıldığı oturumu hakkında bilgi içerir.
-JEA oturumları için bu önemli hakkında bilgiler içerir **ConnectedUser**, JEA oturumu oluşturan gerçek kullanıcı olduğu yanı sıra **farklıkullanıcı** JEA için kullanılan hesabı tanımlayan komutu yürütün.
-Bu nedenle dökümleri sahip farklıkullanıcı tarafından yapılan değişiklikleri gösterir uygulama olay günlüklerini veya modül/komut dosyası ünlüğe kaydetme etkin bir özel komut çağırma geri kullanıcıya kadar izleyebiliyor olmanız önemlidir.
+Her olay günlüğü girişi, komutun çalıştırıldığı oturumu hakkında bilgi içerir. JEA oturumlarında, olay hakkında bilgiler içerir **ConnectedUser** ve **farklıkullanıcı**. **ConnectedUser** JEA oturumu oluşturan gerçek kullanıcı. **Farklıkullanıcı** JEA komutu yürütmek için kullanılan hesaptır.
+
+Uygulama olay günlüklerini göster tarafından yapılan değişiklikleri **farklıkullanıcı**. Modülü ve komut dosyası ünlüğe kaydetme etkin olan belirli bir komut çağrısı geri izleme için gerekli olacak şekilde **ConnectedUser**.
 
 ## <a name="application-event-logs"></a>Uygulama olay günlükleri
 
-Bir dış uygulama veya hizmeti ile etkileşime giren bir JEA oturumda bir komut çalıştırdığınızda, söz konusu uygulamaların kendi olay günlüklerine olayları oturum açabilir.
-PowerShell günlükleri ve dökümler, aksine diğer günlük mekanizmaları JEA oturumun bağlı olan kullanıcı yakalamaz ve bunun yerine yalnızca Çalıştır sanal kullanıcı veya grup yönetilen hizmet hesabı günlüğe kaydedecektir.
-Kimin komutun çalıştığını belirlemek için başvurun gerekecektir bir [oturumu döküm](#session-transcripts) veya PowerShell olay günlükleri uygulama olay günlüğünde gösterilen kullanıcı ve saat ile ilişkilendirin.
+Dış uygulamalarla etkileşim kuran bir JEA oturumunda komutları çalıştırmak veya hizmetleri olayları kendi olay günlüklerine Kaydet. PowerShell günlükleri ve dökümler aksine, diğer günlük mekanizmaları JEA oturumun bağlı olan kullanıcı yakalamayın. Bunun yerine, bu uygulamalar, yalnızca sanal Çalıştır kullanıcı oturum.
+Başvurun gerek kimin komutun çalıştığını belirlemek için bir [oturumu döküm](#session-transcripts) veya PowerShell olay günlükleri uygulama olay günlüğünde gösterilen kullanıcı ve saat ile ilişkilendirin.
 
-Günlük da ilişkilendirmenize yardımcı olabilir WinRM uygulama olay günlüğüne kullanıcı bağlanan kullanıcı ile çalıştırın.
-Olay Kimliği **193** içinde **Microsoft Windows Windows Uzaktan Yönetimi/Operational** günlük kayıtlarının güvenlik tanımlayıcısı (SID) ve hesap için bağlama kullanıcı adı ve kullanıcı olarak bir JEA her defasında Çalıştır oturum oluşturulur.
+WinRM günlük Çalıştır bağlanan kullanıcının bir uygulama olay günlüğüne kullanıcılara bağıntısını da yardımcı olabilir. Olay Kimliği **193** içinde **Microsoft Windows Windows Uzaktan Yönetimi/Operational** günlük her yeni JEA için güvenlik tanımlayıcısı (SID) ve hem bağlanan kullanıcı ve farklı çalıştır hesabı adını kullanıcı olarak kaydeder oturumu.
 
 ## <a name="session-transcripts"></a>Oturum dökümleri
 
 Jea'yı her bir kullanıcı oturumu için bir döküm oluşturmak için yapılandırılmışsa, her kullanıcının eylemleri metin kopyasını belirtilen klasörde depolanır.
 
-Tüm döküm dizinleri bulmak için aşağıdaki komutu bilgisayarda yönetici olarak çalıştırın JEA ile yapılandırılmış:
+Aşağıdaki komutu (Yönetici) olarak tüm döküm dizinleri bulur.
 
 ```powershell
-Get-PSSessionConfiguration | Where-Object { $_.TranscriptDirectory -ne $null } | Format-Table Name, TranscriptDirectory
+Get-PSSessionConfiguration |
+  Where-Object { $_.TranscriptDirectory -ne $null } |
+    Format-Table Name, TranscriptDirectory
 ```
 
 Transkript her zaman oturum başlatıldığında, oturum ve JEA kimliği atanmış bağlı kullanıcı hakkında bilgi ile başlar.
@@ -126,9 +120,7 @@ Machine: SERVER01 (Microsoft Windows NT 10.0.14393.0)
 [...]
 ```
 
-Transkripti gövdesinde kullanıcının çağrılan her komut hakkında bilgileri günlüğe kaydedilir.
-Yürütülen etkili komut hala belirleyebilirsiniz ancak kullanıcı çalıştırılan komut söz dizimi JEA oturumlarında komutları PowerShell uzaktan iletişim için dönüştürülme biçimini nedeniyle kullanılamıyor.
-Çalıştıran bir kullanıcıdan bir örnek dökümü kod parçacığı aşağıda verilmiştir `Get-Service Dns` bir JEA oturumda:
+Transkripti gövdesinin kullanıcı çağrılan her komut hakkında bilgi içerir. Kullanılan komut söz dizimi nedeniyle PowerShell uzaktan iletişim için komutları dönüştürülme biçimini JEA oturumlarda kullanılamıyor. Ancak, yine de yürütülen etkili komut belirleyebilirsiniz. Çalıştıran bir kullanıcıdan bir örnek dökümü kod parçacığı aşağıda verilmiştir `Get-Service Dns` bir JEA oturumda:
 
 ```
 PS>CommandInvocation(Get-Service): "Get-Service"
@@ -139,14 +131,10 @@ PS>CommandInvocation(Get-Service): "Get-Service"
 Running  Dns                DNS Server
 ```
 
-Bir kullanıcı çalıştırır, her komut için "CommandInvocation" satır cmdlet açıklayan yazılır veya kullanıcının çağrılan işlev.
-Her bir parametre ve komutu ile sağlanan değeri hakkında bilgi için her CommandInvocation ParameterBindings izleyin.
-Yukarıdaki örnekte, "ad" parametresi ' % s'değeri "Dns" "Get-Service" cmdlet için sağlanan görebilirsiniz.
+A **CommandInvocation** satır, bir kullanıcının her komut için yazılır. **ParameterBindings** her parametresi ve değeri bu komutla birlikte kaydedin. Önceki örnekte görebileceğiniz gibi parametre **adı** sağlanan değerle **Dns** için `Get-Service` cmdlet'i.
 
-Her komutun çıktısı da bir CommandInvocation genellikle dışarı varsayılan tetikler.
-Inputobject Out-Default, komuttan döndürülen PowerShell nesnedir.
-Bu nesnenin ayrıntılarını yazdırılır aşağıda yakından kullanıcı gördünüz yakından taklit eden birkaç satır kod.
+Her çıkış komutunu da Tetikleyiciler bir **CommandInvocation**, genellikle `Out-Default`. **Inputobject** , `Out-Default` komuttan PowerShell nesne döndürülür. Bu nesnenin ayrıntılarını yazdırılır aşağıda yakından kullanıcı gördünüz yakından taklit eden birkaç satır kod.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [*PowerShell mavi takımın ♥* güvenlik blog gönderisi](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+[*PowerShell mavi takımın ♥* güvenlik blog gönderisi](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)

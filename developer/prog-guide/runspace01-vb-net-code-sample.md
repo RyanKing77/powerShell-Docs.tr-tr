@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081453"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735021"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01 (VB.NET) Kod Örneği
 
-İşte kod örnekleri için bir çalışma açıklanan [belirtilen bir komutu bir konsol uygulaması, çalışır oluşturma](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). Bunu yapmak için uygulama bir çalışma alanı çağırır ve ardından bir komut çalıştırır. (Unutmayın. Bu uygulama çalışma alanı yapılandırma bilgileri belirtmiyor veya açıkça bir işlem hattı oluşturur.) Çağrılan komut `Get-Process` cmdlet'i.
+İşte kod örnekleri için bir çalışma açıklanan [belirtilen bir komutu bir konsol uygulaması, çalışır oluşturma](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Bunu yapmak için uygulama bir çalışma alanı çağırır ve ardından bir komut çalıştırır. (Unutmayın. Bu uygulama çalışma alanı yapılandırma bilgileri belirtmiyor veya açıkça bir işlem hattı oluşturur.) Çağrılan komut `Get-Process` cmdlet'i.
 
 ## <a name="code-sample"></a>Kod örneği
 

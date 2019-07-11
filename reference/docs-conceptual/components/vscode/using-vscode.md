@@ -2,19 +2,19 @@
 title: PowerShell geliştirme için Visual Studio Code'u kullanma
 description: PowerShell geliştirme için Visual Studio Code'u kullanma
 ms.date: 08/06/2018
-ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
-ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
+ms.openlocfilehash: 6a0da6e060693dc7cfc08d40fd658414dc23d660
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882568"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733883"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell geliştirme için Visual Studio Code'u kullanma
 
 Ek olarak [PowerShell ISE][ise], PowerShell Visual Studio Code'da iyi desteklenen de.
 Visual Studio Code için PowerShell Core (Windows, macOS ve Linux) tüm platformlarda desteklenir ancak Ayrıca, işe PowerShell Core ile desteklenmiyor
 
-Visual Studio Code Windows PowerShell sürüm 5 ile Windows 10 veya yükleyerek kullanabileceğinizi [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) için alt düzey Windows OSs (örneğin Windows 8.1, vb.).
+Visual Studio Code Windows PowerShell sürüm 5 ile Windows 10 veya yükleyerek kullanabileceğinizi [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/) için alt düzey Windows OSs (örneğin Windows 8.1, vb.).
 
 Başlamadan önce lütfen PowerShell sisteminizde mevcut olduğundan emin olun.
 Windows, macOS ve Linux'ta modern iş yükleri için bkz:

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: MSFT_DSCLocalConfigurationManager sınıfının TestConfiguration yöntemi
-ms.openlocfilehash: d746832b01310f43a7aae33dd0fa70c0928bb3e0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: TestConfiguration yöntemi
+ms.openlocfilehash: 384134212e3b29b63dc045aee4b708c87c970302
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078087"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726950"
 ---
-# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının TestConfiguration yöntemi
+# <a name="testconfiguration-method"></a>TestConfiguration yöntemi
 
 Yapılandırma belgelerini yönetilen düğüme gönderir ve belgeyi karşı geçerli yapılandırmasını doğrular.
 

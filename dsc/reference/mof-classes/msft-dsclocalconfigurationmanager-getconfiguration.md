@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: MSFT_DSCLocalConfigurationManager sınıfının GetConfiguration yöntemi
-ms.openlocfilehash: ae31ac30c152c96707b764ddaf00c924806afcfc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: GetConfiguration yöntemi
+ms.openlocfilehash: eabc536cfe69abe1144ff031a6f64c09a772e638
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078665"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734532"
 ---
-# <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının GetConfiguration yöntemi
+# <a name="getconfiguration-method"></a>GetConfiguration yöntemi
 
 Yönetilen düğüme yapılandırma belgesi gönderir ve kullandığı **alma** yapılandırmayı uygulamak için yapılandırma aracısı yöntemi.
 

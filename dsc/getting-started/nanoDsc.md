@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Nano Server’da DSC Kullanma
-ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079736"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734604"
 ---
 # <a name="using-dsc-on-nano-server"></a>Nano Server’da DSC Kullanma
 
-> Uygulama hedefi: Windows PowerShell 5.0
+> Şunun için geçerlidir: Windows PowerShell 5.0
 
 **Nano Sunucu'da DSC** isteğe bağlı bir pakette `NanoServer\Packages` Windows Server 2016 medya klasörü. Belirterek bir Nano sunucu için bir VHD oluşturduğunuzda, paketin yüklenebilir **Microsoft-NanoServer-DSC-Package** değeri olarak **paketleri** parametresinin **New-Nanoserverımage**  işlevi. Örneğin, bir VHD için bir sanal makine oluşturuyorsanız, komut aşağıdaki gibi görünür:
 
@@ -44,7 +44,7 @@ Hem İtme hem de çekme modu
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
 - [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Bul-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+- [Bul-DscResource](/powershell/module/powershellget/find-dscresource?view=powershell-6)
 - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
 - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
@@ -56,7 +56,7 @@ Hem İtme hem de çekme modu
 
 - Kullanıcı bağlamı altında bir kaynak çalıştıran (bkz [kullanıcı kimlik bilgilerini (Farklı Çalıştır) ile çalışan DSC](../configurations/runAsUser.md))
 
-- Sınıf tabanlı kaynaklar (bkz [PowerShell sınıfları ile özel bir DSC kaynağı yazma](../resources/authoringResourceClass.md))
+- Sınıf tabanlı kaynaklar (bkz [PowerShell sınıfları ile özel bir DSC kaynağı yazma](/previous-versions//dn948461(v=technet.10)))
 
 - DSC kaynakları hata ayıklama (bkz [hata ayıklama DSC kaynakları](../troubleshooting/debugResource.md))
 

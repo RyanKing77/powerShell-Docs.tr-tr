@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: MSFT_DSCLocalConfigurationManager sınıfının EnableDebugConfiguration yöntemi
-ms.openlocfilehash: b2eaebfa901cb5d93fd0183287073e6b31f975d1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: EnableDebugConfiguration yöntemi
+ms.openlocfilehash: f1290e4d898332361850ffc85aa0a8d79863c8f7
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078780"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727140"
 ---
-# <a name="enabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının EnableDebugConfiguration yöntemi
+# <a name="enabledebugconfiguration-method"></a>EnableDebugConfiguration yöntemi
 
 DSC kaynak hata ayıklamasını etkinleştirir.
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854843"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733953"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Bir Veri Deposuna Erişmek İçin Cmdlet Oluşturma
 
@@ -72,7 +72,7 @@ Bu parametre için iki farklı parametre kümesine ait olan ve bir diğer ad old
 
 İki [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) öznitelikleri bildirme `Path` parametresi ait `ScriptParameterSet` ve `PatternParameterSet`. Parametre kümeleri hakkında daha fazla bilgi için bkz. [bir cmdlet'e parametre ayarlar ekleme](./adding-parameter-sets-to-a-cmdlet.md).
 
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) öznitelik bildirir bir `PSPath` için diğer ad `Path` parametresi. Bu diğer ad bildirmek için Windows PowerShell sağlayıcıları erişen diğer cmdlet'ler ile tutarlılık önemle önerilir. Daha fazla bilgi aboutWindows için PowerShell yolları, bkz: "PowerShell yolu kavramlar" [nasıl Windows PowerShell çalışır](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) öznitelik bildirir bir `PSPath` için diğer ad `Path` parametresi. Bu diğer ad bildirmek için Windows PowerShell sağlayıcıları erişen diğer cmdlet'ler ile tutarlılık önemle önerilir. Daha fazla bilgi aboutWindows için PowerShell yolları, bkz: "PowerShell yolu kavramlar" [nasıl Windows PowerShell çalışır](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="declaring-the-pattern-parameter"></a>Desen parametresini bildirme
 
@@ -379,7 +379,7 @@ Bu örnek seçin Str cmdlet'ini kullanır [System.Management.Automation.Provider
 
 ## <a name="code-sample"></a>Kod örneği
 
-Aşağıdaki kod bu sürümü bu seçin Str cmdlet uygulamasını gösterir. Bu kod cmdlet'i sınıf, cmdlet tarafından kullanılan özel yöntemleri ve cmdlet kaydetmek için kullanılan Windows PowerShell ek bileşenini kod içerdiğini unutmayın. Cmdlet kaydetme hakkında daha fazla bilgi için bkz. [Cmdlet oluşturmaya](#building-the-cmdlet).
+Aşağıdaki kod bu sürümü bu seçin Str cmdlet uygulamasını gösterir. Bu kod cmdlet'i sınıf, cmdlet tarafından kullanılan özel yöntemleri ve cmdlet kaydetmek için kullanılan Windows PowerShell ek bileşenini kod içerdiğini unutmayın. Cmdlet kaydetme hakkında daha fazla bilgi için bkz. [Cmdlet oluşturmaya](#Defining-the-Cmdlet-Class).
 
 ```csharp
 //
@@ -1090,7 +1090,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="building-the-cmdlet"></a>Cmdlet oluşturma
 
-Bir cmdlet uyguladıktan sonra Windows PowerShell ile bir Windows PowerShell ek bileşeni kaydetmelisiniz. Cmdlet'leri kaydetme hakkında daha fazla bilgi için bkz. [kaydetme cmdlet'leri ve sağlayıcıları uygulamalarını barındırmak için nasıl](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Bir cmdlet uyguladıktan sonra Windows PowerShell ile bir Windows PowerShell ek bileşeni kaydetmelisiniz. Cmdlet'leri kaydetme hakkında daha fazla bilgi için bkz. [kaydetme cmdlet'leri ve sağlayıcıları uygulamalarını barındırmak için nasıl](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Sınama cmdlet'i
 
@@ -1214,7 +1214,7 @@ Windows PowerShell ile cmdlet'ini kaydedildi, komut satırında çalıştırarak
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[Bir Windows PowerShell cmdlet'i oluşturma](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Bir Windows PowerShell cmdlet'i oluşturma](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [İlk Cmdlet'inize oluşturma](./creating-a-cmdlet-without-parameters.md)
 
@@ -1222,8 +1222,8 @@ Windows PowerShell ile cmdlet'ini kaydedildi, komut satırında çalıştırarak
 
 [Windows PowerShell sağlayıcınız tasarlama](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Windows PowerShell nasıl çalışır?](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Windows PowerShell nasıl çalışır?](/previous-versions//ms714658(v=vs.85))
 
-[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK'sı](../windows-powershell-reference.md)

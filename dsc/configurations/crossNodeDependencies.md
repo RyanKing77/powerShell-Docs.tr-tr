@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Çapraz düğüm bağımlılıklarını belirtme
-ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080212"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734677"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Çapraz düğüm bağımlılıklarını belirtme
 
-> Uygulama hedefi: Windows PowerShell 5.0
+> Şunun için geçerlidir: Windows PowerShell 5.0
 
 DSC özel kaynaklar sağlayan **WaitForAll**, **WaitForAny**, ve **WaitForSome** kullanılabilecek yapılandırmalarında diğer yapılandırmaları bağımlılıklarını belirtmek için düğümleri. Bu kaynakların davranış aşağıdaki gibidir:
 
@@ -55,14 +55,22 @@ WaitForSome [String] #ResourceName
 
 Tüm **WaitForXXXX** aşağıdaki söz dizimini anahtarlarını paylaşın.
 
-|  Özellik |  Açıklama || RetryIntervalSec | Yeniden denemeden önce saniye sayısı. En az 1 olmalıdır. | | RetryCount | Yeniden deneme sayısı. | | ThrottleLimit | Aynı anda bağlanmak makineleri sayısı. Varsayılan değer `New-CimSession` varsayılan. | | DependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Daha fazla bilgi için [DependsOn](resource-depends-on.md)|| PsDscRunAsCredential | Bkz: [kullanıcı kimlik bilgileriyle DSC kullanma](./runAsUser.md) |
-
+|Özellik|  Açıklama   |
+|---------|---------------------|
+| RetryIntervalSec| Yeniden denemeden önce saniye sayısı. Minimum is 1.|
+| RetryCount| Yeniden deneme sayısı.|
+| ThrottleLimit| Aynı anda bağlanmak makineleri sayısı. Varsayılan değer `New-CimSession` varsayılan.|
+| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Daha fazla bilgi için [DependsOn](resource-depends-on.md)|
+| PsDscRunAsCredential | Bkz: [kullanıcı kimlik bilgileriyle DSC kullanma](./runAsUser.md) |
 
 ## <a name="using-waitforxxxx-resources"></a>WaitForXXXX kaynakları kullanma
 
-Her **WaitForXXXX** belirtilen düğümde tamamlamak belirtilen kaynaklar için kaynak bekler. Diğer kaynakları aynı yapılandırmayı, böylece *bağımlı* **WaitForXXXX** kaynak kullanarak **DependsOn** anahtarı.
+Her **WaitForXXXX** belirtilen düğümde tamamlamak belirtilen kaynaklar için kaynak bekler.
+Diğer kaynakları aynı yapılandırmayı, böylece *bağımlı* **WaitForXXXX** kaynak kullanarak **DependsOn** anahtarı.
 
 Örneğin, aşağıdaki yapılandırmasında, hedef düğüm bekliyor **xADDomain** bitmesi için kaynak **MyDC** düğüm sayısı 30 ile yeniden deneme sayısı, 15 saniyelik aralıklarla önce Hedef düğüm, etki alanına katılmasını sağlayabilirsiniz.
+
+Varsayılan olarak **WaitForXXX** kaynakları bir kez deneyin ve sonra başarısız. Gerekli olmamasına karşın, genellikle belirtmek istersiniz bir **RetryCount** ve **RetryIntervalSec**.
 
 ```powershell
 Configuration JoinDomain
@@ -111,7 +119,9 @@ Configuration JoinDomain
 
 Yapılandırmayı derlemek, iki ".mof" dosya üretilir. Kullanarak hedef düğümler için her iki ".mof" dosyalara [Başlat-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet'i
 
->**Not:** Varsayılan WaitForXXX kaynakları bir kez deneyin ve sonra başarısız. Gerekli olmamasına karşın, genellikle belirtmek istersiniz bir **RetryCount** ve **RetryIntervalSec**.
+> [!NOTE]
+> **WaitForXXX** kaynakları diğer düğümlerinin durumunu denetlemek için Windows Uzaktan Yönetimi kullanın.
+> WinRM bağlantı noktası ve güvenlik gereksinimleri hakkında daha fazla bilgi için bkz. [PowerShell uzaktan iletişim güvenlik konuları](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="see-also"></a>Ayrıca bkz:
 

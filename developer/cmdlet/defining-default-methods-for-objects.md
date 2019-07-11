@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
 caps.latest.revision: 9
-ms.openlocfilehash: fa0f0371856d8723af7ec17a4306de209a481a18
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: af554cde5e888f2a008028010332caa473151622
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068224"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733985"
 ---
 # <a name="defining-default-methods-for-objects"></a>Nesneler için Varsayılan Yöntemleri Tanımlama
 
@@ -26,7 +26,7 @@ ms.locfileid: "62068224"
 
 Bir kod yöntemi statik bir yöntem .NET Framework nesnesi başvuruyor.
 
-Aşağıdaki örnekte, **ConvertLargeIntegerToInt64** yöntemi eklenir [System.Xml.Xmlnode? Displayproperty Fullname =](/dotnet/api/System.Xml.XmlNode) türü. [CodeMethod](http://msdn.microsoft.com/en-us/1ea9b031-bbcf-4e35-b497-bf30fa0b1b05) öğesi, kod yöntemi olarak genişletilmiş yöntemi tanımlar. [Adı](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) öğesi genişletilmiş yöntemin adını belirtir. Ve [CodeReference](http://msdn.microsoft.com/en-us/70017b85-18d2-4f55-8357-92f309d5618b) öğesi statik yöntemini belirtir. (Ayrıca ekleyebilirsiniz [CodeMethod](http://msdn.microsoft.com/en-us/1ea9b031-bbcf-4e35-b497-bf30fa0b1b05) üyelerinin öğesine [MemberSets](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) öğesi.)
+Aşağıdaki örnekte, **ConvertLargeIntegerToInt64** yöntemi eklenir [System.Xml.Xmlnode? Displayproperty Fullname =](/dotnet/api/System.Xml.XmlNode) türü. [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) öğesi, kod yöntemi olarak genişletilmiş yöntemi tanımlar. [Adı](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) öğesi genişletilmiş yöntemin adını belirtir. Ve [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference) öğesi statik yöntemini belirtir. (Ayrıca ekleyebilirsiniz [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) üyelerinin öğesine [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) öğesi.)
 
 ```xml
 <Type>
@@ -45,7 +45,7 @@ Aşağıdaki örnekte, **ConvertLargeIntegerToInt64** yöntemi eklenir [System.X
 
 ## <a name="script-methods"></a>Betik yöntemleri
 
-Bir betik yöntemi, bir komut dosyası çıktısını değeri olan bir yöntem tanımlar. Aşağıdaki örnekte, **ConvertToDateTime** yöntemi eklenir [System.Management.Managementobject? Displayproperty Fullname =](/dotnet/api/System.Management.ManagementObject) türü. [ScriptMethod](http://msdn.microsoft.com/en-us/59f8160f-bc95-42f0-92e2-b16a616bc65c) öğe betik yöntemi olarak genişletilmiş yöntemi tanımlar. [Adı](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) öğesi genişletilmiş yöntemin adını belirtir. Ve [betik](http://msdn.microsoft.com/en-us/1937ad1b-bb2b-4512-9864-01fc0767d46f) öğesi yöntemi değer üreten betiği belirtir. (Ayrıca ekleyebilirsiniz [ScriptMethod](http://msdn.microsoft.com/en-us/59f8160f-bc95-42f0-92e2-b16a616bc65c) üyelerinin öğesine [MemberSets](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) öğesi.)
+Bir betik yöntemi, bir komut dosyası çıktısını değeri olan bir yöntem tanımlar. Aşağıdaki örnekte, **ConvertToDateTime** yöntemi eklenir [System.Management.Managementobject? Displayproperty Fullname =](/dotnet/api/System.Management.ManagementObject) türü. [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) öğe betik yöntemi olarak genişletilmiş yöntemi tanımlar. [Adı](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) öğesi genişletilmiş yöntemin adını belirtir. Ve [betik](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script) öğesi yöntemi değer üreten betiği belirtir. (Ayrıca ekleyebilirsiniz [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) üyelerinin öğesine [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) öğesi.)
 
 ```xml
 <Type>

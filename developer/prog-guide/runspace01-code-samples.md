@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 05b088de-fac3-4a01-9eea-3d96ab755c4b
 caps.latest.revision: 6
-ms.openlocfilehash: b08569a91caa903fa9267d0121f8fd41b33c1e31
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4802f2806cc90cc1a50b372cfc6027c366e015e0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081725"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735124"
 ---
 # <a name="runspace01-code-samples"></a>Runspace01 Kod Örnekleri
 
-İşte kod örnekleri için bir çalışma açıklanan [belirtilen bir komutu bir konsol uygulaması, çalışır oluşturma](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). Çalışma alanında çağrılan komut `Get-Process` cmdlet'i.
+İşte kod örnekleri için bir çalışma açıklanan [belirtilen bir komutu bir konsol uygulaması, çalışır oluşturma](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Çalışma alanında çağrılan komut `Get-Process` cmdlet'i.
 
 Tam örnek kod için aşağıdaki konulara bakın.
 

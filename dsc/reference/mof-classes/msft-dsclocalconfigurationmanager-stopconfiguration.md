@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: MSFT_DSCLocalConfigurationManager sınıfının StopConfiguration yöntemi
-ms.openlocfilehash: 1cd887d205967c3d282143df4e6199027639230e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: StopConfiguration yöntemi
+ms.openlocfilehash: e1de175032a3bddf11af218bc4a15bdbe554a9d5
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078258"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726993"
 ---
-# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının StopConfiguration yöntemi
+# <a name="stopconfiguration-method"></a>StopConfiguration yöntemi
 
 Devam eden yapılandırma değişikliğini durdurur.
 

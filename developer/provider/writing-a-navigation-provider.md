@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080875"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734734"
 ---
 # <a name="writing-a-navigation-provider"></a>Bir gezinti sağlayıcısı yazma
 
@@ -25,7 +25,7 @@ Windows PowerShell sağlayıcıları hakkında daha fazla bilgi için bkz. [Wind
 
 ## <a name="implementing-navigation-methods"></a>Gezinme yöntemlerinden uygulama
 
-[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) sınıfı, iç içe geçmiş kapsayıcılar, göreli yolları ve taşıma öğelerini destekleyen yöntemler uygular. Bu yöntemleri tam bir listesi için bkz. [NavigationCmdletProvider yöntemleri](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx).
+[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) sınıfı, iç içe geçmiş kapsayıcılar, göreli yolları ve taşıma öğelerini destekleyen yöntemler uygular. Bu yöntemleri tam bir listesi için bkz. [NavigationCmdletProvider yöntemleri](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods).
 
 > [!NOTE]
 > Bu konu başlığı altındaki bilgiler geliştirir [Windows PowerShell sağlayıcısı hızlı](./windows-powershell-provider-quickstart.md). Bu konuda bir sağlayıcı projeyi kurmak ilişkin temel bilgileri ele alınmamaktadır veya devralınan yöntemleri uygulamak nasıl [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) sınıfı oluşturun ve sürücülerini kaldırın. Bu konuda ayrıca yöntemleri tarafından kullanıma sunulan uygulama konularını kapsamaz [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) veya [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) sınıfları. Öğe cmdlet'leri uygulamak nasıl gösteren bir örnek için bkz: [öğe sağlayıcısı yazma](./writing-an-item-provider.md). Nasıl kapsayıcı cmdlet'leri uygulayacağınızı gösteren bir örnek için bkz: [kapsayıcı sağlayıcısı yazma](./writing-a-container-provider.md).
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>MakePath uygulama
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) yöntemi birleştiren bir belirtilen üst ile (yolu hakkında bilgi türleri için bir sağlayıcı iç yolu oluşturmak için belirtilen alt yolu Sağlayıcı desteği, bkz: [Windows PowerShell sağlayıcısı genel bakış](./windows-powershell-provider-overview.md). Bir kullanıcı çağırdığında PowerShell altyapısı bu yöntemi çağırır [Microsoft.PowerShell.Commands.Join yolu](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) cmdlet'i.
+[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) yöntemi birleştiren bir belirtilen üst ile (yolu hakkında bilgi türleri için bir sağlayıcı iç yolu oluşturmak için belirtilen alt yolu Sağlayıcı desteği, bkz: [Windows PowerShell sağlayıcısı genel bakış](./windows-powershell-provider-overview.md). Bir kullanıcı çağırdığında PowerShell altyapısı bu yöntemi çağırır [Microsoft.PowerShell.Commands.JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) cmdlet'i.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>MoveItem uygulama
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) yöntemi belirtilen yolu bir öğe için belirtilen hedef yolu taşır. Bir kullanıcı çağırdığında PowerShell altyapısı bu yöntemi çağırır [Microsoft.PowerShell.Commands.Move öğesi](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) cmdlet'i.
+[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) yöntemi belirtilen yolu bir öğe için belirtilen hedef yolu taşır. Bir kullanıcı çağırdığında PowerShell altyapısı bu yöntemi çağırır [Microsoft.PowerShell.Commands.MoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand) cmdlet'i.
 
 ```csharp
 protected override void MoveItem(string path, string destination)

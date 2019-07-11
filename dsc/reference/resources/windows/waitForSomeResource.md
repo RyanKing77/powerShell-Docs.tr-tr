@@ -2,21 +2,24 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: DSC WaitForSome kaynak
-ms.openlocfilehash: 888da1810f0a9233579bad5eef8d5dd556947c61
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2260f37002171154a6f2c3996b2af1bd9120039d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076863"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726776"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome kaynak
 
-> Uygulama hedefi: Windows PowerShell 5.0 ve üzeri
+> Şunun için geçerlidir: Windows PowerShell 5.0 ve üzeri
 
 **WaitForSome** Desired State Configuration ' nı (DSC) kaynak, bir düğüm bloğunda içinde kullanılabilir bir [DSC Yapılandırması](../../../configurations/configurations.md) diğer düğümlerde yapılandırmalarında bağımlılıklarını belirtmek için.
 
 Bu kaynak tarafından belirtilen kaynağı, başarılı **ResourceName** özelliktir istenen durumda düğüm sayısı alt sınırı (tarafından belirtilen **NodeCount**) tarafından tanımlanan **NodeName**  özelliği.
 
+> [!NOTE]
+> **WaitForSome** kaynak diğer düğümlerinin durumunu denetlemek için Windows Uzaktan Yönetimi kullanır.
+> WinRM bağlantı noktası ve güvenlik gereksinimleri hakkında daha fazla bilgi için bkz. [PowerShell uzaktan iletişim güvenlik konuları](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="syntax"></a>Sözdizimi
 

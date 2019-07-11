@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: MSFT_DSCLocalConfigurationManager sınıfının ResourceSet yöntemi
-ms.openlocfilehash: 2712b7ff0a19e643c1f343d436c084f8970c9dd4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: ResourceSet yöntemi
+ms.openlocfilehash: 18364027b249e502e1f0b8802d9f3e031c7b07ce
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078410"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727094"
 ---
-# <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının ResourceSet yöntemi
+# <a name="resourceset-method"></a>ResourceSet yöntemi
 
 Doğrudan çağıran **ayarlamak** DSC kaynağı yöntemi.
 

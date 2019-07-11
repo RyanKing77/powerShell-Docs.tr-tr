@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: MSFT_DSCLocalConfigurationManager sınıfının GetMetaConfiguration yöntemi
-ms.openlocfilehash: e14237ef68b95d68e2f14071aa1fa6ba0717f39f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: GetMetaConfiguration yöntemi
+ms.openlocfilehash: bd280cb8ebd7b0522e4e01cbd24bd9bdcfddf4c2
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078529"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734434"
 ---
-# <a name="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının GetMetaConfiguration yöntemi
+# <a name="getmetaconfiguration-method"></a>GetMetaConfiguration yöntemi
 
 Yapılandırma Aracı denetlemek için kullanılan yerel Configuration Manager ayarlarını alır.
 

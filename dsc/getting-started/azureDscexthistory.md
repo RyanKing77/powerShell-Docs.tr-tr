@@ -3,12 +3,12 @@ description: Azure Desired State Configuration ' nı (DSC) uzantısı sürüm ge
 ms.date: 06/21/2018
 keywords: DSC, powershell, azure, uzantısı
 title: Azure DSC uzantısı sürüm geçmişi
-ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6d821e53e9206d99425e8c83f6d90986c7c28b63
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079753"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734667"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration uzantısı sürüm geçmişi
 
@@ -164,7 +164,7 @@ Bu makalede destekler, açıklamalar ve yenilikleri veya değişiklikleri açık
 - **Ortam:** Azure
 - **Notlar:** Bu sürüm, Windows Server 2016 Technical Preview'da dahil olarak DSC kullanır; diğer Windows işletim sistemleri için yükler [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (yeniden başlatma gerektirir WMF yükleme).
 - **Yeni özellikler:**
-  - İçin WMF 5.1 önizleme destekler. İlk kez yayımlandığında, bu sürümü isteğe bağlı bir yükseltme oldu ve Wmfversion belirtmek zorunda = ' 5.1PP' Resource Manager şablonlarındaki WMF 5.1 Preview sürümünü yükleyin. Wmfversion = 'latest' hala yükler [WMF 5.0 RTM'ye](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). WMF 5.1 önizleme hakkında daha fazla bilgi için bkz. [bu blog]( https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
+  - İçin WMF 5.1 önizleme destekler. İlk kez yayımlandığında, bu sürümü isteğe bağlı bir yükseltme oldu ve Wmfversion belirtmek zorunda = ' 5.1PP' Resource Manager şablonlarındaki WMF 5.1 Preview sürümünü yükleyin. Wmfversion = 'latest' hala yükler [WMF 5.0 RTM'ye](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). WMF 5.1 önizleme hakkında daha fazla bilgi için bkz. [bu blog](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
   - İkincil diğer düzeltmeleri ve geliştirmeleri eklenmiştir.
 
 ### <a name="version--219"></a>Sürüm 2.19

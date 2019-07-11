@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Yapılandırma verilerini kullanma
-ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080229"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727213"
 ---
 # <a name="using-configuration-data-in-dsc"></a>DSC yapılandırma verilerini kullanma
 
-> Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Yerleşik DSC kullanarak **ConfigurationData** parametresi bir yapılandırması içinde kullanılabilir verileri tanımlayabilirsiniz.
 Bu farklı ortamlar için veya birden çok düğüm için kullanılabilecek tek bir yapılandırma oluşturmanızı sağlar.
@@ -187,11 +187,11 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 DSC yapılandırma komut dosyasında kullanılabilen aşağıdaki özel değişkenler sağlar:
 
-- **$AllNodes** tüm koleksiyon içinde tanımlanan düğümlerinin başvurduğu **ConfigurationData**. Filtre uygulayabilirsiniz **AllNodes** kullanarak koleksiyon **. Birlikte WHERE()** ve **. ForEach()**.
+- **$AllNodes** tüm koleksiyon içinde tanımlanan düğümlerinin başvurduğu **ConfigurationData**. Filtre uygulayabilirsiniz **AllNodes** kullanarak koleksiyon **. Birlikte WHERE()** ve **. ForEach()** .
 - **ConfigurationData** bir yapılandırması derlenirken parametre olarak geçirilen tüm karma tablosuna başvuruyor.
 - **MyTypeName** içeren [yapılandırma](configurations.md) adı değişkeni kullanılır. Örneğin, yapılandırmada `MyDscConfiguration`, `$MyTypeName` değerine sahip `MyDscConfiguration`.
-- **Düğüm** belirli bir giriş başvurduğu **AllNodes** kullanarak filtrelenmiştir sonra koleksiyonu **. Birlikte WHERE()** veya **. ForEach()**.
-  - Daha fazla bilgi bu yöntemleri hakkında [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+- **Düğüm** belirli bir giriş başvurduğu **AllNodes** kullanarak filtrelenmiştir sonra koleksiyonu **. Birlikte WHERE()** veya **. ForEach()** .
+  - Daha fazla bilgi bu yöntemleri hakkında [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 ## <a name="using-non-node-data"></a>Düğümü olmayan verileri kullanma
 

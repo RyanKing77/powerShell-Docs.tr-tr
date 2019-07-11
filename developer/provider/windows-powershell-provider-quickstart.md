@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 151b7125afe1b0d386467a0e5f89225716857ac2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080892"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734850"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell Sağlayıcısı Hızlı Başlangıç
 
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>NewDrive uygulama
 
-[System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) yöntemi, Windows PowerShell altyapısı tarafından çağrıldığında, bir kullanıcı çağırdığında [Microsoft.PowerShell.Commands.New-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.New-PSDrive)sağlayıcınızın adı belirterek cmdlet'i. PSDriveInfo parametresi Windows PowerShell altyapısı tarafından geçirilir ve yöntem yeni bir sürücüye Windows PowerShell altyapısı için döndürür. Bu yöntem, yukarıda oluşturulan sınıf içinde bildirilmesi gerekir.
+[System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) yöntemi, Windows PowerShell altyapısı tarafından çağrıldığında, bir kullanıcı çağırdığında [Microsoft.PowerShell.Commands.NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) sağlayıcınızın adı belirterek cmdlet'i. PSDriveInfo parametresi Windows PowerShell altyapısı tarafından geçirilir ve yöntem yeni bir sürücüye Windows PowerShell altyapısı için döndürür. Bu yöntem, yukarıda oluşturulan sınıf içinde bildirilmesi gerekir.
 
 Yöntemi, hem sürücü nesnesi ve geçirilen sürücünün kök var, iade emin olmak için ilk denetler `null` , aşağıdakilerden birini yapın. Yeni bir sürücüye oluşturmak için bir iç sınıf AccessDBPSDriveInfo Oluşturucusu kullanır ve sürücü Access veritabanı bağlantısını temsil eder.
 
@@ -147,7 +147,7 @@ internal class AccessDBPSDriveInfo : PSDriveInfo
 
 ### <a name="implementing-removedrive"></a>RemoveDrive uygulama
 
-[System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) yöntemi, Windows PowerShell altyapısı tarafından çağrıldığında, bir kullanıcı çağırdığında [Microsoft.PowerShell.Commands.Remove-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.Remove-PSDrive) cmdlet'i. Bu sağlayıcı yöntemi veritabanına bağlantıyı kapatır.
+[System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) yöntemi, Windows PowerShell altyapısı tarafından çağrıldığında, bir kullanıcı çağırdığında [Microsoft.PowerShell.Commands.RemovePSDriveCommand ](/dotnet/api/Microsoft.PowerShell.Commands.removepsdrivecommand) cmdlet'i. Bu sağlayıcı yöntemi veritabanına bağlantıyı kapatır.
 
 ```csharp
 protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)

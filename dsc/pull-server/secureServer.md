@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
 title: Çekme sunucusu en iyi uygulamaları
-ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079209"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727202"
 ---
 # <a name="pull-server-best-practices"></a>Çekme sunucusu en iyi uygulamaları
 
-Uygulama hedefi: Windows PowerShell 4.0, Windows PowerShell 5.0
+Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Çekme sunucusu (Windows özelliği *DSC hizmet*) ancak desteklenen bir bileşen Windows Server'ın yeni özellikler veya yetenekler sunmak için herhangi bir plan vardır. Geçişi başlıyor önerilir yönetilen istemcilere [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (Windows Server çekme sunucusunda dışında özellikler dahildir) veya topluluk çözümlerden birini listelenen [burada](pullserver.md#community-solutions-for-pull-service).
+> Çekme sunucusu (Windows özelliği *DSC hizmet*) ancak desteklenen bir bileşen Windows Server'ın yeni özellikler veya yetenekler sunmak için herhangi bir plan vardır. Geçişi başlıyor önerilir yönetilen istemcilere [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (Windows Server çekme sunucusunda dışında özellikler dahildir) veya topluluk çözümlerden birini listelenen [burada](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service).
 
 Özet: Bu belge, işlem ve çözüm için hazırlama mühendislerine yardımcı olmak için genişletilebilirlik içerecek şekilde yöneliktir. En iyi müşteriler tarafından tanımlandığı gibi sağlaması gerekir ve ardından önerileri gelecekte kullanıma yönelik iş ve kararlı kabul emin olmak için ürün ekibi tarafından doğrulanması ayrıntıları.
 
@@ -50,9 +50,9 @@ Windows PowerShell Desired State Configuration oluşturmak ve bildirim temelli y
 Hedef düğümler için erişilebilir olacak yapılandırmaları depolamak için merkezi bir hizmete bir çekme sunucusu sağlar.
 
 Çekme sunucusu rolü, bir Web sunucusu örneğine veya bir SMB dosya paylaşımı dağıtılabilir. Web sunucusu özelliği, bir OData arabirimi içerir ve yapılandırmaları uygulandıkça başarı veya başarısızlık onayı geri bildirmek hedef düğümler için özellikleri isteğe bağlı olarak içerebilir. Bu işlevsellik, ortamlarında yararlıdır bulunduğu çok sayıda hedef düğümleri.
-Son yapılandırmayı çekme sunucusuna işaret etmek için bir hedef düğümü (bir istemci olarak da bilinir) yapılandırdıktan sonra verileri ve gerekli tüm betikleri indirilen uygulanan ve. Bu tek seferlik bir dağıtım veya değişiklik uygun ölçekte yönetmek için önemli bir varlık da çekme sunucusu olmasını sağlayan yeniden tekrarlanan bir iş olarak gerçekleşebilir. Daha fazla bilgi için [Windows PowerShell Desired State Configuration çekme sunucuları](/powershell/dsc/pullServer) ve
+Son yapılandırmayı çekme sunucusuna işaret etmek için bir hedef düğümü (bir istemci olarak da bilinir) yapılandırdıktan sonra verileri ve gerekli tüm betikleri indirilen uygulanan ve. Bu tek seferlik bir dağıtım veya değişiklik uygun ölçekte yönetmek için önemli bir varlık da çekme sunucusu olmasını sağlayan yeniden tekrarlanan bir iş olarak gerçekleşebilir. Daha fazla bilgi için [Windows PowerShell Desired State Configuration çekme sunucuları](/powershell/dsc/pullServer/pullserver) ve
 
-[Gönderme ve çekme yapılandırma modlarından](/powershell/dsc/pullServer).
+[Gönderme ve çekme yapılandırma modlarından](/powershell/dsc/pullServer/pullserver).
 
 ## <a name="configuration-planning"></a>Yapılandırma planlaması
 
@@ -134,7 +134,7 @@ Kullanarak Yük Dengelemesi, trafik HTTPS üzerinden güvenli hale getirmek içi
 
 Senaryo |En iyi uygulama
 :---|:---
-Test ortamı |Planlı bir üretim ortamına mümkünse yeniden oluşturun. Bir sunucu ana bilgisayar adı, basit yapılandırmaları için uygundur. DNS kullanılamıyorsa, bir IP adresi yerine ana bilgisayar adı kullanılabilir.|
+Sınama Ortamı |Planlı bir üretim ortamına mümkünse yeniden oluşturun. Bir sunucu ana bilgisayar adı, basit yapılandırmaları için uygundur. DNS kullanılamıyorsa, bir IP adresi yerine ana bilgisayar adı kullanılabilir.|
 Tek düğümlü dağıtım |Sunucu ana bilgisayar adı için bir DNS CNAME kaydı oluşturun.|
 
 Daha fazla bilgi için [yapılandırma DNS hepsini bir kez deneme Windows Server'da](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - error category string [PowerShell SDK]
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
-ms.openlocfilehash: f6f5e50c55b477cbbeeaaf4f3ea665d5dc07758c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067051"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735068"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell Hata Kayıtları
 
@@ -60,9 +60,9 @@ Hata kaydı oluştururken hata tanımlayıcıları oluşturmak için aşağıdak
 
 ## <a name="error-category"></a>Hata kategorisi
 
-Bir hata kaydı oluşturduğunuzda, tarafından tanımlanan sabitlerinden birini kullanarak hatayı kategorisini belirtmek [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) sabit listesi. Windows PowerShell ayarladığınızda kullanıcılar, hata bilgilerini görüntülemek için hata kategorisi kullanır `$ErrorView` değişkenini `"CategoryView"`.
+Bir hata kaydı oluşturduğunuzda, tarafından tanımlanan sabitlerinden birini kullanarak hatayı kategorisini belirtmek [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) sabit listesi. Windows PowerShell ayarladığınızda kullanıcılar, hata bilgilerini görüntülemek için hata kategorisi kullanır `$ErrorView` değişkenini `"CategoryView"`.
 
-Kullanmaktan kaçının [System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified) sabit. Hataya neden olan işlem veya hata hakkında hiçbir bilgi varsa kategori kusursuz olsa bile hata ya da işlemi en iyi açıklayan kategoriyi seçin.
+Kullanmaktan kaçının [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified** sabit. Hataya neden olan işlem veya hata hakkında hiçbir bilgi varsa kategori kusursuz olsa bile hata ya da işlemi en iyi açıklayan kategoriyi seçin.
 
 Windows PowerShell tarafından görüntülenen bilgiler kategori görünümünde dizesi olarak adlandırılır ve özelliklerinden oluşturulmuştur [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) sınıfı. (Bu sınıf, hata erişilir [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) özellik.)
 
@@ -72,7 +72,7 @@ Windows PowerShell tarafından görüntülenen bilgiler kategori görünümünde
 
 Aşağıdaki listede görüntülenen bilgileri açıklanmaktadır:
 
-- Kategori: Windows PowerShell tanımlı [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) sabit.
+- Kategori: Windows PowerShell tanımlı [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) sabit.
 
 - TargetName: Varsayılan olarak, hata oluştuğunda nesnesinin adını cmdlet işliyordu. Veya başka bir cmdlet tanımlı bir dize.
 
@@ -88,9 +88,9 @@ Bir cmdlet için bir hata kaydı geliştirdiğinizde, varsayılan ileti metni va
 
 Değiştirme yapılacak tarafından sağlanan bir [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) nesne. Windows PowerShell tarafından kullanılabilen ek yerelleştirme bilgisi sağladıkları için bu nesnenin şu oluşturuculardan birini kullanın.
 
-- [ErrorDetails.ErrorDetails (cmdlet'i, dize, dize, nesne\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty Fullname =](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Şablon dizenizi cmdlet gerçekleştirilir aynı bütünleştirilmiş kodun kaynak dizesi ise veya şablon dizesini geçersiz kılma yoluyla yüklemek istiyorsanız bu bu oluşturucuyu kullanarak [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) yöntemi.
+- [Hata ayrıntıları (cmdlet'i, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): Şablon dizenizi cmdlet gerçekleştirilir aynı bütünleştirilmiş kodun kaynak dizesi ise veya şablon dizesini geçersiz kılma yoluyla yüklemek istiyorsanız bu bu oluşturucuyu kullanarak [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) yöntemi.
 
-- [ErrorDetails.ErrorDetails (derleme, dize, dize, nesne\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty Fullname =](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Bu oluşturucu kullanın şablon dizesini başka bir derlemede ve bu geçersiz kılma yüklenmiyor [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
+- [Hata ayrıntıları (derleme, dize, dize, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): Bu oluşturucu kullanın şablon dizesini başka bir derlemede ve bu geçersiz kılma yüklenmiyor [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
 Değiştirme yapılacak küçük bir fark dışında özel durum iletileri yazmak için .NET Framework tasarım ilkelerine uymalıdır. Geliştiriciler için özel durum iletileri yazılması yönergeleri durumu. Bu değişikliği iletileri için cmdlet'i kullanıcı yazılması gerekir.
 
@@ -110,7 +110,7 @@ Bir cmdlet kullandığında [System.Management.Automation.Cmdlet.WriteError](/do
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
+[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 

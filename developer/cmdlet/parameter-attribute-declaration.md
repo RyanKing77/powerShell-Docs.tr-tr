@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Parameter attribute
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
-ms.openlocfilehash: a3488d5fb3f7eb3df28d0242d6c39d07145a3c8d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067561"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735141"
 ---
 # <a name="parameter-attribute-declaration"></a>Parametre Özniteliği Bildirimi
 
@@ -32,17 +32,17 @@ Parametre özniteliği, bir cmdlet parametresi olarak cmdlet'i sınıfın ortak 
 
 #### <a name="parameters"></a>Parametreler
 
-`Mandatory` ([System.Boolean](/dotnet/api/System.Boolean)) isteğe bağlı parametre adı. `True` cmdlet parametresi gereklidir gösterir. Windows PowerShell cmdlet çalıştırıldığında bir gerekli parametresi sağlanmadı değilse, kullanıcı için bir parametre değeri ister. Varsayılan değer: `false`.
+`Mandatory` ([System.Boolean](/dotnet/api/System.Boolean)) isteğe bağlı parametre adı. `True` cmdlet parametresi gereklidir gösterir. Windows PowerShell cmdlet çalıştırıldığında bir gerekli parametresi sağlanmadı değilse, kullanıcı için bir parametre değeri ister. Varsayılan, `false` değeridir.
 
 `ParameterSetName` ([System.String](/dotnet/api/System.String)) isteğe bağlı parametre adı. Bu cmdlet parametresi ait olduğu parametre belirtir. Hiçbir parametre kümesi belirtilirse, parametre için tüm parametre kümeleri aittir.
 
-`Position` ([System.Integer](/dotnet/api/System.Integer)) isteğe bağlı parametre adı. Bir Windows PowerShell komutu içinde parametre konumunu belirtir.
+`Position` ([System.Int32](/dotnet/api/System.Int32)) isteğe bağlı parametre adı. Bir Windows PowerShell komutu içinde parametre konumunu belirtir.
 
-`ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean)) isteğe bağlı parametre adı. `True` cmdlet parametresi değerini bir işlem hattı nesnesinden aldığını gösterir. Cmdlet tam erişirse, bu anahtar sözcük belirtin. nesne, nesnenin yalnızca bir özellik. Varsayılan değer: `false`.
+`ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean)) isteğe bağlı parametre adı. `True` cmdlet parametresi değerini bir işlem hattı nesnesinden aldığını gösterir. Cmdlet tam erişirse, bu anahtar sözcük belirtin. nesne, nesnenin yalnızca bir özellik. Varsayılan, `false` değeridir.
 
-`ValueFromPipelineByPropertyName` ([System.Boolean](/dotnet/api/System.Boolean)) isteğe bağlı parametre adı. `True` cmdlet parametresi değerini aynı ada veya bu parametre aynı ada sahip bir işlem hattı nesnenin bir özelliğini aldığını gösterir. Cmdlet varsa, örneğin, bir `Name` parametresi ve işlem hattı nesne de sahip bir `Name` özelliği, değeri `Name` özelliği atanır `Name` cmdlet parametresi. Varsayılan değer: `false`.
+`ValueFromPipelineByPropertyName` ([System.Boolean](/dotnet/api/System.Boolean)) isteğe bağlı parametre adı. `True` cmdlet parametresi değerini aynı ada veya bu parametre aynı ada sahip bir işlem hattı nesnenin bir özelliğini aldığını gösterir. Cmdlet varsa, örneğin, bir `Name` parametresi ve işlem hattı nesne de sahip bir `Name` özelliği, değeri `Name` özelliği atanır `Name` cmdlet parametresi. Varsayılan, `false` değeridir.
 
-`ValueFromRemainingArguments` ([System.Boolean](/dotnet/api/System.Boolean)) isteğe bağlı parametre adı. `True` cmdlet parametresi cmdlet'e geçirilen tüm kalan bağımsız değişkenleri kabul ettiğini gösterir. Varsayılan değer: `false`.
+`ValueFromRemainingArguments` ([System.Boolean](/dotnet/api/System.Boolean)) isteğe bağlı parametre adı. `True` cmdlet parametresi cmdlet'e geçirilen tüm kalan bağımsız değişkenleri kabul ettiğini gösterir. Varsayılan, `false` değeridir.
 
 `HelpMessage` İsteğe bağlı parametre adı. Parametre kısa bir açıklamasını belirtir. Windows PowerShell cmdlet'i çalıştırdığınızda ve zorunlu bir parametre belirtilmezse bu iletiyi görüntüler.
 

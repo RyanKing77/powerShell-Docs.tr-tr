@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080925"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734871"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell Sağlayıcısına Genel Bakış
 
@@ -27,7 +27,7 @@ Bir sağlayıcı yazdığınızda, varsayılan sürücüleri-sağlayıcısı kul
 
 ## <a name="type-of-providers"></a>Tür sağlayıcıları
 
-Sağlayıcıların her biri farklı düzeyde işlevsellik sağlayan birkaç türü vardır. Alt öğeleri birinden türetilen bir sınıf olarak uygulanan bir sağlayıcı [System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider) sınıfı. Sağlayıcıların farklı türleri hakkında daha fazla bilgi için bkz: [sağlayıcısı türleri](./provider-types.md).
+Sağlayıcıların her biri farklı düzeyde işlevsellik sağlayan birkaç türü vardır. Alt öğeleri birinden türetilen bir sınıf olarak uygulanan bir sağlayıcı [System.Management.Automation.SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider** sınıfı. Sağlayıcıların farklı türleri hakkında daha fazla bilgi için bkz: [sağlayıcısı türleri](./provider-types.md).
 
 ## <a name="provider-cmdlets"></a>Sağlayıcı cmdlet’leri
 
@@ -63,7 +63,7 @@ Sağlayıcıları cmdlet'inin statik parametrelerden biri için belirli bir değ
 
 ## <a name="provider-capabilities"></a>Sağlayıcı özellikleri
 
-[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) numaralandırma birkaç sağlayıcıları destekleyebilir özelliği tanımlar. Bunlar, joker karakterleri kullan, öğeleri filtrelemek ve Destek işlemleri özelliği içerir. Özellikleri için bir sağlayıcı belirtmek için değerleri listesi ekleme [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) numaralandırma, bir mantıksal ile birleştirilmiş `OR` işlemi olarak [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) özelliğini (özniteliğinin ikinci parametresi) [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) sağlayıcısı sınıfınız için özniteliği. Örneğin, aşağıdaki öznitelik sağlayıcının desteklediği belirtir [System.Management.Automation.Provider.Providercapabilities.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.ShouldProcess) ve [ System.Management.Automation.Provider.Providercapabilities.Transactions](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.Transactions) özellikleri.
+[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) numaralandırma birkaç sağlayıcıları destekleyebilir özelliği tanımlar. Bunlar, joker karakterleri kullan, öğeleri filtrelemek ve Destek işlemleri özelliği içerir. Özellikleri için bir sağlayıcı belirtmek için değerleri listesi ekleme [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) numaralandırma, bir mantıksal ile birleştirilmiş `OR` işlemi olarak [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) özelliğini (özniteliğinin ikinci parametresi) [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) sağlayıcısı sınıfınız için özniteliği. Örneğin, aşağıdaki öznitelik sağlayıcının desteklediği belirtir [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** ve [ System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **işlemleri** özellikleri.
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

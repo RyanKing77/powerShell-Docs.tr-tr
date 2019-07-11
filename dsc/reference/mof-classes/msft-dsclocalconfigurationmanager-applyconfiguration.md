@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, yapılandırma, Kurulum
-title: MSFT_DSCLocalConfigurationManager sınıfının ApplyConfiguration yöntemi
-ms.openlocfilehash: 559ff1793a18e28dad2f176bdb20eb53bc08630d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: ApplyConfiguration yöntemi
+ms.openlocfilehash: 0425b9a7db37e421830ba37da8f5c0a4877a1b72
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079175"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727186"
 ---
-# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager sınıfının ApplyConfiguration yöntemi
+# <a name="applyconfiguration-method"></a>ApplyConfiguration yöntemi
 
 Yapılandırma Aracı, bekleyen yapılandırmayı uygulamak için kullanır.
 
