@@ -2,22 +2,26 @@
 title: Linux’ta PowerShell Core yükleme
 description: PowerShell Core yükleme üzerinde çeşitli Linux dağıtımları hakkında bilgi
 ms.date: 08/06/2018
-ms.openlocfilehash: 0a7c9549c37222bf599e4bdb9e36c91288191bb3
-ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
+ms.openlocfilehash: 32d6c0e718ca798af2f6a5d796c3ca362e7befd9
+ms.sourcegitcommit: 13e170e8bff29d3d5f854c874de88f53c5e5ef20
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64530641"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829431"
 ---
-# <a name="installing-powershell-core-on-linux"></a><span data-ttu-id="e4a53-103">Linux’ta PowerShell Core yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-103">Installing PowerShell Core on Linux</span></span>
+# <a name="installing-powershell-core-on-linux"></a><span data-ttu-id="b9de1-103">Linux’ta PowerShell Core yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-103">Installing PowerShell Core on Linux</span></span>
 
-<span data-ttu-id="e4a53-104">Destekler [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [ openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], ve [Arch Linux][arch].</span><span class="sxs-lookup"><span data-stu-id="e4a53-104">Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].</span></span>
+<span data-ttu-id="b9de1-104">Destekler [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9],
+[CentOS 7][cos], [kırmızı Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse],
+[Fedora 27][fedora], [Fedora 28] [fedora], ve [Arch Linux][arch].</span><span class="sxs-lookup"><span data-stu-id="b9de1-104">Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9],
+[CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse],
+[Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].</span></span>
 
-<span data-ttu-id="e4a53-105">Değil resmi olarak desteklenen Linux dağıtımları için kullanmayı deneyebilirsiniz [PowerShell Yasla paket][snap].</span><span class="sxs-lookup"><span data-stu-id="e4a53-105">For Linux distributions that are not officially supported, you can try using the [PowerShell Snap Package][snap].</span></span>
-<span data-ttu-id="e4a53-106">Linux kullanarak doğrudan PowerShell ikili dosyaları dağıtmaya de deneyebilirsiniz [ `tar.gz` arşiv][tar], ancak gerekli bağımlılıkları işletim sisteminde ayrı adımları göre ayarlamanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-106">You can also try deploying PowerShell binaries directly using the Linux [`tar.gz` archive][tar], but you would need to set up the necessary dependencies based on the OS in separate steps.</span></span>
+<span data-ttu-id="b9de1-105">Değil resmi olarak desteklenen Linux dağıtımları için kullanmayı deneyebilirsiniz [PowerShell Yasla paket][snap].</span><span class="sxs-lookup"><span data-stu-id="b9de1-105">For Linux distributions that are not officially supported, you can try using the [PowerShell Snap Package][snap].</span></span>
+<span data-ttu-id="b9de1-106">Linux kullanarak doğrudan PowerShell ikili dosyaları dağıtmaya de deneyebilirsiniz [ `tar.gz` arşiv][tar], ancak gerekli bağımlılıkları işletim sisteminde ayrı adımları göre ayarlamanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-106">You can also try deploying PowerShell binaries directly using the Linux [`tar.gz` archive][tar], but you would need to set up the necessary dependencies based on the OS in separate steps.</span></span>
 
-<span data-ttu-id="e4a53-107">Tüm paketleri bizim Github'da kullanılabilir [Yayınları][] sayfası.</span><span class="sxs-lookup"><span data-stu-id="e4a53-107">All packages are available on our GitHub [releases][] page.</span></span>
-<span data-ttu-id="e4a53-108">Paket yüklendikten sonra Çalıştır `pwsh` bir terminalden.</span><span class="sxs-lookup"><span data-stu-id="e4a53-108">Once the package is installed, run `pwsh` from a terminal.</span></span>
+<span data-ttu-id="b9de1-107">Tüm paketleri bizim Github'da kullanılabilir [Yayınları][] sayfası.</span><span class="sxs-lookup"><span data-stu-id="b9de1-107">All packages are available on our GitHub [releases][] page.</span></span>
+<span data-ttu-id="b9de1-108">Paket yüklendikten sonra Çalıştır `pwsh` bir terminalden.</span><span class="sxs-lookup"><span data-stu-id="b9de1-108">Once the package is installed, run `pwsh` from a terminal.</span></span>
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
@@ -32,26 +36,26 @@ ms.locfileid: "64530641"
 [snap]: #snap-package
 [tar]: #binary-archives
 
-## <a name="installing-preview-releases"></a><span data-ttu-id="e4a53-109">Önizleme sürümleri yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-109">Installing Preview Releases</span></span>
+## <a name="installing-preview-releases"></a><span data-ttu-id="b9de1-109">Önizleme sürümleri yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-109">Installing Preview Releases</span></span>
 
-<span data-ttu-id="e4a53-110">PowerShell Core Önizleme sürümü için Paket Deposu aracılığıyla Linux yüklerken, paket adı değişiklikleri `powershell` için `powershell-preview`.</span><span class="sxs-lookup"><span data-stu-id="e4a53-110">When installing a PowerShell Core Preview release for Linux via a Package Repository, the package name changes from `powershell` to `powershell-preview`.</span></span>
+<span data-ttu-id="b9de1-110">PowerShell Core Önizleme sürümü için Paket Deposu aracılığıyla Linux yüklerken, paket adı değişiklikleri `powershell` için `powershell-preview`.</span><span class="sxs-lookup"><span data-stu-id="b9de1-110">When installing a PowerShell Core Preview release for Linux via a Package Repository, the package name changes from `powershell` to `powershell-preview`.</span></span>
 
-<span data-ttu-id="e4a53-111">Doğrudan indirme ile yükleme, dosya adı dışında değiştirmez.</span><span class="sxs-lookup"><span data-stu-id="e4a53-111">Installing via direct download does not change, other than the file name.</span></span>
+<span data-ttu-id="b9de1-111">Doğrudan indirme ile yükleme, dosya adı dışında değiştirmez.</span><span class="sxs-lookup"><span data-stu-id="b9de1-111">Installing via direct download does not change, other than the file name.</span></span>
 
-<span data-ttu-id="e4a53-112">Çeşitli paket yöneticilerini kullanarak kararlı ve önizleme paketleri yüklemek için komut tablosu şu şekildedir:</span><span class="sxs-lookup"><span data-stu-id="e4a53-112">Here is a table of the commands to install the stable and preview packages using the various package managers:</span></span>
+<span data-ttu-id="b9de1-112">Çeşitli paket yöneticilerini kullanarak kararlı ve önizleme paketleri yüklemek için komut tablosu şu şekildedir:</span><span class="sxs-lookup"><span data-stu-id="b9de1-112">Here is a table of the commands to install the stable and preview packages using the various package managers:</span></span>
 
-|<span data-ttu-id="e4a53-113">Distribution(s)</span><span class="sxs-lookup"><span data-stu-id="e4a53-113">Distribution(s)</span></span>|<span data-ttu-id="e4a53-114">Kararlı komutu</span><span class="sxs-lookup"><span data-stu-id="e4a53-114">Stable Command</span></span> | <span data-ttu-id="e4a53-115">Önizleme komutu</span><span class="sxs-lookup"><span data-stu-id="e4a53-115">Preview Command</span></span> |
+|<span data-ttu-id="b9de1-113">Distribution(s)</span><span class="sxs-lookup"><span data-stu-id="b9de1-113">Distribution(s)</span></span>|<span data-ttu-id="b9de1-114">Kararlı komutu</span><span class="sxs-lookup"><span data-stu-id="b9de1-114">Stable Command</span></span> | <span data-ttu-id="b9de1-115">Önizleme komutu</span><span class="sxs-lookup"><span data-stu-id="b9de1-115">Preview Command</span></span> |
 |---------------|---------------|-----------------|
-| <span data-ttu-id="e4a53-116">Ubuntu, Debian</span><span class="sxs-lookup"><span data-stu-id="e4a53-116">Ubuntu, Debian</span></span> |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| <span data-ttu-id="e4a53-117">CentOS, RedHat</span><span class="sxs-lookup"><span data-stu-id="e4a53-117">CentOS, RedHat</span></span> |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| <span data-ttu-id="e4a53-118">Fedora</span><span class="sxs-lookup"><span data-stu-id="e4a53-118">Fedora</span></span>   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+| <span data-ttu-id="b9de1-116">Ubuntu, Debian</span><span class="sxs-lookup"><span data-stu-id="b9de1-116">Ubuntu, Debian</span></span> |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| <span data-ttu-id="b9de1-117">CentOS, RedHat</span><span class="sxs-lookup"><span data-stu-id="b9de1-117">CentOS, RedHat</span></span> |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| <span data-ttu-id="b9de1-118">Fedora</span><span class="sxs-lookup"><span data-stu-id="b9de1-118">Fedora</span></span>   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
-## <a name="ubuntu-1404"></a><span data-ttu-id="e4a53-119">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="e4a53-119">Ubuntu 14.04</span></span>
+## <a name="ubuntu-1404"></a><span data-ttu-id="b9de1-119">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="b9de1-119">Ubuntu 14.04</span></span>
 
-### <a name="installation-via-package-repository---ubuntu-1404"></a><span data-ttu-id="e4a53-120">Paket Deposu - Ubuntu 14.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-120">Installation via Package Repository - Ubuntu 14.04</span></span>
+### <a name="installation-via-package-repository---ubuntu-1404"></a><span data-ttu-id="b9de1-120">Paket Deposu - Ubuntu 14.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-120">Installation via Package Repository - Ubuntu 14.04</span></span>
 
-<span data-ttu-id="e4a53-121">Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="e4a53-121">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="e4a53-122">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-122">This is the preferred method.</span></span>
+<span data-ttu-id="b9de1-121">Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="b9de1-121">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="b9de1-122">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-122">This is the preferred method.</span></span>
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -70,15 +74,15 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="e4a53-123">Süper kullanıcı Microsoft depoya kaydedin.</span><span class="sxs-lookup"><span data-stu-id="e4a53-123">As superuser, register the Microsoft repository.</span></span>
-<span data-ttu-id="e4a53-124">Daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` yüklemesini güncelleştirmek için.</span><span class="sxs-lookup"><span data-stu-id="e4a53-124">From then on, you just need to use `sudo apt-get upgrade powershell` to update the installation.</span></span>
+<span data-ttu-id="b9de1-123">Süper kullanıcı Microsoft depoya kaydedin.</span><span class="sxs-lookup"><span data-stu-id="b9de1-123">As superuser, register the Microsoft repository.</span></span>
+<span data-ttu-id="b9de1-124">Daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` yüklemesini güncelleştirmek için.</span><span class="sxs-lookup"><span data-stu-id="b9de1-124">From then on, you just need to use `sudo apt-get upgrade powershell` to update the installation.</span></span>
 
-### <a name="installation-via-direct-download---ubuntu-1404"></a><span data-ttu-id="e4a53-125">Doğrudan indirme - Ubuntu 14.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-125">Installation via Direct Download - Ubuntu 14.04</span></span>
+### <a name="installation-via-direct-download---ubuntu-1404"></a><span data-ttu-id="b9de1-125">Doğrudan indirme - Ubuntu 14.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-125">Installation via Direct Download - Ubuntu 14.04</span></span>
 
-<span data-ttu-id="e4a53-126">Debian paketi indirin `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="e4a53-126">Download the Debian package `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`</span></span>
-<span data-ttu-id="e4a53-127">gelen [Yayınları][] Ubuntu makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="e4a53-127">from the [releases][] page onto the Ubuntu machine.</span></span>
+<span data-ttu-id="b9de1-126">Debian paketi indirin `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="b9de1-126">Download the Debian package `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`</span></span>
+<span data-ttu-id="b9de1-127">gelen [Yayınları][] Ubuntu makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="b9de1-127">from the [releases][] page onto the Ubuntu machine.</span></span>
 
-<span data-ttu-id="e4a53-128">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="e4a53-128">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="b9de1-128">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="b9de1-128">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.14.04_amd64.deb
@@ -86,21 +90,21 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> <span data-ttu-id="e4a53-129">`dpkg -i` Komutu karşılaşılmamış bağımlılıklarıyla birlikte başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="e4a53-129">The `dpkg -i` command fails with unmet dependencies.</span></span>
-> <span data-ttu-id="e4a53-130">Sonraki komut `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-130">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
+> <span data-ttu-id="b9de1-129">`dpkg -i` Komutu karşılaşılmamış bağımlılıklarıyla birlikte başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="b9de1-129">The `dpkg -i` command fails with unmet dependencies.</span></span>
+> <span data-ttu-id="b9de1-130">Sonraki komut `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-130">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
 
-### <a name="uninstallation---ubuntu-1404"></a><span data-ttu-id="e4a53-131">Kaldırma - Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="e4a53-131">Uninstallation - Ubuntu 14.04</span></span>
+### <a name="uninstallation---ubuntu-1404"></a><span data-ttu-id="b9de1-131">Kaldırma - Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="b9de1-131">Uninstallation - Ubuntu 14.04</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1604"></a><span data-ttu-id="e4a53-132">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="e4a53-132">Ubuntu 16.04</span></span>
+## <a name="ubuntu-1604"></a><span data-ttu-id="b9de1-132">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="b9de1-132">Ubuntu 16.04</span></span>
 
-### <a name="installation-via-package-repository---ubuntu-1604"></a><span data-ttu-id="e4a53-133">Paket Deposu - Ubuntu 16.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-133">Installation via Package Repository - Ubuntu 16.04</span></span>
+### <a name="installation-via-package-repository---ubuntu-1604"></a><span data-ttu-id="b9de1-133">Paket Deposu - Ubuntu 16.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-133">Installation via Package Repository - Ubuntu 16.04</span></span>
 
-<span data-ttu-id="e4a53-134">Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="e4a53-134">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="e4a53-135">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-135">This is the preferred method.</span></span>
+<span data-ttu-id="b9de1-134">Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="b9de1-134">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="b9de1-135">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-135">This is the preferred method.</span></span>
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -119,14 +123,14 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="e4a53-136">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.</span><span class="sxs-lookup"><span data-stu-id="e4a53-136">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="b9de1-136">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.</span><span class="sxs-lookup"><span data-stu-id="b9de1-136">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-### <a name="installation-via-direct-download---ubuntu-1604"></a><span data-ttu-id="e4a53-137">Doğrudan indirme - Ubuntu 16.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-137">Installation via Direct Download - Ubuntu 16.04</span></span>
+### <a name="installation-via-direct-download---ubuntu-1604"></a><span data-ttu-id="b9de1-137">Doğrudan indirme - Ubuntu 16.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-137">Installation via Direct Download - Ubuntu 16.04</span></span>
 
-<span data-ttu-id="e4a53-138">Debian paketi indirin `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="e4a53-138">Download the Debian package `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`</span></span>
-<span data-ttu-id="e4a53-139">gelen [Yayınları][] Ubuntu makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="e4a53-139">from the [releases][] page onto the Ubuntu machine.</span></span>
+<span data-ttu-id="b9de1-138">Debian paketi indirin `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="b9de1-138">Download the Debian package `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`</span></span>
+<span data-ttu-id="b9de1-139">gelen [Yayınları][] Ubuntu makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="b9de1-139">from the [releases][] page onto the Ubuntu machine.</span></span>
 
-<span data-ttu-id="e4a53-140">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="e4a53-140">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="b9de1-140">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="b9de1-140">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.16.04_amd64.deb
@@ -134,21 +138,21 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> <span data-ttu-id="e4a53-141">`dpkg -i` Komutu karşılaşılmamış bağımlılıklarıyla birlikte başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="e4a53-141">The `dpkg -i` command fails with unmet dependencies.</span></span>
-> <span data-ttu-id="e4a53-142">Sonraki komut `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-142">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
+> <span data-ttu-id="b9de1-141">`dpkg -i` Komutu karşılaşılmamış bağımlılıklarıyla birlikte başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="b9de1-141">The `dpkg -i` command fails with unmet dependencies.</span></span>
+> <span data-ttu-id="b9de1-142">Sonraki komut `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-142">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
 
-### <a name="uninstallation---ubuntu-1604"></a><span data-ttu-id="e4a53-143">Kaldırma - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="e4a53-143">Uninstallation - Ubuntu 16.04</span></span>
+### <a name="uninstallation---ubuntu-1604"></a><span data-ttu-id="b9de1-143">Kaldırma - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="b9de1-143">Uninstallation - Ubuntu 16.04</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1804"></a><span data-ttu-id="e4a53-144">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="e4a53-144">Ubuntu 18.04</span></span>
+## <a name="ubuntu-1804"></a><span data-ttu-id="b9de1-144">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="b9de1-144">Ubuntu 18.04</span></span>
 
-### <a name="installation-via-package-repository---ubuntu-1804"></a><span data-ttu-id="e4a53-145">Paket Deposu - Ubuntu 18.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-145">Installation via Package Repository - Ubuntu 18.04</span></span>
+### <a name="installation-via-package-repository---ubuntu-1804"></a><span data-ttu-id="b9de1-145">Paket Deposu - Ubuntu 18.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-145">Installation via Package Repository - Ubuntu 18.04</span></span>
 
-<span data-ttu-id="e4a53-146">Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="e4a53-146">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="e4a53-147">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-147">This is the preferred method.</span></span>
+<span data-ttu-id="b9de1-146">Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="b9de1-146">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="b9de1-147">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-147">This is the preferred method.</span></span>
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -170,14 +174,14 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="e4a53-148">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.</span><span class="sxs-lookup"><span data-stu-id="e4a53-148">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="b9de1-148">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.</span><span class="sxs-lookup"><span data-stu-id="b9de1-148">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-### <a name="installation-via-direct-download---ubuntu-1804"></a><span data-ttu-id="e4a53-149">Doğrudan indirme - Ubuntu 18.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-149">Installation via Direct Download - Ubuntu 18.04</span></span>
+### <a name="installation-via-direct-download---ubuntu-1804"></a><span data-ttu-id="b9de1-149">Doğrudan indirme - Ubuntu 18.04 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-149">Installation via Direct Download - Ubuntu 18.04</span></span>
 
-<span data-ttu-id="e4a53-150">Debian paketi indirin `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="e4a53-150">Download the Debian package `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`</span></span>
-<span data-ttu-id="e4a53-151">gelen [Yayınları][] Ubuntu makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="e4a53-151">from the [releases][] page onto the Ubuntu machine.</span></span>
+<span data-ttu-id="b9de1-150">Debian paketi indirin `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="b9de1-150">Download the Debian package `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`</span></span>
+<span data-ttu-id="b9de1-151">gelen [Yayınları][] Ubuntu makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="b9de1-151">from the [releases][] page onto the Ubuntu machine.</span></span>
 
-<span data-ttu-id="e4a53-152">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="e4a53-152">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="b9de1-152">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="b9de1-152">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.18.04_amd64.deb
@@ -185,28 +189,28 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> <span data-ttu-id="e4a53-153">`dpkg -i` Komutu karşılaşılmamış bağımlılıklarıyla birlikte başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="e4a53-153">The `dpkg -i` command fails with unmet dependencies.</span></span>
-> <span data-ttu-id="e4a53-154">Sonraki komut `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-154">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
+> <span data-ttu-id="b9de1-153">`dpkg -i` Komutu karşılaşılmamış bağımlılıklarıyla birlikte başarısız olur.</span><span class="sxs-lookup"><span data-stu-id="b9de1-153">The `dpkg -i` command fails with unmet dependencies.</span></span>
+> <span data-ttu-id="b9de1-154">Sonraki komut `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-154">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
 
-### <a name="uninstallation---ubuntu-1804"></a><span data-ttu-id="e4a53-155">Kaldırma - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="e4a53-155">Uninstallation - Ubuntu 18.04</span></span>
+### <a name="uninstallation---ubuntu-1804"></a><span data-ttu-id="b9de1-155">Kaldırma - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="b9de1-155">Uninstallation - Ubuntu 18.04</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1810"></a><span data-ttu-id="e4a53-156">Ubuntu 18.10</span><span class="sxs-lookup"><span data-stu-id="e4a53-156">Ubuntu 18.10</span></span>
+## <a name="ubuntu-1810"></a><span data-ttu-id="b9de1-156">Ubuntu 18.10</span><span class="sxs-lookup"><span data-stu-id="b9de1-156">Ubuntu 18.10</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="e4a53-157">18.10 olduğu gibi bir [Ara Sürüm](https://www.ubuntu.com/about/release-cycle), yalnızca [desteklenen topluluk](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).</span><span class="sxs-lookup"><span data-stu-id="e4a53-157">As 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle), it is only [community supported](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).</span></span>
+> <span data-ttu-id="b9de1-157">18.10 olduğu gibi bir [Ara Sürüm](https://www.ubuntu.com/about/release-cycle), yalnızca [desteklenen topluluk](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).</span><span class="sxs-lookup"><span data-stu-id="b9de1-157">As 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle), it is only [community supported](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).</span></span>
 
-<span data-ttu-id="e4a53-158">Üzerinde 18.10 yükleme aracılığıyla desteklenir `snapd`.</span><span class="sxs-lookup"><span data-stu-id="e4a53-158">Installing on 18.10 is supported via `snapd`.</span></span> <span data-ttu-id="e4a53-159">Bkz: [Yasla paket] [ snap] için tam yönergeler;</span><span class="sxs-lookup"><span data-stu-id="e4a53-159">See [Snap Package][snap] for full instructions;</span></span>
+<span data-ttu-id="b9de1-158">Üzerinde 18.10 yükleme aracılığıyla desteklenir `snapd`.</span><span class="sxs-lookup"><span data-stu-id="b9de1-158">Installing on 18.10 is supported via `snapd`.</span></span> <span data-ttu-id="b9de1-159">Bkz: [Yasla paket][snap] için tam yönergeler;</span><span class="sxs-lookup"><span data-stu-id="b9de1-159">See [Snap Package][snap] for full instructions;</span></span>
 
-## <a name="debian-8"></a><span data-ttu-id="e4a53-160">Debian 8</span><span class="sxs-lookup"><span data-stu-id="e4a53-160">Debian 8</span></span>
+## <a name="debian-8"></a><span data-ttu-id="b9de1-160">Debian 8</span><span class="sxs-lookup"><span data-stu-id="b9de1-160">Debian 8</span></span>
 
-### <a name="installation-via-package-repository---debian-8"></a><span data-ttu-id="e4a53-161">Paket Deposu - Debian 8 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-161">Installation via Package Repository - Debian 8</span></span>
+### <a name="installation-via-package-repository---debian-8"></a><span data-ttu-id="b9de1-161">Paket Deposu - Debian 8 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-161">Installation via Package Repository - Debian 8</span></span>
 
-<span data-ttu-id="e4a53-162">Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="e4a53-162">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="e4a53-163">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-163">This is the preferred method.</span></span>
+<span data-ttu-id="b9de1-162">Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="b9de1-162">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="b9de1-163">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-163">This is the preferred method.</span></span>
 
 ```sh
 # Install system components
@@ -229,14 +233,14 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="e4a53-164">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.</span><span class="sxs-lookup"><span data-stu-id="e4a53-164">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="b9de1-164">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.</span><span class="sxs-lookup"><span data-stu-id="b9de1-164">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-## <a name="debian-9"></a><span data-ttu-id="e4a53-165">Debian 9</span><span class="sxs-lookup"><span data-stu-id="e4a53-165">Debian 9</span></span>
+## <a name="debian-9"></a><span data-ttu-id="b9de1-165">Debian 9</span><span class="sxs-lookup"><span data-stu-id="b9de1-165">Debian 9</span></span>
 
-### <a name="installation-via-package-repository---debian-9"></a><span data-ttu-id="e4a53-166">Paket Deposu - Debian 9 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-166">Installation via Package Repository - Debian 9</span></span>
+### <a name="installation-via-package-repository---debian-9"></a><span data-ttu-id="b9de1-166">Paket Deposu - Debian 9 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-166">Installation via Package Repository - Debian 9</span></span>
 
-<span data-ttu-id="e4a53-167">Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="e4a53-167">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="e4a53-168">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-168">This is the preferred method.</span></span>
+<span data-ttu-id="b9de1-167">Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="b9de1-167">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="b9de1-168">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-168">This is the preferred method.</span></span>
 
 ```sh
 # Install system components
@@ -259,34 +263,34 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="e4a53-169">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.</span><span class="sxs-lookup"><span data-stu-id="e4a53-169">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="b9de1-169">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.</span><span class="sxs-lookup"><span data-stu-id="b9de1-169">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-### <a name="installation-via-direct-download---debian-9"></a><span data-ttu-id="e4a53-170">Doğrudan indirme - Debian 9 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-170">Installation via Direct Download - Debian 9</span></span>
+### <a name="installation-via-direct-download---debian-9"></a><span data-ttu-id="b9de1-170">Doğrudan indirme - Debian 9 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-170">Installation via Direct Download - Debian 9</span></span>
 
-<span data-ttu-id="e4a53-171">Debian paketi indirin `powershell_6.2.0-1.debian.9_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="e4a53-171">Download the Debian package `powershell_6.2.0-1.debian.9_amd64.deb`</span></span>
-<span data-ttu-id="e4a53-172">gelen [Yayınları][] Debian makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="e4a53-172">from the [releases][] page onto the Debian machine.</span></span>
+<span data-ttu-id="b9de1-171">Debian paketi indirin `powershell_6.2.0-1.debian.9_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="b9de1-171">Download the Debian package `powershell_6.2.0-1.debian.9_amd64.deb`</span></span>
+<span data-ttu-id="b9de1-172">gelen [Yayınları][] Debian makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="b9de1-172">from the [releases][] page onto the Debian machine.</span></span>
 
-<span data-ttu-id="e4a53-173">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="e4a53-173">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="b9de1-173">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="b9de1-173">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-### <a name="uninstallation---debian-9"></a><span data-ttu-id="e4a53-174">Kaldırma - Debian 9</span><span class="sxs-lookup"><span data-stu-id="e4a53-174">Uninstallation - Debian 9</span></span>
+### <a name="uninstallation---debian-9"></a><span data-ttu-id="b9de1-174">Kaldırma - Debian 9</span><span class="sxs-lookup"><span data-stu-id="b9de1-174">Uninstallation - Debian 9</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="centos-7"></a><span data-ttu-id="e4a53-175">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="e4a53-175">CentOS 7</span></span>
+## <a name="centos-7"></a><span data-ttu-id="b9de1-175">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="b9de1-175">CentOS 7</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="e4a53-176">Bu paket, Oracle Linux 7'de de çalışır.</span><span class="sxs-lookup"><span data-stu-id="e4a53-176">This package also works on Oracle Linux 7.</span></span>
+> <span data-ttu-id="b9de1-176">Bu paket, Oracle Linux 7'de de çalışır.</span><span class="sxs-lookup"><span data-stu-id="b9de1-176">This package also works on Oracle Linux 7.</span></span>
 
-### <a name="installation-via-package-repository-preferred---centos-7"></a><span data-ttu-id="e4a53-177">Paket (tercih edilir) - deposu CentOS 7 ile yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-177">Installation via Package Repository (preferred) - CentOS 7</span></span>
+### <a name="installation-via-package-repository-preferred---centos-7"></a><span data-ttu-id="b9de1-177">Paket (tercih edilir) - deposu CentOS 7 ile yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-177">Installation via Package Repository (preferred) - CentOS 7</span></span>
 
-<span data-ttu-id="e4a53-178">Linux için PowerShell Core, resmi Microsoft depolara kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="e4a53-178">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="b9de1-178">Linux için PowerShell Core, resmi Microsoft depolara kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="b9de1-178">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -299,26 +303,26 @@ sudo yum install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="e4a53-179">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidir `sudo yum update powershell` PowerShell güncelleştirilecek.</span><span class="sxs-lookup"><span data-stu-id="e4a53-179">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
+<span data-ttu-id="b9de1-179">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidir `sudo yum update powershell` PowerShell güncelleştirilecek.</span><span class="sxs-lookup"><span data-stu-id="b9de1-179">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
 
-### <a name="installation-via-direct-download---centos-7"></a><span data-ttu-id="e4a53-180">Doğrudan indirme - CentOS 7 ile yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-180">Installation via Direct Download - CentOS 7</span></span>
+### <a name="installation-via-direct-download---centos-7"></a><span data-ttu-id="b9de1-180">Doğrudan indirme - CentOS 7 ile yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-180">Installation via Direct Download - CentOS 7</span></span>
 
-<span data-ttu-id="e4a53-181">Kullanarak [CentOS 7][], RPM paketini indirme `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="e4a53-181">Using [CentOS 7][], download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
-<span data-ttu-id="e4a53-182">gelen [Yayınları][] CentOS makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="e4a53-182">from the [releases][] page onto the CentOS machine.</span></span>
+<span data-ttu-id="b9de1-181">Kullanarak [CentOS 7][], RPM paketini indirme `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="b9de1-181">Using [CentOS 7][], download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
+<span data-ttu-id="b9de1-182">gelen [Yayınları][] CentOS makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="b9de1-182">from the [releases][] page onto the CentOS machine.</span></span>
 
-<span data-ttu-id="e4a53-183">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="e4a53-183">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="b9de1-183">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="b9de1-183">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="e4a53-184">RPM karşıdan ara adım olmadan da yükleyebilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="e4a53-184">You can also install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="b9de1-184">RPM karşıdan ara adım olmadan da yükleyebilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="b9de1-184">You can also install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---centos-7"></a><span data-ttu-id="e4a53-185">Kaldırma - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="e4a53-185">Uninstallation - CentOS 7</span></span>
+### <a name="uninstallation---centos-7"></a><span data-ttu-id="b9de1-185">Kaldırma - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="b9de1-185">Uninstallation - CentOS 7</span></span>
 
 ```sh
 sudo yum remove powershell
@@ -326,11 +330,11 @@ sudo yum remove powershell
 
 [CentOS 7]: https://www.centos.org/download/
 
-## <a name="red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="e4a53-187">Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="e4a53-187">Red Hat Enterprise Linux (RHEL) 7</span></span>
+## <a name="red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="b9de1-187">Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="b9de1-187">Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="e4a53-188">Paket (tercih edilir) - deposu Red Hat Enterprise Linux (RHEL) 7 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-188">Installation via Package Repository (preferred) - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="b9de1-188">Paket (tercih edilir) - deposu Red Hat Enterprise Linux (RHEL) 7 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-188">Installation via Package Repository (preferred) - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-<span data-ttu-id="e4a53-189">Linux için PowerShell Core, resmi Microsoft depolara kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="e4a53-189">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="b9de1-189">Linux için PowerShell Core, resmi Microsoft depolara kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="b9de1-189">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -343,34 +347,34 @@ sudo yum install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="e4a53-190">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidir `sudo yum update powershell` PowerShell güncelleştirilecek.</span><span class="sxs-lookup"><span data-stu-id="e4a53-190">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
+<span data-ttu-id="b9de1-190">Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidir `sudo yum update powershell` PowerShell güncelleştirilecek.</span><span class="sxs-lookup"><span data-stu-id="b9de1-190">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
 
-### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="e4a53-191">Doğrudan indirme - Red Hat Enterprise Linux (RHEL) 7 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-191">Installation via Direct Download - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="b9de1-191">Doğrudan indirme - Red Hat Enterprise Linux (RHEL) 7 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-191">Installation via Direct Download - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-<span data-ttu-id="e4a53-192">RPM paketini indirme `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="e4a53-192">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
-<span data-ttu-id="e4a53-193">gelen [Yayınları][] Red Hat Enterprise Linux makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="e4a53-193">from the [releases][] page onto the Red Hat Enterprise Linux machine.</span></span>
+<span data-ttu-id="b9de1-192">RPM paketini indirme `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="b9de1-192">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
+<span data-ttu-id="b9de1-193">gelen [Yayınları][] Red Hat Enterprise Linux makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="b9de1-193">from the [releases][] page onto the Red Hat Enterprise Linux machine.</span></span>
 
-<span data-ttu-id="e4a53-194">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="e4a53-194">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="b9de1-194">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="b9de1-194">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="e4a53-195">RPM karşıdan ara adım olmadan da yükleyebilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="e4a53-195">You can also install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="b9de1-195">RPM karşıdan ara adım olmadan da yükleyebilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="b9de1-195">You can also install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="e4a53-196">Uninstallation - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="e4a53-196">Uninstallation - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="b9de1-196">Uninstallation - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="b9de1-196">Uninstallation - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
 ```sh
 sudo yum remove powershell
 ```
 
-## <a name="opensuse"></a><span data-ttu-id="e4a53-197">openSUSE</span><span class="sxs-lookup"><span data-stu-id="e4a53-197">openSUSE</span></span>
+## <a name="opensuse"></a><span data-ttu-id="b9de1-197">openSUSE</span><span class="sxs-lookup"><span data-stu-id="b9de1-197">openSUSE</span></span>
 
-### <a name="installation---opensuse-423"></a><span data-ttu-id="e4a53-198">Yükleme - openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="e4a53-198">Installation - openSUSE 42.3</span></span>
+### <a name="installation---opensuse-423"></a><span data-ttu-id="b9de1-198">Yükleme - openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="b9de1-198">Installation - openSUSE 42.3</span></span>
 
 ```sh
 # Install dependencies
@@ -395,7 +399,7 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="installation---opensuse-leap-15"></a><span data-ttu-id="e4a53-199">Yükleme - openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="e4a53-199">Installation - openSUSE Leap 15</span></span>
+### <a name="installation---opensuse-leap-15"></a><span data-ttu-id="b9de1-199">Yükleme - openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="b9de1-199">Installation - openSUSE Leap 15</span></span>
 
 ```sh
 # Install dependencies
@@ -420,20 +424,20 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a><span data-ttu-id="e4a53-200">Kaldırma - openSUSE 42.3, openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="e4a53-200">Uninstallation - openSUSE 42.3, openSUSE Leap 15</span></span>
+### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a><span data-ttu-id="b9de1-200">Kaldırma - openSUSE 42.3, openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="b9de1-200">Uninstallation - openSUSE 42.3, openSUSE Leap 15</span></span>
 
 ```sh
 rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
-## <a name="fedora"></a><span data-ttu-id="e4a53-201">Fedora</span><span class="sxs-lookup"><span data-stu-id="e4a53-201">Fedora</span></span>
+## <a name="fedora"></a><span data-ttu-id="b9de1-201">Fedora</span><span class="sxs-lookup"><span data-stu-id="b9de1-201">Fedora</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="e4a53-202">28 fedora yalnızca PowerShell Core 6.1 ve üzeri sürümlerde desteklenir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-202">Fedora 28 is only supported in PowerShell Core 6.1 and newer.</span></span>
+> <span data-ttu-id="b9de1-202">28 fedora yalnızca PowerShell Core 6.1 ve üzeri sürümlerde desteklenir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-202">Fedora 28 is only supported in PowerShell Core 6.1 and newer.</span></span>
 
-### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a><span data-ttu-id="e4a53-203">Paket (tercih edilir) - deposu Fedora 27 Fedora 28 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-203">Installation via Package Repository (preferred) - Fedora 27, Fedora 28</span></span>
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a><span data-ttu-id="b9de1-203">Paket (tercih edilir) - deposu Fedora 27 Fedora 28 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-203">Installation via Package Repository (preferred) - Fedora 27, Fedora 28</span></span>
 
-<span data-ttu-id="e4a53-204">Linux için PowerShell Core, resmi Microsoft depolara kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="e4a53-204">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="b9de1-204">Linux için PowerShell Core, resmi Microsoft depolara kolay yükleme (ve güncelleştirmeleri) için yayımlanır.</span><span class="sxs-lookup"><span data-stu-id="b9de1-204">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
 
 ```sh
 # Register the Microsoft signature key
@@ -455,45 +459,45 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-27-fedora-28"></a><span data-ttu-id="e4a53-205">Doğrudan indirme - 27 Fedora, Fedora 28 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-205">Installation via Direct Download - Fedora 27, Fedora 28</span></span>
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a><span data-ttu-id="b9de1-205">Doğrudan indirme - 27 Fedora, Fedora 28 aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-205">Installation via Direct Download - Fedora 27, Fedora 28</span></span>
 
-<span data-ttu-id="e4a53-206">RPM paketini indirme `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="e4a53-206">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
-<span data-ttu-id="e4a53-207">gelen [Yayınları][] Fedora makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="e4a53-207">from the [releases][] page onto the Fedora machine.</span></span>
+<span data-ttu-id="b9de1-206">RPM paketini indirme `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="b9de1-206">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
+<span data-ttu-id="b9de1-207">gelen [Yayınları][] Fedora makine sayfaya.</span><span class="sxs-lookup"><span data-stu-id="b9de1-207">from the [releases][] page onto the Fedora machine.</span></span>
 
-<span data-ttu-id="e4a53-208">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="e4a53-208">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="b9de1-208">Ardından aşağıdakileri terminalde yürütün:</span><span class="sxs-lookup"><span data-stu-id="b9de1-208">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="e4a53-209">RPM karşıdan ara adım olmadan da yükleyebilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="e4a53-209">You can also install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="b9de1-209">RPM karşıdan ara adım olmadan da yükleyebilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="b9de1-209">You can also install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-27-fedora-28"></a><span data-ttu-id="e4a53-210">Kaldırma - 27, Fedora Fedora 28</span><span class="sxs-lookup"><span data-stu-id="e4a53-210">Uninstallation - Fedora 27, Fedora 28</span></span>
+### <a name="uninstallation---fedora-27-fedora-28"></a><span data-ttu-id="b9de1-210">Kaldırma - 27, Fedora Fedora 28</span><span class="sxs-lookup"><span data-stu-id="b9de1-210">Uninstallation - Fedora 27, Fedora 28</span></span>
 
 ```sh
 sudo dnf remove powershell
 ```
 
-## <a name="arch-linux"></a><span data-ttu-id="e4a53-211">Linux arch</span><span class="sxs-lookup"><span data-stu-id="e4a53-211">Arch Linux</span></span>
+## <a name="arch-linux"></a><span data-ttu-id="b9de1-211">Linux arch</span><span class="sxs-lookup"><span data-stu-id="b9de1-211">Arch Linux</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="e4a53-212">Deneysel yay desteği.</span><span class="sxs-lookup"><span data-stu-id="e4a53-212">Arch support is experimental.</span></span>
+> <span data-ttu-id="b9de1-212">Deneysel yay desteği.</span><span class="sxs-lookup"><span data-stu-id="b9de1-212">Arch support is experimental.</span></span>
 
-<span data-ttu-id="e4a53-213">PowerShell kullanılabilir [Linux arch][] kullanıcı deposu (AUR).</span><span class="sxs-lookup"><span data-stu-id="e4a53-213">PowerShell is available from the [Arch Linux][] User Repository (AUR).</span></span>
+<span data-ttu-id="b9de1-213">PowerShell kullanılabilir [Linux arch][] kullanıcı deposu (AUR).</span><span class="sxs-lookup"><span data-stu-id="b9de1-213">PowerShell is available from the [Arch Linux][] User Repository (AUR).</span></span>
 
-* <span data-ttu-id="e4a53-214">İle derlenebilir [en son sürümü etiketlendi][arch-release]</span><span class="sxs-lookup"><span data-stu-id="e4a53-214">It can be compiled with the [latest tagged release][arch-release]</span></span>
-* <span data-ttu-id="e4a53-215">Gelen derlenebilir [ana son kaydetme][arch-git]</span><span class="sxs-lookup"><span data-stu-id="e4a53-215">It can be compiled from the [latest commit to master][arch-git]</span></span>
-* <span data-ttu-id="e4a53-216">Kullanılarak yüklenebilir [ikili en son sürüm][arch-bin]</span><span class="sxs-lookup"><span data-stu-id="e4a53-216">It can be installed using the [latest release binary][arch-bin]</span></span>
+* <span data-ttu-id="b9de1-214">İle derlenebilir [en son sürümü etiketlendi][arch-release]</span><span class="sxs-lookup"><span data-stu-id="b9de1-214">It can be compiled with the [latest tagged release][arch-release]</span></span>
+* <span data-ttu-id="b9de1-215">Gelen derlenebilir [ana son kaydetme][arch-git]</span><span class="sxs-lookup"><span data-stu-id="b9de1-215">It can be compiled from the [latest commit to master][arch-git]</span></span>
+* <span data-ttu-id="b9de1-216">Kullanılarak yüklenebilir [ikili en son sürüm][arch-bin]</span><span class="sxs-lookup"><span data-stu-id="b9de1-216">It can be installed using the [latest release binary][arch-bin]</span></span>
 
-<span data-ttu-id="e4a53-217">AUR paketlerinde saklanır topluluk - resmi desteği yoktur.</span><span class="sxs-lookup"><span data-stu-id="e4a53-217">Packages in the AUR are community maintained - there is no official support.</span></span>
+<span data-ttu-id="b9de1-217">AUR paketlerinde saklanır topluluk - resmi desteği yoktur.</span><span class="sxs-lookup"><span data-stu-id="b9de1-217">Packages in the AUR are community maintained - there is no official support.</span></span>
 
-<span data-ttu-id="e4a53-218">AUR paketlerini yükleme hakkında daha fazla bilgi için bkz: [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) veya topluluk [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span><span class="sxs-lookup"><span data-stu-id="e4a53-218">For more information on installing packages from the AUR, see the [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or the community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span></span>
+<span data-ttu-id="b9de1-218">AUR paketlerini yükleme hakkında daha fazla bilgi için bkz: [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) veya topluluk [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span><span class="sxs-lookup"><span data-stu-id="b9de1-218">For more information on installing packages from the AUR, see the [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or the community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span></span>
 
 [Linux arch]: https://www.archlinux.org/download/
 [Arch Linux]: https://www.archlinux.org/download/
@@ -501,17 +505,17 @@ sudo dnf remove powershell
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
-## <a name="snap-package"></a><span data-ttu-id="e4a53-220">Paket Yasla</span><span class="sxs-lookup"><span data-stu-id="e4a53-220">Snap Package</span></span>
+## <a name="snap-package"></a><span data-ttu-id="b9de1-220">Paket Yasla</span><span class="sxs-lookup"><span data-stu-id="b9de1-220">Snap Package</span></span>
 
-### <a name="getting-snapd"></a><span data-ttu-id="e4a53-221">Snapd alma</span><span class="sxs-lookup"><span data-stu-id="e4a53-221">Getting snapd</span></span>
+### <a name="getting-snapd"></a><span data-ttu-id="b9de1-221">Snapd alma</span><span class="sxs-lookup"><span data-stu-id="b9de1-221">Getting snapd</span></span>
 
-<span data-ttu-id="e4a53-222">`snapd` yaslar çalıştırmak için gereklidir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-222">`snapd` is required to run snaps.</span></span>
-<span data-ttu-id="e4a53-223">Kullanım [bu yönergeleri](https://docs.snapcraft.io/core/install) sahip olduğunuzdan emin olmak için `snapd` yüklü.</span><span class="sxs-lookup"><span data-stu-id="e4a53-223">Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.</span></span>
+<span data-ttu-id="b9de1-222">`snapd` yaslar çalıştırmak için gereklidir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-222">`snapd` is required to run snaps.</span></span>
+<span data-ttu-id="b9de1-223">Kullanım [bu yönergeleri](https://docs.snapcraft.io/core/install) sahip olduğunuzdan emin olmak için `snapd` yüklü.</span><span class="sxs-lookup"><span data-stu-id="b9de1-223">Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.</span></span>
 
-### <a name="installation-via-snap"></a><span data-ttu-id="e4a53-224">Ek bileşeni aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="e4a53-224">Installation via Snap</span></span>
+### <a name="installation-via-snap"></a><span data-ttu-id="b9de1-224">Ek bileşeni aracılığıyla yükleme</span><span class="sxs-lookup"><span data-stu-id="b9de1-224">Installation via Snap</span></span>
 
-<span data-ttu-id="e4a53-225">Linux için PowerShell Core yayımlanmıştır [ek depolama](https://snapcraft.io/store) kolay yükleme (ve güncelleştirmeleri).</span><span class="sxs-lookup"><span data-stu-id="e4a53-225">PowerShell Core, for Linux, is published to the [Snap store](https://snapcraft.io/store) for easy installation (and updates).</span></span>
-<span data-ttu-id="e4a53-226">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-226">This is the preferred method.</span></span>
+<span data-ttu-id="b9de1-225">Linux için PowerShell Core yayımlanmıştır [ek depolama](https://snapcraft.io/store) kolay yükleme (ve güncelleştirmeleri).</span><span class="sxs-lookup"><span data-stu-id="b9de1-225">PowerShell Core, for Linux, is published to the [Snap store](https://snapcraft.io/store) for easy installation (and updates).</span></span>
+<span data-ttu-id="b9de1-226">Bu tercih edilen yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-226">This is the preferred method.</span></span>
 
 ```sh
 # Install PowerShell
@@ -521,7 +525,7 @@ sudo snap install powershell --classic
 pwsh
 ```
 
-<span data-ttu-id="e4a53-227">Önizleme sürümünü yüklemek istiyorsanız, yöntemi kullanın.</span><span class="sxs-lookup"><span data-stu-id="e4a53-227">If you want to install preview version, use following method.</span></span>
+<span data-ttu-id="b9de1-227">Önizleme sürümünü yüklemek istiyorsanız, yöntemi kullanın.</span><span class="sxs-lookup"><span data-stu-id="b9de1-227">If you want to install preview version, use following method.</span></span>
 
 ```sh
 # Install PowerShell
@@ -531,23 +535,23 @@ sudo snap install powershell-preview --classic
 pwsh-preview
 ```
 
-<span data-ttu-id="e4a53-228">Sonra ek yükleme otomatik olarak yükseltecek, ancak bir yükseltme kullanarak tetikleyebilirsiniz `sudo snap refresh powershell` veya `sudo snap refresh powershell-preview`.</span><span class="sxs-lookup"><span data-stu-id="e4a53-228">After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.</span></span>
+<span data-ttu-id="b9de1-228">Sonra ek yükleme otomatik olarak yükseltecek, ancak bir yükseltme kullanarak tetikleyebilirsiniz `sudo snap refresh powershell` veya `sudo snap refresh powershell-preview`.</span><span class="sxs-lookup"><span data-stu-id="b9de1-228">After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.</span></span>
 
-### <a name="uninstallation"></a><span data-ttu-id="e4a53-229">Kaldırma</span><span class="sxs-lookup"><span data-stu-id="e4a53-229">Uninstallation</span></span>
+### <a name="uninstallation"></a><span data-ttu-id="b9de1-229">Kaldırma</span><span class="sxs-lookup"><span data-stu-id="b9de1-229">Uninstallation</span></span>
 
 ```sh
 sudo snap remove powershell
 ```
 
-<span data-ttu-id="e4a53-230">veya</span><span class="sxs-lookup"><span data-stu-id="e4a53-230">or</span></span>
+<span data-ttu-id="b9de1-230">veya</span><span class="sxs-lookup"><span data-stu-id="b9de1-230">or</span></span>
 
 ```sh
 sudo snap remove powershell-preview
 ```
 
-## <a name="kali"></a><span data-ttu-id="e4a53-231">Kali</span><span class="sxs-lookup"><span data-stu-id="e4a53-231">Kali</span></span>
+## <a name="kali"></a><span data-ttu-id="b9de1-231">Kali</span><span class="sxs-lookup"><span data-stu-id="b9de1-231">Kali</span></span>
 
-### <a name="installation---kali"></a><span data-ttu-id="e4a53-232">Yükleme - Kali</span><span class="sxs-lookup"><span data-stu-id="e4a53-232">Installation - Kali</span></span>
+### <a name="installation---kali"></a><span data-ttu-id="b9de1-232">Yükleme - Kali</span><span class="sxs-lookup"><span data-stu-id="b9de1-232">Installation - Kali</span></span>
 
 ```sh
 # Download & Install prerequisites
@@ -568,29 +572,39 @@ apt-get update && apt-get install -y powershell
 pwsh
 ```
 
-### <a name="uninstallation---kali"></a><span data-ttu-id="e4a53-233">Kaldırma - Kali</span><span class="sxs-lookup"><span data-stu-id="e4a53-233">Uninstallation - Kali</span></span>
+### <a name="uninstallation---kali"></a><span data-ttu-id="b9de1-233">Kaldırma - Kali</span><span class="sxs-lookup"><span data-stu-id="b9de1-233">Uninstallation - Kali</span></span>
 
 ```sh
 # Uninstall PowerShell package
 apt-get remove -y powershell
 ```
 
-## <a name="raspbian"></a><span data-ttu-id="e4a53-234">Raspbian</span><span class="sxs-lookup"><span data-stu-id="e4a53-234">Raspbian</span></span>
+## <a name="raspbian"></a><span data-ttu-id="b9de1-234">Raspbian</span><span class="sxs-lookup"><span data-stu-id="b9de1-234">Raspbian</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="e4a53-235">Deneysel Raspbian desteği.</span><span class="sxs-lookup"><span data-stu-id="e4a53-235">Raspbian support is experimental.</span></span>
+> <span data-ttu-id="b9de1-235">Deneysel Raspbian desteği.</span><span class="sxs-lookup"><span data-stu-id="b9de1-235">Raspbian support is experimental.</span></span>
 
-<span data-ttu-id="e4a53-236">Şu anda PowerShell yalnızca Raspbian Esnetme üzerinde desteklenir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-236">Currently, PowerShell is only supported on Raspbian Stretch.</span></span>
+<span data-ttu-id="b9de1-236">Şu anda PowerShell yalnızca Raspbian Esnetme üzerinde desteklenir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-236">Currently, PowerShell is only supported on Raspbian Stretch.</span></span>
 
-<span data-ttu-id="e4a53-237">Ayrıca CoreCLR (ve bu nedenle PowerShell Core) yalnızca Pi 2 ve Pi 3 cihazlarında diğer cihazlar gibi çalışır [Pi sıfır](https://github.com/dotnet/coreclr/issues/10605), desteklenmeyen bir işlemciye sahip.</span><span class="sxs-lookup"><span data-stu-id="e4a53-237">Also CoreCLR (and thus PowerShell Core) will only work on Pi 2 and Pi 3 devices as other devices, like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), have an unsupported processor.</span></span>
+<span data-ttu-id="b9de1-237">Ayrıca CoreCLR (ve bu nedenle PowerShell Core) yalnızca Pi 2 ve Pi 3 cihazlarında diğer cihazlar gibi çalışır [Pi sıfır](https://github.com/dotnet/coreclr/issues/10605), desteklenmeyen bir işlemciye sahip.</span><span class="sxs-lookup"><span data-stu-id="b9de1-237">Also CoreCLR (and thus PowerShell Core) will only work on Pi 2 and Pi 3 devices as other devices, like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), have an unsupported processor.</span></span>
 
-<span data-ttu-id="e4a53-238">İndirme [Raspbian Esnetme](https://www.raspberrypi.org/downloads/raspbian/) izleyin [yükleme yönergeleri](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) Pi'yi almak için.</span><span class="sxs-lookup"><span data-stu-id="e4a53-238">Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the [installation instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to get it onto your Pi.</span></span>
+<span data-ttu-id="b9de1-238">İndirme [Raspbian Esnetme](https://www.raspberrypi.org/downloads/raspbian/) izleyin [yükleme yönergeleri](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) Pi'yi almak için.</span><span class="sxs-lookup"><span data-stu-id="b9de1-238">Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the [installation instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to get it onto your Pi.</span></span>
 
-### <a name="installation---raspbian"></a><span data-ttu-id="e4a53-239">Yükleme - Raspbian</span><span class="sxs-lookup"><span data-stu-id="e4a53-239">Installation - Raspbian</span></span>
+### <a name="installation---raspbian"></a><span data-ttu-id="b9de1-239">Yükleme - Raspbian</span><span class="sxs-lookup"><span data-stu-id="b9de1-239">Installation - Raspbian</span></span>
 
 ```sh
-# Install prerequisites
-sudo apt-get install libunwind8
+###################################
+# Prerequisites
+
+# Update package lists
+sudo apt-get update
+
+# Install libunwind8 and libssl1.0
+# Regex is used to ensure that we do not install libssl1.0-dev, as it is a variant that is not required
+sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
+
+###################################
+# Download and extract PowerShell
 
 # Grab the latest tar.gz
 wget https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-linux-arm32.tar.gz
@@ -605,7 +619,7 @@ tar -xvf ./powershell-6.2.0-linux-arm32.tar.gz -C ~/powershell
 ~/powershell/pwsh
 ```
 
-<span data-ttu-id="e4a53-240">İsteğe bağlı olarak PowerShell "pwsh" ikili yol belirtmeden başlatabilmeniz için bir sembolik bağlantı oluşturabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="e4a53-240">Optionally you can create a symbolic link to be able to start PowerShell without specifying path to the "pwsh" binary</span></span>
+<span data-ttu-id="b9de1-240">İsteğe bağlı olarak PowerShell "pwsh" ikili yol belirtmeden başlatabilmeniz için bir sembolik bağlantı oluşturabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="b9de1-240">Optionally you can create a symbolic link to be able to start PowerShell without specifying path to the "pwsh" binary</span></span>
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
@@ -617,44 +631,44 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 # Now to start PowerShell you can just run "pwsh"
 ```
 
-### <a name="uninstallation---raspbian"></a><span data-ttu-id="e4a53-241">Kaldırma - Raspbian</span><span class="sxs-lookup"><span data-stu-id="e4a53-241">Uninstallation - Raspbian</span></span>
+### <a name="uninstallation---raspbian"></a><span data-ttu-id="b9de1-241">Kaldırma - Raspbian</span><span class="sxs-lookup"><span data-stu-id="b9de1-241">Uninstallation - Raspbian</span></span>
 
 ```sh
 rm -rf ~/powershell
 ```
 
-## <a name="binary-archives"></a><span data-ttu-id="e4a53-242">İkili Arşivi</span><span class="sxs-lookup"><span data-stu-id="e4a53-242">Binary Archives</span></span>
+## <a name="binary-archives"></a><span data-ttu-id="b9de1-242">İkili Arşivi</span><span class="sxs-lookup"><span data-stu-id="b9de1-242">Binary Archives</span></span>
 
-<span data-ttu-id="e4a53-243">PowerShell ikili `tar.gz` arşivleri gelişmiş dağıtım senaryoları etkinleştirmek Linux platformlar için sağlanır.</span><span class="sxs-lookup"><span data-stu-id="e4a53-243">PowerShell binary `tar.gz` archives are provided for Linux platforms to enable advanced deployment scenarios.</span></span>
+<span data-ttu-id="b9de1-243">PowerShell ikili `tar.gz` arşivleri gelişmiş dağıtım senaryoları etkinleştirmek Linux platformlar için sağlanır.</span><span class="sxs-lookup"><span data-stu-id="b9de1-243">PowerShell binary `tar.gz` archives are provided for Linux platforms to enable advanced deployment scenarios.</span></span>
 
-### <a name="dependencies"></a><span data-ttu-id="e4a53-244">Bağımlılıkları</span><span class="sxs-lookup"><span data-stu-id="e4a53-244">Dependencies</span></span>
+### <a name="dependencies"></a><span data-ttu-id="b9de1-244">Bağımlılıkları</span><span class="sxs-lookup"><span data-stu-id="b9de1-244">Dependencies</span></span>
 
-<span data-ttu-id="e4a53-245">PowerShell tüm Linux dağıtımları için taşınabilir ikili dosyaları oluşturur.</span><span class="sxs-lookup"><span data-stu-id="e4a53-245">PowerShell builds portable binaries for all Linux distributions.</span></span>
-<span data-ttu-id="e4a53-246">Ancak farklı bağımlılıklara farklı dağıtımlar üzerinde .NET Core çalışma zamanı gerektirir ve bu nedenle aynı PowerShell yapar.</span><span class="sxs-lookup"><span data-stu-id="e4a53-246">But .NET Core runtime requires different dependencies on different distributions, and hence PowerShell does the same.</span></span>
+<span data-ttu-id="b9de1-245">PowerShell tüm Linux dağıtımları için taşınabilir ikili dosyaları oluşturur.</span><span class="sxs-lookup"><span data-stu-id="b9de1-245">PowerShell builds portable binaries for all Linux distributions.</span></span>
+<span data-ttu-id="b9de1-246">Ancak farklı bağımlılıklara farklı dağıtımlar üzerinde .NET Core çalışma zamanı gerektirir ve bu nedenle aynı PowerShell yapar.</span><span class="sxs-lookup"><span data-stu-id="b9de1-246">But .NET Core runtime requires different dependencies on different distributions, and hence PowerShell does the same.</span></span>
 
-<span data-ttu-id="e4a53-247">Aşağıdaki tabloda farklı Linux dağıtımlarında resmi olarak desteklenen .NET Core 2.0 bağımlılıkları gösterir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-247">The following chart shows the .NET Core 2.0 dependencies that are officially supported on different Linux distributions.</span></span>
+<span data-ttu-id="b9de1-247">Aşağıdaki tabloda farklı Linux dağıtımlarında resmi olarak desteklenen .NET Core 2.0 bağımlılıkları gösterir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-247">The following chart shows the .NET Core 2.0 dependencies that are officially supported on different Linux distributions.</span></span>
 
-| <span data-ttu-id="e4a53-248">İşletim sistemi</span><span class="sxs-lookup"><span data-stu-id="e4a53-248">OS</span></span>                 | <span data-ttu-id="e4a53-249">Bağımlılıkları</span><span class="sxs-lookup"><span data-stu-id="e4a53-249">Dependencies</span></span> |
+| <span data-ttu-id="b9de1-248">İşletim sistemi</span><span class="sxs-lookup"><span data-stu-id="b9de1-248">OS</span></span>                 | <span data-ttu-id="b9de1-249">Bağımlılıkları</span><span class="sxs-lookup"><span data-stu-id="b9de1-249">Dependencies</span></span> |
 | ------------------ | ------------ |
-| <span data-ttu-id="e4a53-250">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="e4a53-250">Ubuntu 14.04</span></span>       | <span data-ttu-id="e4a53-251">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="e4a53-251">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="e4a53-252">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span><span class="sxs-lookup"><span data-stu-id="e4a53-252">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
-| <span data-ttu-id="e4a53-253">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="e4a53-253">Ubuntu 16.04</span></span>       | <span data-ttu-id="e4a53-254">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="e4a53-254">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="e4a53-255">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span><span class="sxs-lookup"><span data-stu-id="e4a53-255">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span></span> |
-| <span data-ttu-id="e4a53-256">Ubuntu 17.10</span><span class="sxs-lookup"><span data-stu-id="e4a53-256">Ubuntu 17.10</span></span>       | <span data-ttu-id="e4a53-257">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="e4a53-257">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="e4a53-258">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span><span class="sxs-lookup"><span data-stu-id="e4a53-258">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span></span> |
-| <span data-ttu-id="e4a53-259">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="e4a53-259">Ubuntu 18.04</span></span>       | <span data-ttu-id="e4a53-260">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="e4a53-260">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="e4a53-261">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span><span class="sxs-lookup"><span data-stu-id="e4a53-261">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span></span> |
-| <span data-ttu-id="e4a53-262">Debian 8 (Jessie)</span><span class="sxs-lookup"><span data-stu-id="e4a53-262">Debian 8 (Jessie)</span></span>  | <span data-ttu-id="e4a53-263">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="e4a53-263">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="e4a53-264">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span><span class="sxs-lookup"><span data-stu-id="e4a53-264">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
-| <span data-ttu-id="e4a53-265">Debian 9 (Esnetme)</span><span class="sxs-lookup"><span data-stu-id="e4a53-265">Debian 9 (Stretch)</span></span> | <span data-ttu-id="e4a53-266">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="e4a53-266">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="e4a53-267">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span><span class="sxs-lookup"><span data-stu-id="e4a53-267">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span></span> |
-| <span data-ttu-id="e4a53-268">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="e4a53-268">CentOS 7</span></span> <br> <span data-ttu-id="e4a53-269">Oracle Linux 7</span><span class="sxs-lookup"><span data-stu-id="e4a53-269">Oracle Linux 7</span></span> <br> <span data-ttu-id="e4a53-270">RHEL 7</span><span class="sxs-lookup"><span data-stu-id="e4a53-270">RHEL 7</span></span> | <span data-ttu-id="e4a53-271">libunwind, libcurl, openssl kitaplıkları, libicu</span><span class="sxs-lookup"><span data-stu-id="e4a53-271">libunwind, libcurl, openssl-libs, libicu</span></span> |
-| <span data-ttu-id="e4a53-272">openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="e4a53-272">openSUSE 42.3</span></span> | <span data-ttu-id="e4a53-273">libcurl4, libopenssl1_0_0, libicu52_1</span><span class="sxs-lookup"><span data-stu-id="e4a53-273">libcurl4, libopenssl1_0_0, libicu52_1</span></span> |
-| <span data-ttu-id="e4a53-274">openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="e4a53-274">openSUSE Leap 15</span></span> | <span data-ttu-id="e4a53-275">libcurl4, libopenssl1_0_0, libicu60_2</span><span class="sxs-lookup"><span data-stu-id="e4a53-275">libcurl4, libopenssl1_0_0, libicu60_2</span></span> |
-| <span data-ttu-id="e4a53-276">Fedora 27</span><span class="sxs-lookup"><span data-stu-id="e4a53-276">Fedora 27</span></span> <br> <span data-ttu-id="e4a53-277">Fedora 28</span><span class="sxs-lookup"><span data-stu-id="e4a53-277">Fedora 28</span></span> | <span data-ttu-id="e4a53-278">libunwind, libcurl, openssl kitaplıkları, libicu, compat openssl10</span><span class="sxs-lookup"><span data-stu-id="e4a53-278">libunwind, libcurl, openssl-libs, libicu, compat-openssl10</span></span> |
+| <span data-ttu-id="b9de1-250">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="b9de1-250">Ubuntu 14.04</span></span>       | <span data-ttu-id="b9de1-251">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="b9de1-251">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="b9de1-252">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span><span class="sxs-lookup"><span data-stu-id="b9de1-252">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
+| <span data-ttu-id="b9de1-253">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="b9de1-253">Ubuntu 16.04</span></span>       | <span data-ttu-id="b9de1-254">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="b9de1-254">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="b9de1-255">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span><span class="sxs-lookup"><span data-stu-id="b9de1-255">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span></span> |
+| <span data-ttu-id="b9de1-256">Ubuntu 17.10</span><span class="sxs-lookup"><span data-stu-id="b9de1-256">Ubuntu 17.10</span></span>       | <span data-ttu-id="b9de1-257">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="b9de1-257">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="b9de1-258">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span><span class="sxs-lookup"><span data-stu-id="b9de1-258">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span></span> |
+| <span data-ttu-id="b9de1-259">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="b9de1-259">Ubuntu 18.04</span></span>       | <span data-ttu-id="b9de1-260">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="b9de1-260">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="b9de1-261">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span><span class="sxs-lookup"><span data-stu-id="b9de1-261">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span></span> |
+| <span data-ttu-id="b9de1-262">Debian 8 (Jessie)</span><span class="sxs-lookup"><span data-stu-id="b9de1-262">Debian 8 (Jessie)</span></span>  | <span data-ttu-id="b9de1-263">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="b9de1-263">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="b9de1-264">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span><span class="sxs-lookup"><span data-stu-id="b9de1-264">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
+| <span data-ttu-id="b9de1-265">Debian 9 (Esnetme)</span><span class="sxs-lookup"><span data-stu-id="b9de1-265">Debian 9 (Stretch)</span></span> | <span data-ttu-id="b9de1-266">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="b9de1-266">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="b9de1-267">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span><span class="sxs-lookup"><span data-stu-id="b9de1-267">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span></span> |
+| <span data-ttu-id="b9de1-268">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="b9de1-268">CentOS 7</span></span> <br> <span data-ttu-id="b9de1-269">Oracle Linux 7</span><span class="sxs-lookup"><span data-stu-id="b9de1-269">Oracle Linux 7</span></span> <br> <span data-ttu-id="b9de1-270">RHEL 7</span><span class="sxs-lookup"><span data-stu-id="b9de1-270">RHEL 7</span></span> | <span data-ttu-id="b9de1-271">libunwind, libcurl, openssl kitaplıkları, libicu</span><span class="sxs-lookup"><span data-stu-id="b9de1-271">libunwind, libcurl, openssl-libs, libicu</span></span> |
+| <span data-ttu-id="b9de1-272">openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="b9de1-272">openSUSE 42.3</span></span> | <span data-ttu-id="b9de1-273">libcurl4, libopenssl1_0_0, libicu52_1</span><span class="sxs-lookup"><span data-stu-id="b9de1-273">libcurl4, libopenssl1_0_0, libicu52_1</span></span> |
+| <span data-ttu-id="b9de1-274">openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="b9de1-274">openSUSE Leap 15</span></span> | <span data-ttu-id="b9de1-275">libcurl4, libopenssl1_0_0, libicu60_2</span><span class="sxs-lookup"><span data-stu-id="b9de1-275">libcurl4, libopenssl1_0_0, libicu60_2</span></span> |
+| <span data-ttu-id="b9de1-276">Fedora 27</span><span class="sxs-lookup"><span data-stu-id="b9de1-276">Fedora 27</span></span> <br> <span data-ttu-id="b9de1-277">Fedora 28</span><span class="sxs-lookup"><span data-stu-id="b9de1-277">Fedora 28</span></span> | <span data-ttu-id="b9de1-278">libunwind, libcurl, openssl kitaplıkları, libicu, compat openssl10</span><span class="sxs-lookup"><span data-stu-id="b9de1-278">libunwind, libcurl, openssl-libs, libicu, compat-openssl10</span></span> |
 
-<span data-ttu-id="e4a53-279">Resmi olarak desteklenmez Linux dağıtımlarında PowerShell ikili dosyaları dağıtmak için ayrı adımları hedef işletim sistemi için gerekli bağımlılıkları yüklemeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="e4a53-279">To deploy PowerShell binaries on Linux distributions that are not officially supported, you need to install the necessary dependencies for the target OS in separate steps.</span></span>
-<span data-ttu-id="e4a53-280">Örneğin, bizim [Amazon Linux dockerfile] [ amazon-dockerfile] ilk bağımlılıkları yükler ve ardından Linux ayıklar `tar.gz` arşiv.</span><span class="sxs-lookup"><span data-stu-id="e4a53-280">For example, our [Amazon Linux dockerfile][amazon-dockerfile] installs dependencies first, and then extracts the Linux `tar.gz` archive.</span></span>
+<span data-ttu-id="b9de1-279">Resmi olarak desteklenmez Linux dağıtımlarında PowerShell ikili dosyaları dağıtmak için ayrı adımları hedef işletim sistemi için gerekli bağımlılıkları yüklemeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="b9de1-279">To deploy PowerShell binaries on Linux distributions that are not officially supported, you need to install the necessary dependencies for the target OS in separate steps.</span></span>
+<span data-ttu-id="b9de1-280">Örneğin, bizim [Amazon Linux dockerfile][amazon-dockerfile] ilk bağımlılıkları yükler ve ardından Linux ayıklar `tar.gz` arşiv.</span><span class="sxs-lookup"><span data-stu-id="b9de1-280">For example, our [Amazon Linux dockerfile][amazon-dockerfile] installs dependencies first, and then extracts the Linux `tar.gz` archive.</span></span>
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
-### <a name="installation---binary-archives"></a><span data-ttu-id="e4a53-281">Yükleme - ikili Arşivi</span><span class="sxs-lookup"><span data-stu-id="e4a53-281">Installation - Binary Archives</span></span>
+### <a name="installation---binary-archives"></a><span data-ttu-id="b9de1-281">Yükleme - ikili Arşivi</span><span class="sxs-lookup"><span data-stu-id="b9de1-281">Installation - Binary Archives</span></span>
 
-#### <a name="linux"></a><span data-ttu-id="e4a53-282">Linux</span><span class="sxs-lookup"><span data-stu-id="e4a53-282">Linux</span></span>
+#### <a name="linux"></a><span data-ttu-id="b9de1-282">Linux</span><span class="sxs-lookup"><span data-stu-id="b9de1-282">Linux</span></span>
 
 ```sh
 # Download the powershell '.tar.gz' archive
@@ -673,25 +687,25 @@ sudo chmod +x /opt/microsoft/powershell/6.2.0/pwsh
 sudo ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 ```
 
-### <a name="uninstalling-binary-archives"></a><span data-ttu-id="e4a53-283">Kaldırma ikili Arşivi</span><span class="sxs-lookup"><span data-stu-id="e4a53-283">Uninstalling binary archives</span></span>
+### <a name="uninstalling-binary-archives"></a><span data-ttu-id="b9de1-283">Kaldırma ikili Arşivi</span><span class="sxs-lookup"><span data-stu-id="b9de1-283">Uninstalling binary archives</span></span>
 
 ```sh
 sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
-## <a name="paths"></a><span data-ttu-id="e4a53-284">Yollar</span><span class="sxs-lookup"><span data-stu-id="e4a53-284">Paths</span></span>
+## <a name="paths"></a><span data-ttu-id="b9de1-284">Yollar</span><span class="sxs-lookup"><span data-stu-id="b9de1-284">Paths</span></span>
 
-* <span data-ttu-id="e4a53-285">`$PSHOME` olduğu `/opt/microsoft/powershell/6.2.0/`</span><span class="sxs-lookup"><span data-stu-id="e4a53-285">`$PSHOME` is `/opt/microsoft/powershell/6.2.0/`</span></span>
-* <span data-ttu-id="e4a53-286">Kullanıcı profillerini okuyabilir `~/.config/powershell/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="e4a53-286">User profiles will be read from `~/.config/powershell/profile.ps1`</span></span>
-* <span data-ttu-id="e4a53-287">Varsayılan profiller okuyabilir `$PSHOME/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="e4a53-287">Default profiles will be read from `$PSHOME/profile.ps1`</span></span>
-* <span data-ttu-id="e4a53-288">Kullanıcı modülleri okuyabilir `~/.local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="e4a53-288">User modules will be read from `~/.local/share/powershell/Modules`</span></span>
-* <span data-ttu-id="e4a53-289">Paylaşılan modülleri okuyabilir `/usr/local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="e4a53-289">Shared modules will be read from `/usr/local/share/powershell/Modules`</span></span>
-* <span data-ttu-id="e4a53-290">Varsayılan modülleri okuyabilir `$PSHOME/Modules`</span><span class="sxs-lookup"><span data-stu-id="e4a53-290">Default modules will be read from `$PSHOME/Modules`</span></span>
-* <span data-ttu-id="e4a53-291">PSReadline geçmişi için kaydedilir `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span><span class="sxs-lookup"><span data-stu-id="e4a53-291">PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span></span>
+* <span data-ttu-id="b9de1-285">`$PSHOME` olduğu `/opt/microsoft/powershell/6.2.0/`</span><span class="sxs-lookup"><span data-stu-id="b9de1-285">`$PSHOME` is `/opt/microsoft/powershell/6.2.0/`</span></span>
+* <span data-ttu-id="b9de1-286">Kullanıcı profillerini okuyabilir `~/.config/powershell/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="b9de1-286">User profiles will be read from `~/.config/powershell/profile.ps1`</span></span>
+* <span data-ttu-id="b9de1-287">Varsayılan profiller okuyabilir `$PSHOME/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="b9de1-287">Default profiles will be read from `$PSHOME/profile.ps1`</span></span>
+* <span data-ttu-id="b9de1-288">Kullanıcı modülleri okuyabilir `~/.local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="b9de1-288">User modules will be read from `~/.local/share/powershell/Modules`</span></span>
+* <span data-ttu-id="b9de1-289">Paylaşılan modülleri okuyabilir `/usr/local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="b9de1-289">Shared modules will be read from `/usr/local/share/powershell/Modules`</span></span>
+* <span data-ttu-id="b9de1-290">Varsayılan modülleri okuyabilir `$PSHOME/Modules`</span><span class="sxs-lookup"><span data-stu-id="b9de1-290">Default modules will be read from `$PSHOME/Modules`</span></span>
+* <span data-ttu-id="b9de1-291">PSReadline geçmişi için kaydedilir `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span><span class="sxs-lookup"><span data-stu-id="b9de1-291">PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span></span>
 
-<span data-ttu-id="e4a53-292">Varsayılan konak özel profilleri var Bu nedenle, PowerShell'in konak başına yapılandırma profilleri dikkate `Microsoft.PowerShell_profile.ps1` aynı konumlarda.</span><span class="sxs-lookup"><span data-stu-id="e4a53-292">The profiles respect PowerShell's per-host configuration, so the default host-specific profiles exists at `Microsoft.PowerShell_profile.ps1` in the same locations.</span></span>
+<span data-ttu-id="b9de1-292">Varsayılan konak özel profilleri var Bu nedenle, PowerShell'in konak başına yapılandırma profilleri dikkate `Microsoft.PowerShell_profile.ps1` aynı konumlarda.</span><span class="sxs-lookup"><span data-stu-id="b9de1-292">The profiles respect PowerShell's per-host configuration, so the default host-specific profiles exists at `Microsoft.PowerShell_profile.ps1` in the same locations.</span></span>
 
-<span data-ttu-id="e4a53-293">PowerShell uyar [XDG temel dizin belirtimi] [ xdg-bds] Linux üzerinde.</span><span class="sxs-lookup"><span data-stu-id="e4a53-293">PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.</span></span>
+<span data-ttu-id="b9de1-293">PowerShell uyar [XDG temel dizin belirtimi][xdg-bds] Linux üzerinde.</span><span class="sxs-lookup"><span data-stu-id="b9de1-293">PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.</span></span>
 
 [Yayınları]: https://github.com/PowerShell/PowerShell/releases/latest
 [releases]: https://github.com/PowerShell/PowerShell/releases/latest
