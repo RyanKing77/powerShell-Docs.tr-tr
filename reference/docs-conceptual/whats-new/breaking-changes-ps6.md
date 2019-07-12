@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, çekirdek
 title: PowerShell 6.0 için bozucu değişiklikler
-ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085941"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843933"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 için bozucu değişiklikler
 
@@ -15,7 +15,7 @@ ms.locfileid: "62085941"
 
 ### <a name="powershell-workflow"></a>PowerShell iş akışı
 
-[PowerShell iş akışı] [ workflow] üst kısmındaki oluşturan bir Windows PowerShell bir özelliktir [Windows Workflow Foundation (WF)] [ workflow-foundation] oluşturulmasını sağlar uzun süreli veya paralel görevler için güçlü runbook.
+[PowerShell iş akışı][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] , uzun süreli veya paralel görevler için güçlü runbook'ları oluşturulmasını sağlar.
 
 Windows Workflow Foundation'da .NET Core desteği eksikliği nedeniyle, biz de PowerShell Core PowerShell iş akışı desteklemeye devam etmeyecek.
 
@@ -26,7 +26,7 @@ Gelecekte, PowerShell iş akışı gerek kalmadan PowerShell dilinde yerel paral
 
 ### <a name="custom-snap-ins"></a>Özel bileşenler
 
-[PowerShell ek bileşenleri] [ snapin] PowerShell topluluğunda yaygın olmayan PowerShell modülleri için öncül olan.
+[PowerShell ek bileşenleri][snapin] PowerShell topluluğunda yaygın olmayan PowerShell modülleri için öncül olan.
 
 Ek bileşenleri ve bunların kullanım yetersizliği topluluk destekleyen karmaşıklığı nedeniyle, artık özel ek bileşenler de PowerShell Core desteklemiyoruz.
 
@@ -113,9 +113,13 @@ Daha önce varsa `-Verbose` veya `-Debug` belirtilmiş davranışını geçersiz
 
 Bir API döndürdüğünde yalnızca `null`, Invoke-RestMethod serileştirme Bu dize olarak `"null"` yerine `$null`. Bu değişiklik mantığında düzeltmeleri `Invoke-RestMethod` düzgün geçerli tek değer JSON seri hale getirmek için `null` değişmez değer olarak `$null`.
 
-### <a name="remove--computername-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Kaldırma `-ComputerName` gelen `*-Computer` cmdlet'leri [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Kaldırma `-Protocol` gelen `*-Computer` cmdlet'leri [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-RPC remoting Corefx'te (özellikle de Windows olmayan platformlar için) ve bir PowerShell tutarlı remoting deneyimi sağlama ile ilgili sorunlar nedeniyle `-ComputerName` parametresi üzerinden kaldırıldı `\*-Computer` cmdlet'leri. Kullanım `Invoke-Command` cmdlet'leri uzaktan yürütülecek şekilde yerine.
+RPC remoting Corefx'te (özellikle de Windows olmayan platformlar için) ve bir PowerShell tutarlı remoting deneyimi sağlama ile ilgili sorunlar nedeniyle `-Protocol` parametresi üzerinden kaldırıldı `\*-Computer` cmdlet'leri. DCOM Uzaktan iletişim için artık desteklenmiyor. Aşağıdaki cmdlet, yalnızca WSMAN uzaktan iletişimini destekler:
+
+- Bilgisayarı yeniden adlandırma
+- Restart-Computer
+- Stop-bilgisayar
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Kaldırma `-ComputerName` gelen `*-Service` cmdlet'leri [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
@@ -159,7 +163,7 @@ PowerShell Core içinde desteklenmez ve Windows PowerShell için eski nedenlerle
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Kaldırılan `RunspaceConfiguration` Destek [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-Daha önce bir PowerShell çalışma program aracılığıyla oluştururken API'sini kullanarak eski kullanabileceğinizi [ `RunspaceConfiguration` ] [ runspaceconfig] veya yeni [ `InitialSessionState` ] [ iss]. Bu değişiklik desteği kaldırıldı `RunspaceConfiguration` ve yalnızca destekler `InitialSessionState`.
+Daha önce bir PowerShell çalışma program aracılığıyla oluştururken API'sini kullanarak eski kullanabileceğinizi [ `RunspaceConfiguration` ][runspaceconfig] or the newer [`InitialSessionState`][iss]. Bu değişiklik desteği kaldırıldı `RunspaceConfiguration` ve yalnızca destekler `InitialSessionState`.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate

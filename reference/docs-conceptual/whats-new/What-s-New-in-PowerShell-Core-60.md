@@ -2,16 +2,16 @@
 title: PowerShell Core 6.0 yenilikler nelerdir?
 description: Yeni özellikler ve PowerShell Core 6. 0'yayımlanan değişiklikleri
 ms.date: 08/06/2018
-ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1218a38398f4d86829cf2b4ba6a3a882675eaab
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059024"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843928"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 yenilikler nelerdir?
 
-[PowerShell Core 6.0] [ github] yeni platformlar arası (Windows, macOS ve Linux) olan bir PowerShell sürümüdür, açık kaynaklı ve heterojen ortamlar ve hibrit bulut için oluşturulmuştur.
+[PowerShell Core 6.0][github] yeni platformlar arası (Windows, macOS ve Linux) olan bir PowerShell sürümüdür, açık kaynaklı ve heterojen ortamlar ve hibrit bulut için oluşturulmuştur.
 
 ## <a name="moved-from-net-framework-to-net-core"></a>.NET Core ile .NET Framework'ten taşındı
 
@@ -139,7 +139,7 @@ Windows bir parçası olarak gönderilen modüllerinin çoğu (örneğin, `DnsCl
 PowerShell ekibi, bu ürün gruplarını ve takımlar kendi mevcut modülleri PowerShell Core için bağlantı noktası ve doğrulamak için birlikte çalışıyor.
 .NET Standard ile ve [CDXML][], birçok geleneksel bu Windows PowerShell modülleri PowerShell Core ortağımdan ancak bunlar resmi olarak doğrulanmamış ve resmi olarak desteklenmez.
 
-Yükleyerek [ `WindowsPSModulePath` ] [ windowspsmodulepath] modülü, Windows PowerShell ekleyerek Windows PowerShell modüllerini kullanabilirsiniz `PSModulePath` , PowerShell Core `PSModulePath`.
+Yükleyerek [ `WindowsPSModulePath` ][windowspsmodulepath] modülü, Windows PowerShell ekleyerek Windows PowerShell modüllerini kullanabilirsiniz `PSModulePath` , PowerShell Core `PSModulePath`.
 
 İlk olarak, yükleme `WindowsPSModulePath` modülü PowerShell Galerisi'ndeki:
 
@@ -295,9 +295,10 @@ PowerShell işleri hakkında daha fazla bilgi için bkz. [about_Jobs](https://ms
 
 ### <a name="csv-cmdlets"></a>CSV cmdlet'leri
 
+- `Import-Csv` artık W3C Genişletilmiş günlük dosyası biçimini destekler (#2482) (teşekkürler [ @iSazonov ](https://github.com/iSazonov)!)
 - Ekleme `PSTypeName` desteği `Import-Csv` ve `ConvertFrom-Csv`. (#5389) (Thanks [@markekraus](https://github.com/markekraus)!)
 - Olun `Import-Csv` Destek `CR`, `LF`, ve `CRLF` ayırıcıları hat. (#5363) (Thanks [@iSazonov](https://github.com/iSazonov)!)
-- Olun `-NoTypeInformation` varsayılan `Export-Csv` ve `ConvertTo-Csv`. (#5164) (Thanks [@markekraus](https://github.com/markekraus))
+- Olun `-NoTypeInformation` varsayılan `Export-Csv` ve `ConvertTo-Csv`. (#5164) (Thanks [@markekraus](https://github.com/markekraus)!)
 
 ### <a name="service-cmdlets"></a>Hizmeti cmdlet'leri
 
