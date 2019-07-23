@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kurulum
-title: DSC kaynak Linux nxScript için
-ms.openlocfilehash: 339968512ab1c16c4c3785a3a19b00c3fbbf9ea1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, PowerShell, yapılandırma, kurulum
+title: Linux nxScript kaynağı için DSC
+ms.openlocfilehash: 0ad0530f1de7b86ff48c4eb1f79870f6682894a1
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077832"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372156"
 ---
-# <a name="dsc-for-linux-nxscript-resource"></a>DSC kaynak Linux nxScript için
+# <a name="dsc-for-linux-nxscript-resource"></a>Linux nxScript kaynağı için DSC
 
-**NxScript** kaynak içinde PowerShell Desired State Configuration (DSC), bir Linux düğümde Linux betiklerini çalıştırmak için bir mekanizma sağlar.
+PowerShell Istenen durum yapılandırması (DSC) içindeki **Nxscript** kaynağı bir Linux düğümünde Linux betikleri çalıştırmak için bir mekanizma sağlar.
 
 ## <a name="syntax"></a>Sözdizimi
 
@@ -32,16 +32,16 @@ nxScript <string> #ResourceName
 
 |  Özellik |  Açıklama |
 |---|---|
-| GetScript| Çağırdığınızda, çalışan bir komut dosyası sağlar [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet'i. Betik # gibi bir shebang'i başlamalıdır! / bin/bash.|
-| SetScript| Bir komut dosyası sağlar. Çağırdığınızda [Başlat-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet'ini **TestScript** ilk çalıştırır. Varsa **TestScript** bloğu döndüren bir çıkış kodu 0 dışındaki **SetScript** bloğu çalışır. Varsa **TestScript** 0 çıkış kodu döndürür **SetScript** çalışmaz. Betik gibi bir shebang'i ile başlamalıdır `#!/bin/bash`.|
-| TestScript| Bir komut dosyası sağlar. Çağırdığınızda [Başlat-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet'i, bu betiği çalıştırır. 0 dışında bir çıkış kodu döndürürse, SetScript çalıştırılır. 0 çıkış kodu döndürürse **SetScript** çalışmaz. **TestScript** çağırdığınızda, aynı zamanda çalıştırıyorsa [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet'i. Ancak, bu durumda, **SetScript** , hangi çıkış kodu öğesinden döndürülen ne olursa olsun çalışmaz **TestScript**. **TestScript** gerçek yapılandırmasını geçerli istenen durum yapılandırması ile eşleşen ve bir çıkış kodu, diğer 0'dan, eşleşmiyorsa, 0 çıkış kodu döndürmesi gerekir. (Geçerli istenen durum yapılandırması, DSC kullanarak bir düğümde yapılandırmalara uygun koşullarda çalışıldığından son yapılandırmadır). Betik 1#!/bin/bash.1 gibi bir shebang'i ile başlamalıdır|
-| Kullanıcı| Betik olarak çalıştırmak için kullanıcı.|
-| Grup| Betik olarak çalıştırmak için Grup.|
-| dependsOn | Bu kaynağı yapılandırılmadan önce başka bir kaynak yapılandırmasını çalıştırmanız gerektiğini gösterir. Örneğin, varsa **kimliği** kaynağın çalıştırmak istediğiniz yapılandırma komut dosyası bloğu ilk. **ResourceName** ve türünü **ResourceType**, bunu kullanarak söz dizimi özellik `DependsOn = "[ResourceType]ResourceName"`.|
+| GetScript| Makinenin geçerli durumunu döndürmek için bir betik sağlar.  Bu betik, [GetDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) betiğini çağırdığınızda çalışır. Betiğin #!/bin/Bash. gibi bir shebang ile başlaması gerekir|
+| SetScript| Makineyi doğru duruma koyan bir betik sağlar. [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) betiğini çağırdığınızda **TestScript** önce çalışır. **TestScript** bloğu 0 dışında bir çıkış kodu döndürürse, **setscript** bloğu çalışır. **Testscrıpt** 0 çıkış kodu döndürürse, **setscript** çalıştırılmaz. Betiğin gibi bir shebang `#!/bin/bash`ile başlaması gerekir.|
+| TestScript| Düğümün Şu anda doğru durumda olup olmadığını değerlendiren bir betik sağlar. [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) betiğini çağırdığınızda, bu betik çalışır. 0 dışında bir çıkış kodu döndürürse, SetScript çalışır. 0 çıkış kodu döndürürse, **Setscript** çalıştırılmaz. **TestScript** , [testdscconfiguration](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) betiğini çağırdığınızda de çalışır. Ancak, bu durumda, **TestScript**'ten çıkış kodu Döndürülmeksizin, **setscript** çalıştırılmaz. **Test betiği** içerik içermeli ve gerçek yapılandırma geçerli durum yapılandırmasıyla eşleşiyorsa 0 çıkış kodu ve eşleşmezse 0 dışında bir çıkış kodu döndürmelidir. (Geçerli istenen durum yapılandırması, DSC kullanan düğümde kullanılan son yapılandırmadır). Betiğin, 1 #!/bin/Bash.1 gibi bir shebang ile başlaması gerekir|
+| Kullanıcı| Betiği çalıştıran kullanıcı.|
+| Grup| Betiği çalıştırmak için Grup.|
+| DependsOn | Bu kaynak yapılandırıldıktan önce başka bir kaynağın yapılandırmasının çalıştırılması gerektiğini gösterir. Örneğin, önce çalıştırmak istediğiniz kaynak yapılandırma betiği bloğunun **kimliği** **resourceName** ise ve türü **ResourceType**ise, bu özelliği kullanmak için sözdizimi olur `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Örnek
 
-Aşağıdaki örnek, kullanımını gösterir **nxScript** ek yapılandırma yönetimi gerçekleştirmek için kaynak.
+Aşağıdaki örnek, ek yapılandırma yönetimi gerçekleştirmek için **Nxscript** kaynağının kullanımını gösterir.
 
 ```
 Import-DSCResource -Module nx
