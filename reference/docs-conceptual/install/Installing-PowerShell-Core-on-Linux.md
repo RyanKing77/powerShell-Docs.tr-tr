@@ -1,27 +1,23 @@
 ---
 title: Linux’ta PowerShell Core yükleme
-description: PowerShell Core yükleme üzerinde çeşitli Linux dağıtımları hakkında bilgi
-ms.date: 08/06/2018
-ms.openlocfilehash: 32d6c0e718ca798af2f6a5d796c3ca362e7befd9
-ms.sourcegitcommit: 13e170e8bff29d3d5f854c874de88f53c5e5ef20
+description: Çeşitli Linux dağıtımlarına PowerShell Core yükleme hakkında bilgi
+ms.date: 07/19/2019
+ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829431"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372187"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Linux’ta PowerShell Core yükleme
 
-Destekler [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9],
-[CentOS 7][cos], [kırmızı Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse],
-[Fedora 27][fedora], [Fedora 28] [fedora], ve [Arch Linux][arch].
+[Ubuntu 16,04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18,10][u1810], [de, 9][deb9],
+ [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE artık 15][opensuse] , [Fedora 27][fedora]'idestekler, [Fedora 28][Fedora]ve [mimari Linux][arch].
 
-Değil resmi olarak desteklenen Linux dağıtımları için kullanmayı deneyebilirsiniz [PowerShell Yasla paket][snap].
-Linux kullanarak doğrudan PowerShell ikili dosyaları dağıtmaya de deneyebilirsiniz [ `tar.gz` arşiv][tar], ancak gerekli bağımlılıkları işletim sisteminde ayrı adımları göre ayarlamanız gerekir.
+Resmi olarak desteklenen Linux dağıtımları için PowerShell [Snap paketini][snap]kullanarak PowerShell 'i yüklemeyi deneyebilirsiniz. Ayrıca, Linux [ `tar.gz` Arşivi][tar]kullanarak PowerShell ikililerini doğrudan dağıtmaya da deneyebilirsiniz, ancak işletim sistemini ayrı adımlarda temel alarak gerekli bağımlılıkları ayarlamanız gerekir.
 
-Tüm paketleri bizim Github'da kullanılabilir [Yayınları][] sayfası.
-Paket yüklendikten sonra Çalıştır `pwsh` bir terminalden.
+Tüm paketleri GitHub [yayınları][] sayfamızda bulabilirsiniz. Paket yüklendikten sonra bir terminalden çalıştırın `pwsh` .
 
-[u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
@@ -34,75 +30,27 @@ Paket yüklendikten sonra Çalıştır `pwsh` bir terminalden.
 [snap]: #snap-package
 [tar]: #binary-archives
 
-## <a name="installing-preview-releases"></a>Önizleme sürümleri yükleme
+## <a name="installing-preview-releases"></a>Önizleme sürümleri yükleniyor
 
-PowerShell Core Önizleme sürümü için Paket Deposu aracılığıyla Linux yüklerken, paket adı değişiklikleri `powershell` için `powershell-preview`.
+Bir paket deposu aracılığıyla Linux için bir PowerShell Core Preview sürümü yüklerken, paket adı ' dan `powershell` `powershell-preview`' a değişir.
 
-Doğrudan indirme ile yükleme, dosya adı dışında değiştirmez.
+Doğrudan indirme aracılığıyla yükleme, dosya adından başka bir değişiklik yapmaz.
 
-Çeşitli paket yöneticilerini kullanarak kararlı ve önizleme paketleri yüklemek için komut tablosu şu şekildedir:
+Aşağıdaki tabloda, çeşitli paket yöneticilerini kullanarak kararlı ve önizleme paketlerini yüklemeye yönelik komutlar yer almaktadır:
 
-|Distribution(s)|Kararlı komutu | Önizleme komutu |
+|Dağıtım (ler)|Stable komutu | Önizleme komutu |
 |---------------|---------------|-----------------|
-| Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| Ubuntu, dene |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
-## <a name="ubuntu-1404"></a>Ubuntu 14.04
-
-### <a name="installation-via-package-repository---ubuntu-1404"></a>Paket Deposu - Ubuntu 14.04 aracılığıyla yükleme
-
-Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
-Bu tercih edilen yöntemdir.
-
-```sh
-# Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
-
-# Register the Microsoft repository GPG keys
-sudo dpkg -i packages-microsoft-prod.deb
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-Süper kullanıcı Microsoft depoya kaydedin.
-Daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` yüklemesini güncelleştirmek için.
-
-### <a name="installation-via-direct-download---ubuntu-1404"></a>Doğrudan indirme - Ubuntu 14.04 aracılığıyla yükleme
-
-Debian paketi indirin `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
-gelen [Yayınları][] Ubuntu makine sayfaya.
-
-Ardından aşağıdakileri terminalde yürütün:
-
-```sh
-sudo dpkg -i powershell_6.2.0-1.ubuntu.14.04_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> `dpkg -i` Komutu karşılaşılmamış bağımlılıklarıyla birlikte başarısız olur.
-> Sonraki komut `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.
-
-### <a name="uninstallation---ubuntu-1404"></a>Kaldırma - Ubuntu 14.04
-
-```sh
-sudo apt-get remove powershell
-```
-
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
-### <a name="installation-via-package-repository---ubuntu-1604"></a>Paket Deposu - Ubuntu 16.04 aracılığıyla yükleme
+### <a name="installation-via-package-repository---ubuntu-1604"></a>Paket deposu aracılığıyla yükleme-Ubuntu 16,04
 
-Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
-Bu tercih edilen yöntemdir.
+Linux için PowerShell Core, kolay yükleme ve güncelleştirmeler için paket depolarında yayımlanır.
+
+Tercih edilen yöntem aşağıdaki gibidir:
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -121,14 +69,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.
+Süper Kullanıcı olarak Microsoft Repository 'yi bir kez kaydettirin. Kayıttan sonra PowerShell 'i ile `sudo apt-get upgrade powershell`güncelleştirebilirsiniz.
 
-### <a name="installation-via-direct-download---ubuntu-1604"></a>Doğrudan indirme - Ubuntu 16.04 aracılığıyla yükleme
+### <a name="installation-via-direct-download---ubuntu-1604"></a>Doğrudan Download-Ubuntu 16,04 aracılığıyla yükleme
 
-Debian paketi indirin `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
-gelen [Yayınları][] Ubuntu makine sayfaya.
+[yayınları][] sayfasından Ubuntu `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` makinesine deleyi paketini indirin.
 
-Ardından aşağıdakileri terminalde yürütün:
+Ardından, terminalde aşağıdaki komutları yürütün:
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.16.04_amd64.deb
@@ -136,10 +83,9 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> `dpkg -i` Komutu karşılaşılmamış bağımlılıklarıyla birlikte başarısız olur.
-> Sonraki komut `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.
+> `dpkg -i` Komut karşılanmamış bağımlılıklarla başarısız olur. Sonraki komut, `apt-get install -f` bu sorunları çözer ve PowerShell paketini yapılandırmayı tamamlar.
 
-### <a name="uninstallation---ubuntu-1604"></a>Kaldırma - Ubuntu 16.04
+### <a name="uninstallation---ubuntu-1604"></a>Kaldırma-Ubuntu 16,04
 
 ```sh
 sudo apt-get remove powershell
@@ -147,10 +93,11 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
-### <a name="installation-via-package-repository---ubuntu-1804"></a>Paket Deposu - Ubuntu 18.04 aracılığıyla yükleme
+### <a name="installation-via-package-repository---ubuntu-1804"></a>Paket deposu aracılığıyla yükleme-Ubuntu 18,04
 
-Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
-Bu tercih edilen yöntemdir.
+Linux için PowerShell Core, kolay yükleme ve güncelleştirmeler için paket depolarında yayımlanır.
+
+Tercih edilen yöntem aşağıdaki gibidir:
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -172,14 +119,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.
+Süper Kullanıcı olarak Microsoft Repository 'yi bir kez kaydettirin. Kayıttan sonra PowerShell 'i ile `sudo apt-get upgrade powershell`güncelleştirebilirsiniz.
 
-### <a name="installation-via-direct-download---ubuntu-1804"></a>Doğrudan indirme - Ubuntu 18.04 aracılığıyla yükleme
+### <a name="installation-via-direct-download---ubuntu-1804"></a>Doğrudan Download-Ubuntu 18,04 aracılığıyla yükleme
 
-Debian paketi indirin `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
-gelen [Yayınları][] Ubuntu makine sayfaya.
+[yayınları][] sayfasından Ubuntu `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` makinesine deleyi paketini indirin.
 
-Ardından aşağıdakileri terminalde yürütün:
+Ardından, terminalde aşağıdaki komutları yürütün:
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.18.04_amd64.deb
@@ -187,28 +133,28 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> `dpkg -i` Komutu karşılaşılmamış bağımlılıklarıyla birlikte başarısız olur.
-> Sonraki komut `apt-get install -f` PowerShell paketi Yapılandırma tamamlandıktan sonra bu sorunları giderir.
+> `dpkg -i` Komut karşılanmamış bağımlılıklarla başarısız olur. Sonraki komut, `apt-get install -f` bu sorunları çözer ve PowerShell paketini yapılandırmayı tamamlar.
 
-### <a name="uninstallation---ubuntu-1804"></a>Kaldırma - Ubuntu 18.04
+### <a name="uninstallation---ubuntu-1804"></a>Kaldırma-Ubuntu 18,04
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1810"></a>Ubuntu 18.10
+## <a name="ubuntu-1810"></a>Ubuntu 18,10
 
 > [!NOTE]
-> 18.10 olduğu gibi bir [Ara Sürüm](https://www.ubuntu.com/about/release-cycle), yalnızca [desteklenen topluluk](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
+> 18,10, geçici bir [Sürüm](https://www.ubuntu.com/about/release-cycle)olduğundan yalnızca [topluluk desteklenir](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
 
-Üzerinde 18.10 yükleme aracılığıyla desteklenir `snapd`. Bkz: [Yasla paket][snap] için tam yönergeler;
+18,10 üzerine yükleme, aracılığıyla `snapd`desteklenir. Bkz. tam yönergeler için [yaslama paketi][snap] ;
 
 ## <a name="debian-8"></a>Debian 8
 
-### <a name="installation-via-package-repository---debian-8"></a>Paket Deposu - Debian 8 aracılığıyla yükleme
+### <a name="installation-via-package-repository---debian-8"></a>Paket deposu aracılığıyla yükleme-detem 8
 
-Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
-Bu tercih edilen yöntemdir.
+Linux için PowerShell Core, kolay yükleme ve güncelleştirmeler için paket depolarında yayımlanır.
+
+Tercih edilen yöntem aşağıdaki gibidir:
 
 ```sh
 # Install system components
@@ -231,14 +177,15 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.
+Süper Kullanıcı olarak Microsoft Repository 'yi bir kez kaydettirin. Kayıttan sonra PowerShell 'i ile `sudo apt-get upgrade powershell`güncelleştirebilirsiniz.
 
 ## <a name="debian-9"></a>Debian 9
 
-### <a name="installation-via-package-repository---debian-9"></a>Paket Deposu - Debian 9 aracılığıyla yükleme
+### <a name="installation-via-package-repository---debian-9"></a>Paket deposu aracılığıyla yükleme-detem 9
 
-Linux için PowerShell Core, paket depolarınızın kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
-Bu tercih edilen yöntemdir.
+Linux için PowerShell Core, kolay yükleme ve güncelleştirmeler için paket depolarında yayımlanır.
+
+Tercih edilen yöntem aşağıdaki gibidir:
 
 ```sh
 # Install system components
@@ -261,21 +208,20 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Microsoft depo süper kullanıcı bir kez kaydolduktan sonra daha sonra kullanmanız yeterlidir `sudo apt-get upgrade powershell` güncelleştirmek için.
+Süper Kullanıcı olarak Microsoft Repository 'yi bir kez kaydettirin. Kayıttan sonra PowerShell 'i ile `sudo apt-get upgrade powershell`güncelleştirebilirsiniz.
 
-### <a name="installation-via-direct-download---debian-9"></a>Doğrudan indirme - Debian 9 aracılığıyla yükleme
+### <a name="installation-via-direct-download---debian-9"></a>Doğrudan Indirme ile yükleme-detem 9
 
-Debian paketi indirin `powershell_6.2.0-1.debian.9_amd64.deb`
-gelen [Yayınları][] Debian makine sayfaya.
+[yayınları][] sayfasından debir makineye `powershell_6.2.0-1.debian.9_amd64.deb` olan deleyi paketini indirin.
 
-Ardından aşağıdakileri terminalde yürütün:
+Ardından, terminalde aşağıdaki komutları yürütün:
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-### <a name="uninstallation---debian-9"></a>Kaldırma - Debian 9
+### <a name="uninstallation---debian-9"></a>Kaldırma-kaldırıcı 9
 
 ```sh
 sudo apt-get remove powershell
@@ -284,11 +230,11 @@ sudo apt-get remove powershell
 ## <a name="centos-7"></a>CentOS 7
 
 > [!NOTE]
-> Bu paket, Oracle Linux 7'de de çalışır.
+> Bu paket Oracle Linux 7 ' de çalışmaktadır.
 
-### <a name="installation-via-package-repository-preferred---centos-7"></a>Paket (tercih edilir) - deposu CentOS 7 ile yükleme
+### <a name="installation-via-package-repository-preferred---centos-7"></a>Paket deposu aracılığıyla yükleme (tercih edilen)-CentOS 7
 
-Linux için PowerShell Core, resmi Microsoft depolara kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
+Linux için PowerShell Core, kolay yükleme ve güncelleştirmeler için resmi Microsoft depolarında yayımlanır.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -301,26 +247,25 @@ sudo yum install -y powershell
 pwsh
 ```
 
-Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidir `sudo yum update powershell` PowerShell güncelleştirilecek.
+Süper Kullanıcı olarak Microsoft Repository 'yi bir kez kaydettirin. Kayıttan sonra PowerShell 'i ile `sudo yum update powershell`güncelleştirebilirsiniz.
 
-### <a name="installation-via-direct-download---centos-7"></a>Doğrudan indirme - CentOS 7 ile yükleme
+### <a name="installation-via-direct-download---centos-7"></a>Doğrudan Indirme ile yükleme-CentOS 7
 
-Kullanarak [CentOS 7][], RPM paketini indirme `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-gelen [Yayınları][] CentOS makine sayfaya.
+[CentOS 7][]' yi kullanarak, [yayınları][] sayfasından `powershell-6.2.0-1.rhel.7.x86_64.rpm` CentOS makinesine RPM paketini indirin.
 
-Ardından aşağıdakileri terminalde yürütün:
+Ardından, terminalde aşağıdaki komutları yürütün:
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-RPM karşıdan ara adım olmadan da yükleyebilirsiniz:
+Yükleme işlemi için ara adım olmadan RPM 'yi yükleyebilirsiniz:
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---centos-7"></a>Kaldırma - CentOS 7
+### <a name="uninstallation---centos-7"></a>Kaldırma-CentOS 7
 
 ```sh
 sudo yum remove powershell
@@ -330,9 +275,9 @@ sudo yum remove powershell
 
 ## <a name="red-hat-enterprise-linux-rhel-7"></a>Red Hat Enterprise Linux (RHEL) 7
 
-### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a>Paket (tercih edilir) - deposu Red Hat Enterprise Linux (RHEL) 7 aracılığıyla yükleme
+### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a>Paket deposu aracılığıyla yükleme (tercih edilen)-Red Hat Enterprise Linux (RHEL) 7
 
-Linux için PowerShell Core, resmi Microsoft depolara kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
+Linux için PowerShell Core, kolay yükleme ve güncelleştirmeler için resmi Microsoft depolarında yayımlanır.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -345,26 +290,25 @@ sudo yum install -y powershell
 pwsh
 ```
 
-Microsoft depo süper kullanıcı bir kez kaydolduktan sonra kullanmak yeterlidir `sudo yum update powershell` PowerShell güncelleştirilecek.
+Süper Kullanıcı olarak Microsoft Repository 'yi bir kez kaydettirin. Kayıttan sonra PowerShell 'i ile `sudo yum update powershell`güncelleştirebilirsiniz.
 
-### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Doğrudan indirme - Red Hat Enterprise Linux (RHEL) 7 aracılığıyla yükleme
+### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Doğrudan Indirme ile yükleme-Red Hat Enterprise Linux (RHEL) 7
 
-RPM paketini indirme `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-gelen [Yayınları][] Red Hat Enterprise Linux makine sayfaya.
+Sürümler sayfasından Red Hat Enterprise Linux makineye `powershell-6.2.0-1.rhel.7.x86_64.rpm` RPM paketini [yayınları][].
 
-Ardından aşağıdakileri terminalde yürütün:
+Ardından, terminalde aşağıdaki komutları yürütün:
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-RPM karşıdan ara adım olmadan da yükleyebilirsiniz:
+Yükleme işlemi için ara adım olmadan RPM 'yi yükleyebilirsiniz:
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Uninstallation - Red Hat Enterprise Linux (RHEL) 7
+### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Kaldırma-Red Hat Enterprise Linux (RHEL) 7
 
 ```sh
 sudo yum remove powershell
@@ -372,7 +316,7 @@ sudo yum remove powershell
 
 ## <a name="opensuse"></a>openSUSE
 
-### <a name="installation---opensuse-423"></a>Yükleme - openSUSE 42.3
+### <a name="installation---opensuse-423"></a>Yükleme-openSUSE 42,3
 
 ```sh
 # Install dependencies
@@ -397,7 +341,7 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="installation---opensuse-leap-15"></a>Yükleme - openSUSE Leap 15
+### <a name="installation---opensuse-leap-15"></a>Yükleme-openSUSE artık 15
 
 ```sh
 # Install dependencies
@@ -422,7 +366,7 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a>Kaldırma - openSUSE 42.3, openSUSE Leap 15
+### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a>Kaldırma-openSUSE 42,3, openSUSE artık 15
 
 ```sh
 rm -rf /usr/bin/pwsh /opt/microsoft/powershell
@@ -431,11 +375,11 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## <a name="fedora"></a>Fedora
 
 > [!NOTE]
-> 28 fedora yalnızca PowerShell Core 6.1 ve üzeri sürümlerde desteklenir.
+> Fedora 28 yalnızca PowerShell Core 6,1 ve daha yeni sürümlerde desteklenir.
 
-### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Paket (tercih edilir) - deposu Fedora 27 Fedora 28 aracılığıyla yükleme
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Paket deposu aracılığıyla yükleme (tercih edilen)-Fedora 27, Fedora 28
 
-Linux için PowerShell Core, resmi Microsoft depolara kolay yükleme (ve güncelleştirmeleri) için yayımlanır.
+Linux için PowerShell Core, kolay yükleme ve güncelleştirmeler için resmi Microsoft depolarında yayımlanır.
 
 ```sh
 # Register the Microsoft signature key
@@ -457,62 +401,61 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Doğrudan indirme - 27 Fedora, Fedora 28 aracılığıyla yükleme
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Doğrudan Indirme ile yükleme-Fedora 27, Fedora 28
 
-RPM paketini indirme `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-gelen [Yayınları][] Fedora makine sayfaya.
+`powershell-6.2.0-1.rhel.7.x86_64.rpm` [yayınları][] sayfasından Fedora makinesine RPM paketini indirin.
 
-Ardından aşağıdakileri terminalde yürütün:
+Ardından, terminalde aşağıdaki komutları yürütün:
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-RPM karşıdan ara adım olmadan da yükleyebilirsiniz:
+Yükleme işlemi için ara adım olmadan RPM 'yi yükleyebilirsiniz:
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-27-fedora-28"></a>Kaldırma - 27, Fedora Fedora 28
+### <a name="uninstallation---fedora-27-fedora-28"></a>Kaldırma-Fedora 27, Fedora 28
 
 ```sh
 sudo dnf remove powershell
 ```
 
-## <a name="arch-linux"></a>Linux arch
+## <a name="arch-linux"></a>Mimari Linux
 
 > [!NOTE]
-> Deneysel yay desteği.
+> Mimari desteği deneysel.
 
-PowerShell kullanılabilir [Linux arch][] kullanıcı deposu (AUR).
+PowerShell, [mimari Linux][] kullanıcı deposundan (AUR) kullanılabilir.
 
-* İle derlenebilir [en son sürümü etiketlendi][arch-release]
-* Gelen derlenebilir [ana son kaydetme][arch-git]
-* Kullanılarak yüklenebilir [ikili en son sürüm][arch-bin]
+* [En son etiketli sürümle][arch-release] derlenebilir
+* [En son işlemeden ana şablona][arch-git] derlenebilir
+* [En son sürüm ikilisi][arch-bin] kullanılarak yüklenebilir
 
-AUR paketlerinde saklanır topluluk - resmi desteği yoktur.
+AUR 'teki paketler topluluk tarafından korunur; resmi olmayan destek yoktur.
 
-AUR paketlerini yükleme hakkında daha fazla bilgi için bkz: [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) veya topluluk [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
+AUR 'ten paket yükleme hakkında daha fazla bilgi için bkz. [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) veya Community [dockerfile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Linux arch]: https://www.archlinux.org/download/
+[Mimari Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
-## <a name="snap-package"></a>Paket Yasla
+## <a name="snap-package"></a>Yaslama paketi
 
-### <a name="getting-snapd"></a>Snapd alma
+### <a name="getting-snapd"></a>Anlık görüntü alınıyor
 
-`snapd` yaslar çalıştırmak için gereklidir.
-Kullanım [bu yönergeleri](https://docs.snapcraft.io/core/install) sahip olduğunuzdan emin olmak için `snapd` yüklü.
+`snapd`yapış çalıştırmak için gereklidir. Yüklediğinizden emin `snapd` olmak için [Bu yönergeleri](https://docs.snapcraft.io/core/install) kullanın.
 
-### <a name="installation-via-snap"></a>Ek bileşeni aracılığıyla yükleme
+### <a name="installation-via-snap"></a>Yaslama aracılığıyla yükleme
 
-Linux için PowerShell Core yayımlanmıştır [ek depolama](https://snapcraft.io/store) kolay yükleme (ve güncelleştirmeleri).
-Bu tercih edilen yöntemdir.
+Linux için PowerShell Core, kolay yükleme ve güncelleştirmeler için [Snap deposunda](https://snapcraft.io/store) yayımlanır.
+
+Tercih edilen yöntem aşağıdaki gibidir:
 
 ```sh
 # Install PowerShell
@@ -522,7 +465,7 @@ sudo snap install powershell --classic
 pwsh
 ```
 
-Önizleme sürümünü yüklemek istiyorsanız, yöntemi kullanın.
+Önizleme sürümünü yüklemek için aşağıdaki yöntemi kullanın:
 
 ```sh
 # Install PowerShell
@@ -532,9 +475,9 @@ sudo snap install powershell-preview --classic
 pwsh-preview
 ```
 
-Sonra ek yükleme otomatik olarak yükseltecek, ancak bir yükseltme kullanarak tetikleyebilirsiniz `sudo snap refresh powershell` veya `sudo snap refresh powershell-preview`.
+Yükleme sonrasında, yaslama otomatik olarak yükseltilir. `sudo snap refresh powershell` Veya`sudo snap refresh powershell-preview`kullanarak bir yükseltmeyi tetikleyebilirsiniz.
 
-### <a name="uninstallation"></a>Kaldırma
+### <a name="uninstallation"></a>CP
 
 ```sh
 sudo snap remove powershell
@@ -546,9 +489,9 @@ veya
 sudo snap remove powershell-preview
 ```
 
-## <a name="kali"></a>Kali
+## <a name="kali"></a>Kalı
 
-### <a name="installation---kali"></a>Yükleme - Kali
+### <a name="installation---kali"></a>Yükleme-kalı
 
 ```sh
 # Download & Install prerequisites
@@ -569,7 +512,7 @@ apt-get update && apt-get install -y powershell
 pwsh
 ```
 
-### <a name="uninstallation---kali"></a>Kaldırma - Kali
+### <a name="uninstallation---kali"></a>Kaldırma-kalı
 
 ```sh
 # Uninstall PowerShell package
@@ -579,15 +522,15 @@ apt-get remove -y powershell
 ## <a name="raspbian"></a>Raspbian
 
 > [!NOTE]
-> Deneysel Raspbian desteği.
+> Raspbian desteği deneysel.
 
-Şu anda PowerShell yalnızca Raspbian Esnetme üzerinde desteklenir.
+Şu anda PowerShell yalnızca Raspbian Esnette destekleniyor.
 
-Ayrıca CoreCLR (ve bu nedenle PowerShell Core) yalnızca Pi 2 ve Pi 3 cihazlarında diğer cihazlar gibi çalışır [Pi sıfır](https://github.com/dotnet/coreclr/issues/10605), desteklenmeyen bir işlemciye sahip.
+CoreCLR ve PowerShell Core yalnızca PI 2 ve PI 3 cihazlarda, [PI sıfır](https://github.com/dotnet/coreclr/issues/10605)gibi diğer cihazlar için de çalışır ve desteklenmeyen bir işlemciye sahip olur.
 
-İndirme [Raspbian Esnetme](https://www.raspberrypi.org/downloads/raspbian/) izleyin [yükleme yönergeleri](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) Pi'yi almak için.
+[Raspbian Esnetme](https://www.raspberrypi.org/downloads/raspbian/) Indirin ve PI 'larınızın üzerine ulaşmak için [yükleme yönergelerini](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) izleyin.
 
-### <a name="installation---raspbian"></a>Yükleme - Raspbian
+### <a name="installation---raspbian"></a>Yükleme-Raspbian
 
 ```sh
 ###################################
@@ -616,7 +559,7 @@ tar -xvf ./powershell-6.2.0-linux-arm32.tar.gz -C ~/powershell
 ~/powershell/pwsh
 ```
 
-İsteğe bağlı olarak PowerShell "pwsh" ikili yol belirtmeden başlatabilmeniz için bir sembolik bağlantı oluşturabilirsiniz.
+İsteğe bağlı olarak, `pwsh` ikili dosyanın yolunu belirtmeden PowerShell 'i başlatmak için bir sembolik bağlantı oluşturabilirsiniz.
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
@@ -628,42 +571,39 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 # Now to start PowerShell you can just run "pwsh"
 ```
 
-### <a name="uninstallation---raspbian"></a>Kaldırma - Raspbian
+### <a name="uninstallation---raspbian"></a>Kaldırma-Raspbian
 
 ```sh
 rm -rf ~/powershell
 ```
 
-## <a name="binary-archives"></a>İkili Arşivi
+## <a name="binary-archives"></a>İkili Arşivler
 
-PowerShell ikili `tar.gz` arşivleri gelişmiş dağıtım senaryoları etkinleştirmek Linux platformlar için sağlanır.
+PowerShell ikili `tar.gz` arşivleri, Linux platformları için gelişmiş dağıtım senaryolarını etkinleştirmek üzere sağlanır.
 
 ### <a name="dependencies"></a>Bağımlılıkları
 
-PowerShell tüm Linux dağıtımları için taşınabilir ikili dosyaları oluşturur.
-Ancak farklı bağımlılıklara farklı dağıtımlar üzerinde .NET Core çalışma zamanı gerektirir ve bu nedenle aynı PowerShell yapar.
+PowerShell, tüm Linux dağıtımları için taşınabilir ikili dosyalar oluşturur. Ancak, .NET Core çalışma zamanı farklı dağıtımlarda farklı bağımlılıklar gerektirir ve PowerShell de çok fazla yapılır.
 
-Aşağıdaki tabloda farklı Linux dağıtımlarında resmi olarak desteklenen .NET Core 2.0 bağımlılıkları gösterir.
+Aşağıdaki grafikte, farklı Linux dağıtımları üzerinde resmi olarak desteklenen .NET Core 2,0 bağımlılıkları gösterilmektedir.
 
 | İşletim sistemi                 | Bağımlılıkları |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
-| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
-| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Debian 9 (Esnetme) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, openssl kitaplıkları, libicu |
-| openSUSE 42.3 | libcurl4, libopenssl1_0_0, libicu52_1 |
-| openSUSE Leap 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
-| Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl kitaplıkları, libicu, compat openssl10 |
+| Ubuntu 16.04       | libc6, libgcc1, libgssapı-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu55 |
+| Ubuntu 17,10       | libc6, libgcc1, libgssapı-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu57 |
+| Ubuntu 18.04       | libc6, libgcc1, libgssapı-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu60 |
+| Desek8 (Jese)  | libc6, libgcc1, libgssapı-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu52 |
+| Deda 9 (uzat) | libc6, libgcc1, libgssapı-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.2, libicu57 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | librüzgar, Libya, OpenSSL-libs, libıu |
+| openSUSE 42,3 | libcurl4, libopenssl1_0_0, libicu52_1 |
+| openSUSE artık 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
+| Fedora 27 <br> Fedora 28 | libıwind, libkıvrık, OpenSSL-libs, libıu, COMPAT-openssl10 |
 
-Resmi olarak desteklenmez Linux dağıtımlarında PowerShell ikili dosyaları dağıtmak için ayrı adımları hedef işletim sistemi için gerekli bağımlılıkları yüklemeniz gerekir.
-Örneğin, bizim [Amazon Linux dockerfile][amazon-dockerfile] ilk bağımlılıkları yükler ve ardından Linux ayıklar `tar.gz` arşiv.
+Resmi olarak desteklenmeyen Linux dağıtımlarına PowerShell ikilileri dağıtmak için, hedef işletim sistemi için gerekli bağımlılıkları ayrı adımlarda yüklemeniz gerekir. Örneğin, [Amazon Linux dockerfile][amazon-dockerfile] , önce bağımlılıkları yüklüyor ve ardından Linux `tar.gz` arşivini ayıklar.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
-### <a name="installation---binary-archives"></a>Yükleme - ikili Arşivi
+### <a name="installation---binary-archives"></a>Yükleme-Ikili arşivleri
 
 #### <a name="linux"></a>Linux
 
@@ -684,7 +624,7 @@ sudo chmod +x /opt/microsoft/powershell/6.2.0/pwsh
 sudo ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 ```
 
-### <a name="uninstalling-binary-archives"></a>Kaldırma ikili Arşivi
+### <a name="uninstalling-binary-archives"></a>İkili arşivleri kaldırma
 
 ```sh
 sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
@@ -692,17 +632,17 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## <a name="paths"></a>Yollar
 
-* `$PSHOME` olduğu `/opt/microsoft/powershell/6.2.0/`
-* Kullanıcı profillerini okuyabilir `~/.config/powershell/profile.ps1`
-* Varsayılan profiller okuyabilir `$PSHOME/profile.ps1`
-* Kullanıcı modülleri okuyabilir `~/.local/share/powershell/Modules`
-* Paylaşılan modülleri okuyabilir `/usr/local/share/powershell/Modules`
-* Varsayılan modülleri okuyabilir `$PSHOME/Modules`
-* PSReadline geçmişi için kaydedilir `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME`eklenir`/opt/microsoft/powershell/6.2.0/`
+* Kullanıcı profilleri şuradan okunacaktır`~/.config/powershell/profile.ps1`
+* Varsayılan profiller buradan okunacaktır`$PSHOME/profile.ps1`
+* Kullanıcı modülleri okunacaktır`~/.local/share/powershell/Modules`
+* Paylaşılan modüller buradan okunacaktır`/usr/local/share/powershell/Modules`
+* Varsayılan modüller okunacaktır`$PSHOME/Modules`
+* PSReadline geçmişi şu şekilde kaydedilecek`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-Varsayılan konak özel profilleri var Bu nedenle, PowerShell'in konak başına yapılandırma profilleri dikkate `Microsoft.PowerShell_profile.ps1` aynı konumlarda.
+Profiller, PowerShell 'in konak başına yapılandırmasını kabul eder; bu nedenle, varsayılan konağa özgü profiller aynı konumlarda `Microsoft.PowerShell_profile.ps1` bulunur.
 
-PowerShell uyar [XDG temel dizin belirtimi][xdg-bds] Linux üzerinde.
+PowerShell, Linux üzerinde [xdg taban dizini belirtimine][xdg-bds] uyar.
 
-[Yayınları]: https://github.com/PowerShell/PowerShell/releases/latest
+[yayınları]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
