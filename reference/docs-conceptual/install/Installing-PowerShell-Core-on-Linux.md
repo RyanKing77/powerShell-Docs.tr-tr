@@ -6,13 +6,12 @@ ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
 ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68372187"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Linux’ta PowerShell Core yükleme
 
-[Ubuntu 16,04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18,10][u1810], [de, 9][deb9],
- [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE artık 15][opensuse] , [Fedora 27][fedora]'idestekler, [Fedora 28][Fedora]ve [mimari Linux][arch].
+[Ubuntu 16,04][u16], [ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [de, 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE artık 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [mimari Linux][arch].
 
 Resmi olarak desteklenen Linux dağıtımları için PowerShell [Snap paketini][snap]kullanarak PowerShell 'i yüklemeyi deneyebilirsiniz. Ayrıca, Linux [ `tar.gz` Arşivi][tar]kullanarak PowerShell ikililerini doğrudan dağıtmaya da deneyebilirsiniz, ancak işletim sistemini ayrı adımlarda temel alarak gerekli bağımlılıkları ayarlamanız gerekir.
 
