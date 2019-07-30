@@ -1,65 +1,65 @@
 ---
 ms.date: 06/12/2017
 contributor: manikb
-keywords: Galeri, powershell, cmdlet, psget
+keywords: Galeri, PowerShell, cmdlet, psget
 title: PowerShellGet yükleme
-ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d3ba8c4d4d4c7ee023c7e6a948a29d8f47ea242
+ms.sourcegitcommit: 8d47eb41445ffaf10fcd68874e397c9a1703d898
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075282"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601425"
 ---
 # <a name="installing-powershellget"></a>PowerShellGet yükleme
 
-## <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a>PowerShellGet aşağıdaki sürümlerden bir yerleşik modüldür
+## <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a>PowerShellGet, aşağıdaki sürümlerde yerleşik bir modüldür
 
-- [Windows 10](https://www.microsoft.com/windows) ya da daha yeni
-- [Windows Server 2016](/windows-server/windows-server) ya da daha yeni
-- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) ya da daha yeni
+- [Windows 10](https://www.microsoft.com/windows) veya üzeri
+- [Windows Server 2016](/windows-server/windows-server) veya üzeri
+- [Windows Management Framework (WMF) 5,0](https://www.microsoft.com/download/details.aspx?id=50395) veya üzeri
 - [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
-## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>PowerShell sürüm 3.0 ve 4.0 için PowerShellGet modülü Al
+## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>PowerShell sürümleri 3,0 ve 4,0 için PowerShellGet modülünü alın
 
 - [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451)
 
-## <a name="get-the-latest-version-from-powershell-gallery"></a>PowerShell Galerisi'nden en son sürümü Al
+## <a name="get-the-latest-version-from-powershell-gallery"></a>PowerShell Galerisi en son sürümü Al
 
-- PowerShellGet güncelleştirmeden önce her zaman en son Nuget sağlayıcısı yüklemeniz gerekir. Bunu yapmak için yükseltilmiş bir PowerShell oturumunda aşağıdaki komutu çalıştırın.
+- PowerShellGet 'i güncelleştirmeden önce en son NuGet sağlayıcısını her zaman yüklemelisiniz. Bunu yapmak için, yükseltilmiş bir PowerShell oturumunda aşağıdakileri çalıştırın.
 
   ```powershell
-  Install-PackageProvider Nuget –Force
+  Install-PackageProvider Nuget -Force
   Exit
   ```
 
-### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>PowerShell 5.0 (veya daha yeni) sistemleri için en son PowerShellGet yükleyebilirsiniz.
+### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>PowerShell 5,0 (veya daha yeni) olan sistemler için en son PowerShellGet 'i yükleyebilirsiniz
 
-- Windows 10'da bunu yapmak için Windows Server 2016, herhangi bir sistemle WMF 5.0 veya yüklü 5.1 veya PowerShell 6 ile herhangi bir sistem çalıştırmak aşağıdaki komutları yükseltilmiş bir PowerShell oturumundan.
+- Bunu Windows 10, Windows Server 2016, WMF 5,0 veya 5,1 yüklü herhangi bir sisteme veya PowerShell 6 ile herhangi bir sisteme sahip olmak için, yükseltilmiş bir PowerShell oturumundan aşağıdaki komutları çalıştırın.
 
   ```powershell
-  Install-Module –Name PowerShellGet –Force
+  Install-Module -Name PowerShellGet -Force
   Exit
   ```
 
-- Kullanım `Update-Module` daha yeni sürümlerini almak için.
+- Daha `Update-Module` yeni sürümleri almak için kullanın.
 
   ```powershell
   Update-Module -Name PowerShellGet
   Exit
   ```
 
-### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpswwwmicrosoftcomdownloaddetailsaspxid51451"></a>PowerShell 3 veya PowerShell 4 çalıştıran sistemlerde, yüklü [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451)
+### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpswwwmicrosoftcomdownloaddetailsaspxid51451"></a>[Package Management MSI](https://www.microsoft.com/download/details.aspx?id=51451) ' yi yükleyen PowerShell 3 veya PowerShell 4 çalıştıran sistemler için
 
-- PowerShellGet cmdlet'ini yükseltilmiş bir PowerShell oturumunda aşağıdaki modüller, yerel bir dizine kaydetmek için kullanın:
+- Modülleri yerel bir dizine kaydetmek için yükseltilmiş bir PowerShell oturumundan PowerShellGet cmdlet 'ini kullanın
 
   ```powershell
   Save-Module PowerShellGet -Path C:\LocalFolder
   Exit
   ```
 
-- PowerShellGet ve PackageManagement modüllerini tüm diğer işlemler yüklenmeyen emin olun.
-- İçeriğini silin `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` ve `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` klasörleri.
-- PS konsolunda yükseltilmiş izinlerle yeniden açın, ardından aşağıdaki komutları çalıştırın.
+- PowerShellGet ve PackageManagement modüllerinin başka bir işlemde yüklenmediğinden emin olun.
+- `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` Ve`$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` klasörlerinin içeriğini silin.
+- PS konsolunu yükseltilmiş izinlerle yeniden açın ve aşağıdaki komutları çalıştırın.
 
   ```powershell
   Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
