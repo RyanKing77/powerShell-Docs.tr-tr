@@ -1,49 +1,49 @@
 ---
 ms.date: 05/17/2018
 keywords: PowerShell, çekirdek
-title: PowerShell 6.0 için bozucu değişiklikler
+title: PowerShell 6,0 için son değişiklikler
 ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67843933"
 ---
-# <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 için bozucu değişiklikler
+# <a name="breaking-changes-for-powershell-60"></a>PowerShell 6,0 için son değişiklikler
 
-## <a name="features-no-longer-available-in-powershell-core"></a>PowerShell Core artık kullanılabilir özellikler
+## <a name="features-no-longer-available-in-powershell-core"></a>PowerShell Core 'da artık kullanılamayan özellikler
 
 ### <a name="powershell-workflow"></a>PowerShell iş akışı
 
-[PowerShell iş akışı][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] , uzun süreli veya paralel görevler için güçlü runbook'ları oluşturulmasını sağlar.
+[PowerShell Iş akışı][workflow] , Windows PowerShell 'de, uzun süreli veya paralel görevler için sağlam runbook 'ların oluşturulmasına izin veren [Windows Workflow Foundation (WF)][workflow-foundation] üzerinde derleme yapan bir özelliktir.
 
-Windows Workflow Foundation'da .NET Core desteği eksikliği nedeniyle, biz de PowerShell Core PowerShell iş akışı desteklemeye devam etmeyecek.
+.NET Core 'daki Windows Workflow Foundation desteğinin olmamasından dolayı PowerShell Core 'da PowerShell Iş akışını desteklemeye devam eteceğiz.
 
-Gelecekte, PowerShell iş akışı gerek kalmadan PowerShell dilinde yerel paralellik/eşzamanlılık sağlamak istiyoruz.
+Gelecekte PowerShell Iş akışına gerek olmadan PowerShell dilinde yerel paralellik/eşzamanlılık özelliğini etkinleştirmek istiyoruz.
 
 [workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
-### <a name="custom-snap-ins"></a>Özel bileşenler
+### <a name="custom-snap-ins"></a>Özel ek bileşenler
 
-[PowerShell ek bileşenleri][snapin] PowerShell topluluğunda yaygın olmayan PowerShell modülleri için öncül olan.
+PowerShell [ek bileşenleri][snapin] , PowerShell topluluğunda geniş kapsamlı benimseme gerektirmeyen PowerShell modüllerine yönelik bir öncülü vardır.
 
-Ek bileşenleri ve bunların kullanım yetersizliği topluluk destekleyen karmaşıklığı nedeniyle, artık özel ek bileşenler de PowerShell Core desteklemiyoruz.
+Ek bileşenlerin, topluluk içindeki kullanım eksikliğinden ve bu kullanıcıların topluluk içindeki kullanım eksikliğinden dolayı artık PowerShell Core 'da özel ek bileşenleri desteklemiyoruz.
 
-Günümüzde, bu keser `ActiveDirectory` ve `DnsClient` modülleri Windows ve Windows Server.
+Günümüzde, Windows ve Windows `ActiveDirectory` Server `DnsClient` 'daki ve modülleri bu şekilde kesilir.
 
 [snapin]: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins
 
-### <a name="wmi-v1-cmdlets"></a>WMI v1 cmdlet'leri
+### <a name="wmi-v1-cmdlets"></a>WMI v1 cmdlet 'leri
 
-Modüller VMI tabanlı iki kümesini destekleyen karmaşıklığı nedeniyle, WMI v1 cmdlet'leri PowerShell çekirdek kaldırıldı:
+İki WMI tabanlı modül kümesini destekleme karmaşıklığı nedeniyle, WMI v1 cmdlet 'lerini PowerShell Core 'dan kaldırdık:
 
 - `Get-WmiObject`
 - `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
 
-Bunun yerine, öneririz, yeni işlevsellik ve yeniden tasarlanan bir söz dizimi ile aynı işlevselliği sağlayan (WMI v2 olarak da bilinir) CIM cmdlet'leri kullanın:
+Bunun yerine, yeni işlevlerle aynı işlevselliği ve yeniden tasarlanan bir sözdizimi sağlayan CıM (diğer adıyla WMI v2) cmdlet 'lerini kullanmanızı öneririz:
 
 - `Get-CimAssociatedInstance`
 - `Get-CimClass`
@@ -58,194 +58,194 @@ Bunun yerine, öneririz, yeni işlevsellik ve yeniden tasarlanan bir söz dizimi
 - `Remove-CimSession`
 - `Set-CimInstance`
 
-### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
+### <a name="microsoftpowershelllocalaccounts"></a>Microsoft. PowerShell. LocalAccounts
 
-Desteklenmeyen API kullanımı nedeniyle `Microsoft.PowerShell.LocalAccounts` PowerShell çekirdek, daha iyi bir çözüm bulunana kadar kaldırıldı.
+Desteklenmeyen API 'lerin kullanılması nedeniyle, `Microsoft.PowerShell.LocalAccounts` daha iyi bir çözüm bulunana kadar PowerShell Core 'dan kaldırılmıştır.
 
-### <a name="-computer-cmdlets"></a>`*-Computer` Cmdlet'leri
+### <a name="-computer-cmdlets"></a>`*-Computer`öğelerini
 
-Daha iyi bir çözüm bulunana kadar desteklenmeyen API kullanımı nedeniyle, aşağıdaki cmdlet'leri PowerShell çekirdek kaldırıldı.
+Desteklenmeyen API 'lerin kullanılması nedeniyle, daha iyi bir çözüm bulunana kadar aşağıdaki cmdlet 'ler PowerShell çekirdekden kaldırılmıştır.
 
 - Add-Computer
 - Checkpoint-Computer
 - Remove-Computer
 - Geri yükleme-bilgisayar
 
-### <a name="-counter-cmdlets"></a>`*-Counter` Cmdlet'leri
+### <a name="-counter-cmdlets"></a>`*-Counter`öğelerini
 
-Desteklenmeyen API kullanımı nedeniyle `*-Counter` PowerShell çekirdek, daha iyi bir çözüm bulunana kadar kaldırıldı.
+Desteklenmeyen API `*-Counter` 'lerin kullanılması nedeniyle, daha iyi bir çözüm bulunana kadar PowerShell Core 'dan kaldırılmıştır.
 
-### <a name="-eventlog-cmdlets"></a>`*-EventLog` Cmdlet'leri
+### <a name="-eventlog-cmdlets"></a>`*-EventLog`öğelerini
 
-Desteklenmeyen API kullanımı nedeniyle `*-EventLog` PowerShell çekirdek kaldırıldı. daha iyi bir çözüm bulunana kadar. `Get-WinEvent` ve `Create-WinEvent` almak ve Windows üzerinde olayları oluşturmak kullanılabilir.
+Desteklenmeyen API `*-EventLog` 'lerin kullanılması nedeniyle, PowerShell Core 'dan kaldırılmıştır. daha iyi bir çözüm bulunana kadar. `Get-WinEvent`ve `Create-WinEvent` Windows 'da olayları almak ve oluşturmak için kullanılabilir.
 
-## <a name="enginelanguage-changes"></a>Altyapısı/dil değişiklikleri
+## <a name="enginelanguage-changes"></a>Motor/dil değişiklikleri
 
-### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>Yeniden adlandırma `powershell.exe` için `pwsh.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
+### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>`powershell.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101) olarak `pwsh.exe` yeniden adlandır
 
-Kullanıcılar (aksine, Windows PowerShell) Windows PowerShell Core çağırmak için belirlenimci bir şekilde tanımak için PowerShell Core ikili değiştirilmiştir `pwsh.exe` Windows üzerinde ve `pwsh` Windows dışı platformlarda.
+Kullanıcılara PowerShell Core 'u Windows üzerinde (Windows PowerShell 'in aksine) çağırmak için belirleyici bir yöntem sağlamak üzere, PowerShell Core ikilisi Windows ve `pwsh.exe` `pwsh` Windows dışı platformlarda olarak değiştirilmiştir.
 
-Kısaltılmış adı, Windows dışı platformlarda Kabukları adlandırma ile tutarlıdır.
+Kısaltılmış ad, Windows dışı platformlarda kabukların adlandırılmasıyla de tutarlıdır.
 
-### <a name="dont-insert-line-breaks-to-output-except-for-tables-5193httpsgithubcompowershellpowershellissues5193"></a>(Tablolar hariç) çıktısını almak için satır sonları eklemeyin [#5193](https://github.com/PowerShell/PowerShell/issues/5193)
+### <a name="dont-insert-line-breaks-to-output-except-for-tables-5193httpsgithubcompowershellpowershellissues5193"></a>Çıktıya satır sonları eklemeyin (tablolar hariç) [#5193](https://github.com/PowerShell/PowerShell/issues/5193)
 
-Daha önce çıkış konsolunun genişliğine hizalı ve çıkış terminal boyutlandırılmış beklendiği gibi yeniden biçimlendirildi istemediğiniz anlamına gelir konsolun son genişlikte satır sonları eklenmiştir. Satır sonları hizalı sütunları tutmak gerekli olduğundan tablo, bu değişiklik uygulanmadı.
+Daha önce, çıkış konsolun genişliğine hizalanır ve konsolun bitiş genişliğine göre satır sonları eklenmiştir, bu da terminalin yeniden boyutlandırılması durumunda çıktının beklendiği gibi yeniden biçimlendirilmediği anlamına gelir. Sütunları hizalı tutmak için satır sonları gerekli olduğundan bu değişiklik tablolara uygulanmadı.
 
-### <a name="skip-null-element-check-for-collections-with-a-value-type-element-type-5432httpsgithubcompowershellpowershellissues5432"></a>Atla null öğe onay için bir değer türünün öğe türü olan koleksiyonları [#5432](https://github.com/PowerShell/PowerShell/issues/5432)
+### <a name="skip-null-element-check-for-collections-with-a-value-type-element-type-5432httpsgithubcompowershellpowershellissues5432"></a>Değer türü öğe türü olan koleksiyonlar için null öğe denetimini atlayın [#5432](https://github.com/PowerShell/PowerShell/issues/5432)
 
-İçin `Mandatory` parametresi ve `ValidateNotNull` ve `ValidateNotNullOrEmpty` öznitelikleri, koleksiyonun öğe türü, değer türü ise null öğe onay atlayın.
+`Mandatory` Parametresi`ValidateNotNull` ve öznitelikleriiçin,koleksiyonunöğetürüdeğertüründeisenullöğedenetiminiatlayın.`ValidateNotNullOrEmpty`
 
-### <a name="change-outputencoding-to-use-utf-8-nobom-encoding-rather-than-ascii-5369httpsgithubcompowershellpowershellissues5369"></a>Değişiklik `$OutputEncoding` kullanılacak `UTF-8 NoBOM` yerine ASCII kodlaması [#5369](https://github.com/PowerShell/PowerShell/issues/5369)
+### <a name="change-outputencoding-to-use-utf-8-nobom-encoding-rather-than-ascii-5369httpsgithubcompowershellpowershellissues5369"></a>ASCII `$OutputEncoding` [#5369](https://github.com/PowerShell/PowerShell/issues/5369) yerine `UTF-8 NoBOM` kodlamayı kullanacak şekilde değiştirin
 
-Önceki, ASCII (7-bit), kodlama çıkış bazı durumlarda yanlış değişikliğinin neden olur. Bu değişiklik yapmaktır `UTF-8 NoBOM` varsayılan, araçları ve işletim sistemleri tarafından desteklenen kodlama ile Unicode çıkış korur.
+Önceki kodlama, ASCII (7 bit), bazı durumlarda çıkışın yanlış şekilde değişmeye neden olur. Bu değişiklik varsayılan hale `UTF-8 NoBOM` gelir, ancak çoğu araç ve işletim sistemi tarafından desteklenen bir kodlama ile Unicode çıktısını korur.
 
-### <a name="remove-allscope-from-most-default-aliases-5268httpsgithubcompowershellpowershellissues5268"></a>Kaldırma `AllScope` çoğu varsayılan eş ad alanından [#5268](https://github.com/PowerShell/PowerShell/issues/5268)
+### <a name="remove-allscope-from-most-default-aliases-5268httpsgithubcompowershellpowershellissues5268"></a>En `AllScope` çok varsayılan diğer adlarla Kaldır [#5268](https://github.com/PowerShell/PowerShell/issues/5268)
 
-Kapsam, oluşumunu hızlandırma için `AllScope` birçok varsayılan diğer ad kaldırıldı. `AllScope` arama daha hızlı olduğu için sık kullanılan bazı diğer adlar bırakıldı.
+Kapsam oluşturmayı hızlandırmak için, `AllScope` en çok varsayılan diğer adlarla kaldırılmıştır. `AllScope`aramanın daha hızlı olduğu bazı sık kullanılan diğer adlar için ayrılmıştı.
 
-### <a name="-verbose-and--debug-no-longer-overrides-erroractionpreference-5113httpsgithubcompowershellpowershellissues5113"></a>`-Verbose` ve `-Debug` artık geçersiz kılmalar `$ErrorActionPreference` [#5113](https://github.com/PowerShell/PowerShell/issues/5113)
+### <a name="-verbose-and--debug-no-longer-overrides-erroractionpreference-5113httpsgithubcompowershellpowershellissues5113"></a>`-Verbose`artık geçersiz `$ErrorActionPreference` kılınmayacak [#5113](https://github.com/PowerShell/PowerShell/issues/5113) `-Debug`
 
-Daha önce varsa `-Verbose` veya `-Debug` belirtilmiş davranışını geçersiz kılınmış `$ErrorActionPreference`. Bu değişikliğe `-Verbose` ve `-Debug` artık davranışını etkileyen `$ErrorActionPreference`.
+Daha önce, `-Verbose` veya `-Debug` belirtilmişse davranışının `$ErrorActionPreference`üzerine gelin. Bu değişiklik `-Verbose` `-Debug` ile artıkdavranışınıetkilemez.`$ErrorActionPreference`
 
 ## <a name="cmdlet-changes"></a>Cmdlet değişiklikleri
 
-### <a name="invoke-restmethod-doesnt-return-useful-info-when-no-data-is-returned-5320httpsgithubcompowershellpowershellissues5320"></a>Hiçbir veri döndürülmez olduğunda çağırma RestMethod yararlı bilgiler döndürmek zorunda değildir. [#5320](https://github.com/PowerShell/PowerShell/issues/5320)
+### <a name="invoke-restmethod-doesnt-return-useful-info-when-no-data-is-returned-5320httpsgithubcompowershellpowershellissues5320"></a>Invoke-RestMethod hiçbir veri döndürülmediğinde yararlı bilgiler döndürmez. [#5320](https://github.com/PowerShell/PowerShell/issues/5320)
 
-Bir API döndürdüğünde yalnızca `null`, Invoke-RestMethod serileştirme Bu dize olarak `"null"` yerine `$null`. Bu değişiklik mantığında düzeltmeleri `Invoke-RestMethod` düzgün geçerli tek değer JSON seri hale getirmek için `null` değişmez değer olarak `$null`.
+Bir API yalnızca `null`döndürdüğü zaman Invoke-RestMethod bunun yerine `$null`dize `"null"` olarak serileştiriliydi. Bu değişiklik, ' deki geçerli `Invoke-RestMethod` tek değerli JSON `null` sabit `$null`değerini doğru şekilde serileştirmek için içindeki mantığı düzeltir.
 
-### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Kaldırma `-Protocol` gelen `*-Computer` cmdlet'leri [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Cmdlet `-Protocol` 'lerden `*-Computer` Kaldır [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-RPC remoting Corefx'te (özellikle de Windows olmayan platformlar için) ve bir PowerShell tutarlı remoting deneyimi sağlama ile ilgili sorunlar nedeniyle `-Protocol` parametresi üzerinden kaldırıldı `\*-Computer` cmdlet'leri. DCOM Uzaktan iletişim için artık desteklenmiyor. Aşağıdaki cmdlet, yalnızca WSMAN uzaktan iletişimini destekler:
+Corefx 'te RPC uzaktan iletişim sorunları (özellikle Windows dışı platformlarda) ve PowerShell 'de tutarlı bir uzaktan iletişim deneyimi sağlamak nedeniyle, `-Protocol` parametre `\*-Computer` cmdlet 'lerden kaldırılmıştır. Uzaktan erişim için DCOM artık desteklenmiyor. Aşağıdaki cmdlet 'ler yalnızca WSMAN uzaktan iletişimini destekler:
 
-- Bilgisayarı yeniden adlandırma
+- Yeniden adlandır-bilgisayar
 - Restart-Computer
-- Stop-bilgisayar
+- Bilgisayarı durdur
 
-### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Kaldırma `-ComputerName` gelen `*-Service` cmdlet'leri [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
+### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Cmdlet `-ComputerName` 'lerden `*-Service` Kaldır [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
-PSRP, tutarlı kullanımını teşvik etmek için `-ComputerName` parametresi üzerinden kaldırıldı `*-Service` cmdlet'leri.
+PSRP 'nin tutarlı kullanımını teşvik etmek için, `-ComputerName` parametresi cmdlet 'lerden `*-Service` kaldırılmıştır.
 
-### <a name="fix-get-item--literalpath-ab-if-ab-doesnt-actually-exist-to-return-error-5197httpsgithubcompowershellpowershellissues5197"></a>Düzeltme `Get-Item -LiteralPath a*b` varsa `a*b` gerçekten hata döndüreceğini yok [#5197](https://github.com/PowerShell/PowerShell/issues/5197)
+### <a name="fix-get-item--literalpath-ab-if-ab-doesnt-actually-exist-to-return-error-5197httpsgithubcompowershellpowershellissues5197"></a>Hata `Get-Item -LiteralPath a*b` döndürmek `a*b` için gerçekten yoksa, bu hatayı düzeltir [#5197](https://github.com/PowerShell/PowerShell/issues/5197)
 
-Daha önce `-LiteralPath` söz konusu bir joker karakter, disklerle aynı şekilde işlem `-Path` ve joker karakter hiçbir dosya bulunamazsa, sessizce çıkmak. Doğru davranışı, olmalıdır `-LiteralPath` dosya yoksa hata gerektiği şekilde sabitidir. Değişikliktir ile kullanılan joker karakterler değerlendirilecek `-Literal` sabit değer olarak.
+Daha önce `-LiteralPath` , bir joker karakter buna benzer şekilde `-Path` davranır ve joker karakter dosya buluyorsa sessizce çıkış olur. Doğru davranış, dosya yoksa `-LiteralPath` hata olması için değişmez değer olmalıdır. Değişiklik, kullanılan `-Literal` joker karakterleri değişmez değer olarak değerlendirilir.
 
-### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134httpsgithubcompowershellpowershellissues5134"></a>`Import-Csv` uygulamalıdır `PSTypeNames` CSV'ye tür bilgisi varsa içeri aktarma sırasında [#5134](https://github.com/PowerShell/PowerShell/issues/5134)
+### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134httpsgithubcompowershellpowershellissues5134"></a>`Import-Csv`CSV [#5134](https://github.com/PowerShell/PowerShell/issues/5134) tür bilgisi mevcut olduğunda içeri aktarma sırasındauygulanmalıdır`PSTypeNames`
 
-Nesne daha önce dışarı kullanarak `Export-CSV` ile `TypeInformation` içeri `ConvertFrom-Csv` tür bilgilerini koruyarak değil. Bu değişiklik türü bilgileri ekler `PSTypeNames` üyesi kullanılabilir durumdaysa CSV dosyasındaki.
+Daha önce, ile `Export-CSV` `TypeInformation` `ConvertFrom-Csv` içeri aktarılan ile kullanılarak aktarılan nesneler tür bilgilerini saklamadı. Bu değişiklik CSV dosyasından kullanılabiliyorsa, tür `PSTypeNames` bilgilerini üyeye ekler.
 
-### <a name="-notypeinformation-should-be-default-on-export-csv-5131httpsgithubcompowershellpowershellissues5131"></a>`-NoTypeInformation` Varsayılan değer olmalıdır `Export-Csv` [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
+### <a name="-notypeinformation-should-be-default-on-export-csv-5131httpsgithubcompowershellpowershellissues5131"></a>`-NoTypeInformation``Export-Csv` [#5131](https://github.com/PowerShell/PowerShell/issues/5131) varsayılan olmalıdır
 
-Bu değişiklik adresi Müşteri geri bildirimi varsayılan davranışını bulunuldu `Export-CSV` tür bilgileri içerecek şekilde.
+Bu değişiklik, tür bilgilerini dahil etmek için varsayılan davranış olan `Export-CSV` müşteri geri bildirimlerine yönelik olarak bildirimde bulunuldu.
 
-Daha önce cmdlet'i bir yorum nesnenin türü adını içeren ilk satırı çıktı. Çoğu araçları tarafından anlaşılmayan gibi varsayılan olarak bu bastırmak için farklıdır. Kullanım `-IncludeTypeInformation` önceki davranışı korumak için.
+Daha önce cmdlet 'i nesnenin tür adını içeren ilk satır olarak bir yorum çıktısı verebilir. Bu değişiklik, çoğu araç tarafından anlaşılmadığından varsayılan olarak bunu göstermez. Önceki `-IncludeTypeInformation` davranışı sürdürmek için kullanın.
 
-### <a name="web-cmdlets-should-warn-when--credential-is-sent-over-unencrypted-connections-5112httpsgithubcompowershellpowershellissues5112"></a>Web cmdlet'leri uyar `-Credential` şifrelenmemiş bir bağlantı üzerinden gönderilir [#5112](https://github.com/PowerShell/PowerShell/issues/5112)
+### <a name="web-cmdlets-should-warn-when--credential-is-sent-over-unencrypted-connections-5112httpsgithubcompowershellpowershellissues5112"></a>Şifrelenmemiş bağlantılar üzerinden gönderildiğinde Web `-Credential` cmdlet 'leri uyarmalıdır [#5112](https://github.com/PowerShell/PowerShell/issues/5112)
 
-HTTP kullanarak parolaları da dahil olmak üzere içerik düz metin gönderilir. Bu değişiklik, değil Bu varsayılan olarak izin verir ve kimlik bilgilerini güvenli bir şekilde geçirilirse, bir hata döndürebilir oluşturmaktır. Kullanıcılar bu kullanarak konusunda atlayabilir `-AllowUnencryptedAuthentication` geçin.
+HTTP kullanırken, parolalar dahil içerik şifresiz metin olarak gönderilir. Bu değişiklik, varsayılan olarak buna izin verilmez ve kimlik bilgileri güvenli olmayan bir şekilde geçiriliyorsa bir hata döndürür. Kullanıcılar, `-AllowUnencryptedAuthentication` anahtarı kullanarak bunu atlayabilir.
 
 ## <a name="api-changes"></a>API değişiklikleri
 
-### <a name="remove-addtypecommandbase-class-5407httpsgithubcompowershellpowershellissues5407"></a>Kaldırma `AddTypeCommandBase` sınıfı [#5407](https://github.com/PowerShell/PowerShell/issues/5407)
+### <a name="remove-addtypecommandbase-class-5407httpsgithubcompowershellpowershellissues5407"></a>Sınıf `AddTypeCommandBase` [#5407](https://github.com/PowerShell/PowerShell/issues/5407) kaldır
 
-`AddTypeCommandBase` Sınıfı üzerinden kaldırıldı `Add-Type` performansını artırmak için. Bu sınıf, yalnızca Add-Type cmdlet'i tarafından kullanılır ve kullanıcıların etkilememesi gerekir.
+Sınıfı `AddTypeCommandBase` , performansı artırmak için `Add-Type` sürümünden kaldırılmıştır. Bu sınıf yalnızca Add-Type cmdlet 'i tarafından kullanılır ve kullanıcıları etkilememelidir.
 
-### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080httpsgithubcompowershellpowershellissues5080"></a>Cmdlet parametresi ile birleştirin `-Encoding` türünde olmasını `System.Text.Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
+### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080httpsgithubcompowershellpowershellissues5080"></a>Cmdlet 'i `-Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080) türü `System.Text.Encoding` olacak şekilde bütünleştirme
 
-`-Encoding` Değer `Byte` dosya sistemi sağlayıcısı cmdlet'leri kaldırıldı. Yeni bir parametre `-AsByteStream`, bayt akışı olarak gerekli olduğunu belirtmek için artık kullanılan giriş veya çıkış bayt akışı alınır.
+`-Encoding` Değer`Byte` , dosya sistemi sağlayıcısı cmdlet 'lerinden kaldırılmıştır. Artık yeni bir parametre `-AsByteStream`, bir bayt akışının giriş olarak gerekli olduğunu veya çıktının bir bayt akışı olduğunu belirtmek için kullanılır.
 
-### <a name="add-better-error-message-for-empty-and-null--uformat-parameter-5055httpsgithubcompowershellpowershellissues5055"></a>Daha iyi hata iletisi boş ve null ekleme `-UFormat` parametre [#5055](https://github.com/PowerShell/PowerShell/issues/5055)
+### <a name="add-better-error-message-for-empty-and-null--uformat-parameter-5055httpsgithubcompowershellpowershellissues5055"></a>Boş ve null `-UFormat` parametresi için daha iyi hata iletisi ekleyin [#5055](https://github.com/PowerShell/PowerShell/issues/5055)
 
-Daha önce ne zaman geçirme boş bir biçim dizesi için `-UFormat`, faydasız bir ileti görüntülenir. Daha açıklayıcı hata eklendi.
+Daha önce, boş bir biçim dizesi `-UFormat`' a geçirilirken, faydalı olmayan bir hata iletisi görüntülenir. Daha açıklayıcı bir hata eklendi.
 
-### <a name="clean-up-console-code-4995httpsgithubcompowershellpowershellissues4995"></a>Konsol kod Temizleme [#4995](https://github.com/PowerShell/PowerShell/issues/4995)
+### <a name="clean-up-console-code-4995httpsgithubcompowershellpowershellissues4995"></a>Konsol kodunu Temizleme [#4995](https://github.com/PowerShell/PowerShell/issues/4995)
 
-PowerShell Core içinde desteklenmez ve Windows PowerShell için eski nedenlerle oldukları gibi desteği eklemek için bir plan yok olarak aşağıdaki özellikler kaldırıldı: `-psconsolefile` anahtar ve kodu `-importsystemmodules` geçiş kodu ve kod değiştirme yazı tipi.
+Aşağıdaki özellikler PowerShell Core 'da desteklenmediğinden kaldırılmıştır ve Windows PowerShell için eski nedenlerden dolayı destek eklemek için herhangi bir plan yoktur: `-psconsolefile` anahtar ve kod, `-importsystemmodules` anahtar ve kod ve yazı tipi değiştirme kodu.
 
-### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Kaldırılan `RunspaceConfiguration` Destek [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
+### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Destek `RunspaceConfiguration` [#4942](https://github.com/PowerShell/PowerShell/issues/4942) kaldırıldı
 
-Daha önce bir PowerShell çalışma program aracılığıyla oluştururken API'sini kullanarak eski kullanabileceğinizi [ `RunspaceConfiguration` ][runspaceconfig] or the newer [`InitialSessionState`][iss]. Bu değişiklik desteği kaldırıldı `RunspaceConfiguration` ve yalnızca destekler `InitialSessionState`.
+Daha önce, API 'yi kullanarak program aracılığıyla bir PowerShell çalışma alanı oluştururken, eski [`RunspaceConfiguration`][runspaceconfig] veya daha yeni bir sürümünü [`InitialSessionState`][iss]kullanabilirsiniz. Bu değişiklik `RunspaceConfiguration` , ve yalnızca desteğini destekler `InitialSessionState`.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
 
-### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923httpsgithubcompowershellpowershellissues4923"></a>`CommandInvocationIntrinsics.InvokeScript` bağımsız değişken bağlama `$input` yerine `$args` [#4923](https://github.com/PowerShell/PowerShell/issues/4923)
+### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923httpsgithubcompowershellpowershellissues4923"></a>`CommandInvocationIntrinsics.InvokeScript`bağımsız değişkenleri `$input` [](https://github.com/PowerShell/PowerShell/issues/4923) #4923 `$args` yerine bağlama
 
-Bağımsız olarak yerine Giriş bağımsız değişken olarak geçirilen bağımsız değişkenler olarak hatalı bir parametre konumunu sonuçlandı.
+Parametrenin yanlış konumu, bağımsız değişkenler yerine giriş olarak geçirilen bağımsız değişkenler ile sonuçlandı.
 
-### <a name="remove-unsupported--showwindow-switch-from-get-help-4903httpsgithubcompowershellpowershellissues4903"></a>Desteklenmeyen Kaldır `-showwindow` geçmek `Get-Help` [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
+### <a name="remove-unsupported--showwindow-switch-from-get-help-4903httpsgithubcompowershellpowershellissues4903"></a>Desteklenmeyen `-showwindow` [anahtarı #4903](https://github.com/PowerShell/PowerShell/issues/4903) Kaldır `Get-Help`
 
-`-showwindow` Coreclr'de desteklenmeyen WPF kullanır.
+`-showwindow`CoreCLR 'de desteklenmeyen WPF kullanır.
 
-### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>İzin ver * için kayıt defteri yolunda kullanılacak `Remove-Item` [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
+### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>`Remove-Item` [#4866](https://github.com/PowerShell/PowerShell/issues/4866) için kayıt defteri yolunda * kullanılmasına izin ver
 
-Daha önce `-LiteralPath` söz konusu bir joker karakter, disklerle aynı şekilde işlem `-Path` ve joker karakter hiçbir dosya bulunamazsa, sessizce çıkmak. Doğru davranışı, olmalıdır `-LiteralPath` dosya yoksa hata gerektiği şekilde sabitidir. Değişikliktir ile kullanılan joker karakterler değerlendirilecek `-Literal` sabit değer olarak.
+Daha önce `-LiteralPath` , bir joker karakter buna benzer şekilde `-Path` davranır ve joker karakter dosya buluyorsa sessizce çıkış olur. Doğru davranış, dosya yoksa `-LiteralPath` hata olması için değişmez değer olmalıdır. Değişiklik, kullanılan `-Literal` joker karakterleri değişmez değer olarak değerlendirilir.
 
-### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Düzeltme `Set-Service` sınama başarısız [#4802](https://github.com/PowerShell/PowerShell/issues/4802)
+### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Başarısız `Set-Service` test [#4802](https://github.com/PowerShell/PowerShell/issues/4802) düzeltmesini düzeltir
 
-Daha önce varsa `New-Service -StartupType foo` kullanılan `foo` yok sayıldı ve bazı varsayılan başlatma türüyle hizmet oluşturuldu. Bu değişiklik, açıkça geçersiz başlangıç türü için bir hata durum oluşturmaktır.
+Daha önce kullanıldıysa, `foo` yoksayıldı ve hizmet bir varsayılan başlangıç türüyle oluşturulmuştur. `New-Service -StartupType foo` Bu değişiklik, geçersiz bir başlangıç türü için açıkça bir hata oluşturmak için kullanılır.
 
-### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>Yeniden adlandırma `$IsOSX` için `$IsMacOS` [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
+### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>`$IsOSX` [#4700](https://github.com/PowerShell/PowerShell/issues/4700) olarak `$IsMacOS` yeniden adlandır
 
-PowerShell'de adlandırma bizim adlandırma ile tutarlı ve macOS OSX yerine Apple'nın kullanımı için uygun olması gerekir. Ancak, okunabilirlik için ve tutarlı bir şekilde biz ile Pascal kaldığını büyük/küçük harf.
+PowerShell 'deki adlandırma, adlandırma ve Apple 'ın OSX yerine macOS kullanımı ile uyumlu olmalıdır. Bununla birlikte, okunabilirlik ve sürekli olarak Pascal büyük küçük harfe yaklaşıyoruz.
 
-### <a name="make-error-message-consistent-when-invalid-script-is-passed-to--file-better-error-when-passed-ambiguous-argument-4573httpsgithubcompowershellpowershellissues4573"></a>Geçersiz betik geçirildiğinde hata iletisi tutarlı hale getirmek için - dosya, daha iyi belirsiz bağımsız değişken geçirildi hatası [#4573](https://github.com/PowerShell/PowerShell/issues/4573)
+### <a name="make-error-message-consistent-when-invalid-script-is-passed-to--file-better-error-when-passed-ambiguous-argument-4573httpsgithubcompowershellpowershellissues4573"></a>Geçersiz bağımsız değişken geçirildiğinde daha iyi bir hata olduğunda hata iletisinin tutarlı olmasını sağlayın [#4573](https://github.com/PowerShell/PowerShell/issues/4573)
 
-Çıkış kodlarını değiştirmek `pwsh.exe` UNIX kuralları ile hizalamak için
+UNIX kurallarıyla hizalamak `pwsh.exe` için çıkış kodlarını değiştirme
 
-### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302httpsgithubcompowershellpowershellissues4302-4303httpsgithubcompowershellpowershellissues4303"></a>Kaldırılmasını `LocalAccount` ve cmdlet'lerinden `Diagnostics` modüller. [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
+### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302httpsgithubcompowershellpowershellissues4302-4303httpsgithubcompowershellpowershellissues4303"></a>Ve cmdlet 'leri modüllerden `Diagnostics`kaldırma. `LocalAccount` [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
 
-Desteklenmeyen API nedeniyle `LocalAccounts` modülü ve `Counter` cmdlet'leri `Diagnostics` daha iyi bir çözüm bulunana kadar modülü kaldırıldı.
+Desteklenmeyen API 'ler `LocalAccounts` nedeniyle modül `Counter` ve `Diagnostics` modüldeki cmdlet 'ler daha iyi bir çözüm bulunana kadar kaldırılmıştır.
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Bool parametresiyle birlikte PowerShell Betiği Yürütülüyor çalışmıyor [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>PowerShell betiği bool parametresiyle yürütülemedi [#4036](https://github.com/PowerShell/PowerShell/issues/4036) çalışmıyor
 
-Daha önce kullanarak **powershell.exe** (artık **pwsh.exe**) kullanarak bir PowerShell Betiği yürütmek için `-File` başarılı şekilde sağlanan `$true` / `$false` parametre olarak değerler. Destek `$true` / `$false` ayrıştırılmış değerler için parametre olarak eklendi. Şu anda belgelenmiş söz dizimi işe yaramazsa gibi anahtar değerlerini de desteklenir.
+Daha önce, bir `-File` PowerShell betiğini çalıştırmak için **PowerShell. exe** ' yi (şimdi **pwsh. exe**) kullanarak, parametre değerleri `$true` olarak geçirilecek / `$false` hiçbir yöntem sağlanmaz. Parametrelereayrıştırılmışdeğerlerolarakdestekeklendi.`$true` / `$false` Şu anda belgelenmiş sözdizimi çalışmamakta olduğundan anahtar değerleri de desteklenir.
 
-### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Kaldırma `ClrVersion` özelliğinden `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
+### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Özelliği #4027 Kaldır `ClrVersion` `$PSVersionTable` [](https://github.com/PowerShell/PowerShell/issues/4027)
 
-`ClrVersion` Özelliği `$PSVersionTable` olduğu CoreCLR ile kullanışlı değil, son kullanıcılar bu değeri uyumluluğunu belirlemek için kullanılmaması gereken.
+`ClrVersion` Özelliği CoreCLRileyararlıdeğildir,sonkullanıcılarbudeğeriuyumluluğu`$PSVersionTable` belirlemede kullanmamalıdır.
 
-### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019httpsgithubcompowershellpowershellissues4019"></a>Değiştirmek için konumsal parametresi `powershell.exe` gelen `-Command` için `-File` [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
+### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019httpsgithubcompowershellpowershellissues4019"></a>`powershell.exe` Konumundan #4019`-Command`konum parametresini [](https://github.com/PowerShell/PowerShell/issues/4019) Değiştir `-File`
 
-Windows dışı platformlarda shebang'i PowerShell kullanımını etkinleştirin. Başka bir deyişle, UNIX tabanlı sistemlerde PowerShell çağıracaktır bir komut dosyası yürütülebilir yapabilirsiniz açıkça çağırmak yerine otomatik olarak `pwsh`. Ayrıca gibi şeyler yapmak, yani `powershell foo.ps1` veya `powershell fooScript` belirtmeden `-File`. Ancak, bu değişiklik hemen açıkça belirttiğiniz gerektirir `-c` veya `-Command` yapma çalışırken `powershell.exe Get-Command`.
+Windows dışı platformlarda PowerShell 'in el ile kullanımını etkinleştirin. Bu, UNIX tabanlı sistemlerde, açıkça `pwsh`çağırmak yerine PowerShell 'i otomatik olarak çağırabilecek bir betik çalıştırılabilir hale getirebilirsiniz. Bu, artık ya `powershell foo.ps1` `powershell fooScript` da belirtmeksizin `-File`gibi işlemleri yapabileceğiniz anlamına gelir. Bununla birlikte, bu değişiklik artık, gibi `-c` `powershell.exe Get-Command`işlemleri açıkça belirtmenizi `-Command` veya ne zaman yapmaya gerek duymanız gerekir.
 
-### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Unicode kaçış ayrıştırma uygulamak [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
+### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Unicode kaçış ayrıştırma [#3958](https://github.com/PowerShell/PowerShell/issues/3958) uygulama
 
-`` `u####`` veya `` `u{####}`` karşılık gelen bir Unicode karakter için dönüştürülür. Bir sabit değer çıkış `` `u``, kaçış vurgulamasını belirtir: ``` ``u```.
+`` `u####``ya `` `u{####}`` da karşılık gelen Unicode karaktere dönüştürüldü. Bir sabit değere `` `u``çıkış yapmak için, geri değer: ``` ``u```' i kaçış:.
 
-### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Değişiklik `New-ModuleManifest` kodlamasını `UTF8NoBOM` Windows dışı platformlarda [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
+### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Kodlamayı `New-ModuleManifest` Windows dışı `UTF8NoBOM` platformlarda olarak değiştirin [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
-Daha önce `New-ModuleManifest` Linux araçları için sorun oluşturma, BOM ile UTF-16 psd1 bildirimleri oluşturur. Bu değişiklik, kodlama değişiklikleri `New-ModuleManifest` Windows dışı platformlarda UTF (hiçbir BOM) olacak şekilde.
+Daha önce `New-ModuleManifest` , Linux araçları için bir sorun oluşturarak psd1 bildirimlerini, bom ile UTF-16 içinde oluşturur. Bu son değişiklik, ' nin `New-ModuleManifest` kodlamasını Windows olmayan platformlarda UTF (BOM yok) olarak değiştirir.
 
-### <a name="prevent-get-childitem-from-recursing-into-symlinks-1875-3780httpsgithubcompowershellpowershellissues3780"></a>Engelleme `Get-ChildItem` çözümlemeyin recursing gelen (#1875). [#3780](https://github.com/PowerShell/PowerShell/issues/3780)
+### <a name="prevent-get-childitem-from-recursing-into-symlinks-1875-3780httpsgithubcompowershellpowershellissues3780"></a>Çözümlemeyin 'e (#1875) yineleme yapılmasını engelleyin `Get-ChildItem` . [#3780](https://github.com/PowerShell/PowerShell/issues/3780)
 
-Bu değişiklik getirir `Get-ChildItem` UNIX ayarlarına uygun olarak daha fazla `ls -r` ve Windows `dir /s` yerel komutları. Belirtilen komutları gibi cmdlet özyineleme sırasında bulunan dizinler için simgesel bağlantılar görüntüler, ancak bunları recurse değil.
+Bu değişiklik, `Get-ChildItem` Unix `ls -r` ve Windows `dir /s` Native komutlarıyla daha fazla bilgi sunar. Belirtilen komutlar gibi cmdlet, özyineleme sırasında bulunan dizinlere yönelik sembolik bağlantıları görüntüler, ancak bunlarla aynı değildir.
 
-### <a name="fix-get-content--delimiter-to-not-include-the-delimiter-in-the-returned-lines-3706httpsgithubcompowershellpowershellissues3706"></a>Düzeltme `Get-Content -Delimiter` sınırlayıcı döndürülen satırları içermeyecek şekilde [#3706](https://github.com/PowerShell/PowerShell/issues/3706)
+### <a name="fix-get-content--delimiter-to-not-include-the-delimiter-in-the-returned-lines-3706httpsgithubcompowershellpowershellissues3706"></a>Döndürülen `Get-Content -Delimiter` satırlarda sınırlayıcıyı dahil etmek için düzeltilir [#3706](https://github.com/PowerShell/PowerShell/issues/3706)
 
-Kullanırken daha önce çıkış `Get-Content -Delimiter` tutarsız ve daha fazla sınırlayıcı kaldırmak için veri işleme gerektiği şekilde kullanışsız. Bu değişiklik, sınırlayıcı döndürülen satırları kaldırır.
+Daha önce, kullanırken `Get-Content -Delimiter` çıktı, sınırlandırıcının kaldırılması için verilerin daha fazla işlenmesini gerektirdiğinden tutarsızdı ve uygun değildir. Bu değişiklik döndürülen satırlardaki sınırlayıcıları kaldırır.
 
-### <a name="implement-format-hex-in-c-3320httpsgithubcompowershellpowershellissues3320"></a>Biçimi onaltılık olarak uygulamak C# [#3320](https://github.com/PowerShell/PowerShell/issues/3320)
+### <a name="implement-format-hex-in-c-3320httpsgithubcompowershellpowershellissues3320"></a>C# [#3320](https://github.com/PowerShell/PowerShell/issues/3320) biçim-onaltılık uygulama
 
-`-Raw` Parametredir şimdi bir "İşlemsiz" (hiçbir şey yapmasa unutmayın). Tüm çıktı gösterilecek olan kendi türü için bayt hepsini içerir numaralarını temsil ileride (ne `-Raw` parametresi resmi önce bu değişiklik yaptığını).
+`-Raw` Parametresi artık "No-Op" (hiçbir şey yapmaz) olur. Tüm çıktının ileri doğru olması, türünün tüm baytlarını içeren sayıların gerçek bir gösterimiyle görüntülenir (Bu değişiklikten önce `-Raw` parametrenin resmi olarak yaptığı şey).
 
-### <a name="powershell-as-a-default-shell-doesnt-work-with-script-command-3319httpsgithubcompowershellpowershellissues3319"></a>PowerShell varsayılan kabuğunu olarak komut ile işe yaramazsa [#3319](https://github.com/PowerShell/PowerShell/issues/3319)
+### <a name="powershell-as-a-default-shell-doesnt-work-with-script-command-3319httpsgithubcompowershellpowershellissues3319"></a>Varsayılan kabuk olarak PowerShell komut dosyası komutuyla çalışmaz [#3319](https://github.com/PowerShell/PowerShell/issues/3319)
 
-İsteğe bağlı olarak, UNIX için Kabukları kabul etmek bir kuralı olan `-i` etkileşimli bir kabuk ve birçok araçları bu davranışı beklediğiniz için (`script` örneğin ve PowerShell varsayılan kabuğunu ayarlama) ve kabuğunda çağırır `-i` geçin. Bu değişiklik, bozucu `-i` kısa ele eşleştirmek için daha önce kullanılabilir `-inputformat`, olması gerekir böylece `-in`.
+UNIX üzerinde, kabukların etkileşimli bir kabuğu kabul `-i` etmesi ve birçok araç bu davranışı beklediği (`script` Örneğin, PowerShell 'i varsayılan kabuk olarak ayarlarken) ve kabuğu `-i` anahtarla çağıran bir kuraldır. Bu değişiklik, daha önce de `-i` eşleşmesi `-inputformat`gereken `-in`kısa bir süre olarak kullanılabilecek bir parçadır.
 
-### <a name="typo-fix-in-get-computerinfo-property-name-3167httpsgithubcompowershellpowershellissues3167"></a>Get-Computerınfo özellik adında yazım hatası düzeltme [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
+### <a name="typo-fix-in-get-computerinfo-property-name-3167httpsgithubcompowershellpowershellissues3167"></a>Get-ComputerInfo özellik adında typo onarımı [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
 
-`BiosSerialNumber` olarak yanlış `BiosSeralNumber` ve yazımını için değiştirildi.
+`BiosSerialNumber`yanlış yazıldı `BiosSeralNumber` ve doğru yazımla değiştirilmiştir.
 
-### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Ekleme `Get-StringHash` ve `Get-FileHash` cmdlet'leri [#3024](https://github.com/PowerShell/PowerShell/issues/3024)
+### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Ve `Get-StringHash` cmdlet`Get-FileHash` 'leri ekleme [#3024](https://github.com/PowerShell/PowerShell/issues/3024)
 
-Bu değişiklik, bazı karma algoritmaları Corefx'te tarafından desteklenmiyor, bu nedenle bunlar artık kullanılabilir olan:
+Bu değişiklik, bazı karma algoritmaların CoreFX tarafından desteklenmediği, bu nedenle artık kullanılabilir olmalarıdır:
 
 - `MACTripleDES`
 - `RIPEMD160`
 
-### <a name="add-validation-on-get--cmdlets-where-passing-null-returns-all-objects-instead-of-error-2672httpsgithubcompowershellpowershellissues2672"></a>Doğrulama eklemek `Get-*` $null geçirme döndüğü hatası yerine tüm nesneler cmdlet'lerini [#2672](https://github.com/PowerShell/PowerShell/issues/2672)
+### <a name="add-validation-on-get--cmdlets-where-passing-null-returns-all-objects-instead-of-error-2672httpsgithubcompowershellpowershellissues2672"></a>$Null bir hata `Get-*` yerine tüm nesneleri döndüren cmdlet 'lerde doğrulama ekleyin [#2672](https://github.com/PowerShell/PowerShell/issues/2672)
 
-Geçirme `$null` herhangi bir hata şu anda oluşturur:
+Aşağıdakilerden `$null` herhangi birine geçirilmesi bir hata oluşturur:
 
 - `Get-Credential -UserName`
 - `Get-Event -SourceIdentifier`
@@ -263,29 +263,29 @@ Geçirme `$null` herhangi bir hata şu anda oluşturur:
 - `Get-WmiObject -Class`
 - `Get-WmiObject -Property`
 
-### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482httpsgithubcompowershellpowershellissues2482"></a>Ekleme desteği W3C Genişletilmiş günlük dosyası biçimi ' `Import-Csv` [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
+### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482httpsgithubcompowershellpowershellissues2482"></a>`Import-Csv` [#2482](https://github.com/PowerShell/PowerShell/issues/2482) destek W3C Genişletilmiş günlük dosyası biçimi ekleme
 
-Daha önce `Import-Csv` cmdlet'i, doğrudan W3C Genişletilmiş günlük biçiminde günlük dosyalarını içeri aktarmak için kullanılamaz ve başka bir işlem gerekli olacaktır. Bu değişiklik, W3C Genişletilmiş günlük biçimini desteklenir.
+Daha önce `Import-Csv` cmdlet 'i, günlük dosyalarını doğrudan W3C Genişletilmiş günlük biçiminde içeri aktarmak için kullanılamaz ve ek eylem gerekli olacaktır. Bu değişiklik ile W3C Genişletilmiş günlük biçimi desteklenir.
 
-### <a name="parameter-binding-problem-with-valuefromremainingarguments-in-ps-functions-2035httpsgithubcompowershellpowershellissues2035"></a>Parametre bağlama sorun `ValueFromRemainingArguments` PS işlevlerde [#2035](https://github.com/PowerShell/PowerShell/issues/2035)
+### <a name="parameter-binding-problem-with-valuefromremainingarguments-in-ps-functions-2035httpsgithubcompowershellpowershellissues2035"></a>PS işlevlerinde parametre bağlama `ValueFromRemainingArguments` sorunu [#2035](https://github.com/PowerShell/PowerShell/issues/2035)
 
-`ValueFromRemainingArguments` değerleri yerine tek bir dizi olarak döndürür kendisi değer artık bir dizidir.
+`ValueFromRemainingArguments`Şimdi değerleri bir dizi olan tek bir değer yerine dizi olarak döndürür.
 
-### <a name="buildversion-is-removed-from-psversiontable-1415httpsgithubcompowershellpowershellissues1415"></a>`BuildVersion` kaldırılır `$PSVersionTable` [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
+### <a name="buildversion-is-removed-from-psversiontable-1415httpsgithubcompowershellpowershellissues1415"></a>`BuildVersion``$PSVersionTable` [#1415](https://github.com/PowerShell/PowerShell/issues/1415) kaldırılır
 
-Kaldırma `BuildVersion` özelliğinden `$PSVersionTable`. Bu özellik Windows yapı sürümüne bağlı. Bunun yerine kullanmanızı öneriyoruz `GitCommitId` PowerShell Core tam derleme sürümü almak için.
+`BuildVersion` Özelliğini öğesinden`$PSVersionTable`kaldırın. Bu özellik Windows Build sürümüne bağlı. Bunun yerine, PowerShell Core 'un derleme `GitCommitId` sürümünü tam olarak almak için kullanmanızı öneririz.
 
-### <a name="changes-to-web-cmdlets"></a>Değişiklikleri Web cmdlet'leri
+### <a name="changes-to-web-cmdlets"></a>Web cmdlet 'Lerinde yapılan değişiklikler
 
-Temel .NET API Web cmdlet'lerinin değiştirildi `System.Net.Http.HttpClient`. Bu değişiklik, birçok avantaj sunar. Ancak, bu değişiklikle birlikte Internet Explorer ile birlikte çalışabilirlik eksikliği sonuçlandı içindeki çeşitli bozucu değişiklikler `Invoke-WebRequest` ve `Invoke-RestMethod`.
+Web cmdlet 'lerinin temel alınan .NET API 'SI olarak `System.Net.Http.HttpClient`değiştirilmiştir. Bu değişiklik birçok avantaj sağlar. Ancak, bu değişiklik, Internet Explorer ile birlikte çalışabilirliğin yanı sıra ve `Invoke-WebRequest` `Invoke-RestMethod`içindeki çeşitli önemli değişikliklere neden oldu.
 
-- `Invoke-WebRequest` Şimdi temel HTML Ayrıştırma yalnızca destekler. `Invoke-WebRequest` her zaman döndüren bir `BasicHtmlWebResponseObject` nesne. `ParsedHtml` Ve `Forms` özellikleri kaldırıldı.
-- `BasicHtmlWebResponseObject.Headers` değerler şimdi `String[]` yerine `String`.
-- `BasicHtmlWebResponseObject.BaseResponse` artık bir `System.Net.Http.HttpResponseMessage` nesne.
-- `Response` Web Cmdlet özel durum özelliği, artık bir `System.Net.Http.HttpResponseMessage` nesne.
-- Katı RFC üstbilgi ayrıştırma, artık varsayılan `-Headers` ve `-UserAgent` parametresi. Bu ile atlanabilir `-SkipHeaderValidation`.
-- `file://` ve `ftp://` URI düzenleri artık desteklenmiyor.
-- `System.Net.ServicePointManager` ayarları artık dikkate alınır.
-- Var. şu anda hiçbir sertifika tabanlı kimlik doğrulaması macOS üzerinde
-- Kullanım `-Credential` üzerinden bir `http://` URI hataya neden olur. Kullanım bir `https://` URI veya tedarik `-AllowUnencryptedAuthentication` hata bastırmak için parametre.
-- `-MaximumRedirection` Şimdi yeniden yönlendirme denemeleri son yeniden yönlendirme sonuçlarını döndürmek yerine belirtilen sınırı aşan bir sonlandırma hatası oluşturur.
+- `Invoke-WebRequest`Artık yalnızca temel HTML ayrıştırmasını desteklemektedir. `Invoke-WebRequest`her zaman bir `BasicHtmlWebResponseObject` nesne döndürür. `ParsedHtml` Ve`Forms` özellikleri kaldırılmıştır.
+- `BasicHtmlWebResponseObject.Headers`değerler artık `String[]` `String`yerine.
+- `BasicHtmlWebResponseObject.BaseResponse`Artık bir `System.Net.Http.HttpResponseMessage` nesnedir.
+- Web cmdlet özel durumlarının `System.Net.Http.HttpResponseMessage` özelliğiartıkbirnesnedir.`Response`
+- Katı RFC üstbilgi ayrıştırma artık `-Headers` ve `-UserAgent` parametresi için varsayılandır. Bu, ile `-SkipHeaderValidation`atlanabilir.
+- `file://`ve `ftp://` URI şemaları artık desteklenmiyor.
+- `System.Net.ServicePointManager`ayarlar artık kabul edilemez.
+- Şu anda macOS 'ta sertifika tabanlı kimlik doğrulaması yok.
+- URI`http://` üzerinden kullanılması hataya neden olur. `-Credential` Bir `https://` URI kullanın veya hatayı bastırmak `-AllowUnencryptedAuthentication` için parametresini sağlayın.
+- `-MaximumRedirection`Şimdi yeniden yönlendirme denemeleri, son yeniden yönlendirmenin sonuçlarını döndürmek yerine, belirtilen limiti aştığında bir sonlandırma hatası veriyor.
