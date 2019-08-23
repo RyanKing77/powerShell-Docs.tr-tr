@@ -12,13 +12,15 @@
   items:
     - name: Linux için DSC’yi kullanmaya başlama
       href: getting-started/lnxGettingStarted.md
+    - name: Windows için DSC’yi kullanmaya başlama
+      href: getting-started/winGettingStarted.md
     - name: Nano’da DSC’yi kullanmaya başlama
       href: getting-started/nanoDSC.md
     - name: Azure Otomasyonu’nda DSC’yi kullanmaya başlama
       href: getting-started/azureDSC.md
     - name: Azure Sanal Makineleri’nde DSC’yi kullanmaya başlama
       href: getting-started/azureDSCexthistory.md
-- name: Hızlı Başlangıçlar
+- name: Hızlı başlangıçlar
   expanded: true
   items:
     - name: Grup İlkesi’nden bir Yapılandırma oluşturma
