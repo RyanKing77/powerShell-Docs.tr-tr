@@ -1,32 +1,32 @@
 ---
-title: Özellikleri genişletme nesneleri için | Microsoft Docs
+title: Nesneler için özellikleri genişletme | Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/21/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: 496e363b041194563d46c09eee67a12055bb54b0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3b14007384cca0d0cfa35655aee437adf73b1ff0
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068156"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986480"
 ---
 # <a name="extending-properties-for-objects"></a>Nesnelerin Özelliklerini Genişletme
 
-.NET Framework nesneleri genişlettiğinizde, nesnelere özellikler, kod özellikleri, Not özellikleri, betik özellikleri ve özellik kümeleri diğer adı ekleyebilirsiniz. Bu özellikleri tanımlamak için kullanılan XML aşağıdaki bölümlerde açıklanmıştır.
+Nesneleri .NET Framework genişlettiğinizde, nesnelere diğer ad özellikleri, kod özellikleri, Note özellikleri, betik özellikleri ve özellik kümeleri ekleyebilirsiniz. Bu özellikleri tanımlayan XML aşağıdaki bölümlerde açıklanmıştır.
 
 > [!NOTE]
-> Aşağıdaki bölümlerde Windows PowerShell yükleme dizinindeki varsayılan Types.ps1xml türleri dosyasından örnekler (`$pshome`).
+> Aşağıdaki bölümlerdeki örnekler, PowerShell yükleme dizinindeki ( `Types.ps1xml` `$PSHOME`) varsayılan türler dosyasıdır. Daha fazla bilgi için bkz [. Types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
-## <a name="alias-properties"></a>Diğer özellikler
+## <a name="alias-properties"></a>Diğer ad özellikleri
 
-Varolan bir özellik için yeni bir ad bir diğer ad özelliği tanımlar.
+Bir Alias özelliği, var olan bir özellik için yeni bir ad tanımlar.
 
-Aşağıdaki örnekte, `Count` özelliği eklenir [System.Array? Displayproperty Fullname =](/dotnet/api/System.Array) türü. [AliasProperty](http://msdn.microsoft.com/en-us/b140038c-807a-4bb9-beca-332491cda1b1) öğe genişletilmiş özellik bir diğer ad özelliği olarak tanımlar. [Adı](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) öğesi yeni adı belirtir. Ve [ReferencedMemberName](http://msdn.microsoft.com/en-us/0c5db6cc-9033-4d48-88a7-76b962882f7a) öğesi diğer adının başvurduğu var olan özelliği belirtir. (Ayrıca ekleyebilirsiniz [AliasProperty](http://msdn.microsoft.com/en-us/d6647953-94ad-4b0b-af2e-4dda6952dee1) üyelerinin öğesine [MemberSets](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) öğesi.)
+Aşağıdaki örnekte, **Count** özelliği [System. Array](/dotnet/api/System.Array) türüne eklenir. [Alias özelliği](/dotnet/api/system.management.automation.psaliasproperty) öğesi genişletilmiş özelliği bir diğer ad özelliği olarak tanımlar. [Name](/dotnet/api/system.management.automation.psmemberinfo.name) öğesi yeni adı belirtir. Ve [Referencedmembername](/dotnet/api/system.management.automation.psaliasproperty.referencedmembername) öğesi, diğer ad tarafından başvurulan var olan özelliği belirtir. Ayrıca, `AliasProperty` öğesini [membersets](/dotnet/api/system.management.automation.psmemberset) öğesinin üyelerine de ekleyebilirsiniz.
 
 ```xml
 <Type>
@@ -42,9 +42,9 @@ Aşağıdaki örnekte, `Count` özelliği eklenir [System.Array? Displayproperty
 
 ## <a name="code-properties"></a>Kod özellikleri
 
-Kod bir özelliği, bir statik özellik bir .NET Framework nesnesi başvurur.
+Bir kod özelliği bir .NET Framework nesnesinin statik özelliğine başvurur.
 
-Aşağıdaki örnekte, `Node` özelliği eklenir [System.IO.Directoryinfo? Displayproperty Fullname =](/dotnet/api/System.IO.DirectoryInfo) türü. [CodeProperty](http://msdn.microsoft.com/en-us/59bc4d18-41eb-4c0d-8ad3-bbfa5dc488db) öğe genişletilmiş özellik kod özelliği olarak tanımlar. [Adı](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) öğesi, genişletilmiş özelliğin adını belirtir. Ve [GetCodeReference](http://msdn.microsoft.com/en-us/62af34f5-cc22-42c0-9e0c-3bd0f5c1a4a0) öğe genişletilmiş özelliği tarafından başvurulan statik yöntemi tanımlar. (Ayrıca ekleyebilirsiniz [CodeProperty](http://msdn.microsoft.com/en-us/59bc4d18-41eb-4c0d-8ad3-bbfa5dc488db) üyelerinin öğesine [MemberSets](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) öğesi.)
+Aşağıdaki örnekte, **Mode** özelliği [System. IO. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) türüne eklenir. [CodeProperty](/dotnet/api/system.management.automation.pscodeproperty) öğesi, Genişletilmiş özelliği bir kod özelliği olarak tanımlar. [Name](/dotnet/api/system.management.automation.psmemberinfo.name) öğesi, genişletilmiş özelliğin adını belirtir. Ve, [Getcobaşvuru](/dotnet/api/system.management.automation.pscodeproperty.gettercodereference) öğesi, genişletilmiş özellik tarafından başvurulan statik yöntemi tanımlar. Ayrıca, `CodeProperty` öğesini [membersets](/dotnet/api/system.management.automation.psmemberset) öğesinin üyelerine de ekleyebilirsiniz.
 
 ```xml
 <Type>
@@ -61,11 +61,11 @@ Aşağıdaki örnekte, `Node` özelliği eklenir [System.IO.Directoryinfo? Displ
 </Type>
 ```
 
-## <a name="note-properties"></a>Not özellikleri
+## <a name="note-properties"></a>Notun özellikleri
 
-Bir not özelliğini statik bir değere sahip bir özelliği tanımlar.
+Note özelliği statik değere sahip bir özelliği tanımlar.
 
-Aşağıdaki örnekte, `Status` (değeri olan her zaman "Başarılı") özelliği eklenir [System.IO.Directoryinfo? Displayproperty Fullname =](/dotnet/api/System.IO.DirectoryInfo) türü. [NoteProperty](http://msdn.microsoft.com/en-us/331e6c50-d703-43f0-89bc-ca9fb97800eb) öğe tanımlar genişletilmiş özellik Not özelliği olarak; [adı](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) öğesi genişletilmiş özelliğinin adını belirtir ve [değer](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) öğesi Genişletilmiş özellik statik değerini belirtir. ( [NoteProperty](http://msdn.microsoft.com/en-us/331e6c50-d703-43f0-89bc-ca9fb97800eb) öğesi üyelerine de eklenebilir [MemberSets](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) öğesi.)
+Aşağıdaki örnekte, değeri her zaman **başarılı**olan **Status** özelliği [System. IO. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) türüne eklenir. [Noteproperty](/dotnet/api/system.management.automation.psnoteproperty) öğesi genişletilmiş özelliği Not özelliği olarak tanımlar. [Name](/dotnet/api/system.management.automation.psmemberinfo.name) öğesi, genişletilmiş özelliğin adını belirtir. [Value](/dotnet/api/system.management.automation.psnoteproperty.value) öğesi, genişletilmiş özelliğin statik değerini belirtir. Öğesi membersets öğesinin üyelerine de eklenebilir. [](/dotnet/api/system.management.automation.psmemberset) `NoteProperty`
 
 ```xml
 <Type>
@@ -79,11 +79,11 @@ Aşağıdaki örnekte, `Status` (değeri olan her zaman "Başarılı") özelliğ
 </Type>
 ```
 
-## <a name="script-properties"></a>Komut dosyası özellikleri
+## <a name="script-properties"></a>Betik özellikleri
 
-Bir komut dosyası özellik değeri olan bir komut dosyası çıktısını bir özelliği tanımlar.
+Betik özelliği, değeri bir betiğin çıkışı olan bir özelliği tanımlar.
 
-Aşağıdaki örnekte, `VersionInfo` özelliği eklenir [System.IO.FileInfo? Displayproperty Fullname =](/dotnet/api/System.IO.FileInfo) türü. [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) öğe genişletilmiş özellik bir betik özelliği olarak tanımlar. [Adı](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) öğesi, genişletilmiş özelliğin adını belirtir. Ve [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) öğesi özellik değerini üreten betiği belirtir. (Ayrıca ekleyebilirsiniz [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) üyelerinin öğesine [MemberSets](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) öğesi.)
+Aşağıdaki örnekte, **VersionInfo** özelliği [System. IO. FileInfo](/dotnet/api/System.IO.FileInfo) türüne eklenir. [ScriptProperty](/dotnet/api/system.management.automation.psscriptproperty) öğesi, Genişletilmiş özelliği bir betik özelliği olarak tanımlar. [Name](/dotnet/api/system.management.automation.psmemberinfo.name) öğesi, genişletilmiş özelliğin adını belirtir. Ve [Getscriptblock](/dotnet/api/system.management.automation.psscriptproperty.getterscript) öğesi, özellik değerini üreten betiği belirtir. Ayrıca, `ScriptProperty` öğesini [membersets](/dotnet/api/system.management.automation.psmemberset) öğesinin üyelerine de ekleyebilirsiniz.
 
 ```xml
 <Type>
@@ -101,11 +101,13 @@ Aşağıdaki örnekte, `VersionInfo` özelliği eklenir [System.IO.FileInfo? Dis
 
 ## <a name="property-sets"></a>Özellik kümeleri
 
-Bir özellik kümesi, bir küme adı tarafından başvurulan genişletilmiş özellikler grubunu tanımlar. Örneğin, `Property` parametresinin [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet'i, belirli bir özellik görüntülenecek kümesi belirtebilirsiniz. Bir özellik kümesi belirtildiğinde, kümeye ait özellikleri görüntülenir.
+Bir özellik kümesi, küme adı tarafından başvurulabilen genişletilmiş özellikler grubunu tanımlar.
+Örneğin, [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
+**özelliği** parametresi, görüntülenmek üzere belirli bir özellik kümesi belirtebilir. Bir özellik kümesi belirtildiğinde, yalnızca kümesine ait özellikler görüntülenir.
 
-Bir nesne için tanımlanmış bir özellik kümeleri sayısına bir sınırlama yoktur. Ancak, bir nesnenin varsayılan görüntü özelliklerini tanımlamak için kullanılan özellik kümeleri PSStandardMembers üye kümesi içinde belirtilmelidir. Types.ps1xml türleri dosyasında DefaultDisplayProperty DefaultDisplayPropertySet ve DefaultKeyPropertySet varsayılan özellik kümesinin adlarını içerir. PSStandardMembers üye kümesine eklediğiniz herhangi bir ek özellik kümeleri göz ardı edilir.
+Bir nesne için tanımlanabilir özellik kümesi sayısında kısıtlama yoktur. Ancak, bir nesnenin varsayılan görüntüleme özelliklerini tanımlamak için kullanılan özellik kümelerinin **Psstandardmembers** üye kümesi içinde belirtilmesi gerekir. Türler dosyasında, varsayılan özellik kümesi adları **defaultdisplayproperty**, **defaultdisplaypropertyset**ve **defaultkeypropertyset**' i içerir. `Types.ps1xml` **Psstandardmembers** üye kümesine eklediğiniz herhangi bir ek özellik kümesi yok sayılır.
 
-Aşağıdaki örnekte, DefaultDisplayPropertySet özellik kümesi PSStandardMembers üye kümesine eklenen [System.Serviceprocess.Servicecontroller? Displayproperty Fullname =](/dotnet/api/System.ServiceProcess.ServiceController) türü. [PropertySet](http://msdn.microsoft.com/en-us/14cdc234-796e-4857-9b51-bdbaa1412188) öğe özellikler grubunu tanımlar. [Adı](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) öğesi özellik kümesinin adını belirtir. Ve [ReferencedProperties](http://msdn.microsoft.com/en-us/5e620423-8679-4fbf-b6db-9f79288e4786) öğesi kümesi özelliklerini belirtir. (Ayrıca ekleyebilirsiniz [PropertySet](http://msdn.microsoft.com/en-us/14cdc234-796e-4857-9b51-bdbaa1412188) üyelerinin öğesine [türü](http://msdn.microsoft.com/en-us/e5dbd353-d6b2-40a1-92b6-6f1fea744ebe) öğesi.)
+Aşağıdaki örnekte, **Defaultdisplaypropertyset** özelliği kümesi, [System. ServiceProcess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) türünün **psstandardmembers** üye kümesine eklenir. [PropertySet](/dotnet/api/system.management.automation.pspropertyset) öğesi Özellik grubunu tanımlar. [Name](/dotnet/api/system.management.automation.psmemberinfo.name) öğesi özellik kümesi adını belirtir. Ve [Referencedproperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) öğesi, küme özelliklerini belirtir. Ayrıca, `PropertySet` öğesini [Type](/dotnet/api/system.management.automation.pstypename) öğesinin üyelerine de ekleyebilirsiniz.
 
 ```xml
 <Type>
@@ -128,6 +130,10 @@ Aşağıdaki örnekte, DefaultDisplayPropertySet özellik kümesi PSStandardMemb
 </Type>
 ```
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
-[Bir Windows PowerShell cmdlet'i yazma](./writing-a-windows-powershell-cmdlet.md)
+[Türler. ps1xml hakkında](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)
+
+[System. Management. Automation](/dotnet/api/System.Management.Automation)
+
+[Windows PowerShell cmdlet 'ı yazma](./writing-a-windows-powershell-cmdlet.md)

@@ -1,26 +1,26 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, yapılandırma, Kurulum
-title: Bir çekme yapılandırma kimliklerinin (v4/v5) kullanarak sunucuda yayımlayın
-ms.openlocfilehash: 0144fec43d7a8d65b79891567cc0dc3952175343
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, PowerShell, yapılandırma, kurulum
+title: Yapılandırma kimliklerini (v4/V5) kullanarak bir çekme sunucusuna yayımlama
+ms.openlocfilehash: c258814f480b91eba75c7ce9abf70c558f1f469e
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079515"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986569"
 ---
-# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Bir çekme yapılandırma kimliklerinin (v4/v5) kullanarak sunucuda yayımlayın
+# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Yapılandırma kimliklerini (v4/V5) kullanarak bir çekme sunucusuna yayımlama
 
-Aşağıdaki bölümler, zaten bir çekme sunucusu ayarladığınızı varsayalım. Çekme sunucunuzu ayarlamadıysanız, aşağıdaki kılavuzları kullanabilirsiniz:
+Aşağıdaki bölümler, zaten bir çekme sunucusu ayarlamış olduğunuz varsayılmaktadır. Çekme sunucunuzu ayarlamadıysanız Aşağıdaki kılavuzlardan yararlanabilirsiniz:
 
-- [Bir DSC SMB çekme sunucusu ayarlama](pullServerSmb.md)
-- [Bir DSC HTTP çekme sunucusu ayarlama](pullServer.md)
+- [DSC SMB çekme sunucusu ayarlama](pullServerSmb.md)
+- [DSC HTTP çekme sunucusu ayarlama](pullServer.md)
 
-Her hedef düğüm yapılandırmaları, kaynaklar, indirin ve bile durumunu raporlamak için yapılandırılabilir. Bu makale indirilmesi ve kaynakları otomatik olarak indirmek için istemcileri yapılandırın kullanabilmesi için kaynakları karşıya yükleme işlemini gösterir. Düğümün aldığında atanmış bir yapılandırma yoluyla **çekme** veya **anında iletme** (v5) otomatik olarak karşıdan yüklerken LCM içinde belirtilen konumdan yapılandırma için gerekli tüm kaynakları.
+Her hedef düğüm, yapılandırmaların, kaynakların indirileceği ve hatta durumunu rapor etmek üzere yapılandırılabilir. Bu makalede, karşıdan yüklenmek üzere kullanılabilir olmaları için kaynakları karşıya yükleme ve istemcileri otomatik olarak kaynakları yükleyecek şekilde yapılandırma işlemlerinin nasıl yapılacağı gösterilir. Düğüm, **çekme** veya **Push** (V5) aracılığıyla atanan bir yapılandırma aldığında, yapılandırma Için gereken tüm kaynakları yerel Configuration Manager (LCM) ' de belirtilen konumdan otomatik olarak indirir.
 
-## <a name="compile-configurations"></a>Derleme yapılandırmaları
+## <a name="compile-configurations"></a>Derleme yapılandırması
 
-Depolama ilk adımı [yapılandırmaları](../configurations/configurations.md) bunları ".mof" dosyalarına derlemek için bir çekme sunucusu olduğunu. Genel ve daha fazla istemci için geçerli bir yapılandırma oluşturmak için kullanın `localhost` , düğüm bloğundaki. Aşağıdaki örnek, kullanan bir yapılandırma Kabuk gösterir `localhost` belirli istemci adı yerine.
+[Yapılandırma](../configurations/configurations.md) bir çekme sunucusunda depolamanın ilk adımı, bunları dosyalar halinde `.mof` derlemek. Bir yapılandırmayı genel hale getirmek ve daha fazla istemci için geçerli olan düğüm `localhost` blosonra kullanın. Aşağıdaki örnekte, belirli bir istemci adı yerine tarafından `localhost` kullanılan bir yapılandırma kabuğu gösterilmektedir.
 
 ```powershell
 Configuration GenericConfig
@@ -33,61 +33,63 @@ Configuration GenericConfig
 GenericConfig
 ```
 
-Genel yapılandırma derlediğiniz sonra "localhost.mof" dosyası olmalıdır.
+Genel yapılandırmanızı derledikten sonra bir `localhost.mof` dosyanız olmalıdır.
 
 ## <a name="renaming-the-mof-file"></a>MOF dosyasını yeniden adlandırma
 
-Bir çekme sunucusu tarafından yapılandırma ".mof" dosyalarını depoladığınız **ConfigurationName** veya **ConfigurationID**. Nasıl çekme istemcilerinize ayarlanacak planladığınıza bağlı olarak, bir bölümü doğru derlenmiş ".mof" dosyaları yeniden adlandırmak için aşağıdaki seçebilirsiniz.
+Yapılandırma `.mof` dosyalarını, bir çekme sunucusunda **ConfigurationName** veya **ConfigurationId**ile saklayabilirsiniz. Çekme istemcilerinizi nasıl ayarlamayı planladığınıza bağlı olarak, derlenmiş `.mof` dosyalarınızı düzgün şekilde yeniden adlandırmak için aşağıdan bir bölüm seçebilirsiniz.
 
-### <a name="configuration-ids-guid"></a>Yapılandırma Kimliği (GUID)
+### <a name="configuration-ids-guid"></a>Yapılandırma kimlikleri (GUID)
 
-"Localhost.mof" dosyanızı yeniden adlandırmanız gerekir "<GUID>.mof" dosya. Rastgele bir sıra oluşturabilirsiniz **GUID** kullanarak veya aşağıdaki örneği kullanarak [yeni GUID](/powershell/module/microsoft.powershell.utility/new-guid) cmdlet'i.
+Dosyanızı dosya olarak `localhost.mof` `<GUID>.mof` yeniden adlandırmanız gerekir. Aşağıdaki örneği kullanarak veya [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) cmdlet 'ini kullanarak rastgele bir **GUID** oluşturabilirsiniz.
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-Örnek çıktı
+Örnek çıkış
 
-```output
+```Output
 Guid
 ----
 64856475-939e-41fb-aba5-4469f4006059
 ```
 
-Ardından, kabul edilebilir herhangi bir yöntemi kullanarak ".mof" dosyanızı yeniden adlandırabilirsiniz. Aşağıdaki örnekte [öğeyi yeniden adlandır](/powershell/module/microsoft.powershell.management/rename-item) cmdlet'i.
+Daha sonra, kabul edilebilir `.mof` herhangi bir yöntemi kullanarak dosyanızı yeniden adlandırabilirsiniz. Aşağıdaki örnek, [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet 'ini kullanır.
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-Kullanma hakkında daha fazla bilgi için **GUID'leri** ortamınızda bkz [planlama GUID'leri](/powershell/dsc/secureserver#guids).
+Ortamınızda **GUID 'leri** kullanma hakkında daha fazla bilgi için bkz. [GUID için plan](/powershell/dsc/secureserver#guids).
 
 ### <a name="configuration-names"></a>Yapılandırma adları
 
-"Localhost.mof" dosyanızı yeniden adlandırmanız gerekir "<Configuration Name>.mof" dosya. Aşağıdaki örnekte, önceki bölümde yapılandırma adı kullanılır. Ardından, kabul edilebilir herhangi bir yöntemi kullanarak ".mof" dosyanızı yeniden adlandırabilirsiniz. Aşağıdaki örnekte [öğeyi yeniden adlandır](/powershell/module/microsoft.powershell.management/rename-item) cmdlet'i.
+Dosyanızı dosya olarak `localhost.mof` `<Configuration Name>.mof` yeniden adlandırmanız gerekir. Aşağıdaki örnekte, önceki bölümdeki yapılandırma adı kullanılır. Daha sonra, kabul edilebilir `.mof` herhangi bir yöntemi kullanarak dosyanızı yeniden adlandırabilirsiniz. Aşağıdaki örnek, [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet 'ini kullanır.
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 ```
 
-## <a name="create-the-checksum"></a>Sağlama toplamı oluşturma
+## <a name="create-the-checksum"></a>Sağlama toplamını oluşturma
 
-Her ".mof" dosya ilişkili ".checksum" dosyasına sahip olacak şekilde gereksinimlerinize bir çekme sunucusu veya SMB paylaşımı üzerinde depolanır. Bu dosya, ilişkili ".mof" dosya değiştirildi ve yeniden indirilmesi gerektiğini bilmeniz istemcilerin izin verir.
+Bir `.mof` çekme sunucusunda depolanan her bir dosyanın veya SMB paylaşımının ilişkili `.checksum` bir dosyası olması gerekir.
+Bu dosya, istemcilerin ilişkili `.mof` dosyanın değiştiğini bilmesini sağlar ve yeniden indirilmelidir.
 
-Oluşturabileceğiniz bir **sağlama toplamı** ile [yeni DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) cmdlet'i. Ayrıca çalıştırabileceğiniz `New-DSCCheckSum` kullanarak dosyaları dizini karşı `-Path` parametresi. Bir sağlama toplamı zaten varsa, ile yeniden oluşturulması zorlayabilirsiniz `-Force` parametresi. Aşağıdaki örnek, önceki bölümde ".mof" dosyasını içeren bir dizinin belirtilmiş ve kullandığı `-Force` parametresi.
+[New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) cmdlet 'i Ile bir **sağlama toplamı** oluşturabilirsiniz. Ayrıca, parametresini kullanarak `New-DSCCheckSum` bir dosya dizini için `-Path` de çalıştırabilirsiniz.
+Bir sağlama toplamı zaten varsa, bu `-Force` parametre ile yeniden oluşturulmasını zorunlu hale getirebilirsiniz. Aşağıdaki örnek, önceki bölümden `.mof` dosyasını içeren bir dizin belirtti ve `-Force` parametresini kullanır.
 
 ```powershell
 New-DscChecksum -Path '.\' -Force
 ```
 
-Hiçbir çıkış gösterilir, ancak artık görmelisiniz bir "<GUID or Configuration Name>. mof.checksum" dosya.
+Çıktı gösterilmez, ancak artık bir `<GUID or Configuration Name>.mof.checksum` dosya görmeniz gerekir.
 
-## <a name="where-to-store-mof-files-and-checksums"></a>MOF dosyaları ve sağlamalar depolanacağı konumu
+## <a name="where-to-store-mof-files-and-checksums"></a>MOF dosyalarının ve sağlama toplamlarını nerede depolayabileceğiniz
 
 ### <a name="on-a-dsc-http-pull-server"></a>DSC HTTP çekme sunucusunda
 
-Ayarladığınızda, HTTP çekme sunucusu açıklandığı şekilde [bir DSC HTTP çekme sunucusu ayarlama](pullServer.md), dizinler için belirttiğiniz **ModulePath** ve **Yapılandırmayolu** anahtarları. **Yapılandırmayolu** anahtar ".mof" dosyalar nerede depolanacağını belirtir. **Yapılandırmayolu** dosyaları ".mof" ve ".checksum" dosyaları burada depolanmalıdır gösterir.
+HTTP çekme sunucunuzu ayarlarken [DSC http çekme sunucusu ayarlama](pullServer.md)bölümünde açıklandığı gibi, **ModulePath** ve **ConfigurationPath** anahtarlarının dizinlerini belirtirsiniz. **ModulePath** anahtarı, bir modülün paketlenmiş `.zip` dosyalarının nerede depolanması gerektiğini gösterir. **ConfigurationPath** , herhangi bir `.mof` dosya ve `.checksum` dosyanın nerede depolanması gerektiğini gösterir.
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -102,7 +104,8 @@ Ayarladığınızda, HTTP çekme sunucusu açıklandığı şekilde [bir DSC HTT
 
 ### <a name="on-an-smb-share"></a>Bir SMB paylaşımında
 
-SMB paylaşımı kullanmak üzere bir çekme istemcisi ayarlama, belirttiğiniz bir **ConfigurationRepositoryShare**. Tüm dosyaları ".mof" ve ".checksum" dosyaları ardından depolanması gereken **SourcePath** yer **ConfigurationRepositoryShare** blok.
+Bir SMB paylaşımının kullanılması için bir Istek temelli Istemci ayarladığınızda, bir **Configurationdepotorshare**belirlersiniz.
+Tüm `.mof` dosyalar ve `.checksum` dosyalar, **configurationdepotorshare** bloğunun **SourcePath** dizininde depolanmalıdır.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -111,16 +114,16 @@ ConfigurationRepositoryShare SMBPullServer
 }
 ```
 
-## <a name="next-steps"></a>Sonraki Adımlar
+## <a name="next-steps"></a>Sonraki adımlar
 
-Ardından, belirtilen yapılandırmayı almayı çekme istemcileri yapılandırmak isteyeceksiniz. Daha fazla bilgi için aşağıdaki kılavuzlara birine bakın:
+Ardından, belirtilen yapılandırmayı çekmek için çekme Istemcilerini yapılandırmak isteyeceksiniz. Daha fazla bilgi için aşağıdaki kılavuzlardan birine bakın:
 
-- [Bir çekme yapılandırma kimliklerinin (v4) kullanarak istemcisi ayarlama](pullClientConfigId4.md)
-- [Bir çekme yapılandırma kimliklerinin (v5) kullanarak istemcisi ayarlama](pullClientConfigId.md)
-- [Bir çekme (v5) yapılandırma adlarını kullanarak istemcisi ayarlama](pullClientConfigNames.md)
+- [Yapılandırma kimlikleri (v4) kullanarak çekme Istemcisi ayarlama](pullClientConfigId4.md)
+- [Yapılandırma kimliklerini (V5) kullanarak çekme Istemcisi ayarlama](pullClientConfigId.md)
+- [Yapılandırma adlarını (V5) kullanarak çekme Istemcisini ayarlama](pullClientConfigNames.md)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Bir DSC SMB çekme sunucusu ayarlama](pullServerSmb.md)
-- [Bir DSC HTTP çekme sunucusu ayarlama](pullServer.md)
-- [Paket ve karşıya yükleme kaynakları için bir çekme sunucusu](package-upload-resources.md)
+- [DSC SMB çekme sunucusu ayarlama](pullServerSmb.md)
+- [DSC HTTP çekme sunucusu ayarlama](pullServer.md)
+- [Kaynakları bir çekme sunucusuna paketleme ve yükleme](package-upload-resources.md)

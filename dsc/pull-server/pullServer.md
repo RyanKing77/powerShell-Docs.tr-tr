@@ -1,96 +1,96 @@
 ---
 ms.date: 03/04/2019
-keywords: DSC, powershell, yapılandırma, Kurulum
+keywords: DSC, PowerShell, yapılandırma, kurulum
 title: DSC Çekme Hizmeti
-ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 865eae5813e0c7b656a4158f0b1350e60f1e3291
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079413"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986533"
 ---
-# <a name="desired-state-configuration-pull-service"></a>Desired State Configuration çekme hizmeti
+# <a name="desired-state-configuration-pull-service"></a>İstenen durum yapılandırması çekme hizmeti
 
 > [!IMPORTANT]
-> Çekme sunucusu (Windows özelliği *DSC hizmet*) ancak desteklenen bir bileşen Windows Server'ın yeni özellikler veya yetenekler sunmak için herhangi bir plan vardır. Geçişi başlıyor önerilir yönetilen istemcilere [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (Windows Server çekme sunucusunda dışında özellikler dahildir) veya topluluk çözümlerden birini listelenen [burada](pullserver.md#community-solutions-for-pull-service).
+> Çekme sunucusu (Windows özelliği *DSC-Service*) Windows Server 'ın desteklenen bir bileşenidir, ancak yeni özellikler veya yetenekler sunmaya yönelik bir plan yoktur. Yönetilen istemcileri [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) geçirmeyi (Windows Server 'Da çekme sunucusunun ötesindeki özellikleri içerir) veya [burada](pullserver.md#community-solutions-for-pull-service)listelenen topluluk çözümlerinin birini kullanmaya başlamanız önerilir.
 
-Yerel Configuration Manager, bir çekme hizmetini çözümü tarafından merkezi olarak yönetilebilir.
-Bu yaklaşımı kullanarak, yönetilen düğüme bir hizmete kayıtlı ve LCM ayarları yapılandırmasında atanan.
-Yapılandırması ve yapılandırma için bağımlılık olarak gerekli olan tüm DSC kaynaklarını makineye indirilir ve yapılandırmasını yönetmek için LCM tarafından kullanılır.
-Yönetilen makinenin durumu hakkında bilgi, hizmet raporlama için yüklenir.
-Bu kavramı "çekme hizmeti." olarak adlandırılır
+Yerel Configuration Manager, bir çekme hizmeti çözümü tarafından merkezi olarak yönetilebilir.
+Bu yaklaşımı kullanırken, yönetilmekte olan düğüm bir hizmete kaydedilir ve LCM ayarlarında bir yapılandırma atanır.
+Yapılandırma bağımlılıkları olarak gereken yapılandırma ve tüm DSC kaynakları makineye indirilir ve bu yapılandırmayı yönetmek için LCM tarafından kullanılır.
+Yönetilmekte olan makinenin durumu hakkında bilgi, raporlama için hizmete yüklenir.
+Bu kavram "çekme hizmeti" olarak anılacaktır.
 
-Çekme Hizmeti için geçerli seçenekler şunlardır:
+Çekme hizmeti için geçerli seçenekler şunları içerir:
 
-- Azure Otomasyonu Desired State Configuration hizmeti
+- Azure Otomasyonu Istenen durum yapılandırma hizmeti
 - Windows Server üzerinde çalışan bir çekme hizmeti
-- Açık kaynak çözümleri tutulan topluluk
-- SMB paylaşımı
+- Topluluk tarafından tutulan açık kaynaklı çözümler
+- Bir SMB paylaşma
 
-**Önerilen Çözüm**, ve en çok kullanılabilir olan özellikleri seçeneğiyle [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+**Önerilen çözüm**ve en fazla özelliklerle sunulan seçenek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
-Azure hizmet düğümleri şirket içi özel veri merkezinde veya genel bulutlarda Azure ve AWS gibi yönetebilirsiniz.
-Yalnızca yayımlanan Azure IP aralığına giden trafiği sınırlamak burada sunucuları doğrudan bağlanamaz Internet'e özel ortamları için göz önünde bulundurun (bkz [Azure veri merkezi IP aralıkları](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
+Azure hizmeti, şirket içi düğümleri özel veri merkezlerinde veya Azure ve AWS gibi genel bulutlarda yönetebilir.
+Sunucularının Internet 'e doğrudan bağlanamamakta olduğu özel ortamlar için, giden trafiği yalnızca yayımlanan Azure IP aralığıyla sınırlamayı düşünün (bkz. [Azure veri MERKEZI IP aralıkları](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
 
-Çevrimiçi hizmet çekme hizmetini Windows Server üzerinde şu anda kullanılabilir olmayan özellikler şunlardır:
+Windows Server 'da çekme hizmetinde şu anda kullanılamayan çevrimiçi hizmetin özellikleri şunlardır:
 
-- Tüm veriler aktarımda ve bekleme sırasında şifrelenir
-- İstemci sertifikaları oluşturulur ve otomatik olarak yönetilir
-- Gizli dizileri depolamak merkezi olarak yönetmek için [parolaları/kimlik bilgilerinin](/azure/automation/automation-credentials), veya [değişkenleri](/azure/automation/automation-variables) sunucu adları veya bağlantı dizeleri gibi
-- Düğüm merkezi olarak yönetin [LCM yapılandırma](../managing-nodes/metaConfig.md#basic-settings)
-- Merkezi olarak istemci düğüm yapılandırmaları Ata
-- Üretim ulaşmadan önce test etmek için "kanarya gruplarına" yayın yapılandırması değişiklikleri
+- Tüm veriler aktarım sırasında ve bekleyen saatinde şifrelenir
+- İstemci sertifikaları otomatik olarak oluşturulur ve yönetilir
+- [Parolaları/kimlik bilgilerini](/azure/automation/automation-credentials)ya da sunucu adları veya bağlantı dizeleri gibi [değişkenleri](/azure/automation/automation-variables) merkezi olarak yönetmek için gizli dizileri depolar
+- Düğüm [LCM yapılandırmasını](../managing-nodes/metaConfig.md#basic-settings) merkezi olarak Yönet
+- İstemci düğümlerine yapılandırma merkezi olarak atama
+- Üretime ulaşmadan önce test için "Canary gruplarında" yayın yapılandırması değişiklikleri
 - Grafik raporlama
-  - DSC kaynak düzeyinde ayrıntı durumu ayrıntısı
+  - Ayrıntı düzeyi DSC kaynak düzeyinde durum ayrıntısı
   - Sorun giderme için istemci makinelerden ayrıntılı hata iletileri
-- [Azure Log Analytics ile tümleştirme](/azure/automation/automation-dsc-diagnostics) uyarı verme, otomatik görevler, raporlama ve uyarı Android/iOS uygulaması
+- Raporlama ve uyarı için Azure Log Analytics uyarı, otomatikleştirilmiş görevler, Android/iOS uygulaması [Ile tümleştirme](/azure/automation/automation-dsc-diagnostics)
 
-## <a name="dsc-pull-service-in-windows-server"></a>Windows Server'da DSC çekme hizmeti
+## <a name="dsc-pull-service-in-windows-server"></a>Windows Server 'da DSC çekme hizmeti
 
-Windows Server üzerinde çalıştırmak için bir çekme hizmetini yapılandırmak mümkündür.
-Windows Server'a dahil çekme hizmet çözümü yapılandırmaları/modules indirmek için depolama ve veritabanı için rapor verilerini yakalama yalnızca özellikleri içerdiğinden emin olun.
-Çoğu Azure hizmeti tarafından sunulan içermez ve bu nedenle nasıl hizmet kullanılan değerlendirmek için iyi bir aracı değildir.
+Bir çekme hizmetini Windows Server 'da çalışacak şekilde yapılandırmak mümkündür.
+Windows Server 'a dahil olan çekme hizmeti çözümünün yalnızca yapılandırma ve rapor verilerini veritabanına yükleme için depolama yeteneklerini içermesi önerilir.
+Azure 'da hizmetin sunduğu birçok özelliği içermez ve bu nedenle hizmetin nasıl kullanılacağını değerlendirmek için iyi bir araç değildir.
 
-Windows Server'da sunulan çekme hizmetini bir düğümleri için isteyin, DSC yapılandırma dosyalarını hedef düğümler için kullanılabilir hale getirmek için bir OData arabirimini kullanan bir IIS web hizmetidir.
+Windows Server 'da sunulan çekme hizmeti, bir OData arabirimi kullanan bir Web hizmetidir ve bu düğümler, bu düğümleri isteyenler için DSC yapılandırma dosyalarını hedef düğümlere kullanılabilir hale getirir.
 
-Bir çekme sunucusu kullanmak için gereksinimler:
+Çekme sunucusu kullanma gereksinimleri:
 
 - Çalıştıran bir sunucu:
-  - WMF/PowerShell 4.0 veya üzeri
+  - WMF/PowerShell 4,0 veya üzeri
   - IIS sunucu rolü
   - DSC hizmeti
-- İdeal olarak, bazı anlamına gelir bir sertifika oluşturma hedef düğümlerde yerel Configuration Manager (LCM) geçirilen kimlik bilgilerini güvenli hale getirmek için
+- Hedef düğümlerde yerel Configuration Manager (LCM) geçirilen kimlik bilgilerinin güvenliğini sağlamak için bir sertifika oluşturmanın bazı yolları idealdir.
 
-Windows Server için konak çekme hizmetini yapılandırmak için en iyi yolu, bir DSC yapılandırması kullanmaktır.
-Bir örnek betiği aşağıda verilmiştir.
+Windows Server 'ı çekme hizmetini barındıracak şekilde yapılandırmanın en iyi yolu DSC yapılandırması kullanmaktır.
+Aşağıda örnek bir komut dosyası verilmiştir.
 
 ### <a name="supported-database-systems"></a>Desteklenen veritabanı sistemleri
 
-|WMF 4.0   |WMF 5.0  |WMF 5.1 |WMF 5.1 (Windows Server Insider Önizleme 17090)|
+|WMF 4,0   |WMF 5.0  |WMF 5.1 |WMF 5,1 (Windows Server Insider Preview 17090)|
 |---------|---------|---------|---------|
-|MDB     |ESENT (varsayılan), MDB |ESENT (varsayılan), MDB|ESENT (varsayılan), SQL Server'ı MDB
+|TATIL     |ESENT (varsayılan), MDB |ESENT (varsayılan), MDB|ESENT (varsayılan), SQL Server, MDB
 
-İtibariyle, 17090 yayın [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server, çekme hizmeti için desteklenen bir seçenektir (Windows özelliği *DSC hizmet*). Bunun için geçmemiş büyük DSC ortamlarda ölçeklendirmeye yönelik yeni bir seçenek sağlar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+[Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)sürüm 17090 ' den başlayarak, çekme hizmeti (Windows özelliği *DSC-Service*) için desteklenen bir seçenektir SQL Server. Bu, [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)'e geçirilmeyen büyük DSC ortamlarını ölçeklendirmek için yeni bir seçenek sağlar.
 
 > [!NOTE]
-> SQL Server desteği, önceki sürümler için WMF 5.1 (veya öncesi) eklenmez ve yalnızca Windows Server sürümlerinde büyüktür veya eşittir 17090 için kullanılabilir olacak.
+> SQL Server desteği, WMF 5,1 (veya önceki bir sürümü) önceki sürümlerine eklenmez ve yalnızca 17090 ' den büyük veya buna eşit olan Windows Server sürümlerinde kullanılabilir.
 
-Çekme sunucusunu SQL Server'ı kullanacak şekilde yapılandırmak için **SqlProvider** için `$true` ve **SqlConnectionString** için geçerli bir SQL Server bağlantı dizesi. Daha fazla bilgi için [SqlClient bağlantı dizeleri](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
-Bir örnek ile SQL Server yapılandırmasının **xDscWebService**, öncelikle [xDscWebService kaynak kullanarak](#using-the-xdscwebservice-resource) ve daha sonra gözden [Sample_xDscWebServiceRegistration_ GitHub üzerinde UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
+Çekme sunucusunu SQL Server kullanacak şekilde yapılandırmak için, **SqlProvider** `$true` ' ı ve **sqlConnectionString** ' i geçerli bir SQL Server bağlantı dizesine ayarlayın. Daha fazla bilgi için bkz. [SqlClient bağlantı dizeleri](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
+**Xdscwebservice**ile SQL Server yapılandırmasına bir örnek için Ilk olarak [xdscwebservice kaynağını kullanarak](#using-the-xdscwebservice-resource) okuyun ve ardından [GitHub 'da Sample_xDscWebServiceRegistration_UseSQLProvider. ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1)' yi inceleyin.
 
-### <a name="using-the-xdscwebservice-resource"></a>XDscWebService kaynağı kullanma
+### <a name="using-the-xdscwebservice-resource"></a>XDscWebService kaynağını kullanma
 
-Web çekme sunucusu kurmak için en kolay yolu kullanmaktır **xDscWebService** dahil kaynak **xPSDesiredStateConfiguration** modülü.
-Aşağıdaki adımlarda, kaynak web hizmeti oluşturmaya ayarlar bir yapılandırmada kullanmak açıklanmaktadır.
+Bir Web çekme sunucusu ayarlamanın en kolay yolu, **Xpsdesiredstateconfiguration** modülüne dahil edilen **xdscwebservice** kaynağını kullanmaktır.
+Aşağıdaki adımlarda, kaynağı Web hizmetini ayarlayan bir yapılandırmada kullanma açıklanmaktadır.
 
-1. Çağrı [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet'ine **xPSDesiredStateConfiguration** modülü.
+1. **Xpsdesiredstateconfiguration** modülünü yüklemek için [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet 'ini çağırın.
    > [!NOTE]
-   > **Install-Module** dahil **PowerShellGet** modülü, PowerShell 5. 0'da dahildir. İndirebileceğiniz **PowerShellGet** modülü PowerShell 3.0 ve 4.0, [PackageManagement PowerShell modülleri Önizleme](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
-2. Bir SSL sertifikası güvenilen bir sertifika yetkilisi, kuruluşunuz veya bir ortak yetkilisi ya da DSC çekme sunucusu alın. Genellikle yetkilisinden alınan sertifika PFX biçimi ' dir.
-3. DSC çekme sunucusu olmalıdır varsayılan konumda olacak düğüme sertifikayı yükleme `CERT:\LocalMachine\My`.
-   - Sertifika parmak izini not edin.
-4. Kayıt anahtarı kullanılacak bir GUID seçin. İçin bir PowerShell kullanarak, PS istemine aşağıdakileri girin ve enter tuşuna basın: `[guid]::newGuid()` veya `New-Guid`. Bu anahtar tarafından istemci düğümleri kayıt sırasında kimlik doğrulaması için paylaşılan bir anahtar olarak kullanılır. Daha fazla bilgi için kayıt anahtarı bölümüne bakın.
-5. PowerShell ISE'de (F5) aşağıdaki yapılandırma betiğini Başlat (örnekler klasöründe bulunan **xPSDesiredStateConfiguration** modül olarak `Sample_xDscWebServiceRegistration.ps1`). Bu betik, çekme sunucusu ayarlar.
+   > **Install-Module** , PowerShell 5,0 ' de bulunan **PowerShellGet** modülüne dahildir. PowerShell 3,0 ve 4,0 için **PowerShellGet** modülünü [PackageManagement PowerShell modülleri önizlemesine](https://www.microsoft.com/en-us/download/details.aspx?id=49186)indirebilirsiniz.
+2. Kuruluşunuzun içinde veya genel yetkilinizden, güvenilir bir sertifika yetkilisinden DSC çekme sunucusu için bir SSL sertifikası alın. Yetkilinden alınan sertifika genellikle PFX biçimindedir.
+3. Varsayılan konumda `CERT:\LocalMachine\My`DSC çekme sunucusu olacak olan düğüme sertifikayı yükler.
+   - Sertifika parmak izini bir yere getirin.
+4. Kayıt anahtarı olarak kullanılacak bir GUID seçin. PowerShell kullanarak bir tane oluşturmak için PS isteminde aşağıdakini girin ve ENTER tuşuna basın: `[guid]::newGuid()` veya. `New-Guid` Bu anahtar, kayıt sırasında kimlik doğrulaması için paylaşılan anahtar olarak istemci düğümleri tarafından kullanılacaktır. Daha fazla bilgi için aşağıdaki kayıt anahtarı bölümüne bakın.
+5. PowerShell ıSE 'de, aşağıdaki yapılandırma betiğini (F5) başlatın ( **Xpsdesiredstateconfiguration** modülünün `Sample_xDscWebServiceRegistration.ps1`örnekler klasörüne dahil). Bu betik, çekme sunucusunu ayarlar.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -146,7 +146,7 @@ Aşağıdaki adımlarda, kaynak web hizmeti oluşturmaya ayarlar bir yapılandı
     }
     ```
 
-6. Çalıştırma SSL sertifikası parmak izi geçirme yapılandırmasını **certificateThumbPrint** parametre ve bir GUID kayıt anahtarı olarak **RegistrationKey** parametresi:
+6. SSL sertifikasının parmak izini **certificateThumbPrint** parametresi olarak ve bir GUID kayıt anahtarını **registrationkey** parametresi olarak geçirerek yapılandırmayı çalıştırın:
 
     ```powershell
     # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
@@ -162,12 +162,12 @@ Aşağıdaki adımlarda, kaynak web hizmeti oluşturmaya ayarlar bir yapılandı
 
 #### <a name="registration-key"></a>Kayıt anahtarı
 
-İstemci yapılandırma adları yerine bir yapılandırma kimliği kullanabilmeniz sunucusu ile kayıt düğümleri izin vermek için yukarıdaki yapılandırma tarafından oluşturulan bir kayıt anahtarı adlı bir dosyaya kaydedilir `RegistrationKeys.txt` içinde `C:\Program Files\WindowsPowerShell\DscService`. Kayıt anahtarı, ilk kayıt sırasında çekme sunucusu ile istemci tarafından kullanılan paylaşılan gizlilik işlevini görür. İstemci kayıt başarıyla tamamlandıktan sonra çekme sunucusuna benzersiz kimliğini doğrulamak için kullanılan otomatik olarak imzalanan bir sertifika oluşturur. Bu sertifikanın parmak izini yerel olarak depolanan ve çekme sunucusu URL'si ile ilişkili.
+İstemci düğümlerinin bir yapılandırma kimliği yerine yapılandırma adlarını kullanabilmesi için sunucuya kaydedilmesine izin vermek üzere, yukarıdaki yapılandırma tarafından oluşturulan bir kayıt anahtarı içinde `RegistrationKeys.txt` `C:\Program Files\WindowsPowerShell\DscService`adlı bir dosyaya kaydedilir. Kayıt anahtarı, istemci tarafından çekme sunucusuna ilk kayıt sırasında kullanılan bir paylaşılan gizli dizi olarak çalışır. İstemci, kayıt başarıyla tamamlandıktan sonra çekme sunucusuna benzersiz olarak kimlik doğrulaması yapmak için kullanılan otomatik olarak imzalanan bir sertifika oluşturur. Bu sertifikanın parmak izi yerel olarak depolanır ve çekme sunucusunun URL 'SI ile ilişkilendirilir.
 
 > [!NOTE]
-> PowerShell 4. 0'kayıt anahtarları desteklenmiyor.
+> Kayıt anahtarları PowerShell 4,0 ' de desteklenmez.
 
-Çekme sunucusu ile kimlik doğrulaması için bir düğüm yapılandırmak için kayıt anahtarını metaconfiguration bu çekme sunucusu ile kayıt herhangi bir hedef düğüm için yer alması gerekir. Unutmayın **RegistrationKey** aşağıdaki metaconfiguration hedef makine'nın başarıyla kaydolduğunu ve değer saklanan değerle eşleşmelidir sonra kaldırılır `RegistrationKeys.txt` çekme sunucusunda dosyasını (' 140a952b-b9d6-406b-b416-e0f759c9c0e4' Bu örnek için). Her zaman farkında çekme sunucusu ile kayıt herhangi bir hedef makine izin verdiğinden kayıt anahtar değeri güvenli bir şekilde, kabul eder.
+Bir düğümü, çekme sunucusunda kimlik doğrulaması yapacak şekilde yapılandırmak için, kayıt anahtarının bu çekme sunucusuna kaydedilecek herhangi bir hedef düğüm için metaconfiguration içinde olması gerekir. Aşağıdaki metaconfiguration içindeki **registrationkey** 'in, hedef makine başarıyla kaydedildikten sonra kaldırıldığını ve değerin çekme sunucusundaki `RegistrationKeys.txt` dosyasında depolanan değerle eşleşmesi gerektiğini unutmayın (' 140a952b-b9d6-406b-B416-e0f759c9c0e4 ' Bu örnek için). Her zaman, tüm hedef makinelerin çekme sunucusuna kaydedilmesine izin verdiğini bilerek, kayıt anahtarı değerini güvenli şekilde değerlendirin.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -211,51 +211,51 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 ```
 
 > [!NOTE]
-> **ReportServerWeb** bölümü raporlama verilerini çekme sunucusuna gönderilmesini sağlar.
+> **Reportserverweb** bölümü raporlama verilerinin çekme sunucusuna gönderilmesine izin verir.
 
-Eksikliği **ConfigurationID** metaconfiguration dosyasındaki özellik örtük olarak anlamına gelir, çekme sunucusu bir ilk kaydı gerekli olacak şekilde çekme sunucusu protokolü V2 sürümünü destekleme.
-Buna karşılık, varlığı bir **ConfigurationID** çekme sunucusu protokolü V1 sürümü kullanılır ve hiçbir kayıt işleme yoktur anlamına gelir.
+Metaconfiguration dosyasındaki **ConfigurationId** özelliğinin olmaması, çekme sunucusunun, çekme sunucusu protokolünün v2 sürümünü, bu nedenle bir ilk kaydın gerekli olduğu anlamına gelir.
+Buna karşılık, bir **ConfigurationId** varlığı, çekme sunucusu protokolünün v1 sürümünün kullanıldığı ve kayıt işlemenin bulunmadığı anlamına gelir.
 
 > [!NOTE]
-> Bir anında İLETME senaryosunda, hiçbir zaman bir çekme sunucusuna kaydettirdiyseniz düğümleri metaconfiguration dosyasında ConfigurationID özelliği tanımlamak gerekli kılan geçerli sürümde olan bir hata var. V1 çekme sunucusu protokolü zorlamak ve kayıt hata iletileri kaçının.
+> Bir gönderme senaryosunda, geçerli yayında bir hata var ve bu, bir çekme sunucusuna hiç kaydedilmemiş düğümler için metaconfiguration dosyasında bir ConfigurationId özelliği tanımlamanızı sağlar. Bu, v1 çekme sunucusu protokolünü zorlar ve kayıt hatası iletilerini önler.
 
-## <a name="placing-configurations-and-resources"></a>Yapılandırmaları ve kaynakları yerleştirme
+## <a name="placing-configurations-and-resources"></a>Yapılandırma ve kaynakları yerleştirme
 
-Sonra çekme Sunucusu Kurulumu tamamlandığında, tarafından tanımlanan klasörleri **Yapılandırmayolu** ve **ModulePath** çekme sunucusu yapılandırma özelliklerinde olan modülleri ve yapılandırmaları koyacağı Hedef düğümleri çekmek kullanılabilir.
-Bu dosyalar çekme sunucusunun doğru şekilde işlemek sırada belirli bir biçimde olması gerekir.
+Çekme sunucusu kurulumu tamamlandıktan sonra, çekme sunucusu yapılandırmasındaki **ConfigurationPath** ve **ModulePath** özellikleri tarafından tanımlanan klasörler, hedef düğümlerin çekmesini sağlamak için kullanılabilecek modülleri ve yapılandırmaları yerleştireceğiniz yerdir.
+Bu dosyaların, çekme sunucusunun düzgün şekilde işlemesi için belirli bir biçimde olması gerekir.
 
 ### <a name="dsc-resource-module-package-format"></a>DSC kaynak modülü paket biçimi
 
-Her kaynak modülü sıkıştırılmasını ve aşağıdaki modele göre adında gereken `{Module Name}_{Module Version}.zip`.
+Her kaynak modülünün sıkıştırılmış ve aşağıdaki modele `{Module Name}_{Module Version}.zip`göre adlandırılmış olması gerekir.
 
-Örneğin, bir modül sürümüyle 3.1.2.0 xWebAdminstration adlı bir modül adlı `xWebAdministration_3.2.1.0.zip`.
-Her bir modül sürümü tek zip dosyasında yer almalıdır.
-Bir kaynağın her zip dosyası yalnızca tek bir sürüm olduğundan, WMF 5. 0'ile tek bir dizinde birden çok modül sürümleri için destek eklendi modül biçimi desteklenmiyor.
-Bu DSC çekme server ile kullanmak için kaynak modülleri'kurmak paketleme önce küçük bir değişiklik yapmak için dizin yapısını gerektiğini anlamına gelir.
-WMF 5.0 DSC kaynağı içeren modüllerin varsayılan biçimi `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
-Çekme sunucusu için paketleme önce kaldırmak **{Modül sürümü}** klasör yolu olacak şekilde `{Module Folder}\DscResources\{DSC Resource Folder}\`.
-Bu değişiklik, yukarıda açıklandığı gibi klasör zip ve bu zip dosyalarını **ModulePath** klasör.
+Örneğin, xWebAdminstration adlı bir modülün Modül sürümü 3.1.2.0 olarak adlandırılır `xWebAdministration_3.1.2.0.zip`.
+Modülün her sürümü tek bir ZIP dosyasında bulunmalıdır.
+Her ZIP dosyasında bir kaynağın yalnızca tek bir sürümü olduğundan, WMF 5,0 ' de tek bir dizinde birden çok modül sürümü desteğiyle eklenen modül biçimi desteklenmez.
+Diğer bir deyişle, çekme sunucusu ile kullanım için DSC kaynak modüllerini paketlemeden önce dizin yapısında küçük bir değişiklik yapmanız gerekir.
+WMF 5,0 ' de DSC kaynağını içeren modüllerin varsayılan biçimi vardır `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
+Çekme sunucusuna paketlemeden önce, yol haline `{Module Folder}\DscResources\{DSC Resource Folder}\`gelmesi için **{module sürümü}** klasörünü kaldırın.
+Bu değişiklik ile, yukarıda açıklandığı gibi klasörü zip halinde ve bu ZIP dosyalarını **ModulePath** klasörüne yerleştirin.
 
-Kullanım `New-DscChecksum {module zip file}` yeni eklenen modülün bir sağlama toplamı dosyası oluşturmak için.
+Yeni `New-DscChecksum {module zip file}` eklenen modül için bir sağlama toplamı dosyası oluşturmak için kullanın.
 
 ### <a name="configuration-mof-format"></a>Yapılandırma MOF biçimi
 
-Yapılandırma MOF dosyasının yapılandırmasını hedef düğümde bir LCM doğrulayabilmesi bir sağlama toplamı dosyasına ile eşleştirilmesi gerekir.
-Bir sağlama toplamı oluşturmak için arama [yeni DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DscChecksum) cmdlet'i.
-Cmdlet alır bir **yolu** parametresi yapılandırma MOF bulunduğu klasörü belirtir.
-Adlı bir sağlama toplamı dosyasına cmdlet oluşturur `ConfigurationMOFName.mof.checksum`burada `ConfigurationMOFName` yapılandırma mof dosyasının adıdır.
-Belirtilen klasörde MOF dosyaları birden fazla yapılandırması varsa, klasördeki her bir yapılandırma için bir sağlama toplamı oluşturulur.
-MOF dosyaları ve bunların ilişkili sağlama toplamı dosyalarında yerleştirmek **Yapılandırmayolu** klasör.
+Bir hedef düğümdeki LCM 'nin yapılandırmayı doğrulayabilmesi için bir yapılandırma MOF dosyasının bir sağlama toplamı dosyasıyla eşleştirilmesi gerekir.
+Sağlama toplamı oluşturmak için [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DscChecksum) cmdlet 'ini çağırın.
+Cmdlet 'i, yapılandırma MOF 'nin bulunduğu klasörü belirten bir **yol** parametresi alır.
+Cmdlet 'i adlı `ConfigurationMOFName.mof.checksum`bir sağlama toplamı dosyası oluşturur, `ConfigurationMOFName` burada yapılandırma mof dosyasının adıdır.
+Belirtilen klasörde birden fazla yapılandırma MOF dosyası varsa, klasördeki her bir yapılandırma için bir sağlama toplamı oluşturulur.
+MOF dosyalarını ve ilgili sağlama toplamı dosyalarını **ConfigurationPath** klasörüne yerleştirin.
 
 > [!NOTE]
-> Yapılandırma MOF dosyasının herhangi bir şekilde değiştirirseniz, sağlama toplamı dosyasına yeniden oluşturmanız gerekir.
+> Yapılandırma MOF dosyasını herhangi bir şekilde değiştirirseniz, sağlama toplamı dosyasını da yeniden oluşturmanız gerekir.
 
-### <a name="tooling"></a>Araç kullanımı
+### <a name="tooling"></a>Araçları
 
-Ayarı yapmak için doğrulama ve daha kolay, çekme sunucusu yönetme aşağıdaki araçları xPSDesiredStateConfiguration modülünün en son sürümünü örneklerde olarak dahil edilir:
+İstek sunucusunu ayarlamayı, doğrulamayı ve yönetmeyi kolaylaştırmak için aşağıdaki araçlar xPSDesiredStateConfiguration modülünün en son sürümüne örnek olarak dahil edilir:
 
-1. DSC kaynak modülleri ve çekme sunucusu kullanmak için yapılandırma dosyalarını paketleme ile yardımcı olacak bir modül.
-   [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1).
+1. Çekme sunucusunda kullanılmak üzere DSC kaynak modüllerinin ve yapılandırma dosyalarının paketlenmesi için yardımcı olacak bir modül.
+   [PublishModulesAndMofsToPullServer. psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1).
    Aşağıdaki örnekler:
 
     ```powershell
@@ -267,28 +267,28 @@ Ayarı yapmak için doğrulama ve daha kolay, çekme sunucusu yönetme aşağıd
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
     ```
 
-1. Çekme sunucusu doğrulayan bir betik doğru şekilde yapılandırılır. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+1. Çekme sunucusunu doğrulayan bir betik doğru şekilde yapılandırılır. [Pullserversetuptests. ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
-## <a name="community-solutions-for-pull-service"></a>Topluluk çözümleriyle çekme hizmeti
+## <a name="community-solutions-for-pull-service"></a>Çekme hizmeti için topluluk çözümleri
 
-Topluluk DSC çekme hizmeti Protokolü uygulamak için birden çok çözümü yazan.
-Şirket içi ortamlar için bu çekme hizmet özellikleri ve geri artımlı iyileştirmeleri topluluğa katkıda fırsatı sunar.
+DSC topluluğu, çekme hizmeti protokolünü uygulamak için birden çok çözüm yazdı.
+Şirket içi ortamlar için, bu teklif çekme hizmeti özellikleri ve artımlı geliştirmeler sayesinde topluluğa katkıda bulunmak için bir fırsat sunar.
 
-- [Arasında bir güç çekişmesi](https://github.com/powershellorg/tug)
+- [Tug](https://github.com/powershellorg/tug)
 - [DSC-TRÆK](https://github.com/powershellorg/dsc-traek)
 
-## <a name="pull-client-configuration"></a>Çekme istemcisi yapılandırması
+## <a name="pull-client-configuration"></a>İstek temelli istemci yapılandırması
 
-Aşağıdaki konularda ayrıntılı çekme istemciler ayarlama açıklanmaktadır:
+Aşağıdaki konularda, çekme istemcilerinin ayrıntılı olarak ayarlanması açıklanır:
 
-- [Yapılandırma Kimliğini kullanarak bir DSC çekme istemcisi ayarlama](pullClientConfigID.md)
-- [Yapılandırma adlarını kullanarak bir DSC çekme istemcisi ayarlama](pullClientConfigNames.md)
-- [Kısmi yapılandırmalar](partialConfigs.md)
+- [Bir DSC çekme istemcisini yapılandırma KIMLIĞI kullanarak ayarlama](pullClientConfigID.md)
+- [Yapılandırma adlarını kullanarak DSC çekme istemcisini ayarlama](pullClientConfigNames.md)
+- [Kısmi yapılandırma](partialConfigs.md)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Windows PowerShell Desired State Configuration ' ne genel bakış](../overview/overview.md)
+- [Windows PowerShell Istenen durum yapılandırmasına genel bakış](../overview/overview.md)
 - [Yapılandırmaları Kabul Etme](enactingConfigurations.md)
 - [DSC rapor sunucusu kullanma](reportServer.md)
-- [[MS-DSCPM]: Çekme modeli Protokolü Desired State Configuration](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]: Çekme modeli Protokolü Errata Desired State Configuration](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]: İstenen durum yapılandırması Istek modeli Protokolü](https://msdn.microsoft.com/library/dn393548.aspx)
+- [[MS-DSCPM]: İstenen durum yapılandırması Istek modeli protokol Eroytası](https://msdn.microsoft.com/library/mt612824.aspx)

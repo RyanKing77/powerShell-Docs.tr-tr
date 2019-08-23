@@ -2,16 +2,16 @@
 title: Linux’ta PowerShell Core yükleme
 description: Çeşitli Linux dağıtımlarına PowerShell Core yükleme hakkında bilgi
 ms.date: 07/19/2019
-ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: be11a2a873af71c193730d0a9e723da2dc70a62d
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68372187"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986723"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Linux’ta PowerShell Core yükleme
 
-[Ubuntu 16,04][u16], [ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [de, 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE artık 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [mimari Linux][arch].
+[Ubuntu 16,04][u16], [ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [de, 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE, 15][opensuse], [Fedora 27 ' yi destekler ][fedora], [Fedora 28][fedora]ve [mimari Linux][arch].
 
 Resmi olarak desteklenen Linux dağıtımları için PowerShell [Snap paketini][snap]kullanarak PowerShell 'i yüklemeyi deneyebilirsiniz. Ayrıca, Linux [ `tar.gz` Arşivi][tar]kullanarak PowerShell ikililerini doğrudan dağıtmaya da deneyebilirsiniz, ancak işletim sistemini ayrı adımlarda temel alarak gerekli bağımlılıkları ayarlamanız gerekir.
 
@@ -20,6 +20,7 @@ Tüm paketleri GitHub [yayınları][] sayfamızda bulabilirsiniz. Paket yüklend
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
+[u1904]: #ubuntu-1904
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
@@ -142,10 +143,17 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1810"></a>Ubuntu 18,10
 
-> [!NOTE]
-> 18,10, geçici bir [Sürüm](https://www.ubuntu.com/about/release-cycle)olduğundan yalnızca [topluluk desteklenir](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
+Yüklemesi aracılığıyla `snapd`desteklenir. Yönergeler için bkz. [yaslama paketi][snap].
 
-18,10 üzerine yükleme, aracılığıyla `snapd`desteklenir. Bkz. tam yönergeler için [yaslama paketi][snap] ;
+> [!NOTE]
+> Ubuntu 18,10, [topluluk tarafından desteklenen](../powershell-support-lifecycle.md)bir [Ara sürümdür](https://www.ubuntu.com/about/release-cycle) .
+
+## <a name="ubuntu-1904"></a>Ubuntu 19,04
+
+Yüklemesi aracılığıyla `snapd`desteklenir. Yönergeler için bkz. [yaslama paketi][snap].
+
+> [!NOTE]
+> Ubuntu 19,04, [topluluk tarafından desteklenen](../powershell-support-lifecycle.md)bir [Ara sürümdür](https://www.ubuntu.com/about/release-cycle) .
 
 ## <a name="debian-8"></a>Debian 8
 

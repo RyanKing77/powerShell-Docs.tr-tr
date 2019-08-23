@@ -1,5 +1,5 @@
 ---
-title: Cmdlet'i hata raporlama | Microsoft Docs
+title: Cmdlet hata raporlama | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -14,79 +14,80 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068598"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986321"
 ---
-# <a name="cmdlet-error-reporting"></a>Cmdlet Hata Raporlama
+# <a name="cmdlet-error-reporting"></a>Cmdlet hata bildirimi
 
-Cmdlet'leri, farklı bağlı olarak hataları hataları olup olmadığını sonlandırma hataları veya olmak üzere sonlandırmasız hatalar bildirmeniz gerekir. Sonlandıran hata hemen sonlandırılması için işlem hattı neden olan hataları ya da işleme devam etmek için bir neden olduğunda gerçekleşen hataları oluşturur. Geçerli bir hata koşulu rapor bu hataları olmak üzere sonlandırmasız hatalar olan ancak cmdlet giriş nesneleri işlemek devam edebilirsiniz. Olmak üzere sonlandırmasız hatalar, kullanıcı genellikle sorununu bilgilendirilir, ancak cmdlet sonraki giriş nesnesi işlemeye devam eder.
+Cmdlet 'ler hataların hataları sonlandırıp sonlandırmayacağı veya sonlandırmasız hatalar olmasına bağlı olarak hataları farklı şekilde raporlemelidir. Hataları sonlandırma, işlem hattının hemen sonlandırılmasını veya işleme devam etmek için bir neden olmadığında oluşan hataları ortaya çıkarabilir. Sonlandırıcı olmayan hatalar, geçerli bir hata koşulunu rapor eden hatalardır, ancak cmdlet giriş nesnelerini işlemeye devam edebilir. Sonlandırıcı olmayan hatalar ile kullanıcıya genellikle sorun bildirilir, ancak cmdlet bir sonraki giriş nesnesini işlemeye devam eder.
 
-## <a name="terminating-and-nonterminating-errors"></a>Sonlandıran hem de olmak üzere Sonlandırmasız hatalar
+## <a name="terminating-and-nonterminating-errors"></a>Sonlandırma ve Sonlandırıcı olmayan hatalar
 
-Aşağıdaki yönergeler, bir hata durumu hatası veya olmak üzere sonlandırmasız bir hata olup olmadığını belirlemek için kullanılabilir.
+Bir hata koşulunun Sonlandırıcı hatası mu yoksa Sonlandırıcı olmayan bir hata mu olduğunu anlamak için aşağıdaki kılavuzlar kullanılabilir.
 
-- Hata koşulu cmdlet'inize, daha fazla giriş tüm nesneler başarıyla işlenmesini önlemek mu? Bu durumda, bir sonlandırma hatası budur.
+- Hata koşulu, cmdlet 'inin daha fazla giriş nesnesini başarıyla işlemesini engelliyor mu? Bu durumda, bu bir sonlandırma hatasıdır.
 
-- Hata durumu, belirli bir giriş nesnesi veya bir alt giriş nesnelerin ilişkili mi? Bu, bu durumda, olmak üzere sonlandırmasız bir hatadır.
+- Hata durumu, belirli bir giriş nesnesi veya giriş nesneleri alt kümesiyle ilgili mi? Bu durumda, bu Sonlandırıcı olmayan bir hatadır.
 
-- Cmdlet gibi işleme giriş başka bir nesne üzerinde başarılı olabilir birden çok giriş nesneleri kabul ediyor mu? Bu, bu durumda, olmak üzere sonlandırmasız bir hatadır.
+- Cmdlet birden çok giriş nesnesini kabul ediyor, ancak başka bir giriş nesnesinde işleme başarılı olabilir mi? Bu durumda, bu Sonlandırıcı olmayan bir hatadır.
 
-- Hatta belirli bir durum yalnızca tek bir giriş nesnesine geçerli olduğu durumlarda birden çok giriş nesne kabul edebilen cmdlet'leri ne sonlandırma ve olmak üzere sonlandırmasız hatalar arasında karar vermeniz gerekir.
+- Birden çok giriş nesnesini kabul edebilecek cmdlet 'ler, belirli bir durum yalnızca tek bir giriş nesnesi için geçerli olduğunda bile Sonlandırıcı ve Sonlandırıcı olmayan hatalar arasında karar almalıdır.
 
-- Cmdlet'leri herhangi bir sayıda giriş nesneleri alabilir ve bir sonlandırma özel durumuyla atamadan önce herhangi bir sayıda başarı veya hata nesneleri gönderin. Alınan giriş nesne sayısını ve gönderilen başarı ve hata nesne sayısı arasında bir ilişki yoktur.
+- Cmdlet 'leri, bir sonlandırma özel durumu oluşturmadan önce herhangi bir sayıda giriş nesnesini alabilir ve herhangi bir sayıda başarılı veya hata nesnesi gönderebilir. Alınan girdi nesnelerinin sayısı ve gönderilen başarı ve hata nesnelerinin sayısı arasında hiçbir ilişki yoktur.
 
-- Yalnızca 0-1 nesneleri giriş ve yalnızca 0-1 oluşturmak kabul edebilen cmdlet'leri nesneler hataları sonlandıran hata olarak kabul et ve sonlandırıcı özel durumlar oluşturmaya çıktı.
+- Yalnızca 0-1 giriş nesnesini kabul edebilecek ve yalnızca 0-1 çıkış nesnesi oluşturan cmdlet 'ler hataları sonlandırma hataları olarak değerlendirilir ve sonlandırma özel durumları oluşturur.
 
-## <a name="reporting-nonterminating-errors"></a>Raporlama olmak üzere Sonlandırmasız hatalar
+## <a name="reporting-nonterminating-errors"></a>Sonlandırıcı olmayan hataları raporlama
 
-Raporlama olmak üzere sonlandırmasız bir hata her zaman içinde cmdlet'in uygulaması yapılmalıdır [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) yöntemi [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi veya [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemi. Bu tür hataları çağırarak raporlanır [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) sırayla hata akışına bir hata kaydı gönderen yöntemi.
+Sonlandırıcı olmayan bir hatanın raporlanması her zaman cmdlet 'inin [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) yöntemi, [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) yöntemi veya [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) yöntemi. Bu tür hatalar, sırasıyla hata akışına bir hata kaydı Gönderen [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) yöntemi çağırarak raporlanır.
 
-## <a name="reporting-terminating-errors"></a>Sonlandıran hata raporlama
+## <a name="reporting-terminating-errors"></a>Raporlama hatalarını bildirme
 
-Sonlandıran hata bildirilen özel durumları atma veya arayarak [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) yöntemi. Cmdlet ayrıca catch ve özel durumlar gibi OutOfMemory yeniden harekete geçirerek, ancak bunlar Windows PowerShell çalışma zamanı bunları da yakalar özel durumlar yeniden harekete geçirileceğini gerekli değildir unutmayın.
+Hataları sonlandırma, özel durumlar oluşturarak veya [System. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) yöntemi çağırarak bildirilir. Cmdlet 'lerin Ayrıca **OutOfMemory**gibi özel durumları yakalayabilir ve yeniden oluşturduklarında, PowerShell çalışma zamanı bunları da yakalayabileceği için bunların özel durumları yeniden oluşturması gerekli değildir.
 
-Ayrıca, belirli sorunlar için kendi özel durumlarınızı durumunuza tanımlayın veya kendi hata kaydı kullanarak mevcut bir özel ek bilgi ekleyebilirsiniz.
+Ayrıca, durumunuza özgü sorunlar için kendi özel durumlarınızı tanımlayabilir veya hata kaydını kullanarak mevcut bir özel duruma ek bilgiler ekleyebilirsiniz.
 
-## <a name="error-records"></a>Hata kaydı
+## <a name="error-records"></a>Hata kayıtları
 
-Windows PowerShell kullanarak bir olmak üzere sonlandırmasız bir hata koşulu tanımlar [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesneleri. Her [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesne, hata kategorisi bilgileri, isteğe bağlı bir hedef nesneyi ve hata durumu hakkında ayrıntılar sağlar.
+PowerShell, [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) nesneleriyle birlikte Sonlandırıcı olmayan bir hata koşulu tanımlar. Her bir nesne hata kategorisi bilgileri, isteğe bağlı bir hedef nesnesi ve hata durumu hakkında ayrıntılar sağlar.
 
 ### <a name="error-identifiers"></a>Hata tanımlayıcıları
 
-Hata tanımlayıcı cmdlet içinde hata koşulu tanımlayan basit bir dizedir. Windows PowerShell Bu tanımlayıcıyı belirli hatalar için yanıt verirken hata veya günlük kaydı hataları, filtreleme, daha sonra kullanılabilir bir tam hata tanımlayıcısını oluşturmak için cmdlet'i tanımlayıcısı veya başka bir kullanıcıya özel etkinlikler ile birleştirir.
+Hata tanımlayıcısı cmdlet içinde hata koşulunu tanımlayan basit bir dizedir.
+PowerShell bu tanımlayıcıyı, daha sonra hata akışları veya günlüğe kaydetme hatalarını filtrelerken, belirli hatalara yanıt vermediğinde veya kullanıcıya özgü diğer etkinliklerle birlikte kullanılabilecek tam bir hata tanımlayıcısı oluşturmak için bir cmdlet tanımlayıcısı ile birleştirir.
 
-Aşağıdaki yönergeler, hata tanımlayıcıları belirtirken gelmelidir.
+Aşağıdaki yönergelerin hata tanımlayıcıları belirtildiğinde izlenmesi gerekir:
 
-- Farklı, yüksek oranda ayrıntılı hata tanımlayıcıları farklı kod yollarını atayın. Çağıran her kod yolu [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) veya [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) kendi hata tanımlayıcısı olmalıdır.
+- Farklı kod yollarına farklı, yüksek oranda özel, hata tanımlayıcıları atayın. [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) veya [System. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) ' i çağıran her kod yolunun kendi hata tanımlayıcısına sahip olması gerekir.
 
-- Hata tanımlayıcıları hem sonlandıran hem de olmak üzere sonlandırmasız hatalar için CLR özel durum türleri için benzersiz olmalıdır.
+- Hata tanımlayıcıları hem Sonlandırıcı hem de Sonlandırıcı olmayan hatalar için ortak dil çalışma zamanı (CLR) özel durum türleri için benzersiz olmalıdır.
 
-- Bir cmdlet veya Windows PowerShell sağlayıcısı sürümleri arasında hata tanımlayıcı semantiği değiştirmeyin. Hata tanımlayıcı semantiği kurulduktan sonra cmdlet'inize yaşam döngüsü boyunca sürekli kalması gerekir.
+- Cmdlet veya PowerShell sağlayıcınızın sürümleri arasındaki bir hata tanımlayıcısının semantiğini değiştirmeyin. Bir hata tanımlayıcısının semantiği oluşturulduktan sonra, cmdlet 'inin yaşam döngüsü boyunca sabit kalmalıdır.
 
-- Sondaki hataları için hata benzersiz tanımlayıcısı için belirli bir CLR özel durum türü kullanın. Özel durum türü değişirse, yeni bir hata tanımlayıcısı kullanın.
+- Hataları sonlandırmak için, belirli bir CLR özel durum türü için benzersiz bir hata tanımlayıcısı kullanın. Özel durum türü değişirse, yeni bir hata tanımlayıcısı kullanın.
 
-- Olmak üzere sonlandırmasız hatalar için belirli bir giriş nesnesi için bir özel hata tanımlayıcısı kullanın.
+- Sonlandırıcı olmayan hatalar için belirli bir giriş nesnesi için belirli bir hata tanımlayıcısı kullanın.
 
-- Metin için raporlanan hata tersely karşılık gelen tanımlayıcısını seçin. Boşluk veya noktalama işareti kullanmayın.
+- Bildirilen hataya karşılık gelen tanımlayıcı için metin seçin. Boşluk veya noktalama işareti kullanmayın.
 
-- Tekrarlanabilir olmayan hata tanımlayıcıları oluşturmaz. Örneğin, bir işlem tanımlayıcısını içeren tanımlayıcılar oluşturmaz. Yalnızca bunlar aynı sorunu yaşayan başka kullanıcılar tarafından görülen tanımlayıcıları karşılık hata tanımlayıcıları yararlıdır.
+- Tekrarlanmamış hata tanımlayıcıları oluşturmamayın. Örneğin, bir işlem tanımlayıcısı içeren tanımlayıcılar oluşturmayın. Hata tanımlayıcıları yalnızca aynı sorunu yaşayan diğer kullanıcılar tarafından görülen tanımlayıcılara karşılık geliyorsa yararlıdır.
 
-### <a name="error-categories"></a>Hata kategorisi
+### <a name="error-categories"></a>Hata kategorileri
 
-Hata kategorileri, son kullanıcı hataları gruplandırmak için kullanılır. Windows PowerShell kategorilerine tanımlar ve cmdlet'lerini ve Windows PowerShell sağlayıcıları aralarında hata kaydı oluşturulurken seçmelisiniz.
+Hata kategorileri Kullanıcı için hataları gruplandırmak için kullanılır. PowerShell bu kategorileri ve cmdlet 'leri tanımlar ve PowerShell sağlayıcılarının hata kaydını oluştururken aralarında seçim yapmanız gerekir.
 
-Kullanılabilir hata kategorilerinin açıklaması için bkz. [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) sabit listesi. Genel olarak, NoError UndefinedError ve mümkün olduğunda genel hata kaçınmanız gerekir.
+Kullanılabilir hata kategorilerinin bir açıklaması için bkz. [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) sabit listesi. Genel olarak, mümkün olduğunda **NOERROR**, **UndefinedError**ve **genericerror** kullanmaktan kaçının.
 
-Kullanıcılar, bunlar ayarladığınızda, kategoriye göre hataları görüntüleyebilirsiniz "`$ErrorView`" için "CategoryView".
+Kullanıcılar kategorili `$ErrorView` **Görünüm**olarak ayarlandığında, kategoriye göre hataları görüntüleyebilir.
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
-[Windows PowerShell cmdlet'leri](./cmdlet-overview.md)
+[Cmdlet 'e genel bakış](./cmdlet-overview.md)
 
-[Cmdlet çıkışı](./types-of-cmdlet-output.md)
+[Cmdlet çıkış türleri](./types-of-cmdlet-output.md)
 
-[Windows PowerShell Kabuk SDK'sı](../windows-powershell-reference.md)
+[Windows PowerShell Başvurusu](../windows-powershell-reference.md)

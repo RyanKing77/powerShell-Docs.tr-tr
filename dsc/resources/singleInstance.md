@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kurulum
+keywords: DSC, PowerShell, yapılandırma, kurulum
 title: Tek örnekli DSC kaynağı yazma (en iyi uygulama)
-ms.openlocfilehash: 9494964b1b13eaa082ad5cbc279b4586bb7211cc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4d9e07c6aaa064f808a03d4252e8d352b82183ec
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076574"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986519"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Tek örnekli DSC kaynağı yazma (en iyi uygulama)
 
->**Not:** Bu konu, yalnızca tek bir örnek bir yapılandırma sağlayan bir DSC kaynağı tanımlamak için en iyi uygulama açıklar. Şu anda, bunu yapmak için yerleşik bir DSC özelliğini yoktur. Bu gelecekte değişebilir.
+>**Not:** Bu konuda, bir yapılandırmada yalnızca tek bir örneğe izin veren bir DSC kaynağı tanımlamak için en iyi yöntem açıklanmaktadır. Şu anda bunu yapmak için yerleşik DSC özelliği yoktur. Bu, gelecekte değişebilir.
 
-Burada bir yapılandırmada birden çok kez kullanılacak bir kaynağa izin vermenin istemediğiniz durumlar vardır. Örneğin, bir önceki uygulaması içinde [xTimeZone](https://github.com/PowerShell/xTimeZone) kaynak, bir yapılandırma çağrı kaynak birden çok kez, her kaynak blok içinde farklı bir ayar için saat dilimini ayarlamak:
+Bir yapılandırmada bir kaynağın birden çok kez kullanılmasına izin vermek istemediğiniz durumlar vardır. Örneğin, [Xtimezone](https://github.com/PowerShell/xTimeZone) kaynağının önceki bir uygulamasında, bir yapılandırma kaynağı birden çok kez çağırabilir ve saat dilimini her kaynak bloğunda farklı bir ayara ayarlar:
 
 ```powershell
 Configuration SetTimeZone
@@ -46,10 +46,10 @@ Configuration SetTimeZone
 }
 ```
 
-DSC kaynak anahtarlarını çalışma şekli nedeniyle budur. Bir kaynak en az bir anahtarı özelliği olması gerekir. Bir kaynak örneği tüm anahtar özelliklerinin değerlerinin bileşimi benzersiz olması durumunda benzersiz olarak kabul edilir. Kendi önceki uygulamasında [xTimeZone](https://github.com/PowerShell/xTimeZone) kaynak olduğu tek özelliği--**saat dilimi**, bir anahtar olması için gerekli. Bu nedenle, yukarıdaki gibi bir yapılandırma derleyin ve uyarı olmadan çalıştırın. Her biri **xTimeZone** kaynak bloklar benzersiz olarak değerlendirilir. Bu, saat dilimi İleri ve Geri Dönüşüm düğüme sürekli olarak uygulanacak yapılandırma neden olur.
+Bunun nedeni, DSC Kaynak anahtarlarının çalışma yoludur. Bir kaynağın en az bir anahtar özelliği olmalıdır. Tüm anahtar özellikleri değerlerinin birleşimi benzersiz ise kaynak örneği benzersiz olarak değerlendirilir. Önceki uygulamada, [Xtimezone](https://github.com/PowerShell/xTimeZone) kaynağında anahtar olması gereken yalnızca bir özellik--**saat dilimi**vardı. Bu nedenle, yukarıdaki gibi bir yapılandırma uyarı vermeden derleyip çalıştırılır. **Xtimezone** kaynak bloklarının her biri benzersiz olarak değerlendirilir. Bu, yapılandırmanın tekrar tekrar, zaman dilimini geriye ve geriye doğru bir şekilde uygulanmasına neden olur.
 
-Kaynak ikinci bir özellik eklemek için bir kez güncelleştirildi yalnızca bir yapılandırma bir hedef düğüm için saat dilimini ayarlayabilirsiniz emin olmak için **IsSingleInstance**, anahtar özelliği hale geldi.
-**IsSingleInstance** tek bir değer için "Evet" kullanarak sınırlı bir **ValueMap**. Kaynak için eski MOF şema şöyleydi:
+Bir yapılandırmanın bir hedef düğümün saat dilimini yalnızca bir kez ayarlayamasından emin olmak için, kaynak, anahtar özelliği olan **IsSingleInstance**ikinci bir özelliğini eklemek üzere güncelleştirildi.
+**Isingleınstance** , **ValueMap**kullanılarak "Yes" tek bir değerle sınırlandı. Kaynak için eski MOF şeması:
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -59,7 +59,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-Kaynak için güncelleştirilmiş MOF Şeması aşağıdaki gibidir:
+Kaynağın güncelleştirilmiş MOF şeması:
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -70,7 +70,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-Kaynak betiği ayrıca yeni bir parametre kullanmak için güncelleştirildi. Eski kaynak betiği şu şekildedir:
+Kaynak betiği de yeni parametreyi kullanacak şekilde güncelleştirildi. Kaynak betiğin nasıl değiştirildiği aşağıda verilmiştir:
 
 ```powershell
 function Get-TargetResource
@@ -102,10 +102,9 @@ function Get-TargetResource
     $returnValue
 }
 
-
 function Set-TargetResource
 {
-    [CmdletBinding(SupportsShouldProcess=$true)]
+    [CmdletBinding()]
     param
     (
         [parameter(Mandatory = $true)]
@@ -122,24 +121,24 @@ function Set-TargetResource
     #Output the result of Get-TargetResource function.
     $CurrentTimeZone = Get-TimeZone
 
-    if($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
+    Write-Verbose -Message "Replace the System Time Zone to $TimeZone"
+    
+    try
     {
-        try
+        if($CurrentTimeZone -ne $TimeZone)
         {
-            if($CurrentTimeZone -ne $TimeZone)
-            {
-                Write-Verbose -Verbose "Setting the TimeZone"
-                Set-TimeZone -TimeZone $TimeZone}
-            else
-            {
-                Write-Verbose -Verbose "TimeZone already set to $TimeZone"
-            }
+            Write-Verbose -Verbose "Setting the TimeZone"
+            Set-TimeZone -TimeZone $TimeZone
         }
-        catch
+        else
         {
-            $ErrorMsg = $_.Exception.Message
-            Write-Verbose -Verbose $ErrorMsg
+            Write-Verbose -Verbose "TimeZone already set to $TimeZone"
         }
+    }
+    catch
+    {
+        $ErrorMsg = $_.Exception.Message
+        Write-Verbose -Verbose $ErrorMsg
     }
 }
 
@@ -203,7 +202,7 @@ Function Set-TimeZone {
 Export-ModuleMember -Function *-TargetResource
 ```
 
-Dikkat **saat dilimi** özellik olup artık bir anahtar. Şimdi, iki kez saat dilimini ayarlamak bir yapılandırma çalışırsa (iki farklı kullanarak **xTimeZone** farklı bloklar **saat dilimi** değerler), yapılandırmayı derlemek çalışılırken bir hata neden olur:
+**TimeZone** özelliğinin artık bir anahtar olmadığına dikkat edin. Artık, bir yapılandırma saat dilimini iki kez ayarlamaya çalışırsa (farklı **saat dilimi** değerleriyle Iki farklı **xtimezone** bloğu kullanarak), yapılandırmayı derlemeye çalışırken bir hata olur:
 
 ```powershell
 Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and

@@ -8,44 +8,44 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
 caps.latest.revision: 13
-ms.openlocfilehash: 2fc73b6ef5a862fafb7a3c8fe3da19ac71bafc05
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19d31f6b619dff23e7e35bb53d2397f4f41eb728
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068547"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986245"
 ---
-# <a name="cmdlet-dynamic-parameters"></a>Cmdlet Dinamik Parametreler
+# <a name="cmdlet-dynamic-parameters"></a>Cmdlet dinamik parametreleri
 
-Cmdlet'leri kullanıcının belirli bir değerin başka bir parametre bağımsız değişkeni olduğunda gibi özel koşullarda parametrelerini tanımlayabilirsiniz. Bu parametreleri çalışma zamanında eklenir ve denir *dinamik parametreleri* çünkü yalnızca ihtiyacınız olduğunda eklenir. Örneğin, yalnızca belirli anahtar parametresi belirtildiğinde, birkaç parametre ekleyen bir cmdlet tasarlayabilirsiniz.
+Cmdlet 'leri, başka bir parametrenin bağımsız değişkeninin belirli bir değer olduğu durumlar gibi özel koşullar altında Kullanıcı tarafından kullanılabilen parametreleri tanımlayabilir. Bu parametreler çalışma zamanına eklenir ve yalnızca gerektiğinde eklendiğinden dinamik parametreler olarak adlandırılır. Örneğin, yalnızca belirli bir anahtar parametresi belirtildiğinde birkaç parametre ekleyen bir cmdlet tasarlayabilirsiniz.
 
 > [!NOTE]
-> Sağlayıcıları ve Windows PowerShell işlevleri dinamik parametreler de tanımlayabilirsiniz.
+> Sağlayıcılar ve PowerShell işlevleri, dinamik parametreleri de tanımlayabilir.
 
-## <a name="dynamic-parameters-in-windows-powershell-cmdlets"></a>Windows PowerShell cmdlet'lerinde dinamik parametreler
+## <a name="dynamic-parameters-in-powershell-cmdlets"></a>PowerShell cmdlet 'lerinde dinamik parametreler
 
-Windows PowerShell sağlayıcısı cmdlet'lerini bazılarını dinamik parametreler kullanır. Örneğin, `Get-Item` ve `Get-ChildItem` cmdlet'leri eklendi bir `CodeSigningCert` zamanında parametre olduğunda `Path` cmdlet parametresi sertifika sağlayıcısı yolunu belirtir. Varsa `Path` cmdlet parametresi, farklı bir sağlayıcı için bir yol belirtir `CodeSigningCert` parametresi kullanılamaz.
+PowerShell, çeşitli sağlayıcı cmdlet 'lerinde dinamik parametreler kullanır. Örneğin `Get-Item` , `Get-ChildItem` ve cmdlet 'leri, **yol** parametresi **sertifika** sağlayıcısı yolunu belirttiğinde çalışma zamanında bir **codesigningcert** parametresi ekler. **Yol** parametresi farklı bir sağlayıcı için bir yol belirtirse, **codesigningcert** parametresi kullanılamaz.
 
-Aşağıdaki örneklerde gösterildiği nasıl `CodeSigningCert` parametresi, çalışma zamanında eklenir, `Get-Item` cmdlet'ini çalıştırın.
+Aşağıdaki örneklerde, çalıştırıldığında **codesigningcert** parametresinin çalışma zamanında `Get-Item` nasıl eklendiği gösterilmektedir.
 
-İlk örnekte, Windows PowerShell çalışma zamanı parametresi eklendi ve cmdlet başarısız olur.
+Bu örnekte, PowerShell çalışma zamanı parametresini ekledi ve cmdlet başarılı olur.
 
 ```powershell
-Get-Item -Path cert:\CurrentUser -codesigningcert
+Get-Item -Path cert:\CurrentUser -CodeSigningCert
 ```
 
-```output
+```Output
 Location   : CurrentUser
 StoreNames : {SmartCardRoot, UserDS, AuthRoot, CA...}
 ```
 
-İkinci örnekte, bir dosya sistemi sürücü belirtilir ve bir hata döndürdü. Hata iletisi gösterir `CodeSigningCert` parametresi bulunamıyor.
+Bu örnekte bir **dosya sistemi** sürücüsü belirtilir ve bir hata döndürülür. Hata iletisi **Codesigningcert** parametresinin bulunamadığını gösterir.
 
 ```powershell
-Get-Item -Path C:\ -codesigningcert
+Get-Item -Path C:\ -CodeSigningCert
 ```
 
-```output
+```Output
 Get-Item : A parameter cannot be found that matches parameter name 'codesigningcert'.
 At line:1 char:37
 +  get-item -path C:\ -codesigningcert <<<<
@@ -54,19 +54,25 @@ At line:1 char:37
     FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetItemCommand
 ```
 
-## <a name="support-for-dynamic-parameters"></a>Dinamik parametreleri için destek
+## <a name="support-for-dynamic-parameters"></a>Dinamik parametreler için destek
 
-Dinamik parametreleri desteklemek için cmdlet kod aşağıdaki öğeleri içermelidir.
+Dinamik parametreleri desteklemek için aşağıdaki öğelerin cmdlet koduna eklenmesi gerekir.
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters) dinamik parametreleri alır, yöntem bu arabirim sağlar.
+### <a name="interface"></a>Arabirim
 
-Örnek:
+[System. Management. Automation. ıdynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters).
+Bu arabirim, dinamik parametreleri alan yöntemi sağlar.
+
+Örneğin:
 
 `public class SendGreetingCommand : Cmdlet, IDynamicParameters`
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) bu yöntem dinamik parametre tanımları içeren nesneyi alır.
+### <a name="method"></a>Yöntem
 
-Örnek:
+[System. Management. Automation. ıdynamicparameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters).
+Bu yöntem, dinamik parametre tanımlarını içeren nesneyi alır.
+
+Örneğin:
 
 ```csharp
  public object GetDynamicParameters()
@@ -81,9 +87,11 @@ Dinamik parametreleri desteklemek için cmdlet kod aşağıdaki öğeleri içerm
 private SendGreetingCommandDynamicParameters context;
 ```
 
-Bu sınıf, dinamik parametre sınıfı eklenecek parametreleri tanımlar. Bu sınıf, her bir parametre ve cmdlet tarafından gerekli olan isteğe bağlı diğer ad ve doğrulama öznitelikleri için bir parametre özniteliği içermelidir.
+### <a name="class"></a>Sınıf
 
-Örnek:
+Eklenecek dinamik parametreleri tanımlayan bir sınıf. Bu sınıf her bir parametre için bir **parametre** özniteliği ve cmdlet için gereken herhangi bir Isteğe bağlı **diğer ad** ve **doğrulama** özniteliği içermelidir.
+
+Örneğin:
 
 ```csharp
 public class SendGreetingCommandDynamicParameters
@@ -99,14 +107,14 @@ public class SendGreetingCommandDynamicParameters
 }
 ```
 
-Dinamik parametreleri destekleyen bir cmdlet tam bir örnek için bkz: [nasıl dinamik parametreleri bildirmek için](./how-to-declare-dynamic-parameters.md).
+Dinamik parametreleri destekleyen bir cmdlet 'inin tamamen bir örneği için bkz. [dinamik parametreleri bildirme](./how-to-declare-dynamic-parameters.md).
 
-## <a name="see-also"></a>Ayrıca bkz:
+## <a name="see-also"></a>Ayrıca bkz.
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
+[System. Management. Automation. ıdynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
+[System. Management. Automation. ıdynamicparameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
 
-[Dinamik parametreleri bildirmek nasıl](./how-to-declare-dynamic-parameters.md)
+[Dinamik parametreleri bildirme](./how-to-declare-dynamic-parameters.md)
 
-[Bir Windows PowerShell cmdlet'i yazma](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell cmdlet 'ı yazma](./writing-a-windows-powershell-cmdlet.md)

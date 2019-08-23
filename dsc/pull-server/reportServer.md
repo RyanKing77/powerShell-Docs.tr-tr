@@ -1,33 +1,33 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, yapılandırma, Kurulum
+keywords: DSC, PowerShell, yapılandırma, kurulum
 title: DSC rapor sunucusu kullanma
-ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1ccd4f96b782b41b7d7c953735cb41b3ba3d2bce
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079243"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986553"
 ---
 # <a name="using-a-dsc-report-server"></a>DSC rapor sunucusu kullanma
 
-Uygulama hedefi: Windows PowerShell 5.0
+Şunun için geçerlidir: Windows PowerShell 5,0
 
 > [!IMPORTANT]
-> Çekme sunucusu (Windows özelliği *DSC hizmet*) ancak desteklenen bir bileşen Windows Server'ın yeni özellikler veya yetenekler sunmak için herhangi bir plan vardır. Geçişi başlıyor önerilir yönetilen istemcilere [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (Windows Server çekme sunucusunda dışında özellikler dahildir) veya topluluk çözümlerden birini listelenen [burada](pullserver.md#community-solutions-for-pull-service).
+> Çekme sunucusu (Windows özelliği *DSC-Service*) Windows Server 'ın desteklenen bir bileşenidir, ancak yeni özellikler veya yetenekler sunmaya yönelik bir plan yoktur. Yönetilen istemcileri [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) geçirmeyi (Windows Server 'Da çekme sunucusunun ötesindeki özellikleri içerir) veya [burada](pullserver.md#community-solutions-for-pull-service)listelenen topluluk çözümlerinin birini kullanmaya başlamanız önerilir.
 >
 > [!NOTE]
-> PowerShell 4. 0 ', bu konuda açıklanan rapor sunucusu kullanılamıyor.
+> Bu konuda açıklanan rapor sunucusu PowerShell 4,0 ' de kullanılamaz.
 
-Bir düğümün yerel Configuration Manager (LCM) yapılandırma durumu hakkında raporlar daha sonra bu verileri almak için sorgulanabilir bir çekme sunucusuna göndermek için yapılandırılabilir. Düğüm denetler ve bir yapılandırma uygulanabilir her zaman bir raporu rapor sunucusuna gönderir. Bu raporlar, sunucu üzerindeki bir veritabanında depolanır ve raporlama web hizmeti çağrılarak alınabilir. Her rapor bunların başarılı olup olmadığını ve hangi yapılandırmaları uygulanan gibi bilgiler içerir, kullanılan kaynaklar, oluşturulan, başlangıç ve bitiş zamanlarını hataları.
+Bir düğümün yerel Configuration Manager (LCM), yapılandırma durumu hakkında raporları bir çekme sunucusuna gönderecek şekilde yapılandırılabilir ve bu da bu verileri almak için sorgulanabilecek. Düğüm bir yapılandırmayı denetleyip uyguladığı her seferinde rapor sunucusuna bir rapor gönderir. Bu raporlar sunucusundaki bir veritabanında depolanır ve Raporlama Web hizmeti çağırarak alınabilir. Her rapor, hangi yapılandırmaların uygulandığı ve başarılı olup olmadığı, kullanılan kaynaklar, oluşturulan tüm hatalar ve başlangıç ve bitiş zamanları gibi bilgileri içerir.
 
-## <a name="configuring-a-node-to-send-reports"></a>Raporları göndermek için bir düğüm yapılandırma
+## <a name="configuring-a-node-to-send-reports"></a>Rapor göndermek için bir düğüm yapılandırma
 
-Raporları kullanarak bir sunucuya göndermek için bir düğüm size bir **ReportServerWeb** düğümün LCM yapılandırmasında engelleyin (LCM yapılandırma hakkında daha fazla bilgi için bkz. [yerel Configuration Manager Yapılandırma](../managing-nodes/metaConfig.md) ). Raporlar, düğümün gönderdiği server (bir SMB paylaşımına raporları gönderilemiyor) web çekme sunucusu olarak ayarlanmalıdır. Bir çekme sunucusu ayarlama hakkında daha fazla bilgi için bkz: [bir DSC web çekme sunucusu ayarlama](pullServer.md). Rapor sunucusu, aynı hizmeti, düğüm yapılandırmaları çeker ve kaynaklarını alan veya farklı bir hizmet olabilir.
+Bir düğüme, düğümün LCM yapılandırmasında **Reportserverweb** bloğu kullanarak rapor göndermesini söylemiş olursunuz (LCM 'yi yapılandırma hakkında daha fazla bilgi için bkz. [yerel Configuration Manager yapılandırma](../managing-nodes/metaConfig.md)). Düğümün rapor gönderdiği sunucu bir Web çekme sunucusu olarak ayarlanmalıdır (bir SMB paylaşımında rapor gönderemezsiniz). Çekme sunucusu kurma hakkında daha fazla bilgi için bkz. [DSC Web çekme sunucusu](pullServer.md)kurma. Rapor sunucusu, düğümün yapılandırma almasını ve kaynakları almasını sağlayan aynı hizmet olabilir veya farklı bir hizmet olabilir.
 
-İçinde **ReportServerWeb** bloğu çekme hizmetini ve sunucu için bilinen bir kayıt anahtarı URL'sini belirtin.
+**Reportserverweb** bloğunda, çekme hizmetinin URL 'sini ve sunucu tarafından bilinen bir kayıt anahtarını belirtirsiniz.
 
-Aşağıdaki yapılandırmayı bir düğüm için çekme yapılandırmaları hizmetten yapılandırır ve bir hizmet farklı bir sunucuda raporlar gönderir.
+Aşağıdaki yapılandırma bir düğümü, bir hizmetten yapılandırmaları çekmek ve farklı bir sunucudaki bir hizmete rapor göndermek için yapılandırır.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ configuration ReportClientConfig
 
         ReportServerWeb CONTOSO-ReportSrv
         {
-            ServerURL               = 'http://CONTOSO-REPORT:8080/PSDSCReportServer.svc'
+            ServerURL               = 'http://CONTOSO-REPORT:8080/PSDSCPullServer.svc'
             RegistrationKey         = 'ba39daaa-96c5-4f2f-9149-f95c46460faa'
             AllowUnsecureConnection = $true
         }
@@ -61,7 +61,7 @@ configuration ReportClientConfig
 ReportClientConfig
 ```
 
-Aşağıdaki yapılandırma, bir düğüm yapılandırmaları, kaynaklar ve raporlama için tek bir sunucu kullanmak için yapılandırır.
+Aşağıdaki yapılandırma, bir düğümü yapılandırmalar, kaynaklar ve raporlama için tek bir sunucu kullanacak şekilde yapılandırır.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -94,16 +94,16 @@ PullClientConfig
 ```
 
 > [!NOTE]
-> Web hizmeti, bir çekme sunucusu ayarladığınızda istediğiniz adı verebilirsiniz ancak **ServerURL** özelliği, hizmet adı eşleşmelidir.
+> Web hizmetini bir çekme sunucusu ayarlarken istediğiniz her şey olarak adlandırabilirsiniz, ancak **ServerURL** özelliğinin hizmet adıyla eşleşmesi gerekir.
 
-## <a name="getting-report-data"></a>Rapor verilerini alma
+## <a name="getting-report-data"></a>Rapor verileri alınıyor
 
-Çekme sunucusuna gönderilen raporlar, sunucu üzerinde bir veritabanına girilir. Raporları, web hizmetine çağrı aracılığıyla kullanılabilir. Belirli bir düğümün raporları almak için aşağıdaki biçimde rapor web hizmeti için bir HTTP isteği gönder: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
-Burada `MyNodeAgentId` raporları almak istediğiniz düğümün Agentıd olduğu. Çağırarak bir düğüm için Agentıd alabilirsiniz [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) bu düğümde.
+Çekme sunucusuna gönderilen raporlar sunucusundaki bir veritabanına girilir. Raporlar, Web hizmetine yapılan çağrılar aracılığıyla kullanılabilir. Belirli bir düğüme ait raporları almak için, aşağıdaki biçimde rapor Web hizmetine bir HTTP isteği gönderin:`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+Burada `MyNodeAgentId` , raporları almak istediğiniz düğümün olan. Bu düğümde [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) ' i çağırarak bir düğüm için bir düğüm Için sahip kimliği alabilirsiniz.
 
-Raporları, bir dizi JSON nesnesi döndürülür.
+Raporlar, JSON nesneleri dizisi olarak döndürülür.
 
-Aşağıdaki komut dosyasını raporlar üzerinde çalıştığı düğüm için döndürür:
+Aşağıdaki betik, üzerinde çalıştığı düğümün raporlarını döndürür:
 
 ```powershell
 function GetReport
@@ -123,9 +123,9 @@ function GetReport
 }
 ```
 
-## <a name="viewing-report-data"></a>Rapor verileri görüntüleme
+## <a name="viewing-report-data"></a>Rapor verilerini görüntüleme
 
-Sonucu için bir değişken ayarlarsanız **GetReport** işlevi, tek tek alanları döndürülen dizinin bir öğedeki görüntüleyebilirsiniz:
+**Getreport** işlevinin sonucuna bir değişken ayarlarsanız, tek tek alanları döndürülen dizinin bir öğesi içinde görüntüleyebilirsiniz:
 
 ```powershell
 $reports = GetReport
@@ -166,14 +166,14 @@ StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Ad
 AdditionalData       : {}
 ```
 
-Varsayılan olarak, raporları göre sıralanır **JobId**. En son rapor almak için raporları göre azalan düzende sıralayabilir **StartTime** özelliği ve dizinin get ilk öğesi:
+Varsayılan olarak, raporlar iş **kimliği**' ne göre sıralanır. En son raporu almak için raporları azalan **StartTime** özelliğine göre sıralayabilir ve sonra dizinin ilk öğesini alabilirsiniz:
 
 ```powershell
 $reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
-Dikkat **StatusData** birçok özellik içeren bir nesne bir özelliktir. Raporlama verilerini çoğunu olduğu budur. Tek tek alanlarda bakalım **StatusData** özelliği için en son Rapor:
+**Statusdata** özelliğinin, çok sayıda özelliği olan bir nesne olduğuna dikkat edin. Bu, raporlama verilerinin büyük olduğu yerdir. En son rapor için **Statusdata** özelliğinin ayrı alanlarını inceleyelim:
 
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
@@ -213,7 +213,7 @@ Locale                     : en-US
 Mode                       : Pull
 ```
 
-Yanı sıra, bu iki kaynağın en son yapılandırmayı adlı ve bunları birinin istenen durumda olduğu ve bunlardan biri değildi gösterir. Yalnızca bir daha okunabilir çıktısını almak **ResourcesNotInDesiredState** özelliği:
+Diğer şeyler arasında bu, en son yapılandırmanın iki kaynak olarak adlandırıldığını ve bunlardan birinin istenen durumda olduğunu ve bunlardan birinin ne olduğunu gösterir. Yalnızca **Resourcesnotındesıredstate** özelliğinden daha okunabilir bir çıktı alabilirsiniz:
 
 ```powershell
 $statusData.ResourcesInDesiredState
@@ -233,12 +233,12 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-Bu örnek rapor verilerle yapabilecekleriniz hakkında fikir vermek için yöneliktir unutmayın. PowerShell'de, JSON ile çalışma hakkında giriş için bkz [JSON ve PowerShell ile yürütmeyi](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
+Bu örneklerin rapor verileriyle neler yapabileceğinizi gösteren bir fikir sunyacağını unutmayın. PowerShell 'de JSON ile çalışmaya giriş için bkz. [JSON ve PowerShell Ile yürütme](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[Yerel Configuration Manager'ı yapılandırma](../managing-nodes/metaConfig.md)
+[Yerel Configuration Manager yapılandırma](../managing-nodes/metaConfig.md)
 
-[Bir DSC web çekme sunucusu ayarlama](pullServer.md)
+[DSC Web çekme sunucusu ayarlama](pullServer.md)
 
 [Yapılandırma adlarını kullanarak çekme istemcisi ayarlama](pullClientConfigNames.md)
