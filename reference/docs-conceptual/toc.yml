@@ -52,6 +52,24 @@
       href: learn/writing-portable-modules.md
     - name: PowerShell uzaktan iletişim
       items:
+        - name: Yeterli Yönetim (JEA)
+          items:
+            - name: Genel bakış
+              href: learn/remoting/jea/overview.md
+            - name: Önkoşullar
+              href: learn/remoting/jea/prerequisites.md
+            - name: Rol İşlevleri
+              href: learn/remoting/jea/role-capabilities.md
+            - name: Oturum Yapılandırmaları
+              href: learn/remoting/jea/session-configurations.md
+            - name: JEA’yı kaydetme
+              href: learn/remoting/jea/register-jea.md
+            - name: JEA’yı kullanma
+              href: learn/remoting/jea/using-jea.md
+            - name: Güvenlik Konuları
+              href: learn/remoting/jea/security-considerations.md
+            - name: JEA’da Denetim ve Rapor
+              href: learn/remoting/jea/audit-and-report.md
         - name: Uzak komut çalıştırma
           href: learn/remoting/running-remote-commands.md
         - name: SSH üzerinden PowerShell uzaktan iletişimi
