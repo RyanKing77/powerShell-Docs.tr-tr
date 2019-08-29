@@ -1,53 +1,51 @@
 ---
-title: Data Store erişmek için bir Cmdlet oluşturma | Microsoft Docs
+title: Bir Veri Deposuna Erişmek İçin Cmdlet Oluşturma
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
-caps.latest.revision: 8
-ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 7acccbd48dcfb654b11e448a1f24835ad3668fae
+ms.sourcegitcommit: a02ccbeaa17c0e513d6c4a21b877c88ac7725458
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733953"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104459"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Bir Veri Deposuna Erişmek İçin Cmdlet Oluşturma
 
-Bu bölümde, bir Windows PowerShell sağlayıcısı yoluyla depolanan verilere erişen bir cmdlet oluşturmayı açıklar. Bu tür bir cmdlet Windows PowerShell çalışma zamanı Windows PowerShell sağlayıcısı altyapısını kullanır ve bu nedenle, cmdlet sınıfı öğesinden türetilmelidir [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) temel sınıfı.
+Bu bölümde, bir Windows PowerShell sağlayıcısı aracılığıyla depolanan verilere erişen bir cmdlet 'in nasıl oluşturulacağı açıklanmaktadır. Bu tür bir cmdlet, Windows PowerShell çalışma zamanının Windows PowerShell sağlayıcısı altyapısını kullanır ve bu nedenle, cmdlet sınıfı [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) temel sınıfından türetilmelidir.
 
-Burada açıklanan seçin Str cmdlet'i, bulun ve dizeleri bir dosya veya nesne seçin. Dizeyi tanımlamak için kullanılan desenleri ile açıkça belirtilmesi `Path` parametre cmdlet veya örtük olarak aracılığıyla `Script` parametresi.
+Burada açıklanan Select-Str cmdlet 'i bir dosya veya nesne içindeki dizeleri bulabilir ve seçebilir. Dizeyi tanımlamak için kullanılan desenler, cmdlet 'in `Path` parametresi aracılığıyla açıkça veya `Script` parametresi aracılığıyla örtük olarak belirtilebilir.
 
-Cmdlet, türetilen herhangi bir Windows PowerShell sağlayıcısı kullanmak üzere tasarlanmış [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Örneğin, cmdlet, dosya sistemi sağlayıcısı veya Windows PowerShell tarafından sağlanan değişken sağlayıcı belirtebilirsiniz. Daha fazla bilgi aboutWindows için PowerShell sağlayıcıları, bkz: [tasarlama bilgisayarınızı Windows PowerShell sağlayıcısındaki](../prog-guide/designing-your-windows-powershell-provider.md).
+Cmdlet 'i, [System. Management. Automation. Provider. ıtentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)'dan türetilen herhangi bir Windows PowerShell sağlayıcısını kullanmak için tasarlanmıştır. Örneğin cmdlet 'i, Windows PowerShell tarafından sunulan dosya sistemi sağlayıcısını veya değişken sağlayıcısını belirtebilir. Windows PowerShell sağlayıcılarını Aboutmore hakkında daha fazla bilgi için bkz. [Windows PowerShell sağlayıcınızı tasarlama](../prog-guide/designing-your-windows-powershell-provider.md).
 
-## <a name="defining-the-cmdlet-class"></a>Cmdlet'i sınıf tanımlama
+## <a name="defining-the-cmdlet-class"></a>Cmdlet sınıfını tanımlama
 
-İlk adımda cmdlet'i oluşturma her zaman cmdlet adlandırma ve cmdlet uygulayan .NET sınıf bildirme. Bu cmdlet, burada seçilen fiil adı "Seçin", bu nedenle belirli dizeleri tanımlanan algılar [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) sınıfı. Cmdlet dizeleri karıncaların isim adı "Dizesi" kullanılır. Cmdlet fiil ve isim adı cmdlet'i sınıfının adını yansıtılır bildiriminde unutmayın. Onaylanan cmdlet fiilleri hakkında daha fazla bilgi için bkz: [Cmdlet fiili adları](./approved-verbs-for-windows-powershell-commands.md).
+Cmdlet oluşturma 'nın ilk adımı her zaman cmdlet 'i adlandırarak ve cmdlet 'i uygulayan .NET sınıfını bildiriyor. Bu cmdlet belirli dizeleri algılar, bu nedenle burada seçilen fiil adı [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) sınıfı tarafından tanımlanan "Select" olur. "Str" ad adı, cmdlet dizeler üzerinde hareket ettiğinden kullanılır. Aşağıdaki bildirimde, cmdlet fiilinin ve ad adının cmdlet sınıfının adında yansıtıldığını unutmayın. Onaylanan cmdlet fiilleri hakkında daha fazla bilgi için bkz. [cmdlet fiil adları](./approved-verbs-for-windows-powershell-commands.md).
 
-Bu cmdlet için .NET sınıf öğesinden türetilmelidir [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) temel sınıfı, çünkü Windows PowerShell sağlayıcısını kullanıma sunmak için Windows PowerShell çalışma zamanı tarafından gereken desteği sağlar Altyapı. Bu cmdlet ayrıca yapar Not gibi .NET Framework normal ifade sınıfları, kullanın [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+Bu cmdlet 'in .NET sınıfı, Windows PowerShell sağlayıcısı altyapısını kullanıma sunmak için Windows PowerShell çalışma zamanı için gereken desteği sağladığından [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) temel sınıfından türetilmelidir. Bu cmdlet 'in Ayrıca [System. Text. RegularExpressions. Regex](/dotnet/api/System.Text.RegularExpressions.Regex)gibi .NET Framework normal ifade sınıflarını da kullanabileceğini unutmayın.
 
-Bu seçim Str cmdlet için sınıf tanımının kodudur.
+Aşağıdaki kod, bu Select-Str cmdlet 'inin sınıf tanımıdır.
 
 ```csharp
 [Cmdlet(VerbsCommon.Select, "Str", DefaultParameterSetName="PatternParameterSet")]
 public class SelectStringCommand : PSCmdlet
 ```
 
-Bu cmdlet varsayılan parametre ekleyerek ayarlayın tanımlar `DefaultParameterSetName` anahtar sözcüğü bir sınıf bildirimine özniteliği. Varsayılan parametre kümesi `PatternParameterSet` kullanıldığında `Script` parametresi belirtilmedi. Bu parametre kümesi hakkında daha fazla bilgi için bkz. `Pattern` ve `Script` aşağıdaki bölümdeki parametresi tartışma.
+Bu cmdlet, sınıf bildirimine `DefaultParameterSetName` Attribute anahtar sözcüğünü ekleyerek varsayılan bir parametre kümesini tanımlar. Varsayılan parametre kümesi `PatternParameterSet` `Script` parametresi belirtilmediğinde kullanılır. Bu parametre kümesi hakkında daha fazla bilgi için aşağıdaki bölümdeki `Pattern` ve `Script` parametresi tartışmasına bakın.
 
 ## <a name="defining-parameters-for-data-access"></a>Veri erişimi için parametreleri tanımlama
 
-Bu cmdlet, erişim ve depolanan verileri incelemek kullanıcının olanak tanıyan çeşitli parametreleri tanımlar. Bu parametreler içeren bir `Path` veri deposunun konumu belirten bir parametre bir `Pattern` parametresi aramada kullanılacak desenini belirtir ve arama nasıl gerçekleştirildiğini destekleyen çeşitli diğer parametreleri.
+Bu cmdlet, kullanıcının depolanan verilere erişmesine ve bunları incelemesine izin veren çeşitli parametreleri tanımlar. Bu parametreler, veri `Path` deposunun konumunu, aramada kullanılacak kalıbı belirten bir `Pattern` parametreyi ve aramanın nasıl yapıldığını destekleyen diğer birkaç parametreyi içerir.
 
 > [!NOTE]
-> Parametreleri tanımlama temelleri hakkında daha fazla bilgi için bkz: [parametreler, işlem komut satırı girişi ekleme](./adding-parameters-that-process-command-line-input.md).
+> Parametreleri tanımlamanın temelleri hakkında daha fazla bilgi için, bkz. [komut satırı girişini Işleyen parametreler ekleme](./adding-parameters-that-process-command-line-input.md).
 
-### <a name="declaring-the-path-parameter"></a>Path parametresi bildirme
+### <a name="declaring-the-path-parameter"></a>Yol parametresini bildirme
 
-Veri deposu bulmak için bu cmdlet bir Windows PowerShell yolu veri deposuna erişim için tasarlanan Windows PowerShell sağlayıcısı tanımlamak için kullanmanız gerekir. Bu nedenle, tanımladığı bir `Path` sağlayıcının konumu belirtmek için türü dize dizisi parametresi.
+Veri deposunun yerini bulmak için, bu cmdlet 'in veri deposuna erişmek için tasarlanan Windows PowerShell sağlayıcısını belirlemek için bir Windows PowerShell yolu kullanması gerekir. Bu nedenle, sağlayıcının konumunu `Path` belirtmek için String dizisi türünde bir parametre tanımlar.
 
 ```csharp
 [Parameter(
@@ -68,15 +66,15 @@ public string[] Path
 private string[] paths;
 ```
 
-Bu parametre için iki farklı parametre kümesine ait olan ve bir diğer ad olduğunu unutmayın.
+Bu parametrenin iki farklı parametre kümesine ait olduğunu ve bir diğer adı olduğunu unutmayın.
 
-İki [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) öznitelikleri bildirme `Path` parametresi ait `ScriptParameterSet` ve `PatternParameterSet`. Parametre kümeleri hakkında daha fazla bilgi için bkz. [bir cmdlet'e parametre ayarlar ekleme](./adding-parameter-sets-to-a-cmdlet.md).
+İki [System. Management. Automation. ParameterAttribute özniteliği](/dotnet/api/System.Management.Automation.ParameterAttribute) `Path` `ScriptParameterSet` parametresinin `PatternParameterSet`öğesine ve öğesine ait olduğunu bildirir. Parametre kümeleri hakkında daha fazla bilgi için bkz. [bir cmdlet 'e parametre kümeleri ekleme](./adding-parameter-sets-to-a-cmdlet.md).
 
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) öznitelik bildirir bir `PSPath` için diğer ad `Path` parametresi. Bu diğer ad bildirmek için Windows PowerShell sağlayıcıları erişen diğer cmdlet'ler ile tutarlılık önemle önerilir. Daha fazla bilgi aboutWindows için PowerShell yolları, bkz: "PowerShell yolu kavramlar" [nasıl Windows PowerShell çalışır](/previous-versions//ms714658(v=vs.85)).
+[System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) özniteliği `Path` parametresi için bir `PSPath` diğer ad bildirir. Bu diğer adı bildirmek, Windows PowerShell sağlayıcılarına erişen diğer cmdlet 'lerle tutarlılık için önerilir. Windows PowerShell yollarını Aboutmore hakkında daha fazla bilgi için [Windows PowerShell 'In nasıl çalıştığı konusunda](/previous-versions//ms714658(v=vs.85))"PowerShell yol kavramları" başlığına bakın.
 
-### <a name="declaring-the-pattern-parameter"></a>Desen parametresini bildirme
+### <a name="declaring-the-pattern-parameter"></a>Model parametresini bildirme
 
-Aranacak desenleri belirtmek için bu cmdlet'i bildirir. bir `Pattern` , dizelerden oluşan bir dizi parametre. Herhangi bir kalıpla veri deposunda bulunduğunda, pozitif bir sonuç döndürülür. Bu düzenleri, derlenmiş normal ifadeler bir dizi veya joker karakter düzenleri değişmez değer aramaları için kullanılan bir dizi içine derlenebilir unutmayın.
+Aranacak desenleri belirtmek için, bu cmdlet bir dize dizisi olan bir `Pattern` parametre bildirir. Veri deposunda desenlerden herhangi biri bulunduğunda pozitif bir sonuç döndürülür. Bu desenlerin derlenmiş normal ifadeler dizisine veya sabit değer aramaları için kullanılan joker karakter desenlerine bir diziye derleneceğini unutmayın.
 
 ```csharp
 [Parameter(
@@ -93,13 +91,13 @@ private Regex[] regexPattern;
 private WildcardPattern[] wildcardPattern;
 ```
 
-Bu parametre belirtildiğinde cmdlet varsayılan parametre kümesi kullanır. `PatternParameterSet`. Bu durumda, dizeleri seçmek için burada belirtilen desenleri cmdlet'ini kullanır. Buna karşılık, `Script` parametresi de kullanılabilen desenleri içeren bir betik sağlamak için. `Script` Ve `Pattern` parametreleri tanımlayan iki ayrı parametre kümesi için karşılıklı olarak birbirini dışlar.
+Bu parametre belirtildiğinde, cmdlet varsayılan parametre kümesini `PatternParameterSet`kullanır. Bu durumda, cmdlet dizeleri seçmek için burada belirtilen desenleri kullanır. Buna karşılık `Script` , parametresi desenleri içeren bir komut dosyası sağlamak için de kullanılabilir. `Script` Ve`Pattern` parametreleri iki ayrı parametre kümesi tanımlar, bu nedenle birbirini dışlarlar.
 
-### <a name="declaring-search-support-parameters"></a>Arama desteği parametreleri bildirme
+### <a name="declaring-search-support-parameters"></a>Arama desteği parametrelerini bildirme
 
-Bu cmdlet, cmdlet arama özellikleri değiştirmek için kullanılan aşağıdaki Destek parametreleri tanımlar.
+Bu cmdlet, cmdlet 'in arama yeteneklerini değiştirmek için kullanılabilecek aşağıdaki destek parametrelerini tanımlar.
 
-`Script` Parametresi bir alternatif arama mekanizması cmdlet'i için sağlamak için kullanılan bir betik bloğu belirtir. Betik eşleştirmek için kullanılan desenleri içerir ve dönüş bir [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) nesne. Bu parametre tanımlayan benzersiz bir parametre olduğunu unutmayın `ScriptParameterSet` parametre kümesi. Windows PowerShell çalışma zamanı bu parametreyi gördüğünde ait parametreleri kullanır. `ScriptParameterSet` parametre kümesi.
+`Script` Parametresi, cmdlet için alternatif bir arama mekanizması sağlamak üzere kullanılabilecek bir betik bloğu belirtir. Betik, eşleştirmek için kullanılan desenleri içermeli ve bir [System. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) nesnesi döndürüyor. Bu parametrenin Ayrıca `ScriptParameterSet` parametre kümesini tanımlayan benzersiz parametre olduğunu unutmayın. Windows PowerShell çalışma zamanı bu parametreyi gördüğünde yalnızca `ScriptParameterSet` parametre kümesine ait parametreleri kullanır.
 
 ```csharp
 [Parameter(
@@ -114,7 +112,7 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-`SimpleMatch` Parametredir cmdlet bunlar verdiği düzenlerine açıkça uygun olup olmadığını belirten bir anahtar. Ne zaman, kullanıcının belirttiği komut satırı parametresi (`true`), bunlar verdiği desenleri cmdlet'ini kullanır. Parametre belirtilmezse, (`false`), normal ifadeler cmdlet'ini kullanır. Bu parametre için varsayılan değer `false`.
+`SimpleMatch` Parametresi, cmdlet 'in sağlanan desenlerle açıkça eşleşip eşleşmeyeceğini belirten bir switch parametresidir. Kullanıcı parametresini komut satırında (`true`) belirttiğinde, cmdlet, sağlanan desenleri kullanır. Parametresi belirtilmemişse (`false`), cmdlet normal ifadeler kullanır. Bu parametre `false`için varsayılan değer.
 
 ```csharp
 [Parameter]
@@ -126,7 +124,7 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-`CaseSensitive` Parametredir büyük küçük harfe duyarlı bir arama yapılıp yapılmayacağını belirten bir anahtar. Ne zaman, kullanıcının belirttiği komut satırı parametresi (`true`), cmdlet için büyük harf denetler ve küçük karşılaştırılırken karakter desen. Parametre belirtilmezse, (`false`), cmdlet büyük ve küçük harfler arasında ayrım yapmaz. Örneğin "MyFile" ve "myfile" her ikisi de pozitif isabet sayısı döndürülür. Bu parametre için varsayılan değer `false`.
+`CaseSensitive` Parametresi, büyük/küçük harfe duyarlı aramanın gerçekleştirilip gerçekleştirilmediğini belirten bir switch parametresidir. Kullanıcı parametresini komut satırında (`true`) belirttiğinde, cmdlet, desenleri karşılaştırırken büyük ve küçük harfli karakterleri denetler. Parametresi belirtilmemişse (`false`), cmdlet büyük harf ve küçük harf ayrımı yapmaz. Örneğin, "dosyam" ve "dosyam" her ikisi de pozitif isabet olarak döndürülür. Bu parametre `false`için varsayılan değer.
 
 ```csharp
 [Parameter]
@@ -138,7 +136,7 @@ public SwitchParameter CaseSensitive
 private bool caseSensitive;
 ```
 
-`Exclude` Ve `Include` açıkça dışında tutulan veya aramaya dahil öğeleri parametreleri tanımlayın. Varsayılan olarak, cmdlet, veri deposunda tüm öğeleri arar. Ancak, cmdlet tarafından gerçekleştirilen arama sınırlamak için bu parametreleri açıkça aramaya dahil edilecek öğeleri belirtmek için kullanılabilir veya atlanmış.
+`Exclude` Ve`Include` parametreleri, aramanın açıkça dışlandığı veya aramadan dahil edilen öğeleri belirler. Varsayılan olarak, cmdlet veri deposundaki tüm öğeleri arar. Bununla birlikte, cmdlet tarafından gerçekleştirilen aramayı sınırlamak için bu parametreler, aramaya dahil edilecek veya atlanacaktır öğeleri açıkça belirtmek için kullanılabilir.
 
 ```csharp
 [Parameter]
@@ -175,15 +173,15 @@ internal string[] includeStrings = null;
 internal WildcardPattern[] include = null;
 ```
 
-### <a name="declaring-parameter-sets"></a>Parametre kümeleri bildirme
+### <a name="declaring-parameter-sets"></a>Parametre kümelerini bildirme
 
-Bu cmdlet, iki parametre kümesi kullanır (`ScriptParameterSet` ve `PatternParameterSet`, varsayılan değerdir) olarak kullanılan veri erişimi, iki parametre kümesi adları. `PatternParameterSet` Varsayılan parametre kümesi ve kullanıldığında `Pattern` parametre belirtildi. `ScriptParameterSet` Alternatif arama bir mekanizma aracılığıyla kullanıcının belirttiği kullanıldığında `Script` parametresi. Parametre kümeleri hakkında daha fazla bilgi için bkz. [bir cmdlet'e parametre ayarlar ekleme](./adding-parameter-sets-to-a-cmdlet.md).
+Bu cmdlet, veri erişiminde kullanılan iki`ScriptParameterSet` parametre `PatternParameterSet`kümesinin adları olarak iki parametre kümesi (ve varsayılan olan) kullanır. `PatternParameterSet`Varsayılan parametre kümesidir ve `Pattern` parametresi belirtildiğinde kullanılır. `ScriptParameterSet`Kullanıcı `Script` parametresi aracılığıyla alternatif bir arama mekanizması belirttiğinde kullanılır. Parametre kümeleri hakkında daha fazla bilgi için bkz. [bir cmdlet 'e parametre kümeleri ekleme](./adding-parameter-sets-to-a-cmdlet.md).
 
-## <a name="overriding-input-processing-methods"></a>Geçersiz kılma yöntemleri işleme giriş
+## <a name="overriding-input-processing-methods"></a>Giriş Işleme yöntemlerini geçersiz kılma
 
-Cmdlet'leri geçersiz kılması gerekir bir veya daha fazla işleme için yöntemleri giriş [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) sınıfı. Giriş işleme yöntemleri hakkında daha fazla bilgi için bkz. [oluşturma bilgisayarınızı ilk Cmdlet](./creating-a-cmdlet-without-parameters.md).
+Cmdlet 'ler [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) sınıfı için bir veya daha fazla giriş işleme yöntemlerinden birini geçersiz kılmalıdır. Giriş işleme yöntemleri hakkında daha fazla bilgi için, bkz. [Ilk cmdlet dosyanızı oluşturma](./creating-a-cmdlet-without-parameters.md).
 
-Bu cmdlet geçersiz kılmalar [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) derlenmiş normal ifadeler başlatma sırasında bir dizi oluşturmak için yöntemi. Bu basit eşleştirme kullanmayan arama sırasında performansı artırır.
+Bu cmdlet, başlangıçtaki bir derlenmiş normal ifadeler dizisi oluşturmak için [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) yöntemini geçersiz kılar. Bu, basit eşleştirme kullanmayan aramalar sırasında performansı artırır.
 
 ```csharp
 protected override void BeginProcessing()
@@ -262,7 +260,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-Bu cmdlet ayrıca geçersiz kılar [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) komut satırında kullanıcının yaptığı dize seçimleri işlemek için yöntemi. Özel bir nesne biçiminde dize seçim sonuçlarının, özel bir çağırarak Yazar **MatchString** yöntemi.
+Bu cmdlet Ayrıca, kullanıcının komut satırında yaptığı dize seçimlerini işlemek için [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metodunu geçersiz kılar. Bir özel **matchString** yöntemi çağırarak, dize seçiminin sonuçlarını özel bir nesne biçiminde yazar.
 
 ```csharp
 protected override void ProcessRecord()
@@ -371,15 +369,15 @@ protected override void ProcessRecord()
 }// End of protected override void ProcessRecord().
 ```
 
-## <a name="accessing-content"></a>İçerik erişme
+## <a name="accessing-content"></a>Içeriğe erişme
 
-Cmdlet'inize verilere erişebilmesi için Windows PowerShell yoluyla belirtilen sağlayıcı açmanız gerekir. [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) nesne sağlayıcıya erişim için kullanılan çalışma için while [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) özelliği cmdlet, sağlayıcı açmak için kullanılır. İçeriğe erişimi alınmasını tarafından sağlanan [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) sağlayıcısı nesne açılır.
+Cmdlet 'nizin, verilere erişebilmeleri için Windows PowerShell yolu tarafından belirtilen sağlayıcıyı açması gerekir. Çalışma için [System. Management. Automation. SessionState](/dotnet/api/System.Management.Automation.SessionState) nesnesi sağlayıcıya erişim için kullanılır, ancak cmdlet 'in [System. Management. Automation. pscmdlet. ınvokeprovider *](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) özelliği sağlayıcıyı açmak için kullanılır. İçeriğe erişim, belirtilen sağlayıcı için [System. Management. Automation. Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) nesnesinin alınması yoluyla sağlanır.
 
-Bu örnek seçin Str cmdlet'ini kullanır [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) tarama için içerik kullanıma sunmak için özellik. Ardından çağırabilirsiniz [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) yöntemini gerekli Windows PowerShell yolu.
+Bu örnek Select-Str cmdlet 'i, taramanın içeriğini göstermek için [System. Management. Automation. Providerintrinsics. Content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) özelliğini kullanır. Daha sonra, gerekli Windows PowerShell yolunu geçirerek [System. Management. Automation. Contentcmdletproviderintrinsics. GetReader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) metodunu çağırabilir.
 
 ## <a name="code-sample"></a>Kod örneği
 
-Aşağıdaki kod bu sürümü bu seçin Str cmdlet uygulamasını gösterir. Bu kod cmdlet'i sınıf, cmdlet tarafından kullanılan özel yöntemleri ve cmdlet kaydetmek için kullanılan Windows PowerShell ek bileşenini kod içerdiğini unutmayın. Cmdlet kaydetme hakkında daha fazla bilgi için bkz. [Cmdlet oluşturmaya](#Defining-the-Cmdlet-Class).
+Aşağıdaki kod, bu Select-Str cmdlet 'inin bu sürümünün uygulamasını gösterir. Bu kodun cmdlet sınıfını, cmdlet tarafından kullanılan özel yöntemleri ve cmdlet 'i kaydetmek için kullanılan Windows PowerShell ek bileşeni kodunu içerdiğini unutmayın. Cmdlet 'i kaydetme hakkında daha fazla bilgi için bkz. [cmdlet oluşturma](#defining-the-cmdlet-class).
 
 ```csharp
 //
@@ -1088,21 +1086,21 @@ namespace Microsoft.Samples.PowerShell.Commands
 } //namespace Microsoft.Samples.PowerShell.Commands;
 ```
 
-## <a name="building-the-cmdlet"></a>Cmdlet oluşturma
+## <a name="building-the-cmdlet"></a>Cmdlet 'ı oluşturma
 
-Bir cmdlet uyguladıktan sonra Windows PowerShell ile bir Windows PowerShell ek bileşeni kaydetmelisiniz. Cmdlet'leri kaydetme hakkında daha fazla bilgi için bkz. [kaydetme cmdlet'leri ve sağlayıcıları uygulamalarını barındırmak için nasıl](/previous-versions//ms714644(v=vs.85)).
+Bir cmdlet uygulandıktan sonra, Windows PowerShell ek bileşeni aracılığıyla Windows PowerShell ile kaydetmeniz gerekir. Cmdlet 'leri kaydetme hakkında daha fazla bilgi için bkz. [cmdlet 'leri, sağlayıcıları ve ana bilgisayar uygulamalarını kaydetme](/previous-versions//ms714644(v=vs.85)).
 
-## <a name="testing-the-cmdlet"></a>Sınama cmdlet'i
+## <a name="testing-the-cmdlet"></a>Cmdlet 'ı test etme
 
-Windows PowerShell ile cmdlet'ini kaydedildi, komut satırında çalıştırarak test edebilirsiniz. Aşağıdaki yordam, örnek seçin Str cmdlet test etmek için kullanılabilir.
+Cmdlet 'unuz Windows PowerShell ile kaydettirilirse, komut satırında çalıştırarak test edebilirsiniz. Örnek Select-Str cmdlet 'ini test etmek için aşağıdaki yordam kullanılabilir.
 
-1. Windows PowerShell'i başlatın ve ".NET" ifadesiyle satırları oluşumlarını notları dosyada arayın. Yol birden fazla sözcük oluşuyorsa yolun adını tırnak gerekli olduğunu unutmayın.
+1. Windows PowerShell 'i başlatın ve Not dosyasını ".NET" ifadesiyle satır oluşumları için arayın. Yolun adı etrafında tırnak işaretlerinin yalnızca, yol birden fazla sözcükten oluşuyorsa gerekli olduğunu unutmayın.
 
     ```powershell
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
     ```
 
-    Aşağıdaki çıktı görünür.
+    Aşağıdaki çıktı görüntülenir.
 
     ```output
     IgnoreCase   : True
@@ -1117,13 +1115,13 @@ Windows PowerShell ile cmdlet'ini kaydedildi, komut satırında çalıştırarak
     Pattern      : .NET
     ```
 
-2. Herhangi bir metin tarafından izlenen "içinde" sözcüğünü içeren satırları oluşumlarını notları dosyada arayın. `SimpleMatch` Parametrenin varsayılan değerini kullanarak `false`. Arama büyük/küçük harfe duyarsızdır çünkü `CaseSensitive` parametrenin ayarlanmış `false`.
+2. Notlar dosyasında, "Over" kelimesiyle ve ardından başka bir metinle birlikte satır oluşumları için arama yapın. `SimpleMatch` Parametresi varsayılan değerini kullanıyor `false`. `CaseSensitive` Parametresi olarak ayarlandığı için `false`arama büyük/küçük harfe duyarlıdır.
 
     ```powershell
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
     ```
 
-    Aşağıdaki çıktı görünür.
+    Aşağıdaki çıktı görüntülenir.
 
     ```output
     IgnoreCase   : True
@@ -1138,13 +1136,13 @@ Windows PowerShell ile cmdlet'ini kaydedildi, komut satırında çalıştırarak
     Pattern      : over*
     ```
 
-3. Bir normal ifade deseni olarak kullanarak notları dosyada arayın. Cmdlet alfabetik karakterler ve boşluklar parantez içine alınmış arar.
+3. Desenler olarak normal bir ifade kullanarak notlar dosyasında arama yapın. Cmdlet 'i, parantez içine alınmış alfabetik karakterleri ve boş boşlukları arar.
 
     ```powershell
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
     ```
 
-    Aşağıdaki çıktı görünür.
+    Aşağıdaki çıktı görüntülenir.
 
     ```output
     IgnoreCase   : True
@@ -1159,13 +1157,13 @@ Windows PowerShell ile cmdlet'ini kaydedildi, komut satırında çalıştırarak
     Pattern      : \([A-Za-z:blank:]
     ```
 
-4. "Parametre" sözcüğü oluşumlarını için Notlar dosyasının büyük küçük harfe duyarlı bir arama gerçekleştirin.
+4. "Parameter" sözcüğünün oluşumları için notlar dosyasında büyük/küçük harfe duyarlı arama gerçekleştirin.
 
     ```powershell
     select-str -Path notes -Pattern Parameter -CaseSensitive
     ```
 
-    Aşağıdaki çıktı görünür.
+    Aşağıdaki çıktı görüntülenir.
 
     ```output
     IgnoreCase   : False
@@ -1180,13 +1178,13 @@ Windows PowerShell ile cmdlet'ini kaydedildi, komut satırında çalıştırarak
     Pattern      : Parameter
     ```
 
-5. Arama değişken sağlayıcısı, 0-9 arası sayısal değerlere sahip değişkenler için Windows PowerShell ile birlikte gelir.
+5. 0 ile 9 arasında sayısal değerlere sahip değişkenler için Windows PowerShell ile birlikte gelen değişken sağlayıcıda arama yapın.
 
     ```powershell
     select-str -Path * -Pattern "[0-9]"
     ```
 
-    Aşağıdaki çıktı görünür.
+    Aşağıdaki çıktı görüntülenir.
 
     ```output
     IgnoreCase   : True
@@ -1196,13 +1194,13 @@ Windows PowerShell ile cmdlet'ini kaydedildi, komut satırında çalıştırarak
     Pattern      : [0-9]
     ```
 
-6. Bir betik bloğu, "Pos" dizesini SelectStrCommandSample.cs dosyayı aramak için kullanın. **Cmatch** betik büyük küçük harf duyarsız Desen eşleştirmesi gerçekleştirir için işlev.
+6. "POS" dizesi için dosya SelectStrCommandSample.cs aramak üzere bir betik bloğu kullanın. Betik için **cmatch** işlevi, büyük/küçük harfe duyarsız bir model eşleşmesi gerçekleştirir.
 
     ```powershell
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
     ```
 
-    Aşağıdaki çıktı görünür.
+    Aşağıdaki çıktı görüntülenir.
 
     ```output
     IgnoreCase   : True
@@ -1214,16 +1212,16 @@ Windows PowerShell ile cmdlet'ini kaydedildi, komut satırında çalıştırarak
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[Bir Windows PowerShell cmdlet'i oluşturma](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[Windows PowerShell cmdlet 'ı oluşturma](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[İlk Cmdlet'inize oluşturma](./creating-a-cmdlet-without-parameters.md)
+[Ilk cmdlet dosyanızı oluşturma](./creating-a-cmdlet-without-parameters.md)
 
-[Bir Cmdlet oluşturma sistemi değiştirir](./creating-a-cmdlet-that-modifies-the-system.md)
+[Sistemi değiştiren bir cmdlet oluşturma](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Windows PowerShell sağlayıcınız tasarlama](../prog-guide/designing-your-windows-powershell-provider.md)
+[Windows PowerShell sağlayıcınızı tasarlama](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Windows PowerShell nasıl çalışır?](/previous-versions//ms714658(v=vs.85))
+[Windows PowerShell 'in çalışması](/previous-versions//ms714658(v=vs.85))
 
-[Cmdlet, sağlayıcılar kaydetmek ve uygulamaları barındırmak nasıl](/previous-versions//ms714644(v=vs.85))
+[Cmdlet 'Leri, sağlayıcıları ve ana bilgisayar uygulamalarını kaydetme](/previous-versions//ms714644(v=vs.85))
 
-[Windows PowerShell SDK'sı](../windows-powershell-reference.md)
+[Windows PowerShell SDK 'Sı](../windows-powershell-reference.md)

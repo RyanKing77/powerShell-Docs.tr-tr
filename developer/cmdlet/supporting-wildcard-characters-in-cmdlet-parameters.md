@@ -1,73 +1,83 @@
 ---
-title: Cmdlet parametreleri joker karakterleri destekleme | Microsoft Docs
+title: Cmdlet Parametrelerinde Joker Karakteri Destekleme
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/26/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- wildcards [PowerShell Programmer's Guide]
-- parameters [PowerShell Programmer's Guide], wildcards
-ms.assetid: 9b26e1e9-9350-4a5a-aad5-ddcece658d93
-caps.latest.revision: 12
-ms.openlocfilehash: 6c762d3889bc4b649252390625525db4735f4c1d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
+ms.sourcegitcommit: a02ccbeaa17c0e513d6c4a21b877c88ac7725458
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067408"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104455"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Cmdlet Parametrelerinde Joker Karakteri Destekleme
 
-Genellikle, kaynakların bir gruba göre yerine tek bir kaynak karşı çalıştırmak için bir cmdlet tasarım gerekecektir. Örneğin, bir cmdlet tüm dosyaları uzantı ve aynı ada sahip bir veri deposunda bulun gerekebilir. Bir kaynak grubu üzerinde çalıştırılacak bir cmdlet tasarlarken joker karakterleri için destek sağlamalısınız.
+Genellikle, tek bir kaynağa karşı değil, bir grup kaynağa karşı çalışacak bir cmdlet tasarlamanız gerekir. Örneğin, bir cmdlet 'in aynı ada veya uzantıya sahip bir veri deposundaki tüm dosyaları bulması gerekebilir. Bir kaynak grubuna karşı çalıştırılacak bir cmdlet tasarlarken joker karakter desteği sağlamalısınız.
 
 > [!NOTE]
-> Joker karakterler kullanarak bazen olarak adlandırılır *Glob*.
+> Joker karakter kullanmak bazen *Glob*olarak adlandırılır.
 
-## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Joker karakter Windows PowerShell cmdlet'leri
+## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Joker karakterler kullanan Windows PowerShell cmdlet 'Leri
 
- Birçok Windows PowerShell cmdlet'leri için parametre değerleri joker karakterleri destekler. Örneğin, neredeyse her cmdlet'i olan bir `Name` veya `Path` parametresi bu parametreler için joker karakterleri destekler. (Çoğu cmdlet olsa bir `Path` parametresi de bir `LiteralPath` parametresi joker karakterleri desteklemiyor.) Aşağıdaki komut, bir joker karakter tüm cmdlet'lerinin adında Get fiili içeren geçerli oturumda döndürmek için nasıl kullanıldığını gösterir.
+ Birçok Windows PowerShell cmdlet 'i parametre değerleri için joker karakterleri destekler. Örneğin, bir `Name` veya `Path` parametresi olan neredeyse her cmdlet bu parametreler için joker karakterleri destekler. (Bir `Path` parametresi olan çoğu cmdlet 'in de joker karakterleri desteklemeyen `LiteralPath` bir parametresi olsa da). Aşağıdaki komut, geçerli oturumdaki adı Get fiilini içeren tüm cmdlet 'leri döndürmek için bir joker karakterin nasıl kullanıldığını gösterir.
 
- **PS > get-command get -\***
+ `Get-Command get-*`
 
 ## <a name="supported-wildcard-characters"></a>Desteklenen joker karakterler
 
-Windows PowerShell, joker karakterleri destekler.
+Windows PowerShell aşağıdaki joker karakterleri destekler.
 
-|joker karakter|Açıklama|Örnek|Eşleşmeler|Eşleşmez|
-|------------------------|-----------------|-------------|-------------|--------------------|
-|*|Belirtilen konumdan başlayarak, sıfır veya daha fazla karakter ile eşleşir|a*|Apple ag||
-|?|Belirli bir konumda eşleşen anycharacter|? n|Bir içinde üzerinde|çalıştı|
-|[ ]|Bir dizi karakter ile eşleşir|[a-l] ook|kitap, cook, Görünüm|sürdü|
-|[ ]|Belirtilen karakter ile eşleşir|[bc] ook|kitap, cook|Ara|
+| Liyorsa |                             Açıklama                             |  Örnek   |     Eşleşmeler      | Eşleşmez |
+| -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
+| *        | Belirtilen konumdan başlayarak sıfır veya daha fazla karakterle eşleşir | `a*`       | A, AG, Apple     |                |
+| ?        | Belirtilen konumdaki herhangi bir karakterle eşleşir                     | `?n`       | Bir, üzerinde,       | Çalıştır            |
+| [ ]      | Bir karakter aralığıyla eşleşir                                       | `[a-l]ook` | kitap, Cook, görünüm | Nook, gerçekleşti     |
+| [ ]      | Belirtilen karakterlerle eşleşir                                    | `[bn]ook`  | kitap, Nook       | Cook, Look     |
 
-Joker karakterler destekleyen cmdlet'ler tasarlarken, joker karakter birleşimleri için izin verin. Örneğin, aşağıdaki kullanan komut `Get-ChildItem` c:\Techdocs klasöründe olan ve "a" ile "l." harflerle başlayan tüm .txt dosyaları almak için cmdlet
+Joker karakterleri destekleyen cmdlet 'leri tasarladığınızda, joker karakter bileşimleri için izin verin. Örneğin, aşağıdaki komut, c:\techdocs `Get-ChildItem` klasöründe olan ve "a"-"l" harfleriyle başlayan tüm. txt dosyalarını almak için cmdlet 'ini kullanır.
 
-**Get-childıtem c:\techdocs\\[a-l]\*.txt**
+`Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-Önceki komutun aralığı joker karakter kullanan **[a-l]** dosya adı "a" ile "l." karakterleriyle başlaması gereken belirtmek için Daha sonra komut * joker karakterini dosya adının ilk harfi ve .txt uzantısı arasındaki herhangi bir karakter için bir yer tutucu olarak.
+Önceki komut, "a"- `[a-l]` "l" karakterleriyle başlaması gerektiğini belirtmek için Aralık joker karakterini kullanır ve `*` joker karakteri, dosya adının ilk harfi ve **. txt** uzantısı.
 
-Aşağıdaki örnek, "d" harfi dahil değildir, ancak "a" ile "f." den tüm diğer harfler içeren bir aralık joker karakter deseni kullanır.
+Aşağıdaki örnek, "d" harfini dışlayan, ancak "a" ile "f" arasındaki diğer tüm harfleri içeren bir Aralık joker karakter modelini kullanır.
 
-**Get-childıtem c:\techdocs\\[a-cef]\*.txt**
+`Get-ChildItem c:\techdocs\[a-cef]\*.txt`
 
-## <a name="handling-literal-characters-in-wildcard-patterns"></a>Joker karakter düzenleri bir sabit karakterin işleme
+## <a name="handling-literal-characters-in-wildcard-patterns"></a>Joker karakter desenlerinde değişmez karakterleri işleme
 
-Belirttiğiniz joker karakter deseni, değişmez karakterler içeriyorsa, bir kaçış karakteri vurgulamasını belirtir karakteri (') kullanın. Değişmez karakterler programlı olarak belirttiğinizde, tek bir vurgulamasını belirtir kullanın. Komut isteminde değişmez karakterler belirttiğinizde, iki tik kullanın. Örneğin, şu desene tam anlamıyla alınması gereken iki ayraçlar içerir.
+Belirttiğiniz joker karakter deseninin joker karakter olarak yorumlanmamalıdır sabit karakterler içeriyorsa, bir kaçış karakteri olarak backtick karakterini (`` ` ``) kullanın. PowerShell API 'sinin tamsayı karakterlerini belirttiğinizde, tek bir geri nokta kullanın. PowerShell komut isteminde sabit karakterler belirttiğinizde, iki geri ölçü kullanın.
 
-"John Smith \`[*']" (program aracılığıyla belirtilen)
+Örneğin, aşağıdaki model, tam anlamıyla alınması gereken iki köşeli ayraç içerir.
 
-"John Smith \` \`[*\`']" (komut isteminde belirtilen)
+PowerShell API 'sinde kullanıldığında şunu kullanın:
 
-Bu, "John Smith [pazarlama]" veya "John Smith [Geliştirme]" eşleştirilir.
+- "John Smith \`[* ']"
 
-## <a name="cmdlet-output-and-wildcard-characters"></a>Cmdlet çıktı ve joker karakterler
+PowerShell komut isteminden kullanıldığında:
 
-Cmdlet parametrelerini joker karakterlerini desteklediğinde, bir cmdlet işlemi genellikle bir dizi çıkışını oluşturur. Bazen, bir kullanıcı aynı anda yalnızca tek bir öğe kullanabilir olduğundan çıkış dizisi desteklemek için hiçbir mantıklı. Örneğin, `Set-Location` kullanıcı tek bir konuma IGNORE_DUP_KEY çıkış dizisi cmdlet'ini destekler. Bu örnekte, cmdlet hala joker karakterleri destekler, ancak tek bir konuma çözümleme zorlar.
+- "John Smith \` \`[*\`']"
+
+Bu kalıp "John Smith [Marketing]" veya "John Smith [Development]" ile eşleşir. Örneğin:
+
+```
+PS> "John Smith [Marketing]" -like "John Smith ``[*``]"
+True
+
+PS> "John Smith [Development]" -like "John Smith ``[*``]"
+True
+```
+
+## <a name="cmdlet-output-and-wildcard-characters"></a>Cmdlet çıktısı ve joker karakterler
+
+Cmdlet parametreleri joker karakterleri destekledikleri zaman, işlem genellikle bir dizi çıktısı üretir.
+Bazen, Kullanıcı yalnızca tek bir öğe kullanabileceğinden, bir dizi çıkışını desteklemeye yönelik bir fikir vermez. Örneğin, `Set-Location` Kullanıcı yalnızca tek bir konum ayarlamadığı için cmdlet dizi çıkışını desteklemez. Bu örnekte, cmdlet joker karakterleri hala destekliyor, ancak çözümü tek bir konuma zorlar.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[Bir Windows PowerShell cmdlet'i yazma](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell cmdlet 'ı yazma](./writing-a-windows-powershell-cmdlet.md)
 
-[WildcardPattern sınıfı](/dotnet/api/system.management.automation.wildcardpattern)
+[Yada CardModel sınıfı](/dotnet/api/system.management.automation.wildcardpattern)
