@@ -1,23 +1,23 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, yapılandırma, Kurulum
-title: Get-Test-Set
-ms.openlocfilehash: e4aa7770bb5fc8b916b0c0a6488b1ccc0ef0ade9
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+keywords: DSC, PowerShell, yapılandırma, kurulum
+title: Al-test-ayarla
+ms.openlocfilehash: 68738107cd4a222a13dd4afa158f0370953158ad
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229522"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215417"
 ---
-# <a name="get-test-set"></a>Get-Test-Set
+# <a name="get-test-set"></a>Al-test-ayarla
 
->Şunun için geçerlidir: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Şunun için geçerlidir: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-![Kaynak Edinme, Sınama ve Ayarlama](/media/get-test-set.png)
+![Kaynak Edinme, Sınama ve Ayarlama](../media/get-test-set.png)
 
-PowerShell Desired State Configuration çevresinde yapılandırılmıştır bir **alma**, **Test**, ve **ayarlamak** işlem. DSC [kaynakları](resources.md) her bu işlemlerden her biriyle tamamlamak için yöntemler içerir. İçinde bir [yapılandırma](../configurations/configurations.md), kaynağın parametrelerini haline anahtarlarını doldurmak için kaynak bloklar tanımladığınız **alma**, **Test**, ve **ayarlamak** yöntemleri.
+PowerShell Istenen durum yapılandırması, bir **Get**, **Test**ve **set** işlemi etrafında oluşturulur. DSC [kaynakları](resources.md) , bu işlemlerin her birini tamamlamaya yönelik yöntemler içerir. Bir [yapılandırmada](../configurations/configurations.md), kaynak bloklarını bir kaynağın **Get**, **Test**ve **set** yöntemlerinin parametreleri olacak şekilde belirten anahtarları dolduracak şekilde tanımlarsınız.
 
-Bu sözdizimi aşağıdaki gibidir bir **hizmet** kaynak blok. **Hizmet** kaynak Windows Hizmetleri yapılandırır.
+Bu, bir **hizmet** kaynağı bloğunun sözdizimidir. **Hizmet** kaynağı Windows hizmetlerini yapılandırır.
 
 ```syntax
 Service [String] #ResourceName
@@ -37,7 +37,7 @@ Service [String] #ResourceName
 }
 ```
 
-**Alma**, **Test**, ve **ayarlamak** yöntemlerinin **hizmet** kaynak, bu değerleri kabul parametresi blokları olacaktır.
+**Hizmet** kaynağının **Get**, **Test**ve **set** yöntemlerinin bu değerleri kabul eden parametre blokları olacaktır.
 
 ```powershell
     param
@@ -86,9 +86,9 @@ Service [String] #ResourceName
 ```
 
 > [!NOTE]
-> Dil ve kaynağı tanımlamak için kullanılan yöntemi tanımlar nasıl **alma**, **Test**, ve **ayarlamak** yöntemleri tanımlanmasını.
+> Kaynağı tanımlamak için kullanılan dil ve Yöntem **Get**, **Test**ve **set** yöntemlerinin nasıl tanımlanacağını belirler.
 
-Çünkü **hizmet** kaynak yalnızca bir gerekli anahtar var (`Name`), **hizmet** blok kaynak bu kadar basit olabilir:
+**Hizmet** kaynağında yalnızca bir gerekli anahtar (`Name`) bulunduğundan, bir **hizmet** bloğu kaynağı şu kadar basit olabilir:
 
 ```powershell
 Configuration TestConfig
@@ -104,7 +104,7 @@ Configuration TestConfig
 }
 ```
 
-Yukarıdaki yapılandırma derlediğinizde, bir anahtar için belirlediğiniz değerleri oluşturulan ".mof" dosyasında depolanır. Daha fazla bilgi için [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
+Yukarıdaki yapılandırmayı derlerken, bir anahtar için belirttiğiniz değerler oluşturulan ". mof" dosyasında depolanır. Daha fazla bilgi için bkz. [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
 
 ```
 instance of MSFT_ServiceResource as $MSFT_ServiceResource1ref
@@ -121,15 +121,15 @@ ModuleVersion = "1.0";
 };
 ```
 
-Uygulandığında, [yerel Configuration Manager](../managing-nodes/metaConfig.md) (LCM) değer "Biriktirici" ".mof" dosyasından okuyun ve geçirin `-Name` parametresinin **alma**, **Test**, ve **ayarlamak** "MyService" örneği için yöntemleri **hizmet** kaynak.
+Uygulandığında, [yerel Configuration Manager](../managing-nodes/metaConfig.md) (LCM) ". mof" dosyasındaki " `-Name` Kuyruklayıcı" değerini okur ve bunu, **"hizmetim" örneği için Get, test ve set yöntemlerinin parametresine iletir. Hizmet** kaynağı.
 
 ## <a name="get"></a>Alma
 
-**Alma** yöntemi olan bir kaynağın hedef düğümü olarak yapılandırıldığı şekilde kaynak durumunu alır. Bu durum olarak döndürülen bir [hashtable](/powershell/module/microsoft.powershell.core/about/about_hash_tables). Anahtarları **hashtable** yapılandırılabilir değerleri veya parametrelerini kaynak kabul olacaktır.
+Bir kaynağın **Get** yöntemi, hedef düğümde yapılandırıldığı şekilde kaynağın durumunu alır. Bu durum bir [Hashtable](/powershell/module/microsoft.powershell.core/about/about_hash_tables)olarak döndürülür. **Hashtable** 'ın anahtarları yapılandırılabilir değerler veya parametreler olacaktır, kaynak kabul eder.
 
-**Alma** yöntemi eşleştirir doğrudan [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet'i. Çağırdığınızda `Get-DSCConfiguration`, LCM çalıştırmalar **alma** uygulanmış yapılandırmasındaki her bir kaynağın yöntemi. LCM karşılık gelen her bir kaynak örneği parametre olarak ".mof" dosyasında depolanan anahtar değerleri kullanır.
+**Get** yöntemi doğrudan [Get-dscconfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet 'ine eşlenir. ' İ çağırdığınızda `Get-DSCConfiguration`, LCM, uygulanmış olan yapılandırmadaki her bir kaynağın **Get** yöntemini çalıştırır. LCM, her bir karşılık gelen kaynak örneğine parametre olarak ". mof" dosyasında depolanan anahtar değerlerini kullanır.
 
-Bu örnek çıktısı, bir **hizmet** "Biriktirici" hizmetini yapılandırır kaynak.
+Bu, "biriktirici" hizmetini yapılandıran bir **hizmet** kaynağının örnek çıktısıdır.
 
 ```output
 ConfigurationName    : Test
@@ -155,7 +155,7 @@ PSComputerName       :
 CimClassName         : MSFT_ServiceResource
 ```
 
-Geçerli değer özellikleri çıktı tarafından yapılandırılabilir gösterir **hizmet** kaynak.
+Çıktı, **hizmet** kaynağı tarafından yapılandırılabilen geçerli değer özelliklerini gösterir.
 
 ```syntax
 Service [String] #ResourceName
@@ -177,10 +177,10 @@ Service [String] #ResourceName
 
 ## <a name="test"></a>Test
 
-**Test** yöntemi bir kaynak, hedef düğüm kaynak şu anda uyumlu olup olmadığını belirler *durumu istenen*. **Test** yöntemi döndürür `$True` veya `$False` yalnızca düğüm uyumlu olup olmadığını belirtmek için.
-Çağırdığınızda [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration), LCM çağrıları **Test** uygulanmış yapılandırmasındaki her bir kaynağın yöntemi. LCM karşılık gelen her bir kaynak örneği parametre olarak ".mof" dosyasında depolanan anahtar değerleri kullanır.
+Bir kaynağın **Test** yöntemi, hedef düğümün Şu anda kaynağın *istenen durumuyla*uyumlu olup olmadığını belirler. **Test** yöntemi, `$True` `$False` yalnızca düğümün uyumlu olup olmadığını belirtmek için öğesini döndürür.
+[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)' ı çağırdığınızda, LCM geçerli olarak uygulanan yapılandırmadaki her bir kaynağın **Test** yöntemini çağırır. LCM, her bir karşılık gelen kaynak örneğine parametre olarak ". mof" dosyasında depolanan anahtar değerlerini kullanır.
 
-Herhangi tek bir kaynağın sonucunu **Test** olduğu `$False`, `Test-DSCConfiguration` döndürür `$False` belirten düğüm uyumlu değil. Tüm kaynak **Test** yöntemleri dönüş `$True`, `Test-DSCConfiguration` döndürür `$True` düğümü uyumlu olduğunu göstermek için.
+Tek bir kaynağın **testinin** `$False`sonucu varsa, `Test-DSCConfiguration` düğümün uyumlu olmadığını gösteren döndürür `$False` . Tüm kaynakların **Test** yöntemleri `$True`döndürülürse, `Test-DSCConfiguration` düğümün uyumlu olduğunu `$True` göstermek için döndürür.
 
 ```powershell
 Test-DSCConfiguration
@@ -190,7 +190,7 @@ Test-DSCConfiguration
 True
 ```
 
-PowerShell 5. 0'den itibaren `-Detailed` parametresi eklendi. Belirtme `-Detailed` neden `Test-DSCConfiguration` koleksiyonları uyumlu ve uyumlu olmayan kaynaklar için sonuçları içeren bir nesne döndürmek için.
+PowerShell 5,0 ' den başlayarak, `-Detailed` parametresi eklenmiştir. Uyumlu `-Detailed` ve `Test-DSCConfiguration` uyumlu olmayan kaynaklar için sonuç koleksiyonları içeren bir nesne döndürme nedenlerini belirtme.
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -202,13 +202,13 @@ PSComputerName  ResourcesInDesiredState        ResourcesNotInDesiredState     In
 localhost       {[Service]Spooler}                                            True
 ```
 
-Daha fazla bilgi için [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
+Daha fazla bilgi için bkz. [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
 
 ## <a name="set"></a>Ayarla
 
-**Ayarlamak** yöntemi olan bir kaynağın çalışır kaynağın ile uyumlu olması için düğüm zorlamak *durumu istenen*. **Ayarlamak** yöntemi olacak şekilde tasarlanmıştır **etkili**, anlamına **ayarlamak** birden çok kez çalıştırın ve her zaman hata olmadan aynı sonucu elde olabilir.  Çalıştırdığınızda [Başlat-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration), her bir kaynak şu anda uygulanan yapılandırmasında LCM başlatıldıkları. LCM ".mof" dosyasından geçerli kaynak örneği için anahtar değerlerini alır ve bunları için parametre olarak kullanan **Test** yöntemi. Varsa **Test** yöntemi döndürür `$True`, düğüm geçerli kaynak ile uyumludur ve **ayarlamak** yöntemi atlandı. Varsa **Test** döndürür `$False`, uyumlu olmayan bir düğümdür.  LCM kaynak örneğinin anahtar değerleri parametre olarak kaynağın geçirir **ayarlamak** düğümü uyumluluk için geri yükleme yöntemi.
+Bir kaynağın **set** yöntemi, düğümü kaynağın *istenen durumuyla*uyumlu hale getirmeye çalışır. **Set** yönteminin **ıdempotent**olması amaçlanmıştır, yani **küme** birden çok kez çalıştırılabilir ve hata olmadan her zaman aynı sonucu alabilir.  [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration)çalıştırdığınızda, LCM, o anda uygulanan yapılandırmadaki her bir kaynak boyunca geçiş yapar. LCM, ". mof" dosyasındaki geçerli kaynak örneğinin anahtar değerlerini alır ve bunları **Test** yöntemi için parametreler olarak kullanır. **Test** yöntemi döndürürse `$True`, düğüm geçerli kaynakla uyumludur ve **set** yöntemi atlanır. **Test** döndürürse `$False`, düğüm uyumlu değildir.  LCM, kaynak örneğinin anahtar değerlerini kaynağın **ayarlama** yöntemine parametreler olarak geçirir ve düğümü uyumluluğa geri yükler.
 
-Belirterek `-Verbose` ve `-Wait` parametreleri, ilerleme durumunu izleyebilir `Start-DSCConfiguration` cmdlet'i. Bu örnekte, bir düğüm zaten uyumludur. `Verbose` Çıkış gösterir **ayarlamak** yöntemi atlandı.
+`-Verbose` `Start-DSCConfiguration` Ve parametrelerinibelirterek,cmdlet'ininilerlemesiniizleyebilirsiniz`-Wait` . Bu örnekte, düğüm zaten uyumludur. Çıktı, set yönteminin atlandığını gösterir. `Verbose`
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting
@@ -238,5 +238,5 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 ## <a name="see-also"></a>Ayrıca bkz.
 
 - [Azure Automation DSC genel bakış](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
-- [Bir SMB çekme sunucusu ayarlama](../pull-server/pullServerSMB.md)
-- [Çekme istemcisi yapılandırma](../pull-server/pullClientConfigID.md)
+- [SMB çekme sunucusu ayarlama](../pull-server/pullServerSMB.md)
+- [Çekme istemcisini yapılandırma](../pull-server/pullClientConfigID.md)

@@ -1,19 +1,19 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet'i
+keywords: PowerShell, cmdlet
 title: Windows PowerShell Sürücülerini Yönetme
-ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030149"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215515"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell Sürücülerini Yönetme
 
-A *Windows PowerShell sürücüsünü* gibi Windows PowerShell bir dosya sistemi sürücüsüne erişiminiz bir veri deposu konumdur. Dosya sistemi (C: ve D:), kayıt defteri sürücüler gibi Windows PowerShell sağlayıcıları bazı sürücüler için oluşturduğunuz sürücüler (HKCU: ve HKLM:) ve sertifika sürücü (Cert:), kendi Windows PowerShell sürücülerini de oluşturabilirsiniz. Bu sürücüler oldukça faydalıdır, ancak bunlar yalnızca Windows PowerShell içinde kullanılabilir. Bunları dosya Gezgini veya Cmd.exe gibi diğer Windows araçlarını kullanarak erişemez.
+*Windows PowerShell sürücüsü* , Windows PowerShell 'de bir dosya sistemi sürücüsü gibi erişebileceğiniz bir veri deposu konumudur. Windows PowerShell sağlayıcıları dosya sistemi sürücüleri (C: ve D:), kayıt defteri sürücüleri (HKCU: ve HKLM:) ve sertifika sürücüsü (CERT:) dahil olmak üzere sizin için bazı sürücüler oluşturur ve kendi Windows PowerShell sürücülerinizi oluşturabilirsiniz. Bu sürücüler çok kullanışlıdır, ancak yalnızca Windows PowerShell 'de kullanılabilir. Dosya Gezgini veya cmd. exe gibi diğer Windows araçlarını kullanarak bunlara erişemezsiniz.
 
-Windows PowerShell kullanan bir isim **PSDrive**, Windows PowerShell ile çalışmayı komutları için sürücüler. Windows PowerShell oturumunuzda bir listesi için Windows PowerShell sürücülerini, kullanın **Get-PSDrive** cmdlet'i.
+Windows PowerShell, Windows PowerShell sürücüleriyle çalışan komutlar için ad, **PSDrive**' u kullanır. Windows PowerShell oturumunuzda Windows PowerShell sürücülerinin bir listesi için **Get-PSDrive** cmdlet 'ini kullanın.
 
 ```
 PS> Get-PSDrive
@@ -32,11 +32,11 @@ HKLM       Registry      HKEY_LOCAL_MACHINE
 Variable   Variable
 ```
 
-Sisteminizde sürücülerle görüntüsündeki sürücüleri farklı olsa da, listenin çıktısına benzer görünecektir **Get-PSDrive** yukarıda gösterilen komutu.
+Ekrandaki sürücüler sisteminizdeki sürücülerle aynı olsa da, liste yukarıda gösterilen **Get-PSDrive** komutunun çıktısına benzer şekilde görünür.
 
-Dosya sistemi sürücüleri, Windows PowerShell sürücülerini bir alt kümesidir. Dosya sistemi giriş sağlayıcısı sütunda tarafından dosya sistemi sürücüleri tespit edebilirsiniz. (Dosya sistemi sürücüleri Windows PowerShell'de Windows PowerShell dosya sistemi sağlayıcısı tarafından desteklenir.)
+Dosya sistemi sürücüleri, Windows PowerShell sürücülerinin bir alt kümesidir. Dosya sistemi sürücüleri sağlayıcı sütununda FileSystem girişi ile tanımlayabilirsiniz. (Windows PowerShell 'deki dosya sistemi sürücüleri Windows PowerShell dosya sistemi sağlayıcısı tarafından desteklenir.)
 
-Söz dizimi görmek için **Get-PSDrive** cmdlet'i, bir **Get-Command** komutunu **söz dizimi** parametresi:
+**Get-PSDrive** cmdlet 'inin söz dizimini görmek Için, **sözdizimi** parametresine sahip bir **Get-Command** komutu yazın:
 
 ```
 PS> Get-Command -Name Get-PSDrive -Syntax
@@ -46,7 +46,7 @@ erbose] [-Debug] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-
 OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-**PSProvider** görüntülemek için Windows PowerShell Bu sürücüleri yalnızca parametresi sağlar, belirli bir sağlayıcı tarafından desteklenir. Windows PowerShell dosya sistemi sağlayıcısı tarafından desteklenen Windows PowerShell sürücülerini görüntülemek için örneğin bir **Get-PSDrive** komutunu **PSProvider** parametresi ve  **Dosya sistemi** değeri:
+**PSProvider** parametresi yalnızca belirli bir sağlayıcı tarafından desteklenen Windows PowerShell sürücüleri görüntülemenize olanak sağlar. Örneğin, yalnızca Windows PowerShell dosya sağlayıcısı tarafından desteklenen Windows PowerShell sürücülerinin görüntülenmesi için, **PSProvider** parametresine ve **dosya sistemi** değerine sahip bir **Get-PSDrive** komutu yazın:
 
 ```
 PS> Get-PSDrive -PSProvider FileSystem
@@ -58,7 +58,7 @@ C          FileSystem    C:\                           ...nd Settings\PowerUser
 D          FileSystem    D:\
 ```
 
-Kayıt defteri kovanları temsil eden Windows PowerShell sürücülerini görüntülemek için kullanın **PSProvider** parametre yalnızca, Windows PowerShell sürücülerini görüntülemek için Windows PowerShell ile kayıt defteri sağlayıcı tarafından desteklenir:
+Kayıt defteri kovanlarını temsil eden Windows PowerShell sürücüleri görüntülemek için **PSProvider** parametresini kullanarak yalnızca Windows PowerShell kayıt defteri sağlayıcısı tarafından desteklenen Windows PowerShell sürücüleri görüntülenir:
 
 ```
 PS> Get-PSDrive -PSProvider Registry
@@ -69,7 +69,7 @@ HKCU       Registry      HKEY_CURRENT_USER
 HKLM       Registry      HKEY_LOCAL_MACHINE
 ```
 
-Windows PowerShell'i sürücülerle standart konumu cmdlet'leri de kullanabilirsiniz:
+Standart konum cmdlet 'lerini Windows PowerShell sürücüleriyle de kullanabilirsiniz:
 
 ```
 PS> Set-Location HKLM:\SOFTWARE
@@ -81,9 +81,9 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Yeni Windows PowerShell ekleme (PSDrive yeni) sürücüleri
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Yeni Windows PowerShell sürücüleri ekleme (New-PSDrive)
 
-Kullanarak kendi Windows PowerShell sürücülerini ekleyebilirsiniz **yeni PSDrive** komutu. Sözdizimi almak için **yeni PSDrive** komutu, girin **Get-Command** komutunu **söz dizimi** parametresi:
+**New-PSDrive** komutunu kullanarak kendi Windows PowerShell sürücülerinizi ekleyebilirsiniz. **New-PSDrive** komutunun söz dizimini almak Için, **sözdizimi** parametresine sahip **Get-Command** komutunu girin:
 
 ```
 PS> Get-Command -Name New-PSDrive -Syntax
@@ -94,19 +94,18 @@ ion <String>] [-Scope <String>] [-Credential <PSCredential>] [-Verbose] [-Debug
 ring>] [-OutBuffer <Int32>] [-WhatIf] [-Confirm]
 ```
 
-Yeni bir Windows PowerShell sürücüsü oluşturmak için üç parametre belirtmeniz gerekir:
+Yeni bir Windows PowerShell sürücüsü oluşturmak için üç parametre sağlamanız gerekir:
 
-- (Herhangi bir geçerli Windows PowerShell adı kullanabilirsiniz) sürücü için bir ad
+- Sürücü için bir ad (geçerli herhangi bir Windows PowerShell adı kullanabilirsiniz)
 
-- ' % S'PSProvider (dosya sistemi konumları için "dosya" ve "Kayıt" kayıt defteri konumları için kullanın)
+- PSProvider (dosya sistemi konumları için "FileSystem" ve kayıt defteri konumları için "Registry" kullanın)
 
-- Kök, diğer bir deyişle, yeni sürücüsünün kök yolu
+- Kök, diğer bir deyişle, yeni sürücünün kökünün yolu
 
-Örneğin, ", bilgisayarınızda Microsoft Office uygulamaları gibi içeren klasörle eşlendi Office" adlı bir sürücüsü oluşturabilirsiniz **C:\\Program dosyaları\\Microsoft Office\\11**. Sürücü oluşturmak için aşağıdaki komutu yazın:
+Örneğin, bilgisayarınızdaki Microsoft Office uygulamaları içeren klasöre eşlenen "Office" adlı bir sürücü oluşturabilirsiniz. Örneğin, **C:\\program\\Files\\Microsoft Office OFFICE11**. Sürücüyü oluşturmak için aşağıdaki komutu yazın:
 
 ```
-PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Micr
-osoft Office\OFFICE11"
+PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Microsoft Office\OFFICE11"
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
@@ -114,24 +113,25 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 ```
 
 > [!NOTE]
-> Genel olarak, yolları büyük küçük harfe duyarlı değildir.
+> Genel olarak, yollar büyük/küçük harfe duyarlı değildir.
 
---Üste adına göre tüm Windows PowerShell sürücülerini yaptığınız gibi yeni Windows PowerShell sürücüsüne bakın ( **:** ).
+Yeni Windows PowerShell sürücüsüne, adına ve sonuna iki nokta üst üste ( **:** ) kadar tüm Windows PowerShell sürücülerine başvurursunuz.
 
-Bir Windows PowerShell sürücüsü, birçok görevi çok daha kolay hale getirebilirsiniz. Örneğin, en önemli Windows kayıt defteri anahtarları erişimi hantal ve hatırlamak zor hale son derece uzun yollar vardır. Önemli yapılandırma bilgileri bulunduğu altında **HKEY_LOCAL_MACHINE\\yazılım\\Microsoft\\Windows\\CurrentVersion**. Görüntüleyip CurrentVersion kayıt defteri anahtarında öğeleri değiştirmek için yazarak bu anahtar kökü belirtilmiş bir Windows PowerShell sürücüsü oluşturabilirsiniz:
+Bir Windows PowerShell sürücüsü birçok görevi çok daha basit hale getirir. Örneğin, Windows kayıt defterindeki en önemli anahtarların bazılarının çok uzun yolları vardır, bu da erişimi daha kolay ve hatırlayacağınızdır. Kritik yapılandırma bilgileri, **HKEY_LOCAL_MACHINE\\Software\\\\Microsoft\\Windows CurrentVersion**altında bulunur. CurrentVersion kayıt defteri anahtarındaki öğeleri görüntülemek ve değiştirmek için, şunu yazarak bu anahtarda kök olan bir Windows PowerShell sürücüsü oluşturabilirsiniz:
 
 ```
-PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
-indows\CurrentVersion
+PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\Windows\CurrentVersion
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 cvkey      Registry      HKLM\Software\Microsoft\Windows\...
 ```
 
-Ardından bir konuma değiştirebilirsiniz **cvkey:** sürücü, başka bir sürücü gibi:''
+Daha sonra konumu diğer tüm sürücüler gibi **cvkey:** Drive olarak değiştirebilirsiniz:
 
-`PS> cd cvkey:`
+```
+PS> cd cvkey:
+```
 
 veya:
 
@@ -143,25 +143,25 @@ Path
 cvkey:\
 ```
 
-New-PsDrive cmdlet'i yeni bir sürücüye yalnızca geçerli Windows PowerShell oturumuna ekler. Windows PowerShell penceresini kapatırsanız yeni sürücü kaybolur. Bir Windows PowerShell sürücüsü kaydetmek için geçerli Windows PowerShell oturumunda dışarı aktarmak için konsol içi dışarı aktarma cmdlet'ini kullanın ve ardından PowerShell.exe **PSConsoleFile** parametresini kullanarak içe aktarın. Veya Windows PowerShell profiliniz için yeni bir sürücüye ekleyin.
+New-PsDrive cmdlet 'i, yeni sürücüyü yalnızca geçerli Windows PowerShell oturumuna ekler. Windows PowerShell penceresini kapatırsanız yeni sürücü kaybedilir. Bir Windows PowerShell sürücüsünü kaydetmek için, geçerli Windows PowerShell oturumunu dışarı aktarmak için Export-Console cmdlet 'ini kullanın ve ardından içeri aktarmak için PowerShell. exe **Psconsolefile** parametresini kullanın. Ya da yeni sürücüyü Windows PowerShell profilinize ekleyin.
 
-## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Windows PowerShell siliniyor (Remove-PSDrive) sürücüleri
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Windows PowerShell sürücüleri (Remove-PSDrive) siliniyor
 
-Kullanarak Windows Powershell'den sürücüleri silebilirsiniz **Remove-PSDrive** cmdlet'i. **Remove-PSDrive** cmdlet'i kullanımı kolay; belirli bir Windows PowerShell sürücüsü silmek için yalnızca Windows PowerShell sürücüsü ad sağlayın.
+**Remove-PSDrive** cmdlet 'Ini kullanarak Windows PowerShell 'den sürücüleri silebilirsiniz. **Remove-PSDrive** cmdlet 'i kullanımı kolaydır; belirli bir Windows PowerShell sürücüsünü silmek için Windows PowerShell sürücü adını sağlamanız yeterlidir.
 
-Örneğin, eklediğiniz **Office:** Windows PowerShell sürücüsü, gösterildiği gibi **yeni PSDrive** konu silebilirsiniz, yazarak:
+Örneğin, **Office eklediyseniz:** Windows PowerShell sürücüsü, **New-PSDrive** konusunda gösterildiği gibi, şunu yazarak silebilirsiniz:
 
 ```powershell
 Remove-PSDrive -Name Office
 ```
 
-Silinecek **cvkey:** Windows PowerShell sürücüsü de görünmesini **yeni PSDrive** konu, aşağıdaki komutu kullanın:
+**Cvkey** 'yi silmek için: **Yeni-PSDrive** konusunda da gösterilen Windows PowerShell sürücüsü aşağıdaki komutu kullanın:
 
 ```powershell
 Remove-PSDrive -Name cvkey
 ```
 
-Bir Windows PowerShell sürücüsü silmek kolaydır, ancak sürücü çalışırken silinemiyor. Örneğin:
+Bir Windows PowerShell sürücüsünü silmek kolaydır, ancak bu sürücüyü sürücüden siz silemezsiniz. Örneğin:
 
 ```
 PS> cd office:
@@ -171,6 +171,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Ekleme ve kaldırma dışında Windows PowerShell sürücüsü
+## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Windows PowerShell dışında sürücü ekleme ve kaldırma
 
-Windows PowerShell algılar eklendiğinde veya kaldırıldığında, eşlenen ağ sürücülerini, bağlı USB sürücülerin ve kullanarak silinen sürücüler dahil olmak üzere, Windows dosya sistemi sürücüleri **net kullanım** komut veya  **WScript.NetworkMapNetworkDrive** ve **RemoveNetworkDrive** bir Windows komut dosyası sistemi (WSH) komut dosyasındaki yöntemleri.
+Windows PowerShell, eşlenen ağ sürücüleri, eklenen USB sürücüleri ve **net use** komutu kullanılarak silinen sürücüler de dahil olmak üzere Windows 'da eklenen veya kaldırılan dosya sistemi sürücüleri algılar.Bir Windows komut dosyası sistemi (WSH) betiğinin WScript. NetworkMapNetworkDrive ve **removenetworkdrive** yöntemleri.

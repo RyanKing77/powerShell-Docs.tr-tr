@@ -1,19 +1,19 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, yapılandırma, Kurulum
+keywords: DSC, PowerShell, yapılandırma, kurulum
 title: Import-DSCResource kullanma
-ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080110"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215412"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource kullanma
 
-`Import-DScResource` yalnızca bir yapılandırma komut dosyası bloğu içinde kullanılabilir dinamik bir anahtar sözcüktür. `Import-DSCResource` Yapılandırmanızda gerekli tüm kaynakları almak için anahtar sözcüğü. Kaynaklarınıza `$pshome` otomatik olarak alınır ancak bu, açıkça içinde kullanılan tüm kaynakları almak için en iyi varsayılır, [yapılandırma](Configurations.md).
+`Import-DScResource`yalnızca bir yapılandırma komut dosyası bloğunda kullanılabilen dinamik bir anahtar sözcüktür. Yapılandırmanızda gerekli olan tüm kaynakları içeri aktarma anahtarsözcüğü.`Import-DSCResource` Altındaki `$pshome` kaynaklar otomatik olarak içeri aktarılır, ancak [yapılandırmanızda](Configurations.md)kullanılan tüm kaynakları açıkça içeri aktarmak için en iyi yöntem hala kabul edilir.
 
-Sözdizimi `Import-DSCResource` aşağıda gösterilmiştir.  Modül adıyla belirtirken, her yeni bir satıra listelemek için zorunludur.
+Sözdizimi `Import-DSCResource` aşağıda gösterilmiştir.  Modülleri ada göre belirtirken, her bir yeni satıra listelemek bir gereksinimdir.
 
 ```syntax
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
@@ -21,14 +21,14 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 
 |Parametre  |Açıklama  |
 |---------|---------|
-|`-Name`|İçeri aktarmalısınız DSC kaynak adları. Modül adı belirtilmezse, komut bu DSC kaynakları bu modül içinde arar; Aksi takdirde komut DSC kaynakları tüm DSC kaynak yollarını arar. Joker karakterleri desteklenir.|
-|`-ModuleName`|Modül adı veya modül belirtimi.  Bir modülü içeri aktarmak için kaynakları belirtirseniz, yalnızca bu kaynakları almak komut deneyecek. Komut modülü yalnızca belirtirseniz, modüldeki tüm DSC kaynaklarını içeri aktarır.|
+|`-Name`|İçeri aktarmanız gereken DSC kaynak adları. Modül adı belirtilmişse, komut bu modül içinde bu DSC kaynaklarını arar; Aksi takdirde, komut DSC kaynaklarını tüm DSC kaynak yollarında arar. Joker karakterler desteklenir.|
+|`-ModuleName`|Modül adı veya modül belirtimi.  Bir modülden içeri aktarılacak kaynakları belirtirseniz, komut yalnızca bu kaynakları içeri aktarmaya çalışır. Yalnızca modülü belirtirseniz, komut modüldeki tüm DSC kaynaklarını içeri aktarır.|
 
 ```powershell
 Import-DscResource -ModuleName xActiveDirectory;
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>Örnek: Import-DSCResource içine bir yapılandırmayı kullanın.
+## <a name="example-use-import-dscresource-within-a-configuration"></a>Örnek: Bir yapılandırma içinde Import-DSCResource kullanın
 
 ```powershell
 Configuration MSDSCConfiguration
@@ -52,45 +52,45 @@ Configuration MSDSCConfiguration
 ```
 
 > [!NOTE]
-> Kaynak adları ve modülleri adları için birden çok değer aynı komutta belirtme desteklenmez. Bu durumda birden çok modül içinde aynı kaynak var. hangi modülü yüklemek için hangi kaynak hakkında kararlı olmayan davranışı olabilir. Komut, derleme sırasında hataya neden olur.
+> Aynı komutta kaynak adları ve modül adları için birden çok değer belirtilmesi desteklenmez. Bu, birden çok modülde aynı kaynak olması durumunda hangi modülün yükleneceğini belirten belirleyici olmayan davranışlara sahip olabilir. Aşağıdaki komut, derleme sırasında hataya neden olur.
 >
 > ```powershell
 > Import-DscResource -Name UserConfigProvider*,TestLogger1 -ModuleName UserConfigProv,PsModuleForTestLogger
 > ```
 
-Name parametresi kullanırken dikkat edilmesi gerekenler:
+Yalnızca ad parametresini kullanırken göz önünde bulundurmanız gerekenler:
 
-- Bu, makinede yüklü modülleri sayısına bağlı olarak kaynak yoğunluklu bir işlemdir.
-- Verilen ada sahip bulunan ilk kaynak yüklemek. Örnekte yüklü aynı ada sahip birden fazla kaynak olduğunda, yanlış kaynak yükleyebilir.
+- Makinede yüklü olan modül sayısına bağlı olarak Kaynak yoğunluklu bir işlemdir.
+- Verilen adla bulunan ilk kaynağı yükler. Aynı ada sahip birden fazla kaynak yüklü olduğunda, yanlış kaynağı yükleyebilir.
 
-Önerilen kullanım belirlemektir `–ModuleName` ile `-Name` aşağıda açıklandığı gibi parametre.
+Önerilen kullanım, aşağıda açıklandığı gibi `–ModuleName` `-Name` parametresiyle belirtilmelidir.
 
-Bu kullanım aşağıdaki faydaları sağlar:
+Bu kullanım aşağıdaki avantajlara sahiptir:
 
-- Belirtilen kaynak için arama kapsamını sınırlayarak, performans etkisini azaltır.
-- Doğru kaynak yüklenen sağlama kaynak tanımlama modülü açıkça tanımlar.
+- Belirtilen kaynak için arama kapsamını sınırlayarak performans etkisini azaltır.
+- Doğru kaynak yüklendiğinden emin olarak kaynağı tanımlayan modülü açıkça tanımlar.
 
 > [!NOTE]
-> PowerShell 5.0, DSC kaynaklarını birden çok sürümü olabilir ve sürümleri bir bilgisayarda yan yana üzerinde yüklenebilir. Bu, bir kaynak modülü aynı modül klasöründe bulunan birden çok sürümünü sağlayarak uygulanır.
-> Daha fazla bilgi için [birden çok sürümü olan kaynakları kullanma](sxsresource.md).
+> PowerShell 5,0 ' de DSC kaynakları birden çok sürüme sahip olabilir ve sürümler bir bilgisayara yan yana yüklenebilir. Bu, aynı modül klasöründe yer alan bir kaynak modülünün birden çok sürümü ile uygulanır.
+> Daha fazla bilgi için bkz. [birden çok sürümü olan kaynakları kullanma](sxsresource.md).
 
 ## <a name="intellisense-with-import-dscresource"></a>Import-DSCResource ile IntelliSense
 
-DSC yapılandırması ıse'de yazarken, PowerShell IntelliSence kaynakları ve kaynak özellikleri sağlar. Kaynak tanımları altında `$pshome` modül yolu otomatik olarak yüklenir. Kullanarak kaynakları aktardığınızda `Import-DSCResource` anahtar sözcüğü, belirtilen kaynak tanımları eklenir ve IntelliSense, içeri aktarılan kaynak şemayı içerecek şekilde genişletilir.
+ISE 'de DSC yapılandırmasını yazarken, PowerShell kaynak ve kaynak özellikleri için Intellisence 'yi sağlar. `$pshome` Modül yolu altındaki kaynak tanımları otomatik olarak yüklenir. `Import-DSCResource` Anahtar sözcüğünü kullanarak kaynakları içeri aktardığınızda, belirtilen kaynak tanımları eklenir ve IntelliSense, içeri aktarılan kaynağın şemasını içerecek şekilde genişletilir.
 
-![Kaynak IntelliSense](/media/resource-intellisense.png)
+![Kaynak IntelliSense](../media/resource-intellisense.png)
 
 > [!NOTE]
-> PowerShell 5. 0'den itibaren sekme tamamlamayı ISE DSC kaynakları ve bunların özelliklerini için eklendi. Daha fazla bilgi için [kaynakları](../resources/resources.md).
+> PowerShell 5,0 ' den başlayarak, DSC kaynakları ve bunların özelliklerine ilişkin sekme tamamlama, ıSE 'ye eklenmiştir. Daha fazla bilgi için bkz. [kaynaklar](../resources/resources.md).
 
-PowerShell içeri aktarılan kaynak tanımları yapılandırması derlenirken tüm kaynak bloklar yapılandırmasında doğrulamak için kullanır.
-Her kaynak blok kaynağın şema tanımı için aşağıdaki kurallar kullanılarak doğrulanır.
+Yapılandırma derlenirken, PowerShell, yapılandırmadaki tüm kaynak bloklarını doğrulamak için içeri aktarılan kaynak tanımlarını kullanır.
+Her kaynak bloğu, aşağıdaki kurallar için kaynağın şema tanımı kullanılarak onaylanır.
 
-- Şemada tanımlanan özellikler kullanılır.
-- Veri türleri her bir özellik için doğrudur.
-- Anahtar özellikler belirtilmedi.
-- Salt okunur bir özellik kullanılır.
-- Doğrulama değeri türleri eşler.
+- Yalnızca şemada tanımlanan özellikler kullanılır.
+- Her bir özelliğin veri türleri doğrudur.
+- Anahtarlar özellikleri belirtilmiştir.
+- Salt okunurdur özelliği kullanılmaz.
+- Değer eşlemeleri türlerinde doğrulama.
 
 Aşağıdaki yapılandırmayı göz önünde bulundurun:
 
@@ -111,41 +111,41 @@ Configuration SchemaValidationInCorrectEnumValue
 }
 ```
 
-Bu yapılandırma sonuçları hata derleniyor.
+Bu yapılandırmanın derlenmesi bir hatayla sonuçlanır.
 
 ```output
 PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
 ```
 
-IntelliSense ve şema doğrulama daha fazla hata ayrıştırma ve derleme zamanında çalışma zamanında zorluklar önleme catch olanak tanır.
+IntelliSense ve şema doğrulama, ayrıştırma ve derleme sırasında daha fazla hata yakalamalı ve çalışma zamanında karmaşıklıkları önkullanmanıza imkan sağlar.
 
 > [!NOTE]
-> Her DSC kaynağı bir ad olabilir ve bir **FriendlyName** kaynağın şeması tarafından tanımlanır. İlk iki satırını "MSFT_ServiceResource.shema.mof" aşağıda verilmiştir.
+> Her DSC kaynağı bir ada ve kaynağın şeması tarafından tanımlanan bir **FriendlyName** 'a sahip olabilir. Aşağıda "MSFT_ServiceResource. Shema. mof" öğesinin ilk iki satırı verilmiştir.
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
-> Bu kaynak bir yapılandırmada kullanılırken, belirtebileceğiniz **MSFT_ServiceResource** veya **hizmet**.
+> Bu kaynağı bir yapılandırmada kullanırken, **MSFT_ServiceResource** veya **Service**belirtebilirsiniz.
 
 ## <a name="powershell-v4-and-v5-differences"></a>PowerShell v4 ve v5 farklılıkları
 
-Yapılandırmalar PowerShell 4.0 vs'de yazarken gördüğünüz birden çok fark yoktur. PowerShell 5.0 ve üzeri. Bu bölümde farklar vurgular ilgili bu makaleye bakın.
+PowerShell 4,0 ile yapılandırma yazma sırasında gördüğünüz birden çok fark vardır. PowerShell 5,0 ve üzeri. Bu bölümde, bu makaleyle ilgili gördüğünüz farklar vurgulanacaktır.
 
 ### <a name="multiple-resource-versions"></a>Birden çok kaynak sürümü
 
-Yükleme ve birden çok sürümünü yan yana kaynakları kullanarak PowerShell 4. 0'desteklenmiyor. Kaynakları yapılandırmanızı içeri aktarmayla ilgili sorunları fark ederseniz, bir sürümü yüklü kaynak yalnızca olduğundan emin olun.
+PowerShell 4,0 ' de yan yana kaynakların birden çok sürümünün yüklenmesi ve kullanılması desteklenmez. Yapılandırmanızda kaynakları içeri aktarma sorunları fark ederseniz, kaynağın yalnızca bir sürümünün yüklü olduğundan emin olun.
 
-İki sürümü aşağıda resimde **xPSDesiredStateConfiguration** Modülü yüklü.
+Aşağıdaki görüntüde, **Xpsdesiredstateconfiguration** modülünün iki sürümü yüklenir.
 
-![Sabit birden çok kaynak sürümü](/media/multiple-resource-versions-broken.md)
+![Birden çok kaynak sürümü düzeltildi](../media/multiple-resource-versions-broken.png)
 
-Modül dizinini, en üst düzeye istenen modülün sürümünüzü içeriğini kopyalayın.
+İstediğiniz modül sürümünüzün içeriğini modül dizininin en üst düzeyine kopyalayın.
 
-![Sabit birden çok kaynak sürümü](/media/multiple-resource-versions-fixed.md)
+![Birden çok kaynak sürümü düzeltildi](../media/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>Kaynak konumu
 
-Geliştirme ve yapılandırmaları derleme kaynaklarınızı tarafından belirtilen herhangi bir dizinini depolanabilir, [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). PowerShell 4. 0'da, "Program Files\WindowsPowerShell\Modules" altında depolanan tüm DSC kaynak modülleri LCM gerektirir veya `$pshome\Modules`. PowerShell 5. 0'den itibaren bu gereksinimi kaldırıldı ve kaynak modülleri tarafından belirtilen herhangi bir dizinini depolanabilir `PSModulePath`.
+Yapılandırma yazma ve derleme yaparken, kaynaklarınız [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path)'niz tarafından belirtilen herhangi bir dizinde depolanabilir. PowerShell 4,0 ' de, LCM tüm DSC kaynak modüllerinin "program Files\WindowsPowerShell\Modules" veya `$pshome\Modules`altında depolanmasını gerektirir. PowerShell 5,0 ' den başlayarak bu gereksinim kaldırılmıştır ve kaynak modülleri tarafından `PSModulePath`belirtilen herhangi bir dizinde depolanabilir.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

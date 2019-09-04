@@ -1,45 +1,55 @@
 ---
-title: Cmdlet modüllerini kullanarak içeri aktarma | Microsoft Docs
+title: Modüller kullanılarak cmdlet 'Leri Içeri aktarma | Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/28/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
-ms.openlocfilehash: c007bb11324e10ffd100797dccd9e6ab0d09a73e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067986"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215268"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>Modül Kullanarak Cmdlet’i İçeri Aktarma
 
-Bu konuda, ikili modül kullanarak bir Windows PowerShell oturumuna cmdlet'leri içe aktarmayı açıklar.
+Bu makalede, ikili bir modül kullanılarak cmdlet 'leri bir PowerShell oturumuna nasıl içeri aktarılacağı açıklanır.
 
 > [!NOTE]
-> Üyeleri modülleri, cmdlet'leri, sağlayıcıları, İşlevler, değişkenler, diğer adlar ve çok daha fazlasını içerebilir. Ek bileşenler, yalnızca cmdlet'lerini ve sağlayıcıları içerebilir.
+> Modül üyeleri cmdlet 'leri, sağlayıcıları, işlevleri, değişkenleri, diğer adları ve çok daha fazlasını içerebilir. Ek bileşenler yalnızca cmdlet 'ler ve sağlayıcılar içerebilir.
 
-## <a name="how-to-load-cmdlets-using-a-module"></a>Bir modül kullanarak cmdlet'leri yükleme
+## <a name="how-to-load-cmdlets-using-a-module"></a>Modül kullanarak cmdlet 'leri yükleme
 
-1. Cmdlet'ler uygulanan derleme dosyası aynı ada sahip bir modül klasörü oluşturun. Bu yordamda, modül klasöründe oluşturulan `system32` klasör.
+1. Cmdlet 'lerinin uygulandığı derleme dosyasıyla aynı ada sahip bir modül klasörü oluşturun. Bu yordamda modül klasörü Windows `system32` klasöründe oluşturulur.
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-2. Emin olun `PSModulePath` ortam değişkeni, yeni modül klasörün yolunu içerir. Varsayılan olarak, sistem klasörü zaten eklenir `PSModulePath` ortam değişkeni.
+1. `PSModulePath` Ortam değişkeninin yeni modül klasörünüzün yolunu içerdiğinden emin olun. Varsayılan olarak, sistem klasörü `PSModulePath` ortam değişkenine zaten eklenir. Görüntülemek `PSModulePath`için şunu yazın: `$env:PSModulePath`.
 
-3. Cmdlet derleme modülü klasöre kopyalayın.
+1. Cmdlet derlemesini modül klasörüne kopyalayın.
 
-4. Cmdlet'lerini oturumuna eklemek için aşağıdaki komutu çalıştırın:
+1. Modülün kök klasörüne bir modül bildirim`.psd1`dosyası () ekleyin. PowerShell, modülünüzü içeri aktarmak için modül bildirimini kullanır. Daha fazla bilgi için bkz. [PowerShell modülü bildirimi yazma](../module/how-to-write-a-powershell-module-manifest.md).
 
-   `import-module [Module_Name]`
+1. Cmdlet 'leri oturuma eklemek için aşağıdaki komutu çalıştırın:
 
-   Bu yordam, cmdlet'lerinizi test etmek için kullanılabilir. Oturuma derlemedeki tüm cmdlet'ler ekler. Modüller hakkında daha fazla bilgi için farklı türlerdeki modüllerin, modüller ve verilen, bir modül öğelerini kısıtlamak nasıl yük farklı yollarını görmek [bir Windows PowerShell modülü yazma](../module/writing-a-windows-powershell-module.md).
+   `Import-Module [Module_Name]`
 
-## <a name="see-also"></a>Ayrıca bkz:
+   Bu yordam, cmdlet 'lerinizi test etmek için kullanılabilir. Derlemedeki tüm cmdlet 'leri oturuma ekler. Modüller hakkında daha fazla bilgi için bkz. [Windows PowerShell modülü yazma](../module/writing-a-windows-powershell-module.md).
 
-[Bir Windows PowerShell cmdlet'i yazma](./writing-a-windows-powershell-cmdlet.md)
+## <a name="see-also"></a>Ayrıca bkz.
 
-[Modülleri yükleme](../module/installing-a-powershell-module.md)
+[PowerShell modülü bildirimi yazma](../module/how-to-write-a-powershell-module-manifest.md)
+
+[PowerShell modülünü içeri aktarma](../module/importing-a-powershell-module.md)
+
+[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
+
+[Modüller yükleniyor](../module/installing-a-powershell-module.md)
+
+[PSModulePath yükleme yolunu değiştirme](../module/modifying-the-psmodulepath-installation-path.md)
+
+[Windows PowerShell cmdlet 'ı yazma](./writing-a-windows-powershell-cmdlet.md)

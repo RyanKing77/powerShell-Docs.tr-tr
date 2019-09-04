@@ -1,35 +1,35 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet'i
+keywords: PowerShell, cmdlet
 title: Dosya ve Klasörlerle Çalışma
-ms.openlocfilehash: 0f7cb233918b59475417ec49b611ecc25a94ebe1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030695"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215525"
 ---
 # <a name="working-with-files-and-folders"></a>Dosya ve Klasörlerle Çalışma
 
-Windows PowerShell sürücülerini gezinme ve bunları öğelerde düzenleme Windows fiziksel disk sürücüsü üzerindeki dosya ve klasörleri yönetmek için benzerdir. Bu bölümde, PowerShell kullanarak belirli dosya ve klasör düzenleme görevlerle başa çıkma açıklanmaktadır.
+Windows PowerShell sürücülerinden gezinmek ve bunların üzerindeki öğelerin düzenlenmesi, Windows fiziksel disk sürücülerindeki dosya ve klasörleri düzenleme ile benzerdir. Bu bölümde, PowerShell kullanarak belirli dosya ve klasör işleme görevleriyle nasıl başa çıkılabileceği açıklanmaktadır.
 
-## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Tüm dosya ve klasörlerin bir klasördeki listeleme
+## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Bir klasör Içindeki tüm dosya ve klasörleri listeleme
 
-Kullanarak, doğrudan bir klasördeki tüm öğeleri alabilirsiniz **Get-Childıtem**. İsteğe bağlı ekleme **zorla** gizli görüntülemek ya da sistem öğeleri için parametre. Örneğin, bu komut (olan Windows fiziksel sürücü C ile aynı) Windows PowerShell sürücüsü C doğrudan içeriğini görüntüler:
+**Get-ChildItem**kullanarak tüm öğeleri doğrudan bir klasör içinde alabilirsiniz. Gizli veya sistem öğelerini göstermek için isteğe bağlı **zorlama** parametresini ekleyin. Örneğin, bu komut Windows PowerShell sürücüsü C 'nin (Windows fiziksel sürücü C ile aynı) doğrudan içeriğini görüntüler:
 
 ```powershell
 Get-ChildItem -Path C:\ -Force
 ```
 
-Komut Cmd.exe's kullanma gibi doğrudan içerilen öğelerin yalnızca listeler **DIR** komutu veya **ls** UNIX Kabuğu'nda. İçerilen öğelerin göstermek için belirtmeniz gerekir **-Recurse** parametresini de. (Bu, tamamlanması çok uzun zaman alabilir.) Her şeyi C sürücüsünde listelemek için:
+Komut, cmd. exe ' nin **dır** komutunu ya da bir UNIX kabuğundan **ls** gibi yalnızca doğrudan içerilen öğeleri listeler. İçerilen öğeleri göstermek için **-Recurse** parametresini de belirtmeniz gerekir. (Bu işlem, tamamlanması çok uzun zaman alabilir.) C sürücüsündeki her şeyi listelemek için:
 
 ```powershell
 Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
-**Get-Childıtem** öğeleriyle filtreleyebilirsiniz kendi **yolu**, **filtre**, **INCLUDE**, ve **hariç** parametreleri, ancak bu genellikle yalnızca adına göre. Karmaşık filtreleme öğelerin diğer özelliklerini kullanarak gerçekleştirebileceğiniz **Where-Object**.
+**Get-ChildItem** , öğeleri **yolu**, **filtresi**, **içerme**ve **dışlama** parametreleriyle filtreleyip, ancak bunlar genellikle yalnızca adı temel alır. **WHERE-Object**kullanarak öğelerin diğer özelliklerine göre karmaşık filtreleme gerçekleştirebilirsiniz.
 
-Aşağıdaki komutu, son 1 Ekim 2005'ten sonra değiştirilmiş olan ve 1 megabayt değerinden küçük veya büyük 10 megabayt olan Program dosyaları klasöründeki tüm yürütülebilir dosyaları bulur:
+Aşağıdaki komut, 1 Ekim 2005 ' den sonra son değiştirilen ve 1 megabayttan küçük veya 10 megabayttan büyük olmayan program dosyaları klasöründeki tüm yürütülebilir dosyaları bulur:
 
 ```powershell
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt '2005-10-01') -and ($_.Length -ge 1mb) -and ($_.Length -le 10mb)}
@@ -37,33 +37,33 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 
 ## <a name="copying-files-and-folders"></a>Dosya ve klasörleri kopyalama
 
-Kopyalama ile yapılır **Copy-Item**. C: aşağıdaki komutu yedekler\\c: boot.ini\\boot.bak:
+Kopyalama, kopyalama **öğesi**ile yapılır. Aşağıdaki komut c:\\Boot. ini dosyasını c:\\Boot. bak öğesine yedekler:
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-Hedef dosya zaten var. kopyalama girişimi başarısız olur. Önceden var olan bir hedef üzerine yazmak için kullanın **zorla** parametresi:
+Hedef dosya zaten varsa kopyalama girişimi başarısız olur. Önceden var olan bir hedefin üzerine yazmak için **zorla** parametresini kullanın:
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
-Bu komut, hedef salt okunur olsa bile çalışır.
+Bu komut, hedef salt okunurdur olsa bile işe yarar.
 
-Klasörü kopyalama aynı şekilde çalışır. Bu komut ' % s'klasörü C: kopyalar\\temp\\yeni klasöre C: test1\\temp\\DeleteMe yinelemeli olarak:
+Klasör kopyalama aynı şekilde çalışmaktadır. Bu komut c\\: temp\\test1 klasörünü yeni c:\\temp\\klasörüne kopyalar.
 
 ```powershell
 Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
-Öğelerin seçimini de kopyalayabilirsiniz. Aşağıdaki komut c: herhangi bir yerde bulunan tüm .txt dosyaları kopyalar\\c: veri\\temp\\metin:
+Ayrıca, öğelerin bir seçimini de kopyalayabilirsiniz. Aşağıdaki komut, c:\\Data içinde herhangi bir yerde bulunan tüm. txt dosyalarını\\c: temp\\metnine kopyalar:
 
 ```powershell
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
-Dosya sistemi kopyalarını gerçekleştirmek için diğer araçları kullanmaya devam edebilirsiniz. XCOPY, ROBOCOPY ve COM nesneleri gibi **Scripting.FileSystemObject,** tüm Windows PowerShell içinde çalışacak. Örneğin, Windows Script Host kullanabileceğiniz **Scripting.FileSystem COM** C: ' üzere sınıfı\\c: boot.ini\\boot.bak:
+Dosya sistemi kopyalarını gerçekleştirmek için diğer araçları kullanmaya devam edebilirsiniz. XCOPY, ROBOCOPY ve **Scripting. Filesystemmobject** gibi com nesneleri Windows PowerShell 'de çalışır. Örneğin, c:\\Boot. ini dosyasını c:\\Boot. bak ' a yedeklemek için Windows Script Host **Scripting. FileSystem com** sınıfını kullanabilirsiniz:
 
 ```powershell
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
@@ -71,23 +71,23 @@ Dosya sistemi kopyalarını gerçekleştirmek için diğer araçları kullanmaya
 
 ## <a name="creating-files-and-folders"></a>Dosya ve klasör oluşturma
 
-Yeni öğeler oluşturma, aynı tüm Windows PowerShell sağlayıcılarının çalışır. Bir Windows PowerShell sağlayıcısı öğesi birden fazla türü olup olmadığını — Örneğin, dosya sistemi Windows PowerShell sağlayıcısını dizinler ve dosyalar arasında ayıran — öğesi türünü belirtmeniz gerekir.
+Yeni öğelerin oluşturulması, tüm Windows PowerShell sağlayıcılarıyla aynı şekilde çalışmaktadır. Bir Windows PowerShell sağlayıcısında birden fazla öğe türü varsa — Örneğin, dosya sistemi Windows PowerShell sağlayıcısı dizinler ve dosyalar arasında ayrım yapar; öğe türünü belirtmeniz gerekir.
 
-Bu komut yeni bir klasör C: oluşturur\\temp\\yeni klasör:
+Bu komut yeni bir klasör oluşturur C:\\temp\\yeni klasör:
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder' -ItemType Directory
 ```
 
-Bu komut yeni bir boş dosya C: oluşturur\\temp\\yeni klasör\\dosya.txt
+Bu komut yeni bir boş dosya oluşturur C:\\temp\\yeni klasör\\File. txt
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 ```
 
-## <a name="removing-all-files-and-folders-within-a-folder"></a>Tüm dosya ve klasörleri bir klasördeki kaldırma
+## <a name="removing-all-files-and-folders-within-a-folder"></a>Bir klasör Içindeki tüm dosya ve klasörleri kaldırma
 
-İçerilen öğelerin kullanarak kaldırabilirsiniz **Kaldır öğesini**, ancak başka bir öğe içeriyorsa, kaldırma işlemini onaylamanız istenir. Örneğin, C: klasör silmeye çalışıyorsanız\\temp\\diğer öğeleri içeren DeleteMe Windows PowerShell sizden onay klasörü silmeden önce:
+İçerilen öğeleri **Remove-Item**' ı kullanarak kaldırabilirsiniz, ancak öğe başka bir şey içeriyorsa kaldırma işlemini onaylamanız istenir. Örneğin, diğer öğeleri içeren C:\\temp\\deleteme klasörünü silmeye çalışırsanız, Windows PowerShell, klasörü silmeden önce sizden onay ister:
 
 ```
 Remove-Item -Path C:\temp\DeleteMe
@@ -100,25 +100,27 @@ sure you want to continue?
 (default is "Y"):
 ```
 
-İçindeki her öğe için sorulmasını istemiyorsanız belirtin **Recurse** parametresi:
+İçerilen her öğe için istenmesini istemiyorsanız, **Recurse** parametresini belirtin:
 
 ```powershell
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Bir Windows erişilebilir sürücü gibi yerel bir klasöre eşleme
+## <a name="mapping-a-local-folder-as-a-drive"></a>Yerel bir klasörü sürücü olarak eşleme
 
-Yerel bir klasöre de eşleyebilirsiniz kullanarak **subst** komutu. Aşağıdaki komut, yerel Program Files dizininde P: kök erişim izni verilmiş bir yerel sürücüye oluşturur:
+Ayrıca, **New-PSDrive** komutunu kullanarak yerel bir klasörü eşleyebilirsiniz. Aşağıdaki komut, yerel Program Files dizininde belirtilen yerel bir sürücü olan P: ' i yalnızca PowerShell oturumundan görünür olarak oluşturur:
 
 ```powershell
-subst p: $env:programfiles
+New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-İle olduğu gibi ağ sürücülerini, eşlenen sürücülerini Windows PowerShell kullanarak içinde **subst** için Windows PowerShell Kabuk tarafından anında görülemez.
+Ağ sürücülerinde olduğu gibi, Windows PowerShell içinde eşlenen sürücüler hemen Windows PowerShell kabuğu tarafından görülebilir.
+Dosya Gezgini 'nden görünebilir bir eşlenen sürücü oluşturmak için, **-Persist** parametresi gerekir. Ancak, kalıcı olarak yalnızca uzak yollar kullanılabilir.
 
-## <a name="reading-a-text-file-into-an-array"></a>Bir diziye bir metin dosyası okuma
 
-Metin veriler için daha yaygın depolama biçimleri bir dosyada ayrı veri öğeleri olarak kabul ayrı satırlara ile biridir. **Get-Content** cmdlet'i kullanılabilir tek bir adımda tüm dosyayı okumak için burada gösterildiği gibi:
+## <a name="reading-a-text-file-into-an-array"></a>Bir metin dosyasını bir diziye okuma
+
+Metin verileri için daha yaygın depolama biçimlerinden biri ayrı satırlar olarak değerlendirilen bir dosya içinde farklı veri öğeleri olarak değerlendirilir. **Get-Content** cmdlet 'i, burada gösterildiği gibi, bir adımda tüm bir dosyayı okumak için kullanılabilir:
 
 ```
 PS> Get-Content -Path C:\boot.ini
@@ -132,17 +134,17 @@ multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
 with Data Execution Prevention" /noexecute=optin /fastdetect
 ```
 
-**Get-Content** zaten, dosya içeriğinin satır başına bir öğe dizisi olarak dosyadan okunan veriler değerlendirir. Bu denetleyerek doğrulayabilirsiniz **uzunluğu** döndürülen içerik:
+**Get-Content** , dosya içeriğinin her satırı için bir öğe olarak dosyadaki okunan verileri bir dizi olarak zaten değerlendirir. Döndürülen içeriğin **uzunluğunu** denetleyerek bunu doğrulayabilirsiniz:
 
 ```
 PS> (Get-Content -Path C:\boot.ini).Length
 6
 ```
 
-Bu komut, doğrudan Windows PowerShell bilgilerini listesini almak için en kullanışlıdır. Örneğin, bilgisayar adlarını veya IP adreslerini listesini bir dosyada C: depolayabilir\\temp\\domainMembers.txt, dosya her satırda bir ada sahip. Kullanabileceğiniz **Get-Content** dosya içeriğini almak ve bunları değişkeninde yerleştirebilirsiniz **$Computers**:
+Bu komut, Windows PowerShell 'e doğrudan bilgi listesi almak için kullanışlıdır. Örneğin, bir bilgisayar adı veya IP adresi listesini dosyanın her satırında tek bir ada sahip C:\\temp\\domainmembers. txt dosyasında saklayabilirsiniz. Dosya içeriğini almak ve **$Computers**değişkenine koymak için **Get-Content** kullanabilirsiniz:
 
 ```powershell
 $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 ```
 
-**$Computers** , artık her öğe bir bilgisayar adını içeren bir dizi.
+**$Computers** artık her öğe için bir bilgisayar adı içeren bir dizidir.
