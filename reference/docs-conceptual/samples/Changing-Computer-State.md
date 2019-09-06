@@ -1,69 +1,75 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet'i
+keywords: PowerShell, cmdlet
 title: Bilgisayar Durumunu Değiştirme
-ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: de3e31e358548943a015b7bba275c4461202b20f
+ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030289"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386281"
 ---
 # <a name="changing-computer-state"></a>Bilgisayar Durumunu Değiştirme
 
-Bir bilgisayar Windows PowerShell'de sıfırlamak için standart bir komut satırı aracını veya WMI sınıfını kullanın. Yalnızca aracı çalıştırmak için Windows PowerShell kullanarak karşın, Windows PowerShell'de bir bilgisayarın güç durumu değiştirmek öğrenme Windows PowerShell'de dış araçları ile çalışma hakkında önemli ayrıntıları bazıları gösterilmektedir.
+Windows PowerShell 'de bir bilgisayarı sıfırlamak için, standart bir komut satırı aracı, WMI veya CıM sınıfı kullanın. Yalnızca aracı çalıştırmak için Windows PowerShell kullanıyor olsanız da, Windows PowerShell 'de bilgisayarın güç durumunu değiştirme hakkında bilgi edinmek için Windows PowerShell 'de dış araçlarla çalışma hakkındaki önemli ayrıntıların bazıları gösterilir.
 
 ## <a name="locking-a-computer"></a>Bilgisayarı kilitleme
 
-Standart kullanılabilir araçları ile doğrudan bir bilgisayarı kilitlemek için tek yolu çağırmaktır **LockWorkstation() işlevini** işlevi **user32.dll**:
+Bir bilgisayarı doğrudan standart kullanılabilir araçlarla kilitlemeye yönelik tek yol, **User32. dll**' de **LockWorkstation ()** işlevini çağırmanız durumunda:
 
 ```
 rundll32.exe user32.dll,LockWorkStation
 ```
 
-Bu komut, hemen iş istasyonu kilitler. Kullandığı *rundll32.exe*, hangi Windows DLL'leri çalışır (ve yinelemeli olarak kullanmak için kendi kitaplıkları kaydeder) user32.dll, Windows Yönetim işlevlerini içeren bir kitaplık çalıştırılacak.
+Bu komut, iş istasyonunu hemen kilitler. Windows yönetim işlevlerinin bir kitaplığı olan User32. dll dosyasını çalıştırmak için Windows dll 'Leri çalıştıran *Rundll32. exe*' yi (ve bunları yinelenen kullanım için kaydeder) kullanır.
 
-Ne zaman hızlı kullanıcı değiştirme etkinken Windows XP'de geçerli kullanıcının ekran koruyucu başlangıç yerine kullanıcı oturum açma ekranında bilgisayarı görüntüler gibi bir iş istasyonu kilitleyin.
+Windows XP gibi Hızlı Kullanıcı geçişi etkinken bir iş istasyonunu kilitlerseniz, bilgisayar geçerli kullanıcının ekran koruyucuyu başlatmak yerine Kullanıcı oturum açma ekranını görüntüler.
 
-Belirli bir Terminal sunucusu oturumları kapatmak için kullanın **tsshutdn.exe** komut satırı aracı.
+Bir terminal sunucusundaki belirli oturumları kapatmak için **Tsshutdn. exe** komut satırı aracını kullanın.
 
-## <a name="logging-off-the-current-session"></a>Geçerli oturumu oturumunu kapatma
+## <a name="logging-off-the-current-session"></a>Geçerli oturumun oturumu kapatılıyor
 
-Yerel sistem hakkındaki oturumu oturumunu için birkaç farklı teknikleri kullanabilirsiniz. En basit yolu Uzak Masaüstü/Terminal Hizmetleri komut satırı aracını kullanmaktır **logoff.exe** (Ayrıntılar için Windows PowerShell komut isteminde yazın **kapatma /?** ). Geçerli etkin oturumu için şunu yazın **kapatma** bağımsız değişken olmadan.
+Yerel sistemdeki bir oturum oturumunu kapatmak için birkaç farklı teknik kullanabilirsiniz. En basit yol, Uzak Masaüstü/Terminal Hizmetleri komut satırı aracı olan **logoff. exe** ' yi kullanmaktır (Ayrıntılar Için Windows PowerShell isteminde, **logoff/?** yazın). Geçerli etkin oturumu kapatmak için bağımsız değişken olmadan **logoff** yazın.
 
-Ayrıca **shutdown.exe** aracı ile oturum kapatma seçeneği:
+**Kapatma. exe** aracını, oturum kapatma seçeneğiyle de kullanabilirsiniz:
 
 ```
 shutdown.exe -l
 ```
 
-Üçüncü bir seçenek WMI kullanmaktır. Win32_OperatingSystem sınıfını Win32Shutdown yöntemi vardır. 0 bayrağıyla metodu çağrılırken, oturum kapatma başlatır:
+Başka bir seçenek de WMI kullanmaktır. Win32_OperatingSystem sınıfında bir Win32Shutdown yöntemi vardır. Yöntemi 0 bayrağıyla çağırmak oturumu kapatmayı başlatır:
 
 ```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
-Daha fazla bilgi almak ve diğer özellikleri Win32Shutdown yöntemin bulmak için "Win32Shutdown yöntemi, Win32_OperatingSystem sınıfını" MSDN'de bakın.
+Daha fazla bilgi edinmek ve Win32Shutdown yönteminin diğer özelliklerini bulmak için MSDN 'de "Win32_OperatingSystem sınıfının Win32Shutdown yöntemi" başlığına bakın.
 
-## <a name="shutting-down-or-restarting-a-computer"></a>Kapatma veya bir bilgisayar yeniden başlatma
+Son olarak, WMI yönteminde yukarıda açıklanan şekilde aynı Win32_OperatingSystem sınıfıyla CıM kullanabilirsiniz.
 
-Bilgisayarları yeniden başlatma ve kapatma genellikle aynı görevi türleridir. Bir bilgisayarı Araçlar genellikle yeniden başlatılacak, de- ve bunun tersi de geçerlidir. Windows powershell'den bilgisayarı yeniden başlatmak için iki basit seçenek vardır. Tsshutdn.exe ya da Shutdown.exe uygun bağımsız değişkenlerle birlikte kullanın. Ayrıntılı kullanım bilgilerini alabileceğiniz **tsshutdn.exe /?** veya **shutdown.exe /?** .
+```powershell
+Get-CIMInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
+```
 
-Kapatma gerçekleştirme ve işlemleri de Windows PowerShell üzerinden doğrudan yeniden başlatın.
+## <a name="shutting-down-or-restarting-a-computer"></a>Bilgisayarı kapatma veya yeniden başlatma
 
-Bilgisayarı kapatmak için Stop-Computer komutunu kullanın.
+Bilgisayarları kapatmak ve yeniden başlatmak genellikle aynı türde görevdir. Bir bilgisayarı kapatmakta olan araçlar, genellikle da yeniden başlatılır ve tam tersi de geçerlidir. Windows PowerShell 'den bir bilgisayarı yeniden başlatmak için iki basit seçenek vardır. TSShutdn. exe veya kapatılmasını. exe ' yi uygun bağımsız değişkenlerle kullanın. **Tsshutdn. exe/?** adresinden ayrıntılı kullanım bilgileri alabilirsiniz. veya **kapatılacak. exe/?** .
+
+Ayrıca, doğrudan Windows PowerShell 'den de kapalı ve yeniden başlatma işlemleri gerçekleştirebilirsiniz.
+
+Bilgisayarı kapatmak için, dur-Computer komutunu kullanın
 
 ```powershell
 Stop-Computer
 ```
 
-İşletim sistemi yeniden başlatmak için Restart-Computer komutunu kullanın.
+İşletim sistemini yeniden başlatmak için yeniden Başlat-bilgisayar komutunu kullanın
 
 ```powershell
 Restart-Computer
 ```
 
-Bir bilgisayarı hemen yeniden zorlamak için kullanın - Force parametresini.
+Bilgisayarın hemen yeniden başlatılmasını zorlamak için-zorlama parametresini kullanın.
 
 ```powershell
 Restart-Computer -Force

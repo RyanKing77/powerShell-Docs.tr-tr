@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Sistem yönetimi için örnek betikler
+summary: Bir örnek koleksiyonu, PowerShell ile sistemleri yönetmeye yönelik senaryolar hakkında yol gösterir.
+metadata:
+  title: Sistem yönetimi için örnek betikler
+  description: Bir örnek koleksiyonu, PowerShell ile sistemleri yönetmeye yönelik senaryolar hakkında yol gösterir.
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 09/05/2019
+  ms.openlocfilehash: 95ed43cf713f79d8b648a0f3af77fe2e0119f9c4
+  ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+  ms.translationtype: MT
+  ms.contentlocale: tr-TR
+  ms.lasthandoff: 09/05/2019
+  ms.locfileid: "70392640"
+landingContent:
+- title: Nesneler ile çalışma
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Nesne yapısını görüntüleme
+      url: ./viewing-object-structure--get-member-.md
+    - text: Nesnenin parçalarını seçme
+      url: ./selecting-parts-of-objects--select-object-.md
+    - text: İşlem hattındaki nesneleri filtreleme
+      url: ./removing-objects-from-the-pipeline--where-object-.md
+    - text: Nesne sıralama
+      url: ./sorting-objects.md
+    - text: Birden çok nesne için bir görevi yineleme
+      url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
+    - text: .NET ve COM nesneleri oluşturma
+      url: ./creating-.net-and-com-objects--new-object-.md
+    - text: Statik sınıflar ve yöntemler kullanma
+      url: ./using-static-classes-and-methods.md
+    - text: WMI nesnelerini alma - Get-WmiObject
+      url: ./getting-wmi-objects--get-wmiobject-.md
+- title: Bilgisayarları yönetme
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Bilgisayar durumunu değiştirme
+      url: ./changing-computer-state.md
+    - text: Bilgisayarlar hakkında bilgi toplama
+      url: ./collecting-information-about-computers.md
+    - text: FilterHashtable ile Get-WinEvent sorguları oluşturma
+      url: ./creating-get-winEvent-queries-with-filterhashtable.md
+- title: İşlem & hizmetleri yönetme
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: İşlem cmdlet’leri ile işlemleri yönetme
+      url: ./managing-processes-with-process-cmdlets.md
+    - text: Hizmetleri yönetme
+      url: ./managing-services.md
+    - text: Windows PowerShell sürücülerini yönetme
+      url: ./managing-windows-powershell-drives.md
+    - text: Yazıcılar ile çalışma
+      url: ./working-with-printers.md
+    - text: Ağ görevleri gerçekleştirme
+      url: ./performing-networking-tasks.md
+    - text: Yazılım yüklemeleri ile çalışma
+      url: ./working-with-software-installations.md
+    - text: PowerShell komutunun kodunu çalışan bir işlemden çözme
+      url: ./decode-powershell-command-from-a-running-process.md
+- title: Çıktı ile çalışma
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Out-* cmdlet’leri ile verileri yeniden yönlendirme
+      url: ./redirecting-data-with-out---cmdlets.md
+    - text: Çıkış görünümünü değiştirmek için biçimlendirme komutları kullanma
+      url: ./using-format-commands-to-change-output-view.md
+- title: Sürücüleri & dosyaları yönetme
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Geçerli konumu yönetme
+      url: ./managing-current-location.md
+    - text: Dosya ve klasörlerle çalışma
+      url: ./working-with-files-and-folders.md
+    - text: Dosya, klasör ve kayıt defteri anahtarları ile çalışma
+      url: ./working-with-files-folders-and-registry-keys.md
+    - text: Kayıt defteri girdileri ile çalışma
+      url: ./working-with-registry-entries.md
+    - text: Kayıt defteri anahtarları ile çalışma
+      url: ./working-with-registry-keys.md
+- title: Kullanıcı arabirimi öğeleri oluşturma
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Özel bir giriş kutusu oluşturma
+      url: ./creating-a-custom-input-box.md
+    - text: Grafik tarih seçici oluşturma
+      url: ./creating-a-graphical-date-picker.md
+    - text: Birden çok seçim liste kutusu
+      url: ./multiple-selection-list-boxes.md
+    - text: Bir liste kutusundan öğe seçme
+      url: ./selecting-items-from-a-list-box.md

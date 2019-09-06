@@ -1,24 +1,24 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, kaynak, Galeri, Kurulum
+keywords: DSC, PowerShell, kaynak, Galeri, kurulum
 title: Yapılandırmalara Parametre Ekleme
-ms.openlocfilehash: 514bb4cf82b7adbe4cd3d3e34d5464f574cb2206
-ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
+ms.openlocfilehash: 72e6c15593d11ed39d7fe8ea79f794089f410cf8
+ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67301506"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386323"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Yapılandırmalara Parametre Ekleme
 
-İşlevler, ister [yapılandırmaları](configurations.md) kullanıcı girişini temel alarak daha dinamik yapılandırmaları izin vermek için parametreli olabilir. İçinde açıklananlara benzer adımlarla [parametreleri olan işlevlere](/powershell/module/microsoft.powershell.core/about/about_functions).
+LIKE Işlevleri, kullanıcı girişine göre daha dinamik yapılandırmalara izin vermek için [yapılandırma](configurations.md) parametrelenebilir. Adımlar, [parametrelere sahip işlevlerde](/powershell/module/microsoft.powershell.core/about/about_functions)açıklananlara benzerdir.
 
-Bu örnek, "" "Biriktirici" hizmetinin çalışmasını yapılandırır bir temel yapılandırmayla başlatır.
+Bu örnek, "biriktirici" hizmetini "çalışıyor" olarak yapılandıran temel bir yapılandırmayla başlar.
 
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node localhost
@@ -34,19 +34,19 @@ Configuration TestConfig
 
 ## <a name="built-in-configuration-parameters"></a>Yerleşik yapılandırma parametreleri
 
-Bir işlev aksine, [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) öznitelik hiçbir işlevsellik ekler. Ek olarak [ortak parametreleri](/powershell/module/microsoft.powershell.core/about/about_commonparameters), yapılandırmaları, aşağıdaki parametreleri olarak tanımlamak gerek kalmadan yerleşik olarak da kullanabilirsiniz.
+Ancak, bir Işlevden farklı olarak, [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) özniteliği hiçbir işlev ekler. [Sık kullanılan parametrelere](/powershell/module/microsoft.powershell.core/about/about_commonparameters)ek olarak, konfigürasyonlar, bunları tanımlamanıza gerek kalmadan, aşağıdaki yerleşik parametreleri de kullanabilir.
 
 |Parametre  |Açıklama  |
 |---------|---------|
-|`-InstanceName`|Tanımlamak için kullanılan [bileşik yapılandırmaları](compositeconfigs.md)|
-|`-DependsOn`|Tanımlamak için kullanılan [bileşik yapılandırmaları](compositeconfigs.md)|
-|`-PSDSCRunAsCredential`|Tanımlamak için kullanılan [bileşik yapılandırmaları](compositeconfigs.md)|
-|`-ConfigurationData`|Geçirmek için kullanılan içinde yapılandırılmış [yapılandırma verilerini](configData.md) kullanılmak üzere yapılandırma.|
-|`-OutputPath`|Yeri belirtmek için kullanılan, "\<computername\>.mof" dosya derlenecek|
+|`-InstanceName`|[Bileşik yapılandırmaların](compositeconfigs.md) tanımlanması için kullanılır|
+|`-DependsOn`|[Bileşik yapılandırmaların](compositeconfigs.md) tanımlanması için kullanılır|
+|`-PSDSCRunAsCredential`|[Bileşik yapılandırmaların](compositeconfigs.md) tanımlanması için kullanılır|
+|`-ConfigurationData`|Yapılandırmada kullanılmak üzere yapılandırılmış [yapılandırma verilerini](configData.md) geçirmek için kullanılır.|
+|`-OutputPath`|"\<ComputerName\>. mof" dosyanızın derlenebileceği yeri belirtmek için kullanılır|
 
-## <a name="adding-your-own-parameters-to-configurations"></a>Kendi parametre yapılandırmalarına ekleme
+## <a name="adding-your-own-parameters-to-configurations"></a>Yapılandırmalara kendi parametrelerinizi ekleme
 
-Yerleşik parametrelerin yanı sıra, kendi parametreleri yapılandırmalarınız için de ekleyebilirsiniz. Doğrudan bir işlev gibi yapılandırma bildirimi içinde parametre bloğu gider. Dışında herhangi bir yapılandırma parametresi blok olmalıdır **düğüm** bildirimleri ve yukarıda herhangi *alma* deyimleri. Parametreler ekleyerek, daha sağlam ve dinamik yapılandırmalarınızı yapabilirsiniz.
+Yerleşik parametrelere ek olarak, kendi parametrelerinizi de yapılandırmalara ekleyebilirsiniz. Parametre bloğu, doğrudan yapılandırma bildiriminin içinde, tıpkı bir Işlev gibi gider. Bir yapılandırma parametresi bloğunun herhangi bir **düğüm** bildiriminin dışında ve *içeri aktarma* deyimlerinin üzerinde olması gerekir. Parametreleri ekleyerek, yapılandırmalarınızın daha sağlam ve dinamik olmasını sağlayabilirsiniz.
 
 ```powershell
 Configuration TestConfig
@@ -59,7 +59,7 @@ Configuration TestConfig
 
 ### <a name="add-a-computername-parameter"></a>ComputerName parametresi Ekle
 
-Eklediğiniz ilk parametre bir `-Computername` , dinamik olarak bir ".mof" dosyası için derleyebilirsiniz için parametre `-Computername` yapılandırmanıza geçirin. Kullanıcı için bir değer geçirmez durumunda işlevleri gibi da varsayılan bir değer tanımlayabilirsiniz `-ComputerName`
+Ekleyebileceğiniz ilk parametre, yapılandırmanıza geçirdiğiniz bir " `-Computername` . mof" dosyasını dinamik olarak derleyebilmeniz `-Computername` için bir parametredir. Ayrıca, örneğin, kullanıcının bir değer geçirmezse bir varsayılan değer de tanımlayabilirsiniz.`-ComputerName`
 
 ```powershell
 param
@@ -69,7 +69,7 @@ param
 )
 ```
 
-Yapılandırmanızı içinde sonra belirtebilirsiniz, `-ComputerName` düğüm engellemeniz tanımlarken parametresi.
+Yapılandırmanızın içinde, düğüm bloğunu tanımlarken `-ComputerName` parametresini belirtebilirsiniz.
 
 ```powershell
 Node $ComputerName
@@ -78,17 +78,17 @@ Node $ComputerName
 }
 ```
 
-### <a name="calling-your-configuration-with-parameters"></a>Yapılandırmanızı parametrelerle çağırılıyor
+### <a name="calling-your-configuration-with-parameters"></a>Yapılandırma parametrelerini çağırma
 
-İçin yapılandırma parametreleri ekledikten sonra cmdlet ile olduğu gibi bunları kullanabilirsiniz.
+Yapılandırmanıza parametreler ekledikten sonra, bunları bir cmdlet 'le yaptığınız gibi kullanabilirsiniz.
 
 ```powershell
 TestConfig -ComputerName "server01"
 ```
 
-### <a name="compiling-multiple-mof-files"></a>Birden çok .mof dosyaları derleme
+### <a name="compiling-multiple-mof-files"></a>Birden çok. mof dosyası derleme
 
-Düğümü blok, bilgisayar adlarının virgülle ayrılmış bir listesini de kabul edebilir ve her biri için ".mof" dosyaları oluşturur. Geçirilen tüm bilgisayarların için ".mof" dosyaları oluşturmak için aşağıdaki örneği çalıştırabileceğiniz `-ComputerName` parametresi.
+Düğüm bloğu Ayrıca, virgülle ayrılmış bir bilgisayar adları listesi kabul edebilir ve her biri için ". mof" dosyaları oluşturur. `-ComputerName` Parametreye geçirilen tüm bilgisayarlar için ". mof" dosyaları oluşturmak için aşağıdaki örneği çalıştırabilirsiniz.
 
 ```powershell
 Configuration TestConfig
@@ -99,7 +99,7 @@ Configuration TestConfig
         $ComputerName="localhost"
     )
 
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node $ComputerName
@@ -115,9 +115,9 @@ Configuration TestConfig
 TestConfig -ComputerName "server01", "server02", "server03"
 ```
 
-## <a name="advanced-parameters-in-configurations"></a>Gelişmiş parametre yapılandırmaları
+## <a name="advanced-parameters-in-configurations"></a>Yapılandırmalarda Gelişmiş parametreler
 
-Ek olarak bir `-ComputerName` parametresi, hizmet adı ve durum parametrelerini ekleyebiliriz. Aşağıdaki örnek, bir parametre bloğu ile ekler. bir `-ServiceName` parametresi ve dinamik olarak tanımlamak için kullandığı **hizmet** kaynak blok. Ayrıca ekler bir `-State` dinamik olarak tanımlamak için parametre **durumu** içinde **hizmet** kaynak blok.
+Bir `-ComputerName` parametreye ek olarak, hizmet adı ve eyalet için parametreler ekleyebiliriz. Aşağıdaki örnek, parametresi ile `-ServiceName` bir parametre bloğu ekler ve **hizmet** kaynak bloğunu dinamik olarak tanımlamak için kullanır. Ayrıca, **hizmet** kaynak `-State` bloğunda **durumu** dinamik olarak tanımlamak için bir parametre ekler.
 
 ```powershell
 Configuration TestConfig
@@ -134,7 +134,7 @@ Configuration TestConfig
         $ComputerName="localhost"
     )
 
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node $ComputerName
@@ -149,18 +149,18 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> Daha fazla advacned senaryolarda dinamik verilerinizi yapılandırılmış taşımak için daha anlamlı yapabileceğiniz [yapılandırma verilerini](configData.md).
+> Daha fazla işlem senaryosunda, dinamik verilerinizi yapılandırılmış bir [yapılandırma verilerine](configData.md)taşımak daha mantıklı olabilir.
 
-Örnek yapılandırma şimdi dinamik bir alan `$ServiceName`, ancak bir ad belirtilmezse hatayla sonuçlanır derleme. Bu örnekte olduğu gibi varsayılan bir değer ekleyebilirsiniz.
+Örnek yapılandırma artık dinamik `$ServiceName`bir şekilde sürer, ancak belirtilmemişse bir hata oluşur. Bu örneğe benzer bir varsayılan değer ekleyebilirsiniz.
 
 ```powershell
 [String]
 $ServiceName="Spooler"
 ```
 
-Bu örnekte, kullanıcı için bir değer belirtmek için yalnızca zorlamak için daha fazla mantıklıdır `$ServiceName` parametresi. `parameter` Özniteliği, daha fazla doğrulama ve işlem hattı desteği, yapılandırmasının parametreleri eklemenize olanak sağlar.
+Bu örnekte, kullanıcının `$ServiceName` parametre için bir değer belirtmesini zorlamak için de daha anlamlı hale gelir. Özniteliği `parameter` , yapılandırmanızın parametrelerine daha fazla doğrulama ve işlem hattı desteği eklemenizi sağlar.
 
-Herhangi bir parametre bildiriminin üstüne ekleyin `parameter` öznitelik bloğuna aşağıdaki örnekte olduğu gibi.
+Herhangi bir parametre bildiriminde, aşağıdaki örnekte `parameter` olduğu gibi öznitelik bloğunu ekleyin.
 
 ```powershell
 [parameter()]
@@ -168,7 +168,7 @@ Herhangi bir parametre bildiriminin üstüne ekleyin `parameter` öznitelik blo�
 $ServiceName
 ```
 
-Her bağımsız değişken belirtebilirsiniz `parameter` tanımlanan parametre denetimi yönleri için özniteliği. Aşağıdaki örnekte `$ServiceName` bir **zorunlu** parametresi.
+Tanımlı parametrenin yönlerini denetlemek için her `parameter` bir özniteliğin bağımsız değişkenlerini belirtebilirsiniz. Aşağıdaki örnek `$ServiceName` **zorunlu** bir parametre oluşturur.
 
 ```powershell
 [parameter(Mandatory)]
@@ -176,7 +176,7 @@ Her bağımsız değişken belirtebilirsiniz `parameter` tanımlanan parametre d
 $ServiceName
 ```
 
-İçin `$State` parametresi, biz istediğiniz kullanıcı dışında bir önceden tanımlanmış değerler belirtmelerini engelleyin (gibi çalışıyor, durduruldu) `ValidationSet*`özniteliği engelleyebilir kullanıcı belirtmelerini dışında (örneğin, çalışan bir önceden tanımlanmış değerler Durduruldu). Aşağıdaki örnek ekler `ValidationSet` özniteliğini `$State` parametresi. Biz yapmak istemediğiniz beri `$State` parametre **zorunlu**, biz de varsayılan bir değer eklemeniz gerekir.
+Parametresi için, kullanıcının önceden tanımlanmış bir küme dışında (çalışıyor, durduruldu gibi `ValidationSet*`) değerler belirtmesini engellemek istiyoruz. öznitelik, kullanıcının önceden tanımlanmış bir küme dışında değerler belirtmesini önler (örneğin, `$State` Durduruldu). Aşağıdaki örnek, `ValidationSet` `$State` parametresine özniteliğini ekler. `$State` Parametresini **zorunlu**hale getirmek istemediğimiz için, bunun için varsayılan bir değer eklememiz gerekir.
 
 ```powershell
 [ValidateSet("Running", "Stopped")]
@@ -185,13 +185,13 @@ $State="Running"
 ```
 
 > [!NOTE]
-> Belirtmenize gerek olmayan bir `parameter` özniteliği kullanırken bir `validation` özniteliği.
+> Özniteliği kullanırken bir `parameter` öznitelik belirtmeniz gerekmez. `validation`
 
-Daha fazla bilgi edinebilirsiniz `parameter` ve doğrulama öznitelikleri [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
+`parameter` [About_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters)' de ve doğrulama öznitelikleri hakkında daha fazla bilgi edinebilirsiniz.
 
-## <a name="fully-parameterized-configuration"></a>Tam olarak parametreli yapılandırma
+## <a name="fully-parameterized-configuration"></a>Tam parametreli yapılandırma
 
-Artık belirtmesini zorlar parametreli bir yapılandırma sunuyoruz bir `-InstanceName`, `-ServiceName`ve doğrulama `-State` parametresi.
+Artık, kullanıcıyı bir `-InstanceName`, `-ServiceName`, ve `-State` parametresini doğrulama işlemini zorlayan parametreli bir yapılandırmadır.
 
 ```powershell
 Configuration TestConfig
@@ -210,7 +210,7 @@ Configuration TestConfig
         $ComputerName="localhost",
     )
 
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node localhost
@@ -226,7 +226,7 @@ Configuration TestConfig
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [DSC yapılandırmaları için Yardım yazma](configHelp.md)
-- [Dinamik yapılandırmaları](flow-control-in-configurations.md)
-- [Yapılandırma verileri, yapılandırmaları kullanın](configData.md)
-- [Ayrı yapılandırma ve ortam verilerini](separatingEnvData.md)
+- [DSC yapılandırması için yardım yazma](configHelp.md)
+- [Dinamik yapılandırma](flow-control-in-configurations.md)
+- [Yapılandırmalarınızın yapılandırma verilerini kullanma](configData.md)
+- [Yapılandırma ve ortam verilerini ayır](separatingEnvData.md)
