@@ -1,5 +1,5 @@
 ---
-title: Dinamik parametreler için sağlayıcı Yardım konusunun ekleme | Microsoft Docs
+title: Sağlayıcıya dinamik parametreler ekleme Yardım konusu | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -9,27 +9,27 @@ ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
 ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849528"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737594"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Sağlayıcı Yardım Konusuna Dinamik Parametreler Ekleme
 
-Bu bölümde doldurmak açıklanmaktadır **dinamik parametreleri** sağlayıcısı Yardım konusunun bölümü.
+Bu bölümde, bir sağlayıcı Yardım konusunun **dınamık parametreler** bölümünün nasıl doldurulacağı açıklanmaktadır.
 
-*Dinamik parametreleri* bir cmdlet parametreleri veya yalnızca şuranın altında kullanılabilir işlev belirtilen koşullar.
+*Dinamik parametreler* yalnızca belirtilen koşullarda kullanılabilen bir cmdlet veya işlevin parametreleridir.
 
-Bir sağlayıcı Yardım konusunda belgelenen dinamik parametreleri cmdlet'ini veya işlev sağlayıcısı sürücüde kullanıldığında, cmdlet veya işlevi için sağlayıcı ekler dinamik parametreleridir.
+Sağlayıcı yardım konusunda belgelenen dinamik parametreler, sağlayıcının cmdlet 'i veya işlevi sağlayıcı sürücüsünde kullanıldığında cmdlet veya işleve eklediği dinamik parametrelerdir.
 
-Sağlayıcı için özel cmdlet Yardımı'nda dinamik parametreler de belgelenen. Sağlayıcısı için sağlayıcı Yardım hem özel cmdlet yardımına yazarken, hem belgelerde dinamik parametre belgeleri içerir. Özel cmdlet Yardım hakkında daha fazla bilgi için bkz: [yazma Windows PowerShell özel Cmdlet için Yardım sağlayıcıları](./writing-custom-cmdlet-help-for-windows-powershell-providers.md).
+Dinamik parametreler, bir sağlayıcı için özel cmdlet yardımı 'nda da açıklanmalıdır. Sağlayıcı için hem sağlayıcı yardımını hem de özel cmdlet yardımını yazarken, dinamik parametre belgelerini her iki belgeye de ekleyin. Özel cmdlet yardımı hakkında daha fazla bilgi için bkz. [sağlayıcılar Için Windows PowerShell özel cmdlet yardımı yazma](./writing-custom-cmdlet-help-for-windows-powershell-providers.md).
 
-Bir sağlayıcı, herhangi bir dinamik parametre uygulamaz, boş bir sağlayıcı Yardım konusuna içeren `DynamicParameters` öğesi.
+Bir sağlayıcı herhangi bir dinamik parametre uygulamadıysanız, sağlayıcı yardım konusu boş `DynamicParameters` bir öğesi içerir.
 
-### <a name="to-add-dynamic-parameters"></a>Dinamik parametreleri eklemek için
+### <a name="to-add-dynamic-parameters"></a>Dinamik parametreler eklemek için
 
-1. İçinde *AssemblyName*içinde help.xml .dll dosyası `providerHelp` öğe, Ekle bir `DynamicParameters` öğesi. `DynamicParameters` Öğesi sonra görüntülenmelidir `Tasks` öğesi ve önce `RelatedLinks` öğesi.
+1. *AssemblyName*. dll-Help. xml dosyasında, `providerHelp` öğesi içinde, bir `DynamicParameters` öğesi ekleyin. Öğe, `Tasks` öğesinden sonra ve öğesinden önce `RelatedLinks` görünmelidir. `DynamicParameters`
 
    Örneğin:
 
@@ -44,9 +44,9 @@ Bir sağlayıcı, herhangi bir dinamik parametre uygulamaz, boş bir sağlayıc�
     </providerHelp>
     ```
 
-   Sağlayıcı, herhangi bir dinamik parametre uygulamıyorsa `DynamicParameters` öğesi boş olabilir.
+   Sağlayıcı herhangi bir dinamik parametre uygulamadıysanız, `DynamicParameters` öğe boş olabilir.
 
-2. İçinde `DynamicParameters` her dinamik bir parametre için bir öğe ekleme bir `DynamicParameter` öğesi.
+2. Öğesi içinde, her dinamik parametre için bir `DynamicParameter` öğesi ekleyin. `DynamicParameters`
 
    Örneğin:
 
@@ -57,14 +57,14 @@ Bir sağlayıcı, herhangi bir dinamik parametre uygulamaz, boş bir sağlayıc�
     </DynamicParameters>
     ```
 
-3. Her `DynamicParameter` öğe, Ekle bir `Name` ve `CmdletSupported` öğesi.
+3. Her `DynamicParameter` öğesinde bir `Name` ve `CmdletSupported` öğesi ekleyin.
 
    |Öğe Adı|Açıklama|
    |------------------|-----------------|
-   |Adı|Parametre adını belirtir.|
-   |CmdletSupported|Parametrenin geçerli olduğundan cmdlet'leri belirtir. Cmdlet adları virgülle ayrılmış bir listesini yazın.|
+   |Adı|Parametrenin adını belirtir.|
+   |CmdletSupported|Parametresinin geçerli olduğu cmdlet 'leri belirtir. Cmdlet adlarının virgülle ayrılmış bir listesini yazın.|
 
-   Örneğin, aşağıdaki XML belgeleri `Encoding` Windows PowerShell dosya sistemi sağlayıcısı ekler dinamik parametre `Add-Content`, `Get-Content`, `Set-Content` cmdlet'leri.
+   Örneğin, aşağıdaki XML, Windows PowerShell FileSystem `Encoding` sağlayıcısının `Add-Content`, `Get-Content` `Set-Content` , cmdlet 'lerine eklediği dinamik parametreyi belgeler.
 
     ```xml
     <DynamicParameters/>
@@ -75,9 +75,9 @@ Bir sağlayıcı, herhangi bir dinamik parametre uygulamaz, boş bir sağlayıc�
 
     ```
 
-4. Her `DynamicParameter` öğe, Ekle bir `Type` öğesi. `Type` Öğesi için bir kapsayıcıdır `Name` dinamik parametre değerini .NET türünü içeren öğe.
+4. Her `DynamicParameter` öğesinde bir `Type` öğesi ekleyin. Öğesi, dinamik parametre değerinin .NET türünü `Name` içeren öğesi için bir kapsayıcıdır. `Type`
 
-   Örneğin, .NET türünü gösteren aşağıdaki XML `Encoding` dinamik parametredir [Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) sabit listesi.
+   Örneğin, aşağıdaki XML, `Encoding` dinamik parametrenin .NET türünün [Microsoft. PowerShell. Commands. FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) numaralandırması olduğunu gösterir.
 
     ```xml
     <DynamicParameters/>
@@ -91,9 +91,9 @@ Bir sağlayıcı, herhangi bir dinamik parametre uygulamaz, boş bir sağlayıc�
     </DynamicParameters>
     ```
 
-5. Ekleme `Description` dinamik parametre kısa bir açıklamasını içeren öğe. Açıklama oluştururken de tüm cmdlet parametreleri için belirlenen yönergeleri kullanın [parametre bilgilerini ekleme](./how-to-add-parameter-information.md).
+5. Dinamik parametrenin kısa bir açıklamasını içeren öğesiniekleyin.`Description` Açıklamayı oluştururken [parametre bilgilerini ekleme](./how-to-add-parameter-information.md)içindeki tüm cmdlet parametreleri için önceden belirlenmiş olan yönergeleri kullanın.
 
-   Örneğin, aşağıdaki XML açıklamasını içerir `Encoding` dinamik parametre.
+   Örneğin, aşağıdaki XML `Encoding` dinamik parametrenin açıklamasını içerir.
 
     ```xml
     <DynamicParameters/>
@@ -108,18 +108,18 @@ Bir sağlayıcı, herhangi bir dinamik parametre uygulamaz, boş bir sağlayıc�
     </DynamicParameters>
     ```
 
-6. Ekleme `PossibleValues` öğesi ve onun alt öğeleri. Birlikte, bu öğeleri dinamik parametre değerleri açıklar. Bu öğe Enum değerleri için tasarlanmıştır. Dinamik parametre bir değer almaz, anahtar parametresi gibi olduğu ve değerleri numaralandırılamıyor, boş bir ekleme `PossibleValues` öğesi.
+6. `PossibleValues` Öğesi ve alt öğelerini ekleyin. Birlikte, bu öğeler dinamik parametrenin değerlerini anlatmaktadır. Bu öğe, numaralandırılmış değerler için tasarlanmıştır. Dinamik parametre bir değer almaz (örneğin, bir switch parametresi ile birlikte) veya değerler numaralandırılamıyor, boş `PossibleValues` bir öğe ekleyin.
 
-   Aşağıdaki tabloda listelenmekte ve açıklanmaktadır `PossibleValues` öğesi ve onun alt öğeleri.
+   Aşağıdaki tabloda `PossibleValues` öğesi ve alt öğeleri listelenmektedir ve açıklanmaktadır.
 
    |Öğe Adı|Açıklama|
    |------------------|-----------------|
-   |PossibleValues|Bu öğe bir kapsayıcıdır. Alt öğeleri, aşağıda açıklanmıştır. Eklemesini `PossibleValues` her sağlayıcısı Yardım konusu öğesi. Öğe boş olabilir.|
-   |PossibleValue|Bu öğe bir kapsayıcıdır. Alt öğeleri, aşağıda açıklanmıştır. Eklemesini `PossibleValue` her dinamik parametresinin değeri için öğesi.|
-   |Değer|Değer adı belirtir.|
-   |Açıklama|Bu öğeyi içeren bir `Para` öğesi. Metinde `Para` açıklar adlı değer `Value` öğesi.|
+   |PossibleValues|Bu öğe bir kapsayıcıdır. Alt öğeleri aşağıda açıklanmıştır. Her sağlayıcı `PossibleValues` yardım konusuna bir öğe ekleyin. Öğe boş olabilir.|
+   |PossibleValue|Bu öğe bir kapsayıcıdır. Alt öğeleri aşağıda açıklanmıştır. Dinamik parametrenin `PossibleValue` her bir değeri için bir öğe ekleyin.|
+   |Değer|Değer adını belirtir.|
+   |Açıklama|Bu öğe bir `Para` öğesi içerir. `Para` Öğesindeki metin, `Value` öğesinde adı geçen değeri açıklar.|
 
-   Örneğin, aşağıdaki XML bir gösterir `PossibleValue` öğesinin `Encoding` dinamik parametre.
+   Örneğin, aşağıdaki XML `PossibleValue` `Encoding` dinamik parametrenin bir öğesini gösterir.
 
     ```xml
     <DynamicParameters/>
@@ -140,7 +140,7 @@ Bir sağlayıcı, herhangi bir dinamik parametre uygulamaz, boş bir sağlayıc�
 
 ## <a name="example"></a>Örnek
 
-Aşağıdaki örnekte gösterildiği `DynamicParameters` öğesinin `Encoding` dinamik parametre.
+Aşağıdaki örnek, `Encoding` dinamik parametrenin `DynamicParameters` öğesini gösterir.
 
 ```xml
 <DynamicParameters/>

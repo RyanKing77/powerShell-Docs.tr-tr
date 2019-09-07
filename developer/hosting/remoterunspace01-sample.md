@@ -1,5 +1,5 @@
 ---
-title: RemoteRunspace01 örnek | Microsoft Docs
+title: RemoteRunspace01 örneği | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059652"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737572"
 ---
 # <a name="remoterunspace01-sample"></a>RemoteRunspace01 Örneği
 
-Bu örnek, bir uzak bağlantı kurmak için kullanılan bir uzak çalışma alanı oluşturma işlemi gösterilmektedir.
+Bu örnek, uzak bir bağlantı kurmak için kullanılan bir uzak çalışma alanının nasıl oluşturulacağını gösterir.
 
 ## <a name="requirements"></a>Gereksinimler
 
- Bu örnek, Windows PowerShell 2.0 gerektirir.
+ Bu örnek, Windows PowerShell 2,0 gerektirir.
 
 ## <a name="demonstrates"></a>Gösteriler
 
-- Oluşturma bir [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) nesne.
+- [System. Management. Automation. Runspaces. Wsmanconnectionınfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) nesnesi oluşturuluyor.
 
-- Ayarı [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) ve [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) özelliklerini [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) nesne.
+- [System. Management. Automation. Runspaces. Runspaceconnectionınfo. OperationTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) ve [System. Management. Automation. Runspaces. Runspaceconnectionınfo. OpenTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) özelliklerinin [ayarlanması System. Management. Automation. Runspaces. Wsmanconnectionınfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) nesnesi.
 
-- Kullanan bir uzak çalışma alanı oluşturma [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) uzak bağlantı kurmak için nesne.
+- Uzak bağlantı kurmak için [System. Management. Automation. Runspaces. Wsmanconnectionınfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) nesnesini kullanan bir uzak çalışma alanı oluşturma.
 
-- Uzak bağlantı yayımlamayı uzak çalışma alanı kapatılıyor.
+- Uzak çalışma alanı, uzak bağlantıyı serbest bırakmak için kapatılıyor.
 
 ## <a name="example"></a>Örnek
 
-Bu örnek, bir uzak bağlantıyı tanımlar ve sonra uzak bağlantı kurmak için bu bağlantı bilgilerini kullanır.
+Bu örnek, uzak bir bağlantı tanımlar ve bu bağlantı bilgilerini uzak bağlantı kurmak için kullanır.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

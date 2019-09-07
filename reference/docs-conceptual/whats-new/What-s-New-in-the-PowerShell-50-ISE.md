@@ -1,227 +1,204 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell cmdlet'i
-title: "' Teki yenilikler 50 PowerShell ISE"
-ms.openlocfilehash: 52e8926a7320f86f2ab8970a7778faba6a14a714
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.date: 09/06/2019
+keywords: PowerShell, cmdlet
+title: PowerShell 5,0 ıSE 'deki yenilikler
+ms.openlocfilehash: a719baef0da1600f0a5377e1b72c81b67e37eef2
+ms.sourcegitcommit: a74ae7ed089301992fed201fbe55d827a622afa0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030023"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70746214"
 ---
-# <a name="what39s-new-in-the-windows-powershell-ise"></a>Hangi&#39;yeni Windows PowerShell ıse'de s
-Bu konuda, Windows PowerShell Tümleşik komut dosyası ortamı (ISE) sürümlerinde sunulan yeni ve güncelleştirilmiş özellikler açıklanmaktadır.
+# <a name="whats-new-in-the-windows-powershell-50-ise"></a>Windows PowerShell 5,0 ıSE 'deki yenilikler
+
+Bu konuda, Windows PowerShell Tümleşik komut dosyası ortamı (ıSE) sürümlerinde sunulan yeni ve güncelleştirilmiş özellikler açıklanmaktadır.
 
 ## <a name="feature-description"></a>Özellik açıklaması
-Windows PowerShell ISE yazma, çalıştırma ve betikler ve modüllerle grafik ve sezgisel bir ortamda test olanak tanıyan bir ana bilgisayar uygulamasıdır. Söz dizimi renklendirme gibi önemli özelliklerle sekme tamamlama, görsel hata ayıklama, Unicode uyumluluk ve bağlama duyarlı Yardım zengin bir kodlama deneyimi sunar.
 
-Windows PowerShell ISE genel bakış için bkz. [Windows PowerShell Tümleşik komut dosyası ortamı genel bakış](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+Windows PowerShell ISE, bir grafik ve sezgisel bir ortamda betikleri ve modülleri yazmanızı, çalıştırmanızı ve test etmenizi sağlayan bir konak uygulamasıdır. Sözdizimi renklendirme, sekme tamamlama, görsel hata ayıklama, Unicode uyumluluğu ve bağlama duyarlı yardım gibi önemli özellikler, zengin bir betik deneyimi sağlar.
 
-## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Windows PowerShell ıse'de yeni ve değiştirilen işlevsellik
-Aşağıdaki tabloda, bu sürümü Windows PowerShell ISE'de Windows PowerShell için yeni ve değiştirilmiş özellikler listelenmektedir.
+Daha fazla bilgi için bkz. [Windows PowerShell ISE tanıtımı](../components/ise/Introducing-the-Windows-PowerShell-ISE.md).
 
-|Özellik/işlevsellik|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
-|--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense](#intellisense)**|X|X||
-|**[Kod parçacıkları](#snippets)**|X|X||
-|**[Eklenti araçları](#add-on-tools)**|X|X||
-|**[Yeniden başlatma Yöneticisi ve Otomatik Kaydet](#restart-manager-and-auto-save)**|X|X||
-|**[En son kullanılan listesi](#most-recently-used-list)**|X|X||
-|**[Konsol bölmesinde](#console-pane)**|X|X||
-|**[Komut satırı anahtarları](#command-line-switches)**|X|X||
-|**[Yeni Düzenleyici Özellikleri](#new-editor-features)**|X|X||
-|**[Yeni Yardım Görüntüleyici penceresi](#new-help-viewer-window)**|X|X||
-|**[Show-Command cmdlet'i](#show-command-cmdlet)**|X|X||
+Aşağıdaki tabloda, Windows PowerShell 'de Windows PowerShell ISE bu sürümü için yeni ve değiştirilmiş özellikler listelenmiştir.
 
-### <a name="intellisense"></a>IntelliSense
-**3.0 ISE'de eklendi**
+## <a name="intellisense"></a>IntelliSense
 
-IntelliSense Windows PowerShell ISE parçası olan bir otomatik tamamlama Yardım özelliğidir. IntelliSense, siz yazarken, potansiyel olarak cmdlet'leri, parametreleri, parametre değerleri, dosyaları veya klasörleri eşleşen tıklanabilir menü görüntüler.
+> ISE 3,0 eklendi
+
+IntelliSense, Windows PowerShell ISE parçası olan bir otomatik tamamlama yardım özelliğidir.
+IntelliSense, siz yazarken eşleşen cmdlet 'ler, parametreler, parametre değerleri, dosyalar veya klasörler için tıklatılabilir menüler görüntüler.
 
 **Bu değişiklik hangi değeri ekler?**
 
-IntelliSense'nın eklenmesiyle, komut dosyaları oluşturmak için Windows PowerShell ISE kullandığınızda, cmdlet'ler ve söz dizimi bulmak daha kolay olur. Ayrıca, yeni komut dosyası oluştururken, Windows PowerShell öğrenmek için Windows PowerShell ISE kullanabilirsiniz.
+IntelliSense 'in eklenmesiyle, betikleri oluşturmak için Windows PowerShell ISE kullandığınızda cmdlet 'leri ve sözdizimini bulmayı daha kolay hale gelir. Yeni betikler oluştururken Windows PowerShell 'i öğrenmek için Windows PowerShell ISE de kullanabilirsiniz.
 
-**Farklı işleyen nedir?**
+**Ne farklı çalışır?**
 
-Cmdlet'lerini Windows PowerShell ISE 3.0 veya üzeri yazdığınızda, böylece ve uygun komutları seçmek kaydırılabilir ve tıklatılabilir bir menü görüntüler.
+Windows PowerShell ISE cmdlet 'leri yazdığınızda, kaydırılabilir ve tıklatılabilir bir menü görüntülenir ve ilgili komutlara gözatmanıza ve bunları seçmenize olanak sağlar.
 
-### <a name="snippets"></a>Kod parçacıkları
-**3.0 ISE'de eklendi**
+## <a name="snippets"></a>Kod parçacıkları
 
-*Kod parçacıkları* Windows PowerShell ISE'de oluşturduğunuz betikler eklemek Windows PowerShell kodu kısa bölümler. Windows PowerShell ISE kod parçacıkları varsayılan kümesi ile birlikte gelir. Kod parçacıkları kullanarak ekleyebilirsiniz **yeni kod parçacığı** Windows PowerShell ISE'de çalışırken cmdlet'i.
+> ISE 3,0 eklendi
 
-**Bu değişiklik hangi değeri ekler?**
-
-Kod parçacıkları kullanarak hızlı bir şekilde birleştirin ve ortamınızı otomatik hale getirmek için betikleri oluşturun.
-
-**Farklı işleyen nedir?**
-
-Windows PowerShell 3.0 veya sonraki kod parçacıkları kullanması için **Düzenle** menüsünde tıklayın **parçacıkları Başlat**, veya basın **Ctrl-J**.
-
-### <a name="add-on-tools"></a>Eklenti araçları
-**PowerShell 3.0 eklendi**
-
-Windows PowerShell ISE nesne modeli kullanılarak eklenen denetimler Windows Presentation Foundation (WPF) eklenti araçları, artık desteklemektedir. Eklenti araçları, konsolda bir dikey veya yatay bölme olarak görüntülenebilir. Sekmeli denetim olarak birden fazla eklenti araçları bölmesinde görüntülenir. Ayrıca, ekleyebilir veya Microsoft dışı taraflarca oluşturulan eklenti araçları kaldırabilirsiniz. İçeri aktarma veya eklenti araçları kaldırma hakkında daha fazla bilgi için bkz. [Windows PowerShell ISE işlemleri](https://technet.microsoft.com/library/cc732148.aspx).
+Kod *parçacıkları* , Windows PowerShell ISE içinde oluşturduğunuz betiklere ekleyebileceğiniz Windows PowerShell kodunun kısa bölümleridir. Windows PowerShell ISE, varsayılan bir parçacık kümesiyle gelir. Windows PowerShell ISE çalışırken `New-Snippet` cmdlet 'ini kullanarak kod parçacığı ekleyebilirsiniz.
 
 **Bu değişiklik hangi değeri ekler?**
 
-Eklentiler, genişletme ve Windows PowerShell ISE betik oluşturma deneyiminizi geliştirin veya Windows PowerShell ISE'ye işlevsellik ekleyen araçlarla özelleştirme olanak tanır.
+Kod parçacıklarını kullanarak ortamınızı otomatik hale getirmek için hızlı bir şekilde komut dosyaları oluşturabilir ve oluşturabilirsiniz.
 
-**Farklı işleyen nedir?**
+**Ne farklı çalışır?**
 
-Windows PowerShell ISE 3.0 ve sonraki sürümleri ile birlikte geldiğinden **komutları** eklenti. **Komutları** eklenti cmdlet'leri göz atın ve cmdlet'leri yan yana ile ilgili Yardım erişim olanak tanır **betik** ve **konsol** bölmeleri.
+Windows PowerShell 3,0 veya sonrasında kod parçacıklarını kullanmak için, **Düzenle** menüsünde, **parçacıkları Başlat**' a tıklayın veya <kbd>CTRL</kbd>+<kbd>J</kbd>' ye basın.
 
-Ek Eklentiler kullanarak bulunabilir **eklenti araçları Web sitesi Aç** komutunu **eklentileri** menüsü.
+## <a name="add-on-tools"></a>Eklenti araçları
 
-### <a name="restart-manager-and-auto-save"></a>Yöneticisi yeniden Otomatik Kaydet
-**PowerShell 3.0 eklendi**
+> PowerShell 3,0 ' ye eklendi
 
-Windows PowerShell ISE artık otomatik olarak açık betiklerinizi iki dakikada bir, ayrı bir konuma kaydeder.  Betikleri kaydedilmedi bile Windows PowerShell ISE çalışmayı durduruyor ya da Windows PowerShell ISE yeniden başlatıldıktan sonra işletim sistemini yeniden başlatılırsa bu kurtarır olan betikler son oturumunuzda açın.
-
-Otomatik kaydetme aralığını değiştirmek için konsol bölmesinde aşağıdaki komutu çalıştırın: **$psise. Options.AutoSaveMinuteInterval**.
+Windows PowerShell ISE artık nesne modelini kullanan eklenti araçlarını desteklemektedir. Bu eklentiler, konsolunda dikey veya yatay bölme olarak görüntülenen Windows Presentation Foundation (WPF) denetimleridir. Bölmedeki çoklu eklenti araçları sekmeli Denetim olarak görüntülenir. Ayrıca, Microsoft dışı taraflar tarafından üretilen eklenti araçları ekleyebilir veya kaldırabilirsiniz. Daha fazla bilgi için [Windows PowerShell ISE betik nesnesi modelinin amacını](../components/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)inceleyin.
 
 **Bu değişiklik hangi değeri ekler?**
 
-Artık Windows PowerShell ISE açık betiklerinizi beklenmeyen bir yeniden başlatma durumunda otomatik olarak kaydedilir bilerek içinde çalışabilirsiniz.
+Eklentiler, işlevselliği ekleyen ve betik deneyiminizi geliştiren araçlarla Windows PowerShell ISE genişletmenize ve özelleştirmenize olanak tanır.
 
-**Farklı işleyen nedir?**
+**Ne farklı çalışır?**
 
-Windows PowerShell ISE 2.0 komut dosyalarını otomatik olarak yeniden başlatma durumunda kaydetmez.
+Windows PowerShell ISE 3,0 ve üzeri, **Komutlar** eklentisi ile birlikte gelir. **Komutlar** eklentisi, cmdlet 'lere gözatmanıza ve cmdlet 'Ler hakkında **komut dosyası** ve **konsol** bölmeleri ile yan yana erişim sağlamanıza olanak tanır.
 
-### <a name="most-recently-used-list"></a>En son kullanılan listesi
-**PowerShell 3.0 eklendi**
+Ek **Eklentiler, eklentiler menüsündeki** **eklenti araçları Web sitesini aç** komutu kullanılarak bulunabilir.
 
-Windows PowerShell ISE artık dosyalar için en son kullanılan bir listesi vardır. Windows PowerShell ISE'de bir dosyayı açtığınızda, dosyanın en son kullanılan listeye eklendiğini **dosya** menüsü.
+## <a name="restart-manager-and-auto-save"></a>Yeniden başlatma Yöneticisi ve otomatik kaydetme
 
-En son kullanılan listede yer alan dosyalar varsayılan sayısını değiştirmek için konsol bölmesinde aşağıdaki komutu çalıştırın: **$psise. Options.MruCount**.
+> PowerShell 3,0 ' ye eklendi
+
+Windows PowerShell ISE artık açık betiklerinizi her iki dakikada bir otomatik olarak ayrı bir konuma kaydeder. Beklenmeyen kilitlenme veya yeniden başlatma işleminden sonra Windows PowerShell ISE yeniden başlatıldığında, betikler kaydedilmese bile son oturumda açık olan betikleri kurtarır.
+
+Otomatik kaydetme aralığını değiştirmek için Konsol bölmesinde aşağıdaki komutu çalıştırın: `$psise.Options.AutoSaveMinuteInterval`.
 
 **Bu değişiklik hangi değeri ekler?**
 
-En Son Kullanılanlar listesi artık kolayca sık kullanılan dosyalarınıza erişmek için de kullanabilirsiniz.
+Artık açık betiklerinizin otomatik olarak kaydedildiğini bilmenin Windows PowerShell ISE içinde çalışabilirsiniz.
 
-**Farklı işleyen nedir?**
+**Ne farklı çalışır?**
 
-Windows PowerShell ISE 2.0 en son kullanılan liste yok.
+Windows PowerShell ISE 2,0, betikleri otomatik olarak kaydetmez.
 
-### <a name="console-pane"></a>Konsol bölmesinde
-**PowerShell 3.0 eklendi**
+## <a name="most-recently-used-list"></a>En son kullanılan liste
 
-Tek bir konsol bölmesine ayrı komut ve Windows PowerShell ISE ilk sürümde kullanılabilir çıkış bölmeleri birleştirilmiştir. Konsol bölmesinde işlevi ve tipik bir Windows PowerShell Konsolu görünümünü benzer, ancak (çoğu bu konuda açıklandığı gibi) aşağıdaki geliştirmeleri içerir.
+> PowerShell 3,0 ' ye eklendi
 
-- Giriş metin (çıkış metin değil), XML sözdizimi de dahil olmak üzere söz dizimi renklendirmesi
+Artık Windows PowerShell ISE dosyalar için en son kullanılanlar listesine sahiptir. Windows PowerShell ISE **bir dosyayı açtığınızda Dosya menüsündeki en** Son Kullanılanlar listesine eklenir.
 
+En son kullanılan listedeki varsayılan dosya sayısını değiştirmek için Konsol bölmesinde aşağıdaki komutu çalıştırın: `$psise.Options.MruCount`.
+
+**Bu değişiklik hangi değeri ekler?**
+
+Artık sık kullanılan dosyalarınıza kolayca erişmek için en son kullanılan listesini kullanabilirsiniz.
+
+**Ne farklı çalışır?**
+
+Windows PowerShell ISE 2,0 en son kullanılanlar listesine sahip değil.
+
+## <a name="console-pane"></a>Konsol bölmesi
+
+> PowerShell 3,0 ' ye eklendi
+
+İlk Windows PowerShell ISE sürümünde kullanılabilir olan ayrı komut ve çıkış bölmeleri tek bir Konsol bölmesinde birleştirilmiştir. Konsol bölmesi, tipik bir Windows PowerShell konsoluna işlev ve görünüm ile benzerdir, ancak aşağıdaki geliştirmeleri içerir:
+
+- XML sözdizimi dahil olmak üzere giriş metni için sözdizimi renklendirme (çıkış metni değil)
 - IntelliSense
-
 - Ayraç eşleştirme
-
 - Hata göstergesi
-
 - Tam Unicode desteği
-
-- **F1** bağlama duyarlı Yardım
-
-- **CTRL + F1** bağlama duyarlı Göster komutu
-
-- Karmaşık bir betik ve sağdan sola destek
-
+- <kbd>F1</kbd> bağlama duyarlı yardım
+- <kbd></kbd>CTRL+<kbd>F1</kbd> bağlama duyarlı göster-komut
+- Karmaşık betik ve sağdan sola destek
 - Yazı tipi desteği
-
 - Yakınlaştır
-
-- Satırı seçin ve blok seçim modları
-
-- Yazılan içerik tuşuna bastığınızda komut satırında korunmasını **yukarı** konsolda geçmişini görüntülemek için oku
+- Satır seçme ve blok seçme modları
+- Konsolunda geçmişi görüntülemek için <kbd>yukarı oka</kbd> bastığınızda komut satırında yazılan içeriğin korunması
 
 **Bu değişiklik hangi değeri ekler?**
 
-Konsol bölmesinde değişikliklerin eklenmesini konsoluna arabirimle daha tutarlı bir kodlama deneyimi sağlar.
+Bu konsol bölmesi değişikliklerinin eklenmesi konsol arabirimiyle daha tutarlı bir betik deneyimi sağlar.
 
-**Farklı işleyen nedir?**
+**Ne farklı çalışır?**
 
-Windows PowerShell ISE 2.0 ayrı komut ve çıkış bölmeleri vardır.
+Windows PowerShell ISE 2,0 ayrı komut ve çıkış bölmeleri içerir.
 
-### <a name="command-line-switches"></a>Komut satırı anahtarları
-**PowerShell 3.0 eklendi**
+## <a name="command-line-switches"></a>Komut satırı anahtarları
 
-Komut satırından Windows PowerShell ISE başlatırsanız (yazarak **powershell_ise.exe**), aşağıdaki yeni komut satırı anahtarları ekleyebilirsiniz.
+> PowerShell 3,0 ' ye eklendi
 
-- *-NoProfile*: Windows PowerShell ISE verilmeden çalıştırılmasını başlatır **$profile**
+Komut satırından Windows PowerShell ISE başlatırsanız ( **powershell_ise. exe**yazarak) aşağıdaki yeni komut satırı anahtarlarını ekleyebilirsiniz.
 
-- *-Help*: Yardım penceresini görüntüler
-
-- *-mta*: Windows PowerShell ISE birden çok iş parçacıklı bölme modunda başlatır. Windows PowerShell ISE için varsayılan işlem modu tek iş parçacıklı bölme modunda olduğundan veya *- sta*.
-
-**Bu değişiklik hangi değeri ekler?**
-
-Bu komut satırı anahtarları eklenmesi, Windows PowerShell ISE çalıştığı ortam denetlemenize olanak tanır.
-
-**Farklı işleyen nedir?**
-
-Windows PowerShell ISE 2.0, bu komut satırı anahtarları kabul etmiyor.
-
-### <a name="new-editor-features"></a>Yeni Düzenleyici Özellikleri
-**PowerShell 3.0 eklendi**
-
-Diğer Windows PowerShell ISE düzenleme özellikleri şunlardır:
-
-- **XML sözdizimi renklendirme**Windows PowerShell ISE'de artık renkleri XML sözdizimini aynı şekilde Windows PowerShell söz dizimi renkleri gibi.
-
-- **Ayraç eşleştirme** Windows PowerShell ISE vurgulama ve Ayraç eşleştirme içerir ve aşağıdaki şekillerde kullanılabilir: (örneğin, kullanarak **eşleşmeye Git** komutu veya **Ctrl +]** bulur Seçili bir açılış ayracı varsa, kapanış ayracı).
-
-- **Anahat görünümü** betik bölmesine destekler anahat oluşturma, artı veya eksi tıklayarak kod bölümlerini genişletme veya daraltma imzalar sol kenar boşluğunda izin verir. Küme ayraçları kullanabilirsiniz veya **#region** ve **#endregion** başlangıcında veya daraltılabilir bir bölüm sonu işaretlemek için etiketleri. Genişlet veya daralt tüm bölgeler için basın **Ctrl + M**.
-
-- **Sürükle ve bırak metin düzenlemesini**sürükle ve bırak metin düzenlemesini artık Windows PowerShell ISE. Herhangi bir metin bloğu seçin ve bu metin düzenleyicisi veya konsol metni taşımak için başka bir konuma sürükleyin. Fare düğmesini bıraktığınızda, seçili metni sürüklerken Ctrl tuşunu basılı tutun, metin yeni konuma kopyalanır. Windows PowerShell ISE'yi .iso dosyalarını sürükleyip Windows PowerShell ISE bu sürümü, aynı zamanda Windows PowerShell ISE önceki sürümünü, Windows PowerShell ISE dosyayı açar.
-
-- **Hata ekranı ayrıştırma** ayrıştırma hataları kırmızı alt çizgi ile gösterilir. Belirtilen bir hata geldiğinizde, araç ipucu metni, kod içinde bulunan sorun görüntüler.
-
-- **Yakınlaştırma** konsolun içeriği yakınlaştırma yüzdesi yakınlaştırma kaydırıcısı (alt sağ köşesinde Windows PowerShell ISE penceresi) kullanarak veya komutu girerek ayarlanabilir **$psise.options.Zoom** Konsol bölmesinde.
-
-- **Zengin Metin Kopyala ve Yapıştır** yazı tipi, boyut ve renk bilgilerini özgün seçimin içinde Windows PowerShell ISE korur Panoya kopyalama.
-
-- **Blok seçimi** betik bölmesine farenizi metin seçim sırasında ALT tuşunu basılı tutarak veya tuşuna basarak metin bloğu seçin **Alt + SHIFT + ok**.
+- `-NoProfile`: Çalıştırmadan Windows PowerShell ISE başlatır`$profile`
+- `-Help`: Yardım penceresini görüntüler
+- `-mta`: Windows PowerShell ISE çoklu iş parçacıklı grup modunda başlatır. Windows PowerShell ISE için varsayılan işlem modu tek iş parçacıklı grup modu veya `-sta`' dir.
 
 **Bu değişiklik hangi değeri ekler?**
 
-Ek düzenleme özellikleri, daha tutarlı ve güçlü bir düzenleme ortamı sağlar.
+Bu komut satırı anahtarlarının eklenmesi, Windows PowerShell ISE çalıştığı ortamı denetlemenize olanak tanır.
 
-**Farklı işleyen nedir?**
+**Ne farklı çalışır?**
 
-Bu düzenleme geliştirmeleri, Windows PowerShell ISE 2.0 sürümünde bulunmamaktadır.
+Windows PowerShell ISE 2,0, bu komut satırı anahtarlarını tanımıyor.
 
-### <a name="new-help-viewer-window"></a>Yeni Yardım Görüntüleyici penceresi
-**PowerShell 3.0 eklendi**
+## <a name="new-editor-features"></a>Yeni Düzenleyici özellikleri
 
-Basarsanız **F1** imlecinizi bir cmdlet'tir veya vurgulanmış bir cmdlet bir parçası olan, bağlama duyarlı Yardım vurgulanan cmdlet'i hakkında yeni Yardım Görüntüleyicisi'ni açar. Windows PowerShell hakkında Yardım görüntülemek üzere şunu yazın **işleçleri** ENTER tuşuna basın ve konsol bölmesinde **F1**.
+> PowerShell 3,0 ' ye eklendi
 
-Bu özelliği kullanmadan önce Windows PowerShell Yardım konularını en güncel sürümü Microsoft Web sitesinden indirin. Yardım konuları karşıdan yüklemek için en basit yöntem çalıştırmaktır **Update-Help** cmdlet'ini yönetici olarak Windows PowerShell ISE çalışırken Konsol bölmesinde.
+Diğer Windows PowerShell ISE düzenlemekte özellikleri şunlardır:
 
-Where değiştirebilirsiniz **F1** anahtar Yardım için arar. İçinde **Araçları**/**seçenekleri** menü, **genel ayarlar** sekmesindeki **diğer ayarlar**, ayarlama veya Temizle onay kutusu **yerel Yardım içeriğini kullanmak yerine çevrimiçi içerik**. Eğer işaretliyse, cmdlet modülleri klasöründe bulunan indirilen Yardımı'nda Yardım istemci arar.  Onay kutusu işaretli değilse, istemci için cmdlet yardımına TechNet kitaplığında arar.
-
-**Bu değişiklik hangi değeri ekler?**
-
-Geçerli bir cmdlet veya betik çıkmadan bağlama duyarlı Yardım sorunsuz öğrenme deneyimi sağlar.
-
-**Farklı işleyen nedir?**
-
-Windows PowerShell ISE önceki sürümlerinde F1 tuşuna bastığınızda, Yardım dosyasını yerel bilgisayarda açıldı. Windows PowerShell ISE 3.0 ve sonraki sürümlerinde, aranabilir ve yapılandırılabilir bir cmdlet için Yardım içeren bir pencere açılır. Bu Yardım deneyimi için Windows PowerShell ISE 3.0 yenidir ve Windows PowerShell 3.0 için güncelleştirilebilir Yardımı yenidir.
-
-### <a name="show-command-cmdlet"></a>Show-Command cmdlet'i
-**PowerShell 3.0 eklendi**
-
-**Show komutunu** cmdlet'i oluşturun veya bir grafik biçiminde doldurarak bir cmdlet veya işlev çalıştırmanızı sağlar. Formu Windows PowerShell ile bir grafiksel ortamda çalışma olanağı sunar. **Show komutunu** ayrıca çalıştırıcılara hızlı bir Windows PowerShell tabanlı GUI oluşturmak için Gelişmiş etkinleştirir.
+- **XML sözdizimi renklendirme** -Windows PowerShell ISE artık renkler XML söz dizimini BT renkleriyle Windows PowerShell söz dizimi ile aynı şekilde.
+- **Ayraç eşleştirme** -Windows PowerShell ISE parantez ile eşleşen ve vurgulamaya sahiptir ve aşağıdaki yollarla kullanılabilir: (örneğin, **eşleşme komutuna git** komutu veya <kbd>CTRL</kbd>+<kbd>]</kbd> , varsa, kapatma küme ayracını bulur) bir açma ayracı seçili olmalıdır).
+- **Ana hat görünümü** Betik bölmesi ana hattı destekler, böylece sol kenar boşluğunda artı veya eksi işareti tıklatılarak kod bölümlerinin daralmasına veya genişletildiğine izin verir. Daraltılabilir bir bölümün başlangıcını veya sonunu `#region` işaretlemek `#endregion` için küme ayracı veya ve etiketlerini kullanabilirsiniz. Tüm bölgeleri genişletmek veya daraltmak için <kbd>CTRL</kbd>+tuşuna<kbd>basın.</kbd>
+- **Sürükle ve bırak metin düzenlemesi** -Windows PowerShell ISE artık sürükle ve bırak metin düzenlemesini destekliyor. Herhangi bir metin bloğunu seçebilir ve metni, düzenleyicide veya konsolda bulunan başka bir konuma sürükleyerek metnin taşınmasını sağlayabilirsiniz. Seçili metni sürüklerken <kbd>CTRL</kbd> tuşunu basılı tutarsanız, fare düğmesini serbest bırakırsanız metin yeni konuma kopyalanır. Bu Windows PowerShell ISE sürümünde, dosyaları Windows PowerShell ISE sürükleyip bıraktığınızda Windows PowerShell ISE dosyayı açar.
+- **Ayrıştırma hatası görüntüleme** -Ayrıştırma hataları kırmızı alt çizgilerle gösterilir. Belirtilen bir hatanın üzerine geldiğinizde, araç ipucu metni kodda bulunan sorunu görüntüler.
+- **Yakınlaştır** -konsol içeriğinin yakınlaştırma yüzdesi, Yakınlaştırma kaydırıcısı (Windows PowerShell ISE penceresinin sağ alt köşesinde) veya komut `$psise.options.Zoom` konsol bölmesine girilerek ayarlanabilir.
+- **Zengin metin kopyalama ve yapıştırma** -Windows PowerShell ISE Pano 'ya kopyalama, özgün seçimin yazı tipi, boyut ve renk bilgilerini korur.
+- **Seçimi engelle** - <kbd>alt</kbd> tuşunu basılı tutarak, farenizle betik bölmesinde metin seçerken veya <kbd>alt</kbd>+<kbd>kaydırma</kbd>+<kbd>okuna</kbd>basarak bir metin bloğunu seçebilirsiniz.
 
 **Bu değişiklik hangi değeri ekler?**
 
-Kullanarak **Show komutunu** , Windows PowerShell betiklerini, kullanıcılarınızın olduğu tanıdık grafik ortamıyla sağlayabilirsiniz. **Show komutunu** Windows PowerShell tanıtım kullanıcıların da yardımcı olabilir.
+Ek Düzenle özellikleri, daha tutarlı ve güçlü bir düzen ortamı sağlar.
 
-**Farklı işleyen nedir?**
+**Ne farklı çalışır?**
 
-Show-yeni Windows PowerShell ISE 3.0 komutudur.
+Bu düzen geliştirmeleri Windows PowerShell ISE 2,0 ' de yoktu.
+
+## <a name="new-help-viewer-window"></a>Yeni Yardım Görüntüleyici penceresi
+
+> PowerShell 3,0 ' ye eklendi
+
+İmlecinizin bir cmdlet 'deyken <kbd>F1</kbd> tuşuna basarsanız veya bir cmdlet 'in bir parçası vurgulandığında, yeni Yardım Görüntüleyicisi vurgulanan cmdlet hakkında bağlama duyarlı yardım açar. Yardım **hakkında** Windows PowerShell 'i göstermek için konsol `operators` bölmesine yazın ve <kbd>F1</kbd>tuşuna basın.
+
+Bu özelliği kullanmadan önce, Microsoft Web sitesindeki Windows PowerShell yardım konuları 'nın en güncel sürümünü indirin. Yardım konularını indirmek için en basit yöntem, Windows PowerShell ISE yönetici olarak çalıştırırken `Update-Help` , cmdlet 'ini Konsol bölmesinde çalıştırkullanmaktır.
+
+<kbd>F1</kbd> tuşunun yardım için nerede göründüğünü değiştirebilirsiniz. **Araçlar**/Seçenekler menüsünde, **Genel ayarlar** sekmesinde, **diğer ayarlar**' ın altında, **çevrimiçi içerik yerine yerel yardım içeriğini kullan**onay kutusunu ayarlayabilir veya temizleyebilirsiniz. İşaretlendiğinde, istemci, modüller klasöründe bulunan indirilen yardım 'da cmdlet yardımına bakar. Onay kutusu silinirse, istemci yardım çevrimiçi olarak arar.
+
+**Bu değişiklik hangi değeri ekler?**
+
+Geçerli cmdlet 'inizden veya betikten çıkmadan bağlama duyarlı yardım tümleşik bir öğrenme deneyimi sağlar.
+
+**Ne farklı çalışır?**
+
+Önceki Windows PowerShell ISE <kbd>F1</kbd> tuşlarına basmak, yerel bilgisayardaki yardım dosyasını açtı. Windows PowerShell ISE 3,0 ve üzeri sürümlerde, aranabilir ve yapılandırılabilir cmdlet 'inin yardımını içeren bir pencere açılır. Bu yardım deneyimi Windows PowerShell ISE 3,0 ' de yenidir ve Windows PowerShell 3,0 için güncelleştirilebilir yardım yenidir.
+
+## <a name="show-command-cmdlet"></a>Show-Command cmdlet 'i
+
+> PowerShell 3,0 ' ye eklendi
+
+`Show-Command` Cmdlet 'i bir grafik formu doldurarak bir cmdlet veya işlev oluşturabilir veya çalıştırmanıza olanak sağlar. Form, kullanıcıların bir grafik ortamında Windows PowerShell ile çalışmasına olanak tanır.
+`Show-Command`Ayrıca Gelişmiş betikler 'in hızlı Windows PowerShell tabanlı GUI oluşturmasına olanak sağlar.
+
+**Bu değişiklik hangi değeri ekler?**
+
+Windows PowerShell `Show-Command` betiklerinizde kullanarak kullanıcılarınıza tanıdık oldukları grafiksel bir ortam sağlayabilirsiniz. `Show-Command`Ayrıca, giriş kullanıcılarına Windows PowerShell 'i Öğrende yardımcı olabilir.
+
+**Ne farklı çalışır?**
+
+`Show-Command`Yeni Windows PowerShell ISE 3,0 ' dir.
 
 ## <a name="see-also"></a>Ayrıca bkz.
-Windows PowerShell'de Windows PowerShell ISE'yi kullanma hakkında daha fazla bilgi için aşağıdaki bağlantılara bakın.
 
-- [Windows PowerShell Tümleşik komut dosyası ortamı keşfetme](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
-- [ISE TechNet Wiki](https://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [Betik Merkezi](https://technet.microsoft.com/scriptcenter/default)
+Windows PowerShell ISE kullanma hakkında daha fazla bilgi için bkz. [Windows PowerShell Tümleşik komut dosyası ortamını keşfetme](../getting-started/fundamental/exploring-the-windows-powershell-ise.md).
