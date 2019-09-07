@@ -1,5 +1,5 @@
 ---
-title: RemoteRunspace01 örnek | Microsoft Docs
+title: RemoteRunspace01 örneği | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059652"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737572"
 ---
-# <a name="remoterunspace01-sample"></a><span data-ttu-id="09c6f-102">RemoteRunspace01 Örneği</span><span class="sxs-lookup"><span data-stu-id="09c6f-102">RemoteRunspace01 Sample</span></span>
+# <a name="remoterunspace01-sample"></a><span data-ttu-id="ddd77-102">RemoteRunspace01 Örneği</span><span class="sxs-lookup"><span data-stu-id="ddd77-102">RemoteRunspace01 Sample</span></span>
 
-<span data-ttu-id="09c6f-103">Bu örnek, bir uzak bağlantı kurmak için kullanılan bir uzak çalışma alanı oluşturma işlemi gösterilmektedir.</span><span class="sxs-lookup"><span data-stu-id="09c6f-103">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
+<span data-ttu-id="ddd77-103">Bu örnek, uzak bir bağlantı kurmak için kullanılan bir uzak çalışma alanının nasıl oluşturulacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="ddd77-103">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="09c6f-104">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="09c6f-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="ddd77-104">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="ddd77-104">Requirements</span></span>
 
- <span data-ttu-id="09c6f-105">Bu örnek, Windows PowerShell 2.0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="09c6f-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="ddd77-105">Bu örnek, Windows PowerShell 2,0 gerektirir.</span><span class="sxs-lookup"><span data-stu-id="ddd77-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="09c6f-106">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="09c6f-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="ddd77-106">Gösteriler</span><span class="sxs-lookup"><span data-stu-id="ddd77-106">Demonstrates</span></span>
 
-- <span data-ttu-id="09c6f-107">Oluşturma bir [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) nesne.</span><span class="sxs-lookup"><span data-stu-id="09c6f-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="ddd77-107">[System. Management. Automation. Runspaces. Wsmanconnectionınfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) nesnesi oluşturuluyor.</span><span class="sxs-lookup"><span data-stu-id="ddd77-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="09c6f-108">Ayarı [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) ve [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) özelliklerini [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) nesne.</span><span class="sxs-lookup"><span data-stu-id="09c6f-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="ddd77-108">[System. Management. Automation. Runspaces. Runspaceconnectionınfo. OperationTimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) ve [System. Management. Automation. Runspaces. Runspaceconnectionınfo. OpenTimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) özelliklerinin [ayarlanması System. Management. Automation. Runspaces. Wsmanconnectionınfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) nesnesi.</span><span class="sxs-lookup"><span data-stu-id="ddd77-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="09c6f-109">Kullanan bir uzak çalışma alanı oluşturma [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) uzak bağlantı kurmak için nesne.</span><span class="sxs-lookup"><span data-stu-id="09c6f-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
+- <span data-ttu-id="ddd77-109">Uzak bağlantı kurmak için [System. Management. Automation. Runspaces. Wsmanconnectionınfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) nesnesini kullanan bir uzak çalışma alanı oluşturma.</span><span class="sxs-lookup"><span data-stu-id="ddd77-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
 
-- <span data-ttu-id="09c6f-110">Uzak bağlantı yayımlamayı uzak çalışma alanı kapatılıyor.</span><span class="sxs-lookup"><span data-stu-id="09c6f-110">Closing the remote runspace to release the remote connection.</span></span>
+- <span data-ttu-id="ddd77-110">Uzak çalışma alanı, uzak bağlantıyı serbest bırakmak için kapatılıyor.</span><span class="sxs-lookup"><span data-stu-id="ddd77-110">Closing the remote runspace to release the remote connection.</span></span>
 
-## <a name="example"></a><span data-ttu-id="09c6f-111">Örnek</span><span class="sxs-lookup"><span data-stu-id="09c6f-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="ddd77-111">Örnek</span><span class="sxs-lookup"><span data-stu-id="ddd77-111">Example</span></span>
 
-<span data-ttu-id="09c6f-112">Bu örnek, bir uzak bağlantıyı tanımlar ve sonra uzak bağlantı kurmak için bu bağlantı bilgilerini kullanır.</span><span class="sxs-lookup"><span data-stu-id="09c6f-112">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
+<span data-ttu-id="ddd77-112">Bu örnek, uzak bir bağlantı tanımlar ve bu bağlantı bilgilerini uzak bağlantı kurmak için kullanır.</span><span class="sxs-lookup"><span data-stu-id="ddd77-112">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
