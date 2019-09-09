@@ -94,8 +94,6 @@
       items:
         - name: Windows PowerShell ISE tanıtımı
           href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Windows PowerShell Tümleşik Komut Dosyası Ortamı ISE
-          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
         - name: Windows PowerShell ISE’yi Kullanma
           items:
             - name: Windows PowerShell ISE’yi Keşfetme
@@ -200,12 +198,66 @@
   items:
     - name: Yönetim için örnek betikler
       href: samples/sample-scripts-for-administration.yml
-    - name: Bilgisayar durumunu değiştirme
-      href: samples/changing-computer-state.md
-    - name: Bilgisayarlar hakkında bilgi toplama
-      href: samples/collecting-information-about-computers.md
-    - name: FilterHashtable ile Get-WinEvent sorguları oluşturma
-      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Nesneler ile çalışma
+      items:
+        - name: Nesne yapısını görüntüleme - Get-Member
+          href: samples/viewing-object-structure--get-member-.md
+        - name: Nesne bölümleri seçme - Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: Komut zincirinden nesne kaldırma - Where-Object
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: Nesne sıralama
+          href: samples/sorting-objects.md
+        - name: Birden çok nesne için bir görevi tekrarlama - ForEach-Object
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: .NET ve COM nesneleri oluşturma - New-Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: Statik sınıflar ve yöntemler kullanma
+          href: samples/using-static-classes-and-methods.md
+        - name: WMI nesnelerini alma - Get-WmiObject
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+    - name: Bilgisayarları yönetme
+      items:
+        - name: Bilgisayar durumunu değiştirme
+          href: samples/changing-computer-state.md
+        - name: Bilgisayarlar hakkında bilgi toplama
+          href: samples/collecting-information-about-computers.md
+        - name: FilterHashtable ile Get-WinEvent sorguları oluşturma
+          href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: İşlemleri ve hizmetleri yönetme
+      items:
+        - name: İşlem cmdlet’leri ile işlemleri yönetme
+          href: samples/managing-processes-with-process-cmdlets.md
+        - name: Hizmetleri yönetme
+          href: samples/managing-services.md
+        - name: Windows PowerShell sürücülerini yönetme
+          href: samples/managing-windows-powershell-drives.md
+        - name: Yazıcılar ile çalışma
+          href: samples/working-with-printers.md
+        - name: Ağ görevleri gerçekleştirme
+          href: samples/performing-networking-tasks.md
+        - name: Yazılım yüklemeleri ile çalışma
+          href: samples/working-with-software-installations.md
+        - name: PowerShell komutunun kodunu çalışan bir işlemden çözme
+          href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Çıkış ile çalışma
+      items:
+        - name: Out-* cmdlet’leri ile verileri yeniden yönlendirme
+          href: samples/redirecting-data-with-out---cmdlets.md
+        - name: Çıkış görünümünü değiştirmek için biçimlendirme komutları kullanma
+          href: samples/using-format-commands-to-change-output-view.md
+    - name: Sürücüleri ve dosyaları yönetme
+      items:
+        - name: Geçerli konumu yönetme
+          href: samples/managing-current-location.md
+        - name: Dosya ve klasörlerle çalışma
+          href: samples/working-with-files-and-folders.md
+        - name: 'Dosya, klasör ve kayıt defteri anahtarları ile çalışma'
+          href: samples/working-with-files-folders-and-registry-keys.md
+        - name: Kayıt defteri girdileri ile çalışma
+          href: samples/working-with-registry-entries.md
+        - name: Kayıt defteri anahtarları ile çalışma
+          href: samples/working-with-registry-keys.md
     - name: Kullanıcı arabirimi öğeleri oluşturma
       items:
         - name: Özel bir giriş kutusu oluşturma
@@ -216,57 +268,13 @@
           href: samples/multiple-selection-list-boxes.md
         - name: Bir liste kutusundan öğe seçme
           href: samples/selecting-items-from-a-list-box.md
-    - name: PowerShell komutunun kodunu çalışan bir işlemden çözme
-      href: samples/decode-powershell-command-from-a-running-process.md
-    - name: Geçerli konumu yönetme
-      href: samples/managing-current-location.md
-    - name: İşlem cmdlet’leri ile işlemleri yönetme
-      href: samples/managing-processes-with-process-cmdlets.md
-    - name: Hizmetleri yönetme
-      href: samples/managing-services.md
-    - name: Windows PowerShell sürücülerini yönetme
-      href: samples/managing-windows-powershell-drives.md
-    - name: Öğeleri doğrudan işleme
-      href: samples/manipulating-items-directly.md
-    - name: Ağ görevleri gerçekleştirme
-      href: samples/performing-networking-tasks.md
-    - name: Out-* cmdlet’leri ile verileri yeniden yönlendirme
-      href: samples/redirecting-data-with-out---cmdlets.md
-    - name: Çıkış görünümünü değiştirmek için biçimlendirme komutları kullanma
-      href: samples/using-format-commands-to-change-output-view.md
-    - name: Dosya ve klasörlerle çalışma
-      href: samples/working-with-files-and-folders.md
-    - name: 'Dosya, klasör ve kayıt defteri anahtarları ile çalışma'
-      href: samples/working-with-files-folders-and-registry-keys.md
-    - name: Nesneler ile çalışma
+    - name: Diğer örnekler
       items:
-        - name: WMI nesnelerini alma - Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
-        - name: .NET ve COM nesneleri oluşturma - New-Object
-          href: samples/creating-.net-and-com-objects--new-object-.md
-        - name: Komut zincirinden nesne kaldırma - Where-Object
-          href: samples/removing-objects-from-the-pipeline--where-object-.md
-        - name: Nesne bölümleri seçme - Select-Object
-          href: samples/selecting-parts-of-objects--select-object-.md
-        - name: Nesne sıralama
-          href: samples/sorting-objects.md
-        - name: Birden çok nesne için bir görevi tekrarlama - ForEach-Object
-          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-        - name: Statik sınıflar ve yöntemler kullanma
-          href: samples/using-static-classes-and-methods.md
-        - name: Nesne yapısını görüntüleme - Get-Member
-          href: samples/viewing-object-structure--get-member-.md
-    - name: Yazıcılar ile çalışma
-      href: samples/working-with-printers.md
-    - name: Kayıt defteri girdileri ile çalışma
-      href: samples/working-with-registry-entries.md
-    - name: Kayıt defteri anahtarları ile çalışma
-      href: samples/working-with-registry-keys.md
-    - name: Yazılım yüklemeleri ile çalışma
-      href: samples/working-with-software-installations.md
-    - name: Diğer kullanışlı betik oluşturma nesneleri
-      href: samples/other-useful-scripting-objects.md
-    - name: Ek 1 Uyumluluk diğer adları
-      href: samples/appendix-1---compatibility-aliases.md
-    - name: Ek 2 Özel bir PowerShell kısayolu oluşturma
-      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+        - name: Öğeleri doğrudan işleme
+          href: samples/manipulating-items-directly.md
+        - name: Diğer kullanışlı betik oluşturma nesneleri
+          href: samples/other-useful-scripting-objects.md
+        - name: Ek 1 Uyumluluk diğer adları
+          href: samples/appendix-1---compatibility-aliases.md
+        - name: Ek 2 Özel bir PowerShell kısayolu oluşturma
+          href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
