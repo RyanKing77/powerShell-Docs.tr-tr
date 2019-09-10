@@ -1,5 +1,5 @@
 ---
-title: PowerShell betikleri ve işlevleri için Yardım yazma | Microsoft Docs
+title: PowerShell betikleri ve Işlevleri için yardım yazma | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,70 +8,66 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
-ms.openlocfilehash: 98a3f61ff4fa2367f69357173d4e8e14288ff429
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083119"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848091"
 ---
-# <a name="writing-help-for-powershell-scripts-and-functions"></a>PowerShell betikleri ve İşlevler yazma
+# <a name="writing-help-for-powershell-scripts-and-functions"></a>PowerShell betikleri ve Işlevleri için yardım yazma
 
-Diğer kullanıcılarla paylaşılır her PowerShell betikleri ve işlevleri tam olarak belgelenmelidir.
-`Get-Help` Cmdlet Yardım cmdlet'leri ve tüm görüntüler olarak bu komut dosyası ve işlev Yardım konuları aynı biçimde görüntüler `Get-Help` parametreleri iş betiği ve işlev Yardım konuları.
+PowerShell betikleri ve işlevleri, başkalarıyla her paylaşılırken tamamen belgelenmelidir.
+Cmdlet 'i, komut dosyası ve işlev yardım konularını cmdlet 'ler için yardım görüntülediği biçimde görüntüler ve tüm `Get-Help` parametrelerin betiği ve işlevleri Yardım konuları üzerinde çalışır. `Get-Help`
 
-PowerShell betiklerini komut hakkında Yardım konusunun ve her işlevleri hakkında Yardım konularında komut dosyasında yer alabilir.
-Komut bağımsız olarak paylaşılan işlevleri kendi Yardım konuları içerebilir.
+PowerShell betikleri, komut dosyası ve betikteki her işlevlerle ilgili yardım konuları hakkında bir yardım konusu içerebilir.
+Betiklerden bağımsız olarak paylaşılan işlevler kendi yardım konularını içerebilir.
 
-Bu belge, biçimini ve doğru yerleşimini Yardım konularını açıklar ve içerik için yönergeleri önerir.
+Bu belgede Yardım konularının biçimi ve doğru yerleşimi açıklanmakta ve içerik için yönergeler önerilmektedir.
 
-## <a name="types-of-script-and-function-help"></a>Betik ve işlev türlerini Yardım
+## <a name="types-of-script-and-function-help"></a>Betik ve Işlev yardımı türleri
 
-### <a name="comment-based-help"></a>Açıklama tabanlı Yardım
-Bir betik veya işlevdeki açıklayan Yardım konusu, betik veya işlevdeki açıklamaları kümesi olarak uygulanabilir.
-Açıklama tabanlı Yardım işlevleri ve komut dosyası için bir betik yazarken dikkat kuralları açıklama tabanlı Yardım yerleştirmek için ödeme yaparsınız.
-Yerleşimini belirler olmadığını `Get-Help` cmdlet Yardım konusu komut dosyası veya bir işlev ile ilişkilendirir.
-Açıklama tabanlı Yardım konuları yazma hakkında daha fazla bilgi için bkz. [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+### <a name="comment-based-help"></a>Açıklama tabanlı yardım
+Betiği veya işlevi açıklayan Yardım konusu, betik veya işlev içinde bir açıklama kümesi olarak uygulanabilir.
+Bir komut dosyası ve bir betikteki işlevler için açıklama tabanlı yardım yazarken, açıklama tabanlı yardım yerleştirmekle ilgili kurallara dikkat edin.
+Yerleştirme, `Get-Help` cmdlet 'in yardım konusunu betikle veya bir işlevle ilişkilendirmesini belirler.
+Açıklama tabanlı yardım konuları yazma hakkında daha fazla bilgi için bkz. [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
-### <a name="xml-based-command-help"></a>XML-tabanlı komut Yardımı
-Komut Yardımı şemasını kullanan bir XML dosyasındaki bir betik veya işlevdeki açıklayan Yardım konusuna uygulanabilir.
-Betik veya işlevdeki XML dosyası ile ilişkilendirmek için `ExternalHelp` XML dosyasının adını ve yolunu anahtar sözcüğünü açıklama satırı yapın.
+### <a name="xml-based-command-help"></a>XML tabanlı komut yardımı
+Komut dosyası veya işlevi açıklayan Yardım konusu, komut yardım şemasını kullanan bir XML dosyasında uygulanabilir.
+Betiği veya işlevi xml dosyası ile ilişkilendirmek için, `ExternalHelp` açıklama anahtar sözcüğünü ve ardından XML dosyasının yolunu ve adını kullanın.
 
-Zaman `ExternalHelp` açıklama anahtar sözcüğü, açıklama tabanlı Yardım öncelik kazanır, bile `Get-Help` değeri ile eşleşen bir Yardım dosyası bulunamıyor `ExternalHelp` anahtar sözcüğü.
+Açıklama anahtar sözcüğü mevcut olduğunda, `ExternalHelp` anahtar sözcüğünün değeriyle eşleşen bir yardım dosyası bulamadığında `Get-Help` bile açıklama tabanlı yardım 'dan önceliklidir. `ExternalHelp`
 
-### <a name="online-help"></a>Çevrimiçi Yardım
-Internet'te, Yardım konuları gönderin ve daha sonra doğrudan `Get-Help` konular açın.
-Açıklama tabanlı Yardım konuları yazma hakkında daha fazla bilgi için bkz. [çevrimiçi Yardımı destekleme](../module/supporting-online-help.md).
+### <a name="online-help"></a>Çevrimiçi yardım
+Yardım konularınızı Internet 'te gönderebilir ve ardından doğrudan `Get-Help` konuları açabilirsiniz.
+Açıklama tabanlı yardım konuları yazma hakkında daha fazla bilgi için bkz. [çevrimiçi yardımı destekleme](../module/supporting-online-help.md).
 
-("") Konular hakkında betikleri ve işlevleri için kavramsal yazma için yerleşik bir yöntem yoktur.
-Ancak, Internet listedeki kavramsal konular konular ve bunların URL'lerini komutun Yardım konusunun ilgili bağlantılar bölümünde nakledebilirsiniz.
+Betikler ve işlevler için kavramsal ("hakkında") konuları yazmak için bir yöntem yoktur.
+Bununla birlikte, bir komut Yardım konusunun Ilgili bağlantılar bölümünde yer alan konuları ve bunların URL 'Lerini Internet üzerinde kavramsal konular gönderebilirsiniz.
 
-## <a name="content-considerations-for-script-and-function-help"></a>Yardım içerik konuları için komut dosyası ve işlevi
+## <a name="content-considerations-for-script-and-function-help"></a>Betik ve Işlev yardımı için içerik konuları
 
-- Yalnızca birkaç kullanılabilir komut Yardım bölümlerin ile çok kısa bir Yardım konusu yazma, betik veya işlevdeki parametreleri Temizle açıklamalarını eklemeyi unutmayın. Örnek açıklamaları atlamak karar verseniz bir veya iki örnek komut örnekler bölümüne de.
+- Kullanılabilir komut yardım bölümlerinin yalnızca birkaçını içeren çok kısa bir yardım konusu yazıyorsanız, betiğin veya işlev parametrelerinin açık açıklamalarını eklediğinizden emin olun. Örnek açıklamaları atlamaya karar verseniz bile, örnekler bölümüne bir veya iki örnek komut ekleyin.
 
-- Komutu farklı bir betik veya işlevdeki tüm açıklamaların bakın. Bu bilgiler kullanıcının anlamak ve komut yönetmek için yardımcı olur.
+- Tüm açıklamalarda komut dosyası veya işlev olarak komutuna bakın. Bu bilgiler, kullanıcının komutu anlamasına ve yönetmesine yardımcı olur.
 
-  Örneğin, aşağıdaki ayrıntılı açıklama Yeni konu komutu bir komut dosyası olduğunu belirtir. Bu, bunlar çalıştırdığınızda tam adını ve yolunu belirtmek için ihtiyaç duydukları kullanıcılar anımsatır.
+  Örneğin, aşağıdaki ayrıntılı açıklama, New-topic komutunun bir komut dosyası olduğunu belirtir. Bu, kullanıcılara, uygulamayı çalıştırırken yolu ve tam adı belirtmeleri gerektiğini hatırlatır.
 
-  > "Yeni konu betik... girdi dosyasındaki, her bir konu adı için boş bir kavramsal konuya oluşturur"
+  > "Yeni konu betiği, giriş dosyasındaki her konu adı için boş bir kavramsal konu oluşturuyor..."
 
-  Aşağıdaki ayrıntılı açıklama bildiren `Disable-PSRemoting` bir işlevdir. Oturum bazıları daha yüksek önceliğe sahip bir komut tarafından gizlenebilir aynı ada sahip birden çok komut içerdiğinde bu bilgiler kullanıcıları için özellikle yararlıdır.
+  Aşağıdaki ayrıntılı açıklama, bir işlev `Disable-PSRemoting` olduğunu belirtir. Bu bilgiler özellikle, oturum aynı ada sahip birden çok komut içerdiğinde, bazıları daha yüksek önceliğe sahip bir komutla gizlenmiş olabilecek kullanıcılar için yararlıdır.
 
-  > `Disable-PSRemoting` İşlevi devre dışı bırakır, yerel bilgisayardaki tüm oturum yapılandırmalarıyla...
+  > `Disable-PSRemoting` İşlev yerel bilgisayardaki tüm oturum yapılandırmasını devre dışı bırakır...
 
-- Betik Yardım konusunu, betiği bir bütün olarak kullanmak açıklanmaktadır. Betikte, İşlevler için Yardım konuları da yazıyorsanız, betik Yardım konusu işlevlerde bahsedin ve betik Yardım konusunun ilgili bağlantılar bölümünde işlevi Yardım konuları başvurular içerir. Buna karşılık, bir işlev bir betiğinin bir parçası olduğunda, betik ve nasıl, bağımsız olarak kullanılabileceğine işlevi oynadığı rol işlevi Yardım konusunda açıklanmaktadır. Ardından işlev Yardım konusunun ilgili bağlantılar bölümündeki betik Yardım konusuna listeleyin.
+- Bir komut dosyası yardım konusunda, betiğin tamamını nasıl kullanacağınızı açıklayın. Ayrıca betikteki işlevlere yönelik yardım konuları yazıyorsanız, betik yardım konusundaki işlevlerden bahsedin ve betik Yardım konusunun Ilgili bağlantılar bölümünde işlev yardım konularına başvurular ekleyin. Buna karşılık, bir işlev bir betiğin parçasıysa, işlev Yardım konusunun işlevin komut dosyasında oynadığı rol ve bağımsız olarak nasıl kullanılabileceğini açıklayın. Ardından işlev Yardım konusunun Ilgili bağlantılar bölümünde betik yardım konusunu listeleyin.
 
-- Örnekler için bir betik Yardım konusu yazma, betik dosyasının yolunu örnek komutta içereceğiniz emin olun. Komut geçerli dizinde olsa bile, yolu açıkça belirtmeniz gerekir, anımsatma yapar.
+- Betik yardım konusu için örnek yazarken, örnek komutuna komut dosyasının yolunu eklediğinizden emin olun. Bu, komut dosyası geçerli dizinde olduğunda bile, kullanıcılara yolu açıkça belirtmeleri gerektiğini hatırlatır.
 
-- İşlev Yardım konusunda kullanıcılara işlevi yalnızca mevcut oturum var ve diğer oturumlarda kullanmak için eklemek veya bir PowerShell profili eklemek için ihtiyaçları hatırlatın.
+- Bir işlev yardım konu başlığında, kullanıcılardan işlevin yalnızca geçerli oturumda mevcut olduğunu ve başka oturumlarda kullanılması gerektiğini, bunu eklemesi veya bir PowerShell profili eklemesi gerektiğini hatırlatın.
 
-- `Get-Help` yalnızca doğru konumda Yardım konusu dosyaları ve komut dosyası kaydedildiğinde bir betik veya işlevdeki için Yardım konusunu görüntüler. Bu nedenle, PowerShell, yükleme veya kaydetme veya betik veya işlevdeki bir betik veya işlevdeki Yardım konusundaki yükleme yönergelerini içeren yararlı olmaz. Bunun yerine, betik veya işlevdeki dağıtmak için kullandığınız belgede herhangi bir yükleme yönergeleri içerir.
+- `Get-Help`yalnızca betik dosyası ve yardım konu dosyaları doğru konumlara kaydedildiğinde bir betik veya işlev için yardım konusunu görüntüler. Bu nedenle, PowerShell 'i yükleme veya betik ya da işlev yardım konusuna kaydetme veya yükleme yönergelerini dahil etmek yararlı değildir. Bunun yerine, komut dosyasını veya işlevi dağıtmak için kullandığınız belgeye tüm yükleme yönergelerini ekleyin.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
- [Betik ve işlevlerde için XML tabanlı Yardım konuları yazma](./writing-xml-based-help-topics-for-scripts-and-functions.md)
-
- [Komutları için XML tabanlı Yardım konuları yazma](./writing-xml-based-help-topics-for-commands.md)
-
- [Açıklama tabanlı Yardım konuları yazma](./writing-comment-based-help-topics.md)
+[Açıklama tabanlı yardım konuları yazma](./writing-comment-based-help-topics.md)

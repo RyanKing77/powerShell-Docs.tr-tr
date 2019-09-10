@@ -8,21 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 6c625c325e491135af3e5c8d58eead62e89ccb4a
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 0931fe7a606b09475084203eaf9fa263ea1cd5f8
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67734989"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848007"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>RunSpace03 (VB.NET) Kod Örneği
 
-İşte VB.NET kaynak kodu için konsol uygulamasını açıklanan [konsol uygulaması, çalıştırmalar belirtilen kod oluşturma](fd). Bu örnekte [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) alır betiğe geçirilen işlem adlarının listesi için bilgi işlem bir betik yürütmek için sınıf. Bu giriş nesneleri bir betiğe geçirmek nasıl ve çıkış nesnelerini yanı sıra hata nesneleri almayı gösterir.
+Aşağıda, "belirtilen betiği çalıştıran bir konsol uygulaması oluşturma" bölümünde açıklanan konsol uygulaması için VB.NET kaynak kodu verilmiştir. Bu örnek, Betiğe geçirilen işlem adlarının listesi için işlem bilgilerini alan bir betiği yürütmek üzere [System. Management. Automation. Runspaceınvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) sınıfını kullanır. Giriş nesnelerinin bir betiğe nasıl geçirileceğini ve hata nesnelerinin yanı sıra çıkış nesnelerinin nasıl alınacağını gösterir.
 
 > [!NOTE]
-> Bu örnek için Microsoft .NET Framework 3.0 çalışma zamanı bileşenleri ve Windows Vista için Windows yazılım geliştirme Seti'ni kullanarak VB.NET kaynak dosyası (runspace03.vb) indirebilirsiniz. Yükleme yönergeleri için bkz: [Windows PowerShell yükleme ve indirme Windows PowerShell SDK'sı](/powershell/developer/installing-the-windows-powershell-sdk).
->
-> İndirilen kaynak dosyaları kullanılabilir  **\<PowerShell örnekleri >** dizin.
+> Windows Vista ve Microsoft .NET Framework 3,0 çalışma zamanı bileşenleri için Windows yazılım geliştirme seti 'ni kullanarak bu örnek için VB.NET kaynak dosyasını (runspace03. vb) indirebilirsiniz. İndirme yönergeleri için bkz. [Windows PowerShell 'ı yükleme ve Windows PowerShell SDK 'Sını indirme](/powershell/developer/installing-the-windows-powershell-sdk).
+> İndirilen kaynak dosyaları,  **\<PowerShell örnekleri >** dizininde bulunur.
 
 ## <a name="code-sample"></a>Kod örneği
 
@@ -110,4 +109,4 @@ End Namespace
 
 [Windows PowerShell Programcı Kılavuzu](./windows-powershell-programmer-s-guide.md)
 
-[Windows PowerShell SDK'sı](../windows-powershell-reference.md)
+[Windows PowerShell SDK 'Sı](../windows-powershell-reference.md)

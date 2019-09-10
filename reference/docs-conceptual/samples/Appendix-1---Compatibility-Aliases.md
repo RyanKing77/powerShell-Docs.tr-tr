@@ -1,36 +1,54 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell cmdlet'i
+ms.date: 09/09/2019
+keywords: PowerShell, cmdlet
 title: Ek 1 Uyumluluk Takma Adları
-ms.openlocfilehash: 553b9f01d6b5e3f4e04f1a75c25979b54dc205da
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 2351fdf23711fe1417f7e3fc3cca5b642d5a59fc
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030334"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848171"
 ---
-# <a name="appendix-1---compatibility-aliases"></a>Ek 1 - uyumluluk takma adları
+# <a name="appendix-1---compatibility-aliases"></a>Ek 1-uyumluluk diğer adları
 
-Windows PowerShell, Windows PowerShell'de tanıdık komut adlarını kullanmak UNIX ve Cmd kullanıcıların çeşitli geçiş diğer adları vardır. En sık kullanılan diğer adlar diğer adı ve varsa, standart Windows PowerShell diğer Windows PowerShell komutu ile birlikte, aşağıdaki tabloda gösterilmektedir.
+PowerShell, **UNIX** ve **cmd. exe** kullanıcılarının tanıdık komutları kullanmasına izin veren birkaç diğer ad içerir.
+Komutlar ve ilgili PowerShell cmdlet 'i ve PowerShell diğer adı aşağıdaki tabloda gösterilmiştir:
 
-Başka bir ad alanından içinde Windows PowerShell Get-diğer ad cmdlet'ini kullanarak işaret eden Windows PowerShell komutunu bulabilirsiniz. Örneğin **get-diğer ad cls**.
-
-```
-CommandType     Name                            Definition
------------     ----                            ----------
-Alias           cls                             Clear-Host
-```
-
-|CMD komut|UNIX komutu|PS Command|PS Diğer adı|
+|cmd. exe komutu|UNIX komutu|PowerShell cmdlet 'i|PowerShell diğer adı|
 |---------------|----------------|--------------|------------|
-|**dizini**|**Ls**|**Get-Childıtem**|**gci**|
-|**CLS**|**Temizle**|**Clear-Host** (işlev)|**CLS**|
-|**DEL, Sil, rmdir**|**RM**|**Remove öğesi**|**RI**|
-|**kopyalama**|**CP**|**Öğeyi Kopyala**|**ci**|
-|**Taşıma**|**mv**|**Öğe Taşı**|**mı**|
-|**Yeniden adlandırma**|**mv**|**Öğeyi yeniden adlandır**|**rni**|
-|**type**|**Cat**|**Get-Content**|**GC**|
-|**cd**|**cd**|**Konum ayarlama**|**sl**|
-|**MD**|**mkdir**|**Yeni öğe**|**nı**|
-|**pushd**|**pushd**|**Anında iletme konumu**|**pushd**|
-|**popd**|**popd**|**POP konumu**|**popd**|
+|**CLS**|**lediğiniz**|`Clear-Host`çalışmayacaktır|`cls`|
+|**kopya**|**'s**|`Copy-Item`|`cpi`|
+|**öğesini**|**çıkar**|`Get-ChildItem`|`gci`|
+|**type**|**kedi**|`Get-Content`|`gc`|
+|**geçiş**|**k**|`Move-Item`|`mi`|
+|**MD**|**mkdir**|`New-Item`|`ni`|
+|**pushd**|**pushd**|`Push-Location`|`pushd`|
+|**popd**|**popd**|`Pop-Location`|`popd`|
+|**del**, **Erase**, **RD**, **RMI**|**'yi**|`Remove-Item`|`ri`|
+|**Ren**|**k**|`Rename-Item`|`rni`|
+|**CD**, **chdir**|**CD**|`Set-Location`|`sl`|
+
+PowerShell diğer adlarını bulmak için [Get-Alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias) cmdlet 'ini kullanın. Bir cmdlet 'in diğer adlarını göstermek için, **tanım** parametresini kullanın ve cmdlet adını belirtin.
+Ya da diğer adın cmdlet adını bulmak için **ad** parametresini kullanın ve diğer adı belirtin.
+
+```powershell
+Get-Alias -Definition Get-ChildItem
+```
+
+```Output
+CommandType     Name
+-----------     ----
+Alias           dir -> Get-ChildItem
+Alias           gci -> Get-ChildItem
+Alias           ls -> Get-ChildItem
+```
+
+```powershell
+Get-Alias -Name gci
+```
+
+```Output
+CommandType     Name
+-----------     ----
+Alias           gci -> Get-ChildItem
+```

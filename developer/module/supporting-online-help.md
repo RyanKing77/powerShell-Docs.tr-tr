@@ -1,5 +1,5 @@
 ---
-title: Çevrimiçi Yardımı destekleme | Microsoft Docs
+title: Çevrimiçi yardımı destekleme | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,48 +8,48 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
-ms.openlocfilehash: b76f45299d11dc10c8b16ed80f87c7f1fcc5ed65
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082150"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848082"
 ---
-# <a name="supporting-online-help"></a>Çevrimiçi Yardımı destekleme
+# <a name="supporting-online-help"></a>Çevrimiçi Yardımı Destekleme
 
-Windows PowerShell 3. 0'den itibaren desteklemek için iki yolu vardır `Get-Help` Windows PowerShell komutları için çevrimiçi özelliği. Bu konuda, farklı komut türleri için bu özelliği uygulamanız açıklanmaktadır.
+Windows PowerShell 3,0 ' den başlayarak, Windows PowerShell komutlarının `Get-Help` çevrimiçi özelliğini desteklemeye yönelik iki yol vardır. Bu konu, farklı komut türleri için bu özelliğin nasıl uygulanacağını açıklar.
 
 ## <a name="about-online-help"></a>Çevrimiçi Yardım hakkında
 
-Çevrimiçi Yardım her zaman Windows PowerShell sürecinin hayati bir parçası olmuştur. Ancak `Get-Help` cmdlet Yardım konuları komut isteminde görüntüler, birçok kullanıcı deneyimi çevrimiçi okuma, renk kodlaması, köprüler ve topluluk içeriği ve belgeleri wiki tabanlı paylaşım fikirler dahil olmak üzere tercih eder. En önemlisi de güncelleştirilebilir Yardımı gelişinden önce Yardım dosyaları en güncel sürümüne çevrimiçi Yardım sağlanır.
+Çevrimiçi yardım her zaman Windows PowerShell 'in önemli bir parçasıdır. `Get-Help` Cmdlet 'i komut isteminde Yardım konularını görüntülüyor olsa da birçok kullanıcı, topluluk içerikleriyle ve wiki tabanlı belgelerde renk kodlama, köprüler ve paylaşma fikirleri dahil olmak üzere çevrimiçi okuma deneyimini tercih eder. En önemlisi, güncelleştirilebilir yardım 'dan önce, yardım dosyalarının en güncel sürümünü sağlamadan önce çevrimiçi yardım.
 
-Güncelleştirilebilir Yardımı'ndaki Windows PowerShell 3.0 gelişinden ile çevrimiçi Yardım yine de önemli bir rol oynar. Esnek kullanıcı deneyiminin yanı sıra çevrimiçi Yardım olmayan veya Yardım konuları indirmek için güncelleştirilebilir Yardımı kullanamazsınız kullanıcıları için Yardım sağlar.
+Windows PowerShell 3,0 ' de güncelleştirilebilir yardım ile ilgili, çevrimiçi yardım hala önemli bir rol oynar. Esnek kullanıcı deneyiminin yanı sıra, çevrimiçi yardım, yardım konularını indirmek için güncelleştirilebilir yardımı kullanmayan veya kullanmayan kullanıcılara yardım sağlar.
 
-## <a name="how-get-help--online-works"></a>Nasıl Get-Help-Online çalışır
+## <a name="how-get-help--online-works"></a>Get-Help-online nasıl Işe yarar?
 
-Komutlar için çevrimiçi Yardım konularını bulmalarına yardımcı olmak için `Get-Help` komutu bir komut için Yardım konusunun çevrimiçi sürümünü kullanıcının varsayılan Internet tarayıcısında açar. çevrimiçi bir parametresi vardır.
+Kullanıcıların, komutlara yönelik çevrimiçi Yardım konularını bulmasına yardımcı olmak için, `Get-Help` kullanıcının varsayılan Internet tarayıcısında bir komutla ilgili Yardım konusunun çevrimiçi sürümünü açan bir çevrimiçi parametresi vardır.
 
-Örneğin, aşağıdaki komutu için çevrimiçi Yardım konusuna açılır `Invoke-Command` cmdlet'i.
+Örneğin, aşağıdaki komut, `Invoke-Command` cmdlet 'i için çevrimiçi Yardım konusunu açar.
 
 ```powershell
 Get-Help Invoke-Command -Online
 ```
 
-Uygulamak için `Get-Help` -çevrimiçi `Get-Help` cmdlet'i için bir Tekdüzen Kaynak Tanımlayıcısı (URI) çevrimiçi sürümünü Yardım konusunun aşağıdaki konumlarda arar.
+-Online `Get-Help` `Get-Help` 'ı uygulamak için, cmdlet aşağıdaki konumlarda yer alarak çevrimiçi sürüm yardım konusu için bir Tekdüzen Kaynak tanımlayıcısı (URI) arar.
 
-- Komut için Yardım konusunun ilgili bağlantılar bölümündeki ilk bağlantıyı. Yardım konusu kullanıcının bilgisayarında yüklü olmalıdır. Bu özellik, Windows PowerShell 2.0 kullanılmaya başlandı.
+- Komutun Yardım konusunun Ilgili bağlantılar bölümündeki ilk bağlantı. Yardım konusunun kullanıcının bilgisayarında yüklü olması gerekir. Bu özellik Windows PowerShell 2,0 ' de tanıtılmıştır.
 
-- HelpUri özellik, herhangi bir komutu. HelpUri özellik bile komut için Yardım konusu kullanıcının bilgisayarında yüklü değilken erişilebilir. Bu özellik, Windows PowerShell 3. 0 ' sunulmuştur.
+- Herhangi bir komutun HelpUri özelliği. HelpUri özelliği, komutun yardım konusu Kullanıcı bilgisayarında yüklü olmadığında bile erişilebilir. Bu özellik Windows PowerShell 3,0 ' de tanıtılmıştır.
 
-  `Get-Help` HelpUri özellik değerinin almadan önce bir URI ilgili bağlantılar bölümündeki ilk giriş arar. Özellik değeri yanlış veya değiştirildiyse, ilk ilgili bağlantıyı farklı bir değer girerek geçersiz kılabilirsiniz. Ancak, yalnızca Yardım konularının kullanıcının bilgisayarında yüklü olduğunda ilk ilgili bağlantıyı çalışır.
+  `Get-Help`HelpUri özellik değerini almadan önce Ilgili bağlantılar bölümündeki ilk girişte bir URI arar. Özellik değeri yanlışsa veya değiştiyse, ilk Ilgili bağlantıya farklı bir değer girerek onu geçersiz kılabilirsiniz. Ancak, ilk Ilişkili bağlantı yalnızca kullanıcının bilgisayarına yardım konuları yüklendiğinde işe yarar.
 
-## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Komutun Yardım konusunun ilgili ilk bağlantı için bir URI ekleme
+## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Komut Yardım konusunun ilk ilgili bağlantısına URI ekleme
 
-Destekleyebilirsiniz `Get-Help` -Online komutu için XML tabanlı Yardım konusunun ilgili bağlantılar bölümündeki ilk giriş geçerli bir URI ekleyerek herhangi bir komutu. Bu seçenek yalnızca XML tabanlı Yardım konularında geçerlidir ve yalnızca kullanıcının bilgisayarında Yardım konusuna yüklendiğinde çalışır. Yardım konusu URI doldurulur aldığında, bu değer önceliklidir **HelpUri** özelliği komutu. Komutları için XML tabanlı Yardım konuları hakkında daha fazla bilgi için bkz. [Writing XML-Based komutlar için Yardım konularını](../help/writing-xml-based-help-topics-for-commands.md).
+Komutu için XML `Get-Help` tabanlı Yardım konusunun ilgili bağlantılar bölümündeki ilk girişe geçerli bir URI ekleyerek, herhangi bir komut için-online 'ı destekleyebilirsiniz. Bu seçenek yalnızca, XML tabanlı yardım konularında geçerlidir ve yalnızca kullanıcının bilgisayarında yardım konusu yüklendiğinde kullanılır. Yardım konusu yüklendiğinde ve URI doldurulduğu zaman, bu değer komutun **HelpUri** özelliğinden önceliklidir.
 
-Bu özelliği desteklemek için URI görünmelidir `maml:uri` altına ilk öğe `maml:relatedLinks/maml:navigationLink` öğesinde `maml:relatedLinks` öğesi.
+Bu özelliği desteklemek için URI 'nin `maml:uri` `maml:relatedLinks` öğedeki ilk `maml:relatedLinks/maml:navigationLink` öğe altındaki öğesinde görünmesi gerekir.
 
-Aşağıdaki XML URI'nin doğru yerleştirme gösterir. "Çevrimiçi sürüm:" metin `maml:linkText` öğesi en iyi bir uygulamadır, ancak gerekli değildir.
+Aşağıdaki XML URI 'nin doğru yerleşimini gösterir. `maml:linkText` Öğedeki "Çevrimiçi sürüm:" metni en iyi uygulamadır, ancak gerekli değildir.
 
 ```xml
 
@@ -65,25 +65,25 @@ Aşağıdaki XML URI'nin doğru yerleştirme gösterir. "Çevrimiçi sürüm:" m
 </maml:relatedLinks>
 ```
 
-## <a name="adding-the-helpuri-property-to-a-command"></a>HelpUri özellik için bir komut ekleme
+## <a name="adding-the-helpuri-property-to-a-command"></a>Bir komuta HelpUri özelliğini ekleme
 
-Bu bölüm, farklı türlerdeki komutları HelpUri özelliğini eklemek gösterilmektedir.
+Bu bölümde, HelpUri özelliğinin farklı türlerin komutlarına nasıl ekleneceği gösterilmektedir.
 
-### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>Bir Cmdlet için HelpUri özellik ekleme
+### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>Bir cmdlet 'e HelpUri özelliği ekleme
 
-Yazılmış cmdlet'lerinin C#, ekleme bir **HelpUri** cmdlet'i sınıfı özniteliği. Özniteliğinin değeri "http" veya "https" ile başlayan bir URI olmalıdır.
+İçinde C#yazılan cmdlet 'ler Için, cmdlet sınıfına bir **helpurı** özniteliği ekleyin. Özniteliğin değeri "http" veya "https" ile başlayan bir URI olmalıdır.
 
-Aşağıdaki kod HelpUri özniteliğini gösterir `Get-History` cmdlet'i sınıfı.
+Aşağıdaki kod, `Get-History` cmdlet sınıfının HelpUri özniteliğini gösterir.
 
 ```
 [Cmdlet(VerbsCommon.Get, "History", HelpUri = "http://go.microsoft.com/fwlink/?LinkID=001122")]
 ```
 
-### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>Gelişmiş bir işleve HelpUri özellik ekleme
+### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>Gelişmiş Işleve HelpUri özelliği ekleme
 
-Gelişmiş işlevler için ekleme bir **HelpUri** özelliğini **CmdletBinding** özniteliği. Özelliğinin değeri "http" veya "https" ile başlayan bir URI olmalıdır.
+Gelişmiş işlevler için, **CmdletBinding** özniteliğine bir **HelpUri** özelliği ekleyin. Özelliğin değeri, "http" veya "https" ile başlayan bir URI olmalıdır.
 
-Aşağıdaki kod New-Takvim işlevinin HelpUri özniteliğini gösterir.
+Aşağıdaki kod, New-Calendar işlevinin HelpUri özniteliğini gösterir
 
 ```powershell
 
@@ -92,24 +92,24 @@ function New-Calendar {
     HelpURI="http://go.microsoft.com/fwlink/?LinkID=01122")]
 ```
 
-### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>HelpUri özniteliğini CIM komut ekleme
+### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>CıM komutuna Helpurı özniteliği ekleme
 
-CIM komutları için ekleme bir **HelpUri** özniteliğini **CmdletMetadata** CDXML dosyasındaki öğesi. Özniteliğinin değeri "http" veya "https" ile başlayan bir URI olmalıdır.
+CıM komutları için CDXML dosyasındaki **Cmdletmetadata** öğesine bir **helpurı** özniteliği ekleyin. Özniteliğin değeri "http" veya "https" ile başlayan bir URI olmalıdır.
 
-Aşağıdaki kod hata ayıklama başlangıç CIM komut HelpUri özniteliğini gösterir.
+Aşağıdaki kod, Start-Debug CıM komutunun HelpUri özniteliğini gösterir
 
 ```
 <CmdletMetadata Verb="Debug" HelpUri="http://go.microsoft.com/fwlink/?LinkID=001122"/>
 ```
 
-### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>HelpUri özniteliğini bir iş akışına ekleme
+### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>Bir Iş akışına Helpurı özniteliği ekleme
 
-Windows PowerShell dilinde yazılır, iş akışları için ekleme bir **. ExternalHelp** iş akışı kodu comment yönergesi. Yönerge değerini "http" veya "https" ile başlayan bir URI olmalıdır.
+Windows PowerShell dilinde yazılmış iş akışları için bir ekleyin **.** İş akışı koduna ExternalHelp açıklama yönergesi. Yönergesinin değeri, "http" veya "https" ile başlayan bir URI olmalıdır.
 
 > [!NOTE]
-> HelpUri özellik iş akışı XAML tabanlı Windows PowerShell için desteklenmiyor.
+> HelpUri özelliği, Windows PowerShell 'de XAML tabanlı iş akışları için desteklenmez.
 
-Aşağıdaki kod gösterir. Bir iş akışı dosyasındaki ExternalHelp yönergesi.
+Aşağıdaki kod, gösterir. Bir iş akışı dosyasında ExternalHelp yönergesi.
 
 ```powershell
 # .ExternalHelp "http://go.microsoft.com/fwlink/?LinkID=138338"

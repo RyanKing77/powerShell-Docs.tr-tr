@@ -2,103 +2,107 @@
 ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
-title: WMF 5.x sürüm notları
-ms.openlocfilehash: 8bdc423234cf0b104b72b1bee1de35e50783d8a4
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+title: WMF 5.x Sürüm Notları
+ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856402"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848146"
 ---
-# <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x sürüm notları
+# <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5. x sürüm notları
 
-## <a name="wmf-50-changes"></a>WMF 5.0 değiştirir
+## <a name="wmf-50-changes"></a>WMF 5,0 değişiklikleri
 
-- PowerShell 5.0 ekler yeni yapılandırılmış **bilgi** akış
-- Dört yeni DSC kaynakları dahil olmak üzere DSC geliştirmeleri:
+- PowerShell 5,0 yeni bir yapılandırılmış **bilgi** akışı ekler
+- Dört yeni DSC kaynağı da dahil olmak üzere DSC geliştirmeleri:
   - WindowsFeatureSet
   - WindowsOptionalFeatureSet
   - ServiceSet
   - ProcessSet
-- Eklenen yeterli rol tabanlı yönetim üzerinden PowerShell uzaktan iletişimini etkinleştirmek için Yönetim
-- PowerShell 5.0 kullanıcı tanımlı sınıflar ve numaralandırmalar içerecek şekilde dili genişletir.
-- Gelişmiş hata ayıklama PowerShell ISE ve eklenen uzaktan hata ayıklama özellikleri
+- PowerShell uzaktan iletişim yoluyla rol tabanlı yönetimi etkinleştirmek için yeterli yönetim eklendi
+- PowerShell 5,0, dili Kullanıcı tanımlı sınıfları ve numaralandırmaları içerecek şekilde genişletir
+- PowerShell ıSE 'de geliştirilmiş hata ayıklama özellikleri ve uzaktan hata ayıklama eklendi
 - PowerShellGet ve PackageManagement modülleri eklendi
-- PowerShell betiğini Gelişmiş günlüğe kaydetme ve dökümleri
-- Şifreli ileti söz dizimi cmdlet'leri eklendi
-- WMF 5.0 NetworkSwitchManager modülü için Windows içerir.
-- Microsoft.PowerShell.ODataUtils modülü eklendi
-- Yazılım envanteri günlüğü (SIL) için destek eklendi
-- Yeni Sunucu veya kullanıcı talebi ve sorununa yanıt cmdlet'leri güncelleştir
+- Gelişmiş PowerShell betiği günlüğü ve dökümü
+- Şifreleme Iletisi sözdizimi cmdlet 'leri Ekle
+- WMF 5,0, Windows için NetworkSwitchManager modülünü içerir
+- Microsoft. PowerShell. ODataUtils modülü eklendi
+- Yazılım envanter günlüğü (SIL) için destek eklendi
+- Kullanıcı isteklerine ve sorunlarına yanıt olarak yeni veya güncelleştirme cmdlet 'lerini sunucu
 
-## <a name="wmf-51-changes"></a>WMF 5.1 değiştirir
+## <a name="wmf-51-changes"></a>WMF 5,1 değişiklikleri
 
-WMF 5.1, Windows Server 2016 ile yayımlanan PowerShell, WMI, WinRM ve yazılım envanteri günlüğü (SIL) bileşenleri içerir. WMF 5.1 yüklenebilmesi için Windows 7, Windows 8.1, Windows Server 2008 R2, 2012 ve 2012 R2 ve WMF 5.0 şu gibi çeşitli iyileştirmeler sağlar:
+WMF 5,1, Windows Server 2016 ile yayınlanan PowerShell, WMI, WinRM ve yazılım envanteri günlüğü (SIL) bileşenlerini içerir. WMF 5,1, Windows 7, Windows 8.1, Windows Server 2008 R2, 2012 ve 2012 R2 'ye yüklenebilir ve aşağıdakiler de dahil olmak üzere WMF 5,0 üzerinde çeşitli geliştirmeler sağlar:
 
-- Yeni cmdlet'ler
+- Yeni cmdlet 'ler
 - PowerShellGet iyileştirmeleri arasında imzalı modülleri zorlama ve JEA modülleri yükleme bulunur
 - PackageManagement; Kapsayıcılar, CBS Kurulumu, EXE temelli kurulum ve CAD paketleri için destek ekledi
 - DSC ve PowerShell sınıfları için hata ayıklama iyileştirmeleri
 - PowerShellGet cmdlet’leri kullanırken Çekme Sunucusundan gelen katalog imzalı modülleri zorlamayı da içeren güvenlik iyileştirmeleri
 - Birkaç kullanıcı talebi ve sorununa yanıt
 
+> [!IMPORTANT]
+> Windows Server 2008 veya Windows 7 ' de WMF 5,1 ' ü yüklemeden önce, WMF 3,0 ' nin yüklenmediğini doğrulayın. Daha fazla bilgi için bkz. [Windows Server 2008 R2 SP1 ve Windows 7 SP1 Için WMF 5,1 önkoşulları](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
+
 ## <a name="powershell-editions"></a>PowerShell Sürümleri
 
-5.1 sürümünden itibaren PowerShell çeşitli özellik kümelerini ve platform uyumluluğunu belirten farklı sürümlerinde kullanıma sunulmuştur.
+Sürüm 5,1 ' den başlayarak, PowerShell, değişen özellik kümelerini ve platform uyumluluğunu gösteren farklı sürümlerde kullanılabilir.
 
-- **Masaüstü sürümü:** .NET Framework üzerine inşa edilmiş ve Windows Masaüstü ve Windows Server Core gibi tam boyutlu sürümlerinde çalışan PowerShell sürümlerinin hedeflendiği betikler ve modüllerle uyumluluk sağlar.
-- **Çekirdek sürümü:** .NET Core üzerine yapılandırılan ve Nano Server gibi Windows ve Windows IOT azaltılmış boyutlu sürümlerinde çalışan PowerShell sürümlerinin hedeflendiği betikler ve modüllerle uyumluluk sağlar.
+- **Masaüstü sürümü:** .NET Framework oluşturulmuştur ve, Windows 'un sunucu çekirdeği ve Windows Masaüstü gibi tam parmak izi sürümlerinde çalışan PowerShell sürümlerini hedefleyen betikler ve modüllerle uyumluluk sağlar.
+- **Çekirdek sürüm:** .NET Core üzerine kurulmuştur ve nano sunucu ve Windows IoT gibi Windows 'un azaltılmış ayak sürümleri üzerinde çalışan PowerShell sürümlerini hedefleyen betikler ve modüllerle uyumluluk sağlar.
 
-### <a name="learn-more-about-using-powershell-editions"></a>PowerShell sürümleri kullanma hakkında daha fazla bilgi edinin
+### <a name="learn-more-about-using-powershell-editions"></a>PowerShell sürümlerini kullanma hakkında daha fazla bilgi edinin
 
-- [$PSVersionTable kullanarak PowerShell'in çalışan sürümü belirleme](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
-- [Get-Module sonuçları PSEdition parametresini kullanarak CompatiblePSEditions göre filtrele](/powershell/module/microsoft.powershell.core/get-module)
-- [Betik yürütme uyumlu bir PowerShell sürümünde çalıştırmadıkça engelle](/powershell/gallery/concepts/script-psedition-support)
-- [Belirli PowerShell sürümleri için bir modülün uyumluluk bildirme](/powershell/gallery/concepts/module-psedition-support)
+- [$PSVersionTable kullanarak PowerShell 'in çalışan sürümünü belirleme](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
+- [PSEdition parametresini kullanarak, Get-Module sonuçlarını CompatiblePSEditions ile filtreleyin](/powershell/module/microsoft.powershell.core/get-module)
+- [PowerShell 'in uyumlu bir sürümünde çalıştırılmadığı takdirde betik yürütmeyi engelleyin](/powershell/gallery/concepts/script-psedition-support)
+- [Belirli PowerShell sürümlerine bir modülün uyumluluğunu bildirin](/powershell/gallery/concepts/module-psedition-support)
 
-## <a name="module-analysis-cache"></a>Modül çözümleme önbellek
+## <a name="module-analysis-cache"></a>Modül Analizi önbelleği
 
-WMF 5.1 ile başlayarak, PowerShell, bunu aktarır komutlar gibi bir modülle ilgili verileri önbelleğe almak için kullanılan dosya üzerinde denetim sağlar.
+WMF 5,1 ' den itibaren PowerShell, dışarı aktardığı komutlar gibi bir modülle ilgili verileri önbelleğe almak için kullanılan dosya üzerinde denetim sağlar.
 
-Varsayılan olarak, bu önbelleğin dosyasında depolanan `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. Önbellek başlatma sırasında bir komut için aranırken genellikle okuma ve bir modülü içeri aktardıktan sonra bir arka plan iş parçacığında süre yazılır.
+Bu önbellek, varsayılan olarak dosyada `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`depolanır. Önbellek genellikle bir komut aranırken ve bir modül içeri aktarıldıktan sonra bir arka plan iş parçacığında yazıldığında başlangıçta okunurdur.
 
-Önbelleğinin varsayılan konumu değiştirmek için Ayarla `$env:PSModuleAnalysisCachePath` PowerShell başlatmadan önce ortam değişkeni. Bu ortam değişkeni yapılan değişiklikler, yalnızca alt işlemlerin etkiler. Değeri, PowerShell oluşturun ve dosyalarını yazma iznine sahip bir tam yol (dosya adı dahil) adlandırmanız gerekir. Dosya önbelleği devre dışı bırakmak için geçersiz bir konum için bu değeri örneğin ayarlayın:
+Önbelleğin varsayılan konumunu değiştirmek için, PowerShell 'i başlatmadan önce `$env:PSModuleAnalysisCachePath` ortam değişkenini ayarlayın. Bu ortam değişkeninde yapılan değişiklikler yalnızca alt süreçlerini etkiler. Bu değer, PowerShell 'in dosya oluşturma ve yazma iznine sahip olduğu bir tam yolu (filename dahil) olarak adı olmalıdır. Dosya önbelleğini devre dışı bırakmak için bu değeri geçersiz bir konuma ayarlayın, örneğin:
 
 ```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
-Bu, geçersiz bir cihaza yolunu ayarlar. PowerShell yolu yazılamıyor, hata döndürülür, ancak hata raporlama bir izleyici kullanarak görebilirsiniz:
+Bu, yolu geçersiz bir cihaza ayarlar. PowerShell yola yazamaz, hata döndürülmez, ancak izleyici kullanarak hata raporlamayı görebilirsiniz:
 
 ```powershell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
 ```
 
-Önbelleği dışına yazılırken, PowerShell modülleri için artık gereksiz derecede büyük bir önbellek önlemek için mevcut kontrol eder. Bazen bu denetimler, bu durumda, bunları ayarlayarak kapatabilirsiniz, istenmez:
+Önbellek yazılırken, PowerShell gereksiz bir büyük önbelleğinizi önlemek için artık mevcut olmayan modülleri denetlecektir. Bazen bu denetimler istenmez, bu durumda şunları yaparak devre dışı bırakabilirsiniz:
 
 ```powershell
 $env:PSDisableModuleAnalysisCacheCleanup = 1
 ```
 
-Bu ortam değişkenini ayarlayarak hemen geçerli işlemde etkili olur.
+Bu ortam değişkeninin ayarlanması, geçerli işlemde hemen etkili olur.
 
-## <a name="specifying-module-version"></a>Modül sürümü belirtme
+## <a name="specifying-module-version"></a>Modül sürümünü belirtme
 
-WMF 5.1 içinde `using module` PowerShell modülü ile ilgili diğer yapılarını aynı şekilde davranır.
-Daha önce belirli bir modül sürümü belirtmek için imkanı yoktu; var olan birden çok sürüm varsa, bu hatayla sonuçlandı.
+WMF 5,1 ' de `using module` , diğer modülle ilgili kurulumlarını PowerShell ile aynı şekilde davranır.
+Daha önce, belirli bir modül sürümünü belirtmenin bir yolu yoktu; birden çok sürüm varsa, bu hata ile sonuçlanır.
 
-WMF 5.1:
+WMF 5,1:
 
-- Kullanabileceğiniz [ModuleSpecification Oluşturucusu (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
-  Bu karma tablosu olarak aynı biçimde `Get-Module -FullyQualifiedName`.
+- [Modulespecification oluşturucusunu (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)kullanabilirsiniz.
+
+  Bu karma tablo, ile `Get-Module -FullyQualifiedName`aynı biçimde.
 
   **Örnek:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-- Birden çok modül sürümü varsa, PowerShell kullanan **aynı çözüm mantığı** olarak `Import-Module` ve bir hata--aynı davranışı döndürmüyor `Import-Module` ve `Import-DscResource`.
+- Modülün birden çok sürümü varsa, PowerShell **aynı çözünürlükte mantığı** `Import-Module` kullanır ve bir hata döndürmez; `Import-Module` ve ile `Import-DscResource`aynı davranış.
 
 ## <a name="improvements-to-pester"></a>Pester geliştirmeleri
 
-WMF 5.1 Pester PowerShell ile birlikte gelen sürümünü 3.4.0 için 3.3.5 güncelleştirildi.
-Bu güncelleştirme, Nano Sunucu'da Pester için daha iyi davranışını etkinleştirir.
+WMF 5,1 ' de, PowerShell ile birlikte gelen pester sürümü 3.3.5 ' den 3.4.0 ' ye güncelleştirilmiştir.
+Bu güncelleştirme, nano sunucu 'da pester için daha iyi davranışı sunar.
 
-İnceleyerek Pest değişiklikleri gözden geçirebilirsiniz [ChangeLog](https://github.com/pester/Pester/blob/master/CHANGELOG.md) GitHub deposunda.
+GitHub deposundaki [changelog](https://github.com/pester/Pester/blob/master/CHANGELOG.md) 'u Inceleyerek, Pest 'deki değişiklikleri inceleyebilirsiniz.

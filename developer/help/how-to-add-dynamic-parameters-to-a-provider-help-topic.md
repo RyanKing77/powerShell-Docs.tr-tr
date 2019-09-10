@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
-ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
+ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70737594"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848123"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Sağlayıcı Yardım Konusuna Dinamik Parametreler Ekleme
 
@@ -23,7 +23,7 @@ Bu bölümde, bir sağlayıcı Yardım konusunun **dınamık parametreler** böl
 
 Sağlayıcı yardım konusunda belgelenen dinamik parametreler, sağlayıcının cmdlet 'i veya işlevi sağlayıcı sürücüsünde kullanıldığında cmdlet veya işleve eklediği dinamik parametrelerdir.
 
-Dinamik parametreler, bir sağlayıcı için özel cmdlet yardımı 'nda da açıklanmalıdır. Sağlayıcı için hem sağlayıcı yardımını hem de özel cmdlet yardımını yazarken, dinamik parametre belgelerini her iki belgeye de ekleyin. Özel cmdlet yardımı hakkında daha fazla bilgi için bkz. [sağlayıcılar Için Windows PowerShell özel cmdlet yardımı yazma](./writing-custom-cmdlet-help-for-windows-powershell-providers.md).
+Dinamik parametreler, bir sağlayıcı için özel cmdlet yardımı 'nda da açıklanmalıdır. Sağlayıcı için hem sağlayıcı yardımını hem de özel cmdlet yardımını yazarken, dinamik parametre belgelerini her iki belgeye de ekleyin.
 
 Bir sağlayıcı herhangi bir dinamik parametre uygulamadıysanız, sağlayıcı yardım konusu boş `DynamicParameters` bir öğesi içerir.
 

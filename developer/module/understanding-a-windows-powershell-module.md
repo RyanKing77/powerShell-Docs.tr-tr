@@ -1,5 +1,5 @@
 ---
-title: Bir Windows PowerShell modülü anlama | Microsoft Docs
+title: Windows PowerShell modülünü anlama | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,115 +8,115 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66470778"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848072"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Windows PowerShell Modülünü Anlama
 
-A *Modülü* (genellikle tek bir dizinde kaydedilir) uygun bir birim olarak birlikte gruplandırılmış ilgili Windows PowerShell işlevleri kümesidir. Bir dizi ilgili komut dosyaları, derlemeleri ve ilgili kaynakları bir modül olarak tanımlayarak, başvuru, yükleme, kalıcı hale getirmek ve kodunuzu, başka bir duruma göre çok daha kolay paylaşın.
+*Modül* , uygun bir birim (genellikle tek bir dizinde kaydedilir) olarak gruplandırılan Ilgili bir Windows PowerShell işlevleri kümesidir. Bir dizi ilgili betik dosyası, derleme ve ilgili kaynakları bir modül olarak tanımlayarak, kodunuzu daha kolay bir şekilde başvurabilir, yükleyebilir, kalıcı hale getirebilirsiniz ve daha kolay bir şekilde paylaşabilirsiniz.
 
-Modül ana amacı, Windows PowerShell kodu (örneğin, yeniden ve soyutlama) uyumluluğuna izin vermektir. Örneğin, bir modül oluşturmanın en temel yolu yalnızca bir Windows PowerShell Betiği bir .psm1 dosyayı farklı kaydet sağlamaktır. Bunun yapılması kadar denetim (örneğin, genel veya özel) işlevler ve değişkenler betiğinde yer sağlar. Betik bir .psm1 dosyası olarak kaydederek de belirli değişkenlerin kapsam denetlemenizi sağlar. Son olarak da cmdlet'ler gibi kullanabilirsiniz [Install-Module](/powershell/module/PowershellGet/Install-Module) düzenlemek için yükleme ve kodunuzu daha büyük çözümler için yapı taşı olarak kullanın.
+Bir modülün ana amacı, Windows PowerShell kodunun modüle belirlenmesi (IE, yeniden kullanımı ve soyutlama) sağlamaktır. Örneğin, bir modül oluşturmanın en temel yolu, bir Windows PowerShell betiğini. psm1 dosyası olarak kaydetmeniz yeterlidir. Bunun yapılması, betikte bulunan işlevleri ve değişkenleri denetlemenizi (IE, genel veya özel hale getirme) sağlar. Betiği bir. psm1 dosyası olarak kaydetmek, belirli değişkenlerin kapsamını denetlemenize de olanak tanır. Son olarak, komut dosyanızı daha büyük çözümler için yapı taşları olarak düzenlemek, yüklemek ve kullanmak üzere [Install-Module](/powershell/module/PowershellGet/Install-Module) gibi cmdlet 'leri de kullanabilirsiniz.
 
 ## <a name="module-components-and-types"></a>Modül bileşenleri ve türleri
 
-Bir modül dört temel bileşenlerden oluşur:
+Modül dört temel bileşenden oluşur:
 
-1. Bazı kod dosyasının - genellikle bir PowerShell Betiği veya yönetilen cmdlet derleme sıralayın.
+1. Kod dosyası bir sıralama-genellikle bir PowerShell betiği veya yönetilen bir cmdlet bütünleştirilmiş kodu.
 
-2. Yukarıdaki kod dosya olabilir herhangi ek derlemeler gibi dosyalar veya betikler yardımcı.
+2. Yukarıdaki kod dosyasına ek derlemeler, yardım dosyaları veya komut dosyaları gibi, başka her şeyi de gerektirebilir.
 
-3. Yazar ve sürüm bilgileri gibi metadada depolar yanı sıra yukarıdaki dosyalarını açıklar bir bildirim dosyası...
+3. Yukarıdaki dosyaları açıklayan ve yazar ve sürüm bilgileri gibi meta verileri depolayan bir bildirim dosyası.
 
-4. Yukarıdaki içeriğin tümünü içerir ve bulunduğu bir dizin burada PowerShell makul bir şekilde bulabilir.
+4. Yukarıdaki içeriğin tümünü içeren ve PowerShell 'in makul bir şekilde bulabileceği bir dizin.
 
-   Bu bileşenler, kendileri tarafından hiçbiri gerçekten gerekli olduğunu unutmayın. Örneğin, bir modül yalnızca bir .psm1 dosyasında depolanan bir betik teknik olabilir. Esas olarak kuruluş amacıyla kullanılan bir bildirim dosyası, ancak hiçbir şey bir modülü de olabilir. Ayrıca, dinamik olarak bir modül oluşturur ve bu nedenle gerçekten her şeyi depolamak için bir dizin gerekmiyor bir betik yazabilirsiniz. Aşağıdaki bölümlerde karıştırma ve modül olası farklı bölümlerini birlikte eşleşen alabilirsiniz modülleri türleri açıklanmaktadır.
+   Bu bileşenlerden hiçbirinin kendilerine göre değil, gerçekten gerekli olduğunu unutmayın. Örneğin, bir modül Teknik olarak yalnızca bir. psm1 dosyasında depolanan bir betik olabilir. Genellikle kurumsal amaçlar için kullanılan bir bildirim dosyası olan hiçbir şey olmayan bir modüle da sahip olabilirsiniz. Ayrıca, dinamik olarak bir modülün oluşturduğu bir komut dosyası yazabilirsiniz ve bu nedenle, aslında içinde herhangi bir şeyi depolamak için bir dizine ihtiyaç kalmaz. Aşağıdaki bölümlerde, bir modülün farklı olası parçalarını karıştırarak ve eşleştirerek alabileceğiniz modül türleri açıklanır.
 
 ### <a name="script-modules"></a>Betik modülleri
 
-Adından da anlaşılacağı gibi bir *betik modülündeki* herhangi bir geçerli Windows PowerShell kodu içeren bir dosya (.psm1). Betik geliştiriciler ve Yöneticiler bu tür bir modül İşlevler, değişkenler ve diğer üyeleri dahil modüller oluşturmak için kullanabilirsiniz. Yaklaşımının temelindeki üzerinde içeri aktarma, dışarı aktarma ve yönetim işlevlerini kullanma olanağı sağlayan başka bir uzantı yalnızca Windows PowerShell betiğiyle bir betik modüldür.
+Adından da anlaşılacağı gibi, bir *komut dosyası modülü* geçerli herhangi bir Windows PowerShell kodu içeren bir dosyadır (. psm1). Betik geliştiricileri ve Yöneticiler, üyeleri işlevleri, değişkenleri ve daha fazlasını içeren modüller oluşturmak için bu modül türünü kullanabilir. Bu noktada, bir komut dosyası modülü yalnızca farklı bir uzantıya sahip bir Windows PowerShell komut dosyası olur ve bu da yöneticilerin üzerinde içeri aktarma, dışarı aktarma ve yönetim işlevlerini kullanmasına olanak sağlar.
 
-Ayrıca, modülünüzde veri dosyaları, diğer bağımlı modülleri veya çalışma zamanı betikler gibi diğer kaynaklar dahil edilecek bildirim dosyası kullanabilirsiniz. Bildirim dosyaları izlemek için geliştirme ve sürüm bilgileri gibi meta veriler için kullanışlıdır.
+Ayrıca, modüldeki veri dosyaları, diğer bağımlı modüller veya çalışma zamanı betikleri gibi diğer kaynakları dahil etmek için bir bildirim dosyası kullanabilirsiniz. Bildirim dosyaları, yazma ve sürüm oluşturma bilgileri gibi meta verileri izlemek için de kullanışlıdır.
 
-Son olarak, dinamik olarak oluşturulan değil, başka bir modül gibi bir betik modülü PowerShell makul bulabilecek bir klasörde kaydedilmesi gerekir. Genellikle, bu PowerShell modülünü yoludur; Ancak, gerekirse, açıkça modülünüzde yüklendiği tanımlayabilirsiniz. Daha fazla bilgi için [nasıl yazılacağını PowerShell betik modülündeki](./how-to-write-a-powershell-script-module.md).
+Son olarak, dinamik olarak oluşturulmayan diğer tüm modüller gibi bir betik modülünün, PowerShell 'in makul bir şekilde bulabildiği bir klasöre kaydedilmesi gerekir. Genellikle bu, PowerShell modülünün yoludur; Ancak gerekirse modülünüzün yüklendiği yeri açıkça tanımlayabilirsiniz. Daha fazla bilgi için bkz. [PowerShell betik modülü yazma](./how-to-write-a-powershell-script-module.md).
 
-### <a name="binary-modules"></a>İkili modülleri
+### <a name="binary-modules"></a>İkili modüller
 
-A *ikili modül* gibi derlenmiş kodu içeren bir .NET Framework derlemesi (.dll) C#. Cmdlet geliştiriciler bu tür bir modülü cmdlet'leri, sağlayıcıları ve daha fazlasını paylaşmak için kullanabilirsiniz. (Mevcut eklentileri ikili modülleri olarak da kullanılabilir.) Bir betik modülüne karşılaştırıldığında, ikili bir modül daha hızlı veya özelliklerine cmdlet'leri oluşturmanıza olanak tanır (gibi çoklu iş parçacığı kullanımı) için Windows PowerShell betikleri kodda kolay değildir.
+*İkili modül* , gibi derlenmiş kod içeren bir .NET Framework derlemesidir (. dll) C#. Cmdlet geliştiricileri cmdlet 'leri, sağlayıcıları ve daha fazlasını paylaşmak için bu modül türünü kullanabilir. (Mevcut ek bileşenler, ikili modüller olarak da kullanılabilir.) Bir komut dosyası modülüyle karşılaştırıldığında, ikili bir modül daha hızlı bir şekilde veya Windows PowerShell betiklerine kodun kolay olmayan özelliklerini (çoklu iş parçacığı gibi) kullanmanıza olanak tanır.
 
-Betik modülleri ile modülünüzde kullanan ek kaynaklar açıklanır ve modülünüzde hakkındaki meta verileri izlemek için bir bildirim dosyası dahil edebilirsiniz. Benzer şekilde, bir klasörde bir PowerShell modülü yol boyunca büyük olasılıkla ikili modülünüzde yüklemelisiniz. Daha fazla bilgi için bkz. nasıl [ikili bir PowerShell modülü yazma](./how-to-write-a-powershell-binary-module.md).
+Betik modüllerinde olduğu gibi, modülünüzün kullandığı ek kaynakları ve modülünüz hakkındaki meta verileri izlemek için bir bildirim dosyası ekleyebilirsiniz. Benzer şekilde, ikili modülünüzü PowerShell modülü yolu üzerinde bir yere yüklemelisiniz. Daha fazla bilgi için bkz. [PowerShell Ikili modülü nasıl yazılır](./how-to-write-a-powershell-binary-module.md).
 
-### <a name="manifest-modules"></a>Modüller listesi
+### <a name="manifest-modules"></a>Bildirim modülleri
 
-A *bildirim Modülü* tüm bileşenlerini açıklamak için bir bildirim dosyası kullanır, ancak komut çekirdek derleme veya herhangi bir tür olmayan bir modüldür. (Resmi olarak, bir bildirim modül bırakır `ModuleToProcess` veya `RootModule` boş bildirimin öğesi.) Ancak, bir modülün bağımlı derlemeleri yüklemek veya otomatik olarak belirli ön işleme betikleri çalıştırma olanağı gibi diğer özellikleri kullanmaya devam edebilirsiniz. Bir bildirim modülü, iç içe geçmiş modülleri, derlemeler, türler veya biçimleri gibi diğer modüllerin kullanacağı kaynakları paketlemek için kullanışlı bir yol olarak da kullanabilirsiniz. Daha fazla bilgi için [bildirim PowerShell modülü yazma](./how-to-write-a-powershell-module-manifest.md).
+*Bildirim modülü* , tüm bileşenlerini anlatmak için bir bildirim dosyası kullanan bir modüldür, ancak herhangi bir çekirdek derleme veya betik sıralaması yoktur. (Resmi olarak, bildirim modülü bildirimin `ModuleToProcess` veya `RootModule` öğesinin öğesini boş bırakır.) Ancak, bağımlı derlemeleri yükleme veya belirli ön işleme betiklerini otomatik olarak çalıştırma gibi bir modülün diğer özelliklerini kullanmaya devam edebilirsiniz. Bildirim modülünü, iç içe geçmiş modüller, derlemeler, türler veya biçimler gibi diğer modüllerin kullanacağı kaynakları paketlemek için kullanışlı bir yol olarak da kullanabilirsiniz. Daha fazla bilgi için bkz. [PowerShell modülü bildirimi yazma](./how-to-write-a-powershell-module-manifest.md).
 
 ### <a name="dynamic-modules"></a>Dinamik modüller
 
-A *dinamik modül* olmayan öğesinden yüklenmiş veya bir dosyaya kaydedilebilir bir modüldür. Bunun yerine, bir komut dosyası tarafından dinamik olarak oluşturuldukları kullanarak [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet'i. Bu modül türü yüklenemedi veya kalıcı depolama alanına kaydedildi gerekmez isteğe bağlı bir modülü oluşturmak bir betik sağlar. Doğası, dinamik modül kısa süreli olması beklenir ve tarafından erişilemez `Get-Module` cmdlet'i. Benzer şekilde, genellikle modül bildirimleri gerekmez ya da bunların büyük olasılıkla kendi ilgili derlemeleri depolamak için kalıcı klasörleri gerekir.
+*Dinamik modül* bir dosya üzerinden yüklenmeyen veya ' a kaydedilmiş bir modüldür. Bunun yerine, [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet 'i kullanılarak bir komut dosyası tarafından dinamik olarak oluşturulur. Bu tür bir modül, bir betiğin, istek üzerine yüklenmesi veya kalıcı depolamaya kaydedilmesi gerekmeyen bir modül oluşturmasını sağlar. Doğası gereği, dinamik bir modülün kısa süreli olması amaçlanmıştır ve bu nedenle `Get-Module` cmdlet 'i tarafından erişilemez. Benzer şekilde, genellikle modül bildirimlerine gerek kalmaz veya ilgili derlemelerini depolamak için büyük olasılıkla kalıcı klasörlere ihtiyacı yoktur.
 
 ## <a name="module-manifests"></a>Modül bildirimleri
 
-A *modül bildirimini* bir karma tablo içeren bir .psd1 dosyasıdır. Anahtarlar ve değerler karma tablosundaki şunları yapın:
+*Modül bildirimi* , karma tablo içeren bir. psd1 dosyasıdır. Karma tablodaki anahtarlar ve değerler aşağıdaki işlemleri yapar:
 
-- Modül öznitelikleri ve içeriği açıklanmaktadır.
+- Modülün içeriğini ve özniteliklerini açıkla.
 
 - Önkoşulları tanımlayın.
 
-- Bileşenlerin nasıl işleneceğini belirler.
+- Bileşenlerin nasıl işlendiğini belirleme.
 
-  Bildirimler, bir modül için gerekli değildir. Modülleri komut dosyalarına (.ps1) başvuran, biçimlendirme Modülü (.psm1), bildirim dosyası (.psd1) komut dosyalarını ve dosyaları (.ps1xml), cmdlet ve sağlayıcı derlemeleri (.dll), kaynak dosyaları, Yardım dosyaları, yerelleştirme dosyaları veya başka türde bir dosya veya kaynak yazın, Modülün bir parçası sağlanır. Uluslararası hale getirilmiş bir betik için modül klasöründe bir dizi ileti katalog dosyaları da içerir. Modül klasörü için bir bildirim dosyası eklerseniz, tek bir birim olarak birden çok dosya bildirim başvurarak başvurabilirsiniz.
+  Bir modül için bildirimler gerekli değildir. Modüller betik dosyaları (. ps1), komut dosyası modül dosyaları (. psm1), bildirim dosyaları (. psd1), biçimlendirme ve tür dosyaları (. ps1xml), cmdlet ve sağlayıcı derlemeleri (. dll), kaynak dosyaları, yardım dosyaları, yerelleştirme dosyaları veya diğer herhangi bir dosya veya kaynak türü için başvuru yapabilir. , modülün bir parçası olarak paketlenmiştir. Uluslararası bir komut dosyası için modül klasörü, bir dizi ileti kataloğu dosyası da içerir. Modül klasörüne bir bildirim dosyası eklerseniz, bildirime başvurarak birden çok dosyaya tek bir birim olarak başvurabilirsiniz.
 
-  Bildirimi bilgi aşağıdaki kategorileri açıklanmaktadır:
+  Bildirim, aşağıdaki bilgi kategorilerini açıklar:
 
-- Modül, modül sürüm numarasını, yazarı ve açıklaması gibi hakkındaki meta verileri.
+- Modülle ilgili modül Sürüm numarası, yazar ve açıklama gibi meta veriler.
 
-- Modülü Windows PowerShell sürümü, ortak dil çalışma zamanı (CLR) sürümünü ve gerekli modülleri içeri aktarmak için gerekli Önkoşullar.
+- Modülün içeri aktarılması için Windows PowerShell sürümü, ortak dil çalışma zamanı (CLR) sürümü ve gerekli modüller gibi Önkoşullar gereklidir.
 
-- İşlenecek işleme yönergeleri, komut dosyaları, biçimleri ve türleri gibi.
+- İşlenecek betikler, biçimler ve türler gibi işleme yönergeleri.
 
-- Dışarı aktarılacak modülü, diğer adlar, İşlevler, değişkenler ve cmdlet'leri dışarı aktarmak için gibi kısıtlamalar üyeleri üzerinde.
+- Dışarı aktarılacak modül üyeleri, diğer adlar, işlevler, değişkenler ve verilecek cmdlet 'ler gibi kısıtlamalar.
 
-  Daha fazla bilgi için [bildirim PowerShell modülü yazma](./how-to-write-a-powershell-module-manifest.md).
+  Daha fazla bilgi için bkz. [PowerShell modülü bildirimi yazma](./how-to-write-a-powershell-module-manifest.md).
 
-## <a name="storing-and-installing-a-module"></a>Depolama ve bir modülünü yükleme
+## <a name="storing-and-installing-a-module"></a>Modül depolama ve yükleme
 
-Oluşturduktan sonra bir komut dosyası, ikili veya bildirim modülü, başkalarının da erişebilir, iş bir konuma kaydedebilirsiniz. Örneğin, burada Windows PowerShell yüklü değil veya bir kullanıcı klasöründe depolanan sistem klasörü modülünüzde depolanabilir.
+Bir betik, ikili veya bildirim modülünü oluşturduktan sonra, işinizi başkalarının erişebileceği bir konuma kaydedebilirsiniz. Örneğin, modülünüzün Windows PowerShell 'in yüklü olduğu sistem klasöründe depolanması veya bir kullanıcı klasöründe depolanması olabilir.
 
-Genel olarak bakıldığında, modülünüzde depolanan yollardan biri kullanılarak yüklediğiniz belirleyebilir `$ENV:PSModulePath` değişkeni. Bu yollardan kullanarak PowerShell otomatik olarak bulabilir ve bir kullanıcı kendi kodunda bir çağrı yaptığında, modülü, anlamına gelir. Modülünüzün başka bir yerde depolayın, modülünüzde konumunu bir parametre olarak geçirerek çağırdığınızda bilmeniz PowerShell açıkça sağlayabilirsiniz `Install-Module`.
+Genel anlamda, `$ENV:PSModulePath` değişkende depolanan yollardan birini kullanarak modülünüzü nereye yükleyeceğini belirleyebilirsiniz. Bu yollardan birini kullanmak, bir Kullanıcı kendi kodunda bir çağrı yaptığında, PowerShell 'in modülünüzü otomatik olarak bulabileceği ve yükleyebileceği anlamına gelir. Modülünüzü başka bir yerde depoluorsanýz, ' ı çağırdığınızda `Install-Module`modülün konumunu bir parametre olarak geçirerek PowerShell 'e açıkça izin verebilirsiniz.
 
-Ne olursa olsun, klasör yolu olarak adlandırılır *temel* ' % s'Modülü (ModuleBase) ve betik adını, ikili veya bildirim modül dosyası aşağıdaki istisnalarla modülü klasör adı ile aynı olması gerekir:
+Ne olursa olsun, klasörün yolu modülün (ModuleBase) *temeli* olarak adlandırılır ve betik, ikili ya da bildirim modülü dosyasının adı modül klasörü adı ile aynı olmalıdır ve aşağıdaki özel durumlarla aynı olmalıdır:
 
-- Tarafından oluşturulan dinamik modüller `New-Module` cmdlet'i adı kullanılarak `Name` cmdlet parametresi.
+- `New-Module` Cmdlet 'i tarafından oluşturulan Dinamik modüller, cmdlet 'in `Name` parametresi kullanılarak adlandırılabilir.
 
-- Bütünleştirilmiş kod nesneleriyle aynı tarafından içeri aktarılan modülleri  **`Import-Module` -derleme** komutu aşağıdaki söz dizimini göre adlandırılır: `"dynamic_code_module_" + assembly.GetName()`.
+- `"dynamic_code_module_" + assembly.GetName()`  **`Import-Module` -Assembly** komutuna göre derleme nesnelerinden içeri aktarılan modüller aşağıdaki sözdizimine göre adlandırılır:.
 
-  Daha fazla bilgi için [PowerShell modülünü yükleme](./installing-a-powershell-module.md) ve [PSModulePath yükleme yolunu değiştirmek](./modifying-the-psmodulepath-installation-path.md).
+  Daha fazla bilgi için bkz. [PowerShell modülünü yükleme](./installing-a-powershell-module.md) ve [PSModulePath yükleme yolunu değiştirme](./modifying-the-psmodulepath-installation-path.md).
 
-## <a name="module-cmdlets-and-variables"></a>Modülü cmdlet'lerini ve değişkenler
+## <a name="module-cmdlets-and-variables"></a>Modül cmdlet 'Leri ve değişkenleri
 
-Aşağıdaki cmdlet'ler ve değişkenleri oluşturulmasını ve yönetimini modülleri için Windows PowerShell tarafından sağlanır.
+Aşağıdaki cmdlet 'ler ve değişkenler, modüllerin oluşturulması ve yönetilmesi için Windows PowerShell tarafından sağlanır.
 
-[Yeni modül](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet'i Bu cmdlet oluşturur var. yeni bir dinamik modül yalnızca bellekte. Modül bir betik bloğundan oluşturulur ve dışarı aktarılan üyeleri, İşlevler ve değişkenler gibi oturumu hemen kullanılabilir ve oturum kapatılana kadar kullanılabilir durumda kalır.
+[New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet 'i bu cmdlet yalnızca bellekte bulunan yeni bir dinamik modül oluşturur. Modül bir betik bloğundan oluşturulur ve işlevleri ve değişkenleri gibi, bu üye, oturumda hemen kullanılabilir ve oturum kapatılana kadar kullanılabilir kalır.
 
-[Yeni ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet'i Bu cmdlet yeni bir modül bildirimi (.psd1) dosyası oluşturur, değerleri doldurur ve bildirim dosyası için belirtilen yol kaydeder. Bu cmdlet, el ile doldurulacak bir modül bildirim şablonu oluşturmak için de kullanılabilir.
+[New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet 'i bu cmdlet yeni bir modül bildirim (. psd1) dosyası oluşturur, değerlerini doldurur ve bildirim dosyasını belirtilen yola kaydeder. Bu cmdlet, el ile doldurulabilecek bir modül bildirim şablonu oluşturmak için de kullanılabilir.
 
-[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet'i Bu cmdlet bir veya daha fazla modülü geçerli oturuma ekler.
+[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 'i bu cmdlet geçerli oturuma bir veya daha fazla modül ekler.
 
-[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet'i Bu cmdlet, yapıldı veya geçerli oturuma aktarılabilir modülleri hakkında bilgi alır.
+[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet 'i bu cmdlet, geçerli oturuma aktarılabilecek olan veya olmayan modüller hakkında bilgi alır.
 
-[Dışarı aktarma ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet'i Bu cmdlet belirtir (örneğin, cmdlet'leri, İşlevler, değişkenler ve diğer adları) betik Modülü (.psm1) veya dinamik modül kullanılarak oluşturulan dışarı modülü üyeleri `New-Module` cmdlet'i.
+[Export-modülemeclienttarget](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet 'i bu cmdlet, bir betik modülü (. psm1) dosyasından veya `New-Module` cmdlet kullanılarak oluşturulan dinamik bir modülden dışarı aktarılmış modül üyelerini (cmdlet, işlevler, değişkenler ve diğer adlar gibi) belirtir.
 
-[Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) cmdlet'i Bu cmdlet modülleri geçerli oturumdan kaldırır.
+[Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) cmdlet 'i bu cmdlet geçerli oturumdan modülleri kaldırır.
 
-[Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) cmdlet'i Bu cmdlet, bir modül bildirimi doğru bileşenleri bir modülün modül bildirim dosyası (.psd1) içinde listelenen dosyaların gerçekten belirtilen yolda mevcut olduğunu doğrulayarak açıklayan doğrular.
+[Test-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) cmdlet 'i bu cmdlet, modül bildirim dosyasında (. psd1) listelenen dosyaların gerçekten belirtilen yollarda mevcut olduğunu doğrulayarak bir modül bildiriminin bir modülün bileşenlerini doğru şekilde açıkladığını doğrular.
 
-$PSScriptRoot betik modülündeki yürütülmekte olduğu dizin Bu değişken içeriyor. Bu modül yolu diğer kaynaklarına erişmek için kullanılacak komut dosyaları sağlar.
+$PSScriptRoot bu değişken, komut dosyası modülünün yürütüldüğü dizini içerir. Betiklerin diğer kaynaklara erişmek için modül yolunu kullanmasına olanak sağlar.
 
-$env: PSModulePath bu ortam değişkeni, hangi Windows PowerShell modülleri depolanır dizinlerin bir listesini içerir. Windows PowerShell modülleri için Yardım konularını güncelleştiriliyor ve modüller otomatik olarak içeri bu değişkenin değerini kullanır.
+$env:P SModulePath bu ortam değişkeni, Windows PowerShell modüllerinin depolandığı dizinlerin bir listesini içerir. Windows PowerShell, modülleri otomatik olarak içeri aktarırken ve modüller için yardım konularını güncelleştirirken bu değişkenin değerini kullanır.
 
 ## <a name="see-also"></a>Ayrıca bkz:
 
-[Bir Windows PowerShell modülü yazma](./writing-a-windows-powershell-module.md)
+[Windows PowerShell modülü yazma](./writing-a-windows-powershell-module.md)
