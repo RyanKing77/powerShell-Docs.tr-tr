@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: <span data-ttu-id="503ff-101">Sistem yönetimi için örnek betikler</span><span class="sxs-lookup"><span data-stu-id="503ff-101">Sample scripts for system administration</span></span>
-summary: <span data-ttu-id="503ff-102">Bir örnek koleksiyonu, PowerShell ile sistemleri yönetmeye yönelik senaryolar hakkında yol gösterir.</span><span class="sxs-lookup"><span data-stu-id="503ff-102">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+title: Sistem yönetimi için örnek betikler
+summary: Bir örnek koleksiyonu, PowerShell ile sistemleri yönetmeye yönelik senaryolar hakkında yol gösterir.
 metadata:
-  title: <span data-ttu-id="503ff-103">Sistem yönetimi için örnek betikler</span><span class="sxs-lookup"><span data-stu-id="503ff-103">Sample scripts for system administration</span></span>
-  description: <span data-ttu-id="503ff-104">Bir örnek koleksiyonu, PowerShell ile sistemleri yönetmeye yönelik senaryolar hakkında yol gösterir.</span><span class="sxs-lookup"><span data-stu-id="503ff-104">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+  title: Sistem yönetimi için örnek betikler
+  description: Bir örnek koleksiyonu, PowerShell ile sistemleri yönetmeye yönelik senaryolar hakkında yol gösterir.
   ms.topic: landing-page
   author: sdwheeler
   ms.author: sewhee
@@ -15,85 +15,85 @@ metadata:
   ms.lasthandoff: 09/05/2019
   ms.locfileid: "70392640"
 landingContent:
-- title: <span data-ttu-id="503ff-105">Nesneler ile çalışma</span><span class="sxs-lookup"><span data-stu-id="503ff-105">Working with objects</span></span>
+- title: Nesneler ile çalışma
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="503ff-106">Nesne yapısını görüntüleme</span><span class="sxs-lookup"><span data-stu-id="503ff-106">Viewing object structure</span></span>
+    - text: Nesne yapısını görüntüleme
       url: ./viewing-object-structure--get-member-.md
-    - text: <span data-ttu-id="503ff-107">Nesnenin parçalarını seçme</span><span class="sxs-lookup"><span data-stu-id="503ff-107">Selecting parts of object</span></span>
+    - text: Nesnenin parçalarını seçme
       url: ./selecting-parts-of-objects--select-object-.md
-    - text: <span data-ttu-id="503ff-108">İşlem hattındaki nesneleri filtreleme</span><span class="sxs-lookup"><span data-stu-id="503ff-108">Filtering objects in the pipeline</span></span>
+    - text: İşlem hattındaki nesneleri filtreleme
       url: ./removing-objects-from-the-pipeline--where-object-.md
-    - text: <span data-ttu-id="503ff-109">Nesne sıralama</span><span class="sxs-lookup"><span data-stu-id="503ff-109">Sorting objects</span></span>
+    - text: Nesne sıralama
       url: ./sorting-objects.md
-    - text: <span data-ttu-id="503ff-110">Birden çok nesne için bir görevi yineleme</span><span class="sxs-lookup"><span data-stu-id="503ff-110">Repeating a task for multiple objects</span></span>
+    - text: Birden çok nesne için bir görevi yineleme
       url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
-    - text: <span data-ttu-id="503ff-111">.NET ve COM nesneleri oluşturma</span><span class="sxs-lookup"><span data-stu-id="503ff-111">Creating .NET and COM objects</span></span>
+    - text: .NET ve COM nesneleri oluşturma
       url: ./creating-.net-and-com-objects--new-object-.md
-    - text: <span data-ttu-id="503ff-112">Statik sınıflar ve yöntemler kullanma</span><span class="sxs-lookup"><span data-stu-id="503ff-112">Using static classes and methods</span></span>
+    - text: Statik sınıflar ve yöntemler kullanma
       url: ./using-static-classes-and-methods.md
-    - text: <span data-ttu-id="503ff-113">WMI nesnelerini alma - Get-WmiObject</span><span class="sxs-lookup"><span data-stu-id="503ff-113">Getting WMI objects - Get-WmiObject</span></span>
+    - text: WMI nesnelerini alma - Get-WmiObject
       url: ./getting-wmi-objects--get-wmiobject-.md
-- title: <span data-ttu-id="503ff-114">Bilgisayarları yönetme</span><span class="sxs-lookup"><span data-stu-id="503ff-114">Managing computers</span></span>
+- title: Bilgisayarları yönetme
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="503ff-115">Bilgisayar durumunu değiştirme</span><span class="sxs-lookup"><span data-stu-id="503ff-115">Changing computer state</span></span>
+    - text: Bilgisayar durumunu değiştirme
       url: ./changing-computer-state.md
-    - text: <span data-ttu-id="503ff-116">Bilgisayarlar hakkında bilgi toplama</span><span class="sxs-lookup"><span data-stu-id="503ff-116">Collecting information about computers</span></span>
+    - text: Bilgisayarlar hakkında bilgi toplama
       url: ./collecting-information-about-computers.md
-    - text: <span data-ttu-id="503ff-117">FilterHashtable ile Get-WinEvent sorguları oluşturma</span><span class="sxs-lookup"><span data-stu-id="503ff-117">Creating Get-WinEvent queries with FilterHashtable</span></span>
+    - text: FilterHashtable ile Get-WinEvent sorguları oluşturma
       url: ./creating-get-winEvent-queries-with-filterhashtable.md
-- title: <span data-ttu-id="503ff-118">İşlem & hizmetleri yönetme</span><span class="sxs-lookup"><span data-stu-id="503ff-118">Managing processes & services</span></span>
+- title: İşlem & hizmetleri yönetme
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="503ff-119">İşlem cmdlet’leri ile işlemleri yönetme</span><span class="sxs-lookup"><span data-stu-id="503ff-119">Managing processes with process cmdlets</span></span>
+    - text: İşlem cmdlet’leri ile işlemleri yönetme
       url: ./managing-processes-with-process-cmdlets.md
-    - text: <span data-ttu-id="503ff-120">Hizmetleri yönetme</span><span class="sxs-lookup"><span data-stu-id="503ff-120">Managing services</span></span>
+    - text: Hizmetleri yönetme
       url: ./managing-services.md
-    - text: <span data-ttu-id="503ff-121">Windows PowerShell sürücülerini yönetme</span><span class="sxs-lookup"><span data-stu-id="503ff-121">Managing Windows PowerShell drives</span></span>
+    - text: Windows PowerShell sürücülerini yönetme
       url: ./managing-windows-powershell-drives.md
-    - text: <span data-ttu-id="503ff-122">Yazıcılar ile çalışma</span><span class="sxs-lookup"><span data-stu-id="503ff-122">Working with printers</span></span>
+    - text: Yazıcılar ile çalışma
       url: ./working-with-printers.md
-    - text: <span data-ttu-id="503ff-123">Ağ görevleri gerçekleştirme</span><span class="sxs-lookup"><span data-stu-id="503ff-123">Performing networking tasks</span></span>
+    - text: Ağ görevleri gerçekleştirme
       url: ./performing-networking-tasks.md
-    - text: <span data-ttu-id="503ff-124">Yazılım yüklemeleri ile çalışma</span><span class="sxs-lookup"><span data-stu-id="503ff-124">Working with software installations</span></span>
+    - text: Yazılım yüklemeleri ile çalışma
       url: ./working-with-software-installations.md
-    - text: <span data-ttu-id="503ff-125">PowerShell komutunun kodunu çalışan bir işlemden çözme</span><span class="sxs-lookup"><span data-stu-id="503ff-125">Decode a PowerShell command from a running process</span></span>
+    - text: PowerShell komutunun kodunu çalışan bir işlemden çözme
       url: ./decode-powershell-command-from-a-running-process.md
-- title: <span data-ttu-id="503ff-126">Çıktı ile çalışma</span><span class="sxs-lookup"><span data-stu-id="503ff-126">Working with output</span></span>
+- title: Çıktı ile çalışma
   linkLists:
   - linkListType: concept
     links:
-    - text: <span data-ttu-id="503ff-127">Out-\* cmdlet’leri ile verileri yeniden yönlendirme</span><span class="sxs-lookup"><span data-stu-id="503ff-127">Redirecting data with Out-\* cmdlets</span></span>
+    - text: Out-* cmdlet’leri ile verileri yeniden yönlendirme
       url: ./redirecting-data-with-out---cmdlets.md
-    - text: <span data-ttu-id="503ff-128">Çıkış görünümünü değiştirmek için biçimlendirme komutları kullanma</span><span class="sxs-lookup"><span data-stu-id="503ff-128">Using format commands to change output view</span></span>
+    - text: Çıkış görünümünü değiştirmek için biçimlendirme komutları kullanma
       url: ./using-format-commands-to-change-output-view.md
-- title: <span data-ttu-id="503ff-129">Sürücüleri & dosyaları yönetme</span><span class="sxs-lookup"><span data-stu-id="503ff-129">Managing drives & files</span></span>
+- title: Sürücüleri & dosyaları yönetme
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="503ff-130">Geçerli konumu yönetme</span><span class="sxs-lookup"><span data-stu-id="503ff-130">Managing current location</span></span>
+    - text: Geçerli konumu yönetme
       url: ./managing-current-location.md
-    - text: <span data-ttu-id="503ff-131">Dosya ve klasörlerle çalışma</span><span class="sxs-lookup"><span data-stu-id="503ff-131">Working with files and folders</span></span>
+    - text: Dosya ve klasörlerle çalışma
       url: ./working-with-files-and-folders.md
-    - text: <span data-ttu-id="503ff-132">Dosya, klasör ve kayıt defteri anahtarları ile çalışma</span><span class="sxs-lookup"><span data-stu-id="503ff-132">Working with files folders and registry keys</span></span>
+    - text: Dosya, klasör ve kayıt defteri anahtarları ile çalışma
       url: ./working-with-files-folders-and-registry-keys.md
-    - text: <span data-ttu-id="503ff-133">Kayıt defteri girdileri ile çalışma</span><span class="sxs-lookup"><span data-stu-id="503ff-133">Working with registry entries</span></span>
+    - text: Kayıt defteri girdileri ile çalışma
       url: ./working-with-registry-entries.md
-    - text: <span data-ttu-id="503ff-134">Kayıt defteri anahtarları ile çalışma</span><span class="sxs-lookup"><span data-stu-id="503ff-134">Working with registry keys</span></span>
+    - text: Kayıt defteri anahtarları ile çalışma
       url: ./working-with-registry-keys.md
-- title: <span data-ttu-id="503ff-135">Kullanıcı arabirimi öğeleri oluşturma</span><span class="sxs-lookup"><span data-stu-id="503ff-135">Creating UI elements</span></span>
+- title: Kullanıcı arabirimi öğeleri oluşturma
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="503ff-136">Özel bir giriş kutusu oluşturma</span><span class="sxs-lookup"><span data-stu-id="503ff-136">Creating a custom input box</span></span>
+    - text: Özel bir giriş kutusu oluşturma
       url: ./creating-a-custom-input-box.md
-    - text: <span data-ttu-id="503ff-137">Grafik tarih seçici oluşturma</span><span class="sxs-lookup"><span data-stu-id="503ff-137">Creating a graphical date picker</span></span>
+    - text: Grafik tarih seçici oluşturma
       url: ./creating-a-graphical-date-picker.md
-    - text: <span data-ttu-id="503ff-138">Birden çok seçim liste kutusu</span><span class="sxs-lookup"><span data-stu-id="503ff-138">Multiple selection list boxes</span></span>
+    - text: Birden çok seçim liste kutusu
       url: ./multiple-selection-list-boxes.md
-    - text: <span data-ttu-id="503ff-139">Bir liste kutusundan öğe seçme</span><span class="sxs-lookup"><span data-stu-id="503ff-139">Selecting items from a list box</span></span>
+    - text: Bir liste kutusundan öğe seçme
       url: ./selecting-items-from-a-list-box.md
